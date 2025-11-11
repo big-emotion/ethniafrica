@@ -16,7 +16,9 @@ export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>("region");
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
-  const [selectedEthnicity, setSelectedEthnicity] = useState<string | null>(null);
+  const [selectedEthnicity, setSelectedEthnicity] = useState<string | null>(
+    null
+  );
 
   const t = getTranslation(language);
 
@@ -28,7 +30,9 @@ export default function Home() {
 
   const handleCountrySelect = (country: string, regionKey?: string) => {
     setSelectedCountry(country);
-    setSelectedRegion(regionKey || null);
+    // Ne pas définir selectedRegion ici - il sera récupéré automatiquement dans DetailView
+    // selectedRegion ne doit être défini que quand on clique directement sur une région
+    setSelectedRegion(null);
     setSelectedEthnicity(null);
   };
 
@@ -139,4 +143,3 @@ export default function Home() {
     </div>
   );
 }
-

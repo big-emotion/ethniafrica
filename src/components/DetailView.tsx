@@ -52,7 +52,17 @@ export const DetailView = ({
   }
 
   // Vue d'un pays sélectionné
-  if (selectedCountry && countryRegion) {
+  if (selectedCountry) {
+    // Attendre que la région soit chargée
+    if (!countryRegion) {
+      return (
+        <div className="h-[calc(100vh-12rem)] flex items-center justify-center p-6">
+          <div className="text-center text-muted-foreground">
+            <p>Loading country data...</p>
+          </div>
+        </div>
+      );
+    }
     return (
       <CountryDetailView
         regionKey={countryRegion}

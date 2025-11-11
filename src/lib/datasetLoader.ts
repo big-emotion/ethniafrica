@@ -250,22 +250,28 @@ export async function getAllEthnicities(): Promise<Array<{
     countries: Set<string>;
   }>();
 
-  for (const region of Object.values(index.regions)) {
-    for (const [ethName, ethData] of Object.entries(region.ethnicities)) {
-      if (!ethnicitiesMap.has(ethName)) {
-        ethnicitiesMap.set(ethName, {
-          totalPopulation: 0,
-          percentageInAfrica: 0,
-          countries: new Set(),
-        });
-      }
+  // Parcourir toutes les régions et tous les pays pour trouver les ethnies réelles
+  for (const [regionKey, region] of Object.entries(index.regions)) {
+    for (const countryName of Object.keys(region.countries)) {
+      const ethnicities = await getEthnicitiesInCountry(regionKey, countryName);
       
-      const eth = ethnicitiesMap.get(ethName)!;
-      eth.totalPopulation += ethData.totalPopulationInRegion;
-      eth.percentageInAfrica += ethData.percentageInAfrica;
-      
-      // Compter les pays où cette ethnie est présente
-      for (const countryName of Object.keys(region.countries)) {
+      for (const ethnicity of ethnicities) {
+        const ethName = ethnicity.Ethnicity_or_Subgroup;
+        
+        if (!ethnicitiesMap.has(ethName)) {
+          ethnicitiesMap.set(ethName, {
+            totalPopulation: 0,
+            percentageInAfrica: 0,
+            countries: new Set(),
+          });
+        }
+        
+        const eth = ethnicitiesMap.get(ethName)!;
+        const pop = parseFloat(ethnicity['population de l\'ethnie estimée dans le pays']) || 0;
+        const pctAfrica = parseFloat(ethnicity['pourcentage dans la population totale d\'Afrique']) || 0;
+        
+        eth.totalPopulation += pop;
+        eth.percentageInAfrica += pctAfrica;
         eth.countries.add(countryName);
       }
     }

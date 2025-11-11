@@ -8,12 +8,15 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CountryViewProps {
   language: Language;
   onCountrySelect: (country: string, regionKey: string) => void;
 }
+
+const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 export const CountryView = ({
   language,
@@ -21,27 +24,66 @@ export const CountryView = ({
 }: CountryViewProps) => {
   const t = getTranslation(language);
   const [search, setSearch] = useState<string>("");
-  const [countries, setCountries] = useState<Array<{
-    name: string;
-    region: string;
-    regionName: string;
-    data: any;
-  }>>([]);
+  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [countries, setCountries] = useState<
+    Array<{
+      name: string;
+      region: string;
+      regionName: string;
+      data: {
+        population: number;
+        ethnicityCount: number;
+      };
+    }>
+  >([]);
   const [loading, setLoading] = useState(true);
 
+  const itemsPerPage = 10;
+
   useEffect(() => {
-    getAllCountries().then(data => {
+    getAllCountries().then((data) => {
       setCountries(data);
       setLoading(false);
     });
   }, []);
 
   const filteredCountries = useMemo(() => {
-    return countries.filter(country =>
-      country.name.toLowerCase().includes(search.toLowerCase()) ||
-      country.regionName.toLowerCase().includes(search.toLowerCase())
-    );
-  }, [countries, search]);
+    return countries.filter((country) => {
+      const matchesSearch =
+        country.name.toLowerCase().includes(search.toLowerCase()) ||
+        country.regionName.toLowerCase().includes(search.toLowerCase());
+
+      if (selectedLetter) {
+        const firstLetter = country.name.charAt(0).toUpperCase();
+        return matchesSearch && firstLetter === selectedLetter;
+      }
+
+      return matchesSearch;
+    });
+  }, [countries, search, selectedLetter]);
+
+  const paginatedCountries = useMemo(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return filteredCountries.slice(start, start + itemsPerPage);
+  }, [filteredCountries, currentPage]);
+
+  const totalPages = Math.ceil(filteredCountries.length / itemsPerPage);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedLetter, search]);
+
+  const availableLetters = useMemo(() => {
+    const letters = new Set<string>();
+    countries.forEach((country) => {
+      const firstLetter = country.name.charAt(0).toUpperCase();
+      if (/[A-Z]/.test(firstLetter)) {
+        letters.add(firstLetter);
+      }
+    });
+    return Array.from(letters).sort();
+  }, [countries]);
 
   const formatNumber = (num: number): string => {
     return new Intl.NumberFormat(
@@ -57,8 +99,40 @@ export const CountryView = ({
 
   return (
     <div className="space-y-4">
+      {/* Navigation alphabétique */}
+      <div className="px-4 pt-4">
+        <div className="flex flex-wrap gap-1 justify-center">
+          <Button
+            variant={selectedLetter === null ? "default" : "outline"}
+            size="sm"
+            className="h-8 w-8 p-0 text-xs"
+            onClick={() => setSelectedLetter(null)}
+          >
+            Tous
+          </Button>
+          {ALPHABET.map((letter) => (
+            <Button
+              key={letter}
+              variant={selectedLetter === letter ? "default" : "outline"}
+              size="sm"
+              className={`h-8 w-8 p-0 text-xs ${
+                availableLetters.includes(letter)
+                  ? ""
+                  : "opacity-30 cursor-not-allowed"
+              }`}
+              onClick={() =>
+                availableLetters.includes(letter) && setSelectedLetter(letter)
+              }
+              disabled={!availableLetters.includes(letter)}
+            >
+              {letter}
+            </Button>
+          ))}
+        </div>
+      </div>
+
       {/* Barre de recherche */}
-      <div className="relative px-4 pt-4">
+      <div className="relative px-4">
         <Search className="absolute left-7 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           type="text"
@@ -70,14 +144,18 @@ export const CountryView = ({
       </div>
 
       {/* Liste des pays */}
-      <ScrollArea className="h-[calc(100vh-20rem)]">
+      <ScrollArea className="h-[calc(100vh-24rem)]">
         <div className="space-y-2 px-4 pb-4">
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <p className="text-muted-foreground">Loading countries...</p>
             </div>
+          ) : paginatedCountries.length === 0 ? (
+            <div className="flex items-center justify-center h-64">
+              <p className="text-muted-foreground">No countries found</p>
+            </div>
           ) : (
-            filteredCountries.map((country) => (
+            paginatedCountries.map((country) => (
               <Card
                 key={country.name}
                 className="p-4 hover:shadow-md cursor-pointer transition-all group"
@@ -92,8 +170,14 @@ export const CountryView = ({
                       {country.regionName}
                     </Badge>
                     <div className="text-xs text-muted-foreground space-y-1">
-                      <div>{formatNumber(country.data.population)} {language === "en" ? "inhabitants" : "habitants"}</div>
-                      <div>{country.data.ethnicityCount} {t.ethnicGroups.toLowerCase()}</div>
+                      <div>
+                        {formatNumber(country.data.population)}{" "}
+                        {language === "en" ? "inhabitants" : "habitants"}
+                      </div>
+                      <div>
+                        {country.data.ethnicityCount}{" "}
+                        {t.ethnicGroups.toLowerCase()}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -102,6 +186,31 @@ export const CountryView = ({
           )}
         </div>
       </ScrollArea>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-2 px-4 pb-4">
+          <Button
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            variant="outline"
+            size="sm"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+          <span className="text-sm text-muted-foreground">
+            {currentPage} / {totalPages}
+          </span>
+          <Button
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            variant="outline"
+            size="sm"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

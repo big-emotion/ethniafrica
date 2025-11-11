@@ -65,267 +65,267 @@
       "ethnicities": {
         "Africains noirs (tous groupes)": {
           "name": "Africains noirs (tous groupes)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 49510667,
+          "percentageInRegion": 33.58764785200761,
+          "percentageInAfrica": 3.239648
         },
         "Métis (Coloured)": {
           "name": "Métis (Coloured)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5385586,
+          "percentageInRegion": 3.653539267501734,
+          "percentageInAfrica": 0.352397
         },
         "Blancs": {
           "name": "Blancs",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4939136,
+          "percentageInRegion": 3.3506710919724325,
+          "percentageInAfrica": 0.323184
         },
         "Asiatiques/Indiens": {
           "name": "Asiatiques/Indiens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1529996,
+          "percentageInRegion": 1.0379372764858983,
+          "percentageInAfrica": 0.100113
         },
         "Ovimbundu": {
           "name": "Ovimbundu",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 13960787,
+          "percentageInRegion": 9.470888313681693,
+          "percentageInAfrica": 0.913501
         },
         "Ambundu (Mbundu)": {
           "name": "Ambundu (Mbundu)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 9432964,
+          "percentageInRegion": 6.3992487322512766,
+          "percentageInAfrica": 0.61723
         },
         "Bakongo": {
           "name": "Bakongo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4905142,
+          "percentageInRegion": 3.3276098292130123,
+          "percentageInAfrica": 0.32096
         },
         "Chokwe & Lunda": {
           "name": "Chokwe & Lunda",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3018549,
+          "percentageInRegion": 2.047759947084327,
+          "percentageInAfrica": 0.197514
         },
         "Ganguela": {
           "name": "Ganguela",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2263911,
+          "percentageInRegion": 1.5358194515191324,
+          "percentageInAfrica": 0.148135
         },
         "Nyaneka-Nkhumbi": {
           "name": "Nyaneka-Nkhumbi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1131956,
+          "percentageInRegion": 0.7679100649556413,
+          "percentageInAfrica": 0.074068
         },
         "Ovambo": {
           "name": "Ovambo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2134208,
+          "percentageInRegion": 1.4478299544406756,
+          "percentageInAfrica": 0.139648
         },
         "Herero": {
           "name": "Herero",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 570459,
+          "percentageInRegion": 0.3869949077035947,
+          "percentageInAfrica": 0.037327
         },
         "Européens/Métis": {
           "name": "Européens/Métis",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 754637,
+          "percentageInRegion": 0.5119398171730442,
+          "percentageInAfrica": 0.049378
         },
         "Autres": {
           "name": "Autres",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 9189197,
+          "percentageInRegion": 6.233879112933882,
+          "percentageInAfrica": 0.60128
         },
         "Kavango": {
           "name": "Kavango",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 248323,
+          "percentageInRegion": 0.16846037395444677,
+          "percentageInAfrica": 0.016249
         },
         "Damara": {
           "name": "Damara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 193140,
+          "percentageInRegion": 0.13102465992099743,
+          "percentageInAfrica": 0.012638
         },
         "Nama": {
           "name": "Nama",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 137957,
+          "percentageInRegion": 0.09358894588754813,
+          "percentageInAfrica": 0.009027
         },
         "Caprivien (Lozi)": {
           "name": "Caprivien (Lozi)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 110366,
+          "percentageInRegion": 0.07487142806689863,
+          "percentageInAfrica": 0.007222
         },
         "San (Bochimans)": {
           "name": "San (Bochimans)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 82774,
+          "percentageInRegion": 0.056153231854098797,
+          "percentageInAfrica": 0.005416
         },
         "Tswana": {
           "name": "Tswana",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2276048,
+          "percentageInRegion": 1.544053097048081,
+          "percentageInAfrica": 0.148929
         },
         "Kalanga": {
           "name": "Kalanga",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 316918,
+          "percentageInRegion": 0.21499468350855683,
+          "percentageInAfrica": 0.020737
         },
         "Basarwa/San": {
           "name": "Basarwa/San",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 86432,
+          "percentageInRegion": 0.058634790340124525,
+          "percentageInAfrica": 0.005656
         },
         "Kgalagadi": {
           "name": "Kgalagadi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 57621,
+          "percentageInRegion": 0.039089634096032895,
+          "percentageInAfrica": 0.00377
         },
         "Autres Bantous": {
           "name": "Autres Bantous",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 86432,
+          "percentageInRegion": 0.058634790340124525,
+          "percentageInAfrica": 0.005656
         },
         "Européens & métis": {
           "name": "Européens & métis",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 57621,
+          "percentageInRegion": 0.039089634096032895,
+          "percentageInAfrica": 0.00377
         },
         "Shona": {
           "name": "Shona",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 14238929,
+          "percentageInRegion": 9.659577663167795,
+          "percentageInAfrica": 0.931701
         },
         "Ndebele": {
           "name": "Ndebele",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2431037,
+          "percentageInRegion": 1.6491964180406018,
+          "percentageInAfrica": 0.159071
         },
-        "\"Autres Bantous (Venda": {
-          "name": "\"Autres Bantous (Venda",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Autres Bantous (Venda, Tonga, Kalanga)": {
+          "name": "Autres Bantous (Venda, Tonga, Kalanga)",
+          "totalPopulationInRegion": 347291,
+          "percentageInRegion": 0.23559948829151456,
+          "percentageInAfrica": 0.022724
         },
         "Européens/Asiatiques/Métis": {
           "name": "Européens/Asiatiques/Métis",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 173645,
+          "percentageInRegion": 0.11779940494968208,
+          "percentageInAfrica": 0.011362
         },
         "Bemba": {
           "name": "Bemba",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4581164,
+          "percentageInRegion": 3.107825697122897,
+          "percentageInAfrica": 0.299761
         },
         "Tonga": {
           "name": "Tonga",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2835959,
+          "percentageInRegion": 1.923892324349653,
+          "percentageInAfrica": 0.185566
         },
         "Chewa": {
           "name": "Chewa",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1527055,
+          "percentageInRegion": 1.0359421251716823,
+          "percentageInAfrica": 0.09992
         },
         "Lozi": {
           "name": "Lozi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1308904,
+          "percentageInRegion": 0.8879501991779705,
+          "percentageInAfrica": 0.085646
         },
         "Nsenga": {
           "name": "Nsenga",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1090753,
+          "percentageInRegion": 0.7399582731842587,
+          "percentageInAfrica": 0.071372
         },
         "Tumbuka": {
           "name": "Tumbuka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 872603,
+          "percentageInRegion": 0.5919670255826972,
+          "percentageInAfrica": 0.057097
         },
         "Lunda": {
           "name": "Lunda",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 654452,
+          "percentageInRegion": 0.44397509958898523,
+          "percentageInAfrica": 0.042823
         },
         "Luvale": {
           "name": "Luvale",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 436301,
+          "percentageInRegion": 0.2959831735952734,
+          "percentageInAfrica": 0.028549
         },
         "Kaonde": {
           "name": "Kaonde",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 436301,
+          "percentageInRegion": 0.2959831735952734,
+          "percentageInAfrica": 0.028549
         },
         "Ngoni": {
           "name": "Ngoni",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 436301,
+          "percentageInRegion": 0.2959831735952734,
+          "percentageInAfrica": 0.028549
         },
         "Basotho (Sotho)": {
           "name": "Basotho (Sotho)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2416618,
+          "percentageInRegion": 1.639414681624526,
+          "percentageInAfrica": 0.158127
         },
-        "\"Européens": {
-          "name": "\"Européens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Européens, Asiatiques, autres": {
+          "name": "Européens, Asiatiques, autres",
+          "totalPopulationInRegion": 7272,
+          "percentageInRegion": 0.004933267717435504,
+          "percentageInAfrica": 0.000476
         },
         "Swazi (Nguni)": {
           "name": "Swazi (Nguni)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1194994,
+          "percentageInRegion": 0.8106745493301876,
+          "percentageInAfrica": 0.078192
         },
         "Zoulous et autres Nguni": {
           "name": "Zoulous et autres Nguni",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 24639,
+          "percentageInRegion": 0.01671490419277962,
+          "percentageInAfrica": 0.001612
         },
         "Européens": {
           "name": "Européens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 12320,
+          "percentageInRegion": 0.008357791292464991,
+          "percentageInAfrica": 0.000806
         }
       }
     },
@@ -393,333 +393,333 @@
       "ethnicities": {
         "Bamiléké-Bamum": {
           "name": "Bamiléké-Bamum",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 7260679,
+          "percentageInRegion": 4.022870060555542,
+          "percentageInAfrica": 0.47509
         },
         "Béti/Bassa/Mbam": {
           "name": "Béti/Bassa/Mbam",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 6453937,
+          "percentageInRegion": 3.5758845598340945,
+          "percentageInAfrica": 0.422303
         },
         "Biu-Mandara": {
           "name": "Biu-Mandara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4362383,
+          "percentageInRegion": 2.417032892292369,
+          "percentageInAfrica": 0.285445
         },
         "Arab-Choa/Hausa/Kanouri": {
           "name": "Arab-Choa/Hausa/Kanouri",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3286727,
+          "percentageInRegion": 1.8210522246637724,
+          "percentageInAfrica": 0.215062
         },
         "Adamawa-Ubangi": {
           "name": "Adamawa-Ubangi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2928175,
+          "percentageInRegion": 1.6223920021209068,
+          "percentageInAfrica": 0.1916
         },
         "Grassfields (autres)": {
           "name": "Grassfields (autres)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2300709,
+          "percentageInRegion": 1.2747366126708923,
+          "percentageInAfrica": 0.150543
         },
         "Kako/Meka/« Pygmées »": {
           "name": "Kako/Meka/« Pygmées »",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 986018,
+          "percentageInRegion": 0.5463156119928804,
+          "percentageInAfrica": 0.064518
         },
         "Côtiers/Ngoe/Oroko": {
           "name": "Côtiers/Ngoe/Oroko",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 806742,
+          "percentageInRegion": 0.44698550072144755,
+          "percentageInAfrica": 0.052788
         },
         "Bantou du Sud-Ouest": {
           "name": "Bantou du Sud-Ouest",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 209155,
+          "percentageInRegion": 0.11588494512916689,
+          "percentageInAfrica": 0.013686
         },
         "Étrangers/autres": {
           "name": "Étrangers/autres",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1344570,
+          "percentageInRegion": 0.744975834535746,
+          "percentageInAfrica": 0.08798
         },
         "Baya": {
           "name": "Baya",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1587825,
+          "percentageInRegion": 0.8797543113945134,
+          "percentageInAfrica": 0.103897
         },
         "Banda": {
           "name": "Banda",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1262542,
+          "percentageInRegion": 0.6995271946320606,
+          "percentageInAfrica": 0.082612
         },
         "Mandjia": {
           "name": "Mandjia",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 545815,
+          "percentageInRegion": 0.30241563111413183,
+          "percentageInAfrica": 0.035714
         },
         "Sara": {
           "name": "Sara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 435549,
+          "percentageInRegion": 0.24132137393829226,
+          "percentageInAfrica": 0.028499
         },
         "M’bakka-Bantou": {
           "name": "M’bakka-Bantou",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 435549,
+          "percentageInRegion": 0.24132137393829226,
+          "percentageInAfrica": 0.028499
         },
         "Arabes-Peul (Fulɓe)": {
           "name": "Arabes-Peul (Fulɓe)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 330797,
+          "percentageInRegion": 0.18328221746500453,
+          "percentageInAfrica": 0.021645
         },
         "Mbum": {
           "name": "Mbum",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 330797,
+          "percentageInRegion": 0.18328221746500453,
+          "percentageInAfrica": 0.021645
         },
         "Ngbaka/Ngbanki": {
           "name": "Ngbaka/Ngbanki",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 303231,
+          "percentageInRegion": 0.16800893020230168,
+          "percentageInAfrica": 0.019841
         },
         "Zandé-Nzakara": {
           "name": "Zandé-Nzakara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 165398,
+          "percentageInRegion": 0.09164083170124523,
+          "percentageInAfrica": 0.010823
         },
         "Autres ethnies RCA": {
           "name": "Autres ethnies RCA",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 110266,
+          "percentageInRegion": 0.061094257175839536,
+          "percentageInAfrica": 0.007215
         },
         "Non-RCA": {
           "name": "Non-RCA",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5513,
+          "percentageInRegion": 0.0030545466400377576,
+          "percentageInAfrica": 0.000361
         },
         "Sara (Ngambaye/Sara/Madjingaye/Mbaye)": {
           "name": "Sara (Ngambaye/Sara/Madjingaye/Mbaye)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 6406130,
+          "percentageInRegion": 3.5493964932242115,
+          "percentageInAfrica": 0.419174
         },
         "Kanembou/Bornu/Boudouma": {
           "name": "Kanembou/Bornu/Boudouma",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2058363,
+          "percentageInRegion": 1.1404617786374094,
+          "percentageInAfrica": 0.134686
         },
         "Arabes": {
           "name": "Arabes",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2037359,
+          "percentageInRegion": 1.128824249591998,
+          "percentageInAfrica": 0.133311
         },
         "Wadaï/Maba/Masalit/Mimi": {
           "name": "Wadaï/Maba/Masalit/Mimi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1470259,
+          "percentageInRegion": 0.8146153978660028,
+          "percentageInAfrica": 0.096204
         },
         "Goranes (Toubou)": {
           "name": "Goranes (Toubou)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1218215,
+          "percentageInRegion": 0.6749672655711222,
+          "percentageInAfrica": 0.079712
         },
         "Masa/Mussey/Mousgoum": {
           "name": "Masa/Mussey/Mousgoum",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1029182,
+          "percentageInRegion": 0.5702311663499617,
+          "percentageInAfrica": 0.067343
         },
         "Bilala/Medogo/Kuka": {
           "name": "Bilala/Medogo/Kuka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 777137,
+          "percentageInRegion": 0.43058247999256716,
+          "percentageInAfrica": 0.050851
         },
         "Marba/Lélé/Mesme": {
           "name": "Marba/Lélé/Mesme",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 735130,
+          "percentageInRegion": 0.40730797596425844,
+          "percentageInAfrica": 0.048102
         },
         "Moundang": {
           "name": "Moundang",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 567100,
+          "percentageInRegion": 0.31420885172599533,
+          "percentageInAfrica": 0.037107
         },
         "Bidiyo/Migaama/Kenga/Dangleat": {
           "name": "Bidiyo/Migaama/Kenga/Dangleat",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 525093,
+          "percentageInRegion": 0.2909343476976866,
+          "percentageInAfrica": 0.034359
         },
         "Dadjo/Kibet/Mouro": {
           "name": "Dadjo/Kibet/Mouro",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 504089,
+          "percentageInRegion": 0.2792968186522752,
+          "percentageInAfrica": 0.032984
         },
         "Toupouri/Kera": {
           "name": "Toupouri/Kera",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 420074,
+          "percentageInRegion": 0.23274725653314363,
+          "percentageInAfrica": 0.027487
         },
         "Gabri/Kabalaye/Nanchéré/Somraï": {
           "name": "Gabri/Kabalaye/Nanchéré/Somraï",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 420074,
+          "percentageInRegion": 0.23274725653314363,
+          "percentageInAfrica": 0.027487
         },
         "Peuls/Fulɓe/Bodore": {
           "name": "Peuls/Fulɓe/Bodore",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 378067,
+          "percentageInRegion": 0.2094727525048349,
+          "percentageInAfrica": 0.024738
         },
         "Karo/Zimé/Peve": {
           "name": "Karo/Zimé/Peve",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 273048,
+          "percentageInRegion": 0.15128566134029195,
+          "percentageInAfrica": 0.017866
         },
         "Bagirmi/Barma": {
           "name": "Bagirmi/Barma",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 252044,
+          "percentageInRegion": 0.13964813229488054,
+          "percentageInAfrica": 0.016492
         },
         "Zaghawa/Bideyat/Kobé": {
           "name": "Zaghawa/Bideyat/Kobé",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 231041,
+          "percentageInRegion": 0.12801115731198323,
+          "percentageInAfrica": 0.015118
         },
         "Tama/Assongori/Mararit": {
           "name": "Tama/Assongori/Mararit",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 231041,
+          "percentageInRegion": 0.12801115731198323,
+          "percentageInAfrica": 0.015118
         },
         "Mesmedjé/Massalat/Kadjakse": {
           "name": "Mesmedjé/Massalat/Kadjakse",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 168030,
+          "percentageInRegion": 0.09309912423826308,
+          "percentageInAfrica": 0.010995
         },
         "Autres ethnies tchadiennes": {
           "name": "Autres ethnies tchadiennes",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 714126,
+          "percentageInRegion": 0.395670446918847,
+          "percentageInAfrica": 0.046728
         },
         "Tchadiens d’origines étrangères": {
           "name": "Tchadiens d’origines étrangères",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 189033,
+          "percentageInRegion": 0.10473609922116041,
+          "percentageInAfrica": 0.012369
         },
         "Étrangers": {
           "name": "Étrangers",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 594735,
+          "percentageInRegion": 0.3295203693021686,
+          "percentageInAfrica": 0.038915
         },
         "Non précisé": {
           "name": "Non précisé",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 357063,
+          "percentageInRegion": 0.1978352234594235,
+          "percentageInAfrica": 0.023364
         },
         "Kongo (Bakongo)": {
           "name": "Kongo (Bakongo)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2626197,
+          "percentageInRegion": 1.4550773122487282,
+          "percentageInAfrica": 0.171841
         },
         "Téké": {
           "name": "Téké",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1095870,
+          "percentageInRegion": 0.6071804872878972,
+          "percentageInAfrica": 0.071706
         },
         "Mbochi": {
           "name": "Mbochi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 849461,
+          "percentageInRegion": 0.47065449725977027,
+          "percentageInAfrica": 0.055583
         },
         "Sangha": {
           "name": "Sangha",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 363128,
+          "percentageInRegion": 0.20119561260722485,
+          "percentageInAfrica": 0.023761
         },
         "Mbere/Mbeti/Kélé": {
           "name": "Mbere/Mbeti/Kélé",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 285315,
+          "percentageInRegion": 0.15808234620032155,
+          "percentageInAfrica": 0.018669
         },
         "Punu": {
           "name": "Punu",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 278831,
+          "percentageInRegion": 0.15448980485912714,
+          "percentageInAfrica": 0.018245
         },
         "Pygmées": {
           "name": "Pygmées",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 111530,
+          "percentageInRegion": 0.061794592193617104,
+          "percentageInAfrica": 0.007298
         },
         "Oubangiens": {
           "name": "Oubangiens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 103751,
+          "percentageInRegion": 0.05748453989670912,
+          "percentageInAfrica": 0.006789
         },
         "Duma": {
           "name": "Duma",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 97267,
+          "percentageInRegion": 0.05389199855551471,
+          "percentageInAfrica": 0.006365
         },
         "Makaa": {
           "name": "Makaa",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 84298,
+          "percentageInRegion": 0.0467063618106118,
+          "percentageInAfrica": 0.005516
         },
         "Autres/NS": {
           "name": "Autres/NS",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 64844,
+          "percentageInRegion": 0.03592762966200042,
+          "percentageInAfrica": 0.004243
         },
         "Mongo (grand ensemble)": {
           "name": "Mongo (grand ensemble)",
@@ -747,141 +747,141 @@
         },
         "Quatre ensembles combinés": {
           "name": "Quatre ensembles combinés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 50774613,
+          "percentageInRegion": 28.1323097294336,
+          "percentageInAfrica": 3.322352
         },
         "Autres (200+ groupes)": {
           "name": "Autres (200+ groupes)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 62057860,
+          "percentageInRegion": 34.383933929064675,
+          "percentageInAfrica": 4.060653
         },
         "Fang": {
           "name": "Fang",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2262841,
+          "percentageInRegion": 1.2537553733882965,
+          "percentageInAfrica": 0.148065
         },
         "Shira-Punu/Vili": {
           "name": "Shira-Punu/Vili",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 490102,
+          "percentageInRegion": 0.2715471462680546,
+          "percentageInAfrica": 0.032069
         },
         "Nzabi-Duma": {
           "name": "Nzabi-Duma",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 293024,
+          "percentageInRegion": 0.16235361412124502,
+          "percentageInAfrica": 0.019174
         },
         "Mbede-Téké": {
           "name": "Mbede-Téké",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 178926,
+          "percentageInRegion": 0.09913618939151021,
+          "percentageInAfrica": 0.011708
         },
         "Myéné": {
           "name": "Myéné",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 129656,
+          "percentageInRegion": 0.07183752932355078,
+          "percentageInAfrica": 0.008484
         },
         "Kota-Kélé": {
           "name": "Kota-Kélé",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 127063,
+          "percentageInRegion": 0.07040084522458145,
+          "percentageInAfrica": 0.008314
         },
         "Okandé-Tsogo": {
           "name": "Okandé-Tsogo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 54456,
+          "percentageInRegion": 0.03017202826589808,
+          "percentageInAfrica": 0.003563
         },
         "Autres (Gabonais de naissance)": {
           "name": "Autres (Gabonais de naissance)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 194485,
+          "percentageInRegion": 0.10775684804784023,
+          "percentageInAfrica": 0.012726
         },
         "Camerounais (immigrés)": {
           "name": "Camerounais (immigrés)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 119284,
+          "percentageInRegion": 0.06609079292767348,
+          "percentageInAfrica": 0.007805
         },
         "Maliens (immigrés)": {
           "name": "Maliens (immigrés)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 62235,
+          "percentageInRegion": 0.034482080562806064,
+          "percentageInAfrica": 0.004072
         },
         "Béninois (immigrés)": {
           "name": "Béninois (immigrés)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 54456,
+          "percentageInRegion": 0.03017202826589808,
+          "percentageInAfrica": 0.003563
         },
         "Naturalisés gabonais": {
           "name": "Naturalisés gabonais",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 41490,
+          "percentageInRegion": 0.022988053708537376,
+          "percentageInAfrica": 0.002715
         },
         "Togolais (immigrés)": {
           "name": "Togolais (immigrés)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 41490,
+          "percentageInRegion": 0.022988053708537376,
+          "percentageInAfrica": 0.002715
         },
         "Sénégalais (immigrés)": {
           "name": "Sénégalais (immigrés)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 28524,
+          "percentageInRegion": 0.01580407915117667,
+          "percentageInAfrica": 0.001866
         },
-        "\"Congolais (RCB": {
-          "name": "\"Congolais (RCB",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Congolais (RCB, immigrés)": {
+          "name": "Congolais (RCB, immigrés)",
+          "totalPopulationInRegion": 25931,
+          "percentageInRegion": 0.014367395052207344,
+          "percentageInAfrica": 0.001697
         },
-        "\"Autres immigrés (RDC": {
-          "name": "\"Autres immigrés (RDC",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Autres immigrés (RDC, Eq. Guinée, Nigéria…)": {
+          "name": "Autres immigrés (RDC, Eq. Guinée, Nigéria…)",
+          "totalPopulationInRegion": 142622,
+          "percentageInRegion": 0.07902150388091149,
+          "percentageInAfrica": 0.009332
         },
         "Bubi": {
           "name": "Bubi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 125998,
+          "percentageInRegion": 0.06981076864710273,
+          "percentageInAfrica": 0.008244
         },
         "Ndowé (Playeros)": {
           "name": "Ndowé (Playeros)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 69784,
+          "percentageInRegion": 0.0386646984814792,
+          "percentageInAfrica": 0.004566
         },
         "Annobon": {
           "name": "Annobon",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 31015,
+          "percentageInRegion": 0.01718424887371142,
+          "percentageInAfrica": 0.002029
         },
         "Bujeba": {
           "name": "Bujeba",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 21323,
+          "percentageInRegion": 0.011814274987397986,
+          "percentageInAfrica": 0.001395
         },
         "Autres": {
           "name": "Autres",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 27138,
+          "percentageInRegion": 0.015036148506683233,
+          "percentageInAfrica": 0.001776
         },
         "Mestiços (créoles luso-africains)": {
           "name": "Mestiços (créoles luso-africains)",
@@ -1047,333 +1047,333 @@
       "ethnicities": {
         "Oromo": {
           "name": "Oromo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 45583190,
+          "percentageInRegion": 9.801684682019067,
+          "percentageInAfrica": 2.98266
         },
         "Amhara": {
           "name": "Amhara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 35777504,
+          "percentageInRegion": 7.693182792114284,
+          "percentageInAfrica": 2.341041
         },
         "Somali": {
           "name": "Somali",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 28157467,
+          "percentageInRegion": 6.054657714353852,
+          "percentageInAfrica": 1.8424369999999999
         },
         "Tigré": {
           "name": "Tigré",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 8083066,
+          "percentageInRegion": 1.738089506152359,
+          "percentageInAfrica": 0.528902
         },
         "Sidama": {
           "name": "Sidama",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5300371,
+          "percentageInRegion": 1.1397307919809494,
+          "percentageInAfrica": 0.346821
         },
         "Gurage": {
           "name": "Gurage",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3312732,
+          "percentageInRegion": 0.7123317718666551,
+          "percentageInAfrica": 0.216763
         },
         "Wolayta": {
           "name": "Wolayta",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3047713,
+          "percentageInRegion": 0.6553451355047855,
+          "percentageInAfrica": 0.199422
         },
         "Afar": {
           "name": "Afar",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2817186,
+          "percentageInRegion": 0.6057752619463133,
+          "percentageInAfrica": 0.184338
         },
         "Hadiya": {
           "name": "Hadiya",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2252658,
+          "percentageInRegion": 0.4843856564761639,
+          "percentageInAfrica": 0.147399
         },
         "Gamo": {
           "name": "Gamo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1987639,
+          "percentageInRegion": 0.42739902011429426,
+          "percentageInAfrica": 0.130058
         },
         "Gedeo": {
           "name": "Gedeo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1722621,
+          "percentageInRegion": 0.3704125987809183,
+          "percentageInAfrica": 0.112717
         },
         "Kafa": {
           "name": "Kafa",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1590111,
+          "percentageInRegion": 0.34191917308573666,
+          "percentageInAfrica": 0.104046
         },
         "Silte": {
           "name": "Silte",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1325093,
+          "percentageInRegion": 0.2849327517523607,
+          "percentageInAfrica": 0.086705
         },
-        "\"Autres (Agew": {
-          "name": "\"Autres (Agew",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Autres (Agew, Bench, Sheka, Harari…)": {
+          "name": "Autres (Agew, Bench, Sheka, Harari…)",
+          "totalPopulationInRegion": 6757973,
+          "percentageInRegion": 1.453156754399998,
+          "percentageInAfrica": 0.442197
         },
         "Kikuyu": {
           "name": "Kikuyu",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 9950055,
+          "percentageInRegion": 2.1395453385063052,
+          "percentageInAfrica": 0.651065
         },
         "Luhya": {
           "name": "Luhya",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 8320806,
+          "percentageInRegion": 1.7892103802356163,
+          "percentageInAfrica": 0.544458
         },
         "Kalenjin": {
           "name": "Kalenjin",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 7797119,
+          "percentageInRegion": 1.676602753475126,
+          "percentageInAfrica": 0.510191
         },
         "Luo": {
           "name": "Luo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 6226058,
+          "percentageInRegion": 1.3387798731936547,
+          "percentageInAfrica": 0.407392
         },
         "Kamba": {
           "name": "Kamba",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5702371,
+          "percentageInRegion": 1.2261722464331644,
+          "percentageInAfrica": 0.373125
         },
         "Kisii": {
           "name": "Kisii",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3316685,
+          "percentageInRegion": 0.7131817795021018,
+          "percentageInAfrica": 0.217022
         },
         "Mijikenda": {
           "name": "Mijikenda",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3025748,
+          "percentageInRegion": 0.6506220346414946,
+          "percentageInAfrica": 0.197985
         },
         "Meru": {
           "name": "Meru",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2443873,
+          "percentageInRegion": 0.5255023298917866,
+          "percentageInAfrica": 0.159911
         },
         "Turkana": {
           "name": "Turkana",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1512874,
+          "percentageInRegion": 0.3253110173207473,
+          "percentageInAfrica": 0.098992
         },
         "Maasai": {
           "name": "Maasai",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1221937,
+          "percentageInRegion": 0.2627512724601401,
+          "percentageInAfrica": 0.079955
         },
         "Embu": {
           "name": "Embu",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 523687,
+          "percentageInRegion": 0.11260762676049044,
+          "percentageInAfrica": 0.034267
         },
         "Taita/Taveta": {
           "name": "Taita/Taveta",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 407312,
+          "percentageInRegion": 0.0875836858105488,
+          "percentageInAfrica": 0.026652
         },
-        "\"Swahili/Arabes": {
-          "name": "\"Swahili/Arabes",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Swahili/Arabes, Européens, Asiatiques": {
+          "name": "Swahili/Arabes, Européens, Asiatiques",
+          "totalPopulationInRegion": 1396499,
+          "percentageInRegion": 0.3002870763708057,
+          "percentageInAfrica": 0.091378
         },
         "Baganda": {
           "name": "Baganda",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 8182998,
+          "percentageInRegion": 1.7595777335810123,
+          "percentageInAfrica": 0.535441
         },
         "Banyankole": {
           "name": "Banyankole",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4761017,
+          "percentageInRegion": 1.0237543138102527,
+          "percentageInAfrica": 0.311529
         },
         "Basoga": {
           "name": "Basoga",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4364266,
+          "percentageInRegion": 0.9384415439212707,
+          "percentageInAfrica": 0.285568
         },
         "Bakiga": {
           "name": "Bakiga",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3521169,
+          "percentageInRegion": 0.7571516660001285,
+          "percentageInAfrica": 0.230402
         },
         "Iteso": {
           "name": "Iteso",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3322793,
+          "percentageInRegion": 0.7144951735413907,
+          "percentageInAfrica": 0.217421
         },
         "Langi": {
           "name": "Langi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3174011,
+          "percentageInRegion": 0.6825028041973373,
+          "percentageInAfrica": 0.207686
         },
         "Acholi": {
           "name": "Acholi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2330915,
+          "percentageInRegion": 0.5012131413046887,
+          "percentageInAfrica": 0.15252
         },
         "Bagisu": {
           "name": "Bagisu",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2281321,
+          "percentageInRegion": 0.4905490181900043,
+          "percentageInAfrica": 0.149274
         },
         "Lugbara": {
           "name": "Lugbara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1636600,
+          "percentageInRegion": 0.3519156327275999,
+          "percentageInAfrica": 0.107088
         },
         "Banyoro": {
           "name": "Banyoro",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1339036,
+          "percentageInRegion": 0.2879308940394932,
+          "percentageInAfrica": 0.087618
         },
         "Bakonzo": {
           "name": "Bakonzo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1289442,
+          "percentageInRegion": 0.27726677092480867,
+          "percentageInAfrica": 0.084372
         },
         "Banyarwanda": {
           "name": "Banyarwanda",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1190254,
+          "percentageInRegion": 0.25593852469543976,
+          "percentageInAfrica": 0.077882
         },
         "Autres (50+ groupes)": {
           "name": "Autres (50+ groupes)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 12200106,
+          "percentageInRegion": 2.6233704156994917,
+          "percentageInAfrica": 0.798294
         },
         "Sukuma/Nyamwezi": {
           "name": "Sukuma/Nyamwezi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 10890855,
+          "percentageInRegion": 2.3418441453437278,
+          "percentageInAfrica": 0.712625
         },
         "Chagga": {
           "name": "Chagga",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2722714,
+          "percentageInRegion": 0.5854610900930555,
+          "percentageInAfrica": 0.178156
         },
         "Haya": {
           "name": "Haya",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2722714,
+          "percentageInRegion": 0.5854610900930555,
+          "percentageInAfrica": 0.178156
         },
         "Nyakyusa": {
           "name": "Nyakyusa",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2042035,
+          "percentageInRegion": 0.43909571005554476,
+          "percentageInAfrica": 0.133617
         },
         "Hehe": {
           "name": "Hehe",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2042035,
+          "percentageInRegion": 0.43909571005554476,
+          "percentageInAfrica": 0.133617
         },
         "Makonde": {
           "name": "Makonde",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2042035,
+          "percentageInRegion": 0.43909571005554476,
+          "percentageInAfrica": 0.133617
         },
         "Gogo": {
           "name": "Gogo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1361357,
+          "percentageInRegion": 0.29273054504652773,
+          "percentageInAfrica": 0.089078
         },
         "Swahili (côtiers)": {
           "name": "Swahili (côtiers)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 680678,
+          "percentageInRegion": 0.14636516500901703,
+          "percentageInAfrica": 0.044539
         },
         "Arabes/Indo-Tanzaniens/Européens": {
           "name": "Arabes/Indo-Tanzaniens/Européens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 680678,
+          "percentageInRegion": 0.14636516500901703,
+          "percentageInAfrica": 0.044539
         },
         "Autres (110+ ethnies)": {
           "name": "Autres (110+ ethnies)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 42882740,
+          "percentageInRegion": 9.221010986308908,
+          "percentageInAfrica": 2.805961
         },
         "Hutu": {
           "name": "Hutu",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 23768608,
+          "percentageInRegion": 5.110927974687947,
+          "percentageInAfrica": 1.555259
         },
         "Tutsi": {
           "name": "Tutsi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4083706,
+          "percentageInRegion": 0.8781131497393964,
+          "percentageInAfrica": 0.267211
         },
         "Twa (Pygmées)": {
           "name": "Twa (Pygmées)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 144995,
+          "percentageInRegion": 0.031178056438554536,
+          "percentageInAfrica": 0.009488
         },
         "Twa (Batwa)": {
           "name": "Twa (Batwa)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 136341,
+          "percentageInRegion": 0.029317199854401624,
+          "percentageInAfrica": 0.008921
         },
         "Bantous (descendants d’esclaves)": {
           "name": "Bantous (descendants d’esclaves)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2913323,
+          "percentageInRegion": 0.6264474562415188,
+          "percentageInAfrica": 0.190628
         },
         "Darod (clan majeur)": {
           "name": "Darod (clan majeur)",
@@ -1407,243 +1407,243 @@
         },
         "Somali (Issa)": {
           "name": "Somali (Issa)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 702218,
+          "percentageInRegion": 0.15099687876250137,
+          "percentageInAfrica": 0.045948
         },
         "Arabes/Européens/Éthiopiens": {
           "name": "Arabes/Européens/Éthiopiens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 58518,
+          "percentageInRegion": 0.012583037392126172,
+          "percentageInAfrica": 0.003829
         },
         "Tigrinya": {
           "name": "Tigrinya",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2129891,
+          "percentageInRegion": 0.4579872533947333,
+          "percentageInAfrica": 0.139366
         },
         "Tigre": {
           "name": "Tigre",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1161759,
+          "percentageInRegion": 0.24981128776853462,
+          "percentageInAfrica": 0.076018
         },
         "Saho": {
           "name": "Saho",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 154901,
+          "percentageInRegion": 0.03330812869677255,
+          "percentageInAfrica": 0.010136
         },
         "Kunama": {
           "name": "Kunama",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 77451,
+          "percentageInRegion": 0.016654171862633106,
+          "percentageInAfrica": 0.005068
         },
         "Bilen": {
           "name": "Bilen",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 77451,
+          "percentageInRegion": 0.016654171862633106,
+          "percentageInAfrica": 0.005068
         },
         "Nara": {
           "name": "Nara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 77451,
+          "percentageInRegion": 0.016654171862633106,
+          "percentageInAfrica": 0.005068
         },
         "Rashaida": {
           "name": "Rashaida",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 38725,
+          "percentageInRegion": 0.008326978417069723,
+          "percentageInAfrica": 0.002534
         },
         "Merina": {
           "name": "Merina",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 8136858,
+          "percentageInRegion": 1.749656318883437,
+          "percentageInAfrica": 0.532422
         },
         "Betsimisaraka": {
           "name": "Betsimisaraka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4694341,
+          "percentageInRegion": 1.0094170739668302,
+          "percentageInAfrica": 0.307166
         },
         "Betsileo": {
           "name": "Betsileo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3755473,
+          "percentageInRegion": 0.8075337021791628,
+          "percentageInAfrica": 0.245733
         },
         "Tsimihety": {
           "name": "Tsimihety",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2190692,
+          "percentageInRegion": 0.4710612008378904,
+          "percentageInAfrica": 0.143344
         },
         "Sakalava": {
           "name": "Sakalava",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1877736,
+          "percentageInRegion": 0.4037667435753346,
+          "percentageInAfrica": 0.122867
         },
         "Antandroy": {
           "name": "Antandroy",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1564780,
+          "percentageInRegion": 0.3364722863127788,
+          "percentageInAfrica": 0.102389
         },
         "Antaisaka": {
           "name": "Antaisaka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1564780,
+          "percentageInRegion": 0.3364722863127788,
+          "percentageInAfrica": 0.102389
         },
         "Antemoro": {
           "name": "Antemoro",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1251824,
+          "percentageInRegion": 0.269177829050223,
+          "percentageInAfrica": 0.081911
         },
         "Bara": {
           "name": "Bara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 938868,
+          "percentageInRegion": 0.2018833717876673,
+          "percentageInAfrica": 0.061433
         },
         "Autres": {
           "name": "Autres",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5560387,
+          "percentageInRegion": 1.1956416407890267,
+          "percentageInAfrica": 0.363835
         },
         "Makua-Lomwe": {
           "name": "Makua-Lomwe",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 13271453,
+          "percentageInRegion": 2.853740547299037,
+          "percentageInAfrica": 0.868395
         },
         "Tsonga (Shangaan)": {
           "name": "Tsonga (Shangaan)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 8249822,
+          "percentageInRegion": 1.7739467976414969,
+          "percentageInAfrica": 0.539813
         },
         "Sena": {
           "name": "Sena",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5840930,
+          "percentageInRegion": 1.2559663794865088,
+          "percentageInAfrica": 0.382191
         },
         "Ndau": {
           "name": "Ndau",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4304255,
+          "percentageInRegion": 0.9255374689881067,
+          "percentageInAfrica": 0.281642
         },
         "Shona": {
           "name": "Shona",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2152128,
+          "percentageInRegion": 0.46276884200830026,
+          "percentageInAfrica": 0.140821
         },
         "Swahili/Maconde/Chewa/Yao (regroupés)": {
           "name": "Swahili/Maconde/Chewa/Yao (regroupés)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1793440,
+          "percentageInRegion": 0.38564070167358355,
+          "percentageInAfrica": 0.117351
         },
         "Européens/Indiens/Métis": {
           "name": "Européens/Indiens/Métis",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 358688,
+          "percentageInRegion": 0.07712814033471671,
+          "percentageInAfrica": 0.02347
         },
         "Indo-Mauriciens": {
           "name": "Indo-Mauriciens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 902856,
+          "percentageInRegion": 0.1941397656739032,
+          "percentageInAfrica": 0.059077
         },
         "Créoles": {
           "name": "Créoles",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 358487,
+          "percentageInRegion": 0.0770849196074906,
+          "percentageInAfrica": 0.023457
         },
         "Sino-Mauriciens": {
           "name": "Sino-Mauriciens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 39832,
+          "percentageInRegion": 0.008565014959553807,
+          "percentageInAfrica": 0.002606
         },
         "Franco-Mauriciens": {
           "name": "Franco-Mauriciens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 26555,
+          "percentageInRegion": 0.005710081649200426,
+          "percentageInAfrica": 0.001738
         },
         "Créoles (mélange africain/européen/asiatique)": {
           "name": "Créoles (mélange africain/européen/asiatique)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 101200,
+          "percentageInRegion": 0.021760883558617324,
+          "percentageInAfrica": 0.006622
         },
         "Comoriens (bantou-arabe)": {
           "name": "Comoriens (bantou-arabe)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 929955,
+          "percentageInRegion": 0.19996682282365585,
+          "percentageInAfrica": 0.06085
         },
         "Malgaches/Français/Arabes": {
           "name": "Malgaches/Français/Arabes",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 9393,
+          "percentageInRegion": 0.0020197626409692937,
+          "percentageInAfrica": 0.000615
         },
         "Chewa": {
           "name": "Chewa",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 7806101,
+          "percentageInRegion": 1.6785341394052002,
+          "percentageInAfrica": 0.510779
         },
         "Lomwe": {
           "name": "Lomwe",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4301321,
+          "percentageInRegion": 0.9249065753877019,
+          "percentageInAfrica": 0.28145
         },
         "Yao": {
           "name": "Yao",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3140647,
+          "percentageInRegion": 0.6753285935347907,
+          "percentageInAfrica": 0.205503
         },
         "Ngoni": {
           "name": "Ngoni",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2822031,
+          "percentageInRegion": 0.6068170749981068,
+          "percentageInAfrica": 0.184655
         },
         "Tumbuka": {
           "name": "Tumbuka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2093765,
+          "percentageInRegion": 0.4502191340326917,
+          "percentageInAfrica": 0.137002
         },
         "Nyanja": {
           "name": "Nyanja",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 864816,
+          "percentageInRegion": 0.1859600817749921,
+          "percentageInAfrica": 0.056588
         },
         "Tonga": {
           "name": "Tonga",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 477925,
+          "percentageInRegion": 0.10276749283351962,
+          "percentageInAfrica": 0.031272
         },
         "Dinka": {
           "name": "Dinka",
@@ -1796,693 +1796,693 @@
       "ethnicities": {
         "Fon & apparentés": {
           "name": "Fon & apparentés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5688753,
+          "percentageInRegion": 1.2334341880669815,
+          "percentageInAfrica": 0.372234
         },
         "Adja & apparentés": {
           "name": "Adja & apparentés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2236983,
+          "percentageInRegion": 0.4850221674811053,
+          "percentageInAfrica": 0.146373
         },
         "Yoruba & apparentés": {
           "name": "Yoruba & apparentés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1777735,
+          "percentageInRegion": 0.3854481160147497,
+          "percentageInAfrica": 0.116323
         },
         "Bariba & apparentés": {
           "name": "Bariba & apparentés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1422188,
+          "percentageInRegion": 0.3083584928117998,
+          "percentageInAfrica": 0.093059
         },
         "Peul (Fulani) & apparentés": {
           "name": "Peul (Fulani) & apparentés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1274044,
+          "percentageInRegion": 0.27623794295544374,
+          "percentageInAfrica": 0.083365
         },
         "Ottamari & apparentés": {
           "name": "Ottamari & apparentés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 903682,
+          "percentageInRegion": 0.19593613467498872,
+          "percentageInAfrica": 0.059131
         },
         "Yoa-Lokpa & apparentés": {
           "name": "Yoa-Lokpa & apparentés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 637022,
+          "percentageInRegion": 0.13811897147772187,
+          "percentageInAfrica": 0.041682
         },
         "Dendi & apparentés": {
           "name": "Dendi & apparentés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 429619,
+          "percentageInRegion": 0.09314989813112795,
+          "percentageInAfrica": 0.028111
         },
         "Autres": {
           "name": "Autres",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4079524,
+          "percentageInRegion": 0.8845215063195334,
+          "percentageInAfrica": 0.26693500000000003
         },
         "Étrangers": {
           "name": "Étrangers",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 281475,
+          "percentageInRegion": 0.06102934827477193,
+          "percentageInAfrica": 0.018418
         },
         "Mossi": {
           "name": "Mossi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 12518782,
+          "percentageInRegion": 2.7143195902085298,
+          "percentageInAfrica": 0.819146
         },
         "Fulani (Peuls)": {
           "name": "Fulani (Peuls)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2022265,
+          "percentageInRegion": 0.43846705742563874,
+          "percentageInAfrica": 0.132324
         },
         "Gurma": {
           "name": "Gurma",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4152677,
+          "percentageInRegion": 0.9003825238676084,
+          "percentageInAfrica": 0.271724
         },
         "Bobo": {
           "name": "Bobo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1708829,
+          "percentageInRegion": 0.3705079320828857,
+          "percentageInAfrica": 0.111815
         },
         "Gurunsi": {
           "name": "Gurunsi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1107431,
+          "percentageInRegion": 0.24011294853638496,
+          "percentageInAfrica": 0.072463
         },
         "Sénoufo": {
           "name": "Sénoufo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1083356,
+          "percentageInRegion": 0.23489301227307513,
+          "percentageInAfrica": 0.070888
         },
         "Bissa": {
           "name": "Bissa",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 890759,
+          "percentageInRegion": 0.19313417262594393,
+          "percentageInAfrica": 0.058285
         },
         "Lobi": {
           "name": "Lobi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 577790,
+          "percentageInRegion": 0.12527630212161106,
+          "percentageInAfrica": 0.037807
         },
         "Dagara": {
           "name": "Dagara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 577790,
+          "percentageInRegion": 0.12527630212161106,
+          "percentageInAfrica": 0.037807
         },
         "Touareg/Bella": {
           "name": "Touareg/Bella",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 885797,
+          "percentageInRegion": 0.19205831286525676,
+          "percentageInAfrica": 0.05796
         },
         "Dioula": {
           "name": "Dioula",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 192597,
+          "percentageInRegion": 0.04175883964713118,
+          "percentageInAfrica": 0.012602
         },
         "Non précisé": {
           "name": "Non précisé",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 366628,
+          "percentageInRegion": 0.07949220321265861,
+          "percentageInAfrica": 0.02399
         },
         "Créoles (métis)": {
           "name": "Créoles (métis)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 374401,
+          "percentageInRegion": 0.08117754338190918,
+          "percentageInAfrica": 0.024498
         },
         "Africains": {
           "name": "Africains",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 147651,
+          "percentageInRegion": 0.03201365770359126,
+          "percentageInAfrica": 0.009661
         },
         "Européens": {
           "name": "Européens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5273,
+          "percentageInRegion": 0.0011432907130397812,
+          "percentageInAfrica": 0.000345
         },
         "Akan": {
           "name": "Akan",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 25478009,
+          "percentageInRegion": 5.5241363695133625,
+          "percentageInAfrica": 1.6671109999999998
         },
         "Voltaïques/Gur": {
           "name": "Voltaïques/Gur",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5266559,
+          "percentageInRegion": 1.1418941768207995,
+          "percentageInAfrica": 0.344609
         },
         "Mandé du Nord": {
           "name": "Mandé du Nord",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4743174,
+          "percentageInRegion": 1.0284139549652476,
+          "percentageInAfrica": 0.310362
         },
         "Kru": {
           "name": "Kru",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3124353,
+          "percentageInRegion": 0.67742153786421,
+          "percentageInAfrica": 0.20443699999999998
         },
         "Mandé du Sud": {
           "name": "Mandé du Sud",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2257097,
+          "percentageInRegion": 0.4893832805859948,
+          "percentageInAfrica": 0.147689
         },
         "Non-ivoiriens": {
           "name": "Non-ivoiriens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 7916194,
+          "percentageInRegion": 1.7163874611836216,
+          "percentageInAfrica": 0.517983
         },
         "Mandinka/Jahanka": {
           "name": "Mandinka/Jahanka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 939757,
+          "percentageInRegion": 0.20375790832811028,
+          "percentageInAfrica": 0.061491
         },
         "Peul/Fulani/Tukulur/Lorobo": {
           "name": "Peul/Fulani/Tukulur/Lorobo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 513621,
+          "percentageInRegion": 0.11136319349937521,
+          "percentageInAfrica": 0.033608
         },
         "Wolof": {
           "name": "Wolof",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 7880041,
+          "percentageInRegion": 1.7085487755874662,
+          "percentageInAfrica": 0.515617
         },
         "Jola/Karoninka": {
           "name": "Jola/Karoninka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 310430,
+          "percentageInRegion": 0.0673073650766052,
+          "percentageInAfrica": 0.020312
         },
         "Serahuleh (Soninké)": {
           "name": "Serahuleh (Soninké)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 203191,
+          "percentageInRegion": 0.04405582842276999,
+          "percentageInAfrica": 0.013295
         },
         "Sérère": {
           "name": "Sérère",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3127888,
+          "percentageInRegion": 0.678187995795292,
+          "percentageInAfrica": 0.204668
         },
         "Non-Gambiens": {
           "name": "Non-Gambiens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 279387,
+          "percentageInRegion": 0.06057662856894468,
+          "percentageInAfrica": 0.018281
         },
         "Mole-Dagbani": {
           "name": "Mole-Dagbani",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 6486890,
+          "percentageInRegion": 1.4064860787996636,
+          "percentageInAfrica": 0.424459
         },
         "Ewe": {
           "name": "Ewe",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 7599142,
+          "percentageInRegion": 1.6476443155074054,
+          "percentageInAfrica": 0.49723799999999996
         },
         "Ga-Dangme": {
           "name": "Ga-Dangme",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2489563,
+          "percentageInRegion": 0.539786508140993,
+          "percentageInAfrica": 0.1629
         },
         "Guan": {
           "name": "Guan",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1122057,
+          "percentageInRegion": 0.2432841546750005,
+          "percentageInAfrica": 0.07342
         },
         "Grusi": {
           "name": "Grusi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 946735,
+          "percentageInRegion": 0.20527087677028583,
+          "percentageInAfrica": 0.061948
         },
         "Mandé": {
           "name": "Mandé",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 701285,
+          "percentageInRegion": 0.15205246115951127,
+          "percentageInAfrica": 0.045887
         },
         "Peul (Fulɓe)": {
           "name": "Peul (Fulɓe)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5043309,
+          "percentageInRegion": 1.093489160381177,
+          "percentageInAfrica": 0.330001
         },
         "Malinké (Maninka)": {
           "name": "Malinké (Maninka)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4439320,
+          "percentageInRegion": 0.9625323967782592,
+          "percentageInAfrica": 0.29048
         },
         "Soussou": {
           "name": "Soussou",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3201142,
+          "percentageInRegion": 0.6940709121413978,
+          "percentageInAfrica": 0.209461
         },
         "Guerzé/Kpelle": {
           "name": "Guerzé/Kpelle",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1177779,
+          "percentageInRegion": 0.2553657865945914,
+          "percentageInAfrica": 0.077066
         },
         "Kissi": {
           "name": "Kissi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1211281,
+          "percentageInRegion": 0.2626296829473808,
+          "percentageInAfrica": 0.079259
         },
         "Toma": {
           "name": "Toma",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 241596,
+          "percentageInRegion": 0.052382792169080025,
+          "percentageInAfrica": 0.015808
         },
         "Autres/étrangers": {
           "name": "Autres/étrangers",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 60399,
+          "percentageInRegion": 0.013095698042270006,
+          "percentageInAfrica": 0.003952
         },
         "Balanta": {
           "name": "Balanta",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 674854,
+          "percentageInRegion": 0.1463216974886684,
+          "percentageInAfrica": 0.044158
         },
         "Fula (Peul)": {
           "name": "Fula (Peul)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 674854,
+          "percentageInRegion": 0.1463216974886684,
+          "percentageInAfrica": 0.044158
         },
         "Manjaco": {
           "name": "Manjaco",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 314932,
+          "percentageInRegion": 0.06828348773734957,
+          "percentageInAfrica": 0.020607
         },
         "Mandinga": {
           "name": "Mandinga",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 292437,
+          "percentageInRegion": 0.06340612673036497,
+          "percentageInAfrica": 0.019135
         },
         "Papel": {
           "name": "Papel",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 157466,
+          "percentageInRegion": 0.03414174386867479,
+          "percentageInAfrica": 0.010304
         },
         "Autres non spécifiés": {
           "name": "Autres non spécifiés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 134971,
+          "percentageInRegion": 0.029264382861690176,
+          "percentageInAfrica": 0.008832
         },
         "Kpelle": {
           "name": "Kpelle",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1163435,
+          "percentageInRegion": 0.2522557236346364,
+          "percentageInAfrica": 0.076127
         },
         "Bassa": {
           "name": "Bassa",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 767982,
+          "percentageInRegion": 0.16651369019186749,
+          "percentageInAfrica": 0.050252
         },
         "Grebo": {
           "name": "Grebo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 573121,
+          "percentageInRegion": 0.1242639705571918,
+          "percentageInAfrica": 0.037501
         },
         "Gio": {
           "name": "Gio",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 458496,
+          "percentageInRegion": 0.09941100298992746,
+          "percentageInAfrica": 0.030001
         },
         "Mano": {
           "name": "Mano",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 452765,
+          "percentageInRegion": 0.09816840881650984,
+          "percentageInAfrica": 0.029626
         },
         "Lorma": {
           "name": "Lorma",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 292292,
+          "percentageInRegion": 0.06337468786190474,
+          "percentageInAfrica": 0.019126
         },
         "Gola": {
           "name": "Gola",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 252173,
+          "percentageInRegion": 0.054676095008416595,
+          "percentageInAfrica": 0.016501
         },
         "Krahn": {
           "name": "Krahn",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 229248,
+          "percentageInRegion": 0.04970550149496373,
+          "percentageInAfrica": 0.015
         },
         "Vai": {
           "name": "Vai",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 229248,
+          "percentageInRegion": 0.04970550149496373,
+          "percentageInAfrica": 0.015
         },
         "Mandingo": {
           "name": "Mandingo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 430353,
+          "percentageInRegion": 0.09330904385147144,
+          "percentageInAfrica": 0.028159
         },
         "Gbandi": {
           "name": "Gbandi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 171936,
+          "percentageInRegion": 0.03727912612122279,
+          "percentageInAfrica": 0.01125
         },
         "Mende": {
           "name": "Mende",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2791003,
+          "percentageInRegion": 0.6051446633730643,
+          "percentageInAfrica": 0.18262399999999998
         },
         "Sapo": {
           "name": "Sapo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 74506,
+          "percentageInRegion": 0.016154374713776204,
+          "percentageInAfrica": 0.004875
         },
         "Autres Libériens": {
           "name": "Autres Libériens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 97431,
+          "percentageInRegion": 0.021124968227229073,
+          "percentageInAfrica": 0.006375
         },
         "Autres Africains": {
           "name": "Autres Africains",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 80237,
+          "percentageInRegion": 0.0173969688871938,
+          "percentageInAfrica": 0.00525
         },
         "Non-Africains": {
           "name": "Non-Africains",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5731,
+          "percentageInRegion": 0.0012425941734175963,
+          "percentageInAfrica": 0.000375
         },
         "Bambara": {
           "name": "Bambara",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 8391207,
+          "percentageInRegion": 1.8193796765208425,
+          "percentageInAfrica": 0.549065
         },
         "Fulani (Peul)": {
           "name": "Fulani (Peul)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3351443,
+          "percentageInRegion": 0.7266591422685725,
+          "percentageInAfrica": 0.219296
         },
         "Sarakolé/Soninké/Marka": {
           "name": "Sarakolé/Soninké/Marka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2469484,
+          "percentageInRegion": 0.5354329837284906,
+          "percentageInAfrica": 0.161587
         },
         "Sénoufo/Minyanka": {
           "name": "Sénoufo/Minyanka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2419087,
+          "percentageInRegion": 0.5245059171506287,
+          "percentageInAfrica": 0.158289
         },
         "Malinké": {
           "name": "Malinké",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2217496,
+          "percentageInRegion": 0.4807970003798336,
+          "percentageInAfrica": 0.145098
         },
         "Dogon": {
           "name": "Dogon",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2192297,
+          "percentageInRegion": 0.4753333586810114,
+          "percentageInAfrica": 0.143449
         },
         "Sonraï": {
           "name": "Sonraï",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1486730,
+          "percentageInRegion": 0.3223524752129023,
+          "percentageInAfrica": 0.097282
         },
         "Autres Maliens": {
           "name": "Autres Maliens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1511929,
+          "percentageInRegion": 0.32781611691172446,
+          "percentageInAfrica": 0.098931
         },
         "CEDEAO (non-Maliens)": {
           "name": "CEDEAO (non-Maliens)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 100795,
+          "percentageInRegion": 0.021854349975506303,
+          "percentageInAfrica": 0.006595
         },
         "Hausa": {
           "name": "Hausa",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 86082703,
+          "percentageInRegion": 18.664432940121696,
+          "percentageInAfrica": 5.632678
         },
         "Zarma/Songhaï": {
           "name": "Zarma/Songhaï",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5918580,
+          "percentageInRegion": 1.2832652282160038,
+          "percentageInAfrica": 0.387272
         },
         "Touareg": {
           "name": "Touareg",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3070961,
+          "percentageInRegion": 0.6658450960378075,
+          "percentageInAfrica": 0.200943
         },
         "Peul (Fulani)": {
           "name": "Peul (Fulani)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1814659,
+          "percentageInRegion": 0.39345396966320045,
+          "percentageInAfrica": 0.118739
         },
         "Kanuri": {
           "name": "Kanuri",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1647152,
+          "percentageInRegion": 0.3571351383586007,
+          "percentageInAfrica": 0.107779
         },
         "Arabes": {
           "name": "Arabes",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 111671,
+          "percentageInRegion": 0.02421248192980569,
+          "percentageInAfrica": 0.007307
         },
         "Toubou": {
           "name": "Toubou",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 111671,
+          "percentageInRegion": 0.02421248192980569,
+          "percentageInAfrica": 0.007307
         },
         "Autres/indisponible": {
           "name": "Autres/indisponible",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 251260,
+          "percentageInRegion": 0.05447813854700842,
+          "percentageInAfrica": 0.016441
         },
         "Yoruba": {
           "name": "Yoruba",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 36816806,
+          "percentageInRegion": 7.982611868687141,
+          "percentageInAfrica": 2.409046
         },
         "Igbo": {
           "name": "Igbo",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 36104223,
+          "percentageInRegion": 7.828109777625121,
+          "percentageInAfrica": 2.36242
         },
         "Fulani": {
           "name": "Fulani",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 14251667,
+          "percentageInRegion": 3.090043338978858,
+          "percentageInAfrica": 0.932534
         },
         "Tiv": {
           "name": "Tiv",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5700667,
+          "percentageInRegion": 1.2360173789554996,
+          "percentageInAfrica": 0.373014
         },
         "Kanuri/Beriberi": {
           "name": "Kanuri/Beriberi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5700667,
+          "percentageInRegion": 1.2360173789554996,
+          "percentageInAfrica": 0.373014
         },
         "Ibibio": {
           "name": "Ibibio",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4275500,
+          "percentageInRegion": 0.9270129800116791,
+          "percentageInAfrica": 0.27976
         },
         "Ijaw/Izon": {
           "name": "Ijaw/Izon",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 4275500,
+          "percentageInRegion": 0.9270129800116791,
+          "percentageInAfrica": 0.27976
         },
         "Autres (250+ groupes)": {
           "name": "Autres (250+ groupes)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 59144418,
+          "percentageInRegion": 12.823679845921271,
+          "percentageInAfrica": 3.870016
         },
         "Pular (Fula)": {
           "name": "Pular (Fula)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 5206291,
+          "percentageInRegion": 1.1288268821700351,
+          "percentageInAfrica": 0.340665
         },
         "Mandinka": {
           "name": "Mandinka",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 927666,
+          "percentageInRegion": 0.20113634033809247,
+          "percentageInAfrica": 0.0607
         },
         "Jola": {
           "name": "Jola",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 795143,
+          "percentageInRegion": 0.1724027323039239,
+          "percentageInAfrica": 0.052029
         },
         "Soninké": {
           "name": "Soninké",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 454367,
+          "percentageInRegion": 0.09851575410804972,
+          "percentageInAfrica": 0.029731
         },
         "Temne": {
           "name": "Temne",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3122207,
+          "percentageInRegion": 0.6769562426109986,
+          "percentageInAfrica": 0.204296
         },
         "Limba": {
           "name": "Limba",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 776142,
+          "percentageInRegion": 0.16828293961693946,
+          "percentageInAfrica": 0.050786
         },
         "Kono": {
           "name": "Kono",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 379251,
+          "percentageInRegion": 0.08222911932695809,
+          "percentageInAfrica": 0.024816
         },
         "Koranko": {
           "name": "Koranko",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 352792,
+          "percentageInRegion": 0.07649228470220566,
+          "percentageInAfrica": 0.023084
         },
         "Fula": {
           "name": "Fula",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 335152,
+          "percentageInRegion": 0.07266758373918239,
+          "percentageInAfrica": 0.02193
         },
         "Loko": {
           "name": "Loko",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 176396,
+          "percentageInRegion": 0.03824614235110283,
+          "percentageInAfrica": 0.011542
         },
         "Sherbro": {
           "name": "Sherbro",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 167576,
+          "percentageInRegion": 0.036333791869591195,
+          "percentageInAfrica": 0.010965
         },
         "Krio (Créoles)": {
           "name": "Krio (Créoles)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 105838,
+          "percentageInRegion": 0.02294777213857469,
+          "percentageInAfrica": 0.006925
         },
         "Kabye": {
           "name": "Kabye",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2138754,
+          "percentageInRegion": 0.46372417706745384,
+          "percentageInAfrica": 0.139946
         },
         "Tem/Kotokoli & Tchamba": {
           "name": "Tem/Kotokoli & Tchamba",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1361025,
+          "percentageInRegion": 0.2950971444557117,
+          "percentageInAfrica": 0.089056
         },
         "Ouatchi": {
           "name": "Ouatchi",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1361025,
+          "percentageInRegion": 0.2950971444557117,
+          "percentageInAfrica": 0.089056
         },
         "Mina/Mossi/Moba/Bassar/Tchokossi (autres)": {
           "name": "Mina/Mossi/Moba/Bassar/Tchokossi (autres)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 777729,
+          "percentageInRegion": 0.16862703261174208,
+          "percentageInAfrica": 0.050889
         },
         "Autres / non précisé": {
           "name": "Autres / non précisé",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 972161,
+          "percentageInRegion": 0.21078373655973198,
+          "percentageInAfrica": 0.063612
         }
       }
     },
@@ -2550,123 +2550,123 @@
       "ethnicities": {
         "Arabes": {
           "name": "Arabes",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 78956975,
+          "percentageInRegion": 28.8044871784933,
+          "percentageInAfrica": 5.166418
         },
-        "\"Berbères (Kabyles": {
-          "name": "\"Berbères (Kabyles",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Berbères (Kabyles, Chaouis, Mozabites, Touaregs)": {
+          "name": "Berbères (Kabyles, Chaouis, Mozabites, Touaregs)",
+          "totalPopulationInRegion": 6901684,
+          "percentageInRegion": 2.5178202215575296,
+          "percentageInAfrica": 0.4516
         },
-        "\"Amazighs (Rifains": {
-          "name": "\"Amazighs (Rifains",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Amazighs (Rifains, Chleuhs, Zayanes…)": {
+          "name": "Amazighs (Rifains, Chleuhs, Zayanes…)",
+          "totalPopulationInRegion": 11653073,
+          "percentageInRegion": 4.251186064543968,
+          "percentageInAfrica": 0.762499
         },
-        "\"Amazighs (Djerba": {
-          "name": "\"Amazighs (Djerba",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Amazighs (Djerba, Matmata, Chenini, Douiret…)": {
+          "name": "Amazighs (Djerba, Matmata, Chenini, Douiret…)",
+          "totalPopulationInRegion": 129152,
+          "percentageInRegion": 0.04711625702576329,
+          "percentageInAfrica": 0.008451
         },
-        "\"Autres (européens": {
-          "name": "\"Autres (européens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Autres (européens, subsahariens)": {
+          "name": "Autres (européens, subsahariens)",
+          "totalPopulationInRegion": 129152,
+          "percentageInRegion": 0.04711625702576329,
+          "percentageInAfrica": 0.008451
         },
         "Égyptiens arabophones": {
           "name": "Égyptiens arabophones",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 108019518,
+          "percentageInRegion": 39.40686457729702,
+          "percentageInAfrica": 7.068077
         },
         "Nubiens": {
           "name": "Nubiens",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 2274095,
+          "percentageInRegion": 0.8296181593858646,
+          "percentageInAfrica": 0.148802
         },
         "Bédouins (Sinaï & Ouest)": {
           "name": "Bédouins (Sinaï & Ouest)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 1137048,
+          "percentageInRegion": 0.41480926209915525,
+          "percentageInAfrica": 0.074401
         },
         "Amazighs (Siwa)": {
           "name": "Amazighs (Siwa)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 227410,
+          "percentageInRegion": 0.08296199834480945,
+          "percentageInAfrica": 0.01488
         },
-        "\"Autres (Grecs": {
-          "name": "\"Autres (Grecs",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Autres (Grecs, Arméniens, réfugiés…)": {
+          "name": "Autres (Grecs, Arméniens, réfugiés…)",
+          "totalPopulationInRegion": 2046686,
+          "percentageInRegion": 0.7466565258535011,
+          "percentageInAfrica": 0.133921
         },
         "Arabes & Berbères arabisés": {
           "name": "Arabes & Berbères arabisés",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 6523608,
+          "percentageInRegion": 2.379893391223718,
+          "percentageInAfrica": 0.426861
         },
         "Touaregs & Toubous": {
           "name": "Touaregs & Toubous",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 425453,
+          "percentageInRegion": 0.15521054958794342,
+          "percentageInAfrica": 0.027839
         },
         "Subsahariens (immigrés)": {
           "name": "Subsahariens (immigrés)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 141818,
+          "percentageInRegion": 0.05173697146679647,
+          "percentageInAfrica": 0.00928
         },
-        "\"Arabes (Jaaliyin": {
-          "name": "\"Arabes (Jaaliyin",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Arabes (Jaaliyin, Shaigiya, etc.)": {
+          "name": "Arabes (Jaaliyin, Shaigiya, etc.)",
+          "totalPopulationInRegion": 34907442,
+          "percentageInRegion": 12.734669299615373,
+          "percentageInAfrica": 2.28411
         },
-        "\"Nubas": {
-          "name": "\"Nubas",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Nubas, Bejas, Fur, Nuer, Dinka et autres": {
+          "name": "Nubas, Bejas, Fur, Nuer, Dinka et autres",
+          "totalPopulationInRegion": 14960332,
+          "percentageInRegion": 5.457715309888746,
+          "percentageInAfrica": 0.978904
         },
         "Maures (Arabes/Berbères arabisés)": {
           "name": "Maures (Arabes/Berbères arabisés)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 3535550,
+          "percentageInRegion": 1.289812643454514,
+          "percentageInAfrica": 0.231343
         },
         "Haratines": {
           "name": "Haratines",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 757618,
+          "percentageInRegion": 0.2763884757134596,
+          "percentageInAfrica": 0.049573
         },
-        "\"Afro-Mauritaniens (Peuls": {
-          "name": "\"Afro-Mauritaniens (Peuls",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+        "Afro-Mauritaniens (Peuls, Soninkés, Wolofs)": {
+          "name": "Afro-Mauritaniens (Peuls, Soninkés, Wolofs)",
+          "totalPopulationInRegion": 757618,
+          "percentageInRegion": 0.2763884757134596,
+          "percentageInAfrica": 0.049573
         },
         "Sahraouis (Hassanya)": {
           "name": "Sahraouis (Hassanya)",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 622932,
+          "percentageInRegion": 0.22725334661153354,
+          "percentageInAfrica": 0.040761
         },
         "Autres": {
           "name": "Autres",
-          "totalPopulationInRegion": 0,
-          "percentageInRegion": 0,
-          "percentageInAfrica": 0
+          "totalPopulationInRegion": 6292,
+          "percentageInRegion": 0.0022953999102306014,
+          "percentageInAfrica": 0.000412
         }
       }
     }
