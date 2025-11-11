@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import fs from "node:fs";
+import path from "node:path";
 
 export const size = {
   width: 1200,
@@ -6,24 +8,21 @@ export const size = {
 };
 
 export const contentType = "image/png";
+export const runtime = "nodejs";
 
 export default async function OgImage() {
   const title = "African Ethnicities Dictionary";
   const subtitle =
     "Explore ethnic groups across 55 African countries • Multilingual • Open Source";
 
-  // Try to load africa.png from the public folder. Fallback to no image.
+  // Load africa.png from the local filesystem to avoid build-time fetches.
   let africaSrc: string | undefined = undefined;
   try {
-    const imgRes = await fetch(
-      new URL("../../public/africa.png", import.meta.url)
-    );
-    if (imgRes.ok) {
-      const buf = Buffer.from(await imgRes.arrayBuffer());
-      africaSrc = `data:image/png;base64,${buf.toString("base64")}`;
-    }
+    const filePath = path.join(process.cwd(), "public", "africa.png");
+    const buf = fs.readFileSync(filePath);
+    africaSrc = `data:image/png;base64,${buf.toString("base64")}`;
   } catch {
-    // ignore - image optional
+    // optional image
   }
 
   return new ImageResponse(
