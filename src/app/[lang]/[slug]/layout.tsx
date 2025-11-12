@@ -2,12 +2,13 @@ import { Metadata } from "next";
 import { getPageFromRoute, getLanguageFromRoute } from "@/lib/routing";
 import { loadDatasetIndex } from "@/lib/datasetLoader";
 
-type Props = {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
   params: Promise<{ lang: string; slug: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
-
-export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
+}): Promise<Metadata> {
   const resolvedParams = await params;
   const resolvedSearchParams = await searchParams;
   const pageType = getPageFromRoute(`/${resolvedParams.lang}/${resolvedParams.slug}`);
