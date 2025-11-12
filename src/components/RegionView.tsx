@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Globe, ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
 
 interface RegionViewProps {
   language: Language;
@@ -58,14 +59,15 @@ export const RegionView = ({
   }, []);
 
   const filteredRegions = useMemo(() => {
+    const normalizedSearch = normalizeString(search);
     return regions.filter((region) => {
       const matchesSearch =
-        region.name.toLowerCase().includes(search.toLowerCase()) ||
-        region.key.toLowerCase().includes(search.toLowerCase());
+        normalizeString(region.name).includes(normalizedSearch) ||
+        normalizeString(region.key).includes(normalizedSearch);
 
       if (selectedLetter) {
-        const firstLetter = region.name.charAt(0).toUpperCase();
-        return matchesSearch && firstLetter === selectedLetter;
+        const normalizedFirstLetter = getNormalizedFirstLetter(region.name);
+        return matchesSearch && normalizedFirstLetter === selectedLetter;
       }
 
       return matchesSearch;
@@ -90,9 +92,9 @@ export const RegionView = ({
   const availableLetters = useMemo(() => {
     const letters = new Set<string>();
     regions.forEach((region) => {
-      const firstLetter = region.name.charAt(0).toUpperCase();
-      if (/[A-Z]/.test(firstLetter)) {
-        letters.add(firstLetter);
+      const normalizedFirstLetter = getNormalizedFirstLetter(region.name);
+      if (/[A-Z]/.test(normalizedFirstLetter)) {
+        letters.add(normalizedFirstLetter);
       }
     });
     return Array.from(letters).sort();
@@ -119,7 +121,11 @@ export const RegionView = ({
   }
 
   return (
-    <div className={`space-y-4 ${hideSearchAndAlphabet ? "h-full flex flex-col" : ""}`}>
+    <div
+      className={`space-y-4 ${
+        hideSearchAndAlphabet ? "h-full flex flex-col" : ""
+      }`}
+    >
       {/* Navigation alphabétique */}
       {!hideSearchAndAlphabet && (
         <>
@@ -172,7 +178,11 @@ export const RegionView = ({
       {/* Liste des régions */}
       {isMobile ? (
         // En mobile, pas de ScrollArea, juste une div simple
-        <div className={`space-y-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4`}>
+        <div
+          className={`space-y-2 ${
+            hideSearchAndAlphabet ? "px-0" : "px-4"
+          } pb-4`}
+        >
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <p className="text-muted-foreground">Loading regions...</p>
@@ -211,8 +221,16 @@ export const RegionView = ({
           )}
         </div>
       ) : (
-        <ScrollArea className={hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"}>
-          <div className={`space-y-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4`}>
+        <ScrollArea
+          className={
+            hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"
+          }
+        >
+          <div
+            className={`space-y-2 ${
+              hideSearchAndAlphabet ? "px-0" : "px-4"
+            } pb-4`}
+          >
             {loading ? (
               <div className="flex items-center justify-center h-64">
                 <p className="text-muted-foreground">Loading regions...</p>
@@ -225,7 +243,9 @@ export const RegionView = ({
               paginatedRegions.map((region) => (
                 <Card
                   key={region.key}
-                  className={`p-4 hover:shadow-md cursor-pointer transition-all group ${hideSearchAndAlphabet ? "mx-0" : ""}`}
+                  className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
+                    hideSearchAndAlphabet ? "mx-0" : ""
+                  }`}
                   onClick={() => onRegionSelect(region.key)}
                 >
                   <div className="flex items-start justify-between">
@@ -255,7 +275,11 @@ export const RegionView = ({
 
       {/* Pagination - seulement en desktop */}
       {!isMobile && totalPages > 1 && (
-        <div className={`flex items-center justify-center gap-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4 flex-shrink-0`}>
+        <div
+          className={`flex items-center justify-center gap-2 ${
+            hideSearchAndAlphabet ? "px-0" : "px-4"
+          } pb-4 flex-shrink-0`}
+        >
           <Button
             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
             disabled={currentPage === 1}

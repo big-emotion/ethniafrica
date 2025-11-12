@@ -347,12 +347,25 @@ function main() {
           };
         });
 
+      // Fonction pour échapper les valeurs CSV (ajouter des guillemets si nécessaire)
+      const escapeCSVValue = (value: string | number): string => {
+        const str = String(value);
+        // Si la valeur contient une virgule, un guillemet ou un saut de ligne, l'entourer de guillemets
+        if (str.includes(",") || str.includes('"') || str.includes("\n")) {
+          // Échapper les guillemets en les doublant
+          return `"${str.replace(/"/g, '""')}"`;
+        }
+        return str;
+      };
+
       // Créer le fichier CSV pour ce pays
       const csvHeader =
         "Ethnicity_or_Subgroup,pourcentage dans la population du pays,population de l'ethnie estimée dans le pays,pourcentage dans la population totale d'Afrique\n";
       const csvRows = ethnicityRows
         .map((row) => {
-          return `${row.Ethnicity_or_Subgroup},${row.pctCountry},${row.popEthnie},${row.pctAfrica}`;
+          return `${escapeCSVValue(row.Ethnicity_or_Subgroup)},${escapeCSVValue(
+            row.pctCountry
+          )},${escapeCSVValue(row.popEthnie)},${escapeCSVValue(row.pctAfrica)}`;
         })
         .join("\n");
 

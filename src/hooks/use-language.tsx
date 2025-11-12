@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Language } from "@/types/ethnicity";
-import { getLanguageFromRoute, getLocalizedRoute } from "@/lib/routing";
+import { getLanguageFromRoute, getLocalizedRoute, getPageFromRoute, getSlugFromRoute } from "@/lib/routing";
 
 const LANGUAGE_STORAGE_KEY = "ethniafrique-language";
 
@@ -11,7 +11,13 @@ export const useLanguage = () => {
   const pathname = usePathname();
   const router = useRouter();
   const [language, setLanguageState] = useState<Language>(() => {
-    // Try localStorage first (for SSR compatibility)
+    // Try to get language from route first
+    const routeLang = getLanguageFromRoute(pathname);
+    if (routeLang) {
+      return routeLang;
+    }
+
+    // Try localStorage (for SSR compatibility)
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem(
         LANGUAGE_STORAGE_KEY
@@ -45,43 +51,20 @@ export const useLanguage = () => {
 
     // Update route if we're on a localized page
     const currentPage = pathname;
-    if (
-      currentPage.startsWith("/regions") ||
-      currentPage.startsWith("/regiones") ||
-      currentPage.startsWith("/regioes") ||
-      currentPage.startsWith("/countries") ||
-      currentPage.startsWith("/pays") ||
-      currentPage.startsWith("/paises") ||
-      currentPage.startsWith("/ethnicities") ||
-      currentPage.startsWith("/ethnies") ||
-      currentPage.startsWith("/etnias")
-    ) {
-      // Determine which page we're on
-      let pageType: "regions" | "countries" | "ethnicities" | null = null;
-      if (
-        currentPage.startsWith("/regions") ||
-        currentPage.startsWith("/regiones") ||
-        currentPage.startsWith("/regioes")
-      ) {
-        pageType = "regions";
-      } else if (
-        currentPage.startsWith("/countries") ||
-        currentPage.startsWith("/pays") ||
-        currentPage.startsWith("/paises")
-      ) {
-        pageType = "countries";
-      } else if (
-        currentPage.startsWith("/ethnicities") ||
-        currentPage.startsWith("/ethnies") ||
-        currentPage.startsWith("/etnias")
-      ) {
-        pageType = "ethnicities";
-      }
-
-      if (pageType) {
-        const newRoute = getLocalizedRoute(lang, pageType);
-        router.push(newRoute);
-      }
+    const pageType = getPageFromRoute(currentPage);
+    
+    if (pageType) {
+      // Preserve query params if any
+      const searchParams = new URLSearchParams(window.location.search);
+      const queryString = searchParams.toString();
+      const newRoute = getLocalizedRoute(lang, pageType) + (queryString ? `?${queryString}` : "");
+      router.push(newRoute);
+    } else if (currentPage === "/" || currentPage === "" || currentPage === `/${language}` || currentPage.match(/^\/(en|fr|es|pt)$/)) {
+      // If on homepage, redirect to /{lang}
+      router.push(`/${lang}`);
+    } else if (currentPage.startsWith("/about")) {
+      // If on about page, redirect to /{lang}/about
+      router.push(`/${lang}/about`);
     }
   };
 

@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
 
 interface EthnicityViewProps {
   language: Language;
@@ -51,19 +52,15 @@ export const EthnicityView = ({
   }, []);
 
   const filteredGroups = useMemo(() => {
+    const normalizedSearch = normalizeString(search);
     return ethnicGroups.filter((group) => {
-      const matchesSearch = group.name
-        .toLowerCase()
-        .includes(search.toLowerCase());
+      const matchesSearch = normalizeString(group.name).includes(
+        normalizedSearch
+      );
 
       if (selectedLetter) {
-        // Gérer les noms qui commencent par des guillemets ou caractères spéciaux
-        let firstChar = group.name.trim().charAt(0);
-        if (firstChar === '"') {
-          firstChar = group.name.trim().charAt(1);
-        }
-        const firstLetter = firstChar.toUpperCase();
-        return matchesSearch && firstLetter === selectedLetter;
+        const normalizedFirstLetter = getNormalizedFirstLetter(group.name);
+        return matchesSearch && normalizedFirstLetter === selectedLetter;
       }
 
       return matchesSearch;
@@ -88,13 +85,9 @@ export const EthnicityView = ({
   const availableLetters = useMemo(() => {
     const letters = new Set<string>();
     ethnicGroups.forEach((group) => {
-      let firstChar = group.name.trim().charAt(0);
-      if (firstChar === '"') {
-        firstChar = group.name.trim().charAt(1);
-      }
-      const firstLetter = firstChar.toUpperCase();
-      if (/[A-Z]/.test(firstLetter)) {
-        letters.add(firstLetter);
+      const normalizedFirstLetter = getNormalizedFirstLetter(group.name);
+      if (/[A-Z]/.test(normalizedFirstLetter)) {
+        letters.add(normalizedFirstLetter);
       }
     });
     return Array.from(letters).sort();
@@ -174,7 +167,11 @@ export const EthnicityView = ({
       {/* Liste des ethnies */}
       {isMobile ? (
         // En mobile, pas de ScrollArea, juste une div simple
-        <div className={`space-y-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4`}>
+        <div
+          className={`space-y-2 ${
+            hideSearchAndAlphabet ? "px-0" : "px-4"
+          } pb-4`}
+        >
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <p className="text-muted-foreground">Loading ethnicities...</p>

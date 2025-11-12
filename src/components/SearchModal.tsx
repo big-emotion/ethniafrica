@@ -15,6 +15,7 @@ import {
 import { Language } from "@/types/ethnicity";
 import { getTranslation } from "@/lib/translations";
 import { getAllCountries, getAllEthnicities } from "@/lib/datasetLoader";
+import { normalizeString } from "@/lib/normalize";
 
 interface SearchResult {
   type: "ethnicity" | "country";
@@ -83,14 +84,17 @@ export const SearchModal = ({
   const results = useMemo(() => {
     if (!searchQuery.trim()) return [];
 
-    const query = searchQuery.toLowerCase().trim();
+    const query = normalizeString(searchQuery.trim());
     const results: SearchResult[] = [];
 
     // Rechercher dans les pays
     countries.forEach((country) => {
+      const normalizedCountryName = normalizeString(country.name);
+      const normalizedRegionName = normalizeString(country.regionName);
+
       if (
-        country.name.toLowerCase().includes(query) ||
-        country.regionName.toLowerCase().includes(query)
+        normalizedCountryName.includes(query) ||
+        normalizedRegionName.includes(query)
       ) {
         results.push({
           type: "country",
@@ -107,7 +111,9 @@ export const SearchModal = ({
 
     // Rechercher dans les ethnies
     ethnicities.forEach((ethnicity) => {
-      if (ethnicity.name.toLowerCase().includes(query)) {
+      const normalizedEthnicityName = normalizeString(ethnicity.name);
+
+      if (normalizedEthnicityName.includes(query)) {
         results.push({
           type: "ethnicity",
           name: ethnicity.name,

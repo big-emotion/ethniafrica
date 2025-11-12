@@ -8,6 +8,7 @@ import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./LanguageSelector";
 import { Home } from "lucide-react";
+import Image from "next/image";
 
 interface DesktopNavBarProps {
   language: Language;
@@ -26,8 +27,8 @@ export const DesktopNavBar = ({
   const ethnicitiesRoute = getLocalizedRoute(language, "ethnicities");
 
   const currentPage = getPageFromRoute(pathname);
-  const isHome = pathname === "/";
-  const isAbout = pathname === "/about";
+  const isHome = pathname === `/${language}` || pathname === "/";
+  const isAbout = pathname === `/${language}/about` || pathname === "/about";
 
   const isActive = (pageType: "regions" | "countries" | "ethnicities" | "home" | "about") => {
     if (pageType === "home") return isHome;
@@ -41,12 +42,19 @@ export const DesktopNavBar = ({
         <div className="flex items-center justify-between h-16">
           {/* Navigation links */}
           <div className="flex items-center gap-2">
-            <Link href="/">
+            <Link href={`/${language}`}>
               <Button
                 variant={isActive("home") ? "default" : "ghost"}
                 size="sm"
                 className="gap-2"
               >
+                <Image
+                  src="/africa.png"
+                  alt="Africa"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
                 <Home className="h-4 w-4" />
                 {language === "en"
                   ? "Home"
@@ -81,7 +89,7 @@ export const DesktopNavBar = ({
                 {t.byEthnicity}
               </Button>
             </Link>
-            <Link href="/about">
+            <Link href={`/${language}/about`}>
               <Button
                 variant={isActive("about") ? "default" : "ghost"}
                 size="sm"

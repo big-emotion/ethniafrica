@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
 
 interface CountryViewProps {
   language: Language;
@@ -54,14 +55,15 @@ export const CountryView = ({
   }, []);
 
   const filteredCountries = useMemo(() => {
+    const normalizedSearch = normalizeString(search);
     return countries.filter((country) => {
       const matchesSearch =
-        country.name.toLowerCase().includes(search.toLowerCase()) ||
-        country.regionName.toLowerCase().includes(search.toLowerCase());
+        normalizeString(country.name).includes(normalizedSearch) ||
+        normalizeString(country.regionName).includes(normalizedSearch);
 
       if (selectedLetter) {
-        const firstLetter = country.name.charAt(0).toUpperCase();
-        return matchesSearch && firstLetter === selectedLetter;
+        const normalizedFirstLetter = getNormalizedFirstLetter(country.name);
+        return matchesSearch && normalizedFirstLetter === selectedLetter;
       }
 
       return matchesSearch;
@@ -86,9 +88,9 @@ export const CountryView = ({
   const availableLetters = useMemo(() => {
     const letters = new Set<string>();
     countries.forEach((country) => {
-      const firstLetter = country.name.charAt(0).toUpperCase();
-      if (/[A-Z]/.test(firstLetter)) {
-        letters.add(firstLetter);
+      const normalizedFirstLetter = getNormalizedFirstLetter(country.name);
+      if (/[A-Z]/.test(normalizedFirstLetter)) {
+        letters.add(normalizedFirstLetter);
       }
     });
     return Array.from(letters).sort();
@@ -164,7 +166,11 @@ export const CountryView = ({
       {/* Liste des pays */}
       {isMobile ? (
         // En mobile, pas de ScrollArea, juste une div simple
-        <div className={`space-y-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4`}>
+        <div
+          className={`space-y-2 ${
+            hideSearchAndAlphabet ? "px-0" : "px-4"
+          } pb-4`}
+        >
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <p className="text-muted-foreground">Loading countries...</p>

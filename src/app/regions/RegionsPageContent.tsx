@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
 import { PageLayout } from "@/components/PageLayout";
 import { DetailView } from "@/components/DetailView";
@@ -11,6 +11,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { getTranslation } from "@/lib/translations";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { DefaultMessage } from "@/components/DefaultMessage";
+import { getLanguageFromRoute } from "@/lib/routing";
 
 export function RegionsPageContent() {
   const { language, setLanguage } = useLanguage();
@@ -80,7 +82,7 @@ export function RegionsPageContent() {
                   ? "Volver"
                   : "Voltar"}
               </Button>
-              <Card className="shadow-soft">
+              <Card className="shadow-soft w-full">
                 <DetailView
                   language={language}
                   selectedRegion={selectedRegion}
@@ -107,14 +109,18 @@ export function RegionsPageContent() {
           {/* Vue détaillée - Gauche (70%) */}
           <div className="lg:col-span-7">
             <Card className="shadow-soft h-full">
-              <DetailView
-                language={language}
-                selectedRegion={selectedRegion}
-                selectedCountry={selectedCountry}
-                selectedEthnicity={selectedEthnicity}
-                onEthnicitySelect={handleEthnicitySelect}
-                onCountrySelect={handleCountrySelect}
-              />
+              {selectedRegion || selectedCountry || selectedEthnicity ? (
+                <DetailView
+                  language={language}
+                  selectedRegion={selectedRegion}
+                  selectedCountry={selectedCountry}
+                  selectedEthnicity={selectedEthnicity}
+                  onEthnicitySelect={handleEthnicitySelect}
+                  onCountrySelect={handleCountrySelect}
+                />
+              ) : (
+                <DefaultMessage language={language} pageType="regions" />
+              )}
             </Card>
           </div>
 

@@ -13,6 +13,7 @@ import { getTranslation } from "@/lib/translations";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { DefaultMessage } from "@/components/DefaultMessage";
 
 export function CountriesPageContent() {
   const { language, setLanguage } = useLanguage();
@@ -107,7 +108,7 @@ export function CountriesPageContent() {
                   ? "Volver"
                   : "Voltar"}
               </Button>
-              <Card className="shadow-soft">
+              <Card className="shadow-soft w-full">
                 <DetailView
                   language={language}
                   selectedRegion={selectedRegion}
@@ -134,14 +135,18 @@ export function CountriesPageContent() {
           {/* Vue détaillée - Gauche (70%) */}
           <div className="lg:col-span-7">
             <Card className="shadow-soft h-full">
-              <DetailView
-                language={language}
-                selectedRegion={selectedRegion}
-                selectedCountry={selectedCountry}
-                selectedEthnicity={selectedEthnicity}
-                onEthnicitySelect={handleEthnicitySelect}
-                onCountrySelect={handleCountrySelect}
-              />
+              {selectedRegion || selectedCountry || selectedEthnicity ? (
+                <DetailView
+                  language={language}
+                  selectedRegion={selectedRegion}
+                  selectedCountry={selectedCountry}
+                  selectedEthnicity={selectedEthnicity}
+                  onEthnicitySelect={handleEthnicitySelect}
+                  onCountrySelect={handleCountrySelect}
+                />
+              ) : (
+                <DefaultMessage language={language} pageType="countries" />
+              )}
             </Card>
           </div>
 

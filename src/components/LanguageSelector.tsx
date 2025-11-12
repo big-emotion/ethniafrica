@@ -9,6 +9,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { usePathname } from 'next/navigation';
+import { getPageFromRoute, getLocalizedRoute } from '@/lib/routing';
+import Link from 'next/link';
 
 interface LanguageSelectorProps {
   currentLang: Language;
@@ -23,7 +26,34 @@ const languages = [
 ];
 
 export const LanguageSelector = ({ currentLang, onLanguageChange }: LanguageSelectorProps) => {
+  const pathname = usePathname();
   const current = languages.find(l => l.code === currentLang);
+  
+  // Determine the target route for each language
+  const getTargetRoute = (lang: Language): string => {
+    const pageType = getPageFromRoute(pathname);
+    
+    // Preserve query params if any
+    const searchParams = typeof window !== "undefined" 
+      ? new URLSearchParams(window.location.search)
+      : new URLSearchParams();
+    const queryString = searchParams.toString();
+    const querySuffix = queryString ? `?${queryString}` : "";
+    
+    if (pageType) {
+      // If on a page with a slug (regions, countries, ethnicities)
+      return getLocalizedRoute(lang, pageType) + querySuffix;
+    } else if (pathname === "/" || pathname === "" || pathname.match(/^\/(en|fr|es|pt)$/)) {
+      // If on homepage
+      return `/${lang}${querySuffix}`;
+    } else if (pathname.includes("/about")) {
+      // If on about page
+      return `/${lang}/about${querySuffix}`;
+    }
+    
+    // Default to homepage
+    return `/${lang}${querySuffix}`;
+  };
 
   return (
     <DropdownMenu>
@@ -35,16 +65,17 @@ export const LanguageSelector = ({ currentLang, onLanguageChange }: LanguageSele
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-card">
-        {languages.map(lang => (
-          <DropdownMenuItem
-            key={lang.code}
-            onClick={() => onLanguageChange(lang.code)}
-            className="cursor-pointer gap-2"
-          >
-            <span>{lang.flag}</span>
-            <span>{lang.name}</span>
-          </DropdownMenuItem>
-        ))}
+        {languages.map(lang => {
+          const targetRoute = getTargetRoute(lang.code);
+          return (
+            <DropdownMenuItem key={lang.code} asChild>
+              <Link href={targetRoute} onClick={() => onLanguageChange(lang.code)} className="cursor-pointer gap-2 flex items-center">
+                <span>{lang.flag}</span>
+                <span>{lang.name}</span>
+              </Link>
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -9,6 +9,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Users, TrendingUp, Globe, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { ShareButton } from "@/components/ShareButton";
 
 interface EthnicityDetailViewProps {
   ethnicityName: string;
@@ -22,6 +24,7 @@ export const EthnicityDetailView = ({
   onCountrySelect,
 }: EthnicityDetailViewProps) => {
   const t = getTranslation(language);
+  const isMobile = useIsMobile();
   const [ethnicityData, setEthnicityData] =
     useState<EthnicityGlobalData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -222,21 +225,29 @@ export const EthnicityDetailView = ({
     );
   }
 
-  return (
-    <ScrollArea className="h-[calc(100vh-12rem)]">
-      <div className="space-y-6 p-4 md:p-6">
+  const content = (
+    <div className="space-y-6 p-4 md:p-6 w-full">
         {/* En-tête de l'ethnie */}
         <div>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground">
-              <Users className="inline-block h-6 w-6 md:h-8 md:w-8 mr-2 text-primary" />
-              {ethnicityData.name}
-            </h2>
-            {summary && (
-              <p className="text-sm md:text-base text-muted-foreground md:max-w-md md:ml-4 leading-relaxed">
-                {summary}
-              </p>
-            )}
+            <div className="flex-1">
+              <div className="flex items-center justify-between mb-2">
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+                  <Users className="inline-block h-6 w-6 md:h-8 md:w-8 mr-2 text-primary" />
+                  {ethnicityData.name}
+                </h2>
+                <ShareButton 
+                  type="ethnicity" 
+                  name={ethnicityData.name} 
+                  language={language}
+                />
+              </div>
+              {summary && (
+                <p className="text-sm md:text-base text-muted-foreground md:max-w-md leading-relaxed">
+                  {summary}
+                </p>
+              )}
+            </div>
           </div>
         </div>
 
@@ -401,7 +412,16 @@ export const EthnicityDetailView = ({
             )}
           </div>
         </Card>
-      </div>
+    </div>
+  );
+
+  if (isMobile) {
+    return <div className="w-full">{content}</div>;
+  }
+
+  return (
+    <ScrollArea className="h-[calc(100vh-12rem)]">
+      {content}
     </ScrollArea>
   );
 };

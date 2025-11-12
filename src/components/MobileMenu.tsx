@@ -49,6 +49,20 @@ export const MobileMenu = ({
         <div className="flex flex-col gap-4 mt-6">
           {/* Navigation links */}
           <div className="flex flex-col gap-2">
+            <Link href={`/${language}`} onClick={() => onOpenChange(false)}>
+              <Button
+                variant={pathname === `/${language}` || pathname === "/" ? "default" : "ghost"}
+                className="w-full justify-start"
+              >
+                {language === "en"
+                  ? "Home"
+                  : language === "fr"
+                  ? "Accueil"
+                  : language === "es"
+                  ? "Inicio"
+                  : "Início"}
+              </Button>
+            </Link>
             <Link href={regionsRoute} onClick={() => onOpenChange(false)}>
               <Button
                 variant={isActive("regions") ? "default" : "ghost"}
@@ -78,7 +92,7 @@ export const MobileMenu = ({
           <Separator />
 
           {/* About link */}
-          <Link href="/about" onClick={() => onOpenChange(false)}>
+          <Link href={`/${language}/about`} onClick={() => onOpenChange(false)}>
             <Button variant="ghost" className="w-full justify-start">
               {t.whyThisSite}
             </Button>

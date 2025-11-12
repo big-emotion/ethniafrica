@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { EthnicityData, Language } from '@/types/ethnicity';
 import { getTranslation } from '@/lib/translations';
 import { Input } from '@/components/ui/input';
-import { Search } from 'lucide-react';
+import { Search, ChevronUp, ChevronDown } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -14,17 +14,33 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Button } from '@/components/ui/button';
 
 interface StatisticsViewProps {
   data: EthnicityData[];
   language: Language;
 }
 
+type SortField = 'country' | 'ethnicity' | 'population' | 'percentageInCountry' | 'percentageInAfrica';
+type SortDirection = 'asc' | 'desc';
+
 export const StatisticsView = ({ data, language }: StatisticsViewProps) => {
   const t = getTranslation(language);
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [sortField, setSortField] = useState<SortField>('population');
+  const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
   const itemsPerPage = 20;
+
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDirection('asc');
+    }
+    setCurrentPage(1);
+  };
 
   const filteredData = useMemo(() => {
     return data
@@ -40,11 +56,59 @@ export const StatisticsView = ({ data, language }: StatisticsViewProps) => {
         );
       })
       .sort((a, b) => {
-        const popA = parseFloat(a["population de l'ethnie estimée dans le pays"]) || 0;
-        const popB = parseFloat(b["population de l'ethnie estimée dans le pays"]) || 0;
-        return popB - popA;
+        let comparison = 0;
+        
+        switch (sortField) {
+          case 'country':
+            comparison = (a.Country || '').localeCompare(b.Country || '');
+            break;
+          case 'ethnicity':
+            comparison = (a.Ethnicity_or_Subgroup || '').localeCompare(b.Ethnicity_or_Subgroup || '');
+            break;
+          case 'population':
+            const popA = parseFloat(a["population de l'ethnie estimée dans le pays"]) || 0;
+            const popB = parseFloat(b["population de l'ethnie estimée dans le pays"]) || 0;
+            comparison = popA - popB;
+            break;
+          case 'percentageInCountry':
+            const pctA = parseFloat(a["pourcentage dans la population du pays"]) || 0;
+            const pctB = parseFloat(b["pourcentage dans la population du pays"]) || 0;
+            comparison = pctA - pctB;
+            break;
+          case 'percentageInAfrica':
+            const africaA = parseFloat(a["pourcentage dans la population totale d'Afrique"]) || 0;
+            const africaB = parseFloat(b["pourcentage dans la population totale d'Afrique"]) || 0;
+            comparison = africaA - africaB;
+            break;
+        }
+        
+        return sortDirection === 'asc' ? comparison : -comparison;
       });
-  }, [data, search]);
+  }, [data, search, sortField, sortDirection]);
+
+  const SortButton = ({ field, currentField, currentDirection, onSort }: {
+    field: SortField;
+    currentField: SortField;
+    currentDirection: SortDirection;
+    onSort: (field: SortField) => void;
+  }) => (
+    <Button
+      variant="ghost"
+      size="sm"
+      className="h-auto p-0 font-normal"
+      onClick={() => onSort(field)}
+    >
+      {currentField === field ? (
+        currentDirection === 'asc' ? (
+          <ChevronUp className="h-4 w-4" />
+        ) : (
+          <ChevronDown className="h-4 w-4" />
+        )
+      ) : (
+        <div className="h-4 w-4" />
+      )}
+    </Button>
+  );
 
   const paginatedData = useMemo(() => {
     const start = (currentPage - 1) * itemsPerPage;
@@ -92,11 +156,61 @@ export const StatisticsView = ({ data, language }: StatisticsViewProps) => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[200px]">{t.country}</TableHead>
-                <TableHead className="w-[250px]">{t.ethnicity}</TableHead>
-                <TableHead className="text-right">{t.population}</TableHead>
-                <TableHead className="text-right">{t.inCountry}</TableHead>
-                <TableHead className="text-right">{t.inAfrica}</TableHead>
+                <TableHead className="w-[200px]">
+                  <div className="flex items-center gap-2">
+                    {t.country}
+                    <SortButton 
+                      field="country"
+                      currentField={sortField}
+                      currentDirection={sortDirection}
+                      onSort={handleSort}
+                    />
+                  </div>
+                </TableHead>
+                <TableHead className="w-[250px]">
+                  <div className="flex items-center gap-2">
+                    {t.ethnicity}
+                    <SortButton 
+                      field="ethnicity"
+                      currentField={sortField}
+                      currentDirection={sortDirection}
+                      onSort={handleSort}
+                    />
+                  </div>
+                </TableHead>
+                <TableHead className="text-right">
+                  <div className="flex items-center justify-end gap-2">
+                    {t.population}
+                    <SortButton 
+                      field="population"
+                      currentField={sortField}
+                      currentDirection={sortDirection}
+                      onSort={handleSort}
+                    />
+                  </div>
+                </TableHead>
+                <TableHead className="text-right">
+                  <div className="flex items-center justify-end gap-2">
+                    {t.inCountry}
+                    <SortButton 
+                      field="percentageInCountry"
+                      currentField={sortField}
+                      currentDirection={sortDirection}
+                      onSort={handleSort}
+                    />
+                  </div>
+                </TableHead>
+                <TableHead className="text-right">
+                  <div className="flex items-center justify-end gap-2">
+                    {t.inAfrica}
+                    <SortButton 
+                      field="percentageInAfrica"
+                      currentField={sortField}
+                      currentDirection={sortDirection}
+                      onSort={handleSort}
+                    />
+                  </div>
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

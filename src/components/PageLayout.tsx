@@ -13,6 +13,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { getLocalizedRoute } from "@/lib/routing";
+import Image from "next/image";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -103,16 +104,25 @@ export const PageLayout = ({
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex-1">
-              <h1
-                className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2 bg-clip-text text-transparent gradient-warm"
-                style={{
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                {displayTitle}
-              </h1>
+              <div className="flex items-center gap-3 mb-2">
+                <Image
+                  src="/africa.png"
+                  alt="Africa"
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
+                <h1
+                  className="text-3xl md:text-4xl font-display font-bold text-foreground bg-clip-text text-transparent gradient-warm"
+                  style={{
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  {displayTitle}
+                </h1>
+              </div>
               <p className="text-sm md:text-base text-muted-foreground">
                 {displaySubtitle}
               </p>
@@ -122,7 +132,7 @@ export const PageLayout = ({
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">{children}</main>
+      <main className={`container mx-auto px-4 ${isMobile ? "py-4" : "py-8"}`}>{children}</main>
 
       {/* Footer */}
       <footer className="border-t bg-card">
