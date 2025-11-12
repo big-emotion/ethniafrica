@@ -43,7 +43,18 @@ export const CountryDetailView = ({
 }: CountryDetailViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
-  const [countryData, setCountryData] = useState<any>(null);
+  const [countryData, setCountryData] = useState<{
+    name: string;
+    population: number;
+    percentageInRegion: number;
+    percentageInAfrica: number;
+    ethnicities: Array<{
+      name: string;
+      population: number;
+      percentageInCountry: number;
+      percentageInRegion: number;
+    }>;
+  } | null>(null);
   const [loading, setLoading] = useState(true);
 
   const [sortField, setSortField] = useState<SortField>("name");

@@ -65,21 +65,24 @@ export const StatisticsView = ({ data, language }: StatisticsViewProps) => {
           case 'ethnicity':
             comparison = (a.Ethnicity_or_Subgroup || '').localeCompare(b.Ethnicity_or_Subgroup || '');
             break;
-          case 'population':
+          case 'population': {
             const popA = parseFloat(a["population de l'ethnie estimée dans le pays"]) || 0;
             const popB = parseFloat(b["population de l'ethnie estimée dans le pays"]) || 0;
             comparison = popA - popB;
             break;
-          case 'percentageInCountry':
+          }
+          case 'percentageInCountry': {
             const pctA = parseFloat(a["pourcentage dans la population du pays"]) || 0;
             const pctB = parseFloat(b["pourcentage dans la population du pays"]) || 0;
             comparison = pctA - pctB;
             break;
-          case 'percentageInAfrica':
+          }
+          case 'percentageInAfrica': {
             const africaA = parseFloat(a["pourcentage dans la population totale d'Afrique"]) || 0;
             const africaB = parseFloat(b["pourcentage dans la population totale d'Afrique"]) || 0;
             comparison = africaA - africaB;
             break;
+          }
         }
         
         return sortDirection === 'asc' ? comparison : -comparison;

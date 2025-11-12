@@ -14,11 +14,11 @@ export const parseCSV = (text: string): EthnicityData[] => {
   
   return lines.slice(1).map(line => {
     const values = line.split(',').map(v => v.trim());
-    const obj: any = {};
+    const obj: Record<string, string> = {};
     headers.forEach((header, index) => {
       obj[header] = values[index] || '';
     });
-    return obj as EthnicityData;
+    return obj as unknown as EthnicityData;
   });
 };
 

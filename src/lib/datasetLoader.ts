@@ -44,7 +44,7 @@ export async function getRegion(regionKey: string): Promise<RegionData | null> {
 // Obtenir les pays d'une région
 export async function getCountriesInRegion(
   regionKey: string
-): Promise<Array<{ name: string; data: any }>> {
+): Promise<Array<{ name: string; data: { population: number; percentageInRegion: number; percentageInAfrica: number } }>> {
   const region = await getRegion(regionKey);
   if (!region) return [];
 
@@ -113,11 +113,11 @@ export async function getEthnicitiesInCountry(
 
     for (let i = 1; i < lines.length; i++) {
       const values = parseCSVLine(lines[i]);
-      const obj: any = {};
+      const obj: Record<string, string> = {};
       headers.forEach((header, index) => {
         obj[header] = values[index] || "";
       });
-      data.push(obj as EthnicityInCountry);
+      data.push(obj as unknown as EthnicityInCountry);
     }
 
     return data;
@@ -281,7 +281,7 @@ export async function getAllCountries(): Promise<
     name: string;
     region: string;
     regionName: string;
-    data: any;
+    data: { population: number; percentageInRegion: number; percentageInAfrica: number };
   }>
 > {
   const index = await loadDatasetIndex();
@@ -289,7 +289,7 @@ export async function getAllCountries(): Promise<
     name: string;
     region: string;
     regionName: string;
-    data: any;
+    data: { population: number; percentageInRegion: number; percentageInAfrica: number };
   }> = [];
 
   for (const [regionKey, region] of Object.entries(index.regions)) {

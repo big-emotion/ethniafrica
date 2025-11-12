@@ -41,7 +41,18 @@ export const RegionDetailView = ({
 }: RegionDetailViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
-  const [region, setRegion] = useState<any>(null);
+  const [region, setRegion] = useState<{
+    name: string;
+    totalPopulation: number;
+    countries: Record<
+      string,
+      {
+        population: number;
+        percentageInRegion: number;
+        percentageInAfrica: number;
+      }
+    >;
+  } | null>(null);
   const [loading, setLoading] = useState(true);
 
   // États pour le tri des pays
@@ -90,12 +101,10 @@ export const RegionDetailView = ({
   const sortedCountries = useMemo(() => {
     if (!region) return [];
 
-    const countries = Object.entries(region.countries).map(
-      ([name, data]: [string, any]) => ({
-        name,
-        ...data,
-      })
-    );
+    const countries = Object.entries(region.countries).map(([name, data]) => ({
+      name,
+      ...data,
+    }));
 
     return countries.sort((a, b) => {
       let comparison = 0;

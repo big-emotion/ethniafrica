@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
 import { PageLayout } from "@/components/PageLayout";
 import { useEffect } from "react";
+import { Language } from "@/types/ethnicity";
 
 export default function AboutPage() {
   const params = useParams();
@@ -13,7 +14,7 @@ export default function AboutPage() {
   // Sync language from URL param
   useEffect(() => {
     if (lang && ["en", "fr", "es", "pt"].includes(lang) && lang !== language) {
-      setLanguage(lang as any);
+      setLanguage(lang as Language);
     }
   }, [lang, language, setLanguage]);
 
