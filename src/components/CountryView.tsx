@@ -10,6 +10,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface CountryViewProps {
   language: Language;
@@ -25,6 +26,7 @@ export const CountryView = ({
   hideSearchAndAlphabet = false,
 }: CountryViewProps) => {
   const t = getTranslation(language);
+  const isMobile = useIsMobile();
   const [search, setSearch] = useState<string>("");
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,6 +44,7 @@ export const CountryView = ({
   const [loading, setLoading] = useState(true);
 
   const itemsPerPage = 10;
+  const maxItemsMobile = 10;
 
   useEffect(() => {
     getAllCountries().then((data) => {
@@ -66,9 +69,13 @@ export const CountryView = ({
   }, [countries, search, selectedLetter]);
 
   const paginatedCountries = useMemo(() => {
+    if (isMobile) {
+      // En mobile, limiter à 10 cartes maximum
+      return filteredCountries.slice(0, maxItemsMobile);
+    }
     const start = (currentPage - 1) * itemsPerPage;
     return filteredCountries.slice(start, start + itemsPerPage);
-  }, [filteredCountries, currentPage]);
+  }, [filteredCountries, currentPage, isMobile, maxItemsMobile]);
 
   const totalPages = Math.ceil(filteredCountries.length / itemsPerPage);
 
@@ -155,16 +162,9 @@ export const CountryView = ({
       )}
 
       {/* Liste des pays */}
-      <ScrollArea
-        className={
-          hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"
-        }
-      >
-        <div
-          className={`space-y-2 ${
-            hideSearchAndAlphabet ? "px-0" : "px-4"
-          } pb-4`}
-        >
+      {isMobile ? (
+        // En mobile, pas de ScrollArea, juste une div simple
+        <div className={`space-y-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4`}>
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <p className="text-muted-foreground">Loading countries...</p>
@@ -204,10 +204,61 @@ export const CountryView = ({
             ))
           )}
         </div>
-      </ScrollArea>
+      ) : (
+        <ScrollArea
+          className={
+            hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"
+          }
+        >
+          <div
+            className={`space-y-2 ${
+              hideSearchAndAlphabet ? "px-0" : "px-4"
+            } pb-4`}
+          >
+            {loading ? (
+              <div className="flex items-center justify-center h-64">
+                <p className="text-muted-foreground">Loading countries...</p>
+              </div>
+            ) : paginatedCountries.length === 0 ? (
+              <div className="flex items-center justify-center h-64">
+                <p className="text-muted-foreground">No countries found</p>
+              </div>
+            ) : (
+              paginatedCountries.map((country) => (
+                <Card
+                  key={country.name}
+                  className="p-4 hover:shadow-md cursor-pointer transition-all group"
+                  onClick={() => onCountrySelect(country.name, country.region)}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-base group-hover:text-primary transition-colors mb-2">
+                        {country.name}
+                      </h3>
+                      <Badge variant="secondary" className="text-xs mb-2">
+                        {country.regionName}
+                      </Badge>
+                      <div className="text-xs text-muted-foreground space-y-1">
+                        <div>
+                          {formatNumber(country.data.population)}{" "}
+                          {language === "en" ? "inhabitants" : "habitants"}
+                        </div>
+                        <div>
+                          {country.data.ethnicityCount}{" "}
+                          {t.ethnicGroups.toLowerCase()}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))
+            )}
+          </div>
+        </ScrollArea>
+      )}
 
-      {/* Pagination */}
-      {totalPages > 1 && (
+      {/* Pagination - seulement en desktop */}
+      {!isMobile && totalPages > 1 && (
         <div
           className={`flex items-center justify-center gap-2 ${
             hideSearchAndAlphabet ? "px-0" : "px-4"

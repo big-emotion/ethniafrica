@@ -31,7 +31,7 @@ export const MobileSearchBar = ({
       : "Pesquisar uma etnia ou país...";
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-card border-b shadow-sm">
+    <div className="fixed top-[57px] left-0 right-0 z-40 bg-card border-b shadow-sm lg:hidden">
       <div className="px-4 py-3">
         <div
           className="flex items-center gap-3 bg-background rounded-lg px-4 py-3 cursor-pointer border hover:bg-muted/50 transition-colors"
@@ -46,4 +46,3 @@ export const MobileSearchBar = ({
     </div>
   );
 };
-

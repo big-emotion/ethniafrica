@@ -10,6 +10,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Globe, ChevronLeft, ChevronRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface RegionViewProps {
   language: Language;
@@ -25,6 +26,7 @@ export const RegionView = ({
   hideSearchAndAlphabet = false,
 }: RegionViewProps) => {
   const t = getTranslation(language);
+  const isMobile = useIsMobile();
   const [search, setSearch] = useState<string>("");
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,6 +41,7 @@ export const RegionView = ({
   const [loading, setLoading] = useState(true);
 
   const itemsPerPage = 10;
+  const maxItemsMobile = 10;
 
   useEffect(() => {
     getRegions().then((data) => {
@@ -70,9 +73,13 @@ export const RegionView = ({
   }, [regions, search, selectedLetter]);
 
   const paginatedRegions = useMemo(() => {
+    if (isMobile) {
+      // En mobile, limiter à 10 cartes maximum
+      return filteredRegions.slice(0, maxItemsMobile);
+    }
     const start = (currentPage - 1) * itemsPerPage;
     return filteredRegions.slice(start, start + itemsPerPage);
-  }, [filteredRegions, currentPage]);
+  }, [filteredRegions, currentPage, isMobile, maxItemsMobile]);
 
   const totalPages = Math.ceil(filteredRegions.length / itemsPerPage);
 
@@ -163,7 +170,8 @@ export const RegionView = ({
       )}
 
       {/* Liste des régions */}
-      <ScrollArea className={hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"}>
+      {isMobile ? (
+        // En mobile, pas de ScrollArea, juste une div simple
         <div className={`space-y-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4`}>
           {loading ? (
             <div className="flex items-center justify-center h-64">
@@ -174,12 +182,12 @@ export const RegionView = ({
               <p className="text-muted-foreground">No regions found</p>
             </div>
           ) : (
-                    paginatedRegions.map((region) => (
-                      <Card
-                        key={region.key}
-                        className={`p-4 hover:shadow-md cursor-pointer transition-all group ${hideSearchAndAlphabet ? "mx-0" : ""}`}
-                        onClick={() => onRegionSelect(region.key)}
-                      >
+            paginatedRegions.map((region) => (
+              <Card
+                key={region.key}
+                className="p-4 hover:shadow-md cursor-pointer transition-all group mx-0"
+                onClick={() => onRegionSelect(region.key)}
+              >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -202,10 +210,51 @@ export const RegionView = ({
             ))
           )}
         </div>
-      </ScrollArea>
+      ) : (
+        <ScrollArea className={hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"}>
+          <div className={`space-y-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4`}>
+            {loading ? (
+              <div className="flex items-center justify-center h-64">
+                <p className="text-muted-foreground">Loading regions...</p>
+              </div>
+            ) : paginatedRegions.length === 0 ? (
+              <div className="flex items-center justify-center h-64">
+                <p className="text-muted-foreground">No regions found</p>
+              </div>
+            ) : (
+              paginatedRegions.map((region) => (
+                <Card
+                  key={region.key}
+                  className={`p-4 hover:shadow-md cursor-pointer transition-all group ${hideSearchAndAlphabet ? "mx-0" : ""}`}
+                  onClick={() => onRegionSelect(region.key)}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Globe className="h-5 w-5 text-primary" />
+                        <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
+                          {region.name}
+                        </h3>
+                      </div>
+                      <div className="space-y-1 text-sm text-muted-foreground">
+                        <div>
+                          Population: {formatNumber(region.totalPopulation)}
+                        </div>
+                        <div>
+                          {region.countryCount} {t.country.toLowerCase() + "s"}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))
+            )}
+          </div>
+        </ScrollArea>
+      )}
 
-      {/* Pagination */}
-      {totalPages > 1 && (
+      {/* Pagination - seulement en desktop */}
+      {!isMobile && totalPages > 1 && (
         <div className={`flex items-center justify-center gap-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4 flex-shrink-0`}>
           <Button
             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}

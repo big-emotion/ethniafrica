@@ -10,6 +10,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface EthnicityViewProps {
   language: Language;
@@ -25,6 +26,7 @@ export const EthnicityView = ({
   hideSearchAndAlphabet = false,
 }: EthnicityViewProps) => {
   const t = getTranslation(language);
+  const isMobile = useIsMobile();
   const [search, setSearch] = useState<string>("");
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,6 +41,7 @@ export const EthnicityView = ({
   const [loading, setLoading] = useState(true);
 
   const itemsPerPage = 10;
+  const maxItemsMobile = 10;
 
   useEffect(() => {
     getAllEthnicities().then((data) => {
@@ -68,9 +71,13 @@ export const EthnicityView = ({
   }, [ethnicGroups, search, selectedLetter]);
 
   const paginatedGroups = useMemo(() => {
+    if (isMobile) {
+      // En mobile, limiter à 10 cartes maximum
+      return filteredGroups.slice(0, maxItemsMobile);
+    }
     const start = (currentPage - 1) * itemsPerPage;
     return filteredGroups.slice(start, start + itemsPerPage);
-  }, [filteredGroups, currentPage]);
+  }, [filteredGroups, currentPage, isMobile, maxItemsMobile]);
 
   const totalPages = Math.ceil(filteredGroups.length / itemsPerPage);
 
@@ -165,16 +172,9 @@ export const EthnicityView = ({
       )}
 
       {/* Liste des ethnies */}
-      <ScrollArea
-        className={
-          hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"
-        }
-      >
-        <div
-          className={`space-y-2 ${
-            hideSearchAndAlphabet ? "px-0" : "px-4"
-          } pb-4`}
-        >
+      {isMobile ? (
+        // En mobile, pas de ScrollArea, juste une div simple
+        <div className={`space-y-2 ${hideSearchAndAlphabet ? "px-0" : "px-4"} pb-4`}>
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <p className="text-muted-foreground">Loading ethnicities...</p>
@@ -230,10 +230,77 @@ export const EthnicityView = ({
             ))
           )}
         </div>
-      </ScrollArea>
+      ) : (
+        <ScrollArea
+          className={
+            hideSearchAndAlphabet ? "flex-1 min-h-0" : "h-[calc(100vh-24rem)]"
+          }
+        >
+          <div
+            className={`space-y-2 ${
+              hideSearchAndAlphabet ? "px-0" : "px-4"
+            } pb-4`}
+          >
+            {loading ? (
+              <div className="flex items-center justify-center h-64">
+                <p className="text-muted-foreground">Loading ethnicities...</p>
+              </div>
+            ) : paginatedGroups.length === 0 ? (
+              <div className="flex items-center justify-center h-64">
+                <p className="text-muted-foreground">No ethnicities found</p>
+              </div>
+            ) : (
+              paginatedGroups.map((group) => (
+                <Card
+                  key={group.name}
+                  className="p-4 hover:shadow-md cursor-pointer transition-all group"
+                  onClick={() => onEthnicitySelect(group.name)}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-base group-hover:text-primary transition-colors mb-2">
+                        {group.name}
+                      </h3>
+                      <div className="space-y-1 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">
+                            {t.population}:
+                          </span>
+                          <span className="font-medium">
+                            {formatNumber(group.totalPopulation)}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">
+                            {t.inAfrica}:
+                          </span>
+                          <span className="font-medium">
+                            {formatPercent(group.percentageInAfrica)}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">
+                            {t.country}:
+                          </span>
+                          <span className="font-medium">
+                            {group.countryCount}{" "}
+                            {group.countryCount === 1
+                              ? t.country.toLowerCase()
+                              : t.countries.toLowerCase()}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))
+            )}
+          </div>
+        </ScrollArea>
+      )}
 
-      {/* Pagination */}
-      {totalPages > 1 && (
+      {/* Pagination - seulement en desktop */}
+      {!isMobile && totalPages > 1 && (
         <div
           className={`flex items-center justify-center gap-2 ${
             hideSearchAndAlphabet ? "px-0" : "px-4"

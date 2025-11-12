@@ -1,64 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import { Language, ViewMode } from "@/types/ethnicity";
+import { useLanguage } from "@/hooks/use-language";
 import { getTranslation } from "@/lib/translations";
-import { LanguageSelector } from "@/components/LanguageSelector";
+import { getLocalizedRoute } from "@/lib/routing";
+import { PageLayout } from "@/components/PageLayout";
 import { DetailView } from "@/components/DetailView";
-import { RegionView } from "@/components/RegionView";
-import { CountryView } from "@/components/CountryView";
-import { EthnicityView } from "@/components/EthnicityView";
-import { MobileSearchBar } from "@/components/MobileSearchBar";
-import { SearchModal } from "@/components/SearchModal";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
-import Link from "next/link";
-import {
-  SidebarProvider,
-  Sidebar,
-  SidebarContent,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { Globe, MapPin, Users, Search } from "lucide-react";
+import { SearchModal } from "@/components/SearchModal";
 
 export default function Home() {
-  const [language, setLanguage] = useState<Language>("en");
-  const [viewMode, setViewMode] = useState<ViewMode>("region");
+  const { language, setLanguage } = useLanguage();
+  const router = useRouter();
+  const isMobile = useIsMobile();
   const [selectedRegion, setSelectedRegion] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
   const [selectedEthnicity, setSelectedEthnicity] = useState<string | null>(
     null
   );
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isFullScreenView, setIsFullScreenView] = useState(false);
-
-  const isMobile = useIsMobile();
   const t = getTranslation(language);
-
-  const handleRegionSelect = (regionKey: string) => {
-    setSelectedRegion(regionKey);
-    setSelectedCountry(null);
-    setSelectedEthnicity(null);
-  };
-
-  const handleCountrySelect = (country: string, regionKey?: string) => {
-    setSelectedCountry(country);
-    // Ne pas définir selectedRegion ici - il sera récupéré automatiquement dans DetailView
-    // selectedRegion ne doit être défini que quand on clique directement sur une région
-    setSelectedRegion(null);
-    setSelectedEthnicity(null);
-  };
-
-  const handleEthnicitySelect = (ethnicity: string) => {
-    setSelectedEthnicity(ethnicity);
-    setSelectedCountry(null);
-    setSelectedRegion(null);
-    if (isMobile) {
-      setIsFullScreenView(true);
-    }
-  };
 
   const handleSearchResult = (result: {
     type: "ethnicity" | "country";
@@ -75,257 +41,188 @@ export default function Home() {
       setSelectedRegion(null);
       setSelectedEthnicity(null);
     }
-    if (isMobile) {
-      setIsFullScreenView(true);
-    }
   };
 
+  const handleCountrySelect = (country: string, regionKey?: string) => {
+    setSelectedCountry(country);
+    setSelectedRegion(null);
+    setSelectedEthnicity(null);
+  };
+
+  const handleEthnicitySelect = (ethnicity: string) => {
+    setSelectedEthnicity(ethnicity);
+    setSelectedCountry(null);
+    setSelectedRegion(null);
+  };
+
+  const regionsRoute = getLocalizedRoute(language, "regions");
+  const countriesRoute = getLocalizedRoute(language, "countries");
+  const ethnicitiesRoute = getLocalizedRoute(language, "ethnicities");
+
   return (
-    <div className="min-h-screen gradient-earth">
-      {/* Barre de recherche mobile fixe */}
-      <MobileSearchBar
-        onSearchClick={() => setIsSearchOpen(true)}
-        isSearchOpen={isSearchOpen}
-        language={language}
-      />
+    <PageLayout
+      language={language}
+      onLanguageChange={setLanguage}
+      title={t.title}
+      subtitle={t.subtitle}
+      onSearchResult={handleSearchResult}
+    >
+      <div className="space-y-8">
+        {/* Section texte introductive */}
+        <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-display font-bold">
+            {language === "en"
+              ? "Discover the Rich Diversity of African Ethnic Groups"
+              : language === "fr"
+              ? "Découvrez la Richesse de la Diversité des Groupes Ethniques Africains"
+              : language === "es"
+              ? "Descubre la Rica Diversidad de los Grupos Étnicos Africanos"
+              : "Descubra a Rica Diversidade dos Grupos Étnicos Africanos"}
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground">
+            {language === "en"
+              ? "Explore comprehensive information about ethnic groups across all 55 African countries. Browse by region, country, or ethnic group to learn about demographics, cultures, and languages."
+              : language === "fr"
+              ? "Explorez des informations complètes sur les groupes ethniques dans les 55 pays africains. Parcourez par région, pays ou groupe ethnique pour découvrir les démographies, cultures et langues."
+              : language === "es"
+              ? "Explora información completa sobre grupos étnicos en los 55 países africanos. Navega por región, país o grupo étnico para conocer demografías, culturas e idiomas."
+              : "Explore informações completas sobre grupos étnicos em todos os 55 países africanos. Navegue por região, país ou grupo étnico para conhecer demografias, culturas e idiomas."}
+          </p>
+        </div>
 
-      {/* Modal de recherche */}
-      <SearchModal
-        open={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        language={language}
-        onResultSelect={handleSearchResult}
-      />
-
-      {/* Header */}
-      <header
-        className={`border-b bg-card shadow-soft ${isMobile ? "pt-20" : ""}`}
-      >
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex-1">
-              <h1
-                className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2 bg-clip-text text-transparent gradient-warm"
-                style={{
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                {t.title}
-              </h1>
-              <p className="text-sm md:text-base text-muted-foreground">
-                {t.subtitle}
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <Link href="/about">
-                <Button variant="secondary" size="sm">
-                  {t.whyThisSite}
-                </Button>
-              </Link>
-              <LanguageSelector
-                currentLang={language}
-                onLanguageChange={setLanguage}
+        {/* Barre de recherche desktop */}
+        {!isMobile && (
+          <div className="max-w-2xl mx-auto">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder={t.searchPlaceholder}
+                className="pl-11 h-12 text-base"
+                onClick={() => setIsSearchOpen(true)}
+                readOnly
               />
             </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        {isMobile ? (
-          // Vue mobile : sidebar + vue détaillée plein écran
-          <SidebarProvider>
-            <div className="flex">
-              <Sidebar
-                side="left"
-                collapsible="offcanvas"
-                className="lg:hidden"
-              >
-                <SidebarContent className="h-full flex flex-col">
-                  <div className="flex flex-col h-full p-4">
-                    {/* Boutons de navigation au lieu d'onglets */}
-                    <div className="flex flex-col gap-2 mb-4 flex-shrink-0">
-                      <Button
-                        variant={viewMode === "region" ? "default" : "outline"}
-                        className="w-full justify-start"
-                        onClick={() => setViewMode("region")}
-                      >
-                        {t.regions}
-                      </Button>
-                      <Button
-                        variant={viewMode === "country" ? "default" : "outline"}
-                        className="w-full justify-start"
-                        onClick={() => setViewMode("country")}
-                      >
-                        {t.byCountry}
-                      </Button>
-                      <Button
-                        variant={
-                          viewMode === "ethnicity" ? "default" : "outline"
-                        }
-                        className="w-full justify-start"
-                        onClick={() => setViewMode("ethnicity")}
-                      >
-                        {t.byEthnicity}
-                      </Button>
-                    </div>
-
-                    {/* Contenu selon le mode sélectionné */}
-                    <div className="flex-1 min-h-0 overflow-hidden">
-                      {viewMode === "region" && (
-                        <RegionView
-                          language={language}
-                          onRegionSelect={(regionKey) => {
-                            handleRegionSelect(regionKey);
-                            setIsFullScreenView(true);
-                          }}
-                          hideSearchAndAlphabet={true}
-                        />
-                      )}
-
-                      {viewMode === "country" && (
-                        <CountryView
-                          language={language}
-                          onCountrySelect={(country, regionKey) => {
-                            handleCountrySelect(country, regionKey);
-                            setIsFullScreenView(true);
-                          }}
-                          hideSearchAndAlphabet={true}
-                        />
-                      )}
-
-                      {viewMode === "ethnicity" && (
-                        <EthnicityView
-                          language={language}
-                          onEthnicitySelect={handleEthnicitySelect}
-                          hideSearchAndAlphabet={true}
-                        />
-                      )}
-                    </div>
-                  </div>
-                </SidebarContent>
-              </Sidebar>
-
-              {/* Vue détaillée plein écran en mobile */}
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-4">
-                  <SidebarTrigger />
-                  {isFullScreenView && (
-                    <Button
-                      variant="ghost"
-                      onClick={() => {
-                        setIsFullScreenView(false);
-                        setSelectedRegion(null);
-                        setSelectedCountry(null);
-                        setSelectedEthnicity(null);
-                      }}
-                    >
-                      ←{" "}
-                      {language === "en"
-                        ? "Back"
-                        : language === "fr"
-                        ? "Retour"
-                        : language === "es"
-                        ? "Volver"
-                        : "Voltar"}
-                    </Button>
-                  )}
-                </div>
-                <Card className="shadow-soft h-full">
-                  <DetailView
-                    language={language}
-                    selectedRegion={selectedRegion}
-                    selectedCountry={selectedCountry}
-                    selectedEthnicity={selectedEthnicity}
-                    onEthnicitySelect={handleEthnicitySelect}
-                    onCountrySelect={handleCountrySelect}
-                  />
-                </Card>
-              </div>
-            </div>
-          </SidebarProvider>
-        ) : (
-          // Vue desktop : deux colonnes
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-            {/* Vue détaillée - Gauche (40%) */}
-            <div className="lg:col-span-2">
-              <Card className="shadow-soft h-full">
-                <DetailView
-                  language={language}
-                  selectedRegion={selectedRegion}
-                  selectedCountry={selectedCountry}
-                  selectedEthnicity={selectedEthnicity}
-                  onEthnicitySelect={handleEthnicitySelect}
-                  onCountrySelect={handleCountrySelect}
-                />
-              </Card>
-            </div>
-
-            {/* Liste de choix - Droite (60%) */}
-            <div className="lg:col-span-3">
-              <Tabs
-                value={viewMode}
-                onValueChange={(v) => setViewMode(v as ViewMode)}
-              >
-                <TabsList className="grid w-full grid-cols-3 mb-6">
-                  <TabsTrigger value="region">{t.regions}</TabsTrigger>
-                  <TabsTrigger value="country">{t.byCountry}</TabsTrigger>
-                  <TabsTrigger value="ethnicity">{t.byEthnicity}</TabsTrigger>
-                </TabsList>
-
-                <TabsContent value="region" className="mt-0">
-                  <Card className="shadow-soft">
-                    <RegionView
-                      language={language}
-                      onRegionSelect={handleRegionSelect}
-                    />
-                  </Card>
-                </TabsContent>
-
-                <TabsContent value="country" className="mt-0">
-                  <Card className="shadow-soft">
-                    <CountryView
-                      language={language}
-                      onCountrySelect={handleCountrySelect}
-                    />
-                  </Card>
-                </TabsContent>
-
-                <TabsContent value="ethnicity" className="mt-0">
-                  <Card className="shadow-soft">
-                    <EthnicityView
-                      language={language}
-                      onEthnicitySelect={handleEthnicitySelect}
-                    />
-                  </Card>
-                </TabsContent>
-              </Tabs>
-            </div>
+            <SearchModal
+              open={isSearchOpen}
+              onClose={() => setIsSearchOpen(false)}
+              language={language}
+              onResultSelect={handleSearchResult}
+            />
           </div>
         )}
-      </main>
 
-      {/* Footer */}
-      <footer className="border-t bg-card">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p className="text-center md:text-left">
-              © 2025 African Ethnicities Dictionary | Data sources: Official
-              demographic estimates 2025
-            </p>
-            <div className="flex items-center gap-2 text-center">
-              <span>{t.madeWithEmotion}</span>
-              <div className="flex items-center gap-1">
-                <span className="font-bold text-yellow-500">BIG</span>
-                <span className="font-bold text-foreground">EMOTION</span>
+        {/* Section CTA - 3 boutons vers les pages */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+            onClick={() => router.push(regionsRoute)}
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <Globe className="h-8 w-8 text-primary" />
               </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{t.regions}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {language === "en"
+                    ? "Explore by region"
+                    : language === "fr"
+                    ? "Explorer par région"
+                    : language === "es"
+                    ? "Explorar por región"
+                    : "Explorar por região"}
+                </p>
+              </div>
+              <Button className="w-full" variant="default">
+                {language === "en"
+                  ? "View Regions"
+                  : language === "fr"
+                  ? "Voir les régions"
+                  : language === "es"
+                  ? "Ver regiones"
+                  : "Ver regiões"}
+              </Button>
             </div>
-          </div>
+          </Card>
+
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+            onClick={() => router.push(countriesRoute)}
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <MapPin className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{t.byCountry}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {language === "en"
+                    ? "Browse by country"
+                    : language === "fr"
+                    ? "Parcourir par pays"
+                    : language === "es"
+                    ? "Navegar por país"
+                    : "Navegar por país"}
+                </p>
+              </div>
+              <Button className="w-full" variant="default">
+                {language === "en"
+                  ? "View Countries"
+                  : language === "fr"
+                  ? "Voir les pays"
+                  : language === "es"
+                  ? "Ver países"
+                  : "Ver países"}
+              </Button>
+            </div>
+          </Card>
+
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+            onClick={() => router.push(ethnicitiesRoute)}
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <Users className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{t.byEthnicity}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {language === "en"
+                    ? "Discover ethnic groups"
+                    : language === "fr"
+                    ? "Découvrir les ethnies"
+                    : language === "es"
+                    ? "Descubrir grupos étnicos"
+                    : "Descobrir grupos étnicos"}
+                </p>
+              </div>
+              <Button className="w-full" variant="default">
+                {language === "en"
+                  ? "View Ethnicities"
+                  : language === "fr"
+                  ? "Voir les ethnies"
+                  : language === "es"
+                  ? "Ver etnias"
+                  : "Ver etnias"}
+              </Button>
+            </div>
+          </Card>
         </div>
-      </footer>
-    </div>
+
+        {/* Vue détaillée par défaut */}
+        <Card className="shadow-soft">
+          <DetailView
+            language={language}
+            selectedRegion={selectedRegion}
+            selectedCountry={selectedCountry}
+            selectedEthnicity={selectedEthnicity}
+            onEthnicitySelect={handleEthnicitySelect}
+            onCountrySelect={handleCountrySelect}
+          />
+        </Card>
+      </div>
+    </PageLayout>
   );
 }
