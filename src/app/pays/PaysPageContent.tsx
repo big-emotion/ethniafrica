@@ -9,6 +9,8 @@ import { CountryView } from "@/components/CountryView";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getTranslation } from "@/lib/translations";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 export function PaysPageContent() {
   const { language, setLanguage } = useLanguage();
@@ -50,15 +52,48 @@ export function PaysPageContent() {
       subtitle={t.subtitle}
     >
       {isMobile ? (
-        // Vue mobile : liste seule
+        // Vue mobile : liste ou vue détaillée selon la sélection
         <div>
-          <CountryView
-            language={language}
-            onCountrySelect={(country, regionKey) => {
-              handleCountrySelect(country, regionKey);
-            }}
-            hideSearchAndAlphabet={false}
-          />
+          {selectedRegion || selectedCountry || selectedEthnicity ? (
+            <div className="space-y-4">
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  setSelectedRegion(null);
+                  setSelectedCountry(null);
+                  setSelectedEthnicity(null);
+                }}
+                className="mb-2"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                {language === "en"
+                  ? "Back"
+                  : language === "fr"
+                  ? "Retour"
+                  : language === "es"
+                  ? "Volver"
+                  : "Voltar"}
+              </Button>
+              <Card className="shadow-soft">
+                <DetailView
+                  language={language}
+                  selectedRegion={selectedRegion}
+                  selectedCountry={selectedCountry}
+                  selectedEthnicity={selectedEthnicity}
+                  onEthnicitySelect={handleEthnicitySelect}
+                  onCountrySelect={handleCountrySelect}
+                />
+              </Card>
+            </div>
+          ) : (
+            <CountryView
+              language={language}
+              onCountrySelect={(country, regionKey) => {
+                handleCountrySelect(country, regionKey);
+              }}
+              hideSearchAndAlphabet={false}
+            />
+          )}
         </div>
       ) : (
         // Vue desktop : deux colonnes (70% détail, 30% liste)
@@ -91,4 +126,3 @@ export function PaysPageContent() {
     </PageLayout>
   );
 }
-

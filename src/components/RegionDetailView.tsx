@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { ChevronUp, ChevronDown } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface RegionDetailViewProps {
   regionKey: string;
@@ -34,6 +35,7 @@ export const RegionDetailView = ({
   onCountrySelect,
 }: RegionDetailViewProps) => {
   const t = getTranslation(language);
+  const isMobile = useIsMobile();
   const [region, setRegion] = useState<any>(null);
   const [ethnicities, setEthnicities] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -195,21 +197,21 @@ export const RegionDetailView = ({
             </h2>
           </div>
           
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            <Card className="p-4">
+          <div className={`${isMobile ? "grid grid-cols-1" : "grid grid-cols-2"} gap-4 mt-4`}>
+            <Card className="p-4 w-full">
               <div className="flex items-center gap-2 mb-2">
                 <Users className="h-5 w-5 text-primary" />
                 <span className="text-sm text-muted-foreground">{t.population}</span>
               </div>
-              <p className="text-2xl font-bold">{formatNumber(region.totalPopulation)}</p>
+              <p className="text-2xl font-bold break-words">{formatNumber(region.totalPopulation)}</p>
             </Card>
             
-            <Card className="p-4">
+            <Card className="p-4 w-full">
               <div className="flex items-center gap-2 mb-2">
                 <TrendingUp className="h-5 w-5 text-primary" />
                 <span className="text-sm text-muted-foreground">{t.country}</span>
               </div>
-              <p className="text-2xl font-bold">{Object.keys(region.countries).length}</p>
+              <p className="text-2xl font-bold break-words">{Object.keys(region.countries).length}</p>
             </Card>
           </div>
         </div>
@@ -222,78 +224,110 @@ export const RegionDetailView = ({
             {t.country} ({sortedCountries.length})
           </h3>
           
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>
-                    <div className="flex items-center gap-2">
-                      {t.country}
-                      <SortButton
-                        field="name"
-                        currentField={countrySortField}
-                        currentDirection={countrySortDirection}
-                        onSort={handleCountrySort}
-                      />
+          {isMobile ? (
+            // Vue mobile : liste
+            <div className="space-y-3">
+              {paginatedCountries.map((country) => (
+                <div
+                  key={country.name}
+                  className="p-4 rounded-lg border bg-card hover:bg-muted/50 cursor-pointer transition-colors"
+                  onClick={() => onCountrySelect?.(country.name, regionKey)}
+                >
+                  <div className="space-y-2">
+                    <div className="font-semibold text-base">{country.name}</div>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div>
+                        <span className="text-muted-foreground">{t.population}: </span>
+                        <span className="font-medium">{formatNumber(country.population)}</span>
+                      </div>
+                      <div>
+                        <span className="text-muted-foreground">% {t.region}: </span>
+                        <span className="font-medium">{formatPercent(country.percentageInRegion)}</span>
+                      </div>
+                      <div>
+                        <span className="text-muted-foreground">% {t.inAfrica}: </span>
+                        <span className="font-medium">{formatPercent(country.percentageInAfrica)}</span>
+                      </div>
                     </div>
-                  </TableHead>
-                  <TableHead className="text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      {t.population}
-                      <SortButton
-                        field="population"
-                        currentField={countrySortField}
-                        currentDirection={countrySortDirection}
-                        onSort={handleCountrySort}
-                      />
-                    </div>
-                  </TableHead>
-                  <TableHead className="text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      % {t.region}
-                      <SortButton
-                        field="percentageInRegion"
-                        currentField={countrySortField}
-                        currentDirection={countrySortDirection}
-                        onSort={handleCountrySort}
-                      />
-                    </div>
-                  </TableHead>
-                  <TableHead className="text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      % {t.inAfrica}
-                      <SortButton
-                        field="percentageInAfrica"
-                        currentField={countrySortField}
-                        currentDirection={countrySortDirection}
-                        onSort={handleCountrySort}
-                      />
-                    </div>
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {paginatedCountries.map((country) => (
-                  <TableRow
-                    key={country.name}
-                    className="cursor-pointer hover:bg-muted/50"
-                    onClick={() => onCountrySelect?.(country.name, regionKey)}
-                  >
-                    <TableCell className="font-medium">{country.name}</TableCell>
-                    <TableCell className="text-right tabular-nums">
-                      {formatNumber(country.population)}
-                    </TableCell>
-                    <TableCell className="text-right tabular-nums">
-                      {formatPercent(country.percentageInRegion)}
-                    </TableCell>
-                    <TableCell className="text-right tabular-nums">
-                      {formatPercent(country.percentageInAfrica)}
-                    </TableCell>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            // Vue desktop : tableau
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>
+                      <div className="flex items-center gap-2">
+                        {t.country}
+                        <SortButton
+                          field="name"
+                          currentField={countrySortField}
+                          currentDirection={countrySortDirection}
+                          onSort={handleCountrySort}
+                        />
+                      </div>
+                    </TableHead>
+                    <TableHead className="text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        {t.population}
+                        <SortButton
+                          field="population"
+                          currentField={countrySortField}
+                          currentDirection={countrySortDirection}
+                          onSort={handleCountrySort}
+                        />
+                      </div>
+                    </TableHead>
+                    <TableHead className="text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        % {t.region}
+                        <SortButton
+                          field="percentageInRegion"
+                          currentField={countrySortField}
+                          currentDirection={countrySortDirection}
+                          onSort={handleCountrySort}
+                        />
+                      </div>
+                    </TableHead>
+                    <TableHead className="text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        % {t.inAfrica}
+                        <SortButton
+                          field="percentageInAfrica"
+                          currentField={countrySortField}
+                          currentDirection={countrySortDirection}
+                          onSort={handleCountrySort}
+                        />
+                      </div>
+                    </TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
+                </TableHeader>
+                <TableBody>
+                  {paginatedCountries.map((country) => (
+                    <TableRow
+                      key={country.name}
+                      className="cursor-pointer hover:bg-muted/50"
+                      onClick={() => onCountrySelect?.(country.name, regionKey)}
+                    >
+                      <TableCell className="font-medium">{country.name}</TableCell>
+                      <TableCell className="text-right tabular-nums">
+                        {formatNumber(country.population)}
+                      </TableCell>
+                      <TableCell className="text-right tabular-nums">
+                        {formatPercent(country.percentageInRegion)}
+                      </TableCell>
+                      <TableCell className="text-right tabular-nums">
+                        {formatPercent(country.percentageInAfrica)}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          )}
 
           {totalCountryPages > 1 && (
             <div className="flex items-center justify-center gap-2 mt-4">
@@ -326,60 +360,87 @@ export const RegionDetailView = ({
             {t.ethnicGroups} ({sortedEthnicities.length})
           </h3>
           
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>
-                    <div className="flex items-center gap-2">
-                      {t.ethnicity}
-                      <SortButton
-                        field="name"
-                        currentField={ethnicitySortField}
-                        currentDirection={ethnicitySortDirection}
-                        onSort={handleEthnicitySort}
-                      />
+          {isMobile ? (
+            // Vue mobile : liste
+            <div className="space-y-3">
+              {paginatedEthnicities.map((ethnicity) => (
+                <div
+                  key={ethnicity.name}
+                  className="p-4 rounded-lg border bg-card"
+                >
+                  <div className="space-y-2">
+                    <div className="font-semibold text-base">{ethnicity.name}</div>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div>
+                        <span className="text-muted-foreground">% {t.region}: </span>
+                        <span className="font-medium">{formatPercent(ethnicity.percentageInRegion)}</span>
+                      </div>
+                      <div>
+                        <span className="text-muted-foreground">% {t.inAfrica}: </span>
+                        <span className="font-medium">{formatPercent(ethnicity.percentageInAfrica)}</span>
+                      </div>
                     </div>
-                  </TableHead>
-                  <TableHead className="text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      % {t.region}
-                      <SortButton
-                        field="percentageInRegion"
-                        currentField={ethnicitySortField}
-                        currentDirection={ethnicitySortDirection}
-                        onSort={handleEthnicitySort}
-                      />
-                    </div>
-                  </TableHead>
-                  <TableHead className="text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      % {t.inAfrica}
-                      <SortButton
-                        field="percentageInAfrica"
-                        currentField={ethnicitySortField}
-                        currentDirection={ethnicitySortDirection}
-                        onSort={handleEthnicitySort}
-                      />
-                    </div>
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {paginatedEthnicities.map((ethnicity) => (
-                  <TableRow key={ethnicity.name}>
-                    <TableCell className="font-medium">{ethnicity.name}</TableCell>
-                    <TableCell className="text-right tabular-nums">
-                      {formatPercent(ethnicity.percentageInRegion)}
-                    </TableCell>
-                    <TableCell className="text-right tabular-nums">
-                      {formatPercent(ethnicity.percentageInAfrica)}
-                    </TableCell>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            // Vue desktop : tableau
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>
+                      <div className="flex items-center gap-2">
+                        {t.ethnicity}
+                        <SortButton
+                          field="name"
+                          currentField={ethnicitySortField}
+                          currentDirection={ethnicitySortDirection}
+                          onSort={handleEthnicitySort}
+                        />
+                      </div>
+                    </TableHead>
+                    <TableHead className="text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        % {t.region}
+                        <SortButton
+                          field="percentageInRegion"
+                          currentField={ethnicitySortField}
+                          currentDirection={ethnicitySortDirection}
+                          onSort={handleEthnicitySort}
+                        />
+                      </div>
+                    </TableHead>
+                    <TableHead className="text-right">
+                      <div className="flex items-center justify-end gap-2">
+                        % {t.inAfrica}
+                        <SortButton
+                          field="percentageInAfrica"
+                          currentField={ethnicitySortField}
+                          currentDirection={ethnicitySortDirection}
+                          onSort={handleEthnicitySort}
+                        />
+                      </div>
+                    </TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
+                </TableHeader>
+                <TableBody>
+                  {paginatedEthnicities.map((ethnicity) => (
+                    <TableRow key={ethnicity.name}>
+                      <TableCell className="font-medium">{ethnicity.name}</TableCell>
+                      <TableCell className="text-right tabular-nums">
+                        {formatPercent(ethnicity.percentageInRegion)}
+                      </TableCell>
+                      <TableCell className="text-right tabular-nums">
+                        {formatPercent(ethnicity.percentageInAfrica)}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          )}
 
           {totalEthnicityPages > 1 && (
             <div className="flex items-center justify-center gap-2 mt-4">
