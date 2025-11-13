@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { getAllEthnicities } from "@/lib/api/datasetLoader.server";
+import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
 /**
  * @swagger
@@ -36,12 +36,16 @@ import { getAllEthnicities } from "@/lib/api/datasetLoader.server";
 export async function GET() {
   try {
     const ethnicities = await getAllEthnicities();
-    return NextResponse.json({ ethnicities });
+    return jsonWithCors({ ethnicities });
   } catch (error) {
     console.error("Error fetching ethnicities:", error);
-    return NextResponse.json(
+    return jsonWithCors(
       { error: "Failed to fetch ethnicities" },
       { status: 500 }
     );
   }
+}
+
+export function OPTIONS() {
+  return corsOptionsResponse();
 }

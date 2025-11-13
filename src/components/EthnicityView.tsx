@@ -3,13 +3,11 @@
 import { useState, useMemo, useEffect } from "react";
 import { Language } from "@/types/ethnicity";
 import { getTranslation } from "@/lib/translations";
-import { getAllEthnicities } from "@/lib/datasetLoader";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, Users } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
 
@@ -45,10 +43,35 @@ export const EthnicityView = ({
   const maxItemsMobile = 10;
 
   useEffect(() => {
-    getAllEthnicities().then((data) => {
-      setEthnicGroups(data);
-      setLoading(false);
-    });
+    const controller = new AbortController();
+
+    const loadEthnicities = async () => {
+      try {
+        const response = await fetch("/api/ethnicities", {
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to load ethnicities");
+        }
+
+        const payload = await response.json();
+        setEthnicGroups(payload.ethnicities);
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") {
+          return;
+        }
+        console.error("Error fetching ethnicities:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadEthnicities();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   const filteredGroups = useMemo(() => {
@@ -98,10 +121,10 @@ export const EthnicityView = ({
       language === "en"
         ? "en-US"
         : language === "fr"
-        ? "fr-FR"
-        : language === "es"
-        ? "es-ES"
-        : "pt-PT"
+          ? "fr-FR"
+          : language === "es"
+            ? "es-ES"
+            : "pt-PT"
     ).format(Math.round(num));
   };
 
@@ -184,41 +207,26 @@ export const EthnicityView = ({
             paginatedGroups.map((group) => (
               <Card
                 key={group.name}
-                className="p-4 hover:shadow-md cursor-pointer transition-all group"
+                className="p-4 hover:shadow-md cursor-pointer transition-all group mx-0"
                 onClick={() => onEthnicitySelect(group.name)}
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="font-semibold text-base group-hover:text-primary transition-colors mb-2">
-                      {group.name}
-                    </h3>
-                    <div className="space-y-1 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">
-                          {t.population}:
-                        </span>
-                        <span className="font-medium">
-                          {formatNumber(group.totalPopulation)}
-                        </span>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Users className="h-5 w-5 text-primary" />
+                      <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
+                        {group.name}
+                      </h3>
+                    </div>
+                    <div className="space-y-1 text-sm text-muted-foreground">
+                      <div>
+                        Population: {formatNumber(group.totalPopulation)}
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">
-                          {t.inAfrica}:
-                        </span>
-                        <span className="font-medium">
-                          {formatPercent(group.percentageInAfrica)}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">
-                          {t.country}:
-                        </span>
-                        <span className="font-medium">
-                          {group.countryCount}{" "}
-                          {group.countryCount === 1
-                            ? t.country.toLowerCase()
-                            : t.countries.toLowerCase()}
-                        </span>
+                      <div>
+                        {group.countryCount}{" "}
+                        {group.countryCount === 1
+                          ? t.country.toLowerCase()
+                          : t.countries.toLowerCase()}
                       </div>
                     </div>
                   </div>
@@ -250,41 +258,28 @@ export const EthnicityView = ({
               paginatedGroups.map((group) => (
                 <Card
                   key={group.name}
-                  className="p-4 hover:shadow-md cursor-pointer transition-all group"
+                  className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
+                    hideSearchAndAlphabet ? "mx-0" : ""
+                  }`}
                   onClick={() => onEthnicitySelect(group.name)}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-base group-hover:text-primary transition-colors mb-2">
-                        {group.name}
-                      </h3>
-                      <div className="space-y-1 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">
-                            {t.population}:
-                          </span>
-                          <span className="font-medium">
-                            {formatNumber(group.totalPopulation)}
-                          </span>
+                      <div className="flex items-center gap-2 mb-2">
+                        <Users className="h-5 w-5 text-primary" />
+                        <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
+                          {group.name}
+                        </h3>
+                      </div>
+                      <div className="space-y-1 text-sm text-muted-foreground">
+                        <div>
+                          Population: {formatNumber(group.totalPopulation)}
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">
-                            {t.inAfrica}:
-                          </span>
-                          <span className="font-medium">
-                            {formatPercent(group.percentageInAfrica)}
-                          </span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">
-                            {t.country}:
-                          </span>
-                          <span className="font-medium">
-                            {group.countryCount}{" "}
-                            {group.countryCount === 1
-                              ? t.country.toLowerCase()
-                              : t.countries.toLowerCase()}
-                          </span>
+                        <div>
+                          {group.countryCount}{" "}
+                          {group.countryCount === 1
+                            ? t.country.toLowerCase()
+                            : t.countries.toLowerCase()}
                         </div>
                       </div>
                     </div>

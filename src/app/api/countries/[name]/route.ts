@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
 import {
   getCountryDetails,
   getCountryRegion,
 } from "@/lib/api/datasetLoader.server";
+import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
 /**
  * @swagger
@@ -67,21 +67,22 @@ export async function GET(
     // Trouver la région du pays
     const regionKey = await getCountryRegion(decodedName);
     if (!regionKey) {
-      return NextResponse.json({ error: "Country not found" }, { status: 404 });
+      return jsonWithCors({ error: "Country not found" }, { status: 404 });
     }
 
     // Obtenir les détails complets
     const countryDetails = await getCountryDetails(regionKey, decodedName);
     if (!countryDetails) {
-      return NextResponse.json({ error: "Country not found" }, { status: 404 });
+      return jsonWithCors({ error: "Country not found" }, { status: 404 });
     }
 
-    return NextResponse.json(countryDetails);
+    return jsonWithCors(countryDetails);
   } catch (error) {
     console.error("Error fetching country:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch country" },
-      { status: 500 }
-    );
+    return jsonWithCors({ error: "Failed to fetch country" }, { status: 500 });
   }
+}
+
+export function OPTIONS() {
+  return corsOptionsResponse();
 }

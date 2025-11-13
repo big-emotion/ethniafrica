@@ -3,22 +3,22 @@
 import { Suspense } from "react";
 import { useParams } from "next/navigation";
 import { getPageFromRoute, getLanguageFromRoute } from "@/lib/routing";
-import { RegionsPageContent } from "@/app/regions/RegionsPageContent";
-import { CountriesPageContent } from "@/app/countries/CountriesPageContent";
-import { EthnicitiesPageContent } from "@/app/ethnicities/EthnicitiesPageContent";
-import { PaysPageContent } from "@/app/pays/PaysPageContent";
-import { EthniesPageContent } from "@/app/ethnies/EthniesPageContent";
-import { RegionesPageContent } from "@/app/regiones/RegionesPageContent";
-import { PaisesPageContent } from "@/app/paises/PaisesPageContent";
-import { EtniasPageContent } from "@/app/etnias/EtniasPageContent";
-import { RegioesPageContent } from "@/app/regioes/RegioesPageContent";
+import { RegionsPageContent } from "@/components/pages/RegionsPageContent";
+import { CountriesPageContent } from "@/components/pages/CountriesPageContent";
+import { EthnicitiesPageContent } from "@/components/pages/EthnicitiesPageContent";
+import { PaysPageContent } from "@/components/pages/PaysPageContent";
+import { EthniesPageContent } from "@/components/pages/EthniesPageContent";
+import { RegionesPageContent } from "@/components/pages/RegionesPageContent";
+import { PaisesPageContent } from "@/components/pages/PaisesPageContent";
+import { EtniasPageContent } from "@/components/pages/EtniasPageContent";
+import { RegioesPageContent } from "@/components/pages/RegioesPageContent";
 
 function PageContent() {
   const params = useParams();
   const lang = params?.lang as string;
-  const slug = params?.slug as string;
-  
-  const pathname = `/${lang}/${slug}`;
+  const section = params?.section as string;
+
+  const pathname = `/${lang}/${section}`;
   const pageType = getPageFromRoute(pathname);
   const language = getLanguageFromRoute(pathname);
 
@@ -32,35 +32,35 @@ function PageContent() {
     );
   }
 
-  // Render the appropriate component based on the slug
-  if (slug === "regions" && language === "en") {
+  // Render the appropriate component based on the section
+  if (section === "regions" && language === "en") {
     return <RegionsPageContent />;
   }
-  if (slug === "regions" && language === "fr") {
+  if (section === "regions" && language === "fr") {
     return <RegionsPageContent />;
   }
-  if (slug === "regiones" && language === "es") {
+  if (section === "regiones" && language === "es") {
     return <RegionesPageContent />;
   }
-  if (slug === "regioes" && language === "pt") {
+  if (section === "regioes" && language === "pt") {
     return <RegioesPageContent />;
   }
-  if (slug === "countries" && language === "en") {
+  if (section === "countries" && language === "en") {
     return <CountriesPageContent />;
   }
-  if (slug === "pays" && language === "fr") {
+  if (section === "pays" && language === "fr") {
     return <PaysPageContent />;
   }
-  if (slug === "paises" && (language === "es" || language === "pt")) {
+  if (section === "paises" && (language === "es" || language === "pt")) {
     return language === "es" ? <PaisesPageContent /> : <PaisesPageContent />;
   }
-  if (slug === "ethnicities" && language === "en") {
+  if (section === "ethnicities" && language === "en") {
     return <EthnicitiesPageContent />;
   }
-  if (slug === "ethnies" && language === "fr") {
+  if (section === "ethnies" && language === "fr") {
     return <EthniesPageContent />;
   }
-  if (slug === "etnias" && (language === "es" || language === "pt")) {
+  if (section === "etnias" && (language === "es" || language === "pt")) {
     return language === "es" ? <EtniasPageContent /> : <EtniasPageContent />;
   }
 
@@ -73,7 +73,7 @@ function PageContent() {
   );
 }
 
-export default function SlugPage() {
+export default function SectionPage() {
   return (
     <Suspense
       fallback={
@@ -88,4 +88,3 @@ export default function SlugPage() {
     </Suspense>
   );
 }
-

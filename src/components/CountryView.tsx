@@ -3,13 +3,11 @@
 import { useState, useMemo, useEffect } from "react";
 import { Language } from "@/types/ethnicity";
 import { getTranslation } from "@/lib/translations";
-import { getAllCountries } from "@/lib/datasetLoader";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
 
@@ -48,10 +46,35 @@ export const CountryView = ({
   const maxItemsMobile = 10;
 
   useEffect(() => {
-    getAllCountries().then((data) => {
-      setCountries(data);
-      setLoading(false);
-    });
+    const controller = new AbortController();
+
+    const loadCountries = async () => {
+      try {
+        const response = await fetch("/api/countries", {
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to load countries");
+        }
+
+        const payload = await response.json();
+        setCountries(payload.countries);
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") {
+          return;
+        }
+        console.error("Error fetching countries:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadCountries();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   const filteredCountries = useMemo(() => {
@@ -101,10 +124,10 @@ export const CountryView = ({
       language === "en"
         ? "en-US"
         : language === "fr"
-        ? "fr-FR"
-        : language === "es"
-        ? "es-ES"
-        : "pt-PT"
+          ? "fr-FR"
+          : language === "es"
+            ? "es-ES"
+            : "pt-PT"
     ).format(num);
   };
 
@@ -183,21 +206,20 @@ export const CountryView = ({
             paginatedCountries.map((country) => (
               <Card
                 key={country.name}
-                className="p-4 hover:shadow-md cursor-pointer transition-all group"
+                className="p-4 hover:shadow-md cursor-pointer transition-all group mx-0"
                 onClick={() => onCountrySelect(country.name, country.region)}
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="font-semibold text-base group-hover:text-primary transition-colors mb-2">
-                      {country.name}
-                    </h3>
-                    <Badge variant="secondary" className="text-xs mb-2">
-                      {country.regionName}
-                    </Badge>
-                    <div className="text-xs text-muted-foreground space-y-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="h-5 w-5 text-primary" />
+                      <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
+                        {country.name}
+                      </h3>
+                    </div>
+                    <div className="space-y-1 text-sm text-muted-foreground">
                       <div>
-                        {formatNumber(country.data.population)}{" "}
-                        {language === "en" ? "inhabitants" : "habitants"}
+                        Population: {formatNumber(country.data.population)}
                       </div>
                       <div>
                         {country.data.ethnicityCount}{" "}
@@ -233,21 +255,22 @@ export const CountryView = ({
               paginatedCountries.map((country) => (
                 <Card
                   key={country.name}
-                  className="p-4 hover:shadow-md cursor-pointer transition-all group"
+                  className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
+                    hideSearchAndAlphabet ? "mx-0" : ""
+                  }`}
                   onClick={() => onCountrySelect(country.name, country.region)}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-base group-hover:text-primary transition-colors mb-2">
-                        {country.name}
-                      </h3>
-                      <Badge variant="secondary" className="text-xs mb-2">
-                        {country.regionName}
-                      </Badge>
-                      <div className="text-xs text-muted-foreground space-y-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <MapPin className="h-5 w-5 text-primary" />
+                        <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
+                          {country.name}
+                        </h3>
+                      </div>
+                      <div className="space-y-1 text-sm text-muted-foreground">
                         <div>
-                          {formatNumber(country.data.population)}{" "}
-                          {language === "en" ? "inhabitants" : "habitants"}
+                          Population: {formatNumber(country.data.population)}
                         </div>
                         <div>
                           {country.data.ethnicityCount}{" "}

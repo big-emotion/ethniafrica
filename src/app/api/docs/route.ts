@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { swaggerSpec } from "@/lib/api/openapi";
+import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
 /**
  * @swagger
@@ -17,5 +17,9 @@ import { swaggerSpec } from "@/lib/api/openapi";
  *               type: object
  */
 export async function GET() {
-  return NextResponse.json(swaggerSpec);
+  return jsonWithCors(swaggerSpec);
+}
+
+export function OPTIONS() {
+  return corsOptionsResponse();
 }

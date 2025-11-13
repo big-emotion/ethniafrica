@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { getTotalPopulationAfrica } from "@/lib/api/datasetLoader.server";
+import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
 /**
  * @swagger
@@ -25,14 +25,18 @@ import { getTotalPopulationAfrica } from "@/lib/api/datasetLoader.server";
 export async function GET() {
   try {
     const totalPopulation = await getTotalPopulationAfrica();
-    return NextResponse.json({
+    return jsonWithCors({
       totalPopulationAfrica: totalPopulation,
     });
   } catch (error) {
     console.error("Error fetching stats:", error);
-    return NextResponse.json(
+    return jsonWithCors(
       { error: "Failed to fetch statistics" },
       { status: 500 }
     );
   }
+}
+
+export function OPTIONS() {
+  return corsOptionsResponse();
 }

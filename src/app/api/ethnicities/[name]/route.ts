@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { getEthnicityGlobalDetails } from "@/lib/api/datasetLoader.server";
+import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
 /**
  * @swagger
@@ -61,18 +61,19 @@ export async function GET(
     const ethnicityDetails = await getEthnicityGlobalDetails(decodedName);
 
     if (!ethnicityDetails) {
-      return NextResponse.json(
-        { error: "Ethnicity not found" },
-        { status: 404 }
-      );
+      return jsonWithCors({ error: "Ethnicity not found" }, { status: 404 });
     }
 
-    return NextResponse.json(ethnicityDetails);
+    return jsonWithCors(ethnicityDetails);
   } catch (error) {
     console.error("Error fetching ethnicity:", error);
-    return NextResponse.json(
+    return jsonWithCors(
       { error: "Failed to fetch ethnicity" },
       { status: 500 }
     );
   }
+}
+
+export function OPTIONS() {
+  return corsOptionsResponse();
 }

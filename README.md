@@ -29,6 +29,7 @@ Page "À propos" disponible sur `/about` ou `/{lang}/about` (ex. `/fr/about`, `/
 
 - **Vue détaillée** : Résumé synthétique, populations et pourcentages pour chaque région, pays ou ethnie
 - **Tri des tableaux** : Toutes les colonnes sont triables (nom, population, pourcentages) pour faciliter l'analyse
+- **Pagination intelligente** : La pagination des tableaux se réinitialise automatiquement lors du changement de pays, région ou ethnie
 - **Recherche** : Recherche globale (desktop et mobile) + navigation alphabétique
 - **Partage social** : Bouton de partage pour les pages détaillées (Facebook, Twitter, LinkedIn, copie de lien, Web Share API)
 
@@ -72,8 +73,17 @@ L'application expose une API REST publique pour accéder aux données démograph
 
 ### Documentation interactive
 
-- **Swagger UI** : `/api/docs` - Interface interactive pour explorer et tester l'API
+- **Swagger UI** : `/docs/api` - Interface interactive pour explorer et tester l'API
 - **OpenAPI Spec** : `/api/docs` (JSON) - Spécification OpenAPI au format JSON
+
+### Navigation localisée (frontend)
+
+`{lang}` ∈ `{en, fr, es, pt}`
+
+- Listes : `/{lang}/regions`, `/{lang}/pays|countries|paises`, `/{lang}/ethnies|ethnicities|etnias`
+- Détails pays : `/{lang}/{slugPays}/{nom_du_pays}` &rarr; ex. `/fr/pays/Rwanda`
+- Détails régions : `/{lang}/{slugRegions}/{cle_de_region}` &rarr; ex. `/fr/regions/afrique_centrale`
+- Détails ethnies : `/{lang}/{slugEthnies}/{nom_de_l_ethnie}` &rarr; ex. `/pt/etnias/Yoruba`
 
 ### Endpoints disponibles
 
@@ -96,6 +106,8 @@ L'application expose une API REST publique pour accéder aux données démograph
 
 - `GET /api/ethnicities` - Liste toutes les ethnies
 - `GET /api/ethnicities/{name}` - Détails d'une ethnie globale
+
+> Documentation détaillée : `docs/API_ROUTES.md`
 
 ### Exemples d'utilisation
 

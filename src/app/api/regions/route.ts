@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
 import { getRegions } from "@/lib/api/datasetLoader.server";
+import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
 /**
  * @swagger
@@ -32,12 +32,13 @@ import { getRegions } from "@/lib/api/datasetLoader.server";
 export async function GET() {
   try {
     const regions = await getRegions();
-    return NextResponse.json({ regions });
+    return jsonWithCors({ regions });
   } catch (error) {
     console.error("Error fetching regions:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch regions" },
-      { status: 500 }
-    );
+    return jsonWithCors({ error: "Failed to fetch regions" }, { status: 500 });
   }
+}
+
+export function OPTIONS() {
+  return corsOptionsResponse();
 }

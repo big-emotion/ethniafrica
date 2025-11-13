@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { Language } from "@/types/ethnicity";
 import { getTranslation } from "@/lib/translations";
-import { getRegions } from "@/lib/datasetLoader";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -45,17 +44,54 @@ export const RegionView = ({
   const maxItemsMobile = 10;
 
   useEffect(() => {
-    getRegions().then((data) => {
-      setRegions(
-        data.map(({ key, data: regionData }) => ({
-          key,
-          name: regionData.name,
-          totalPopulation: regionData.totalPopulation,
-          countryCount: Object.keys(regionData.countries).length,
-        }))
-      );
-      setLoading(false);
-    });
+    const controller = new AbortController();
+
+    const loadRegions = async () => {
+      try {
+        const response = await fetch("/api/regions", {
+          signal: controller.signal,
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to load regions");
+        }
+
+        const payload = await response.json();
+        setRegions(
+          payload.regions.map(
+            ({
+              key,
+              data: regionData,
+            }: {
+              key: string;
+              data: {
+                name: string;
+                totalPopulation: number;
+                countries: Record<string, unknown>;
+              };
+            }) => ({
+              key,
+              name: regionData.name,
+              totalPopulation: regionData.totalPopulation,
+              countryCount: Object.keys(regionData.countries).length,
+            })
+          )
+        );
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") {
+          return;
+        }
+        console.error("Error fetching regions:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadRegions();
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   const filteredRegions = useMemo(() => {
@@ -105,10 +141,10 @@ export const RegionView = ({
       language === "en"
         ? "en-US"
         : language === "fr"
-        ? "fr-FR"
-        : language === "es"
-        ? "es-ES"
-        : "pt-PT"
+          ? "fr-FR"
+          : language === "es"
+            ? "es-ES"
+            : "pt-PT"
     ).format(Math.round(num));
   };
 
