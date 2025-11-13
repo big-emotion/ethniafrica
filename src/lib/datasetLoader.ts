@@ -44,7 +44,16 @@ export async function getRegion(regionKey: string): Promise<RegionData | null> {
 // Obtenir les pays d'une région
 export async function getCountriesInRegion(
   regionKey: string
-): Promise<Array<{ name: string; data: { population: number; percentageInRegion: number; percentageInAfrica: number } }>> {
+): Promise<
+  Array<{
+    name: string;
+    data: {
+      population: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+    };
+  }>
+> {
   const region = await getRegion(regionKey);
   if (!region) return [];
 
@@ -281,7 +290,12 @@ export async function getAllCountries(): Promise<
     name: string;
     region: string;
     regionName: string;
-    data: { population: number; percentageInRegion: number; percentageInAfrica: number };
+    data: {
+      population: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+      ethnicityCount: number;
+    };
   }>
 > {
   const index = await loadDatasetIndex();
@@ -289,7 +303,12 @@ export async function getAllCountries(): Promise<
     name: string;
     region: string;
     regionName: string;
-    data: { population: number; percentageInRegion: number; percentageInAfrica: number };
+    data: {
+      population: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+      ethnicityCount: number;
+    };
   }> = [];
 
   for (const [regionKey, region] of Object.entries(index.regions)) {
@@ -298,7 +317,12 @@ export async function getAllCountries(): Promise<
         name: countryName,
         region: regionKey,
         regionName: region.name,
-        data: countryData,
+        data: {
+          population: countryData.population,
+          percentageInRegion: countryData.percentageInRegion,
+          percentageInAfrica: countryData.percentageInAfrica,
+          ethnicityCount: countryData.ethnicityCount,
+        },
       });
     }
   }

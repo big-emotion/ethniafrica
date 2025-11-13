@@ -4,72 +4,57 @@ import { loadDatasetIndex } from "@/lib/datasetLoader";
 
 export async function generateMetadata({
   params,
-  searchParams,
 }: {
   params: Promise<{ lang: string; slug: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }): Promise<Metadata> {
   const resolvedParams = await params;
-  const resolvedSearchParams = await searchParams;
-  const pageType = getPageFromRoute(`/${resolvedParams.lang}/${resolvedParams.slug}`);
-  const language = getLanguageFromRoute(`/${resolvedParams.lang}/${resolvedParams.slug}`) || "en";
-  
-  let title = "African Ethnicities Dictionary";
-  let description = "Explore ethnic groups across 55 African countries";
-  let name = "";
+  const pageType = getPageFromRoute(
+    `/${resolvedParams.lang}/${resolvedParams.slug}`
+  );
+  const language =
+    getLanguageFromRoute(`/${resolvedParams.lang}/${resolvedParams.slug}`) ||
+    "en";
 
-  // Ensure resolvedSearchParams is an object (handle both null and undefined)
-  const searchParamsObj = resolvedSearchParams && typeof resolvedSearchParams === 'object' ? resolvedSearchParams : {};
+  // Note: searchParams are not available in layout generateMetadata in Next.js 15
+  // Metadata will be basic, detailed metadata with searchParams is handled in opengraph-image.tsx
+  const pageTitle =
+    pageType === "regions"
+      ? language === "en"
+        ? "Regions"
+        : language === "fr"
+          ? "Régions"
+          : language === "es"
+            ? "Regiones"
+            : "Regiões"
+      : pageType === "countries"
+        ? language === "en"
+          ? "Countries"
+          : language === "fr"
+            ? "Pays"
+            : language === "es"
+              ? "Países"
+              : "Países"
+        : pageType === "ethnicities"
+          ? language === "en"
+            ? "Ethnicities"
+            : language === "fr"
+              ? "Ethnies"
+              : language === "es"
+                ? "Etnias"
+                : "Etnias"
+          : "African Ethnicities Dictionary";
 
-  if (pageType === "regions" && searchParamsObj.region) {
-    const regionKey = String(searchParamsObj.region);
-    // Try to get the region name from the dataset
-    try {
-      const index = await loadDatasetIndex();
-      const region = index.regions[regionKey];
-      name = region ? region.name : regionKey;
-    } catch {
-      name = regionKey;
-    }
-    title = `${name} - African Ethnicities Dictionary`;
-    description = language === "en"
-      ? `Explore countries and ethnic groups in ${name}`
+  const title = `${pageTitle} - African Ethnicities Dictionary`;
+  const description =
+    language === "en"
+      ? "Explore ethnic groups across 55 African countries"
       : language === "fr"
-      ? `Explorez les pays et groupes ethniques de ${name}`
-      : language === "es"
-      ? `Explore países y grupos étnicos en ${name}`
-      : `Explore países e grupos étnicos em ${name}`;
-  } else if (pageType === "countries" && searchParamsObj.country) {
-    name = String(searchParamsObj.country);
-    title = `${name} - African Ethnicities Dictionary`;
-    description = language === "en"
-      ? `Demographics and ethnic groups in ${name}`
-      : language === "fr"
-      ? `Démographie et groupes ethniques en ${name}`
-      : language === "es"
-      ? `Demografía y grupos étnicos en ${name}`
-      : `Demografia e grupos étnicos em ${name}`;
-  } else if (pageType === "ethnicities" && searchParamsObj.ethnicity) {
-    name = String(searchParamsObj.ethnicity);
-    title = `${name} - African Ethnicities Dictionary`;
-    description = language === "en"
-      ? `Information about the ${name} ethnic group`
-      : language === "fr"
-      ? `Informations sur le groupe ethnique ${name}`
-      : language === "es"
-      ? `Información sobre el grupo étnico ${name}`
-      : `Informações sobre o grupo étnico ${name}`;
-  }
+        ? "Explorez les groupes ethniques dans les 55 pays africains"
+        : language === "es"
+          ? "Explore grupos étnicos en los 55 países africanos"
+          : "Explore grupos étnicos em todos os 55 países africanos";
 
-  // Build the Open Graph image URL with query params
-  const queryString = new URLSearchParams(
-    Object.entries(searchParamsObj).reduce((acc, [key, value]) => {
-      if (value) acc[key] = String(value);
-      return acc;
-    }, {} as Record<string, string>)
-  ).toString();
-
-  const ogImageUrl = `/${resolvedParams.lang}/${resolvedParams.slug}/opengraph-image${queryString ? `?${queryString}` : ""}`;
+  const ogImageUrl = `/${resolvedParams.lang}/${resolvedParams.slug}/opengraph-image`;
 
   return {
     title,
@@ -102,4 +87,3 @@ export default function SlugLayout({
 }) {
   return <>{children}</>;
 }
-
