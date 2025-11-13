@@ -27,6 +27,12 @@ export async function loadDatasetIndex(): Promise<DatasetIndex> {
   }
 }
 
+// Obtenir la population totale de l'Afrique
+export async function getTotalPopulationAfrica(): Promise<number> {
+  const index = await loadDatasetIndex();
+  return index.totalPopulationAfrica;
+}
+
 // Obtenir toutes les régions
 export async function getRegions(): Promise<
   Array<{ key: string; data: RegionData }>
@@ -42,9 +48,7 @@ export async function getRegion(regionKey: string): Promise<RegionData | null> {
 }
 
 // Obtenir les pays d'une région
-export async function getCountriesInRegion(
-  regionKey: string
-): Promise<
+export async function getCountriesInRegion(regionKey: string): Promise<
   Array<{
     name: string;
     data: {

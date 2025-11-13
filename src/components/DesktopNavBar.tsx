@@ -7,7 +7,6 @@ import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./LanguageSelector";
-import { Home } from "lucide-react";
 import Image from "next/image";
 
 interface DesktopNavBarProps {
@@ -30,7 +29,9 @@ export const DesktopNavBar = ({
   const isHome = pathname === `/${language}` || pathname === "/";
   const isAbout = pathname === `/${language}/about` || pathname === "/about";
 
-  const isActive = (pageType: "regions" | "countries" | "ethnicities" | "home" | "about") => {
+  const isActive = (
+    pageType: "regions" | "countries" | "ethnicities" | "home" | "about"
+  ) => {
     if (pageType === "home") return isHome;
     if (pageType === "about") return isAbout;
     return currentPage === pageType;
@@ -55,14 +56,13 @@ export const DesktopNavBar = ({
                   height={20}
                   className="object-contain"
                 />
-                <Home className="h-4 w-4" />
                 {language === "en"
                   ? "Home"
                   : language === "fr"
-                  ? "Accueil"
-                  : language === "es"
-                  ? "Inicio"
-                  : "Início"}
+                    ? "Accueil"
+                    : language === "es"
+                      ? "Inicio"
+                      : "Início"}
               </Button>
             </Link>
             <Link href={regionsRoute}>
@@ -111,4 +111,3 @@ export const DesktopNavBar = ({
     </nav>
   );
 };
-

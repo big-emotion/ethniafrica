@@ -12,11 +12,13 @@ import Link from "next/link";
 interface MobileNavBarProps {
   language: Language;
   onLanguageChange: (lang: Language) => void;
+  onSearchClick?: () => void;
 }
 
 export const MobileNavBar = ({
   language,
   onLanguageChange,
+  onSearchClick,
 }: MobileNavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = getTranslation(language);
@@ -52,6 +54,7 @@ export const MobileNavBar = ({
           onOpenChange={setIsMenuOpen}
           language={language}
           onLanguageChange={onLanguageChange}
+          onSearchClick={onSearchClick}
         />
       </div>
     </div>

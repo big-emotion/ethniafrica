@@ -6,7 +6,6 @@ import { getTranslation } from "@/lib/translations";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { MobileNavBar } from "@/components/MobileNavBar";
 import { DesktopNavBar } from "@/components/DesktopNavBar";
-import { MobileSearchBar } from "@/components/MobileSearchBar";
 import { SearchModal } from "@/components/SearchModal";
 import { useIsMobile } from "@/hooks/use-mobile";
 import Link from "next/link";
@@ -70,35 +69,35 @@ export const PageLayout = ({
     <div className="min-h-screen gradient-earth">
       {/* Barre de navigation desktop */}
       {!isMobile && (
-        <DesktopNavBar language={language} onLanguageChange={onLanguageChange} />
+        <DesktopNavBar
+          language={language}
+          onLanguageChange={onLanguageChange}
+        />
       )}
 
       {/* Barre de navigation mobile */}
       {isMobile && (
-        <MobileNavBar language={language} onLanguageChange={onLanguageChange} />
+        <MobileNavBar
+          language={language}
+          onLanguageChange={onLanguageChange}
+          onSearchClick={() => setIsSearchOpen(true)}
+        />
       )}
 
-      {/* Barre de recherche mobile */}
+      {/* Modal de recherche mobile */}
       {isMobile && (
-        <>
-          <MobileSearchBar
-            onSearchClick={() => setIsSearchOpen(true)}
-            isSearchOpen={isSearchOpen}
-            language={language}
-          />
-          <SearchModal
-            open={isSearchOpen}
-            onClose={() => setIsSearchOpen(false)}
-            language={language}
-            onResultSelect={handleSearchResult}
-          />
-        </>
+        <SearchModal
+          open={isSearchOpen}
+          onClose={() => setIsSearchOpen(false)}
+          language={language}
+          onResultSelect={handleSearchResult}
+        />
       )}
 
       {/* Header */}
       <header
         className={`border-b bg-card shadow-soft ${
-          isMobile ? "pt-[114px]" : "pt-20"
+          isMobile ? "pt-[73px]" : "pt-20"
         }`}
       >
         <div className="container mx-auto px-4 py-6">
@@ -132,7 +131,9 @@ export const PageLayout = ({
       </header>
 
       {/* Main Content */}
-      <main className={`container mx-auto px-4 ${isMobile ? "py-4" : "py-8"}`}>{children}</main>
+      <main className={`container mx-auto px-4 ${isMobile ? "py-4" : "py-8"}`}>
+        {children}
+      </main>
 
       {/* Footer */}
       <footer className="border-t bg-card">

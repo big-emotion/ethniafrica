@@ -70,10 +70,10 @@ export function PaisesPageContent() {
                 {language === "en"
                   ? "Back"
                   : language === "fr"
-                  ? "Retour"
-                  : language === "es"
-                  ? "Volver"
-                  : "Voltar"}
+                    ? "Retour"
+                    : language === "es"
+                      ? "Volver"
+                      : "Voltar"}
               </Button>
               <Card className="shadow-soft">
                 <DetailView
@@ -103,14 +103,34 @@ export function PaisesPageContent() {
           <div className="lg:col-span-7">
             <Card className="shadow-soft h-full">
               {selectedRegion || selectedCountry || selectedEthnicity ? (
-                <DetailView
-                  language={language}
-                  selectedRegion={selectedRegion}
-                  selectedCountry={selectedCountry}
-                  selectedEthnicity={selectedEthnicity}
-                  onEthnicitySelect={handleEthnicitySelect}
-                  onCountrySelect={handleCountrySelect}
-                />
+                <div className="space-y-4">
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      setSelectedRegion(null);
+                      setSelectedCountry(null);
+                      setSelectedEthnicity(null);
+                    }}
+                    className="mb-2"
+                  >
+                    <ArrowLeft className="h-4 w-4 mr-2" />
+                    {language === "en"
+                      ? "Back"
+                      : language === "fr"
+                        ? "Retour"
+                        : language === "es"
+                          ? "Volver"
+                          : "Voltar"}
+                  </Button>
+                  <DetailView
+                    language={language}
+                    selectedRegion={selectedRegion}
+                    selectedCountry={selectedCountry}
+                    selectedEthnicity={selectedEthnicity}
+                    onEthnicitySelect={handleEthnicitySelect}
+                    onCountrySelect={handleCountrySelect}
+                  />
+                </div>
               ) : (
                 <DefaultMessage language={language} pageType="countries" />
               )}

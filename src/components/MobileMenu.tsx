@@ -14,12 +14,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./LanguageSelector";
 import { Separator } from "@/components/ui/separator";
+import { Search } from "lucide-react";
 
 interface MobileMenuProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   language: Language;
   onLanguageChange: (lang: Language) => void;
+  onSearchClick?: () => void;
 }
 
 export const MobileMenu = ({
@@ -27,6 +29,7 @@ export const MobileMenu = ({
   onOpenChange,
   language,
   onLanguageChange,
+  onSearchClick,
 }: MobileMenuProps) => {
   const t = getTranslation(language);
   const pathname = usePathname();
@@ -51,16 +54,20 @@ export const MobileMenu = ({
           <div className="flex flex-col gap-2">
             <Link href={`/${language}`} onClick={() => onOpenChange(false)}>
               <Button
-                variant={pathname === `/${language}` || pathname === "/" ? "default" : "ghost"}
+                variant={
+                  pathname === `/${language}` || pathname === "/"
+                    ? "default"
+                    : "ghost"
+                }
                 className="w-full justify-start"
               >
                 {language === "en"
                   ? "Home"
                   : language === "fr"
-                  ? "Accueil"
-                  : language === "es"
-                  ? "Inicio"
-                  : "Início"}
+                    ? "Accueil"
+                    : language === "es"
+                      ? "Inicio"
+                      : "Início"}
               </Button>
             </Link>
             <Link href={regionsRoute} onClick={() => onOpenChange(false)}>
@@ -88,6 +95,29 @@ export const MobileMenu = ({
               </Button>
             </Link>
           </div>
+
+          <Separator />
+
+          {/* Search CTA */}
+          {onSearchClick && (
+            <Button
+              variant="ghost"
+              className="w-full justify-start"
+              onClick={() => {
+                onOpenChange(false);
+                onSearchClick();
+              }}
+            >
+              <Search className="h-4 w-4 mr-2" />
+              {language === "en"
+                ? "Search"
+                : language === "fr"
+                  ? "Rechercher"
+                  : language === "es"
+                    ? "Buscar"
+                    : "Pesquisar"}
+            </Button>
+          )}
 
           <Separator />
 
