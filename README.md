@@ -6,7 +6,9 @@ Page "À propos" disponible sur `/about` ou `/{lang}/about` (ex. `/fr/about`, `/
 
 ## Liens utiles
 
-- À propos / Contexte / Participation: `/about`
+- À propos / Contexte: `/{lang}/about` (ex. `/fr/about`, `/en/about`)
+- Contribuer: `/{lang}/contribute` - Documentation API, téléchargement de données, contribution GitHub
+- Signaler une erreur: `/{lang}/report-error` - Formulaire pour signaler des erreurs dans les données
 - Dépôt GitHub: https://github.com/big-emotion/ethniafrique-atlas
 
 ## Fonctionnalités
@@ -14,16 +16,16 @@ Page "À propos" disponible sur `/about` ou `/{lang}/about` (ex. `/fr/about`, `/
 ### Navigation et structure
 
 - **Pages dédiées** : Régions, Pays et Ethnies ont chacune leur propre page avec URL localisée (ex. `/fr/regions`, `/en/countries`)
-- **Navigation desktop** : Barre de menu fixe en haut avec accès direct à toutes les sections (Accueil, Régions, Pays, Ethnies, À propos)
+- **Navigation desktop** : Barre de menu fixe en haut avec accès direct à toutes les sections (Accueil, Régions, Pays, Ethnies, À propos, Contribuer, Signaler une erreur)
 - **Navigation mobile** : Menu burger avec accès rapide à toutes les pages et à la recherche
 - **URLs localisées** : Chaque langue a ses propres URLs (ex. `/fr/regions`, `/en/regions`, `/es/regiones`, `/pt/regioes`)
 
 ### Page d'accueil
 
-- **Statistiques** : Affichage de la population totale de l'Afrique (calculée depuis les données)
+- **Statistiques** : Affichage de 4 cartes statistiques (Population totale, Total Régions, Total Pays, Total Groupes ethniques) récupérées depuis l'API
 - **Synthèse** : Message de présentation du projet et de son contenu
-- **Accès direct** : 3 boutons CTA pour accéder rapidement aux pages principales
-- **Recherche desktop** : Barre de recherche intégrée sur la page d'accueil
+- **Recherche** : Barre de recherche intégrée sur la page d'accueil
+- **Accès direct** : 3 boutons CTA (Ethnies, Pays, Régions) positionnés sous les statistiques pour accéder rapidement aux pages principales
 
 ### Exploration des données
 
@@ -43,7 +45,9 @@ Page "À propos" disponible sur `/about` ou `/{lang}/about` (ex. `/fr/about`, `/
 ### Multilingue
 
 - **4 langues** : français, anglais, espagnol, portugais
-- **Page "À propos"** : Contenu complet avec formulaire de contact dans toutes les langues
+- **Page "À propos"** : Contenu complet avec section "Sources" (bibliographie exhaustive) dans toutes les langues
+- **Page "Contribuer"** : Documentation API, téléchargement de données (CSV/Excel), formulaire de contact, lien GitHub
+- **Page "Signaler une erreur"** : Formulaire dédié pour signaler des erreurs dans les données
 - **Traductions** : Toutes les interfaces et contenus sont traduits
 
 ## Stack
@@ -107,6 +111,11 @@ L'application expose une API REST publique pour accéder aux données démograph
 - `GET /api/ethnicities` - Liste toutes les ethnies
 - `GET /api/ethnicities/{name}` - Détails d'une ethnie globale
 
+#### Téléchargement de données
+
+- `GET /api/download?format=csv` - Télécharge toutes les données en format CSV (ZIP)
+- `GET /api/download?format=excel` - Télécharge toutes les données en format Excel (XLSX)
+
 > Documentation détaillée : `docs/API_ROUTES.md`
 
 ### Exemples d'utilisation
@@ -136,6 +145,12 @@ curl http://localhost:3000/api/ethnicities
 
 # Détails d'une ethnie
 curl http://localhost:3000/api/ethnicities/Arabes
+
+# Télécharger toutes les données (CSV)
+curl http://localhost:3000/api/download?format=csv -o data.zip
+
+# Télécharger toutes les données (Excel)
+curl http://localhost:3000/api/download?format=excel -o data.xlsx
 ```
 
 ### Format des réponses
@@ -153,9 +168,37 @@ Les noms de pays et d'ethnies avec caractères spéciaux doivent être encodés 
 - `Côte d'Ivoire` → `Côte%20d'Ivoire`
 - `São Tomé-et-Principe` → `São%20Tomé-et-Principe`
 
+## Pages supplémentaires
+
+### Page "Contribuer" (`/{lang}/contribute`)
+
+Page dédiée à la contribution au projet avec :
+
+- **Documentation API** : Lien vers la documentation interactive Swagger UI
+- **Téléchargement de données** : Boutons pour télécharger toutes les données en CSV (ZIP) ou Excel
+- **Contribution GitHub** : Lien vers le dépôt pour contribuer au code
+- **Formulaire de contact** : Formulaire Typeform pour proposer des contributions
+
+### Page "Signaler une erreur" (`/{lang}/report-error`)
+
+Page dédiée au signalement d'erreurs dans les données avec :
+
+- **Explication** : Information sur la provenance des données et l'importance des corrections
+- **Formulaire Typeform** : Formulaire dédié pour signaler des erreurs, informations manquantes ou douteuses
+
+### Page "À propos" (`/{lang}/about`)
+
+Page d'information sur le projet avec :
+
+- **À propos du projet** : Présentation du dictionnaire et de ses objectifs
+- **Sources** : Bibliographie complète organisée par type (Sources internationales, Sources par région, Sources académiques, Sources complémentaires)
+
 ## Contact
 
-Vous pouvez me contacter via le formulaire présent sur la page `/about` ou `/{lang}/about` (Typeform intégré).
+Vous pouvez nous contacter via :
+
+- **Formulaire de contribution** : Page `/{lang}/contribute`
+- **Signalement d'erreur** : Page `/{lang}/report-error`
 
 ## Données et pipeline
 
@@ -179,13 +222,16 @@ public/dataset/
 
 Les contributions sont bienvenues: fichiers CSV, corrections, nouvelles sources, UI/UX, refacto, etc.
 
-- Dépôt: https://github.com/big-emotion/ethniafrique-atlas
-- Contexte & liens: `/about`
+- **Page dédiée** : `/{lang}/contribute` - Toutes les informations pour contribuer
+- **Dépôt GitHub** : https://github.com/big-emotion/ethniafrique-atlas
+- **Documentation API** : `/docs/api` - Pour utiliser les données programmatiquement
+- **Téléchargement de données** : `/api/download?format=csv` ou `/api/download?format=excel`
 
 Merci de:
 
-- Respecter la structure des CSV et l’encodage (guillemets, apostrophes)
+- Respecter la structure des CSV et l'encodage (guillemets, apostrophes)
 - Lancer `npm run parse-dataset` après modification des sources
+- Signaler les erreurs via la page `/{lang}/report-error`
 
 ## Roadmap (extraits)
 

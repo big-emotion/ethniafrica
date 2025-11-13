@@ -208,7 +208,43 @@ Base URL (développement) : `http://localhost:3000`
 
 ---
 
-### 5. Codes d’erreur génériques
+### 5. Téléchargement de données
+
+#### 5.1 Télécharger toutes les données (CSV)
+
+`GET /api/download?format=csv`
+
+- **Description** : Télécharge toutes les données du dataset en format CSV compressé dans un fichier ZIP.
+- **Paramètres query**
+  - `format` : `csv` (obligatoire)
+- **Réponse 200**
+  - **Content-Type** : `application/zip`
+  - **Content-Disposition** : `attachment; filename="ethniafrique-atlas-data.zip"`
+  - **Corps** : Fichier ZIP contenant tous les fichiers CSV du dataset organisés par région/pays
+- **Erreurs**
+  - `400` : `{"error": "Invalid format. Use 'csv' or 'excel'"}`
+  - `500` : `{"error": "Failed to generate download"}`
+
+#### 5.2 Télécharger toutes les données (Excel)
+
+`GET /api/download?format=excel`
+
+- **Description** : Télécharge toutes les données du dataset en format Excel (XLSX) avec plusieurs feuilles.
+- **Paramètres query**
+  - `format` : `excel` (obligatoire)
+- **Réponse 200**
+  - **Content-Type** : `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+  - **Content-Disposition** : `attachment; filename="ethniafrique-atlas-data.xlsx"`
+  - **Corps** : Fichier Excel avec les feuilles suivantes :
+    - **Summary** : Statistiques globales (population totale, nombre de régions, nombre de pays)
+    - **Feuilles par région** : Une feuille par région avec les pays et leurs statistiques
+- **Erreurs**
+  - `400` : `{"error": "Invalid format. Use 'csv' or 'excel'"}`
+  - `500` : `{"error": "Failed to generate download"}`
+
+---
+
+### 6. Codes d'erreur génériques
 
 | Code | Description                       |
 | ---- | --------------------------------- |
@@ -218,7 +254,7 @@ Base URL (développement) : `http://localhost:3000`
 
 ---
 
-### 6. Exemples d’utilisation (curl)
+### 7. Exemples d'utilisation (curl)
 
 ```bash
 # Statistiques globales
@@ -245,18 +281,24 @@ curl http://localhost:3000/api/ethnicities
 
 # Détails d'une ethnie
 curl http://localhost:3000/api/ethnicities/Arabes
+
+# Télécharger toutes les données (CSV)
+curl http://localhost:3000/api/download?format=csv -o data.zip
+
+# Télécharger toutes les données (Excel)
+curl http://localhost:3000/api/download?format=excel -o data.xlsx
 ```
 
 ---
 
-### 7. Documentation interactive
+### 8. Documentation interactive
 
 - Swagger UI : `http://localhost:3000/docs/api`
 - Spécification JSON : `http://localhost:3000/api/docs` (même endpoint)
 
 > Les annotations Swagger sont maintenues dans les fichiers Route Handlers (`src/app/api/**/route.ts`). La génération de la spec est centralisée dans `src/lib/api/openapi.ts`.
 
-### 8. CORS
+### 9. CORS
 
 - `Access-Control-Allow-Origin` : `CORS_ALLOWED_ORIGIN` (si défini) sinon `*`
 - `Access-Control-Allow-Methods` : `GET, OPTIONS`
