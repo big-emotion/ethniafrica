@@ -308,29 +308,6 @@ export default function AboutPage() {
         </section>
 
         <section className="space-y-4">
-          <h3 className="text-xl font-semibold">{t.contribution.title}</h3>
-          <p>{t.contribution.text1}</p>
-          <p>{t.contribution.text2}</p>
-          <div className="pt-2">
-            <Link
-              href="https://github.com/big-emotion/ethniafrique-atlas"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="default">
-                {language === "en"
-                  ? "Contribute on GitHub"
-                  : language === "fr"
-                    ? "Participer sur GitHub"
-                    : language === "es"
-                      ? "Contribuir en GitHub"
-                      : "Contribuir no GitHub"}
-              </Button>
-            </Link>
-          </div>
-        </section>
-
-        <section className="space-y-4">
           <h3 className="text-xl font-semibold">{t.contact.title}</h3>
           <p className="text-muted-foreground">{t.contact.text}</p>
           <div className="w-full">
@@ -340,16 +317,6 @@ export default function AboutPage() {
             src="//embed.typeform.com/next/embed.js"
             strategy="lazyOnload"
           />
-        </section>
-
-        <section className="pt-4">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>{t.footer}</span>
-            <div className="flex items-center gap-1" aria-label="BIG EMOTION">
-              <span className="font-bold text-yellow-500">BIG</span>
-              <span className="font-bold text-foreground">EMOTION</span>
-            </div>
-          </div>
         </section>
       </div>
     </PageLayout>

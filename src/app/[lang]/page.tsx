@@ -155,105 +155,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Section CTA - 3 boutons vers les pages */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(regionsRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Globe className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">{t.regions}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {currentLanguage === "en"
-                    ? "Explore by region"
-                    : currentLanguage === "fr"
-                      ? "Explorer par région"
-                      : currentLanguage === "es"
-                        ? "Explorar por región"
-                        : "Explorar por região"}
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                {currentLanguage === "en"
-                  ? "View Regions"
-                  : currentLanguage === "fr"
-                    ? "Voir les régions"
-                    : currentLanguage === "es"
-                      ? "Ver regiones"
-                      : "Ver regiões"}
-              </Button>
-            </div>
-          </Card>
-
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(countriesRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <MapPin className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">{t.byCountry}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {currentLanguage === "en"
-                    ? "Browse by country"
-                    : currentLanguage === "fr"
-                      ? "Parcourir par pays"
-                      : currentLanguage === "es"
-                        ? "Navegar por país"
-                        : "Navegar por país"}
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                {currentLanguage === "en"
-                  ? "View Countries"
-                  : currentLanguage === "fr"
-                    ? "Voir les pays"
-                    : currentLanguage === "es"
-                      ? "Ver países"
-                      : "Ver países"}
-              </Button>
-            </div>
-          </Card>
-
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(ethnicitiesRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">{t.byEthnicity}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {currentLanguage === "en"
-                    ? "Discover ethnic groups"
-                    : currentLanguage === "fr"
-                      ? "Découvrir les ethnies"
-                      : currentLanguage === "es"
-                        ? "Descubrir grupos étnicos"
-                        : "Descobrir grupos étnicos"}
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                {currentLanguage === "en"
-                  ? "View Ethnicities"
-                  : currentLanguage === "fr"
-                    ? "Voir les ethnies"
-                    : currentLanguage === "es"
-                      ? "Ver etnias"
-                      : "Ver etnias"}
-              </Button>
-            </div>
-          </Card>
-        </div>
-
         {/* Section Statistiques */}
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -425,6 +326,105 @@ export default function Home() {
               </Card>
             )}
           </div>
+        </div>
+
+        {/* Section CTA - 3 boutons vers les pages */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+            onClick={() => router.push(ethnicitiesRoute)}
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <Users className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{t.byEthnicity}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {currentLanguage === "en"
+                    ? "Discover ethnic groups"
+                    : currentLanguage === "fr"
+                      ? "Découvrir les ethnies"
+                      : currentLanguage === "es"
+                        ? "Descubrir grupos étnicos"
+                        : "Descobrir grupos étnicos"}
+                </p>
+              </div>
+              <Button className="w-full" variant="default">
+                {currentLanguage === "en"
+                  ? "View Ethnicities"
+                  : currentLanguage === "fr"
+                    ? "Voir les ethnies"
+                    : currentLanguage === "es"
+                      ? "Ver etnias"
+                      : "Ver etnias"}
+              </Button>
+            </div>
+          </Card>
+
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+            onClick={() => router.push(countriesRoute)}
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <MapPin className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{t.byCountry}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {currentLanguage === "en"
+                    ? "Browse by country"
+                    : currentLanguage === "fr"
+                      ? "Parcourir par pays"
+                      : currentLanguage === "es"
+                        ? "Navegar por país"
+                        : "Navegar por país"}
+                </p>
+              </div>
+              <Button className="w-full" variant="default">
+                {currentLanguage === "en"
+                  ? "View Countries"
+                  : currentLanguage === "fr"
+                    ? "Voir les pays"
+                    : currentLanguage === "es"
+                      ? "Ver países"
+                      : "Ver países"}
+              </Button>
+            </div>
+          </Card>
+
+          <Card
+            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
+            onClick={() => router.push(regionsRoute)}
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <Globe className="h-8 w-8 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{t.regions}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {currentLanguage === "en"
+                    ? "Explore by region"
+                    : currentLanguage === "fr"
+                      ? "Explorer par région"
+                      : currentLanguage === "es"
+                        ? "Explorar por región"
+                        : "Explorar por região"}
+                </p>
+              </div>
+              <Button className="w-full" variant="default">
+                {currentLanguage === "en"
+                  ? "View Regions"
+                  : currentLanguage === "fr"
+                    ? "Voir les régions"
+                    : currentLanguage === "es"
+                      ? "Ver regiones"
+                      : "Ver regiões"}
+              </Button>
+            </div>
+          </Card>
         </div>
       </div>
     </PageLayout>

@@ -128,6 +128,38 @@ export const MobileMenu = ({
             </Button>
           </Link>
 
+          {/* Contribute link */}
+          <Link
+            href={`/${language}/contribute`}
+            onClick={() => onOpenChange(false)}
+          >
+            <Button variant="ghost" className="w-full justify-start">
+              {language === "en"
+                ? "Contribute"
+                : language === "fr"
+                  ? "Contribuer"
+                  : language === "es"
+                    ? "Contribuir"
+                    : "Contribuir"}
+            </Button>
+          </Link>
+
+          {/* Report Error link */}
+          <Link
+            href={`/${language}/report-error`}
+            onClick={() => onOpenChange(false)}
+          >
+            <Button variant="ghost" className="w-full justify-start">
+              {language === "en"
+                ? "Report Error"
+                : language === "fr"
+                  ? "Signaler une erreur"
+                  : language === "es"
+                    ? "Reportar error"
+                    : "Reportar erro"}
+            </Button>
+          </Link>
+
           <Separator />
 
           {/* Language selector */}

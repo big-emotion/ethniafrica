@@ -28,12 +28,25 @@ export const DesktopNavBar = ({
   const currentPage = getPageFromRoute(pathname);
   const isHome = pathname === `/${language}` || pathname === "/";
   const isAbout = pathname === `/${language}/about` || pathname === "/about";
+  const isContribute =
+    pathname === `/${language}/contribute` || pathname === "/contribute";
+  const isReportError =
+    pathname === `/${language}/report-error` || pathname === "/report-error";
 
   const isActive = (
-    pageType: "regions" | "countries" | "ethnicities" | "home" | "about"
+    pageType:
+      | "regions"
+      | "countries"
+      | "ethnicities"
+      | "home"
+      | "about"
+      | "contribute"
+      | "report-error"
   ) => {
     if (pageType === "home") return isHome;
     if (pageType === "about") return isAbout;
+    if (pageType === "contribute") return isContribute;
+    if (pageType === "report-error") return isReportError;
     return currentPage === pageType;
   };
 
@@ -89,6 +102,10 @@ export const DesktopNavBar = ({
                 {t.byEthnicity}
               </Button>
             </Link>
+          </div>
+
+          {/* Right side: About, Contribute, Report Error, Language selector */}
+          <div className="flex items-center gap-2">
             <Link href={`/${language}/about`}>
               <Button
                 variant={isActive("about") ? "default" : "ghost"}
@@ -97,10 +114,34 @@ export const DesktopNavBar = ({
                 {t.whyThisSite}
               </Button>
             </Link>
-          </div>
-
-          {/* Language selector */}
-          <div className="flex items-center">
+            <Link href={`/${language}/contribute`}>
+              <Button
+                variant={isActive("contribute") ? "default" : "ghost"}
+                size="sm"
+              >
+                {language === "en"
+                  ? "Contribute"
+                  : language === "fr"
+                    ? "Contribuer"
+                    : language === "es"
+                      ? "Contribuir"
+                      : "Contribuir"}
+              </Button>
+            </Link>
+            <Link href={`/${language}/report-error`}>
+              <Button
+                variant={isActive("report-error") ? "default" : "ghost"}
+                size="sm"
+              >
+                {language === "en"
+                  ? "Report Error"
+                  : language === "fr"
+                    ? "Signaler une erreur"
+                    : language === "es"
+                      ? "Reportar error"
+                      : "Reportar erro"}
+              </Button>
+            </Link>
             <LanguageSelector
               currentLang={language}
               onLanguageChange={onLanguageChange}
