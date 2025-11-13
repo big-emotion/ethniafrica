@@ -129,36 +129,40 @@ export const MobileMenu = ({
           </Link>
 
           {/* Contribute link */}
-          <Link
-            href={`/${language}/contribute`}
-            onClick={() => onOpenChange(false)}
+          <Button
+            variant="ghost"
+            className="w-full justify-start"
+            onClick={() => {
+              onOpenChange(false);
+              window.location.href = `/${language}/contribute`;
+            }}
           >
-            <Button variant="ghost" className="w-full justify-start">
-              {language === "en"
-                ? "Contribute"
-                : language === "fr"
-                  ? "Contribuer"
-                  : language === "es"
-                    ? "Contribuir"
-                    : "Contribuir"}
-            </Button>
-          </Link>
+            {language === "en"
+              ? "Contribute"
+              : language === "fr"
+                ? "Contribuer"
+                : language === "es"
+                  ? "Contribuir"
+                  : "Contribuir"}
+          </Button>
 
           {/* Report Error link */}
-          <Link
-            href={`/${language}/report-error`}
-            onClick={() => onOpenChange(false)}
+          <Button
+            variant="ghost"
+            className="w-full justify-start"
+            onClick={() => {
+              onOpenChange(false);
+              window.location.href = `/${language}/report-error`;
+            }}
           >
-            <Button variant="ghost" className="w-full justify-start">
-              {language === "en"
-                ? "Report Error"
-                : language === "fr"
-                  ? "Signaler une erreur"
-                  : language === "es"
-                    ? "Reportar error"
-                    : "Reportar erro"}
-            </Button>
-          </Link>
+            {language === "en"
+              ? "Report Error"
+              : language === "fr"
+                ? "Signaler une erreur"
+                : language === "es"
+                  ? "Reportar error"
+                  : "Reportar erro"}
+          </Button>
 
           <Separator />
 

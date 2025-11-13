@@ -114,34 +114,36 @@ export const DesktopNavBar = ({
                 {t.whyThisSite}
               </Button>
             </Link>
-            <Link href={`/${language}/contribute`}>
-              <Button
-                variant={isActive("contribute") ? "default" : "ghost"}
-                size="sm"
-              >
-                {language === "en"
-                  ? "Contribute"
-                  : language === "fr"
-                    ? "Contribuer"
-                    : language === "es"
-                      ? "Contribuir"
-                      : "Contribuir"}
-              </Button>
-            </Link>
-            <Link href={`/${language}/report-error`}>
-              <Button
-                variant={isActive("report-error") ? "default" : "ghost"}
-                size="sm"
-              >
-                {language === "en"
-                  ? "Report Error"
-                  : language === "fr"
-                    ? "Signaler une erreur"
-                    : language === "es"
-                      ? "Reportar error"
-                      : "Reportar erro"}
-              </Button>
-            </Link>
+            <Button
+              variant={isActive("contribute") ? "default" : "ghost"}
+              size="sm"
+              onClick={() => {
+                window.location.href = `/${language}/contribute`;
+              }}
+            >
+              {language === "en"
+                ? "Contribute"
+                : language === "fr"
+                  ? "Contribuer"
+                  : language === "es"
+                    ? "Contribuir"
+                    : "Contribuir"}
+            </Button>
+            <Button
+              variant={isActive("report-error") ? "default" : "ghost"}
+              size="sm"
+              onClick={() => {
+                window.location.href = `/${language}/report-error`;
+              }}
+            >
+              {language === "en"
+                ? "Report Error"
+                : language === "fr"
+                  ? "Signaler une erreur"
+                  : language === "es"
+                    ? "Reportar error"
+                    : "Reportar erro"}
+            </Button>
             <LanguageSelector
               currentLang={language}
               onLanguageChange={onLanguageChange}
