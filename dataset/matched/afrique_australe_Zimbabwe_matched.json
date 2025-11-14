@@ -1,0 +1,128 @@
+{
+  "countryName": "Zimbabwe",
+  "region": "afrique_australe",
+  "countryDescription": null,
+  "ethnicities": [
+    {
+      "groupName": "Shona",
+      "subGroups": [],
+      "population": 14238929,
+      "percentageInCountry": 82,
+      "percentageInAfrica": 0.931701,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Ndebele",
+      "subGroups": [],
+      "population": 2431037,
+      "percentageInCountry": 14,
+      "percentageInAfrica": 0.159071,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres Bantous (Venda, Tonga, Kalanga)",
+      "subGroups": [],
+      "population": 347291,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.022724,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Européens",
+      "subGroups": [
+        {
+          "name": "Asiatiques",
+          "population": 86823,
+          "percentageInCountry": 0.5000028794379338,
+          "percentageInAfrica": 0.005681032716173803
+        },
+        {
+          "name": "Métis",
+          "population": 86823,
+          "percentageInCountry": 0.5000028794379338,
+          "percentageInAfrica": 0.005681032716173803
+        }
+      ],
+      "population": 173646,
+      "percentageInCountry": 1.0000057588758675,
+      "percentageInAfrica": 0.011362065432347607,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Asiatiques",
+          "population": 86823,
+          "percentageInCountry": 0.5000028794379338,
+          "percentageInAfrica": 0.005681032716173803
+        },
+        {
+          "name": "Métis",
+          "population": 86823,
+          "percentageInCountry": 0.5000028794379338,
+          "percentageInAfrica": 0.005681032716173803
+        }
+      ]
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 173645,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.011362,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

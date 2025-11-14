@@ -1,0 +1,44 @@
+{
+  "countryName": "Tchad",
+  "region": "afrique_centrale",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": ["pas d’État unifié ; empires sahéliens et royaumes soudanais"]
+    },
+    {
+      "period": "Empire du Kanem (VIIIe–XIVe siècle)",
+      "names": ["autour du lac Tchad"]
+    },
+    {
+      "period": "Empire du Bornou (XIVe–XIXe siècle)",
+      "names": ["domination kanouri"]
+    },
+    {
+      "period": "Royaume du Baguirmi (XVIe–XIXe siècle)",
+      "names": ["peuple Barma"]
+    },
+    {
+      "period": "Royaume du Ouaddaï (XVIe–XIXe siècle)",
+      "names": ["dynastie arabe mahri"]
+    },
+    {
+      "period": "Nom “Tchad”",
+      "names": ["Tsade / Chad", "grand lac"]
+    },
+    {
+      "period": "1900–1920",
+      "names": ["conquête française"]
+    },
+    {
+      "period": "1920",
+      "names": ["Colonie du Tchad (AEF)"]
+    },
+    {
+      "period": "1960",
+      "names": ["Indépendance → République du Tchad"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

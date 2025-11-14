@@ -3,7 +3,9 @@ import {
   getCountryDetailsByKey,
   getCountryRegion,
 } from "@/lib/api/datasetLoader.server";
+import { getCountryKey } from "@/lib/entityKeys";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
+import { getDataVersion, DATA_VERSION_KEYS } from "@/lib/cache/dataVersion";
 
 /**
  * @swagger
@@ -65,8 +67,11 @@ export async function GET(
     const { name } = await params;
     const decodedName = decodeURIComponent(name);
 
+    // Convertir le nom en clé si possible
+    const countryKey = getCountryKey(decodedName) || decodedName;
+
     // Essayer d'abord comme clé normalisée
-    let countryDetails = await getCountryDetailsByKey(decodedName);
+    let countryDetails = await getCountryDetailsByKey(countryKey);
 
     // Si pas trouvé, essayer comme nom direct (rétrocompatibilité temporaire)
     if (!countryDetails) {
@@ -83,7 +88,11 @@ export async function GET(
       return jsonWithCors({ error: "Country not found" }, { status: 404 });
     }
 
-    return jsonWithCors(countryDetails);
+    const dataVersion = getDataVersion(DATA_VERSION_KEYS.COUNTRIES);
+    return jsonWithCors({
+      ...countryDetails,
+      dataVersion, // Inclure la version pour invalidation automatique du cache client
+    });
   } catch (error) {
     console.error("Error fetching country:", error);
     return jsonWithCors({ error: "Failed to fetch country" }, { status: 500 });

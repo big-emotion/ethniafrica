@@ -1,0 +1,290 @@
+{
+  "countryName": "Angola",
+  "region": "afrique_australe",
+  "countryDescription": {
+    "countryName": "Angola",
+    "region": "afrique_australe",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "aucun nom unifié ; territoire composé des peuples Khoisan",
+          "Ovimbundu",
+          "Mbundu",
+          "Kongo",
+          "Lunda",
+          "Chokwe"
+        ]
+      },
+      {
+        "period": "Noms pré-coloniaux issus des royaumes",
+        "names": ["Ndongo", "Kongo", "Lunda"]
+      },
+      {
+        "period": "1575–1975",
+        "names": ["Colónia de Angola (période coloniale portugaise)"]
+      },
+      {
+        "period": "1975",
+        "names": ["République populaire d’Angola"]
+      },
+      {
+        "period": "Depuis les années 1990",
+        "names": ["République d’Angola"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Ovimbundu",
+      "subGroups": [],
+      "population": 13320000,
+      "percentageInCountry": 37,
+      "percentageInAfrica": 0.931469,
+      "languages": ["Umbundu"],
+      "region": "Plateau central (Huambo, Bié, Benguela)",
+      "sources": ["Sources historiques", "linguistiques"],
+      "ancientName": "Royaumes Ovimbundu",
+      "description": "Groupe bantu majoritaire, sociétés agricoles en plateau",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu (Umbundu)",
+      "historicalStatus": "Royaumes Ovimbundu",
+      "regionalPresence": ["Angola"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Kimbundu / Mbundu",
+      "subGroups": [],
+      "population": 9000000,
+      "percentageInCountry": 25,
+      "percentageInAfrica": 0.629371,
+      "languages": ["Kimbundu"],
+      "region": "Nord-ouest (Luanda, Malanje)",
+      "sources": ["Sources historiques"],
+      "ancientName": "Royaume Ndongo (Ngola), Royaume Matamba",
+      "description": "Deuxième groupe du pays, fortement urbanisé autour de Luanda",
+      "societyType": "Urbaine & agricole",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu (Kimbundu)",
+      "historicalStatus": "Royaumes Ndongo et Matamba",
+      "regionalPresence": ["Angola"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Bakongo",
+      "subGroups": [],
+      "population": 4680000,
+      "percentageInCountry": 13,
+      "percentageInAfrica": 0.327273,
+      "languages": ["Kikongo"],
+      "region": "Nord (Uíge, Zaire)",
+      "sources": ["Sources historiques"],
+      "ancientName": "Royaume Kongo",
+      "description": "Ancienne puissance régionale transfrontalière",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme",
+      "linguisticFamily": "Bantu (Kongo)",
+      "historicalStatus": "Royaume Kongo",
+      "regionalPresence": ["Angola", "Congo", "RDC"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Lunda-Chokwe",
+      "subGroups": [
+        {
+          "name": "Lunda",
+          "population": 1440000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 10.06995
+        },
+        {
+          "name": "Chokwe",
+          "population": 1440000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 10.06995
+        }
+      ],
+      "population": 2880000,
+      "percentageInCountry": 8,
+      "percentageInAfrica": 0.201399,
+      "languages": ["Lunda", "Chokwe"],
+      "region": "Est (Lunda Norte, Lunda Sul)",
+      "sources": ["Sources ethnologiques"],
+      "ancientName": "Empire Lunda",
+      "description": "Peuples de chasseurs, sculpteurs et commerçants",
+      "societyType": "Semi-nomade & agricole",
+      "religion": "Traditions + Christianisme",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Empire Lunda",
+      "regionalPresence": ["Angola", "RDC", "Zambie"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Lunda",
+          "population": 1440000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 10.06995
+        },
+        {
+          "name": "Chokwe",
+          "population": 1440000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 10.06995
+        }
+      ]
+    },
+    {
+      "groupName": "Nhaneka-Humbe",
+      "subGroups": [
+        {
+          "name": "Nhaneka",
+          "population": 540000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 3.7762
+        },
+        {
+          "name": "Humbe",
+          "population": 540000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 3.7762
+        }
+      ],
+      "population": 1080000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.075524,
+      "languages": ["Nhaneka-Humbe"],
+      "region": "Sud (Huila)",
+      "sources": ["Sources ethnologiques"],
+      "ancientName": "Chefferies Nhaneka-Humbe",
+      "description": "Groupes pastoraux du sud",
+      "societyType": "Agro-pastorale",
+      "religion": "Traditions + Christianisme",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Chefferies locales",
+      "regionalPresence": ["Angola"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Nhaneka",
+          "population": 540000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 3.7762
+        },
+        {
+          "name": "Humbe",
+          "population": 540000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 3.7762
+        }
+      ]
+    },
+    {
+      "groupName": "Herero",
+      "subGroups": [],
+      "population": 720000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.05035,
+      "languages": ["Otjiherero"],
+      "region": "Sud (Cunene)",
+      "sources": ["Sources ethnologiques"],
+      "ancientName": "Royaumes Herero",
+      "description": "Pasteurs transfrontaliers",
+      "societyType": "Pastorale",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Chefferies Herero",
+      "regionalPresence": ["Angola", "Namibie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Khoisan",
+      "subGroups": [
+        {
+          "name": "Khoikhoi",
+          "population": 180000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 1.25875
+        },
+        {
+          "name": "San",
+          "population": 180000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 1.25875
+        }
+      ],
+      "population": 360000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.025175,
+      "languages": ["Langues khoisan"],
+      "region": "Sud et zones désertiques",
+      "sources": ["Anthropologie"],
+      "ancientName": "Peuples San autochtones",
+      "description": "Chasseurs-cueilleurs",
+      "societyType": "Nomade",
+      "religion": "Traditions",
+      "linguisticFamily": "Khoisan",
+      "historicalStatus": "Groupes San",
+      "regionalPresence": ["Namibie", "Botswana"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Khoikhoi",
+          "population": 180000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 1.25875
+        },
+        {
+          "name": "San",
+          "population": 180000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 1.25875
+        }
+      ]
+    },
+    {
+      "groupName": "Urbains métissés",
+      "subGroups": [],
+      "population": 1800000,
+      "percentageInCountry": 5,
+      "percentageInAfrica": 0.125874,
+      "languages": ["Portugais", "langues bantu"],
+      "region": "Luanda & villes",
+      "sources": ["Archives coloniales"],
+      "ancientName": "Époque coloniale portugaise",
+      "description": "Population urbaine métissée historique",
+      "societyType": "Urbaine",
+      "religion": "Christianisme",
+      "linguisticFamily": "Créole luso-africain",
+      "historicalStatus": "Colonisation portugaise",
+      "regionalPresence": ["Angola"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 2160000,
+      "percentageInCountry": 6,
+      "percentageInAfrica": 0.151049,
+      "languages": ["Diverses langues"],
+      "region": "National",
+      "sources": ["Estimation générale"],
+      "ancientName": "Divers royaumes locaux",
+      "description": "Minorités de petite taille",
+      "societyType": "Variable",
+      "religion": "Christianisme / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Angola"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

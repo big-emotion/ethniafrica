@@ -1,0 +1,429 @@
+{
+  "countryName": "Cameroun",
+  "region": "afrique_centrale",
+  "countryDescription": {
+    "countryName": "Cameroun",
+    "region": "afrique_centrale",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "aucun nom unifié ; territoire composé de royaumes Bamoun",
+          "chefferies Bamiléké",
+          "Beti-Fang-Bulu",
+          "sultanats Mandara et Kotoko",
+          "peuples Sawa et pygmées Baka"
+        ]
+      },
+      {
+        "period": "1472",
+        "names": ["Rio dos Camarões (Portugais) → origine du mot Cameroun"]
+      },
+      {
+        "period": "1884–1916",
+        "names": ["Kamerun (colonie allemande)"]
+      },
+      {
+        "period": "1916–1960",
+        "names": ["Cameroun français & Cameroons britanniques"]
+      },
+      {
+        "period": "1960",
+        "names": ["République du Cameroun"]
+      },
+      {
+        "period": "1961",
+        "names": ["République fédérale du Cameroun"]
+      },
+      {
+        "period": "1972",
+        "names": ["République unie du Cameroun"]
+      },
+      {
+        "period": "1984",
+        "names": ["République du Cameroun (nom actuel)"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Beti-Fang-Bulu",
+      "subGroups": [
+        {
+          "name": "Beti",
+          "population": 1875000,
+          "percentageInCountry": 625,
+          "percentageInAfrica": 13.111900000000002
+        },
+        {
+          "name": "Bulu",
+          "population": 1875000,
+          "percentageInCountry": 625,
+          "percentageInAfrica": 13.111900000000002
+        },
+        {
+          "name": "Fang",
+          "population": 1875000,
+          "percentageInCountry": 625,
+          "percentageInAfrica": 13.111900000000002
+        },
+        {
+          "name": "Ewondo",
+          "population": 1875000,
+          "percentageInCountry": 625,
+          "percentageInAfrica": 13.111900000000002
+        }
+      ],
+      "population": 7500000,
+      "percentageInCountry": 25,
+      "percentageInAfrica": 0.524476,
+      "languages": ["Ewondo", "Bulu", "Fang"],
+      "region": "Centre, Sud, Est (Yaoundé et environs)",
+      "sources": ["Recensements nationaux", "ethnologie camerounaise"],
+      "ancientName": "Chefferies Beti et Fang",
+      "description": "Groupe forestier du Centre-Sud, fortement présent dans l'administration",
+      "societyType": "Sédentaire forestière & urbaine",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu (groupe Beti-Fang)",
+      "historicalStatus": "Chefferies Beti-Fang",
+      "regionalPresence": ["Cameroun", "Guinée équatoriale", "Gabon"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Beti",
+          "population": 1875000,
+          "percentageInCountry": 625,
+          "percentageInAfrica": 13.111900000000002
+        },
+        {
+          "name": "Bulu",
+          "population": 1875000,
+          "percentageInCountry": 625,
+          "percentageInAfrica": 13.111900000000002
+        },
+        {
+          "name": "Fang",
+          "population": 1875000,
+          "percentageInCountry": 625,
+          "percentageInAfrica": 13.111900000000002
+        },
+        {
+          "name": "Ewondo",
+          "population": 1875000,
+          "percentageInCountry": 625,
+          "percentageInAfrica": 13.111900000000002
+        }
+      ]
+    },
+    {
+      "groupName": "Bamiléké & Grassfields",
+      "subGroups": [
+        {
+          "name": "Bamiléké",
+          "population": 3000000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 20.979
+        },
+        {
+          "name": "Bamenda Grassfields",
+          "population": 3000000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 20.979
+        }
+      ],
+      "population": 6000000,
+      "percentageInCountry": 20,
+      "percentageInAfrica": 0.41958,
+      "languages": ["Langues bamiléké et grassfields"],
+      "region": "Ouest, Nord-Ouest (Bafoussam, Bamenda)",
+      "sources": ["Sources historiques régionales"],
+      "ancientName": "Chefferies de l’Ouest (royaumes bamiléké)",
+      "description": "Sociétés de chefferies très denses, agricoles et commerçantes",
+      "societyType": "Sédentaire agricole & urbaine",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu (Grassfields)",
+      "historicalStatus": "Royaumes bamiléké et bamoun",
+      "regionalPresence": ["Cameroun"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Bamiléké",
+          "population": 3000000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 20.979
+        },
+        {
+          "name": "Bamenda Grassfields",
+          "population": 3000000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 20.979
+        }
+      ]
+    },
+    {
+      "groupName": "Sawa",
+      "subGroups": [
+        {
+          "name": "côtiers",
+          "population": 3000000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 20.979
+        }
+      ],
+      "population": 3000000,
+      "percentageInCountry": 10,
+      "percentageInAfrica": 0.20979,
+      "languages": ["Douala", "Bassa", "langues côtières"],
+      "region": "Littoral (Douala, côte atlantique)",
+      "sources": ["Ethnologie camerounaise"],
+      "ancientName": "Cités-États côtières sawa",
+      "description": "Peuples côtiers commerçants, tournés vers l'Atlantique",
+      "societyType": "Côtière & urbaine",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Chefferies sawa du littoral",
+      "regionalPresence": ["Cameroun"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "côtiers",
+          "population": 3000000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 20.979
+        }
+      ]
+    },
+    {
+      "groupName": "Peul / Fulani",
+      "subGroups": [
+        {
+          "name": "Fulɓe (Mbororo",
+          "population": 1500000,
+          "percentageInCountry": 500,
+          "percentageInAfrica": 10.4895
+        },
+        {
+          "name": "Peuls sédentaires)",
+          "population": 1500000,
+          "percentageInCountry": 500,
+          "percentageInAfrica": 10.4895
+        }
+      ],
+      "population": 3000000,
+      "percentageInCountry": 10,
+      "percentageInAfrica": 0.20979,
+      "languages": ["Fulfulde"],
+      "region": "Nord, Adamaoua",
+      "sources": ["Études sahéliennes"],
+      "ancientName": "Lamidats peuls (Garoua, Ngaoundéré)",
+      "description": "Pasteurs et agro-pasteurs du Nord",
+      "societyType": "Pastorale & agro-pastorale",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Atlantique (Fulani)",
+      "historicalStatus": "Lamidats peuls",
+      "regionalPresence": ["Cameroun", "Nigeria", "Tchad", "Niger"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Fulɓe (Mbororo",
+          "population": 1500000,
+          "percentageInCountry": 500,
+          "percentageInAfrica": 10.4895
+        },
+        {
+          "name": "Peuls sédentaires)",
+          "population": 1500000,
+          "percentageInCountry": 500,
+          "percentageInAfrica": 10.4895
+        }
+      ]
+    },
+    {
+      "groupName": "Kirdi",
+      "subGroups": [
+        {
+          "name": "montagnards du Nord",
+          "population": 3600000,
+          "percentageInCountry": 1200,
+          "percentageInAfrica": 25.1748
+        }
+      ],
+      "population": 3600000,
+      "percentageInCountry": 12,
+      "percentageInAfrica": 0.251748,
+      "languages": ["Diverses langues tchadiques et adamawa"],
+      "region": "Nord et Extrême-Nord (montagnes, plaines)",
+      "sources": ["Anthropologie du Nord-Cameroun"],
+      "ancientName": "Chefferies montagnardes pré-islamiques",
+      "description": "Peuples longtemps non islamisés, montagnards ou de savane",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme + religions traditionnelles",
+      "linguisticFamily": "Chadique, Adamawa (Niger-Congo)",
+      "historicalStatus": "Chefferies Kirdi",
+      "regionalPresence": ["Cameroun", "Tchad", "Nigeria"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "montagnards du Nord",
+          "population": 3600000,
+          "percentageInCountry": 1200,
+          "percentageInAfrica": 25.1748
+        }
+      ]
+    },
+    {
+      "groupName": "Bamoun",
+      "subGroups": [],
+      "population": 1200000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.083916,
+      "languages": ["Shu Pamom"],
+      "region": "Ouest (Foumban)",
+      "sources": ["Histoire du royaume bamoun"],
+      "ancientName": "Royaume bamoun",
+      "description": "Ancien royaume islamisé avec art et écriture propres (Shü-mom)",
+      "societyType": "Sédentaire urbaine & agricole",
+      "religion": "Islam + christianisme + traditions",
+      "linguisticFamily": "Bantu (Grassfields)",
+      "historicalStatus": "Royaume bamoun",
+      "regionalPresence": ["Cameroun"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Arabes Choa & sahéliens",
+      "subGroups": [
+        {
+          "name": "Arabes Choa",
+          "population": 300000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 2.0979
+        },
+        {
+          "name": "Shuwa",
+          "population": 300000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 2.0979
+        },
+        {
+          "name": "Kotoko",
+          "population": 300000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 2.0979
+        }
+      ],
+      "population": 900000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.062937,
+      "languages": ["Arabe choa", "kotoko"],
+      "region": "Extrême-Nord (bassin du Logone et du lac Tchad)",
+      "sources": ["Sources sahéliennes"],
+      "ancientName": "Chefferies kotoko, routes sahéliennes",
+      "description": "Populations sahéliennes mêlant influences arabes et locales",
+      "societyType": "Agro-pastorale & fluviale",
+      "religion": "Islam",
+      "linguisticFamily": "Sémitique (arabe) + nilo-saharien",
+      "historicalStatus": "Chefferies du bassin du lac Tchad",
+      "regionalPresence": ["Tchad", "Cameroun", "Nigeria"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Arabes Choa",
+          "population": 300000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 2.0979
+        },
+        {
+          "name": "Shuwa",
+          "population": 300000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 2.0979
+        },
+        {
+          "name": "Kotoko",
+          "population": 300000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 2.0979
+        }
+      ]
+    },
+    {
+      "groupName": "Peuples de forêt profonde",
+      "subGroups": [
+        {
+          "name": "Baka",
+          "population": 100000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 0.6993000000000001
+        },
+        {
+          "name": "Bagyeli",
+          "population": 100000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 0.6993000000000001
+        },
+        {
+          "name": "Bakola",
+          "population": 100000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 0.6993000000000001
+        }
+      ],
+      "population": 300000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.020979,
+      "languages": ["Langues oubanguiennes et bantoues"],
+      "region": "Sud et Est forestier",
+      "sources": ["Anthropologie des forêts d'Afrique centrale"],
+      "ancientName": "Peuples autochtones de la forêt",
+      "description": "Chasseurs-cueilleurs progressivement sédentarisés",
+      "societyType": "Semi-nomade & forestière",
+      "religion": "Traditions + christianisme",
+      "linguisticFamily": "Oubanguien + Bantu",
+      "historicalStatus": "Peuples pygmées d’Afrique centrale",
+      "regionalPresence": ["Cameroun", "Gabon", "Congo"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Baka",
+          "population": 100000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 0.6993000000000001
+        },
+        {
+          "name": "Bagyeli",
+          "population": 100000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 0.6993000000000001
+        },
+        {
+          "name": "Bakola",
+          "population": 100000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 0.6993000000000001
+        }
+      ]
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 4500000,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 0.314685,
+      "languages": ["Français", "pidgin", "langues locales"],
+      "region": "Grandes villes (Douala, Yaoundé) et zones mixtes",
+      "sources": ["Estimations démographiques"],
+      "ancientName": "Époques coloniales & postcoloniales",
+      "description": "Ensemble de petites communautés sans majorité régionale",
+      "societyType": "Urbaine & variable",
+      "religion": "Christianisme / Islam / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Cameroun"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

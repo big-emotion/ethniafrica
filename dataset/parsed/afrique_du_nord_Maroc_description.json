@@ -1,0 +1,41 @@
+{
+  "countryName": "Maroc",
+  "region": "afrique_du_nord",
+  "ancientNames": [
+    {
+      "period": "Avant les conquêtes",
+      "names": [
+        "pas de nom unifié ; territoires amazighs (Imazighen)",
+        "royaumes du Souss",
+        "émirat de Nekor",
+        "tribus du Rif et de l’Atlas"
+      ]
+    },
+    {
+      "period": "Antiquité",
+      "names": ["Maurétanie (royaumes Maure & Massyle)"]
+    },
+    {
+      "period": "Conquête islamique",
+      "names": ["Maghrib al‑Aqsa"]
+    },
+    {
+      "period": "Dynasties",
+      "names": [
+        "Idrissides",
+        "Almoravides",
+        "Almohades",
+        "Mérinides",
+        "Wattassides",
+        "Saâdiens",
+        "Alaouites"
+      ]
+    },
+    {
+      "period": "1956",
+      "names": ["Royaume du Maroc"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

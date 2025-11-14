@@ -1,0 +1,41 @@
+{
+  "countryName": "Ghana",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "royaumes Akan (Bono",
+        "Akwamu",
+        "Denkyira",
+        "Asante",
+        "Fante",
+        "Akuapem)",
+        "peuples Ga–Dangme",
+        "Guan",
+        "Gur et Mandé"
+      ]
+    },
+    {
+      "period": "Empire du Ghana (Wagadu)",
+      "names": [
+        "IIIe–XIIIe s. — ⚠️ situé en Mauritanie/Mali",
+        "pas dans le Ghana actuel"
+      ]
+    },
+    {
+      "period": "XVe–XIXe siècle",
+      "names": ["présence portugaise", "néerlandaise puis britannique"]
+    },
+    {
+      "period": "Nom colonial",
+      "names": ["Côte-de-l’Or (Gold Coast)"]
+    },
+    {
+      "period": "1957",
+      "names": ["Ghana"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

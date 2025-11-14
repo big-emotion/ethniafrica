@@ -126,10 +126,19 @@ export async function getCountryDetails(
     percentageInCountry: number;
     percentageInRegion: number;
     percentageInAfrica: number;
+    isParent: boolean;
+    parentName?: string;
+    subgroups?: Array<{
+      name: string;
+      population: number;
+      percentageInCountry: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+    }>;
   }>;
   description?: string;
-  ancientNames?: string[]; // Max 3 pour le résumé
-  allAncientNames?: string[]; // Tous pour la section détaillée
+  ancientNames?: Array<{ period: string; names: string[] }>; // Max 3 entrées pour le résumé
+  allAncientNames?: Array<{ period: string; names: string[] }>; // Toutes les entrées pour la section détaillée
   topEthnicities?: Array<{
     name: string;
     languages: string[];
@@ -192,12 +201,12 @@ export async function getCountryRegion(
       return null;
     }
     const data = await response.json();
-    // Extraire la région depuis les données
-    // On peut aussi utiliser l'API regions pour trouver la région
-    const regions = await getRegions();
-    for (const region of regions) {
-      const countries = await getCountriesInRegion(region.key);
-      if (countries.some((c) => c.name === countryName)) {
+    // Extraire la région depuis les données du pays (plus efficace)
+    if (data.region) {
+      // Convertir le nom de région en clé
+      const regions = await getRegions();
+      const region = regions.find((r) => r.data.name === data.region);
+      if (region) {
         return region.key;
       }
     }

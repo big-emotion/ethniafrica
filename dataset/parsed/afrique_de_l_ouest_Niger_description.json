@@ -1,0 +1,43 @@
+{
+  "countryName": "Niger",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "pas d’État unifié ; zones touareg",
+        "haoussa",
+        "zarma-sonraï",
+        "peul",
+        "toubou",
+        "kanouri"
+      ]
+    },
+    {
+      "period": "Le nom « Niger » vient du fleuve Niger (probable origine",
+      "names": ["Ni Gir", "Négher"]
+    },
+    {
+      "period": "Empire songhaï (Gao)",
+      "names": ["influence sur l’ouest"]
+    },
+    {
+      "period": "Empire Kanem-Bornou",
+      "names": ["influence sur le sud-est"]
+    },
+    {
+      "period": "1900",
+      "names": ["Conquête française"]
+    },
+    {
+      "period": "1922",
+      "names": ["Colonie du Niger"]
+    },
+    {
+      "period": "1960",
+      "names": ["Indépendance → République du Niger"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

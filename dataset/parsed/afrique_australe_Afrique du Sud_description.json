@@ -1,0 +1,41 @@
+{
+  "countryName": "Afrique du Sud",
+  "region": "afrique_australe",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "aucun nom unifié ; territoire composé de peuples Khoisan",
+        "Nguni",
+        "Sotho-Tswana",
+        "Venda et Tsonga"
+      ]
+    },
+    {
+      "period": "Noms utilisés par les navigateurs (1488–1652)",
+      "names": ["Cabo da Boa Esperança", "Terra dos Fumos", "Southern Africa"]
+    },
+    {
+      "period": "1652–1795",
+      "names": ["Dutch Cape Colony (Colonie du Cap)"]
+    },
+    {
+      "period": "1795–1910",
+      "names": ["British Cape Colony"]
+    },
+    {
+      "period": "XIXe siècle",
+      "names": ["États boers (Transvaal", "Orange Free State", "Natal)"]
+    },
+    {
+      "period": "1910–1961",
+      "names": ["Union of South Africa"]
+    },
+    {
+      "period": "Depuis 1961",
+      "names": ["Republic of South Africa"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

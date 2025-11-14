@@ -1,0 +1,45 @@
+{
+  "countryName": "Mali",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant l’époque impériale",
+      "names": [
+        "territoires proto‑mandé",
+        "soninke",
+        "peuls",
+        "bozo ; aucun nom unifié"
+      ]
+    },
+    {
+      "period": "IIIe–XIIIe siècle",
+      "names": ["Empire du Ghana (Wagadu)", "dominé par les Soninke"]
+    },
+    {
+      "period": "XIIIe–XVIe siècle",
+      "names": ["Empire du Mali (fondé par Soundiata Keïta)", "capitale Niani"]
+    },
+    {
+      "period": "XVe–XVIe siècle",
+      "names": ["Empire Songhai (Gao", "Tombouctou", "Djenné)"]
+    },
+    {
+      "period": "Royaumes touaregs",
+      "names": ["Kel Adagh", "Ifoghas", "Tagelmoust"]
+    },
+    {
+      "period": "1892–1958",
+      "names": ["Soudan français (AOF)"]
+    },
+    {
+      "period": "1959–1960",
+      "names": ["Fédération du Mali"]
+    },
+    {
+      "period": "Depuis 1960",
+      "names": ["République du Mali"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

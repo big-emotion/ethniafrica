@@ -2,10 +2,15 @@ import * as fs from "fs";
 import * as path from "path";
 import { normalizeToKey } from "../src/lib/normalize";
 
+interface AncientNameEntry {
+  period: string;
+  names: string[];
+}
+
 interface ParsedCountryDescription {
   countryName: string;
   region: string;
-  ancientNames: string[]; // Max 3
+  ancientNames: AncientNameEntry[]; // Max 3 entrées
   description: string;
   ethnicities: ParsedEthnicityDescription[];
 }
@@ -234,92 +239,127 @@ function parseDescriptionFile(
           collectingAncientNames = false;
         }
 
-        // Extraire les noms de différentes façons
-        if (line && result.ancientNames.length < 3) {
-          // Ignorer les lignes qui sont clairement des titres ou des descriptions
+        // Extraire les entrées avec période et noms (sans limite)
+        if (line) {
+          // Ignorer les lignes qui sont clairement des titres
           if (
             line.match(/^#+\s*/) ||
             line.match(/^🟩|^🟦|^🟨|^🟪|^🟧|^🟫|^⬜/) ||
-            line.match(/^👉|^✔️|^🧭|^🎯/) ||
-            line.match(
-              /^(Avant|Période|L'unification|Le nom|Noms utilisés|Première entité|Nom actuel)/i
-            ) ||
-            (line.length > 150 && !line.match(/\*\*([^*]+)\*\*/))
+            line.match(/^👉|^✔️|^🧭|^🎯/)
           ) {
             // Ne rien faire pour ces lignes
           }
-          // Format avec tiret ou puce contenant **Nom**
-          else if (line.match(/^[-•]\s*\*\*([^*]+)\*\*/)) {
-            const match = line.match(/^[-•]\s*\*\*([^*]+)\*\*/);
-            if (match && match[1]) {
-              const name = extractNameFromLine(match[1]);
-              if (name && !result.ancientNames.includes(name)) {
-                result.ancientNames.push(name);
+          // Format principal: "- [Période] : [Noms séparés par virgules]"
+          else if (line.match(/^[-•]\s*.+:\s*.+/)) {
+            const cleanedLine = line.replace(/^[-•]\s*/, "").trim();
+            const colonIndex = cleanedLine.indexOf(":");
+
+            if (colonIndex > 0) {
+              const period = cleanedLine.substring(0, colonIndex).trim();
+              const namesPart = cleanedLine.substring(colonIndex + 1).trim();
+
+              // Extraire les noms (séparés par virgules, avec guillemets possibles)
+              const names: string[] = [];
+
+              // Normaliser tous les types de guillemets vers des guillemets droits pour faciliter l'extraction
+              // Guillemets typographiques: " " (U+201C U+201D), " " (U+201E U+201C)
+              // Guillemets français: « » (U+00AB U+00BB)
+              // Guillemets simples: ' ' (U+2018 U+2019)
+              const normalized = namesPart
+                .replace(/\u201C/g, '"') // LEFT DOUBLE QUOTATION MARK
+                .replace(/\u201D/g, '"') // RIGHT DOUBLE QUOTATION MARK
+                .replace(/\u201E/g, '"') // DOUBLE LOW-9 QUOTATION MARK
+                .replace(/\u00AB/g, '"') // LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+                .replace(/\u00BB/g, '"') // RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+                .replace(/\u2018/g, '"') // LEFT SINGLE QUOTATION MARK
+                .replace(/\u2019/g, '"') // RIGHT SINGLE QUOTATION MARK
+                .replace(/\u201A/g, '"') // SINGLE LOW-9 QUOTATION MARK
+                .replace(/\u201B/g, '"'); // SINGLE HIGH-REVERSED-9 QUOTATION MARK
+
+              // Extraire les noms entre guillemets droits
+              const quotedPattern = /"([^"]+)"/g;
+              let match;
+              const foundQuoted: string[] = [];
+
+              while ((match = quotedPattern.exec(normalized)) !== null) {
+                const name = match[1].trim();
+                if (name && name.length > 0) {
+                  foundQuoted.push(name);
+                }
+              }
+
+              if (foundQuoted.length > 0) {
+                names.push(...foundQuoted);
+              } else {
+                // Si pas de guillemets trouvés, séparer par virgules
+                const splitNames = namesPart.split(",");
+                for (const name of splitNames) {
+                  // Enlever tous types de guillemets (typographiques et droits)
+                  let cleaned = name.replace(/["""«»'']/g, "").trim();
+                  // Enlever les points en fin
+                  cleaned = cleaned.replace(/\.\s*$/, "").trim();
+                  if (cleaned && cleaned.length > 0) {
+                    names.push(cleaned);
+                  }
+                }
+              }
+
+              if (period && names.length > 0) {
+                result.ancientNames.push({ period, names });
               }
             }
           }
-          // Format avec tiret ou puce
-          else if (line.match(/^[-•]\s*/)) {
-            const name = extractNameFromLine(line);
-            if (name && !result.ancientNames.includes(name)) {
-              result.ancientNames.push(name);
-            }
-          }
-          // Format avec numéro contenant **Nom** (ex: "1. **Nom**")
-          else if (line.match(/^\d+[.)]\s+\*\*([^*]+)\*\*/)) {
-            const match = line.match(/^\d+[.)]\s+\*\*([^*]+)\*\*/);
-            if (match && match[1]) {
-              const name = extractNameFromLine(match[1]);
-              if (name && !result.ancientNames.includes(name)) {
-                result.ancientNames.push(name);
+          // Format avec numéro: "1. [Période] : [Noms]"
+          else if (line.match(/^\d+[.)]\s*.+:\s*.+/)) {
+            const cleanedLine = line.replace(/^\d+[.)]\s*/, "").trim();
+            const colonIndex = cleanedLine.indexOf(":");
+
+            if (colonIndex > 0) {
+              const period = cleanedLine.substring(0, colonIndex).trim();
+              const namesPart = cleanedLine.substring(colonIndex + 1).trim();
+
+              const names: string[] = [];
+
+              // Pattern pour matcher les noms entre guillemets typographiques ou droits
+              const quotedPattern =
+                /[""]([^""]+)[""]|[""]([^""]+)[""]|«([^»]+)»|'([^']+)'|"([^"]+)"/g;
+              let match;
+              const foundQuoted = [];
+
+              // Réinitialiser lastIndex pour éviter les problèmes
+              quotedPattern.lastIndex = 0;
+
+              while ((match = quotedPattern.exec(namesPart)) !== null) {
+                const name = (
+                  match[1] ||
+                  match[2] ||
+                  match[3] ||
+                  match[4] ||
+                  match[5] ||
+                  ""
+                ).trim();
+                if (name && name.length > 0) {
+                  foundQuoted.push(name);
+                }
               }
-            }
-          }
-          // Format avec numéro (ex: "1. Nom", "2) Nom")
-          else if (line.match(/^\d+[.)]\s+/)) {
-            const name = extractNameFromLine(line);
-            if (name && !result.ancientNames.includes(name)) {
-              result.ancientNames.push(name);
-            }
-          }
-          // Format avec "→" (ex: "→ Apparaît le terme Maghrib al-Aqsa")
-          else if (line.includes("→")) {
-            const name = extractNameFromLine(line, true);
-            if (name && !result.ancientNames.includes(name)) {
-              result.ancientNames.push(name);
-            }
-          }
-          // Format avec ":" (ex: "Nom : Algérie française", "**Nom** : ...")
-          else if (line.match(/:\s*[A-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞŸ]/)) {
-            const name = extractNameFromLine(line, true);
-            if (name && !result.ancientNames.includes(name)) {
-              result.ancientNames.push(name);
-            }
-          }
-          // Format avec ** (ex: "**Cabo da Boa Esperança**")
-          else if (line.match(/\*\*([^*]+)\*\*/)) {
-            const match = line.match(/\*\*([^*]+)\*\*/);
-            if (match && match[1]) {
-              const name = extractNameFromLine(match[1]);
-              if (name && !result.ancientNames.includes(name)) {
-                result.ancientNames.push(name);
+
+              if (foundQuoted.length > 0) {
+                names.push(...foundQuoted);
+              } else {
+                // Si pas de guillemets, séparer par virgules
+                const splitNames = namesPart.split(",");
+                for (const name of splitNames) {
+                  let cleaned = name.replace(/["""«»'']/g, "").trim();
+                  cleaned = cleaned.replace(/\.\s*$/, "").trim();
+                  if (cleaned && cleaned.length > 0) {
+                    names.push(cleaned);
+                  }
+                }
               }
-            }
-          }
-          // Ligne qui semble être un nom (commence par majuscule, pas trop long, pas de verbe)
-          else if (
-            line.match(/^[A-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞŸ]/) &&
-            line.length < 100 &&
-            !line.match(
-              /\s+(est|était|sont|étaient|a|ont|avait|avaient|s'appelle|se nomme|désigne|désignent)/i
-            ) &&
-            !line.match(
-              /^(Le|La|Les|Un|Une|Des|Ce|Cette|Ces|Il|Elle|Ils|Elles|C'est|C'était|Le territoire|Le pays|Les territoires)/i
-            )
-          ) {
-            const name = extractNameFromLine(line);
-            if (name && !result.ancientNames.includes(name)) {
-              result.ancientNames.push(name);
+
+              if (period && names.length > 0) {
+                result.ancientNames.push({ period, names });
+              }
             }
           }
         }
@@ -434,8 +474,8 @@ function parseDescriptionFile(
     }
   }
 
-  // Limiter à 3 anciens noms maximum
-  result.ancientNames = result.ancientNames.slice(0, 3);
+  // Ne pas limiter ici - on limitera à 3 seulement pour l'affichage dans la vue détaillée
+  // Cela permet d'avoir toutes les entrées dans allAncientNames pour la page dédiée
 
   return result;
 }

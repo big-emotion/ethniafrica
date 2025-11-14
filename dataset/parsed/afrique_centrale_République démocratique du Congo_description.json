@@ -1,0 +1,40 @@
+{
+  "countryName": "République démocratique du Congo",
+  "region": "afrique_centrale",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "aucun nom unifié ; mosaïque de royaumes et chefferies (Empire Luba",
+        "Empire Lunda",
+        "Royaume Kongo",
+        "royaumes Mangbetu",
+        "sultanats Zande",
+        "chefferies Mongo",
+        "etc.)"
+      ]
+    },
+    {
+      "period": "1885–1908",
+      "names": ["État indépendant du Congo (propriété du roi Léopold II)"]
+    },
+    {
+      "period": "1908–1960",
+      "names": ["Congo belge"]
+    },
+    {
+      "period": "1960–1964",
+      "names": ["République du Congo (Léopoldville)"]
+    },
+    {
+      "period": "1971–1997",
+      "names": ["Zaïre"]
+    },
+    {
+      "period": "Depuis 1997",
+      "names": ["République démocratique du Congo"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

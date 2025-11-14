@@ -1,0 +1,172 @@
+{
+  "countryName": "Égypte",
+  "region": "afrique_du_nord",
+  "ethnicities": [
+    {
+      "groupName": "Égyptiens",
+      "subGroups": [
+        {
+          "name": "Arabes égyptianisés",
+          "population": 100800000,
+          "percentageInCountry": 9000,
+          "percentageInAfrica": 704.8951
+        }
+      ],
+      "population": 100800000,
+      "percentageInCountry": 90,
+      "percentageInAfrica": 7.048951,
+      "languages": ["Arabe égyptien"],
+      "region": "Vallée du Nil, Delta, grandes villes",
+      "sources": ["CAPMAS Égypte", "Ethnologue"],
+      "ancientName": "Kemet, Pharaons, conquête arabe",
+      "description": "Population majoritaire issue d’un mélange pharaonique et arabe",
+      "societyType": "Urbaine & rurale agricole",
+      "religion": "Islam sunnite (90%) + Christianisme (10%)",
+      "linguisticFamily": "Sémitique (arabe) + substrat afro-asiatique",
+      "historicalStatus": "Royaumes pharaoniques, califats arabes",
+      "regionalPresence": ["Diaspora mondiale"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Nubiens",
+      "subGroups": [
+        {
+          "name": "Nubiens (Kenouz",
+          "population": 560000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 3.9161
+        },
+        {
+          "name": "Fadija)",
+          "population": 560000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 3.9161
+        }
+      ],
+      "population": 1120000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.078322,
+      "languages": ["Nobiin", "Kenzi", "Fadija"],
+      "region": "Sud Égypte (Assouan), Nubie",
+      "sources": ["CAPMAS", "UNESCO"],
+      "ancientName": "Royaumes de Nubie",
+      "description": "Peuple autochtone de la Nubie",
+      "societyType": "Sédentaire agricole fluvial",
+      "religion": "Islam",
+      "linguisticFamily": "Nilo-saharienne",
+      "historicalStatus": "Royaumes de Nubie (Nobatie, Makurie)",
+      "regionalPresence": ["Soudan"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Bédouins",
+      "subGroups": [
+        {
+          "name": "Arabes bédouins (Sinaï",
+          "population": 1680000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 11.74825
+        },
+        {
+          "name": "Matrouh)",
+          "population": 1680000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 11.74825
+        }
+      ],
+      "population": 3360000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.234965,
+      "languages": ["Arabe bédouin"],
+      "region": "Sinaï, Désert occidental",
+      "sources": ["Ethnologue"],
+      "ancientName": "Tribus arabes",
+      "description": "Peuples nomades",
+      "societyType": "Pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Sémitique",
+      "historicalStatus": "Tribus bédouines",
+      "regionalPresence": ["Libye", "Arabie"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Amazigh / Berbères",
+      "subGroups": [],
+      "population": 560000,
+      "percentageInCountry": 0.5,
+      "percentageInAfrica": 0.039161,
+      "languages": ["Tasiwit (berbère)"],
+      "region": "Oasis de Siwa",
+      "sources": ["IRCAM", "Ethnologue"],
+      "ancientName": "Berbères de Siwa",
+      "description": "Peuple oasisien amazigh",
+      "societyType": "Oasienne",
+      "religion": "Islam",
+      "linguisticFamily": "Berbère (afro-asiatique)",
+      "historicalStatus": "Ancien royaume berbère",
+      "regionalPresence": ["Libye"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Beja",
+      "subGroups": [],
+      "population": 224000,
+      "percentageInCountry": 0.2,
+      "percentageInAfrica": 0.015664,
+      "languages": ["Beja / Bedawi"],
+      "region": "Désert oriental (Soudan-Égypte)",
+      "sources": ["Ethnologue"],
+      "ancientName": "Tribus Beja",
+      "description": "Pasteurs nomades",
+      "societyType": "Pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Cushitique",
+      "historicalStatus": "Tribus Beja",
+      "regionalPresence": ["Soudan"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Dom",
+      "subGroups": [],
+      "population": 560000,
+      "percentageInCountry": 0.5,
+      "percentageInAfrica": 0.039161,
+      "languages": ["Domari"],
+      "region": "Villes (Caire, Louxor)",
+      "sources": ["Études anthropologiques"],
+      "ancientName": "Peuple Dom",
+      "description": "Groupe itinérant proche des Roms",
+      "societyType": "Nomade & urbain",
+      "religion": "Islam",
+      "linguisticFamily": "Indo-aryenne",
+      "historicalStatus": "Communautés Dom",
+      "regionalPresence": ["Moyen-Orient"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Nubiens du Soudan",
+      "subGroups": [
+        {
+          "name": "réfugiés",
+          "population": 896000,
+          "percentageInCountry": 80,
+          "percentageInAfrica": 6.265700000000001
+        }
+      ],
+      "population": 896000,
+      "percentageInCountry": 0.8,
+      "percentageInAfrica": 0.062657,
+      "languages": ["Nobiin", "autres"],
+      "region": "Frontière soudanaise",
+      "sources": ["UNHCR"],
+      "ancientName": "Nubie soudanaise",
+      "description": "Groupes déplacés du Soudan",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Nilo-saharienne",
+      "historicalStatus": "Royaumes nubiens",
+      "regionalPresence": ["Soudan"],
+      "isGroupWithSubgroups": true
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "countryName": "Côte d’Ivoire",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "royaumes Akan (Baoulé",
+        "Agni",
+        "Abron)",
+        "peuples Krou (Bété",
+        "Wé",
+        "Dida)",
+        "Mandé du Nord (Malinké",
+        "Dioula)",
+        "Mandé du Sud (Dan",
+        "Gouro",
+        "Wan)",
+        "peuples voltaiques (Sénoufo",
+        "Lobi",
+        "Koulango)"
+      ]
+    },
+    {
+      "period": "XVe siècle",
+      "names": ["Côte d", "(Costa do Marfim), lié au commerce de l"]
+    },
+    {
+      "period": "1893",
+      "names": ["Colonie de Côte d’Ivoire (AOF)"]
+    },
+    {
+      "period": "Depuis 1960",
+      "names": ["République de Côte d’Ivoire (nom non traduit)"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

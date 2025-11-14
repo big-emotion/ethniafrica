@@ -1,0 +1,171 @@
+{
+  "countryName": "Afrique du Sud",
+  "region": "afrique_australe",
+  "ethnicities": [
+    {
+      "groupName": "Nguni",
+      "subGroups": [
+        {
+          "name": "Zulu",
+          "population": 11160000,
+          "percentageInCountry": 18,
+          "percentageInAfrica": 0.78042
+        },
+        {
+          "name": "Xhosa (AmaXhosa)",
+          "population": 9300000,
+          "percentageInCountry": 15,
+          "percentageInAfrica": 0.65035
+        },
+        {
+          "name": "Swazi (siSwati)",
+          "population": 1860000,
+          "percentageInCountry": 3,
+          "percentageInAfrica": 0.13007
+        },
+        {
+          "name": "Ndebele",
+          "population": 1240000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.086713
+        }
+      ],
+      "population": 23560000,
+      "percentageInCountry": 38,
+      "percentageInAfrica": 1.6475529999999998,
+      "languages": ["isiZulu", "isiXhosa", "siSwati", "isiNdebele"],
+      "region": "KwaZulu-Natal, Eastern Cape, Mpumalanga, Gauteng, Mpumalanga",
+      "sources": [
+        "Sources historiques et ethnolinguistiques",
+        "Sources historiques",
+        "Sources ethnologiques"
+      ],
+      "ancientName": "Royaumes zoulous (Shaka, Dingane)",
+      "description": "Groupe Nguni majoritaire, héritier du royaume zoulou",
+      "societyType": "Sédentaire agricole et urbaine",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu (Nguni)",
+      "historicalStatus": "Royaume zoulou",
+      "regionalPresence": ["Afrique du Sud", "Eswatini"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Sotho-Tswana",
+      "subGroups": [
+        {
+          "name": "Northern Sotho (Pedi)",
+          "population": 5580000,
+          "percentageInCountry": 9,
+          "percentageInAfrica": 0.39021
+        },
+        {
+          "name": "Southern Sotho (Basotho)",
+          "population": 4960000,
+          "percentageInCountry": 8,
+          "percentageInAfrica": 0.346853
+        },
+        {
+          "name": "Tswana",
+          "population": 2480000,
+          "percentageInCountry": 4,
+          "percentageInAfrica": 0.173427
+        }
+      ],
+      "population": 13020000,
+      "percentageInCountry": 21,
+      "percentageInAfrica": 0.91049,
+      "languages": ["Sepedi", "Sesotho", "Setswana"],
+      "region": "Limpopo, Free State, North West Province",
+      "sources": [
+        "Sources linguistiques",
+        "Sources historiques",
+        "Sources ethnologiques"
+      ],
+      "ancientName": "Chefferies Pedi",
+      "description": "Groupe majeur du nord",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme",
+      "linguisticFamily": "Bantu (Sotho-Tswana)",
+      "historicalStatus": "Royaume Pedi",
+      "regionalPresence": [
+        "Afrique du Sud",
+        "Afrique du Sud & Lesotho",
+        "Botswana & Afrique du Sud"
+      ],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Tsonga",
+      "subGroups": [],
+      "population": 2480000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.173427,
+      "languages": ["Xitsonga"],
+      "region": "Limpopo, Mpumalanga",
+      "sources": ["Sources ethnologiques"],
+      "ancientName": "Chefferies Tsonga",
+      "description": "Population du nord-est",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Chefferies Tsonga",
+      "regionalPresence": ["Mozambique & Afrique du Sud"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Venda",
+      "subGroups": [],
+      "population": 1240000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.086713,
+      "languages": ["Tshivenda"],
+      "region": "Limpopo",
+      "sources": ["Sources ethnologiques"],
+      "ancientName": "Royaumes Venda",
+      "description": "Peuple ancien du nord",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Royaumes Venda",
+      "regionalPresence": ["Afrique du Sud"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [
+        {
+          "name": "Communautés métisses (Coloured)",
+          "population": 5580000,
+          "percentageInCountry": 9,
+          "percentageInAfrica": 0.39021
+        },
+        {
+          "name": "Communautés indiennes",
+          "population": 1550000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.108392
+        },
+        {
+          "name": "Communautés européennes",
+          "population": 4340000,
+          "percentageInCountry": 7,
+          "percentageInAfrica": 0.303497
+        }
+      ],
+      "population": 11470000,
+      "percentageInCountry": 18.5,
+      "percentageInAfrica": 0.802099,
+      "languages": ["Afrikaans", "anglais", "Anglais + langues indo-aryennes"],
+      "region": "Western Cape, KwaZulu-Natal, National",
+      "sources": ["Stats SA"],
+      "ancientName": "Colonie du Cap",
+      "description": "Population métissée historique",
+      "societyType": "Urbaine",
+      "religion": "Christianisme",
+      "linguisticFamily": "Créole africaans",
+      "historicalStatus": "Colonie du Cap",
+      "regionalPresence": ["Afrique du Sud", "Inde & Afrique du Sud"],
+      "isGroupWithSubgroups": true
+    }
+  ]
+}

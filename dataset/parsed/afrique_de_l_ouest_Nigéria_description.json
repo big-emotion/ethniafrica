@@ -1,0 +1,49 @@
+{
+  "countryName": "Nigéria",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "sultanats haoussa (Kano",
+        "Katsina",
+        "Zaria)",
+        "califat de Sokoto",
+        "empire Kanem‑Bornou",
+        "royaume d’Oyo",
+        "Ile‑Ife",
+        "chefferies igbo",
+        "royaumes ijaw",
+        "itsekiri",
+        "urhobo",
+        "royaume du Bénin"
+      ]
+    },
+    {
+      "period": "XVe–XVIe siècle",
+      "names": [
+        "premiers contacts portugais sur les côtes (Lagos",
+        "Bénin",
+        "Calabar)"
+      ]
+    },
+    {
+      "period": "XIXe siècle",
+      "names": ["expansion britannique ; création des protectorats Nord et Sud"]
+    },
+    {
+      "period": "1914",
+      "names": ["Amalgamation"]
+    },
+    {
+      "period": "1960",
+      "names": ["Fédération du Nigeria"]
+    },
+    {
+      "period": "1963",
+      "names": ["République fédérale du Nigeria (nom actuel)"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

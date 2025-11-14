@@ -1,0 +1,640 @@
+{
+  "countryName": "Tchad",
+  "region": "afrique_centrale",
+  "ethnicities": [
+    {
+      "groupName": "Sara (Ngambaye",
+      "subGroups": [
+        {
+          "name": "Sara",
+          "population": 2135377,
+          "percentageInCountry": 10.166668253688265,
+          "percentageInAfrica": 0.13972468847775488
+        },
+        {
+          "name": "Madjingaye",
+          "population": 2135377,
+          "percentageInCountry": 10.166668253688265,
+          "percentageInAfrica": 0.13972468847775488
+        },
+        {
+          "name": "Mbaye)",
+          "population": 2135377,
+          "percentageInCountry": 10.166668253688265,
+          "percentageInAfrica": 0.13972468847775488
+        }
+      ],
+      "population": 6406131,
+      "percentageInCountry": 30.500004761064794,
+      "percentageInAfrica": 0.41917406543326463,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Kanembou",
+      "subGroups": [
+        {
+          "name": "Bornu",
+          "population": 1029182,
+          "percentageInCountry": 4.9000023805324915,
+          "percentageInAfrica": 0.06734303271677543
+        },
+        {
+          "name": "Boudouma",
+          "population": 1029182,
+          "percentageInCountry": 4.9000023805324915,
+          "percentageInAfrica": 0.06734303271677543
+        }
+      ],
+      "population": 2058364,
+      "percentageInCountry": 9.800004761064983,
+      "percentageInAfrica": 0.13468606543355086,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Arabes",
+      "subGroups": [],
+      "population": 2037359,
+      "percentageInCountry": 9.7,
+      "percentageInAfrica": 0.133311,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Wadaï",
+      "subGroups": [
+        {
+          "name": "Maba",
+          "population": 490086,
+          "percentageInCountry": 2.333331746311364,
+          "percentageInAfrica": 0.032067978188876925
+        },
+        {
+          "name": "Masalit",
+          "population": 490086,
+          "percentageInCountry": 2.333331746311364,
+          "percentageInAfrica": 0.032067978188876925
+        },
+        {
+          "name": "Mimi",
+          "population": 490086,
+          "percentageInCountry": 2.333331746311364,
+          "percentageInAfrica": 0.032067978188876925
+        }
+      ],
+      "population": 1470258,
+      "percentageInCountry": 6.999995238934092,
+      "percentageInAfrica": 0.09620393456663077,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Goranes (Toubou)",
+      "subGroups": [],
+      "population": 1218215,
+      "percentageInCountry": 5.8,
+      "percentageInAfrica": 0.079712,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Masa",
+      "subGroups": [
+        {
+          "name": "Mussey",
+          "population": 514591,
+          "percentageInCountry": 2.45,
+          "percentageInAfrica": 0.03367150000000001
+        },
+        {
+          "name": "Mousgoum",
+          "population": 514591,
+          "percentageInCountry": 2.45,
+          "percentageInAfrica": 0.03367150000000001
+        }
+      ],
+      "population": 1029182,
+      "percentageInCountry": 4.9,
+      "percentageInAfrica": 0.06734300000000001,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Bilala",
+      "subGroups": [
+        {
+          "name": "Medogo",
+          "population": 388569,
+          "percentageInCountry": 1.8500023805326475,
+          "percentageInAfrica": 0.02542553271688261
+        },
+        {
+          "name": "Kuka",
+          "population": 388569,
+          "percentageInCountry": 1.8500023805326475,
+          "percentageInAfrica": 0.02542553271688261
+        }
+      ],
+      "population": 777138,
+      "percentageInCountry": 3.700004761065295,
+      "percentageInAfrica": 0.05085106543376522,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Marba",
+      "subGroups": [
+        {
+          "name": "Lélé",
+          "population": 367565,
+          "percentageInCountry": 1.75,
+          "percentageInAfrica": 0.024051
+        },
+        {
+          "name": "Mesme",
+          "population": 367565,
+          "percentageInCountry": 1.75,
+          "percentageInAfrica": 0.024051
+        }
+      ],
+      "population": 735130,
+      "percentageInCountry": 3.5,
+      "percentageInAfrica": 0.048102,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Moundang",
+      "subGroups": [],
+      "population": 567100,
+      "percentageInCountry": 2.7,
+      "percentageInAfrica": 0.037107,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Bidiyo",
+      "subGroups": [
+        {
+          "name": "Migaama",
+          "population": 175031,
+          "percentageInCountry": 0.8333333333333334,
+          "percentageInAfrica": 0.011453000000000001
+        },
+        {
+          "name": "Kenga",
+          "population": 175031,
+          "percentageInCountry": 0.8333333333333334,
+          "percentageInAfrica": 0.011453000000000001
+        },
+        {
+          "name": "Dangleat",
+          "population": 175031,
+          "percentageInCountry": 0.8333333333333334,
+          "percentageInAfrica": 0.011453000000000001
+        }
+      ],
+      "population": 525093,
+      "percentageInCountry": 2.5,
+      "percentageInAfrica": 0.034359,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Dadjo",
+      "subGroups": [
+        {
+          "name": "Kibet",
+          "population": 252045,
+          "percentageInCountry": 1.2000023805320092,
+          "percentageInAfrica": 0.016492032716444914
+        },
+        {
+          "name": "Mouro",
+          "population": 252045,
+          "percentageInCountry": 1.2000023805320092,
+          "percentageInAfrica": 0.016492032716444914
+        }
+      ],
+      "population": 504090,
+      "percentageInCountry": 2.4000047610640185,
+      "percentageInAfrica": 0.03298406543288983,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Toupouri",
+      "subGroups": [
+        {
+          "name": "Kera",
+          "population": 420074,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.027487
+        }
+      ],
+      "population": 420074,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.027487,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Gabri",
+      "subGroups": [
+        {
+          "name": "Kabalaye",
+          "population": 140025,
+          "percentageInCountry": 0.6666682536886358,
+          "percentageInAfrica": 0.009162355144569766
+        },
+        {
+          "name": "Nanchéré",
+          "population": 140025,
+          "percentageInCountry": 0.6666682536886358,
+          "percentageInAfrica": 0.009162355144569766
+        },
+        {
+          "name": "Somraï",
+          "population": 140025,
+          "percentageInCountry": 0.6666682536886358,
+          "percentageInAfrica": 0.009162355144569766
+        }
+      ],
+      "population": 420075,
+      "percentageInCountry": 2.0000047610659073,
+      "percentageInAfrica": 0.0274870654337093,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Peuls",
+      "subGroups": [
+        {
+          "name": "Fulɓe",
+          "population": 189034,
+          "percentageInCountry": 0.9000023805304351,
+          "percentageInAfrica": 0.012369032716423279
+        },
+        {
+          "name": "Bodore",
+          "population": 189034,
+          "percentageInCountry": 0.9000023805304351,
+          "percentageInAfrica": 0.012369032716423279
+        }
+      ],
+      "population": 378068,
+      "percentageInCountry": 1.8000047610608703,
+      "percentageInAfrica": 0.024738065432846557,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Karo",
+      "subGroups": [
+        {
+          "name": "Zimé",
+          "population": 136524,
+          "percentageInCountry": 0.65,
+          "percentageInAfrica": 0.008933
+        },
+        {
+          "name": "Peve",
+          "population": 136524,
+          "percentageInCountry": 0.65,
+          "percentageInAfrica": 0.008933
+        }
+      ],
+      "population": 273048,
+      "percentageInCountry": 1.3,
+      "percentageInAfrica": 0.017866,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Bagirmi",
+      "subGroups": [
+        {
+          "name": "Barma",
+          "population": 252044,
+          "percentageInCountry": 1.2,
+          "percentageInAfrica": 0.016492
+        }
+      ],
+      "population": 252044,
+      "percentageInCountry": 1.2,
+      "percentageInAfrica": 0.016492,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Zaghawa",
+      "subGroups": [
+        {
+          "name": "Bideyat",
+          "population": 115521,
+          "percentageInCountry": 0.5500023805298627,
+          "percentageInAfrica": 0.007559032717136784
+        },
+        {
+          "name": "Kobé",
+          "population": 115521,
+          "percentageInCountry": 0.5500023805298627,
+          "percentageInAfrica": 0.007559032717136784
+        }
+      ],
+      "population": 231042,
+      "percentageInCountry": 1.1000047610597254,
+      "percentageInAfrica": 0.015118065434273568,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Tama",
+      "subGroups": [
+        {
+          "name": "Assongori",
+          "population": 115521,
+          "percentageInCountry": 0.5500023805298627,
+          "percentageInAfrica": 0.007559032717136784
+        },
+        {
+          "name": "Mararit",
+          "population": 115521,
+          "percentageInCountry": 0.5500023805298627,
+          "percentageInAfrica": 0.007559032717136784
+        }
+      ],
+      "population": 231042,
+      "percentageInCountry": 1.1000047610597254,
+      "percentageInAfrica": 0.015118065434273568,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Mesmedjé",
+      "subGroups": [
+        {
+          "name": "Massalat",
+          "population": 84015,
+          "percentageInCountry": 0.4,
+          "percentageInAfrica": 0.0054975
+        },
+        {
+          "name": "Kadjakse",
+          "population": 84015,
+          "percentageInCountry": 0.4,
+          "percentageInAfrica": 0.0054975
+        }
+      ],
+      "population": 168030,
+      "percentageInCountry": 0.8,
+      "percentageInAfrica": 0.010995,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Autres ethnies tchadiennes",
+      "subGroups": [],
+      "population": 714126,
+      "percentageInCountry": 3.4,
+      "percentageInAfrica": 0.046728,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Tchadiens d’origines étrangères",
+      "subGroups": [],
+      "population": 189033,
+      "percentageInCountry": 0.9,
+      "percentageInAfrica": 0.012369,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Étrangers",
+      "subGroups": [],
+      "population": 63011,
+      "percentageInCountry": 0.3,
+      "percentageInAfrica": 0.004123,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Non précisé",
+      "subGroups": [],
+      "population": 357063,
+      "percentageInCountry": 1.7,
+      "percentageInAfrica": 0.023364,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

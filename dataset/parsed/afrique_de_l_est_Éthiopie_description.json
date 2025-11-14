@@ -1,0 +1,41 @@
+{
+  "countryName": "Éthiopie",
+  "region": "afrique_de_l_est",
+  "ancientNames": [
+    {
+      "period": "Avant −1000",
+      "names": [
+        "aucun nom unifié ; territoires occupés par Afar",
+        "Agaw",
+        "proto-Sémitiques",
+        "liens avec Sabéens"
+      ]
+    },
+    {
+      "period": "~−1000 à −400",
+      "names": ["Royaume de D’mt (premier proto-État éthiopien)"]
+    },
+    {
+      "period": "Ier – Xe siècle",
+      "names": ["Empire d’Aksoum (un des plus grands empires antiques)"]
+    },
+    {
+      "period": "1270–1974",
+      "names": ["Empire d’Abyssinie (Abyssinia / Habesha)"]
+    },
+    {
+      "period": "1936–1941",
+      "names": ["Africa Orientale Italiana (occupation italienne)"]
+    },
+    {
+      "period": "1974–1991",
+      "names": ["République populaire d’Éthiopie (Derg)"]
+    },
+    {
+      "period": "Depuis 1991",
+      "names": ["République fédérale démocratique d’Éthiopie"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

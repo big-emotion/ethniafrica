@@ -1,0 +1,49 @@
+{
+  "countryName": "Algérie",
+  "region": "afrique_du_nord",
+  "ancientNames": [
+    {
+      "period": "Époque pré-berbère",
+      "names": ["aucun nom unifié ; peuples proto‑amazighs"]
+    },
+    {
+      "period": "Antiquité",
+      "names": [
+        "Numidie (Massyles & Massæsyles)",
+        "Maurétanie (Bocchus",
+        "Juba II)"
+      ]
+    },
+    {
+      "period": "Époque romaine",
+      "names": ["Africa Nova", "Numidia", "Maurétanie Césarienne", "Sitifienne"]
+    },
+    {
+      "period": "Période vandale & byzantine",
+      "names": ["Africa (province d’Orient)"]
+    },
+    {
+      "period": "Période islamique",
+      "names": [
+        "Ifriqiya ; royaumes rustémide",
+        "ziride",
+        "hammadide",
+        "zianide"
+      ]
+    },
+    {
+      "period": "1515–1830",
+      "names": ["Régence d’Alger (Empire ottoman)"]
+    },
+    {
+      "period": "1830–1962",
+      "names": ["Algérie française"]
+    },
+    {
+      "period": "Depuis 1962",
+      "names": ["République algérienne démocratique et populaire"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

@@ -1,0 +1,41 @@
+{
+  "countryName": "Togo",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "aucun nom unifié ; territoires Ewe",
+        "Mina",
+        "Adja",
+        "Kabye",
+        "Tem/Kotokoli",
+        "Gourma",
+        "Moba",
+        "Akposso",
+        "Akebu",
+        "Ana",
+        "Ifè",
+        "Bassar"
+      ]
+    },
+    {
+      "period": "Région côtière appelée par les Européens",
+      "names": ["Côte des Esclaves"]
+    },
+    {
+      "period": "1884",
+      "names": ["Protectorat allemand — Togoland (Deutsch‑Togoland)"]
+    },
+    {
+      "period": "1916–1960",
+      "names": ["Partition entre Togo français et British Togoland"]
+    },
+    {
+      "period": "1960",
+      "names": ["Indépendance — République togolaise"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

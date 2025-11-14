@@ -78,8 +78,8 @@ interface CountryDetailPayload {
     percentageInAfrica: number;
   }>;
   description?: string;
-  ancientNames?: string[]; // Max 3 pour le résumé
-  allAncientNames?: string[]; // Tous pour la section détaillée
+  ancientNames?: Array<{ period: string; names: string[] }>; // Max 3 entrées pour le résumé
+  allAncientNames?: Array<{ period: string; names: string[] }>; // Toutes les entrées pour la section détaillée
   topEthnicities?: Array<{
     name: string;
     languages: string[];

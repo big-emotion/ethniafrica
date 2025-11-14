@@ -1,0 +1,117 @@
+{
+  "countryName": "Mauritanie",
+  "region": "afrique_du_nord",
+  "countryDescription": {
+    "countryName": "Mauritanie",
+    "region": "afrique_du_nord",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires berbères Sanhaja (Lemtouna",
+          "Massufa",
+          "Godala)",
+          "populations négro-africaines halpulaar",
+          "wolof",
+          "soninké",
+          "bambara ; aucun État unifié"
+        ]
+      },
+      {
+        "period": "VIIe–XIIe siècles",
+        "names": ["empire Almoravide (fondé par les Sanhaja du Sahara)"]
+      },
+      {
+        "period": "Termes locaux",
+        "names": ["pays de Chinguetti"]
+      },
+      {
+        "period": "1904",
+        "names": ["Protectorat français"]
+      },
+      {
+        "period": "1920",
+        "names": ["Mauritanie"]
+      },
+      {
+        "period": "1960",
+        "names": ["Indépendance → République Islamique de Mauritanie"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Maures (Arabes",
+      "subGroups": [
+        {
+          "name": "Berbères arabisés)",
+          "population": 3535550,
+          "percentageInCountry": 70,
+          "percentageInAfrica": 0.231343
+        }
+      ],
+      "population": 3535550,
+      "percentageInCountry": 70,
+      "percentageInAfrica": 0.231343,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Berbères arabisés)",
+          "population": 3535550,
+          "percentageInCountry": 70,
+          "percentageInAfrica": 0.231343
+        }
+      ]
+    },
+    {
+      "groupName": "Haratines",
+      "subGroups": [],
+      "population": 757618,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 0.049573,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Afro-Mauritaniens (Peuls, Soninkés, Wolofs)",
+      "subGroups": [],
+      "population": 757618,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 0.049573,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

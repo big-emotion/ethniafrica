@@ -1,0 +1,544 @@
+{
+  "countryName": "Éthiopie",
+  "region": "afrique_de_l_est",
+  "countryDescription": {
+    "countryName": "Éthiopie",
+    "region": "afrique_de_l_est",
+    "ancientNames": [
+      {
+        "period": "Avant −1000",
+        "names": [
+          "aucun nom unifié ; territoires occupés par Afar",
+          "Agaw",
+          "proto-Sémitiques",
+          "liens avec Sabéens"
+        ]
+      },
+      {
+        "period": "~−1000 à −400",
+        "names": ["Royaume de D’mt (premier proto-État éthiopien)"]
+      },
+      {
+        "period": "Ier – Xe siècle",
+        "names": ["Empire d’Aksoum (un des plus grands empires antiques)"]
+      },
+      {
+        "period": "1270–1974",
+        "names": ["Empire d’Abyssinie (Abyssinia / Habesha)"]
+      },
+      {
+        "period": "1936–1941",
+        "names": ["Africa Orientale Italiana (occupation italienne)"]
+      },
+      {
+        "period": "1974–1991",
+        "names": ["République populaire d’Éthiopie (Derg)"]
+      },
+      {
+        "period": "Depuis 1991",
+        "names": ["République fédérale démocratique d’Éthiopie"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Oromo",
+      "subGroups": [
+        {
+          "name": "Oromo (Borana",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        },
+        {
+          "name": "Guji",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        },
+        {
+          "name": "Arsi",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        },
+        {
+          "name": "Macca",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        },
+        {
+          "name": "Tulama)",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        }
+      ],
+      "population": 42840000,
+      "percentageInCountry": 34,
+      "percentageInAfrica": 2.995804,
+      "languages": ["Afaan Oromo"],
+      "region": "Oromia (Centre, Sud, Est)",
+      "sources": ["CSA Ethiopia", "histoire Oromo"],
+      "ancientName": "Gadaa (ancien système politique Oromo)",
+      "description": "Plus grand groupe d'Éthiopie, système gadaa, pasteurs & agriculteurs",
+      "societyType": "Agro-pastorale",
+      "religion": "Islam + Christianisme + traditions Waaq",
+      "linguisticFamily": "Cushitique (Afro-asiatique)",
+      "historicalStatus": "Système Gadaa",
+      "regionalPresence": ["Éthiopie", "Kenya"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Oromo (Borana",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        },
+        {
+          "name": "Guji",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        },
+        {
+          "name": "Arsi",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        },
+        {
+          "name": "Macca",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        },
+        {
+          "name": "Tulama)",
+          "population": 8568000,
+          "percentageInCountry": 680,
+          "percentageInAfrica": 59.91608000000001
+        }
+      ]
+    },
+    {
+      "groupName": "Amhara",
+      "subGroups": [],
+      "population": 34020000,
+      "percentageInCountry": 27,
+      "percentageInAfrica": 2.379021,
+      "languages": ["Amharic"],
+      "region": "Amhara region, Addis Abeba",
+      "sources": ["Sources historiques éthiopiennes"],
+      "ancientName": "Empire abyssin",
+      "description": "Groupe politique historiquement dominant, agriculteurs de plateau",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme orthodoxe",
+      "linguisticFamily": "Sémitique (Afro-asiatique)",
+      "historicalStatus": "Empire d'Abyssinie",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Tigréen",
+      "subGroups": [
+        {
+          "name": "Tigrinya",
+          "population": 4410000,
+          "percentageInCountry": 350,
+          "percentageInAfrica": 30.83915
+        },
+        {
+          "name": "Tigray",
+          "population": 4410000,
+          "percentageInCountry": 350,
+          "percentageInAfrica": 30.83915
+        }
+      ],
+      "population": 8820000,
+      "percentageInCountry": 7,
+      "percentageInAfrica": 0.616783,
+      "languages": ["Tigrinya"],
+      "region": "Tigray",
+      "sources": ["Histoire tigréenne"],
+      "ancientName": "Royaumes Aksoumites",
+      "description": "Peuple ancien lié au royaume d’Aksoum",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme orthodoxe",
+      "linguisticFamily": "Sémitique",
+      "historicalStatus": "Royaume d’Aksoum",
+      "regionalPresence": ["Éthiopie", "Érythrée"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Tigrinya",
+          "population": 4410000,
+          "percentageInCountry": 350,
+          "percentageInAfrica": 30.83915
+        },
+        {
+          "name": "Tigray",
+          "population": 4410000,
+          "percentageInCountry": 350,
+          "percentageInAfrica": 30.83915
+        }
+      ]
+    },
+    {
+      "groupName": "Somali éthiopiens",
+      "subGroups": [
+        {
+          "name": "Dir",
+          "population": 1890000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 13.216775
+        },
+        {
+          "name": "Darod",
+          "population": 1890000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 13.216775
+        },
+        {
+          "name": "Isaaq",
+          "population": 1890000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 13.216775
+        },
+        {
+          "name": "Hawiye",
+          "population": 1890000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 13.216775
+        }
+      ],
+      "population": 7560000,
+      "percentageInCountry": 6,
+      "percentageInAfrica": 0.528671,
+      "languages": ["Somali"],
+      "region": "Somali Region (Ogaden)",
+      "sources": ["Ethnologie Somali"],
+      "ancientName": "Sultanats somalis",
+      "description": "Pasteurs nomades du désert et de la brousse",
+      "societyType": "Nomade",
+      "religion": "Islam",
+      "linguisticFamily": "Cushitique",
+      "historicalStatus": "Sultanats somalis",
+      "regionalPresence": ["Éthiopie", "Somalie", "Djibouti"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Dir",
+          "population": 1890000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 13.216775
+        },
+        {
+          "name": "Darod",
+          "population": 1890000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 13.216775
+        },
+        {
+          "name": "Isaaq",
+          "population": 1890000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 13.216775
+        },
+        {
+          "name": "Hawiye",
+          "population": 1890000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 13.216775
+        }
+      ]
+    },
+    {
+      "groupName": "Sidama",
+      "subGroups": [],
+      "population": 5040000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.352448,
+      "languages": ["Sidama"],
+      "region": "Sidama Region",
+      "sources": ["CSA Ethiopia"],
+      "ancientName": "Chefferies Sidama",
+      "description": "Peuple de la zone des lacs, agriculteurs du café",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Cushitique",
+      "historicalStatus": "Royaumes Sidama",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Guragé",
+      "subGroups": [
+        {
+          "name": "Silté",
+          "population": 1260000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 8.811200000000001
+        },
+        {
+          "name": "Sebat Bet Gurage",
+          "population": 1260000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 8.811200000000001
+        },
+        {
+          "name": "Sodo",
+          "population": 1260000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 8.811200000000001
+        }
+      ],
+      "population": 3780000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.264336,
+      "languages": ["Gurage languages"],
+      "region": "Sud-Ouest et Centre",
+      "sources": ["Historiographie Gurage"],
+      "ancientName": "Chefferies Gurage",
+      "description": "Artisans, agriculteurs, marchands influents",
+      "societyType": "Sédentaire & urbaine",
+      "religion": "Christianisme + Islam",
+      "linguisticFamily": "Sémitique",
+      "historicalStatus": "Chefferies Gurage",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Silté",
+          "population": 1260000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 8.811200000000001
+        },
+        {
+          "name": "Sebat Bet Gurage",
+          "population": 1260000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 8.811200000000001
+        },
+        {
+          "name": "Sodo",
+          "population": 1260000,
+          "percentageInCountry": 100,
+          "percentageInAfrica": 8.811200000000001
+        }
+      ]
+    },
+    {
+      "groupName": "Afar",
+      "subGroups": [],
+      "population": 2520000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.176224,
+      "languages": ["Afar"],
+      "region": "Afar Region (Danakil)",
+      "sources": ["Anthropologie Afar"],
+      "ancientName": "Sultanats Afar",
+      "description": "Nomades du désert Danakil",
+      "societyType": "Nomade",
+      "religion": "Islam",
+      "linguisticFamily": "Cushitique",
+      "historicalStatus": "Sultanat Afar",
+      "regionalPresence": ["Éthiopie", "Djibouti", "Érythrée"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Hadiya",
+      "subGroups": [],
+      "population": 2520000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.176224,
+      "languages": ["Hadiyya"],
+      "region": "Hadiya Zone",
+      "sources": ["Ethnologie Cushitique"],
+      "ancientName": "Chefferies Hadiya",
+      "description": "Agriculteurs du sud",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme",
+      "linguisticFamily": "Cushitique",
+      "historicalStatus": "Chefferies locales",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Wolayta",
+      "subGroups": [],
+      "population": 3150000,
+      "percentageInCountry": 2.5,
+      "percentageInAfrica": 0.22028,
+      "languages": ["Wolaytta"],
+      "region": "Wolayta Zone",
+      "sources": ["Sources régionales"],
+      "ancientName": "Royaume Wolayta",
+      "description": "Ancien royaume résistant à la centralisation",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme",
+      "linguisticFamily": "Omotique (Afro-asiatique)",
+      "historicalStatus": "Royaume de Wolayta",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Peuples omotiques",
+      "subGroups": [
+        {
+          "name": "Shabo",
+          "population": 787500,
+          "percentageInCountry": 62.5,
+          "percentageInAfrica": 5.507
+        },
+        {
+          "name": "Gamo",
+          "population": 787500,
+          "percentageInCountry": 62.5,
+          "percentageInAfrica": 5.507
+        },
+        {
+          "name": "Gofa",
+          "population": 787500,
+          "percentageInCountry": 62.5,
+          "percentageInAfrica": 5.507
+        },
+        {
+          "name": "Bench",
+          "population": 787500,
+          "percentageInCountry": 62.5,
+          "percentageInAfrica": 5.507
+        }
+      ],
+      "population": 3150000,
+      "percentageInCountry": 2.5,
+      "percentageInAfrica": 0.22028,
+      "languages": ["Omotic languages"],
+      "region": "Sud-Ouest",
+      "sources": ["Ethnologie Omo"],
+      "ancientName": "Royaumes Omo",
+      "description": "Agriculteurs forestiers",
+      "societyType": "Forestière",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Omotique",
+      "historicalStatus": "Royaumes Omotiques",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Shabo",
+          "population": 787500,
+          "percentageInCountry": 62.5,
+          "percentageInAfrica": 5.507
+        },
+        {
+          "name": "Gamo",
+          "population": 787500,
+          "percentageInCountry": 62.5,
+          "percentageInAfrica": 5.507
+        },
+        {
+          "name": "Gofa",
+          "population": 787500,
+          "percentageInCountry": 62.5,
+          "percentageInAfrica": 5.507
+        },
+        {
+          "name": "Bench",
+          "population": 787500,
+          "percentageInCountry": 62.5,
+          "percentageInAfrica": 5.507
+        }
+      ]
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [
+        {
+          "name": "Berta",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        },
+        {
+          "name": "Gumuz",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        },
+        {
+          "name": "Mao",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        },
+        {
+          "name": "Komo",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        },
+        {
+          "name": "etc.",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        }
+      ],
+      "population": 3780000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.264336,
+      "languages": ["Divers"],
+      "region": "National",
+      "sources": ["CSA estimations"],
+      "ancientName": "Divers royaumes",
+      "description": "Communautés variées",
+      "societyType": "Variable",
+      "religion": "Islam / Christianisme / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Berta",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        },
+        {
+          "name": "Gumuz",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        },
+        {
+          "name": "Mao",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        },
+        {
+          "name": "Komo",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        },
+        {
+          "name": "etc.",
+          "population": 756000,
+          "percentageInCountry": 60,
+          "percentageInAfrica": 5.286720000000001
+        }
+      ]
+    }
+  ]
+}

@@ -62,26 +62,12 @@ export const RegionView = ({
       );
       const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-      const cachedData = getCachedData<
-        Array<{
-          key: string;
-          name: string;
-          totalPopulation: number;
-          countryCount: number;
-        }>
-      >(CACHE_KEYS.REGIONS, CACHE_TTL);
-
-      if (cachedData) {
-        setRegions(cachedData);
-        setLoading(false);
-        return;
-      }
-
       // Délai minimum pour garantir la visibilité du loader
       const minLoadingTime = Promise.all([
         new Promise((resolve) => setTimeout(resolve, 300)), // 300ms minimum
         (async () => {
           try {
+            // D'abord, récupérer la version du serveur
             const response = await fetch("/api/regions", {
               signal: controller.signal,
             });
@@ -91,6 +77,67 @@ export const RegionView = ({
             }
 
             const payload = await response.json();
+            const serverVersion = payload.dataVersion;
+
+            // Maintenant, vérifier le cache avec la version du serveur
+            // Si le cache n'a pas de version ou si la version diffère, getCachedData retournera null
+            const cachedData = getCachedData<
+              Array<{
+                key: string;
+                name: string;
+                totalPopulation: number;
+                countryCount: number;
+              }>
+            >(CACHE_KEYS.REGIONS, CACHE_TTL, serverVersion);
+
+            // Si le cache est valide (version correspond), l'utiliser
+            if (cachedData && serverVersion !== undefined) {
+              // Récupérer la version du cache pour le log
+              try {
+                const cached = localStorage.getItem(CACHE_KEYS.REGIONS);
+                if (cached) {
+                  const entry = JSON.parse(cached);
+                  if (entry.version === serverVersion) {
+                    console.log(
+                      `✓ Cache valide utilisé (version: ${serverVersion})`
+                    );
+                    setRegions(cachedData);
+                    setLoading(false);
+                    return;
+                  }
+                }
+              } catch {
+                // Ignore errors
+              }
+            }
+
+            // Cache invalide ou absent : utiliser les nouvelles données
+            // Vérifier pourquoi le cache a été invalidé pour le log
+            try {
+              const cached = localStorage.getItem(CACHE_KEYS.REGIONS);
+              if (cached) {
+                const entry = JSON.parse(cached);
+                if (
+                  entry.version === undefined &&
+                  serverVersion !== undefined
+                ) {
+                  console.log(
+                    `🔄 Cache invalidé automatiquement (ancien cache sans version détecté)`
+                  );
+                } else if (
+                  entry.version !== undefined &&
+                  serverVersion !== undefined &&
+                  entry.version !== serverVersion
+                ) {
+                  console.log(
+                    `🔄 Cache invalidé automatiquement (version serveur: ${serverVersion}, version cache: ${entry.version})`
+                  );
+                }
+              }
+            } catch {
+              // Ignore errors
+            }
+
             const regionsData = payload.regions.map(
               ({
                 key,
@@ -110,8 +157,13 @@ export const RegionView = ({
               })
             );
             setRegions(regionsData);
-            // Cache the data
-            setCachedData(CACHE_KEYS.REGIONS, regionsData, CACHE_TTL);
+            // Cache the data with version for automatic invalidation
+            setCachedData(
+              CACHE_KEYS.REGIONS,
+              regionsData,
+              CACHE_TTL,
+              serverVersion
+            );
           } catch (error) {
             if (error instanceof DOMException && error.name === "AbortError") {
               return;

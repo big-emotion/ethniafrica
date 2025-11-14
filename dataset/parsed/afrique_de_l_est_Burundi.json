@@ -1,0 +1,60 @@
+{
+  "countryName": "Burundi",
+  "region": "afrique_de_l_est",
+  "ethnicities": [
+    {
+      "groupName": "Hutu",
+      "subGroups": [],
+      "population": 11588992,
+      "percentageInCountry": 85,
+      "percentageInAfrica": 0.758306,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Tutsi",
+      "subGroups": [],
+      "population": 1908775,
+      "percentageInCountry": 14,
+      "percentageInAfrica": 0.124898,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Twa (Batwa)",
+      "subGroups": [],
+      "population": 136341,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.008921,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

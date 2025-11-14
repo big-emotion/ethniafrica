@@ -31,9 +31,13 @@ dataset/
         senegal.txt
 ```
 
-### Format du CSV enrichi
+### Formats CSV supportés
 
-Le fichier CSV doit contenir les colonnes suivantes :
+Le système supporte deux formats de fichiers CSV :
+
+#### Format enrichi (recommandé)
+
+Le fichier doit être nommé `{country}_ethnies_complet.csv` et contenir les colonnes suivantes :
 
 - `Group` : Nom du groupe ethnique principal
 - `Sub_group` : Sous-groupes séparés par des virgules (optionnel)
@@ -50,6 +54,27 @@ Le fichier CSV doit contenir les colonnes suivantes :
 - `Famille_linguistique` : Famille linguistique
 - `Statut_historique` : Statut historique
 - `Presence_regionale` : Présence régionale (pays, séparés par des virgules)
+
+#### Format legacy (ancien format)
+
+Le fichier doit être nommé `groupes_ethniques.csv` et contenir les colonnes suivantes :
+
+- `Ethnicity_or_Subgroup` : Nom du groupe ethnique ou sous-groupe
+- `pourcentage dans la population du pays` : Pourcentage dans le pays
+- `population de l'ethnie estimée dans le pays` : Population estimée
+- `pourcentage dans la population totale d'Afrique` : Pourcentage en Afrique
+
+**Note** : Le format legacy ne contient pas les informations enrichies (langues, descriptions, etc.). Ces champs seront vides dans la base de données. Il est recommandé de migrer vers le format enrichi pour bénéficier de toutes les fonctionnalités.
+
+### Détection automatique du format
+
+Le script de parsing détecte automatiquement le format du fichier CSV en analysant les en-têtes :
+
+1. **Priorité 1** : Si un fichier `*_ethnies_complet.csv` existe, il est utilisé (format enrichi)
+2. **Priorité 2** : Sinon, si un fichier `groupes_ethniques.csv` existe, il est utilisé (format legacy)
+3. **Priorité 3** : Sinon, n'importe quel autre fichier CSV est utilisé (format détecté automatiquement)
+
+Le format est détecté en analysant les colonnes présentes dans le fichier.
 
 ### Format du fichier de description
 
@@ -80,22 +105,31 @@ Description complète du pays...
 
 ## Détection des sous-groupes
 
-Le système détecte automatiquement les sous-groupes de deux manières :
+Le système détecte automatiquement les sous-groupes selon le format CSV utilisé :
+
+### Format enrichi
 
 1. **Pattern avec parenthèses** : `"Berbères (Amazigh, etc)"` → groupe "Berbères", sous-groupes ["Amazigh", "etc"]
 2. **Pattern avec virgules dans Sub_group** : `Sub_group: "Fon, Gun, Maxi"` → sous-groupes séparés
+
+### Format legacy
+
+1. **Pattern avec slash** : `"Basarwa/San"` → groupe "Basarwa", sous-groupe "San"
 
 Les populations des sous-groupes sont calculées automatiquement :
 
 - Si des pourcentages sont disponibles, ils sont utilisés
 - Sinon, la population est répartie équitablement entre les sous-groupes
+- Pour le format legacy, la population totale est répartie proportionnellement entre les sous-groupes
 
 ## Processus de migration
 
 ### 1. Préparer les fichiers
 
-1. Placer le fichier CSV enrichi dans `dataset/source/{region}/{country}/{country}_ethnies_complet.csv`
-2. Placer le fichier de description dans `dataset/source/{region}/{country}/{country}.txt`
+1. Placer le fichier CSV dans `dataset/source/{region}/{country}/` :
+   - **Format enrichi (recommandé)** : `{country}_ethnies_complet.csv`
+   - **Format legacy** : `groupes_ethniques.csv`
+2. Placer le fichier de description dans `dataset/source/{region}/{country}/{country}.txt` (optionnel, recommandé pour le format enrichi)
 
 ### 2. Parser les données CSV
 
@@ -105,10 +139,14 @@ tsx scripts/parseEnrichedCountryCSV.ts
 
 Ce script :
 
-- Parse tous les fichiers CSV enrichis
-- Détecte les sous-groupes
+- Détecte automatiquement le format de chaque fichier CSV (enrichi ou legacy)
+- Parse tous les fichiers CSV (format enrichi et legacy)
+- Détecte les sous-groupes selon le format
 - Calcule les populations
+- Normalise les données vers la même structure (champs enrichis vides pour le format legacy)
 - Génère des fichiers JSON dans `dataset/parsed/`
+
+**Note** : Les fichiers au format legacy produiront des données normalisées avec les champs enrichis (langues, descriptions, etc.) vides. Ces données seront migrées vers la base de données mais n'afficheront pas les informations enrichies dans l'interface.
 
 ### 3. Parser les descriptions
 
@@ -149,13 +187,24 @@ Ce script :
 - Crée/met à jour les langues et relations
 - Crée/met à jour les sources et relations
 - Crée/met à jour les presences avec région géographique
+- **Invalide automatiquement le cache Next.js** pour que les nouvelles données soient immédiatement disponibles
+
+**Note** : Pour que l'invalidation automatique du cache fonctionne, vous devez :
+
+1. Configurer `REVALIDATE_SECRET` dans `.env.local` (voir `env.dist`)
+2. Configurer `NEXT_PUBLIC_SITE_URL` dans `.env.local` (URL de votre application)
+3. S'assurer que le serveur Next.js est en cours d'exécution lors de la migration
 
 ## Ajouter un nouveau pays
 
 1. Créer le dossier `dataset/source/{region}/{country}/`
-2. Ajouter le fichier CSV enrichi : `{country}_ethnies_complet.csv`
-3. Ajouter le fichier de description : `{country}.txt`
+2. Ajouter le fichier CSV :
+   - **Format enrichi (recommandé)** : `{country}_ethnies_complet.csv`
+   - **Format legacy** : `groupes_ethniques.csv`
+3. Ajouter le fichier de description : `{country}.txt` (optionnel, uniquement pour le format enrichi)
 4. Exécuter les scripts de migration (étapes 2-5 ci-dessus)
+
+**Note** : Le fichier de description est optionnel pour le format legacy, mais recommandé pour le format enrichi afin d'ajouter les descriptions et anciens noms.
 
 ## Mettre à jour un pays existant
 
@@ -189,10 +238,12 @@ Cette approche est recommandée lorsque vous avez ajouté de nouveaux fichiers o
 
 ## Notes importantes
 
-- Les anciens noms sont limités à 3 maximum (pour les pays et les ethnies)
+- Les anciens noms sont limités à 3 maximum (pour les pays uniquement, pas pour les ethnies)
 - Les sous-groupes apparaissent dans la liste des ethnies et sont accessibles individuellement
 - Les groupes et sous-groupes sont comptés séparément dans les statistiques
 - Les descriptions peuvent être en texte libre (markdown supporté)
+- Le format legacy est supporté pour la compatibilité, mais le format enrichi est recommandé pour bénéficier de toutes les fonctionnalités
+- Les données au format legacy seront normalisées vers la même structure, mais les champs enrichis resteront vides
 
 ## Structure de la base de données
 
@@ -211,6 +262,63 @@ Cette approche est recommandée lorsque vous avez ajouté de nouveaux fichiers o
 
 Les sous-groupes sont liés aux groupes parents via `parent_id` dans la table `ethnic_groups`.
 
+## Invalidation du cache
+
+Le système utilise un mécanisme de **versioning automatique** pour invalider le cache client (localStorage) et serveur (Next.js) lorsque les données changent.
+
+### Comment ça fonctionne
+
+1. **Versioning des données** : Chaque type de données (régions, pays, ethnies, population) a un numéro de version qui est incrémenté lors des migrations.
+
+2. **Cache serveur (Next.js)** : Invalidé automatiquement via `revalidateTag()` lors de la migration.
+
+3. **Cache client (localStorage)** : Invalidé automatiquement en comparant la version du cache avec celle du serveur. Si les versions diffèrent, le cache est automatiquement vidé et les nouvelles données sont chargées.
+
+### Configuration
+
+Pour activer l'invalidation automatique du cache, ajoutez ces variables dans `.env.local` :
+
+```bash
+# Secret token pour sécuriser l'endpoint d'invalidation
+REVALIDATE_SECRET=your_secret_token_here
+
+# URL de l'application Next.js
+NEXT_PUBLIC_SITE_URL=http://localhost:3000  # ou votre URL de staging/production
+```
+
+### Processus d'invalidation
+
+Lors d'une migration :
+
+1. Le script de migration appelle `/api/admin/revalidate` avec les tags appropriés
+2. L'endpoint invalide le cache serveur Next.js via `revalidateTag()`
+3. L'endpoint incrémente automatiquement les versions des données correspondantes
+4. Les prochaines requêtes API incluront la nouvelle version dans la réponse
+5. Le client compare la version du cache avec celle du serveur
+6. Si les versions diffèrent, le cache est automatiquement vidé et les nouvelles données sont chargées
+
+### Invalidation manuelle
+
+Si l'invalidation automatique ne fonctionne pas, vous pouvez invalider le cache manuellement :
+
+1. **Via l'API** (si le serveur est en cours d'exécution) :
+
+   ```bash
+   curl -X POST http://localhost:3000/api/admin/revalidate \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer YOUR_REVALIDATE_SECRET" \
+     -d '{"tags": ["regions", "countries", "ethnicities", "population", "africa"]}'
+   ```
+
+2. **En redémarrant le serveur** : Le cache serveur est automatiquement vidé au redémarrage (mais les versions restent en mémoire)
+
+3. **En vidant le cache côté client** : Dans la console du navigateur :
+   ```javascript
+   localStorage.removeItem("app:regions");
+   localStorage.removeItem("app:countries");
+   localStorage.removeItem("app:ethnicities");
+   ```
+
 ## Dépannage
 
 ### Erreurs de matching
@@ -226,3 +334,24 @@ Si certaines ethnies ne sont pas matchées avec leurs descriptions :
 - Vérifier les logs pour identifier les erreurs spécifiques
 - Vérifier que la migration SQL `002_add_enriched_fields.sql` a été appliquée
 - Vérifier les variables d'environnement Supabase
+
+### Cache non invalidé
+
+Si les nouvelles données n'apparaissent pas après la migration :
+
+1. Vérifier que `REVALIDATE_SECRET` est configuré dans `.env.local`
+2. Vérifier que `NEXT_PUBLIC_SITE_URL` pointe vers la bonne URL
+3. Vérifier que le serveur Next.js est en cours d'exécution
+4. Vérifier les logs de migration pour voir si l'invalidation a réussi
+5. Vérifier la console du navigateur pour voir si le cache a été invalidé automatiquement (message `🔄 Cache invalidé automatiquement`)
+6. Si nécessaire, invalider manuellement le cache (voir section ci-dessus)
+
+#### Versions perdues après redémarrage
+
+⚠️ **Important** : Les versions sont stockées en mémoire et sont perdues lors du redémarrage du serveur. Pour persister les versions entre les redémarrages, vous pouvez :
+
+1. Stocker les versions dans la base de données (table `data_versions`)
+2. Utiliser une variable d'environnement pour forcer une version minimale
+3. Redémarrer le serveur après chaque migration pour réinitialiser les versions
+
+**Note** : En production, les versions sont généralement réinitialisées à chaque déploiement, ce qui force une invalidation complète du cache.

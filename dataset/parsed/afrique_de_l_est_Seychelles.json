@@ -1,0 +1,55 @@
+{
+  "countryName": "Seychelles",
+  "region": "afrique_de_l_est",
+  "ethnicities": [
+    {
+      "groupName": "Créoles (mélange africain",
+      "subGroups": [
+        {
+          "name": "européen",
+          "population": 50600,
+          "percentageInCountry": 47,
+          "percentageInAfrica": 0.0033110000000000006
+        },
+        {
+          "name": "asiatique)",
+          "population": 50600,
+          "percentageInCountry": 47,
+          "percentageInAfrica": 0.0033110000000000006
+        }
+      ],
+      "population": 101200,
+      "percentageInCountry": 94,
+      "percentageInAfrica": 0.006622000000000001,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 6460,
+      "percentageInCountry": 6,
+      "percentageInAfrica": 0.000423,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

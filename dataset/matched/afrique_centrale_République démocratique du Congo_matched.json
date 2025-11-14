@@ -1,0 +1,492 @@
+{
+  "countryName": "République démocratique du Congo",
+  "region": "afrique_centrale",
+  "countryDescription": {
+    "countryName": "République démocratique du Congo",
+    "region": "afrique_centrale",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "aucun nom unifié ; mosaïque de royaumes et chefferies (Empire Luba",
+          "Empire Lunda",
+          "Royaume Kongo",
+          "royaumes Mangbetu",
+          "sultanats Zande",
+          "chefferies Mongo",
+          "etc.)"
+        ]
+      },
+      {
+        "period": "1885–1908",
+        "names": ["État indépendant du Congo (propriété du roi Léopold II)"]
+      },
+      {
+        "period": "1908–1960",
+        "names": ["Congo belge"]
+      },
+      {
+        "period": "1960–1964",
+        "names": ["République du Congo (Léopoldville)"]
+      },
+      {
+        "period": "1971–1997",
+        "names": ["Zaïre"]
+      },
+      {
+        "period": "Depuis 1997",
+        "names": ["République démocratique du Congo"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Luba",
+      "subGroups": [
+        {
+          "name": "Baluba du Kasaï",
+          "population": 9180000,
+          "percentageInCountry": 900,
+          "percentageInAfrica": 64.1958
+        },
+        {
+          "name": "Baluba du Katanga",
+          "population": 9180000,
+          "percentageInCountry": 900,
+          "percentageInAfrica": 64.1958
+        }
+      ],
+      "population": 18360000,
+      "percentageInCountry": 18,
+      "percentageInAfrica": 1.283916,
+      "languages": ["Tshiluba"],
+      "region": "Kasaï, Katanga (Haut-Lomami, Lualaba)",
+      "sources": ["Ethnologie du Congo", "sources historiques"],
+      "ancientName": "Royaume Luba",
+      "description": "Grand peuple bantu du centre-sud, forte tradition politique",
+      "societyType": "Sédentaire & agricole",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Royaume Luba",
+      "regionalPresence": ["RDC"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Baluba du Kasaï",
+          "population": 9180000,
+          "percentageInCountry": 900,
+          "percentageInAfrica": 64.1958
+        },
+        {
+          "name": "Baluba du Katanga",
+          "population": 9180000,
+          "percentageInCountry": 900,
+          "percentageInAfrica": 64.1958
+        }
+      ]
+    },
+    {
+      "groupName": "Kongo",
+      "subGroups": [
+        {
+          "name": "Bakongo",
+          "population": 4080000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 28.53146666666667
+        },
+        {
+          "name": "Vili",
+          "population": 4080000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 28.53146666666667
+        },
+        {
+          "name": "Yombe",
+          "population": 4080000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 28.53146666666667
+        }
+      ],
+      "population": 12240000,
+      "percentageInCountry": 12,
+      "percentageInAfrica": 0.855944,
+      "languages": ["Kikongo"],
+      "region": "Kongo Central, Kinshasa ouest",
+      "sources": ["Histoire du Royaume Kongo"],
+      "ancientName": "Royaume Kongo",
+      "description": "Peuple ancien du littoral ouest",
+      "societyType": "Sédentaire & commerçante",
+      "religion": "Christianisme",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Royaume Kongo",
+      "regionalPresence": ["RDC", "Congo", "Angola"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Bakongo",
+          "population": 4080000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 28.53146666666667
+        },
+        {
+          "name": "Vili",
+          "population": 4080000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 28.53146666666667
+        },
+        {
+          "name": "Yombe",
+          "population": 4080000,
+          "percentageInCountry": 400,
+          "percentageInAfrica": 28.53146666666667
+        }
+      ]
+    },
+    {
+      "groupName": "Mongo",
+      "subGroups": [
+        {
+          "name": "Nkundo",
+          "population": 5780000,
+          "percentageInCountry": 566.6666666666667,
+          "percentageInAfrica": 40.41956666666667
+        },
+        {
+          "name": "Ntomba",
+          "population": 5780000,
+          "percentageInCountry": 566.6666666666667,
+          "percentageInAfrica": 40.41956666666667
+        },
+        {
+          "name": "Ekonda",
+          "population": 5780000,
+          "percentageInCountry": 566.6666666666667,
+          "percentageInAfrica": 40.41956666666667
+        }
+      ],
+      "population": 17340000,
+      "percentageInCountry": 17,
+      "percentageInAfrica": 1.212587,
+      "languages": ["Lomongo"],
+      "region": "Cuvette centrale",
+      "sources": ["Anthropologie congolaise"],
+      "ancientName": "Chefferies Mongo",
+      "description": "Un des plus grands groupes forestiers",
+      "societyType": "Forestière & agricole",
+      "religion": "Christianisme",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Chefferies Mongo",
+      "regionalPresence": ["RDC"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Nkundo",
+          "population": 5780000,
+          "percentageInCountry": 566.6666666666667,
+          "percentageInAfrica": 40.41956666666667
+        },
+        {
+          "name": "Ntomba",
+          "population": 5780000,
+          "percentageInCountry": 566.6666666666667,
+          "percentageInAfrica": 40.41956666666667
+        },
+        {
+          "name": "Ekonda",
+          "population": 5780000,
+          "percentageInCountry": 566.6666666666667,
+          "percentageInAfrica": 40.41956666666667
+        }
+      ]
+    },
+    {
+      "groupName": "Tetela",
+      "subGroups": [],
+      "population": 7140000,
+      "percentageInCountry": 7,
+      "percentageInAfrica": 0.499301,
+      "languages": ["Tetela"],
+      "region": "Sankuru",
+      "sources": ["Sources historiques"],
+      "ancientName": "Chefferies Tetela",
+      "description": "Agriculteurs du centre",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Chefferies Tetela",
+      "regionalPresence": ["RDC"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Lunda-Chokwe",
+      "subGroups": [
+        {
+          "name": "Lunda",
+          "population": 2040000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 14.265749999999999
+        },
+        {
+          "name": "Chokwe",
+          "population": 2040000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 14.265749999999999
+        }
+      ],
+      "population": 4080000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.285315,
+      "languages": ["Lunda", "Chokwe"],
+      "region": "Katanga & frontières angolaises",
+      "sources": ["Histoire de l’Empire Lunda"],
+      "ancientName": "Empire Lunda",
+      "description": "Peuples transfrontaliers, chasse et artisanat",
+      "societyType": "Semi-nomade & agricole",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Empire Lunda",
+      "regionalPresence": ["RDC", "Angola", "Zambie"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Lunda",
+          "population": 2040000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 14.265749999999999
+        },
+        {
+          "name": "Chokwe",
+          "population": 2040000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 14.265749999999999
+        }
+      ]
+    },
+    {
+      "groupName": "Ituri",
+      "subGroups": [
+        {
+          "name": "Hema",
+          "population": 1530000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 10.699300000000001
+        },
+        {
+          "name": "Lendu",
+          "population": 1530000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 10.699300000000001
+        }
+      ],
+      "population": 3060000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.213986,
+      "languages": ["Hema", "Lendu"],
+      "region": "Ituri",
+      "sources": ["Études de l’Ituri"],
+      "ancientName": "Chefferies Hema et Lendu",
+      "description": "Groupes nilotiques et bantu en cohabitation historique",
+      "societyType": "Agro-pastorale",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Nilotique (Hema) / Bantu (Lendu)",
+      "historicalStatus": "Chefferies locales",
+      "regionalPresence": ["RDC"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Hema",
+          "population": 1530000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 10.699300000000001
+        },
+        {
+          "name": "Lendu",
+          "population": 1530000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 10.699300000000001
+        }
+      ]
+    },
+    {
+      "groupName": "Nande",
+      "subGroups": [],
+      "population": 2550000,
+      "percentageInCountry": 2.5,
+      "percentageInAfrica": 0.178322,
+      "languages": ["Kinande"],
+      "region": "Nord-Kivu",
+      "sources": ["Anthropologie du Kivu"],
+      "ancientName": "Royaumes nande",
+      "description": "Groupes montagnards du Kivu",
+      "societyType": "Montagnarde agricole",
+      "religion": "Christianisme",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Chefferies Nande",
+      "regionalPresence": ["RDC"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Hunde",
+      "subGroups": [],
+      "population": 1530000,
+      "percentageInCountry": 1.5,
+      "percentageInAfrica": 0.106993,
+      "languages": ["Hunde"],
+      "region": "Nord-Kivu",
+      "sources": ["Anthropologie du Kivu"],
+      "ancientName": "Chefferies Hunde",
+      "description": "Population montagnarde",
+      "societyType": "Montagnarde",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Chefferies Hunde",
+      "regionalPresence": ["RDC"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Grands Lacs",
+      "subGroups": [
+        {
+          "name": "Hutu",
+          "population": 1530000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 10.699300000000001
+        },
+        {
+          "name": "Tutsi",
+          "population": 1530000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 10.699300000000001
+        }
+      ],
+      "population": 3060000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.213986,
+      "languages": ["Kinyarwanda"],
+      "region": "Sud-Kivu, Nord-Kivu",
+      "sources": ["Histoire des Grands Lacs"],
+      "ancientName": "Royaumes rwandais",
+      "description": "Groupes transfrontaliers",
+      "societyType": "Agro-pastorale",
+      "religion": "Christianisme",
+      "linguisticFamily": "Bantu (Hutu), Nilotique (Tutsi)",
+      "historicalStatus": "Royaumes du Rwanda ancien",
+      "regionalPresence": ["Rwanda", "Burundi", "RDC"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Hutu",
+          "population": 1530000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 10.699300000000001
+        },
+        {
+          "name": "Tutsi",
+          "population": 1530000,
+          "percentageInCountry": 150,
+          "percentageInAfrica": 10.699300000000001
+        }
+      ]
+    },
+    {
+      "groupName": "Bemba",
+      "subGroups": [],
+      "population": 1020000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.071329,
+      "languages": ["Bemba"],
+      "region": "Katanga sud",
+      "sources": ["Sources transfrontalières"],
+      "ancientName": "Royaumes Bemba",
+      "description": "Population du sud Katanga",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme",
+      "linguisticFamily": "Bantu",
+      "historicalStatus": "Royaume Bemba",
+      "regionalPresence": ["Zambie", "RDC"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Peuples de forêt",
+      "subGroups": [
+        {
+          "name": "Mbuti",
+          "population": 340000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 2.3776333333333337
+        },
+        {
+          "name": "Efe",
+          "population": 340000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 2.3776333333333337
+        },
+        {
+          "name": "Aka",
+          "population": 340000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 2.3776333333333337
+        }
+      ],
+      "population": 1020000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.071329,
+      "languages": ["Langues oubanguiennes et bantu"],
+      "region": "Ituri, forêts profondes",
+      "sources": ["Anthropologie forestière"],
+      "ancientName": "Peuples autochtones de la forêt",
+      "description": "Chasseurs-cueilleurs",
+      "societyType": "Nomade forestière",
+      "religion": "Traditions",
+      "linguisticFamily": "Oubanguien + Bantu",
+      "historicalStatus": "Peuples pygmées d’Afrique centrale",
+      "regionalPresence": ["RDC", "Ouganda"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Mbuti",
+          "population": 340000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 2.3776333333333337
+        },
+        {
+          "name": "Efe",
+          "population": 340000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 2.3776333333333337
+        },
+        {
+          "name": "Aka",
+          "population": 340000,
+          "percentageInCountry": 33.33333333333333,
+          "percentageInAfrica": 2.3776333333333337
+        }
+      ]
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 15300000,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 1.06993,
+      "languages": ["Diverses langues"],
+      "region": "Tout le pays",
+      "sources": ["Estimations générales"],
+      "ancientName": "Divers royaumes et chefferies",
+      "description": "Mosaïque culturelle exceptionnelle",
+      "societyType": "Variable",
+      "religion": "Christianisme / Islam / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["RDC"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

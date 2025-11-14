@@ -3,6 +3,8 @@
  */
 import { createServerClient } from "../server";
 
+import { AncientNameEntry } from "@/types/ethnicity";
+
 export interface Country {
   id: string;
   slug: string;
@@ -17,7 +19,7 @@ export interface Country {
   percentage_in_region?: number;
   percentage_in_africa?: number;
   description?: string;
-  ancient_names?: string;
+  ancient_names?: string | unknown; // JSONB ou TEXT contenant du JSON
   created_at: string;
   updated_at: string;
 }
@@ -128,15 +130,43 @@ export async function getCountryWithDescription(
 }
 
 /**
- * Obtenir les anciens noms d'un pays
+ * Obtenir les anciens noms d'un pays (nouveau format structuré)
  */
-export async function getCountryAncientNames(slug: string): Promise<string[]> {
+export async function getCountryAncientNames(
+  slug: string
+): Promise<AncientNameEntry[]> {
   const country = await getCountryBySlug(slug);
   if (!country || !country.ancient_names) return [];
-  return country.ancient_names
-    .split(",")
-    .map((n) => n.trim())
-    .filter((n) => n.length > 0);
+
+  try {
+    // Si c'est déjà un objet (JSONB), le retourner directement
+    if (typeof country.ancient_names === "object") {
+      return country.ancient_names as AncientNameEntry[];
+    }
+
+    // Si c'est une string, essayer de parser le JSON
+    if (typeof country.ancient_names === "string") {
+      // Essayer de parser comme JSON
+      try {
+        const parsed = JSON.parse(country.ancient_names);
+        if (Array.isArray(parsed)) {
+          return parsed as AncientNameEntry[];
+        }
+      } catch {
+        // Si le parsing JSON échoue, c'est peut-être l'ancien format (séparé par virgules)
+        // Convertir en nouveau format avec période vide
+        const names = country.ancient_names
+          .split(",")
+          .map((n) => n.trim())
+          .filter((n) => n.length > 0);
+        return names.map((name) => ({ period: "", names: [name] }));
+      }
+    }
+  } catch (error) {
+    console.error("Error parsing ancient names:", error);
+  }
+
+  return [];
 }
 
 /**

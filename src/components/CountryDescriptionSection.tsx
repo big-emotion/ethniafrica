@@ -1,42 +1,58 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { FileText, History } from "lucide-react";
+import Link from "next/link";
+import { getLocalizedRoute } from "@/lib/routing";
+import { getCountryKey } from "@/lib/entityKeys";
+import { AncientNameEntry } from "@/types/ethnicity";
 
 interface CountryDescriptionSectionProps {
   description?: string;
-  ancientNames?: string[];
+  ancientNames?: AncientNameEntry[];
   language: "en" | "fr" | "es" | "pt";
+  countrySlug?: string; // Pour le lien "Voir plus"
 }
 
 export const CountryDescriptionSection = ({
   description,
   ancientNames,
   language,
+  countrySlug,
 }: CountryDescriptionSectionProps) => {
   const t = {
     en: {
       description: "Description",
       ancientNames: "Ancient Names",
+      seeMore: "See more",
     },
     fr: {
       description: "Description",
       ancientNames: "Anciennes appellations",
+      seeMore: "Voir plus",
     },
     es: {
       description: "Descripción",
       ancientNames: "Nombres antiguos",
+      seeMore: "Ver más",
     },
     pt: {
       description: "Descrição",
       ancientNames: "Nomes antigos",
+      seeMore: "Ver mais",
     },
   }[language];
 
   if (!description && (!ancientNames || ancientNames.length === 0)) {
     return null;
   }
+
+  // Afficher les 3 premières entrées
+  const displayedEntries = ancientNames?.slice(0, 3) || [];
+  // Afficher "Voir plus" s'il y a plus de 3 entrées
+  // Note: on affiche toujours le CTA si on a un countrySlug, car même avec 3 entrées,
+  // la page dédiée peut avoir plus d'informations
+  const hasMore = ancientNames && ancientNames.length > 3;
 
   return (
     <div className="space-y-6">
@@ -45,7 +61,13 @@ export const CountryDescriptionSection = ({
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <FileText className="h-5 w-5" />
-              {t.description}
+              {language === "fr"
+                ? "Résumé historique"
+                : language === "en"
+                  ? "Historical Summary"
+                  : language === "es"
+                    ? "Resumen histórico"
+                    : "Resumo histórico"}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -56,7 +78,7 @@ export const CountryDescriptionSection = ({
         </Card>
       )}
 
-      {ancientNames && ancientNames.length > 0 && (
+      {displayedEntries.length > 0 && (
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -65,12 +87,29 @@ export const CountryDescriptionSection = ({
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {ancientNames.map((name, index) => (
-                <Badge key={index} variant="outline">
-                  {name}
-                </Badge>
-              ))}
+            <div className="space-y-2">
+              {displayedEntries.map((entry, index) => {
+                const namesStr = entry.names.join(", ");
+                const isLastEntry = index === displayedEntries.length - 1;
+                const shouldShowMore = isLastEntry && hasMore && countrySlug;
+
+                return (
+                  <p key={index} className="text-muted-foreground">
+                    {entry.period ? `${entry.period} : ${namesStr}` : namesStr}
+                    {shouldShowMore && (
+                      <>
+                        {" ... "}
+                        <Link
+                          href={`${getLocalizedRoute(language, "countries")}/${encodeURIComponent(countrySlug!)}`}
+                          className="text-primary hover:underline"
+                        >
+                          {t.seeMore}
+                        </Link>
+                      </>
+                    )}
+                  </p>
+                );
+              })}
             </div>
           </CardContent>
         </Card>

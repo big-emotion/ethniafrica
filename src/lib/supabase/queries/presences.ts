@@ -34,6 +34,7 @@ export interface PresenceWithEthnicity extends Presence {
     id: string;
     name_fr: string;
     slug: string;
+    parent_id?: string | null;
   };
 }
 

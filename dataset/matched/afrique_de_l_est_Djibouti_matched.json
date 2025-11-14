@@ -1,0 +1,90 @@
+{
+  "countryName": "Djibouti",
+  "region": "afrique_de_l_est",
+  "countryDescription": null,
+  "ethnicities": [
+    {
+      "groupName": "Somali (Issa)",
+      "subGroups": [],
+      "population": 702218,
+      "percentageInCountry": 60,
+      "percentageInAfrica": 0.045948,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Afar",
+      "subGroups": [],
+      "population": 409627,
+      "percentageInCountry": 35,
+      "percentageInAfrica": 0.026803,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Arabes",
+      "subGroups": [
+        {
+          "name": "Européens",
+          "population": 29259,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0019145
+        },
+        {
+          "name": "Éthiopiens",
+          "population": 29259,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0019145
+        }
+      ],
+      "population": 58518,
+      "percentageInCountry": 5,
+      "percentageInAfrica": 0.003829,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Européens",
+          "population": 29259,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0019145
+        },
+        {
+          "name": "Éthiopiens",
+          "population": 29259,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0019145
+        }
+      ]
+    }
+  ]
+}

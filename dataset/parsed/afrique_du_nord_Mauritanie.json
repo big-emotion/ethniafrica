@@ -1,0 +1,67 @@
+{
+  "countryName": "Mauritanie",
+  "region": "afrique_du_nord",
+  "ethnicities": [
+    {
+      "groupName": "Maures (Arabes",
+      "subGroups": [
+        {
+          "name": "Berbères arabisés)",
+          "population": 3535550,
+          "percentageInCountry": 70,
+          "percentageInAfrica": 0.231343
+        }
+      ],
+      "population": 3535550,
+      "percentageInCountry": 70,
+      "percentageInAfrica": 0.231343,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Haratines",
+      "subGroups": [],
+      "population": 757618,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 0.049573,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Afro-Mauritaniens (Peuls, Soninkés, Wolofs)",
+      "subGroups": [],
+      "population": 757618,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 0.049573,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

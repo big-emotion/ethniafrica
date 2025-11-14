@@ -21,8 +21,16 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, MapPin, Users, ExternalLink } from "lucide-react";
-import { TopEthnicitiesCard } from "@/components/TopEthnicitiesCard";
+import {
+  ArrowLeft,
+  MapPin,
+  Users,
+  ExternalLink,
+  FileText,
+  ChevronRight,
+  ChevronDown,
+} from "lucide-react";
+import { EthnicityWithSubgroups } from "@/types/ethnicity";
 import { TopLanguagesCard } from "@/components/TopLanguagesCard";
 import { SubgroupsTable } from "@/components/SubgroupsTable";
 import { CountryDescriptionSection } from "@/components/CountryDescriptionSection";
@@ -36,16 +44,10 @@ interface CountryDetailPayload {
   percentageInRegion: number;
   percentageInAfrica: number;
   region: string;
-  ethnicities: Array<{
-    name: string;
-    population: number;
-    percentageInCountry: number;
-    percentageInRegion: number;
-    percentageInAfrica: number;
-  }>;
+  ethnicities: EthnicityWithSubgroups[];
   description?: string;
-  ancientNames?: string[]; // Max 3 pour le résumé
-  allAncientNames?: string[]; // Tous pour la section détaillée
+  ancientNames?: Array<{ period: string; names: string[] }>; // Max 3 entrées pour le résumé
+  allAncientNames?: Array<{ period: string; names: string[] }>; // Toutes les entrées pour la section détaillée
   topEthnicities?: Array<{
     name: string;
     languages: string[];
@@ -266,11 +268,6 @@ export function DetailPageClient({
                 <CardTitle className="text-2xl flex items-center gap-2">
                   <Users className="h-5 w-5 text-primary" />
                   {itemTitle}
-                  {payload.ancientNames && payload.ancientNames.length > 0 && (
-                    <span className="text-base font-normal text-muted-foreground">
-                      ({payload.ancientNames.slice(0, 3).join(", ")})
-                    </span>
-                  )}
                 </CardTitle>
                 <CardDescription>
                   {getRegionName(
@@ -415,51 +412,146 @@ export function DetailPageClient({
     payload,
   }: {
     payload: CountryDetailPayload;
-  }) => (
-    <Card className="shadow-soft">
-      <CardHeader>
-        <CardTitle>
-          {language === "en"
-            ? "Ethnic composition"
-            : language === "fr"
-              ? "Composition ethnique"
-              : language === "es"
-                ? "Composición étnica"
-                : "Composição étnica"}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead className="text-left text-muted-foreground">
-            <tr className="border-b">
-              <th className="py-2 pr-4">{t.ethnicity}</th>
-              <th className="py-2 pr-4">{t.population}</th>
-              <th className="py-2 pr-4">{t.percentage}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {payload.ethnicities.map((ethnicity) => {
-              const ethnicityKey =
-                getEthnicityKey(ethnicity.name) || ethnicity.name;
-              return (
-                <tr key={ethnicity.name} className="border-b last:border-none">
-                  <td className="py-2 pr-4 font-medium">
-                    {getEthnicityName(ethnicityKey, language)}
-                  </td>
-                  <td className="py-2 pr-4">
-                    {formatNumber(ethnicity.population, language)}
-                  </td>
-                  <td className="py-2 pr-4">
-                    {formatPercentage(ethnicity.percentageInCountry, language)}%
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </CardContent>
-    </Card>
-  );
+  }) => {
+    const [expandedGroups, setExpandedGroups] = useState<Set<string>>(
+      new Set()
+    );
+
+    const toggleGroup = (groupName: string) => {
+      setExpandedGroups((prev) => {
+        const newSet = new Set(prev);
+        if (newSet.has(groupName)) {
+          newSet.delete(groupName);
+        } else {
+          newSet.add(groupName);
+        }
+        return newSet;
+      });
+    };
+
+    // Construire la liste plate avec groupes parents et sous-groupes expandés
+    const flattenedEthnicities = useMemo(() => {
+      const result: Array<{
+        ethnicity: EthnicityWithSubgroups;
+        isSubgroup: boolean;
+        parentName?: string;
+      }> = [];
+
+      for (const ethnicity of payload.ethnicities) {
+        result.push({
+          ethnicity,
+          isSubgroup: !ethnicity.isParent,
+        });
+
+        // Si c'est un groupe parent avec sous-groupes et qu'il est expandé, ajouter les sous-groupes
+        if (
+          ethnicity.isParent &&
+          ethnicity.subgroups &&
+          ethnicity.subgroups.length > 0 &&
+          expandedGroups.has(ethnicity.name)
+        ) {
+          for (const subgroup of ethnicity.subgroups) {
+            result.push({
+              ethnicity: {
+                ...subgroup,
+                isParent: false,
+                percentageInAfrica: subgroup.percentageInAfrica,
+              } as EthnicityWithSubgroups,
+              isSubgroup: true,
+              parentName: ethnicity.name,
+            });
+          }
+        }
+      }
+
+      return result;
+    }, [payload.ethnicities, expandedGroups]);
+
+    return (
+      <Card className="shadow-soft">
+        <CardHeader>
+          <CardTitle>
+            {language === "en"
+              ? "Ethnic composition"
+              : language === "fr"
+                ? "Composition ethnique"
+                : language === "es"
+                  ? "Composición étnica"
+                  : "Composição étnica"}{" "}
+            ({payload.ethnicities.filter((e) => e.isParent).length})
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="text-left text-muted-foreground">
+              <tr className="border-b">
+                <th className="py-2 pr-4">{t.ethnicity}</th>
+                <th className="py-2 pr-4">{t.population}</th>
+                <th className="py-2 pr-4">{t.percentage}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {flattenedEthnicities.map((item) => {
+                const ethnicityKey =
+                  getEthnicityKey(item.ethnicity.name) || item.ethnicity.name;
+                const hasSubgroups =
+                  item.ethnicity.isParent &&
+                  item.ethnicity.subgroups &&
+                  item.ethnicity.subgroups.length > 0;
+                const isExpanded = expandedGroups.has(item.ethnicity.name);
+
+                return (
+                  <tr
+                    key={`${item.ethnicity.name}-${item.isSubgroup}`}
+                    className={`border-b last:border-none ${item.isSubgroup ? "bg-muted/20" : ""}`}
+                  >
+                    <td className="py-2 pr-4 font-medium">
+                      <div className="flex items-center gap-2">
+                        {hasSubgroups && !item.isSubgroup && (
+                          <button
+                            onClick={() => toggleGroup(item.ethnicity.name)}
+                            className="p-1 hover:bg-muted rounded -ml-1"
+                          >
+                            {isExpanded ? (
+                              <ChevronDown className="h-4 w-4" />
+                            ) : (
+                              <ChevronRight className="h-4 w-4" />
+                            )}
+                          </button>
+                        )}
+                        {item.isSubgroup && (
+                          <div className="w-6 flex items-center justify-center">
+                            <div className="w-0.5 h-4 bg-muted-foreground/30" />
+                          </div>
+                        )}
+                        <span
+                          className={
+                            item.isSubgroup ? "text-muted-foreground" : ""
+                          }
+                        >
+                          {getEthnicityName(ethnicityKey, language)}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-2 pr-4">
+                      {formatNumber(item.ethnicity.population, language)}
+                    </td>
+                    <td className="py-2 pr-4">
+                      {formatPercentage(
+                        item.ethnicity.percentageInCountry,
+                        language
+                      )}
+                      %
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </CardContent>
+      </Card>
+    );
+  };
 
   const RegionCountriesTable = ({
     payload,
@@ -726,48 +818,39 @@ export function DetailPageClient({
 
         {data.type === "country" && (
           <div className="space-y-6">
-            {data.payload.topEthnicities &&
-              data.payload.topEthnicities.length > 0 && (
-                <div className="relative">
-                  <TopEthnicitiesCard
-                    ethnicities={data.payload.topEthnicities}
-                    language={language}
-                  />
-                  <Link
-                    href={`/${language}/${
-                      language === "en"
-                        ? "countries"
-                        : language === "fr"
-                          ? "pays"
-                          : language === "es"
-                            ? "paises"
-                            : "paises"
-                    }/${encodeURIComponent(
-                      getCountryKey(data.payload.name) || item
-                    )}`}
-                    className="absolute top-4 right-4"
-                  >
-                    <Button variant="ghost" size="sm" className="gap-2">
-                      {language === "en"
-                        ? "See more"
-                        : language === "fr"
-                          ? "Voir plus"
-                          : language === "es"
-                            ? "Ver más"
-                            : "Ver mais"}
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              )}
-            <CountryEthnicitiesTable payload={data.payload} />
+            {/* 1. Résumé historique (description) */}
+            {data.payload.description && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <FileText className="h-5 w-5" />
+                    {language === "fr"
+                      ? "Résumé historique"
+                      : language === "en"
+                        ? "Historical Summary"
+                        : language === "es"
+                          ? "Resumen histórico"
+                          : "Resumo histórico"}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground whitespace-pre-line">
+                    {data.payload.description}
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+            {/* 2. Anciennes appellations */}
             <CountryDescriptionSection
-              description={data.payload.description}
+              description={undefined}
               ancientNames={
                 data.payload.allAncientNames || data.payload.ancientNames
               }
               language={language}
+              countrySlug={getCountryKey(data.payload.name) || item}
             />
+            {/* 3. Tableau des ethnies */}
+            <CountryEthnicitiesTable payload={data.payload} />
           </div>
         )}
 

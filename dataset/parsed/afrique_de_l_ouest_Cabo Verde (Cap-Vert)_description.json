@@ -1,0 +1,38 @@
+{
+  "countryName": "Cabo Verde (Cap-Vert)",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant le XVe siècle",
+      "names": [
+        "les îles étaient inhabitées (aucune population autochtone connue)"
+      ]
+    },
+    {
+      "period": "1456–1462",
+      "names": ["Découverte par des navigateurs portugais et génois"]
+    },
+    {
+      "period": "1462",
+      "names": ["Début de la colonisation portugaise"]
+    },
+    {
+      "period": "XVIe–XVIIIe siècles",
+      "names": ["centre majeur de traite atlantique (île de Santiago)"]
+    },
+    {
+      "period": "1956–1973",
+      "names": ["Lutte pour l’indépendance (PAIGC)"]
+    },
+    {
+      "period": "1975",
+      "names": ["República de Cabo Verde"]
+    },
+    {
+      "period": "2013",
+      "names": ["Nom officiel international normalisé : Cabo Verde"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

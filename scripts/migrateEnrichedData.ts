@@ -18,11 +18,16 @@ import {
   getEthnicityKey,
 } from "../src/lib/entityKeys";
 
+interface AncientNameEntry {
+  period: string;
+  names: string[];
+}
+
 interface MatchedCountryData {
   countryName: string;
   region: string;
   countryDescription: {
-    ancientNames: string[];
+    ancientNames: AncientNameEntry[];
     description: string;
   } | null;
   ethnicities: MatchedEthnicity[];
@@ -58,7 +63,47 @@ interface SubgroupInfo {
   percentageInAfrica: number;
 }
 
-// Limiter les anciens noms à 3 maximum
+// Convertir les anciennes appellations en JSON pour stockage
+function formatAncientNamesForDB(
+  ancientNames: AncientNameEntry[] | string[] | string | null | undefined
+): string | null {
+  // Si c'est déjà le nouveau format (tableau d'objets)
+  if (Array.isArray(ancientNames) && ancientNames.length > 0) {
+    // Vérifier si c'est le nouveau format (objets avec period et names)
+    if (
+      typeof ancientNames[0] === "object" &&
+      "period" in ancientNames[0] &&
+      "names" in ancientNames[0]
+    ) {
+      // Nouveau format: convertir toutes les entrées en JSON (sans limite)
+      // La limite à 3 sera appliquée uniquement pour l'affichage dans la vue détaillée
+      return JSON.stringify(ancientNames as AncientNameEntry[]);
+    }
+    // Ancien format: tableau de strings
+    else if (typeof ancientNames[0] === "string") {
+      // Convertir en nouveau format avec période vide
+      const converted: AncientNameEntry[] = (ancientNames as string[])
+        .slice(0, 3)
+        .map((name) => ({ period: "", names: [name] }));
+      return JSON.stringify(converted);
+    }
+  }
+  // Si c'est une string (ancien format séparé par virgules)
+  else if (typeof ancientNames === "string" && ancientNames.trim()) {
+    const namesArray = ancientNames
+      .split(",")
+      .map((n) => n.trim())
+      .filter((n) => n.length > 0);
+    const converted: AncientNameEntry[] = namesArray
+      .slice(0, 3)
+      .map((name) => ({ period: "", names: [name] }));
+    return JSON.stringify(converted);
+  }
+
+  return null;
+}
+
+// Fonction de compatibilité pour les ethnies (ancien format)
 function limitAncientNames(names: string | string[]): string {
   const namesArray = Array.isArray(names)
     ? names
@@ -111,6 +156,54 @@ function formatError(error: unknown): string {
   }
 
   return String(error);
+}
+
+// Invalider le cache Next.js après la migration
+async function invalidateCache() {
+  const revalidateSecret = process.env.REVALIDATE_SECRET;
+  const apiUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+  if (!revalidateSecret) {
+    console.warn(
+      "\n⚠️  REVALIDATE_SECRET not set. Cache will not be invalidated automatically."
+    );
+    console.warn(
+      "   Add REVALIDATE_SECRET to .env.local to enable automatic cache invalidation."
+    );
+    return;
+  }
+
+  console.log("\n🔄 Invalidating Next.js cache...");
+
+  try {
+    const response = await fetch(`${apiUrl}/api/admin/revalidate`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${revalidateSecret}`,
+      },
+      body: JSON.stringify({
+        tags: ["regions", "countries", "ethnicities", "population", "africa"],
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      throw new Error(`HTTP ${response.status}: ${error}`);
+    }
+
+    const result = await response.json();
+    console.log("✅ Cache invalidated successfully!");
+    console.log(`   Invalidated tags: ${result.invalidatedTags.join(", ")}`);
+  } catch (error) {
+    console.error("⚠️  Failed to invalidate cache:", error);
+    console.error(
+      "   You may need to manually invalidate the cache or restart the server."
+    );
+    console.error(
+      "   Make sure the Next.js server is running and REVALIDATE_SECRET is correct."
+    );
+  }
 }
 
 async function main() {
@@ -179,30 +272,38 @@ async function main() {
                     : regionKey;
 
         // Calculer la population totale de la région
-        let totalPopulation = 0;
+        // On va d'abord calculer toutes les populations de pays, puis les sommer
+        const countryPopulations: number[] = [];
         for (const file of matchedFiles) {
           const matchedData: MatchedCountryData = JSON.parse(
             fs.readFileSync(path.join(matchedDir, file), "utf-8")
           );
           if (matchedData.region === regionKey) {
             // Calculer la population du pays depuis les ethnies
+            // On utilise la population de l'ethnie avec le plus grand pourcentage
+            // pour estimer la population totale du pays
             const countryPopulation = matchedData.ethnicities.reduce(
-              (sum, eth) => {
-                // Utiliser la population de la première ethnie pour estimer la population du pays
-                // (approximation basée sur le pourcentage)
+              (max, eth) => {
                 if (eth.percentageInCountry > 0) {
-                  return Math.max(
-                    sum,
-                    Math.round((eth.population / eth.percentageInCountry) * 100)
+                  const estimated = Math.round(
+                    (eth.population / eth.percentageInCountry) * 100
                   );
+                  return Math.max(max, estimated);
                 }
-                return sum;
+                return max;
               },
               0
             );
-            totalPopulation = Math.max(totalPopulation, countryPopulation);
+            if (countryPopulation > 0) {
+              countryPopulations.push(countryPopulation);
+            }
           }
         }
+        // Sommer toutes les populations de pays pour obtenir la population totale de la région
+        const totalPopulation = countryPopulations.reduce(
+          (sum, pop) => sum + pop,
+          0
+        );
         regionPopulations.set(regionKey, totalPopulation);
 
         const { data, error } = await supabase
@@ -293,9 +394,9 @@ async function main() {
         const percentageInAfrica =
           (countryPopulation / totalAfricaPopulation) * 100;
 
-        // Anciens noms du pays
+        // Anciens noms du pays (nouveau format JSON)
         const ancientNames = matchedData.countryDescription?.ancientNames || [];
-        const ancientNamesStr = limitAncientNames(ancientNames);
+        const ancientNamesJson = formatAncientNamesForDB(ancientNames);
 
         const { data, error } = await supabase
           .from("countries")
@@ -308,7 +409,7 @@ async function main() {
               percentage_in_region: percentageInRegion,
               percentage_in_africa: percentageInAfrica,
               description: matchedData.countryDescription?.description || null,
-              ancient_names: ancientNamesStr || null,
+              ancient_names: ancientNamesJson,
             },
             {
               onConflict: "slug",
@@ -937,6 +1038,9 @@ async function main() {
       process.exit(1);
     } else {
       console.log("\n✅ Migration completed successfully!");
+
+      // Invalider le cache Next.js
+      await invalidateCache();
     }
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : String(error);

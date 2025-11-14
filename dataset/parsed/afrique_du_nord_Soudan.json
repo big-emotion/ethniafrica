@@ -1,0 +1,42 @@
+{
+  "countryName": "Soudan",
+  "region": "afrique_du_nord",
+  "ethnicities": [
+    {
+      "groupName": "Arabes (Jaaliyin, Shaigiya, etc.)",
+      "subGroups": [],
+      "population": 34907442,
+      "percentageInCountry": 70,
+      "percentageInAfrica": 2.28411,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Nubas, Bejas, Fur, Nuer, Dinka et autres",
+      "subGroups": [],
+      "population": 14960332,
+      "percentageInCountry": 30,
+      "percentageInAfrica": 0.978904,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

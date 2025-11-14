@@ -222,7 +222,7 @@ Les données sont stockées dans Supabase (PostgreSQL) et chargées dynamiquemen
 
 ### Organisation des fichiers sources
 
-Les fichiers sources CSV enrichis et les fichiers de description sont organisés par région puis par pays pour la migration des données :
+Les fichiers sources CSV (format enrichi ou legacy) et les fichiers de description sont organisés par région puis par pays pour la migration des données :
 
 ```
 dataset/
@@ -245,6 +245,13 @@ dataset/
 
 ### Données enrichies
 
+L'application supporte deux formats de fichiers CSV :
+
+- **Format enrichi (recommandé)** : `{country}_ethnies_complet.csv` avec 15 colonnes incluant langues, descriptions, informations culturelles, etc.
+- **Format legacy** : `groupes_ethniques.csv` avec 4 colonnes de base (compatibilité avec les anciens fichiers)
+
+Le script de parsing détecte automatiquement le format et normalise les données vers la même structure. Le format legacy est supporté pour la compatibilité, mais le format enrichi est recommandé pour bénéficier de toutes les fonctionnalités.
+
 L'application supporte désormais des données enrichies pour les pays et les groupes ethniques :
 
 - **Pays** : descriptions, anciens noms (max 3)
@@ -257,7 +264,9 @@ L'application supporte désormais des données enrichies pour les pays et les gr
 
 Pour mettre à jour les données dans la base de données :
 
-1. Placer les fichiers CSV enrichis dans `dataset/source/{region}/{country}/`
+1. Placer les fichiers CSV dans `dataset/source/{region}/{country}/` :
+   - Format enrichi : `{country}_ethnies_complet.csv` (recommandé)
+   - Format legacy : `groupes_ethniques.csv` (compatibilité)
 2. Placer les fichiers de description (`.txt`) dans le même dossier
 3. Exécuter les scripts de parsing et migration :
    ```bash

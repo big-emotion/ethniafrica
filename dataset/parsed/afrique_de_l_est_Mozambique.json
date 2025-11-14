@@ -1,0 +1,182 @@
+{
+  "countryName": "Mozambique",
+  "region": "afrique_de_l_est",
+  "ethnicities": [
+    {
+      "groupName": "Makua-Lomwe",
+      "subGroups": [],
+      "population": 13271453,
+      "percentageInCountry": 37,
+      "percentageInAfrica": 0.868395,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Tsonga (Shangaan)",
+      "subGroups": [],
+      "population": 8249822,
+      "percentageInCountry": 23,
+      "percentageInAfrica": 0.539813,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Sena",
+      "subGroups": [],
+      "population": 5021631,
+      "percentageInCountry": 14,
+      "percentageInAfrica": 0.328582,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Ndau",
+      "subGroups": [],
+      "population": 4304255,
+      "percentageInCountry": 12,
+      "percentageInAfrica": 0.281642,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Shona",
+      "subGroups": [],
+      "population": 2152128,
+      "percentageInCountry": 6,
+      "percentageInAfrica": 0.140821,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Swahili",
+      "subGroups": [
+        {
+          "name": "Maconde",
+          "population": 597813,
+          "percentageInCountry": 1.666665737353912,
+          "percentageInAfrica": 0.039116978188843785
+        },
+        {
+          "name": "Chewa",
+          "population": 597813,
+          "percentageInCountry": 1.666665737353912,
+          "percentageInAfrica": 0.039116978188843785
+        },
+        {
+          "name": "Yao (regroupés)",
+          "population": 597813,
+          "percentageInCountry": 1.666665737353912,
+          "percentageInAfrica": 0.039116978188843785
+        }
+      ],
+      "population": 1793439,
+      "percentageInCountry": 4.999997212061736,
+      "percentageInAfrica": 0.11735093456653135,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Européens",
+      "subGroups": [
+        {
+          "name": "Indiens",
+          "population": 179344,
+          "percentageInCountry": 0.5,
+          "percentageInAfrica": 0.011735
+        },
+        {
+          "name": "Métis",
+          "population": 179344,
+          "percentageInCountry": 0.5,
+          "percentageInAfrica": 0.011735
+        }
+      ],
+      "population": 358688,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.02347,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 717376,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.04694,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

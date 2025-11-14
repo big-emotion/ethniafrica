@@ -1,0 +1,60 @@
+{
+  "countryName": "Cabo Verde (Cap-Vert)",
+  "region": "afrique_de_l_ouest",
+  "ethnicities": [
+    {
+      "groupName": "Créoles (métis)",
+      "subGroups": [],
+      "population": 374401,
+      "percentageInCountry": 71,
+      "percentageInAfrica": 0.024498,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Africains",
+      "subGroups": [],
+      "population": 147651,
+      "percentageInCountry": 28,
+      "percentageInAfrica": 0.009661,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Européens",
+      "subGroups": [],
+      "population": 5273,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.000345,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

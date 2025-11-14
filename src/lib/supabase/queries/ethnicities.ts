@@ -32,6 +32,7 @@ export async function getAllEthnicities(): Promise<Ethnicity[]> {
   const { data, error } = await supabase
     .from("ethnic_groups")
     .select("*")
+    .is("parent_id", null) // Filtrer uniquement les groupes parents
     .order("name_fr");
 
   if (error) {

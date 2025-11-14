@@ -1,0 +1,425 @@
+{
+  "countryName": "Nigéria",
+  "region": "afrique_de_l_ouest",
+  "countryDescription": {
+    "countryName": "Nigéria",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "sultanats haoussa (Kano",
+          "Katsina",
+          "Zaria)",
+          "califat de Sokoto",
+          "empire Kanem‑Bornou",
+          "royaume d’Oyo",
+          "Ile‑Ife",
+          "chefferies igbo",
+          "royaumes ijaw",
+          "itsekiri",
+          "urhobo",
+          "royaume du Bénin"
+        ]
+      },
+      {
+        "period": "XVe–XVIe siècle",
+        "names": [
+          "premiers contacts portugais sur les côtes (Lagos",
+          "Bénin",
+          "Calabar)"
+        ]
+      },
+      {
+        "period": "XIXe siècle",
+        "names": [
+          "expansion britannique ; création des protectorats Nord et Sud"
+        ]
+      },
+      {
+        "period": "1914",
+        "names": ["Amalgamation"]
+      },
+      {
+        "period": "1960",
+        "names": ["Fédération du Nigeria"]
+      },
+      {
+        "period": "1963",
+        "names": ["République fédérale du Nigeria (nom actuel)"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Hausa-Fulani",
+      "subGroups": [
+        {
+          "name": "Hausa",
+          "population": 34050000,
+          "percentageInCountry": 1500,
+          "percentageInAfrica": 238.1119
+        },
+        {
+          "name": "Fulani",
+          "population": 34050000,
+          "percentageInCountry": 1500,
+          "percentageInAfrica": 238.1119
+        }
+      ],
+      "population": 68100000,
+      "percentageInCountry": 30,
+      "percentageInAfrica": 4.762238,
+      "languages": ["Hausa", "Fulfulde"],
+      "region": "Nord (Kano, Kaduna, Sokoto)",
+      "sources": ["NBS Nigeria", "ethnologie sahélienne"],
+      "ancientName": "Califat de Sokoto, cités haoussa",
+      "description": "Groupe majoritaire du nord, islamisé tôt",
+      "societyType": "Urbaine & pastorale",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Chadique (Hausa), Atlantique (Fulani)",
+      "historicalStatus": "Califat de Sokoto",
+      "regionalPresence": ["Nigeria", "Niger", "Cameroun"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Hausa",
+          "population": 34050000,
+          "percentageInCountry": 1500,
+          "percentageInAfrica": 238.1119
+        },
+        {
+          "name": "Fulani",
+          "population": 34050000,
+          "percentageInCountry": 1500,
+          "percentageInAfrica": 238.1119
+        }
+      ]
+    },
+    {
+      "groupName": "Yoruba",
+      "subGroups": [
+        {
+          "name": "Oyo",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        },
+        {
+          "name": "Ife",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        },
+        {
+          "name": "Egba",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        },
+        {
+          "name": "Ijebu",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        },
+        {
+          "name": "Ekiti…",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        }
+      ],
+      "population": 34050000,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 2.381119,
+      "languages": ["Yoruba"],
+      "region": "Sud-Ouest (Lagos, Ibadan, Abeokuta)",
+      "sources": ["NBS Nigeria", "histoire yoruba"],
+      "ancientName": "Royaumes Oyo, Ife",
+      "description": "Grande civilisation urbaine",
+      "societyType": "Urbaine & agricole",
+      "religion": "Christianisme + Islam + traditions",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Royaume d’Oyo",
+      "regionalPresence": ["Nigeria", "Bénin", "Togo"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Oyo",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        },
+        {
+          "name": "Ife",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        },
+        {
+          "name": "Egba",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        },
+        {
+          "name": "Ijebu",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        },
+        {
+          "name": "Ekiti…",
+          "population": 6810000,
+          "percentageInCountry": 300,
+          "percentageInAfrica": 47.62238
+        }
+      ]
+    },
+    {
+      "groupName": "Igbo",
+      "subGroups": [
+        {
+          "name": "Igbo",
+          "population": 18160000,
+          "percentageInCountry": 800,
+          "percentageInAfrica": 126.993
+        },
+        {
+          "name": "sous-groupes claniques",
+          "population": 18160000,
+          "percentageInCountry": 800,
+          "percentageInAfrica": 126.993
+        }
+      ],
+      "population": 36320000,
+      "percentageInCountry": 16,
+      "percentageInAfrica": 2.53986,
+      "languages": ["Igbo"],
+      "region": "Sud-Est (Enugu, Anambra, Imo)",
+      "sources": ["NBS Nigeria"],
+      "ancientName": "Royaumes igbo, confédérations locales",
+      "description": "Population très commerçante et urbaine",
+      "societyType": "Urbaine",
+      "religion": "Christianisme",
+      "linguisticFamily": "Niger-Congo (igboïde)",
+      "historicalStatus": "Confédérations Igbo",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Igbo",
+          "population": 18160000,
+          "percentageInCountry": 800,
+          "percentageInAfrica": 126.993
+        },
+        {
+          "name": "sous-groupes claniques",
+          "population": 18160000,
+          "percentageInCountry": 800,
+          "percentageInAfrica": 126.993
+        }
+      ]
+    },
+    {
+      "groupName": "Ijaw",
+      "subGroups": [],
+      "population": 15890000,
+      "percentageInCountry": 7,
+      "percentageInAfrica": 1.111189,
+      "languages": ["Ijaw"],
+      "region": "Delta du Niger",
+      "sources": ["Anthropologie du delta"],
+      "ancientName": "Chefferies du delta",
+      "description": "Peuples fluviaux pêcheurs",
+      "societyType": "Fluviale & maritime",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Niger-Congo (ijoid)",
+      "historicalStatus": "Chefferies Ijaw",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Kanuri",
+      "subGroups": [
+        {
+          "name": "Kanembu",
+          "population": 4540000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 31.74825
+        },
+        {
+          "name": "Yerwa",
+          "population": 4540000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 31.74825
+        }
+      ],
+      "population": 9080000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.634965,
+      "languages": ["Kanuri"],
+      "region": "Nord-Est (Borno, Yobe)",
+      "sources": ["Histoire du Bornou"],
+      "ancientName": "Empire du Kanem-Bornou",
+      "description": "Ancien empire sahélien",
+      "societyType": "Sédentaire & pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Nilo-saharienne",
+      "historicalStatus": "Kanem-Bornou",
+      "regionalPresence": ["Tchad", "Niger", "Nigeria"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Kanembu",
+          "population": 4540000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 31.74825
+        },
+        {
+          "name": "Yerwa",
+          "population": 4540000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 31.74825
+        }
+      ]
+    },
+    {
+      "groupName": "Tiv",
+      "subGroups": [],
+      "population": 6810000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.476224,
+      "languages": ["Tiv"],
+      "region": "Centre (Benue, Taraba)",
+      "sources": ["Sources ethnologiques"],
+      "ancientName": "Chefferies Tiv",
+      "description": "Agriculteurs du centre",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme",
+      "linguisticFamily": "Niger-Congo (bantoïde)",
+      "historicalStatus": "Chefferies Tiv",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Ibibio",
+      "subGroups": [],
+      "population": 5675000,
+      "percentageInCountry": 2.5,
+      "percentageInAfrica": 0.396853,
+      "languages": ["Ibibio"],
+      "region": "Sud (Akwa Ibom)",
+      "sources": ["Anthropologie côtière"],
+      "ancientName": "Royaumes Ibibio",
+      "description": "Population du golfe de Guinée",
+      "societyType": "Côtière & agricole",
+      "religion": "Christianisme",
+      "linguisticFamily": "Niger-Congo (Cross River)",
+      "historicalStatus": "Royaumes Ibibio",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Edo",
+      "subGroups": [],
+      "population": 3405000,
+      "percentageInCountry": 1.5,
+      "percentageInAfrica": 0.238112,
+      "languages": ["Edo"],
+      "region": "État d’Edo (Benin City)",
+      "sources": ["Histoire du royaume de Benin"],
+      "ancientName": "Royaume du Bénin",
+      "description": "Grande civilisation artistique",
+      "societyType": "Urbaine",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Niger-Congo (édoïde)",
+      "historicalStatus": "Royaume du Benin",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Nupe",
+      "subGroups": [],
+      "population": 2270000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.158741,
+      "languages": ["Nupe"],
+      "region": "Centre-Nord (Niger State)",
+      "sources": ["Ethnologie nigériane"],
+      "ancientName": "Royaume Nupe",
+      "description": "Agriculteurs et artisans",
+      "societyType": "Sédentaire agricole",
+      "religion": "Islam & christianisme",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Royaume Nupe",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Gwari / Gbagyi",
+      "subGroups": [],
+      "population": 3405000,
+      "percentageInCountry": 1.5,
+      "percentageInAfrica": 0.238112,
+      "languages": ["Gbagyi"],
+      "region": "Centre (Abuja, Niger State)",
+      "sources": ["Anthropologie"],
+      "ancientName": "Chefferies Gbagyi",
+      "description": "Population locale du centre",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Chefferies Gbagyi",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Jukun",
+      "subGroups": [],
+      "population": 2270000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.158741,
+      "languages": ["Jukun"],
+      "region": "Centre-Est (Taraba)",
+      "sources": ["Histoire du Kororofa"],
+      "ancientName": "Confédération Jukun",
+      "description": "Ancienne entité militaire de la région",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Benue-Congo",
+      "historicalStatus": "Confédération Kororofa",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 15890000,
+      "percentageInCountry": 7,
+      "percentageInAfrica": 1.111189,
+      "languages": ["Diverses langues nigéro-congolaises"],
+      "region": "National",
+      "sources": ["NBS Nigeria"],
+      "ancientName": "Divers royaumes locaux",
+      "description": "Mosaïque culturelle du Nigeria",
+      "societyType": "Variable",
+      "religion": "Christianisme / Islam / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Nigeria"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "countryName": "Maroc",
+  "region": "afrique_du_nord",
+  "countryDescription": {
+    "countryName": "Maroc",
+    "region": "afrique_du_nord",
+    "ancientNames": [
+      {
+        "period": "Avant les conquêtes",
+        "names": [
+          "pas de nom unifié ; territoires amazighs (Imazighen)",
+          "royaumes du Souss",
+          "émirat de Nekor",
+          "tribus du Rif et de l’Atlas"
+        ]
+      },
+      {
+        "period": "Antiquité",
+        "names": ["Maurétanie (royaumes Maure & Massyle)"]
+      },
+      {
+        "period": "Conquête islamique",
+        "names": ["Maghrib al‑Aqsa"]
+      },
+      {
+        "period": "Dynasties",
+        "names": [
+          "Idrissides",
+          "Almoravides",
+          "Almohades",
+          "Mérinides",
+          "Wattassides",
+          "Saâdiens",
+          "Alaouites"
+        ]
+      },
+      {
+        "period": "1956",
+        "names": ["Royaume du Maroc"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Arabes marocains",
+      "subGroups": [
+        {
+          "name": "Arabes (Hilaliens",
+          "population": 8233333,
+          "percentageInCountry": 2166.666578947368,
+          "percentageInAfrica": 57.57576433566397
+        },
+        {
+          "name": "Andalous",
+          "population": 8233333,
+          "percentageInCountry": 2166.666578947368,
+          "percentageInAfrica": 57.57576433566397
+        },
+        {
+          "name": "Chorfa)",
+          "population": 8233333,
+          "percentageInCountry": 2166.666578947368,
+          "percentageInAfrica": 57.57576433566397
+        }
+      ],
+      "population": 24700000,
+      "percentageInCountry": 65,
+      "percentageInAfrica": 1.727273,
+      "languages": ["Darija (arabe maghrébin)"],
+      "region": "Plaines atlantiques, grandes villes (Rabat, Casablanca, Fès, Marrakech)",
+      "sources": ["HCP Maroc", "histoire maghrébine"],
+      "ancientName": "Maghreb al-Aqsa, dynasties arabes et andalouses",
+      "description": "Population majoritaire arabo-amazighe, fortement urbanisée",
+      "societyType": "Urbaine & rurale",
+      "religion": "Islam sunnite (malékite)",
+      "linguisticFamily": "Sémitique (arabe) + substrat amazigh",
+      "historicalStatus": "Dynasties Idrissides, Almoravides, Almohades, Mérinides, Saâdiens, Alaouites",
+      "regionalPresence": ["Maroc"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Arabes (Hilaliens",
+          "population": 8233333,
+          "percentageInCountry": 2166.666578947368,
+          "percentageInAfrica": 57.57576433566397
+        },
+        {
+          "name": "Andalous",
+          "population": 8233333,
+          "percentageInCountry": 2166.666578947368,
+          "percentageInAfrica": 57.57576433566397
+        },
+        {
+          "name": "Chorfa)",
+          "population": 8233333,
+          "percentageInCountry": 2166.666578947368,
+          "percentageInAfrica": 57.57576433566397
+        }
+      ]
+    },
+    {
+      "groupName": "Amazigh / Imazighen",
+      "subGroups": [
+        {
+          "name": "Chleuh (Souss, Anti-Atlas)",
+          "population": 5700000,
+          "percentageInCountry": 15,
+          "percentageInAfrica": 0.398601
+        },
+        {
+          "name": "Rifains (Tarifit)",
+          "population": 2280000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.159441
+        },
+        {
+          "name": "Amazigh du Moyen-Atlas (Zayanes, Aït Atta…)",
+          "population": 3040000,
+          "percentageInCountry": 8,
+          "percentageInAfrica": 0.212587
+        }
+      ],
+      "population": 11020000,
+      "percentageInCountry": 29,
+      "percentageInAfrica": 0.7706289999999999,
+      "languages": ["Tashelhit", "Tarifit", "Tamazight"],
+      "region": "Souss, Anti-Atlas, Haut-Atlas occidental, Rif (Nord, Nador, Al Hoceima), Moyen-Atlas, Haut-Atlas central",
+      "sources": [
+        "IRCAM",
+        "sources historiques",
+        "histoire du Rif",
+        "ethnologie"
+      ],
+      "ancientName": "Royaumes amazighs du Souss",
+      "description": "Peuples amazighs montagnards et agricoles du Sud",
+      "societyType": "Montagnarde agricole",
+      "religion": "Islam sunnite + traditions",
+      "linguisticFamily": "Berbère (afro-asiatique)",
+      "historicalStatus": "Royaumes du Souss",
+      "regionalPresence": ["Sud Maroc", "Nord Maroc", "Maroc central"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Chleuh (Souss, Anti-Atlas)",
+          "population": 5700000,
+          "percentageInCountry": 15,
+          "percentageInAfrica": 0.398601
+        },
+        {
+          "name": "Rifains (Tarifit)",
+          "population": 2280000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.159441
+        },
+        {
+          "name": "Amazigh du Moyen-Atlas (Zayanes, Aït Atta…)",
+          "population": 3040000,
+          "percentageInCountry": 8,
+          "percentageInAfrica": 0.212587
+        }
+      ]
+    },
+    {
+      "groupName": "Sahraouis",
+      "subGroups": [],
+      "population": 1520000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.106294,
+      "languages": ["Hassaniya"],
+      "region": "Sahara (Laâyoune, Dakhla, Tarfaya)",
+      "sources": ["ONU", "études sahariennes"],
+      "ancientName": "Émirats et tribus sahariennes (Bidanes)",
+      "description": "Peuples pastoraux et commerçants du désert",
+      "societyType": "Nomade & oasienne",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Arabe-hassani (sémitique)",
+      "historicalStatus": "Tribus sahariennes",
+      "regionalPresence": ["Maroc", "Mauritanie", "Sahara"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Communautés afro-marocaines",
+      "subGroups": [],
+      "population": 380000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.026573,
+      "languages": ["Arabe + dialectes gnawa"],
+      "region": "Villes (Marrakech, Essaouira, Fès)",
+      "sources": ["Anthropologie maghrébine"],
+      "ancientName": "Esclavage transsaharien et intégration confrérique",
+      "description": "Communautés d’origine subsaharienne intégrées aux milieux soufis",
+      "societyType": "Urbaine confrérique",
+      "religion": "Islam soufi",
+      "linguisticFamily": "Mandé / Haoussa (origine) + arabe",
+      "historicalStatus": "Confréries gnawa",
+      "regionalPresence": ["Maroc"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Communautés afro-amazighes",
+      "subGroups": [],
+      "population": 760000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.053147,
+      "languages": ["Arabe hassani + amazigh"],
+      "region": "Vallées du Drâa, Tafilalet, oasis sahariennes",
+      "sources": ["Anthropologie du Sahara"],
+      "ancientName": "Sociétés oasiennes sahariennes",
+      "description": "Communautés afro-amazighes des oasis",
+      "societyType": "Oasienne agricole",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Afro-berbère",
+      "historicalStatus": "Oasis sahariennes",
+      "regionalPresence": ["Maroc", "Sahara"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Jbala",
+      "subGroups": [],
+      "population": 1140000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.07972,
+      "languages": ["Dialecte arabe jbala"],
+      "region": "Nord-Ouest (Chefchaouen, montagnes du Rif occidental)",
+      "sources": ["Sources régionales"],
+      "ancientName": "Tribus Jbala",
+      "description": "Population montagnarde arabisée ancienne",
+      "societyType": "Montagnarde agricole",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Arabo-amazigh",
+      "historicalStatus": "Tribus Jbala",
+      "regionalPresence": ["Nord-Ouest Maroc"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [
+        {
+          "name": "Juifs marocains",
+          "population": 253333,
+          "percentageInCountry": 66.66657894736842,
+          "percentageInAfrica": 1.7715643356578947
+        },
+        {
+          "name": "migrants subsahariens",
+          "population": 253333,
+          "percentageInCountry": 66.66657894736842,
+          "percentageInAfrica": 1.7715643356578947
+        },
+        {
+          "name": "Européens",
+          "population": 253333,
+          "percentageInCountry": 66.66657894736842,
+          "percentageInAfrica": 1.7715643356578947
+        }
+      ],
+      "population": 760000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.053147,
+      "languages": ["Arabe", "français", "hébreu", "diverses langues"],
+      "region": "Principalement urbain (Casablanca, Rabat, Tanger)",
+      "sources": ["HCP Maroc", "histoire juive marocaine"],
+      "ancientName": "Diaspora juive marocaine et présences étrangères",
+      "description": "Ensemble de petites communautés historiques ou récentes",
+      "societyType": "Urbaine",
+      "religion": "Judaïsme / Islam / Christianisme",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Diaspora juive marocaine, migrations récentes",
+      "regionalPresence": ["Maroc et diaspora"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Juifs marocains",
+          "population": 253333,
+          "percentageInCountry": 66.66657894736842,
+          "percentageInAfrica": 1.7715643356578947
+        },
+        {
+          "name": "migrants subsahariens",
+          "population": 253333,
+          "percentageInCountry": 66.66657894736842,
+          "percentageInAfrica": 1.7715643356578947
+        },
+        {
+          "name": "Européens",
+          "population": 253333,
+          "percentageInCountry": 66.66657894736842,
+          "percentageInAfrica": 1.7715643356578947
+        }
+      ]
+    }
+  ]
+}

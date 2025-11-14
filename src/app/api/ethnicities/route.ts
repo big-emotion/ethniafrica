@@ -1,6 +1,7 @@
 import { getAllEthnicities } from "@/lib/api/datasetLoader.server";
 import { getAllEthnicitiesIncludingSubgroups } from "@/lib/supabase/queries/ethnicities";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
+import { getDataVersion, DATA_VERSION_KEYS } from "@/lib/cache/dataVersion";
 
 /**
  * @swagger
@@ -45,7 +46,11 @@ export async function GET() {
       percentageInAfrica: eth.percentage_in_africa || 0,
       countryCount: 0, // Will be calculated if needed
     }));
-    const response = jsonWithCors({ ethnicities });
+    const dataVersion = getDataVersion(DATA_VERSION_KEYS.ETHNICITIES);
+    const response = jsonWithCors({
+      ethnicities,
+      dataVersion, // Inclure la version pour invalidation automatique du cache client
+    });
     // Add Cache-Control headers
     if (response instanceof Response) {
       response.headers.set(

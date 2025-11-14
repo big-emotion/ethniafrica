@@ -34,10 +34,15 @@ interface SubgroupInfo {
   percentageInAfrica: number;
 }
 
+interface AncientNameEntry {
+  period: string;
+  names: string[];
+}
+
 interface ParsedCountryDescription {
   countryName: string;
   region: string;
-  ancientNames: string[];
+  ancientNames: AncientNameEntry[];
   description: string;
   ethnicities: ParsedEthnicityDescription[];
 }

@@ -1,0 +1,71 @@
+{
+  "countryName": "Comores",
+  "region": "afrique_de_l_est",
+  "countryDescription": null,
+  "ethnicities": [
+    {
+      "groupName": "Comoriens (bantou-arabe)",
+      "subGroups": [],
+      "population": 929955,
+      "percentageInCountry": 99,
+      "percentageInAfrica": 0.06085,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Malgaches",
+      "subGroups": [
+        {
+          "name": "Français",
+          "population": 4697,
+          "percentageInCountry": 0.5000532311295646,
+          "percentageInAfrica": 0.0003075327371446822
+        },
+        {
+          "name": "Arabes",
+          "population": 4697,
+          "percentageInCountry": 0.5000532311295646,
+          "percentageInAfrica": 0.0003075327371446822
+        }
+      ],
+      "population": 9394,
+      "percentageInCountry": 1.0001064622591291,
+      "percentageInAfrica": 0.0006150654742893644,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Français",
+          "population": 4697,
+          "percentageInCountry": 0.5000532311295646,
+          "percentageInAfrica": 0.0003075327371446822
+        },
+        {
+          "name": "Arabes",
+          "population": 4697,
+          "percentageInCountry": 0.5000532311295646,
+          "percentageInAfrica": 0.0003075327371446822
+        }
+      ]
+    }
+  ]
+}

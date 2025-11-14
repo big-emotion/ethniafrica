@@ -1,0 +1,46 @@
+{
+  "countryName": "Cameroun",
+  "region": "afrique_centrale",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "aucun nom unifié ; territoire composé de royaumes Bamoun",
+        "chefferies Bamiléké",
+        "Beti-Fang-Bulu",
+        "sultanats Mandara et Kotoko",
+        "peuples Sawa et pygmées Baka"
+      ]
+    },
+    {
+      "period": "1472",
+      "names": ["Rio dos Camarões (Portugais) → origine du mot Cameroun"]
+    },
+    {
+      "period": "1884–1916",
+      "names": ["Kamerun (colonie allemande)"]
+    },
+    {
+      "period": "1916–1960",
+      "names": ["Cameroun français & Cameroons britanniques"]
+    },
+    {
+      "period": "1960",
+      "names": ["République du Cameroun"]
+    },
+    {
+      "period": "1961",
+      "names": ["République fédérale du Cameroun"]
+    },
+    {
+      "period": "1972",
+      "names": ["République unie du Cameroun"]
+    },
+    {
+      "period": "1984",
+      "names": ["République du Cameroun (nom actuel)"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

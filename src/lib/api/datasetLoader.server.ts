@@ -46,7 +46,7 @@ export const getTotalPopulationAfrica = unstable_cache(
   ["total-population-africa"],
   {
     revalidate: CACHE_TTL,
-    tags: ["population", "africa"],
+    tags: ["population", "africa", "regions", "countries"], // Invalider quand les données changent
   }
 );
 
@@ -55,20 +55,41 @@ async function _getRegions(): Promise<
   Array<{ key: string; data: RegionData }>
 > {
   const regions = await getAllRegionsFromSupabase();
-  return regions.map((region) => ({
-    key: region.code,
-    data: {
-      name: region.name_fr,
-      totalPopulation: region.total_population,
-      countries: {}, // Will be loaded separately if needed
-      ethnicities: {}, // Will be loaded separately if needed
-    },
-  }));
+
+  // Pour chaque région, charger le nombre de pays
+  const regionsWithCountries = await Promise.all(
+    regions.map(async (region) => {
+      const countries = await getCountriesByRegionCodeFromSupabase(region.code);
+      // Créer un objet countries avec les pays pour que Object.keys() fonctionne
+      const countriesMap: Record<string, CountryData> = {};
+      for (const country of countries) {
+        countriesMap[country.name_fr] = {
+          name: country.name_fr,
+          population: country.population_2025,
+          percentageInRegion: country.percentage_in_region || 0,
+          percentageInAfrica: country.percentage_in_africa || 0,
+          ethnicityCount: 0, // Sera calculé si nécessaire
+        } as CountryData;
+      }
+
+      return {
+        key: region.code,
+        data: {
+          name: region.name_fr,
+          totalPopulation: region.total_population,
+          countries: countriesMap,
+          ethnicities: {}, // Will be loaded separately if needed
+        },
+      };
+    })
+  );
+
+  return regionsWithCountries;
 }
 
 export const getRegions = unstable_cache(_getRegions, ["all-regions"], {
   revalidate: CACHE_TTL,
-  tags: ["regions"],
+  tags: ["regions", "countries"], // Invalider aussi quand les pays changent
 });
 
 // Obtenir une région spécifique
@@ -166,10 +187,19 @@ export async function getCountryDetails(
     percentageInCountry: number;
     percentageInRegion: number;
     percentageInAfrica: number;
+    isParent: boolean;
+    parentName?: string;
+    subgroups?: Array<{
+      name: string;
+      population: number;
+      percentageInCountry: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+    }>;
   }>;
   description?: string;
-  ancientNames?: string[]; // Max 3 pour le résumé
-  allAncientNames?: string[]; // Tous pour la section détaillée
+  ancientNames?: Array<{ period: string; names: string[] }>; // Max 3 entrées pour le résumé
+  allAncientNames?: Array<{ period: string; names: string[] }>; // Toutes les entrées pour la section détaillée
   topEthnicities?: Array<{
     name: string;
     languages: string[];
@@ -183,13 +213,75 @@ export async function getCountryDetails(
   if (!region) return null;
 
   const presences = await getPresencesByCountryFromSupabase(country.id);
-  const ethnicities = presences.map((presence) => ({
-    name: presence.ethnicity.name_fr,
-    population: presence.population,
-    percentageInCountry: presence.percentage_in_country || 0,
-    percentageInRegion: presence.percentage_in_region || 0,
-    percentageInAfrica: presence.percentage_in_africa || 0,
-  }));
+
+  // Séparer les groupes parents et les sous-groupes
+  const parentPresences = presences.filter(
+    (presence) => !presence.ethnicity.parent_id
+  );
+  const subgroupPresences = presences.filter(
+    (presence) => presence.ethnicity.parent_id
+  );
+
+  // Créer une map des sous-groupes par parent_id
+  const subgroupsByParentId = new Map<
+    string,
+    Array<{
+      name: string;
+      population: number;
+      percentageInCountry: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+    }>
+  >();
+
+  for (const presence of subgroupPresences) {
+    if (!presence.ethnicity.parent_id) continue;
+    const parentId = presence.ethnicity.parent_id;
+    if (!subgroupsByParentId.has(parentId)) {
+      subgroupsByParentId.set(parentId, []);
+    }
+    subgroupsByParentId.get(parentId)!.push({
+      name: presence.ethnicity.name_fr,
+      population: presence.population,
+      percentageInCountry: presence.percentage_in_country || 0,
+      percentageInRegion: presence.percentage_in_region || 0,
+      percentageInAfrica: presence.percentage_in_africa || 0,
+    });
+  }
+
+  // Construire la structure hiérarchique
+  const ethnicities = parentPresences.map((presence) => {
+    const subgroups = subgroupsByParentId.get(presence.ethnicity.id) || [];
+    return {
+      name: presence.ethnicity.name_fr,
+      population: presence.population,
+      percentageInCountry: presence.percentage_in_country || 0,
+      percentageInRegion: presence.percentage_in_region || 0,
+      percentageInAfrica: presence.percentage_in_africa || 0,
+      isParent: true,
+      subgroups: subgroups.length > 0 ? subgroups : undefined,
+    };
+  });
+
+  // Ajouter les sous-groupes orphelins (parent supprimé ou non présent dans ce pays)
+  const parentIds = new Set(parentPresences.map((p) => p.ethnicity.id));
+  for (const presence of subgroupPresences) {
+    if (
+      presence.ethnicity.parent_id &&
+      !parentIds.has(presence.ethnicity.parent_id)
+    ) {
+      // Sous-groupe orphelin, l'afficher comme groupe normal
+      ethnicities.push({
+        name: presence.ethnicity.name_fr,
+        population: presence.population,
+        percentageInCountry: presence.percentage_in_country || 0,
+        percentageInRegion: presence.percentage_in_region || 0,
+        percentageInAfrica: presence.percentage_in_africa || 0,
+        isParent: false,
+        subgroups: undefined,
+      });
+    }
+  }
 
   // Charger les données enrichies
   const enrichedCountry = await getCountryWithDescription(countrySlug);
@@ -206,8 +298,8 @@ export async function getCountryDetails(
     region: region.name_fr,
     ethnicities: ethnicities.sort((a, b) => b.population - a.population),
     description: enrichedCountry?.description,
-    ancientNames: ancientNames.slice(0, 3), // Max 3 pour le résumé
-    allAncientNames: ancientNames, // Tous pour la section détaillée
+    ancientNames: ancientNames.slice(0, 3), // Max 3 entrées pour le résumé
+    allAncientNames: ancientNames, // Toutes les entrées pour la section détaillée
     topEthnicities: topEthnicities,
   };
 }
@@ -356,7 +448,7 @@ export const getAllCountries = unstable_cache(
   ["all-countries"],
   {
     revalidate: CACHE_TTL,
-    tags: ["countries"],
+    tags: ["countries", "regions"], // Invalider aussi quand les régions changent
   }
 );
 
@@ -427,10 +519,19 @@ export async function getCountryDetailsByKey(countryKey: string): Promise<{
     percentageInCountry: number;
     percentageInRegion: number;
     percentageInAfrica: number;
+    isParent: boolean;
+    parentName?: string;
+    subgroups?: Array<{
+      name: string;
+      population: number;
+      percentageInCountry: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+    }>;
   }>;
   description?: string;
-  ancientNames?: string[]; // Max 3 pour le résumé
-  allAncientNames?: string[]; // Tous pour la section détaillée
+  ancientNames?: Array<{ period: string; names: string[] }>; // Max 3 entrées pour le résumé
+  allAncientNames?: Array<{ period: string; names: string[] }>; // Toutes les entrées pour la section détaillée
   topEthnicities?: Array<{
     name: string;
     languages: string[];
@@ -445,13 +546,75 @@ export async function getCountryDetailsByKey(countryKey: string): Promise<{
   if (!region) return null;
 
   const presences = await getPresencesByCountryFromSupabase(country.id);
-  const ethnicities = presences.map((presence) => ({
-    name: presence.ethnicity.name_fr,
-    population: presence.population,
-    percentageInCountry: presence.percentage_in_country || 0,
-    percentageInRegion: presence.percentage_in_region || 0,
-    percentageInAfrica: presence.percentage_in_africa || 0,
-  }));
+
+  // Séparer les groupes parents et les sous-groupes
+  const parentPresences = presences.filter(
+    (presence) => !presence.ethnicity.parent_id
+  );
+  const subgroupPresences = presences.filter(
+    (presence) => presence.ethnicity.parent_id
+  );
+
+  // Créer une map des sous-groupes par parent_id
+  const subgroupsByParentId = new Map<
+    string,
+    Array<{
+      name: string;
+      population: number;
+      percentageInCountry: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+    }>
+  >();
+
+  for (const presence of subgroupPresences) {
+    if (!presence.ethnicity.parent_id) continue;
+    const parentId = presence.ethnicity.parent_id;
+    if (!subgroupsByParentId.has(parentId)) {
+      subgroupsByParentId.set(parentId, []);
+    }
+    subgroupsByParentId.get(parentId)!.push({
+      name: presence.ethnicity.name_fr,
+      population: presence.population,
+      percentageInCountry: presence.percentage_in_country || 0,
+      percentageInRegion: presence.percentage_in_region || 0,
+      percentageInAfrica: presence.percentage_in_africa || 0,
+    });
+  }
+
+  // Construire la structure hiérarchique
+  const ethnicities = parentPresences.map((presence) => {
+    const subgroups = subgroupsByParentId.get(presence.ethnicity.id) || [];
+    return {
+      name: presence.ethnicity.name_fr,
+      population: presence.population,
+      percentageInCountry: presence.percentage_in_country || 0,
+      percentageInRegion: presence.percentage_in_region || 0,
+      percentageInAfrica: presence.percentage_in_africa || 0,
+      isParent: true,
+      subgroups: subgroups.length > 0 ? subgroups : undefined,
+    };
+  });
+
+  // Ajouter les sous-groupes orphelins (parent supprimé ou non présent dans ce pays)
+  const parentIds = new Set(parentPresences.map((p) => p.ethnicity.id));
+  for (const presence of subgroupPresences) {
+    if (
+      presence.ethnicity.parent_id &&
+      !parentIds.has(presence.ethnicity.parent_id)
+    ) {
+      // Sous-groupe orphelin, l'afficher comme groupe normal
+      ethnicities.push({
+        name: presence.ethnicity.name_fr,
+        population: presence.population,
+        percentageInCountry: presence.percentage_in_country || 0,
+        percentageInRegion: presence.percentage_in_region || 0,
+        percentageInAfrica: presence.percentage_in_africa || 0,
+        isParent: false,
+        subgroups: undefined,
+      });
+    }
+  }
 
   // Charger les données enrichies
   const enrichedCountry = await getCountryWithDescription(countryKey);
@@ -468,8 +631,8 @@ export async function getCountryDetailsByKey(countryKey: string): Promise<{
     region: region.name_fr,
     ethnicities: ethnicities.sort((a, b) => b.population - a.population),
     description: enrichedCountry?.description,
-    ancientNames: ancientNames.slice(0, 3), // Max 3 pour le résumé
-    allAncientNames: ancientNames, // Tous pour la section détaillée
+    ancientNames: ancientNames.slice(0, 3), // Max 3 entrées pour le résumé
+    allAncientNames: ancientNames, // Toutes les entrées pour la section détaillée
     topEthnicities: topEthnicities,
   };
 }

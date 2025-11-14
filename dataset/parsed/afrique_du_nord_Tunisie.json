@@ -1,0 +1,60 @@
+{
+  "countryName": "Tunisie",
+  "region": "afrique_du_nord",
+  "ethnicities": [
+    {
+      "groupName": "Arabes",
+      "subGroups": [],
+      "population": 12656930,
+      "percentageInCountry": 98,
+      "percentageInAfrica": 0.828185,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Amazighs (Djerba, Matmata, Chenini, Douiret…)",
+      "subGroups": [],
+      "population": 129152,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.008451,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Autres (européens, subsahariens)",
+      "subGroups": [],
+      "population": 129152,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.008451,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

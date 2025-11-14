@@ -1,0 +1,238 @@
+{
+  "countryName": "Burkina Faso",
+  "region": "afrique_de_l_ouest",
+  "ethnicities": [
+    {
+      "groupName": "Mossi",
+      "subGroups": [],
+      "population": 12480000,
+      "percentageInCountry": 52,
+      "percentageInAfrica": 0.872727,
+      "languages": ["Mooré"],
+      "region": "Plateau central (Ouagadougou, Kadiogo)",
+      "sources": ["INSD Burkina", "histoire mossi"],
+      "ancientName": "Royaumes Mossi (Ouagadougou, Yatenga, Tenkodogo)",
+      "description": "Groupe majoritaire, organisation monarchique forte, agriculteurs",
+      "societyType": "Sédentaire agricole",
+      "religion": "Islam + Christianisme + traditions",
+      "linguisticFamily": "Gur (Niger-Congo)",
+      "historicalStatus": "Royaumes Mossi",
+      "regionalPresence": ["Burkina Faso", "Ghana"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Peul / Fulani",
+      "subGroups": [
+        {
+          "name": "Fulɓe (Mbororo",
+          "population": 1200000,
+          "percentageInCountry": 500,
+          "percentageInAfrica": 8.3916
+        },
+        {
+          "name": "Peuls sédentaires)",
+          "population": 1200000,
+          "percentageInCountry": 500,
+          "percentageInAfrica": 8.3916
+        }
+      ],
+      "population": 2400000,
+      "percentageInCountry": 10,
+      "percentageInAfrica": 0.167832,
+      "languages": ["Fulfulde"],
+      "region": "Nord, Sahel, Est",
+      "sources": ["Sources sahéliennes"],
+      "ancientName": "Chefferies peules & empires pastoraux",
+      "description": "Pasteurs nomades et agro-pasteurs",
+      "societyType": "Pastorale & agro-pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Atlantique (Niger-Congo)",
+      "historicalStatus": "Chefferies peules",
+      "regionalPresence": ["Burkina Faso", "Niger", "Mali"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Gourmantché",
+      "subGroups": [],
+      "population": 1680000,
+      "percentageInCountry": 7,
+      "percentageInAfrica": 0.117483,
+      "languages": ["Gourmantchéma"],
+      "region": "Est (Fada N’Gourma)",
+      "sources": ["Ethnologie gourmantché"],
+      "ancientName": "Royaumes Gourma",
+      "description": "Agriculteurs et chasseurs de savane",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Royaumes gourmantché",
+      "regionalPresence": ["Burkina Faso", "Niger", "Bénin"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Bobo",
+      "subGroups": [],
+      "population": 720000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.05035,
+      "languages": ["Bobo"],
+      "region": "Ouest (Bobo-Dioulasso)",
+      "sources": ["Anthropologie de l’Ouest"],
+      "ancientName": "Anciens royaumes de savane",
+      "description": "Agriculteurs et forgerons",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Mande",
+      "historicalStatus": "Royaumes Bobo",
+      "regionalPresence": ["Burkina Faso"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Lobi",
+      "subGroups": [
+        {
+          "name": "Lobi",
+          "population": 400000,
+          "percentageInCountry": 166.66666666666669,
+          "percentageInAfrica": 2.7972000000000006
+        },
+        {
+          "name": "Birifor",
+          "population": 400000,
+          "percentageInCountry": 166.66666666666669,
+          "percentageInAfrica": 2.7972000000000006
+        },
+        {
+          "name": "Téguessié",
+          "population": 400000,
+          "percentageInCountry": 166.66666666666669,
+          "percentageInAfrica": 2.7972000000000006
+        }
+      ],
+      "population": 1200000,
+      "percentageInCountry": 5,
+      "percentageInAfrica": 0.083916,
+      "languages": ["Lobi", "Birifor"],
+      "region": "Sud-Ouest (Gaoua)",
+      "sources": ["Ethnologie lobi"],
+      "ancientName": "Confédérations Lobi",
+      "description": "Peuples guerriers & agricoles",
+      "societyType": "Sédentaire",
+      "religion": "Traditions + Christianisme",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Chefferies Lobi",
+      "regionalPresence": ["Burkina Faso", "Côte d’Ivoire", "Ghana"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Sénoufo",
+      "subGroups": [],
+      "population": 1920000,
+      "percentageInCountry": 8,
+      "percentageInAfrica": 0.134266,
+      "languages": ["Sénoufo"],
+      "region": "Sud-Ouest et régions frontalières",
+      "sources": ["Sources régionales"],
+      "ancientName": "Royaumes Sénoufo",
+      "description": "Agriculteurs, sociétés initiatiques (Poro)",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Royaumes Sénoufo",
+      "regionalPresence": ["Burkina Faso", "Mali", "Côte d’Ivoire"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Bissa",
+      "subGroups": [],
+      "population": 840000,
+      "percentageInCountry": 3.5,
+      "percentageInAfrica": 0.058741,
+      "languages": ["Bissa"],
+      "region": "Centre-Sud (Koumntenga)",
+      "sources": ["Anthropologie locale"],
+      "ancientName": "Chefferies Bissa",
+      "description": "Agriculteurs spécialisés dans l’arachide",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Chefferies Bissa",
+      "regionalPresence": ["Burkina Faso", "Ghana"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Toussian & Siamou",
+      "subGroups": [
+        {
+          "name": "Toussian",
+          "population": 120000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 0.83915
+        },
+        {
+          "name": "Siamou",
+          "population": 120000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 0.83915
+        }
+      ],
+      "population": 240000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.016783,
+      "languages": ["Toussian", "Siamou"],
+      "region": "Ouest (Banfora)",
+      "sources": ["Ethnologie de l’Ouest"],
+      "ancientName": "Chefferies locales",
+      "description": "Petits groupes forestiers de savane",
+      "societyType": "Sédentaire",
+      "religion": "Traditions + Christianisme",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Groupes locaux",
+      "regionalPresence": ["Burkina Faso"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Dogon",
+      "subGroups": [
+        {
+          "name": "Burkina",
+          "population": 120000,
+          "percentageInCountry": 50,
+          "percentageInAfrica": 0.8392000000000001
+        }
+      ],
+      "population": 120000,
+      "percentageInCountry": 0.5,
+      "percentageInAfrica": 0.008392,
+      "languages": ["Dogoso", "d'autres variantes"],
+      "region": "Nord frontaliers Mali",
+      "sources": ["Ethnologie dogon"],
+      "ancientName": "Royaumes Dogon",
+      "description": "Groupes montagnards",
+      "societyType": "Montagnarde",
+      "religion": "Traditions",
+      "linguisticFamily": "Dogon (Niger-Congo)",
+      "historicalStatus": "Plateaux dogon",
+      "regionalPresence": ["Mali", "Burkina Faso"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 480000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.033566,
+      "languages": ["Divers"],
+      "region": "National",
+      "sources": ["INSD estimations"],
+      "ancientName": "Divers royaumes",
+      "description": "Communautés mixtes",
+      "societyType": "Variable",
+      "religion": "Islam / Christianisme / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Burkina Faso"],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

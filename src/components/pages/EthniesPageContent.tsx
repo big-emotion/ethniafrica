@@ -182,7 +182,7 @@ export function EthniesPageContent() {
           </div>
 
           {/* Liste de choix - Droite (30%) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 sticky top-0 self-start">
             <Card className="shadow-soft">
               <EthnicityView
                 language={language}

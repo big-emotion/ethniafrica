@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Language } from "@/types/ethnicity";
 import { getTranslation } from "@/lib/translations";
 import { RegionDetailView } from "@/components/RegionDetailView";
@@ -35,18 +35,40 @@ export const DetailView = ({
 }: DetailViewProps) => {
   const t = getTranslation(language);
   const [countryRegion, setCountryRegion] = useState<string | null>(null);
+  const lastLoadedCountryRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (selectedCountry && !selectedRegion) {
+      // Ne recharger que si le pays a changé
+      if (lastLoadedCountryRef.current === selectedCountry) {
+        return;
+      }
+      // Réinitialiser la région quand le pays change
+      setCountryRegion(null);
+      // Capturer la valeur actuelle de selectedCountry pour la vérification dans le callback
+      const currentCountry = selectedCountry;
       // selectedCountry est maintenant une clé, on doit la convertir en nom
       const countryName = getCountryName(selectedCountry);
       if (countryName) {
-        getCountryRegion(countryName).then((region) => {
-          setCountryRegion(region);
-        });
+        lastLoadedCountryRef.current = selectedCountry;
+        getCountryRegion(countryName)
+          .then((region) => {
+            // Ne mettre à jour que si le pays n'a pas changé pendant le chargement
+            if (lastLoadedCountryRef.current === currentCountry) {
+              setCountryRegion(region);
+            }
+          })
+          .catch(() => {
+            // En cas d'erreur, réinitialiser pour permettre un nouvel essai
+            if (lastLoadedCountryRef.current === currentCountry) {
+              setCountryRegion(null);
+              lastLoadedCountryRef.current = null;
+            }
+          });
       }
     } else {
       setCountryRegion(null);
+      lastLoadedCountryRef.current = null;
     }
   }, [selectedCountry, selectedRegion]);
 

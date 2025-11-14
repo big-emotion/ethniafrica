@@ -1,0 +1,51 @@
+{
+  "countryName": "Sénégal",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "territoires wolof",
+        "sérère",
+        "peul",
+        "mandinka",
+        "jola ; empires régionaux (Ghana",
+        "Mali",
+        "Songhai)"
+      ]
+    },
+    {
+      "period": "XIIIe–XVIe siècle",
+      "names": ["Empire du Jolof (Wolof)"]
+    },
+    {
+      "period": "Royaumes",
+      "names": [
+        "Cayor",
+        "Baol",
+        "Waalo",
+        "Sine",
+        "Saloum",
+        "Fouta Toro (théocratie peule)"
+      ]
+    },
+    {
+      "period": "XVe siècle",
+      "names": ["Senega", "Sunugal"]
+    },
+    {
+      "period": "1659",
+      "names": ["Fondation de Saint‑Louis par les Français"]
+    },
+    {
+      "period": "1895",
+      "names": ["Intégration à l’AOF"]
+    },
+    {
+      "period": "1960",
+      "names": ["Indépendance — République du Sénégal"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

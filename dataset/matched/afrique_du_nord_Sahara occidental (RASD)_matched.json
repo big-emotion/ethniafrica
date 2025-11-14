@@ -1,0 +1,45 @@
+{
+  "countryName": "Sahara occidental (RASD)",
+  "region": "afrique_du_nord",
+  "countryDescription": null,
+  "ethnicities": [
+    {
+      "groupName": "Sahraouis (Hassanya)",
+      "subGroups": [],
+      "population": 622932,
+      "percentageInCountry": 99,
+      "percentageInAfrica": 0.040761,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 6292,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.000412,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

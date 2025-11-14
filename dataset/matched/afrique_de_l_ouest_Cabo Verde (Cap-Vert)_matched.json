@@ -1,0 +1,101 @@
+{
+  "countryName": "Cabo Verde (Cap-Vert)",
+  "region": "afrique_de_l_ouest",
+  "countryDescription": {
+    "countryName": "Cabo Verde (Cap-Vert)",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant le XVe siècle",
+        "names": [
+          "les îles étaient inhabitées (aucune population autochtone connue)"
+        ]
+      },
+      {
+        "period": "1456–1462",
+        "names": ["Découverte par des navigateurs portugais et génois"]
+      },
+      {
+        "period": "1462",
+        "names": ["Début de la colonisation portugaise"]
+      },
+      {
+        "period": "XVIe–XVIIIe siècles",
+        "names": ["centre majeur de traite atlantique (île de Santiago)"]
+      },
+      {
+        "period": "1956–1973",
+        "names": ["Lutte pour l’indépendance (PAIGC)"]
+      },
+      {
+        "period": "1975",
+        "names": ["República de Cabo Verde"]
+      },
+      {
+        "period": "2013",
+        "names": ["Nom officiel international normalisé : Cabo Verde"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Créoles (métis)",
+      "subGroups": [],
+      "population": 374401,
+      "percentageInCountry": 71,
+      "percentageInAfrica": 0.024498,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Africains",
+      "subGroups": [],
+      "population": 147651,
+      "percentageInCountry": 28,
+      "percentageInAfrica": 0.009661,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Européens",
+      "subGroups": [],
+      "population": 5273,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.000345,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

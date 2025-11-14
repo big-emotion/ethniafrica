@@ -1,0 +1,263 @@
+{
+  "countryName": "Guinée",
+  "region": "afrique_de_l_ouest",
+  "ethnicities": [
+    {
+      "groupName": "Peul / Fulbe",
+      "subGroups": [
+        {
+          "name": "Peul",
+          "population": 1540000,
+          "percentageInCountry": 1100,
+          "percentageInAfrica": 10.769233333333334
+        },
+        {
+          "name": "Fulakunda",
+          "population": 1540000,
+          "percentageInCountry": 1100,
+          "percentageInAfrica": 10.769233333333334
+        },
+        {
+          "name": "Fouta-Djallon",
+          "population": 1540000,
+          "percentageInCountry": 1100,
+          "percentageInAfrica": 10.769233333333334
+        }
+      ],
+      "population": 4620000,
+      "percentageInCountry": 33,
+      "percentageInAfrica": 0.323077,
+      "languages": ["Pulaar"],
+      "region": "Fouta-Djallon (Labé, Mamou)",
+      "sources": ["INS Guinée", "histoire du Fouta-Djallon"],
+      "ancientName": "Royaume théocratique du Fouta-Djallon",
+      "description": "Groupe majoritaire, islamisé tôt, commerçant et éleveur",
+      "societyType": "Agro-pastorale & urbaine",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Atlantique (Niger-Congo)",
+      "historicalStatus": "Imamat du Fouta-Djallon",
+      "regionalPresence": ["Guinée", "Sénégal", "Mali"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Malinké / Mandingue",
+      "subGroups": [
+        {
+          "name": "Malinké",
+          "population": 1400000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 9.790200000000002
+        },
+        {
+          "name": "Bamana",
+          "population": 1400000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 9.790200000000002
+        },
+        {
+          "name": "Djallonké",
+          "population": 1400000,
+          "percentageInCountry": 1000,
+          "percentageInAfrica": 9.790200000000002
+        }
+      ],
+      "population": 4200000,
+      "percentageInCountry": 30,
+      "percentageInAfrica": 0.293706,
+      "languages": ["Malinké"],
+      "region": "Haute-Guinée (Kankan, Siguiri)",
+      "sources": ["Histoire mandingue"],
+      "ancientName": "Empire du Mali",
+      "description": "Grands agriculteurs et commerçants",
+      "societyType": "Sédentaire",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Empire du Mali",
+      "regionalPresence": ["Guinée", "Mali", "Côte d’Ivoire"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Soussou",
+      "subGroups": [],
+      "population": 1820000,
+      "percentageInCountry": 13,
+      "percentageInAfrica": 0.127273,
+      "languages": ["Susu"],
+      "region": "Basse-Guinée (Conakry, Kindia)",
+      "sources": ["Ethnologie côtière"],
+      "ancientName": "Chefferies de Basse-Guinée",
+      "description": "Peuple côtier fortement urbanisé",
+      "societyType": "Côtière & urbaine",
+      "religion": "Islam",
+      "linguisticFamily": "Kwa (Niger-Congo)",
+      "historicalStatus": "Chefferies côtières",
+      "regionalPresence": ["Guinée"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Kissi",
+      "subGroups": [],
+      "population": 700000,
+      "percentageInCountry": 5,
+      "percentageInAfrica": 0.048951,
+      "languages": ["Kisi"],
+      "region": "Sud-Est (Gueckédou, Kissidougou)",
+      "sources": ["Anthropologie régionale"],
+      "ancientName": "Chefferies Kissi",
+      "description": "Agriculteurs forestiers",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Mel (Niger-Congo)",
+      "historicalStatus": "Chefferies Kissi",
+      "regionalPresence": ["Guinée", "Liberia", "Sierra Leone"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Guerzé / Kpelle",
+      "subGroups": [
+        {
+          "name": "Guerzé",
+          "population": 595000,
+          "percentageInCountry": 425,
+          "percentageInAfrica": 4.16085
+        },
+        {
+          "name": "Kpelle",
+          "population": 595000,
+          "percentageInCountry": 425,
+          "percentageInAfrica": 4.16085
+        }
+      ],
+      "population": 1190000,
+      "percentageInCountry": 8.5,
+      "percentageInAfrica": 0.083217,
+      "languages": ["Kpelle"],
+      "region": "Forêt guinéenne (N’Zérékoré)",
+      "sources": ["Ethnologie de la forêt"],
+      "ancientName": "Chefferies forestières",
+      "description": "Grands cultivateurs, sociétés initiatiques",
+      "societyType": "Forestière",
+      "religion": "Christianisme + traditions + Islam",
+      "linguisticFamily": "Mande / Mel",
+      "historicalStatus": "Chefferies Kpelle",
+      "regionalPresence": ["Guinée", "Liberia"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Toma / Loma",
+      "subGroups": [
+        {
+          "name": "Toma",
+          "population": 280000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 1.95805
+        },
+        {
+          "name": "Loma",
+          "population": 280000,
+          "percentageInCountry": 200,
+          "percentageInAfrica": 1.95805
+        }
+      ],
+      "population": 560000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.039161,
+      "languages": ["Loma"],
+      "region": "Région de Macenta",
+      "sources": ["Anthropologie locale"],
+      "ancientName": "Royaumes Toma",
+      "description": "Peuple forestier ancien",
+      "societyType": "Forestière",
+      "religion": "Traditions + Christianisme",
+      "linguisticFamily": "Mel",
+      "historicalStatus": "Royaumes Toma",
+      "regionalPresence": ["Guinée", "Liberia"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Coniagui & Bassari",
+      "subGroups": [
+        {
+          "name": "Coniagui",
+          "population": 105000,
+          "percentageInCountry": 75,
+          "percentageInAfrica": 0.73425
+        },
+        {
+          "name": "Bassari",
+          "population": 105000,
+          "percentageInCountry": 75,
+          "percentageInAfrica": 0.73425
+        }
+      ],
+      "population": 210000,
+      "percentageInCountry": 1.5,
+      "percentageInAfrica": 0.014685,
+      "languages": ["Coniagui", "Bassari"],
+      "region": "Nord-Est",
+      "sources": ["Ethnologie Peuple du Fouta & Guinée"],
+      "ancientName": "Chefferies locales",
+      "description": "Peuples montagnards agro-pastoraux",
+      "societyType": "Montagnarde",
+      "religion": "Traditions + Christianisme",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Groupes montagnards",
+      "regionalPresence": ["Guinée", "Sénégal"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Bagha",
+      "subGroups": [],
+      "population": 140000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.00979,
+      "languages": ["Baga"],
+      "region": "Littoral (Boffa, Boké)",
+      "sources": ["Sources littorales"],
+      "ancientName": "Chefferies Baga",
+      "description": "Pêcheurs, spécialistes des masques Nimba",
+      "societyType": "Côtière",
+      "religion": "Traditions + Christianisme + Islam",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Chefferies Baga",
+      "regionalPresence": ["Guinée"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Djallonké",
+      "subGroups": [],
+      "population": 140000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.00979,
+      "languages": ["Dialonké"],
+      "region": "Transition Fouta–Haute Guinée",
+      "sources": ["Histoire Mandé"],
+      "ancientName": "Populations mandé anciennes",
+      "description": "Groupes anciens du plateau",
+      "societyType": "Sédentaire",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Anciennes communautés mandé",
+      "regionalPresence": ["Guinée"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 70000,
+      "percentageInCountry": 0.5,
+      "percentageInAfrica": 0.004895,
+      "languages": ["Divers"],
+      "region": "National",
+      "sources": ["INS estimations"],
+      "ancientName": "Divers royaumes",
+      "description": "Petits groupes variés",
+      "societyType": "Variable",
+      "religion": "Islam / Christianisme / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Guinée"],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}
