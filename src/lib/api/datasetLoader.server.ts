@@ -20,6 +20,9 @@ import {
   getAllCountries as getAllCountriesFromSupabase,
   getCountryBySlug as getCountryBySlugFromSupabase,
   getCountriesByRegionCode as getCountriesByRegionCodeFromSupabase,
+  getCountryWithDescription,
+  getCountryAncientNames,
+  getTopEthnicitiesForCountry,
 } from "@/lib/supabase/queries/countries";
 import {
   getAllEthnicities as getAllEthnicitiesFromSupabase,
@@ -164,6 +167,13 @@ export async function getCountryDetails(
     percentageInRegion: number;
     percentageInAfrica: number;
   }>;
+  description?: string;
+  ancientNames?: string[]; // Max 3 pour le résumé
+  allAncientNames?: string[]; // Tous pour la section détaillée
+  topEthnicities?: Array<{
+    name: string;
+    languages: string[];
+  }>;
 } | null> {
   const countrySlug = getCountryKey(countryName) || countryName;
   const country = await getCountryBySlugFromSupabase(countrySlug);
@@ -181,6 +191,13 @@ export async function getCountryDetails(
     percentageInAfrica: presence.percentage_in_africa || 0,
   }));
 
+  // Charger les données enrichies
+  const enrichedCountry = await getCountryWithDescription(countrySlug);
+  const ancientNames = enrichedCountry
+    ? await getCountryAncientNames(countrySlug)
+    : [];
+  const topEthnicities = await getTopEthnicitiesForCountry(countrySlug, 5);
+
   return {
     name: country.name_fr,
     population: country.population_2025,
@@ -188,6 +205,10 @@ export async function getCountryDetails(
     percentageInAfrica: country.percentage_in_africa || 0,
     region: region.name_fr,
     ethnicities: ethnicities.sort((a, b) => b.population - a.population),
+    description: enrichedCountry?.description,
+    ancientNames: ancientNames.slice(0, 3), // Max 3 pour le résumé
+    allAncientNames: ancientNames, // Tous pour la section détaillée
+    topEthnicities: topEthnicities,
   };
 }
 
@@ -407,6 +428,13 @@ export async function getCountryDetailsByKey(countryKey: string): Promise<{
     percentageInRegion: number;
     percentageInAfrica: number;
   }>;
+  description?: string;
+  ancientNames?: string[]; // Max 3 pour le résumé
+  allAncientNames?: string[]; // Tous pour la section détaillée
+  topEthnicities?: Array<{
+    name: string;
+    languages: string[];
+  }>;
 } | null> {
   const country = await getCountryBySlugFromSupabase(countryKey);
   if (!country) return null;
@@ -425,6 +453,13 @@ export async function getCountryDetailsByKey(countryKey: string): Promise<{
     percentageInAfrica: presence.percentage_in_africa || 0,
   }));
 
+  // Charger les données enrichies
+  const enrichedCountry = await getCountryWithDescription(countryKey);
+  const ancientNames = enrichedCountry
+    ? await getCountryAncientNames(countryKey)
+    : [];
+  const topEthnicities = await getTopEthnicitiesForCountry(countryKey, 5);
+
   return {
     name: country.name_fr,
     population: country.population_2025,
@@ -432,6 +467,10 @@ export async function getCountryDetailsByKey(countryKey: string): Promise<{
     percentageInAfrica: country.percentage_in_africa || 0,
     region: region.name_fr,
     ethnicities: ethnicities.sort((a, b) => b.population - a.population),
+    description: enrichedCountry?.description,
+    ancientNames: ancientNames.slice(0, 3), // Max 3 pour le résumé
+    allAncientNames: ancientNames, // Tous pour la section détaillée
+    topEthnicities: topEthnicities,
   };
 }
 

@@ -44,7 +44,8 @@ interface CountryDetailPayload {
     percentageInAfrica: number;
   }>;
   description?: string;
-  ancientNames?: string[];
+  ancientNames?: string[]; // Max 3 pour le résumé
+  allAncientNames?: string[]; // Tous pour la section détaillée
   topEthnicities?: Array<{
     name: string;
     languages: string[];
@@ -92,7 +93,8 @@ interface EthnicityDetailPayload {
     percentageInRegion: number;
   }>;
   description?: string;
-  ancientName?: string[];
+  ancientName?: string[]; // Max 3 pour le résumé
+  allAncientNames?: string[]; // Tous pour la section détaillée
   topLanguages?: string[];
   allLanguages?: Array<{ name: string; isPrimary: boolean }>;
   sources?: string[];
@@ -379,11 +381,6 @@ export function DetailPageClient({
               <CardTitle className="text-2xl flex items-center gap-2">
                 <Users className="h-5 w-5 text-primary" />
                 {payload.name}
-                {payload.ancientName && payload.ancientName.length > 0 && (
-                  <span className="text-base font-normal text-muted-foreground">
-                    ({payload.ancientName.slice(0, 3).join(", ")})
-                  </span>
-                )}
               </CardTitle>
             </div>
           </div>
@@ -766,7 +763,9 @@ export function DetailPageClient({
             <CountryEthnicitiesTable payload={data.payload} />
             <CountryDescriptionSection
               description={data.payload.description}
-              ancientNames={data.payload.ancientNames}
+              ancientNames={
+                data.payload.allAncientNames || data.payload.ancientNames
+              }
               language={language}
             />
           </div>
@@ -825,7 +824,6 @@ export function DetailPageClient({
             <EthnicityCountriesTable payload={data.payload} />
             <EthnicityDescriptionSection
               description={data.payload.description}
-              ancientName={data.payload.ancientName}
               societyType={data.payload.societyType}
               religion={data.payload.religion}
               linguisticFamily={data.payload.linguisticFamily}

@@ -40,7 +40,7 @@ export async function GET(
       return jsonWithCors({ error: "Region not found" }, { status: 404 });
     }
 
-    return jsonWithCors(region);
+    return jsonWithCors({ region });
   } catch (error) {
     console.error("Error fetching region:", error);
     return jsonWithCors({ error: "Failed to fetch region" }, { status: 500 });

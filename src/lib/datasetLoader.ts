@@ -127,6 +127,13 @@ export async function getCountryDetails(
     percentageInRegion: number;
     percentageInAfrica: number;
   }>;
+  description?: string;
+  ancientNames?: string[]; // Max 3 pour le résumé
+  allAncientNames?: string[]; // Tous pour la section détaillée
+  topEthnicities?: Array<{
+    name: string;
+    languages: string[];
+  }>;
 } | null> {
   try {
     const encodedCountry = encodeURIComponent(countryName);
@@ -142,6 +149,10 @@ export async function getCountryDetails(
       percentageInAfrica: data.percentageInAfrica || 0,
       region: data.region || "",
       ethnicities: data.ethnicities || [],
+      description: data.description,
+      ancientNames: data.ancientNames,
+      allAncientNames: data.allAncientNames,
+      topEthnicities: data.topEthnicities,
     };
   } catch (error) {
     console.error(`Error loading country details for ${countryName}:`, error);

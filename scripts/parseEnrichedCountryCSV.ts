@@ -286,14 +286,23 @@ function main() {
       const countryName = countryDir.name;
       const countryPath = path.join(regionPath, countryName);
 
-      // Chercher le fichier CSV
-      const csvFiles = fs
+      // Chercher le fichier CSV selon la règle :
+      // 1. Si un fichier *_ethnies_complet.csv existe, on l'utilise (et on ignore les autres)
+      // 2. Sinon, on cherche n'importe quel autre fichier CSV
+      let csvFiles = fs
         .readdirSync(countryPath)
         .filter((f) => f.endsWith(".csv") && f.includes("_ethnies_complet"));
 
       if (csvFiles.length === 0) {
+        // Aucun fichier _ethnies_complet trouvé, chercher n'importe quel CSV
+        csvFiles = fs
+          .readdirSync(countryPath)
+          .filter((f) => f.endsWith(".csv"));
+      }
+
+      if (csvFiles.length === 0) {
         console.warn(
-          `⚠️  Aucun fichier CSV enrichi trouvé pour ${countryName} dans ${region}`
+          `⚠️  Aucun fichier CSV trouvé pour ${countryName} dans ${region}`
         );
         continue;
       }

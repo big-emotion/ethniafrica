@@ -78,7 +78,8 @@ interface CountryDetailPayload {
     percentageInAfrica: number;
   }>;
   description?: string;
-  ancientNames?: string[];
+  ancientNames?: string[]; // Max 3 pour le résumé
+  allAncientNames?: string[]; // Tous pour la section détaillée
   topEthnicities?: Array<{
     name: string;
     languages: string[];
@@ -126,7 +127,8 @@ interface EthnicityDetailPayload {
     percentageInRegion: number;
   }>;
   description?: string;
-  ancientName?: string[];
+  ancientName?: string[]; // Max 3 pour le résumé
+  allAncientNames?: string[]; // Tous pour la section détaillée
   topLanguages?: string[];
   allLanguages?: Array<{ name: string; isPrimary: boolean }>;
   sources?: string[];
@@ -199,7 +201,8 @@ export default async function LocalizedDetailPage({
       const payload: CountryDetailPayload = {
         ...countryDetails,
         description: enrichedCountry?.description,
-        ancientNames: ancientNames.slice(0, 3), // Max 3
+        ancientNames: ancientNames.slice(0, 3), // Max 3 pour le résumé
+        allAncientNames: ancientNames, // Tous pour la section détaillée
         topEthnicities: topEthnicities,
       };
       detailData = { type: "country", payload };
@@ -248,13 +251,13 @@ export default async function LocalizedDetailPage({
       const sources = await getEthnicitySources(ethnicitySlug);
 
       // Parser les anciens noms
-      const ancientName = enrichedEthnicity?.ancient_name
+      const allAncientNames = enrichedEthnicity?.ancient_name
         ? enrichedEthnicity.ancient_name
             .split(",")
             .map((n) => n.trim())
             .filter((n) => n.length > 0)
-            .slice(0, 3)
         : [];
+      const ancientName = allAncientNames.slice(0, 3); // Max 3 pour le résumé
 
       const payload: EthnicityDetailPayload = {
         name: ethnicityDetails.name,
@@ -263,7 +266,8 @@ export default async function LocalizedDetailPage({
         countries: ethnicityDetails.countries,
         regions: ethnicityDetails.regions,
         description: enrichedEthnicity?.description,
-        ancientName: ancientName,
+        ancientName: ancientName, // Max 3 pour le résumé
+        allAncientNames: allAncientNames, // Tous pour la section détaillée
         topLanguages: topLanguages,
         allLanguages: allLanguages,
         sources: sources,

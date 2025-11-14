@@ -5,10 +5,11 @@ import { Language } from "@/types/ethnicity";
 import { getTranslation, getEthnicityName } from "@/lib/translations";
 import { getCountryKey, getEthnicityKey } from "@/lib/entityKeys";
 import { getCountryDetails } from "@/lib/datasetLoader";
+import { getLocalizedRoute } from "@/lib/routing";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { MapPin, Users, TrendingUp } from "lucide-react";
+import { MapPin, Users, TrendingUp, ExternalLink } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -21,6 +22,9 @@ import { Button } from "@/components/ui/button";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ShareButton } from "@/components/ShareButton";
+import { TopEthnicitiesCard } from "@/components/TopEthnicitiesCard";
+import { CountryDescriptionSection } from "@/components/CountryDescriptionSection";
+import Link from "next/link";
 
 interface CountryDetailViewProps {
   regionKey: string;
@@ -56,6 +60,13 @@ export const CountryDetailView = ({
       population: number;
       percentageInCountry: number;
       percentageInRegion: number;
+    }>;
+    description?: string;
+    ancientNames?: string[]; // Max 3 pour le résumé
+    allAncientNames?: string[]; // Tous pour la section détaillée
+    topEthnicities?: Array<{
+      name: string;
+      languages: string[];
     }>;
   } | null>(null);
   const [loading, setLoading] = useState(true);
@@ -177,11 +188,29 @@ export const CountryDetailView = ({
       {/* En-tête du pays */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <MapPin className="h-6 w-6 text-primary" />
-            <h2 className="text-3xl font-display font-bold text-foreground">
-              {countryData.name}
-            </h2>
+            <div>
+              <h2 className="text-3xl font-display font-bold text-foreground">
+                {countryData.name}
+              </h2>
+              {(countryData.allAncientNames || countryData.ancientNames) &&
+                (countryData.allAncientNames || countryData.ancientNames)!
+                  .length > 0 && (
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {language === "en"
+                      ? "Ancient names: "
+                      : language === "fr"
+                        ? "Anciennes appellations : "
+                        : language === "es"
+                          ? "Nombres antiguos: "
+                          : "Nomes antigos: "}
+                    {(countryData.allAncientNames || countryData.ancientNames)!
+                      .slice(0, 3)
+                      .join(", ")}
+                  </p>
+                )}
+            </div>
           </div>
           <ShareButton
             type="country"
@@ -235,6 +264,40 @@ export const CountryDetailView = ({
       </div>
 
       <Separator />
+
+      {/* Top 5 ethnies principales */}
+      {countryData.topEthnicities && countryData.topEthnicities.length > 0 && (
+        <div className="relative">
+          <TopEthnicitiesCard
+            ethnicities={countryData.topEthnicities}
+            language={language}
+          />
+          <Link
+            href={`${getLocalizedRoute(language, "countries")}/${encodeURIComponent(
+              getCountryKey(countryData.name) || countryName
+            )}`}
+            className="absolute top-4 right-4"
+          >
+            <Button variant="ghost" size="sm" className="gap-2">
+              {language === "en"
+                ? "See more"
+                : language === "fr"
+                  ? "Voir plus"
+                  : language === "es"
+                    ? "Ver más"
+                    : "Ver mais"}
+              <ExternalLink className="h-4 w-4" />
+            </Button>
+          </Link>
+        </div>
+      )}
+
+      {/* Section description complète */}
+      <CountryDescriptionSection
+        description={countryData.description}
+        ancientNames={countryData.allAncientNames || countryData.ancientNames}
+        language={language}
+      />
 
       {/* Tableau: Ethnies du pays */}
       <Card className="p-6">

@@ -2,18 +2,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  FileText,
-  History,
-  Globe,
-  Users,
-  BookOpen,
-  MapPin,
-} from "lucide-react";
+import { FileText, Globe, Users, BookOpen, MapPin } from "lucide-react";
 
 interface EthnicityDescriptionSectionProps {
   description?: string;
-  ancientName?: string[];
   societyType?: string;
   religion?: string;
   linguisticFamily?: string;
@@ -26,7 +18,6 @@ interface EthnicityDescriptionSectionProps {
 
 export const EthnicityDescriptionSection = ({
   description,
-  ancientName,
   societyType,
   religion,
   linguisticFamily,
@@ -39,7 +30,6 @@ export const EthnicityDescriptionSection = ({
   const t = {
     en: {
       description: "Description",
-      ancientName: "Ancient Name",
       societyType: "Society Type",
       religion: "Religion",
       linguisticFamily: "Linguistic Family",
@@ -51,7 +41,6 @@ export const EthnicityDescriptionSection = ({
     },
     fr: {
       description: "Description",
-      ancientName: "Ancien nom",
       societyType: "Type de société",
       religion: "Religion",
       linguisticFamily: "Famille linguistique",
@@ -63,7 +52,6 @@ export const EthnicityDescriptionSection = ({
     },
     es: {
       description: "Descripción",
-      ancientName: "Nombre antiguo",
       societyType: "Tipo de sociedad",
       religion: "Religión",
       linguisticFamily: "Familia lingüística",
@@ -75,7 +63,6 @@ export const EthnicityDescriptionSection = ({
     },
     pt: {
       description: "Descrição",
-      ancientName: "Nome antigo",
       societyType: "Tipo de sociedade",
       religion: "Religião",
       linguisticFamily: "Família linguística",
@@ -89,7 +76,6 @@ export const EthnicityDescriptionSection = ({
 
   const hasContent =
     description ||
-    (ancientName && ancientName.length > 0) ||
     societyType ||
     religion ||
     linguisticFamily ||
@@ -114,26 +100,6 @@ export const EthnicityDescriptionSection = ({
             <p className="text-muted-foreground whitespace-pre-line">
               {description}
             </p>
-          </CardContent>
-        </Card>
-      )}
-
-      {ancientName && ancientName.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <History className="h-5 w-5" />
-              {t.ancientName}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {ancientName.map((name, index) => (
-                <Badge key={index} variant="outline">
-                  {name}
-                </Badge>
-              ))}
-            </div>
           </CardContent>
         </Card>
       )}

@@ -1,16 +1,13 @@
-Group,Sub_group,Population_2025,Percentage_in_country,Percentage_in_Africa,Language,Region,Sources,Ancient_Name,Description
-Nguni,Zulu,17000000,27.8689,1.188811,isiZulu,KwaZulu-Natal,Stats SA (langue) + estimations ONU,Aucun (précolonial),Plus grand groupe ethnique
-Nguni,Xhosa,10000000,16.3934,0.699301,isiXhosa,Eastern & Western Cape,Stats SA + linguistique,Aucun (précolonial),Langue à clics partielle
-Sotho-Tswana,Pedi,6000000,9.8361,0.41958,Sepedi,Limpopo,Stats SA + UNDP,Aucun (précolonial),Royaume Pedi historique
-Sotho-Tswana,Sotho du Sud,4500000,7.377,0.314685,Sesotho,Free State,Stats SA + UNDP,Aucun (précolonial),Liés au Lesotho
-Sotho-Tswana,Tswana,3000000,4.918,0.20979,Setswana,North West,Stats SA + Botswana Demographics,Aucun (précolonial),Présents aussi au Botswana
-Tsonga,Tsonga/Shangaan,2500000,4.0984,0.174825,Xitsonga,"Limpopo, Mpumalanga",Stats SA + ethnologue,Aucun (précolonial),Fusion Tsonga + Nguni (Shangaan)
-Venda,Venda,1500000,2.459,0.104895,Tshivenda,Limpopo (nord),Stats SA + ethnologue,Aucun (précolonial),Culture liée au Zimbabwe
-Nguni,Swazi,1800000,2.9508,0.125874,siSwati,Mpumalanga,Stats SA + Eswatini Data,Aucun (précolonial),Proches du royaume Eswatini
-Nguni,Ndebele,900000,1.4754,0.062937,isiNdebele,"Gauteng, Mpumalanga",Stats SA,Aucun (précolonial),Maisons peintes géométriques
-Nguni,Hlubi,150000,0.2459,0.01049,isiHlubi (variantes),"KZN, Eastern Cape",Études anthropologiques,Aucun (précolonial),Groupe dispersé au XIXe siècle
-Khoisan,Khoisan (San+Khoikhoi),600000,0.9836,0.041958,Langues à clics,Northern & Western Cape,Anthropologie + UN,Aucun (précolonial),Peuples autochtones les plus anciens
-Coloureds,Coloureds (total),5700000,9.3443,0.398601,Anglais/Afrikaans,Western & Northern Cape,Stats SA,Cape Colony,Métissage historique
-Whites,Afrikaners,2700000,4.4262,0.188811,Afrikaans,National (villes),Stats SA,Cape Colony / Transvaal,Descendants des colons boers
-Whites,Anglophones,1500000,2.459,0.104895,Anglais,"Villes : Johannesburg, Cape Town",Stats SA,British Cape Colony,Descendants britanniques
-Indian/Asian,Indian/Asian,1700000,2.7869,0.118881,Anglais + langues indo-pakistanaises,Durban (KZN),Stats SA,Natal Colony,Arrivés comme travailleurs sous contrat
+Group,Sub_group,Population_2025,Percentage_in_country,Percentage_in_Africa,Language,Region,Sources,Ancient_Name,Description,Type_de_societe,Religion,Famille_linguistique,Statut_historique,Presence_regionale
+Nguni,Zulu,11160000,18.0,0.78042,isiZulu,KwaZulu-Natal,Sources historiques et ethnolinguistiques,"Royaumes zoulous (Shaka, Dingane)","Groupe Nguni majoritaire, héritier du royaume zoulou",Sédentaire agricole et urbaine,Christianisme + traditions,Bantu (Nguni),Royaume zoulou,Afrique du Sud
+Nguni,Xhosa (AmaXhosa),9300000,15.0,0.65035,isiXhosa,Eastern Cape,Sources historiques,Royaumes Xhosa,Deuxième groupe Nguni le plus important,Agricole & littorale,Christianisme + traditions,Bantu (Nguni),Royaumes Xhosa,Afrique du Sud
+Nguni,Swazi (siSwati),1860000,3.0,0.13007,siSwati,Mpumalanga,Sources ethnologiques,Royaume Swazi,Population Nguni liée à l’Eswatini,Sédentaire,Christianisme,Bantu (Nguni),Royaume Swazi,"Afrique du Sud, Eswatini"
+Nguni,Ndebele,1240000,2.0,0.086713,isiNdebele,"Gauteng, Mpumalanga",Sources ethnologiques,Chefferies ndebele,Groupe Nguni migrant du nord,Sédentaire,Christianisme + traditions,Bantu (Nguni),Chefferies Ndebele,Afrique du Sud
+Sotho-Tswana,Northern Sotho (Pedi),5580000,9.0,0.39021,Sepedi,Limpopo,Sources linguistiques,Chefferies Pedi,Groupe majeur du nord,Sédentaire agricole,Christianisme,Bantu (Sotho-Tswana),Royaume Pedi,Afrique du Sud
+Sotho-Tswana,Southern Sotho (Basotho),4960000,8.0,0.346853,Sesotho,Free State,Sources historiques,Royaumes basotho,Peuple partagé avec le Lesotho,Sédentaire,Christianisme,Bantu (Sotho-Tswana),Royaume Basotho,Afrique du Sud & Lesotho
+Sotho-Tswana,Tswana,2480000,4.0,0.173427,Setswana,North West Province,Sources ethnologiques,Royaumes Tswana,Groupe transfrontalier avec le Botswana,Sédentaire,Christianisme,Bantu (Sotho-Tswana),Royaumes Tswana,Botswana & Afrique du Sud
+Tsonga,Tsonga/Shangaan,2480000,4.0,0.173427,Xitsonga,"Limpopo, Mpumalanga",Sources ethnologiques,Chefferies Tsonga,Population du nord-est,Sédentaire,Christianisme + traditions,Bantu,Chefferies Tsonga,Mozambique & Afrique du Sud
+Venda,Venda,1240000,2.0,0.086713,Tshivenda,Limpopo,Sources ethnologiques,Royaumes Venda,Peuple ancien du nord,Sédentaire,Christianisme + traditions,Bantu,Royaumes Venda,Afrique du Sud
+Autres,Communautés métisses (Coloured),5580000,9.0,0.39021,"Afrikaans, anglais",Western Cape,Stats SA,Colonie du Cap,Population métissée historique,Urbaine,Christianisme,Créole africaans,Colonie du Cap,Afrique du Sud
+Autres,Communautés indiennes,1550000,2.5,0.108392,Anglais + langues indo-aryennes,KwaZulu-Natal,Stats SA,Empire britannique,Descendants des travailleurs indiens,Urbaine,Hindouisme + Islam + Christianisme,Indo-aryenne,Colonie britannique,Inde & Afrique du Sud
+Autres,Communautés européennes,4340000,7.0,0.303497,"Afrikaans, anglais",National,Stats SA,"Colonie du Cap, colonisation hollandaise","Descendants néerlandais, britanniques",Urbaine,Christianisme,Germanique,Colonie du Cap,Afrique du Sud
