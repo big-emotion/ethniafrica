@@ -17,7 +17,7 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
  *         required: true
  *         schema:
  *           type: string
- *         description: Nom de l'ethnie (ex: "Arabes", "Yoruba")
+ *         description: Nom de l'ethnie, ex. Arabes ou Yoruba
  *     responses:
  *       200:
  *         description: Détails de l'ethnie

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { getPendingContributions } from "@/lib/supabase/admin-queries";
 import type { Contribution } from "@/lib/supabase/admin-queries";
@@ -12,11 +12,7 @@ export default function AdminContributionsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    loadContributions();
-  }, []);
-
-  const loadContributions = async () => {
+  const loadContributions = useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch("/api/admin/contributions");
@@ -35,7 +31,11 @@ export default function AdminContributionsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [router]);
+
+  useEffect(() => {
+    loadContributions();
+  }, [loadContributions]);
 
   const handleApprove = async (id: string) => {
     try {

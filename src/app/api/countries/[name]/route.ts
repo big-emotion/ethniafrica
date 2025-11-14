@@ -18,7 +18,7 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
  *         required: true
  *         schema:
  *           type: string
- *         description: Nom du pays (ex: "Maroc", "Côte d'Ivoire")
+ *         description: Nom du pays, ex. Maroc ou Côte d'Ivoire
  *     responses:
  *       200:
  *         description: Détails du pays
