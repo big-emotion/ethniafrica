@@ -71,10 +71,6 @@ cp env.dist .env.local
 # Configurer les variables d'environnement dans .env.local
 # (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, etc.)
 
-# Si vous utilisez les fichiers statiques (USE_SUPABASE=false)
-# Générer les données à partir des CSV sources
-npm run parse-dataset
-
 # Lancer le serveur de développement
 npm run dev
 ```
@@ -88,7 +84,6 @@ Copiez `env.dist` vers `.env.local` et configurez :
 - `NEXT_PUBLIC_SUPABASE_URL` : URL de votre projet Supabase
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` : Clé anonyme Supabase
 - `SUPABASE_SERVICE_ROLE_KEY` : Clé de service Supabase (pour les opérations admin)
-- `USE_SUPABASE` : `true` pour utiliser Supabase, `false` pour les fichiers statiques
 - `ADMIN_USERNAME` : Nom d'utilisateur pour l'interface admin
 - `ADMIN_PASSWORD` : Mot de passe pour l'interface admin
 
@@ -221,23 +216,71 @@ Vous pouvez nous contacter via :
 - **Formulaire de contribution** : Page `/{lang}/contribute`
 - **Signalement d'erreur** : Page `/{lang}/report-error`
 
-## Données et pipeline
+## Structure des données
 
-- CSV sources: `dataset/source/*.csv`
-- Script de parsing: `scripts/parseDataset.ts`
-  - Agrège et calcule les totaux et pourcentages (pays, régions, continent)
-  - Produit `dataset/result/**` et `dataset/result/index.json`
-  - Copie automatiquement la sortie dans `public/dataset/**` pour l’application
-- Chargement côté app: `src/lib/datasetLoader.ts`
+Les données sont stockées dans Supabase (PostgreSQL) et chargées dynamiquement par l'application. **L'application ne charge plus de données depuis des fichiers CSV statiques** - toutes les données proviennent de la base de données Supabase.
 
-Sortie (extrait):
+### Organisation des fichiers sources
+
+Les fichiers sources CSV enrichis et les fichiers de description sont organisés par région puis par pays pour la migration des données :
 
 ```
-public/dataset/
-  index.json
-  afrique_du_nord/Maroc/groupes_ethniques.csv
-  ...
+dataset/
+  source/
+    afrique_de_l_ouest/
+      benin/
+        benin_ethnies_complet.csv
+        benin.txt
+      senegal/
+        senegal_ethnies_complet.csv
+        senegal.txt
+      ...
+    afrique_centrale/
+      cameroun/
+        cameroun_ethnies_complet.csv
+        cameroun.txt
+      ...
+    [autres régions...]
 ```
+
+### Données enrichies
+
+L'application supporte désormais des données enrichies pour les pays et les groupes ethniques :
+
+- **Pays** : descriptions, anciens noms (max 3)
+- **Groupes ethniques** : descriptions, anciens noms (max 3), type de société, religion, famille linguistique, statut historique, présence régionale
+- **Relations hiérarchiques** : support des groupes parent/sous-groupes ethniques
+- **Langues** : association des langues aux groupes ethniques avec indicateur de langue primaire
+- **Sources** : association des sources de données aux groupes ethniques
+
+### Migration des données
+
+Pour mettre à jour les données dans la base de données :
+
+1. Placer les fichiers CSV enrichis dans `dataset/source/{region}/{country}/`
+2. Placer les fichiers de description (`.txt`) dans le même dossier
+3. Exécuter les scripts de parsing et migration :
+   ```bash
+   tsx scripts/parseEnrichedCountryCSV.ts
+   tsx scripts/parseCountryDescriptions.ts
+   tsx scripts/matchCSVAndDescriptions.ts
+   tsx scripts/migrateEnrichedData.ts
+   ```
+
+> Documentation complète : `docs/DATA_MIGRATION.md`
+
+### Déploiement
+
+Pour déployer la nouvelle version avec les données enrichies :
+
+> Guide complet : `docs/DEPLOYMENT.md`
+
+**Résumé rapide** :
+
+1. Appliquer les migrations SQL (`001_initial_schema.sql` puis `002_add_enriched_fields.sql`)
+2. Configurer les variables d'environnement Supabase
+3. Exécuter les scripts de migration des données
+4. Déployer l'application
 
 ## Contribuer
 
@@ -250,8 +293,8 @@ Les contributions sont bienvenues: fichiers CSV, corrections, nouvelles sources,
 
 Merci de:
 
-- Respecter la structure des CSV et l'encodage (guillemets, apostrophes)
-- Lancer `npm run parse-dataset` après modification des sources
+- Respecter la structure des CSV enrichis et l'encodage (guillemets, apostrophes)
+- Suivre le guide de migration des données dans `docs/DATA_MIGRATION.md`
 - Signaler les erreurs via la page `/{lang}/report-error`
 
 ## Roadmap (extraits)
@@ -278,6 +321,15 @@ ADMIN_PASSWORD=your_secure_password_here
 ```
 
 ## Changelog
+
+### v1.3.0 (2025-01-XX)
+
+- **Données enrichies** : Ajout de descriptions, anciens noms, informations culturelles (religion, type de société, famille linguistique, statut historique) pour les pays et groupes ethniques
+- **Groupes hiérarchiques** : Support des groupes parent/sous-groupes ethniques avec relations `parent_id`
+- **Vues détaillées enrichies** : Affichage des top 5 ethnies/langues, anciens noms, descriptions complètes avec CTAs "Voir plus"
+- **Migration par pays** : Passage d'une structure par région à une structure par pays pour les fichiers sources CSV
+- **Suppression du chargement CSV** : L'application charge désormais toutes les données depuis Supabase uniquement
+- **Export enrichi** : Les exports CSV/Excel incluent tous les nouveaux champs enrichis
 
 ### v1.2.0 (2025-01-XX)
 

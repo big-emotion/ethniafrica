@@ -21,7 +21,12 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, MapPin, Users } from "lucide-react";
+import { ArrowLeft, MapPin, Users, ExternalLink } from "lucide-react";
+import { TopEthnicitiesCard } from "@/components/TopEthnicitiesCard";
+import { TopLanguagesCard } from "@/components/TopLanguagesCard";
+import { SubgroupsTable } from "@/components/SubgroupsTable";
+import { CountryDescriptionSection } from "@/components/CountryDescriptionSection";
+import { EthnicityDescriptionSection } from "@/components/EthnicityDescriptionSection";
 
 type SectionType = "country" | "region" | "ethnicity";
 
@@ -37,6 +42,12 @@ interface CountryDetailPayload {
     percentageInCountry: number;
     percentageInRegion: number;
     percentageInAfrica: number;
+  }>;
+  description?: string;
+  ancientNames?: string[];
+  topEthnicities?: Array<{
+    name: string;
+    languages: string[];
   }>;
 }
 
@@ -80,6 +91,24 @@ interface EthnicityDetailPayload {
     ethnicityPopulation: number;
     percentageInRegion: number;
   }>;
+  description?: string;
+  ancientName?: string[];
+  topLanguages?: string[];
+  allLanguages?: Array<{ name: string; isPrimary: boolean }>;
+  sources?: string[];
+  societyType?: string;
+  religion?: string;
+  linguisticFamily?: string;
+  historicalStatus?: string;
+  regionalPresence?: string;
+  subgroups?: Array<{
+    id: string;
+    slug: string;
+    name_fr: string;
+    total_population?: number;
+    percentage_in_africa?: number;
+  }>;
+  isSubgroup?: boolean;
 }
 
 type DetailData =
@@ -216,19 +245,39 @@ export function DetailPageClient({
   const SummaryCard = () => {
     if (data.type === "country") {
       const { payload } = data;
+      const countryKey = getCountryKey(payload.name) || item;
+      const countryDetailUrl = `/${language}/${
+        language === "en"
+          ? "countries"
+          : language === "fr"
+            ? "pays"
+            : language === "es"
+              ? "paises"
+              : "paises"
+      }/${encodeURIComponent(countryKey)}`;
+
       return (
         <Card className="shadow-soft">
           <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <Users className="h-5 w-5 text-primary" />
-              {itemTitle}
-            </CardTitle>
-            <CardDescription>
-              {getRegionName(
-                getRegionKey(payload.region) || payload.region,
-                language
-              )}
-            </CardDescription>
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1">
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <Users className="h-5 w-5 text-primary" />
+                  {itemTitle}
+                  {payload.ancientNames && payload.ancientNames.length > 0 && (
+                    <span className="text-base font-normal text-muted-foreground">
+                      ({payload.ancientNames.slice(0, 3).join(", ")})
+                    </span>
+                  )}
+                </CardTitle>
+                <CardDescription>
+                  {getRegionName(
+                    getRegionKey(payload.region) || payload.region,
+                    language
+                  )}
+                </CardDescription>
+              </div>
+            </div>
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 rounded-lg border bg-card">
@@ -311,13 +360,33 @@ export function DetailPageClient({
     }
 
     const { payload } = data;
+    const ethnicityKey = getEthnicityKey(payload.name) || item;
+    const ethnicityDetailUrl = `/${language}/${
+      language === "en"
+        ? "ethnicities"
+        : language === "fr"
+          ? "ethnies"
+          : language === "es"
+            ? "etnias"
+            : "etnias"
+    }/${encodeURIComponent(ethnicityKey)}`;
+
     return (
       <Card className="shadow-soft">
         <CardHeader>
-          <CardTitle className="text-2xl flex items-center gap-2">
-            <Users className="h-5 w-5 text-primary" />
-            {payload.name}
-          </CardTitle>
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <CardTitle className="text-2xl flex items-center gap-2">
+                <Users className="h-5 w-5 text-primary" />
+                {payload.name}
+                {payload.ancientName && payload.ancientName.length > 0 && (
+                  <span className="text-base font-normal text-muted-foreground">
+                    ({payload.ancientName.slice(0, 3).join(", ")})
+                  </span>
+                )}
+              </CardTitle>
+            </div>
+          </div>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 rounded-lg border bg-card">
@@ -659,7 +728,48 @@ export function DetailPageClient({
         <SummaryCard />
 
         {data.type === "country" && (
-          <CountryEthnicitiesTable payload={data.payload} />
+          <div className="space-y-6">
+            {data.payload.topEthnicities &&
+              data.payload.topEthnicities.length > 0 && (
+                <div className="relative">
+                  <TopEthnicitiesCard
+                    ethnicities={data.payload.topEthnicities}
+                    language={language}
+                  />
+                  <Link
+                    href={`/${language}/${
+                      language === "en"
+                        ? "countries"
+                        : language === "fr"
+                          ? "pays"
+                          : language === "es"
+                            ? "paises"
+                            : "paises"
+                    }/${encodeURIComponent(
+                      getCountryKey(data.payload.name) || item
+                    )}`}
+                    className="absolute top-4 right-4"
+                  >
+                    <Button variant="ghost" size="sm" className="gap-2">
+                      {language === "en"
+                        ? "See more"
+                        : language === "fr"
+                          ? "Voir plus"
+                          : language === "es"
+                            ? "Ver más"
+                            : "Ver mais"}
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              )}
+            <CountryEthnicitiesTable payload={data.payload} />
+            <CountryDescriptionSection
+              description={data.payload.description}
+              ancientNames={data.payload.ancientNames}
+              language={language}
+            />
+          </div>
         )}
 
         {data.type === "region" && (
@@ -670,7 +780,62 @@ export function DetailPageClient({
         )}
 
         {data.type === "ethnicity" && (
-          <EthnicityCountriesTable payload={data.payload} />
+          <div className="space-y-6">
+            {!data.payload.isSubgroup &&
+              data.payload.topLanguages &&
+              data.payload.topLanguages.length > 0 && (
+                <div className="relative">
+                  <TopLanguagesCard
+                    languages={data.payload.topLanguages}
+                    language={language}
+                  />
+                  <Link
+                    href={`/${language}/${
+                      language === "en"
+                        ? "ethnicities"
+                        : language === "fr"
+                          ? "ethnies"
+                          : language === "es"
+                            ? "etnias"
+                            : "etnias"
+                    }/${encodeURIComponent(
+                      getEthnicityKey(data.payload.name) || item
+                    )}`}
+                    className="absolute top-4 right-4"
+                  >
+                    <Button variant="ghost" size="sm" className="gap-2">
+                      {language === "en"
+                        ? "See more"
+                        : language === "fr"
+                          ? "Voir plus"
+                          : language === "es"
+                            ? "Ver más"
+                            : "Ver mais"}
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              )}
+            {data.payload.subgroups && data.payload.subgroups.length > 0 && (
+              <SubgroupsTable
+                subgroups={data.payload.subgroups}
+                language={language}
+              />
+            )}
+            <EthnicityCountriesTable payload={data.payload} />
+            <EthnicityDescriptionSection
+              description={data.payload.description}
+              ancientName={data.payload.ancientName}
+              societyType={data.payload.societyType}
+              religion={data.payload.religion}
+              linguisticFamily={data.payload.linguisticFamily}
+              historicalStatus={data.payload.historicalStatus}
+              regionalPresence={data.payload.regionalPresence}
+              languages={data.payload.allLanguages}
+              sources={data.payload.sources}
+              language={language}
+            />
+          </div>
         )}
       </main>
     </div>

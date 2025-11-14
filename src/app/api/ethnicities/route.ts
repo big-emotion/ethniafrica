@@ -1,4 +1,5 @@
 import { getAllEthnicities } from "@/lib/api/datasetLoader.server";
+import { getAllEthnicitiesIncludingSubgroups } from "@/lib/supabase/queries/ethnicities";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
 /**
@@ -35,7 +36,15 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
  */
 export async function GET() {
   try {
-    const ethnicities = await getAllEthnicities();
+    // Utiliser getAllEthnicitiesIncludingSubgroups pour inclure les sous-groupes
+    const allEthnicities = await getAllEthnicitiesIncludingSubgroups();
+    const ethnicities = allEthnicities.map((eth) => ({
+      name: eth.name_fr,
+      key: eth.slug,
+      totalPopulation: eth.total_population || 0,
+      percentageInAfrica: eth.percentage_in_africa || 0,
+      countryCount: 0, // Will be calculated if needed
+    }));
     const response = jsonWithCors({ ethnicities });
     // Add Cache-Control headers
     if (response instanceof Response) {
