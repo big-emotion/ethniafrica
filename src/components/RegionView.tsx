@@ -92,22 +92,34 @@ export const RegionView = ({
 
             // Si le cache est valide (version correspond), l'utiliser
             if (cachedData && serverVersion !== undefined) {
-              // Récupérer la version du cache pour le log
-              try {
-                const cached = localStorage.getItem(CACHE_KEYS.REGIONS);
-                if (cached) {
-                  const entry = JSON.parse(cached);
-                  if (entry.version === serverVersion) {
-                    console.log(
-                      `✓ Cache valide utilisé (version: ${serverVersion})`
-                    );
-                    setRegions(cachedData);
-                    setLoading(false);
-                    return;
+              // Vérifier que le cache ne contient pas de données invalides (countryCount = 0)
+              const hasInvalidData = cachedData.some(
+                (region) => region.countryCount === 0
+              );
+
+              // Si le cache contient des données invalides, ne pas l'utiliser
+              if (hasInvalidData) {
+                console.log(
+                  `🔄 Cache invalidé automatiquement (données invalides détectées: countryCount = 0)`
+                );
+              } else {
+                // Récupérer la version du cache pour le log
+                try {
+                  const cached = localStorage.getItem(CACHE_KEYS.REGIONS);
+                  if (cached) {
+                    const entry = JSON.parse(cached);
+                    if (entry.version === serverVersion) {
+                      console.log(
+                        `✓ Cache valide utilisé (version: ${serverVersion})`
+                      );
+                      setRegions(cachedData);
+                      setLoading(false);
+                      return;
+                    }
                   }
+                } catch {
+                  // Ignore errors
                 }
-              } catch {
-                // Ignore errors
               }
             }
 
@@ -149,12 +161,18 @@ export const RegionView = ({
                   totalPopulation: number;
                   countries: Record<string, unknown>;
                 };
-              }) => ({
-                key,
-                name: regionData.name,
-                totalPopulation: regionData.totalPopulation,
-                countryCount: Object.keys(regionData.countries).length,
-              })
+              }) => {
+                // Calculer le nombre de pays de manière sécurisée
+                const countries = regionData.countries || {};
+                const countryCount = Object.keys(countries).length;
+
+                return {
+                  key,
+                  name: regionData.name,
+                  totalPopulation: regionData.totalPopulation,
+                  countryCount,
+                };
+              }
             );
             setRegions(regionsData);
             // Cache the data with version for automatic invalidation
