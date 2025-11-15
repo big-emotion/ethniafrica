@@ -271,7 +271,7 @@ export const CountryView = ({
                   key={country.key}
                   className={`p-4 hover:shadow-md cursor-pointer transition-all group mx-0 ${
                     selectedCountryKey === country.key
-                      ? "bg-accent border-2 border-primary"
+                      ? "border-2 border-primary"
                       : ""
                   }`}
                   onClick={() => onCountrySelect(country.key, country.region)}

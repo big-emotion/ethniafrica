@@ -32,6 +32,10 @@ export function PaysPageContent() {
   useEffect(() => {
     const expected = getLocalizedRoute(language, "countries");
     if (pathname !== expected) {
+      // Réinitialiser la sélection lors du changement de langue
+      setSelectedCountry(null);
+      setSelectedEthnicity(null);
+      setSelectedRegion(null);
       router.replace(expected);
     }
   }, [language, pathname, router]);
@@ -186,7 +190,7 @@ export function PaysPageContent() {
           </div>
 
           {/* Liste de choix - Droite (30%) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 sticky top-0 self-start">
             <Card className="shadow-soft">
               <CountryView
                 language={language}

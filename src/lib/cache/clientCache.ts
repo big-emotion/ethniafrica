@@ -6,6 +6,7 @@ interface CacheEntry<T> {
   data: T;
   timestamp: number;
   ttl: number;
+  version?: number; // Version des données au moment de la mise en cache
 }
 
 // Cache keys
@@ -32,8 +33,15 @@ function isLocalStorageAvailable(): boolean {
 
 /**
  * Get cached data if it exists and is not expired
+ * @param key - Cache key
+ * @param ttl - Time to live in milliseconds
+ * @param currentVersion - Current version of the data (optional, for automatic invalidation)
  */
-export function getCachedData<T>(key: string, ttl: number): T | null {
+export function getCachedData<T>(
+  key: string,
+  ttl: number,
+  currentVersion?: number
+): T | null {
   if (!isLocalStorageAvailable()) {
     return null;
   }
@@ -54,6 +62,22 @@ export function getCachedData<T>(key: string, ttl: number): T | null {
       return null;
     }
 
+    // Check version if provided (automatic invalidation)
+    if (currentVersion !== undefined) {
+      // Si le cache n'a pas de version (ancien cache), on l'invalide
+      if (entry.version === undefined) {
+        // Ancien cache sans version : invalider automatiquement
+        localStorage.removeItem(key);
+        return null;
+      }
+      // Si les versions diffèrent, invalider le cache
+      if (entry.version !== currentVersion) {
+        // Version mismatch: data has changed, invalidate cache
+        localStorage.removeItem(key);
+        return null;
+      }
+    }
+
     return entry.data;
   } catch (error) {
     console.warn(`Error reading cache for key "${key}":`, error);
@@ -69,8 +93,17 @@ export function getCachedData<T>(key: string, ttl: number): T | null {
 
 /**
  * Set data in cache with TTL
+ * @param key - Cache key
+ * @param data - Data to cache
+ * @param ttl - Time to live in milliseconds
+ * @param version - Version of the data (optional, for automatic invalidation)
  */
-export function setCachedData<T>(key: string, data: T, ttl: number): void {
+export function setCachedData<T>(
+  key: string,
+  data: T,
+  ttl: number,
+  version?: number
+): void {
   if (!isLocalStorageAvailable()) {
     return;
   }
@@ -80,6 +113,7 @@ export function setCachedData<T>(key: string, data: T, ttl: number): void {
       data,
       timestamp: Date.now(),
       ttl,
+      version,
     };
     localStorage.setItem(key, JSON.stringify(entry));
   } catch (error) {

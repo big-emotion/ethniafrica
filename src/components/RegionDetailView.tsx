@@ -10,7 +10,6 @@ import {
 import { getCountryKey } from "@/lib/entityKeys";
 import { getRegion } from "@/lib/datasetLoader";
 import { Card } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { Globe, Users, TrendingUp } from "lucide-react";
 import {
@@ -252,7 +251,7 @@ export const RegionDetailView = ({
                   key={country.name}
                   className={`p-4 rounded-lg border bg-card hover:bg-muted/50 cursor-pointer transition-colors ${
                     selectedCountryKey === countryKey
-                      ? "bg-accent border-2 border-primary"
+                      ? "border-2 border-primary"
                       : ""
                   }`}
                   onClick={() => onCountrySelect?.(countryKey, regionKey)}
@@ -353,7 +352,7 @@ export const RegionDetailView = ({
                       key={country.name}
                       className={`cursor-pointer hover:bg-muted/50 ${
                         selectedCountryKey === countryKey
-                          ? "bg-accent border-l-4 border-primary"
+                          ? "border-l-4 border-primary"
                           : ""
                       }`}
                       onClick={() => onCountrySelect?.(countryKey, regionKey)}
@@ -407,9 +406,5 @@ export const RegionDetailView = ({
     </div>
   );
 
-  if (isMobile) {
-    return <div className="w-full">{content}</div>;
-  }
-
-  return <ScrollArea className="h-[calc(100vh-12rem)]">{content}</ScrollArea>;
+  return <div className="w-full">{content}</div>;
 };

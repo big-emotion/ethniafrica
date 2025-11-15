@@ -1,77 +1,168 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readdirSync, readFileSync, statSync } from "fs";
-import { join } from "path";
 import archiver from "archiver";
 import * as XLSX from "xlsx";
 import { corsOptionsResponse } from "@/lib/api/cors";
-import { DatasetIndex, RegionData, CountryData } from "@/types/ethnicity";
+import {
+  getRegions,
+  getAllCountries,
+  getTotalPopulationAfrica,
+  getCountryDetails,
+} from "@/lib/api/datasetLoader.server";
 
-function getDatasetPath(): string {
-  if (process.env.NODE_ENV === "production") {
-    return join(process.cwd(), "public", "dataset");
+// Fonction helper pour échapper les valeurs CSV
+function escapeCSV(value: string | string[] | undefined | null): string {
+  if (!value) return "";
+  if (Array.isArray(value)) {
+    return value.join("; ");
   }
-  return join(process.cwd(), "dataset", "result");
+  const str = String(value);
+  // Si la valeur contient une virgule, des guillemets ou un saut de ligne, l'entourer de guillemets
+  if (str.includes(",") || str.includes('"') || str.includes("\n")) {
+    return `"${str.replace(/"/g, '""')}"`;
+  }
+  return str;
 }
 
-// Fonction récursive pour trouver tous les fichiers CSV
-function findCSVFiles(
-  dir: string,
-  baseDir: string
-): Array<{ path: string; relativePath: string }> {
-  const files: Array<{ path: string; relativePath: string }> = [];
+// Générer un fichier CSV pour un pays avec tous les champs enrichis
+function generateCountryCSV(
+  countryName: string,
+  regionName: string,
+  ethnicities: Array<{
+    name: string;
+    population: number;
+    percentageInCountry: number;
+    percentageInRegion: number;
+    percentageInAfrica: number;
+    isParent: boolean;
+    parentName?: string;
+    subGroup?: string;
+    language?: string;
+    languages?: string[];
+    region?: string;
+    sources?: string[];
+    ancientName?: string;
+    description?: string;
+    societyType?: string;
+    religion?: string;
+    linguisticFamily?: string;
+    historicalStatus?: string;
+    regionalPresence?: string;
+    subgroups?: Array<{
+      name: string;
+      population: number;
+      percentageInCountry: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+      language?: string;
+      languages?: string[];
+      region?: string;
+      sources?: string[];
+      ancientName?: string;
+      description?: string;
+      societyType?: string;
+      religion?: string;
+      linguisticFamily?: string;
+      historicalStatus?: string;
+      regionalPresence?: string;
+    }>;
+  }>
+): string {
+  const headers = [
+    "Group",
+    "Sub_group",
+    "Population_2025",
+    "Percentage_in_country",
+    "Percentage_in_Africa",
+    "Language",
+    "Region",
+    "Sources",
+    "Ancient_Name",
+    "Description",
+    "Type_de_societe",
+    "Religion",
+    "Famille_linguistique",
+    "Statut_historique",
+    "Presence_regionale",
+  ];
 
-  try {
-    const entries = readdirSync(dir);
+  const rows: string[][] = [];
 
-    for (const entry of entries) {
-      const fullPath = join(dir, entry);
-      const stat = statSync(fullPath);
+  // Parcourir toutes les ethnies (parents et orphelins)
+  for (const eth of ethnicities) {
+    // Ajouter le groupe parent
+    rows.push([
+      escapeCSV(eth.name),
+      escapeCSV(""), // Pas de sous-groupe pour le parent
+      eth.population.toString(),
+      eth.percentageInCountry.toFixed(2),
+      eth.percentageInAfrica.toFixed(4),
+      escapeCSV(eth.language || eth.languages?.join("; ") || ""),
+      escapeCSV(eth.region || ""),
+      escapeCSV(eth.sources || []),
+      escapeCSV(eth.ancientName || ""),
+      escapeCSV(eth.description || ""),
+      escapeCSV(eth.societyType || ""),
+      escapeCSV(eth.religion || ""),
+      escapeCSV(eth.linguisticFamily || ""),
+      escapeCSV(eth.historicalStatus || ""),
+      escapeCSV(eth.regionalPresence || ""),
+    ]);
 
-      if (stat.isDirectory()) {
-        files.push(...findCSVFiles(fullPath, baseDir));
-      } else if (entry.endsWith(".csv")) {
-        const relativePath = fullPath.replace(baseDir + "/", "");
-        files.push({ path: fullPath, relativePath });
+    // Ajouter les sous-groupes s'ils existent
+    if (eth.subgroups && eth.subgroups.length > 0) {
+      for (const subgroup of eth.subgroups) {
+        rows.push([
+          escapeCSV(eth.name), // Nom du groupe parent
+          escapeCSV(subgroup.name), // Nom du sous-groupe
+          subgroup.population.toString(),
+          subgroup.percentageInCountry.toFixed(2),
+          subgroup.percentageInAfrica.toFixed(4),
+          escapeCSV(subgroup.language || subgroup.languages?.join("; ") || ""),
+          escapeCSV(subgroup.region || ""),
+          escapeCSV(subgroup.sources || []),
+          escapeCSV(subgroup.ancientName || ""),
+          escapeCSV(subgroup.description || ""),
+          escapeCSV(subgroup.societyType || ""),
+          escapeCSV(subgroup.religion || ""),
+          escapeCSV(subgroup.linguisticFamily || ""),
+          escapeCSV(subgroup.historicalStatus || ""),
+          escapeCSV(subgroup.regionalPresence || ""),
+        ]);
       }
     }
-  } catch (error) {
-    console.error(`Error reading directory ${dir}:`, error);
   }
 
-  return files;
+  const csvContent = [
+    headers.join(","),
+    ...rows.map((row) => row.join(",")),
+  ].join("\n");
+  return csvContent;
 }
 
 // Charger toutes les données pour Excel
 async function loadAllDataForExcel() {
-  const datasetPath = getDatasetPath();
-  const indexPath = join(datasetPath, "index.json");
-  const index = JSON.parse(readFileSync(indexPath, "utf-8")) as DatasetIndex;
-
   const workbook = XLSX.utils.book_new();
+
+  // Charger les données depuis Supabase
+  const totalPopulation = await getTotalPopulationAfrica();
+  const regions = await getRegions();
+  const allCountries = await getAllCountries();
 
   // Feuille 1: Index / Résumé
   const summaryData: (string | number)[][] = [
-    ["Total Population of Africa", index.totalPopulationAfrica],
-    ["Number of Regions", Object.keys(index.regions).length],
-    [
-      "Number of Countries",
-      Object.values(index.regions).reduce(
-        (acc: number, region: RegionData) =>
-          acc + Object.keys(region.countries).length,
-        0
-      ),
-    ],
+    ["Total Population of Africa", totalPopulation],
+    ["Number of Regions", regions.length],
+    ["Number of Countries", allCountries.length],
   ];
   const summarySheet = XLSX.utils.aoa_to_sheet(summaryData);
   XLSX.utils.book_append_sheet(workbook, summarySheet, "Summary");
 
   // Feuille par région
-  for (const [regionKey, regionData] of Object.entries(index.regions) as [
-    string,
-    RegionData,
-  ][]) {
-    const regionName = regionData.name;
-    const countries = regionData.countries;
+  for (const region of regions) {
+    const regionName = region.data.name;
+    const countriesInRegion = allCountries.filter(
+      (c) => c.region === region.key
+    );
 
     // Créer une feuille pour chaque région avec les pays
     const regionRows: (string | number)[][] = [
@@ -84,16 +175,13 @@ async function loadAllDataForExcel() {
       ],
     ];
 
-    for (const [countryName, countryData] of Object.entries(countries) as [
-      string,
-      CountryData,
-    ][]) {
+    for (const country of countriesInRegion) {
       regionRows.push([
-        countryName,
-        countryData.population,
-        countryData.percentageInRegion.toFixed(2),
-        countryData.percentageInAfrica.toFixed(2),
-        countryData.ethnicityCount,
+        country.name,
+        country.data.population,
+        country.data.percentageInRegion.toFixed(2),
+        country.data.percentageInAfrica.toFixed(2),
+        country.data.ethnicityCount,
       ]);
     }
 
@@ -108,15 +196,44 @@ async function loadAllDataForExcel() {
   return workbook;
 }
 
+// Générer tous les fichiers CSV depuis Supabase
+async function generateAllCSVFiles(): Promise<
+  Array<{ path: string; content: string }>
+> {
+  const files: Array<{ path: string; content: string }> = [];
+  const regions = await getRegions();
+
+  for (const region of regions) {
+    const countries = await getAllCountries();
+    const countriesInRegion = countries.filter((c) => c.region === region.key);
+
+    for (const country of countriesInRegion) {
+      const countryDetails = await getCountryDetails(region.key, country.name);
+      if (countryDetails) {
+        const csvContent = generateCountryCSV(
+          countryDetails.name,
+          countryDetails.region,
+          countryDetails.ethnicities
+        );
+        files.push({
+          path: `${region.key}/${country.name}/groupes_ethniques.csv`,
+          content: csvContent,
+        });
+      }
+    }
+  }
+
+  return files;
+}
+
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const format = searchParams.get("format") || "csv";
 
     if (format === "csv") {
-      // Générer un ZIP avec tous les fichiers CSV
-      const datasetPath = getDatasetPath();
-      const csvFiles = findCSVFiles(datasetPath, datasetPath);
+      // Générer un ZIP avec tous les fichiers CSV depuis Supabase
+      const csvFiles = await generateAllCSVFiles();
 
       // Créer un stream pour le ZIP
       const archive = archiver("zip", {
@@ -125,8 +242,7 @@ export async function GET(request: NextRequest) {
 
       // Ajouter tous les fichiers CSV au ZIP
       for (const file of csvFiles) {
-        const fileContent = readFileSync(file.path);
-        archive.append(fileContent, { name: file.relativePath });
+        archive.append(file.content, { name: file.path });
       }
 
       // Convertir le stream en buffer

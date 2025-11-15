@@ -3,6 +3,8 @@
  */
 import { createServerClient } from "../server";
 
+import { AncientNameEntry } from "@/types/ethnicity";
+
 export interface Country {
   id: string;
   slug: string;
@@ -16,6 +18,10 @@ export interface Country {
   population_2025: number;
   percentage_in_region?: number;
   percentage_in_africa?: number;
+  description?: string;
+  ancient_names?: string | unknown; // JSONB ou TEXT contenant du JSON
+  ethnic_groups_summary?: string; // Section 4
+  notes?: string; // Section 6
   created_at: string;
   updated_at: string;
 }
@@ -114,4 +120,121 @@ export async function getCountriesByRegionCode(
   }
 
   return data || [];
+}
+
+/**
+ * Obtenir un pays avec sa description
+ */
+export async function getCountryWithDescription(
+  slug: string
+): Promise<Country | null> {
+  return await getCountryBySlug(slug);
+}
+
+/**
+ * Obtenir les anciens noms d'un pays (nouveau format structuré)
+ */
+export async function getCountryAncientNames(
+  slug: string
+): Promise<AncientNameEntry[]> {
+  const country = await getCountryBySlug(slug);
+  if (!country || !country.ancient_names) return [];
+
+  try {
+    // Si c'est déjà un objet (JSONB), le retourner directement
+    if (typeof country.ancient_names === "object") {
+      return country.ancient_names as AncientNameEntry[];
+    }
+
+    // Si c'est une string, essayer de parser le JSON
+    if (typeof country.ancient_names === "string") {
+      // Essayer de parser comme JSON
+      try {
+        const parsed = JSON.parse(country.ancient_names);
+        if (Array.isArray(parsed)) {
+          return parsed as AncientNameEntry[];
+        }
+      } catch {
+        // Si le parsing JSON échoue, c'est peut-être l'ancien format (séparé par virgules)
+        // Convertir en nouveau format avec période vide
+        const names = country.ancient_names
+          .split(",")
+          .map((n) => n.trim())
+          .filter((n) => n.length > 0);
+        return names.map((name) => ({ period: "", names: [name] }));
+      }
+    }
+  } catch (error) {
+    console.error("Error parsing ancient names:", error);
+  }
+
+  return [];
+}
+
+/**
+ * Obtenir les top N ethnies d'un pays avec leurs langues
+ */
+export async function getTopEthnicitiesForCountry(
+  slug: string,
+  limit: number = 5
+): Promise<
+  Array<{
+    name: string;
+    languages: string[];
+  }>
+> {
+  const supabase = createServerClient();
+  const country = await getCountryBySlug(slug);
+  if (!country) return [];
+
+  // Récupérer les presences avec les ethnies et leurs langues
+  const { data: presences, error } = await supabase
+    .from("ethnic_group_presence")
+    .select(
+      `
+      population,
+      ethnic_groups!inner (
+        id,
+        name_fr,
+        ethnic_group_languages (
+          languages!inner (
+            name_fr
+          ),
+          is_primary
+        )
+      )
+    `
+    )
+    .eq("country_id", country.id)
+    .order("population", { ascending: false })
+    .limit(limit);
+
+  if (error) {
+    console.error("Error fetching top ethnicities:", error);
+    return [];
+  }
+
+  return (
+    presences?.map((presence: unknown) => {
+      const p = presence as {
+        ethnic_groups: {
+          name_fr: string;
+          ethnic_group_languages?: Array<{
+            is_primary: boolean;
+            languages: { name_fr: string };
+          }>;
+        };
+      };
+      const ethnicity = p.ethnic_groups;
+      const languages = (ethnicity.ethnic_group_languages || [])
+        .sort((a, b) => (b.is_primary ? 1 : 0) - (a.is_primary ? 1 : 0))
+        .map((lang) => lang.languages.name_fr)
+        .filter((name: string) => name);
+
+      return {
+        name: ethnicity.name_fr,
+        languages: languages,
+      };
+    }) || []
+  );
 }

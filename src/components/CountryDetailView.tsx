@@ -5,10 +5,16 @@ import { Language } from "@/types/ethnicity";
 import { getTranslation, getEthnicityName } from "@/lib/translations";
 import { getCountryKey, getEthnicityKey } from "@/lib/entityKeys";
 import { getCountryDetails } from "@/lib/datasetLoader";
-import { Card } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { getLocalizedRoute } from "@/lib/routing";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { MapPin, Users, TrendingUp } from "lucide-react";
+import {
+  MapPin,
+  Users,
+  TrendingUp,
+  ExternalLink,
+  FileText,
+} from "lucide-react";
 import {
   Table,
   TableBody,
@@ -18,9 +24,12 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronUp, ChevronDown, ChevronRight } from "lucide-react";
+import { EthnicityWithSubgroups } from "@/types/ethnicity";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ShareButton } from "@/components/ShareButton";
+import { CountryDescriptionSection } from "@/components/CountryDescriptionSection";
+import Link from "next/link";
 
 interface CountryDetailViewProps {
   regionKey: string;
@@ -51,11 +60,13 @@ export const CountryDetailView = ({
     population: number;
     percentageInRegion: number;
     percentageInAfrica: number;
-    ethnicities: Array<{
+    ethnicities: EthnicityWithSubgroups[];
+    description?: string;
+    ancientNames?: Array<{ period: string; names: string[] }>; // Max 3 entrées pour le résumé
+    allAncientNames?: Array<{ period: string; names: string[] }>; // Toutes les entrées pour la section détaillée
+    topEthnicities?: Array<{
       name: string;
-      population: number;
-      percentageInCountry: number;
-      percentageInRegion: number;
+      languages: string[];
     }>;
   } | null>(null);
   const [loading, setLoading] = useState(true);
@@ -63,10 +74,13 @@ export const CountryDetailView = ({
   const [sortField, setSortField] = useState<SortField>("name");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
   const [currentPage, setCurrentPage] = useState(1);
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
   const itemsPerPage = 10;
 
   useEffect(() => {
+    setLoading(true); // Remettre loading à true au début pour éviter d'afficher les anciennes données
     setCurrentPage(1); // Réinitialiser la pagination à chaque changement de pays
+    setExpandedGroups(new Set()); // Réinitialiser les groupes expandés
     getCountryDetails(regionKey, countryName).then((data) => {
       setCountryData(data);
       setLoading(false);
@@ -124,12 +138,68 @@ export const CountryDetailView = ({
     });
   }, [countryData, sortField, sortDirection]);
 
-  const paginatedEthnicities = useMemo(() => {
-    const start = (currentPage - 1) * itemsPerPage;
-    return sortedEthnicities.slice(start, start + itemsPerPage);
-  }, [sortedEthnicities, currentPage]);
+  // Fonction pour toggle l'expand/collapse d'un groupe
+  const toggleGroup = (groupName: string) => {
+    setExpandedGroups((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(groupName)) {
+        newSet.delete(groupName);
+      } else {
+        newSet.add(groupName);
+      }
+      return newSet;
+    });
+  };
 
-  const totalPages = Math.ceil(sortedEthnicities.length / itemsPerPage);
+  // Paginer uniquement sur les groupes parents, puis ajouter leurs sous-groupes
+  const paginatedEthnicities = useMemo(() => {
+    // Calculer la pagination sur les groupes parents uniquement
+    const parentOnlyEthnicities = sortedEthnicities.filter((e) => e.isParent);
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const paginatedParents = parentOnlyEthnicities.slice(start, end);
+
+    // Construire la liste avec les groupes parents de la page + leurs sous-groupes si expandés
+    const result: Array<{
+      ethnicity: EthnicityWithSubgroups;
+      isSubgroup: boolean;
+      parentName?: string;
+    }> = [];
+
+    for (const ethnicity of paginatedParents) {
+      result.push({
+        ethnicity,
+        isSubgroup: false,
+      });
+
+      // Si c'est un groupe parent avec sous-groupes et qu'il est expandé, ajouter les sous-groupes
+      if (
+        ethnicity.subgroups &&
+        ethnicity.subgroups.length > 0 &&
+        expandedGroups.has(ethnicity.name)
+      ) {
+        for (const subgroup of ethnicity.subgroups) {
+          result.push({
+            ethnicity: {
+              ...subgroup,
+              isParent: false,
+              percentageInAfrica: subgroup.percentageInAfrica,
+            } as EthnicityWithSubgroups,
+            isSubgroup: true,
+            parentName: ethnicity.name,
+          });
+        }
+      }
+    }
+
+    return result;
+  }, [sortedEthnicities, expandedGroups, currentPage, itemsPerPage]);
+
+  // Calculer le nombre total de pages basé uniquement sur les groupes parents
+  const totalPages = useMemo(() => {
+    const parentOnlyEthnicities = sortedEthnicities.filter((e) => e.isParent);
+    return Math.ceil(parentOnlyEthnicities.length / itemsPerPage);
+  }, [sortedEthnicities, itemsPerPage]);
 
   const SortButton = ({
     field,
@@ -177,11 +247,13 @@ export const CountryDetailView = ({
       {/* En-tête du pays */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <MapPin className="h-6 w-6 text-primary" />
-            <h2 className="text-3xl font-display font-bold text-foreground">
-              {countryData.name}
-            </h2>
+            <div>
+              <h2 className="text-3xl font-display font-bold text-foreground">
+                {countryData.name}
+              </h2>
+            </div>
           </div>
           <ShareButton
             type="country"
@@ -236,7 +308,38 @@ export const CountryDetailView = ({
 
       <Separator />
 
-      {/* Tableau: Ethnies du pays */}
+      {/* 1. Résumé historique (description) */}
+      {countryData.description && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <FileText className="h-5 w-5" />
+              {language === "fr"
+                ? "Résumé historique"
+                : language === "en"
+                  ? "Historical Summary"
+                  : language === "es"
+                    ? "Resumen histórico"
+                    : "Resumo histórico"}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground whitespace-pre-line">
+              {countryData.description}
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* 2. Anciennes appellations */}
+      <CountryDescriptionSection
+        description={undefined}
+        ancientNames={countryData.allAncientNames || countryData.ancientNames}
+        language={language}
+        countrySlug={getCountryKey(countryData.name) || countryName}
+      />
+
+      {/* 3. Tableau: Ethnies du pays */}
       <Card className="p-6">
         <h3 className="text-lg font-semibold mb-4">
           {t.ethnicGroups} ({sortedEthnicities.length})
@@ -245,47 +348,82 @@ export const CountryDetailView = ({
         {isMobile ? (
           // Vue mobile : liste
           <div className="space-y-3">
-            {paginatedEthnicities.map((ethnicity) => {
+            {paginatedEthnicities.map((item) => {
               const ethnicityKey =
-                getEthnicityKey(ethnicity.name) || ethnicity.name;
+                getEthnicityKey(item.ethnicity.name) || item.ethnicity.name;
+              const hasSubgroups =
+                item.ethnicity.isParent &&
+                item.ethnicity.subgroups &&
+                item.ethnicity.subgroups.length > 0;
+              const isExpanded = expandedGroups.has(item.ethnicity.name);
+
               return (
-                <div
-                  key={ethnicity.name}
-                  className={`p-4 rounded-lg border bg-card hover:bg-muted/50 cursor-pointer transition-colors ${
-                    selectedEthnicityKey === ethnicityKey
-                      ? "bg-accent border-2 border-primary"
-                      : ""
-                  }`}
-                  onClick={() => onEthnicitySelect?.(ethnicityKey)}
-                >
-                  <div className="space-y-2">
-                    <div className="font-semibold text-base">
-                      {getEthnicityName(ethnicityKey, language)}
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div>
-                        <span className="text-muted-foreground">
-                          {t.population}:{" "}
-                        </span>
-                        <span className="font-medium">
-                          {formatNumber(ethnicity.population)}
-                        </span>
+                <div key={`${item.ethnicity.name}-${item.isSubgroup}`}>
+                  <div
+                    className={`p-4 rounded-lg border bg-card hover:bg-muted/50 cursor-pointer transition-colors ${
+                      selectedEthnicityKey === ethnicityKey
+                        ? "border-2 border-primary"
+                        : ""
+                    } ${item.isSubgroup ? "bg-muted/30 border-l-4 border-l-muted-foreground/30" : ""}`}
+                    onClick={() => {
+                      if (hasSubgroups && !item.isSubgroup) {
+                        toggleGroup(item.ethnicity.name);
+                      } else {
+                        onEthnicitySelect?.(ethnicityKey);
+                      }
+                    }}
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        {hasSubgroups && !item.isSubgroup && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleGroup(item.ethnicity.name);
+                            }}
+                            className="p-1 hover:bg-muted rounded"
+                          >
+                            {isExpanded ? (
+                              <ChevronDown className="h-4 w-4" />
+                            ) : (
+                              <ChevronRight className="h-4 w-4" />
+                            )}
+                          </button>
+                        )}
+                        {item.isSubgroup && (
+                          <div className="w-6 flex items-center justify-center">
+                            <div className="w-0.5 h-4 bg-muted-foreground/30" />
+                          </div>
+                        )}
+                        <div className="font-semibold text-base">
+                          {getEthnicityName(ethnicityKey, language)}
+                        </div>
                       </div>
-                      <div>
-                        <span className="text-muted-foreground">
-                          % {t.inCountry}:{" "}
-                        </span>
-                        <span className="font-medium">
-                          {formatPercent(ethnicity.percentageInCountry)}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">
-                          % {t.region}:{" "}
-                        </span>
-                        <span className="font-medium">
-                          {formatPercent(ethnicity.percentageInRegion)}
-                        </span>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        <div>
+                          <span className="text-muted-foreground">
+                            {t.population}:{" "}
+                          </span>
+                          <span className="font-medium">
+                            {formatNumber(item.ethnicity.population)}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">
+                            % {t.inCountry}:{" "}
+                          </span>
+                          <span className="font-medium">
+                            {formatPercent(item.ethnicity.percentageInCountry)}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-muted-foreground">
+                            % {t.region}:{" "}
+                          </span>
+                          <span className="font-medium">
+                            {formatPercent(item.ethnicity.percentageInRegion)}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -346,30 +484,70 @@ export const CountryDetailView = ({
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {paginatedEthnicities.map((ethnicity, index) => {
+                {paginatedEthnicities.map((item) => {
                   const ethnicityKey =
-                    getEthnicityKey(ethnicity.name) || ethnicity.name;
+                    getEthnicityKey(item.ethnicity.name) || item.ethnicity.name;
+                  const hasSubgroups =
+                    item.ethnicity.isParent &&
+                    item.ethnicity.subgroups &&
+                    item.ethnicity.subgroups.length > 0;
+                  const isExpanded = expandedGroups.has(item.ethnicity.name);
+
                   return (
                     <TableRow
-                      key={ethnicity.name}
+                      key={`${item.ethnicity.name}-${item.isSubgroup}`}
                       className={`cursor-pointer hover:bg-muted/50 ${
                         selectedEthnicityKey === ethnicityKey
-                          ? "bg-accent border-l-4 border-primary"
+                          ? "border-l-4 border-primary"
                           : ""
-                      }`}
-                      onClick={() => onEthnicitySelect?.(ethnicityKey)}
+                      } ${item.isSubgroup ? "bg-muted/20" : ""}`}
+                      onClick={() => {
+                        if (hasSubgroups && !item.isSubgroup) {
+                          toggleGroup(item.ethnicity.name);
+                        } else {
+                          onEthnicitySelect?.(ethnicityKey);
+                        }
+                      }}
                     >
                       <TableCell className="font-medium">
-                        {getEthnicityName(ethnicityKey, language)}
+                        <div className="flex items-center gap-2">
+                          {hasSubgroups && !item.isSubgroup && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleGroup(item.ethnicity.name);
+                              }}
+                              className="p-1 hover:bg-muted rounded -ml-1"
+                            >
+                              {isExpanded ? (
+                                <ChevronDown className="h-4 w-4" />
+                              ) : (
+                                <ChevronRight className="h-4 w-4" />
+                              )}
+                            </button>
+                          )}
+                          {item.isSubgroup && (
+                            <div className="w-6 flex items-center justify-center">
+                              <div className="w-0.5 h-4 bg-muted-foreground/30" />
+                            </div>
+                          )}
+                          <span
+                            className={
+                              item.isSubgroup ? "text-muted-foreground" : ""
+                            }
+                          >
+                            {getEthnicityName(ethnicityKey, language)}
+                          </span>
+                        </div>
                       </TableCell>
                       <TableCell className="text-right tabular-nums">
-                        {formatNumber(ethnicity.population)}
+                        {formatNumber(item.ethnicity.population)}
                       </TableCell>
                       <TableCell className="text-right tabular-nums">
-                        {formatPercent(ethnicity.percentageInCountry)}
+                        {formatPercent(item.ethnicity.percentageInCountry)}
                       </TableCell>
                       <TableCell className="text-right tabular-nums">
-                        {formatPercent(ethnicity.percentageInRegion)}
+                        {formatPercent(item.ethnicity.percentageInRegion)}
                       </TableCell>
                     </TableRow>
                   );
@@ -406,9 +584,5 @@ export const CountryDetailView = ({
     </div>
   );
 
-  if (isMobile) {
-    return <div className="w-full">{content}</div>;
-  }
-
-  return <ScrollArea className="h-[calc(100vh-12rem)]">{content}</ScrollArea>;
+  return <div className="w-full">{content}</div>;
 };

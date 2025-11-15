@@ -1,0 +1,7 @@
+Group,Sub_group,Population_2025,Percentage_in_country,Percentage_in_Africa,Language,Region,Sources,Ancient_Name,Description,Type_de_societe,Religion,Famille_linguistique,Statut_historique,Presence_regionale
+Somali,Issa,450000,41%,,Somali,"Sud, Ouest (Djibouti-ville, Dikhil)","EthnoAtlas, UN Data, Djibouti Stat 2024",Issa clans,"Sous-clan somali majoritaire, influent politiquement",Pastorale nomade,Islam sunnite,Couchitique,Autochtone,"Somalie, Ethiopie"
+Somali,Gadabursi,120000,11%,,Somali,Nord-Ouest,EthnoAtlas,Gadabursi clans,Sous-clan somali important dans le nord-ouest,Pastorale nomade,Islam sunnite,Couchitique,Autochtone,"Somalie, Ethiopie"
+Somali,Isaaq,80000,7%,,Somali,Zones urbaines,EthnoAtlas,Isaaq clans,Sous-clan somali transfrontalier (Somaliland),Pastorale / urbaine,Islam sunnite,Couchitique,Transfrontalier,"Somaliland, Somalie"
+Afar,Afar,380000,35%,,Afar,Nord et Centre,UN Data,"Adal, Dankali",Peuple fondateur des anciens sultanats afar,Pastorale nomade,Islam sunnite,Couchitique,Autochtone,"Éthiopie, Érythrée"
+Arabes,Hadrami,35000,3%,,Arabe,Djibouti-ville,EthnoAtlas,Hadramout,Commerçants et familles religieuses arabes,Urbaine,Islam sunnite,Sémitique,Migrants historiques,Yémen
+Autres,Divers,25000,2%,,Divers,Djibouti-ville,Djibouti Stat,—,Migrants et minorités récentes,Urbaine,Divers,—,Minorités modernes,Afrique de l'Est

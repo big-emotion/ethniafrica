@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Language } from "@/types/ethnicity";
+import { Language, EthnicityWithSubgroups } from "@/types/ethnicity";
 import { getLocalizedRoute } from "@/lib/routing";
 import { DetailPageClient } from "@/components/pages/DetailPageClient";
 import {
@@ -7,6 +7,20 @@ import {
   getRegion,
   getEthnicityGlobalDetailsByKey,
 } from "@/lib/api/datasetLoader.server";
+import {
+  getCountryWithDescription,
+  getCountryAncientNames,
+  getTopEthnicitiesForCountry,
+} from "@/lib/supabase/queries/countries";
+import {
+  getEthnicityWithDescription,
+  getTopLanguagesForEthnicity,
+  getEthnicityLanguages,
+  getEthnicitySubgroups,
+  getEthnicityParent,
+  getEthnicitySources,
+} from "@/lib/supabase/queries/ethnicities";
+import { getCountryKey, getEthnicityKey } from "@/lib/entityKeys";
 
 type SectionType = "country" | "region" | "ethnicity";
 
@@ -56,12 +70,15 @@ interface CountryDetailPayload {
   percentageInRegion: number;
   percentageInAfrica: number;
   region: string;
-  ethnicities: Array<{
+  ethnicities: EthnicityWithSubgroups[];
+  description?: string;
+  ancientNames?: Array<{ period: string; names: string[] }>; // Max 3 entrées pour le résumé
+  allAncientNames?: Array<{ period: string; names: string[] }>; // Toutes les entrées pour la section détaillée
+  ethnicGroupsSummary?: string; // Section 4
+  notes?: string; // Section 6
+  topEthnicities?: Array<{
     name: string;
-    population: number;
-    percentageInCountry: number;
-    percentageInRegion: number;
-    percentageInAfrica: number;
+    languages: string[];
   }>;
 }
 
@@ -105,6 +122,25 @@ interface EthnicityDetailPayload {
     ethnicityPopulation: number;
     percentageInRegion: number;
   }>;
+  description?: string;
+  ancientName?: string[]; // Max 3 pour le résumé
+  allAncientNames?: string[]; // Tous pour la section détaillée
+  topLanguages?: string[];
+  allLanguages?: Array<{ name: string; isPrimary: boolean }>;
+  sources?: string[];
+  societyType?: string;
+  religion?: string;
+  linguisticFamily?: string;
+  historicalStatus?: string;
+  regionalPresence?: string;
+  subgroups?: Array<{
+    id: string;
+    slug: string;
+    name_fr: string;
+    total_population?: number;
+    percentage_in_africa?: number;
+  }>;
+  isSubgroup?: boolean;
 }
 
 type DetailData =
@@ -150,7 +186,23 @@ export default async function LocalizedDetailPage({
         notFound();
       }
 
-      const payload: CountryDetailPayload = countryDetails;
+      // Charger les données enrichies
+      const countrySlug = getCountryKey(countryDetails.name) || decodedItem;
+      const enrichedCountry = await getCountryWithDescription(countrySlug);
+      const ancientNames = enrichedCountry
+        ? await getCountryAncientNames(countrySlug)
+        : [];
+      const topEthnicities = await getTopEthnicitiesForCountry(countrySlug, 5);
+
+      const payload: CountryDetailPayload = {
+        ...countryDetails,
+        description: enrichedCountry?.description,
+        ancientNames: ancientNames.slice(0, 3), // Max 3 pour le résumé
+        allAncientNames: ancientNames, // Tous pour la section détaillée
+        ethnicGroupsSummary: countryDetails.ethnicGroupsSummary,
+        notes: countryDetails.notes,
+        topEthnicities: topEthnicities,
+      };
       detailData = { type: "country", payload };
       break;
     }
@@ -178,12 +230,52 @@ export default async function LocalizedDetailPage({
         notFound();
       }
 
+      // Charger les données enrichies
+      const ethnicitySlug =
+        getEthnicityKey(ethnicityDetails.name) || decodedItem;
+      const enrichedEthnicity =
+        await getEthnicityWithDescription(ethnicitySlug);
+      const parent = await getEthnicityParent(ethnicitySlug);
+      const isSubgroup = !!parent;
+      const subgroups = isSubgroup
+        ? []
+        : await getEthnicitySubgroups(ethnicitySlug);
+      const topLanguages = isSubgroup
+        ? []
+        : await getTopLanguagesForEthnicity(ethnicitySlug, 5);
+      const allLanguages = isSubgroup
+        ? []
+        : await getEthnicityLanguages(ethnicitySlug);
+      const sources = await getEthnicitySources(ethnicitySlug);
+
+      // Parser les anciens noms
+      const allAncientNames = enrichedEthnicity?.ancient_name
+        ? enrichedEthnicity.ancient_name
+            .split(",")
+            .map((n) => n.trim())
+            .filter((n) => n.length > 0)
+        : [];
+      const ancientName = allAncientNames.slice(0, 3); // Max 3 pour le résumé
+
       const payload: EthnicityDetailPayload = {
         name: ethnicityDetails.name,
         totalPopulation: ethnicityDetails.totalPopulation,
         percentageInAfrica: ethnicityDetails.percentageInAfrica,
         countries: ethnicityDetails.countries,
         regions: ethnicityDetails.regions,
+        description: enrichedEthnicity?.description,
+        ancientName: ancientName, // Max 3 pour le résumé
+        allAncientNames: allAncientNames, // Tous pour la section détaillée
+        topLanguages: topLanguages,
+        allLanguages: allLanguages,
+        sources: sources,
+        societyType: enrichedEthnicity?.society_type,
+        religion: enrichedEthnicity?.religion,
+        linguisticFamily: enrichedEthnicity?.linguistic_family,
+        historicalStatus: enrichedEthnicity?.historical_status,
+        regionalPresence: enrichedEthnicity?.regional_presence,
+        subgroups: subgroups,
+        isSubgroup: isSubgroup,
       };
       detailData = { type: "ethnicity", payload };
       break;

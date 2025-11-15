@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { Language } from "@/types/ethnicity";
 import { getTranslation } from "@/lib/translations";
 import { RegionDetailView } from "@/components/RegionDetailView";
@@ -35,28 +35,68 @@ export const DetailView = ({
 }: DetailViewProps) => {
   const t = getTranslation(language);
   const [countryRegion, setCountryRegion] = useState<string | null>(null);
+  const lastLoadedCountryRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (selectedCountry && !selectedRegion) {
+      // Ne recharger que si le pays a changé
+      if (lastLoadedCountryRef.current === selectedCountry) {
+        return;
+      }
+      // Réinitialiser la région quand le pays change
+      setCountryRegion(null);
+      // Capturer la valeur actuelle de selectedCountry pour la vérification dans le callback
+      const currentCountry = selectedCountry;
       // selectedCountry est maintenant une clé, on doit la convertir en nom
       const countryName = getCountryName(selectedCountry);
       if (countryName) {
-        getCountryRegion(countryName).then((region) => {
-          setCountryRegion(region);
-        });
+        lastLoadedCountryRef.current = selectedCountry;
+        getCountryRegion(countryName)
+          .then((region) => {
+            // Ne mettre à jour que si le pays n'a pas changé pendant le chargement
+            if (lastLoadedCountryRef.current === currentCountry) {
+              setCountryRegion(region);
+            }
+          })
+          .catch(() => {
+            // En cas d'erreur, réinitialiser pour permettre un nouvel essai
+            if (lastLoadedCountryRef.current === currentCountry) {
+              setCountryRegion(null);
+              lastLoadedCountryRef.current = null;
+            }
+          });
       }
     } else {
       setCountryRegion(null);
+      lastLoadedCountryRef.current = null;
     }
   }, [selectedCountry, selectedRegion]);
 
+  // Convertir la clé en nom pour EthnicityDetailView (stabilisé avec useMemo)
+  const ethnicityName = useMemo(() => {
+    if (!selectedEthnicity) return null;
+    // Essayer d'abord de convertir la clé en nom
+    const name = getEthnicityName(selectedEthnicity);
+    if (name) {
+      console.log(
+        "[DetailView] Converted key to name:",
+        selectedEthnicity,
+        "->",
+        name
+      );
+      return name;
+    }
+    // Si la conversion échoue, selectedEthnicity est peut-être déjà un nom
+    console.log(
+      "[DetailView] Using selectedEthnicity as name (not a key):",
+      selectedEthnicity
+    );
+    return selectedEthnicity;
+  }, [selectedEthnicity]);
+
   // Gérer la hiérarchie : ethnicity > country > region
   // Vue d'une ethnie sélectionnée (priorité la plus haute)
-  if (selectedEthnicity) {
-    // Convertir la clé en nom pour EthnicityDetailView
-    const ethnicityName =
-      getEthnicityName(selectedEthnicity) || selectedEthnicity;
-
+  if (selectedEthnicity && ethnicityName) {
     return (
       <EthnicityDetailView
         ethnicityName={ethnicityName}

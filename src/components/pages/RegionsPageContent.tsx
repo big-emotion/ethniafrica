@@ -32,6 +32,10 @@ export function RegionsPageContent() {
   useEffect(() => {
     const expected = getLocalizedRoute(language, "regions");
     if (pathname !== expected) {
+      // Réinitialiser la sélection lors du changement de langue
+      setSelectedRegion(null);
+      setSelectedCountry(null);
+      setSelectedEthnicity(null);
       router.replace(expected);
     }
   }, [language, pathname, router]);
@@ -265,7 +269,7 @@ export function RegionsPageContent() {
           </div>
 
           {/* Liste de choix - Droite (30%) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 sticky top-0 self-start">
             <Card className="shadow-soft">
               <RegionView
                 key={pathname}

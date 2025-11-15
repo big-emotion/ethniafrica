@@ -32,6 +32,10 @@ export function CountriesPageContent() {
   useEffect(() => {
     const correctRoute = getLocalizedRoute(language, "countries");
     if (pathname !== correctRoute) {
+      // Réinitialiser la sélection lors du changement de langue
+      setSelectedCountry(null);
+      setSelectedEthnicity(null);
+      setSelectedRegion(null);
       router.replace(correctRoute);
     }
   }, [language, router, pathname]);
@@ -231,7 +235,7 @@ export function CountriesPageContent() {
           </div>
 
           {/* Liste de choix - Droite (30%) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 sticky top-0 self-start">
             <Card className="shadow-soft">
               <CountryView
                 key={pathname}

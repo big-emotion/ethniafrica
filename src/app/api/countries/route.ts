@@ -1,5 +1,6 @@
 import { getAllCountries } from "@/lib/api/datasetLoader.server";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
+import { getDataVersion, DATA_VERSION_KEYS } from "@/lib/cache/dataVersion";
 
 /**
  * @swagger
@@ -47,7 +48,11 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 export async function GET() {
   try {
     const countries = await getAllCountries();
-    const response = jsonWithCors({ countries });
+    const dataVersion = getDataVersion(DATA_VERSION_KEYS.COUNTRIES);
+    const response = jsonWithCors({
+      countries,
+      dataVersion, // Inclure la version pour invalidation automatique du cache client
+    });
     // Add Cache-Control headers
     if (response instanceof Response) {
       response.headers.set(

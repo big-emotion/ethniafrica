@@ -1,0 +1,15 @@
+Group,Sub_group,Population_2025,Percentage_in_country,Percentage_in_Africa,Language,Region,Sources,Ancient_Name,Description,Type_de_societe,Religion,Famille_linguistique,Statut_historique,Presence_regionale
+Kikuyu,Kikuyu,9300000,17%,,Kikuyu,Centre,KNBS,Kirinyaga,Groupe bantou majoritaire,Sédentaire agricole,Christianisme,Bantou,Autochtone,Kenya
+Luhya,Maragoli/Bukusu,7700000,14%,,Luhya,Ouest,KNBS,Luhya anciens,Grand groupe de l'ouest,Sédentaire,Christianisme,Bantou,Autochtone,Kenya
+Kalenjin,Nandi/Kipsigis,7200000,13%,,Kalenjin,Rift Valley,KNBS,Kalenjin,Groupes nilotiques,Pastorale/agricole,Christianisme,Nilotique,Autochtone,Kenya
+Luo,Luo,5600000,10%,,Luo,Nyanza,KNBS,Nilotes,Peuple lacustre,Pêche/agriculture,Christianisme,Nilotique,Autochtone,Kenya
+Kamba,Kamba,5600000,10%,,Kamba,Sud-Est,KNBS,Akamba,Peuple forestier/agricole,Sédentaire,Christianisme,Bantou,Autochtone,Kenya
+Somali,Ogaden/Marehan,3300000,6%,,Somali,Nord-Est,KNBS,Somalo-couchitique,Pasteurs transfrontaliers,Pastorale nomade,Islam,Couchitique,Transfrontalier,"Somalie, Éthiopie"
+Kisii,Kisii,3300000,6%,,Kisii,Sud-Ouest,KNBS,Kisii,Agriculteurs forestiers,Sédentaire,Christianisme,Bantou,Autochtone,Kenya
+Meru,Meru,2200000,4%,,Meru,Mont Kenya,KNBS,Meru anciens,Population bantoue montagnarde,Agricole,Christianisme,Bantou,Autochtone,Kenya
+Mijikenda,Giriama/Digo,2700000,5%,,Mijikenda,Côte,KNBS,Neuf tribus,Côtiers swahiliphones,Pêche/agriculture,Islam/Christianisme,Bantou,Autochtone,Kenya
+Turkana,Turkana,1600000,3%,,Turkana,Nord-Ouest,KNBS,Turkana,Pasteurs nilotiques,Pastorale,Animisme/Christianisme,Nilotique,Autochtone,Kenya
+Maasai,Maasai,1100000,2%,,Maasai,Rift Valley,KNBS,Maasai,Pasteurs guerriers,Pastorale,Traditions/Christianisme,Nilotique,Autochtone,Kenya
+Samburu,Samburu,550000,1%,,Samburu,Centre-Nord,KNBS,Samburu,Pasteurs,Pastorale,Traditions/Christianisme,Nilotique,Autochtone,Kenya
+Borana,Borana,550000,1%,,Borana,Nord,KNBS,Borana,Pastorale couchitique,Pastorale,Islam,Couchitique,Transfrontalier,Éthiopie
+Autres,Divers,4400000,8%,,Divers,Urbain,KNBS,—,Minorités diverses,Urbaine,Divers,Divers,Récents,Afrique de l'Est

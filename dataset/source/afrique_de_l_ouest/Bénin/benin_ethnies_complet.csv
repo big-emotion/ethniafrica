@@ -1,0 +1,10 @@
+Group,Sub_group,Population_2025,Percentage_in_country,Percentage_in_Africa,Language,Region,Sources,Ancient_Name,Description,Type_de_societe,Religion,Famille_linguistique,Statut_historique,Presence_regionale
+Fon,"Fon, Gun, Maxi",5320000,38.0,0.372028,"Fon, Gun","Sud (Abomey, Cotonou)","INSAE Bénin, Ethnologue",Royaume du Dahomey,Groupe majoritaire lié au royaume du Dahomey,Sédentaire urbaine & agricole,Christianisme + Vodun + Islam,Gbe (Niger‑Congo),Royaume du Dahomey,Togo
+Adja‑Ewe‑Mina,"Adja, Ewe, Mina",2240000,16.0,0.156643,"Adja, Ewe","Sud‑Ouest (Mono, Couffo)",Ethnologue,Royaumes Adja‑Ewe,Peuples côtiers et forestiers,Sédentaire,Vodun + Christianisme,Gbe,Royaumes Adja,"Togo, Ghana"
+Yoruba (Nago),Nago Yoruba,1680000,12.0,0.117483,Yoruba,"Centre‑Sud (Porto‑Novo, Kétou)",INSAE,Royaume de Kétou,Yoruba béninois proches du Nigeria,Sédentaire urbaine,Christianisme + Islam + Ifa,Yoruba,Royaumes Yoruba,Nigeria
+Bariba,Baatonou / Bariba,1260000,9.0,0.088112,Bariba,"Nord‑Est (Nikki, Parakou)",Ethnologue,Royaume de Nikki,Cavalier-guerriers du Borgou,Agro‑pastorale,Islam + traditions,Gur (Voltaïque),Royaume de Nikki,Nigeria
+Dendi,Dendi (Songhai),840000,6.0,0.058741,Dendi,Nord (Alibori),Ethnologue,Empire Songhai,Peuple songhai du fleuve Niger,Sédentaire fluvial,Islam,Songhai (Nilo‑saharien),Empire Songhai,Niger
+Fula / Peul,Fulbe,980000,7.0,0.068531,Fulfulde,"Nord (Borgou, Donga)",Ethnologue,Chefferies Peules,Pasteurs et agro‑pasteurs,Pastorale,Islam,Atlantic,Chefferies Peules,Sahel
+Otamari / Somba,"Tamberma, Betammaribe",700000,5.0,0.048951,Ditammari,Nord‑Ouest (Atacora),UNESCO,Royaumes Otamari,Peuple des tatas somba,Sédentaire montagnarde,Traditions + christianisme,Gur,Pays Somba,Togo
+Lamba,Lama / Lamba,280000,2.0,0.01958,Lamba,Nord‑Ouest,Ethnologue,Chefferies Lamba,Groupes montagnards voltaïques,Sédentaire,Traditions,Gur,Zones frontalières,Togo
+Others,"Waama, Yoa‑Lokpa, Dita",700000,5.0,0.048951,Divers,Nord & Centre,INSAE,Divers royaumes,Groupes minoritaires,Variable,Islam / Christianisme,Divers,Divers,Bénin

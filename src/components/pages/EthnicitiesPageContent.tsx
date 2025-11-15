@@ -30,6 +30,10 @@ export function EthnicitiesPageContent() {
   useEffect(() => {
     const correctRoute = getLocalizedRoute(language, "ethnicities");
     if (pathname !== correctRoute) {
+      // Réinitialiser la sélection lors du changement de langue
+      setSelectedEthnicity(null);
+      setSelectedCountry(null);
+      setSelectedRegion(null);
       router.replace(correctRoute);
     }
   }, [language, router, pathname]);
@@ -223,7 +227,7 @@ export function EthnicitiesPageContent() {
           </div>
 
           {/* Liste de choix - Droite (30%) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 sticky top-0 self-start">
             <Card className="shadow-soft">
               <EthnicityView
                 key={pathname}

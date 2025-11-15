@@ -82,3 +82,53 @@ export interface EthnicityGlobalData {
     percentageInRegion: number;
   }>;
 }
+
+// Types pour les données enrichies
+export interface AncientNameEntry {
+  period: string;
+  names: string[];
+}
+
+export interface EnrichedCountry {
+  description?: string;
+  ancientNames?: AncientNameEntry[]; // Max 3 entrées
+  topEthnicities?: Array<{
+    name: string;
+    languages: string[];
+  }>;
+}
+
+// Types pour la structure hiérarchique des ethnies
+export interface SubgroupInfo {
+  name: string;
+  population: number;
+  percentageInCountry: number;
+  percentageInRegion: number;
+  percentageInAfrica: number;
+}
+
+export interface EthnicityWithSubgroups {
+  name: string;
+  population: number;
+  percentageInCountry: number;
+  percentageInRegion: number;
+  percentageInAfrica: number;
+  isParent: boolean;
+  parentName?: string;
+  subgroups?: SubgroupInfo[];
+}
+
+export interface EnrichedEthnicity {
+  description?: string;
+  ancientName?: string[]; // Max 3
+  societyType?: string;
+  religion?: string;
+  linguisticFamily?: string;
+  historicalStatus?: string;
+  regionalPresence?: string;
+  languages?: Array<{ name: string; isPrimary: boolean }>;
+  topLanguages?: string[]; // Top 5
+  parentId?: string;
+  subgroups?: EnrichedEthnicity[];
+  isSubgroup?: boolean;
+}

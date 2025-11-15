@@ -266,7 +266,7 @@ export const EthnicityView = ({
                   key={group.key}
                   className={`p-4 hover:shadow-md cursor-pointer transition-all group mx-0 ${
                     selectedEthnicityKey === group.key
-                      ? "bg-accent border-2 border-primary"
+                      ? "border-2 border-primary"
                       : ""
                   }`}
                   onClick={() => onEthnicitySelect(group.key)}
@@ -335,7 +335,7 @@ export const EthnicityView = ({
                       hideSearchAndAlphabet ? "mx-0" : ""
                     } ${
                       selectedEthnicityKey === group.key
-                        ? "bg-accent border-2 border-primary"
+                        ? "border-2 border-primary"
                         : ""
                     }`}
                     onClick={() => onEthnicitySelect(group.key)}

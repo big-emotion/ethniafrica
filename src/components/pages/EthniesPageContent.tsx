@@ -30,6 +30,10 @@ export function EthniesPageContent() {
   useEffect(() => {
     const expected = getLocalizedRoute(language, "ethnicities");
     if (pathname !== expected) {
+      // Réinitialiser la sélection lors du changement de langue
+      setSelectedEthnicity(null);
+      setSelectedCountry(null);
+      setSelectedRegion(null);
       router.replace(expected);
     }
   }, [language, pathname, router]);
@@ -119,6 +123,7 @@ export function EthniesPageContent() {
               language={language}
               onEthnicitySelect={handleEthnicitySelect}
               hideSearchAndAlphabet={false}
+              selectedEthnicityKey={selectedEthnicity}
             />
           )}
         </div>
@@ -182,11 +187,13 @@ export function EthniesPageContent() {
           </div>
 
           {/* Liste de choix - Droite (30%) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 sticky top-0 self-start">
             <Card className="shadow-soft">
               <EthnicityView
+                key={pathname}
                 language={language}
                 onEthnicitySelect={handleEthnicitySelect}
+                selectedEthnicityKey={selectedEthnicity}
               />
             </Card>
           </div>

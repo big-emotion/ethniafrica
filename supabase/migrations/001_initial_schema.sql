@@ -111,7 +111,7 @@ CREATE TABLE ethnic_group_languages (
 -- Sources de données pour les statistiques
 CREATE TABLE sources (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  title TEXT NOT NULL,
+  title TEXT NOT NULL UNIQUE,
   url TEXT,
   author TEXT,
   publication_year INTEGER,
