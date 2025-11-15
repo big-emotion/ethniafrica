@@ -24,6 +24,7 @@ import {
   getCountryWithDescription,
   getCountryAncientNames,
   getTopEthnicitiesForCountry,
+  type Country,
 } from "@/lib/supabase/queries/countries";
 import {
   getAllEthnicities as getAllEthnicitiesFromSupabase,
@@ -393,8 +394,14 @@ export async function getCountryDetails(
     description: enrichedCountry?.description,
     ancientNames: ancientNames.slice(0, 3), // Max 3 entrées pour le résumé
     allAncientNames: ancientNames, // Toutes les entrées pour la section détaillée
-    ethnicGroupsSummary: enrichedCountry?.ethnic_groups_summary,
-    notes: enrichedCountry?.notes,
+    ethnicGroupsSummary:
+      enrichedCountry && "ethnic_groups_summary" in enrichedCountry
+        ? (enrichedCountry as Country).ethnic_groups_summary
+        : undefined,
+    notes:
+      enrichedCountry && "notes" in enrichedCountry
+        ? (enrichedCountry as Country).notes
+        : undefined,
     topEthnicities: topEthnicities,
   };
 }
@@ -774,8 +781,14 @@ export async function getCountryDetailsByKey(countryKey: string): Promise<{
     description: enrichedCountry?.description,
     ancientNames: ancientNames.slice(0, 3), // Max 3 entrées pour le résumé
     allAncientNames: ancientNames, // Toutes les entrées pour la section détaillée
-    ethnicGroupsSummary: enrichedCountry?.ethnic_groups_summary,
-    notes: enrichedCountry?.notes,
+    ethnicGroupsSummary:
+      enrichedCountry && "ethnic_groups_summary" in enrichedCountry
+        ? (enrichedCountry as Country).ethnic_groups_summary
+        : undefined,
+    notes:
+      enrichedCountry && "notes" in enrichedCountry
+        ? (enrichedCountry as Country).notes
+        : undefined,
     topEthnicities: topEthnicities,
   };
 }
