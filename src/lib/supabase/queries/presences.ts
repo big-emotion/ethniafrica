@@ -35,7 +35,15 @@ export interface PresenceWithEthnicity extends Presence {
     name_fr: string;
     slug: string;
     parent_id?: string | null;
+    description?: string | null;
+    ancient_name?: string | null;
+    society_type?: string | null;
+    religion?: string | null;
+    linguistic_family?: string | null;
+    historical_status?: string | null;
+    regional_presence?: string | null;
   };
+  region?: string | null; // Région géographique du pays
 }
 
 /**
@@ -71,7 +79,7 @@ export async function getPresencesByEthnicity(
 }
 
 /**
- * Obtenir toutes les présences d'un pays
+ * Obtenir toutes les présences d'un pays avec toutes les données enrichies
  */
 export async function getPresencesByCountry(
   countryId: string
@@ -82,7 +90,19 @@ export async function getPresencesByCountry(
     .select(
       `
       *,
-      ethnic_groups (*)
+      ethnic_groups (
+        id,
+        name_fr,
+        slug,
+        parent_id,
+        description,
+        ancient_name,
+        society_type,
+        religion,
+        linguistic_family,
+        historical_status,
+        regional_presence
+      )
     `
     )
     .eq("country_id", countryId);
@@ -95,6 +115,7 @@ export async function getPresencesByCountry(
   return (data?.map((presence) => ({
     ...presence,
     ethnicity: presence.ethnic_groups,
+    region: presence.region || null,
   })) || []) as PresenceWithEthnicity[];
 }
 

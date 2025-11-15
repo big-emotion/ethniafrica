@@ -9,7 +9,21 @@ import {
   getCountryDetails,
 } from "@/lib/api/datasetLoader.server";
 
-// Générer un fichier CSV pour un pays
+// Fonction helper pour échapper les valeurs CSV
+function escapeCSV(value: string | string[] | undefined | null): string {
+  if (!value) return "";
+  if (Array.isArray(value)) {
+    return value.join("; ");
+  }
+  const str = String(value);
+  // Si la valeur contient une virgule, des guillemets ou un saut de ligne, l'entourer de guillemets
+  if (str.includes(",") || str.includes('"') || str.includes("\n")) {
+    return `"${str.replace(/"/g, '""')}"`;
+  }
+  return str;
+}
+
+// Générer un fichier CSV pour un pays avec tous les champs enrichis
 function generateCountryCSV(
   countryName: string,
   regionName: string,
@@ -19,21 +33,104 @@ function generateCountryCSV(
     percentageInCountry: number;
     percentageInRegion: number;
     percentageInAfrica: number;
+    isParent: boolean;
+    parentName?: string;
+    subGroup?: string;
+    language?: string;
+    languages?: string[];
+    region?: string;
+    sources?: string[];
+    ancientName?: string;
+    description?: string;
+    societyType?: string;
+    religion?: string;
+    linguisticFamily?: string;
+    historicalStatus?: string;
+    regionalPresence?: string;
+    subgroups?: Array<{
+      name: string;
+      population: number;
+      percentageInCountry: number;
+      percentageInRegion: number;
+      percentageInAfrica: number;
+      language?: string;
+      languages?: string[];
+      region?: string;
+      sources?: string[];
+      ancientName?: string;
+      description?: string;
+      societyType?: string;
+      religion?: string;
+      linguisticFamily?: string;
+      historicalStatus?: string;
+      regionalPresence?: string;
+    }>;
   }>
 ): string {
   const headers = [
-    "Ethnicity_or_Subgroup",
-    "pourcentage dans la population du pays",
-    "population de l'ethnie estimée dans le pays",
-    "pourcentage dans la population totale d'Afrique",
+    "Group",
+    "Sub_group",
+    "Population_2025",
+    "Percentage_in_country",
+    "Percentage_in_Africa",
+    "Language",
+    "Region",
+    "Sources",
+    "Ancient_Name",
+    "Description",
+    "Type_de_societe",
+    "Religion",
+    "Famille_linguistique",
+    "Statut_historique",
+    "Presence_regionale",
   ];
 
-  const rows = ethnicities.map((eth) => [
-    eth.name,
-    eth.percentageInCountry.toFixed(2),
-    eth.population.toString(),
-    eth.percentageInAfrica.toFixed(4),
-  ]);
+  const rows: string[][] = [];
+
+  // Parcourir toutes les ethnies (parents et orphelins)
+  for (const eth of ethnicities) {
+    // Ajouter le groupe parent
+    rows.push([
+      escapeCSV(eth.name),
+      escapeCSV(""), // Pas de sous-groupe pour le parent
+      eth.population.toString(),
+      eth.percentageInCountry.toFixed(2),
+      eth.percentageInAfrica.toFixed(4),
+      escapeCSV(eth.language || eth.languages?.join("; ") || ""),
+      escapeCSV(eth.region || ""),
+      escapeCSV(eth.sources || []),
+      escapeCSV(eth.ancientName || ""),
+      escapeCSV(eth.description || ""),
+      escapeCSV(eth.societyType || ""),
+      escapeCSV(eth.religion || ""),
+      escapeCSV(eth.linguisticFamily || ""),
+      escapeCSV(eth.historicalStatus || ""),
+      escapeCSV(eth.regionalPresence || ""),
+    ]);
+
+    // Ajouter les sous-groupes s'ils existent
+    if (eth.subgroups && eth.subgroups.length > 0) {
+      for (const subgroup of eth.subgroups) {
+        rows.push([
+          escapeCSV(eth.name), // Nom du groupe parent
+          escapeCSV(subgroup.name), // Nom du sous-groupe
+          subgroup.population.toString(),
+          subgroup.percentageInCountry.toFixed(2),
+          subgroup.percentageInAfrica.toFixed(4),
+          escapeCSV(subgroup.language || subgroup.languages?.join("; ") || ""),
+          escapeCSV(subgroup.region || ""),
+          escapeCSV(subgroup.sources || []),
+          escapeCSV(subgroup.ancientName || ""),
+          escapeCSV(subgroup.description || ""),
+          escapeCSV(subgroup.societyType || ""),
+          escapeCSV(subgroup.religion || ""),
+          escapeCSV(subgroup.linguisticFamily || ""),
+          escapeCSV(subgroup.historicalStatus || ""),
+          escapeCSV(subgroup.regionalPresence || ""),
+        ]);
+      }
+    }
+  }
 
   const csvContent = [
     headers.join(","),
