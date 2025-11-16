@@ -1,0 +1,96 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_NILOTIQUE
+- Nom français : Nilotique
+- Nom anglais / auto-appellation académique : Nilotic
+- Appellation(s) historique(s) :
+  « Nilotiques » ; « Nilo-hamitique » (terme colonial obsolète).
+- Origine du terme historique :
+  « Nilotic » vient du Nil, car les premiers travaux ethnologiques européens ont observé ces peuples dans les bassins du Nil Blanc et du Nil supérieur (Soudan, Sud-Soudan, Kenya, Ouganda).  
+  Le terme « nilo-hamitique » a été utilisé dans la période coloniale pour séparer certains groupes des « Nègres bantous », selon une logique raciale pseudo-scientifique.
+- Pourquoi le terme pose problème :
+  - « Nilo-hamitique » est un terme racialiste introduit par l’administration coloniale britannique pour hiérarchiser les peuples d’Afrique orientale.  
+  - Il supposait que certains peuples nilotiques (Maasai, Tutsi…) seraient « plus proches des Hamites » et donc « supérieurs ».  
+  → Ce terme est **totalement rejeté** aujourd’hui.  
+  → L’appellation correcte est **nilotique**, strictement linguistique.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Nilotic languages / Langues nilotiques
+- Usage contemporain :
+  Les langues nilotiques constituent un sous-groupe clé du nilo-saharien, parlant principalement dans les zones pastorales de l’Afrique orientale.
+- Aire / répartition géographique générale :
+  Sud-Soudan, Soudan, Éthiopie occidentale, Ouganda, Kenya, Tanzanie.
+- Nombre de langues (estimation) : 30–40
+- Nombre total de locuteurs (estimation) : >10 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Nilotique
+- Branches internes / sous-groupes :
+  - Nilotique occidental : Luo, Acholi, Alur  
+  - Nilotique central : Nuer, Dinka, Atuot  
+  - Nilotique oriental : Maasai, Turkana, Samburu
+- Aire géographique :
+  Vallées du Nil supérieur, Rift est-africain
+- Nombre de langues :
+  30–40
+- Nombre total de locuteurs :
+  >10 millions
+
+# 2. Peuples associés
+- Peuple 1 : Dinka
+- Peuple 2 : Nuer
+- Peuple 3 : Maasai
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Dinka  
+- Ethnie 2 : Nuer  
+- Ethnie 3 : Maasai  
+(+ renvoi aux futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues tonales ; structure SVO ou VSO ; morphologie verbale souvent complexe.
+- Particularités phonologiques :
+  - Tons lexicaux  
+  - Consonnes implosives (ex. Dinka)  
+  - Oppositions vocaliques longues/courtes
+- Liens avec les familles voisines :
+  Contacts prolongés avec :
+  - langues bantoues (Kenya, Tanzanie)  
+  - couchitiques (Oromo, Somali)  
+  - soudaniques centrales (Lendu, Lugbara)
+- Innovations clés :
+  - Systèmes de genres nominaux particuliers dans certaines langues  
+  - Morphologie irrégulière du verbe (notamment Nuer, Dinka)  
+  - Phonologie riche, parfois extrêmement complexe
+
+# 5. Histoire et origines
+- Origine probable :
+  Zones marécageuses du Nil supérieur (Sudd) ou Éthiopie occidentale.
+- Diffusion des langues :
+  Migrations pastorales du sud Soudan vers le Kenya et la Tanzanie actuels.
+- Ruptures historiques :
+  - Conflits au Sud-Soudan (Dinka vs Nuer)  
+  - Colonisation britannique dans la région des Grands Lacs  
+  - Déplacements liés aux guerres civiles
+- Zones de contact et métissages :
+  Rift est-africain (Maasai, Samburu), Nil supérieur (Dinka, Nuer).
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  >10 millions
+- Répartition par pays :
+  Sud-Soudan, Soudan, Éthiopie, Ouganda, Kenya, Tanzanie
+- Importance historique :
+  Langues des grands peuples pastoraux du Nil supérieur ; rôle déterminant dans l’histoire politique de la région.
+
+# 7. Sources
+- Dimmendaal – *The Nilotic Languages*
+- SIL Ethnologue – Nilotic languages
+- UNESCO – Atlas des langues
+- Greenberg – *Languages of Africa*

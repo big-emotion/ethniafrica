@@ -1,0 +1,94 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_NIGERCONGO
+- Nom français : Niger-Congo
+- Nom anglais / auto-appellation académique : Niger–Congo
+- Appellation(s) historique(s) :
+  « Congo-Kordofanien » ; « Niger-Kordofanien » (Greenberg, 20ᵉ siècle)
+- Origine du terme historique :
+  Le terme « Niger-Congo » a été introduit par Joseph Greenberg pour regrouper un très large ensemble de langues partageant des caractéristiques phonologiques et grammaticales, principalement les classes nominales.
+  « Congo-Kordofanien » était une tentative antérieure d’intégrer les langues Kordofaniennes.
+- Pourquoi le terme pose problème :
+  Ces appellations anciennes reposaient sur une vision partiellement géographique et parfois racialiste de l’Afrique subsaharienne.  
+  Plusieurs linguistes coloniaux utilisaient le terme « nègre » ou « nigrid » pour désigner ces langues de manière essentialiste.  
+  Aujourd’hui, **Niger-Congo** est l’appellation scientifique neutre et reconnue.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Niger–Congo languages / Langues nigéro-congolaises
+- Usage contemporain :
+  Plus grande famille linguistique d’Afrique (et l’une des plus grandes du monde), comprenant les langues atlantiques, mandé, gur, krou, bénoué-congo, et les langues bantoues.
+- Aire / répartition géographique générale :
+  Afrique de l’Ouest, Afrique centrale, Afrique orientale, Afrique australe.
+- Nombre de langues (estimation) : ~1500
+- Nombre total de locuteurs (estimation) : ~600 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Niger-Congo
+- Branches internes / sous-groupes :
+  - Atlantique
+  - Mandé
+  - Gur
+  - Krou
+  - Volta-Congo
+  - Benue–Congo (incluant Bantou)
+  - Adamawa (selon certaines classifications)
+- Aire géographique :
+  Afrique subsaharienne (Ouest, Centre, Est et Sud)
+- Nombre de langues :
+  ~1500
+- Nombre total de locuteurs :
+  ~600 millions
+
+# 2. Peuples associés
+- Peuple 1 : Yoruba
+- Peuple 2 : Igbo
+- Peuple 3 : Akan
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Yoruba
+- Ethnie 2 : Igbo
+- Ethnie 3 : Ashanti (Akan)
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues principalement tonales, souvent agglutinantes ; présence fréquente de classes nominales.
+- Particularités phonologiques :
+  Tons (souvent 2 ou 3 niveaux), harmonies vocaliques, consonnes prénasalisées.
+- Liens avec les familles voisines :
+  Contacts importants avec les langues tchadiques (Haoussa), nilo-sahariennes (Songhay, Kanuri).
+- Innovations clés :
+  - Systèmes élaborés de classes nominales  
+  - Morphologie verbale dérivationnelle  
+  - Expression grammaticale par tons
+
+# 5. Histoire et origines
+- Origine probable :
+  Région de la forêt guinéo-congolaise ou zones de la moyenne Volta.
+- Diffusion des langues :
+  Migrations agricoles anciennes vers l’Afrique australe (via les Bantous), expansions ouest-africaines mandé, diffusion des langues gurs au Sahel.
+- Ruptures historiques :
+  - Expansion bantoue vers l’Afrique centrale et australe  
+  - Développement des royaumes Yoruba, Akan, Bini, etc.  
+  - Contacts prolongés entre civilsations mandé et sahéliennes
+- Zones de contact et métissages :
+  Afrique centrale (croisement bantou–pygmées), Sahel ouest-africain, delta du Niger.
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~600 millions
+- Répartition par pays :
+  Nigéria, Ghana, Côte d’Ivoire, Bénin, Togo, Cameroun, RDC, Angola, Afrique australe…
+- Importance historique :
+  Langues majeures du commerce ouest-africain, de l’expansion bantoue et des civilisations nigérianes (Yoruba, Igbo) et akan.
+
+# 7. Sources
+- Greenberg, J. – *The Languages of Africa*
+- Williamson & Blench – *Niger-Congo Overview*
+- SIL Ethnologue – Niger–Congo
+- UNESCO – Atlas des langues africaines

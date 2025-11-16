@@ -1,0 +1,49 @@
+ID famille linguistique : FLG_00001
+Nom français : Afro-asiatique
+Appellation historique : Hamito-Sémitique (terme historique souvent utilisé)  
+Origine du terme historique : Le terme « Hamito-Sémitique » venait de la linguistique du XIXᵉ siècle, reliant les langues « sémitiques » et les langues dites « hamitiques » (unies en fonction d’un modèle biblique).  
+Pourquoi le terme pose problème : Le terme « hamitique » est aujourd’hui considéré comme colonial et non fondé scientifiquement — il implique une hiérarchisation raciale et un lien aux récits de la « descendance de Cham ». Le terme a donc une charge idéologique inappropriée pour un usage neutre.  
+Auto-appellation : Afro-asiatique (ou Afar-asiatique)  
+Usage contemporain : Désigne une famille de langues parlées en Afrique du Nord, dans la Corne de l’Afrique, au Sahel, incluant les branches berbère, tchadique, couchitique, omotique et sémitique. :contentReference[oaicite:0]{index=0}  
+Idée de répartition géographique : Afrique du Nord, Sahel, Corne de l’Afrique, Sahara oriental  
+------------------------------------------
+
+ID famille linguistique : FLG_00002
+Nom français : Niger-Congo
+Appellation historique : (parfois « Congo-Kordofanien » dans les classifications anciennes)  
+Origine du terme historique : Le terme « Congo-Kordofanien » était utilisé pour englober les langues de l’Afrique subsaharienne de l’Ouest/Sud, avant que la classification soit affinée.  
+Pourquoi le terme pose problème : Il est ancien, peu précis, et mélange des sous-groupes mal définis. Il peut porter un biais selon la façon dont les langues ont été regroupées de façon plus ou moins arbitraire.  
+Auto-appellation : Niger-Congo  
+Usage contemporain : Famille très large de langues parlées surtout en Afrique subsaharienne, comprenant notamment les langues bantoues et de nombreuses autres branches. :contentReference[oaicite:1]{index=1}  
+Répartition géographique : Afrique de l’Ouest, Centrale, et du Sud  
+------------------------------------------
+
+ID famille linguistique : FLG_00003
+Nom français : Nilo-Saharienne
+Appellation historique : —  
+Origine du terme historique : —  
+Pourquoi le terme pose problème : Le statut génétique de cette famille est encore controversé ; certains linguistes considèrent que le regroupement Nilo-Saharien est plus un « panier » de langues non encore classées que véritablement un lien prouvé. :contentReference[oaicite:2]{index=2}  
+Auto-appellation : Nilo-Saharan (en anglais) / Nilo-Saharienne (en français)  
+Usage contemporain : Utilisé pour regrouper diverses langues de l’intérieur nord-est et est de l’Afrique (bassin du Nil, zones sahéliennes, etc.) : langues nilotiques, soudanaises centrales, songhay, etc. :contentReference[oaicite:3]{index=3}  
+Répartition géographique : Afrique centrale, nord-est, bassin du Nil  
+------------------------------------------
+
+ID famille linguistique : FLG_00004
+Nom français : Khoï-San
+Appellation historique : « Khoisan »  
+Origine du terme historique : Le terme « Khoisan » avait été inventé pour regrouper les langues à clics parlées par les peuples « Khoi » et « San » d’Afrique australe.  
+Pourquoi le terme pose problème : Ce terme est aussi générique et contraint car « Khoi » et « San » sont des appellations externes, parfois perçues comme colonial-anthropologiques, et le rapprochement « Khoi-San » ne reflète pas toujours un lien linguistique prouvé mais plutôt une convergence typologique (ex : clics). :contentReference[oaicite:4]{index=4}  
+Auto-appellation : Généralement les locuteurs utilisent leur nom propre (ex. ǃKung, !Xóõ, Ju/’hoan)  
+Usage contemporain : Terme commode pour désigner les langues à clics d’Afrique australe, même si leur classification génétique reste largement débattue. :contentReference[oaicite:5]{index=5}  
+Répartition géographique : Afrique australe (Namibie, Botswana, Afrique du Sud)  
+------------------------------------------
+
+ID famille linguistique : FLG_00005
+Nom français : Austronésienne (intruse en Afrique)
+Appellation historique : —  
+Origine du terme historique : —  
+Pourquoi le terme pose problème : Bien que majoritairement non africaine, cette famille est mentionnée pour l’île de Madagascar et quelques zones périphériques — elle teste les limites de « familles africaines » strictes.  
+Auto-appellation : Austronesian (anglais) / Austronésienne (français)  
+Usage contemporain : Famille de langues originaire de l’Asie-Pacifique, mais présente à Madagascar (ex : malgache) ; donc elle entre dans le panorama linguistique africain comme cas d’introduction externe. :contentReference[oaicite:6]{index=6}  
+Répartition géographique : Madagascar  
+------------------------------------------

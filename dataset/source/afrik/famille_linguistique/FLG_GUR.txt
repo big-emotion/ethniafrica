@@ -1,0 +1,93 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_GUR
+- Nom français : Gur
+- Nom anglais / auto-appellation académique : Gur / Voltaic (terme ancien)
+- Appellation(s) historique(s) :
+  « Voltaïque » (ancien terme colonial) ; « Langues voltaïques » (du fleuve Volta).
+- Origine du terme historique :
+  Le terme « Voltaic » a été créé par des administrateurs et linguistes coloniaux français pour désigner les langues parlées autour des affluents du fleuve Volta (Burkina Faso, Ghana).  
+  Ce terme a été remplacé par « Gur » (nom plus interne et linguistiquement cohérent).
+- Pourquoi le terme pose problème :
+  - « Voltaïque » est un terme purement géographique imposé par l’administration coloniale.  
+  - Il ne reflète pas les autonymes ni la diversité interne des langues.  
+  - La classification était approximative et parfois racialisée.
+  → **Le terme moderne correct est “Gur”.**
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Gur languages / Langues gur
+- Usage contemporain :
+  Le gur regroupe des langues majeures du Burkina Faso, du Ghana, du Togo et du Bénin, notamment le mooré, le dagbani, le dagaare, le gulmancema.
+- Aire / répartition géographique générale :
+  Burkina Faso, Ghana, Côte d’Ivoire nord, Togo nord, Bénin nord
+- Nombre de langues (estimation) : ~70–80
+- Nombre total de locuteurs (estimation) : >20 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Gur
+- Branches internes / sous-groupes :
+  - Central Gur (Mossi, Dagbani, Mandinka du nord Ghana)
+  - Northern Gur
+  - Southern Gur
+  - Oti-Volta (grand sous-groupe)
+- Aire géographique :
+  Sahel et savanes d’Afrique de l’Ouest
+- Nombre de langues :
+  70–80
+- Nombre total de locuteurs :
+  >20 millions
+
+# 2. Peuples associés
+- Peuple 1 : Mossi
+- Peuple 2 : Dagomba
+- Peuple 3 : Gourmantché
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Mossi
+- Ethnie 2 : Dagomba
+- Ethnie 3 : Gourmantché
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues tonales ; structure SVO ; affixation nominale et verbale variable.
+- Particularités phonologiques :
+  Consonnes prénasalisées, harmoniques vocaliques fréquentes, tons grammaticaux et lexicaux.
+- Liens avec les familles voisines :
+  Contacts intenses avec les Mandé (Bambara, Malinké) et avec les langues kwa et krou.
+- Innovations clés :
+  - Développement des systèmes tonals grammaticaux  
+  - Simplification ou absence de classes nominales  
+  - Riches alternances vocaliques
+
+# 5. Histoire et origines
+- Origine probable :
+  Région Volta–Niger (entre Burkina Faso et Ghana).
+- Diffusion des langues :
+  Expansion des royaumes mossi (XVe–XIXe siècles), migrations agricoles dans la zone voltaïque.
+- Ruptures historiques :
+  - Pressions mandingues au Moyen Âge  
+  - Colonisation française  
+  - Déplacements liés à la désertification et aux conflits sahéliens
+- Zones de contact et métissages :
+  - Sahel burkinabè (Gourmantché, Mossi)  
+  - Ghana septentrional (Dagomba, Mamprusi)
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  >20 millions
+- Répartition par pays :
+  Burkina Faso (langue nationale : mooré), Ghana (dagbani, mampruli), Togo nord, Bénin nord, Côte d’Ivoire nord.
+- Importance historique :
+  Langues des royaumes mossi (Ouagadougou, Yatenga) ; rôle majeur dans la culture agricole sahélienne.
+
+# 7. Sources
+- Blench, R. – *Gur Languages Overview*
+- Glottolog – Oti-Volta / Gur branch
+- SIL Ethnologue – Gur languages
+- UNESCO – Atlas des langues africaines

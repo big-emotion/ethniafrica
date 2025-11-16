@@ -1,0 +1,94 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_KHOE
+- Nom français : Khoe
+- Nom anglais / auto-appellation académique : Khoe / Khoeid
+- Appellation(s) historique(s) :
+  « Hottentot » (terme aujourd’hui clairement raciste et offensant),
+  « Khoikhoi », « Nama-Hottentot » dans les sources coloniales.
+- Origine du terme historique :
+  - « Khoekhoe » signifie approximativement « les vrais gens » dans la langue.  
+  - Les colons néerlandais ont utilisé « Hottentot » en imitant de manière moqueuse la phonologie à clics.  
+  - Les linguistes ont plus tard retenu « Khoe » comme nom de famille.
+- Pourquoi le terme pose problème :
+  - « Hottentot » est un terme péjoratif, tournant en ridicule la langue et la culture, utilisé dans un cadre raciste et déshumanisant.  
+  - Il a servi à justifier la domination coloniale, les spoliations et violences contre les Nama et autres groupes.  
+  → Afrik **rejette “Hottentot”**, ne le conserve que dans l’explication historique, et utilise **Khoe / Khoekhoe / Nama**.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Khoekhoegowab (langue nama) ; Khoe languages / Langues khoe
+- Usage contemporain :
+  Famille linguistique distincte, regroupant le khoekhoe (nama/damara) et plusieurs langues du Kalahari (Khoekhoe, Khwe, Naro…).
+- Aire / répartition géographique générale :
+  Namibie, Botswana, Afrique du Sud, Angola.
+- Nombre de langues (estimation) : ~10–15
+- Nombre total de locuteurs (estimation) : ~250 000 à 350 000 (majoritairement Nama/Damara)
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Khoe
+- Branches internes / sous-groupes :
+  - Khoekhoe (Nama, Damara, Griqua)
+  - Kalahari Khoe (Naro, Khwe, Tshikhwe, Shua, etc.)
+- Aire géographique :
+  Namibie, Botswana, Afrique du Sud, Angola
+- Nombre de langues :
+  10–15
+- Nombre total de locuteurs :
+  ~250 000–350 000
+
+# 2. Peuples associés
+- Peuple 1 : Nama
+- Peuple 2 : Damara
+- Peuple 3 : Khwe
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Nama  
+- Ethnie 2 : Damara  
+- Ethnie 3 : Naro / Khwe  
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues agglutinantes, SOV ou relativement flexibles, avec un système pronominal riche.
+- Particularités phonologiques :
+  - Inventaires riches de clics (4–5 types de clics, combinés avec des modificateurs)  
+  - Distinction de longueur vocalique  
+  - Tons ou accent contrastif selon les langues
+- Liens avec les familles voisines :
+  - Contacts forts avec les langues bantoues d’Afrique australe (afrikaans, oshiwambo, tswana, zoulou…)  
+  - Prêts lexicaux dans les deux sens (ex. emprunts de Khoe vers zoulou/xhosa via clics).
+- Innovations clés :
+  - Complexité extrême des inventaires consonantiques  
+  - Systèmes pronominaux et de marquage de personne très développés
+
+# 5. Histoire et origines
+- Origine probable :
+  Sud-ouest africain (Namibie actuelle), ancien milieu pastoral et semi-nomade.
+- Diffusion des langues :
+  Déplacements successifs des Nama et autres groupes Khoe à travers la Namibie, le Botswana et le Cap.
+- Ruptures historiques :
+  - Colonisation allemande (Namibie) et génocide des Herero et Nama (1904–1908)  
+  - Colonisation sud-africaine, apartheid, déplacement des populations  
+  - Pression linguistique de l’afrikaans, de l’anglais et des langues bantoues
+- Zones de contact et métissages :
+  - Désert du Namib et du Kalahari  
+  - Zones frontalières Namibie/Botswana/Afrique du Sud
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~250 000–350 000
+- Répartition par pays :
+  Namibie (majorité : Nama/Damara), Botswana (Naro, Khwe), Afrique du Sud, Angola.
+- Importance historique :
+  Langues des peuples pastoraux historiques du sud-ouest africain ; mémoire linguistique d’une Afrique pré-bantoue et pré-coloniale.
+
+# 7. Sources
+- Sands, B. – travaux sur les langues Khoe  
+- Pakendorf et al. – *Classification of Khoe languages*  
+- SIL Ethnologue – Khoekhoe, Naro, Khwe  
+- UNESCO – langues en danger (Afrique australe)

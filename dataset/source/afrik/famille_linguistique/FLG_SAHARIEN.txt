@@ -1,0 +1,96 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_SAHARIEN
+- Nom français : Saharien
+- Nom anglais / auto-appellation académique : Saharan
+- Appellation(s) historique(s) :
+  « Langues sahariennes », parfois incluses dans de larges catégories « soudanaises » ou « nilo-hamitiques » (désuètes).
+- Origine du terme historique :
+  « Saharien » est un terme géographique référant aux populations vivant dans le Sahara central et oriental.  
+  Les linguistes ont identifié un noyau cohérent autour des langues Kanuri–Kanembu et Teda–Daza.
+- Pourquoi le terme pose problème :
+  - Le terme est géographique et a parfois été utilisé de manière imprécise.  
+  - Dans certains travaux coloniaux, le peuple saharien (notamment toubou) a été assigné à des catégories raciales et pseudo-historiques, notamment via l’opposition « hamite » vs « nègre ».  
+  - Toutefois, aujourd’hui **« Saharan »** reste un terme scientifique neutre et clairement défini.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Saharan languages / Langues sahariennes
+- Usage contemporain :
+  Petit groupe au sein du nilo-saharien, incluant les langues kanuri, kanembu, et toubou (teda/daza).
+- Aire / répartition géographique générale :
+  Niger, Tchad, Libye, nord Nigéria
+- Nombre de langues (estimation) : 10–15
+- Nombre total de locuteurs (estimation) : ~5 à 8 millions (principalement kanuri)
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Saharien
+- Branches internes / sous-groupes :
+  - Kanuri / Kanembu (lac Tchad)
+  - Toubou (Teda, Daza)
+  - Langues sahariennes mineures
+- Aire géographique :
+  Sahara central et oriental
+- Nombre de langues :
+  10–15
+- Nombre total de locuteurs :
+  5–8 millions
+
+# 2. Peuples associés
+- Peuple 1 : Kanuri
+- Peuple 2 : Teda
+- Peuple 3 : Daza
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Kanuri  
+- Ethnie 2 : Teda (Toubou du nord)  
+- Ethnie 3 : Daza (Toubou du sud)  
+(+ renvoi aux futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues plutôt analytiques, SVO, utilisation de particules grammaticales.
+- Particularités phonologiques :
+  - Tons (dans Kanuri)  
+  - Systèmes vocaliques réduits  
+  - Consonnes fricatives labiovélaires dans certains dialectes
+- Liens avec les familles voisines :
+  Contacts étroits avec :
+  - langues tchadiques (haoussa, bade, ngas)  
+  - langues songhay (Niger)  
+  - langues berbères (Touaregs au Sahara)
+- Innovations clés :
+  - Marqueurs de temps/aspect postverbaux  
+  - Réduction phonologique dans Kanuri  
+  - Emprunts multiples aux langues voisines (arabe, haoussa)
+
+# 5. Histoire et origines
+- Origine probable :
+  Bassin du lac Tchad, zones saharo-sahéliennes.
+- Diffusion des langues :
+  Expansion des Kanem-Bornou (empire médiéval), influence majeure autour du lac Tchad.
+- Ruptures historiques :
+  - Déclin de l’empire Kanem-Bornou  
+  - Colonisation (Nigéria britannique, Tchad français)  
+  - Désertification du Sahara
+- Zones de contact et métissages :
+  - Oasis du Tibesti (Teda/Daza)  
+  - Région du lac Tchad (Kanuri, Kanembu)
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  5–8 millions
+- Répartition par pays :
+  Nigéria nord, Niger, Tchad, Libye
+- Importance historique :
+  Langues des royaumes saharo-sahéliens (Kanem-Bornou), acteurs majeurs des routes transsahariennes.
+
+# 7. Sources
+- Dimmendaal – *Nilo-Saharan Linguistics*  
+- SIL Ethnologue – Kanuri, Teda-Daza  
+- Glottolog – Saharan branch  
+- UNESCO – Atlas des langues africaines

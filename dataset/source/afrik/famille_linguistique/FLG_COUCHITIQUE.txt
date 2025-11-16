@@ -1,0 +1,94 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_COUCHITIQUE
+- Nom français : Couchitique
+- Nom anglais / auto-appellation académique : Cushitic
+- Appellation(s) historique(s) :
+  « Langues couchitiques », « Langues de Koush/Cush » (référence biblique), anciennement intégrées dans le bloc « hamitique ».
+- Origine du terme historique :
+  Le terme « Cushitic » dérive de « Koush/Cush », figure biblique associée à la Nubie.  
+  Des linguistes européens du XIXᵉ siècle ont appliqué ce terme aux peuples et langues de la Corne de l’Afrique selon une vision pseudo-généalogique inspirée de la Bible.
+- Pourquoi le terme pose problème :
+  - Le mot « couchitique » est hérité d’une grille de lecture biblique/coloniale qui attribuait des origines « extra-africaines » à certains peuples pour les distinguer des Africains « noirs » dans une logique raciale.  
+  - Le concept « hamitique-couchitique » a été utilisé pour justifier des hiérarchies raciales.
+  → Aujourd’hui le terme **couchitique** est maintenu uniquement dans une perspective **linguistique**, dépouillée de son héritage idéologique.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Cushitic languages / Langues couchitiques
+- Usage contemporain :
+  Branche majeure de l’Afro-asiatique, extrêmement présente en Éthiopie, Somalie, Djibouti, Érythrée et nord du Kenya. Comprend l’oromo, le somali, l’afar, le sidamo, etc.
+- Aire / répartition géographique générale :
+  Corne de l’Afrique
+- Nombre de langues (estimation) : 40–50
+- Nombre total de locuteurs (estimation) : ~40 à 45 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Couchitique
+- Branches internes / sous-groupes :
+  - Oromo (Oromoid)
+  - Somali (Somaloid)
+  - Afar–Saho
+  - Agaw (Centrales)
+  - Rendille–Boni
+  - Sidamo
+- Aire géographique :
+  Corne de l’Afrique (Éthiopie, Somalie, Djibouti, Érythrée, Kenya nord)
+- Nombre de langues :
+  40–50
+- Nombre total de locuteurs :
+  40–45 millions
+
+# 2. Peuples associés
+- Peuple 1 : Oromo
+- Peuple 2 : Somali
+- Peuple 3 : Afar
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Oromo
+- Ethnie 2 : Somali
+- Ethnie 3 : Afar
+
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues majoritairement agglutinantes, fortement tonales ou accentuelles selon les branches.
+- Particularités phonologiques :
+  Harmonie vocalique dans certaines langues ; consonnes pharyngales dans les zones proches du sémitique ; longueur vocalique distinctive.
+- Liens avec les familles voisines :
+  Contacts étroits et anciens avec les langues sémitiques éthiopiennes (amharique, tigrinya) et avec l’omotique.
+- Innovations clés :
+  - Suffixation verbale riche  
+  - Marqueurs morphologiques de genre  
+  - Alternances vocaliques fortes (ex. dans l’oromo)
+
+# 5. Histoire et origines
+- Origine probable :
+  Hautes terres et basses terres de la Corne de l’Afrique (région Oromo–Somalo–Afar).
+- Diffusion des langues :
+  Expansion de l’oromo du sud au centre de l’Éthiopie (XVIe–XVIIIe siècles) ; diffusion somalie jusqu’au Kenya.
+- Ruptures historiques :
+  - Arabisation partielle des zones côtières  
+  - Islamisation des régions somalies et afar  
+  - Contacts prolongés avec Abyssinie chrétienne
+- Zones de contact et métissages :
+  Plateau éthiopien, Ogaden, rives de la mer Rouge, zones pastorales transfrontalières.
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~40 à 45 millions
+- Répartition par pays :
+  Éthiopie (Oromo, Sidamo, Agaw), Somalie, Djibouti (Afar, Somali), Érythrée (Afar), nord Kenya.
+- Importance historique :
+  Langues des grands peuples pastoraux et agro-pastoraux de la Corne ; rôle crucial dans les échanges de la mer Rouge.
+
+# 7. Sources
+- Ehret, C. — *The Civilizations of Africa*
+- Glottolog — Cushitic branch
+- SIL Ethnologue — Oromo, Somali, Afar
+- UNESCO — Atlas of the World’s Languages

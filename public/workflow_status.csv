@@ -1,22 +1,10 @@
-type,id,label,status
-famille,FLG_NIGERCONGO,Niger-Congo,pending
-famille,FLG_AFROASIATIQUE,Afro-asiatique,pending
-famille,FLG_NILOSAHARIENNE,Nilo-saharienne,pending
-famille,FLG_KHOISAN,Khoisan,pending
-langue,swa,Swahili,pending
-langue,lin,Lingala,pending
-langue,kin,Kinyarwanda,pending
-langue,yor,Yoruba,pending
-langue,ibo,Igbo,pending
-peuple,PPL_KONGO,Peuple Kongo,pending
-peuple,PPL_BETI_FANG,Peuple Beti-Fang,pending
-peuple,PPL_FULANI,Peuple Peul,pending
-ethnie,ETH_LUBA,Luba,pending
-ethnie,ETH_MONGO,Mongo,pending
-ethnie,ETH_KONGO,Kongo,pending
-ethnie,ETH_YOMBE,Yombe,pending
-pays,DRC,République démocratique du Congo,pending
-pays,CMR,Cameroun,pending
-pays,NGA,Nigeria,pending
-validation,VALIDATION_GLOBAL,Validation générale,pending
-publication,PUB_RELEASE,Publication GitHub,pending
+etape,status
+familles_linguistiques,done
+langues,done
+peuples,pending
+ethnies,pending
+sous_ethnies_clans,pending
+pays,pending
+demographies_csv,pending
+validation,pending
+publication,pending

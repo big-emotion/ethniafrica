@@ -1,37 +1,58 @@
 # Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) :
+- Nom français :
+- Nom anglais / auto-appellation académique :
+- Appellation(s) historique(s) :
+- Origine du terme historique :
+- Pourquoi le terme pose problème (si applicable) :
+- Auto-appellation (locuteurs / linguistes contemporains) :
+- Usage contemporain (définition moderne de la famille) :
+- Aire / répartition géographique générale :
+- Nombre de langues (estimation) :
+- Nombre total de locuteurs (estimation) :
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
 - Nom de la famille :
-- Sous-familles internes :
+- Branches internes / sous-groupes :
 - Aire géographique :
 - Nombre de langues :
 - Nombre total de locuteurs :
 
-# 1. Peuples associés
+# 2. Peuples associés
 - Peuple 1 :
 - Peuple 2 :
 - Peuple 3 :
 
-# 2. Ethnies associées (liste synthétique)
+# 3. Ethnies associées (liste synthétique)
 - Ethnie 1 :
 - Ethnie 2 :
 - Ethnie 3 :
 (+ renvoi vers les fichiers ethniques dédiés)
 
-# 3. Caractéristiques linguistiques
+# 4. Caractéristiques linguistiques
 - Typologie linguistique :
 - Particularités phonologiques :
 - Liens avec les familles voisines :
 - Innovations clés :
 
-# 4. Histoire et origines
+# 5. Histoire et origines
 - Origine probable :
 - Diffusion des langues :
 - Ruptures historiques :
 - Zones de contact et métissages :
 
-# 5. Répartition géographique et démographie
-- Nombre de locuteurs :
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
 - Répartition par pays :
 - Importance historique :
 
-# 6. Sources
+# 7. Sources
+- [Titre] – [Auteur/URL]
 - [Titre] – [Auteur/URL]

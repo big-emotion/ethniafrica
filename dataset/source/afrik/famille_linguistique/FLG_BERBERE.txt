@@ -1,0 +1,103 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_BERBERE
+- Nom français : Berbère / Amazighe
+- Nom anglais / auto-appellation académique : Berber / Amazigh
+- Appellation(s) historique(s) :
+  « Libyque », « Libyco-berbère », « Barbares » (appellation grecque et romaine), « Berbère » (arabe médiéval al-Barbar), « Kabyle », « Touareg » (termes régionalisés).
+- Origine du terme historique :
+  - Le mot « Berbère » vient de l’arabe médiéval « al-Barbar », lui-même probablement issu du terme grec « barbaros » (« celui qui ne parle pas grec »).  
+  - Les Romains utilisaient « Libyens » pour désigner les populations autochtones d’Afrique du Nord.
+- Pourquoi le terme pose problème :
+  - « Berbère » est un exonyme, historiquement chargé d’une vision extérieure perçue comme péjorative dans certains contextes.  
+  - Il a été utilisé pendant la colonisation française comme catégorie rigide opposée aux « Arabes ».  
+  - L’usage moderne privilégie **Amazigh** ou **Imazighen** (auto-appellation).
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Amazigh (sing.), Imazighen (plur.), Tamazight (langue)
+- Usage contemporain :
+  Ensemble de langues afro-asiatiques présentes dans tout le Maghreb et le Sahara.  
+  Fort mouvement de revitalisation culturelle et linguistique depuis les années 2000.
+- Aire / répartition géographique générale :
+  Maroc, Algérie, Tunisie, Libye, Sahara central (Touaregs), nord du Mali, Niger.
+- Nombre de langues (estimation) :
+  ~30–40 variétés amazighes
+- Nombre total de locuteurs (estimation) :
+  ~25 à 30 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Berbère / Amazighe
+- Branches internes / sous-groupes :
+  - Tamazight du Maroc central  
+  - Tarifit (Rif)  
+  - Tachelhit (Chleuh)  
+  - Kabyle  
+  - Chaoui  
+  - Touareg (Tamajeq / Tamasheq / Tamahak)  
+  - Zenaga (Mauritanie, quasi disparu)
+- Aire géographique :
+  Maghreb, Sahara central, Sahel nord
+- Nombre de langues :
+  30–40
+- Nombre total de locuteurs :
+  ~25 millions
+
+# 2. Peuples associés
+- Peuple 1 : Amazighs (Maroc, Algérie, Tunisie)
+- Peuple 2 : Touaregs (Sahara central)
+- Peuple 3 : Zenaga (Mauritanie — presque éteint)
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Kabyles
+- Ethnie 2 : Chleuhs (Tachelhit)
+- Ethnie 3 : Touaregs Kel Air, Kel Ahaggar, Kel Adagh
+
+(+ renvoi vers les fichiers ethniques dédiés)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues afro-asiatiques à morphologie riche, verbes dérivationnels, système de genre (masculin/féminin), pluriels internes.
+- Particularités phonologiques :
+  Emphatiques; présence de spirantes; distinctions vocaliques réduites; alternances consonantiques (mutation).
+- Liens avec les familles voisines :
+  Proximité structurelle avec le sémitique et le couchitique; emprunts massifs à l’arabe.
+- Innovations clés :
+  - Écriture en Tifinagh (revitalisée)  
+  - Système dérivationnel extrêmement productif  
+  - Ordre VSO ou VOS fréquent
+
+# 5. Histoire et origines
+- Origine probable :
+  Présence préhistorique en Afrique du Nord (capsien, néolithique nord-africain).
+- Diffusion des langues :
+  Occupation majoritaire du Maghreb avant romanisation, arabisation et colonisation.
+- Ruptures historiques :
+  - Disparition du libyque ancien  
+  - Arabisation progressive du Maghreb  
+  - Résilience linguistique en Kabylie, Rif, Atlas, Sahara
+- Zones de contact et métissages :
+  - Arabisation au nord  
+  - Contacts sahariens avec les Songhay et Hausa  
+  - Influence française (colonisation)
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~25 à 30 millions
+- Répartition par pays :
+  - Maroc (~40 % amazighophones selon régions)
+  - Algérie (~25 %)
+  - Libye, Tunisie (minorités)
+  - Mali, Niger (Touaregs)
+- Importance historique :
+  Peuples autochtones du Maghreb ; rôle dans les royaumes berbères, Almohades, Almoravides, Touaregs sahariens.
+
+# 7. Sources
+- Encyclopaedia Berberica
+- UNESCO – Atlas des langues en danger
+- Glottolog – Berber branch
+- Chaker, S. – *Linguistique berbère*

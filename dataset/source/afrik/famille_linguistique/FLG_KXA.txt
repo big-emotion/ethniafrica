@@ -1,0 +1,94 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_KXA
+- Nom français : Kx’a
+- Nom anglais / auto-appellation académique : Kx’a
+- Appellation(s) historique(s) :
+  anciennement « Juu-ǂHoan » (terme technique),  
+  auparavant assimilé au « Khoisan » (macro-étiquette non génétique).
+- Origine du terme historique :
+  « Kx’a » est un terme introduit par des linguistes modernes (Heine & Honken) sur la base de reconstructions systématiques montrant que les langues Ju (ex. Ju|’hoan) et ǂHoan forment une famille génétique distincte.
+- Pourquoi le terme pose problème :
+  - Avant la classification moderne, ces langues ont été regroupées dans « Khoisan », catégorie fourre-tout et coloniale.  
+  - Certains termes associés (ex. « Bushmen ») sont péjoratifs et racialisants.  
+  - Le terme « ǂHoan » était parfois associé à des caricatures coloniales.
+  → **Kx’a est le terme scientifique contemporain, neutre et reconnu.**
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Ju|’hoan, ǂHoan (ethnonymes) ; Kx’a languages (famille)
+- Usage contemporain :
+  Petite famille de langues à clics parlées principalement par les populations Ju et ǂHoan en Namibie et au Botswana.
+- Aire / répartition géographique générale :
+  Nord du désert du Kalahari : Namibie et Botswana.
+- Nombre de langues (estimation) : 2 à 3
+- Nombre total de locuteurs (estimation) : ~20 000–30 000
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Kx’a
+- Branches internes / sous-groupes :
+  - Juu (Ju|’hoan, Juǀ’Hõasi, d’autres variétés)
+  - ǂHoan (ǂHoan)
+- Aire géographique :
+  Nord-Kalahari (Namibie, Botswana)
+- Nombre de langues :
+  2–3
+- Nombre total de locuteurs :
+  ~20 000–30 000
+
+# 2. Peuples associés
+- Peuple 1 : Ju|’hoansi
+- Peuple 2 : ǂHoan
+- Peuple 3 : Autres groupes ju minoritaires
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Ju|’hoansi  
+- Ethnie 2 : ǂHoan  
+- Ethnie 3 : Juǀ’Hõasi  
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues tonales ; morphologie relativement simple ; ordre typique SOV.
+- Particularités phonologiques :
+  - Inventaires de clics extrêmement grands (jusqu’à 48 phonèmes distincts)  
+  - Consonnes éjectives, glottalisées  
+  - Voyelles avec contraste ATR
+- Liens avec les familles voisines :
+  - Contacts réduits, mais emprunts mutuels avec les familles Khoe et Tuu  
+  - Influence limitée des langues bantoues en raison de l’isolement historique
+- Innovations clés :
+  - Richesse inégalée des consonnes à clics  
+  - Structures prosodiques fines  
+  - Inventaires consonantiques parmi les plus complexes du monde humain
+
+# 5. Histoire et origines
+- Origine probable :
+  Population très ancienne du Kalahari, antérieure à l’arrivée des Bantous et des Khoekhoe.
+- Diffusion des langues :
+  Diffusion limitée géographiquement ; maintien dans des régions isolées du Kalahari.
+- Ruptures historiques :
+  - Pertes territoriales massives sous les colonies allemandes et sud-africaines  
+  - Pressions économiques modernes (réserves naturelles, déplacements forcés)
+- Zones de contact et métissages :
+  - Nord Botswana  
+  - Nord-est Namibie  
+  - Faible contact avec les Bantous
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~20 000–30 000
+- Répartition par pays :
+  Namibie, Botswana
+- Importance historique :
+  Représente une des lignées linguistiques et culturelles les plus anciennes du continent africain.
+
+# 7. Sources
+- Sands, B. – études sur les langues Ju  
+- Pakendorf et al. – *Classification of Kx’a languages*  
+- SIL Ethnologue – Ju|’hoan, ǂHoan  
+- UNESCO – langues en danger du Kalahari

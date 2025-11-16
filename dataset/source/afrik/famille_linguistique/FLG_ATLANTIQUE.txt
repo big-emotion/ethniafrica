@@ -1,0 +1,89 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_ATLANTIQUE
+- Nom français : Atlantique
+- Nom anglais / auto-appellation académique : Atlantic (ou West Atlantic dans certaines sources anciennes)
+- Appellation(s) historique(s) :
+  « Langues atlantique-occidentales », « West Atlantic », parfois confondues dans la littérature coloniale avec les « langues de la côte de Guinée ».
+- Origine du terme historique :
+  Le nom vient de la localisation des peuples parlant ces langues : la façade atlantique de l’Afrique de l’Ouest (Sénégal, Gambie, Guinée-Bissau, Guinée).
+- Pourquoi le terme pose problème :
+  - L’appellation est purement géographique et reflète une vision extérieure centrée sur les routes atlantiques et coloniales.  
+  - Certains auteurs coloniaux associaient abusivement ces langues aux peuples côtiers impliqués dans le commerce atlantique, sans reconnaître leur diversité interne.  
+  - Elle peut donner une vision réductrice : de nombreuses populations atlantiques vivent aussi à l’intérieur du continent.
+  **→ Aujourd’hui, “Atlantic” reste un terme linguistique neutre, mais il doit être contextualisé.**
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Atlantic languages / Langues atlantiques (groupe du Niger-Congo)
+- Usage contemporain :
+  Sous-famille du Niger-Congo, comprenant des langues majeures comme le wolof et le fula/fulfulde.
+- Aire / répartition géographique générale :
+  Sénégal, Gambie, Guinée-Bissau, sud de la Mauritanie, Guinée.
+- Nombre de langues (estimation) : ~30–40
+- Nombre total de locuteurs (estimation) : ~35 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Atlantique
+- Branches internes / sous-groupes :
+  - Nord-Atlantique : Wolof, Peul/Fulfulde, Serer
+  - Sud-Atlantique : Balante, Diola (Joola), Bijago
+  - Bak (Guinée-Bissau)
+- Aire géographique :
+  Sénégambie, Guinée-Bissau, Guinée, sud Mauritanie
+- Nombre de langues :
+  30–40
+- Nombre total de locuteurs :
+  ~35 millions
+
+# 2. Peuples associés
+- Peuple 1 : Wolof
+- Peuple 2 : Peuls / Fulbe
+- Peuple 3 : Diola (Joola)
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Wolof
+- Ethnie 2 : Fula / Fulani
+- Ethnie 3 : Diola / Joola
+(+ renvoi aux fiches ethniques dédiées)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues tonales, souvent agglutinantes, avec un marquage grammatical par affixes et alternances.
+- Particularités phonologiques :
+  Consonnes prénasalisées, harmoniques vocaliques, distinction forte voyelles longues/courtes, certaines langues non tonales (ex. wolof).
+- Liens avec les familles voisines :
+  Contacts intenses avec les langues mandé au Mali/Guinée et avec les langues gur (sud Burkina Faso).
+- Innovations clés :
+  - Langue wolof très influente comme lingua franca régionale  
+  - Systèmes noun-class parfois réduits ou restructurés  
+  - Flexion nominale variable selon les branches
+
+# 5. Histoire et origines
+- Origine probable :
+  Zone sénégambienne, bassin supérieur de la Casamance et de la Gambie.
+- Diffusion des langues :
+  Expansion du wolof dans les empires wolofs ; migrations pastorales peules du Fouta-Djalon vers le Sahel.
+- Ruptures historiques :
+  - Islamisation des royaumes sénégambiens  
+  - Influence coloniale française (wolof, sérère)  
+  - Pressions démographiques modernes
+- Zones de contact et métissages :
+  Sénégambie, Casamance, Guinée-Bissau (peuples atlantiques + mandé + créoles portugais).
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~35 millions
+- Répartition par pays :
+  Sénégal, Gambie, Guinée-Bissau, côté atlantique de la Guinée, sud de la Mauritanie
+- Importance historique :
+  Langues des grands royaumes wolofs, des confédérations peules (Fouta-Djalon), et des sociétés agricoles de Guinée-Bissau.
+
+# 7. Sources
+- Blench, R. – *Niger-Congo Languages Overview*
+- SIL Ethnologue – Atlantic languages
+- UNESCO – Atlas des langues africaines

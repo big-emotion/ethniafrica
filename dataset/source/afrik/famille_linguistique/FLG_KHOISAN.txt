@@ -1,0 +1,97 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_KHOISAN
+- Nom français : Khoïsan (macro-groupe non génétique)
+- Nom anglais / auto-appellation académique : Khoisan (typological group)
+- Appellation(s) historique(s) :
+  « Khoisan » ; « Hottentot » (terme aujourd’hui offensant) ; « Bushmen » (à contextualiser).  
+- Origine du terme historique :
+  Le terme « Khoisan » a été inventé au début du XXᵉ siècle par l’ethnologue L. Schultze pour regrouper deux grands ensembles :  
+  - les Khoekhoe (pasteurs),  
+  - les San (chasseurs-cueilleurs).  
+  Les linguistes ont ensuite repris cette étiquette pour désigner un ensemble de langues à clics, même si aucune filiation génétique solide n’a été démontrée.
+- Pourquoi le terme pose problème :
+  - « Khoisan » n’est **pas une famille linguistique génétique** : c’est un regroupement typologique basé uniquement sur les clics.  
+  - Plusieurs termes associés — dont **« Hottentot »** et **« Bushmen »** — ont été utilisés de manière péjorative, raciste ou exotisante.  
+  - Ces termes ont servi à justifier des discriminations et spoliations en Afrique australe.  
+  → Afrik utilise **Khoïsan uniquement comme macro-étiquette technique**, tout en séparant les familles réelles : **Khoe, Kx’a, Tuu**.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Les locuteurs se désignent par leurs ethnonymes propres : Nama, ǃXóõ, Ju|’hoansi, Khwe, Naro, etc.
+- Usage contemporain :
+  Catégorie non génétique rassemblant les familles à clics d’Afrique australe.  
+  **Ce n’est pas une famille linguistique**, mais une *aire linguistique*.
+- Aire / répartition géographique générale :
+  Namibie, Botswana, Afrique du Sud, Angola.
+- Nombre de langues (estimation) : ~30 (toutes familles confondues)
+- Nombre total de locuteurs (estimation) : Faible (beaucoup de langues en danger)
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Khoïsan (macro-groupe)
+- Branches internes / sous-groupes :
+  ⚠️ *Important : ce ne sont PAS des sous-familles, mais des familles réellement distinctes* :
+  - Khoe (Khoekhoe, Khwe, Naro…)
+  - Kx’a (Ju|’hoan, ǂHoan)
+  - Tuu (Taa/!Xóõ, ǀXam)
+- Aire géographique :
+  Afrique australe (Namibie, Botswana, Afrique du Sud)
+- Nombre de langues :
+  ~30 (selon familles)
+- Nombre total de locuteurs :
+  Faible : plusieurs langues ont < 5 000 locuteurs
+
+# 2. Peuples associés
+- Peuple 1 : Nama (Khoekhoe)
+- Peuple 2 : Ju|’hoansi
+- Peuple 3 : ǃXóõ
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Nama  
+- Ethnie 2 : Ju|’hoansi  
+- Ethnie 3 : ǃXóõ  
+(+ renvoi aux futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Mélange de langues tonales/non tonales ; structures souvent agglutinantes.
+- Particularités phonologiques :
+  - **Présence de clics** (dental, latéral, palatal, alvéolaire…)  
+  - Inventaires consonantiques parmi les plus complexes du monde  
+  - Distinction de longueur vocalique
+- Liens avec les familles voisines :
+  Contacts profonds avec les langues bantoues d’Afrique australe (ex. clics adoptés dans zoulou et xhosa).
+- Innovations clés :
+  - Développement de grands inventaires de clics  
+  - Systèmes verbaux simples mais flexion nominale variable
+
+# 5. Histoire et origines
+- Origine probable :
+  Peuples très anciens d’Afrique australe, présents depuis l’Âge de pierre.
+- Diffusion des langues :
+  Très peu d’expansion récente ; nombreuses langues en déclin.
+- Ruptures historiques :
+  - Spoliation des terres par les colons néerlandais et allemands  
+  - Génocide des Herero et Nama (1904–1908)  
+  - Pressions des langues bantoues et européennes
+- Zones de contact et métissages :
+  - Namibie (Nama, Naro)  
+  - Désert du Kalahari (Ju|’hoansi, ǃXóõ)
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  Faible (souvent < 20 000 par langue)
+- Répartition par pays :
+  Namibie, Botswana, Afrique du Sud, Angola
+- Importance historique :
+  Patrimoine linguistique et humain unique ; populations parmi les plus anciennes génétiquement documentées.
+
+# 7. Sources
+- Sands, B. – études sur les langues à clics  
+- Pakendorf et al. – *Khoe–Kwadi, Kx’a, Tuu classifications*  
+- SIL Ethnologue – Khoisan area  
+- UNESCO – langues en danger d’Afrique australe

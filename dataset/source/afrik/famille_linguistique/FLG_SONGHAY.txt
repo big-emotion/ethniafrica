@@ -1,0 +1,100 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_SONGHAY
+- Nom français : Songhay / Sonrai
+- Nom anglais / auto-appellation académique : Songhay
+- Appellation(s) historique(s) :
+  « Songhai » (orthographe ancienne),  
+  « Langues soudanaises » (catégorie coloniale trop vaste),  
+  parfois classée comme « Nilo-saharienne » (statut controversé).
+- Origine du terme historique :
+  Le nom vient de l’ancien Empire Songhay (XVe–XVIe siècles) basé à Gao.  
+  Les populations zarma et songhay se nomment *Soŋay*, *Soŋai*, *Sonrai* selon les dialectes.
+- Pourquoi le terme pose problème :
+  - Certains travaux coloniaux ont utilisé « Songhai » comme catégorie englobante pour différentes ethnies et parlers distincts.  
+  - Dans les anciennes classifications, Songhay fut mis dans des groupes flous comme « soudanais » ou « nilo-hamitique ».  
+  - Sur le plan scientifique, son statut génétique reste débattu : famille indépendante ? branche du nilo-saharien ?  
+  → Afrik la traite **comme famille distincte**, par cohérence méthodologique.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Songhay / Soŋay / Zarma-Songhay
+- Usage contemporain :
+  Groupement de langues parlé le long du Niger moyen (Mali–Niger), avec des variétés parfois peu mutuellement intelligibles.
+- Aire / répartition géographique générale :
+  Mali, Niger, Burkina Faso, Bénin
+- Nombre de langues (estimation) : 10–15
+- Nombre total de locuteurs (estimation) : ~3 à 4 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Songhay
+- Branches internes / sous-groupes :
+  - Occidental : Zarma (Niger), Songhay de Gao (Mali)
+  - Oriental : Koyraboro Senni, Koyra Chiini
+  - Subgroupes isolés : Tasawaq (Agadez), Dendi (Bénin)
+- Aire géographique :
+  Vallée moyenne du Niger (Mali–Niger)
+- Nombre de langues :
+  ~10–15
+- Nombre total de locuteurs :
+  ~3 à 4 millions
+
+# 2. Peuples associés
+- Peuple 1 : Songhay / Sonrai
+- Peuple 2 : Zarma (Djerma)
+- Peuple 3 : Dendi
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Songhay de Gao  
+- Ethnie 2 : Zarma du Niger  
+- Ethnie 3 : Dendi du Bénin  
+(+ renvoi aux futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues majoritairement SOV, peu de flexion, usage de particules grammaticales.
+- Particularités phonologiques :
+  - Tons lexicaux dans plusieurs variétés  
+  - Consonnes implosives  
+  - Voyelles ATR +/- (dans certaines variétés)
+- Liens avec les familles voisines :
+  - Influences fortes des langues mandé (Bambara, Malinké)  
+  - Contacts prolongés avec les langues tchadiques (Hausa)  
+  - Emprunts au berbère dans les régions sahariennes
+- Innovations clés :
+  - Marqueurs verbaux postverbaux  
+  - Système prononciatif particulier dans le Zarma (différences Zarma/Gao)
+
+# 5. Histoire et origines
+- Origine probable :
+  Région du Niger moyen (entre Gao et Niamey).  
+  Théories alternatives : un ancien substrat dans la boucle du Niger, avec influences mandé.
+- Diffusion des langues :
+  - Rôle central dans l’Empire Songhay (Gao, Tombouctou)  
+  - Diffusion jusqu’au Dendi (Bénin)
+- Ruptures historiques :
+  - Défaite de Tondibi (1591) → éclatement de l’empire  
+  - Colonisation française → réorganisation territoriale  
+  - Urbanisation à Niamey → montée du Zarma comme langue dominante
+- Zones de contact et métissages :
+  - Mali (Gao, Tombouctou)  
+  - Niger (Niamey, Tillabéri)  
+  - Bénin (Dendi)
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~3 à 4 millions
+- Répartition par pays :
+  Niger, Mali, Burkina Faso, Bénin
+- Importance historique :
+  Langue des élites de l’Empire Songhay ; rôle majeur dans le commerce transsaharien.
+
+# 7. Sources
+- Nicolaï, R. – *Les dialectes songhay*
+- SIL Ethnologue – Songhay languages
+- Glottolog – Songhay
+- UNESCO – Atlas des langues

@@ -1,0 +1,25 @@
+id_famille,nom_famille,population_locuteurs_2025,source,annee,nb_langues_estimees
+FLG_AFROASIATIQUE,Afro-asiatique,500000000,"UNESCO, Ethnologue, Glottolog",2025,375
+FLG_SEMITIQUE,S√©mitique,300000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_BERBERE,Berb√®re,25000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_TCHADIQUE,Tchadique,70000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_COUCHITIQUE,Couchitique,45000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_OMOTIQUE,Omotique,5000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_NIGERCONGO,Niger-Congo,600000000,"UNESCO, Ethnologue, Glottolog",2025,1514
+FLG_ATLANTIQUE,Atlantique,35000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_MANDE,Mand√©,30000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_GUR,Gur,20000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_KROU,Krou,3000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_BENOUECONGO,B√©nou√©-Congo,400000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_BANTU,Bantou,350000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_NILOSAHARIENNE,Nilo-saharienne,60000000,"UNESCO, Ethnologue, Glottolog",2025,204
+FLG_NILOTIQUE,Nilotique,10000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_SOUDANIQUECENTRAL,Soudanique central,8000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_SAHARIEN,Saharien,7000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_SONGHAY,Songhay,4000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_KHOISAN,Kho√Øsan (macro),30000,"UNESCO, Ethnologue, Glottolog",2025,20
+FLG_KHOE,Khoe,300000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_KXA,Kx'a,30000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_TUU,Tuu,3000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_AUSTRONESIENNE,Austron√©sienne (Afrique),27000000,"UNESCO, Ethnologue, Glottolog",2025,
+FLG_CREOLE,Cr√©ole africain,10000000,"APiCS, Ethnologue, UNESCO",2025,

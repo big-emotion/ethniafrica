@@ -1,0 +1,107 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_NILOSAHARIENNE
+- Nom français : Nilo-saharienne
+- Nom anglais / auto-appellation académique : Nilo-Saharan
+- Appellation(s) historique(s) :
+  « Langues nilotiques et soudanaises », « Nilotic-Sudanic » (anciens regroupements),  
+  « Soudanais oriental » (désuet).
+- Origine du terme historique :
+  Le terme « Nilo-Saharan » a été proposé par Joseph Greenberg (1963) pour regrouper diverses langues d’Afrique orientale, centrale et sahélienne qui n’appartenaient ni à l’afro-asiatique ni au niger-congo.  
+  C’est **une construction comparative moderne**, et non un terme ancien.
+- Pourquoi le terme pose problème :
+  - La famille nilo-saharienne n’est **pas prouvée** de manière solide — elle regroupe des langues parfois très éloignées.  
+  - Certains sous-groupes pourraient être des familles indépendantes.  
+  - La classification a longtemps été utilisée dans des contextes coloniaux pour opposer des « groupes nilotiques » (perçus comme guerriers) à d’autres groupes sahéliens.  
+  → **La charge problématique est surtout scientifique (classification instable), et secondairement coloniale (caricatures ethniques).**
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Nilo-Saharan languages / Langues nilo-sahariennes
+- Usage contemporain :
+  Macro-famille proposée regroupant les langues nilotiques (Maasai, Luo, Dinka), sahariennes (Kanuri, Tebu), soudaniques centrales (Lendu, Lugbara), et Songhay.
+- Aire / répartition géographique générale :
+  Est sahélien, hauts plateaux du Nil, Sahara central, zones du Tchad et de l’Ouganda.
+- Nombre de langues (estimation) : ~120–210
+- Nombre total de locuteurs (estimation) : 50 à 70 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Nilo-saharienne
+- Branches internes / sous-groupes :
+  (selon classification Greenberg / Dimmendaal)  
+  - Nilotiques (Maasai, Dinka, Luo…)  
+  - Sahariennes (Kanuri, Teda, Daza)  
+  - Songhay (Zarma, Songhay de Gao)  
+  - Soudaniques centrales (Lendu, Lugbara, Mangbetu, Moru)  
+  - Koman (sud Éthiopie)  
+  - Kunama / Barya  
+  - Surmic (Me’en, Suri)  
+  - Teso-Turkana (certaines classifications)
+- Aire géographique :
+  Est sahélien, Nil supérieur, Sahara central, Afrique centrale orientale
+- Nombre de langues :
+  120–210
+- Nombre total de locuteurs :
+  50–70 millions
+
+# 2. Peuples associés
+- Peuple 1 : Dinka
+- Peuple 2 : Maasai
+- Peuple 3 : Kanuri
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Dinka  
+- Ethnie 2 : Maasai  
+- Ethnie 3 : Kanuri  
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Grande variabilité : langues tonales, flexionnelles ou analytiques selon les branches.  
+- Particularités phonologiques :
+  - Tons lexicaux dans la plupart des groupes  
+  - Consonnes implosives ou éjectives dans certaines branches  
+  - Voyelles ATR +/- (advanced tongue root)
+- Liens avec les familles voisines :
+  Contacts nombreux avec :
+  - Afro-asiatique (Soudan, Tchad)  
+  - Niger-Congo (Ouganda, RDC, Nigéria)  
+  - Khoïsan (échanges anciens dans le Sahara)
+- Innovations clés :
+  - Flexions verbales irrégulières dans les nilotiques  
+  - Suggestions de liens anciens entre Songhay et d’autres branches (débat encore ouvert)
+
+# 5. Histoire et origines
+- Origine probable :
+  Hypothèse centrale : régions du Nil supérieur et de l’Éthiopie occidentale.  
+  Hypothèse alternative : Sahara central humide (Holocène).
+- Diffusion des langues :
+  - Migrations pastorales nilotiques  
+  - Expansion saharienne kanembu/kanuri  
+  - Diffusion songhay le long du fleuve Niger
+- Ruptures historiques :
+  - Désertification du Sahara  
+  - Guerres et déplacements forcés au Soudan, au Tchad et en Ouganda  
+  - Pressions arabophones au nord et bantoues au sud
+- Zones de contact et métissages :
+  - Nil supérieur  
+  - Région tchado-saharienne  
+  - Ituri (RDC – Mangbetu, Lendu)
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  50–70 millions
+- Répartition par pays :
+  Soudan du Sud, Soudan, Éthiopie, Ouganda, Kenya, Tchad, Niger, Nigéria, RDC
+- Importance historique :
+  Langues des anciens royaumes du Nil supérieur ; lien crucial entre Afrique saharienne, sahélienne et orientale.
+
+# 7. Sources
+- Dimmendaal, G. – *Historical Linguistics of the Nilo-Saharan*
+- Greenberg, J. – *The Languages of Africa*
+- SIL Ethnologue – Nilo-Saharan
+- UNESCO – Atlas des langues en danger

@@ -1,0 +1,93 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_TUU
+- Nom français : Tuu
+- Nom anglais / auto-appellation académique : Tuu
+- Appellation(s) historique(s) :
+  Anciennement « Southern Khoisan » dans les classifications coloniales ;  
+  associée aux termes offensants « Bushmen » ou « Hottentot » dans certains documents anciens.
+- Origine du terme historique :
+  Le nom « Tuu » est basé sur une reconstruction linguistique moderne proposée par Güldemann & Elderkin pour désigner la famille incluant Taa (ǃXóõ) et ǀXam.
+- Pourquoi le terme pose problème :
+  - L’ancienne étiquette « Southern Khoisan » est une construction coloniale approximative qui ne reflète pas la généalogie réelle.  
+  - Les peuples Tuu ont subi une forte marginalisation, des massacres et des déplacements forcés.  
+  - Les termes « Bushmen » et « Hottentot » étaient racistes et stigmatisants.
+  → Afrik utilise **Tuu** comme terme strictement linguistique moderne.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Taa / ǃXóõ (pour les locuteurs vivants) ; ǀXam (langue éteinte)
+- Usage contemporain :
+  Petite famille linguistique caractérisée par des systèmes phonologiques parmi les plus complexes au monde.
+- Aire / répartition géographique générale :
+  Botswana, Afrique du Sud.
+- Nombre de langues (estimation) : 2 (dont 1 éteinte)
+- Nombre total de locuteurs (estimation) : ~2 000–3 000 (Taa/ǃXóõ)
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Tuu
+- Branches internes / sous-groupes :
+  - Taa / ǃXóõ (Botswana, Namibie – très faible nombre de locuteurs)
+  - ǀXam (Afrique du Sud – éteinte)
+- Aire géographique :
+  Botswana (Désert du Kalahari), Afrique du Sud (anciennement)
+- Nombre de langues :
+  2 (1 vivante, 1 éteinte)
+- Nombre total de locuteurs :
+  ~2 000–3 000
+
+# 2. Peuples associés
+- Peuple 1 : ǃXóõ (Taa)
+- Peuple 2 : ǀXam (ancien peuple d’Afrique du Sud)
+- Peuple 3 : Sous-groupes du Kalahari méridional
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : ǃXóõ (Botswana)  
+- Ethnie 2 : ǀXam (Éteinte)  
+- Ethnie 3 : Communautés Taa du Kalahari  
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues tonales, structures morphologiques relativement simples, ordre SOV fréquent.
+- Particularités phonologiques :
+  - **Systèmes de clics les plus complexes au monde** (jusqu’à 80 distinctions !)  
+  - Consonnes glottalisées, éjectives, aspirées  
+  - Voyelles avec modalités phonationnelles variées
+- Liens avec les familles voisines :
+  Contacts réduits avec Kx’a et Khoe ; influence mineure des langues bantoues du sud.
+- Innovations clés :
+  - Inventaires consonantiques extrêmement diversifiés  
+  - Distinctions fines dans les clics (mode, lieu, phonation)  
+  - Grand nombre de phonèmes (ǃXóõ ≈ 140)
+
+# 5. Histoire et origines
+- Origine probable :
+  Populations très anciennes du Kalahari méridional ; lignées culturelles pré-agricoles.
+- Diffusion des langues :
+  Pas d’expansion récente ; régression due aux déplacements et assimilations forcées.
+- Ruptures historiques :
+  - Extermination ou déplacements des peuples ǀXam au XIXe siècle  
+  - Colonisation et répression en Afrique du Sud  
+  - Marginalisation socio-économique persistante
+- Zones de contact et métissages :
+  - Kalahari sud (avec les Bantous Nguni au contact historique : Zulu, Xhosa)  
+  - Regions australes du Botswana
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~2 000–3 000
+- Répartition par pays :
+  Botswana (Kalahari), Namibie (faiblement), Afrique du Sud (historique)
+- Importance historique :
+  Systèmes linguistiques uniques dans le monde ; importance culturelle majeure dans l’histoire profonde de l’humanité.
+
+# 7. Sources
+- Güldemann & Elderkin – travaux fondateurs sur Tuu  
+- Sands, B. – *Khoisan phonology*  
+- SIL Ethnologue – Taa/ǃXóõ  
+- UNESCO – Atlas des langues en danger du Kalahari

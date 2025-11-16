@@ -1,0 +1,83 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_SEMITIQUE
+- Nom français : Sémitique
+- Nom anglais / auto-appellation académique : Semitic
+- Appellation(s) historique(s) : Hamito-sémitique ; Sémito-hamitique
+- Origine du terme historique :
+  Le terme « sémitique » a été créé au XVIIIe siècle par August Ludwig Schlözer et Johann Gottfried Eichhorn pour regrouper les langues proches de l’hébreu, de l’arabe et de l’araméen, en référence biblique au personnage de Sem. Les linguistes du XIXe siècle ont ensuite construit la catégorie « hamito-sémitique » en y ajoutant d’autres peuples africains selon une logique biblique non scientifique.
+- Pourquoi le terme pose problème :
+  Le terme « hamito-sémitique » est profondément racialiste : il classe des peuples selon des généalogies bibliques et une hiérarchie raciale imaginaire.  
+  La notion de « Hamites », opposée à « Sémites », a été utilisée pour attribuer certains progrès techniques ou civilisations africaines à des étrangers « non-nègres ».  
+  Aujourd’hui, seule l’appellation **« sémitique »** (linguistique) est conservée.
+- Auto-appellation (locuteurs / linguistes contemporains) : Semitic languages / Langues sémitiques
+- Usage contemporain :
+  La branche sémitique est l’une des plus importantes de l’afro-asiatique. Elle comprend l’arabe, l’amharique, le tigrinya, l’hébreu, et de nombreuses langues d’Éthiopie et d’Érythrée.
+- Aire / répartition géographique générale :
+  Afrique du Nord-Est, Corne de l’Afrique, Moyen-Orient.
+- Nombre de langues (estimation) : 40–80 selon classifications
+- Nombre total de locuteurs (estimation) : >300 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Sémitique
+- Branches internes / sous-groupes :
+  - Sémitique oriental (akkadien — éteint)
+  - Sémitique occidental (araméen, hébreu)
+  - Sémitique méridional (amharique, tigrinya, sudarabique moderne)
+  - Arabe (variante majeure contemporaine)
+- Aire géographique :
+  Afrique du Nord-Est, Corne de l’Afrique, péninsule Arabique
+- Nombre de langues :
+  40 à 80
+- Nombre total de locuteurs :
+  >300 millions
+
+# 2. Peuples associés
+- Peuple 1 : Arabes
+- Peuple 2 : Amhara
+- Peuple 3 : Tigréens
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Amhara
+- Ethnie 2 : Tigrinya / Tigréens
+- Ethnie 3 : Arabophones d’Afrique (Maghreb, Sahara, Sahel)
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues flexionnelles basées sur des racines consonantiques (généralement trilittères).  
+  Systèmes verbaux riches ; conjugaisons non concaténatives.
+- Particularités phonologiques :
+  Consonnes emphatiques, uvulaires, pharyngales.  
+  Longueur vocalique distinctive.
+- Liens avec les familles voisines :
+  Contacts historiques importants avec le couchitique et l’omotique ; emprunts réciproques.
+- Innovations clés :
+  - Racines trilitères  
+  - Morphologie interne  
+  - Distinction perfectif / imperfectif ancienne
+
+# 5. Histoire et origines
+- Origine probable :
+  Zone syro-arabique ou corne de l’Afrique (deux théories principales).
+- Diffusion des langues :
+  Expansion de l’arabe dès le VIIe siècle (Islam), diffusion de l’amharique via l’empire éthiopien.
+- Ruptures historiques :
+  - Disparition du sémitique oriental  
+  - Diffusion massive de l’arabe  
+  - Développement local des langues éthiosémitiques
+- Zones de contact et métissages :
+  Corne de l’Afrique (Amhara, Tigréens), vallée du Nil, Maghreb saharien.
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs : >300 millions
+- Répartition par pays :
+  Égypte, Soudan, Érythrée, Éthiopie, Somalie, Djibouti, pays du Maghreb (arabophone), péninsule Arabique
+- Importance historique :
+  Langues à écriture ancienne (araméen, hébreu, guèze) ; rôle majeur dans l’histoire religieuse, politiqu

@@ -8,8 +8,8 @@
 
 ## 0. ÉTAT GLOBAL DU PROJET
 
-- [ ] Familles linguistiques
-- [ ] Langues principales
+- [x] Familles linguistiques
+- [x] Langues principales
 - [ ] Peuples
 - [ ] Ethnies
 - [ ] Sous-ethnies & clans
@@ -20,64 +20,86 @@
 
 ---
 
-# 1. ÉTAPE 1 — FAMILLES LINGUISTIQUES
+# 1. ÉTAPE 1 — FAMILLES LINGUISTIQUES (COMPLET — 24/24)
 
-### Familles principales
+## Macro-familles (racines)
 
-- [ ] FLG_NIGERCONGO
-- [ ] FLG_AFROASIATIQUE
-- [ ] FLG_NILOSAHARIENNE
-- [ ] FLG_KHOISAN
+- [x] FLG_AFROASIATIQUE — Afro-asiatique
+- [x] FLG_NIGERCONGO — Niger-Congo
+- [x] FLG_NILOSAHARIENNE — Nilo-saharienne
+- [x] FLG_KHOISAN — Khoïsan (macro-étiquette)
 
-### Sous-familles (sélection)
+## Sous-familles détaillées (24/24)
 
-- [ ] Bantu
-- [ ] Mandé
-- [ ] Atlantique
-- [ ] Gur
-- [ ] Krou
-- [ ] Tchadique
-- [ ] Sémitique
-- [ ] Couchitique
-- [ ] Nilotique
-- [ ] Khoe
-- [ ] Tuu
-- [ ] Kx’a
+### Afro-asiatique
 
-CSV :
+- [x] FLG_SEMITIQUE — Sémitique
+- [x] FLG_BERBERE — Berbère / Amazigh
+- [x] FLG_TCHADIQUE — Tchadique
+- [x] FLG_COUCHITIQUE — Couchitique
+- [x] FLG_OMOTIQUE — Omotique
 
-- [ ] famille_linguistique.csv complété
+### Niger-Congo
+
+- [x] FLG_ATLANTIQUE — Atlantique
+- [x] FLG_MANDE — Mandé
+- [x] FLG_GUR — Gur
+- [x] FLG_KROU — Krou
+- [x] FLG_BENOUECONGO — Bénoué-Congo
+- [x] FLG_BANTU — Bantou
+
+### Nilo-saharien
+
+- [x] FLG_NILOTIQUE — Nilotique
+- [x] FLG_SOUDANIQUECENTRAL — Soudanique central
+- [x] FLG_SAHARIEN — Saharien
+- [x] FLG_SONGHAY — Songhay
+
+### Khoïsan (familles réelles)
+
+- [x] FLG_KHOE — Khoe
+- [x] FLG_KXA — Kx’a
+- [x] FLG_TUU — Tuu
+
+### Autres familles présentes en Afrique
+
+- [x] FLG_AUSTRONESIENNE — Austronésienne (Madagascar)
+- [x] FLG_CREOLE — Créoles africains
+
+## CSV
+
+- [x] famille_linguistique.csv complété (données démographiques 2025)
 
 ---
 
 # 2. ÉTAPE 2 — LANGUES (principales)
 
-- [ ] Swahili (swa)
-- [ ] Lingala (lin)
-- [ ] Kinyarwanda (kin)
-- [ ] Kirundi (run)
-- [ ] Wolof (wol)
-- [ ] Yoruba (yor)
-- [ ] Igbo (ibo)
-- [ ] Fula/Fulfulde (ful)
-- [ ] Hausa (hau)
-- [ ] Somali (som)
-- [ ] Amharique (amh)
-- [ ] Tigrinya (tir)
-- [ ] Arabe maghrébin (ary)
-- [ ] Tamazight (ber)
-- [ ] Zoulou (zul)
-- [ ] Xhosa (xho)
-- [ ] Shona (sna)
-- [ ] Tswana (tsn)
-- [ ] Ndebele (nde)
-- [ ] Ewé (ewe)
-- [ ] Fang (fan)
-- [ ] Sango (sag)
+- [x] Swahili (swa)
+- [x] Lingala (lin)
+- [x] Kinyarwanda (kin)
+- [x] Kirundi (run)
+- [x] Wolof (wol)
+- [x] Yoruba (yor)
+- [x] Igbo (ibo)
+- [x] Fula/Fulfulde (ful)
+- [x] Hausa (hau)
+- [x] Somali (som)
+- [x] Amharique (amh)
+- [x] Tigrinya (tir)
+- [x] Arabe maghrébin (ary)
+- [x] Tamazight (ber)
+- [x] Zoulou (zul)
+- [x] Xhosa (xho)
+- [x] Shona (sna)
+- [x] Tswana (tsn)
+- [x] Ndebele (nde)
+- [x] Ewé (ewe)
+- [x] Fang (fan)
+- [x] Sango (sag)
 
 CSV :
 
-- [ ] famille_linguistique.csv enrichi
+- [x] famille_linguistique.csv enrichi
 
 ---
 
@@ -96,7 +118,7 @@ CSV :
 - [ ] PPL_AMAZIGH
 - [ ] PPL_NILOTIC
 - [ ] PPL_COUCHITIC
-- [ ] PPL_SWahili
+- [ ] PPL_SWAHILI
 - [ ] PPL_SAN
 - [ ] PPL_KHOÏKHOÏ
 

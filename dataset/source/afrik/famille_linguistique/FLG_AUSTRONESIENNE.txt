@@ -1,0 +1,76 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_AUSTRONESIENNE
+- Nom français : Austronésienne (présente en Afrique uniquement via Madagascar)
+- Nom anglais / auto-appellation académique : Austronesian / Malayo-Polynesian
+- Appellation(s) historique(s) : —
+- Origine du terme historique : Terme forgé par les linguistes européens du XIXe siècle pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l’Asie du Sud-Est et de l’océan Indien.
+- Pourquoi le terme pose problème (si applicable) :  
+  L’expression ne pose pas de problème direct, mais son utilisation en Afrique peut prêter à confusion car elle désigne une famille mondiale principalement asiatique.  
+  En Afrique, seule Madagascar en relève : certains travaux coloniaux minimisaient l’africanité du peuple malgache en insistant uniquement sur l’origine austronésienne, invisibilisant les apports bantous et est-africains.
+- Auto-appellation (locuteurs / linguistes contemporains) : « Austronesian » (communauté scientifique), « Malagasy » pour la branche africaine.
+- Usage contemporain : Famille mondiale comptant ~1 257 langues, couvrant le Pacifique et l’Asie du Sud-Est, et représentée en Afrique uniquement par le malgache et ses variantes régionales.
+- Aire / répartition géographique générale : Madagascar (Afrique), Asie du Sud-Est, Polynésie, Micronésie, Mélanésie.
+- Nombre de langues (estimation) : En Afrique : 1 (malgache). Monde : ~1257.
+- Nombre total de locuteurs (estimation) : ~27 millions en Afrique (Madagascar), >300 millions dans le monde.
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Austronésienne (Madagascar)
+- Branches internes / sous-groupes :  
+  - Malgache (dialectes : Merina, Betsimisaraka, Betsileo, Sakalava, Antandroy, Antanosy…)
+- Aire géographique : Madagascar (Afrique)
+- Nombre de langues : 1 (en Afrique)
+- Nombre total de locuteurs : ~27 millions
+
+# 2. Peuples associés
+- Peuple 1 : Malgaches (Merina)
+- Peuple 2 : Malgaches (Betsimisaraka)
+- Peuple 3 : Malgaches (Sakalava)
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Merina
+- Ethnie 2 : Betsimisaraka
+- Ethnie 3 : Sakalava
+
+(+ renvoi vers les futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :  
+  Langue agglutinante, riche en dérivation verbale, ordre SVO, système vocalique simple.
+- Particularités phonologiques :  
+  Peu de consonnes occlusives aspirées ; alternances morphophonologiques régulières ; faible tonalisme.
+- Liens avec les familles voisines :  
+  Emprunts massifs au bantou (swahili, comorien) et à l’arabe, ainsi qu’aux langues françaises et anglaises.
+- Innovations clés :  
+  Complexe dérivationnel verbal ; système riche de morphèmes de voix ; importance de la particule *mi- / maha-* dans la formation verbale.
+
+# 5. Histoire et origines
+- Origine probable :  
+  Asie du Sud-Est, probablement Bornéo (populations Barito du sud).
+- Diffusion des langues :  
+  Migration austronésienne vers Madagascar datée entre 500 et 700 ap. J.-C., puis fusion avec les populations bantoues venues de la côte est-africaine.
+- Ruptures historiques :
+  - Séparation nette entre malgache et reste de la famille austronésienne.  
+  - Influences multiples (bantoues, arabes, swahilies, européennes).
+- Zones de contact et métissages :  
+  Contact ancien avec les marchands austronésiens, swahili, omanais ; métissages internes entre groupes malgaches.
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs : ~27 millions (Madagascar, 2025)
+- Répartition par pays :  
+  - Madagascar : quasi-totalité des locuteurs  
+  - Diaspora : France, Comores, Mayotte
+- Importance historique :  
+  Première et unique implantation austronésienne en Afrique ; point majeur des routes maritimes indo-océaniques.
+
+# 7. Sources
+- Adelaar, K. (2005) – *The Austronesian Languages of Asia and Madagascar*
+- Dahl, O. (1951) – *Southern Barito and Malagasy*
+- UNESCO – Atlas of Languages
+- SIL Ethnologue – Malagasy

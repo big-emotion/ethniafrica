@@ -1,0 +1,101 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_SOUDANIQUECENTRAL
+- Nom français : Soudanique central
+- Nom anglais / auto-appellation académique : Central Sudanic
+- Appellation(s) historique(s) :
+  « Langues soudaniques » ; « Eastern Sudanic » (ancienne classification large et imprécise).
+- Origine du terme historique :
+  Le terme « soudanique » fut utilisé par les linguistes coloniaux européens pour désigner un vaste ensemble de langues parlées dans la région dite du « Soudan » (zone sahélienne allant du Sénégal à l’Éthiopie), sans distinction précise.
+  Plus tard, la classification a été affinée en groupes : *Western Sudanic*, *Central Sudanic*, *Eastern Sudanic*.  
+  **Seule la catégorie “Central Sudanic” est aujourd’hui linguistiquement cohérente.**
+- Pourquoi le terme pose problème :
+  - « Soudanique » est un terme flou, géographique et colonial, regroupant au départ des langues très différentes.  
+  - L’amalgame entre groupes du « Soudan » (au sens colonial) a contribué à effacer des identités linguistiques distinctes.  
+  - Certains travaux ont utilisé des stéréotypes raciaux autour du « type soudanais ».  
+  → Afrik utilise la version **rigoureuse et scientifiquement définie : Central Sudanic**.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Central Sudanic languages / Langues soudaniques centrales
+- Usage contemporain :
+  Regroupe des langues parlées en RDC, Ouganda, Soudan du Sud, Tchad, et nord de la République centrafricaine.
+- Aire / répartition géographique générale :
+  Région du Haut-Nil, Nord-est de la RDC, Ouganda, Soudan du Sud.
+- Nombre de langues (estimation) : ~40–60
+- Nombre total de locuteurs (estimation) : environ 5 à 10 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Soudanique central
+- Branches internes / sous-groupes :
+  - Groupe Lendu (Lendu, Ngiti)
+  - Groupe Mangbetu (Mangbetu, Medje)
+  - Groupe Moru–Madi (Moru, Madi, Lugbara)
+  - Groupe Avokaya–Baka
+  - Groupes tchadiens orientaux (plus petits)
+- Aire géographique :
+  Nord-est de la RDC, Soudan du Sud, Ouganda, Tchad central
+- Nombre de langues :
+  40–60
+- Nombre total de locuteurs :
+  5–10 millions
+
+# 2. Peuples associés
+- Peuple 1 : Lendu
+- Peuple 2 : Lugbara
+- Peuple 3 : Mangbetu
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Lendu  
+- Ethnie 2 : Lugbara  
+- Ethnie 3 : Mangbetu  
+(+ renvoi aux futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues majoritairement tonales ; structure SVO ; morphologie agglutinante légère.
+- Particularités phonologiques :
+  - Systèmes tonals complexes  
+  - Voyelles ATR +/-  
+  - Consonnes implosives ou éjectives dans certains sous-groupes
+- Liens avec les familles voisines :
+  Contacts multiples avec :
+  - Nilotique (Maasai, Dinka, Acholi)  
+  - Bantou (Kongo, Luba, Lingala) dans la zone RDC  
+  - Adamawa et Ubangi dans la zone centrafricaine
+- Innovations clés :
+  - Développement de systèmes tonals grammaticaux  
+  - Structures verbales à séries  
+  - Influence areale dans la région du Haut-Nil
+
+# 5. Histoire et origines
+- Origine probable :
+  Zones du Haut-Nil et nord-centre de la RDC, dispersées par vagues migratoires anciennes.
+- Diffusion des langues :
+  Expansion vers le sud (RDC) et l’ouest (Centrafrique) par mobilité agricole et pastorale.
+- Ruptures historiques :
+  - Guerres au Soudan du Sud  
+  - Conflits intercommunautaires en Ituri (RDC)  
+  - Colonisation belge et britannique reconfigurant les territoires
+- Zones de contact et métissages :
+  - Ituri (Lendu, Ngiti, Hema)  
+  - Nord de la RDC (Mangbetu)  
+  - Ouganda (Madi, Lugbara)
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  5 à 10 millions
+- Répartition par pays :
+  RDC, Soudan du Sud, Ouganda, RCA, Tchad
+- Importance historique :
+  Langues anciennes du Haut-Nil ; grands royaumes mangbetu ; rôle majeur dans les dynamiques interethniques de l’Afrique centrale.
+
+# 7. Sources
+- Dimmendaal – *Nilo-Saharan Linguistics*  
+- SIL Ethnologue – Central Sudanic  
+- Glottolog – Central Sudanic branch  
+- UNESCO – Atlas des langues africaines

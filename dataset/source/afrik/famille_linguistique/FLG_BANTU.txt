@@ -1,0 +1,112 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_BANTU
+- Nom français : Bantou
+- Nom anglais / auto-appellation académique : Bantu
+- Appellation(s) historique(s) :
+  « Langues bantoues » ; « Bantou » (souvent détourné en « race bantoue » dans les systèmes coloniaux du XIXᵉ siècle).
+- Origine du terme historique :
+  Le terme « bantou » vient de la racine proto-Bantu *ba-ntu* (« les gens »).  
+  Les linguistes l’ont adopté scientifiquement au début du XXᵉ siècle pour désigner un sous-groupe du Niger-Congo.  
+  Mais les administrateurs coloniaux l’ont transformé en catégorie raciale (« race bantoue »).
+- Pourquoi le terme pose problème :
+  - À l’époque coloniale, « Bantou » fut utilisé pour créer des hiérarchies raciales : la « race bantoue » opposée à la « race nilotique » ou « khoïsan ».  
+  - Il a été utilisé pour justifier des politiques ségrégationnistes (Afrique du Sud, Namibie, Afrique orientale).  
+  → Aujourd’hui, **“bantou” est strictement linguistique**, pas racial.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Bantu languages / Langues bantoues
+- Usage contemporain :
+  Regroupe plus de 500 langues parlées par environ 350 millions de personnes en Afrique centrale, orientale et australe.
+- Aire / répartition géographique générale :
+  Cameroun, Gabon, Congo, RDC, Angola, Tanzanie, Kenya, Ouganda, Mozambique, Zambie, Malawi, Zimbabwe, Afrique du Sud, Namibie.
+- Nombre de langues (estimation) : ~500
+- Nombre total de locuteurs (estimation) : ~350 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Bantou
+- Branches internes / sous-groupes :
+  Classification Guthrie (zones A à S) regroupant :
+  - Zone A : Cameroun, Gabon (Duala, Bassa…)
+  - Zone B : Nord Congo (Kongo…)
+  - Zone C : RDC (Mongo, Tetela…)
+  - Zone D : Est RDC
+  - Zone E/F/G : Kenya, Tanzanie (Swahili, Gikuyu…)
+  - Zone H : Rwanda, Burundi (Kinyarwanda, Kirundi)
+  - Zone K : Angola (Kimbundu, Umbundu)
+  - Zone L : RDC (Luba-Katanga, Luba-Kasai)
+  - Zone S : Afrique australe (Zulu, Xhosa, Ndebele)
+- Aire géographique :
+  Afrique centrale, orientale et australe
+- Nombre de langues :
+  ~500
+- Nombre total de locuteurs :
+  ~350 millions
+
+# 2. Peuples associés
+- Peuple 1 : Kongo
+- Peuple 2 : Luba
+- Peuple 3 : Zoulou
+- (autres : Shona, Tswana, Ganda, Xhosa, Fang, Kikuyu…)
+
+# 3. Ethnies associées (liste synthétique)
+- Ethnie 1 : Kongo
+- Ethnie 2 : Luba
+- Ethnie 3 : Zoulou
+(+ renvoi vers futures fiches ethniques)
+
+# 4. Caractéristiques linguistiques
+- Typologie linguistique :
+  - Langues agglutinantes  
+  - Riches systèmes de classes nominales (préfixes)  
+  - Accord nominal étendu dans toute la phrase  
+  - Ordre SVO fréquent
+- Particularités phonologiques :
+  - Systèmes tonals (2 ou 3 tons)  
+  - Consonnes prénasalisées fréquentes  
+  - Harmonies vocaliques dans certaines langues
+- Liens avec les familles voisines :
+  - Contacts majeurs avec les langues nilotiques (Ouganda, Kenya, Tanzanie)  
+  - Interactions avec les langues khoïsan (Afrique australe → clics empruntés en xhosa, zoulou)
+- Innovations clés :
+  - Système de classes nominales extrêmement développé  
+  - Morphologie verbale très riche (extensions verbales)  
+  - Structuration morphosyntaxique régulière à travers 12+ zones géographiques
+
+# 5. Histoire et origines
+- Origine probable :
+  Région Cameroun–Gabon (forêt équatoriale), entre 3000 et 4000 ans.
+- Diffusion des langues :
+  **Expansion bantoue** :  
+  - Phase 1 : Sud Cameroun → sud Nigeria  
+  - Phase 2 : Forêts du Congo → Afrique centrale  
+  - Phase 3 : Afrique orientale (Lac Victoria)  
+  - Phase 4 : Afrique australe (Zambie → Afrique du Sud)
+- Ruptures historiques :
+  - Interactions avec les populations pygmées et khoïsan  
+  - Empires Luba, Lunda, Kongo  
+  - Colonisation belge, portugaise, britannique
+- Zones de contact et métissages :
+  - Bassin du Congo  
+  - Grands Lacs  
+  - Afrique australe (contacts bantou–khoïsan)
+
+# 6. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~350 millions
+- Répartition par pays :
+  Cameroun, Gabon, Congo, RDC, Angola, Tanzanie, Kenya, Ouganda, Mozambique, Malawi, Zambie, Zimbabwe, Afrique du Sud, Namibie
+- Importance historique :
+  La plus vaste migration de l’histoire africaine (expansion bantoue).  
+  Langues majeures : Swahili, Lingala, Kinyarwanda, Kirundi, Zulu, Xhosa, Shona, Tswana, Luba, Kikongo…
+
+# 7. Sources
+- Nurse & Philippson – *The Bantu Languages*
+- Vansina, J. – *Paths in the Rainforests*
+- SIL Ethnologue – Bantu languages
+- UNESCO – African languages atlas
