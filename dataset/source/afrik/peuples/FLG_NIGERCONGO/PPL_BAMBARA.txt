@@ -1,0 +1,87 @@
+# Nom du peuple
+- Nom principal du peuple : Bambara
+- Auto-appellation : Bamana
+- Exonymes / appellations historiques : Bambara (terme utilisé par les Européens), Bamana
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Mandé
+- Région historique : Mali, Burkina Faso, Sénégal, Côte d'Ivoire
+- Pays actuels : Mali, Burkina Faso, Sénégal, Côte d'Ivoire
+- Identifiant peuple (ID) : PPL_BAMBARA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bambara du Mali
+- Ethnie 2 : Bambara du Burkina Faso
+- Ethnie 3 : Bambara du Sénégal
+- Ethnie 4 : Bambara de Côte d'Ivoire
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Bambara sont originaires du Mali, du Burkina Faso, du Sénégal et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Mandé de la famille Niger-Congo. Formation de l'empire Bambara.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le Mali, le Burkina Faso, le Sénégal et la Côte d'Ivoire
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation de l'empire Bambara. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples ouest-africains, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en empire traditionnel (Bambara). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Bambara
+- Codes ISO : bam (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le bambara est parlé par la majorité des Bambara et sert de langue véhiculaire au Mali. Le français et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels bambara.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture bambara.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Empire Bambara (XVIIe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples mandé
+  - Interactions avec les peuples peuls
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion de l'empire Bambara
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora bambara dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 6 000 000 - 8 000 000
+- Répartition par pays : 
+  - Mali : 4 000 000 - 5 000 000
+  - Burkina Faso : 1 000 000 - 1 500 000
+  - Sénégal : 500 000 - 800 000
+  - Côte d'Ivoire : 500 000 - 700 000
+  - Diaspora : 200 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Bambara language (bam)
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples mandé
+- Études historiques sur l'empire Bambara
+

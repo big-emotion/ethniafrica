@@ -1,0 +1,89 @@
+# Nom du peuple
+- Nom principal du peuple : Comorien (Global)
+- Auto-appellation : Shimasiwa (gens des îles)
+- Exonymes / appellations historiques : Comorians (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Bantou (Zone G, branche swahilie)
+- Région historique : Archipel des Comores
+- Pays actuels : Comores, Mayotte, diaspora
+- Identifiant peuple (ID) : PPL_COMORIEN_GLOBAL
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ngazidja (Grande Comore)
+- Ethnie 2 : Ndzuani (Anjouan)
+- Ethnie 3 : Mwali (Mohéli)
+- Ethnie 4 : Maorais (Mayotte)
+- Ethnie 5 : Comoriens de la diaspora
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Mélange bantou → swahili → influences malgaches et arabes. Les Comoriens sont originaires de l'archipel des Comores. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone G, branche swahilie) de la famille Niger-Congo. Populations de navigateurs.
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues et swahilies
+  - Expansion vers l'archipel des Comores
+  - Déplacements vers les zones urbaines et la diaspora
+- Unifications / divisions : Organisation en groupes insulaires distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts intensifs avec Swahili, Arabes, Perses, Shirazi. Influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Système de notables (Anda, Shungu). Chefferies insulaires traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues comoriennes (shimaore, shingazidja, shimwali)
+- Codes ISO : swb, wni, zdj, wlc (ISO 639-3)
+- Dialectes : 
+  - Shimaore (Mayotte)
+  - Shingazidja (Grande Comore)
+  - Shimwali (Mohéli)
+  - Shindzuani (Anjouan)
+- Rôle véhiculaire : Les langues comoriennes sont parlées par la majorité des Comoriens. Le français et l'arabe sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Mariage grand-comorien (Anda)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies religieuses islamiques
+- Symboles : Symboles culturels comoriens, symboles islamiques.
+- Arts et musique : 
+  - Architecture en pierre
+  - Poésie et musique orientale-swahili
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Artisanat (poterie, tissage)
+- Spiritualités : L'islam sunnite structure la vie sociale. Syncrétisme avec certaines croyances traditionnelles.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies insulaires traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Swahili
+  - Interactions avec les peuples malgaches
+  - Contacts commerciaux avec Arabes, Perses, Shirazi
+- Conflits / alliances : 
+  - Archipel musulman depuis le IXe siècle
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora comorienne importante dans les grandes villes (France, Madagascar, etc.).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 150 000 - 1 600 000
+- Répartition par pays : 
+  - Comores : 900 000 - 1 000 000
+  - Mayotte : 250 000 - 300 000
+  - Diaspora : 200 000 - 300 000
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Comorian languages (swb, wni, zdj, wlc)
+- CIA World Factbook – Comoros, Mayotte
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+- Comoros Cultural Studies
+

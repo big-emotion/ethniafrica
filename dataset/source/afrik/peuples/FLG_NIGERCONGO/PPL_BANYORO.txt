@@ -1,0 +1,83 @@
+# Nom du peuple
+- Nom principal du peuple : Banyoro
+- Auto-appellation : Banyoro
+- Exonymes / appellations historiques : Banyoro (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Bantou (Zone J)
+- Région historique : Ouest de l'Ouganda
+- Pays actuels : Ouganda
+- Identifiant peuple (ID) : PPL_BANYORO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Banyoro du Nord
+- Ethnie 2 : Banyoro du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Banyoro sont originaires de l'ouest de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J) de la famille Niger-Congo. Formation du royaume Bunyoro.
+- Routes migratoires : 
+  - Migrations depuis les régions des Grands Lacs
+  - Expansion vers l'ouest de l'Ouganda
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation du royaume Bunyoro. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples nilotiques, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel (Bunyoro). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Nyoro
+- Codes ISO : nyo (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le nyoro est parlé par la majorité des Banyoro. L'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux banyoro, symboles liés à l'agriculture, symboles culturels banyoro, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Bunyoro (XVe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les Baganda
+  - Interactions avec les autres peuples bantous
+  - Contacts avec les peuples nilotiques
+- Conflits / alliances : 
+  - Expansion du royaume Bunyoro
+  - Résistance à la colonisation britannique
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora banyoro dans les grandes villes ougandaises et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 000 000 - 1 500 000
+- Répartition par pays : 
+  - Ouganda : 1 000 000 - 1 500 000
+  - Diaspora : 30 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Nyoro language (nyo)
+- CIA World Factbook – Uganda
+- Recensements ougandais
+- Études anthropologiques sur les peuples bantous
+- Études historiques sur le royaume Bunyoro
+

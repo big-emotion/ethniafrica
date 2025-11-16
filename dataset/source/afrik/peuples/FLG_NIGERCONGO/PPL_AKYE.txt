@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Akye
+- Auto-appellation : Akye
+- Exonymes / appellations historiques : Akye (terme utilisé par les Européens), Attié
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Kwa
+- Région historique : Sud-est de la Côte d'Ivoire
+- Pays actuels : Côte d'Ivoire
+- Identifiant peuple (ID) : PPL_AKYE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Akye du Nord
+- Ethnie 2 : Akye du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Akye sont originaires du sud-est de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le sud-est de la Côte d'Ivoire
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples ouest-africains, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Akye
+- Codes ISO : ati (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : L'akye est parlé par la majorité des Akye. Le français et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels akye, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples kwa
+  - Interactions avec les peuples akan
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora akye dans les grandes villes ivoiriennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 000 - 800 000
+- Répartition par pays : 
+  - Côte d'Ivoire : 500 000 - 800 000
+  - Diaspora : 20 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Akye language (ati)
+- CIA World Factbook – Côte d'Ivoire
+- Recensements ivoiriens
+- Études anthropologiques sur les peuples kwa
+

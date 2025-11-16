@@ -1,0 +1,86 @@
+# Nom du peuple
+- Nom principal du peuple : Bobo
+- Auto-appellation : Bobo
+- Exonymes / appellations historiques : Bobo (terme utilisé par les Européens), Bobo-Madare
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Mandé
+- Région historique : Burkina Faso, Mali
+- Pays actuels : Burkina Faso, Mali
+- Identifiant peuple (ID) : PPL_BOBO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bobo de Bobo-Dioulasso
+- Ethnie 2 : Bobo-Madare ruraux
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Bobo sont originaires du Burkina Faso et du Mali. Population agricole ancienne du Haut-Bassin. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Mandé de la famille Niger-Congo.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le Burkina Faso et le Mali
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples mandé voisins, influence de l'islam et du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Société lignagère. Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Bobo
+- Codes ISO : bwq (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le bobo est parlé par la majorité des Bobo. Le français et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Rituels agricoles majeurs
+  - Masques sacrés
+  - Fêtes agraires
+  - Culte des esprits protecteurs
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+- Symboles : Symboles liés à l'agriculture, symboles culturels bobo, symboles islamiques et chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, masques)
+- Spiritualités : Culte des esprits protecteurs. Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples mandé
+  - Interactions avec les peuples gur
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Rôle dans les échanges régionaux précoloniaux
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora bobo dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 650 000 - 800 000
+- Répartition par pays : 
+  - Burkina Faso : 500 000 - 600 000
+  - Mali : 150 000 - 200 000
+  - Diaspora : 20 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Bobo language (bwq)
+- CIA World Factbook – Burkina Faso, Mali
+- Recensements nationaux
+- Études anthropologiques sur les peuples mandé
+- Burkina Faso Ethnographic Studies
+

@@ -1,0 +1,83 @@
+# Nom du peuple
+- Nom principal du peuple : Asante
+- Auto-appellation : Asante
+- Exonymes / appellations historiques : Asante (terme utilisé par les Européens), Ashanti
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Kwa
+- Région historique : Centre du Ghana
+- Pays actuels : Ghana
+- Identifiant peuple (ID) : PPL_ASANTE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Asante du Nord
+- Ethnie 2 : Asante du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Asante sont originaires du centre du Ghana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo. Formation du royaume Ashanti.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le centre du Ghana
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation du royaume Ashanti. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples ouest-africains, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel (Ashanti). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique matrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages matrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Twi (Asante)
+- Codes ISO : twi (ISO 639-3)
+- Dialectes : 
+  - Dialecte asante
+  - Variantes régionales
+- Rôle véhiculaire : Le twi asante est parlé par la majorité des Asante. L'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux asante (Ashanti), symboles liés à l'agriculture, symboles culturels asante, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Ashanti (XVIIe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples akan
+  - Interactions avec les peuples mandé
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion du royaume Ashanti
+  - Résistance à la colonisation britannique
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora asante dans les grandes villes ghanéennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 000 - 7 000 000
+- Répartition par pays : 
+  - Ghana : 5 000 000 - 7 000 000
+  - Diaspora : 200 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ghanéens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Twi language (twi)
+- CIA World Factbook – Ghana
+- Recensements ghanéens
+- Études anthropologiques sur les peuples akan
+- Études historiques sur le royaume Ashanti
+

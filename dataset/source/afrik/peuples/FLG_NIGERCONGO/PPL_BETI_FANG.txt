@@ -1,0 +1,86 @@
+# Nom du peuple
+- Nom principal du peuple : Béti-Fang
+- Auto-appellation : Béti-Fang
+- Exonymes / appellations historiques : « Beti-Pahouin » (catégorie coloniale englobante, terme problématique)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Bantou (Zone A)
+- Région historique : Plateau du Centre-Sud Cameroun, Guinée équatoriale
+- Pays actuels : Cameroun, Guinée équatoriale
+- Identifiant peuple (ID) : PPL_BETI_FANG
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Béti-Fang du Cameroun
+- Ethnie 2 : Béti-Fang de Guinée équatoriale
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Béti-Fang sont originaires du plateau du Centre-Sud Cameroun et de la Guinée équatoriale. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone A) de la famille Niger-Congo. Relations étroites entre les Béti et les Fang.
+- Routes migratoires : 
+  - Déplacements forestiers vers le centre et le sud
+  - Expansion vers le Cameroun et la Guinée équatoriale
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Identité béti-fang fédérant de multiples sous-groupes. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec missions chrétiennes et colons. Influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Chefferies et lignages dirigés par notables. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Clans totémiques. Structures familiales étendues. Organisation en familles étendues et lignages.
+- Rôle des lignages : Gardiens des terres et du patrimoine rituel. Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Spécialistes du culte aux ancêtres. Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Ewondo, Bulu, Fang
+- Codes ISO : ewo, bum, fan (ISO 639-3)
+- Dialectes : 
+  - Variantes beti, pahouin et fang
+  - Dialectes régionaux
+- Rôle véhiculaire : Langues importantes dans le sud du Cameroun et en Guinée équatoriale. Le français, l'espagnol et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Initiations et cultes des ancêtres
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Masques, sculptures, symboles lignagers. Symboles liés à l'agriculture, symboles culturels béti-fang, symboles chrétiens.
+- Arts et musique : 
+  - Chants polyphoniques
+  - Tambours forêt
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Ancestralité, forêts sacrées. Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles beti-fang
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations étroites entre Béti et Fang
+  - Interactions avec les autres peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Alliances commerciales
+  - Tensions coloniales
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+- Diaspora : Présente dans les villes du Cameroun, de la Guinée équatoriale et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 3 000 000 - 4 000 000
+- Répartition par pays : 
+  - Cameroun : 2 000 000 - 2 500 000
+  - Guinée équatoriale : 1 000 000 - 1 500 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Ewondo (ewo), Bulu (bum), Fang (fan)
+- CIA World Factbook – Cameroon, Equatorial Guinea
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+- Études sur les Beti-Pahouin
+

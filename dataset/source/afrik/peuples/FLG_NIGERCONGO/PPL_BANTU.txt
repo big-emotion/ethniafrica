@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Bantou
+- Auto-appellation : Bantou
+- Exonymes / appellations historiques : Bantou (terme utilisé par les Européens), parfois utilisé de manière problématique
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Bantou
+- Région historique : Afrique centrale, orientale et australe
+- Pays actuels : Multiple pays d'Afrique
+- Identifiant peuple (ID) : PPL_BANTU
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Groupes bantous divers
+- Ethnie 2 : Sous-groupes régionaux
+- Ethnie 3 : Variantes linguistiques
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples bantous sont originaires d'Afrique centrale, orientale et australe. Leur présence dans la région remonte à plusieurs millénaires. Ils font partie du groupe bantou de la famille Niger-Congo. Le terme "bantou" a été utilisé de manière problématique dans l'histoire coloniale.
+- Routes migratoires : 
+  - Expansion bantoue depuis l'Afrique centrale
+  - Migrations vers l'Afrique orientale et australe
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes.
+- Influences externes : Contacts avec les peuples khoïsan, nilotiques, et autres groupes africains, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation variée (royaumes, chefferies, systèmes égalitaires). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique variée (patrilinéaire, matrilinéaire). Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages déterminant l'identité et les alliances selon les groupes.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues bantoues (plus de 500 langues)
+- Codes ISO : Multiple codes ISO 639-3
+- Dialectes : 
+  - Dialectes régionaux nombreux
+  - Variantes entre groupes
+- Rôle véhiculaire : Les langues bantoues sont parlées par des centaines de millions de personnes. Les langues coloniales et véhiculaires sont également utilisées.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes et islamiques
+- Symboles : Symboles variés selon les groupes, symboles culturels bantous, symboles chrétiens et islamiques.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Nombreux royaumes et chefferies bantous
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples africains
+  - Interactions avec les peuples khoïsan, nilotiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora bantoue dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 350 000 000 - 400 000 000
+- Répartition par pays : 
+  - Multiple pays d'Afrique centrale, orientale et australe
+  - Diaspora : 5 000 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Bantu languages
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+

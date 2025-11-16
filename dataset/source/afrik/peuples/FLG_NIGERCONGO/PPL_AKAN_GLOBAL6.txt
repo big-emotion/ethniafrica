@@ -1,0 +1,91 @@
+# Nom du peuple
+- Nom principal du peuple : Akan (Global 6)
+- Auto-appellation : Akan
+- Exonymes / appellations historiques : Akan (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Kwa
+- Région historique : Ghana, Côte d'Ivoire
+- Pays actuels : Ghana, Côte d'Ivoire, diaspora
+- Identifiant peuple (ID) : PPL_AKAN_GLOBAL6
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ashanti
+- Ethnie 2 : Fanti
+- Ethnie 3 : Akuapem
+- Ethnie 4 : Akyem
+- Ethnie 5 : Brong
+- Ethnie 6 : Nzema
+- Ethnie 7 : Autres sous-groupes akan
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Akan sont originaires du Ghana et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le Ghana et la Côte d'Ivoire
+  - Déplacements vers les zones urbaines et la diaspora
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Formation de royaumes akan.
+- Influences externes : Contacts avec les peuples ouest-africains, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaumes traditionnels (Ashanti, etc.). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique matrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages matrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Akan
+- Codes ISO : aka (ISO 639-3)
+- Dialectes : 
+  - Twi (Ashanti, Akuapem, Akyem)
+  - Fanti
+  - Nzema
+  - Autres variantes
+- Rôle véhiculaire : L'akan est parlé par la majorité des Akan. L'anglais, le français et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux akan (Ashanti), symboles liés à l'agriculture, symboles culturels akan, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Ashanti (XVIIe-XIXe siècles)
+  - Autres royaumes akan
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples ouest-africains
+  - Interactions avec les peuples mandé
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion du royaume Ashanti
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora akan dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 20 000 000 - 25 000 000
+- Répartition par pays : 
+  - Ghana : 15 000 000 - 18 000 000
+  - Côte d'Ivoire : 5 000 000 - 7 000 000
+  - Diaspora : 500 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Akan language (aka)
+- CIA World Factbook – Ghana, Côte d'Ivoire
+- Recensements nationaux
+- Études anthropologiques sur les peuples akan
+- Études historiques sur le royaume Ashanti
+

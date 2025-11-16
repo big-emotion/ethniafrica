@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Annang
+- Auto-appellation : Annang
+- Exonymes / appellations historiques : Annang (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Bénoué-Congo
+- Région historique : Sud-est du Nigeria
+- Pays actuels : Nigeria
+- Identifiant peuple (ID) : PPL_ANNANG
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Annang du Nord
+- Ethnie 2 : Annang du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Annang sont originaires du sud-est du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Bénoué-Congo de la famille Niger-Congo.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le sud-est du Nigeria
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples bénoué-congo voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Annang
+- Codes ISO : anw (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : L'annang est parlé par la majorité des Annang. L'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels annang, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bénoué-congo
+  - Interactions avec les peuples igbo
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora annang dans les grandes villes nigérianes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 500 000 - 2 000 000
+- Répartition par pays : 
+  - Nigeria : 1 500 000 - 2 000 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements nigérians, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Annang language (anw)
+- CIA World Factbook – Nigeria
+- Recensements nigérians
+- Études anthropologiques sur les peuples bénoué-congo
+

@@ -1,0 +1,84 @@
+# Nom du peuple
+- Nom principal du peuple : Bainouk (Global)
+- Auto-appellation : Bainouk
+- Exonymes / appellations historiques : Bainouk (terme utilisé par les Européens), Banyun
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Atlantique
+- Région historique : Sénégal, Gambie, Guinée-Bissau
+- Pays actuels : Sénégal, Gambie, Guinée-Bissau, diaspora
+- Identifiant peuple (ID) : PPL_BAINOUK_GLOBAL
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bainouk du Sénégal
+- Ethnie 2 : Bainouk de Gambie
+- Ethnie 3 : Bainouk de Guinée-Bissau
+- Ethnie 4 : Bainouk de la diaspora
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Bainouk sont originaires du Sénégal, de la Gambie et de la Guinée-Bissau. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Atlantique de la famille Niger-Congo.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le Sénégal, la Gambie et la Guinée-Bissau
+  - Déplacements vers les zones urbaines et la diaspora
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples ouest-africains, influence de l'islam et du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Bainouk
+- Codes ISO : bcz (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le bainouk est parlé par la majorité des Bainouk. Le français, le portugais, le wolof et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses islamiques et chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels bainouk, symboles islamiques et chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples ouest-africains
+  - Interactions avec les peuples mandé
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora bainouk dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 350 000
+- Répartition par pays : 
+  - Sénégal : 100 000 - 150 000
+  - Gambie : 50 000 - 80 000
+  - Guinée-Bissau : 50 000 - 70 000
+  - Diaspora : 20 000 - 50 000
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Bainouk language (bcz)
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples atlantiques
+

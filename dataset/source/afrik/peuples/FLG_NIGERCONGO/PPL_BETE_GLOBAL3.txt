@@ -1,0 +1,84 @@
+# Nom du peuple
+- Nom principal du peuple : Bété (Global 3)
+- Auto-appellation : Bété
+- Exonymes / appellations historiques : Bété (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Krou
+- Région historique : Centre-Ouest de la Côte d'Ivoire
+- Pays actuels : Côte d'Ivoire, diaspora
+- Identifiant peuple (ID) : PPL_BETE_GLOBAL3
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bété de Gagnoa
+- Ethnie 2 : Bété de Daloa
+- Ethnie 3 : Bété d'Oumé
+- Ethnie 4 : Bété de la diaspora
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Bété sont originaires du centre-ouest de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Krou de la famille Niger-Congo.
+- Routes migratoires : 
+  - Migrations depuis les régions forestières
+  - Expansion vers le centre-ouest de la Côte d'Ivoire
+  - Déplacements vers les zones urbaines et la diaspora
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples krou voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Bété
+- Codes ISO : beb, btv (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux (Gagnoa, Daloa, Oumé)
+  - Variantes entre groupes
+- Rôle véhiculaire : Le bété est parlé par la majorité des Bété. Le français et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Rites de bois sacrés
+- Symboles : Symboles liés à l'agriculture, symboles culturels bété, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle percussive
+  - Danse traditionnelle
+  - Masques forestiers
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples krou
+  - Interactions avec les peuples wè et gouro
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Conflits et alliances anciennes avec les Wè et les Gouro
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora bété dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 500 000 - 3 100 000
+- Répartition par pays : 
+  - Côte d'Ivoire : 2 500 000 - 3 000 000
+  - Diaspora : 50 000 - 100 000
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Bété languages (beb, btv)
+- CIA World Factbook – Côte d'Ivoire
+- Recensements nationaux
+- Études anthropologiques sur les peuples krou
+

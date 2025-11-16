@@ -1,0 +1,88 @@
+# Nom du peuple
+- Nom principal du peuple : Chewa
+- Auto-appellation : Achewa
+- Exonymes / appellations historiques : Cewa (variante coloniale), Chewa (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Bantou (Zone N)
+- Région historique : Malawi central, Mozambique Ouest
+- Pays actuels : Malawi, Mozambique, Zambie
+- Identifiant peuple (ID) : PPL_CHEWA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Chewa du Malawi
+- Ethnie 2 : Chewa du Mozambique
+- Ethnie 3 : Chewa de Zambie
+- Ethnie 4 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Lointaine migration bantoue de la région du Congo. Les Chewa sont originaires du Malawi central et du Mozambique Ouest. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N) de la famille Niger-Congo. Fondation du royaume de Maravi.
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers le Malawi, le Mozambique et la Zambie
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Fondation du royaume de Maravi. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Influence des missionnaires européens. Contacts avec les peuples bantous voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Système matrilinéaire. Chefferies locales. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique matrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages matrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Chewa / Chichewa
+- Codes ISO : nya (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le chichewa est parlé par la majorité des Chewa et sert de langue véhiculaire au Malawi. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Masques *Gule Wamkulu* (rituel initiatique majeur)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles liés à l'agriculture, symboles culturels chewa, symboles chrétiens.
+- Arts et musique : 
+  - Musiques traditionnelles
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Maravi aux XVIe–XVIIe siècles
+  - Chefferies locales
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples nilotiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion du royaume Maravi
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora chewa dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 9 400 000 - 11 000 000
+- Répartition par pays : 
+  - Malawi : 6 000 000 - 7 000 000
+  - Mozambique : 2 000 000 - 2 500 000
+  - Zambie : 1 400 000 - 1 500 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Chichewa language (nya)
+- CIA World Factbook – Malawi, Mozambique, Zambia
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+- Malawi National Archives
+

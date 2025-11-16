@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Bambara (Diaspora)
+- Auto-appellation : Bamana
+- Exonymes / appellations historiques : Bambara (terme utilisé par les Européens), Bamana
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Mandé
+- Région historique : Mali, Burkina Faso, Sénégal, Côte d'Ivoire
+- Pays actuels : Diaspora mondiale
+- Identifiant peuple (ID) : PPL_BAMBARA_DIASPORA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bambara de la diaspora
+- Ethnie 2 : Sous-groupes régionaux de la diaspora
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Bambara de la diaspora sont originaires du Mali, du Burkina Faso, du Sénégal et de la Côte d'Ivoire. Leur présence dans la diaspora remonte aux migrations modernes.
+- Routes migratoires : 
+  - Migrations vers l'Europe, l'Amérique du Nord, l'Amérique du Sud
+  - Déplacements vers les zones urbaines internationales
+  - Migration économique et éducative
+- Unifications / divisions : Organisation en communautés diasporiques distinctes mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les sociétés d'accueil, maintien des traditions bambara.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en associations communautaires. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire maintenue. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Bambara
+- Codes ISO : bam (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le bambara est parlé par une partie de la diaspora. Les langues des pays d'accueil sont également utilisées.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels bambara.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture bambara.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Associations communautaires diasporiques
+  - Organisations culturelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres communautés africaines de la diaspora
+  - Interactions avec les sociétés d'accueil
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation aux mouvements politiques
+  - Alliances communautaires
+  - Préservation de l'identité culturelle
+- Diaspora : Diaspora bambara dans les grandes villes mondiales.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 400 000
+- Répartition par pays : 
+  - Europe : 100 000 - 200 000
+  - Amérique du Nord : 50 000 - 100 000
+  - Amérique du Sud : 30 000 - 60 000
+  - Autres régions : 20 000 - 40 000
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, études démographiques, et données migratoires
+
+# 8. Sources
+- SIL Ethnologue – Bambara language (bam)
+- Études démographiques sur la diaspora africaine
+- Recensements nationaux
+- Études anthropologiques sur les peuples mandé
+

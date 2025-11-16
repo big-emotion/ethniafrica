@@ -1,0 +1,87 @@
+# Nom du peuple
+- Nom principal du peuple : Dagara
+- Auto-appellation : Dagara / Dagao
+- Exonymes / appellations historiques : Dagara (terme utilisé par les Européens), Dagaaba
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Gur
+- Région historique : Burkina Faso, Ghana
+- Pays actuels : Burkina Faso, Ghana
+- Identifiant peuple (ID) : PPL_DAGARA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Dagara du Burkina Faso
+- Ethnie 2 : Dagaaba du Ghana
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Parenté historique avec Lobi et Birifor. Culture voltaïque ancienne. Les Dagara sont originaires du Burkina Faso et du Ghana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Gur de la famille Niger-Congo.
+- Routes migratoires : 
+  - Zones de migration saisonnière vers le Ghana
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le Burkina Faso et le Ghana
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples gur voisins, influence de l'islam et du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Structures initiatiques. Lignages claniques. Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Dagaare / Dagara
+- Codes ISO : dgi, dga (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le dagaare est parlé par la majorité des Dagara. Le français, l'anglais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Rituels funéraires réputés
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses islamiques et chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels dagara, symboles islamiques et chrétiens.
+- Arts et musique : 
+  - Xylophone *gyil*
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat du fer
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Lobi et Birifor
+  - Interactions avec les autres peuples gur
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora dagara dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 600 000 - 3 000 000
+- Répartition par pays : 
+  - Burkina Faso : 1 500 000 - 1 800 000
+  - Ghana : 1 100 000 - 1 200 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Dagaare language (dga)
+- CIA World Factbook – Burkina Faso, Ghana
+- Recensements nationaux
+- Études anthropologiques sur les peuples gur
+- Upper West Ghana cultural studies
+

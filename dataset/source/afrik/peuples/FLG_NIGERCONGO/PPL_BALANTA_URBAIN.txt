@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Balanta (Urbain)
+- Auto-appellation : Balanta
+- Exonymes / appellations historiques : Balanta (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Atlantique
+- Région historique : Guinée-Bissau, Sénégal
+- Pays actuels : Guinée-Bissau, Sénégal
+- Identifiant peuple (ID) : PPL_BALANTA_URBAIN
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Balanta urbains de Guinée-Bissau
+- Ethnie 2 : Balanta urbains du Sénégal
+- Ethnie 3 : Sous-groupes régionaux urbains
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Balanta urbains sont originaires de la Guinée-Bissau et du Sénégal. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Atlantique de la famille Niger-Congo.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers la Guinée-Bissau et le Sénégal
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Adaptation à la vie urbaine.
+- Influences externes : Contacts avec les peuples ouest-africains, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en associations communautaires. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire partiellement maintenue. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant partiellement l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Balanta
+- Codes ISO : ble (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le balanta est parlé par une partie des Balanta urbains. Le portugais, le français et d'autres langues sont principalement utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Célébrations culturelles balanta
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles culturels balanta, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Associations communautaires urbaines
+  - Organisations culturelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples atlantiques
+  - Interactions avec les peuples mandé
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation aux mouvements politiques
+  - Alliances communautaires
+  - Préservation de l'identité culturelle
+- Diaspora : Migration vers les grandes villes et la diaspora.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 350 000
+- Répartition par pays : 
+  - Guinée-Bissau : 150 000 - 250 000
+  - Sénégal : 50 000 - 100 000
+  - Diaspora : 15 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Balanta language (ble)
+- CIA World Factbook – Guinea-Bissau, Senegal
+- Recensements nationaux
+- Études anthropologiques sur les peuples atlantiques
+

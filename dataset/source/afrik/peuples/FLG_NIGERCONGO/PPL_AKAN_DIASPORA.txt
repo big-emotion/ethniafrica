@@ -1,0 +1,85 @@
+# Nom du peuple
+- Nom principal du peuple : Akan (Diaspora)
+- Auto-appellation : Akan
+- Exonymes / appellations historiques : Akan (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Kwa
+- Région historique : Ghana, Côte d'Ivoire
+- Pays actuels : Diaspora mondiale
+- Identifiant peuple (ID) : PPL_AKAN_DIASPORA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Akan de la diaspora
+- Ethnie 2 : Ashanti de la diaspora
+- Ethnie 3 : Fanti de la diaspora
+- Ethnie 4 : Autres sous-groupes akan de la diaspora
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Akan de la diaspora sont originaires du Ghana et de la Côte d'Ivoire. Leur présence dans la diaspora remonte aux migrations modernes.
+- Routes migratoires : 
+  - Migrations vers l'Europe, l'Amérique du Nord, l'Amérique du Sud
+  - Déplacements vers les zones urbaines internationales
+  - Migration économique et éducative
+- Unifications / divisions : Organisation en communautés diasporiques distinctes mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les sociétés d'accueil, maintien des traditions akan.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en associations communautaires. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique matrilinéaire maintenue. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages matrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Akan
+- Codes ISO : aka (ISO 639-3)
+- Dialectes : 
+  - Twi (Ashanti, Akuapem, Akyem)
+  - Fanti
+  - Nzema
+  - Autres variantes
+- Rôle véhiculaire : L'akan est parlé par une partie de la diaspora. Les langues des pays d'accueil sont également utilisées.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Célébrations culturelles akan
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles royaux akan (Ashanti), symboles culturels akan, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Associations communautaires diasporiques
+  - Organisations culturelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres communautés africaines de la diaspora
+  - Interactions avec les sociétés d'accueil
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation aux mouvements politiques
+  - Alliances communautaires
+  - Préservation de l'identité culturelle
+- Diaspora : Diaspora akan dans les grandes villes mondiales.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 000 - 1 000 000
+- Répartition par pays : 
+  - Europe : 200 000 - 400 000
+  - Amérique du Nord : 200 000 - 400 000
+  - Amérique du Sud : 50 000 - 100 000
+  - Autres régions : 50 000 - 100 000
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, études démographiques, et données migratoires
+
+# 8. Sources
+- SIL Ethnologue – Akan language (aka)
+- Études démographiques sur la diaspora africaine
+- Recensements nationaux
+- Études anthropologiques sur les peuples akan
+

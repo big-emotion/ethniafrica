@@ -1,0 +1,85 @@
+# Nom du peuple
+- Nom principal du peuple : Chaga
+- Auto-appellation : Wachaga
+- Exonymes / appellations historiques : Chagga (variante coloniale), Chaga (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Bantou (Zone E)
+- Région historique : Pentes sud et est du Kilimandjaro
+- Pays actuels : Tanzanie
+- Identifiant peuple (ID) : PPL_CHAGA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Rombo
+- Ethnie 2 : Machame
+- Ethnie 3 : Siha/Kibosho
+- Ethnie 4 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Installation ancienne sur les pentes du Kilimandjaro. Les Chaga sont originaires des pentes sud et est du Kilimandjaro en Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone E) de la famille Niger-Congo.
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers les pentes du Kilimandjaro
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Création de chefferies puissantes. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Influence agricole (bananeraies en terrasses). Contacts avec les peuples bantous voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Chefferies : Mangi (chefs), bandes lignagères. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique très marquée. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Kichaga
+- Codes ISO : jmc (ISO 639-3)
+- Dialectes : 
+  - Divers dialectes (Rombo, Machame, Siha/Kibosho)
+  - Variantes régionales
+- Rôle véhiculaire : Le kichaga est parlé par la majorité des Chaga. Le swahili, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Rituels liés à la terre et aux ancêtres
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles liés à l'agriculture, symboles culturels chaga, symboles chrétiens.
+- Arts et musique : 
+  - Musiques et danses de montagne
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies chaga fortes jusqu'à la colonisation allemande
+  - Figures célèbres : Mangi Mkuu, Mangi Sina
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples nilotiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation allemande
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora chaga dans les grandes villes tanzaniennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 000 000 - 2 500 000
+- Répartition par pays : 
+  - Tanzanie : 2 000 000 - 2 500 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements tanzaniens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kichaga language (jmc)
+- CIA World Factbook – Tanzania
+- Recensements tanzaniens
+- Études anthropologiques sur les peuples bantous
+- Archives du Kilimandjaro
+

@@ -1,0 +1,83 @@
+# Nom du peuple
+- Nom principal du peuple : Dagomba (Diaspora 2)
+- Auto-appellation : Dagomba
+- Exonymes / appellations historiques : Dagomba (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Gur
+- Région historique : Nord du Ghana
+- Pays actuels : Ghana, diaspora
+- Identifiant peuple (ID) : PPL_DAGOMBA_DIASPORA2
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Dagomba du Ghana
+- Ethnie 2 : Dagomba de la diaspora
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Dagomba sont originaires du nord du Ghana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Gur de la famille Niger-Congo. Formation du royaume Dagomba.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le nord du Ghana
+  - Déplacements vers les zones urbaines et la diaspora
+- Unifications / divisions : Formation du royaume Dagomba. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples ouest-africains, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel (Dagomba). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Dagbani
+- Codes ISO : dag (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le dagbani est parlé par la majorité des Dagomba. L'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+- Symboles : Symboles royaux dagomba, symboles islamiques, symboles culturels dagomba.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture dagomba.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Dagomba (XVe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples gur
+  - Interactions avec les peuples akan
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion du royaume Dagomba
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora dagomba dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 000 000 - 1 500 000
+- Répartition par pays : 
+  - Ghana : 900 000 - 1 300 000
+  - Diaspora : 100 000 - 200 000
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ghanéens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Dagbani language (dag)
+- CIA World Factbook – Ghana
+- Recensements ghanéens
+- Études anthropologiques sur les peuples gur
+- Études historiques sur le royaume Dagomba
+

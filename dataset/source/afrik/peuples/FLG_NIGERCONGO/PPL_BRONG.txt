@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Brong
+- Auto-appellation : Brong
+- Exonymes / appellations historiques : Brong (terme utilisé par les Européens), Abron
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Kwa
+- Région historique : Ghana, Côte d'Ivoire
+- Pays actuels : Ghana, Côte d'Ivoire
+- Identifiant peuple (ID) : PPL_BRONG
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Brong du Ghana
+- Ethnie 2 : Brong de Côte d'Ivoire
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Brong sont originaires du Ghana et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo. Relations étroites avec les Akan.
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le Ghana et la Côte d'Ivoire
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Akan.
+- Influences externes : Contacts avec les peuples akan, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique matrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages matrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Brong
+- Codes ISO : abr (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le brong est parlé par la majorité des Brong. L'anglais, le français et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels brong, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations étroites avec les Akan
+  - Interactions avec les autres peuples kwa
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora brong dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 000 000 - 1 500 000
+- Répartition par pays : 
+  - Ghana : 800 000 - 1 200 000
+  - Côte d'Ivoire : 200 000 - 300 000
+  - Diaspora : 30 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Brong language (abr)
+- CIA World Factbook – Ghana, Côte d'Ivoire
+- Recensements nationaux
+- Études anthropologiques sur les peuples kwa
+

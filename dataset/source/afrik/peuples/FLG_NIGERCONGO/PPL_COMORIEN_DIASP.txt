@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Comorien (Diaspora)
+- Auto-appellation : Shimasiwa (gens des îles)
+- Exonymes / appellations historiques : Comorians (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : Bantou (Zone G, branche swahilie)
+- Région historique : Archipel des Comores
+- Pays actuels : Diaspora mondiale
+- Identifiant peuple (ID) : PPL_COMORIEN_DIASP
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Comoriens de la diaspora
+- Ethnie 2 : Sous-groupes régionaux de la diaspora
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Comoriens de la diaspora sont originaires de l'archipel des Comores. Leur présence dans la diaspora remonte aux migrations modernes, notamment vers la France et Madagascar.
+- Routes migratoires : 
+  - Migrations vers la France, Madagascar, l'Europe, l'Amérique du Nord
+  - Déplacements vers les zones urbaines internationales
+  - Migration économique et éducative
+- Unifications / divisions : Organisation en communautés diasporiques distinctes mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les sociétés d'accueil, maintien des traditions comoriennes.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en associations communautaires. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire maintenue. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues comoriennes (shimaore, shingazidja, shimwali)
+- Codes ISO : swb, wni, zdj, wlc (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Les langues comoriennes sont parlées par une partie de la diaspora. Les langues des pays d'accueil sont également utilisées.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Célébrations culturelles comoriennes
+  - Cérémonies religieuses islamiques
+- Symboles : Symboles culturels comoriens, symboles islamiques.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : L'islam sunnite structure la vie sociale. Syncrétisme avec certaines croyances traditionnelles.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Associations communautaires diasporiques
+  - Organisations culturelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres communautés africaines de la diaspora
+  - Interactions avec les sociétés d'accueil
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation aux mouvements politiques
+  - Alliances communautaires
+  - Préservation de l'identité culturelle
+- Diaspora : Diaspora comorienne dans les grandes villes mondiales.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 300 000
+- Répartition par pays : 
+  - France : 150 000 - 200 000
+  - Madagascar : 30 000 - 50 000
+  - Europe : 10 000 - 20 000
+  - Amérique du Nord : 5 000 - 10 000
+  - Autres régions : 5 000 - 20 000
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, études démographiques, et données migratoires
+
+# 8. Sources
+- SIL Ethnologue – Comorian languages (swb, wni, zdj, wlc)
+- Études démographiques sur la diaspora africaine
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+
