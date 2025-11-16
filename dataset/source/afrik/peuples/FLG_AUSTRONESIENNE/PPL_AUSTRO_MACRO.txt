@@ -1,0 +1,112 @@
+# Nom du peuple
+- Nom principal du peuple : Peuples Austronésiens (macro-groupe)
+- Auto-appellation : Variées selon les groupes (Merina, Betsimisaraka, Sakalava, etc.)
+- Exonymes / appellations historiques : 
+  - « Austronésiens » (terme linguistique)
+  - « Malayo-polynésiens » (terme académique)
+- Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
+- Groupe ethno-linguistique : Malayo-polynésien (macro-groupe)
+- Région historique : Madagascar
+- Pays actuels : Madagascar
+- Identifiant peuple (ID) : PPL_AUSTRO_MACRO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Merina
+- Ethnie 2 : Betsimisaraka
+- Ethnie 3 : Sakalava
+- Ethnie 4 : Antandroy
+- Ethnie 5 : Betsileo
+- Ethnie 6 : Tsimihety
+- Ethnie 7 : Antakarana
+- Ethnie 8 : Vezo
+- Ethnie 9 : Tanosy (Antanosy)
+- Ethnie 10 : Antambahoaka
+- Ethnie 11 : Bezanozano
+- Ethnie 12 : Mikea
+- Ethnie 13 : Antsalova
+- Ethnie 14 : Autres groupes malgaches
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples Austronésiens de Madagascar sont originaires de migrations depuis l'Asie du Sud-Est (probablement Bornéo) vers Madagascar (500-700 ap. J.-C.). Fusion avec les populations bantoues venues de la côte est-africaine.
+- Routes migratoires : 
+  - Migrations austronésiennes vers Madagascar
+  - Expansion dans toute l'île
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.
+- Influences externes : Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme, de l'islam, et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaumes et chefferies traditionnelles. Système de fokonolona (communautés villageoises). Diversité des systèmes politiques.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).
+- Autorité religieuse : Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Malgache (langue austronésienne)
+- Codes ISO : mlg (ISO 639-3, code générique), plusieurs codes pour les dialectes
+- Dialectes : 
+  - Merina (hautes terres)
+  - Betsimisaraka (côte est)
+  - Sakalava (côte ouest)
+  - Antandroy (sud)
+  - Betsileo (hautes terres sud)
+  - Tsimihety (nord)
+  - Antakarana (nord)
+  - Vezo (côte sud-ouest)
+  - Tanosy (sud-est)
+  - Antambahoaka (sud-est)
+  - Bezanozano (centre-est)
+  - Mikea (sud-ouest)
+  - Antsalova (ouest)
+  - Nombreuses variantes régionales
+- Rôle véhiculaire : Le malgache est la langue officielle de Madagascar. Le français est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Famadihana (retournement des morts)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Cérémonies liées au riz, à la pêche, à l'élevage
+- Symboles : Symboles royaux, symboles liés au riz, symboles liés à la mer, symboles chrétiens et musulmans.
+- Arts et musique : 
+  - Musique traditionnelle (valiha, sodina)
+  - Danse traditionnelle (hira gasy)
+  - Poésie orale (hainteny)
+  - Artisanat (tissage, vannerie)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana).
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Merina (XVIe-XIXe siècles)
+  - Royaume de Madagascar (XIXe siècle)
+  - Royaumes Sakalava (Menabe, Boina)
+  - Royaume Antakarana
+  - Royaume Antanosy
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations entre groupes malgaches
+  - Interactions avec les peuples de la côte est-africaine
+  - Contacts commerciaux avec les Arabes et les Européens
+- Conflits / alliances : 
+  - Expansion du royaume Merina
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora malgache dans les grandes villes et dans les pays occidentaux (France, Canada, États-Unis).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 27 000 000 - 30 000 000
+- Répartition par pays : 
+  - Madagascar : 27 000 000 - 30 000 000
+  - Diaspora : 200 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements malgaches, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Malagasy language (mlg)
+- CIA World Factbook – Madagascar
+- Recensements malgaches
+- Études anthropologiques sur les peuples malgaches
+- Études historiques sur les royaumes malgaches
+

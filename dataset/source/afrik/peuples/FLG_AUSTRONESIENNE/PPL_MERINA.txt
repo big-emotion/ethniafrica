@@ -1,0 +1,84 @@
+# Nom du peuple
+- Nom principal du peuple : Merina
+- Auto-appellation : Merina
+- Exonymes / appellations historiques : Hova (terme historique, parfois utilisé de manière péjorative), Imerina
+- Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
+- Groupe ethno-linguistique : Malayo-polynésien
+- Région historique : Hautes terres centrales de Madagascar
+- Pays actuels : Madagascar
+- Identifiant peuple (ID) : PPL_MERINA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Merina des hautes terres
+- Ethnie 2 : Sous-groupes régionaux
+- Ethnie 3 : Communautés urbaines
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Merina sont originaires des hautes terres centrales de Madagascar. Leur présence remonte aux migrations austronésiennes vers Madagascar (500-700 ap. J.-C.) et à la fusion avec les populations bantoues.
+- Routes migratoires : 
+  - Migrations depuis les côtes vers les hautes terres
+  - Expansion depuis l'Imerina (région d'Antananarivo)
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation du royaume Merina (XVIe-XIXe siècles). Unification de Madagascar sous le règne de Radama I et Ranavalona I.
+- Influences externes : Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Royaume Merina avec système de castes (andriana, hova, andevo). Système de fokonolona (communautés villageoises).
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).
+- Autorité religieuse : Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Malgache (dialecte merina)
+- Codes ISO : mlg (ISO 639-3, code générique), plusieurs codes pour les dialectes
+- Dialectes : 
+  - Dialecte merina (hautes terres)
+  - Variantes régionales
+- Rôle véhiculaire : Le malgache merina est la base de la langue officielle malgache. Le français est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Famadihana (retournement des morts)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Cérémonies liées au riz
+- Symboles : Symboles royaux merina, symboles liés au riz, symboles chrétiens et musulmans.
+- Arts et musique : 
+  - Musique traditionnelle (valiha, sodina)
+  - Danse traditionnelle (hira gasy)
+  - Poésie orale (hainteny)
+  - Artisanat (tissage, vannerie)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana).
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Merina (XVIe-XIXe siècles)
+  - Royaume de Madagascar (XIXe siècle)
+  - Expansion vers les autres régions de Madagascar
+- Relations avec peuples voisins : 
+  - Relations avec les autres groupes malgaches
+  - Interactions avec les peuples côtiers
+  - Contacts commerciaux avec les Arabes et les Européens
+- Conflits / alliances : 
+  - Expansion du royaume Merina
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora merina dans les grandes villes malgaches et dans les pays occidentaux (France, Canada, États-Unis).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 000 - 6 000 000
+- Répartition par pays : 
+  - Madagascar : 5 000 000 - 6 000 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Malagasy language (mlg)
+- CIA World Factbook – Madagascar
+- Recensements malgaches
+- Études anthropologiques sur les peuples malgaches
+- Études historiques sur le royaume Merina
+

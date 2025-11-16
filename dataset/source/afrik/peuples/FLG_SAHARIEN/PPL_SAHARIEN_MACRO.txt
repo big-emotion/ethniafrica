@@ -1,0 +1,99 @@
+# Nom du peuple
+- Nom principal du peuple : Peuples Sahariens (macro-groupe)
+- Auto-appellation : Variées selon les groupes (Kanuri, Toubou, Zaghawa, etc.)
+- Exonymes / appellations historiques : 
+  - « Sahariens » (terme linguistique)
+  - « Langues sahariennes » (terme académique)
+- Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Groupe ethno-linguistique : Saharien (macro-groupe)
+- Région historique : Tchad, Niger, Nigeria, Soudan, Libye
+- Pays actuels : Tchad, Niger, Nigeria, Soudan, Libye, Cameroun
+- Identifiant peuple (ID) : PPL_SAHARIEN_MACRO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Kanuri
+- Ethnie 2 : Kanembu
+- Ethnie 3 : Toubou
+- Ethnie 4 : Zaghawa
+- Ethnie 5 : Daza
+- Ethnie 6 : Teda
+- Ethnie 7 : Autres groupes sahariens
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples Sahariens sont originaires de la région du Sahara central et du Sahel, notamment autour du lac Tchad. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations autour du lac Tchad
+  - Expansion le long des zones sahéliennes et désertiques
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.
+- Influences externes : Contacts avec les peuples arabes, touareg et autres groupes, influence profonde de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Tradition du royaume du Kanem-Bornou pour certains groupes.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues sahariennes (Kanuri, Kanembu, Toubou, Zaghawa, etc.)
+- Codes ISO : kau (Kanuri), kbl (Kanembu), tbv (Teda), zag (Zaghawa), dzg (Daza), et autres
+- Dialectes : 
+  - Kanuri (Nigeria, Niger, Tchad, Cameroun)
+  - Kanembu (Tchad)
+  - Toubou (Tchad, Niger, Libye)
+  - Zaghawa (Tchad, Soudan)
+  - Nombreuses variantes régionales
+- Rôle véhiculaire : Les langues sahariennes sont parlées par les peuples Sahariens. L'arabe, le français, l'anglais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels sahariens, symboles du royaume du Kanem-Bornou.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture saharienne.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume du Kanem (VIIIe-XIVe siècles)
+  - Royaume du Bornou (XIVe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations entre groupes sahariens
+  - Interactions avec les Arabes
+  - Relations avec les Touareg
+  - Contacts commerciaux transsahariens
+- Conflits / alliances : 
+  - Expansion du royaume du Kanem-Bornou
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora saharienne dans les grandes villes tchadiennes, nigériennes, nigérianes, soudanaises et libyennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 000 - 6 500 000
+- Répartition par pays : 
+  - Nigeria : 3 000 000 - 4 000 000 (Kanuri majoritaire)
+  - Tchad : 1 000 000 - 1 500 000
+  - Niger : 600 000 - 900 000
+  - Soudan : 200 000 - 400 000
+  - Libye : 100 000 - 200 000
+  - Cameroun : 200 000 - 300 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Saharan languages
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples sahariens
+- Études historiques sur le royaume du Kanem-Bornou
+

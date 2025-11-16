@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Toubou
+- Auto-appellation : Toubou
+- Exonymes / appellations historiques : Toubou (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Groupe ethno-linguistique : Saharien (Toubou)
+- Région historique : Tchad, Niger, Libye
+- Pays actuels : Tchad, Niger, Libye
+- Identifiant peuple (ID) : PPL_TOUBOU
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Teda (Toubou du Nord)
+- Ethnie 2 : Daza (Toubou du Sud)
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Toubou sont originaires du Tchad, du Niger et de la Libye, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones désertiques
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts (Teda au nord, Daza au sud) mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples sahariens voisins, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Toubou (Teda et Daza)
+- Codes ISO : tbv (Teda), dzg (Daza)
+- Dialectes : 
+  - Teda (Toubou du Nord)
+  - Daza (Toubou du Sud)
+  - Variantes régionales
+- Rôle véhiculaire : Le toubou est parlé par la majorité des Toubou. L'arabe et le français sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels toubou.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture toubou.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes, nigériennes et libyennes.
+- Relations avec peuples voisins : 
+  - Relations entre groupes Toubou (Teda et Daza)
+  - Interactions avec les autres peuples sahariens
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora toubou dans les grandes villes tchadiennes, nigériennes et libyennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 000 - 800 000
+- Répartition par pays : 
+  - Tchad : 300 000 - 500 000
+  - Niger : 150 000 - 250 000
+  - Libye : 50 000 - 100 000
+  - Diaspora : 20 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Toubou languages (tbv, dzg)
+- CIA World Factbook – Chad, Niger, Libya
+- Recensements nationaux
+- Études anthropologiques sur les peuples sahariens
+

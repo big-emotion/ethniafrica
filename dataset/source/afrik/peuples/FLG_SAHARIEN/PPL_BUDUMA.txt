@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Buduma
+- Auto-appellation : Buduma
+- Exonymes / appellations historiques : Buduma (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Groupe ethno-linguistique : Saharien (Kanembu)
+- Région historique : Tchad, Niger, Nigeria
+- Pays actuels : Tchad, Niger, Nigeria
+- Identifiant peuple (ID) : PPL_BUDUMA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Buduma du Tchad
+- Ethnie 2 : Buduma du Niger
+- Ethnie 3 : Buduma du Nigeria
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Buduma sont originaires du Tchad, du Niger et du Nigeria, dans la région du lac Tchad. Leur présence dans la région remonte à plusieurs siècles. Ils sont traditionnellement des pêcheurs et éleveurs du lac Tchad.
+- Routes migratoires : 
+  - Migrations autour du lac Tchad
+  - Expansion le long des zones lacustres
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Kanembu.
+- Influences externes : Contacts avec les peuples sahariens voisins, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Buduma
+- Codes ISO : bdm (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le buduma est parlé par la majorité des Buduma. L'arabe, le français, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+  - Cérémonies liées à la pêche
+- Symboles : Symboles islamiques, symboles culturels buduma, symboles liés au lac Tchad.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, objets liés à la pêche)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture buduma.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes, nigériennes et nigérianes.
+- Relations avec peuples voisins : 
+  - Relations avec les Kanembu
+  - Interactions avec les autres peuples sahariens
+  - Contacts commerciaux autour du lac Tchad
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora buduma dans les grandes villes tchadiennes, nigériennes et nigérianes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 50 000 - 100 000
+- Répartition par pays : 
+  - Tchad : 30 000 - 60 000
+  - Niger : 10 000 - 20 000
+  - Nigeria : 10 000 - 20 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Buduma language (bdm)
+- CIA World Factbook – Chad, Niger, Nigeria
+- Recensements nationaux
+- Études anthropologiques sur les peuples sahariens
+

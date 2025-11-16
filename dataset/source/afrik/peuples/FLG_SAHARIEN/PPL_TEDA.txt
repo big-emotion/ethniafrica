@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Teda
+- Auto-appellation : Teda
+- Exonymes / appellations historiques : Teda (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Groupe ethno-linguistique : Saharien (Toubou)
+- Région historique : Tchad, Niger, Libye
+- Pays actuels : Tchad, Niger, Libye
+- Identifiant peuple (ID) : PPL_TEDA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Teda du Tchad
+- Ethnie 2 : Teda du Niger
+- Ethnie 3 : Teda de Libye
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Teda sont originaires du Tchad, du Niger et de la Libye, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Toubou.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones désertiques
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Toubou.
+- Influences externes : Contacts avec les peuples sahariens voisins, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Teda (variété Toubou)
+- Codes ISO : tbv (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le teda est parlé par la majorité des Teda. L'arabe et le français sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels teda.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture teda.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes, nigériennes et libyennes.
+- Relations avec peuples voisins : 
+  - Relations avec les Toubou
+  - Interactions avec les autres peuples sahariens
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora teda dans les grandes villes tchadiennes, nigériennes et libyennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 100 000 - 200 000
+- Répartition par pays : 
+  - Tchad : 50 000 - 100 000
+  - Niger : 30 000 - 60 000
+  - Libye : 20 000 - 40 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Teda language (tbv)
+- CIA World Factbook – Chad, Niger, Libya
+- Recensements nationaux
+- Études anthropologiques sur les peuples sahariens
+

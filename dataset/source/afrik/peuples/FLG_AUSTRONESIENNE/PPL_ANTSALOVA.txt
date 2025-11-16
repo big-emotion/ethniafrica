@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Antsalova
+- Auto-appellation : Antsalova
+- Exonymes / appellations historiques : Antsalova (terme géographique)
+- Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
+- Groupe ethno-linguistique : Malayo-polynésien
+- Région historique : Ouest de Madagascar
+- Pays actuels : Madagascar
+- Identifiant peuple (ID) : PPL_ANTSALOVA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Antsalova du Nord
+- Ethnie 2 : Antsalova du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Antsalova sont originaires de l'ouest de Madagascar, dans la région d'Antsalova. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues.
+- Routes migratoires : 
+  - Migrations dans l'ouest
+  - Expansion depuis les zones côtières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts.
+- Influences externes : Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de fokonolona (communautés villageoises).
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).
+- Autorité religieuse : Autorité des mpisikidy (devins) et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Malgache (dialecte antsalova)
+- Codes ISO : mlg (ISO 639-3, code générique), plusieurs codes pour les dialectes
+- Dialectes : 
+  - Dialecte antsalova (ouest)
+  - Variantes régionales
+- Rôle véhiculaire : Le malgache antsalova est parlé par la majorité des Antsalova. Le français est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Famadihana (retournement des morts)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles liés à l'agriculture, symboles liés à la région, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (tissage, vannerie)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Culte des ancêtres (razana).
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres groupes malgaches
+  - Interactions avec les peuples des hautes terres
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora antsalova dans les grandes villes malgaches et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 100 000 - 200 000
+- Répartition par pays : 
+  - Madagascar : 100 000 - 200 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Malagasy language (mlg)
+- CIA World Factbook – Madagascar
+- Recensements malgaches
+- Études anthropologiques sur les peuples malgaches
+

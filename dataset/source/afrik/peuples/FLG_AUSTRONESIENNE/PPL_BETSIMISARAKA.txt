@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Betsimisaraka
+- Auto-appellation : Betsimisaraka
+- Exonymes / appellations historiques : Betsimisaraka (terme signifiant "les nombreux inséparables")
+- Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
+- Groupe ethno-linguistique : Malayo-polynésien
+- Région historique : Côte est de Madagascar
+- Pays actuels : Madagascar
+- Identifiant peuple (ID) : PPL_BETSIMISARAKA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Betsimisaraka du Nord
+- Ethnie 2 : Betsimisaraka du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Betsimisaraka sont originaires de la côte est de Madagascar. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Formation d'une confédération au XVIIIe siècle.
+- Routes migratoires : 
+  - Migrations le long de la côte est
+  - Expansion depuis les zones côtières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation d'une confédération Betsimisaraka au XVIIIe siècle. Organisation en groupes territoriaux distincts.
+- Influences externes : Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de fokonolona (communautés villageoises).
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).
+- Autorité religieuse : Autorité des mpisikidy (devins) et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Malgache (dialecte betsimisaraka)
+- Codes ISO : mlg (ISO 639-3, code générique), plusieurs codes pour les dialectes
+- Dialectes : 
+  - Dialecte betsimisaraka (côte est)
+  - Variantes régionales
+- Rôle véhiculaire : Le malgache betsimisaraka est parlé par la majorité des Betsimisaraka. Le français est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Famadihana (retournement des morts)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Cérémonies liées à la pêche et à l'agriculture
+- Symboles : Symboles liés à la mer, symboles liés à l'agriculture, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (tissage, vannerie)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Culte des ancêtres (razana).
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Confédération Betsimisaraka (XVIIIe siècle)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres groupes malgaches
+  - Interactions avec les peuples des hautes terres
+  - Contacts commerciaux avec les Arabes et les Européens
+- Conflits / alliances : 
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora betsimisaraka dans les grandes villes malgaches et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 000 000 - 3 000 000
+- Répartition par pays : 
+  - Madagascar : 2 000 000 - 3 000 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Malagasy language (mlg)
+- CIA World Factbook – Madagascar
+- Recensements malgaches
+- Études anthropologiques sur les peuples malgaches
+

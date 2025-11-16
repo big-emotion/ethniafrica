@@ -1,0 +1,80 @@
+# Nom du peuple
+- Nom principal du peuple : Daza
+- Auto-appellation : Daza
+- Exonymes / appellations historiques : Daza (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Groupe ethno-linguistique : Saharien (Toubou)
+- Région historique : Tchad, Niger
+- Pays actuels : Tchad, Niger
+- Identifiant peuple (ID) : PPL_DAZA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Daza du Tchad
+- Ethnie 2 : Daza du Niger
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Daza sont originaires du Tchad et du Niger, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Toubou.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones désertiques
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Toubou.
+- Influences externes : Contacts avec les peuples sahariens voisins, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Daza (variété Toubou)
+- Codes ISO : dzg (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le daza est parlé par la majorité des Daza. L'arabe et le français sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels daza.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture daza.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes et nigériennes.
+- Relations avec peuples voisins : 
+  - Relations avec les Toubou
+  - Interactions avec les autres peuples sahariens
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora daza dans les grandes villes tchadiennes et nigériennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 400 000
+- Répartition par pays : 
+  - Tchad : 150 000 - 300 000
+  - Niger : 50 000 - 100 000
+  - Diaspora : 10 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Daza language (dzg)
+- CIA World Factbook – Chad, Niger
+- Recensements nationaux
+- Études anthropologiques sur les peuples sahariens
+
