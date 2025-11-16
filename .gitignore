@@ -67,4 +67,9 @@ Thumbs.db
 
 # Dataset
 dataset/*
-!dataset/source/*
+!dataset/source/
+dataset/source/*
+!dataset/source/**/*
+# Ignorer les dossiers générés
+dataset/matched/
+dataset/parsed/
