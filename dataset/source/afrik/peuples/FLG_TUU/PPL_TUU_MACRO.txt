@@ -1,0 +1,94 @@
+# Nom du peuple
+- Nom principal du peuple : Peuples Tuu (macro-groupe)
+- Auto-appellation : Variées selon les groupes (ǃXóõ, Nǀuu, ǀXam, etc.)
+- Exonymes / appellations historiques : 
+  - « Bushmen » (terme colonial péjoratif, à éviter)
+  - « San » (terme générique, parfois utilisé)
+  - « Southern Khoisan » (ancienne classification coloniale)
+  - « Tuu » (terme linguistique moderne)
+- Famille linguistique principale : Khoïsan – Tuu (FLG_TUU)
+- Groupe ethno-linguistique : Tuu (macro-groupe)
+- Région historique : Désert du Kalahari (Botswana, Afrique du Sud, Namibie)
+- Pays actuels : Botswana, Afrique du Sud, Namibie
+- Identifiant peuple (ID) : PPL_TUU_MACRO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : ǃXóõ (Taa) - vivant
+- Ethnie 2 : Nǀuu - en danger critique
+- Ethnie 3 : ǀXam - éteint
+- Ethnie 4 : Autres groupes Tuu
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples Tuu sont parmi les peuples les plus anciens d'Afrique, originaires du désert du Kalahari. Leur présence dans la région remonte à des dizaines de milliers d'années.
+- Routes migratoires : 
+  - Migrations limitées dans le désert du Kalahari
+  - Déplacements saisonniers liés à la chasse et à la cueillette
+  - Déplacements forcés vers les réserves
+  - Extermination de certains groupes (ǀXam)
+- Unifications / divisions : Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Diversité linguistique et culturelle importante. Certains groupes éteints.
+- Influences externes : Contacts limités avec les peuples bantous. Influence croissante de la modernisation et de la sédentarisation forcée. Extermination par les colons européens pour certains groupes.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.
+- Organisation clanique : Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.
+- Rôle des lignages : Lignages bilatéraux. Importance des liens de parenté et de réciprocité.
+- Autorité religieuse : Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues Tuu (Taa/ǃXóõ, Nǀuu, ǀXam éteinte)
+- Codes ISO : nmn (Taa), ngh (Nǀuu), xam (ǀXam, éteinte)
+- Dialectes : 
+  - Variétés Taa (ǃXóõ)
+  - Variétés Nǀuu
+  - Variétés ǀXam (éteintes)
+  - Nombreuses variantes régionales
+- Rôle véhiculaire : Les langues Tuu sont parlées par les peuples Tuu survivants. L'afrikaans, l'anglais et le tswana sont également utilisés. La langue ǀXam est éteinte.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de guérison (trance dances)
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Cérémonies de chasse
+  - Rituels de partage
+- Symboles : Art rupestre, symboles de chasse, motifs de réciprocité.
+- Arts et musique : 
+  - Art rupestre (peintures et gravures, patrimoine mondial pour ǀXam)
+  - Musique traditionnelle (instruments à cordes, chants)
+  - Danse de transe
+  - Contes et récits oraux (documentés pour ǀXam par Bleek et Lloyd)
+- Spiritualités : Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.
+- Relations avec peuples voisins : 
+  - Relations entre groupes Tuu
+  - Interactions avec les Bantous
+  - Relations avec les Khoekhoe
+  - Contacts avec les colons européens (conduisant à l'extermination pour certains groupes)
+- Conflits / alliances : 
+  - Marginalisation et déplacements forcés
+  - Extermination de certains groupes (ǀXam) par les colons européens
+  - Résistance à la sédentarisation
+  - Conflits liés à l'accès aux terres et aux ressources
+  - Alliances avec organisations de défense des droits des peuples autochtones
+- Diaspora : Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises, sud-africaines et namibiennes. Peuple ǀXam éteint.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 000 - 3 500
+- Répartition par pays : 
+  - Botswana : 1 500 - 2 000 (ǃXóõ)
+  - Afrique du Sud : 50 - 200 (Nǀuu, en danger critique)
+  - Namibie : 500 - 1 000 (ǃXóõ)
+  - ǀXam : 0 (éteint)
+  - Diaspora : 100+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Tuu languages
+- Traill, Anthony – *Phonetic and Phonological Studies of ǃXóõ Bushman*
+- Güldemann, Tom – *Studies in Tuu (Southern Khoisan) Linguistics*
+- Bleek, Wilhelm H.I. & Lloyd, Lucy – *Specimens of Bushman Folklore*
+- UNESCO – Atlas des langues en danger
+- IWGIA – Indigenous Peoples in Africa
+

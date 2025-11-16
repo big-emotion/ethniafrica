@@ -1,0 +1,84 @@
+# Nom du peuple
+- Nom principal du peuple : Konso
+- Auto-appellation : Konso
+- Exonymes / appellations historiques : Konso (terme utilisé par les Européens)
+- Famille linguistique principale : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Groupe ethno-linguistique : Couchitiques orientaux (Highland East Cushitic)
+- Région historique : Sud de l'Éthiopie (région des nations, nationalités et peuples du Sud)
+- Pays actuels : Éthiopie
+- Identifiant peuple (ID) : PPL_KONSO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Konso du Nord
+- Ethnie 2 : Konso du Sud
+- Ethnie 3 : Konso de l'Est
+- Ethnie 4 : Konso de l'Ouest
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Konso sont originaires du sud de l'Éthiopie, dans la région actuelle de la zone de Konso. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les hauts plateaux vers les zones actuelles
+  - Expansion le long des terrasses agricoles
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Système de villages fortifiés.
+- Influences externes : Contacts avec les peuples couchitiques voisins (Oromo, Burji), influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en villages fortifiés (paleta) dirigés par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances. Système de classes d'âge (hela).
+- Autorité religieuse : Autorité des prêtres traditionnels (poqalla) et des chefs religieux. Croyances traditionnelles importantes.
+
+# 4. Langues et sous-familles
+- Langue principale : Konso
+- Codes ISO : kxc (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre villages
+- Rôle véhiculaire : Le konso est parlé par la majorité des Konso. L'oromo et l'amharique sont utilisés dans l'éducation et l'administration. L'anglais est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+  - Rituels liés à l'agriculture en terrasses
+- Symboles : Statues funéraires (waka), terrasses agricoles, villages fortifiés.
+- Arts et musique : 
+  - Sculpture sur bois (statues funéraires waka)
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Rôle important des prêtres traditionnels (poqalla). Influence croissante du christianisme et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en villages fortifiés (paleta) plutôt qu'en royaumes centralisés. Système de chefferies traditionnelles.
+- Relations avec peuples voisins : 
+  - Relations avec les Oromo
+  - Interactions avec les Burji
+  - Relations avec les peuples du sud de l'Éthiopie
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à l'expansion oromo
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora konso dans les grandes villes éthiopiennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 250 000 - 300 000
+- Répartition par pays : 
+  - Éthiopie : 250 000 - 300 000 (région des nations, nationalités et peuples du Sud)
+  - Diaspora : 10 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements éthiopiens, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Konso language (kxc)
+- CIA World Factbook – Ethiopia
+- Hallpike, C.R. – *The Konso of Ethiopia: A Study of the Values of a Cushitic People*
+- Recensements éthiopiens
+- UNESCO – Konso Cultural Landscape (patrimoine mondial)
+

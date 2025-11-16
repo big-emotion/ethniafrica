@@ -1,0 +1,89 @@
+# Nom du peuple
+- Nom principal du peuple : Idoma
+- Auto-appellation : Idoma
+- Exonymes / appellations historiques : Idoma (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
+- Groupe ethno-linguistique : Idomoid (sous-groupe du Bénoué-Congo)
+- Région historique : Centre du Nigeria (État de Benue)
+- Pays actuels : Nigeria
+- Identifiant peuple (ID) : PPL_IDOMA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Idoma central
+- Ethnie 2 : Idoma du Nord
+- Ethnie 3 : Idoma du Sud
+- Ethnie 4 : Idoma de l'Est
+- Ethnie 5 : Idoma de l'Ouest
+- Ethnie 6 : Agatu
+- Ethnie 7 : Otukpo
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Idoma sont originaires de la région du centre du Nigeria, dans l'actuel État de Benue. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long de la rivière Benue
+  - Déplacements vers les zones urbaines (Makurdi, Abuja, Lagos)
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Tiv et les Igala.
+- Influences externes : Contacts avec les peuples voisins (Tiv, Igala, Igbo), influence du christianisme, et plus récemment de l'islam et de la modernisation.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies dirigées par des chefs traditionnels (och'Idoma). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité, les droits fonciers et les alliances matrimoniales.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Idoma
+- Codes ISO : idu (ISO 639-3)
+- Dialectes : 
+  - Idoma central
+  - Idoma du Nord
+  - Idoma du Sud
+  - Agatu
+  - Otukpo
+- Rôle véhiculaire : L'idoma est parlé par la majorité des Idoma. L'anglais est utilisé dans l'éducation et l'administration. Le pidgin english nigérian est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels (Igede Festival, New Yam Festival)
+  - Cérémonies de réconciliation
+- Symboles : Masques traditionnels, symboles culturels idoma, art idoma.
+- Arts et musique : 
+  - Sculpture sur bois (masques, statues)
+  - Musique traditionnelle (tambours, flûtes)
+  - Danse traditionnelle
+  - Artisanat (tissage, poterie)
+  - Littérature orale
+- Spiritualités : Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Influence croissante du christianisme (catholicisme et protestantisme) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies indépendantes. Système de chefferie traditionnel avec l'Och'Idoma comme chef suprême.
+- Relations avec peuples voisins : 
+  - Relations avec les Tiv
+  - Interactions avec les Igala
+  - Relations avec les Igbo
+  - Contacts commerciaux avec les peuples de l'intérieur
+- Conflits / alliances : 
+  - Résistance à la colonisation britannique
+  - Conflits territoriaux avec groupes voisins
+  - Alliances commerciales et politiques
+  - Participation aux mouvements d'indépendance
+- Diaspora : Diaspora idoma dans les grandes villes nigérianes (Lagos, Abuja, Makurdi) et dans les pays occidentaux (États-Unis, Royaume-Uni).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 500 000 - 2 000 000
+- Répartition par pays : 
+  - Nigeria : 1 500 000 - 2 000 000 (majorité dans l'État de Benue)
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements nigérians, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Idoma language (idu)
+- CIA World Factbook – Nigeria
+- Armstrong, Robert G. – *The Idoma-Speaking Peoples*
+- Recensements nigérians
+- Études anthropologiques sur les peuples du centre du Nigeria
+

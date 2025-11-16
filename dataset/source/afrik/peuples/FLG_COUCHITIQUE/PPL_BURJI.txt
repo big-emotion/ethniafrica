@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Burji
+- Auto-appellation : Burji
+- Exonymes / appellations historiques : Burji (terme utilisé par les Européens)
+- Famille linguistique principale : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Groupe ethno-linguistique : Couchitiques orientaux (Highland East Cushitic)
+- Région historique : Sud de l'Éthiopie (région Oromia, zone de Burji)
+- Pays actuels : Éthiopie, Kenya
+- Identifiant peuple (ID) : PPL_BURJI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Burji d'Éthiopie
+- Ethnie 2 : Burji du Kenya
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Burji sont originaires du sud de l'Éthiopie, dans la région actuelle de la zone de Burji. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les hauts plateaux vers les zones actuelles
+  - Expansion vers le Kenya (région de Marsabit)
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples couchitiques voisins (Oromo, Konso), influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et de l'islam.
+
+# 4. Langues et sous-familles
+- Langue principale : Burji
+- Codes ISO : bji (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes éthiopiennes et kenyanes
+- Rôle véhiculaire : Le burji est parlé par la majorité des Burji. L'oromo, l'amharique, le swahili et l'anglais sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels burji, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes et kenyanes.
+- Relations avec peuples voisins : 
+  - Relations avec les Oromo
+  - Interactions avec les Konso
+  - Relations avec les peuples du Kenya
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à l'expansion oromo
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora burji dans les grandes villes éthiopiennes et kenyanes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 100 000 - 150 000
+- Répartition par pays : 
+  - Éthiopie : 70 000 - 100 000
+  - Kenya : 30 000 - 50 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements éthiopiens et kenyans, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Burji language (bji)
+- CIA World Factbook – Ethiopia, Kenya
+- Recensements éthiopiens et kenyans
+- Études anthropologiques sur les peuples couchitiques du sud de l'Éthiopie
+

@@ -1,0 +1,89 @@
+# Nom du peuple
+- Nom principal du peuple : Peuples Kx'a (macro-groupe)
+- Auto-appellation : Variées selon les groupes (Ju|'hoansi, ǂHoan, etc.)
+- Exonymes / appellations historiques : 
+  - « Bushmen » (terme colonial péjoratif, à éviter)
+  - « San » (terme générique, parfois utilisé)
+  - « Kx'a » (terme linguistique moderne)
+- Famille linguistique principale : Khoïsan – Kx'a (FLG_KXA)
+- Groupe ethno-linguistique : Kx'a (macro-groupe)
+- Région historique : Désert du Kalahari (Namibie, Botswana, Angola)
+- Pays actuels : Namibie, Botswana, Angola
+- Identifiant peuple (ID) : PPL_KXA_MACRO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ju|'hoansi
+- Ethnie 2 : ǂHoan
+- Ethnie 3 : !Kung (diverses variétés)
+- Ethnie 4 : Bugakwe
+- Ethnie 5 : Autres groupes Juu
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples Kx'a sont parmi les peuples les plus anciens d'Afrique, originaires du désert du Kalahari. Leur présence dans la région remonte à des dizaines de milliers d'années.
+- Routes migratoires : 
+  - Migrations limitées dans le désert du Kalahari
+  - Déplacements saisonniers liés à la chasse et à la cueillette
+  - Déplacements forcés vers les réserves et les zones urbaines
+- Unifications / divisions : Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Diversité linguistique et culturelle importante.
+- Influences externes : Contacts limités avec les peuples bantous et khoekhoe. Influence croissante de la modernisation et de la sédentarisation forcée.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.
+- Organisation clanique : Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.
+- Rôle des lignages : Lignages bilatéraux. Importance des liens de parenté et de réciprocité.
+- Autorité religieuse : Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues Kx'a (Ju|'hoan, ǂHoan, !Kung, etc.)
+- Codes ISO : ktz (Ju|'hoan), huc (ǂHoan), vaj (!Kung Nord), knw (!Kung Sud), et autres
+- Dialectes : 
+  - Variétés Juu (Ju|'hoan, !Kung, etc.)
+  - Variété ǂHoan
+  - Nombreuses variantes régionales
+- Rôle véhiculaire : Les langues Kx'a sont parlées par les peuples Kx'a. L'afrikaans, l'anglais, le portugais, le tswana et d'autres langues sont également utilisés selon les régions.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de guérison (trance dances)
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Cérémonies de chasse
+  - Rituels de partage
+- Symboles : Art rupestre, symboles de chasse, motifs de réciprocité.
+- Arts et musique : 
+  - Art rupestre (peintures et gravures)
+  - Musique traditionnelle (instruments à cordes, chants)
+  - Danse de transe
+  - Contes et récits oraux
+- Spiritualités : Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.
+- Relations avec peuples voisins : 
+  - Relations entre groupes Kx'a
+  - Interactions avec les Bantous (Herero, Tswana, Ovambo)
+  - Relations avec les Khoekhoe
+  - Contacts commerciaux limités
+- Conflits / alliances : 
+  - Marginalisation et déplacements forcés sous la colonisation
+  - Résistance à la sédentarisation
+  - Conflits liés à l'accès aux terres et aux ressources
+  - Alliances avec organisations de défense des droits des peuples autochtones
+- Diaspora : Déplacements forcés vers les réserves, les zones urbaines et les camps de réfugiés. Communautés dispersées dans les villes namibiennes, botswanaises et angolaises.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 25 000 - 35 000
+- Répartition par pays : 
+  - Namibie : 12 000 - 18 000
+  - Botswana : 10 000 - 15 000
+  - Angola : 3 000 - 5 000
+  - Diaspora : 2 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kx'a languages
+- Lee, Richard B. – *The !Kung San: Men, Women, and Work in a Foraging Society*
+- Marshall, Lorna – *The !Kung of Nyae Nyae*
+- UNESCO – Atlas des langues en danger
+- IWGIA – Indigenous Peoples in Africa
+

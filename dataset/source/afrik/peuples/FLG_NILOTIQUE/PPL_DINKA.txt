@@ -1,0 +1,96 @@
+# Nom du peuple
+- Nom principal du peuple : Dinka
+- Auto-appellation : Jieng (singulier) / Muonyjang (pluriel)
+- Exonymes / appellations historiques : Dinka (terme utilisé par les Arabes et les colonisateurs), Denka (variante)
+- Famille linguistique principale : Nilo-saharienne – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotiques centraux
+- Région historique : Sud-Soudan (région du Nil Blanc, marais du Sudd)
+- Pays actuels : Soudan du Sud, Soudan (régions frontalières)
+- Identifiant peuple (ID) : PPL_DINKA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Dinka Rek (Rek Dinka)
+- Ethnie 2 : Dinka Ngok (Ngok Dinka)
+- Ethnie 3 : Dinka Padang (Padang Dinka)
+- Ethnie 4 : Dinka Bor (Bor Dinka)
+- Ethnie 5 : Dinka Agar (Agar Dinka)
+- Ethnie 6 : Dinka Ciec (Ciec Dinka)
+- Ethnie 7 : Dinka Twic (Twic Dinka)
+- Ethnie 8 : Dinka Malual (Malual Dinka)
+- Ethnie 9 : Dinka Luac (Luac Dinka)
+- Ethnie 10 : Dinka Gok (Gok Dinka)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Dinka sont originaires de la région du Sudd (marais du Nil Blanc) dans l'actuel Soudan du Sud. Leur présence dans cette région remonte à plusieurs millénaires.
+- Routes migratoires : Migrations depuis les zones marécageuses du Sudd vers les terres plus élevées et fertiles le long du Nil Blanc et de ses affluents. Expansion vers le sud et l'est du Soudan du Sud.
+- Unifications / divisions : Organisation en groupes territoriaux (cieng) et sous-groupes dialectaux. Les différents groupes Dinka partagent une identité culturelle commune mais maintiennent des distinctions régionales.
+- Influences externes : Contacts historiques avec les peuples nilotiques voisins (Nuer, Shilluk), les Arabes du Nord-Soudan, et plus récemment avec les colonisateurs britanniques et égyptiens.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies (bany de bith) dirigées par des chefs spirituels et politiques (bany de bith). Système de conseils d'anciens (jok) pour la résolution des conflits.
+- Organisation clanique : Structure clanique patrilinéaire. Les clans (thok) sont organisés en lignages (cieng) qui déterminent l'identité et les droits fonciers.
+- Rôle des lignages : Les lignages sont fondamentaux pour l'organisation sociale, la propriété du bétail, et les alliances matrimoniales. Transmission patrilinéaire des biens et du statut.
+- Autorité religieuse : Les chefs spirituels (bany de bith) jouent un rôle central dans les rituels, la médiation avec les esprits (jok), et la résolution des conflits. Le bétail a une dimension sacrée.
+
+# 4. Langues et sous-familles
+- Langue principale : Dinka (Thong Muonyjang)
+- Codes ISO : din (ISO 639-3)
+- Dialectes : 
+  - Rek (dialecte standard)
+  - Ngok
+  - Padang
+  - Bor
+  - Agar
+  - Ciec
+  - Twic
+  - Malual
+  - Luac
+  - Gok
+- Rôle véhiculaire : Le dinka est la langue maternelle des Dinka et est largement utilisé dans les régions du Soudan du Sud où ils sont majoritaires. L'anglais et l'arabe sont également utilisés comme langues officielles.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Rites d'initiation des jeunes hommes (gar) marquant le passage à l'âge adulte
+  - Cérémonies de mariage impliquant le paiement de dots en bétail
+  - Rituels funéraires et commémoration des ancêtres
+  - Cérémonies de réconciliation (cieng) pour résoudre les conflits
+- Symboles : Le bétail (bovins) est le symbole central de la richesse, du statut social et de l'identité culturelle. Les marques de bétail (gär) identifient les propriétaires et les clans.
+- Arts et musique : 
+  - Musique traditionnelle avec tambours, flûtes et chants
+  - Danses rituelles lors des cérémonies
+  - Poésie orale et récits épiques
+  - Artisanat lié au bétail (colliers, bracelets)
+- Spiritualités : Croyances traditionnelles centrées sur le culte des esprits (jok) et des ancêtres. Le bétail joue un rôle central dans les pratiques religieuses. Influence croissante du christianisme (catholicisme, anglicanisme) depuis le XXe siècle.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies territoriales plutôt qu'en royaumes centralisés. Les différents groupes Dinka ont maintenu une autonomie relative tout en partageant une identité culturelle commune.
+- Relations avec peuples voisins : 
+  - Relations complexes avec les Nuer (alliances et conflits)
+  - Contacts commerciaux avec les Shilluk
+  - Conflits historiques avec les Arabes du Nord-Soudan
+  - Relations avec d'autres peuples nilotiques (Atuot, Jur)
+- Conflits / alliances : 
+  - Conflits récurrents avec les Nuer pour le contrôle des pâturages et du bétail
+  - Résistance à la domination arabe et turco-égyptienne au XIXe siècle
+  - Participation active aux guerres civiles soudanaises (1955-1972, 1983-2005)
+  - Rôle majeur dans la lutte pour l'indépendance du Soudan du Sud (2011)
+- Diaspora : Diaspora importante dans les pays voisins (Ouganda, Kenya, Éthiopie) due aux conflits et déplacements. Communautés Dinka dans les pays occidentaux (États-Unis, Canada, Australie) suite aux migrations de réfugiés.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 4 500 000 - 5 000 000
+- Répartition par pays : 
+  - Soudan du Sud : 4 200 000 - 4 700 000 (majorité de la population)
+  - Soudan : 200 000 - 300 000 (régions frontalières)
+  - Diaspora : 100 000+ (Ouganda, Kenya, Éthiopie, pays occidentaux)
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, UNFPA, recensements soudanais, et études démographiques régionales
+
+# 8. Sources
+- Lienhardt, Godfrey – *Divinity and Experience: The Religion of the Dinka*
+- Deng, Francis Mading – *The Dinka of the Sudan*
+- SIL Ethnologue – Dinka language (din)
+- CIA World Factbook – South Sudan demographics
+- UNFPA – South Sudan population data
+- Hutchinson, Sharon – *Nuer Dilemmas: Coping with Money, War, and the State*
+- Johnson, Douglas H. – *The Root Causes of Sudan's Civil Wars*
+

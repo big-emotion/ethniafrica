@@ -1,0 +1,110 @@
+# Nom du peuple
+- Nom principal du peuple : Arabes d'Afrique
+- Auto-appellation : Al-'Arab (العرب)
+- Exonymes / appellations historiques : Arabes, Arabophones, Maures (terme historique pour certains groupes sahariens)
+- Famille linguistique principale : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Groupe ethno-linguistique : Sémitiques occidentaux
+- Région historique : Péninsule arabique (origines), Afrique du Nord, Corne de l'Afrique, Sahel
+- Pays actuels : Maroc, Algérie, Tunisie, Libye, Égypte, Soudan, Mauritanie, Tchad, Djibouti, Somalie, Comores, et communautés dans toute l'Afrique
+- Identifiant peuple (ID) : PPL_ARABES_AFRIQUE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Arabes du Maghreb (Maroc, Algérie, Tunisie, Libye)
+- Ethnie 2 : Arabes d'Égypte
+- Ethnie 3 : Arabes du Soudan
+- Ethnie 4 : Arabes de Mauritanie
+- Ethnie 5 : Arabes du Tchad
+- Ethnie 6 : Arabes de Djibouti
+- Ethnie 7 : Arabes de Somalie
+- Ethnie 8 : Arabes des Comores
+- Ethnie 9 : Bédouins sahariens
+- Ethnie 10 : Communautés arabes diasporiques
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Arabes sont originaires de la péninsule arabique. La présence arabe en Afrique remonte aux migrations pré-islamiques et s'est intensifiée avec l'expansion de l'islam à partir du VIIe siècle.
+- Routes migratoires : 
+  - Expansion vers l'Afrique du Nord (Maghreb) à partir du VIIe siècle
+  - Migration vers la vallée du Nil (Égypte, Soudan)
+  - Expansion vers la Corne de l'Afrique (Somalie, Djibouti)
+  - Traversée du Sahara vers le Sahel
+  - Navigation vers les îles de l'océan Indien (Comores)
+- Unifications / divisions : Diversification en groupes régionaux distincts tout en maintenant une identité culturelle et linguistique commune. Métissages avec les populations berbères, africaines et autres groupes locaux.
+- Influences externes : Influence profonde de l'islam, de la culture arabe classique, et des échanges commerciaux transsahariens et transocéaniques.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation tribale traditionnelle avec cheikhs et conseils tribaux. Systèmes étatiques modernes dans les pays arabes d'Afrique.
+- Organisation clanique : Structure tribale (qabila) et clanique (ashira) importante, particulièrement chez les Bédouins et les groupes sahariens.
+- Rôle des lignages : Lignages patrilinéaires (nasab) déterminant l'identité, les alliances et les droits. Importance de la généalogie.
+- Autorité religieuse : Autorité des oulémas (savants religieux) et des imams. L'islam sunnite (majoritairement malékite au Maghreb, chaféite en Égypte et Corne de l'Afrique) structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Arabe (dialectes variés)
+- Codes ISO : ara (arabe standard), ary (arabe marocain), arq (arabe algérien), aeb (arabe tunisien), ayl (arabe libyen), arz (arabe égyptien), apd (arabe soudanais)
+- Dialectes : 
+  - Arabe maghrébin (darija) : marocain, algérien, tunisien, libyen
+  - Arabe égyptien
+  - Arabe soudanais
+  - Arabe tchadien
+  - Arabe hassaniya (Mauritanie, Sahara occidental)
+  - Arabe comorien (shikomori avec influences bantoues)
+- Rôle véhiculaire : L'arabe est langue officielle dans tous les pays arabes d'Afrique. L'arabe standard moderne est utilisé dans l'éducation, les médias et l'administration. Les dialectes sont utilisés dans la vie quotidienne.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd al-Fitr, Aïd al-Adha)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Calligraphie arabe, architecture islamique, étoile et croissant, motifs géométriques et arabesques.
+- Arts et musique : 
+  - Musique arabe classique et populaire (chaâbi, raï, malouf)
+  - Poésie arabe classique et moderne
+  - Calligraphie et arts décoratifs islamiques
+  - Danse traditionnelle (belly dance en Égypte, danses bédouines)
+- Spiritualités : Islam sunnite majoritaire (écoles malékite, chaféite, hanafite). Minorités chiites et ibadites. Soufisme important dans certaines régions. Préservation de certaines traditions pré-islamiques dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Califat omeyyade et abbasside (expansion en Afrique)
+  - Dynasties maghrébines (Almoravides, Almohades, Hafsides, Mérinides)
+  - Sultanat mamelouk d'Égypte
+  - Royaumes arabes du Soudan (Sennar, Darfour)
+- Relations avec peuples voisins : 
+  - Métissages avec Berbères au Maghreb
+  - Relations commerciales et culturelles avec peuples subsahariens
+  - Interactions avec peuples de la Corne de l'Afrique
+  - Échanges avec communautés swahilies
+- Conflits / alliances : 
+  - Conquêtes et résistances lors de l'expansion islamique
+  - Alliances tribales dans le Sahara et le Sahel
+  - Conflits coloniaux (résistance à la colonisation française, italienne, britannique)
+  - Guerres d'indépendance au Maghreb
+- Diaspora : Importante diaspora arabe en Europe, Amériques, et autres régions d'Afrique. Communautés arabes établies dans les grandes villes africaines.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 180 000 000 - 200 000 000
+- Répartition par pays : 
+  - Égypte : 105 000 000 (majorité arabe)
+  - Algérie : 45 000 000
+  - Maroc : 37 000 000
+  - Soudan : 15 000 000 - 20 000 000 (estimations variables)
+  - Tunisie : 12 000 000
+  - Libye : 7 000 000
+  - Mauritanie : 4 000 000
+  - Tchad : 1 500 000 - 2 000 000
+  - Djibouti : 500 000 - 600 000
+  - Somalie : 500 000 - 1 000 000
+  - Comores : 300 000 - 400 000
+  - Autres pays : 1 000 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, ONU, recensements nationaux, et études démographiques régionales
+
+# 8. Sources
+- CIA World Factbook – Country profiles (Égypte, Algérie, Maroc, etc.)
+- ONU – Population data 2025
+- Hourani, Albert – *A History of the Arab Peoples*
+- Lapidus, Ira M. – *A History of Islamic Societies*
+- SIL Ethnologue – Arabic language varieties
+- UNESCO – Atlas of the World's Languages in Danger
+- Recensements nationaux des pays arabes d'Afrique
+

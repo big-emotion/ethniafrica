@@ -1,0 +1,95 @@
+# Nom du peuple
+- Nom principal du peuple : Habesha
+- Auto-appellation : Habesha (አበሻ) / Habeshat
+- Exonymes / appellations historiques : Abyssin (terme historique européen), Éthiopiens (terme géographique moderne)
+- Famille linguistique principale : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Groupe ethno-linguistique : Sémitiques méridionaux (éthiosémitiques)
+- Région historique : Hauts plateaux éthiopiens et érythréens
+- Pays actuels : Éthiopie, Érythrée, diaspora
+- Identifiant peuple (ID) : PPL_HABESHA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Amhara
+- Ethnie 2 : Tigréens (Tigray)
+- Ethnie 3 : Tigré (Érythrée)
+- Ethnie 4 : Guragé
+- Ethnie 5 : Argobba
+- Ethnie 6 : Harari
+- Ethnie 7 : Gafat (éteint)
+- Ethnie 8 : Geez (éteint, langue liturgique)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Habesha sont originaires des hauts plateaux d'Éthiopie et d'Érythrée. Leur présence dans la région remonte à l'Antiquité, avec des liens avec l'Arabie du Sud (Saba/Himyar).
+- Routes migratoires : 
+  - Migrations depuis l'Arabie du Sud vers la Corne de l'Afrique (hypothèse sabéenne)
+  - Expansion depuis les hauts plateaux vers les régions environnantes
+  - Déplacements liés aux conquêtes et aux migrations internes
+- Unifications / divisions : Formation de l'empire éthiopien unifiant différents groupes habesha. Divisions historiques entre Tigréens et Amhara. Séparation Éthiopie/Érythrée en 1993.
+- Influences externes : Influences sabéennes, grecques, coptes, et plus tard arabes. Christianisme orthodoxe éthiopien comme élément unificateur.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Système impérial éthiopien avec empereur (Negus Negast). Organisation féodale traditionnelle avec noblesse (mekwanint) et paysannerie.
+- Organisation clanique : Structure clanique et lignagère importante, particulièrement chez les Tigréens et les Amhara. Organisation en familles étendues.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et le statut social. Importance de la généalogie et des origines nobles.
+- Autorité religieuse : Autorité de l'Église orthodoxe éthiopienne (Tewahedo). Rôle central des prêtres et des monastères dans la vie sociale et culturelle.
+
+# 4. Langues et sous-familles
+- Langue principale : Amharique, Tigrinya, Guragé, Harari
+- Codes ISO : amh (amharique), tir (tigrinya), gru (guragé), har (harari), gez (guèze, éteint)
+- Dialectes : 
+  - Amharique : dialectes régionaux (Gondar, Gojjam, Shoa, Wollo)
+  - Tigrinya : dialectes éthiopiens et érythréens
+  - Guragé : plusieurs variétés (Soddo, Chaha, etc.)
+- Rôle véhiculaire : L'amharique est la langue officielle de l'Éthiopie et langue véhiculaire majeure. Le tigrinya est langue officielle en Érythrée. Le guèze est utilisé comme langue liturgique.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses orthodoxes éthiopiennes (Timkat, Meskel, Gena)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (baptême, circoncision)
+  - Fêtes religieuses suivant le calendrier éthiopien
+- Symboles : Croix éthiopienne, Lion de Juda, drapeau tricolore éthiopien, architecture des églises rupestres de Lalibela.
+- Arts et musique : 
+  - Musique traditionnelle éthiopienne (zema, chant liturgique)
+  - Danse traditionnelle (eskista)
+  - Peinture religieuse (icônes éthiopiennes)
+  - Architecture religieuse (églises rupestres, monastères)
+  - Littérature en guèze et amharique
+- Spiritualités : Christianisme orthodoxe éthiopien (Tewahedo) majoritaire. Minorités musulmanes et juives (Beta Israel). Rôle central de la religion dans la culture habesha.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume d'Aksoum (Ier-VIIe siècles)
+  - Empire éthiopien médiéval (Zagwe, Salomonides)
+  - Empire éthiopien moderne (jusqu'en 1974)
+  - Royaume du Tigray
+- Relations avec peuples voisins : 
+  - Relations avec peuples couchitiques (Oromo, Somali, Afar)
+  - Interactions avec peuples nilotiques
+  - Relations commerciales avec l'Arabie, l'Inde, l'Égypte
+  - Contacts avec puissances européennes
+- Conflits / alliances : 
+  - Résistance à l'expansion islamique
+  - Guerres contre les sultanats musulmans
+  - Résistance à la colonisation italienne
+  - Conflit Éthiopie-Érythrée
+  - Guerre civile éthiopienne
+- Diaspora : Importante diaspora habesha aux États-Unis, Canada, Europe, et autres pays. Communautés établies dans les grandes villes mondiales.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 35 000 000 - 40 000 000
+- Répartition par pays : 
+  - Éthiopie : 30 000 000 - 35 000 000 (Amhara, Tigréens, Guragé, Harari)
+  - Érythrée : 4 000 000 - 5 000 000 (Tigréens, Tigré)
+  - Diaspora : 1 000 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements éthiopiens et érythréens, et études démographiques
+
+# 8. Sources
+- Pankhurst, Richard – *The Ethiopians: A History*
+- Levine, Donald N. – *Greater Ethiopia: The Evolution of a Multiethnic Society*
+- SIL Ethnologue – Amharic, Tigrinya languages
+- CIA World Factbook – Ethiopia, Eritrea
+- Marcus, Harold G. – *A History of Ethiopia*
+- Ullendorff, Edward – *The Ethiopians: An Introduction to Country and People*
+

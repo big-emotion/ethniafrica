@@ -1,0 +1,80 @@
+# Nom du peuple
+- Nom principal du peuple : Libido (Marako)
+- Auto-appellation : Libido / Marako
+- Exonymes / appellations historiques : Libido, Marako (termes utilisés par les Européens)
+- Famille linguistique principale : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Groupe ethno-linguistique : Couchitiques orientaux (Highland East Cushitic)
+- Région historique : Sud de l'Éthiopie (région Oromia)
+- Pays actuels : Éthiopie
+- Identifiant peuple (ID) : PPL_LIBIDO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Libido du Nord
+- Ethnie 2 : Libido du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Libido sont originaires du sud de l'Éthiopie, dans la région actuelle de l'Oromia. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les hauts plateaux vers les zones actuelles
+  - Expansion le long des régions montagneuses
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples couchitiques voisins (Oromo, Sidamo), influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et de l'islam.
+
+# 4. Langues et sous-familles
+- Langue principale : Libido (Marako)
+- Codes ISO : liq (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes locales
+- Rôle véhiculaire : Le libido est parlé par la majorité des Libido. L'oromo et l'amharique sont utilisés dans l'éducation et l'administration. L'anglais est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels libido, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes.
+- Relations avec peuples voisins : 
+  - Relations avec les Oromo
+  - Interactions avec les Sidamo
+  - Relations avec les peuples du sud de l'Éthiopie
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à l'expansion oromo
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora libido dans les grandes villes éthiopiennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 50 000 - 80 000
+- Répartition par pays : 
+  - Éthiopie : 50 000 - 80 000 (région Oromia)
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Libido language (liq)
+- CIA World Factbook – Ethiopia
+- Recensements éthiopiens
+- Études anthropologiques sur les peuples couchitiques du sud de l'Éthiopie
+

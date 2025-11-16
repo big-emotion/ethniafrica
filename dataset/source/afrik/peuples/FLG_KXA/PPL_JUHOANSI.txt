@@ -1,0 +1,86 @@
+# Nom du peuple
+- Nom principal du peuple : Ju|'hoansi
+- Auto-appellation : Ju|'hoansi
+- Exonymes / appellations historiques : 
+  - « Bushmen » (terme colonial péjoratif, à éviter)
+  - « San » (terme générique, parfois utilisé)
+  - « !Kung » (ancienne appellation, moins précise)
+- Famille linguistique principale : Khoïsan – Kx'a (FLG_KXA)
+- Groupe ethno-linguistique : Kx'a (Juu)
+- Région historique : Désert du Kalahari (nord-est de la Namibie, nord-ouest du Botswana)
+- Pays actuels : Namibie, Botswana
+- Identifiant peuple (ID) : PPL_JUHOANSI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ju|'hoansi du Nord (Namibie)
+- Ethnie 2 : Ju|'hoansi du Sud (Botswana)
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Ju|'hoansi sont l'un des peuples les plus anciens d'Afrique, originaires du désert du Kalahari. Leur présence dans la région remonte à des dizaines de milliers d'années.
+- Routes migratoires : 
+  - Migrations limitées dans le désert du Kalahari
+  - Déplacements saisonniers liés à la chasse et à la cueillette
+  - Déplacements forcés vers les réserves et les zones urbaines
+- Unifications / divisions : Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage.
+- Influences externes : Contacts limités avec les peuples bantous et khoekhoe. Influence croissante de la modernisation et de la sédentarisation forcée.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.
+- Organisation clanique : Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.
+- Rôle des lignages : Lignages bilatéraux. Importance des liens de parenté et de réciprocité (hxaro).
+- Autorité religieuse : Autorité des guérisseurs traditionnels (n/om kxao). Croyances animistes centrées sur les esprits et les forces naturelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Ju|'hoan
+- Codes ISO : ktz (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le ju|'hoan est parlé par la majorité des Ju|'hoansi. L'afrikaans, l'anglais, le tswana et le herero sont également utilisés selon les régions.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de guérison (trance dances)
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Cérémonies de chasse
+  - Rituels de partage (hxaro)
+- Symboles : Art rupestre, symboles de chasse, motifs de réciprocité.
+- Arts et musique : 
+  - Art rupestre (peintures et gravures)
+  - Musique traditionnelle (instruments à cordes, chants)
+  - Danse de transe
+  - Contes et récits oraux
+- Spiritualités : Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs (n/om kxao) et des cérémonies de transe. Influence croissante du christianisme.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.
+- Relations avec peuples voisins : 
+  - Relations avec autres groupes San
+  - Interactions avec les Bantous (Herero, Tswana)
+  - Relations avec les Khoekhoe
+  - Contacts commerciaux limités
+- Conflits / alliances : 
+  - Marginalisation et déplacements forcés sous la colonisation
+  - Résistance à la sédentarisation
+  - Conflits liés à l'accès aux terres et aux ressources
+  - Alliances avec organisations de défense des droits des peuples autochtones
+- Diaspora : Déplacements forcés vers les réserves, les zones urbaines et les camps de réfugiés. Communautés dispersées dans les villes namibiennes et botswanaises.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 15 000 - 20 000
+- Répartition par pays : 
+  - Namibie : 8 000 - 12 000
+  - Botswana : 7 000 - 8 000
+  - Diaspora : 1 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements namibiens et botswanais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Ju|'hoan language (ktz)
+- Lee, Richard B. – *The !Kung San: Men, Women, and Work in a Foraging Society*
+- Marshall, Lorna – *The !Kung of Nyae Nyae*
+- Katz, Richard – *Boiling Energy: Community Healing Among the Kalahari Kung*
+- UNESCO – Atlas des langues en danger
+- IWGIA – Indigenous Peoples in Africa
+

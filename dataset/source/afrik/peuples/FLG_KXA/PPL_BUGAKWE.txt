@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Bugakwe
+- Auto-appellation : Bugakwe
+- Exonymes / appellations historiques : 
+  - « Bushmen » (terme colonial péjoratif, à éviter)
+  - « San » (terme générique, parfois utilisé)
+- Famille linguistique principale : Khoïsan – Kx'a (FLG_KXA)
+- Groupe ethno-linguistique : Kx'a (Juu)
+- Région historique : Désert du Kalahari (Botswana)
+- Pays actuels : Botswana
+- Identifiant peuple (ID) : PPL_BUGAKWE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bugakwe du Nord
+- Ethnie 2 : Bugakwe du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Bugakwe sont un peuple ancien du désert du Kalahari au Botswana. Leur présence dans la région remonte à plusieurs millénaires.
+- Routes migratoires : 
+  - Migrations limitées dans le désert du Kalahari
+  - Déplacements saisonniers liés à la chasse et à la cueillette
+  - Déplacements forcés vers les réserves
+- Unifications / divisions : Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage.
+- Influences externes : Contacts limités avec les peuples bantous (Tswana). Influence croissante de la modernisation et de la sédentarisation forcée.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.
+- Organisation clanique : Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.
+- Rôle des lignages : Lignages bilatéraux. Importance des liens de parenté et de réciprocité.
+- Autorité religieuse : Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Bugakwe (variété Juu)
+- Codes ISO : Code spécifique à vérifier (probablement sous-code de juu)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le bugakwe est parlé par la majorité des Bugakwe. Le tswana et l'anglais sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de guérison (trance dances)
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Cérémonies de chasse
+  - Rituels de partage
+- Symboles : Art rupestre, symboles de chasse, motifs de réciprocité.
+- Arts et musique : 
+  - Art rupestre (peintures et gravures)
+  - Musique traditionnelle (instruments à cordes, chants)
+  - Danse de transe
+  - Contes et récits oraux
+- Spiritualités : Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.
+- Relations avec peuples voisins : 
+  - Relations avec autres groupes San
+  - Interactions avec les Tswana
+  - Contacts commerciaux limités
+- Conflits / alliances : 
+  - Marginalisation et déplacements forcés
+  - Résistance à la sédentarisation
+  - Conflits liés à l'accès aux terres et aux ressources
+  - Alliances avec organisations de défense des droits des peuples autochtones
+- Diaspora : Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 - 1 000
+- Répartition par pays : 
+  - Botswana : 500 - 1 000
+  - Diaspora : 50+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements botswanais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Bugakwe language
+- UNESCO – Atlas des langues en danger
+- IWGIA – Indigenous Peoples in Africa
+- Études anthropologiques sur les peuples San du Kalahari
+

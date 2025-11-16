@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : West Taa
+- Auto-appellation : Variante de ǃXóõ
+- Exonymes / appellations historiques : 
+  - « Bushmen » (terme colonial péjoratif, à éviter)
+  - « San » (terme générique, parfois utilisé)
+- Famille linguistique principale : Khoïsan – Tuu (FLG_TUU)
+- Groupe ethno-linguistique : Tuu (Taa)
+- Région historique : Désert du Kalahari (Botswana, Namibie)
+- Pays actuels : Botswana, Namibie
+- Identifiant peuple (ID) : PPL_WEST_TAA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : West Taa du Nord
+- Ethnie 2 : West Taa du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les West Taa sont un peuple ancien du désert du Kalahari, variante occidentale des Taa (ǃXóõ). Leur présence dans la région remonte à des dizaines de milliers d'années.
+- Routes migratoires : 
+  - Migrations limitées dans le désert du Kalahari
+  - Déplacements saisonniers liés à la chasse et à la cueillette
+  - Déplacements forcés vers les réserves
+- Unifications / divisions : Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Relations étroites avec les autres groupes Taa.
+- Influences externes : Contacts limités avec les peuples bantous (Tswana). Influence croissante de la modernisation et de la sédentarisation forcée.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.
+- Organisation clanique : Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.
+- Rôle des lignages : Lignages bilatéraux. Importance des liens de parenté et de réciprocité.
+- Autorité religieuse : Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Taa (variante occidentale)
+- Codes ISO : nmn (ISO 639-3, code générique pour Taa)
+- Dialectes : 
+  - Dialectes régionaux occidentaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le taa est parlé par la majorité des West Taa. Le tswana, l'afrikaans et l'anglais sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de guérison (trance dances)
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Cérémonies de chasse
+  - Rituels de partage
+- Symboles : Art rupestre, symboles de chasse, motifs de réciprocité.
+- Arts et musique : 
+  - Art rupestre (peintures et gravures)
+  - Musique traditionnelle (instruments à cordes, chants)
+  - Danse de transe
+  - Contes et récits oraux
+- Spiritualités : Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.
+- Relations avec peuples voisins : 
+  - Relations avec autres groupes Taa
+  - Interactions avec les Tswana
+  - Contacts commerciaux limités
+- Conflits / alliances : 
+  - Marginalisation et déplacements forcés
+  - Résistance à la sédentarisation
+  - Conflits liés à l'accès aux terres et aux ressources
+  - Alliances avec organisations de défense des droits des peuples autochtones
+- Diaspora : Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises et namibiennes.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 - 1 000
+- Répartition par pays : 
+  - Botswana : 300 - 600
+  - Namibie : 200 - 400
+  - Diaspora : 50+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Taa language (nmn)
+- Traill, Anthony – *Phonetic and Phonological Studies of ǃXóõ Bushman*
+- UNESCO – Atlas des langues en danger
+- IWGIA – Indigenous Peoples in Africa
+

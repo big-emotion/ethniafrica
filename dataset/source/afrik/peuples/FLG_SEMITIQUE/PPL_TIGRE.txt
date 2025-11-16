@@ -1,0 +1,84 @@
+# Nom du peuple
+- Nom principal du peuple : Tigré
+- Auto-appellation : Tigré (ትግረ) / Tigrayit
+- Exonymes / appellations historiques : Tigré (terme utilisé par les Européens), parfois confondu avec Tigréens (Tigray)
+- Famille linguistique principale : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Groupe ethno-linguistique : Sémitiques méridionaux (éthiosémitiques)
+- Région historique : Érythrée (régions côtières et basses terres)
+- Pays actuels : Érythrée, Soudan (régions frontalières)
+- Identifiant peuple (ID) : PPL_TIGRE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Tigré du Nord (région de Sahel)
+- Ethnie 2 : Tigré du Sud (région de Semhar)
+- Ethnie 3 : Tigré de l'Est (région côtière)
+- Ethnie 4 : Tigré de l'Ouest (régions frontalières)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Tigré sont originaires de l'Érythrée, descendants des populations sémitiques qui se sont installées dans la région. Leur langue est proche du tigrinya mais distincte.
+- Routes migratoires : 
+  - Installation dans les régions côtières et basses terres d'Érythrée
+  - Migrations vers les hauts plateaux
+  - Déplacements vers le Soudan lors des conflits
+- Unifications / divisions : Organisation en groupes territoriaux. Distinction importante avec les Tigréens (Tigray) qui parlent le tigrinya et habitent les hauts plateaux.
+- Influences externes : Influences arabes, turques, et égyptiennes. Islam majoritaire contrairement aux Tigréens chrétiens.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation tribale traditionnelle avec cheikhs et conseils tribaux. Intégration dans les structures étatiques érythréennes modernes.
+- Organisation clanique : Structure tribale et clanique importante. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances. Importance de la généalogie tribale.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux musulmans. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Tigré (Tigrayit)
+- Codes ISO : tig (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux (Nord, Sud, Est, Ouest)
+  - Variations entre communautés urbaines et rurales
+- Rôle véhiculaire : Le tigré est parlé par la majorité des Tigré en Érythrée. L'arabe et le tigrinya sont également utilisés comme langues véhiculaires. L'anglais est utilisé dans l'éducation.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, motifs culturels érythréens, drapeau érythréen.
+- Arts et musique : 
+  - Musique traditionnelle tigré
+  - Poésie orale
+  - Danse traditionnelle
+  - Artisanat (tissage, poterie)
+- Spiritualités : Islam sunnite majoritaire. Minorités chrétiennes. Rôle central de l'islam dans la culture tigré.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies et sultanats historiques. Intégration dans les structures politiques érythréennes.
+- Relations avec peuples voisins : 
+  - Relations avec Tigréens (Tigray) chrétiens des hauts plateaux
+  - Interactions avec peuples couchitiques (Afar, Saho)
+  - Relations avec Arabes et populations du Soudan
+  - Contacts commerciaux avec la péninsule arabique
+- Conflits / alliances : 
+  - Résistance à la colonisation italienne
+  - Participation à la lutte pour l'indépendance de l'Érythrée
+  - Conflits frontaliers avec l'Éthiopie
+  - Alliances tribales dans la région
+- Diaspora : Diaspora tigré dans les pays voisins (Soudan, Éthiopie) et dans les pays occidentaux, particulièrement suite aux conflits.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 200 000 - 1 500 000
+- Répartition par pays : 
+  - Érythrée : 1 000 000 - 1 200 000 (majorité de la population)
+  - Soudan : 150 000 - 250 000 (réfugiés et communautés frontalières)
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements érythréens, et études démographiques régionales
+
+# 8. Sources
+- SIL Ethnologue – Tigre language (tig)
+- CIA World Factbook – Eritrea
+- Connell, Dan – *Against All Odds: A Chronicle of the Eritrean Revolution*
+- Pool, David – *From Guerrillas to Government: The Eritrean People's Liberation Front*
+- Bereketeab, Redie – *Eritrea: The Making of a Nation*
+- Recensements érythréens
+

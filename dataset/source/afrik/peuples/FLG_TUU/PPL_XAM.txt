@@ -1,0 +1,83 @@
+# Nom du peuple
+- Nom principal du peuple : ǀXam
+- Auto-appellation : ǀXam (peuple éteint)
+- Exonymes / appellations historiques : 
+  - « Bushmen » (terme colonial péjoratif, à éviter)
+  - « San » (terme générique, parfois utilisé)
+  - « ǀXam » (appellation linguistique)
+- Famille linguistique principale : Khoïsan – Tuu (FLG_TUU)
+- Groupe ethno-linguistique : Tuu (ǀXam)
+- Région historique : Afrique du Sud (province du Cap)
+- Pays actuels : Afrique du Sud (peuple éteint)
+- Identifiant peuple (ID) : PPL_XAM
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : ǀXam du Nord
+- Ethnie 2 : ǀXam du Sud
+- Ethnie 3 : Sous-groupes régionaux (tous éteints)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les ǀXam étaient l'un des peuples les plus anciens d'Afrique du Sud, originaires de la région du Cap. Leur présence dans la région remontait à des dizaines de milliers d'années.
+- Routes migratoires : 
+  - Migrations limitées dans la région du Cap
+  - Déplacements saisonniers liés à la chasse et à la cueillette
+  - Déplacements forcés et extermination au XIXe siècle
+- Unifications / divisions : Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Peuple éteint au XIXe siècle.
+- Influences externes : Contacts avec les colons européens (néerlandais, britanniques) qui ont conduit à leur extermination et à leur assimilation forcée.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.
+- Organisation clanique : Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.
+- Rôle des lignages : Lignages bilatéraux. Importance des liens de parenté et de réciprocité.
+- Autorité religieuse : Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles.
+
+# 4. Langues et sous-familles
+- Langue principale : ǀXam (éteinte)
+- Codes ISO : xam (ISO 639-3, langue éteinte)
+- Dialectes : 
+  - Dialectes régionaux (tous éteints)
+  - Variantes entre groupes (toutes éteintes)
+- Rôle véhiculaire : La langue ǀXam est éteinte. Elle était parlée jusqu'au XIXe siècle. Documentation disponible grâce aux travaux de Wilhelm Bleek et Lucy Lloyd.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de guérison (trance dances)
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Cérémonies de chasse
+  - Rituels de partage
+- Symboles : Art rupestre, symboles de chasse, motifs de réciprocité.
+- Arts et musique : 
+  - Art rupestre (peintures et gravures, patrimoine mondial)
+  - Musique traditionnelle (instruments à cordes, chants)
+  - Danse de transe
+  - Contes et récits oraux (documentés par Bleek et Lloyd)
+- Spiritualités : Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.
+- Relations avec peuples voisins : 
+  - Relations avec autres groupes San
+  - Interactions avec les Khoekhoe
+  - Contacts avec les colons européens
+- Conflits / alliances : 
+  - Extermination et déplacements forcés par les colons européens au XIXe siècle
+  - Résistance à la colonisation
+  - Conflits liés à l'accès aux terres et aux ressources
+  - Assimilation forcée et disparition du peuple
+- Diaspora : Peuple éteint. Quelques descendants métissés dans les populations sud-africaines modernes.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 0 (peuple éteint)
+- Répartition par pays : 
+  - Afrique du Sud : 0 (peuple éteint au XIXe siècle)
+  - Descendants métissés : nombre inconnu
+- Année de référence : 2025 (peuple éteint)
+- Source : Documentation historique, travaux de Bleek et Lloyd, études anthropologiques
+
+# 8. Sources
+- Bleek, Wilhelm H.I. & Lloyd, Lucy – *Specimens of Bushman Folklore*
+- SIL Ethnologue – ǀXam language (xam, éteinte)
+- Skotnes, Pippa – *Claim to the Country: The Archive of Lucy Lloyd and Wilhelm Bleek*
+- UNESCO – Art rupestre de ǀXam (patrimoine mondial)
+- Études historiques sur l'extermination des peuples San en Afrique du Sud
+

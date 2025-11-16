@@ -1,0 +1,91 @@
+# Nom du peuple
+- Nom principal du peuple : Ibibio
+- Auto-appellation : Ibibio
+- Exonymes / appellations historiques : Ibibio (terme utilisé par les Européens), parfois regroupés avec les Efik sous le terme "Calabar"
+- Famille linguistique principale : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
+- Groupe ethno-linguistique : Cross River (sous-groupe du Bénoué-Congo)
+- Région historique : Sud-est du Nigeria (État d'Akwa Ibom, Cross River)
+- Pays actuels : Nigeria
+- Identifiant peuple (ID) : PPL_IBIBIO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ibibio proprement dit
+- Ethnie 2 : Annang
+- Ethnie 3 : Eket
+- Ethnie 4 : Oron
+- Ethnie 5 : Andoni
+- Ethnie 6 : Ibeno
+- Ethnie 7 : Enyong
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Ibibio sont originaires de la région du Cross River dans le sud-est du Nigeria. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones côtières
+  - Expansion le long des rivières Cross River et Qua Iboe
+  - Déplacements vers les zones urbaines (Calabar, Uyo, Port Harcourt)
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations étroites avec les Efik.
+- Influences externes : Contacts avec les commerçants européens (XVIIe-XIXe siècles), influence du christianisme, et plus récemment de l'islam et de la modernisation.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies (obong) dirigées par des chefs traditionnels. Système de conseils d'anciens (ekpo) pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité, les droits fonciers et les alliances matrimoniales.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Rôle important des sociétés secrètes (ekpo, ekpe).
+
+# 4. Langues et sous-familles
+- Langue principale : Ibibio
+- Codes ISO : ibb (ISO 639-3)
+- Dialectes : 
+  - Ibibio central
+  - Annang
+  - Eket
+  - Oron
+  - Andoni
+  - Ibeno
+- Rôle véhiculaire : L'ibibio est parlé par la majorité des Ibibio. L'anglais est utilisé dans l'éducation et l'administration. Le pidgin english nigérian est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels (New Yam Festival)
+  - Cérémonies de réconciliation
+- Symboles : Masques traditionnels, symboles des sociétés secrètes (ekpo, ekpe), art ibibio.
+- Arts et musique : 
+  - Sculpture sur bois (masques, statues)
+  - Musique traditionnelle (tambours, flûtes)
+  - Danse traditionnelle
+  - Artisanat (tissage, poterie)
+  - Littérature orale
+- Spiritualités : Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Rôle important des sociétés secrètes (ekpo, ekpe). Influence croissante du christianisme (protestantisme majoritaire) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies indépendantes. Relations étroites avec le royaume d'Old Calabar (Efik).
+- Relations avec peuples voisins : 
+  - Relations étroites avec les Efik
+  - Interactions avec les Igbo
+  - Relations commerciales avec les peuples de l'intérieur
+  - Contacts avec commerçants européens
+- Conflits / alliances : 
+  - Participation au commerce transatlantique (huile de palme)
+  - Résistance à la colonisation britannique
+  - Conflits territoriaux avec groupes voisins
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora ibibio dans les grandes villes nigérianes (Lagos, Abuja, Port Harcourt) et dans les pays occidentaux (États-Unis, Royaume-Uni).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 4 500 000 - 5 500 000
+- Répartition par pays : 
+  - Nigeria : 4 500 000 - 5 500 000 (majorité dans l'État d'Akwa Ibom et Cross River)
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements nigérians, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Ibibio language (ibb)
+- CIA World Factbook – Nigeria
+- Udo, Edet A. – *Who Are the Ibibio?*
+- Offiong, Daniel A. – *The Ibibio of Nigeria*
+- Recensements nigérians
+- Études anthropologiques sur les peuples du Cross River
+
