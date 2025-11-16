@@ -1,0 +1,54 @@
+# Nom du peuple
+- Nom principal du peuple : Duala
+- Auto-appellation : Duàlá
+- Exonymes / appellations historiques : Douala (orthographe francisée) ; « Jalla » (ancienne graphie étrangère)
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous côtiers (Sawa)
+- Région historique : Littoral camerounais (Wouri)
+- Pays actuels : Cameroun
+- Identifiant peuple (ID) : PPL_DUALA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Duala de Bonanjo
+- Ethnie 2 : Duala de Bonaberi
+- Ethnie 3 : Sous-groupes Sawa apparentés (éléments Bakoko, Isubu… selon contextes)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Installation sur les bords de l’estuaire du Wouri.
+- Routes migratoires : Mobilité entre littoral et zones maritimes.
+- Unifications / divisions : Formation progressive de lignages marchands dominants.
+- Influences externes : Contacts très anciens avec Européens (XVIᵉ siècle), rôle majeur dans le commerce atlantique.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Chefferies notables (Bell, Akwa, Deido…).
+- Organisation clanique : Clans lignagers consolidés autour de familles nobles.
+- Rôle des lignages : Alliances commerciales, gestion côtière.
+- Autorité religieuse : Mélange de cultes ancestraux et christianismes anciens.
+
+# 4. Langues et sous-familles
+- Langue principale : Duala
+- Code ISO : dua
+- Dialectes : Variantes urbaines et rurales.
+- Rôle véhiculaire : Langue historique du commerce côtier camerounais.
+
+# 5. Culture, rites et traditions
+- Rites : Cérémonies maritimes, fêtes sawa, rites funéraires élaborés.
+- Symboles : Estuaire du Wouri, pirogues, totems lignagers.
+- Arts : Chant, danse sawa, sculptures maritimes.
+- Spiritualités : Croyances en ancêtres, forte présence du christianisme.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Familles Bell & Akwa dominantes.
+- Relations voisines : Intenses échanges avec Bakweri, Bassa, Bakoko, Mabea…
+- Conflits / alliances : Alliances commerciales précoloniales ; résistance anti-allemande (Ngondo).
+- Diaspora : Présence à Douala, Yaoundé et à l’étranger.
+
+# 7. Démographie globale
+- Population totale 2025 : 400 000
+- Répartition : Cameroun (région du Littoral)
+- Source : peuple_demographie_globale.csv (PPL_DUALA)
+
+# 8. Sources
+- Ethnologue (dua)
+- Archives Douala & Ngondo
+- Études sur les peuples sawa

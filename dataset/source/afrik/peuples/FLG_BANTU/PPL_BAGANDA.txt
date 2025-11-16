@@ -1,0 +1,55 @@
+# Nom du peuple
+- Nom principal du peuple : Baganda / Ganda
+- Auto-appellation : Baganda (sg. Muganda)
+- Exonymes / appellations historiques : Ganda ; « Buganda tribe » (terme colonial administratif)
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous des Grands Lacs (Ouganda)
+- Région historique : Royaume du Buganda (région centrale de l’actuelle Ouganda)
+- Pays actuels : Ouganda (principal), petites communautés dans les pays voisins
+- Identifiant peuple (ID) : PPL_BAGANDA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Groupe ethnique baganda (à détailler dans un futur fichier ETH_BAGANDA)
+- Ethnie 2 : À préciser (sous-groupes régionaux du Buganda)
+- Ethnie 3 : À préciser (autres segments lignagers internes)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Formation progressive autour des rives nord du lac Victoria, à partir de populations bantoues venues du nord-ouest des Grands Lacs.
+- Routes migratoires : Mouvements internes autour du lac Victoria et expansion à partir du noyau central de Buganda.
+- Unifications / divisions : Unification politique sous la monarchie du Kabaka ; intégration de plusieurs clans et chefferies locales dans un royaume centralisé.
+- Influences externes : Contacts anciens avec Bunyoro, puis avec les commerçants swahili et arabes ; influence britannique à l’époque coloniale.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Monarchie (Kabaka) avec un conseil de chefs (Lukiiko) et une forte centralisation autour de la cour royale.
+- Organisation clanique : Plus de 50 clans reconnus, chacun avec un totem, une histoire et des responsabilités spécifiques.
+- Rôle des lignages : Les lignages structurent la parenté, l’héritage, les alliances matrimoniales et la transmission des fonctions.
+- Autorité religieuse : Autorités spirituelles traditionnelles liées aux esprits (balubaale) et aux sanctuaires, coexistant aujourd’hui avec christianisme et islam.
+
+# 4. Langues et sous-familles
+- Langue principale : Luganda (Ganda)
+- Codes ISO : lug
+- Dialectes : Variétés régionales internes (Kibuga – langue de la cour, variétés rurales) mais forte standardisation actuelle.
+- Rôle véhiculaire : Langue majeure de communication en Ouganda central ; l’une des grandes langues véhiculaires du pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : Rites d’initiation, cérémonies royales du Kabaka, funérailles très codifiées.
+- Symboles : Totems de clans (animaux, plantes), tambours royaux, emblèmes du royaume de Buganda.
+- Arts et musique : Tambours, harpes, danses de cour, chants de louange ; riche tradition orale.
+- Spiritualités : Anciennes croyances aux balubaale (esprits/ancêtres) ; aujourd’hui forte présence du christianisme (catholique et protestant) et de l’islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Royaume du Buganda, l’un des plus puissants États précoloniaux de la région des Grands Lacs.
+- Relations avec peuples voisins : Relations complexes (alliances, guerres, échanges) avec Bunyoro, Toro, Ankole et les peuples voisins nilotiques et bantous.
+- Conflits / alliances : Alliances avec la puissance coloniale britannique au XIXe siècle ; participation centrale à la formation de l’État ougandais moderne.
+- Diaspora : Diaspora baganda en Afrique de l’Est et dans les pays d’émigration (Europe, Amérique du Nord).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 8 499 000
+- Répartition par pays : OUGANDA (UGA) ~ 8 499 000 (communautés plus petites dans la région à préciser)
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv (PPL_BAGANDA) + statistiques nationales ougandaises
+
+# 8. Sources
+- [Article] – « Buganda » / « Baganda people », encyclopédies et ressources en ligne (Wikipédia, School for Africa, UBOS)
+- [Rapport] – Uganda Bureau of Statistics, profils régionaux récents
+- [Études] – Travaux historiques et anthropologiques sur le royaume de Buganda

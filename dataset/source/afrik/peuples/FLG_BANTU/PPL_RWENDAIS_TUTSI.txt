@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Tutsi du Rwanda
+- Auto-appellation : Abatutsi
+- Exonymes / appellations historiques : Tutsi (terme utilisé par les Européens), parfois utilisé de manière problématique
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone J)
+- Région historique : Rwanda
+- Pays actuels : Rwanda
+- Identifiant peuple (ID) : PPL_RWENDAIS_TUTSI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Tutsi du Nord
+- Ethnie 2 : Tutsi du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Tutsi du Rwanda sont originaires du Rwanda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Le terme "Tutsi" a été utilisé de manière problématique dans l'histoire coloniale.
+- Routes migratoires : 
+  - Migrations depuis les régions des Grands Lacs
+  - Expansion vers le Rwanda
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Hutu.
+- Influences externes : Contacts avec les peuples nilotiques, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Kinyarwanda
+- Codes ISO : kin (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le kinyarwanda est parlé par la majorité des Tutsi du Rwanda. Le français, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'élevage
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'élevage, symboles culturels tutsi, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Hutu
+  - Interactions avec les autres peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora tutsi du Rwanda dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 000 000 - 2 000 000
+- Répartition par pays : 
+  - Rwanda : 1 000 000 - 2 000 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements rwandais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kinyarwanda language (kin)
+- CIA World Factbook – Rwanda
+- Recensements rwandais
+- Études anthropologiques sur les peuples bantous
+

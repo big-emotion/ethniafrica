@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Hutu du Rwanda
+- Auto-appellation : Abahutu
+- Exonymes / appellations historiques : Hutu (terme utilisé par les Européens), parfois utilisé de manière problématique
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone J)
+- Région historique : Rwanda
+- Pays actuels : Rwanda
+- Identifiant peuple (ID) : PPL_RWENDAIS_HUTU
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Hutu du Nord
+- Ethnie 2 : Hutu du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Hutu du Rwanda sont originaires du Rwanda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Le terme "Hutu" a été utilisé de manière problématique dans l'histoire coloniale.
+- Routes migratoires : 
+  - Migrations depuis les régions des Grands Lacs
+  - Expansion vers le Rwanda
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Tutsi.
+- Influences externes : Contacts avec les peuples nilotiques, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Kinyarwanda
+- Codes ISO : kin (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le kinyarwanda est parlé par la majorité des Hutu du Rwanda. Le français, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels hutu, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Tutsi
+  - Interactions avec les autres peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora hutu du Rwanda dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 10 000 000 - 12 000 000
+- Répartition par pays : 
+  - Rwanda : 10 000 000 - 12 000 000
+  - Diaspora : 200 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements rwandais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kinyarwanda language (kin)
+- CIA World Factbook – Rwanda
+- Recensements rwandais
+- Études anthropologiques sur les peuples bantous
+

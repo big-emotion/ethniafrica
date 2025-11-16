@@ -1,0 +1,56 @@
+# Nom du peuple
+- Nom principal du peuple : Béti
+- Auto-appellation : Béti
+- Exonymes / appellations historiques : « Beti-Pahouin » (catégorie coloniale englobante)
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous forestiers du Cameroun
+- Région historique : Plateau du Centre-Sud Cameroun
+- Pays actuels : Cameroun, Guinée équatoriale
+- Identifiant peuple (ID) : PPL_BETI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ewondo
+- Ethnie 2 : Bulu
+- Ethnie 3 : Fang du sud (éléments culturels)
+- Ethnie 4 : Sous-groupes beti à préciser (Mvog, Essomba, etc.)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Expansion bantoue venue du sud-est camerounais.
+- Routes migratoires : Déplacements forestiers vers le centre et le sud.
+- Unifications / divisions : Identité béti fédérant de multiples sous-groupes.
+- Influences externes : Contacts avec missions chrétiennes et colons allemands.
+
+# 3. Organisation et structure interne
+- Système politique : Chefferies et lignages dirigés par notables.
+- Organisation clanique : Clans totémiques ; structures familiales étendues.
+- Rôle des lignages : Gardiens des terres et du patrimoine rituel.
+- Autorité religieuse : Spécialistes du culte aux ancêtres.
+
+# 4. Langues et sous-familles
+- Langues principales : Ewondo, Bulu, Beti
+- Codes ISO : ewo, bum
+- Dialectes : Variantes beti et pahouin.
+- Rôle véhiculaire : Langues importantes dans le sud du Cameroun.
+
+# 5. Culture, rites et traditions
+- Rites : Initiations et cultes des ancêtres.
+- Symboles : Masques, sculptures, symboles lignagers.
+- Musiques : Chants polyphoniques, tambours forêt.
+- Spiritualités : Ancestralité, forêts sacrées.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Chefferies traditionnelles beti.
+- Relations voisines : Relations étroites avec Fang, Bulu, Ewondo.
+- Conflits / alliances : Alliances commerciales, tensions coloniales.
+- Diaspora : Présente dans les villes du Cameroun.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 000 (est.)
+- Répartition : Cameroun majoritaire
+- Année : 2025
+- Source : regroupement Beti dans peuple_demographie_globale.csv (à partir des sous-groupes Fang, Ewondo, Bulu)
+
+# 8. Sources
+- Ethnologue
+- Études sur les Beti-Pahouin
+- Archives camerounaises

@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Ndebele
+- Auto-appellation : Ndebele
+- Exonymes / appellations historiques : Ndebele (terme utilisé par les Européens), Matabele
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone S)
+- Région historique : Zimbabwe, Afrique du Sud
+- Pays actuels : Zimbabwe, Afrique du Sud
+- Identifiant peuple (ID) : PPL_NDEBELE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ndebele du Zimbabwe
+- Ethnie 2 : Ndebele d'Afrique du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Ndebele sont originaires du Zimbabwe et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Migration depuis le Zoulouland.
+- Routes migratoires : 
+  - Migrations depuis le Zoulouland
+  - Expansion vers le Zimbabwe et l'Afrique du Sud
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Zoulous.
+- Influences externes : Contacts avec les peuples bantous voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Ndebele
+- Codes ISO : nde (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le ndebele est parlé par la majorité des Ndebele. L'anglais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels ndebele (peintures murales), symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (peintures murales, poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Zoulous
+  - Interactions avec les autres peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora ndebele dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 000 000 - 3 000 000
+- Répartition par pays : 
+  - Zimbabwe : 1 500 000 - 2 000 000
+  - Afrique du Sud : 500 000 - 1 000 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Ndebele language (nde)
+- CIA World Factbook – Zimbabwe, South Africa
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+

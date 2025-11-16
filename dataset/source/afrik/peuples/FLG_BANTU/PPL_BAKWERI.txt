@@ -1,0 +1,55 @@
+# Nom du peuple
+- Nom principal du peuple : Bakweri
+- Auto-appellation : Bakweri / Bakwele ; Kwe (pour la langue)
+- Exonymes / appellations historiques : « Kwe people » ; graphies coloniales variées (Bakwiri, Bakwedi)
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous côtiers et montagnards du Mont Cameroun (Sawa)
+- Région historique : Pentes sud-est du Mont Cameroun (Fako)
+- Pays actuels : Cameroun
+- Identifiant peuple (ID) : PPL_BAKWERI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Communautés bakweri des villages de montagne (Buea et environs)
+- Ethnie 2 : Communautés bakweri des zones de piémont et du littoral (Limbe et environs)
+- Ethnie 3 : À préciser (autres segments internes et lignages locaux)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Installation ancienne sur les pentes fertiles du Mont Cameroun, au sein de l’ensemble des peuples sawa (côtiers).
+- Routes migratoires : Déplacements internes le long des pentes et vers le littoral ; mobilité liée à l’agriculture et aux plantations.
+- Unifications / divisions : Organisation en villages autonomes, unifiés par langue, culture et récits d’origine.
+- Influences externes : Forte exposition aux colonisations allemande, puis britannique et française ; intégration dans l’économie de plantation (banane, hévéa).
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Chefferies traditionnelles (chiefs) par villages/territoires, avec conseil d’anciens.
+- Organisation clanique : Clans et lignages organisant la parenté, la gestion foncière et les rites.
+- Rôle des lignages : Gestion des terres, médiation des conflits, transmission de l’héritage culturel.
+- Autorité religieuse : Figures spirituelles (guérisseurs, spécialistes des rituels) ; cohabitation avec christianisme.
+
+# 4. Langues et sous-familles
+- Langue principale : Mokpwe / Kpwe (Bakweri)
+- Codes ISO : lsq (souvent rattaché à la langue bakweri/kwe)
+- Dialectes : Variantes locales (Kole, Mboko…) selon les sources linguistiques.
+- Rôle véhiculaire : Langue locale, historquement langue de communication dans les villages bakweri ; recul face à l’anglais, le français et le pidgin-english.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : Rites liés à la terre, aux ancêtres et à la fertilité ; cérémonies de passage (naissance, mariage, funérailles).
+- Symboles : Mont Cameroun (Fako) comme repère majeur ; symboles liés à la forêt et à l’océan.
+- Arts et musique : Musiques et danses sawa ; chants traditionnels, percussions.
+- Spiritualités : Combinaison de croyances traditionnelles (esprits, ancêtres) et christianisme.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Ensemble de chefferies bakweri, intégrées dans l’aire sawa du littoral camerounais.
+- Relations avec peuples voisins : Relations étroites avec Duala, Isubu, Bakole, etc. (commerce, mariages, alliances claniques).
+- Conflits / alliances : Résistances face aux expropriations foncières coloniales et aux plantations ; alliances avec d’autres groupes côtiers sur des enjeux de terres.
+- Diaspora : Migration vers Douala, Yaoundé, et diaspora bakweri en Europe/Amériques.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 230 000
+- Répartition par pays : CAMEROUN (CMR) ~ 230 000
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv (PPL_BAKWERI) + synthèse d’études démographiques camerounaises
+
+# 8. Sources
+- [Article] – « Bakweri people » (101lasttribes, autres ressources ethnographiques)
+- [Études] – Articles universitaires sur les Bakweri et la langue Mokpwe
+- [Ressources locales] – Centres culturels bakweri / Kwe

@@ -1,0 +1,84 @@
+# Nom du peuple
+- Nom principal du peuple : Herero
+- Auto-appellation : Ovaherero
+- Exonymes / appellations historiques : Herero (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone R)
+- Région historique : Namibie, Botswana, Angola
+- Pays actuels : Namibie, Botswana, Angola
+- Identifiant peuple (ID) : PPL_HERERO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Herero de Namibie
+- Ethnie 2 : Herero du Botswana
+- Ethnie 3 : Herero d'Angola
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Herero sont originaires de la Namibie, du Botswana et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R).
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers la Namibie, le Botswana et l'Angola
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.
+- Influences externes : Contacts avec les peuples khoïsan, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Herero
+- Codes ISO : her (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le herero est parlé par la majorité des Herero. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'élevage
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'élevage, symboles culturels herero (vêtements traditionnels), symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (bijoux, armes)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples khoïsan
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation allemande (génocide des Herero)
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora herero dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 300 000
+- Répartition par pays : 
+  - Namibie : 150 000 - 200 000
+  - Botswana : 30 000 - 50 000
+  - Angola : 20 000 - 50 000
+  - Diaspora : 10 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Herero language (her)
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+- Études historiques sur le génocide des Herero
+

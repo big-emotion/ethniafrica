@@ -1,0 +1,87 @@
+# Nom du peuple
+- Nom principal du peuple : Swahili
+- Auto-appellation : Waswahili
+- Exonymes / appellations historiques : Swahili (terme utilisé par les Européens), parfois "Arabes" (terme problématique)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone G)
+- Région historique : Côtes de l'Afrique de l'Est
+- Pays actuels : Kenya, Tanzanie, Mozambique, Comores
+- Identifiant peuple (ID) : PPL_SWAHILI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Swahili du Kenya
+- Ethnie 2 : Swahili de Tanzanie
+- Ethnie 3 : Swahili du Mozambique
+- Ethnie 4 : Swahili des Comores
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Swahili sont originaires des côtes de l'Afrique de l'Est. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone G). Formation de cités-États swahili.
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion le long des côtes de l'Afrique de l'Est
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation de cités-États swahili. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples arabes et persans, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en cités-États traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Swahili
+- Codes ISO : swa (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le swahili est parlé par la majorité des Swahili et sert de langue véhiculaire en Afrique de l'Est. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels swahili, symboles liés à la mer.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, architecture)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture swahili.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Cités-États swahili (VIIIe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples arabes et persans
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion des cités-États swahili
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora swahili dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 000 000 - 3 000 000
+- Répartition par pays : 
+  - Tanzanie : 1 000 000 - 1 500 000
+  - Kenya : 500 000 - 800 000
+  - Mozambique : 300 000 - 500 000
+  - Comores : 200 000 - 300 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Swahili language (swa)
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+- Études historiques sur les cités-États swahili
+

@@ -1,0 +1,43 @@
+# Nom du peuple
+- Nom principal du peuple : Gogo
+- Auto-appellation : Wagogo
+- Exonymes historiques : Gogo (neutre)
+- Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe : Bantous de Tanzanie centrale
+- Région : Dodoma, Manyoni, Mpwapwa
+- Pays : Tanzanie
+- Identifiant : PPL_GOGO
+
+# 1. Ethnies incluses
+- Wagogo du Nord (Mpwapwa)
+- Wagogo du Sud (Manyoni)
+- Sous-groupes pastoraux
+
+# 2. Origines
+- Populations bantoues anciennes du centre tanzanien.
+- Migrations internes liées aux cycles pastoraux.
+
+# 3. Organisation
+- Chef traditionnel (mtani)
+- Lignages familiaux saisis autour du bétail
+
+# 4. Langue
+- Cigogo / Gogo
+- ISO : gog
+
+# 5. Culture
+- Rituels pastoraux
+- Danses collectives
+- Symbolique du bétail
+
+# 6. Histoire
+- Relations anciennes avec Nyamwezi et Hehe.
+- Zone stratégique de caravanes au XIXe siècle.
+
+# 7. Démographie
+- Population : 2 000 000
+- Source : peuple_demographie_globale.csv (PPL_GOGO)
+
+# 8. Sources
+- Ethnologue (gog)
+- Tanzania National Bureau

@@ -1,0 +1,47 @@
+# Nom du peuple
+- Nom principal du peuple : Bemba
+- Auto-appellation : Aɓemba
+- Exonymes historiques : BaBemba (forme bantoue)
+- Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe : Bantous d’Afrique centrale (Zambie)
+- Région historique : Nord de la Zambie
+- Pays actuels : Zambie, RDC, Tanzanie
+- Identifiant peuple : PPL_BEMBA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bemba du Nord
+- Ethnie 2 : Sous-groupes ruraux
+- Ethnie 3 : Groupes apparentés Luba-Bemba
+
+# 2. Origines et migrations
+- Origine luba migrée vers la Zambie il y a plusieurs siècles.
+- Établissement dans les hautes terres du nord.
+- Royaume bemba structuré dès le XVIIIe siècle.
+
+# 3. Organisation interne
+- Royaume dirigé par le Chitimukulu.
+- Clans matrilinéaires puissants.
+- Conseils d’anciens.
+
+# 4. Langue
+- Langue : Bemba
+- ISO : bem
+- Variantes régionales mineures.
+
+# 5. Culture
+- Masques bemba
+- Rituels agraires
+- Musiques de tamtam
+
+# 6. Rôle historique
+- Royaume Bemba : acteur majeur de l’histoire zambienne précoloniale.
+- Relations avec Luba, Lunda, Bisa.
+
+# 7. Démographie
+- Population : 4 500 000
+- Année : 2025
+- Source : peuple_demographie_globale.csv
+
+# 8. Sources
+- Zambia Ethnographic Studies
+- Ethnologue (bem)

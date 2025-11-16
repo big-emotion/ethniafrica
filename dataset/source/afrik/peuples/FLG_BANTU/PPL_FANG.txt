@@ -1,0 +1,45 @@
+# Nom du peuple
+- Nom principal du peuple : Fang
+- Auto-appellation : Fan / Pahouin / Pangwe
+- Exonymes historiques : « Pahouins » (ancienne étiquette coloniale)
+- Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe : Bantous forestiers (Gabon, Guinée Équatoriale, Cameroun)
+- Région historique : Forêts équatoriales
+- Pays actuels : Gabon, Guinée équatoriale, Cameroun
+- Identifiant : PPL_FANG
+
+# 1. Ethnies incluses
+- Fang du Gabon
+- Fang de Guinée équatoriale
+- Fang du Cameroun
+
+# 2. Origines
+- Migration nord-sud depuis le Cameroun septentrional.
+- Installation en forêts équatoriales il y a plusieurs siècles.
+
+# 3. Organisation
+- Chefferies lignagères
+- Clanisme fort
+
+# 4. Langue
+- Fang
+- ISO : fan
+- Plusieurs sous-dialectes.
+
+# 5. Culture
+- Masques fang (notamment ngil)
+- Boîtes à reliques (byeri)
+- Traditions d’initiation
+
+# 6. Histoire
+- Conflits et alliances forestières.
+- Rôle politique important en Guinée Équatoriale contemporaine.
+
+# 7. Démographie
+- Population : 2 320 950
+- Année : 2025
+- Source : peuple_demographie_globale.csv (PPL_FANG)
+
+# 8. Sources
+- Ethnologue (fan)
+- Études sur les Pahouin

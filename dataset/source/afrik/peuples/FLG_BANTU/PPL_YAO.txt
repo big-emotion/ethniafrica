@@ -1,0 +1,83 @@
+# Nom du peuple
+- Nom principal du peuple : Yao
+- Auto-appellation : Yao
+- Exonymes / appellations historiques : Yao (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone P)
+- Région historique : Malawi, Mozambique, Tanzanie
+- Pays actuels : Malawi, Mozambique, Tanzanie
+- Identifiant peuple (ID) : PPL_YAO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Yao du Malawi
+- Ethnie 2 : Yao du Mozambique
+- Ethnie 3 : Yao de Tanzanie
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Yao sont originaires du Malawi, du Mozambique et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers le Malawi, le Mozambique et la Tanzanie
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples bantous voisins, influence de l'islam et du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique matrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages matrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas, des pasteurs chrétiens, et des chefs religieux. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Yao
+- Codes ISO : yao (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le yao est parlé par la majorité des Yao. L'anglais, le portugais, le swahili et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles islamiques et chrétiens, symboles culturels yao.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples swahili
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora yao dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 3 000 000 - 4 000 000
+- Répartition par pays : 
+  - Malawi : 1 500 000 - 2 000 000
+  - Mozambique : 1 000 000 - 1 500 000
+  - Tanzanie : 500 000 - 800 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Yao language (yao)
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+

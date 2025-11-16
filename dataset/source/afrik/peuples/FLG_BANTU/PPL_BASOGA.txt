@@ -1,0 +1,55 @@
+# Nom du peuple
+- Nom principal du peuple : Basoga / Soga
+- Auto-appellation : Basoga (sg. Musoga)
+- Exonymes / appellations historiques : Soga ; « Busoga tribes » (terminologie coloniale)
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous des Grands Lacs (Est de l’Ouganda)
+- Région historique : Royaume de Busoga (entre lac Victoria et lac Kyoga)
+- Pays actuels : Ouganda
+- Identifiant peuple (ID) : PPL_BASOGA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Basoga des différents principalités (sous-chefferies de Busoga)
+- Ethnie 2 : À préciser (sous-groupes régionaux au sein du Busoga)
+- Ethnie 3 : À préciser (autres segments internes et lignages)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Peuples bantous installés entre le Nil Victoria et le lac Kyoga, avec des liens historiques avec les royaumes voisins (Buganda, Bunyoro).
+- Routes migratoires : Mouvements locaux autour du lac Victoria et expansion vers le nord-est de la région.
+- Unifications / divisions : Busoga comme union de plusieurs principautés (chefferies) sous une royauté (Kyabazinga).
+- Influences externes : Influences des royaumes voisins, puis de la colonisation britannique et des missions chrétiennes.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Fédération de 11 principautés historiques, dirigée par le Kyabazinga (roi) de Busoga.
+- Organisation clanique : Clans et lignages au sein de chaque principauté, organisant parenté, héritage et obligations sociales.
+- Rôle des lignages : Central dans la structure familiale, la répartition foncière et la gestion des conflits.
+- Autorité religieuse : Autorités rituelles locales, coexistant avec les structures religieuses chrétiennes et musulmanes.
+
+# 4. Langues et sous-familles
+- Langue principale : Lusoga / Soga
+- Codes ISO : xog
+- Dialectes : Variantes internes (dialectes associés aux différentes principautés ; parfois distingués en sous-dialectes régionaux).
+- Rôle véhiculaire : Langue principale de la région de Busoga ; proche du luganda et utilisée pour la communication régionale en plus de l’anglais et du swahili.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : Rites de passage, cérémonies royales du Kyabazinga, fêtes agraires.
+- Symboles : Emblèmes du royaume de Busoga, symboles liés au Nil, au lac Victoria et à la fertilité des terres.
+- Arts et musique : Danses et musiques propres à Busoga ; instruments traditionnels (tambours, harpes, xylophones).
+- Spiritualités : Anciennes croyances aux esprits de l’eau et de la terre ; forte présence actuelle du christianisme, avec une minorité musulmane.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Royaume de Busoga, reconnu comme l’une des monarchies traditionnelles de l’Ouganda.
+- Relations avec peuples voisins : Relations d’échanges et parfois de tensions avec Baganda, Banyoro et autres peuples de la région.
+- Conflits / alliances : Alliances variées pendant la période précoloniale et coloniale ; participation à la vie politique de l’État ougandais moderne.
+- Diaspora : Migration vers Kampala et d’autres villes d’Ouganda, ainsi que diaspora plus large liée à l’émigration contemporaine.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 3 500 000
+- Répartition par pays : OUGANDA (UGA) ~ 3 500 000
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv (PPL_BASOGA) + estimations récentes des groupes ethniques d’Ouganda
+
+# 8. Sources
+- [Article] – « Basoga people » / « Busoga Kingdom » (ressources historiques et culturelles)
+- [Ressource] – Présentations culturelles de Busoga (guides culturels, sites institutionnels ougandais)
+- [Études] – Travaux sur les royaumes traditionnels ougandais (dont Busoga)

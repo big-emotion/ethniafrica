@@ -1,0 +1,55 @@
+# Nom du peuple
+- Nom principal du peuple : Bassa du Cameroun
+- Auto-appellation : Bàsáa / ɓasaá
+- Exonymes / appellations historiques : Bassa, Basa, parfois « Bassa-Bakoko » (étiquette coloniale agrégée)
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous du littoral et du centre camerounais
+- Région historique : Nyong-et-Kellé, Sanaga-Maritime, Nkam et zones voisines (Centre et Littoral)
+- Pays actuels : Cameroun
+- Identifiant peuple (ID) : PPL_BASSA_CAM
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bassa des régions de Nyong-et-Kellé
+- Ethnie 2 : Bassa des zones de Sanaga-Maritime et Nkam
+- Ethnie 3 : À préciser (autres segments régionaux bassa ; sous-groupes dialectaux)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Peuple bantou ancien des zones forestières du sud Cameroun.
+- Routes migratoires : Déplacement progressif entre l’intérieur (forêt) et le littoral, avec installation le long des axes fluviaux.
+- Unifications / divisions : Plusieurs chefferies et lignages ; identité bassa consolidée autour de la langue et des mythes d’origine.
+- Influences externes : Contacts avec les peuples côtiers (Duala, Bakoko), puis avec les pouvoirs coloniaux allemands et français.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Chefferies locales et conseils d’anciens.
+- Organisation clanique : Clans et lignages régissant la parenté, la terre et les obligations rituelles.
+- Rôle des lignages : Gestion des terres agricoles, socialisation, médiation des conflits.
+- Autorité religieuse : Praticiens rituels, gardiens des bois sacrés ; aujourd’hui en interaction avec églises chrétiennes.
+
+# 4. Langues et sous-familles
+- Langue principale : Basaa / Bàsáa
+- Codes ISO : bas
+- Dialectes : Plusieurs dialectes (Bakem, Bon, Bibeng, Diboum, Log, Mpo, etc.) selon les études linguistiques.
+- Rôle véhiculaire : Langue de communication entre Bassa, avec une présence dans les médias et la musique ; coexistence avec le français et d’autres langues camerounaises.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : Rites de passage, cultes liés aux bois sacrés, cérémonies funéraires élaborées.
+- Symboles : Masques et sculptures, symboles liés à la forêt et aux ancêtres.
+- Arts et musique : Musiques polyrythmiques, danse, chant ; contribution importante à la musique moderne camerounaise.
+- Spiritualités : Croyances traditionnelles centrées sur les ancêtres et la nature ; forte christianisation aujourd’hui.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies ; pas de royaume centralisé unique.
+- Relations avec peuples voisins : Relations fortes avec Bakoko, Duala et autres groupes du littoral ; échanges commerciaux et culturels.
+- Conflits / alliances : Alliances et tensions locales autour de l’accès à la terre et aux axes commerciaux.
+- Diaspora : Importante diaspora bassa dans les grandes villes camerounaises (Douala, Yaoundé) et à l’étranger.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 840 000
+- Répartition par pays : CAMEROUN (CMR) ~ 840 000
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv (PPL_BASSA_CAM) + études démographiques sur le peuple bassa
+
+# 8. Sources
+- [Article] – « Basaa language » et ressources associées (données sur la langue et l’aire géographique)
+- [Ressource] – Présentations ethnographiques du peuple Bassa du Cameroun
+- [Études linguistiques] – Travaux de L. M. Hyman et autres linguistes sur le basaa

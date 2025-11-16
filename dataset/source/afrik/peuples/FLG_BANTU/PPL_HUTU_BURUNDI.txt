@@ -1,0 +1,54 @@
+# Nom du peuple
+- Nom principal du peuple : Hutu du Burundi
+- Auto-appellation : Abahutu
+- Exonymes / appellations historiques : Hutu (terme historique non péjoratif) ; « races du Burundi » (catégorisation coloniale problématique)
+- Pourquoi le terme pose problème : L’administration coloniale belge a figé les catégories Hutu/Tutsi en termes "racialisés", ce qui a exacerbé les tensions sociales et politiques.
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous des Grands Lacs (Burundi)
+- Région historique : Plateaux du Burundi
+- Pays actuels : Burundi (principal), Rwanda, diaspora régionale
+- Identifiant peuple (ID) : PPL_HUTU_BURUNDI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Hutu des hautes terres du Burundi
+- Ethnie 2 : Hutu des plaines et collines rurales
+- Ethnie 3 : À préciser (lignages régionaux)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Peuplement bantou installé dans l’espace burundais depuis plus d’un millénaire.
+- Routes migratoires : Mouvements internes autour des collines et plateaux.
+- Unifications / divisions : Catégorie socio-culturelle homogène mais diverse clans.
+- Influences externes : Colonisation allemande et belge → transformations sociales profondes.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Chefferies locales ; intégration dans la monarchie burundaise.
+- Organisation clanique : Clans lignagers (ubwoko).
+- Rôle des lignages : Structure familiale, transmission foncière et rituelle.
+- Autorité religieuse : Anciens, prêtres traditionnels (abapfumu).
+
+# 4. Langues et sous-familles
+- Langue principale : Kirundi (bantou)
+- Code ISO : run
+- Rôle véhiculaire : Langue commune à Hutu, Tutsi, Twa.
+
+# 5. Culture, rites et traditions
+- Rites : Funérailles, initiations, rites agricoles.
+- Symboles : Vache (importance économique et symbolique).
+- Arts et musique : Tambours royaux (ingoma), danses.
+- Spiritualités : Croyances traditionnelles + christianisme.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Intégration dans le royaume du Burundi (Mwami).
+- Relations avec Tutsi et Twa : Relations historiques complexes.
+- Conflits / alliances : Tensions politico-ethniques coloniales et postcoloniales.
+- Diaspora : Présente dans Rwanda, Tanzanie, Ouganda.
+
+# 7. Démographie globale
+- Population totale 2025 : ≈ 6 300 000 (Burundi)
+- Répartition : BURUNDI (principal), Rwanda (~ petites communautés)
+- Source : peuple_demographie_globale.csv (PPL_HUTU_BURUNDI)
+
+# 8. Sources
+- Archives du Burundi
+- Ethnologue (run)
+- Littérature anthropologique sur les Grands Lacs

@@ -1,0 +1,52 @@
+# Nom du peuple
+- Nom principal du peuple : Tutsi du Burundi
+- Auto-appellation : Abatutsi
+- Exonymes / appellations historiques : « Hamites » (terme colonial raciste, totalement rejeté)
+- Pourquoi le terme pose problème : Thèse hamitique = construction raciste européenne visant à opposer les peuples de la région ; utilisée pour légitimer des hiérarchies coloniales.
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous des Grands Lacs
+- Région historique : Plateaux du Burundi
+- Pays actuels : Burundi (principal), Rwanda (communautés), diaspora
+- Identifiant peuple (ID) : PPL_TUTSI_BURUNDI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Tutsi des collines centrales
+- Ethnie 2 : Tutsi des régions du nord et sud
+- Ethnie 3 : Lignages nobles (Ganwa → catégorie historique distincte mais liée)
+
+# 2. Origines, migrations et formation du peuple
+- Origines : Peuplement ancien intégré aux systèmes politiques monarchiques locaux.
+- Migrations : Déplacements internes entre collines et régions pastorales.
+- Unification : Intégration dans le royaume du Burundi.
+- Influences externes : Reconfiguration coloniale belge au XXe siècle.
+
+# 3. Organisation et structure interne
+- Système : Noblesses lignagères, chefferies, structures pastorales.
+- Clans : Structures ubwoko.
+- Rôle foncier : Élevage et pâturages.
+- Autorités : Anciens, leaders lignagers.
+
+# 4. Langue
+- Kirundi
+- ISO : run
+
+# 5. Culture
+- Culte des ancêtres
+- Importance du bétail
+- Rituels pastoraux
+- Tambours et danses royales
+
+# 6. Rôle historique
+- Élites nobles dans la monarchie du Burundi.
+- Relations complexes avec Hutu, Twa.
+- Périodes de violences politiques (XXᵉ siècle).
+
+# 7. Démographie
+- Population totale : ≈ 1 700 000
+- Année : 2025
+- Source : peuple_demographie_globale.csv (PPL_TUTSI_BURUNDI)
+
+# 8. Sources
+- Travaux anthropologiques Grands Lacs
+- Ethnologue (run)
+- Archives du royaume du Burundi

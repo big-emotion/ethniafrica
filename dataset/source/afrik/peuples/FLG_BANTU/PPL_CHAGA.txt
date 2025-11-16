@@ -1,0 +1,44 @@
+# Nom du peuple
+- Nom principal : Chaga
+- Auto-appellation : Wachaga
+- Exonymes historiques : Chagga (variante coloniale)
+- Famille : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe : Bantous de Tanzanie (Kilimandjaro)
+- Région historique : Pentes sud et est du Kilimandjaro
+- Pays : Tanzanie
+- Identifiant : PPL_CHAGA
+
+# 1. Ethnies incluses
+- Ethnie 1 : Rombo
+- Ethnie 2 : Machame
+- Ethnie 3 : Siha/Kibosho
+
+# 2. Origines
+- Installation ancienne sur les pentes du Kilimandjaro.
+- Influence agricole (bananeraies en terrasses).
+- Création de chefferies puissantes.
+
+# 3. Organisation
+- Chefferies : Mangi (chefs), bandes lignagères.
+- Structure clanique très marquée.
+
+# 4. Langue
+- Kichaga (divers dialectes)
+- ISO : jmc
+
+# 5. Culture
+- Agriculture de montagne (banane, café)
+- Rituels liés à la terre et aux ancêtres
+- Musiques et danses de montagne
+
+# 6. Histoire
+- Chefferies chaga fortes jusqu’à la colonisation allemande.
+- Figures célèbres : Mangi Mkuu, Mangi Sina.
+
+# 7. Démographie
+- Population : 2 000 000
+- Source : CSV AFRIK 2025
+
+# 8. Sources
+- Ethnologue (jmc)
+- Archives du Kilimandjaro

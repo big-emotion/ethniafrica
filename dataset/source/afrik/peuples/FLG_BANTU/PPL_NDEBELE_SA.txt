@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Ndebele d'Afrique du Sud
+- Auto-appellation : Ndebele
+- Exonymes / appellations historiques : Ndebele d'Afrique du Sud (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone S)
+- Région historique : Nord-est de l'Afrique du Sud
+- Pays actuels : Afrique du Sud
+- Identifiant peuple (ID) : PPL_NDEBELE_SA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ndebele du Nord
+- Ethnie 2 : Ndebele du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Ndebele d'Afrique du Sud sont originaires du nord-est de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Migration depuis le Zoulouland.
+- Routes migratoires : 
+  - Migrations depuis le Zoulouland
+  - Expansion vers le nord-est de l'Afrique du Sud
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Ndebele du Zimbabwe. Relations avec les Zoulous.
+- Influences externes : Contacts avec les peuples bantous voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Ndebele (dialecte d'Afrique du Sud)
+- Codes ISO : nbl (ISO 639-3, code spécifique pour l'Afrique du Sud)
+- Dialectes : 
+  - Dialecte ndebele d'Afrique du Sud
+  - Variantes régionales
+- Rôle véhiculaire : Le ndebele d'Afrique du Sud est parlé par la majorité des Ndebele d'Afrique du Sud. L'anglais, l'afrikaans et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels ndebele (peintures murales), symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (peintures murales, poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Zoulous
+  - Interactions avec les autres peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora ndebele d'Afrique du Sud dans les grandes villes sud-africaines et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 000 - 1 000 000
+- Répartition par pays : 
+  - Afrique du Sud : 500 000 - 1 000 000
+  - Diaspora : 20 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements sud-africains, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Ndebele language (nbl)
+- CIA World Factbook – South Africa
+- Recensements sud-africains
+- Études anthropologiques sur les peuples bantous
+

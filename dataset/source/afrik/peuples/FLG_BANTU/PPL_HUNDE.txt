@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Hunde
+- Auto-appellation : Hunde
+- Exonymes / appellations historiques : Hunde (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone J)
+- Région historique : Est de la RDC
+- Pays actuels : République démocratique du Congo
+- Identifiant peuple (ID) : PPL_HUNDE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Hunde du Nord
+- Ethnie 2 : Hunde du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Hunde sont originaires de l'est de la RDC, dans la région des Grands Lacs. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).
+- Routes migratoires : 
+  - Migrations depuis les régions des Grands Lacs
+  - Expansion vers l'est de la RDC
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples nilotiques, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Hunde
+- Codes ISO : hke (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le hunde est parlé par la majorité des Hunde. Le français, le swahili et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels hunde, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples nilotiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora hunde dans les grandes villes congolaises et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 000 - 800 000
+- Répartition par pays : 
+  - RDC : 500 000 - 800 000
+  - Diaspora : 20 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements congolais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Hunde language (hke)
+- CIA World Factbook – DRC
+- Recensements congolais
+- Études anthropologiques sur les peuples bantous
+

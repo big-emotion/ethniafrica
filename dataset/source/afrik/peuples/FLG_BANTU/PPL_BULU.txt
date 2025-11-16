@@ -1,0 +1,43 @@
+# Nom du peuple
+- Nom principal du peuple : Bulu
+- Auto-appellation : Bulu
+- Exonymes historiques : Béti (macro-peuple)
+- Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe : Bantous forestiers camerounais
+- Région historique : Sud Cameroun
+- Pays actuels : Cameroun
+- Identifiant peuple : PPL_BULU
+
+# 1. Ethnies incluses
+- Ethnie 1 : Bulu du Sud camerounais
+- Ethnie 2 : Sous-groupes régionaux
+
+# 2. Origines
+- Segment du macro-peuple Beti-Pahouin.
+- Migration forestière ancienne.
+
+# 3. Organisation
+- Chefferies lignagères
+- Structures familiales étendues
+
+# 4. Langue
+- Bulu
+- ISO : bum
+
+# 5. Culture
+- Masques forestiers
+- Sculptures lignagères
+- Culte des ancêtres
+
+# 6. Histoire
+- Contacts anciens avec Ewondo et Fang.
+- Poids historique et contemporain dans l’administration camerounaise.
+
+# 7. Démographie
+- Population : 850 000
+- Année : 2025
+- Source : peuple_demographie_globale.csv
+
+# 8. Sources
+- Ethnologue (bum)
+- Cameroon Cultural Archives

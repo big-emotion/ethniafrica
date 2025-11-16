@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Makonde
+- Auto-appellation : Makonde
+- Exonymes / appellations historiques : Makonde (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone P)
+- Région historique : Sud-est de la Tanzanie, Nord du Mozambique
+- Pays actuels : Tanzanie, Mozambique
+- Identifiant peuple (ID) : PPL_MAKONDE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Makonde de Tanzanie
+- Ethnie 2 : Makonde du Mozambique
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Makonde sont originaires du sud-est de la Tanzanie et du nord du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers le sud-est de la Tanzanie et le nord du Mozambique
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples bantous voisins, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique matrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages matrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Makonde
+- Codes ISO : kde (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le makonde est parlé par la majorité des Makonde. Le swahili, le portugais, l'anglais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes et islamiques
+- Symboles : Symboles liés à l'agriculture, symboles culturels makonde (sculptures), symboles chrétiens et islamiques.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (sculpture sur bois, poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples swahili
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora makonde dans les grandes villes tanzaniennes et mozambicaines, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 500 000 - 2 000 000
+- Répartition par pays : 
+  - Tanzanie : 800 000 - 1 000 000
+  - Mozambique : 700 000 - 1 000 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Makonde language (kde)
+- CIA World Factbook – Tanzania, Mozambique
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+

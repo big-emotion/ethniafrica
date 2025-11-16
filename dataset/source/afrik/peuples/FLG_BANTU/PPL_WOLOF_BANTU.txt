@@ -1,0 +1,83 @@
+# Nom du peuple
+- Nom principal du peuple : Wolof (Bantou)
+- Auto-appellation : Wolof
+- Exonymes / appellations historiques : Wolof (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou
+- Région historique : Afrique de l'Ouest
+- Pays actuels : Sénégal, Gambie, Mauritanie
+- Identifiant peuple (ID) : PPL_WOLOF_BANTU
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Wolof du Sénégal
+- Ethnie 2 : Wolof de Gambie
+- Ethnie 3 : Wolof de Mauritanie
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Wolof sont originaires du Sénégal, de la Gambie et de la Mauritanie. Leur présence dans la région remonte à plusieurs siècles. Classification linguistique à vérifier (le wolof est généralement classé dans les langues atlantiques, pas bantoues).
+- Routes migratoires : 
+  - Migrations depuis les régions ouest-africaines
+  - Expansion vers le Sénégal, la Gambie et la Mauritanie
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples ouest-africains, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Wolof
+- Codes ISO : wol (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le wolof est parlé par la majorité des Wolof et sert de langue véhiculaire au Sénégal. Le français et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels wolof.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture wolof.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples ouest-africains
+  - Interactions avec les peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora wolof dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 000 - 7 000 000
+- Répartition par pays : 
+  - Sénégal : 4 000 000 - 5 500 000
+  - Gambie : 500 000 - 800 000
+  - Mauritanie : 500 000 - 700 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Wolof language (wol)
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples ouest-africains
+

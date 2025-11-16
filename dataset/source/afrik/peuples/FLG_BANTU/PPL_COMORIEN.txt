@@ -1,0 +1,45 @@
+# Nom du peuple
+- Nom principal : Comorien
+- Auto-appellation : Shimasiwa (gens des îles)
+- Exonymes : Comorians
+- Famille : Niger-Congo – Bantu (FLG_BANTU, branche swahilie)
+- Groupe : Bantous de l’océan Indien
+- Région historique : Archipel des Comores
+- Pays actuels : Comores, Mayotte
+- Identifiant : PPL_COMORIEN
+
+# 1. Ethnies incluses
+- Ngazidja (Grande Comore)
+- Ndzuani (Anjouan)
+- Mwali (Mohéli)
+- Maorais (Mayotte)
+
+# 2. Origines
+- Mélange bantou → swahili → influences malgaches et arabes.
+- Populations de navigateurs.
+
+# 3. Organisation
+- Système de notables (Anda, Shungu)
+- Chefferies insulaires traditionnelles
+
+# 4. Langue
+- Langues comoriennes (shimaore, shingazidja, shimwali…)
+- ISO : swb, wni, zdj, wlc
+
+# 5. Culture
+- Architecture en pierre
+- Mariage grand-comorien (Anda)
+- Poésie et musique orientale-swahili
+
+# 6. Histoire
+- Archipel musulman depuis le IXe siècle.
+- Contacts intensifs avec Swahili, Arabes, Perses, Shirazi.
+
+# 7. Démographie
+- Population totale : 1 150 000
+- Année : 2025
+- Source : estimations AFRIK + recensements Comores/Mayotte
+
+# 8. Sources
+- Ethnologue
+- Comoros Cultural Studies

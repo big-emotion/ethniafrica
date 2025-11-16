@@ -1,0 +1,83 @@
+# Nom du peuple
+- Nom principal du peuple : Baganda
+- Auto-appellation : Baganda
+- Exonymes / appellations historiques : Baganda (terme utilisé par les Européens), Ganda
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone J)
+- Région historique : Centre de l'Ouganda
+- Pays actuels : Ouganda
+- Identifiant peuple (ID) : PPL_BUGANDA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Baganda du Nord
+- Ethnie 2 : Baganda du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Baganda sont originaires du centre de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Formation du royaume Buganda.
+- Routes migratoires : 
+  - Migrations depuis les régions des Grands Lacs
+  - Expansion vers le centre de l'Ouganda
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation du royaume Buganda. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples nilotiques, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel (Buganda). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Ganda
+- Codes ISO : lug (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le ganda est parlé par la majorité des Baganda. L'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux baganda, symboles liés à l'agriculture, symboles culturels baganda, symboles chrétiens et islamiques.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Buganda (XVe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les Banyoro
+  - Interactions avec les autres peuples bantous
+  - Contacts avec les peuples nilotiques
+- Conflits / alliances : 
+  - Expansion du royaume Buganda
+  - Résistance à la colonisation britannique
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora baganda dans les grandes villes ougandaises et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 000 - 7 000 000
+- Répartition par pays : 
+  - Ouganda : 5 000 000 - 7 000 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Ganda language (lug)
+- CIA World Factbook – Uganda
+- Recensements ougandais
+- Études anthropologiques sur les peuples bantous
+- Études historiques sur le royaume Buganda
+

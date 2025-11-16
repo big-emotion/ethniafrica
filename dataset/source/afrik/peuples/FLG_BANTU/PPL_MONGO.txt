@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Mongo
+- Auto-appellation : Mongo
+- Exonymes / appellations historiques : Mongo (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone C)
+- Région historique : Centre-nord de la RDC
+- Pays actuels : République démocratique du Congo
+- Identifiant peuple (ID) : PPL_MONGO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Mongo du Nord
+- Ethnie 2 : Mongo du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Mongo sont originaires du centre-nord de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone C).
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers le centre-nord de la RDC
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples bantous voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Mongo
+- Codes ISO : lol (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le mongo est parlé par la majorité des Mongo. Le français, le lingala et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels mongo, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples soudaniques centraux
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation belge
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora mongo dans les grandes villes congolaises et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 000 - 7 000 000
+- Répartition par pays : 
+  - RDC : 5 000 000 - 7 000 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements congolais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Mongo language (lol)
+- CIA World Factbook – DRC
+- Recensements congolais
+- Études anthropologiques sur les peuples bantous
+

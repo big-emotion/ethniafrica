@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Meru
+- Auto-appellation : Meru
+- Exonymes / appellations historiques : Meru (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone E)
+- Région historique : Centre-est du Kenya
+- Pays actuels : Kenya
+- Identifiant peuple (ID) : PPL_MERU
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Meru du Nord
+- Ethnie 2 : Meru du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Meru sont originaires du centre-est du Kenya. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone E).
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers le centre-est du Kenya
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples nilotiques, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Meru
+- Codes ISO : mer (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le meru est parlé par la majorité des Meru. Le swahili, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels meru, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples nilotiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation britannique
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora meru dans les grandes villes kényanes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 000 000 - 3 000 000
+- Répartition par pays : 
+  - Kenya : 2 000 000 - 3 000 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements kényans, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Meru language (mer)
+- CIA World Factbook – Kenya
+- Recensements kényans
+- Études anthropologiques sur les peuples bantous
+

@@ -1,0 +1,55 @@
+# Nom du peuple
+- Nom principal du peuple : Bakossi
+- Auto-appellation : Bakossi
+- Exonymes / appellations historiques : « Akose people » (par la langue Akoose) ; variantes Akose/Akoose
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous des montagnes du Cameroun (région des Bakossi Mountains)
+- Région historique : Pentes ouest et est du Mont Mwanenguba et du Mont Kupe
+- Pays actuels : Cameroun
+- Identifiant peuple (ID) : PPL_BAKOSSI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Communautés bakossi des versants ouest (villages de montagne)
+- Ethnie 2 : Communautés bakossi des versants est et des basses terres
+- Ethnie 3 : À préciser (autres segments internes, lignages et sous-groupes locaux)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Tradition orale reliant l’origine à l’ancêtre Ngoe et à sa femme Sumediang, au cœur des montagnes de Mwanenguba.
+- Routes migratoires : Mouvements internes entre hautes terres et basses terres dans les Bakossi Mountains ; contacts historiques avec d’autres peuples côtiers.
+- Unifications / divisions : Groupes de clans structurés autour de villages de montagne, sans État centralisé mais avec une forte identité commune.
+- Influences externes : Contacts avec les missionnaires européens, les administrateurs coloniaux allemands puis français/britanniques, et avec les peuples voisins (Bafaw, Bakundu, Balong…).
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Chefferies locales (chefs de village) et conseils d’anciens.
+- Organisation clanique : Clans issus des différents descendants de l’ancêtre mythique Ngoe ; chaque clan avec son histoire propre.
+- Rôle des lignages : Lignages patrilinéaires ou bilinéaires selon les localités, structurant héritage foncier et responsabilités rituelles.
+- Autorité religieuse : Autorités rituelles liées à la terre, aux forêts et aux ancêtres ; aujourd’hui coexistence avec christianisme.
+
+# 4. Langues et sous-familles
+- Langue principale : Akoose (Akose)
+- Codes ISO : bss (souvent classé comme Akoose/Bakossi dans la littérature)
+- Dialectes : Variantes régionales (Northern, Western, Southern Bakossi, etc., selon les descriptions dialectales).
+- Rôle véhiculaire : Langue de communication locale, avec présence croissante de l’anglais et du français comme langues de scolarisation.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : Rites agraires liés aux saisons, cérémonies de passage et de guérison.
+- Symboles : Masques forestiers, éléments de faune et de relief montagneux comme repères identitaires.
+- Arts et musique : Danses collectives, chants rituels, tam-tams ; artisanat du bois.
+- Spiritualités : Croyances en des forces de la nature et en les ancêtres ; christianisme très implanté aujourd’hui.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Pas de royaume unifié, mais un ensemble de chefferies bakossi.
+- Relations avec peuples voisins : Relations étroites avec Bafaw, Bakundu, Balong, Mbo, etc. (alliances matrimoniales, échanges, parfois conflits fonciers).
+- Conflits / alliances : Tensions liées aux terres agricoles et à l’exploitation forestière ; alliances locales face à l’emprise coloniale et postcoloniale.
+- Diaspora : Migration interne vers les villes camerounaises (Douala, Buea, Kumba) et diaspora en Europe/Amérique du Nord.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 160 000
+- Répartition par pays : CAMEROUN (CMR) ~ 160 000
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv (PPL_BAKOSSI) + estimations démographiques régionales
+
+# 8. Sources
+- [Article] – « Bakossi people » (encyclopédies et ressources en ligne)
+- [Étude] – B. Ekanjume-Ilongo, « Greetings in Akóóse: A Sociolinguistic Approach »
+- [Ressource] – Sites communautaires bakossi (Bakoswiss, BACDA)

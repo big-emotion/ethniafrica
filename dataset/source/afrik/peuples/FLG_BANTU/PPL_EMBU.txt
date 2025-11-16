@@ -1,0 +1,47 @@
+# Nom du peuple
+- Nom principal du peuple : Embu
+- Auto-appellation : Aembu
+- Exonymes historiques : Mbeere parfois associé (groupe voisin parfois fusionné)
+- Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe : Bantous du Kenya (Mont Kenya)
+- Région historique : Pentes sud-est du Mont Kenya
+- Pays actuels : Kenya
+- Identifiant : PPL_EMBU
+
+# 1. Ethnies incluses
+- Ethnie 1 : Embu du centre
+- Ethnie 2 : Embu de Runyenjes
+- Ethnie 3 : Groupes proches (éléments Mbeere)
+
+# 2. Origines, migrations et formation du peuple
+- Origines : Installation précoce sur les pentes du Mont Kenya.
+- Migrations : Déplacements vers vallées et zones agricoles.
+- Unification : Chefferies locales unifiées par langue et pratiques.
+- Influences : Proximité avec Kikuyu et Meru.
+
+# 3. Organisation et structure interne
+- Structure : Chefferies claniques ; autorités d’âge.
+- Clans : Systèmes lignagers matrilinéaires ou bilinéaires selon zones.
+- Autorité religieuse : Anciens et spécialistes rituels.
+
+# 4. Langue
+- Embu
+- ISO : ebu
+
+# 5. Culture
+- Rituels : Initiations, rites d’âge, cérémonies agraires.
+- Arts : Sculptures, instruments, danses.
+- Spiritualité : Culte des ancêtres + christianisme.
+
+# 6. Histoire
+- Relations anciennes avec Kikuyu, Kamba.
+- Participation aux dynamiques coloniales du Mont Kenya.
+
+# 7. Démographie
+- Population totale : 850 000
+- Année : 2025
+- Source : peuple_demographie_globale.csv (PPL_EMBU)
+
+# 8. Sources
+- Ethnologue (ebu)
+- Kenya National Bureau of Statistics

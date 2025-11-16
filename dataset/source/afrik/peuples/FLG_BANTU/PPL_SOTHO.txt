@@ -1,0 +1,84 @@
+# Nom du peuple
+- Nom principal du peuple : Sotho
+- Auto-appellation : Basotho
+- Exonymes / appellations historiques : Sotho (terme utilisé par les Européens), Basotho
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone S)
+- Région historique : Lesotho, Afrique du Sud
+- Pays actuels : Lesotho, Afrique du Sud
+- Identifiant peuple (ID) : PPL_SOTHO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Sotho du Lesotho
+- Ethnie 2 : Sotho d'Afrique du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Sotho sont originaires du Lesotho et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Formation du royaume du Lesotho.
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers le Lesotho et l'Afrique du Sud
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation du royaume du Lesotho. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples khoïsan, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel (Lesotho). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Sotho
+- Codes ISO : sot (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le sotho est parlé par la majorité des Sotho. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux sotho, symboles liés à l'agriculture, symboles culturels sotho, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume du Lesotho (XIXe siècle)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples khoïsan
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion du royaume du Lesotho
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora sotho dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 7 000 000 - 9 000 000
+- Répartition par pays : 
+  - Afrique du Sud : 5 000 000 - 6 000 000
+  - Lesotho : 2 000 000 - 3 000 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Sotho language (sot)
+- CIA World Factbook – Lesotho, South Africa
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+- Études historiques sur le royaume du Lesotho
+

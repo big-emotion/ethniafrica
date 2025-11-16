@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Ovambo
+- Auto-appellation : Ovambo
+- Exonymes / appellations historiques : Ovambo (terme utilisé par les Européens), Ambo
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone R)
+- Région historique : Nord de la Namibie, Sud de l'Angola
+- Pays actuels : Namibie, Angola
+- Identifiant peuple (ID) : PPL_OVAMBO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Ovambo de Namibie
+- Ethnie 2 : Ovambo d'Angola
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Ovambo sont originaires du nord de la Namibie et du sud de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R).
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers le nord de la Namibie et le sud de l'Angola
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples khoïsan, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Ovambo
+- Codes ISO : kwn (ISO 639-3, code générique), plusieurs codes pour les variétés
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : L'ovambo est parlé par la majorité des Ovambo. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture, symboles culturels ovambo, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples khoïsan
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora ovambo dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 500 000 - 2 000 000
+- Répartition par pays : 
+  - Namibie : 1 000 000 - 1 300 000
+  - Angola : 500 000 - 700 000
+  - Diaspora : 30 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Ovambo languages (kwn)
+- CIA World Factbook – Namibia, Angola
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+

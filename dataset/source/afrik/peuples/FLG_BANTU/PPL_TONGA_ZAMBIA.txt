@@ -1,0 +1,55 @@
+# Nom du peuple
+- Nom principal du peuple : Batonga / Tonga
+- Auto-appellation : Batonga (sg. Mutonga)
+- Exonymes / appellations historiques : Tonga (forme générique) ; BaTonga (pluriel bantou)
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Bantous d’Afrique australe (Zambie, Zimbabwe)
+- Région historique : Vallée du Zambèze, rives nord et sud
+- Pays actuels : Zambie, Zimbabwe
+- Identifiant peuple (ID) : PPL_TONGA_ZAMBIA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Tonga de Zambie (Southern Province)
+- Ethnie 2 : Tonga de Zimbabwe (Binga, vallée du Zambèze)
+- Ethnie 3 : À préciser (autres communautés rurales ou fluviales)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Installation sur la vallée du Zambèze avant l’arrivée des Nguni et autres migrants du sud.
+- Routes migratoires : Mobilité locale entre vallées, plateaux et rives du fleuve.
+- Unifications / divisions : Groupes liés culturellement mais politiquement décentralisés.
+- Influences externes : Contacts avec Shona, Lozis, Nguni, puis avec les colons britanniques.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Chefferies locales (chiefdoms) avec chefs héréditaires.
+- Organisation clanique : Clans totémiques ; structure familiale étendue.
+- Rôle des lignages : Héritage, accès aux terres, rôle cérémoniel.
+- Autorité religieuse : Devins et anciens ; syncrétisme avec christianisme.
+
+# 4. Langues et sous-familles
+- Langue principale : Tonga (Zambie/ZW)
+- Codes ISO : toi (Zambie), tzl (Zimbabwe)
+- Dialectes : Variantes de plateau et variants fluviaux.
+- Rôle véhiculaire : Langue majeure du sud de la Zambie.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : Rituels agraires et pastoraux liés aux saisons.
+- Symboles : Fleuve Zambèze ; bétail ; tambours rituels.
+- Arts et musique : Danses traditionnelles ; polyrythmes.
+- Spiritualités : Croyances aux esprits fluviaux et aux ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Chefferies Tonga influentes dans le sud de la Zambie.
+- Relations avec peuples voisins : Interactions avec Shona, Lozi, Ila.
+- Conflits / alliances : Déplacements forcés lors de la construction du barrage de Kariba (années 1950).
+- Diaspora : Présente à Lusaka, Harare, Livingstone.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 800 000
+- Répartition par pays : ZAMBIE (~1,2M), ZIMBABWE (~0,6M)
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv (PPL_BATONGA)
+
+# 8. Sources
+- Ethnologue (toi/tzl)
+- Zambia Statistics Agency
+- Archives historiques du Zambèze

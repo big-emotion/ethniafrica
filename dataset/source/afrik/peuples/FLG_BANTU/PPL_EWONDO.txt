@@ -1,0 +1,43 @@
+# Nom du peuple
+- Nom principal du peuple : Ewondo
+- Auto-appellation : Ewondo
+- Exonymes historiques : Yaunde (orthographe allemande)
+- Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe ethno-linguistique : Macro-groupe Beti-Pahouin
+- Région historique : Centre du Cameroun (Yaoundé)
+- Pays actuels : Cameroun
+- Identifiant : PPL_EWONDO
+
+# 1. Ethnies incluses
+- Ethnie 1 : Ewondo urbains
+- Ethnie 2 : Ewondo ruraux
+- Ethnie 3 : Sous-groupes lignagers régionaux
+
+# 2. Origines
+- Origines forestières anciennes.
+- Intégration dans le macro-groupe Beti.
+
+# 3. Organisation
+- Chefferies, conseils d’anciens.
+- Clans lignagers étendus.
+
+# 4. Langue
+- Ewondo
+- ISO : ewo
+
+# 5. Culture
+- Masques pahouin
+- Rituels lignagers
+- Musiques et danses du Centre Cameroun
+
+# 6. Histoire
+- Interaction avec Fang et Bulu.
+- Poids historique élevé car Yaoundé est en territoire ewondo.
+
+# 7. Démographie
+- Population : 1 400 000
+- Source : peuple_demographie_globale.csv (PPL_EWONDO)
+
+# 8. Sources
+- Ethnologue (ewo)
+- Archives Pahouin

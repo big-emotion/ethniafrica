@@ -1,0 +1,87 @@
+# Nom du peuple
+- Nom principal du peuple : Kongo
+- Auto-appellation : Bakongo
+- Exonymes / appellations historiques : Kongo (terme utilisé par les Européens), Bakongo
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone H)
+- Région historique : RDC, Angola, Congo, Gabon
+- Pays actuels : République démocratique du Congo, Angola, République du Congo, Gabon
+- Identifiant peuple (ID) : PPL_KONGO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Kongo de RDC
+- Ethnie 2 : Kongo d'Angola
+- Ethnie 3 : Kongo du Congo
+- Ethnie 4 : Kongo du Gabon
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Kongo sont originaires de la RDC, de l'Angola, du Congo et du Gabon. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H). Formation du royaume Kongo.
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers la RDC, l'Angola, le Congo et le Gabon
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation du royaume Kongo. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples bantous voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel (Kongo). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Kikongo
+- Codes ISO : kon (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le kikongo est parlé par la majorité des Kongo. Le français, le portugais, le lingala et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux kongo, symboles liés à l'agriculture, symboles culturels kongo, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Kongo (XIVe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples soudaniques centraux
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion du royaume Kongo
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora kongo dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 10 000 000 - 15 000 000
+- Répartition par pays : 
+  - RDC : 5 000 000 - 7 000 000
+  - Angola : 3 000 000 - 5 000 000
+  - Congo : 1 500 000 - 2 500 000
+  - Gabon : 500 000 - 1 000 000
+  - Diaspora : 200 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kikongo language (kon)
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+- Études historiques sur le royaume Kongo
+

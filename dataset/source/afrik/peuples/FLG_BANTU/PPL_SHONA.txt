@@ -1,0 +1,84 @@
+# Nom du peuple
+- Nom principal du peuple : Shona
+- Auto-appellation : Shona
+- Exonymes / appellations historiques : Shona (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
+- Groupe ethno-linguistique : Bantou (Zone S)
+- Région historique : Zimbabwe, Mozambique
+- Pays actuels : Zimbabwe, Mozambique
+- Identifiant peuple (ID) : PPL_SHONA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Shona du Zimbabwe
+- Ethnie 2 : Shona du Mozambique
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Shona sont originaires du Zimbabwe et du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Formation du royaume du Grand Zimbabwe.
+- Routes migratoires : 
+  - Migrations depuis les régions bantoues
+  - Expansion vers le Zimbabwe et le Mozambique
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation du royaume du Grand Zimbabwe. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples bantous voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel (Grand Zimbabwe). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Shona
+- Codes ISO : sna (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le shona est parlé par la majorité des Shona. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux shona, symboles liés à l'agriculture, symboles culturels shona, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume du Grand Zimbabwe (XIe-XVe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples bantous
+  - Interactions avec les peuples khoïsan
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion du royaume du Grand Zimbabwe
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora shona dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 15 000 000 - 20 000 000
+- Répartition par pays : 
+  - Zimbabwe : 12 000 000 - 15 000 000
+  - Mozambique : 3 000 000 - 5 000 000
+  - Diaspora : 300 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Shona language (sna)
+- CIA World Factbook – Zimbabwe, Mozambique
+- Recensements nationaux
+- Études anthropologiques sur les peuples bantous
+- Études historiques sur le royaume du Grand Zimbabwe
+

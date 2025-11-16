@@ -1,0 +1,42 @@
+# Nom du peuple
+- Nom principal : Chewa
+- Auto-appellation : Achewa
+- Exonymes historiques : Cewa
+- Famille : Niger-Congo – Bantu (FLG_BANTU)
+- Groupe : Bantous de Malawi–Mozambique
+- Région principale : Malawi central, Mozambique Ouest
+- Identifiant : PPL_CHEWA
+
+# 1. Ethnies incluses
+- Chewa du Malawi
+- Chewa du Mozambique
+- Chewa de la diaspora zambienne
+
+# 2. Origines
+- Lointaine migration bantoue de la région du Congo.
+- Fondation du royaume de Maravi.
+
+# 3. Organisation
+- Système matrilinéaire
+- Chefferies locales
+
+# 4. Langue
+- Chewa / Chichewa
+- ISO : nya
+
+# 5. Culture
+- Masques *Gule Wamkulu* (rituel initiatique majeur)
+- Musiques traditionnelles
+- Agriculture (maïs)
+
+# 6. Histoire
+- Royaume Maravi aux XVIe–XVIIe siècles.
+- Influence des missionnaires européens.
+
+# 7. Démographie
+- Population : 9 400 000
+- Source : peuple_demographie_globale.csv
+
+# 8. Sources
+- Ethnologue (nya)
+- Malawi National Archives
