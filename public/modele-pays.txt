@@ -1,0 +1,73 @@
+# Nom du pays
+- Nom officiel actuel :
+- Étymologie du nom :
+- Personne / peuple / administration à l’origine du nom :
+- Identifiant pays (ISO 3166-1 alpha-3) :
+
+# 1. Appellations historiques et origines du nom
+- Antiquité :
+- Moyen Âge :
+- Époque précoloniale :
+- Colonisation :
+- Période contemporaine :
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Nom du royaume / empire] :
+  - Période :
+  - Peuples dominants :
+  - Centres politiques :
+  - Rôle historique :
+
+# 3. Groupes ethniques majeurs
+- Groupe 1 :
+  - Nom :
+  - Identifiant ethnie (ETH_) :
+  - Identifiant peuple (PPL_) :
+  - Région principale :
+  - Langues parlées :
+  - Famille linguistique :
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) :
+
+# 4. Sous-groupes associés
+- Groupe principal :
+  - Sous-groupe :
+    - Nom :
+    - Identifiant sous-groupe (SUB_) :
+    - Identifiant clan (CLN_) :
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+- Traditions culturelles :
+- Religions dominantes :
+- Modes de vie :
+- Organisation sociale :
+- Relations régionales :
+
+# 6. Faits historiques majeurs
+- Périodes anciennes :
+- Moyen Âge :
+- Époque précoloniale :
+- Colonisation :
+- Lutte pour l’indépendance :
+- Période post-indépendance :
+
+# 7. Sources
+- [Titre] – [Auteur/URL]
+- Etc.
+
+# DONNÉES DÉMOGRAPHIQUES
+### Ethnie : [Nom]
+- Identifiant ethnie (ETH_) :
+- Identifiant peuple (PPL_) :
+- Population :
+- Pourcentage dans le pays :
+- Pourcentage en Afrique :
+- Région :
+- Famille linguistique :
+- Code ISO 639-3 (langue principale) :
+
+#### Sous-groupe : [Nom]
+- Identifiant (SUB_) :
+- Population :
+- Pourcentage dans le pays :
+- Pourcentage en Afrique :

@@ -1,0 +1,73 @@
+# Nom de l’ethnie
+- Nom principal :
+- Identifiant ethnie (ID) :
+- Auto-appellation :
+- Exonymes et termes coloniaux (connotation, origine, contextualisation) :
+- Peuple d’appartenance :
+- Identifiant peuple (ID) :
+- Langue parlée :
+- Code ISO 639-3 :
+- Famille linguistique :
+- Identifiant famille linguistique (FLG) :
+
+# 1. Sous-groupes internes
+- Sous-ethnies :
+  - Nom :
+  - Identifiant (SUB_) :
+- Clans :
+  - Nom :
+  - Identifiant (CLN_) :
+- Lignages :
+  - Nom :
+  - Identifiant (CLN_) :
+
+# 2. Origines et histoire du groupe
+- Origines anciennes :
+- Migrations majeures :
+- Formation du groupe :
+- Relations avec les peuples voisins :
+- Rôle dans les royaumes / empires :
+
+# 3. Territoires / Répartition géographique
+- Pays :
+- Régions principales :
+- Zones historiques :
+- Diaspora interne :
+- Diaspora externe :
+
+# 4. Organisation sociale et culturelle
+- Mode de vie :
+- Structure familiale :
+- Organisation clanique :
+- Rites de passage :
+- Religion(s) / spiritualités :
+- Autorités traditionnelles :
+
+# 5. Économie traditionnelle / modes de subsistance
+- Agriculture :
+- Élevage :
+- Artisanat :
+- Pêche / chasse / cueillette :
+- Commerce et réseaux économiques :
+
+# 6. Démographie (pays par pays)
+- Population totale :
+- Population par pays :
+  - Code pays (ISO) :
+  - Région :
+  - Population :
+  - Pourcentage dans le pays :
+  - Source :
+  - Année de référence (2025) :
+
+# 7. Interactions historiques
+- Alliances :
+- Conflits :
+- Rôle dans les États précoloniaux :
+- Rôle dans la période coloniale :
+- Mouvements modernes :
+- Figures majeures du groupe :
+
+# 8. Sources
+- [Titre] – [Auteur/URL]
+- Etc.

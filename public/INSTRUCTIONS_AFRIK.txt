@@ -1,0 +1,269 @@
+# INSTRUCTIONS DU PROJET AFRIK
+# VERSION 1.1 — Document opérationnel pour IA et développeurs
+
+
+========================================================
+0. OBJECTIF DU DOCUMENT
+========================================================
+
+Ce document définit les règles que doit suivre l’IA pour :
+
+• générer les fichiers TXT Afrik (pays, peuples, ethnies, familles linguistiques)  
+• générer et mettre à jour les CSV démographiques  
+• utiliser les identifiants Afrik  
+• respecter le workflow officiel  
+• appliquer les règles méthodologiques et linguistiques Afrik  
+• garantir la cohérence entre les fichiers  
+• maintenir le suivi du projet via les fichiers de statut
+
+
+========================================================
+1. RÈGLE D’ACTIVATION
+========================================================
+
+Lorsque l’utilisateur écrit :
+
+• « Génère le pays X »  
+• « Fais-moi la fiche du pays X »  
+• « Donne-moi le pays X »  
+• « Crée le fichier du pays X »  
+
+→ L’IA doit automatiquement produire un fichier `.txt`  
+→ basé STRICTEMENT sur `modele-pays.txt`.
+
+Lorsque l’utilisateur écrit :
+
+• « Génère le peuple X »  
+→ L’IA doit utiliser `modele-peuple.txt`.
+
+Lorsque l’utilisateur écrit :
+
+• « Génère l’ethnie X »  
+→ L’IA doit utiliser `modele-ethnie.txt`.
+
+Lorsque l’utilisateur écrit :
+
+• « Génère la famille linguistique X »  
+→ L’IA doit utiliser `modele-linguistique.txt`.
+
+Lorsque l’utilisateur demande :
+
+• « Génère la démographie de X »  
+→ L’IA doit remplir le ou les bons fichiers CSV.
+
+
+========================================================
+2. RÈGLE ABSOLUE : RESPECT STRICT DES MODÈLES TXT
+========================================================
+
+L’IA doit impérativement :
+
+• charger le modèle TXT correspondant  
+• respecter 100 % des sections  
+• conserver les titres et l’ordre  
+• ne jamais supprimer une section  
+• ne jamais renommer une section  
+• ne jamais ajouter de section non prévue  
+
+Chaque ligne doit être remplie.
+
+
+========================================================
+3. UTILISATION DES PRÉREQUIS AFRIK
+========================================================
+
+L’IA doit respecter intégralement :
+
+• la hiérarchie (famille → peuple → ethnie → sous-ethnie → clan)  
+• les identifiants internes Afrik (ID pays, ID peuple, ID ethnie, ID sous-ethnie, ID clan)  
+• les règles de nommage  
+• la méthodologie démographique Afrik  
+• les règles sur les termes péjoratifs  
+• les sources autorisées  
+• les fichiers de suivi du workflow  
+
+
+========================================================
+4. TERMES PÉJORATIFS / COLONIAUX (OBLIGATOIRE)
+========================================================
+
+Si un terme historique est :
+
+• péjoratif  
+• colonial  
+• imposé  
+• raciste  
+• problématique  
+
+L’IA doit :
+
+1. conserver le terme  
+2. expliquer l’origine  
+3. indiquer pourquoi il pose problème  
+4. donner l’auto-appellation  
+5. préciser l’usage contemporain  
+6. NE JAMAIS présenter le terme comme neutre  
+
+Particulièrement dans :
+
+• Section "Appellations historiques"  
+• Section "Groupes ethniques majeurs"  
+
+
+========================================================
+5. IDENTIFIANTS AFRIK (OBLIGATOIRE)
+========================================================
+
+Chaque fichier TXT doit inclure les ID suivants lorsqu’ils existent :
+
+• ID famille linguistique : FLG_xxxxx  
+• ID langue : code ISO 639-3  
+• ID peuple : PPL_xxxxx  
+• ID ethnie : ETH_xxxxx  
+• ID sous-ethnie : SUB_xxxxx  
+• ID clan : CLN_xxxxx  
+• ID pays : ISO 3166-1 alpha-3  
+
+Les CSV DOIVENT utiliser les mêmes identifiants.
+
+
+========================================================
+6. DÉMOGRAPHIE : MÉTHODOLOGIE AFRIK
+========================================================
+
+L’IA doit :
+
+1. Utiliser les chiffres ONU / UNFPA pour les populations nationales (année 2025).  
+2. Utiliser les % ethniques des sources fiables (CIA, SIL, UNESCO, recherches anthropologiques).  
+3. La somme des ethnies d’un pays = EXACTEMENT 100 %.  
+4. Remplir les CSV correspondants :
+
+   - famille_linguistique.csv  
+   - peuple_demographie_globale.csv  
+   - ethnie_demographie_par_pays.csv  
+   - pays_demographie.csv
+
+5. Corriger automatiquement si incohérence.  
+6. Toujours inclure :  
+   • population  
+   • pourcentage (si applicable)  
+   • source  
+   • année 2025
+
+
+========================================================
+7. RECHERCHE WEB (OBLIGATOIRE)
+========================================================
+
+Aucune donnée ne doit être inventée.
+
+L’IA doit effectuer une recherche web pour :
+
+• Nom du pays  
+• Appellations historiques  
+• Royaumes, civilisations, dynasties  
+• Groupes ethniques  
+• Sous-groupes  
+• Langues  
+• Démographie  
+• Sources utilisées  
+
+
+========================================================
+8. RÈGLES POUR LES FICHIERS CSV
+========================================================
+
+CSV officiels :
+
+1. famille_linguistique.csv  
+2. peuple_demographie_globale.csv  
+3. ethnie_demographie_par_pays.csv  
+4. pays_demographie.csv  
+
+Chaque entrée doit contenir :
+
+• identifiant  
+• population  
+• année de référence  
+• source  
+
+
+========================================================
+9. COHÉRENCE TXT ↔ CSV
+========================================================
+
+L’IA doit vérifier automatiquement que :
+
+• toute entité dans un TXT existe dans les CSV  
+• la démographie TXT = démographie CSV  
+• les ID sont identiques partout  
+• la famille linguistique TXT existe dans CSV  
+
+L’IA doit corriger si incohérence.
+
+
+========================================================
+10. WORKFLOW OFFICIEL AFRIK (OBLIGATOIRE)
+========================================================
+
+1️⃣ Familles linguistiques  
+2️⃣ Langues  
+3️⃣ Peuples  
+4️⃣ Ethnies  
+5️⃣ Sous-ethnies & clans  
+6️⃣ Pays  
+7️⃣ Démographies CSV  
+8️⃣ Validation  
+9️⃣ Publication  
+
+
+========================================================
+10.3 FICHIERS DE SUIVI (OBLIGATOIRES)
+========================================================
+
+Deux fichiers doivent accompagner l’avancement du projet :
+
+1. WORKFLOW_AFRIK_STATUS.md  
+   → checklist humaine  
+   → progression visible  
+
+2. workflow_status.csv  
+   → suivi technique  
+   → statuts : pending / in_progress / done  
+
+Aucune étape ne peut être considérée comme finalisée tant qu’elle n’est pas mise à jour dans ces fichiers.
+
+L’IA doit proposer les mises à jour des deux fichiers dès qu’une étape est terminée.
+
+
+========================================================
+11. RÉACTIONS INTELLIGENTES DE L’IA
+========================================================
+
+L’IA doit :
+
+• avertir si une étape est tentée hors workflow  
+• détecter les identifiants manquants et les proposer  
+• proposer des regroupements si un pays a trop d’ethnies  
+• signaler les incohérences  
+• proposer les corrections  
+
+
+========================================================
+12. FORMAT DES SORTIES
+========================================================
+
+Fichiers TXT :  
+→ Bloc unique entre ```  
+→ Aucun commentaire externe  
+→ Pas de texte hors fichier  
+
+CSV :  
+→ En-tête obligatoire  
+→ Séparateur virgule  
+→ Aucune explication hors tableau  
+
+
+========================================================
+FIN DU DOCUMENT — INSTRUCTIONS_AFRIK.txt (VERSION 1.1)
+========================================================

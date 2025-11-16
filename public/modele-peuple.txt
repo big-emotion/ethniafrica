@@ -1,0 +1,53 @@
+# Nom du peuple
+- Nom principal du peuple :
+- Auto-appellation :
+- Exonymes / appellations historiques :
+- Famille linguistique principale :
+- Groupe ethno-linguistique :
+- Région historique :
+- Pays actuels :
+- Identifiant peuple (ID) :
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 :
+- Ethnie 2 :
+- Ethnie 3 :
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes :
+- Routes migratoires :
+- Unifications / divisions :
+- Influences externes :
+
+# 3. Organisation et structure interne
+- Système politique traditionnel :
+- Organisation clanique :
+- Rôle des lignages :
+- Autorité religieuse :
+
+# 4. Langues et sous-familles
+- Langue principale :
+- Codes ISO :
+- Dialectes :
+- Rôle véhiculaire :
+
+# 5. Culture, rites et traditions
+- Rites majeurs :
+- Symboles :
+- Arts et musique :
+- Spiritualités :
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies :
+- Relations avec peuples voisins :
+- Conflits / alliances :
+- Diaspora :
+
+# 7. Démographie globale
+- Population totale (tous pays) :
+- Répartition par pays :
+- Année de référence :
+- Source :
+
+# 8. Sources
+- [Titre] – [Auteur/URL]
