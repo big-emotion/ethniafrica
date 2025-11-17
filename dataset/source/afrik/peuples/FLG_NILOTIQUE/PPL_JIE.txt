@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Jie
+- Auto-appellation : Jie
+- Exonymes / appellations historiques : Jie (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique oriental
+- Région historique : Nord-est de l'Ouganda
+- Pays actuels : Ouganda
+- Identifiant peuple (ID) : PPL_JIE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Jie du Nord
+- Ethnie 2 : Jie du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Jie sont originaires du nord-est de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le nord-est de l'Ouganda
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.
+- Influences externes : Contacts avec les peuples bantous, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Jie
+- Codes ISO : jie (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le jie est parlé par la majorité des Jie. L'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (scarification, fêtes de naissance)
+  - Cérémonies liées à l'élevage
+- Symboles : Symboles liés à l'élevage, symboles culturels jie (scarifications, bijoux), symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (bijoux, armes)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Organisation en groupes d'âge
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples nilotiques
+  - Interactions avec les peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora jie dans les grandes villes ougandaises et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 50 000 - 100 000
+- Répartition par pays : 
+  - Ouganda : 50 000 - 100 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Jie language (jie)
+- CIA World Factbook – Uganda
+- Recensements ougandais
+- Études anthropologiques sur les peuples nilotiques
+

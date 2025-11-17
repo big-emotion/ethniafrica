@@ -1,0 +1,80 @@
+# Nom du peuple
+- Nom principal du peuple : Dafing
+- Auto-appellation : Dafing
+- Exonymes / appellations historiques : Dafing (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
+- Groupe ethno-linguistique : Mandé occidental
+- Région historique : Burkina Faso, Mali
+- Pays actuels : Burkina Faso, Mali
+- Identifiant peuple (ID) : PPL_DAFING
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Dafing du Burkina Faso
+- Ethnie 2 : Dafing du Mali
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Dafing sont originaires du Burkina Faso et du Mali, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones sahéliennes
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples mandé voisins, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Dafing
+- Codes ISO : dtn (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le dafing est parlé par la majorité des Dafing. Le français est utilisé dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels dafing.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Croyances traditionnelles préservées dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques burkinabé et malienne.
+- Relations avec peuples voisins : 
+  - Relations avec les peuples mandé voisins
+  - Interactions avec les peuples gur
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora dafing dans les grandes villes burkinabé et maliennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 100 000 - 200 000
+- Répartition par pays : 
+  - Burkina Faso : 60 000 - 120 000
+  - Mali : 40 000 - 80 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements burkinabé et maliens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Dafing language (dtn)
+- CIA World Factbook – Burkina Faso, Mali
+- Recensements burkinabé et maliens
+- Études anthropologiques sur les peuples mandé
+

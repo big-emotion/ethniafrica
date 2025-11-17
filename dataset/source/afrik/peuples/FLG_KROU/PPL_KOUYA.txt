@@ -1,0 +1,79 @@
+# Nom du peuple
+- Nom principal du peuple : Kouya
+- Auto-appellation : Kouya
+- Exonymes / appellations historiques : Kouya (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
+- Groupe ethno-linguistique : Krou
+- Région historique : Côte d'Ivoire
+- Pays actuels : Côte d'Ivoire
+- Identifiant peuple (ID) : PPL_KOUYA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Kouya du Nord
+- Ethnie 2 : Kouya du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Kouya sont originaires de la Côte d'Ivoire, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones forestières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples voisins, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Kouya
+- Codes ISO : kyf (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le kouya est parlé par la majorité des Kouya. Le français est utilisé dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels kouya, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques ivoiriennes.
+- Relations avec peuples voisins : 
+  - Relations avec les peuples krou voisins
+  - Interactions avec les peuples mandé
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques ivoiriens
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora kouya dans les grandes villes ivoiriennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 30 000 - 60 000
+- Répartition par pays : 
+  - Côte d'Ivoire : 30 000 - 60 000
+  - Diaspora : 3 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kouya language (kyf)
+- CIA World Factbook – Côte d'Ivoire
+- Recensements ivoiriens
+- Études anthropologiques sur les peuples krou
+

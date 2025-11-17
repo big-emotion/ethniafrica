@@ -1,0 +1,86 @@
+# Nom du peuple
+- Nom principal du peuple : Wè (Guéré)
+- Auto-appellation : Wè / Guéré
+- Exonymes / appellations historiques : 
+  - « Wè » (auto-appellation)
+  - « Guéré » (terme utilisé par les Européens)
+  - « Krahn » (terme utilisé au Libéria)
+- Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
+- Groupe ethno-linguistique : Krou occidental
+- Région historique : Ouest de la Côte d'Ivoire, est du Libéria
+- Pays actuels : Côte d'Ivoire, Libéria
+- Identifiant peuple (ID) : PPL_WE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Wè de Côte d'Ivoire
+- Ethnie 2 : Krahn du Libéria
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Wè sont originaires de l'ouest de la Côte d'Ivoire et de l'est du Libéria, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones forestières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations entre Wè (Côte d'Ivoire) et Krahn (Libéria).
+- Influences externes : Contacts avec les peuples voisins, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Wè / Guéré / Krahn
+- Codes ISO : wec (ISO 639-3, code générique), plusieurs codes pour les variétés
+- Dialectes : 
+  - Wè de Côte d'Ivoire
+  - Krahn du Libéria
+  - Variantes régionales
+- Rôle véhiculaire : Le wè/guéré/krahn est parlé par la majorité des Wè. Le français (Côte d'Ivoire) et l'anglais (Libéria) sont utilisés dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Masques traditionnels wè, symboles culturels, art traditionnel.
+- Arts et musique : 
+  - Sculpture sur bois (masques wè célèbres)
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme (catholicisme et protestantisme) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques ivoiriennes et libériennes.
+- Relations avec peuples voisins : 
+  - Relations avec les peuples krou voisins
+  - Interactions avec les peuples mandé
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques ivoiriens et libériens
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora wè/krahn dans les grandes villes ivoiriennes et libériennes, et dans les pays occidentaux (États-Unis).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 400 000 - 600 000
+- Répartition par pays : 
+  - Côte d'Ivoire : 300 000 - 400 000
+  - Libéria : 100 000 - 200 000
+  - Diaspora : 30 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ivoiriens et libériens, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Wè/Guéré/Krahn language (wec)
+- CIA World Factbook – Côte d'Ivoire, Liberia
+- Recensements ivoiriens et libériens
+- Études anthropologiques sur les peuples krou
+- Études sur l'art wè (masques)
+

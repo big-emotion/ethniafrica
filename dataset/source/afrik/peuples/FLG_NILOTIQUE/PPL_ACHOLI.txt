@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Acholi
+- Auto-appellation : Acholi
+- Exonymes / appellations historiques : Acholi (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique occidental
+- Région historique : Nord de l'Ouganda, Sud-Soudan
+- Pays actuels : Ouganda, Soudan du Sud
+- Identifiant peuple (ID) : PPL_ACHOLI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Acholi d'Ouganda
+- Ethnie 2 : Acholi du Soudan du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Acholi sont originaires du nord de l'Ouganda et du sud du Soudan. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le nord de l'Ouganda
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Luo.
+- Influences externes : Contacts avec les peuples bantous, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Acholi
+- Codes ISO : ach (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : L'acholi est parlé par la majorité des Acholi. L'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'élevage
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'élevage, symboles culturels acholi, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Luo
+  - Interactions avec les autres peuples nilotiques
+  - Contacts avec les peuples bantous
+- Conflits / alliances : 
+  - Résistance à la colonisation britannique
+  - Participation aux mouvements politiques
+  - Conflits territoriaux (notamment avec la LRA)
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora acholi dans les grandes villes ougandaises et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 500 000 - 2 000 000
+- Répartition par pays : 
+  - Ouganda : 1 200 000 - 1 600 000
+  - Soudan du Sud : 300 000 - 400 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Acholi language (ach)
+- CIA World Factbook – Uganda, South Sudan
+- Recensements nationaux
+- Études anthropologiques sur les peuples nilotiques
+

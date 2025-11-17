@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Murle
+- Auto-appellation : Murle
+- Exonymes / appellations historiques : Murle (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique méridional
+- Région historique : Sud-Soudan, Éthiopie
+- Pays actuels : Soudan du Sud, Éthiopie
+- Identifiant peuple (ID) : PPL_MURLE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Murle du Soudan du Sud
+- Ethnie 2 : Murle d'Éthiopie
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Murle sont originaires du Soudan du Sud et de l'Éthiopie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique méridional.
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le Soudan du Sud et l'Éthiopie
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.
+- Influences externes : Contacts avec les peuples nilotiques voisins, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Murle
+- Codes ISO : mur (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le murle est parlé par la majorité des Murle. L'anglais, l'amharique et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (scarification, fêtes de naissance)
+  - Cérémonies liées à l'élevage
+- Symboles : Symboles liés à l'élevage, symboles culturels murle (scarifications, bijoux), symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (bijoux, armes)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Organisation en groupes d'âge
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples nilotiques
+  - Interactions avec les peuples couchitiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora murle dans les grandes villes soudanaises et éthiopiennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 400 000
+- Répartition par pays : 
+  - Soudan du Sud : 150 000 - 300 000
+  - Éthiopie : 50 000 - 100 000
+  - Diaspora : 10 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Murle language (mur)
+- CIA World Factbook – South Sudan, Ethiopia
+- Recensements nationaux
+- Études anthropologiques sur les peuples nilotiques
+

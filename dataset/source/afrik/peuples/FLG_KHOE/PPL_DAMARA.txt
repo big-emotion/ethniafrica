@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Damara
+- Auto-appellation : ǂNūkhoen
+- Exonymes / appellations historiques : 
+  - « Damara » (terme utilisé par les Européens)
+  - « Bergdama » (terme historique, parfois péjoratif)
+- Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
+- Groupe ethno-linguistique : Khoe central
+- Région historique : Namibie
+- Pays actuels : Namibie
+- Identifiant peuple (ID) : PPL_DAMARA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Damara du Nord
+- Ethnie 2 : Damara du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Damara sont originaires de la Namibie. Leur présence dans la région remonte à plusieurs millénaires. Ils sont historiquement liés aux populations khoisan.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones désertiques
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples khoekhoe, bantous et européens, influence du christianisme et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Damara (Khoekhoe)
+- Codes ISO : naq (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le damara est parlé par la majorité des Damara. L'afrikaans et l'anglais sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels damara, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques namibiennes.
+- Relations avec peuples voisins : 
+  - Relations avec les Khoekhoe
+  - Interactions avec les Bantous (Herero, Ovambo)
+  - Contacts avec les colons européens
+- Conflits / alliances : 
+  - Marginalisation et déplacements forcés sous la colonisation
+  - Résistance à la colonisation allemande et sud-africaine
+  - Participation aux mouvements politiques namibiens
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora damara dans les grandes villes namibiennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 100 000 - 200 000
+- Répartition par pays : 
+  - Namibie : 100 000 - 200 000
+  - Diaspora : 10 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements namibiens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Damara language (naq)
+- CIA World Factbook – Namibia
+- Recensements namibiens
+- Études anthropologiques sur les peuples khoisan
+

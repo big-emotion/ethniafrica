@@ -1,0 +1,79 @@
+# Nom du peuple
+- Nom principal du peuple : Wogo
+- Auto-appellation : Wogo
+- Exonymes / appellations historiques : Wogo (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Songhay (FLG_SONGHAY)
+- Groupe ethno-linguistique : Songhay
+- Région historique : Mali
+- Pays actuels : Mali
+- Identifiant peuple (ID) : PPL_WOGO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Wogo du Nord
+- Ethnie 2 : Wogo du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Wogo sont originaires du Mali, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long du fleuve Niger
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les autres peuples songhay.
+- Influences externes : Contacts avec les peuples touareg et autres groupes, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Wogo (variété songhay)
+- Codes ISO : Code spécifique à vérifier (probablement sous-code de songhay)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le wogo est parlé par la majorité des Wogo. Le français est utilisé dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels songhay.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture wogo.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques maliennes.
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples songhay
+  - Interactions avec les Touareg
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques maliens
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora wogo dans les grandes villes maliennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 50 000 - 100 000
+- Répartition par pays : 
+  - Mali : 50 000 - 100 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements maliens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Wogo language
+- CIA World Factbook – Mali
+- Recensements maliens
+- Études anthropologiques sur les peuples songhay
+

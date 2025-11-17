@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Maasai
+- Auto-appellation : Maasai
+- Exonymes / appellations historiques : Maasai (terme utilisé par les Européens), Masai
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique oriental
+- Région historique : Kenya, Tanzanie
+- Pays actuels : Kenya, Tanzanie
+- Identifiant peuple (ID) : PPL_MAASAI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Maasai du Kenya
+- Ethnie 2 : Maasai de Tanzanie
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Maasai sont originaires du Kenya et de la Tanzanie, dans la région du Rift est-africain. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le Rift est-africain
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.
+- Influences externes : Contacts avec les peuples bantous, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en groupes d'âge (moran, laibon). Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des laibon (chefs religieux traditionnels) et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Maasai
+- Codes ISO : mas (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le maasai est parlé par la majorité des Maasai. Le swahili, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation (Eunoto, Emuratare)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Cérémonies liées à l'élevage
+- Symboles : Symboles liés à l'élevage, symboles culturels maasai (shuka, bijoux), symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle (chant, saut)
+  - Danse traditionnelle (adumu)
+  - Poésie orale
+  - Artisanat (bijoux, armes)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Organisation en groupes d'âge
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples nilotiques
+  - Interactions avec les peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation britannique
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora maasai dans les grandes villes kényanes et tanzaniennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 500 000 - 2 000 000
+- Répartition par pays : 
+  - Kenya : 800 000 - 1 000 000
+  - Tanzanie : 700 000 - 1 000 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Maasai language (mas)
+- CIA World Factbook – Kenya, Tanzania
+- Recensements nationaux
+- Études anthropologiques sur les peuples nilotiques
+

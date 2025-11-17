@@ -1,0 +1,80 @@
+# Nom du peuple
+- Nom principal du peuple : Krio
+- Auto-appellation : Krio
+- Exonymes / appellations historiques : Krio (terme utilisé pour les créoles de Sierra Leone)
+- Famille linguistique principale : Créole (FLG_CREOLE)
+- Groupe ethno-linguistique : Créole afro-anglais
+- Région historique : Sierra Leone
+- Pays actuels : Sierra Leone
+- Identifiant peuple (ID) : PPL_KRIO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Krio de Freetown
+- Ethnie 2 : Krio des provinces
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Krio sont un peuple créole formé à partir du contact entre les populations africaines libérées (notamment les "Nova Scotians" et les "Maroons" de Jamaïque) et les colons britanniques à partir du XVIIIe siècle. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Formation dans la région de Freetown
+  - Expansion le long des zones côtières
+  - Déplacements vers les zones urbaines
+  - Diaspora vers le Royaume-Uni et d'autres pays
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune.
+- Influences externes : Contacts avec les populations africaines locales, influence du christianisme protestant et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure basée sur les familles créoles. Organisation en familles étendues.
+- Rôle des lignages : Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.
+- Autorité religieuse : Autorité des prêtres protestants et des chefs religieux. Influence du protestantisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Krio (créole de Sierra Leone)
+- Codes ISO : kri (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le krio est parlé par la majorité des Krio. Il sert de lingua franca en Sierra Leone. L'anglais est utilisé dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses protestantes
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels créoles
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels créoles, symboles protestants.
+- Arts et musique : 
+  - Musique traditionnelle créole
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat
+- Spiritualités : Protestantisme majoritaire. Croyances traditionnelles préservées dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en communautés créoles. Intégration dans les structures politiques sierra-léonaises.
+- Relations avec peuples voisins : 
+  - Relations avec les populations africaines locales
+  - Interactions avec les colons britanniques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation à la lutte pour l'indépendance
+  - Participation aux mouvements politiques sierra-léonais
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora krio importante dans les grandes villes sierra-léonaises et dans les pays occidentaux (Royaume-Uni, États-Unis).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 000 - 700 000
+- Répartition par pays : 
+  - Sierra Leone : 500 000 - 700 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements sierra-léonais, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Krio language (kri)
+- CIA World Factbook – Sierra Leone
+- Recensements sierra-léonais
+- Études anthropologiques sur les peuples créoles
+

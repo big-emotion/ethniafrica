@@ -1,0 +1,102 @@
+# Nom du peuple
+- Nom principal du peuple : Peuples Songhay (macro-groupe)
+- Auto-appellation : Variées selon les groupes (Songhay, Zarma, Dendi, etc.)
+- Exonymes / appellations historiques : 
+  - « Songhay » (terme linguistique)
+  - « Songhaï » (variante française)
+  - « Sonrai » (variante historique)
+- Famille linguistique principale : Nilo-saharien – Songhay (FLG_SONGHAY)
+- Groupe ethno-linguistique : Songhay (macro-groupe)
+- Région historique : Mali, Niger, Bénin, Burkina Faso, Nigeria
+- Pays actuels : Mali, Niger, Bénin, Burkina Faso, Nigeria
+- Identifiant peuple (ID) : PPL_SONGHAY_MACRO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Songhay du Mali
+- Ethnie 2 : Zarma du Niger
+- Ethnie 3 : Dendi (Bénin, Niger, Nigeria)
+- Ethnie 4 : Koyra Chiini (Mali)
+- Ethnie 5 : Koyra Boro Seyo (Mali)
+- Ethnie 6 : Songhay Gurma (Burkina Faso, Bénin)
+- Ethnie 7 : Autres groupes songhay
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples Songhay sont originaires de la région du fleuve Niger, berceau de l'empire Songhay. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Expansion depuis la région de Gao (Mali) vers l'est (Niger) et le sud (Bénin, Burkina Faso, Nigeria)
+  - Migrations le long du fleuve Niger
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Diversité linguistique importante.
+- Influences externes : Contacts avec les peuples touareg, haoussa et autres groupes, influence profonde de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Tradition de l'empire Songhay.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite (malékite) structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues songhay (Songhay, Zarma, Dendi, Koyra Chiini, etc.)
+- Codes ISO : son (Songhay), dje (Zarma), ddn (Dendi), ses (Koyra Chiini), et autres
+- Dialectes : 
+  - Songhay du Mali
+  - Zarma du Niger
+  - Dendi (Bénin, Niger, Nigeria)
+  - Koyra Chiini (Mali)
+  - Koyra Boro Seyo (Mali)
+  - Songhay Gurma (Burkina Faso, Bénin)
+  - Nombreuses variantes régionales
+- Rôle véhiculaire : Les langues songhay sont parlées par les peuples Songhay. Le zarma sert de langue véhiculaire au Niger. Le français, l'anglais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles de l'empire Songhay, symboles islamiques, symboles culturels songhay.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture songhay.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Empire Songhay (XVe-XVIe siècles)
+  - Royaumes songhay post-empire
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations entre groupes songhay
+  - Interactions avec les Touareg
+  - Relations avec les Haoussa
+  - Contacts commerciaux transsahariens
+- Conflits / alliances : 
+  - Expansion de l'empire Songhay
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora songhay dans les grandes villes maliennes, nigériennes, béninoises, burkinabé et nigérianes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 3 500 000 - 4 500 000
+- Répartition par pays : 
+  - Niger : 2 000 000 - 2 500 000 (Zarma majoritaire)
+  - Mali : 1 000 000 - 1 500 000
+  - Bénin : 200 000 - 300 000
+  - Burkina Faso : 100 000 - 200 000
+  - Nigeria : 100 000 - 200 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Songhay languages
+- CIA World Factbook – Country profiles
+- Hunwick, John O. – *Timbuktu and the Songhay Empire*
+- Kati, Mahmoud – *Tarikh al-Fattash*
+- Recensements nationaux
+- Études anthropologiques sur les peuples songhay
+

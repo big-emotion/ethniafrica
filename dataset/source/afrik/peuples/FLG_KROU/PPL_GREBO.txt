@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Grebo
+- Auto-appellation : Grebo
+- Exonymes / appellations historiques : Grebo (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
+- Groupe ethno-linguistique : Krou occidental
+- Région historique : Sud-est du Libéria, sud-ouest de la Côte d'Ivoire
+- Pays actuels : Libéria, Côte d'Ivoire
+- Identifiant peuple (ID) : PPL_GREBO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Grebo du Libéria
+- Ethnie 2 : Grebo de Côte d'Ivoire
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Grebo sont originaires du sud-est du Libéria et du sud-ouest de la Côte d'Ivoire, dans la région côtière. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones côtières
+  - Expansion le long des zones côtières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Kru.
+- Influences externes : Contacts avec les commerçants européens, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Grebo
+- Codes ISO : grb (ISO 639-3, code générique), plusieurs codes pour les variétés
+- Dialectes : 
+  - Grebo du Libéria
+  - Grebo de Côte d'Ivoire
+  - Variantes régionales
+- Rôle véhiculaire : Le grebo est parlé par la majorité des Grebo. L'anglais (Libéria) et le français (Côte d'Ivoire) sont utilisés dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels grebo, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques libériennes et ivoiriennes.
+- Relations avec peuples voisins : 
+  - Relations avec les Kru
+  - Interactions avec les Bassa
+  - Relations avec les peuples voisins
+  - Contacts commerciaux avec les Européens
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora grebo dans les grandes villes libériennes et ivoiriennes, et dans les pays occidentaux (États-Unis).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 300 000 - 400 000
+- Répartition par pays : 
+  - Libéria : 200 000 - 300 000
+  - Côte d'Ivoire : 100 000 - 150 000
+  - Diaspora : 20 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements libériens et ivoiriens, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Grebo language (grb)
+- CIA World Factbook – Liberia, Côte d'Ivoire
+- Recensements libériens et ivoiriens
+- Études anthropologiques sur les peuples krou
+

@@ -1,0 +1,80 @@
+# Nom du peuple
+- Nom principal du peuple : Créole Seychellois
+- Auto-appellation : Kreol Seselwa
+- Exonymes / appellations historiques : Créole seychellois (terme utilisé pour les créoles des Seychelles)
+- Famille linguistique principale : Créole (FLG_CREOLE)
+- Groupe ethno-linguistique : Créole afro-français
+- Région historique : Seychelles
+- Pays actuels : Seychelles
+- Identifiant peuple (ID) : PPL_CREOLE_SEYCHELLES
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Créole des Seychelles
+- Ethnie 2 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Créoles seychellois sont un peuple créole formé à partir du contact entre les populations africaines (notamment de Madagascar et d'Afrique de l'Est), malgaches, indiennes et les colons français à partir du XVIIIe siècle. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Formation dans les îles des Seychelles
+  - Expansion dans toutes les îles
+  - Déplacements vers les zones urbaines
+  - Diaspora vers la France et d'autres pays
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune.
+- Influences externes : Contacts avec les populations africaines, malgaches et indiennes, influence du christianisme catholique et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure basée sur les familles créoles. Organisation en familles étendues.
+- Rôle des lignages : Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.
+- Autorité religieuse : Autorité des prêtres catholiques et des chefs religieux. Influence du catholicisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Créole seychellois (Kreol Seselwa)
+- Codes ISO : crs (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre îles
+- Rôle véhiculaire : Le créole seychellois est parlé par la majorité des Créoles seychellois. Le français et l'anglais sont utilisés dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses catholiques
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels créoles
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels créoles, symboles catholiques.
+- Arts et musique : 
+  - Musique traditionnelle créole (séga, moutia)
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat
+- Spiritualités : Catholicisme majoritaire. Croyances traditionnelles préservées dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en communautés créoles. Intégration dans les structures politiques seychelloises.
+- Relations avec peuples voisins : 
+  - Relations avec les populations africaines et malgaches
+  - Interactions avec les colons français
+  - Contacts avec les populations indiennes
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation à la lutte pour l'indépendance
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora créole seychelloise dans les grandes villes seychelloises et dans les pays occidentaux (France, Royaume-Uni).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 80 000 - 100 000
+- Répartition par pays : 
+  - Seychelles : 80 000 - 100 000
+  - Diaspora : 10 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements seychellois, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Seychellois Creole language (crs)
+- CIA World Factbook – Seychelles
+- Recensements seychellois
+- Études anthropologiques sur les peuples créoles
+

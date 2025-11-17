@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Maban
+- Auto-appellation : Maban
+- Exonymes / appellations historiques : Maban (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique
+- Région historique : Soudan du Sud, Tchad
+- Pays actuels : Soudan du Sud, Tchad
+- Identifiant peuple (ID) : PPL_MABAN
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Maban du Soudan du Sud
+- Ethnie 2 : Maban du Tchad
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Maban sont originaires du Soudan du Sud et du Tchad. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique.
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le Soudan du Sud et le Tchad
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples nilotiques voisins, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Maban
+- Codes ISO : mdy (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le maban est parlé par la majorité des Maban. L'anglais, l'arabe, le français et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture et à l'élevage
+  - Cérémonies religieuses chrétiennes et islamiques
+- Symboles : Symboles liés à l'agriculture et à l'élevage, symboles culturels maban, symboles chrétiens et islamiques.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples nilotiques
+  - Interactions avec les peuples sahariens
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora maban dans les grandes villes soudanaises et tchadiennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 100 000 - 200 000
+- Répartition par pays : 
+  - Soudan du Sud : 60 000 - 120 000
+  - Tchad : 40 000 - 80 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Maban language (mdy)
+- CIA World Factbook – South Sudan, Chad
+- Recensements nationaux
+- Études anthropologiques sur les peuples nilotiques
+

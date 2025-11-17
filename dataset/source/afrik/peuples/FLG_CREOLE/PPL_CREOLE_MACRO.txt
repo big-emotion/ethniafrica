@@ -1,0 +1,97 @@
+# Nom du peuple
+- Nom principal du peuple : Peuples Créoles (macro-groupe)
+- Auto-appellation : Variées selon les groupes (Crioulo, Krio, etc.)
+- Exonymes / appellations historiques : 
+  - « Créoles » (terme générique)
+  - « Crioulo » (terme portugais)
+  - « Krio » (terme pour les créoles de Sierra Leone)
+- Famille linguistique principale : Créole (FLG_CREOLE)
+- Groupe ethno-linguistique : Créole (macro-groupe)
+- Région historique : Zones côtières d'Afrique de l'Ouest, îles de l'océan Indien
+- Pays actuels : Guinée-Bissau, Cap-Vert, São Tomé-et-Príncipe, Sierra Leone, Maurice, Seychelles, Réunion, et autres
+- Identifiant peuple (ID) : PPL_CREOLE_MACRO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Créoles cap-verdiens
+- Ethnie 2 : Crioulo de Guinée-Bissau
+- Ethnie 3 : Krio de Sierra Leone
+- Ethnie 4 : Créoles de São Tomé-et-Príncipe
+- Ethnie 5 : Créoles de Maurice
+- Ethnie 6 : Créoles des Seychelles
+- Ethnie 7 : Créoles de la Réunion
+- Ethnie 8 : Autres groupes créoles
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples créoles sont formés à partir du contact entre les populations africaines locales et les colons européens (portugais, français, britanniques) à partir du XVe siècle. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Formation dans les zones côtières et les îles
+  - Expansion le long des zones côtières
+  - Déplacements vers les zones urbaines
+  - Diaspora importante vers les pays occidentaux
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune. Diversité linguistique importante.
+- Influences externes : Contacts avec les populations africaines locales, influence du christianisme (catholicisme, protestantisme) et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure basée sur les familles créoles. Organisation en familles étendues.
+- Rôle des lignages : Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.
+- Autorité religieuse : Autorité des prêtres et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues créoles (Créole cap-verdien, Crioulo, Krio, Créole mauricien, etc.)
+- Codes ISO : kea (Créole cap-verdien), pov (Crioulo), kri (Krio), mfe (Créole mauricien), crs (Créole seychellois), rcf (Créole réunionnais), et autres
+- Dialectes : 
+  - Créoles afro-portugais (Cap-Vert, Guinée-Bissau, São Tomé)
+  - Créoles afro-anglais (Sierra Leone)
+  - Créoles afro-français (Maurice, Seychelles, Réunion)
+  - Nombreuses variantes régionales
+- Rôle véhiculaire : Les langues créoles sont parlées par les peuples créoles. Les langues européennes (portugais, anglais, français) sont utilisées dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses chrétiennes
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels créoles
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels créoles, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle créole (morna, coladeira, séga, maloya, etc.)
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat
+- Spiritualités : Christianisme majoritaire (catholicisme, protestantisme). Croyances traditionnelles préservées dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en communautés créoles. Intégration dans les structures politiques nationales.
+- Relations avec peuples voisins : 
+  - Relations avec les populations africaines locales
+  - Interactions avec les colons européens
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation aux luttes pour l'indépendance
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora créole importante dans les grandes villes et dans les pays occidentaux (États-Unis, Portugal, France, Royaume-Uni, Pays-Bas).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 2 000 000 - 3 000 000
+- Répartition par pays : 
+  - Cap-Vert : 600 000 - 700 000
+  - Guinée-Bissau : 200 000 - 300 000
+  - Sierra Leone : 500 000 - 700 000
+  - Maurice : 400 000 - 500 000
+  - Seychelles : 80 000 - 100 000
+  - Réunion : 200 000 - 300 000
+  - São Tomé-et-Príncipe : 50 000 - 100 000
+  - Autres pays : 100 000+
+  - Diaspora : 1 000 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Creole languages
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples créoles
+

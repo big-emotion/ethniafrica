@@ -1,0 +1,105 @@
+# Nom du peuple
+- Nom principal du peuple : Peuples Nilotiques (macro-groupe)
+- Auto-appellation : Variées selon les groupes (Dinka, Nuer, Maasai, Luo, etc.)
+- Exonymes / appellations historiques : 
+  - « Nilotiques » (terme linguistique)
+  - « Nilo-hamitique » (terme colonial obsolète et rejeté)
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique (macro-groupe)
+- Région historique : Soudan du Sud, Soudan, Éthiopie, Ouganda, Kenya, Tanzanie
+- Pays actuels : Soudan du Sud, Soudan, Éthiopie, Ouganda, Kenya, Tanzanie
+- Identifiant peuple (ID) : PPL_NILOTIQUE_MACRO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Dinka
+- Ethnie 2 : Nuer
+- Ethnie 3 : Maasai
+- Ethnie 4 : Luo
+- Ethnie 5 : Acholi
+- Ethnie 6 : Lango
+- Ethnie 7 : Turkana
+- Ethnie 8 : Karamojong
+- Ethnie 9 : Samburu
+- Ethnie 10 : Shilluk
+- Ethnie 11 : Toposa
+- Ethnie 12 : Autres groupes nilotiques
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples Nilotiques sont originaires des régions du Nil supérieur et du Rift est-africain. Leur présence dans la région remonte à plusieurs siècles. Diversité linguistique importante avec trois branches principales : occidentale, centrale et orientale.
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le Rift est-africain
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.
+- Influences externes : Contacts avec les peuples bantous, couchitiques et sahariens, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaumes, chefferies et groupes d'âge. Système de conseils d'anciens pour la gouvernance. Diversité des systèmes politiques.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues nilotiques (Dinka, Nuer, Maasai, Luo, etc.)
+- Codes ISO : din (Dinka), nus (Nuer), mas (Maasai), luo (Luo), ach (Acholi), et autres
+- Dialectes : 
+  - Nilotique occidental : Luo, Acholi, Lango, Alur, Anuak, Shilluk
+  - Nilotique central : Dinka, Nuer, Atuot
+  - Nilotique oriental : Maasai, Turkana, Karamojong, Samburu, Rendille
+  - Nilotique méridional : Datoga, Toposa, Murle, Surma
+  - Nombreuses variantes régionales
+- Rôle véhiculaire : Les langues nilotiques sont parlées par les peuples Nilotiques. Le swahili, l'anglais, l'arabe et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (scarification, fêtes de naissance)
+  - Cérémonies liées à l'élevage et à l'agriculture
+  - Cérémonies royales (pour certains groupes)
+- Symboles : Symboles liés à l'élevage, symboles royaux (pour certains groupes), symboles culturels nilotiques (scarifications, bijoux), symboles chrétiens et islamiques.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (bijoux, armes, poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres et de la nature.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Shilluk (XVe-XIXe siècles)
+  - Royaumes et chefferies traditionnelles
+  - Organisation en groupes d'âge
+- Relations avec peuples voisins : 
+  - Relations entre groupes nilotiques
+  - Interactions avec les peuples bantous
+  - Relations avec les peuples couchitiques
+  - Contacts commerciaux transsahariens
+- Conflits / alliances : 
+  - Conflits historiques entre groupes (Dinka vs Nuer)
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora nilotique dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 10 000 000 - 15 000 000
+- Répartition par pays : 
+  - Soudan du Sud : 4 000 000 - 6 000 000
+  - Kenya : 2 000 000 - 3 000 000
+  - Ouganda : 2 000 000 - 3 000 000
+  - Tanzanie : 1 000 000 - 2 000 000
+  - Éthiopie : 1 000 000 - 2 000 000
+  - Soudan : 500 000 - 1 000 000
+  - Diaspora : 200 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Nilotic languages
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples nilotiques
+- Études historiques sur les royaumes nilotiques
+

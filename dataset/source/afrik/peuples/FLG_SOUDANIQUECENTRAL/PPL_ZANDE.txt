@@ -1,0 +1,85 @@
+# Nom du peuple
+- Nom principal du peuple : Zande
+- Auto-appellation : Azande
+- Exonymes / appellations historiques : Zande (terme utilisé par les Européens), Azande
+- Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+- Groupe ethno-linguistique : Soudanique central
+- Région historique : Sud-Soudan, RDC, RCA
+- Pays actuels : Soudan du Sud, République démocratique du Congo, République centrafricaine
+- Identifiant peuple (ID) : PPL_ZANDE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Zande du Soudan du Sud
+- Ethnie 2 : Zande de RDC
+- Ethnie 3 : Zande de RCA
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Zande sont originaires du Sud-Soudan, de la RDC et de la RCA. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central. Formation d'un royaume.
+- Routes migratoires : 
+  - Migrations depuis les régions du Haut-Nil
+  - Expansion vers le Sud-Soudan, la RDC et la RCA
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Formation d'un royaume Zande. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples bantous, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Zande
+- Codes ISO : zne (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le zande est parlé par la majorité des Zande. Le français, l'anglais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux zande, symboles culturels zande, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Zande (XVIIIe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples soudaniques centraux
+  - Interactions avec les peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion du royaume Zande
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora zande dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 500 000 - 2 500 000
+- Répartition par pays : 
+  - RDC : 800 000 - 1 300 000
+  - Soudan du Sud : 400 000 - 700 000
+  - RCA : 300 000 - 500 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Zande language (zne)
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples soudaniques centraux
+- Études historiques sur le royaume Zande
+

@@ -1,0 +1,78 @@
+# Nom du peuple
+- Nom principal du peuple : Angolar
+- Auto-appellation : Angolar
+- Exonymes / appellations historiques : Angolar (terme utilisé pour les créoles de São Tomé-et-Príncipe)
+- Famille linguistique principale : Créole (FLG_CREOLE)
+- Groupe ethno-linguistique : Créole afro-portugais
+- Région historique : São Tomé-et-Príncipe
+- Pays actuels : São Tomé-et-Príncipe
+- Identifiant peuple (ID) : PPL_ANGOLAR
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Angolar de São Tomé
+- Ethnie 2 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Angolar sont un peuple créole formé à partir du contact entre les populations africaines (notamment d'Angola) et les colons portugais à partir du XVe siècle. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Formation dans les zones côtières de São Tomé
+  - Expansion le long des zones côtières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune.
+- Influences externes : Contacts avec les populations africaines locales, influence du christianisme catholique et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure basée sur les familles créoles. Organisation en familles étendues.
+- Rôle des lignages : Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.
+- Autorité religieuse : Autorité des prêtres catholiques et des chefs religieux. Influence du catholicisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Angolar (créole de São Tomé)
+- Codes ISO : aoa (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : L'angolar est parlé par la majorité des Angolar. Le portugais est utilisé dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses catholiques
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels créoles
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels créoles, symboles catholiques.
+- Arts et musique : 
+  - Musique traditionnelle créole
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat
+- Spiritualités : Catholicisme majoritaire. Croyances traditionnelles préservées dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en communautés créoles. Intégration dans les structures politiques santoméennes.
+- Relations avec peuples voisins : 
+  - Relations avec les populations africaines locales
+  - Interactions avec les colons portugais
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation à la lutte pour l'indépendance
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora angolar dans les grandes villes santoméennes et dans les pays occidentaux (Portugal).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 - 10 000
+- Répartition par pays : 
+  - São Tomé-et-Príncipe : 5 000 - 10 000
+  - Diaspora : 1 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements santoméens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Angolar language (aoa)
+- CIA World Factbook – São Tomé and Príncipe
+- Recensements santoméens
+- Études anthropologiques sur les peuples créoles
+

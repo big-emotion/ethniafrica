@@ -1,0 +1,79 @@
+# Nom du peuple
+- Nom principal du peuple : Créole Réunionnais
+- Auto-appellation : Kréol Rényoné
+- Exonymes / appellations historiques : Créole réunionnais (terme utilisé pour les créoles de la Réunion)
+- Famille linguistique principale : Créole (FLG_CREOLE)
+- Groupe ethno-linguistique : Créole afro-français
+- Région historique : La Réunion
+- Pays actuels : France (La Réunion)
+- Identifiant peuple (ID) : PPL_CREOLE_REUNION
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Créole de la Réunion
+- Ethnie 2 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Créoles réunionnais sont un peuple créole formé à partir du contact entre les populations africaines (notamment de Madagascar et d'Afrique de l'Est), malgaches, indiennes et les colons français à partir du XVIIe siècle. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Formation dans l'île de la Réunion
+  - Expansion dans toute l'île
+  - Déplacements vers les zones urbaines
+  - Diaspora vers la France métropolitaine
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune.
+- Influences externes : Contacts avec les populations africaines, malgaches et indiennes, influence du christianisme catholique et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure basée sur les familles créoles. Organisation en familles étendues.
+- Rôle des lignages : Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.
+- Autorité religieuse : Autorité des prêtres catholiques et des chefs religieux. Influence du catholicisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Créole réunionnais (Kréol Rényoné)
+- Codes ISO : rcf (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le créole réunionnais est parlé par la majorité des Créoles réunionnais. Le français est utilisé dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses catholiques
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels créoles
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels créoles, symboles catholiques.
+- Arts et musique : 
+  - Musique traditionnelle créole (maloya, séga)
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat
+- Spiritualités : Catholicisme majoritaire. Croyances traditionnelles préservées dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en communautés créoles. Intégration dans les structures politiques françaises (département d'outre-mer).
+- Relations avec peuples voisins : 
+  - Relations avec les populations africaines et malgaches
+  - Interactions avec les colons français
+  - Contacts avec les populations indiennes
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora créole réunionnaise dans les grandes villes réunionnaises et en France métropolitaine.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 300 000
+- Répartition par pays : 
+  - France (La Réunion) : 200 000 - 300 000
+  - Diaspora (France métropolitaine) : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements français, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Réunion Creole language (rcf)
+- CIA World Factbook – Réunion
+- Recensements français
+- Études anthropologiques sur les peuples créoles
+

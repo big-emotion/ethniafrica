@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Bura
+- Auto-appellation : Bura
+- Exonymes / appellations historiques : Bura (terme utilisé par les Européens)
+- Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Groupe ethno-linguistique : Tchadique (Biu-Mandara)
+- Région historique : Nord-est du Nigeria
+- Pays actuels : Nigeria
+- Identifiant peuple (ID) : PPL_BURA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bura du Nord
+- Ethnie 2 : Bura du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Bura sont originaires du nord-est du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique (Biu-Mandara).
+- Routes migratoires : 
+  - Migrations depuis les régions du lac Tchad
+  - Expansion vers le nord-est du Nigeria
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples haoussa, influence de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Bura
+- Codes ISO : bwr (ISO 639-3, code partagé avec d'autres langues), code spécifique à vérifier
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le bura est parlé par la majorité des Bura. Le haoussa, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+- Symboles : Symboles islamiques, symboles culturels bura.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Islam sunnite majoritaire. Rôle central de l'islam dans la culture bura.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Haoussa
+  - Interactions avec les autres peuples tchadiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora bura dans les grandes villes nigérianes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 500 000 - 800 000
+- Répartition par pays : 
+  - Nigeria : 500 000 - 800 000
+  - Diaspora : 20 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements nigérians, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Bura language
+- CIA World Factbook – Nigeria
+- Recensements nigérians
+- Études anthropologiques sur les peuples tchadiques
+

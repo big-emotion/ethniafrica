@@ -1,0 +1,249 @@
+# RÈGLES DU PROJET AFRIK - ETHNIAFRICA
+# Version 1.0 - Règles automatiques pour génération de fichiers AFRIK
+
+## CONTEXTE DU PROJET
+
+Ce projet génère des fichiers de données ethnographiques et linguistiques sur l'Afrique selon la méthodologie AFRIK. L'agent utilise ChatGPT 5.1 et peut accéder au navigateur pour rechercher des informations sur internet.
+
+## STRUCTURE DES DOSSIERS
+
+- Modèles de référence : `/public/modele-*.txt` (modele-pays.txt, modele-peuple.txt, modele-ethnie.txt, modele-linguistique.txt)
+- Fichiers générés : `/dataset/source/afrik/`
+  - Familles linguistiques : `/dataset/source/afrik/famille_linguistique/FLG_*.txt`
+  - Peuples : `/dataset/source/afrik/peuples/FLG_*/PPL_*.txt` (organisés par famille linguistique)
+- CSV démographiques : `/public/*.csv` et `/dataset/source/afrik/peuples/*.csv`
+- Documentation : `/public/INSTRUCTIONS_AFRIK.txt`, `/public/PRÉREQUIS_AFRIK.txt`, `/public/WORKFLOW_AFRIK_STATUS.md`
+
+## RÈGLE D'ACTIVATION AUTOMATIQUE
+
+Lorsque l'utilisateur demande :
+- "Génère le pays X" / "Fais-moi la fiche du pays X" / "Donne-moi le pays X" / "Crée le fichier du pays X"
+  → Générer un fichier `.txt` basé STRICTEMENT sur `modele-pays.txt`
+
+- "Génère le peuple X" / "Fais-moi la fiche du peuple X"
+  → Générer un fichier `.txt` basé STRICTEMENT sur `modele-peuple.txt`
+  → Placer dans `/dataset/source/afrik/peuples/FLG_*/PPL_*.txt` (dossier correspondant à la famille linguistique)
+
+- "Génère l'ethnie X" / "Fais-moi la fiche de l'ethnie X"
+  → Générer un fichier `.txt` basé STRICTEMENT sur `modele-ethnie.txt`
+
+- "Génère la famille linguistique X" / "Fais-moi la fiche de la famille linguistique X"
+  → Générer un fichier `.txt` basé STRICTEMENT sur `modele-linguistique.txt`
+  → Placer dans `/dataset/source/afrik/famille_linguistique/FLG_*.txt`
+
+- "Génère la démographie de X"
+  → Remplir le ou les fichiers CSV correspondants
+
+## RÈGLE ABSOLUE : RESPECT STRICT DES MODÈLES
+
+TOUJOURS :
+1. Charger le modèle TXT correspondant depuis `/public/modele-*.txt`
+2. Respecter 100% des sections du modèle
+3. Conserver les titres et l'ordre exact
+4. Ne jamais supprimer une section
+5. Ne jamais renommer une section
+6. Ne jamais ajouter de section non prévue
+7. Remplir chaque ligne (même si c'est "N/A" ou "Non applicable")
+
+## IDENTIFIANTS AFRIK (OBLIGATOIRE)
+
+Chaque fichier TXT doit inclure les identifiants suivants lorsqu'ils existent :
+- ID famille linguistique : `FLG_xxxxx` (ex: FLG_BANTU)
+- ID langue : code ISO 639-3 (ex: swa, lin, kin)
+- ID peuple : `PPL_xxxxx` (ex: PPL_COMORIEN)
+- ID ethnie : `ETH_xxxxx` (ex: ETH_LUBA)
+- ID sous-ethnie : `SUB_xxxxx` (ex: SUB_LUBA_KASAI)
+- ID clan : `CLN_xxxxx` (ex: CLN_BAVOVOKO)
+- ID pays : ISO 3166-1 alpha-3 (ex: COM, ZAF, CMR)
+
+Les CSV DOIVENT utiliser les mêmes identifiants.
+
+## HIÉRARCHIE AFRIK
+
+Respecter strictement la hiérarchie :
+1. Famille linguistique (FLG_)
+2. Peuple (PPL_)
+3. Ethnie (ETH_)
+4. Sous-ethnie (SUB_)
+5. Clan (CLN_)
+
+## TERMES PÉJORATIFS / COLONIAUX (OBLIGATOIRE)
+
+Si un terme historique est péjoratif, colonial, imposé, raciste ou problématique :
+
+1. CONSERVER le terme (ne pas le supprimer)
+2. EXPLIQUER l'origine du terme
+3. INDIQUER pourquoi il pose problème
+4. DONNER l'auto-appellation du groupe
+5. PRÉCISER l'usage contemporain
+6. NE JAMAIS présenter le terme comme neutre
+
+Sections concernées :
+- "Appellations historiques"
+- "Exonymes et termes coloniaux"
+- "Groupes ethniques majeurs"
+
+## RECHERCHE WEB (OBLIGATOIRE)
+
+AUCUNE donnée ne doit être inventée. TOUJOURS effectuer une recherche web pour :
+- Nom du pays/peuple/ethnie/famille linguistique
+- Appellations historiques
+- Royaumes, civilisations, dynasties
+- Groupes ethniques et sous-groupes
+- Langues et codes ISO 639-3
+- Démographie (ONU, UNFPA, CIA, SIL)
+- Sources académiques
+
+Utiliser le navigateur si nécessaire pour trouver des informations fiables.
+
+## DÉMOGRAPHIE : MÉTHODOLOGIE AFRIK
+
+1. Utiliser les chiffres ONU / UNFPA pour les populations nationales (année 2025)
+2. Utiliser les % ethniques des sources fiables (CIA, SIL, UNESCO, recherches anthropologiques)
+3. La somme des ethnies d'un pays = EXACTEMENT 100%
+4. Remplir les CSV correspondants :
+   - `famille_linguistique.csv`
+   - `peuple_demographie_globale.csv`
+   - `ethnie_demographie_par_pays.csv`
+   - `pays_demographie.csv`
+5. Corriger automatiquement si incohérence détectée
+6. Toujours inclure : population, pourcentage (si applicable), source, année 2025
+
+## FICHIERS CSV
+
+CSV officiels à maintenir :
+1. `famille_linguistique.csv`
+2. `peuple_demographie_globale.csv`
+3. `ethnie_demographie_par_pays.csv`
+4. `pays_demographie.csv`
+
+Chaque entrée doit contenir :
+- identifiant
+- population
+- année de référence (2025)
+- source
+
+## COHÉRENCE TXT ↔ CSV
+
+Vérifier automatiquement que :
+- Toute entité dans un TXT existe dans les CSV correspondants
+- La démographie TXT = démographie CSV
+- Les ID sont identiques partout
+- La famille linguistique TXT existe dans CSV
+
+Corriger automatiquement si incohérence détectée.
+
+## WORKFLOW OFFICIEL AFRIK
+
+Respecter l'ordre obligatoire :
+1. Familles linguistiques
+2. Langues
+3. Peuples
+4. Ethnies
+5. Sous-ethnies & clans
+6. Pays
+7. Démographies CSV
+8. Validation
+9. Publication
+
+## FICHIERS DE SUIVI (OBLIGATOIRES)
+
+Deux fichiers doivent être mis à jour :
+1. `WORKFLOW_AFRIK_STATUS.md` - checklist humaine, progression visible
+2. `workflow_status.csv` - suivi technique, statuts : pending / in_progress / done
+
+Aucune étape ne peut être considérée comme finalisée tant qu'elle n'est pas mise à jour dans ces fichiers.
+
+Proposer les mises à jour des deux fichiers dès qu'une étape est terminée.
+
+## SOURCES AUTORISÉES
+
+Utiliser uniquement :
+- ONU, UNFPA, CIA, Banque Mondiale
+- Ethnologue (SIL), Glottolog, UNESCO, African Language Atlas
+- IWGIA, Vansina, Ehret, Hiernaux
+- Encyclopaedia Africana
+- ASCL Leiden
+
+Toujours citer les sources dans la section "Sources" de chaque fichier.
+
+## RÈGLES DE NOMMAGE
+
+Fichiers TXT :
+- Familles linguistiques : `FLG_xxxxx.txt` (ex: FLG_BANTU.txt)
+- Peuples : `PPL_xxxxx.txt` (ex: PPL_COMORIEN.txt)
+- Ethnies : `ETH_xxxxx.txt` (ex: ETH_LUBA.txt)
+
+ID : MAJUSCULES, sans espaces, underscore pour séparer
+
+## FORMAT DES SORTIES
+
+Fichiers TXT :
+- Bloc unique entre triple backticks
+- Aucun commentaire externe
+- Pas de texte hors fichier
+- Format exact du modèle respecté
+
+CSV :
+- En-tête obligatoire
+- Séparateur virgule
+- Aucune explication hors tableau
+- Encodage UTF-8
+
+## RÉACTIONS INTELLIGENTES
+
+L'agent doit :
+- Avertir si une étape est tentée hors workflow
+- Détecter les identifiants manquants et les proposer
+- Proposer des regroupements si un pays a trop d'ethnies
+- Signaler les incohérences
+- Proposer les corrections automatiquement
+
+## RÉFÉRENTIEL LINGUISTIQUE
+
+Références obligatoires :
+- ISO 639-3 pour les codes de langues
+- Glottolog
+- Ethnologue (SIL)
+- UNESCO
+- African Language Atlas
+
+Chaque langue doit indiquer :
+- nom
+- code ISO 639-3
+- famille linguistique
+- sous-famille
+- nombre de locuteurs
+
+## ORGANISATION DES FICHIERS PEUPLES
+
+Les fichiers peuples sont organisés par famille linguistique :
+- `/dataset/source/afrik/peuples/FLG_BANTU/PPL_*.txt`
+- `/dataset/source/afrik/peuples/FLG_MANDE/PPL_*.txt`
+- etc.
+
+Chaque dossier famille linguistique contient :
+- Un fichier CSV : `FLG_*-peuple.csv`
+- Les fichiers TXT des peuples : `PPL_*.txt`
+
+## VALIDATION AVANT GÉNÉRATION
+
+Avant de générer un fichier, vérifier :
+1. Que le modèle correspondant existe dans `/public/`
+2. Que l'identifiant respecte la convention de nommage
+3. Que la famille linguistique existe si c'est un peuple
+4. Que les sources sont disponibles via recherche web
+5. Que les données démographiques sont cohérentes
+
+## LANGUE DE COMMUNICATION
+
+Répondre en français pour toutes les interactions concernant le projet AFRIK.
+
+## NOTES IMPORTANTES
+
+- L'agent utilise ChatGPT 5.1
+- L'agent peut se connecter au navigateur pour rechercher des informations
+- Toujours rechercher les informations depuis internet, ne jamais inventer
+- Respecter la sensibilité décoloniale dans le traitement des termes
+- Maintenir la cohérence entre tous les fichiers du projet
+

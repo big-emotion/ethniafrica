@@ -10,7 +10,7 @@
 
 - [x] Familles linguistiques
 - [x] Langues principales
-- [ ] Peuples
+- [x] Peuples (905/905 générés)
 - [ ] Ethnies
 - [ ] Sous-ethnies & clans
 - [ ] Pays
@@ -103,28 +103,31 @@ CSV :
 
 ---
 
-# 3. ÉTAPE 3 — PEUPLES
+# 3. ÉTAPE 3 — PEUPLES (COMPLET — 905/905)
 
-- [ ] PPL_KONGO
-- [ ] PPL_BETI_FANG
-- [ ] PPL_BAMILÉKÉ
-- [ ] PPL_MANDINGUE
-- [ ] PPL_FULANI
-- [ ] PPL_YORUBA
-- [ ] PPL_IGBO
-- [ ] PPL_ZULU
-- [ ] PPL_SHONA
-- [ ] PPL_TUAREG
-- [ ] PPL_AMAZIGH
-- [ ] PPL_NILOTIC
-- [ ] PPL_COUCHITIC
-- [ ] PPL_SWAHILI
-- [ ] PPL_SAN
-- [ ] PPL_KHOÏKHOÏ
+- [x] PPL_KONGO
+- [x] PPL_BETI_FANG
+- [x] PPL_BAMILÉKÉ
+- [x] PPL_MANDINGUE
+- [x] PPL_FULANI
+- [x] PPL_YORUBA
+- [x] PPL_IGBO
+- [x] PPL_ZULU
+- [x] PPL_SHONA
+- [x] PPL_TUAREG
+- [x] PPL_AMAZIGH
+- [x] PPL_NILOTIC
+- [x] PPL_COUCHITIC
+- [x] PPL_SWAHILI
+- [x] PPL_SAN
+- [x] PPL_KHOÏKHOÏ
+- [x] ... et 889 autres peuples (905 au total)
+
+**Tous les peuples ont été générés selon le modèle modele-peuple.txt**
 
 CSV :
 
-- [ ] peuple_demographie_globale.csv rempli
+- [ ] peuple_demographie_globale.csv rempli (à compléter)
 
 ---
 

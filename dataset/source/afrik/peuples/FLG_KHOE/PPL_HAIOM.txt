@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Haiǁom
+- Auto-appellation : Haiǁom
+- Exonymes / appellations historiques : 
+  - « Haiǁom » (auto-appellation)
+  - « Bushmen » (terme colonial péjoratif, à éviter)
+  - « San » (terme générique, parfois utilisé)
+- Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
+- Groupe ethno-linguistique : Khoe
+- Région historique : Namibie
+- Pays actuels : Namibie
+- Identifiant peuple (ID) : PPL_HAIOM
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Haiǁom du Nord
+- Ethnie 2 : Haiǁom du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Haiǁom sont originaires de la Namibie, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones désertiques
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples khoisan voisins, influence du christianisme et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Haiǁom (variété Khoe)
+- Codes ISO : hgm (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le haiǁom est parlé par la majorité des Haiǁom. L'afrikaans et l'anglais sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels haiǁom, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques namibiennes.
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples khoisan
+  - Interactions avec les Bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Marginalisation et déplacements forcés
+  - Résistance à la sédentarisation
+  - Conflits liés à l'accès aux terres et aux ressources
+  - Alliances avec organisations de défense des droits des peuples autochtones
+- Diaspora : Diaspora haiǁom dans les grandes villes namibiennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 20 000 - 50 000
+- Répartition par pays : 
+  - Namibie : 20 000 - 50 000
+  - Diaspora : 2 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements namibiens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Haiǁom language (hgm)
+- CIA World Factbook – Namibia
+- Recensements namibiens
+- Études anthropologiques sur les peuples khoisan
+

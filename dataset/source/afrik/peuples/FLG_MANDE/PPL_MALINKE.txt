@@ -1,0 +1,104 @@
+# Nom du peuple
+- Nom principal du peuple : Malinké
+- Auto-appellation : Maninka / Mandinka
+- Exonymes / appellations historiques : 
+  - « Malinké » (terme français)
+  - « Mandinka » (terme anglophone)
+  - « Mandingo » (terme historique, parfois péjoratif)
+- Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
+- Groupe ethno-linguistique : Mandé occidental
+- Région historique : Mali, Guinée, Sénégal, Gambie, Côte d'Ivoire, Burkina Faso
+- Pays actuels : Mali, Guinée, Sénégal, Gambie, Côte d'Ivoire, Burkina Faso, et autres pays d'Afrique de l'Ouest
+- Identifiant peuple (ID) : PPL_MALINKE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Malinké du Mali
+- Ethnie 2 : Malinké de Guinée
+- Ethnie 3 : Mandinka du Sénégal et de la Gambie
+- Ethnie 4 : Malinké de Côte d'Ivoire
+- Ethnie 5 : Malinké du Burkina Faso
+- Ethnie 6 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Malinké sont originaires de la région du Mandé (Mali, Guinée), berceau de l'empire du Mali. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Expansion depuis le Mandé vers l'ouest (Sénégal, Gambie)
+  - Migrations vers le sud (Côte d'Ivoire, Burkina Faso)
+  - Déplacements vers les zones urbaines
+  - Diaspora historique vers les Amériques (traite transatlantique)
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les autres peuples mandé.
+- Influences externes : Influence profonde de l'islam, rôle majeur dans l'empire du Mali et les réseaux commerciaux transsahariens.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Tradition de l'empire du Mali.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Hiérarchie sociale traditionnelle (nobles, griots, artisans, esclaves).
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité, le statut social et les alliances. Importance de la généalogie.
+- Autorité religieuse : Autorité des oulémas et des chefs religieux. L'islam sunnite (malékite) structure la vie sociale.
+
+# 4. Langues et sous-familles
+- Langue principale : Malinké / Mandinka
+- Codes ISO : mlq (ISO 639-3, code générique), plusieurs codes pour les variétés
+- Dialectes : 
+  - Malinké du Mali
+  - Malinké de Guinée
+  - Mandinka du Sénégal et de la Gambie
+  - Malinké de Côte d'Ivoire
+  - Variantes régionales nombreuses
+- Rôle véhiculaire : Le malinké/mandinka est parlé par la majorité des Malinké. Il sert de langue véhiculaire dans certaines régions. Le français, l'anglais et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses islamiques (Ramadan, Aïd)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (circoncision, fêtes de naissance)
+  - Pèlerinage à La Mecque (Hajj)
+  - Cérémonies de griots
+- Symboles : Symboles de l'empire du Mali, symboles islamiques, symboles culturels malinké.
+- Arts et musique : 
+  - Musique traditionnelle (kora, balafon, djembé)
+  - Tradition des griots (jaliya)
+  - Danse traditionnelle
+  - Poésie orale (épopée de Soundiata)
+  - Artisanat (tissage, poterie)
+- Spiritualités : Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture malinké. Traditions pré-islamiques préservées dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Empire du Mali (XIIIe-XVe siècles)
+  - Royaumes malinké post-empire
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples mandé
+  - Interactions avec les peuples atlantiques (Wolof, Sérère)
+  - Relations avec les peuples gur
+  - Contacts commerciaux transsahariens
+- Conflits / alliances : 
+  - Expansion de l'empire du Mali
+  - Résistance à la colonisation française et britannique
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora malinké/mandinka importante dans les pays d'Afrique de l'Ouest, et dans les pays occidentaux (États-Unis, France). Diaspora historique aux Amériques (traite transatlantique).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 11 000 000 - 13 000 000
+- Répartition par pays : 
+  - Mali : 4 000 000 - 5 000 000
+  - Guinée : 3 000 000 - 4 000 000
+  - Sénégal : 1 500 000 - 2 000 000
+  - Gambie : 500 000 - 700 000
+  - Côte d'Ivoire : 1 000 000 - 1 500 000
+  - Burkina Faso : 500 000 - 800 000
+  - Autres pays : 500 000+
+  - Diaspora : 200 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Malinké/Mandinka language (mlq)
+- CIA World Factbook – Country profiles
+- Niane, Djibril Tamsir – *Soundjata ou l'épopée mandingue*
+- Levtzion, Nehemia – *Ancient Ghana and Mali*
+- Recensements nationaux
+- Études anthropologiques sur les peuples mandé
+

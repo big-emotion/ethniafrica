@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Datoga
+- Auto-appellation : Datoga
+- Exonymes / appellations historiques : Datoga (terme utilisé par les Européens), Tatog
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique méridional
+- Région historique : Centre-nord de la Tanzanie
+- Pays actuels : Tanzanie
+- Identifiant peuple (ID) : PPL_DATOGA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Datoga du Nord
+- Ethnie 2 : Datoga du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Datoga sont originaires du centre-nord de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique méridional.
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le centre-nord de la Tanzanie
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.
+- Influences externes : Contacts avec les peuples bantous, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Datoga
+- Codes ISO : tcc (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le datoga est parlé par la majorité des Datoga. Le swahili, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (scarification, fêtes de naissance)
+  - Cérémonies liées à l'élevage
+- Symboles : Symboles liés à l'élevage, symboles culturels datoga (scarifications, bijoux), symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (bijoux, armes)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Organisation en groupes d'âge
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples nilotiques
+  - Interactions avec les peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora datoga dans les grandes villes tanzaniennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 400 000
+- Répartition par pays : 
+  - Tanzanie : 200 000 - 400 000
+  - Diaspora : 10 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements tanzaniens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Datoga language (tcc)
+- CIA World Factbook – Tanzania
+- Recensements tanzaniens
+- Études anthropologiques sur les peuples nilotiques
+

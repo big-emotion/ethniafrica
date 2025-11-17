@@ -1,0 +1,79 @@
+# Nom du peuple
+- Nom principal du peuple : Khoisan Créole
+- Auto-appellation : Variées selon les groupes
+- Exonymes / appellations historiques : Khoisan Créole (terme utilisé pour les créoles avec influences khoisan)
+- Famille linguistique principale : Créole (FLG_CREOLE)
+- Groupe ethno-linguistique : Créole avec influences khoisan
+- Région historique : Afrique du Sud, Namibie
+- Pays actuels : Afrique du Sud, Namibie
+- Identifiant peuple (ID) : PPL_KHOISAN_CREOLE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Créoles avec influences khoisan d'Afrique du Sud
+- Ethnie 2 : Créoles avec influences khoisan de Namibie
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Khoisan Créoles sont un peuple créole formé à partir du contact entre les populations khoisan locales et les colons européens (néerlandais, allemands, britanniques) à partir du XVIIe siècle. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Formation dans les zones côtières d'Afrique du Sud et de Namibie
+  - Expansion le long des zones côtières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune avec influences khoisan.
+- Influences externes : Contacts avec les populations khoisan locales, influence du christianisme (protestantisme) et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure basée sur les familles créoles. Organisation en familles étendues.
+- Rôle des lignages : Lignages déterminant l'identité et les alliances. Importance de l'héritage créole et khoisan.
+- Autorité religieuse : Autorité des prêtres et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Créoles avec influences khoisan
+- Codes ISO : Codes spécifiques à vérifier selon les variétés
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Les créoles khoisan sont parlés par la majorité des Khoisan Créoles. L'afrikaans, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Célébrations religieuses chrétiennes
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels créoles
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels créoles, symboles khoisan, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle créole avec influences khoisan
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat
+- Spiritualités : Christianisme majoritaire (protestantisme). Croyances traditionnelles khoisan préservées dans certaines communautés.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en communautés créoles. Intégration dans les structures politiques sud-africaines et namibiennes.
+- Relations avec peuples voisins : 
+  - Relations avec les populations khoisan locales
+  - Interactions avec les colons européens
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora khoisan créole dans les grandes villes sud-africaines et namibiennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 50 000 - 100 000
+- Répartition par pays : 
+  - Afrique du Sud : 30 000 - 60 000
+  - Namibie : 20 000 - 40 000
+  - Diaspora : 5 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Khoisan Creole languages
+- CIA World Factbook – South Africa, Namibia
+- Recensements nationaux
+- Études anthropologiques sur les peuples créoles
+

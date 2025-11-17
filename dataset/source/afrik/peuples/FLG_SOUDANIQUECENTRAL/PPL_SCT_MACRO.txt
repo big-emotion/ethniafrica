@@ -1,0 +1,100 @@
+# Nom du peuple
+- Nom principal du peuple : Peuples Soudaniques Centraux (macro-groupe)
+- Auto-appellation : Variées selon les groupes (Lugbara, Mangbetu, Sara, Azande, etc.)
+- Exonymes / appellations historiques : 
+  - « Soudaniques centraux » (terme linguistique)
+  - « Central Sudanic » (terme académique)
+- Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+- Groupe ethno-linguistique : Soudanique central (macro-groupe)
+- Région historique : RDC, Ouganda, Soudan du Sud, RCA, Tchad
+- Pays actuels : République démocratique du Congo, Ouganda, Soudan du Sud, République centrafricaine, Tchad
+- Identifiant peuple (ID) : PPL_SCT_MACRO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Lugbara
+- Ethnie 2 : Mangbetu
+- Ethnie 3 : Sara
+- Ethnie 4 : Azande
+- Ethnie 5 : Banda
+- Ethnie 6 : Madi
+- Ethnie 7 : Moru
+- Ethnie 8 : Autres groupes soudaniques centraux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les peuples Soudaniques Centraux sont originaires des régions du Haut-Nil et du nord-est de la RDC. Leur présence dans la région remonte à plusieurs siècles. Diversité linguistique importante.
+- Routes migratoires : 
+  - Migrations depuis les régions du Haut-Nil
+  - Expansion vers la RDC, l'Ouganda, le Soudan du Sud, la RCA et le Tchad
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.
+- Influences externes : Contacts avec les peuples bantous, nilotiques et sahariens, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaumes, chefferies et groupes d'âge. Système de conseils d'anciens pour la gouvernance. Diversité des systèmes politiques.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Langues soudaniques centrales (Lugbara, Mangbetu, Sara, Zande, etc.)
+- Codes ISO : lgg (Lugbara), mdk (Mangbetu), sre (Sara), zne (Zande), et autres
+- Dialectes : 
+  - Groupe Moru-Madi : Lugbara, Madi, Moru
+  - Groupe Mangbetu : Mangbetu
+  - Groupe Banda : Banda
+  - Groupe Sara : Sara
+  - Groupe Zande : Zande
+  - Nombreuses variantes régionales
+- Rôle véhiculaire : Les langues soudaniques centrales sont parlées par les peuples Soudaniques Centraux. Le français, l'anglais, l'arabe et d'autres langues sont également utilisés selon les pays.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies royales (pour certains groupes)
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture
+- Symboles : Symboles royaux (pour certains groupes), symboles liés à l'agriculture, symboles culturels soudaniques centraux, symboles chrétiens et islamiques.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, sculpture)
+- Spiritualités : Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Royaume Mangbetu (XIXe siècle)
+  - Royaume Azande (XVIIIe-XIXe siècles)
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations entre groupes soudaniques centraux
+  - Interactions avec les peuples bantous
+  - Relations avec les peuples nilotiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Expansion des royaumes Mangbetu et Azande
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora soudanique centrale dans les grandes villes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 5 000 000 - 8 000 000
+- Répartition par pays : 
+  - Tchad : 2 500 000 - 3 500 000 (Sara majoritaire)
+  - RDC : 1 500 000 - 2 500 000
+  - RCA : 1 000 000 - 1 500 000
+  - Ouganda : 1 000 000 - 1 500 000
+  - Soudan du Sud : 500 000 - 1 000 000
+  - Diaspora : 100 000+
+- Année de référence : 2025
+- Source : Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Central Sudanic languages
+- CIA World Factbook – Country profiles
+- Recensements nationaux
+- Études anthropologiques sur les peuples soudaniques centraux
+- Études historiques sur les royaumes Mangbetu et Azande
+

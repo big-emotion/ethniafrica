@@ -1,0 +1,82 @@
+# Nom du peuple
+- Nom principal du peuple : Alur
+- Auto-appellation : Alur
+- Exonymes / appellations historiques : Alur (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique occidental
+- Région historique : Nord-ouest de l'Ouganda, Nord-est de la RDC
+- Pays actuels : Ouganda, République démocratique du Congo
+- Identifiant peuple (ID) : PPL_ALUR
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Alur d'Ouganda
+- Ethnie 2 : Alur de RDC
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Alur sont originaires du nord-ouest de l'Ouganda et du nord-est de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le nord-ouest de l'Ouganda et le nord-est de la RDC
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Acholi et les Luo.
+- Influences externes : Contacts avec les peuples bantous, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Alur
+- Codes ISO : alz (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : L'alur est parlé par la majorité des Alur. Le français, l'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (initiation, fêtes de naissance)
+  - Cérémonies liées à l'agriculture et à l'élevage
+  - Cérémonies religieuses chrétiennes
+- Symboles : Symboles liés à l'agriculture et à l'élevage, symboles culturels alur, symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Chefferies traditionnelles
+  - Organisation en groupes territoriaux
+- Relations avec peuples voisins : 
+  - Relations avec les Acholi et les Luo
+  - Interactions avec les autres peuples nilotiques
+  - Contacts avec les peuples bantous
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora alur dans les grandes villes ougandaises et congolaises, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 800 000 - 1 200 000
+- Répartition par pays : 
+  - Ouganda : 500 000 - 700 000
+  - RDC : 300 000 - 500 000
+  - Diaspora : 30 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Alur language (alz)
+- CIA World Factbook – Uganda, DRC
+- Recensements nationaux
+- Études anthropologiques sur les peuples nilotiques
+

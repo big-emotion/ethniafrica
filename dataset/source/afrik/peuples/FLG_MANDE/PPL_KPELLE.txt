@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Kpelle
+- Auto-appellation : Kpelle
+- Exonymes / appellations historiques : Kpelle (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
+- Groupe ethno-linguistique : Mandé occidental
+- Région historique : Libéria, Guinée
+- Pays actuels : Libéria, Guinée
+- Identifiant peuple (ID) : PPL_KPELLE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Kpelle du Libéria
+- Ethnie 2 : Kpelle de Guinée
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Kpelle sont originaires du Libéria et de la Guinée, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones forestières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples mandé voisins, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et de l'islam.
+
+# 4. Langues et sous-familles
+- Langue principale : Kpelle
+- Codes ISO : kpe (ISO 639-3, code générique), plusieurs codes pour les variétés
+- Dialectes : 
+  - Kpelle du Libéria
+  - Kpelle de Guinée
+  - Variantes régionales
+- Rôle véhiculaire : Le kpelle est parlé par la majorité des Kpelle. L'anglais (Libéria) et le français (Guinée) sont utilisés dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels kpelle, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques libériennes et guinéennes.
+- Relations avec peuples voisins : 
+  - Relations avec les peuples mandé voisins
+  - Interactions avec les peuples atlantiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques libériens et guinéens
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora kpelle dans les grandes villes libériennes et guinéennes, et dans les pays occidentaux (États-Unis).
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 000 000 - 1 500 000
+- Répartition par pays : 
+  - Libéria : 600 000 - 900 000
+  - Guinée : 400 000 - 600 000
+  - Diaspora : 50 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements libériens et guinéens, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kpelle language (kpe)
+- CIA World Factbook – Liberia, Guinea
+- Recensements libériens et guinéens
+- Études anthropologiques sur les peuples mandé
+

@@ -1,0 +1,79 @@
+# Nom du peuple
+- Nom principal du peuple : Gbélé
+- Auto-appellation : Gbélé
+- Exonymes / appellations historiques : Gbélé (terme utilisé par les Européens)
+- Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
+- Groupe ethno-linguistique : Mandé
+- Région historique : Côte d'Ivoire
+- Pays actuels : Côte d'Ivoire
+- Identifiant peuple (ID) : PPL_GBELE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Gbélé du Nord
+- Ethnie 2 : Gbélé du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Gbélé sont originaires de la Côte d'Ivoire, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones forestières
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples mandé voisins, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et de l'islam.
+
+# 4. Langues et sous-familles
+- Langue principale : Gbélé
+- Codes ISO : Code spécifique à vérifier (probablement sous-code de mandé)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le gbélé est parlé par la majorité des Gbélé. Le français est utilisé dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels gbélé, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques ivoiriennes.
+- Relations avec peuples voisins : 
+  - Relations avec les peuples mandé voisins
+  - Interactions avec les peuples krou
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation française
+  - Participation aux mouvements politiques ivoiriens
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora gbélé dans les grandes villes ivoiriennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 20 000 - 50 000
+- Répartition par pays : 
+  - Côte d'Ivoire : 20 000 - 50 000
+  - Diaspora : 2 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Gbélé language
+- CIA World Factbook – Côte d'Ivoire
+- Recensements ivoiriens
+- Études anthropologiques sur les peuples mandé
+

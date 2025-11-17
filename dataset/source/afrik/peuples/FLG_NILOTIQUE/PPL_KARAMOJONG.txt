@@ -1,0 +1,81 @@
+# Nom du peuple
+- Nom principal du peuple : Karamojong
+- Auto-appellation : Karamojong
+- Exonymes / appellations historiques : Karamojong (terme utilisé par les Européens)
+- Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Groupe ethno-linguistique : Nilotique oriental
+- Région historique : Nord-est de l'Ouganda
+- Pays actuels : Ouganda
+- Identifiant peuple (ID) : PPL_KARAMOJONG
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Karamojong du Nord
+- Ethnie 2 : Karamojong du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Karamojong sont originaires du nord-est de l'Ouganda, dans la région aride. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
+- Routes migratoires : 
+  - Migrations depuis les régions du Nil supérieur
+  - Expansion vers le nord-est de l'Ouganda
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.
+- Influences externes : Contacts avec les peuples bantous, influence du christianisme.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.
+
+# 4. Langues et sous-familles
+- Langue principale : Karamojong
+- Codes ISO : kdj (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le karamojong est parlé par la majorité des Karamojong. L'anglais et d'autres langues sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Cérémonies de mariage traditionnelles
+  - Rites de passage (scarification, fêtes de naissance)
+  - Cérémonies liées à l'élevage
+- Symboles : Symboles liés à l'élevage, symboles culturels karamojong (scarifications, bijoux), symboles chrétiens.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (bijoux, armes)
+- Spiritualités : Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : 
+  - Organisation en groupes d'âge
+  - Chefferies traditionnelles
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples nilotiques
+  - Interactions avec les peuples bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à la colonisation britannique
+  - Participation aux mouvements politiques
+  - Conflits territoriaux (notamment avec les Pokot)
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora karamojong dans les grandes villes ougandaises et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 000 000 - 1 500 000
+- Répartition par pays : 
+  - Ouganda : 1 000 000 - 1 500 000
+  - Diaspora : 30 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Karamojong language (kdj)
+- CIA World Factbook – Uganda
+- Recensements ougandais
+- Études anthropologiques sur les peuples nilotiques
+

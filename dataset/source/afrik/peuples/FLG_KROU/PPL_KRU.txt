@@ -1,0 +1,85 @@
+# Nom du peuple
+- Nom principal du peuple : Kru
+- Auto-appellation : Kru
+- Exonymes / appellations historiques : 
+  - « Kru » (terme utilisé par les Européens, parfois péjoratif dans certains contextes)
+  - « Kroo » (variante historique)
+- Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
+- Groupe ethno-linguistique : Krou occidental
+- Région historique : Côte du Libéria
+- Pays actuels : Libéria
+- Identifiant peuple (ID) : PPL_KRU
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Kru du Nord
+- Ethnie 2 : Kru du Sud
+- Ethnie 3 : Kru de l'Est
+- Ethnie 4 : Kru de l'Ouest
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Kru sont originaires de la côte du Libéria. Leur présence dans la région remonte à plusieurs siècles. Ils sont connus historiquement comme marins et intermédiaires commerciaux.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones côtières
+  - Expansion le long des zones côtières
+  - Déplacements vers les zones urbaines et les ports
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Grebo.
+- Influences externes : Contacts avec les commerçants européens (XVIIe-XIXe siècles), influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Kru
+- Codes ISO : klu (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le kru est parlé par la majorité des Kru. L'anglais est utilisé dans l'éducation et l'administration.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels kru, art traditionnel, symboles maritimes.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage, objets maritimes)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques libériennes.
+- Relations avec peuples voisins : 
+  - Relations avec les Grebo
+  - Interactions avec les Bassa
+  - Relations avec les peuples voisins
+  - Contacts commerciaux avec les Européens
+- Conflits / alliances : 
+  - Rôle historique comme marins et intermédiaires commerciaux
+  - Résistance à la colonisation
+  - Participation aux mouvements politiques libériens
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora kru importante dans les grandes villes libériennes (Monrovia) et dans les pays occidentaux (États-Unis), notamment suite aux guerres civiles.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 300 000
+- Répartition par pays : 
+  - Libéria : 200 000 - 300 000
+  - Diaspora : 30 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements libériens, CIA World Factbook, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kru language (klu)
+- CIA World Factbook – Liberia
+- Recensements libériens
+- Études anthropologiques sur les peuples krou
+- Études historiques sur le rôle maritime des Kru
+

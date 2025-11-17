@@ -1,0 +1,83 @@
+# Nom du peuple
+- Nom principal du peuple : Kxoe
+- Auto-appellation : Kxoe
+- Exonymes / appellations historiques : 
+  - « Kxoe » (auto-appellation)
+  - « Bushmen » (terme colonial péjoratif, à éviter)
+  - « San » (terme générique, parfois utilisé)
+- Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
+- Groupe ethno-linguistique : Khoe
+- Région historique : Botswana, Namibie
+- Pays actuels : Botswana, Namibie
+- Identifiant peuple (ID) : PPL_KXOE
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Kxoe du Botswana
+- Ethnie 2 : Kxoe de Namibie
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Kxoe sont originaires du Botswana et de la Namibie, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des zones désertiques
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples khoisan voisins, influence du christianisme et des croyances traditionnelles.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Kxoe
+- Codes ISO : xuu (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre pays
+- Rôle véhiculaire : Le kxoe est parlé par la majorité des Kxoe. Le tswana, l'afrikaans et l'anglais sont également utilisés.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels kxoe, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques botswanaises et namibiennes.
+- Relations avec peuples voisins : 
+  - Relations avec les autres peuples khoisan
+  - Interactions avec les Bantous
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Marginalisation et déplacements forcés
+  - Résistance à la sédentarisation
+  - Conflits liés à l'accès aux terres et aux ressources
+  - Alliances avec organisations de défense des droits des peuples autochtones
+- Diaspora : Diaspora kxoe dans les grandes villes botswanaises et namibiennes, et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 10 000 - 20 000
+- Répartition par pays : 
+  - Botswana : 5 000 - 10 000
+  - Namibie : 5 000 - 10 000
+  - Diaspora : 1 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Kxoe language (xuu)
+- CIA World Factbook – Botswana, Namibia
+- Recensements nationaux
+- Études anthropologiques sur les peuples khoisan
+

@@ -1,0 +1,80 @@
+# Nom du peuple
+- Nom principal du peuple : Bench
+- Auto-appellation : Bench
+- Exonymes / appellations historiques : Bench (terme utilisé par les Européens)
+- Famille linguistique principale : Afro-asiatique – Omotique (FLG_OMOTIQUE)
+- Groupe ethno-linguistique : Omotique du Nord
+- Région historique : Sud-ouest de l'Éthiopie
+- Pays actuels : Éthiopie
+- Identifiant peuple (ID) : PPL_BENCH
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Bench du Nord
+- Ethnie 2 : Bench du Sud
+- Ethnie 3 : Sous-groupes régionaux
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Les Bench sont originaires du sud-ouest de l'Éthiopie, dans la région des nations, nationalités et peuples du Sud. Leur présence dans la région remonte à plusieurs siècles.
+- Routes migratoires : 
+  - Migrations depuis les régions intérieures vers les zones actuelles
+  - Expansion le long des hauts plateaux
+  - Déplacements vers les zones urbaines
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
+- Influences externes : Contacts avec les peuples couchitiques et sémitiques voisins, influence du christianisme et de l'islam.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.
+- Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
+- Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
+- Autorité religieuse : Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles.
+
+# 4. Langues et sous-familles
+- Langue principale : Bench
+- Codes ISO : bcq (ISO 639-3)
+- Dialectes : 
+  - Dialectes régionaux
+  - Variantes entre groupes
+- Rôle véhiculaire : Le bench est parlé par la majorité des Bench. L'amharique est utilisé dans l'éducation et l'administration. L'anglais est également utilisé.
+
+# 5. Culture, rites et traditions
+- Rites majeurs : 
+  - Cérémonies d'initiation
+  - Rites de passage (naissance, puberté, mariage, mort)
+  - Festivals traditionnels
+  - Cérémonies de réconciliation
+- Symboles : Symboles culturels bench, art traditionnel.
+- Arts et musique : 
+  - Musique traditionnelle
+  - Danse traditionnelle
+  - Poésie orale
+  - Artisanat (poterie, tissage)
+- Spiritualités : Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam.
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes.
+- Relations avec peuples voisins : 
+  - Relations avec les peuples omotiques voisins
+  - Interactions avec les Oromo
+  - Relations avec les peuples sémitiques
+  - Contacts commerciaux
+- Conflits / alliances : 
+  - Résistance à l'expansion oromo
+  - Participation aux mouvements politiques éthiopiens
+  - Conflits territoriaux
+  - Alliances commerciales et politiques
+- Diaspora : Diaspora bench dans les grandes villes éthiopiennes et dans les pays occidentaux.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 200 000 - 300 000
+- Répartition par pays : 
+  - Éthiopie : 200 000 - 300 000
+  - Diaspora : 10 000+
+- Année de référence : 2025
+- Source : Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques
+
+# 8. Sources
+- SIL Ethnologue – Bench language (bcq)
+- CIA World Factbook – Ethiopia
+- Recensements éthiopiens
+- Études anthropologiques sur les peuples omotiques
+
