@@ -1,0 +1,25 @@
+# Peuple : PPL_BEJA
+- Nom principal : N/A
+- Auto-appellation (peuple) : Bidhaawyeet / Hadendoa
+- Famille linguistique : FLG_COUCHITIQUE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Hadendoa
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Bisharin
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Amar’ar
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

@@ -1,0 +1,30 @@
+# Peuple : PPL_TIGRE
+- Nom principal : Tigré
+- Auto-appellation (peuple) : Tigré (ትግረ) / Tigrayit
+- Famille linguistique : FLG_SEMITIQUE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Tigré du Nord (région de Sahel)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Tigré du Sud (région de Semhar)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Tigré de l'Est (région côtière)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Tigré de l'Ouest (régions frontalières)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

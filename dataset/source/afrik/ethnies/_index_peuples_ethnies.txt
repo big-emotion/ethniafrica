@@ -1,0 +1,2264 @@
+# Index ethnies par peuple
+
+- Peuples couverts : 493
+- Ethnies listées : 1272
+
+## PPL_AARI — FLG_OMOTIQUE
+- Aari du nord
+- Aari du sud
+- Groupes agropastoraux locaux
+
+## PPL_ACHOLI — FLG_NILOTIQUE
+- Acholi d'Ouganda
+- Acholi du Soudan du Sud
+
+## PPL_ADJA — FLG_BENOUECONGO
+- Adja du Togo (Plateaux)
+- Adja du Bénin (Mono, Couffo)
+- Sous-groupes : Dogbo, Tado, etc.
+
+## PPL_AFAR — FLG_COUCHITIQUE
+- Afar Assaïmara
+- Afar Adoyta
+- Afar We’ima
+
+## PPL_AFEMAI — FLG_BENOUECONGO
+- Etsako
+- Owan
+- Akoko-Edo
+
+## PPL_AGAW — FLG_COUCHITIQUE
+- Awi
+- Qimant (Qemant)
+- Xamir
+
+## PPL_AIT_ATTA — FLG_BERBERE
+- Aït Yahya
+- Aït Ouazik
+- Aït Ouhman
+- Divers sous-clans nomades du Saghro
+
+## PPL_AIT_HDZ — FLG_BERBERE
+- Aït Yafelman
+- Aït Ouirra
+- Aït Sukhman
+- Divers groupes montagnards amazighs
+
+## PPL_AKAN — FLG_NIGERCONGO
+- Ashanti
+- Fanti
+- Akuapem
+- Akyem
+- Brong
+- Nzema
+- Autres sous-groupes akan
+
+## PPL_AKYE — FLG_NIGERCONGO
+- Akye du Nord
+- Akye du Sud
+
+## PPL_ALABA — FLG_COUCHITIQUE
+- Alaba du plateau sud
+- Groupes agricoles associés
+
+## PPL_ALAGO — FLG_BENOUECONGO
+- Alago de Doma
+- Alago ruraux du centre de Nasarawa
+
+## PPL_ALUR — FLG_NILOTIQUE
+- Alur d'Ouganda
+- Alur de RDC
+
+## PPL_AMAZIGH_MACRO — FLG_BERBERE
+- Tous les peuples amazighs du Maghreb (Kabyles, Chaouis, Chleuhs, Rifains, Mozabites, Touaregs, etc.)
+
+## PPL_AMBUNDU — FLG_NIGERCONGO
+- Ambundu du Nord
+- Ambundu du Sud
+
+## PPL_AMHARA — FLG_SEMITIQUE
+- Gojjam Amhara
+- Gondar Amhara
+- Wollo Amhara
+
+## PPL_ANAFRO_CRIOULO — FLG_CREOLE
+- Crioulo de Guinée-Bissau
+
+## PPL_ANAGO — FLG_BENOUECONGO
+- Anago de Porto-Novo
+- Anago du Togo
+
+## PPL_ANGOLAR — FLG_CREOLE
+- Angolar de São Tomé
+
+## PPL_ANNANG — FLG_NIGERCONGO
+- Annang du Nord
+- Annang du Sud
+
+## PPL_ANTAKARANA — FLG_AUSTRONESIENNE
+- Antakarana du Nord
+- Antakarana du Sud
+
+## PPL_ANTAMBAHOAKA — FLG_AUSTRONESIENNE
+- Antambahoaka du Nord
+- Antambahoaka du Sud
+
+## PPL_ANTANDROY — FLG_AUSTRONESIENNE
+- Antandroy du Nord
+- Antandroy du Sud
+
+## PPL_ANTSALOVA — FLG_AUSTRONESIENNE
+- Antsalova du Nord
+- Antsalova du Sud
+
+## PPL_ANUAK — FLG_NILOTIQUE
+- Anuak du Soudan du Sud
+- Anuak d'Éthiopie
+
+## PPL_ARABES_AFRIQUE — FLG_SEMITIQUE
+- Arabes du Maghreb (Maroc, Algérie, Tunisie, Libye)
+- Arabes d'Égypte
+- Arabes du Soudan
+- Arabes de Mauritanie
+- Arabes du Tchad
+- Arabes de Djibouti
+- Arabes de Somalie
+- Arabes des Comores
+- Bédouins sahariens
+- Communautés arabes diasporiques
+
+## PPL_ARGOBBA — FLG_SEMITIQUE
+- Argobba du Shewa
+- Argobba du Harar
+
+## PPL_ARINGA — FLG_SOUDANIQUECENTRAL
+- Aringa du Nord
+- Aringa du Sud
+
+## PPL_ARSII — FLG_COUCHITIQUE
+- Arsi du Nord
+- Arsi du Sud
+- Arsi de l'Est
+- Arsi de l'Ouest
+
+## PPL_ASANTE — FLG_NIGERCONGO
+- Asante du Nord
+- Asante du Sud
+
+## PPL_ATLANTIQUE_MACRO — FLG_ATLANTIQUE
+- Wolof, Sérère, Diola, Balanta, Bainouk, Manjak, Papel, Mankanya, Bijogo, Temne, Limba, Yalunka, Baga, Sape, et autres sous-groupes atlantique.
+
+## PPL_AUSTRO_MACRO — FLG_AUSTRONESIENNE
+- Merina
+- Betsimisaraka
+- Sakalava
+- Antandroy
+- Betsileo
+- Tsimihety
+- Antakarana
+- Vezo
+- Tanosy (Antanosy)
+- Antambahoaka
+- Bezanozano
+- Mikea
+- Antsalova
+- Autres groupes malgaches
+
+## PPL_AZANDE_SUD — FLG_SOUDANIQUECENTRAL
+- Azande du Soudan du Sud
+- Azande de RDC
+- Azande de RCA
+
+## PPL_BABUR — FLG_TCHADIQUE
+- Babur du Nord
+- Babur du Sud
+
+## PPL_BADE — FLG_TCHADIQUE
+- Bade du Nord
+- Bade du Sud
+
+## PPL_BAFUTA — FLG_NIGERCONGO
+- Bafuta du Nord
+- Bafuta du Sud
+
+## PPL_BAGA — FLG_ATLANTIQUE
+- Baga Sitemu
+- Baga Kalum
+- Baga Koba
+- Baga Mandori
+
+## PPL_BAGANDA — FLG_BANTU
+- À préciser (sous-groupes régionaux du Buganda)
+- À préciser (autres segments lignagers internes)
+
+## PPL_BAGGAR — FLG_NIGERCONGO
+- Baggar du Nord
+- Baggar du Sud
+
+## PPL_BAINOUK — FLG_NIGERCONGO
+- Bainouk du Sénégal
+- Bainouk de Gambie
+- Bainouk de Guinée-Bissau
+
+## PPL_BAKIGA — FLG_NIGERCONGO
+- Bakiga du Nord
+- Bakiga du Sud
+
+## PPL_BAKOSSI — FLG_BANTU
+- Communautés bakossi des versants ouest (villages de montagne)
+- Communautés bakossi des versants est et des basses terres
+- À préciser (autres segments internes, lignages et sous-groupes locaux)
+
+## PPL_BAKWE — FLG_KROU
+- Bakwé du Nord
+- Bakwé du Sud
+
+## PPL_BAKWERI — FLG_NIGERCONGO
+- Bakweri du Nord
+- Bakweri du Sud
+
+## PPL_BALANTA — FLG_NIGERCONGO
+- Balanta de Guinée-Bissau
+- Balanta du Sénégal
+
+## PPL_BAMBARA — FLG_NIGERCONGO
+- Bambara du Mali
+- Bambara du Burkina Faso
+- Bambara du Sénégal
+- Bambara de Côte d'Ivoire
+
+## PPL_BAMILEKE — FLG_NIGERCONGO
+- Bamiléké du Nord
+- Bamiléké du Sud
+
+## PPL_BANDA — FLG_SOUDANIQUECENTRAL
+- Banda de RCA
+- Banda de RDC
+- Banda du Soudan du Sud
+
+## PPL_BANTU — FLG_NIGERCONGO
+- Groupes bantous divers
+- Variantes linguistiques
+
+## PPL_BANYORO — FLG_NIGERCONGO
+- Banyoro du Nord
+- Banyoro du Sud
+
+## PPL_BARMA — FLG_SOUDANIQUECENTRAL
+- Barma du Nord
+- Barma du Sud
+
+## PPL_BASKETO — FLG_OMOTIQUE
+- Basketo du centre
+- Sous-groupes ruraux
+
+## PPL_BASOGA — FLG_NIGERCONGO
+- Basoga du Nord
+- Basoga du Sud
+
+## PPL_BASSA — FLG_MANDE
+- Bassa de Buchanan
+- Bassa de la côte sud
+
+## PPL_BASSARI — FLG_NIGERCONGO
+- Bassari du Sénégal
+- Bassari de Guinée
+
+## PPL_BASSA_CAM — FLG_NIGERCONGO
+- Bassa du Nord
+- Bassa du Sud
+
+## PPL_BASSA_NIGERIA — FLG_BENOUECONGO
+- Bassa Nge
+- Bassa Kwomu
+- Bassa Komo
+
+## PPL_BEJA — FLG_COUCHITIQUE
+- Hadendoa
+- Bisharin
+- Amar’ar
+
+## PPL_BELANDA — FLG_SOUDANIQUECENTRAL
+- Belanda du Nord
+- Belanda du Sud
+
+## PPL_BEMBA — FLG_NIGERCONGO
+- Bemba de Zambie
+- Bemba de RDC
+
+## PPL_BEMBE — FLG_NIGERCONGO
+- Bembe du Nord
+- Bembe du Sud
+
+## PPL_BENCH — FLG_OMOTIQUE
+- Bench du Nord
+- Bench du Sud
+
+## PPL_BENOUECONGO_MACRO — FLG_BENOUECONGO
+- Yoruba, Igbo, Ewe, Fon, Edos, Tiv, Nupe, Idoma, Ijaw, Ibibio, Annang, Efik…
+- Et l’ensemble des 48 peuples Bénoué-Congo répertoriés par AFRIK.
+
+## PPL_BERI — FLG_SAHARIEN
+- Beri du Tchad
+- Beri du Soudan
+
+## PPL_BETE — FLG_NIGERCONGO
+- Bété de Gagnoa
+- Bété de Daloa
+- Bété d'Oumé
+
+## PPL_BETI — FLG_NIGERCONGO
+- Ewondo
+- Bulu
+- Fang du sud (éléments culturels)
+- Sous-groupes beti (Mvog, Essomba, etc.)
+
+## PPL_BETI_FANG — FLG_NIGERCONGO
+- Béti-Fang du Cameroun
+- Béti-Fang de Guinée équatoriale
+
+## PPL_BETSILEO — FLG_AUSTRONESIENNE
+- Betsileo du Nord
+- Betsileo du Sud
+
+## PPL_BETSIMISARAKA — FLG_AUSTRONESIENNE
+- Betsimisaraka du Nord
+- Betsimisaraka du Sud
+
+## PPL_BEZANOZANO — FLG_AUSTRONESIENNE
+- Bezanozano du Nord
+- Bezanozano du Sud
+
+## PPL_BIDEYAT — FLG_SAHARIEN
+- Bideyat du Tchad
+- Bideyat du Soudan
+
+## PPL_BIDYOGO — FLG_TCHADIQUE
+- Bidyogo du Nord
+- Bidyogo du Sud
+
+## PPL_BIJAOGO — FLG_ATLANTIQUE
+- Bijogo d’Orango
+- Bijogo de Formosa
+- Bijogo de Uno
+
+## PPL_BILEN — FLG_COUCHITIQUE
+- Bilen de Keren
+- Bilen de Hagaz
+
+## PPL_BILLE — FLG_BENOUECONGO
+- Communautés Bille du Delta
+- Villages fluviaux
+
+## PPL_BOBO — FLG_NIGERCONGO
+- Bobo de Bobo-Dioulasso
+- Bobo-Madare ruraux
+
+## PPL_BOLIWA — FLG_TCHADIQUE
+- Boliwa du Nord
+- Boliwa du Sud
+
+## PPL_BONGO — FLG_SOUDANIQUECENTRAL
+- Bongo du Nord
+- Bongo du Sud
+
+## PPL_BOSO — FLG_NIGERCONGO
+- Boso du Nord
+- Boso du Sud
+
+## PPL_BRONG — FLG_NIGERCONGO
+- Brong du Ghana
+- Brong de Côte d'Ivoire
+
+## PPL_BUDUMA — FLG_SAHARIEN
+- Buduma du Tchad
+- Buduma du Niger
+- Buduma du Nigeria
+
+## PPL_BUGAKWE — FLG_KXA
+- Bugakwe du Nord
+- Bugakwe du Sud
+
+## PPL_BUGANDA — FLG_BANTU
+- Baganda du Nord
+- Baganda du Sud
+
+## PPL_BULU — FLG_NIGERCONGO
+- Bulu du Nord
+- Bulu du Sud
+
+## PPL_BURA — FLG_TCHADIQUE
+- Bura du Nord
+- Bura du Sud
+
+## PPL_BURJI — FLG_COUCHITIQUE
+- Burji d'Éthiopie
+- Burji du Kenya
+
+## PPL_BUSANSI — FLG_NIGERCONGO
+- Busansi du Burkina Faso
+- Busansi du Ghana
+
+## PPL_BUSSA — FLG_GUR
+- Bissa du Centre-Sud (Burkina Faso)
+- Bissa du Nord-Ghana
+- Bissa du Togo
+
+## PPL_BWABA — FLG_NIGERCONGO
+- Bwaba du Burkina Faso
+- Bwaba du Mali
+
+## PPL_CHAGA — FLG_NIGERCONGO
+- Rombo
+- Machame
+- Siha/Kibosho
+
+## PPL_CHAOUI — FLG_BERBERE
+- Chaouis de l’Aurès Ouest
+- Chaouis des Nememcha
+- Chaouis des Ayata
+
+## PPL_CHENOUA — FLG_BERBERE
+- Communautés berbérophones de Tipasa
+- Groupes des environs de Cherchell
+
+## PPL_CHEWA — FLG_NIGERCONGO
+- Chewa du Malawi
+- Chewa du Mozambique
+- Chewa de Zambie
+
+## PPL_CHLEUH — FLG_BERBERE
+- Chleuhs du Souss
+- Chleuhs de l’Anti-Atlas
+- Chleuhs du Haut-Atlas occidental
+
+## PPL_CHOPE — FLG_NIGERCONGO
+- Chope du Nord
+- Chope du Sud
+
+## PPL_CHOPE_MOZ — FLG_NIGERCONGO
+- Chope du Nord
+- Chope du Sud
+
+## PPL_COMORIEN — FLG_NIGERCONGO
+- Ngazidja (Grande Comore)
+- Ndzuani (Anjouan)
+- Mwali (Mohéli)
+- Maorais (Mayotte)
+
+## PPL_CREOLE_CABOVERDIEN — FLG_CREOLE
+- Créole de Santiago
+- Créole de São Vicente
+- Créole de Fogo
+- Créole de Brava
+- Autres îles
+
+## PPL_CREOLE_MACRO — FLG_CREOLE
+- Créoles cap-verdiens
+- Crioulo de Guinée-Bissau
+- Krio de Sierra Leone
+- Créoles de São Tomé-et-Príncipe
+- Créoles de Maurice
+- Créoles des Seychelles
+- Créoles de la Réunion
+- Autres groupes créoles
+
+## PPL_CREOLE_MAURICE — FLG_CREOLE
+- Créole de Maurice
+
+## PPL_CREOLE_REUNION — FLG_CREOLE
+- Créole de la Réunion
+
+## PPL_CREOLE_SEYCHELLES — FLG_CREOLE
+- Créole des Seychelles
+
+## PPL_DAFING — FLG_NIGERCONGO
+- Dafing du Burkina Faso
+- Dafing du Mali
+
+## PPL_DAGARA — FLG_NIGERCONGO
+- Dagara du Burkina Faso
+- Dagaaba du Ghana
+
+## PPL_DAGOMBA — FLG_NIGERCONGO
+- Dagomba de Tamale
+- Dagbamba ruraux
+
+## PPL_DAMARA — FLG_KHOE
+- Damara du Nord
+- Damara du Sud
+
+## PPL_DANGME — FLG_BENOUECONGO
+- Ada
+- Krobo
+- Shai
+
+## PPL_DASANECH — FLG_COUCHITIQUE
+- Daasanach de l’Omo
+- Daasanach de Marsabit (Kenya)
+- Groupes semi-nomades de la frontière soudanaise
+
+## PPL_DATOGA — FLG_NILOTIQUE
+- Datoga du Nord
+- Datoga du Sud
+
+## PPL_DAWRO — FLG_OMOTIQUE
+- Dawro des hautes terres
+- Sous-groupes du Dawro sud
+
+## PPL_DAZA — FLG_SAHARIEN
+- Daza du Tchad
+- Daza du Niger
+
+## PPL_DENDI — FLG_SONGHAY
+- Dendi du Bénin
+- Dendi du Niger
+- Dendi du Nigeria
+
+## PPL_DIDA — FLG_NIGERCONGO
+- Dida du Centre
+- Dida du Sud
+
+## PPL_DIMME — FLG_OMOTIQUE
+- Dimme du Nord
+- Dimme du Sud
+
+## PPL_DINKA — FLG_NILOTIQUE
+- Dinka Rek (Rek Dinka)
+- Dinka Ngok (Ngok Dinka)
+- Dinka Padang (Padang Dinka)
+- Dinka Bor (Bor Dinka)
+- Dinka Agar (Agar Dinka)
+- Dinka Ciec (Ciec Dinka)
+- Dinka Twic (Twic Dinka)
+- Dinka Malual (Malual Dinka)
+- Dinka Luac (Luac Dinka)
+- Dinka Gok (Gok Dinka)
+
+## PPL_DIOLA — FLG_ATLANTIQUE
+- Jola Fogny
+- Jola Bayot
+- Jola Kasa
+- Jola Felup
+
+## PPL_DIZI — FLG_OMOTIQUE
+- Dizi du Nord
+- Dizi du Sud
+
+## PPL_DOGON — FLG_NIGERCONGO
+- Dogon de Bandiagara
+- Dogon de Sangha
+- Dogon de Sanga
+- Dogon de Kani-Kombolé
+- Dogon de Tintam
+- Dogon de Yougo
+- Dogon de Nombori
+- Dogon de Kani-Bonzon
+- Dogon de Tireli
+- Dogon de Banani
+- Dogon de Dourou
+- Dogon de Yendouma
+- Dogon de Bongo
+- Dogon de Kani-Kombole
+- Dogon de Kani-Kombolé
+- Dogon de Kani-Kombolé
+- Dogon de Kani-Kombolé
+- Dogon de Kani-Kombolé
+- Dogon de Kani-Kombolé
+- Dogon de Kani-Kombolé
+
+## PPL_DUALA — FLG_NIGERCONGO
+- Duala de Bonanjo
+- Duala de Bonaberi
+- Sous-groupes Sawa apparentés (éléments Bakoko, Isubu… selon contextes)
+
+## PPL_DYULA — FLG_NIGERCONGO
+- Dyula commerçants
+- Dyula de Kong
+- Dyula du Worodougou
+
+## PPL_EBIRA — FLG_NIGERCONGO
+- Ebira Tao (Okene)
+- Ebira Koto (Kogi)
+- Ebira Etuno (Edo State)
+
+## PPL_EDO — FLG_NIGERCONGO
+- Communautés Edo du royaume de Bénin
+- Sous-groupes urbains et ruraux
+
+## PPL_EFIK — FLG_NIGERCONGO
+- Efik du littoral
+- Communautés Efik historiques de Calabar
+
+## PPL_EKPEYE — FLG_BENOUECONGO
+- Ekpeye d’Ahoada
+- Villages riverains du cours inférieur de l’Orashi
+
+## PPL_EL_MOLO — FLG_NILOTIQUE
+- El Molo du Nord
+- El Molo du Sud
+
+## PPL_EMBU — FLG_NIGERCONGO
+- Embu du Nord
+- Embu du Sud
+
+## PPL_ESAN — FLG_BENOUECONGO
+- Esan d’Irrua
+- Esan d’Uromi
+- Esan rural
+
+## PPL_EWE — FLG_NIGERCONGO
+- Ewe du Ghana (Volta)
+- Ewe du Togo
+- Ewe du Bénin (Mono, Couffo)
+
+## PPL_EWONDO — FLG_NIGERCONGO
+- Ewondo urbains
+- Ewondo ruraux
+- Sous-groupes lignagers régionaux
+
+## PPL_FANG — FLG_NIGERCONGO
+- Fang du Gabon
+- Fang de Guinée équatoriale
+- Fang du Cameroun
+
+## PPL_FANG_EQGUINEE — FLG_NIGERCONGO
+- Fang de Guinée équatoriale
+- Sous-groupes régionaux de Guinée équatoriale
+
+## PPL_FANG_GABON — FLG_NIGERCONGO
+- Fang du Gabon
+- Sous-groupes régionaux du Gabon
+
+## PPL_FANTE — FLG_NIGERCONGO
+- Fante du Central
+- Fante du Western
+
+## PPL_FON — FLG_BENOUECONGO
+- Fon d’Abomey
+- Fon de Porto-Novo
+- Sous-groupes Mahoun, Gun, Maxi (selon zones)
+
+## PPL_FORROS — FLG_CREOLE
+- Forros de São Tomé
+- Forros de Príncipe
+
+## PPL_FRAFRA — FLG_NIGERCONGO
+- Frafra du Ghana
+- Frafra du Burkina Faso
+
+## PPL_FULA — FLG_NIGERCONGO
+- Fulɓe Toroɓe (Fouta Toro, Sénégal/Mauritanie)
+- Fulɓe Wodaabe (Niger, Nigeria, Cameroun)
+- Fulɓe Jalooɓe (Fouta Djallon, Guinée)
+- Fulɓe Kuniari
+- Fulɓe Mbororo (pasteurs nomades, Cameroun, Tchad, RCA)
+- Fulɓe Adamawa (Nigeria, Cameroun)
+- Fulɓe Sokoto (Nigeria)
+
+## PPL_FULANI — FLG_ATLANTIQUE
+- Fulɓe Toroɓe
+- Fulɓe Wodaabe
+- Fulɓe Jalooɓe
+- Fulɓe Kuniari
+- Fulɓe Mbororo (pasteurs nomades)
+
+## PPL_FULA_FORET — FLG_NIGERCONGO
+- Fulɓe des zones forestières
+- Sous-groupes régionaux forestiers
+
+## PPL_FULA_NOMADES — FLG_NIGERCONGO
+- Fulɓe Mbororo (pasteurs nomades)
+- Fulɓe Wodaabe (pasteurs nomades)
+- Autres groupes nomades fula
+
+## PPL_FULA_SAHEL — FLG_NIGERCONGO
+- Fulɓe Toroɓe (Fouta Toro, Sénégal/Mauritanie)
+- Fulɓe du Sahel central
+- Fulɓe du Sahel oriental
+
+## PPL_FURU — FLG_SOUDANIQUECENTRAL
+- Furu du Nord
+- Furu du Sud
+
+## PPL_GA — FLG_BENOUECONGO
+- Ga Mashie
+- Ga de l’intérieur (Abokobi, Amasaman)
+- Sous-groupes liés aux Dangme
+
+## PPL_GABRA — FLG_COUCHITIQUE
+- Gabra du Kenya
+- Gabra d’Éthiopie (Borana zone)
+
+## PPL_GAMO — FLG_OMOTIQUE
+- Tribu Gamo nord
+- Gamo sud
+- Groupes lacustres du sud-ouest
+
+## PPL_GANDA — FLG_NIGERCONGO
+- Groupe ethnique baganda
+- Sous-groupes régionaux du Buganda
+- Autres segments lignagers internes
+
+## PPL_GA_DANGME — FLG_NIGERCONGO
+- Ga (Ga Mashie, Ga de l'intérieur)
+- Dangme (Ada, Krobo, Shai)
+
+## PPL_GBAGYI — FLG_NIGERCONGO
+- Gbagyi Ogu
+- Gbagyi Nkwa
+- Gbagyi du centre et du nord
+
+## PPL_GBELE — FLG_MANDE
+- Gbélé du Nord
+- Gbélé du Sud
+
+## PPL_GBODJIBO — FLG_KROU
+- Gbodjibo du Nord
+- Gbodjibo du Sud
+
+## PPL_GEDEO — FLG_OMOTIQUE
+- Gedeo du nord
+- Gedeo du sud
+
+## PPL_GHOMARA — FLG_BERBERE
+- Tribu Aït Ghomara
+- Sous-groupes villageois du Rif occidental
+
+## PPL_GHOWA — FLG_TUU
+- Gǀowa du Nord
+- Gǀowa du Sud
+
+## PPL_GIZIGA — FLG_TCHADIQUE
+- Giziga Nord
+- Giziga Sud
+
+## PPL_GODIE — FLG_KROU
+- Godié de Sassandra
+- Sous-groupes littoraux
+
+## PPL_GOGO — FLG_NIGERCONGO
+- Wagogo du Nord (Mpwapwa)
+- Wagogo du Sud (Manyoni)
+- Sous-groupes pastoraux
+
+## PPL_GOLA — FLG_NIGERCONGO
+- Gola de l'Est
+- Gola de l'Ouest
+
+## PPL_GONA — FLG_KHOE
+- Gona du Nord
+- Gona du Sud
+
+## PPL_GREBO — FLG_KROU
+- Grebo du Libéria
+- Grebo de Côte d'Ivoire
+
+## PPL_GUERE — FLG_KROU
+- Wè du nord
+- Wè du sud
+
+## PPL_GURAGE — FLG_SEMITIQUE
+- Soddo Gurage
+- Sebat Bet Gurage
+- Kistane (Sayete)
+
+## PPL_GURMA — FLG_NIGERCONGO
+- Gurma du Burkina Faso
+- Gurma du Togo
+- Gurma du Bénin
+- Gurma du Ghana
+
+## PPL_GUR_MACRO — FLG_GUR
+- Mossi, Dagomba, Mamprusi, Kassena, Dagara, Lobi, Frafra, Gurma, Konkomba, Nankana, Kusasi, Bwa, Bissa, Wiyã, Talensi, etc.
+
+## PPL_GUWA — FLG_TCHADIQUE
+- Guwa du Nord
+- Guwa du Sud
+
+## PPL_GWANDARA — FLG_TCHADIQUE
+- Gwandara du Nord
+- Gwandara du Sud
+
+## PPL_HABESHA — FLG_SEMITIQUE
+- Amhara
+- Tigréens (Tigray)
+- Tigré (Érythrée)
+- Guragé
+- Argobba
+- Harari
+- Gafat (éteint)
+- Geez (éteint, langue liturgique)
+
+## PPL_HADIYA — FLG_COUCHITIQUE
+- Hadiya du centre
+- Hadiya du sud
+- Sous-groupes de la zone Gurage–Hadiya
+
+## PPL_HAIOM — FLG_KHOE
+- Haiǁom du Nord
+- Haiǁom du Sud
+
+## PPL_HARARI — FLG_SEMITIQUE
+- Harari urbains (Adare)
+- Groupes harari diasporiques
+
+## PPL_HAUSA — FLG_TCHADIQUE
+- Kano
+- Katsina
+- Zaria (Zazzau)
+
+## PPL_HAVU — FLG_BANTU
+- Havu du Nord
+- Havu du Sud
+
+## PPL_HAYA — FLG_NIGERCONGO
+- Haya du Nord
+- Haya du Sud
+
+## PPL_HEHE — FLG_NIGERCONGO
+- Hehe du Nord
+- Hehe du Sud
+
+## PPL_HERERO — FLG_NIGERCONGO
+- Herero de Namibie
+- Herero du Botswana
+- Herero d'Angola
+
+## PPL_HIMBA — FLG_NIGERCONGO
+- Himba de Namibie
+- Himba d'Angola
+
+## PPL_HOA — FLG_KXA
+- ǂHoan du Nord
+- ǂHoan du Sud
+
+## PPL_HOBA — FLG_BANTU
+- Hoba de RDC
+- Hoba de RCA
+
+## PPL_HUNDE — FLG_BANTU
+- Hunde du Nord
+- Hunde du Sud
+
+## PPL_HUTU_BURUNDI — FLG_BANTU
+- Hutu des hautes terres du Burundi
+- Hutu des plaines et collines rurales
+- À préciser (lignages régionaux)
+
+## PPL_IBIBIO — FLG_NIGERCONGO
+- Ibibio proprement dit
+- Annang
+- Eket
+- Oron
+- Andoni
+- Ibeno
+- Enyong
+
+## PPL_IDOMA — FLG_NIGERCONGO
+- Idoma central
+- Idoma du Nord
+- Idoma du Sud
+- Idoma de l'Est
+- Idoma de l'Ouest
+- Agatu
+- Otukpo
+
+## PPL_IGALA — FLG_BENOUECONGO
+- Igala de Idah
+- Igala des villages fluviaux
+
+## PPL_IGBO — FLG_NIGERCONGO
+- Onicha
+- Ngwa
+- Aro
+- Autres sous-groupes claniques igbo
+
+## PPL_IJAW — FLG_NIGERCONGO
+- Izon (Ijaw central)
+- Kalabari
+- Nembe
+- Okrika
+- Bonny
+- Andoni
+- Ogbia
+- Biseni
+- Epie-Atissa
+- Autres sous-groupes ijaw
+
+## PPL_ISOKO — FLG_NIGERCONGO
+- Isoko central
+- Isoko du Nord
+- Isoko du Sud
+
+## PPL_ITSEKIRI — FLG_NIGERCONGO
+- Itsekiri central
+- Itsekiri du Nord
+- Itsekiri du Sud
+
+## PPL_JAHANKA — FLG_NIGERCONGO
+- Jahanka de Guinée
+- Jahanka du Mali
+- Jahanka du Sénégal
+
+## PPL_JARAWA — FLG_TCHADIQUE
+- Jarawa du Nord
+- Jarawa du Sud
+
+## PPL_JIE — FLG_NILOTIQUE
+- Jie du Nord
+- Jie du Sud
+
+## PPL_JIE_SUD — FLG_NILOTIQUE
+- Jie du Sud (groupe principal)
+- Communautés urbaines
+
+## PPL_JOLA — FLG_NIGERCONGO
+- Jola de Casamance (Sénégal)
+- Jola de Gambie
+- Jola de Guinée-Bissau
+
+## PPL_JOPADHOLA — FLG_NILOTIQUE
+- Jopadhola du Nord
+- Jopadhola du Sud
+
+## PPL_JUHOANSI — FLG_KXA
+- Ju|'hoansi du Nord (Namibie)
+- Ju|'hoansi du Sud (Botswana)
+
+## PPL_JUKUN — FLG_BENOUECONGO
+- Jukun Wapan
+- Jukun Takum
+- Sous-groupes du fleuve Benue
+
+## PPL_KABYLE — FLG_BERBERE
+- Kabyles de la Grande Kabylie
+- Kabyles de la Petite Kabylie
+- Kabyles du Djurdjura
+
+## PPL_KAFA — FLG_OMOTIQUE
+- Kafa des hautes terres
+- Groupes ruraux forestiers
+
+## PPL_KAKWA — FLG_SOUDANIQUECENTRAL
+- Kakwa d'Ouganda
+- Kakwa du Soudan du Sud
+- Kakwa de RDC
+
+## PPL_KALAIBARI — FLG_BENOUECONGO
+- Kalabari de Buguma
+- Kalabari de Tombia
+- Sous-groupes fluviaux
+
+## PPL_KAMBA — FLG_NIGERCONGO
+- Kamba du Nord
+- Kamba du Sud
+
+## PPL_KAMBATA — FLG_COUCHITIQUE
+- Kambata
+- Tembaro
+- Alaba (proches culturalement)
+
+## PPL_KANEMBU — FLG_SAHARIEN
+- Kanembu du Nord
+- Kanembu du Sud
+
+## PPL_KANURI — FLG_SAHARIEN
+- Kanuri du Nigeria
+- Kanuri du Niger
+- Kanuri du Tchad
+- Kanuri du Cameroun
+
+## PPL_KARAMOJONG — FLG_NILOTIQUE
+- Karamojong du Nord
+- Karamojong du Sud
+
+## PPL_KARANGA — FLG_NIGERCONGO
+- Karanga du Nord
+- Karanga du Sud
+
+## PPL_KARANGA_ZIM — FLG_NIGERCONGO
+- Karanga du Nord
+- Karanga du Sud
+
+## PPL_KASEENA — FLG_GUR
+- Kassena du Burkina
+- Kassena du Ghana
+
+## PPL_KASEM — FLG_NIGERCONGO
+- Kasem du Ghana
+- Kasem du Burkina Faso
+
+## PPL_KATIA — FLG_TUU
+- Katia du Nord
+- Katia du Sud
+
+## PPL_KAVANGO — FLG_NIGERCONGO
+- Kavango de Namibie
+- Kavango d'Angola
+
+## PPL_KENGA — FLG_TCHADIQUE
+- Kenga du Nord
+- Kenga du Sud
+
+## PPL_KERA — FLG_TCHADIQUE
+- Kera du Tchad
+- Kera du Cameroun
+
+## PPL_KGALAGADI — FLG_KHOE
+- Kgalagadi du Botswana
+- Kgalagadi d'Afrique du Sud
+
+## PPL_KHAINAI — FLG_KHOE
+- Khainai du Nord
+- Khainai du Sud
+
+## PPL_KHOE_MACRO — FLG_KHOE
+- Nama
+- Damara
+- Khoekhoe
+- Haiǁom
+- Kgalagadi
+- Autres groupes Khoe
+
+## PPL_KHOISAN_CREOLE — FLG_CREOLE
+- Créoles avec influences khoisan d'Afrique du Sud
+- Créoles avec influences khoisan de Namibie
+
+## PPL_KHOZA_FAUXEX — FLG_NIGERCONGO
+- Khoza (sous-groupes à déterminer)
+
+## PPL_KIKUYU — FLG_NIGERCONGO
+- Kikuyu du Nord
+- Kikuyu du Sud
+
+## PPL_KINYARWANDA — FLG_NIGERCONGO
+- Hutu (Rwanda, Burundi)
+- Tutsi (Rwanda, Burundi)
+- Twa (Rwanda, Burundi)
+- Autres locuteurs kinyarwanda
+
+## PPL_KIRUNDI_HUTU — FLG_NIGERCONGO
+- Hutu du Burundi
+- Hutu du Rwanda
+
+## PPL_KIRUNDI_TUTSI — FLG_NIGERCONGO
+- Tutsi du Burundi
+- Tutsi du Rwanda
+
+## PPL_KLAO — FLG_KROU
+- Klao du Liberia
+- Klao littoraux de Côte d’Ivoire
+
+## PPL_KONGO — FLG_NIGERCONGO
+- Kongo du Bas-Congo
+- Kongo d'Angola
+- Kongo du Congo
+- Kongo du Gabon
+
+## PPL_KONGO_BRAZZA — FLG_NIGERCONGO
+- Kongo de Brazzaville
+- Kongo du Pool
+
+## PPL_KONGO_CABINDA — FLG_NIGERCONGO
+- Kongo de Cabinda
+
+## PPL_KONGO_MAYOMBE — FLG_NIGERCONGO
+- Kongo du Mayombe (Congo)
+- Kongo du Mayombe (Gabon)
+
+## PPL_KONGO_SUD — FLG_NIGERCONGO
+- Kongo du Bas-Congo
+
+## PPL_KONKOMBA — FLG_NIGERCONGO
+- Konkomba du Ghana
+- Konkomba du Togo
+
+## PPL_KONO — FLG_NIGERCONGO
+- Kono de Sierra Leone
+- Kono de Guinée
+
+## PPL_KONSO — FLG_COUCHITIQUE
+- Konso du Nord
+- Konso du Sud
+- Konso de l'Est
+- Konso de l'Ouest
+
+## PPL_KOORETE — FLG_OMOTIQUE
+- Koorete des hautes terres
+- Groupes des vallées forestières
+
+## PPL_KOREKORE — FLG_NIGERCONGO
+- Korekore du Nord
+- Korekore du Sud
+
+## PPL_KOREKORE_ZIM — FLG_NIGERCONGO
+- Korekore du Nord
+- Korekore du Sud
+
+## PPL_KOTA — FLG_NIGERCONGO
+- Kota du Gabon
+- Kota du Congo
+
+## PPL_KOULOUGO — FLG_GUR
+- Koulango du Nord-Est ivoirien
+- Sous-groupes ruraux de Bondoukou
+
+## PPL_KOUYA — FLG_KROU
+- Kouya du Nord
+- Kouya du Sud
+
+## PPL_KOUYOU — FLG_NIGERCONGO
+- Kouyou du Nord
+- Kouyou du Sud
+
+## PPL_KOYRA — FLG_OMOTIQUE
+- Koyra du Nord
+- Koyra du Sud
+
+## PPL_KOYRA_BORO_SEYO — FLG_SONGHAY
+- Koyra Boro Seyo du Nord
+- Koyra Boro Seyo du Sud
+
+## PPL_KOYRA_CHIINI — FLG_SONGHAY
+- Koyra Chiini du Nord
+- Koyra Chiini du Sud
+
+## PPL_KPANA — FLG_NIGERCONGO
+- Kpana de Sierra Leone
+- Kpana de Guinée
+
+## PPL_KPELLE — FLG_NIGERCONGO
+- Kpelle du Libéria
+- Kpelle de Guinée
+
+## PPL_KRAHN — FLG_NIGERCONGO
+- Krahn du Libéria
+- Krahn de Côte d'Ivoire
+
+## PPL_KREDA — FLG_SAHARIEN
+- Kreda du Nord
+- Kreda du Sud
+
+## PPL_KRESH — FLG_SOUDANIQUECENTRAL
+- Kresh du Nord
+- Kresh du Sud
+
+## PPL_KRIO — FLG_CREOLE
+- Krio de Freetown
+- Krio des provinces
+
+## PPL_KROUMEN — FLG_NIGERCONGO
+- Kroumen de Côte d'Ivoire
+- Kroumen du Libéria
+
+## PPL_KROU_MACRO — FLG_KROU
+- Bété, Dida, Guéré/Wè, Godié, Nyabwa, Klao/Krao, Kroumen, etc.
+
+## PPL_KRU — FLG_NIGERCONGO
+- Kru du Libéria
+- Kru de Côte d'Ivoire
+
+## PPL_KUBA — FLG_NIGERCONGO
+- Kuba du Nord
+- Kuba du Sud
+
+## PPL_KUMAM — FLG_NILOTIQUE
+- Kumam du Nord
+- Kumam du Sud
+
+## PPL_KUNG — FLG_KXA
+- !Kung du Nord (Angola, Namibie)
+- !Kung du Sud (Botswana, Namibie)
+- !Kung de l'Est
+
+## PPL_KURANKO — FLG_ATLANTIQUE
+- Kuranko du Nord Sierra Leone
+- Kuranko de Guinée
+
+## PPL_KURTEY — FLG_SONGHAY
+- Kurtey du Nord
+- Kurtey du Sud
+
+## PPL_KUSASI — FLG_GUR
+- Kusasi du Ghana
+- Kusasi du Burkina Faso
+
+## PPL_KUSSI — FLG_ATLANTIQUE
+- Kussi-Kassanga du Sénégal
+- Kussi littoraux
+
+## PPL_KUTAEB — FLG_BENOUECONGO
+- Kuteb de Takum
+- Sous-groupes frontaliers
+
+## PPL_KWADI — FLG_KHOE
+- Kwadi d'Angola
+
+## PPL_KWANYAMA — FLG_NIGERCONGO
+- Kwanyama de Namibie
+- Kwanyama d'Angola
+
+## PPL_KXA_MACRO — FLG_KXA
+- Ju|'hoansi
+- ǂHoan
+- !Kung (diverses variétés)
+- Bugakwe
+- Autres groupes Juu
+
+## PPL_KXOE — FLG_KHOE
+- Kxoe du Botswana
+- Kxoe de Namibie
+
+## PPL_LAGWAN — FLG_TCHADIQUE
+- Lagwan du Tchad
+- Lagwan du Cameroun
+
+## PPL_LANGO — FLG_NILOTIQUE
+- Lango du Nord
+- Lango du Sud
+
+## PPL_LEBOU — FLG_NIGERCONGO
+- Lébou du Cap-Vert
+- Lébou de Dakar
+
+## PPL_LENGO — FLG_NIGERCONGO
+- Lengo du Nord
+- Lengo du Sud
+
+## PPL_LIBIDO — FLG_COUCHITIQUE
+- Libido du Nord
+- Libido du Sud
+
+## PPL_LIMBA — FLG_ATLANTIQUE
+- Limba du Nord
+- Limba du Sud
+
+## PPL_LINGALA — FLG_NIGERCONGO
+- Locuteurs lingala de RDC
+- Locuteurs lingala du Congo
+- Locuteurs lingala de RCA
+- Autres locuteurs lingala
+
+## PPL_LOBI — FLG_NIGERCONGO
+- Lobi du Burkina Faso
+- Lobi de Côte d'Ivoire
+- Lobi du Ghana
+
+## PPL_LOMWE — FLG_NIGERCONGO
+- Lomwe du Mozambique
+- Lomwe du Malawi
+
+## PPL_LOMWE_MALA — FLG_NIGERCONGO
+- Lomwe du Nord
+- Lomwe du Sud
+
+## PPL_LOMWE_MOZ — FLG_NIGERCONGO
+- Lomwe du Nord
+- Lomwe du Sud
+
+## PPL_LOZI — FLG_NIGERCONGO
+- Lozi de Zambie
+- Lozi du Zimbabwe
+- Lozi de Namibie
+- Lozi d'Angola
+
+## PPL_LUBA — FLG_NIGERCONGO
+- Luba du Kasaï
+- Luba du Katanga
+
+## PPL_LUBA_KASAI — FLG_NIGERCONGO
+- Luba du Kasaï central
+- Luba du Kasaï oriental
+- Luba du Kasaï occidental
+
+## PPL_LUBA_KASAI2 — FLG_NIGERCONGO
+- Luba du Kasaï central
+- Luba du Kasaï oriental
+- Luba du Kasaï occidental
+
+## PPL_LUBA_KATANGA — FLG_NIGERCONGO
+- Luba du Katanga central
+- Luba du Katanga oriental
+- Luba du Katanga occidental
+
+## PPL_LUGANDA_ETHNO — FLG_NIGERCONGO
+- Ganda du Nord
+- Ganda du Sud
+
+## PPL_LUGBARA — FLG_SOUDANIQUECENTRAL
+- Lugbara d'Ouganda
+- Lugbara de RDC
+
+## PPL_LUNDA — FLG_NIGERCONGO
+- Lunda de RDC
+- Lunda d'Angola
+- Lunda de Zambie
+
+## PPL_LUNDA_NORTE — FLG_NIGERCONGO
+- Lunda de Lunda Norte
+
+## PPL_LUO_BANTU — FLG_NIGERCONGO
+- Luo bantou (sous-groupes à déterminer)
+
+## PPL_LUO_PAGU — FLG_NILOTIQUE
+- Luo Pagu d'Ouganda
+- Luo Pagu du Kenya
+
+## PPL_MAASAI — FLG_NILOTIQUE
+- Maasai du Kenya
+- Maasai de Tanzanie
+
+## PPL_MAATS — FLG_OMOTIQUE
+- Maats du Nord
+- Maats du Sud
+
+## PPL_MABAN — FLG_NILOTIQUE
+- Maban du Soudan du Sud
+- Maban du Tchad
+
+## PPL_MADI — FLG_SOUDANIQUECENTRAL
+- Madi d'Ouganda
+- Madi du Soudan du Sud
+
+## PPL_MAFA — FLG_TCHADIQUE
+- Mafa des Monts Mandara
+- Variantes locales villageoises
+
+## PPL_MAKONDE — FLG_NIGERCONGO
+- Makonde du Mozambique
+- Makonde de Tanzanie
+
+## PPL_MAKONDE_MOZ — FLG_NIGERCONGO
+- Makonde du Nord
+- Makonde du Sud
+
+## PPL_MAKONDE_TANZ — FLG_NIGERCONGO
+- Makonde du Nord
+- Makonde du Sud
+
+## PPL_MAKUA — FLG_NIGERCONGO
+- Makua du Mozambique
+- Makua de Tanzanie
+- Makua du Malawi
+
+## PPL_MALINKE — FLG_NIGERCONGO
+- Malinké du Mali
+- Malinké de Guinée
+- Malinké du Sénégal
+- Malinké de Côte d'Ivoire
+- Malinké de Gambie
+- Malinké de Guinée-Bissau
+
+## PPL_MALLE — FLG_OMOTIQUE
+- Malle du Nord
+- Malle du Sud
+
+## PPL_MAMPRUSI — FLG_NIGERCONGO
+- Mamprusi du Ghana
+- Mamprusi du Burkina Faso
+
+## PPL_MANDARA — FLG_TCHADIQUE
+- Wandala du Cameroun
+- Mandara du Nigeria
+
+## PPL_MANDE_MACRO — FLG_MANDE
+- Malinké / Mandinka
+- Bambara
+- Dioula
+- Soninké
+- Kpelle
+- Lobi
+- Autres groupes mandé
+
+## PPL_MANDINGUE — FLG_NIGERCONGO
+- Mandingue du Mali
+- Mandingue de Guinée
+- Mandingue du Sénégal
+- Mandingue de Côte d'Ivoire
+- Mandingue de Gambie
+- Mandingue de Guinée-Bissau
+- Mandingue de Sierra Leone
+
+## PPL_MANGA — FLG_TCHADIQUE
+- Manga du Nord
+- Manga du Sud
+
+## PPL_MANGBETU — FLG_SOUDANIQUECENTRAL
+- Mangbetu du Nord
+- Mangbetu du Sud
+
+## PPL_MANIANGA — FLG_NIGERCONGO
+- Manianga du Nord
+- Manianga du Sud
+
+## PPL_MANJAK — FLG_NIGERCONGO
+- Manjak de Guinée-Bissau
+- Manjak du Sénégal
+
+## PPL_MANKANYA — FLG_ATLANTIQUE
+- Mankanya du Sénégal (région de Ziguinchor)
+- Mankanya de Guinée-Bissau (zone littorale)
+
+## PPL_MANYIKA — FLG_NIGERCONGO
+- Manyika du Zimbabwe
+- Manyika du Mozambique
+
+## PPL_MANYIKA_ZIM — FLG_NIGERCONGO
+- Manyika du Nord
+- Manyika du Sud
+
+## PPL_MARAKA — FLG_NIGERCONGO
+- Maraka du Nord
+- Maraka du Sud
+
+## PPL_MARGI — FLG_TCHADIQUE
+- Margi du Nord
+- Margi du Sud
+
+## PPL_MASA — FLG_TCHADIQUE
+- Masa du Tchad
+- Masa du Cameroun
+
+## PPL_MBOCHI — FLG_NIGERCONGO
+- Mbochi du Nord
+- Mbochi du Sud
+
+## PPL_MBOGO — FLG_TCHADIQUE
+- Mbogo du Nord
+- Mbogo du Sud
+
+## PPL_MEEN — FLG_OMOTIQUE
+- Me'en du Nord
+- Me'en du Sud
+
+## PPL_MENDE — FLG_NIGERCONGO
+- Mende de Sierra Leone
+- Mende du Libéria
+
+## PPL_MERINA — FLG_AUSTRONESIENNE
+- Merina des hautes terres
+- Communautés urbaines
+
+## PPL_MERU — FLG_NIGERCONGO
+- Meru du Nord
+- Meru du Sud
+
+## PPL_MIKEA — FLG_AUSTRONESIENNE
+- Mikea du Nord
+- Mikea du Sud
+
+## PPL_MOBE — FLG_TCHADIQUE
+- Mobe du Nord
+- Mobe du Sud
+
+## PPL_MOFU — FLG_TCHADIQUE
+- Mofu-Gudur
+- Mofu-Duvangar
+- Mofu-Meri
+- Mofu-Mokyo
+- (Les variantes correspondent à des villages ou massifs distincts.)*
+
+## PPL_MONGO — FLG_NIGERCONGO
+- Mongo de l'Équateur
+- Mongo du Tshuapa
+
+## PPL_MORU — FLG_SOUDANIQUECENTRAL
+- Moru du Nord
+- Moru du Sud
+
+## PPL_MOSSI — FLG_NIGERCONGO
+- Mossi du Burkina Faso
+- Mossi du Ghana
+- Mossi de Côte d'Ivoire
+- Mossi du Mali
+
+## PPL_MOZABITE — FLG_BERBERE
+- At Mzab
+- At Bounour
+- At Abad
+
+## PPL_MURLE — FLG_NILOTIQUE
+- Murle du Soudan du Sud
+- Murle d'Éthiopie
+
+## PPL_MUSGU — FLG_TCHADIQUE
+- Musgum du Cameroun
+- Musgum du Tchad
+
+## PPL_MYENE — FLG_NIGERCONGO
+- Myene du Nord
+- Myene du Sud
+
+## PPL_NABT — FLG_GUR
+- Nabit de Bongo
+- Nabit des villages ruraux
+
+## PPL_NAFUSI — FLG_BERBERE
+- Nafusi de Yefren
+- Nafusi de Jadu
+
+## PPL_NALU — FLG_ATLANTIQUE
+- Nalu du littoral
+- Sous-groupes des estuaires
+
+## PPL_NAMA — FLG_KHOE
+- Nama de Namibie
+- Nama d'Afrique du Sud
+
+## PPL_NANDE — FLG_BANTU
+- Nande du Nord
+- Nande du Sud
+
+## PPL_NANKANA — FLG_NIGERCONGO
+- Nankana du Nord
+- Nankana du Sud
+
+## PPL_NDAI — FLG_SOUDANIQUECENTRAL
+- Ndai du Nord
+- Ndai du Sud
+
+## PPL_NDAU — FLG_NIGERCONGO
+- Ndau du Mozambique
+- Ndau du Zimbabwe
+
+## PPL_NDAU_MOZ — FLG_NIGERCONGO
+- Ndau du Nord
+- Ndau du Sud
+
+## PPL_NDAU_ZIM — FLG_NIGERCONGO
+- Ndau du Nord
+- Ndau du Sud
+
+## PPL_NDEBELE — FLG_NIGERCONGO
+- Ndebele du Zimbabwe
+- Ndebele d'Afrique du Sud
+
+## PPL_NDEBELE_MACRO — FLG_NIGERCONGO
+- Ndebele du Zimbabwe
+- Ndebele d'Afrique du Sud
+
+## PPL_NDEBELE_MZ — FLG_NIGERCONGO
+- Ndebele du Nord
+- Ndebele du Sud
+
+## PPL_NDEBELE_NORD — FLG_NIGERCONGO
+- Ndebele du Nord (Zimbabwe)
+- Ndebele du Nord (Afrique du Sud)
+
+## PPL_NDEBELE_SA — FLG_BANTU
+- Ndebele du Nord
+- Ndebele du Sud
+
+## PPL_NDEBELE_SUD — FLG_NIGERCONGO
+- Ndebele du Sud (Nord)
+- Ndebele du Sud (Sud)
+
+## PPL_NDEBELE_SUD2 — FLG_NIGERCONGO
+- Ndebele du Sud (Nord)
+- Ndebele du Sud (Sud)
+
+## PPL_NDEBELE_ZIM — FLG_NIGERCONGO
+- Ndebele du Nord
+- Ndebele du Sud
+
+## PPL_NEMBE — FLG_BENOUECONGO
+- Brass-Nembe
+- Bassan-Nembe
+- Villages fluviaux du delta
+
+## PPL_NGALA — FLG_NIGERCONGO
+- Ngala de RDC
+- Ngala du Congo
+
+## PPL_NGBANDE — FLG_SOUDANIQUECENTRAL
+- Ngbande de RCA
+- Ngbande de RDC
+
+## PPL_NGIZIM — FLG_TCHADIQUE
+- Ngizim du Nord
+- Ngizim du Sud
+
+## PPL_NGONI — FLG_NIGERCONGO
+- Ngoni du Malawi
+- Ngoni de Tanzanie
+- Ngoni de Zambie
+- Ngoni du Mozambique
+
+## PPL_NGUNI — FLG_NIGERCONGO
+- Nguni d'Afrique du Sud
+- Nguni d'Eswatini
+- Nguni du Lesotho
+- Nguni du Zimbabwe
+- Nguni du Mozambique
+
+## PPL_NILOTIQUE_MACRO — FLG_NILOTIQUE
+- Dinka
+- Nuer
+- Maasai
+- Luo
+- Acholi
+- Lango
+- Turkana
+- Karamojong
+- Samburu
+- Shilluk
+- Toposa
+- Autres groupes nilotiques
+
+## PPL_NUER — FLG_NILOTIQUE
+- Nuer du Soudan du Sud
+- Nuer d'Éthiopie
+
+## PPL_NUPE — FLG_NIGERCONGO
+- Nupe du Nord
+- Nupe du Sud
+
+## PPL_NUU — FLG_TUU
+- Nǀuu d'Afrique du Sud
+- Nǀuu du Botswana
+
+## PPL_NYABWA — FLG_NIGERCONGO
+- Nyabwa de Côte d'Ivoire
+- Nyabwa du Libéria
+
+## PPL_NYAMWEZI — FLG_NIGERCONGO
+- Nyamwezi du Nord
+- Nyamwezi du Sud
+
+## PPL_NYANJA — FLG_NIGERCONGO
+- Nyanja du Malawi
+- Nyanja de Zambie
+- Nyanja du Mozambique
+- Nyanja du Zimbabwe
+
+## PPL_NYASA — FLG_NIGERCONGO
+- Nyasa du Malawi
+- Nyasa du Mozambique
+- Nyasa de Tanzanie
+
+## PPL_NZEBI — FLG_NIGERCONGO
+- Nzebi du Gabon
+- Nzebi du Congo
+
+## PPL_OGBRI — FLG_BENOUECONGO
+- Ogbia central
+- Ogbia fluvial
+
+## PPL_OMOTIQUE_MACRO — FLG_OMOTIQUE
+- Bench
+- Dizi
+- Me'en
+- Dimme
+- Koyra
+- Maats
+- Malle
+- Autres groupes omotiques
+
+## PPL_OROMO — FLG_COUCHITIQUE
+- Borana
+- Barentu
+- Arsi
+- Guji
+- Raya Oromo
+
+## PPL_ORON — FLG_BENOUECONGO
+- Oron côtier
+- Oron insulaire (zone de la presqu’île)
+
+## PPL_OVAMBO — FLG_NIGERCONGO
+- Ovambo de Namibie
+- Ovambo d'Angola
+
+## PPL_OVIMBUNDU — FLG_NIGERCONGO
+- Ovimbundu du Nord
+- Ovimbundu du Sud
+
+## PPL_PAPEL — FLG_NIGERCONGO
+- Papel du Nord
+- Papel du Sud
+
+## PPL_PAPELO — FLG_CREOLE
+- Papelo de Guinée-Bissau
+
+## PPL_PEDI — FLG_NIGERCONGO
+- Pedi du Nord
+- Pedi du Sud
+
+## PPL_PODOKO — FLG_TCHADIQUE
+- Podoko du Nigeria
+- Podoko du Cameroun
+
+## PPL_PUNU — FLG_NIGERCONGO
+- Punu du Gabon
+- Punu du Congo
+
+## PPL_QEMANT — FLG_COUCHITIQUE
+- Groupes Qemant de Gondar
+- Sous-groupes ruraux dispersés
+
+## PPL_RENDILLE — FLG_NILOTIQUE
+- Rendille du Nord
+- Rendille du Sud
+
+## PPL_RIFAIN — FLG_BERBERE
+- Aït Waryaghar
+- Aït Bouyahyi
+- Aït Touzine
+
+## PPL_RONGA — FLG_NIGERCONGO
+- Ronga du Mozambique
+- Ronga d'Afrique du Sud
+
+## PPL_RONGA_MOZ — FLG_NIGERCONGO
+- Ronga du Nord
+- Ronga du Sud
+
+## PPL_RUNDI — FLG_NIGERCONGO
+- Locuteurs rundi du Burundi
+- Locuteurs rundi de RDC
+- Locuteurs rundi de Tanzanie
+- Autres locuteurs rundi
+
+## PPL_RWANDAIS_HUTU — FLG_NIGERCONGO
+- Hutu du Rwanda
+- Hutu de RDC
+- Hutu d'Ouganda
+- Hutu du Burundi
+
+## PPL_RWANDAIS_TUTSI — FLG_NIGERCONGO
+- Tutsi du Rwanda
+- Tutsi de RDC
+- Tutsi d'Ouganda
+- Tutsi du Burundi
+
+## PPL_RWENDAIS_HUTU — FLG_BANTU
+- Hutu du Nord
+- Hutu du Sud
+
+## PPL_RWENDAIS_TUTSI — FLG_BANTU
+- Tutsi du Nord
+- Tutsi du Sud
+
+## PPL_SAHARIEN_MACRO — FLG_SAHARIEN
+- Kanuri
+- Kanembu
+- Toubou
+- Zaghawa
+- Daza
+- Teda
+- Autres groupes sahariens
+
+## PPL_SAKALAVA — FLG_AUSTRONESIENNE
+- Sakalava du Menabe
+- Sakalava du Boina
+
+## PPL_SAMBURU — FLG_NILOTIQUE
+- Samburu du Nord
+- Samburu du Sud
+
+## PPL_SANGO — FLG_NIGERCONGO
+- Locuteurs sango de RCA
+- Locuteurs sango de RDC
+- Locuteurs sango du Congo
+- Locuteurs sango du Cameroun
+- Autres locuteurs sango
+
+## PPL_SANGO_SCT — FLG_SOUDANIQUECENTRAL
+- Sango du Nord
+- Sango du Sud
+
+## PPL_SAPEY — FLG_ATLANTIQUE
+- Sapey de Sierra Leone
+- Sapey de Guinée forestière
+
+## PPL_SARA — FLG_SOUDANIQUECENTRAL
+- Sara du Tchad
+- Sara de RCA
+
+## PPL_SCT_MACRO — FLG_SOUDANIQUECENTRAL
+- Lugbara
+- Mangbetu
+- Sara
+- Azande
+- Banda
+- Madi
+- Moru
+- Autres groupes soudaniques centraux
+
+## PPL_SEBATBET — FLG_COUCHITIQUE
+- Chaha
+- Ezha
+- Gumer
+- Gura
+- Gyeto
+- Muher
+- Soddo
+
+## PPL_SENA — FLG_NIGERCONGO
+- Sena du Mozambique
+- Sena du Malawi
+- Sena de Zambie
+
+## PPL_SENA_MOZ — FLG_NIGERCONGO
+- Sena du Nord
+- Sena du Sud
+
+## PPL_SENA_ZAMB — FLG_NIGERCONGO
+- Sena du Nord
+- Sena du Sud
+
+## PPL_SENUFO — FLG_NIGERCONGO
+- Sénufo de Côte d'Ivoire
+- Sénufo du Mali
+- Sénufo du Burkina Faso
+
+## PPL_SERER — FLG_NIGERCONGO
+- Sérère du Sénégal
+- Sérère de Gambie
+
+## PPL_SERERE — FLG_ATLANTIQUE
+- Sapey de Sierra Leone
+- Sapey de Guinée forestière
+
+## PPL_SESOTHO_NATL — FLG_NIGERCONGO
+- Sesotho du Lesotho
+- Sesotho d'Afrique du Sud
+
+## PPL_SETSWANA_NATL — FLG_NIGERCONGO
+- Setswana du Botswana
+- Setswana d'Afrique du Sud
+
+## PPL_SHEKO — FLG_OMOTIQUE
+- Sheko des hautes terres
+- Sous-groupes forestiers
+
+## PPL_SHILLUK — FLG_NILOTIQUE
+- Shilluk du Nord
+- Shilluk du Sud
+
+## PPL_SHONA — FLG_NIGERCONGO
+- Shona du Zimbabwe
+- Shona du Mozambique
+
+## PPL_SHUA — FLG_KHOE
+- Shua du Nord
+- Shua du Sud
+
+## PPL_SIDAMA — FLG_COUCHITIQUE
+- Sidaama du Sud
+- Sous-groupes ruraux
+
+## PPL_SILTIE — FLG_COUCHITIQUE
+- Silt’e du centre
+- Silt’e du sud (Genale)
+- Sous-groupes urbains proches de Soddo
+
+## PPL_SIWI — FLG_BERBERE
+- Communautés berbères de Siwa
+- Tribu Aghurmi
+
+## PPL_SOKORO — FLG_TCHADIQUE
+- Sokoro du Nord
+- Sokoro du Sud
+
+## PPL_SOLONGO — FLG_NIGERCONGO
+- Solongo de RDC
+- Solongo d'Angola
+
+## PPL_SOMALI — FLG_COUCHITIQUE
+- Darod
+- Hawiye
+- Dir
+- Isaaq
+- Rahanweyn
+
+## PPL_SONGHAY_GURMA — FLG_SONGHAY
+- Songhay Gurma du Burkina Faso
+- Songhay Gurma du Bénin
+
+## PPL_SONGHAY_MACRO — FLG_SONGHAY
+- Songhay du Mali
+- Zarma du Niger
+- Dendi (Bénin, Niger, Nigeria)
+- Koyra Chiini (Mali)
+- Koyra Boro Seyo (Mali)
+- Songhay Gurma (Burkina Faso, Bénin)
+- Autres groupes songhay
+
+## PPL_SONGHAY_NIGERIEN — FLG_SONGHAY
+- Songhay du Nord (Niger)
+- Songhay du Sud (Niger)
+
+## PPL_SONINKE — FLG_NIGERCONGO
+- Soninké du Mali
+- Soninké du Sénégal
+- Soninké de Mauritanie
+- Soninké de Gambie
+
+## PPL_SOTHO — FLG_NIGERCONGO
+- Sotho du Lesotho
+- Sotho d'Afrique du Sud
+
+## PPL_SOTHO_NORD — FLG_NIGERCONGO
+- Sotho du Nord (Lesotho)
+- Sotho du Nord (Afrique du Sud)
+
+## PPL_SOTHO_SUD — FLG_NIGERCONGO
+- Sotho du Sud (Lesotho)
+- Sotho du Sud (Afrique du Sud)
+
+## PPL_SOTHO_TSWANA — FLG_NIGERCONGO
+- Sotho-Tswana du Lesotho
+- Sotho-Tswana d'Afrique du Sud
+- Sotho-Tswana du Botswana
+
+## PPL_SUKUMA — FLG_NIGERCONGO
+- Sukuma du Nord
+- Sukuma du Sud
+
+## PPL_SURMANuer) — FLG_NILOTIQUE
+- Surma du Soudan du Sud
+- Surma d'Éthiopie
+
+## PPL_SUSU — FLG_NIGERCONGO
+- Susu de Guinée
+- Susu de Sierra Leone
+
+## PPL_SWAHILI — FLG_NIGERCONGO
+- Swahili de Tanzanie
+- Swahili du Kenya
+- Swahili du Mozambique
+- Swahili des Comores
+
+## PPL_SWAHILI_KENYA — FLG_NIGERCONGO
+- Swahili du Nord
+- Swahili du Sud
+
+## PPL_SWAHILI_MOZAMBIQUE — FLG_NIGERCONGO
+- Swahili du Nord
+- Swahili du Sud
+
+## PPL_SWAHILI_OMAN — FLG_NIGERCONGO
+- Swahili d'Oman
+
+## PPL_SWAHILI_SOMALIE — FLG_NIGERCONGO
+- Swahili du Nord
+- Swahili du Sud
+
+## PPL_SWAHILI_TANZANIE — FLG_NIGERCONGO
+- Swahili du Nord
+- Swahili du Sud
+
+## PPL_SWAHILI_YEMEN — FLG_NIGERCONGO
+- Swahili du Yémen
+
+## PPL_SWAZI — FLG_NIGERCONGO
+- Swazi d'Eswatini
+- Swazi d'Afrique du Sud
+
+## PPL_TAA — FLG_TUU
+- ǃXóõ du Nord (Botswana)
+- ǃXóõ du Sud (Botswana)
+- ǃXóõ de l'Est
+
+## PPL_TAAL — FLG_GUR
+- Groupes Talomsi ruraux
+
+## PPL_TABWA — FLG_NIGERCONGO
+- Tabwa de RDC
+- Tabwa de Zambie
+
+## PPL_TAIZI — FLG_KROU
+- Taizi du Nord
+- Taizi du Sud
+
+## PPL_TALENSI — FLG_GUR
+- Talensi du Nord
+- Talensi ruraux des collines
+
+## PPL_TANOSY — FLG_AUSTRONESIENNE
+- Antanosy du Nord
+- Antanosy du Sud
+
+## PPL_TEDA — FLG_SAHARIEN
+- Teda du Tchad
+- Teda du Niger
+- Teda de Libye
+
+## PPL_TEKE_NORD — FLG_NIGERCONGO
+- Teke du Nord (RDC)
+- Teke du Nord (Congo)
+- Teke du Nord (Gabon)
+
+## PPL_TEKKE — FLG_NIGERCONGO
+- Tekke de RDC
+- Tekke du Congo
+- Tekke du Gabon
+
+## PPL_TEMBO — FLG_NIGERCONGO
+- Tembo du Nord
+- Tembo du Sud
+
+## PPL_TEMNE — FLG_NIGERCONGO
+- Temne du Nord
+- Temne du Sud
+
+## PPL_TERA — FLG_TCHADIQUE
+- Tera du Nord
+- Tera du Sud
+
+## PPL_TIGRAY — FLG_SEMITIQUE
+- Akele Guzay
+- Enderta
+
+## PPL_TIGRE — FLG_SEMITIQUE
+- Tigré du Nord (région de Sahel)
+- Tigré du Sud (région de Semhar)
+- Tigré de l'Est (région côtière)
+- Tigré de l'Ouest (régions frontalières)
+
+## PPL_TIV — FLG_NIGERCONGO
+- Tiv du Nigeria
+- Tiv du Cameroun
+
+## PPL_TOKELAU_FAUXEX — FLG_NIGERCONGO
+- Aucune ethnie documentée (recherche requise).
+
+## PPL_TONGA_LAC — FLG_NIGERCONGO
+- Tonga du lac (Zambie)
+- Tonga du lac (Zimbabwe)
+- Sous-groupes régionaux du lac
+
+## PPL_TONGA_MALA — FLG_NIGERCONGO
+- Tonga du Nord
+- Tonga du Sud
+
+## PPL_TONGA_ZAMB — FLG_NIGERCONGO
+- Tonga du Nord
+- Tonga du Sud
+
+## PPL_TONGA_ZAMBIA — FLG_BANTU
+- Tonga de Zambie (Southern Province)
+- Tonga de Zimbabwe (Binga, vallée du Zambèze)
+- À préciser (autres communautés rurales ou fluviales)
+
+## PPL_TONGA_ZIM — FLG_NIGERCONGO
+- Tonga du Nord
+- Tonga du Sud
+
+## PPL_TOPOSA — FLG_NILOTIQUE
+- Toposa du Soudan du Sud
+- Toposa d'Éthiopie
+
+## PPL_TOUBOU — FLG_SAHARIEN
+- Teda (Toubou du Nord)
+- Daza (Toubou du Sud)
+
+## PPL_TSAO — FLG_NIGERCONGO
+- Tsao de RDC
+- Tsao d'Angola
+
+## PPL_TSAO_KXA — FLG_KXA
+- Tshao du Nord
+- Tshao du Sud
+
+## PPL_TSHOKWE — FLG_NIGERCONGO
+- Tshokwe de RDC
+- Tshokwe d'Angola
+- Tshokwe de Zambie
+
+## PPL_TSHUWA — FLG_KHOE
+- Tshuwa du Nord
+- Tshuwa du Sud
+
+## PPL_TSIMIHETY — FLG_AUSTRONESIENNE
+- Tsimihety du Nord
+- Tsimihety du Sud
+
+## PPL_TSONGA — FLG_NIGERCONGO
+- Tsonga d'Afrique du Sud
+- Tsonga du Mozambique
+- Tsonga du Zimbabwe
+
+## PPL_TSWA — FLG_NIGERCONGO
+- Tswa du Mozambique
+- Tswa d'Afrique du Sud
+
+## PPL_TSWANA — FLG_NIGERCONGO
+- Tswana du Botswana
+- Tswana d'Afrique du Sud
+
+## PPL_TSWA_CALANGA — FLG_NIGERCONGO
+- Tswa Calanga du Nord
+- Tswa Calanga du Sud
+
+## PPL_TSWA_MOZ — FLG_NIGERCONGO
+- Tswa du Nord
+- Tswa du Sud
+
+## PPL_TUAREG — FLG_BERBERE
+- Kel Ahaggar
+- Kel Adagh
+- Iwellemmedan
+
+## PPL_TUMBUKA — FLG_NIGERCONGO
+- Tumbuka du Malawi
+- Tumbuka de Zambie
+- Tumbuka de Tanzanie
+
+## PPL_TURKANA — FLG_NILOTIQUE
+- Turkana du Nord
+- Turkana du Sud
+
+## PPL_TUTSI_BURUNDI — FLG_BANTU
+- Tutsi des collines centrales
+- Tutsi des régions du nord et sud
+- Lignages nobles (Ganwa → catégorie historique distincte mais liée)
+
+## PPL_TUU_MACRO — FLG_TUU
+- ǃXóõ (Taa) - vivant
+- Nǀuu - en danger critique
+- ǀXam - éteint
+- Autres groupes Tuu
+
+## PPL_URHOBO — FLG_NIGERCONGO
+- Urhobo du Nord
+- Urhobo du Sud
+
+## PPL_VAI — FLG_NIGERCONGO
+- Vai du Liberia
+- Vai de Sierra Leone
+
+## PPL_VENDA — FLG_NIGERCONGO
+- Venda d'Afrique du Sud
+- Venda du Zimbabwe
+
+## PPL_VEZO — FLG_AUSTRONESIENNE
+- Vezo du Nord
+- Vezo du Sud
+
+## PPL_VILI — FLG_NIGERCONGO
+- Vili de RDC
+- Vili du Congo
+- Vili du Gabon
+
+## PPL_WANDYA — FLG_NIGERCONGO
+- Wandya de RDC
+- Wandya d'Ouganda
+
+## PPL_WANE — FLG_KROU
+- Wane du Nord
+- Wane du Sud
+
+## PPL_WE — FLG_NIGERCONGO
+- We de Côte d'Ivoire
+- We du Liberia
+
+## PPL_WEST_TAA — FLG_TUU
+- West Taa du Nord
+- West Taa du Sud
+
+## PPL_WIYANA — FLG_GUR
+- Wiyã du nord
+- Wiyã ruraux
+
+## PPL_WOGO — FLG_SONGHAY
+- Wogo du Nord
+- Wogo du Sud
+
+## PPL_WOLAYTA — FLG_OMOTIQUE
+- Wolayta du nord
+- Wolayta du sud
+
+## PPL_WOLOF — FLG_NIGERCONGO
+- Wolof du Sénégal
+- Wolof de Gambie
+- Wolof de Mauritanie
+
+## PPL_WOLOF_BANTU — FLG_BANTU
+- Wolof du Sénégal
+- Wolof de Gambie
+- Wolof de Mauritanie
+
+## PPL_XAM — FLG_TUU
+- ǀXam du Nord
+- ǀXam du Sud
+- Sous-groupes régionaux (tous éteints)
+
+## PPL_XHOSA — FLG_NIGERCONGO
+- Xhosa du Cap-Oriental
+- Xhosa du Cap-Occidental
+
+## PPL_XHOSA_CISKEI — FLG_NIGERCONGO
+- Xhosa du Ciskei
+- Sous-groupes régionaux du Ciskei
+
+## PPL_YAKA — FLG_NIGERCONGO
+- Yaka de RDC
+- Yaka d'Angola
+
+## PPL_YALUNKA — FLG_ATLANTIQUE
+- Yalunka de Guinée
+- Yalunka de Sierra Leone
+
+## PPL_YAO — FLG_NIGERCONGO
+- Yao du Malawi
+- Yao du Mozambique
+- Yao de Tanzanie
+
+## PPL_YAO_MALAWI — FLG_NIGERCONGO
+- Yao du Nord
+- Yao du Sud
+
+## PPL_YAO_MOZ — FLG_NIGERCONGO
+- Yao du Nord
+- Yao du Sud
+
+## PPL_YERIMA — FLG_SAHARIEN
+- Yerima du Nord
+- Yerima du Sud
+
+## PPL_YOMBE — FLG_NIGERCONGO
+- Yombe de RDC
+- Yombe du Congo
+- Yombe d'Angola
+
+## PPL_YORUBA — FLG_BENOUECONGO
+- Ọ̀yọ́
+- Èkìtì
+- Ìjẹ̀ṣà
+
+## PPL_YULI — FLG_SOUDANIQUECENTRAL
+- Yuli du Nord
+- Yuli du Sud
+
+## PPL_ZAGHAWA — FLG_SAHARIEN
+- Zaghawa du Tchad
+- Zaghawa du Soudan
+- Bideyat (sous-groupe)
+
+## PPL_ZANDE — FLG_SOUDANIQUECENTRAL
+- Zande du Soudan du Sud
+- Zande de RDC
+- Zande de RCA
+
+## PPL_ZARMA — FLG_SONGHAY
+- Zarma du Niger
+- Zarma du Nigeria
+
+## PPL_ZENATA — FLG_BERBERE
+- Beni Snous
+- Maghraoua
+- Djarawa
+- Zuwawa (ancêtre historique des Kabyles)
+- Kutama (plus tard associés aux Fatimides)
+
+## PPL_ZULU — FLG_NIGERCONGO
+- Zulu du KwaZulu-Natal
+- Zulu du Gauteng
+
+## PPL_ZULU_KWA_ZULU — FLG_NIGERCONGO
+- Zulu du KwaZulu-Natal
+- Sous-groupes régionaux du KwaZulu-Natal
+

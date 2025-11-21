@@ -1,0 +1,45 @@
+# Peuple : PPL_MANDE_MACRO
+- Nom principal : Peuples Mandé (macro-groupe)
+- Auto-appellation (peuple) : Variées selon les groupes (Maninka, Bambara, Dioula, etc.)
+- Famille linguistique : FLG_MANDE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Malinké / Mandinka
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Bambara
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Dioula
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Soninké
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Kpelle
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Lobi
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Autres groupes mandé
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

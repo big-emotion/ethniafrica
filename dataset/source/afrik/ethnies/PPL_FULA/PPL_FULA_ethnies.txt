@@ -1,0 +1,45 @@
+# Peuple : PPL_FULA
+- Nom principal : Fula (Fulɓe / Peul)
+- Auto-appellation (peuple) : Fulɓe (pluriel), Pullo (singulier)
+- Famille linguistique : FLG_NIGERCONGO
+
+## Ethnies validées (liste initiale)
+- Ethnie : Fulɓe Toroɓe (Fouta Toro, Sénégal/Mauritanie)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Fulɓe Wodaabe (Niger, Nigeria, Cameroun)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Fulɓe Jalooɓe (Fouta Djallon, Guinée)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Fulɓe Kuniari
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Fulɓe Mbororo (pasteurs nomades, Cameroun, Tchad, RCA)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Fulɓe Adamawa (Nigeria, Cameroun)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Fulɓe Sokoto (Nigeria)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

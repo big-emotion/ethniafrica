@@ -1,0 +1,25 @@
+# Peuple : PPL_TUTSI_BURUNDI
+- Nom principal : Tutsi du Burundi
+- Auto-appellation (peuple) : Abatutsi
+- Famille linguistique : FLG_BANTU
+
+## Ethnies validées (liste initiale)
+- Ethnie : Tutsi des collines centrales
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Tutsi des régions du nord et sud
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Lignages nobles (Ganwa → catégorie historique distincte mais liée)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

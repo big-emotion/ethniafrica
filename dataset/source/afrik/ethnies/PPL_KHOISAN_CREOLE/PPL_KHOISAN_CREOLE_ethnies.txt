@@ -1,0 +1,20 @@
+# Peuple : PPL_KHOISAN_CREOLE
+- Nom principal : Khoisan Créole
+- Auto-appellation (peuple) : Variées selon les groupes
+- Famille linguistique : FLG_CREOLE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Créoles avec influences khoisan d'Afrique du Sud
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Créoles avec influences khoisan de Namibie
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

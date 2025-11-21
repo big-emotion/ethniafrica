@@ -1,0 +1,25 @@
+# Peuple : PPL_HADIYA
+- Nom principal : N/A
+- Auto-appellation (peuple) : Hadiyya
+- Famille linguistique : FLG_COUCHITIQUE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Hadiya du centre
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Hadiya du sud
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Sous-groupes de la zone Gurage–Hadiya
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

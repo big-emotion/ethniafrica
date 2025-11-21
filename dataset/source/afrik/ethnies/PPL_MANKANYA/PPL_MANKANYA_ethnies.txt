@@ -1,0 +1,20 @@
+# Peuple : PPL_MANKANYA
+- Nom principal : Mankanya
+- Auto-appellation (peuple) : Mankanya / Mankagne
+- Famille linguistique : FLG_ATLANTIQUE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Mankanya du Sénégal (région de Ziguinchor)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Mankanya de Guinée-Bissau (zone littorale)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

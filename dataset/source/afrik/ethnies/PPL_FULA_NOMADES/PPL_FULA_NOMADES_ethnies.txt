@@ -1,0 +1,25 @@
+# Peuple : PPL_FULA_NOMADES
+- Nom principal : Fula (Nomades)
+- Auto-appellation (peuple) : Fulɓe (pluriel), Pullo (singulier)
+- Famille linguistique : FLG_NIGERCONGO
+
+## Ethnies validées (liste initiale)
+- Ethnie : Fulɓe Mbororo (pasteurs nomades)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Fulɓe Wodaabe (pasteurs nomades)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Autres groupes nomades fula
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

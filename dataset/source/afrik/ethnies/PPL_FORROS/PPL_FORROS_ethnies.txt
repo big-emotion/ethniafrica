@@ -1,0 +1,20 @@
+# Peuple : PPL_FORROS
+- Nom principal : Forros
+- Auto-appellation (peuple) : Forros
+- Famille linguistique : FLG_CREOLE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Forros de São Tomé
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Forros de Príncipe
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

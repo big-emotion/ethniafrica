@@ -1,0 +1,20 @@
+# Peuple : PPL_KOYRA_BORO_SEYO
+- Nom principal : Koyra Boro Seyo
+- Auto-appellation (peuple) : Koyra Boro Seyo
+- Famille linguistique : FLG_SONGHAY
+
+## Ethnies validées (liste initiale)
+- Ethnie : Koyra Boro Seyo du Nord
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Koyra Boro Seyo du Sud
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

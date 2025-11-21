@@ -1,0 +1,20 @@
+# Peuple : PPL_EKPEYE
+- Nom principal : N/A
+- Auto-appellation (peuple) : Ekpeye
+- Famille linguistique : FLG_BENOUECONGO
+
+## Ethnies validées (liste initiale)
+- Ethnie : Ekpeye d’Ahoada
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Villages riverains du cours inférieur de l’Orashi
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

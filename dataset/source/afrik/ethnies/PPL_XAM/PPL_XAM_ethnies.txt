@@ -1,0 +1,25 @@
+# Peuple : PPL_XAM
+- Nom principal : ǀXam
+- Auto-appellation (peuple) : ǀXam (peuple éteint)
+- Famille linguistique : FLG_TUU
+
+## Ethnies validées (liste initiale)
+- Ethnie : ǀXam du Nord
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : ǀXam du Sud
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Sous-groupes régionaux (tous éteints)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

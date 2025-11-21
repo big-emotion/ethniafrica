@@ -1,0 +1,11 @@
+# Peuple : PPL_TOKELAU_FAUXEX
+- Nom principal : Tokelau (Faux exonyme)
+- Auto-appellation (peuple) : N/A
+- Famille linguistique : FLG_NIGERCONGO
+
+## Ethnies validées (liste initiale)
+- Aucune ethnie identifiée. Recherche complète requise.
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

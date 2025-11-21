@@ -1,0 +1,25 @@
+# Peuple : PPL_TONGA_ZAMBIA
+- Nom principal : Batonga / Tonga
+- Auto-appellation (peuple) : Batonga (sg. Mutonga)
+- Famille linguistique : FLG_BANTU
+
+## Ethnies validées (liste initiale)
+- Ethnie : Tonga de Zambie (Southern Province)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Tonga de Zimbabwe (Binga, vallée du Zambèze)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : À préciser (autres communautés rurales ou fluviales)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

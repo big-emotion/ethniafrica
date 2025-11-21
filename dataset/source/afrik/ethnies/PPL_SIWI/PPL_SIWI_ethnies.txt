@@ -1,0 +1,20 @@
+# Peuple : PPL_SIWI
+- Nom principal : Siwi
+- Auto-appellation (peuple) : Isiwan
+- Famille linguistique : FLG_BERBERE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Communautés berbères de Siwa
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Tribu Aghurmi
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

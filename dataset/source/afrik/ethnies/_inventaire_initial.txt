@@ -1,0 +1,2727 @@
+# Inventaire initial des ethnies par peuple
+
+## PPL_ATLANTIQUE_MACRO (FLG_ATLANTIQUE)
+- Ethnie 1: Wolof, Sérère, Diola, Balanta, Bainouk, Manjak, Papel, Mankanya, Bijogo, Temne, Limba, Yalunka, Baga, Sape, et autres sous-groupes atlantique.
+
+## PPL_BAGA (FLG_ATLANTIQUE)
+- Ethnie 1: Baga Sitemu
+- Ethnie 2: Baga Kalum
+- Ethnie 3: Baga Koba
+- Ethnie 4: Baga Mandori
+
+## PPL_BAINOUK (FLG_ATLANTIQUE)
+- Ethnie 1: Bainouk Gunyaamolo
+- Ethnie 2: Bainouk Kassanga
+- Ethnie 3: Bainouk Kasa
+
+## PPL_BALANTA (FLG_ATLANTIQUE)
+- Ethnie 1: Balanta Brassa
+- Ethnie 2: Balanta Mane
+- Ethnie 3: Balanta Kentohe
+
+## PPL_BIJAOGO (FLG_ATLANTIQUE)
+- Ethnie 1: Bijogo d’Orango
+- Ethnie 2: Bijogo de Formosa
+- Ethnie 3: Bijogo de Uno
+
+## PPL_DIOLA (FLG_ATLANTIQUE)
+- Ethnie 1: Jola Fogny
+- Ethnie 2: Jola Bayot
+- Ethnie 3: Jola Kasa
+- Ethnie 4: Jola Felup
+
+## PPL_FULA (FLG_ATLANTIQUE)
+- Ethnie 1: Fulɓe Toroɓe (Fouta Toro, Sénégal/Mauritanie)
+- Ethnie 2: Fulɓe Wodaabe (Niger, Nigeria, Cameroun)
+- Ethnie 3: Fulɓe Jalooɓe (Fouta Djallon, Guinée)
+- Ethnie 4: Fulɓe Kuniari
+- Ethnie 5: Fulɓe Mbororo (pasteurs nomades, Cameroun, Tchad, RCA)
+- Ethnie 6: Fulɓe Adamawa (Nigeria, Cameroun)
+- Ethnie 7: Fulɓe Sokoto (Nigeria)
+
+## PPL_FULANI (FLG_ATLANTIQUE)
+- Ethnie 1: Fulɓe Toroɓe
+- Ethnie 2: Fulɓe Wodaabe
+- Ethnie 3: Fulɓe Jalooɓe
+- Ethnie 4: Fulɓe Kuniari
+- Ethnie 5: Fulɓe Mbororo (pasteurs nomades)
+
+## PPL_GOLA (FLG_ATLANTIQUE)
+- Ethnie 1: Gola de l’Est
+- Ethnie 2: Gola de l’Ouest
+
+## PPL_KURANKO (FLG_ATLANTIQUE)
+- Ethnie 1: Kuranko du Nord Sierra Leone
+- Ethnie 2: Kuranko de Guinée
+
+## PPL_KUSSI (FLG_ATLANTIQUE)
+- Ethnie 1: Kussi-Kassanga du Sénégal
+- Ethnie 2: Kussi littoraux
+
+## PPL_LIMBA (FLG_ATLANTIQUE)
+- Ethnie 1: Limba du Nord
+- Ethnie 2: Limba du Sud
+
+## PPL_MANJAK (FLG_ATLANTIQUE)
+- Ethnie 1: Manjak Brame
+- Ethnie 2: Manjak Fogan
+- Ethnie 3: Manjak Essin
+
+## PPL_MANKANYA (FLG_ATLANTIQUE)
+- Ethnie 1: Mankanya du Sénégal (région de Ziguinchor)
+- Ethnie 2: Mankanya de Guinée-Bissau (zone littorale)
+
+## PPL_NALU (FLG_ATLANTIQUE)
+- Ethnie 1: Nalu du littoral
+- Ethnie 2: Sous-groupes des estuaires
+
+## PPL_PAPEL (FLG_ATLANTIQUE)
+- Ethnie 1: Papel du centre
+- Ethnie 2: Papel littoraux
+
+## PPL_SAPEY (FLG_ATLANTIQUE)
+- Ethnie 1: Sapey de Sierra Leone
+- Ethnie 2: Sapey de Guinée forestière
+
+## PPL_SERERE (FLG_ATLANTIQUE)
+- Ethnie 1: Sapey de Sierra Leone
+- Ethnie 2: Sapey de Guinée forestière
+
+## PPL_TEMNE (FLG_ATLANTIQUE)
+- Ethnie 1: Temne du Nord
+- Ethnie 2: Temne du Centre
+
+## PPL_WOLOF (FLG_ATLANTIQUE)
+- Ethnie 1: Wolof du Cayor
+- Ethnie 2: Wolof du Baol
+- Ethnie 3: Wolof de Gambie
+
+## PPL_YALUNKA (FLG_ATLANTIQUE)
+- Ethnie 1: Yalunka de Guinée
+- Ethnie 2: Yalunka de Sierra Leone
+
+## PPL_ANTAKARANA (FLG_AUSTRONESIENNE)
+- Ethnie 1: Antakarana du Nord
+- Ethnie 2: Antakarana du Sud
+
+## PPL_ANTAMBAHOAKA (FLG_AUSTRONESIENNE)
+- Ethnie 1: Antambahoaka du Nord
+- Ethnie 2: Antambahoaka du Sud
+
+## PPL_ANTANDROY (FLG_AUSTRONESIENNE)
+- Ethnie 1: Antandroy du Nord
+- Ethnie 2: Antandroy du Sud
+
+## PPL_ANTSALOVA (FLG_AUSTRONESIENNE)
+- Ethnie 1: Antsalova du Nord
+- Ethnie 2: Antsalova du Sud
+
+## PPL_AUSTRO_MACRO (FLG_AUSTRONESIENNE)
+- Ethnie 1: Merina
+- Ethnie 2: Betsimisaraka
+- Ethnie 3: Sakalava
+- Ethnie 4: Antandroy
+- Ethnie 5: Betsileo
+- Ethnie 6: Tsimihety
+- Ethnie 7: Antakarana
+- Ethnie 8: Vezo
+- Ethnie 9: Tanosy (Antanosy)
+- Ethnie 10: Antambahoaka
+- Ethnie 11: Bezanozano
+- Ethnie 12: Mikea
+- Ethnie 13: Antsalova
+- Ethnie 14: Autres groupes malgaches
+
+## PPL_BETSILEO (FLG_AUSTRONESIENNE)
+- Ethnie 1: Betsileo du Nord
+- Ethnie 2: Betsileo du Sud
+
+## PPL_BETSIMISARAKA (FLG_AUSTRONESIENNE)
+- Ethnie 1: Betsimisaraka du Nord
+- Ethnie 2: Betsimisaraka du Sud
+
+## PPL_BEZANOZANO (FLG_AUSTRONESIENNE)
+- Ethnie 1: Bezanozano du Nord
+- Ethnie 2: Bezanozano du Sud
+
+## PPL_MERINA (FLG_AUSTRONESIENNE)
+- Ethnie 1: Merina des hautes terres
+- Ethnie 2: Communautés urbaines
+
+## PPL_MIKEA (FLG_AUSTRONESIENNE)
+- Ethnie 1: Mikea du Nord
+- Ethnie 2: Mikea du Sud
+
+## PPL_SAKALAVA (FLG_AUSTRONESIENNE)
+- Ethnie 1: Sakalava du Menabe
+- Ethnie 2: Sakalava du Boina
+
+## PPL_TANOSY (FLG_AUSTRONESIENNE)
+- Ethnie 1: Antanosy du Nord
+- Ethnie 2: Antanosy du Sud
+
+## PPL_TSIMIHETY (FLG_AUSTRONESIENNE)
+- Ethnie 1: Tsimihety du Nord
+- Ethnie 2: Tsimihety du Sud
+
+## PPL_VEZO (FLG_AUSTRONESIENNE)
+- Ethnie 1: Vezo du Nord
+- Ethnie 2: Vezo du Sud
+
+## PPL_BAGANDA (FLG_BANTU)
+- Ethnie 1: À préciser (sous-groupes régionaux du Buganda)
+- Ethnie 2: À préciser (autres segments lignagers internes)
+
+## PPL_BAKOSSI (FLG_BANTU)
+- Ethnie 1: Communautés bakossi des versants ouest (villages de montagne)
+- Ethnie 2: Communautés bakossi des versants est et des basses terres
+- Ethnie 3: À préciser (autres segments internes, lignages et sous-groupes locaux)
+
+## PPL_BAKWERI (FLG_BANTU)
+- Ethnie 1: Communautés bakweri des villages de montagne (Buea et environs)
+- Ethnie 2: Communautés bakweri des zones de piémont et du littoral (Limbe et environs)
+- Ethnie 3: À préciser (autres segments internes et lignages locaux)
+
+## PPL_BANYORO (FLG_BANTU)
+- Ethnie 1: Banyoro du Nord
+- Ethnie 2: Banyoro du Sud
+
+## PPL_BASOGA (FLG_BANTU)
+- Ethnie 1: Basoga des différents principalités (sous-chefferies de Busoga)
+- Ethnie 2: À préciser (sous-groupes régionaux au sein du Busoga)
+- Ethnie 3: À préciser (autres segments internes et lignages)
+
+## PPL_BASSA_CAM (FLG_BANTU)
+- Ethnie 1: Bassa des régions de Nyong-et-Kellé
+- Ethnie 2: Bassa des zones de Sanaga-Maritime et Nkam
+- Ethnie 3: À préciser (autres segments régionaux bassa ; sous-groupes dialectaux)
+
+## PPL_BEMBA (FLG_BANTU)
+- Ethnie 1: Bemba du Nord
+- Ethnie 2: Sous-groupes ruraux
+- Ethnie 3: Groupes apparentés Luba-Bemba
+
+## PPL_BETI (FLG_BANTU)
+- Ethnie 1: Ewondo
+- Ethnie 2: Bulu
+- Ethnie 3: Fang du sud (éléments culturels)
+- Ethnie 4: Sous-groupes beti à préciser (Mvog, Essomba, etc.)
+
+## PPL_BUGANDA (FLG_BANTU)
+- Ethnie 1: Baganda du Nord
+- Ethnie 2: Baganda du Sud
+
+## PPL_BULU (FLG_BANTU)
+- Ethnie 1: Bulu du Sud camerounais
+
+## PPL_CHAGA (FLG_BANTU)
+- Ethnie 1: Rombo
+- Ethnie 2: Machame
+- Ethnie 3: Siha/Kibosho
+
+## PPL_CHEWA (FLG_BANTU)
+- Ethnie 1: Chewa du Malawi
+- Ethnie 2: Chewa du Mozambique
+- Ethnie 3: Chewa de la diaspora zambienne
+
+## PPL_COMORIEN (FLG_BANTU)
+- Ethnie 1: Ngazidja (Grande Comore)
+- Ethnie 2: Ndzuani (Anjouan)
+- Ethnie 3: Mwali (Mohéli)
+- Ethnie 4: Maorais (Mayotte)
+
+## PPL_DUALA (FLG_BANTU)
+- Ethnie 1: Duala de Bonanjo
+- Ethnie 2: Duala de Bonaberi
+- Ethnie 3: Sous-groupes Sawa apparentés (éléments Bakoko, Isubu… selon contextes)
+
+## PPL_EMBU (FLG_BANTU)
+- Ethnie 1: Embu du centre
+- Ethnie 2: Embu de Runyenjes
+- Ethnie 3: Groupes proches (éléments Mbeere)
+
+## PPL_EWONDO (FLG_BANTU)
+- Ethnie 1: Ewondo urbains
+- Ethnie 2: Ewondo ruraux
+- Ethnie 3: Sous-groupes lignagers régionaux
+
+## PPL_FANG (FLG_BANTU)
+- Ethnie 1: Fang du Gabon
+- Ethnie 2: Fang de Guinée équatoriale
+- Ethnie 3: Fang du Cameroun
+
+## PPL_GOGO (FLG_BANTU)
+- Ethnie 1: Wagogo du Nord (Mpwapwa)
+- Ethnie 2: Wagogo du Sud (Manyoni)
+- Ethnie 3: Sous-groupes pastoraux
+
+## PPL_HAVU (FLG_BANTU)
+- Ethnie 1: Havu du Nord
+- Ethnie 2: Havu du Sud
+
+## PPL_HAYA (FLG_BANTU)
+- Ethnie 1: Haya du Nord
+- Ethnie 2: Haya du Sud
+
+## PPL_HEHE (FLG_BANTU)
+- Ethnie 1: Hehe du Nord
+- Ethnie 2: Hehe du Sud
+
+## PPL_HERERO (FLG_BANTU)
+- Ethnie 1: Herero de Namibie
+- Ethnie 2: Herero du Botswana
+- Ethnie 3: Herero d'Angola
+
+## PPL_HOBA (FLG_BANTU)
+- Ethnie 1: Hoba de RDC
+- Ethnie 2: Hoba de RCA
+
+## PPL_HUNDE (FLG_BANTU)
+- Ethnie 1: Hunde du Nord
+- Ethnie 2: Hunde du Sud
+
+## PPL_HUTU_BURUNDI (FLG_BANTU)
+- Ethnie 1: Hutu des hautes terres du Burundi
+- Ethnie 2: Hutu des plaines et collines rurales
+- Ethnie 3: À préciser (lignages régionaux)
+
+## PPL_KAMBA (FLG_BANTU)
+- Ethnie 1: Kamba du Nord
+- Ethnie 2: Kamba du Sud
+
+## PPL_KIKUYU (FLG_BANTU)
+- Ethnie 1: Kikuyu du Nord
+- Ethnie 2: Kikuyu du Sud
+
+## PPL_KONGO (FLG_BANTU)
+- Ethnie 1: Kongo de RDC
+- Ethnie 2: Kongo d'Angola
+- Ethnie 3: Kongo du Congo
+- Ethnie 4: Kongo du Gabon
+
+## PPL_KUBA (FLG_BANTU)
+- Ethnie 1: Kuba du Nord
+- Ethnie 2: Kuba du Sud
+
+## PPL_LOZI (FLG_BANTU)
+- Ethnie 1: Lozi de Zambie
+- Ethnie 2: Lozi du Botswana
+- Ethnie 3: Lozi de Namibie
+- Ethnie 4: Lozi d'Angola
+
+## PPL_LUBA (FLG_BANTU)
+- Ethnie 1: Luba du Kasai
+- Ethnie 2: Luba du Katanga
+
+## PPL_LUNDA (FLG_BANTU)
+- Ethnie 1: Lunda de RDC
+- Ethnie 2: Lunda d'Angola
+- Ethnie 3: Lunda de Zambie
+
+## PPL_MAKONDE (FLG_BANTU)
+- Ethnie 1: Makonde de Tanzanie
+- Ethnie 2: Makonde du Mozambique
+
+## PPL_MERU (FLG_BANTU)
+- Ethnie 1: Meru du Nord
+- Ethnie 2: Meru du Sud
+
+## PPL_MONGO (FLG_BANTU)
+- Ethnie 1: Mongo du Nord
+- Ethnie 2: Mongo du Sud
+
+## PPL_NANDE (FLG_BANTU)
+- Ethnie 1: Nande du Nord
+- Ethnie 2: Nande du Sud
+
+## PPL_NDEBELE (FLG_BANTU)
+- Ethnie 1: Ndebele du Zimbabwe
+- Ethnie 2: Ndebele d'Afrique du Sud
+
+## PPL_NDEBELE_SA (FLG_BANTU)
+- Ethnie 1: Ndebele du Nord
+- Ethnie 2: Ndebele du Sud
+
+## PPL_NYAMWEZI (FLG_BANTU)
+- Ethnie 1: Nyamwezi du Nord
+- Ethnie 2: Nyamwezi du Sud
+
+## PPL_OVAMBO (FLG_BANTU)
+- Ethnie 1: Ovambo de Namibie
+- Ethnie 2: Ovambo d'Angola
+
+## PPL_RWENDAIS_HUTU (FLG_BANTU)
+- Ethnie 1: Hutu du Nord
+- Ethnie 2: Hutu du Sud
+
+## PPL_RWENDAIS_TUTSI (FLG_BANTU)
+- Ethnie 1: Tutsi du Nord
+- Ethnie 2: Tutsi du Sud
+
+## PPL_SANGO (FLG_BANTU)
+- Ethnie 1: Sango de RCA
+- Ethnie 2: Sango de RDC
+
+## PPL_SHONA (FLG_BANTU)
+- Ethnie 1: Shona du Zimbabwe
+- Ethnie 2: Shona du Mozambique
+
+## PPL_SOTHO (FLG_BANTU)
+- Ethnie 1: Sotho du Lesotho
+- Ethnie 2: Sotho d'Afrique du Sud
+
+## PPL_SUKUMA (FLG_BANTU)
+- Ethnie 1: Sukuma du Nord
+- Ethnie 2: Sukuma du Sud
+
+## PPL_SWAHILI (FLG_BANTU)
+- Ethnie 1: Swahili du Kenya
+- Ethnie 2: Swahili de Tanzanie
+- Ethnie 3: Swahili du Mozambique
+- Ethnie 4: Swahili des Comores
+
+## PPL_TEKKE (FLG_BANTU)
+- Ethnie 1: Tekke du Nord
+- Ethnie 2: Tekke du Sud
+
+## PPL_TONGA_ZAMBIA (FLG_BANTU)
+- Ethnie 1: Tonga de Zambie (Southern Province)
+- Ethnie 2: Tonga de Zimbabwe (Binga, vallée du Zambèze)
+- Ethnie 3: À préciser (autres communautés rurales ou fluviales)
+
+## PPL_TSWANA (FLG_BANTU)
+- Ethnie 1: Tswana du Botswana
+- Ethnie 2: Tswana d'Afrique du Sud
+
+## PPL_TUMBUKA (FLG_BANTU)
+- Ethnie 1: Tumbuka du Malawi
+- Ethnie 2: Tumbuka de Zambie
+- Ethnie 3: Tumbuka de Tanzanie
+
+## PPL_TUTSI_BURUNDI (FLG_BANTU)
+- Ethnie 1: Tutsi des collines centrales
+- Ethnie 2: Tutsi des régions du nord et sud
+- Ethnie 3: Lignages nobles (Ganwa → catégorie historique distincte mais liée)
+
+## PPL_VENDA (FLG_BANTU)
+- Ethnie 1: Venda d'Afrique du Sud
+- Ethnie 2: Venda du Zimbabwe
+
+## PPL_WOLOF_BANTU (FLG_BANTU)
+- Ethnie 1: Wolof du Sénégal
+- Ethnie 2: Wolof de Gambie
+- Ethnie 3: Wolof de Mauritanie
+
+## PPL_XHOSA (FLG_BANTU)
+- Ethnie 1: Xhosa du Nord
+- Ethnie 2: Xhosa du Sud
+
+## PPL_YAKA (FLG_BANTU)
+- Ethnie 1: Yaka de RDC
+- Ethnie 2: Yaka d'Angola
+
+## PPL_YAO (FLG_BANTU)
+- Ethnie 1: Yao du Malawi
+- Ethnie 2: Yao du Mozambique
+- Ethnie 3: Yao de Tanzanie
+
+## PPL_ZULU (FLG_BANTU)
+- Ethnie 1: Zoulou du Nord
+- Ethnie 2: Zoulou du Sud
+
+## PPL_ADJA (FLG_BENOUECONGO)
+- Ethnie 1: Adja du Togo (Plateaux)
+- Ethnie 2: Adja du Bénin (Mono, Couffo)
+- Ethnie 3: Sous-groupes : Dogbo, Tado, etc.
+
+## PPL_AFEMAI (FLG_BENOUECONGO)
+- Ethnie 1: Etsako
+- Ethnie 2: Owan
+- Ethnie 3: Akoko-Edo
+
+## PPL_ALAGO (FLG_BENOUECONGO)
+- Ethnie 1: Alago de Doma
+- Ethnie 2: Alago ruraux du centre de Nasarawa
+
+## PPL_ANAGO (FLG_BENOUECONGO)
+- Ethnie 1: Anago de Porto-Novo
+- Ethnie 2: Anago du Togo
+
+## PPL_ANNANG (FLG_BENOUECONGO)
+- Ethnie 1: Annang centre
+- Ethnie 2: Annang sud
+- Ethnie 3: Villages associés aux Ibibio
+
+## PPL_BASSA_NIGERIA (FLG_BENOUECONGO)
+- Ethnie 1: Bassa Nge
+- Ethnie 2: Bassa Kwomu
+- Ethnie 3: Bassa Komo
+
+## PPL_BENOUECONGO_MACRO (FLG_BENOUECONGO)
+- Ethnie 1: Yoruba, Igbo, Ewe, Fon, Edos, Tiv, Nupe, Idoma, Ijaw, Ibibio, Annang, Efik…
+- Ethnie 2: Et l’ensemble des 48 peuples Bénoué-Congo répertoriés par AFRIK.
+
+## PPL_BILLE (FLG_BENOUECONGO)
+- Ethnie 1: Communautés Bille du Delta
+- Ethnie 2: Villages fluviaux
+
+## PPL_DANGME (FLG_BENOUECONGO)
+- Ethnie 1: Ada
+- Ethnie 2: Krobo
+- Ethnie 3: Shai
+
+## PPL_EBIRA (FLG_BENOUECONGO)
+- Ethnie 1: Ebira Tao (Okene)
+- Ethnie 2: Ebira Koto (Kogi)
+- Ethnie 3: Ebira Etuno (Edo State)
+
+## PPL_EDO (FLG_BENOUECONGO)
+- Ethnie 1: Communautés Edo du royaume de Bénin
+- Ethnie 2: Sous-groupes urbains et ruraux
+
+## PPL_EFIK (FLG_BENOUECONGO)
+- Ethnie 1: Efik du littoral
+- Ethnie 2: Communautés Efik historiques de Calabar
+
+## PPL_EKPEYE (FLG_BENOUECONGO)
+- Ethnie 1: Ekpeye d’Ahoada
+- Ethnie 2: Villages riverains du cours inférieur de l’Orashi
+
+## PPL_ESAN (FLG_BENOUECONGO)
+- Ethnie 1: Esan d’Irrua
+- Ethnie 2: Esan d’Uromi
+- Ethnie 3: Esan rural
+
+## PPL_EWE (FLG_BENOUECONGO)
+- Ethnie 1: Ewe du Ghana (Volta)
+- Ethnie 2: Ewe du Togo
+- Ethnie 3: Ewe du Bénin (Mono, Couffo)
+
+## PPL_FON (FLG_BENOUECONGO)
+- Ethnie 1: Fon d’Abomey
+- Ethnie 2: Fon de Porto-Novo
+- Ethnie 3: Sous-groupes Mahoun, Gun, Maxi (selon zones)
+
+## PPL_GA (FLG_BENOUECONGO)
+- Ethnie 1: Ga Mashie
+- Ethnie 2: Ga de l’intérieur (Abokobi, Amasaman)
+- Ethnie 3: Sous-groupes liés aux Dangme
+
+## PPL_GBAGYI (FLG_BENOUECONGO)
+- Ethnie 1: Gbagyi Ogu
+- Ethnie 2: Gbagyi Nkwa
+- Ethnie 3: Gbagyi du centre et du nord
+
+## PPL_IBIBIO (FLG_BENOUECONGO)
+- Ethnie 1: Ibibio proprement dit
+- Ethnie 2: Annang
+- Ethnie 3: Eket
+- Ethnie 4: Oron
+- Ethnie 5: Andoni
+- Ethnie 6: Ibeno
+- Ethnie 7: Enyong
+
+## PPL_IDOMA (FLG_BENOUECONGO)
+- Ethnie 1: Idoma central
+- Ethnie 2: Idoma du Nord
+- Ethnie 3: Idoma du Sud
+- Ethnie 4: Idoma de l'Est
+- Ethnie 5: Idoma de l'Ouest
+- Ethnie 6: Agatu
+- Ethnie 7: Otukpo
+
+## PPL_IGALA (FLG_BENOUECONGO)
+- Ethnie 1: Igala de Idah
+- Ethnie 2: Igala des villages fluviaux
+
+## PPL_IGBO (FLG_BENOUECONGO)
+- Ethnie 1: Onicha
+- Ethnie 2: Ngwa
+- Ethnie 3: Aro
+
+## PPL_IJAW (FLG_BENOUECONGO)
+- Ethnie 1: Izon
+- Ethnie 2: Okrika
+- Ethnie 3: Ibani
+- Ethnie 4: Andoni (éléments ijoïdes)
+- Ethnie 5: Sous-groupes fluviaux
+
+## PPL_ITSEKIRI (FLG_BENOUECONGO)
+- Ethnie 1: Itsekiri de Warri
+- Ethnie 2: Itsekiri des villages côtiers et fluviaux
+
+## PPL_JUKUN (FLG_BENOUECONGO)
+- Ethnie 1: Jukun Wapan
+- Ethnie 2: Jukun Takum
+- Ethnie 3: Sous-groupes du fleuve Benue
+
+## PPL_KALAIBARI (FLG_BENOUECONGO)
+- Ethnie 1: Kalabari de Buguma
+- Ethnie 2: Kalabari de Tombia
+- Ethnie 3: Sous-groupes fluviaux
+
+## PPL_KUTAEB (FLG_BENOUECONGO)
+- Ethnie 1: Kuteb de Takum
+- Ethnie 2: Sous-groupes frontaliers
+
+## PPL_NEMBE (FLG_BENOUECONGO)
+- Ethnie 1: Brass-Nembe
+- Ethnie 2: Bassan-Nembe
+- Ethnie 3: Villages fluviaux du delta
+
+## PPL_NUPE (FLG_BENOUECONGO)
+- Ethnie 1: Nupe de Bida
+- Ethnie 2: Nupe Kokoli
+- Ethnie 3: Nupe Yagba (éléments)
+
+## PPL_OGBRI (FLG_BENOUECONGO)
+- Ethnie 1: Ogbia central
+- Ethnie 2: Ogbia fluvial
+
+## PPL_ORON (FLG_BENOUECONGO)
+- Ethnie 1: Oron côtier
+- Ethnie 2: Oron insulaire (zone de la presqu’île)
+
+## PPL_TIV (FLG_BENOUECONGO)
+- Ethnie 1: Tiv du Benue
+- Ethnie 2: Tiv du Taraba
+- Ethnie 3: Sous-groupes frontaliers du Cameroun
+
+## PPL_YORUBA (FLG_BENOUECONGO)
+- Ethnie 1: Ọ̀yọ́
+- Ethnie 2: Èkìtì
+- Ethnie 3: Ìjẹ̀ṣà
+
+## PPL_AIT_ATTA (FLG_BERBERE)
+- Ethnie 1: Aït Yahya
+- Ethnie 2: Aït Ouazik
+- Ethnie 3: Aït Ouhman
+- Ethnie 4: Divers sous-clans nomades du Saghro
+
+## PPL_AIT_HDZ (FLG_BERBERE)
+- Ethnie 1: Aït Yafelman
+- Ethnie 2: Aït Ouirra
+- Ethnie 3: Aït Sukhman
+- Ethnie 4: Divers groupes montagnards amazighs
+
+## PPL_AMAZIGH_MACRO (FLG_BERBERE)
+- Ethnie 1: Tous les peuples amazighs du Maghreb (Kabyles, Chaouis, Chleuhs, Rifains, Mozabites, Touaregs, etc.)
+
+## PPL_CHAOUI (FLG_BERBERE)
+- Ethnie 1: Chaouis de l’Aurès Ouest
+- Ethnie 2: Chaouis des Nememcha
+- Ethnie 3: Chaouis des Ayata
+
+## PPL_CHENOUA (FLG_BERBERE)
+- Ethnie 1: Communautés berbérophones de Tipasa
+- Ethnie 2: Groupes des environs de Cherchell
+
+## PPL_CHLEUH (FLG_BERBERE)
+- Ethnie 1: Chleuhs du Souss
+- Ethnie 2: Chleuhs de l’Anti-Atlas
+- Ethnie 3: Chleuhs du Haut-Atlas occidental
+
+## PPL_GHOMARA (FLG_BERBERE)
+- Ethnie 1: Tribu Aït Ghomara
+- Ethnie 2: Sous-groupes villageois du Rif occidental
+
+## PPL_KABYLE (FLG_BERBERE)
+- Ethnie 1: Kabyles de la Grande Kabylie
+- Ethnie 2: Kabyles de la Petite Kabylie
+- Ethnie 3: Kabyles du Djurdjura
+
+## PPL_MOZABITE (FLG_BERBERE)
+- Ethnie 1: At Mzab
+- Ethnie 2: At Bounour
+- Ethnie 3: At Abad
+
+## PPL_NAFUSI (FLG_BERBERE)
+- Ethnie 1: Nafusi de Yefren
+- Ethnie 2: Nafusi de Jadu
+
+## PPL_RIFAIN (FLG_BERBERE)
+- Ethnie 1: Aït Waryaghar
+- Ethnie 2: Aït Bouyahyi
+- Ethnie 3: Aït Touzine
+
+## PPL_SIWI (FLG_BERBERE)
+- Ethnie 1: Communautés berbères de Siwa
+- Ethnie 2: Tribu Aghurmi
+
+## PPL_TUAREG (FLG_BERBERE)
+- Ethnie 1: Kel Ahaggar
+- Ethnie 2: Kel Adagh
+- Ethnie 3: Iwellemmedan
+
+## PPL_ZENATA (FLG_BERBERE)
+- Ethnie 1: Beni Snous
+- Ethnie 2: Maghraoua
+- Ethnie 3: Djarawa
+- Ethnie 4: Zuwawa (ancêtre historique des Kabyles)
+- Ethnie 5: Kutama (plus tard associés aux Fatimides)
+
+## PPL_AFAR (FLG_COUCHITIQUE)
+- Ethnie 1: Afar Assaïmara
+- Ethnie 2: Afar Adoyta
+- Ethnie 3: Afar We’ima
+
+## PPL_AGAW (FLG_COUCHITIQUE)
+- Ethnie 1: Awi
+- Ethnie 2: Qimant (Qemant)
+- Ethnie 3: Xamir
+
+## PPL_ALABA (FLG_COUCHITIQUE)
+- Ethnie 1: Alaba du plateau sud
+- Ethnie 2: Groupes agricoles associés
+
+## PPL_ARSII (FLG_COUCHITIQUE)
+- Ethnie 1: Arsi du Nord
+- Ethnie 2: Arsi du Sud
+- Ethnie 3: Arsi de l'Est
+- Ethnie 4: Arsi de l'Ouest
+
+## PPL_BEJA (FLG_COUCHITIQUE)
+- Ethnie 1: Hadendoa
+- Ethnie 2: Bisharin
+- Ethnie 3: Amar’ar
+
+## PPL_BILEN (FLG_COUCHITIQUE)
+- Ethnie 1: Bilen de Keren
+- Ethnie 2: Bilen de Hagaz
+
+## PPL_BURJI (FLG_COUCHITIQUE)
+- Ethnie 1: Burji d'Éthiopie
+- Ethnie 2: Burji du Kenya
+
+## PPL_DASANECH (FLG_COUCHITIQUE)
+- Ethnie 1: Daasanach de l’Omo
+- Ethnie 2: Daasanach de Marsabit (Kenya)
+- Ethnie 3: Groupes semi-nomades de la frontière soudanaise
+
+## PPL_GABRA (FLG_COUCHITIQUE)
+- Ethnie 1: Gabra du Kenya
+- Ethnie 2: Gabra d’Éthiopie (Borana zone)
+
+## PPL_HADIYA (FLG_COUCHITIQUE)
+- Ethnie 1: Hadiya du centre
+- Ethnie 2: Hadiya du sud
+- Ethnie 3: Sous-groupes de la zone Gurage–Hadiya
+
+## PPL_KAMBATA (FLG_COUCHITIQUE)
+- Ethnie 1: Kambata
+- Ethnie 2: Tembaro
+- Ethnie 3: Alaba (proches culturalement)
+
+## PPL_KONSO (FLG_COUCHITIQUE)
+- Ethnie 1: Konso du Nord
+- Ethnie 2: Konso du Sud
+- Ethnie 3: Konso de l'Est
+- Ethnie 4: Konso de l'Ouest
+
+## PPL_LIBIDO (FLG_COUCHITIQUE)
+- Ethnie 1: Libido du Nord
+- Ethnie 2: Libido du Sud
+
+## PPL_OROMO (FLG_COUCHITIQUE)
+- Ethnie 1: Borana
+- Ethnie 2: Barentu
+- Ethnie 3: Arsi
+- Ethnie 4: Guji
+- Ethnie 5: Raya Oromo
+
+## PPL_QEMANT (FLG_COUCHITIQUE)
+- Ethnie 1: Groupes Qemant de Gondar
+- Ethnie 2: Sous-groupes ruraux dispersés
+
+## PPL_SEBATBET (FLG_COUCHITIQUE)
+- Ethnie 1: Chaha
+- Ethnie 2: Ezha
+- Ethnie 3: Gumer
+- Ethnie 4: Gura
+- Ethnie 5: Gyeto
+- Ethnie 6: Muher
+- Ethnie 7: Soddo
+
+## PPL_SIDAMA (FLG_COUCHITIQUE)
+- Ethnie 1: Sidaama du Sud
+- Ethnie 2: Sous-groupes ruraux
+
+## PPL_SILTIE (FLG_COUCHITIQUE)
+- Ethnie 1: Silt’e du centre
+- Ethnie 2: Silt’e du sud (Genale)
+- Ethnie 3: Sous-groupes urbains proches de Soddo
+
+## PPL_SOMALI (FLG_COUCHITIQUE)
+- Ethnie 1: Darod
+- Ethnie 2: Hawiye
+- Ethnie 3: Dir
+- Ethnie 4: Isaaq
+- Ethnie 5: Rahanweyn
+
+## PPL_ANAFRO_CRIOULO (FLG_CREOLE)
+- Ethnie 1: Crioulo de Guinée-Bissau
+
+## PPL_ANGOLAR (FLG_CREOLE)
+- Ethnie 1: Angolar de São Tomé
+
+## PPL_CREOLE_CABOVERDIEN (FLG_CREOLE)
+- Ethnie 1: Créole de Santiago
+- Ethnie 2: Créole de São Vicente
+- Ethnie 3: Créole de Fogo
+- Ethnie 4: Créole de Brava
+- Ethnie 5: Autres îles
+
+## PPL_CREOLE_MACRO (FLG_CREOLE)
+- Ethnie 1: Créoles cap-verdiens
+- Ethnie 2: Crioulo de Guinée-Bissau
+- Ethnie 3: Krio de Sierra Leone
+- Ethnie 4: Créoles de São Tomé-et-Príncipe
+- Ethnie 5: Créoles de Maurice
+- Ethnie 6: Créoles des Seychelles
+- Ethnie 7: Créoles de la Réunion
+- Ethnie 8: Autres groupes créoles
+
+## PPL_CREOLE_MAURICE (FLG_CREOLE)
+- Ethnie 1: Créole de Maurice
+
+## PPL_CREOLE_REUNION (FLG_CREOLE)
+- Ethnie 1: Créole de la Réunion
+
+## PPL_CREOLE_SEYCHELLES (FLG_CREOLE)
+- Ethnie 1: Créole des Seychelles
+
+## PPL_FORROS (FLG_CREOLE)
+- Ethnie 1: Forros de São Tomé
+- Ethnie 2: Forros de Príncipe
+
+## PPL_KHOISAN_CREOLE (FLG_CREOLE)
+- Ethnie 1: Créoles avec influences khoisan d'Afrique du Sud
+- Ethnie 2: Créoles avec influences khoisan de Namibie
+
+## PPL_KRIO (FLG_CREOLE)
+- Ethnie 1: Krio de Freetown
+- Ethnie 2: Krio des provinces
+
+## PPL_PAPELO (FLG_CREOLE)
+- Ethnie 1: Papelo de Guinée-Bissau
+
+## PPL_BUSSA (FLG_GUR)
+- Ethnie 1: Bissa du Centre-Sud (Burkina Faso)
+- Ethnie 2: Bissa du Nord-Ghana
+- Ethnie 3: Bissa du Togo
+
+## PPL_BWABA (FLG_GUR)
+- Ethnie 1: Bwa de Dédougou
+- Ethnie 2: Bwa du nord
+- Ethnie 3: Bwaba ruraux
+
+## PPL_DAGARA (FLG_GUR)
+- Ethnie 1: Dagara du Burkina
+- Ethnie 2: Dagaaba du Ghana
+
+## PPL_DAGOMBA (FLG_GUR)
+- Ethnie 1: Dagomba de Tamale
+- Ethnie 2: Dagbamba ruraux
+
+## PPL_FRAFRA (FLG_GUR)
+- Ethnie 1: Frafra du nord
+- Ethnie 2: Gurensi rural
+
+## PPL_GURMA (FLG_GUR)
+- Ethnie 1: Gourmantché du Burkina
+- Ethnie 2: Gulmanceba du Niger
+- Ethnie 3: Sous-groupes du nord Bénin et Togo
+
+## PPL_GUR_MACRO (FLG_GUR)
+- Ethnie 1: Mossi, Dagomba, Mamprusi, Kassena, Dagara, Lobi, Frafra, Gurma, Konkomba, Nankana, Kusasi, Bwa, Bissa, Wiyã, Talensi, etc.
+
+## PPL_KASEENA (FLG_GUR)
+- Ethnie 1: Kassena du Burkina
+- Ethnie 2: Kassena du Ghana
+
+## PPL_KONKOMBA (FLG_GUR)
+- Ethnie 1: Konkomba du Ghana
+- Ethnie 2: Konkomba du Togo
+
+## PPL_KOULOUGO (FLG_GUR)
+- Ethnie 1: Koulango du Nord-Est ivoirien
+- Ethnie 2: Sous-groupes ruraux de Bondoukou
+
+## PPL_KUSASI (FLG_GUR)
+- Ethnie 1: Kusasi du Ghana
+- Ethnie 2: Kusasi du Burkina Faso
+
+## PPL_LOBI (FLG_GUR)
+- Ethnie 1: Lobi du Burkina Faso
+- Ethnie 2: Lobi de Côte d’Ivoire
+- Ethnie 3: Lobi du Ghana
+
+## PPL_MAMPRUSI (FLG_GUR)
+- Ethnie 1: Mamprusi du Ghana
+- Ethnie 2: Mamprusi de la frontière burkinabè
+
+## PPL_MOSSI (FLG_GUR)
+- Ethnie 1: Moose du plateau central
+- Ethnie 2: Sous-groupes régionaux (Yatenga, Ouagadougou, Tenkodogo)
+
+## PPL_NABT (FLG_GUR)
+- Ethnie 1: Nabit de Bongo
+- Ethnie 2: Nabit des villages ruraux
+
+## PPL_NANKANA (FLG_GUR)
+- Ethnie 1: Nankani du Ghana
+- Ethnie 2: Nankana des zones rurales
+
+## PPL_SENUFO (FLG_GUR)
+- Ethnie 1: Sénoufo Tagwana
+- Ethnie 2: Sénoufo Nyarafolo
+- Ethnie 3: Sénoufo Kafibele
+- Ethnie 4: Sénoufo Nafara
+
+## PPL_TAAL (FLG_GUR)
+- Ethnie 1: Groupes Talomsi ruraux
+
+## PPL_TALENSI (FLG_GUR)
+- Ethnie 1: Talensi du Nord
+- Ethnie 2: Talensi ruraux des collines
+
+## PPL_WIYANA (FLG_GUR)
+- Ethnie 1: Wiyã du nord
+- Ethnie 2: Wiyã ruraux
+
+## PPL_DAMARA (FLG_KHOE)
+- Ethnie 1: Damara du Nord
+- Ethnie 2: Damara du Sud
+
+## PPL_GONA (FLG_KHOE)
+- Ethnie 1: Gona du Nord
+- Ethnie 2: Gona du Sud
+
+## PPL_HAIOM (FLG_KHOE)
+- Ethnie 1: Haiǁom du Nord
+- Ethnie 2: Haiǁom du Sud
+
+## PPL_KGALAGADI (FLG_KHOE)
+- Ethnie 1: Kgalagadi du Botswana
+- Ethnie 2: Kgalagadi d'Afrique du Sud
+
+## PPL_KHAINAI (FLG_KHOE)
+- Ethnie 1: Khainai du Nord
+- Ethnie 2: Khainai du Sud
+
+## PPL_KHOE_MACRO (FLG_KHOE)
+- Ethnie 1: Nama
+- Ethnie 2: Damara
+- Ethnie 3: Khoekhoe
+- Ethnie 4: Haiǁom
+- Ethnie 5: Kgalagadi
+- Ethnie 6: Autres groupes Khoe
+
+## PPL_KWADI (FLG_KHOE)
+- Ethnie 1: Kwadi d'Angola
+
+## PPL_KXOE (FLG_KHOE)
+- Ethnie 1: Kxoe du Botswana
+- Ethnie 2: Kxoe de Namibie
+
+## PPL_NAMA (FLG_KHOE)
+- Ethnie 1: Nama de Namibie
+- Ethnie 2: Nama d'Afrique du Sud
+
+## PPL_SHUA (FLG_KHOE)
+- Ethnie 1: Shua du Nord
+- Ethnie 2: Shua du Sud
+
+## PPL_TSHUWA (FLG_KHOE)
+- Ethnie 1: Tshuwa du Nord
+- Ethnie 2: Tshuwa du Sud
+
+## PPL_BAKWE (FLG_KROU)
+- Ethnie 1: Bakwé du Nord
+- Ethnie 2: Bakwé du Sud
+
+## PPL_BETE (FLG_KROU)
+- Ethnie 1: Bété Gagnoa
+- Ethnie 2: Bété Daloa
+- Ethnie 3: Bété Oumé
+
+## PPL_DIDA (FLG_KROU)
+- Ethnie 1: Dida du Centre
+- Ethnie 2: Dida du Sud
+
+## PPL_GBODJIBO (FLG_KROU)
+- Ethnie 1: Gbodjibo du Nord
+- Ethnie 2: Gbodjibo du Sud
+
+## PPL_GODIE (FLG_KROU)
+- Ethnie 1: Godié de Sassandra
+- Ethnie 2: Sous-groupes littoraux
+
+## PPL_GREBO (FLG_KROU)
+- Ethnie 1: Grebo du Libéria
+- Ethnie 2: Grebo de Côte d'Ivoire
+
+## PPL_GUERE (FLG_KROU)
+- Ethnie 1: Wè du nord
+- Ethnie 2: Wè du sud
+
+## PPL_KLAO (FLG_KROU)
+- Ethnie 1: Klao du Liberia
+- Ethnie 2: Klao littoraux de Côte d’Ivoire
+
+## PPL_KOUYA (FLG_KROU)
+- Ethnie 1: Kouya du Nord
+- Ethnie 2: Kouya du Sud
+
+## PPL_KROUMEN (FLG_KROU)
+- Ethnie 1: Kroumen de Tabou
+- Ethnie 2: Kroumen de Grabo
+- Ethnie 3: Kroumen du Liberia
+
+## PPL_KROU_MACRO (FLG_KROU)
+- Ethnie 1: Bété, Dida, Guéré/Wè, Godié, Nyabwa, Klao/Krao, Kroumen, etc.
+
+## PPL_KRU (FLG_KROU)
+- Ethnie 1: Kru du Nord
+- Ethnie 2: Kru du Sud
+- Ethnie 3: Kru de l'Est
+- Ethnie 4: Kru de l'Ouest
+
+## PPL_NYABWA (FLG_KROU)
+- Ethnie 1: Nyabwa du centre-ouest
+- Ethnie 2: Petits sous-groupes ruraux
+
+## PPL_TAIZI (FLG_KROU)
+- Ethnie 1: Taizi du Nord
+- Ethnie 2: Taizi du Sud
+
+## PPL_WANE (FLG_KROU)
+- Ethnie 1: Wane du Nord
+- Ethnie 2: Wane du Sud
+
+## PPL_WE (FLG_KROU)
+- Ethnie 1: Wè de Côte d'Ivoire
+- Ethnie 2: Krahn du Libéria
+
+## PPL_BUGAKWE (FLG_KXA)
+- Ethnie 1: Bugakwe du Nord
+- Ethnie 2: Bugakwe du Sud
+
+## PPL_HOA (FLG_KXA)
+- Ethnie 1: ǂHoan du Nord
+- Ethnie 2: ǂHoan du Sud
+
+## PPL_JUHOANSI (FLG_KXA)
+- Ethnie 1: Ju|'hoansi du Nord (Namibie)
+- Ethnie 2: Ju|'hoansi du Sud (Botswana)
+
+## PPL_KUNG (FLG_KXA)
+- Ethnie 1: !Kung du Nord (Angola, Namibie)
+- Ethnie 2: !Kung du Sud (Botswana, Namibie)
+- Ethnie 3: !Kung de l'Est
+
+## PPL_KXA_MACRO (FLG_KXA)
+- Ethnie 1: Ju|'hoansi
+- Ethnie 2: ǂHoan
+- Ethnie 3: !Kung (diverses variétés)
+- Ethnie 4: Bugakwe
+- Ethnie 5: Autres groupes Juu
+
+## PPL_TSAO_KXA (FLG_KXA)
+- Ethnie 1: Tshao du Nord
+- Ethnie 2: Tshao du Sud
+
+## PPL_BAMBARA (FLG_MANDE)
+- Ethnie 1: Bamana de Ségou
+- Ethnie 2: Bamana de Koulikoro
+- Ethnie 3: Bamana de Dioïla
+
+## PPL_BASSA (FLG_MANDE)
+- Ethnie 1: Bassa de Buchanan
+- Ethnie 2: Bassa de la côte sud
+
+## PPL_BOBO (FLG_MANDE)
+- Ethnie 1: Bobo de Bobo-Dioulasso
+- Ethnie 2: Bobo-Madare ruraux
+
+## PPL_BOSO (FLG_MANDE)
+- Ethnie 1: Boso du Nord
+- Ethnie 2: Boso du Sud
+
+## PPL_DAFING (FLG_MANDE)
+- Ethnie 1: Dafing du Burkina Faso
+- Ethnie 2: Dafing du Mali
+
+## PPL_DYULA (FLG_MANDE)
+- Ethnie 1: Dyula commerçants
+- Ethnie 2: Dyula de Kong
+- Ethnie 3: Dyula du Worodougou
+
+## PPL_GBELE (FLG_MANDE)
+- Ethnie 1: Gbélé du Nord
+- Ethnie 2: Gbélé du Sud
+
+## PPL_JAHANKA (FLG_MANDE)
+- Ethnie 1: Communautés jahanka savantes
+- Ethnie 2: Familles lignagères islamiques
+
+## PPL_KONO (FLG_MANDE)
+- Ethnie 1: Kono du Nord-Est
+- Ethnie 2: Kono du Sud-Est
+
+## PPL_KPANA (FLG_MANDE)
+- Ethnie 1: Kpana du Nord
+- Ethnie 2: Kpana du Sud
+
+## PPL_KPELLE (FLG_MANDE)
+- Ethnie 1: Kpelle du Libéria
+- Ethnie 2: Kpelle de Guinée
+
+## PPL_LOBI (FLG_MANDE)
+- Ethnie 1: Lobi du Burkina Faso
+- Ethnie 2: Lobi de Côte d'Ivoire
+- Ethnie 3: Lobi du Ghana
+
+## PPL_MALINKE (FLG_MANDE)
+- Ethnie 1: Malinké du Mali
+- Ethnie 2: Malinké de Guinée
+- Ethnie 3: Mandinka du Sénégal et de la Gambie
+- Ethnie 4: Malinké de Côte d'Ivoire
+- Ethnie 5: Malinké du Burkina Faso
+
+## PPL_MANDE_MACRO (FLG_MANDE)
+- Ethnie 1: Malinké / Mandinka
+- Ethnie 2: Bambara
+- Ethnie 3: Dioula
+- Ethnie 4: Soninké
+- Ethnie 5: Kpelle
+- Ethnie 6: Lobi
+- Ethnie 7: Autres groupes mandé
+
+## PPL_MANDINGUE (FLG_MANDE)
+- Ethnie 1: Mandinka de Gambie
+- Ethnie 2: Mandinka de Casamance
+- Ethnie 3: Mandinka du Mali
+
+## PPL_MARAKA (FLG_MANDE)
+- Ethnie 1: Maraka du Mali
+- Ethnie 2: Maraka du Sénégal
+
+## PPL_MENDE (FLG_MANDE)
+- Ethnie 1: Mende du Sud
+- Ethnie 2: Mende du Nord
+
+## PPL_SONINKE (FLG_MANDE)
+- Ethnie 1: Soninké du Gajaaga
+- Ethnie 2: Soninké du Waalo
+- Ethnie 3: Soninké du Guidimakha
+
+## PPL_SUSU (FLG_MANDE)
+- Ethnie 1: Susu du littoral
+- Ethnie 2: Sous-groupes ruraux forestiers
+
+## PPL_VAI (FLG_MANDE)
+- Ethnie 1: Vai de Liberia (Grand Cape Mount)
+- Ethnie 2: Vai de Sierra Leone (Pujehun / Zimmi)
+
+## PPL_AKAN (FLG_NIGERCONGO)
+- Ethnie 1: Ashanti
+- Ethnie 2: Fanti
+- Ethnie 3: Akuapem
+- Ethnie 4: Akyem
+- Ethnie 5: Brong
+- Ethnie 6: Nzema
+- Ethnie 7: Autres sous-groupes akan
+
+## PPL_AKYE (FLG_NIGERCONGO)
+- Ethnie 1: Akye du Nord
+- Ethnie 2: Akye du Sud
+
+## PPL_AMBUNDU (FLG_NIGERCONGO)
+- Ethnie 1: Ambundu du Nord
+- Ethnie 2: Ambundu du Sud
+
+## PPL_ANNANG (FLG_NIGERCONGO)
+- Ethnie 1: Annang du Nord
+- Ethnie 2: Annang du Sud
+
+## PPL_ASANTE (FLG_NIGERCONGO)
+- Ethnie 1: Asante du Nord
+- Ethnie 2: Asante du Sud
+
+## PPL_BAFUTA (FLG_NIGERCONGO)
+- Ethnie 1: Bafuta du Nord
+- Ethnie 2: Bafuta du Sud
+
+## PPL_BAGGAR (FLG_NIGERCONGO)
+- Ethnie 1: Baggar du Nord
+- Ethnie 2: Baggar du Sud
+
+## PPL_BAINOUK (FLG_NIGERCONGO)
+- Ethnie 1: Bainouk du Sénégal
+- Ethnie 2: Bainouk de Gambie
+- Ethnie 3: Bainouk de Guinée-Bissau
+
+## PPL_BAKIGA (FLG_NIGERCONGO)
+- Ethnie 1: Bakiga du Nord
+- Ethnie 2: Bakiga du Sud
+
+## PPL_BAKWERI (FLG_NIGERCONGO)
+- Ethnie 1: Bakweri du Nord
+- Ethnie 2: Bakweri du Sud
+
+## PPL_BALANTA (FLG_NIGERCONGO)
+- Ethnie 1: Balanta de Guinée-Bissau
+- Ethnie 2: Balanta du Sénégal
+
+## PPL_BAMBARA (FLG_NIGERCONGO)
+- Ethnie 1: Bambara du Mali
+- Ethnie 2: Bambara du Burkina Faso
+- Ethnie 3: Bambara du Sénégal
+- Ethnie 4: Bambara de Côte d'Ivoire
+
+## PPL_BAMILEKE (FLG_NIGERCONGO)
+- Ethnie 1: Bamiléké du Nord
+- Ethnie 2: Bamiléké du Sud
+
+## PPL_BANTU (FLG_NIGERCONGO)
+- Ethnie 1: Groupes bantous divers
+- Ethnie 2: Variantes linguistiques
+
+## PPL_BANYORO (FLG_NIGERCONGO)
+- Ethnie 1: Banyoro du Nord
+- Ethnie 2: Banyoro du Sud
+
+## PPL_BASOGA (FLG_NIGERCONGO)
+- Ethnie 1: Basoga du Nord
+- Ethnie 2: Basoga du Sud
+
+## PPL_BASSARI (FLG_NIGERCONGO)
+- Ethnie 1: Bassari du Sénégal
+- Ethnie 2: Bassari de Guinée
+
+## PPL_BASSA_CAM (FLG_NIGERCONGO)
+- Ethnie 1: Bassa du Nord
+- Ethnie 2: Bassa du Sud
+
+## PPL_BEMBA (FLG_NIGERCONGO)
+- Ethnie 1: Bemba de Zambie
+- Ethnie 2: Bemba de RDC
+
+## PPL_BEMBE (FLG_NIGERCONGO)
+- Ethnie 1: Bembe du Nord
+- Ethnie 2: Bembe du Sud
+
+## PPL_BETE (FLG_NIGERCONGO)
+- Ethnie 1: Bété de Gagnoa
+- Ethnie 2: Bété de Daloa
+- Ethnie 3: Bété d'Oumé
+
+## PPL_BETI (FLG_NIGERCONGO)
+- Ethnie 1: Ewondo
+- Ethnie 2: Bulu
+- Ethnie 3: Fang du sud (éléments culturels)
+- Ethnie 4: Sous-groupes beti (Mvog, Essomba, etc.)
+
+## PPL_BETI_FANG (FLG_NIGERCONGO)
+- Ethnie 1: Béti-Fang du Cameroun
+- Ethnie 2: Béti-Fang de Guinée équatoriale
+
+## PPL_BOBO (FLG_NIGERCONGO)
+- Ethnie 1: Bobo de Bobo-Dioulasso
+- Ethnie 2: Bobo-Madare ruraux
+
+## PPL_BOSO (FLG_NIGERCONGO)
+- Ethnie 1: Boso du Nord
+- Ethnie 2: Boso du Sud
+
+## PPL_BRONG (FLG_NIGERCONGO)
+- Ethnie 1: Brong du Ghana
+- Ethnie 2: Brong de Côte d'Ivoire
+
+## PPL_BULU (FLG_NIGERCONGO)
+- Ethnie 1: Bulu du Nord
+- Ethnie 2: Bulu du Sud
+
+## PPL_BUSANSI (FLG_NIGERCONGO)
+- Ethnie 1: Busansi du Burkina Faso
+- Ethnie 2: Busansi du Ghana
+
+## PPL_BWABA (FLG_NIGERCONGO)
+- Ethnie 1: Bwaba du Burkina Faso
+- Ethnie 2: Bwaba du Mali
+
+## PPL_CHAGA (FLG_NIGERCONGO)
+- Ethnie 1: Rombo
+- Ethnie 2: Machame
+- Ethnie 3: Siha/Kibosho
+
+## PPL_CHEWA (FLG_NIGERCONGO)
+- Ethnie 1: Chewa du Malawi
+- Ethnie 2: Chewa du Mozambique
+- Ethnie 3: Chewa de Zambie
+
+## PPL_CHOPE (FLG_NIGERCONGO)
+- Ethnie 1: Chope du Nord
+- Ethnie 2: Chope du Sud
+
+## PPL_CHOPE_MOZ (FLG_NIGERCONGO)
+- Ethnie 1: Chope du Nord
+- Ethnie 2: Chope du Sud
+
+## PPL_COMORIEN (FLG_NIGERCONGO)
+- Ethnie 1: Ngazidja (Grande Comore)
+- Ethnie 2: Ndzuani (Anjouan)
+- Ethnie 3: Mwali (Mohéli)
+- Ethnie 4: Maorais (Mayotte)
+
+## PPL_DAFING (FLG_NIGERCONGO)
+- Ethnie 1: Dafing du Burkina Faso
+- Ethnie 2: Dafing du Mali
+
+## PPL_DAGARA (FLG_NIGERCONGO)
+- Ethnie 1: Dagara du Burkina Faso
+- Ethnie 2: Dagaaba du Ghana
+
+## PPL_DAGOMBA (FLG_NIGERCONGO)
+- Ethnie 1: Dagomba de Tamale
+- Ethnie 2: Dagbamba ruraux
+
+## PPL_DIDA (FLG_NIGERCONGO)
+- Ethnie 1: Dida du Centre
+- Ethnie 2: Dida du Sud
+
+## PPL_DOGON (FLG_NIGERCONGO)
+- Ethnie 1: Dogon de Bandiagara
+- Ethnie 2: Dogon de Sangha
+- Ethnie 3: Dogon de Sanga
+- Ethnie 4: Dogon de Kani-Kombolé
+- Ethnie 5: Dogon de Tintam
+- Ethnie 6: Dogon de Yougo
+- Ethnie 7: Dogon de Nombori
+- Ethnie 8: Dogon de Kani-Bonzon
+- Ethnie 9: Dogon de Tireli
+- Ethnie 10: Dogon de Banani
+- Ethnie 11: Dogon de Dourou
+- Ethnie 12: Dogon de Yendouma
+- Ethnie 13: Dogon de Bongo
+- Ethnie 14: Dogon de Kani-Kombole
+- Ethnie 15: Dogon de Kani-Kombolé
+- Ethnie 16: Dogon de Kani-Kombolé
+- Ethnie 17: Dogon de Kani-Kombolé
+- Ethnie 18: Dogon de Kani-Kombolé
+- Ethnie 19: Dogon de Kani-Kombolé
+- Ethnie 20: Dogon de Kani-Kombolé
+
+## PPL_DUALA (FLG_NIGERCONGO)
+- Ethnie 1: Duala de Bonanjo
+- Ethnie 2: Duala de Bonaberi
+- Ethnie 3: Sous-groupes Sawa apparentés (éléments Bakoko, Isubu… selon contextes)
+
+## PPL_DYULA (FLG_NIGERCONGO)
+- Ethnie 1: Dyula commerçants
+- Ethnie 2: Dyula de Kong
+- Ethnie 3: Dyula du Worodougou
+
+## PPL_EBIRA (FLG_NIGERCONGO)
+- Ethnie 1: Ebira Tao (Okene)
+- Ethnie 2: Ebira Koto (Kogi)
+- Ethnie 3: Ebira Etuno (Edo State)
+
+## PPL_EDO (FLG_NIGERCONGO)
+- Ethnie 1: Communautés Edo du royaume de Bénin
+- Ethnie 2: Sous-groupes urbains et ruraux
+
+## PPL_EFIK (FLG_NIGERCONGO)
+- Ethnie 1: Efik du littoral
+- Ethnie 2: Communautés Efik historiques de Calabar
+
+## PPL_EMBU (FLG_NIGERCONGO)
+- Ethnie 1: Embu du Nord
+- Ethnie 2: Embu du Sud
+
+## PPL_EWE (FLG_NIGERCONGO)
+- Ethnie 1: Ewe du Ghana (Volta)
+- Ethnie 2: Ewe du Togo
+- Ethnie 3: Ewe du Bénin (Mono, Couffo)
+
+## PPL_EWONDO (FLG_NIGERCONGO)
+- Ethnie 1: Ewondo urbains
+- Ethnie 2: Ewondo ruraux
+- Ethnie 3: Sous-groupes lignagers régionaux
+
+## PPL_FANG (FLG_NIGERCONGO)
+- Ethnie 1: Fang du Gabon
+- Ethnie 2: Fang de Guinée équatoriale
+- Ethnie 3: Fang du Cameroun
+
+## PPL_FANG_EQGUINEE (FLG_NIGERCONGO)
+- Ethnie 1: Fang de Guinée équatoriale
+- Ethnie 2: Sous-groupes régionaux de Guinée équatoriale
+
+## PPL_FANG_GABON (FLG_NIGERCONGO)
+- Ethnie 1: Fang du Gabon
+- Ethnie 2: Sous-groupes régionaux du Gabon
+
+## PPL_FANTE (FLG_NIGERCONGO)
+- Ethnie 1: Fante du Central
+- Ethnie 2: Fante du Western
+
+## PPL_FRAFRA (FLG_NIGERCONGO)
+- Ethnie 1: Frafra du Ghana
+- Ethnie 2: Frafra du Burkina Faso
+
+## PPL_FULA (FLG_NIGERCONGO)
+- Ethnie 1: Fulɓe Toroɓe (Fouta Toro, Sénégal/Mauritanie)
+- Ethnie 2: Fulɓe Wodaabe (Niger, Nigeria, Cameroun)
+- Ethnie 3: Fulɓe Jalooɓe (Fouta Djallon, Guinée)
+- Ethnie 4: Fulɓe Kuniari
+- Ethnie 5: Fulɓe Mbororo (pasteurs nomades, Cameroun, Tchad, RCA)
+- Ethnie 6: Fulɓe Adamawa (Nigeria, Cameroun)
+- Ethnie 7: Fulɓe Sokoto (Nigeria)
+
+## PPL_FULA_FORET (FLG_NIGERCONGO)
+- Ethnie 1: Fulɓe des zones forestières
+- Ethnie 2: Sous-groupes régionaux forestiers
+
+## PPL_FULA_NOMADES (FLG_NIGERCONGO)
+- Ethnie 1: Fulɓe Mbororo (pasteurs nomades)
+- Ethnie 2: Fulɓe Wodaabe (pasteurs nomades)
+- Ethnie 3: Autres groupes nomades fula
+
+## PPL_FULA_SAHEL (FLG_NIGERCONGO)
+- Ethnie 1: Fulɓe Toroɓe (Fouta Toro, Sénégal/Mauritanie)
+- Ethnie 2: Fulɓe du Sahel central
+- Ethnie 3: Fulɓe du Sahel oriental
+
+## PPL_GANDA (FLG_NIGERCONGO)
+- Ethnie 1: Groupe ethnique baganda
+- Ethnie 2: Sous-groupes régionaux du Buganda
+- Ethnie 3: Autres segments lignagers internes
+
+## PPL_GA_DANGME (FLG_NIGERCONGO)
+- Ethnie 1: Ga (Ga Mashie, Ga de l'intérieur)
+- Ethnie 2: Dangme (Ada, Krobo, Shai)
+
+## PPL_GBAGYI (FLG_NIGERCONGO)
+- Ethnie 1: Gbagyi Ogu
+- Ethnie 2: Gbagyi Nkwa
+- Ethnie 3: Gbagyi du centre et du nord
+
+## PPL_GOGO (FLG_NIGERCONGO)
+- Ethnie 1: Wagogo du Nord (Mpwapwa)
+- Ethnie 2: Wagogo du Sud (Manyoni)
+- Ethnie 3: Sous-groupes pastoraux
+
+## PPL_GOLA (FLG_NIGERCONGO)
+- Ethnie 1: Gola de l'Est
+- Ethnie 2: Gola de l'Ouest
+
+## PPL_GURMA (FLG_NIGERCONGO)
+- Ethnie 1: Gurma du Burkina Faso
+- Ethnie 2: Gurma du Togo
+- Ethnie 3: Gurma du Bénin
+- Ethnie 4: Gurma du Ghana
+
+## PPL_HAYA (FLG_NIGERCONGO)
+- Ethnie 1: Haya du Nord
+- Ethnie 2: Haya du Sud
+
+## PPL_HEHE (FLG_NIGERCONGO)
+- Ethnie 1: Hehe du Nord
+- Ethnie 2: Hehe du Sud
+
+## PPL_HERERO (FLG_NIGERCONGO)
+- Ethnie 1: Herero de Namibie
+- Ethnie 2: Herero du Botswana
+- Ethnie 3: Herero d'Angola
+
+## PPL_HIMBA (FLG_NIGERCONGO)
+- Ethnie 1: Himba de Namibie
+- Ethnie 2: Himba d'Angola
+
+## PPL_IBIBIO (FLG_NIGERCONGO)
+- Ethnie 1: Ibibio proprement dit
+- Ethnie 2: Annang
+- Ethnie 3: Eket
+- Ethnie 4: Oron
+- Ethnie 5: Andoni
+- Ethnie 6: Ibeno
+- Ethnie 7: Enyong
+
+## PPL_IDOMA (FLG_NIGERCONGO)
+- Ethnie 1: Idoma central
+- Ethnie 2: Idoma du Nord
+- Ethnie 3: Idoma du Sud
+- Ethnie 4: Idoma de l'Est
+- Ethnie 5: Idoma de l'Ouest
+- Ethnie 6: Agatu
+- Ethnie 7: Otukpo
+
+## PPL_IGBO (FLG_NIGERCONGO)
+- Ethnie 1: Onicha
+- Ethnie 2: Ngwa
+- Ethnie 3: Aro
+- Ethnie 4: Autres sous-groupes claniques igbo
+
+## PPL_IJAW (FLG_NIGERCONGO)
+- Ethnie 1: Izon (Ijaw central)
+- Ethnie 2: Kalabari
+- Ethnie 3: Nembe
+- Ethnie 4: Okrika
+- Ethnie 5: Bonny
+- Ethnie 6: Andoni
+- Ethnie 7: Ogbia
+- Ethnie 8: Biseni
+- Ethnie 9: Epie-Atissa
+- Ethnie 10: Autres sous-groupes ijaw
+
+## PPL_ISOKO (FLG_NIGERCONGO)
+- Ethnie 1: Isoko central
+- Ethnie 2: Isoko du Nord
+- Ethnie 3: Isoko du Sud
+
+## PPL_ITSEKIRI (FLG_NIGERCONGO)
+- Ethnie 1: Itsekiri central
+- Ethnie 2: Itsekiri du Nord
+- Ethnie 3: Itsekiri du Sud
+
+## PPL_JAHANKA (FLG_NIGERCONGO)
+- Ethnie 1: Jahanka de Guinée
+- Ethnie 2: Jahanka du Mali
+- Ethnie 3: Jahanka du Sénégal
+
+## PPL_JOLA (FLG_NIGERCONGO)
+- Ethnie 1: Jola de Casamance (Sénégal)
+- Ethnie 2: Jola de Gambie
+- Ethnie 3: Jola de Guinée-Bissau
+
+## PPL_KAMBA (FLG_NIGERCONGO)
+- Ethnie 1: Kamba du Nord
+- Ethnie 2: Kamba du Sud
+
+## PPL_KARANGA (FLG_NIGERCONGO)
+- Ethnie 1: Karanga du Nord
+- Ethnie 2: Karanga du Sud
+
+## PPL_KARANGA_ZIM (FLG_NIGERCONGO)
+- Ethnie 1: Karanga du Nord
+- Ethnie 2: Karanga du Sud
+
+## PPL_KASEM (FLG_NIGERCONGO)
+- Ethnie 1: Kasem du Ghana
+- Ethnie 2: Kasem du Burkina Faso
+
+## PPL_KAVANGO (FLG_NIGERCONGO)
+- Ethnie 1: Kavango de Namibie
+- Ethnie 2: Kavango d'Angola
+
+## PPL_KHOZA_FAUXEX (FLG_NIGERCONGO)
+- Ethnie 1: Khoza (sous-groupes à déterminer)
+
+## PPL_KIKUYU (FLG_NIGERCONGO)
+- Ethnie 1: Kikuyu du Nord
+- Ethnie 2: Kikuyu du Sud
+
+## PPL_KINYARWANDA (FLG_NIGERCONGO)
+- Ethnie 1: Hutu (Rwanda, Burundi)
+- Ethnie 2: Tutsi (Rwanda, Burundi)
+- Ethnie 3: Twa (Rwanda, Burundi)
+- Ethnie 4: Autres locuteurs kinyarwanda
+
+## PPL_KIRUNDI_HUTU (FLG_NIGERCONGO)
+- Ethnie 1: Hutu du Burundi
+- Ethnie 2: Hutu du Rwanda
+
+## PPL_KIRUNDI_TUTSI (FLG_NIGERCONGO)
+- Ethnie 1: Tutsi du Burundi
+- Ethnie 2: Tutsi du Rwanda
+
+## PPL_KONGO (FLG_NIGERCONGO)
+- Ethnie 1: Kongo du Bas-Congo
+- Ethnie 2: Kongo d'Angola
+- Ethnie 3: Kongo du Congo
+- Ethnie 4: Kongo du Gabon
+
+## PPL_KONGO_BRAZZA (FLG_NIGERCONGO)
+- Ethnie 1: Kongo de Brazzaville
+- Ethnie 2: Kongo du Pool
+
+## PPL_KONGO_CABINDA (FLG_NIGERCONGO)
+- Ethnie 1: Kongo de Cabinda
+
+## PPL_KONGO_MAYOMBE (FLG_NIGERCONGO)
+- Ethnie 1: Kongo du Mayombe (Congo)
+- Ethnie 2: Kongo du Mayombe (Gabon)
+
+## PPL_KONGO_SUD (FLG_NIGERCONGO)
+- Ethnie 1: Kongo du Bas-Congo
+
+## PPL_KONKOMBA (FLG_NIGERCONGO)
+- Ethnie 1: Konkomba du Ghana
+- Ethnie 2: Konkomba du Togo
+
+## PPL_KONO (FLG_NIGERCONGO)
+- Ethnie 1: Kono de Sierra Leone
+- Ethnie 2: Kono de Guinée
+
+## PPL_KOREKORE (FLG_NIGERCONGO)
+- Ethnie 1: Korekore du Nord
+- Ethnie 2: Korekore du Sud
+
+## PPL_KOREKORE_ZIM (FLG_NIGERCONGO)
+- Ethnie 1: Korekore du Nord
+- Ethnie 2: Korekore du Sud
+
+## PPL_KOTA (FLG_NIGERCONGO)
+- Ethnie 1: Kota du Gabon
+- Ethnie 2: Kota du Congo
+
+## PPL_KOUYOU (FLG_NIGERCONGO)
+- Ethnie 1: Kouyou du Nord
+- Ethnie 2: Kouyou du Sud
+
+## PPL_KPANA (FLG_NIGERCONGO)
+- Ethnie 1: Kpana de Sierra Leone
+- Ethnie 2: Kpana de Guinée
+
+## PPL_KPELLE (FLG_NIGERCONGO)
+- Ethnie 1: Kpelle du Libéria
+- Ethnie 2: Kpelle de Guinée
+
+## PPL_KRAHN (FLG_NIGERCONGO)
+- Ethnie 1: Krahn du Libéria
+- Ethnie 2: Krahn de Côte d'Ivoire
+
+## PPL_KROUMEN (FLG_NIGERCONGO)
+- Ethnie 1: Kroumen de Côte d'Ivoire
+- Ethnie 2: Kroumen du Libéria
+
+## PPL_KRU (FLG_NIGERCONGO)
+- Ethnie 1: Kru du Libéria
+- Ethnie 2: Kru de Côte d'Ivoire
+
+## PPL_KUBA (FLG_NIGERCONGO)
+- Ethnie 1: Kuba du Nord
+- Ethnie 2: Kuba du Sud
+
+## PPL_KWANYAMA (FLG_NIGERCONGO)
+- Ethnie 1: Kwanyama de Namibie
+- Ethnie 2: Kwanyama d'Angola
+
+## PPL_LEBOU (FLG_NIGERCONGO)
+- Ethnie 1: Lébou du Cap-Vert
+- Ethnie 2: Lébou de Dakar
+
+## PPL_LENGO (FLG_NIGERCONGO)
+- Ethnie 1: Lengo du Nord
+- Ethnie 2: Lengo du Sud
+
+## PPL_LINGALA (FLG_NIGERCONGO)
+- Ethnie 1: Locuteurs lingala de RDC
+- Ethnie 2: Locuteurs lingala du Congo
+- Ethnie 3: Locuteurs lingala de RCA
+- Ethnie 4: Autres locuteurs lingala
+
+## PPL_LOBI (FLG_NIGERCONGO)
+- Ethnie 1: Lobi du Burkina Faso
+- Ethnie 2: Lobi de Côte d'Ivoire
+- Ethnie 3: Lobi du Ghana
+
+## PPL_LOMWE (FLG_NIGERCONGO)
+- Ethnie 1: Lomwe du Mozambique
+- Ethnie 2: Lomwe du Malawi
+
+## PPL_LOMWE_MALA (FLG_NIGERCONGO)
+- Ethnie 1: Lomwe du Nord
+- Ethnie 2: Lomwe du Sud
+
+## PPL_LOMWE_MOZ (FLG_NIGERCONGO)
+- Ethnie 1: Lomwe du Nord
+- Ethnie 2: Lomwe du Sud
+
+## PPL_LOZI (FLG_NIGERCONGO)
+- Ethnie 1: Lozi de Zambie
+- Ethnie 2: Lozi du Zimbabwe
+- Ethnie 3: Lozi de Namibie
+- Ethnie 4: Lozi d'Angola
+
+## PPL_LUBA (FLG_NIGERCONGO)
+- Ethnie 1: Luba du Kasaï
+- Ethnie 2: Luba du Katanga
+
+## PPL_LUBA_KASAI (FLG_NIGERCONGO)
+- Ethnie 1: Luba du Kasaï central
+- Ethnie 2: Luba du Kasaï oriental
+- Ethnie 3: Luba du Kasaï occidental
+
+## PPL_LUBA_KASAI2 (FLG_NIGERCONGO)
+- Ethnie 1: Luba du Kasaï central
+- Ethnie 2: Luba du Kasaï oriental
+- Ethnie 3: Luba du Kasaï occidental
+
+## PPL_LUBA_KATANGA (FLG_NIGERCONGO)
+- Ethnie 1: Luba du Katanga central
+- Ethnie 2: Luba du Katanga oriental
+- Ethnie 3: Luba du Katanga occidental
+
+## PPL_LUGANDA_ETHNO (FLG_NIGERCONGO)
+- Ethnie 1: Ganda du Nord
+- Ethnie 2: Ganda du Sud
+
+## PPL_LUNDA (FLG_NIGERCONGO)
+- Ethnie 1: Lunda de RDC
+- Ethnie 2: Lunda d'Angola
+- Ethnie 3: Lunda de Zambie
+
+## PPL_LUNDA_NORTE (FLG_NIGERCONGO)
+- Ethnie 1: Lunda de Lunda Norte
+
+## PPL_LUO_BANTU (FLG_NIGERCONGO)
+- Ethnie 1: Luo bantou (sous-groupes à déterminer)
+
+## PPL_MAKONDE (FLG_NIGERCONGO)
+- Ethnie 1: Makonde du Mozambique
+- Ethnie 2: Makonde de Tanzanie
+
+## PPL_MAKONDE_MOZ (FLG_NIGERCONGO)
+- Ethnie 1: Makonde du Nord
+- Ethnie 2: Makonde du Sud
+
+## PPL_MAKONDE_TANZ (FLG_NIGERCONGO)
+- Ethnie 1: Makonde du Nord
+- Ethnie 2: Makonde du Sud
+
+## PPL_MAKUA (FLG_NIGERCONGO)
+- Ethnie 1: Makua du Mozambique
+- Ethnie 2: Makua de Tanzanie
+- Ethnie 3: Makua du Malawi
+
+## PPL_MALINKE (FLG_NIGERCONGO)
+- Ethnie 1: Malinké du Mali
+- Ethnie 2: Malinké de Guinée
+- Ethnie 3: Malinké du Sénégal
+- Ethnie 4: Malinké de Côte d'Ivoire
+- Ethnie 5: Malinké de Gambie
+- Ethnie 6: Malinké de Guinée-Bissau
+
+## PPL_MAMPRUSI (FLG_NIGERCONGO)
+- Ethnie 1: Mamprusi du Ghana
+- Ethnie 2: Mamprusi du Burkina Faso
+
+## PPL_MANDINGUE (FLG_NIGERCONGO)
+- Ethnie 1: Mandingue du Mali
+- Ethnie 2: Mandingue de Guinée
+- Ethnie 3: Mandingue du Sénégal
+- Ethnie 4: Mandingue de Côte d'Ivoire
+- Ethnie 5: Mandingue de Gambie
+- Ethnie 6: Mandingue de Guinée-Bissau
+- Ethnie 7: Mandingue de Sierra Leone
+
+## PPL_MANIANGA (FLG_NIGERCONGO)
+- Ethnie 1: Manianga du Nord
+- Ethnie 2: Manianga du Sud
+
+## PPL_MANJAK (FLG_NIGERCONGO)
+- Ethnie 1: Manjak de Guinée-Bissau
+- Ethnie 2: Manjak du Sénégal
+
+## PPL_MANYIKA (FLG_NIGERCONGO)
+- Ethnie 1: Manyika du Zimbabwe
+- Ethnie 2: Manyika du Mozambique
+
+## PPL_MANYIKA_ZIM (FLG_NIGERCONGO)
+- Ethnie 1: Manyika du Nord
+- Ethnie 2: Manyika du Sud
+
+## PPL_MARAKA (FLG_NIGERCONGO)
+- Ethnie 1: Maraka du Nord
+- Ethnie 2: Maraka du Sud
+
+## PPL_MBOCHI (FLG_NIGERCONGO)
+- Ethnie 1: Mbochi du Nord
+- Ethnie 2: Mbochi du Sud
+
+## PPL_MENDE (FLG_NIGERCONGO)
+- Ethnie 1: Mende de Sierra Leone
+- Ethnie 2: Mende du Libéria
+
+## PPL_MERU (FLG_NIGERCONGO)
+- Ethnie 1: Meru du Nord
+- Ethnie 2: Meru du Sud
+
+## PPL_MONGO (FLG_NIGERCONGO)
+- Ethnie 1: Mongo de l'Équateur
+- Ethnie 2: Mongo du Tshuapa
+
+## PPL_MOSSI (FLG_NIGERCONGO)
+- Ethnie 1: Mossi du Burkina Faso
+- Ethnie 2: Mossi du Ghana
+- Ethnie 3: Mossi de Côte d'Ivoire
+- Ethnie 4: Mossi du Mali
+
+## PPL_MYENE (FLG_NIGERCONGO)
+- Ethnie 1: Myene du Nord
+- Ethnie 2: Myene du Sud
+
+## PPL_NANKANA (FLG_NIGERCONGO)
+- Ethnie 1: Nankana du Nord
+- Ethnie 2: Nankana du Sud
+
+## PPL_NDAU (FLG_NIGERCONGO)
+- Ethnie 1: Ndau du Mozambique
+- Ethnie 2: Ndau du Zimbabwe
+
+## PPL_NDAU_MOZ (FLG_NIGERCONGO)
+- Ethnie 1: Ndau du Nord
+- Ethnie 2: Ndau du Sud
+
+## PPL_NDAU_ZIM (FLG_NIGERCONGO)
+- Ethnie 1: Ndau du Nord
+- Ethnie 2: Ndau du Sud
+
+## PPL_NDEBELE (FLG_NIGERCONGO)
+- Ethnie 1: Ndebele du Zimbabwe
+- Ethnie 2: Ndebele d'Afrique du Sud
+
+## PPL_NDEBELE_MACRO (FLG_NIGERCONGO)
+- Ethnie 1: Ndebele du Zimbabwe
+- Ethnie 2: Ndebele d'Afrique du Sud
+
+## PPL_NDEBELE_MZ (FLG_NIGERCONGO)
+- Ethnie 1: Ndebele du Nord
+- Ethnie 2: Ndebele du Sud
+
+## PPL_NDEBELE_NORD (FLG_NIGERCONGO)
+- Ethnie 1: Ndebele du Nord (Zimbabwe)
+- Ethnie 2: Ndebele du Nord (Afrique du Sud)
+
+## PPL_NDEBELE_SUD (FLG_NIGERCONGO)
+- Ethnie 1: Ndebele du Sud (Nord)
+- Ethnie 2: Ndebele du Sud (Sud)
+
+## PPL_NDEBELE_SUD2 (FLG_NIGERCONGO)
+- Ethnie 1: Ndebele du Sud (Nord)
+- Ethnie 2: Ndebele du Sud (Sud)
+
+## PPL_NDEBELE_ZIM (FLG_NIGERCONGO)
+- Ethnie 1: Ndebele du Nord
+- Ethnie 2: Ndebele du Sud
+
+## PPL_NGALA (FLG_NIGERCONGO)
+- Ethnie 1: Ngala de RDC
+- Ethnie 2: Ngala du Congo
+
+## PPL_NGONI (FLG_NIGERCONGO)
+- Ethnie 1: Ngoni du Malawi
+- Ethnie 2: Ngoni de Tanzanie
+- Ethnie 3: Ngoni de Zambie
+- Ethnie 4: Ngoni du Mozambique
+
+## PPL_NGUNI (FLG_NIGERCONGO)
+- Ethnie 1: Nguni d'Afrique du Sud
+- Ethnie 2: Nguni d'Eswatini
+- Ethnie 3: Nguni du Lesotho
+- Ethnie 4: Nguni du Zimbabwe
+- Ethnie 5: Nguni du Mozambique
+
+## PPL_NUPE (FLG_NIGERCONGO)
+- Ethnie 1: Nupe du Nord
+- Ethnie 2: Nupe du Sud
+
+## PPL_NYABWA (FLG_NIGERCONGO)
+- Ethnie 1: Nyabwa de Côte d'Ivoire
+- Ethnie 2: Nyabwa du Libéria
+
+## PPL_NYAMWEZI (FLG_NIGERCONGO)
+- Ethnie 1: Nyamwezi du Nord
+- Ethnie 2: Nyamwezi du Sud
+
+## PPL_NYANJA (FLG_NIGERCONGO)
+- Ethnie 1: Nyanja du Malawi
+- Ethnie 2: Nyanja de Zambie
+- Ethnie 3: Nyanja du Mozambique
+- Ethnie 4: Nyanja du Zimbabwe
+
+## PPL_NYASA (FLG_NIGERCONGO)
+- Ethnie 1: Nyasa du Malawi
+- Ethnie 2: Nyasa du Mozambique
+- Ethnie 3: Nyasa de Tanzanie
+
+## PPL_NZEBI (FLG_NIGERCONGO)
+- Ethnie 1: Nzebi du Gabon
+- Ethnie 2: Nzebi du Congo
+
+## PPL_OVAMBO (FLG_NIGERCONGO)
+- Ethnie 1: Ovambo de Namibie
+- Ethnie 2: Ovambo d'Angola
+
+## PPL_OVIMBUNDU (FLG_NIGERCONGO)
+- Ethnie 1: Ovimbundu du Nord
+- Ethnie 2: Ovimbundu du Sud
+
+## PPL_PAPEL (FLG_NIGERCONGO)
+- Ethnie 1: Papel du Nord
+- Ethnie 2: Papel du Sud
+
+## PPL_PEDI (FLG_NIGERCONGO)
+- Ethnie 1: Pedi du Nord
+- Ethnie 2: Pedi du Sud
+
+## PPL_PUNU (FLG_NIGERCONGO)
+- Ethnie 1: Punu du Gabon
+- Ethnie 2: Punu du Congo
+
+## PPL_RONGA (FLG_NIGERCONGO)
+- Ethnie 1: Ronga du Mozambique
+- Ethnie 2: Ronga d'Afrique du Sud
+
+## PPL_RONGA_MOZ (FLG_NIGERCONGO)
+- Ethnie 1: Ronga du Nord
+- Ethnie 2: Ronga du Sud
+
+## PPL_RUNDI (FLG_NIGERCONGO)
+- Ethnie 1: Locuteurs rundi du Burundi
+- Ethnie 2: Locuteurs rundi de RDC
+- Ethnie 3: Locuteurs rundi de Tanzanie
+- Ethnie 4: Autres locuteurs rundi
+
+## PPL_RWANDAIS_HUTU (FLG_NIGERCONGO)
+- Ethnie 1: Hutu du Rwanda
+- Ethnie 2: Hutu de RDC
+- Ethnie 3: Hutu d'Ouganda
+- Ethnie 4: Hutu du Burundi
+
+## PPL_RWANDAIS_TUTSI (FLG_NIGERCONGO)
+- Ethnie 1: Tutsi du Rwanda
+- Ethnie 2: Tutsi de RDC
+- Ethnie 3: Tutsi d'Ouganda
+- Ethnie 4: Tutsi du Burundi
+
+## PPL_SANGO (FLG_NIGERCONGO)
+- Ethnie 1: Locuteurs sango de RCA
+- Ethnie 2: Locuteurs sango de RDC
+- Ethnie 3: Locuteurs sango du Congo
+- Ethnie 4: Locuteurs sango du Cameroun
+- Ethnie 5: Autres locuteurs sango
+
+## PPL_SENA (FLG_NIGERCONGO)
+- Ethnie 1: Sena du Mozambique
+- Ethnie 2: Sena du Malawi
+- Ethnie 3: Sena de Zambie
+
+## PPL_SENA_MOZ (FLG_NIGERCONGO)
+- Ethnie 1: Sena du Nord
+- Ethnie 2: Sena du Sud
+
+## PPL_SENA_ZAMB (FLG_NIGERCONGO)
+- Ethnie 1: Sena du Nord
+- Ethnie 2: Sena du Sud
+
+## PPL_SENUFO (FLG_NIGERCONGO)
+- Ethnie 1: Sénufo de Côte d'Ivoire
+- Ethnie 2: Sénufo du Mali
+- Ethnie 3: Sénufo du Burkina Faso
+
+## PPL_SERER (FLG_NIGERCONGO)
+- Ethnie 1: Sérère du Sénégal
+- Ethnie 2: Sérère de Gambie
+
+## PPL_SESOTHO_NATL (FLG_NIGERCONGO)
+- Ethnie 1: Sesotho du Lesotho
+- Ethnie 2: Sesotho d'Afrique du Sud
+
+## PPL_SETSWANA_NATL (FLG_NIGERCONGO)
+- Ethnie 1: Setswana du Botswana
+- Ethnie 2: Setswana d'Afrique du Sud
+
+## PPL_SHONA (FLG_NIGERCONGO)
+- Ethnie 1: Shona du Zimbabwe
+- Ethnie 2: Shona du Mozambique
+
+## PPL_SOLONGO (FLG_NIGERCONGO)
+- Ethnie 1: Solongo de RDC
+- Ethnie 2: Solongo d'Angola
+
+## PPL_SONINKE (FLG_NIGERCONGO)
+- Ethnie 1: Soninké du Mali
+- Ethnie 2: Soninké du Sénégal
+- Ethnie 3: Soninké de Mauritanie
+- Ethnie 4: Soninké de Gambie
+
+## PPL_SOTHO (FLG_NIGERCONGO)
+- Ethnie 1: Sotho du Lesotho
+- Ethnie 2: Sotho d'Afrique du Sud
+
+## PPL_SOTHO_NORD (FLG_NIGERCONGO)
+- Ethnie 1: Sotho du Nord (Lesotho)
+- Ethnie 2: Sotho du Nord (Afrique du Sud)
+
+## PPL_SOTHO_SUD (FLG_NIGERCONGO)
+- Ethnie 1: Sotho du Sud (Lesotho)
+- Ethnie 2: Sotho du Sud (Afrique du Sud)
+
+## PPL_SOTHO_TSWANA (FLG_NIGERCONGO)
+- Ethnie 1: Sotho-Tswana du Lesotho
+- Ethnie 2: Sotho-Tswana d'Afrique du Sud
+- Ethnie 3: Sotho-Tswana du Botswana
+
+## PPL_SUKUMA (FLG_NIGERCONGO)
+- Ethnie 1: Sukuma du Nord
+- Ethnie 2: Sukuma du Sud
+
+## PPL_SUSU (FLG_NIGERCONGO)
+- Ethnie 1: Susu de Guinée
+- Ethnie 2: Susu de Sierra Leone
+
+## PPL_SWAHILI_KENYA (FLG_NIGERCONGO)
+- Ethnie 1: Swahili du Nord
+- Ethnie 2: Swahili du Sud
+
+## PPL_SWAHILI_MOZAMBIQUE (FLG_NIGERCONGO)
+- Ethnie 1: Swahili du Nord
+- Ethnie 2: Swahili du Sud
+
+## PPL_SWAHILI_OMAN (FLG_NIGERCONGO)
+- Ethnie 1: Swahili d'Oman
+
+## PPL_SWAHILI_SOMALIE (FLG_NIGERCONGO)
+- Ethnie 1: Swahili du Nord
+- Ethnie 2: Swahili du Sud
+
+## PPL_SWAHILI_TANZANIE (FLG_NIGERCONGO)
+- Ethnie 1: Swahili du Nord
+- Ethnie 2: Swahili du Sud
+
+## PPL_SWAHILI_YEMEN (FLG_NIGERCONGO)
+- Ethnie 1: Swahili du Yémen
+
+## PPL_SWAZI (FLG_NIGERCONGO)
+- Ethnie 1: Swazi d'Eswatini
+- Ethnie 2: Swazi d'Afrique du Sud
+
+## PPL_SWahili (FLG_NIGERCONGO)
+- Ethnie 1: Swahili de Tanzanie
+- Ethnie 2: Swahili du Kenya
+- Ethnie 3: Swahili du Mozambique
+- Ethnie 4: Swahili des Comores
+
+## PPL_TABWA (FLG_NIGERCONGO)
+- Ethnie 1: Tabwa de RDC
+- Ethnie 2: Tabwa de Zambie
+
+## PPL_TEKE_NORD (FLG_NIGERCONGO)
+- Ethnie 1: Teke du Nord (RDC)
+- Ethnie 2: Teke du Nord (Congo)
+- Ethnie 3: Teke du Nord (Gabon)
+
+## PPL_TEKKE (FLG_NIGERCONGO)
+- Ethnie 1: Tekke de RDC
+- Ethnie 2: Tekke du Congo
+- Ethnie 3: Tekke du Gabon
+
+## PPL_TEMBO (FLG_NIGERCONGO)
+- Ethnie 1: Tembo du Nord
+- Ethnie 2: Tembo du Sud
+
+## PPL_TEMNE (FLG_NIGERCONGO)
+- Ethnie 1: Temne du Nord
+- Ethnie 2: Temne du Sud
+
+## PPL_TIV (FLG_NIGERCONGO)
+- Ethnie 1: Tiv du Nigeria
+- Ethnie 2: Tiv du Cameroun
+
+## PPL_TOKELAU_FAUXEX (FLG_NIGERCONGO)
+- Aucune ethnie listée dans le fichier peuple
+
+## PPL_TONGA_LAC (FLG_NIGERCONGO)
+- Ethnie 1: Tonga du lac (Zambie)
+- Ethnie 2: Tonga du lac (Zimbabwe)
+- Ethnie 3: Sous-groupes régionaux du lac
+
+## PPL_TONGA_MALA (FLG_NIGERCONGO)
+- Ethnie 1: Tonga du Nord
+- Ethnie 2: Tonga du Sud
+
+## PPL_TONGA_ZAMB (FLG_NIGERCONGO)
+- Ethnie 1: Tonga du Nord
+- Ethnie 2: Tonga du Sud
+
+## PPL_TONGA_ZIM (FLG_NIGERCONGO)
+- Ethnie 1: Tonga du Nord
+- Ethnie 2: Tonga du Sud
+
+## PPL_TSAO (FLG_NIGERCONGO)
+- Ethnie 1: Tsao de RDC
+- Ethnie 2: Tsao d'Angola
+
+## PPL_TSHOKWE (FLG_NIGERCONGO)
+- Ethnie 1: Tshokwe de RDC
+- Ethnie 2: Tshokwe d'Angola
+- Ethnie 3: Tshokwe de Zambie
+
+## PPL_TSONGA (FLG_NIGERCONGO)
+- Ethnie 1: Tsonga d'Afrique du Sud
+- Ethnie 2: Tsonga du Mozambique
+- Ethnie 3: Tsonga du Zimbabwe
+
+## PPL_TSWA (FLG_NIGERCONGO)
+- Ethnie 1: Tswa du Mozambique
+- Ethnie 2: Tswa d'Afrique du Sud
+
+## PPL_TSWANA (FLG_NIGERCONGO)
+- Ethnie 1: Tswana du Botswana
+- Ethnie 2: Tswana d'Afrique du Sud
+
+## PPL_TSWA_CALANGA (FLG_NIGERCONGO)
+- Ethnie 1: Tswa Calanga du Nord
+- Ethnie 2: Tswa Calanga du Sud
+
+## PPL_TSWA_MOZ (FLG_NIGERCONGO)
+- Ethnie 1: Tswa du Nord
+- Ethnie 2: Tswa du Sud
+
+## PPL_TUMBUKA (FLG_NIGERCONGO)
+- Ethnie 1: Tumbuka du Malawi
+- Ethnie 2: Tumbuka de Zambie
+- Ethnie 3: Tumbuka de Tanzanie
+
+## PPL_URHOBO (FLG_NIGERCONGO)
+- Ethnie 1: Urhobo du Nord
+- Ethnie 2: Urhobo du Sud
+
+## PPL_VAI (FLG_NIGERCONGO)
+- Ethnie 1: Vai du Liberia
+- Ethnie 2: Vai de Sierra Leone
+
+## PPL_VENDA (FLG_NIGERCONGO)
+- Ethnie 1: Venda d'Afrique du Sud
+- Ethnie 2: Venda du Zimbabwe
+
+## PPL_VILI (FLG_NIGERCONGO)
+- Ethnie 1: Vili de RDC
+- Ethnie 2: Vili du Congo
+- Ethnie 3: Vili du Gabon
+
+## PPL_WANDYA (FLG_NIGERCONGO)
+- Ethnie 1: Wandya de RDC
+- Ethnie 2: Wandya d'Ouganda
+
+## PPL_WE (FLG_NIGERCONGO)
+- Ethnie 1: We de Côte d'Ivoire
+- Ethnie 2: We du Liberia
+
+## PPL_WOLOF (FLG_NIGERCONGO)
+- Ethnie 1: Wolof du Sénégal
+- Ethnie 2: Wolof de Gambie
+- Ethnie 3: Wolof de Mauritanie
+
+## PPL_XHOSA (FLG_NIGERCONGO)
+- Ethnie 1: Xhosa du Cap-Oriental
+- Ethnie 2: Xhosa du Cap-Occidental
+
+## PPL_XHOSA_CISKEI (FLG_NIGERCONGO)
+- Ethnie 1: Xhosa du Ciskei
+- Ethnie 2: Sous-groupes régionaux du Ciskei
+
+## PPL_YAKA (FLG_NIGERCONGO)
+- Ethnie 1: Yaka de RDC
+- Ethnie 2: Yaka d'Angola
+
+## PPL_YAO (FLG_NIGERCONGO)
+- Ethnie 1: Yao du Malawi
+- Ethnie 2: Yao du Mozambique
+- Ethnie 3: Yao de Tanzanie
+
+## PPL_YAO_MALAWI (FLG_NIGERCONGO)
+- Ethnie 1: Yao du Nord
+- Ethnie 2: Yao du Sud
+
+## PPL_YAO_MOZ (FLG_NIGERCONGO)
+- Ethnie 1: Yao du Nord
+- Ethnie 2: Yao du Sud
+
+## PPL_YOMBE (FLG_NIGERCONGO)
+- Ethnie 1: Yombe de RDC
+- Ethnie 2: Yombe du Congo
+- Ethnie 3: Yombe d'Angola
+
+## PPL_ZULU (FLG_NIGERCONGO)
+- Ethnie 1: Zulu du KwaZulu-Natal
+- Ethnie 2: Zulu du Gauteng
+
+## PPL_ZULU_KWA_ZULU (FLG_NIGERCONGO)
+- Ethnie 1: Zulu du KwaZulu-Natal
+- Ethnie 2: Sous-groupes régionaux du KwaZulu-Natal
+
+## PPL_ACHOLI (FLG_NILOTIQUE)
+- Ethnie 1: Acholi d'Ouganda
+- Ethnie 2: Acholi du Soudan du Sud
+
+## PPL_ALUR (FLG_NILOTIQUE)
+- Ethnie 1: Alur d'Ouganda
+- Ethnie 2: Alur de RDC
+
+## PPL_ANUAK (FLG_NILOTIQUE)
+- Ethnie 1: Anuak du Soudan du Sud
+- Ethnie 2: Anuak d'Éthiopie
+
+## PPL_DATOGA (FLG_NILOTIQUE)
+- Ethnie 1: Datoga du Nord
+- Ethnie 2: Datoga du Sud
+
+## PPL_DINKA (FLG_NILOTIQUE)
+- Ethnie 1: Dinka Rek (Rek Dinka)
+- Ethnie 2: Dinka Ngok (Ngok Dinka)
+- Ethnie 3: Dinka Padang (Padang Dinka)
+- Ethnie 4: Dinka Bor (Bor Dinka)
+- Ethnie 5: Dinka Agar (Agar Dinka)
+- Ethnie 6: Dinka Ciec (Ciec Dinka)
+- Ethnie 7: Dinka Twic (Twic Dinka)
+- Ethnie 8: Dinka Malual (Malual Dinka)
+- Ethnie 9: Dinka Luac (Luac Dinka)
+- Ethnie 10: Dinka Gok (Gok Dinka)
+
+## PPL_EL_MOLO (FLG_NILOTIQUE)
+- Ethnie 1: El Molo du Nord
+- Ethnie 2: El Molo du Sud
+
+## PPL_JIE (FLG_NILOTIQUE)
+- Ethnie 1: Jie du Nord
+- Ethnie 2: Jie du Sud
+
+## PPL_JIE_SUD (FLG_NILOTIQUE)
+- Ethnie 1: Jie du Sud (groupe principal)
+- Ethnie 2: Communautés urbaines
+
+## PPL_JOPADHOLA (FLG_NILOTIQUE)
+- Ethnie 1: Jopadhola du Nord
+- Ethnie 2: Jopadhola du Sud
+
+## PPL_KARAMOJONG (FLG_NILOTIQUE)
+- Ethnie 1: Karamojong du Nord
+- Ethnie 2: Karamojong du Sud
+
+## PPL_KUMAM (FLG_NILOTIQUE)
+- Ethnie 1: Kumam du Nord
+- Ethnie 2: Kumam du Sud
+
+## PPL_LANGO (FLG_NILOTIQUE)
+- Ethnie 1: Lango du Nord
+- Ethnie 2: Lango du Sud
+
+## PPL_LUO_PAGU (FLG_NILOTIQUE)
+- Ethnie 1: Luo Pagu d'Ouganda
+- Ethnie 2: Luo Pagu du Kenya
+
+## PPL_MAASAI (FLG_NILOTIQUE)
+- Ethnie 1: Maasai du Kenya
+- Ethnie 2: Maasai de Tanzanie
+
+## PPL_MABAN (FLG_NILOTIQUE)
+- Ethnie 1: Maban du Soudan du Sud
+- Ethnie 2: Maban du Tchad
+
+## PPL_MURLE (FLG_NILOTIQUE)
+- Ethnie 1: Murle du Soudan du Sud
+- Ethnie 2: Murle d'Éthiopie
+
+## PPL_NILOTIQUE_MACRO (FLG_NILOTIQUE)
+- Ethnie 1: Dinka
+- Ethnie 2: Nuer
+- Ethnie 3: Maasai
+- Ethnie 4: Luo
+- Ethnie 5: Acholi
+- Ethnie 6: Lango
+- Ethnie 7: Turkana
+- Ethnie 8: Karamojong
+- Ethnie 9: Samburu
+- Ethnie 10: Shilluk
+- Ethnie 11: Toposa
+- Ethnie 12: Autres groupes nilotiques
+
+## PPL_NUER (FLG_NILOTIQUE)
+- Ethnie 1: Nuer du Soudan du Sud
+- Ethnie 2: Nuer d'Éthiopie
+
+## PPL_RENDILLE (FLG_NILOTIQUE)
+- Ethnie 1: Rendille du Nord
+- Ethnie 2: Rendille du Sud
+
+## PPL_SAMBURU (FLG_NILOTIQUE)
+- Ethnie 1: Samburu du Nord
+- Ethnie 2: Samburu du Sud
+
+## PPL_SHILLUK (FLG_NILOTIQUE)
+- Ethnie 1: Shilluk du Nord
+- Ethnie 2: Shilluk du Sud
+
+## PPL_SURMANuer) (FLG_NILOTIQUE)
+- Ethnie 1: Surma du Soudan du Sud
+- Ethnie 2: Surma d'Éthiopie
+
+## PPL_TOPOSA (FLG_NILOTIQUE)
+- Ethnie 1: Toposa du Soudan du Sud
+- Ethnie 2: Toposa d'Éthiopie
+
+## PPL_TURKANA (FLG_NILOTIQUE)
+- Ethnie 1: Turkana du Nord
+- Ethnie 2: Turkana du Sud
+
+## PPL_AARI (FLG_OMOTIQUE)
+- Ethnie 1: Aari du nord
+- Ethnie 2: Aari du sud
+- Ethnie 3: Groupes agropastoraux locaux
+
+## PPL_BASKETO (FLG_OMOTIQUE)
+- Ethnie 1: Basketo du centre
+- Ethnie 2: Sous-groupes ruraux
+
+## PPL_BENCH (FLG_OMOTIQUE)
+- Ethnie 1: Bench du Nord
+- Ethnie 2: Bench du Sud
+
+## PPL_DAWRO (FLG_OMOTIQUE)
+- Ethnie 1: Dawro des hautes terres
+- Ethnie 2: Sous-groupes du Dawro sud
+
+## PPL_DIMME (FLG_OMOTIQUE)
+- Ethnie 1: Dimme du Nord
+- Ethnie 2: Dimme du Sud
+
+## PPL_DIZI (FLG_OMOTIQUE)
+- Ethnie 1: Dizi du Nord
+- Ethnie 2: Dizi du Sud
+
+## PPL_GAMO (FLG_OMOTIQUE)
+- Ethnie 1: Tribu Gamo nord
+- Ethnie 2: Gamo sud
+- Ethnie 3: Groupes lacustres du sud-ouest
+
+## PPL_GEDEO (FLG_OMOTIQUE)
+- Ethnie 1: Gedeo du nord
+- Ethnie 2: Gedeo du sud
+
+## PPL_KAFA (FLG_OMOTIQUE)
+- Ethnie 1: Kafa des hautes terres
+- Ethnie 2: Groupes ruraux forestiers
+
+## PPL_KOORETE (FLG_OMOTIQUE)
+- Ethnie 1: Koorete des hautes terres
+- Ethnie 2: Groupes des vallées forestières
+
+## PPL_KOYRA (FLG_OMOTIQUE)
+- Ethnie 1: Koyra du Nord
+- Ethnie 2: Koyra du Sud
+
+## PPL_MAATS (FLG_OMOTIQUE)
+- Ethnie 1: Maats du Nord
+- Ethnie 2: Maats du Sud
+
+## PPL_MALLE (FLG_OMOTIQUE)
+- Ethnie 1: Malle du Nord
+- Ethnie 2: Malle du Sud
+
+## PPL_MEEN (FLG_OMOTIQUE)
+- Ethnie 1: Me'en du Nord
+- Ethnie 2: Me'en du Sud
+
+## PPL_OMOTIQUE_MACRO (FLG_OMOTIQUE)
+- Ethnie 1: Bench
+- Ethnie 2: Dizi
+- Ethnie 3: Me'en
+- Ethnie 4: Dimme
+- Ethnie 5: Koyra
+- Ethnie 6: Maats
+- Ethnie 7: Malle
+- Ethnie 8: Autres groupes omotiques
+
+## PPL_SHEKO (FLG_OMOTIQUE)
+- Ethnie 1: Sheko des hautes terres
+- Ethnie 2: Sous-groupes forestiers
+
+## PPL_WOLAYTA (FLG_OMOTIQUE)
+- Ethnie 1: Wolayta du nord
+- Ethnie 2: Wolayta du sud
+
+## PPL_BERI (FLG_SAHARIEN)
+- Ethnie 1: Beri du Tchad
+- Ethnie 2: Beri du Soudan
+
+## PPL_BIDEYAT (FLG_SAHARIEN)
+- Ethnie 1: Bideyat du Tchad
+- Ethnie 2: Bideyat du Soudan
+
+## PPL_BUDUMA (FLG_SAHARIEN)
+- Ethnie 1: Buduma du Tchad
+- Ethnie 2: Buduma du Niger
+- Ethnie 3: Buduma du Nigeria
+
+## PPL_DAZA (FLG_SAHARIEN)
+- Ethnie 1: Daza du Tchad
+- Ethnie 2: Daza du Niger
+
+## PPL_KANEMBU (FLG_SAHARIEN)
+- Ethnie 1: Kanembu du Nord
+- Ethnie 2: Kanembu du Sud
+
+## PPL_KANURI (FLG_SAHARIEN)
+- Ethnie 1: Kanuri du Nigeria
+- Ethnie 2: Kanuri du Niger
+- Ethnie 3: Kanuri du Tchad
+- Ethnie 4: Kanuri du Cameroun
+
+## PPL_KREDA (FLG_SAHARIEN)
+- Ethnie 1: Kreda du Nord
+- Ethnie 2: Kreda du Sud
+
+## PPL_SAHARIEN_MACRO (FLG_SAHARIEN)
+- Ethnie 1: Kanuri
+- Ethnie 2: Kanembu
+- Ethnie 3: Toubou
+- Ethnie 4: Zaghawa
+- Ethnie 5: Daza
+- Ethnie 6: Teda
+- Ethnie 7: Autres groupes sahariens
+
+## PPL_TEDA (FLG_SAHARIEN)
+- Ethnie 1: Teda du Tchad
+- Ethnie 2: Teda du Niger
+- Ethnie 3: Teda de Libye
+
+## PPL_TOUBOU (FLG_SAHARIEN)
+- Ethnie 1: Teda (Toubou du Nord)
+- Ethnie 2: Daza (Toubou du Sud)
+
+## PPL_YERIMA (FLG_SAHARIEN)
+- Ethnie 1: Yerima du Nord
+- Ethnie 2: Yerima du Sud
+
+## PPL_ZAGHAWA (FLG_SAHARIEN)
+- Ethnie 1: Zaghawa du Tchad
+- Ethnie 2: Zaghawa du Soudan
+- Ethnie 3: Bideyat (sous-groupe)
+
+## PPL_AMHARA (FLG_SEMITIQUE)
+- Ethnie 1: Gojjam Amhara
+- Ethnie 2: Gondar Amhara
+- Ethnie 3: Wollo Amhara
+
+## PPL_ARABES_AFRIQUE (FLG_SEMITIQUE)
+- Ethnie 1: Arabes du Maghreb (Maroc, Algérie, Tunisie, Libye)
+- Ethnie 2: Arabes d'Égypte
+- Ethnie 3: Arabes du Soudan
+- Ethnie 4: Arabes de Mauritanie
+- Ethnie 5: Arabes du Tchad
+- Ethnie 6: Arabes de Djibouti
+- Ethnie 7: Arabes de Somalie
+- Ethnie 8: Arabes des Comores
+- Ethnie 9: Bédouins sahariens
+- Ethnie 10: Communautés arabes diasporiques
+
+## PPL_ARGOBBA (FLG_SEMITIQUE)
+- Ethnie 1: Argobba du Shewa
+- Ethnie 2: Argobba du Harar
+
+## PPL_GURAGE (FLG_SEMITIQUE)
+- Ethnie 1: Soddo Gurage
+- Ethnie 2: Sebat Bet Gurage
+- Ethnie 3: Kistane (Sayete)
+
+## PPL_HABESHA (FLG_SEMITIQUE)
+- Ethnie 1: Amhara
+- Ethnie 2: Tigréens (Tigray)
+- Ethnie 3: Tigré (Érythrée)
+- Ethnie 4: Guragé
+- Ethnie 5: Argobba
+- Ethnie 6: Harari
+- Ethnie 7: Gafat (éteint)
+- Ethnie 8: Geez (éteint, langue liturgique)
+
+## PPL_HARARI (FLG_SEMITIQUE)
+- Ethnie 1: Harari urbains (Adare)
+- Ethnie 2: Groupes harari diasporiques
+
+## PPL_TIGRAY (FLG_SEMITIQUE)
+- Ethnie 1: Akele Guzay
+- Ethnie 2: Enderta
+
+## PPL_TIGRE (FLG_SEMITIQUE)
+- Ethnie 1: Tigré du Nord (région de Sahel)
+- Ethnie 2: Tigré du Sud (région de Semhar)
+- Ethnie 3: Tigré de l'Est (région côtière)
+- Ethnie 4: Tigré de l'Ouest (régions frontalières)
+
+## PPL_DENDI (FLG_SONGHAY)
+- Ethnie 1: Dendi du Bénin
+- Ethnie 2: Dendi du Niger
+- Ethnie 3: Dendi du Nigeria
+
+## PPL_KOYRA_BORO_SEYO (FLG_SONGHAY)
+- Ethnie 1: Koyra Boro Seyo du Nord
+- Ethnie 2: Koyra Boro Seyo du Sud
+
+## PPL_KOYRA_CHIINI (FLG_SONGHAY)
+- Ethnie 1: Koyra Chiini du Nord
+- Ethnie 2: Koyra Chiini du Sud
+
+## PPL_KURTEY (FLG_SONGHAY)
+- Ethnie 1: Kurtey du Nord
+- Ethnie 2: Kurtey du Sud
+
+## PPL_SONGHAY_GURMA (FLG_SONGHAY)
+- Ethnie 1: Songhay Gurma du Burkina Faso
+- Ethnie 2: Songhay Gurma du Bénin
+
+## PPL_SONGHAY_MACRO (FLG_SONGHAY)
+- Ethnie 1: Songhay du Mali
+- Ethnie 2: Zarma du Niger
+- Ethnie 3: Dendi (Bénin, Niger, Nigeria)
+- Ethnie 4: Koyra Chiini (Mali)
+- Ethnie 5: Koyra Boro Seyo (Mali)
+- Ethnie 6: Songhay Gurma (Burkina Faso, Bénin)
+- Ethnie 7: Autres groupes songhay
+
+## PPL_SONGHAY_NIGERIEN (FLG_SONGHAY)
+- Ethnie 1: Songhay du Nord (Niger)
+- Ethnie 2: Songhay du Sud (Niger)
+
+## PPL_WOGO (FLG_SONGHAY)
+- Ethnie 1: Wogo du Nord
+- Ethnie 2: Wogo du Sud
+
+## PPL_ZARMA (FLG_SONGHAY)
+- Ethnie 1: Zarma du Niger
+- Ethnie 2: Zarma du Nigeria
+
+## PPL_ARINGA (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Aringa du Nord
+- Ethnie 2: Aringa du Sud
+
+## PPL_AZANDE_SUD (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Azande du Soudan du Sud
+- Ethnie 2: Azande de RDC
+- Ethnie 3: Azande de RCA
+
+## PPL_BANDA (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Banda de RCA
+- Ethnie 2: Banda de RDC
+- Ethnie 3: Banda du Soudan du Sud
+
+## PPL_BARMA (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Barma du Nord
+- Ethnie 2: Barma du Sud
+
+## PPL_BELANDA (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Belanda du Nord
+- Ethnie 2: Belanda du Sud
+
+## PPL_BONGO (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Bongo du Nord
+- Ethnie 2: Bongo du Sud
+
+## PPL_FURU (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Furu du Nord
+- Ethnie 2: Furu du Sud
+
+## PPL_KAKWA (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Kakwa d'Ouganda
+- Ethnie 2: Kakwa du Soudan du Sud
+- Ethnie 3: Kakwa de RDC
+
+## PPL_KRESH (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Kresh du Nord
+- Ethnie 2: Kresh du Sud
+
+## PPL_LUGBARA (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Lugbara d'Ouganda
+- Ethnie 2: Lugbara de RDC
+
+## PPL_MADI (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Madi d'Ouganda
+- Ethnie 2: Madi du Soudan du Sud
+
+## PPL_MANGBETU (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Mangbetu du Nord
+- Ethnie 2: Mangbetu du Sud
+
+## PPL_MORU (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Moru du Nord
+- Ethnie 2: Moru du Sud
+
+## PPL_NDAI (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Ndai du Nord
+- Ethnie 2: Ndai du Sud
+
+## PPL_NGBANDE (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Ngbande de RCA
+- Ethnie 2: Ngbande de RDC
+
+## PPL_SANGO_SCT (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Sango du Nord
+- Ethnie 2: Sango du Sud
+
+## PPL_SARA (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Sara du Tchad
+- Ethnie 2: Sara de RCA
+
+## PPL_SCT_MACRO (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Lugbara
+- Ethnie 2: Mangbetu
+- Ethnie 3: Sara
+- Ethnie 4: Azande
+- Ethnie 5: Banda
+- Ethnie 6: Madi
+- Ethnie 7: Moru
+- Ethnie 8: Autres groupes soudaniques centraux
+
+## PPL_YULI (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Yuli du Nord
+- Ethnie 2: Yuli du Sud
+
+## PPL_ZANDE (FLG_SOUDANIQUECENTRAL)
+- Ethnie 1: Zande du Soudan du Sud
+- Ethnie 2: Zande de RDC
+- Ethnie 3: Zande de RCA
+
+## PPL_BABUR (FLG_TCHADIQUE)
+- Ethnie 1: Babur du Nord
+- Ethnie 2: Babur du Sud
+
+## PPL_BADE (FLG_TCHADIQUE)
+- Ethnie 1: Bade du Nord
+- Ethnie 2: Bade du Sud
+
+## PPL_BIDYOGO (FLG_TCHADIQUE)
+- Ethnie 1: Bidyogo du Nord
+- Ethnie 2: Bidyogo du Sud
+
+## PPL_BOLIWA (FLG_TCHADIQUE)
+- Ethnie 1: Boliwa du Nord
+- Ethnie 2: Boliwa du Sud
+
+## PPL_BURA (FLG_TCHADIQUE)
+- Ethnie 1: Bura du Nord
+- Ethnie 2: Bura du Sud
+
+## PPL_GIZIGA (FLG_TCHADIQUE)
+- Ethnie 1: Giziga Nord
+- Ethnie 2: Giziga Sud
+
+## PPL_GUWA (FLG_TCHADIQUE)
+- Ethnie 1: Guwa du Nord
+- Ethnie 2: Guwa du Sud
+
+## PPL_GWANDARA (FLG_TCHADIQUE)
+- Ethnie 1: Gwandara du Nord
+- Ethnie 2: Gwandara du Sud
+
+## PPL_HAUSA (FLG_TCHADIQUE)
+- Ethnie 1: Kano
+- Ethnie 2: Katsina
+- Ethnie 3: Zaria (Zazzau)
+
+## PPL_JARAWA (FLG_TCHADIQUE)
+- Ethnie 1: Jarawa du Nord
+- Ethnie 2: Jarawa du Sud
+
+## PPL_KENGA (FLG_TCHADIQUE)
+- Ethnie 1: Kenga du Nord
+- Ethnie 2: Kenga du Sud
+
+## PPL_KERA (FLG_TCHADIQUE)
+- Ethnie 1: Kera du Tchad
+- Ethnie 2: Kera du Cameroun
+
+## PPL_LAGWAN (FLG_TCHADIQUE)
+- Ethnie 1: Lagwan du Tchad
+- Ethnie 2: Lagwan du Cameroun
+
+## PPL_MAFA (FLG_TCHADIQUE)
+- Ethnie 1: Mafa des Monts Mandara
+- Ethnie 2: Variantes locales villageoises
+
+## PPL_MANDARA (FLG_TCHADIQUE)
+- Ethnie 1: Wandala du Cameroun
+- Ethnie 2: Mandara du Nigeria
+
+## PPL_MANGA (FLG_TCHADIQUE)
+- Ethnie 1: Manga du Nord
+- Ethnie 2: Manga du Sud
+
+## PPL_MARGI (FLG_TCHADIQUE)
+- Ethnie 1: Margi du Nord
+- Ethnie 2: Margi du Sud
+
+## PPL_MASA (FLG_TCHADIQUE)
+- Ethnie 1: Masa du Tchad
+- Ethnie 2: Masa du Cameroun
+
+## PPL_MBOGO (FLG_TCHADIQUE)
+- Ethnie 1: Mbogo du Nord
+- Ethnie 2: Mbogo du Sud
+
+## PPL_MOBE (FLG_TCHADIQUE)
+- Ethnie 1: Mobe du Nord
+- Ethnie 2: Mobe du Sud
+
+## PPL_MOFU (FLG_TCHADIQUE)
+- Ethnie 1: Mofu-Gudur
+- Ethnie 2: Mofu-Duvangar
+- Ethnie 3: Mofu-Meri
+- Ethnie 4: Mofu-Mokyo
+- Ethnie 5: (Les variantes correspondent à des villages ou massifs distincts.)*
+
+## PPL_MUSGU (FLG_TCHADIQUE)
+- Ethnie 1: Musgum du Cameroun
+- Ethnie 2: Musgum du Tchad
+
+## PPL_NGIZIM (FLG_TCHADIQUE)
+- Ethnie 1: Ngizim du Nord
+- Ethnie 2: Ngizim du Sud
+
+## PPL_PODOKO (FLG_TCHADIQUE)
+- Ethnie 1: Podoko du Nigeria
+- Ethnie 2: Podoko du Cameroun
+
+## PPL_SOKORO (FLG_TCHADIQUE)
+- Ethnie 1: Sokoro du Nord
+- Ethnie 2: Sokoro du Sud
+
+## PPL_TERA (FLG_TCHADIQUE)
+- Ethnie 1: Tera du Nord
+- Ethnie 2: Tera du Sud
+
+## PPL_GHOWA (FLG_TUU)
+- Ethnie 1: Gǀowa du Nord
+- Ethnie 2: Gǀowa du Sud
+
+## PPL_KATIA (FLG_TUU)
+- Ethnie 1: Katia du Nord
+- Ethnie 2: Katia du Sud
+
+## PPL_NUU (FLG_TUU)
+- Ethnie 1: Nǀuu d'Afrique du Sud
+- Ethnie 2: Nǀuu du Botswana
+
+## PPL_TAA (FLG_TUU)
+- Ethnie 1: ǃXóõ du Nord (Botswana)
+- Ethnie 2: ǃXóõ du Sud (Botswana)
+- Ethnie 3: ǃXóõ de l'Est
+
+## PPL_TUU_MACRO (FLG_TUU)
+- Ethnie 1: ǃXóõ (Taa) - vivant
+- Ethnie 2: Nǀuu - en danger critique
+- Ethnie 3: ǀXam - éteint
+- Ethnie 4: Autres groupes Tuu
+
+## PPL_WEST_TAA (FLG_TUU)
+- Ethnie 1: West Taa du Nord
+- Ethnie 2: West Taa du Sud
+
+## PPL_XAM (FLG_TUU)
+- Ethnie 1: ǀXam du Nord
+- Ethnie 2: ǀXam du Sud
+- Ethnie 3: Sous-groupes régionaux (tous éteints)
+

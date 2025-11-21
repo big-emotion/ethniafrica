@@ -1,0 +1,20 @@
+# Peuple : PPL_TURKANA
+- Nom principal : Turkana
+- Auto-appellation (peuple) : Turkana
+- Famille linguistique : FLG_NILOTIQUE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Turkana du Nord
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Turkana du Sud
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

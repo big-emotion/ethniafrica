@@ -1,0 +1,20 @@
+# Peuple : PPL_KOYRA_CHIINI
+- Nom principal : Koyra Chiini
+- Auto-appellation (peuple) : Koyra Chiini
+- Famille linguistique : FLG_SONGHAY
+
+## Ethnies validées (liste initiale)
+- Ethnie : Koyra Chiini du Nord
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Koyra Chiini du Sud
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

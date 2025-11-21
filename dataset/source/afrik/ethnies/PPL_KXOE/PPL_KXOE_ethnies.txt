@@ -1,0 +1,20 @@
+# Peuple : PPL_KXOE
+- Nom principal : Kxoe
+- Auto-appellation (peuple) : Kxoe
+- Famille linguistique : FLG_KHOE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Kxoe du Botswana
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Kxoe de Namibie
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

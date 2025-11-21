@@ -1,0 +1,25 @@
+# Peuple : PPL_FON
+- Nom principal : N/A
+- Auto-appellation (peuple) : Fɔ̀ngbè / Fon
+- Famille linguistique : FLG_BENOUECONGO
+
+## Ethnies validées (liste initiale)
+- Ethnie : Fon d’Abomey
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Fon de Porto-Novo
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Sous-groupes Mahoun, Gun, Maxi (selon zones)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

@@ -1,0 +1,20 @@
+# Peuple : PPL_JUHOANSI
+- Nom principal : Ju|'hoansi
+- Auto-appellation (peuple) : Ju|'hoansi
+- Famille linguistique : FLG_KXA
+
+## Ethnies validées (liste initiale)
+- Ethnie : Ju|'hoansi du Nord (Namibie)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Ju|'hoansi du Sud (Botswana)
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

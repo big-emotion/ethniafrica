@@ -1,0 +1,25 @@
+# Peuple : PPL_KAKWA
+- Nom principal : Kakwa
+- Auto-appellation (peuple) : Kakwa
+- Famille linguistique : FLG_SOUDANIQUECENTRAL
+
+## Ethnies validées (liste initiale)
+- Ethnie : Kakwa d'Ouganda
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Kakwa du Soudan du Sud
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Kakwa de RDC
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

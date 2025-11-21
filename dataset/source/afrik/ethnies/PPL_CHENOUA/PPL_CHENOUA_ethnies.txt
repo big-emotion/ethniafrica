@@ -1,0 +1,20 @@
+# Peuple : PPL_CHENOUA
+- Nom principal : Chenoua
+- Auto-appellation (peuple) : Ic̱enwa / Ach-chinwa (variantes locales)
+- Famille linguistique : FLG_BERBERE
+
+## Ethnies validées (liste initiale)
+- Ethnie : Communautés berbérophones de Tipasa
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Groupes des environs de Cherchell
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.

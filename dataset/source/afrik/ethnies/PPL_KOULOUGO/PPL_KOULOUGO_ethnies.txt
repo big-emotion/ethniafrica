@@ -1,0 +1,20 @@
+# Peuple : PPL_KOULOUGO
+- Nom principal : N/A
+- Auto-appellation (peuple) : Kulango / Koulango
+- Famille linguistique : FLG_GUR
+
+## Ethnies validées (liste initiale)
+- Ethnie : Koulango du Nord-Est ivoirien
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+- Ethnie : Sous-groupes ruraux de Bondoukou
+  - Auto-appellation : N/A (à compléter via recherche)
+  - Exonymes sensibles : N/A (à documenter)
+  - Pays / régions principaux : À confirmer
+  - Sources : À compléter (voir instruction)
+
+### Notes
+- Liste issue du fichier peuple, en attente de validation scientifique.
+- Appliquer la procédure `_instruction_recherche_ethnies.md` avant publication.
