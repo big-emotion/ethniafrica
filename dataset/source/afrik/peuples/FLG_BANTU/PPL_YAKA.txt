@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Yaka (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone H)
-- Région historique : RDC, Angola
-- Pays actuels : République démocratique du Congo, Angola
+- Région historique : COD, AGO
+- Pays actuels : République démocratique du COG, AGO
 - Identifiant peuple (ID) : PPL_YAKA
 
 # 1. Ethnies incluses dans le peuple

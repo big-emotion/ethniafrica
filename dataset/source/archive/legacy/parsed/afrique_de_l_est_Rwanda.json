@@ -1,0 +1,60 @@
+{
+  "countryName": "Rwanda",
+  "region": "afrique_de_l_est",
+  "ethnicities": [
+    {
+      "groupName": "Hutu",
+      "subGroups": [],
+      "population": 12179616,
+      "percentageInCountry": 84,
+      "percentageInAfrica": 0.796953,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Tutsi",
+      "subGroups": [],
+      "population": 2174931,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 0.142313,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Twa (Pygmées)",
+      "subGroups": [],
+      "population": 144995,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.009488,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

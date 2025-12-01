@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Ovambo (terme utilisé par les Européens), Ambo
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone R)
-- Région historique : Nord de la Namibie, Sud de l'Angola
-- Pays actuels : Namibie, Angola
+- Région historique : Nord de la NAM, Sud de l'Angola
+- Pays actuels : NAM, AGO
 - Identifiant peuple (ID) : PPL_OVAMBO
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Ovambo languages (kwn)
-- CIA World Factbook – Namibia, Angola
+- CIA World Factbook – Namibia, AGO
 - Recensements nationaux
 - Études anthropologiques sur les peuples bantous
 

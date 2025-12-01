@@ -7,7 +7,7 @@
 - Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
 - Groupe ethno-linguistique : Krou occidental
 - Région historique : Côte du Libéria
-- Pays actuels : Libéria
+- Pays actuels : LBR
 - Identifiant peuple (ID) : PPL_KRU
 
 # 1. Ethnies incluses dans le peuple

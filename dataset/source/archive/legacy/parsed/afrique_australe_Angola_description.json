@@ -1,0 +1,36 @@
+{
+  "countryName": "Angola",
+  "region": "afrique_australe",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "aucun nom unifié ; territoire composé des peuples Khoisan",
+        "Ovimbundu",
+        "Mbundu",
+        "Kongo",
+        "Lunda",
+        "Chokwe"
+      ]
+    },
+    {
+      "period": "Noms pré-coloniaux issus des royaumes",
+      "names": ["Ndongo", "Kongo", "Lunda"]
+    },
+    {
+      "period": "1575–1975",
+      "names": ["Colónia de Angola (période coloniale portugaise)"]
+    },
+    {
+      "period": "1975",
+      "names": ["République populaire d’Angola"]
+    },
+    {
+      "period": "Depuis les années 1990",
+      "names": ["République d’Angola"]
+    }
+  ],
+  "description": "",
+  "ethnicGroupsSummary": "- Ovimbundu (~37 %) : agriculteurs des hauts plateaux du centre-sud.\n- Mbundu / Ambundu (~25 %) : autour de Luanda, héritiers du Royaume Ndongo.\n- Bakongo (~13 %) : héritiers du Royaume Kongo.",
+  "ethnicities": []
+}

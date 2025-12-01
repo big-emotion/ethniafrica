@@ -5,7 +5,7 @@
 - Famille linguistique principale : Créole (FLG_CREOLE)
 - Groupe ethno-linguistique : Créole afro-portugais
 - Région historique : Guinée-Bissau
-- Pays actuels : Guinée-Bissau
+- Pays actuels : GIN-Bissau
 - Identifiant peuple (ID) : PPL_PAPELO
 
 # 1. Ethnies incluses dans le peuple

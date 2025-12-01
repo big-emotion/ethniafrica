@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Krou
 - Région historique : Centre-Ouest de la Côte d'Ivoire
-- Pays actuels : Côte d'Ivoire
+- Pays actuels : CIV
 - Identifiant peuple (ID) : PPL_BETE
 
 # 1. Ethnies incluses dans le peuple

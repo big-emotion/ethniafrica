@@ -5,7 +5,7 @@
 - Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe : Bantous du Kenya (Mont Kenya)
 - Région historique : Pentes sud-est du Mont Kenya
-- Pays actuels : Kenya
+- Pays actuels : KEN
 - Identifiant : PPL_EMBU
 
 # 1. Ethnies incluses

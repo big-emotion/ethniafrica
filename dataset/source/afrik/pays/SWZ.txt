@@ -1,0 +1,93 @@
+# Nom du pays
+- Nom officiel actuel : Royaume d'Eswatini (Kingdom of Eswatini, Umbuso weSwatini)
+- Étymologie du nom : Le nom "Eswatini" signifie "pays des Swazi" en langue swati. Il s'agit du nom traditionnel du royaume. Le nom "Swaziland" était le nom colonial britannique (combinaison de "Swazi" et "land"). Le pays a officiellement changé de nom de "Swaziland" à "Eswatini" en 2018 pour retrouver son appellation d'origine.
+- Personne / peuple / administration à l'origine du nom : Le nom "Eswatini" est le nom traditionnel du royaume swazi. Le nom "Swaziland" a été donné par les Britanniques lors de la colonisation. Le roi Mswati III a officiellement changé le nom du pays de "Swaziland" à "Eswatini" en 2018 pour restaurer le nom traditionnel.
+- Identifiant pays (ISO 3166-1 alpha-3) : SWZ
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel d'Eswatini était peuplé de peuples bantous sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations bantoues vers la région. Développement de chefferies locales. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Formation du royaume swazi au XVIIIe siècle sous le roi Ngwane III. Le royaume était connu sous le nom traditionnel "Eswatini" (pays des Swazi). Expansion du royaume swazi, résistance aux Zoulous et aux Boers.
+- Colonisation : 1903-1968 : Protectorat britannique du Swaziland. Les Britanniques ont établi un protectorat sur le Swaziland en 1903. Le nom "Swaziland" (combinaison de "Swazi" et "land") a été officialisé par les Britanniques. Le territoire était administré comme un protectorat britannique jusqu'à l'indépendance en 1968.
+- Période contemporaine : 1968 : Indépendance du Swaziland (6 septembre 1968), proclamation du royaume du Swaziland. 2018 : Changement de nom officiel de "Swaziland" à "Eswatini" (19 avril 2018), restauration du nom traditionnel par le roi Mswati III.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume swazi] :
+  - Période : XVIIIe siècle - présent
+  - Peuples dominants : Swazi
+  - Centres politiques : Lobamba (capitale royale), Mbabane (capitale administrative)
+  - Rôle historique : Royaume swazi traditionnel, système monarchique absolu, traditions culturelles swazi (Incwala, Umhlanga). Le royaume a résisté à la colonisation et a maintenu son indépendance relative sous protectorat britannique. Le roi Ngwane III est considéré comme le fondateur du royaume moderne.
+
+- [Protectorat britannique du Swaziland] :
+  - Période : 1903 - 1968
+  - Peuples dominants : Tous les peuples swazi sous protectorat britannique
+  - Centres politiques : Mbabane (capitale administrative)
+  - Rôle historique : Protectorat britannique, développement de l'administration coloniale, préservation relative de l'autonomie du royaume swazi. Résistance aux pressions coloniales. Développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Swazi
+  - Auto-appellation (endonyme) : Swazi
+  - Exonymes / appellations historiques : Swazi (terme utilisé par les Européens), parfois appelés "Swati" (terme alternatif)
+  - Identifiant peuple (PPL_) : PPL_SWAZI
+  - Région principale : Toutes les régions d'Eswatini
+  - Langues parlées : Swati / Swazi (ssw, ISO 639-3), anglais, afrikaans
+  - Famille linguistique : Niger-Congo – Bantou (Zone S) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Swazi" est l'auto-appellation. "Swati" est un terme alternatif accepté. Pas de terme péjoratif connu.
+
+- Peuple 2 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes d'origine
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Zones urbaines, régions frontalières
+  - Langues parlées : Langues d'origine, swati, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation selon son origine (Zoulou, Tsonga, autres peuples bantous, etc.). Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Swati / Swazi (ssw, langue nationale), Anglais (eng, langue officielle), Afrikaans (afr)
+- Traditions culturelles : Traditions culturelles swazi riches et préservées. Cérémonies royales traditionnelles (Incwala, cérémonie des premiers fruits), Umhlanga (cérémonie du roseau, danse des jeunes filles). Musique et danse traditionnelles swazi. Artisanat traditionnel (vannerie, poterie, tissage). Architecture traditionnelle (huttes rondes). Système monarchique absolu avec traditions ancestrales.
+- Religions dominantes : Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, croyances traditionnelles)
+- Modes de vie : Agriculture (maïs, sorgho, cultures vivrières), élevage (bovins, importance symbolique du bétail), commerce et activités urbaines (zones urbaines, Mbabane, Manzini). Urbanisation modérée. Économie basée sur l'agriculture, l'élevage, l'exploitation forestière, et les services. Dépendance économique importante de l'Afrique du Sud.
+- Organisation sociale : Organisation en royaume traditionnel (système monarchique absolu), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle central du roi (Ngwenyama, "le lion") et de la reine mère (Ndlovukati, "l'éléphant"). Système de conseils traditionnels (Ligogo). Traditions d'initiation et de passage à l'âge adulte.
+- Relations régionales : Relations historiques avec l'Afrique du Sud (commerce, migrations, dépendance économique), le Mozambique (frontière, commerce). Intégration dans la SADC (Communauté de développement d'Afrique australe). Relations commerciales et culturelles transfrontalières. Dépendance économique importante de l'Afrique du Sud.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales.
+- Moyen Âge : Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.
+- Époque précoloniale : XVIIIe siècle : Formation du royaume swazi sous le roi Ngwane III. Expansion du royaume swazi. Résistance aux Zoulous et aux Boers. Consolidation du royaume traditionnel. Développement des traditions culturelles swazi.
+- Colonisation : 1903 : Établissement du protectorat britannique du Swaziland. Période coloniale britannique (1903-1968), développement de l'administration coloniale, préservation relative de l'autonomie du royaume swazi. Résistance aux pressions coloniales. XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1960s : Mouvement pour l'indépendance mené par les dirigeants swazi. 1968 : Indépendance du Swaziland (6 septembre 1968), proclamation du royaume du Swaziland. Le roi Sobhuza II devient monarque absolu.
+- Période post-indépendance : 1968-1982 : Règne du roi Sobhuza II, abolition de la constitution, établissement du système monarchique absolu. 1982-présent : Règne du roi Mswati III (depuis 1986). Défis : pauvreté, inégalités sociales, VIH/sida, dépendance économique de l'Afrique du Sud. 2018 : Changement de nom officiel de "Swaziland" à "Eswatini" (19 avril 2018), restauration du nom traditionnel. L'Eswatini est l'un des derniers royaumes absolus d'Afrique.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Eswatini
+- CIA World Factbook – Eswatini
+- ONU / UNFPA – Démographie Eswatini 2025
+- Kuper, Hilda – "An African Aristocracy: Rank among the Swazi"
+- Marwick, Brian Allan – "The Swazi: An Ethnographic Account of the Natives of the Swaziland Protectorate"
+- Recensements eswatinis
+- Études anthropologiques sur les peuples swazi
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Swazi
+- Identifiant peuple (PPL_) : PPL_SWAZI
+- Population : 1 200 000
+- Pourcentage dans le pays : 97%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions d'Eswatini
+- Famille linguistique : Niger-Congo – Bantou (Zone S) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : ssw
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 40 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Zones urbaines, régions frontalières
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Eswatini 2025 : 1 240 000 (estimations ONU/UNFPA)**
+

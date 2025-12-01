@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Lomwe (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone P)
-- Région historique : Mozambique, Malawi
-- Pays actuels : Mozambique, Malawi
+- Région historique : MOZ, MWI
+- Pays actuels : MOZ, MWI
 - Identifiant peuple (ID) : PPL_LOMWE
 
 # 1. Ethnies incluses dans le peuple

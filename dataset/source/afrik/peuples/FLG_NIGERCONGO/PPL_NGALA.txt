@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Ngala (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone C)
-- Région historique : RDC, Congo
-- Pays actuels : RDC, Congo
+- Région historique : COD, COG
+- Pays actuels : COD, COG
 - Identifiant peuple (ID) : PPL_NGALA
 
 # 1. Ethnies incluses dans le peuple

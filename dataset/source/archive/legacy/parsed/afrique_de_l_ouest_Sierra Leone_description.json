@@ -1,0 +1,45 @@
+{
+  "countryName": "Sierra Leone",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "territoires Mende",
+        "Temne",
+        "Limba",
+        "Kono",
+        "Loko",
+        "Krim",
+        "Sherbro",
+        "Fulla",
+        "Susu ; aucune entité nationale unifiée"
+      ]
+    },
+    {
+      "period": "XVe siècle",
+      "names": ["Serra Lyoa / Serra Leoa", "Montagnes du Lion"]
+    },
+    {
+      "period": "XVIIe–XVIIIe siècle",
+      "names": ["zones de traite atlantique sur la côte"]
+    },
+    {
+      "period": "1787",
+      "names": [
+        "fondation de Freetown comme colonie pour anciens esclaves libérés (Black Poor",
+        "Nova Scotians)"
+      ]
+    },
+    {
+      "period": "XIXe siècle",
+      "names": ["Protectorat britannique sur l’intérieur"]
+    },
+    {
+      "period": "1961",
+      "names": ["Indépendance — Sierra Leone"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

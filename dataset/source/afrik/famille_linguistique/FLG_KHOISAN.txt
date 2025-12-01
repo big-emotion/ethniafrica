@@ -46,9 +46,9 @@
   Faible : plusieurs langues ont < 5 000 locuteurs
 
 # 2. Peuples associés
-- Peuple 1 : Nama (Khoekhoe)
-- Peuple 2 : Ju|’hoansi
-- Peuple 3 : ǃXóõ
+- Peuple 1 : Nama (Khoekhoe) (PPL_NAMA)
+- Peuple 2 : Ju|'hoansi (PPL_JUHOANSI)
+- Peuple 3 : ǃXóõ (PPL_XOO)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Nama  

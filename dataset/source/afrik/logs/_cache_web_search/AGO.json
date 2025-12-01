@@ -1,0 +1,487 @@
+{
+  "countryCode": "AGO",
+  "countryName": "République d'Angola",
+  "peoples": [
+    {
+      "name": "Ovimbundu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Ambundu",
+      "alternativeNames": ["Mbundu"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre-Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Kongo",
+      "alternativeNames": ["Bakongo"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Tshokwe",
+      "alternativeNames": ["Chokwe"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyaneka-Nkhumbi",
+      "alternativeNames": ["Nyaneka", "Nkhumbi"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Ganguela",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Khoisan",
+      "alternativeNames": ["San", "Khoikhoi"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KHOE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Ovambo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Herero",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Himba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyaneka",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Nkhumbi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Humbe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucubal",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucahona",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucuissi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucuval",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucubal",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucuissi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucuval",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucuissi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mucuval",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwena",
+      "alternativeNames": ["Luvale"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Luchazi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Mbunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwimbi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda-Ndembu",
+      "alternativeNames": ["Ndembu"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda-Chokwe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Songo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Minungu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwena",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Luchazi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Mbunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwimbi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nganguela",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Luchazi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Mbunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwimbi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwena",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Luchazi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Mbunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwimbi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Kimbundu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre-Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Kikongo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Umbundu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Chokwe",
+      "alternativeNames": ["Tshokwe"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwena",
+      "alternativeNames": ["Luvale"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Luchazi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Mbunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwimbi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nganguela",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda-Ndembu",
+      "alternativeNames": ["Ndembu"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda-Chokwe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Songo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Minungu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "San",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KHOE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Khoikhoi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KHOE",
+      "region": "Sud",
+      "source": "web_search"
+    }
+  ],
+  "timestamp": "2025-11-30T19:43:45.409Z",
+  "sourcesUsed": ["web_search"],
+  "sourcesPending": [
+    "CIA World Factbook",
+    "Ethnologue",
+    "UNESCO",
+    "IWGIA",
+    "Encyclopaedia Africana"
+  ]
+}

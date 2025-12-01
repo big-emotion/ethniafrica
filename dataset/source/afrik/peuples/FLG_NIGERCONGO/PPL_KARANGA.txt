@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
 - Région historique : Sud du Zimbabwe
-- Pays actuels : Zimbabwe
+- Pays actuels : ZWE
 - Identifiant peuple (ID) : PPL_KARANGA
 
 # 1. Ethnies incluses dans le peuple

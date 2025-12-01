@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Lugbara (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central (Moru-Madi)
-- Région historique : Ouganda, RDC
-- Pays actuels : Ouganda, République démocratique du Congo
+- Région historique : UGA, COD
+- Pays actuels : UGA, République démocratique du Congo
 - Identifiant peuple (ID) : PPL_LUGBARA
 
 # 1. Ethnies incluses dans le peuple

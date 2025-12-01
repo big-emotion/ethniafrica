@@ -1,0 +1,584 @@
+{
+  "countryName": "Côte d’Ivoire",
+  "region": "afrique_de_l_ouest",
+  "countryDescription": {
+    "countryName": "Côte d’Ivoire",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "royaumes Akan (Baoulé",
+          "Agni",
+          "Abron)",
+          "peuples Krou (Bété",
+          "Wé",
+          "Dida)",
+          "Mandé du Nord (Malinké",
+          "Dioula)",
+          "Mandé du Sud (Dan",
+          "Gouro",
+          "Wan)",
+          "peuples voltaiques (Sénoufo",
+          "Lobi",
+          "Koulango)"
+        ]
+      },
+      {
+        "period": "XVe siècle",
+        "names": ["Côte d", "(Costa do Marfim), lié au commerce de l"]
+      },
+      {
+        "period": "1893",
+        "names": ["Colonie de Côte d’Ivoire (AOF)"]
+      },
+      {
+        "period": "Depuis 1960",
+        "names": ["République de Côte d’Ivoire (nom non traduit)"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Akan (~42 %) : Baoulé, Agni, Abron, Attié.\n- Voltaïques / Gur (~17 %) : Sénoufo, Lobi, Koulango.\n- Mandé du Nord (~16 %) : Malinké, Dioula, Bambara.\n- Mandé du Sud (~10 %) : Dan/Yacouba, Gouro, Wan.\n- Krou (~11 %) : Bété, Dida, Wé (Guéré, Wobé).\n- Autres (~4 %) : migrants régionaux et groupes urbains.",
+    "notes": "- Les Baoulé forment l’un des groupes les plus influents du pays.",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Akan",
+      "subGroups": [
+        {
+          "name": "Baoulé",
+          "population": 2706667,
+          "percentageInCountry": 9.33333448275862,
+          "percentageInAfrica": 0.18927735664334974
+        },
+        {
+          "name": "Agni",
+          "population": 2706667,
+          "percentageInCountry": 9.33333448275862,
+          "percentageInAfrica": 0.18927735664334974
+        },
+        {
+          "name": "Abron",
+          "population": 2706667,
+          "percentageInCountry": 9.33333448275862,
+          "percentageInAfrica": 0.18927735664334974
+        }
+      ],
+      "population": 8120000,
+      "percentageInCountry": 28,
+      "percentageInAfrica": 0.567832,
+      "languages": ["Baoulé", "Agni"],
+      "region": "Centre, Est (Yamoussoukro, Abengourou)",
+      "sources": ["INS Côte d’Ivoire", "histoire akan"],
+      "ancientName": "Royaumes Akan (Baoulé, Agni)",
+      "description": "Grand groupe matrilinéaire, agriculteurs et commerçants",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Kwa (Niger-Congo)",
+      "historicalStatus": "Royaumes Akan",
+      "regionalPresence": ["Côte d’Ivoire", "Ghana"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Baoulé",
+          "population": 2706667,
+          "percentageInCountry": 9.33333448275862,
+          "percentageInAfrica": 0.18927735664334974
+        },
+        {
+          "name": "Agni",
+          "population": 2706667,
+          "percentageInCountry": 9.33333448275862,
+          "percentageInAfrica": 0.18927735664334974
+        },
+        {
+          "name": "Abron",
+          "population": 2706667,
+          "percentageInCountry": 9.33333448275862,
+          "percentageInAfrica": 0.18927735664334974
+        }
+      ]
+    },
+    {
+      "groupName": "Mandé du Nord",
+      "subGroups": [
+        {
+          "name": "Sénoufo",
+          "population": 1643333,
+          "percentageInCountry": 5.66666551724138,
+          "percentageInAfrica": 0.11491831002332657
+        },
+        {
+          "name": "Mandé",
+          "population": 1643333,
+          "percentageInCountry": 5.66666551724138,
+          "percentageInAfrica": 0.11491831002332657
+        },
+        {
+          "name": "Tagwana",
+          "population": 1643333,
+          "percentageInCountry": 5.66666551724138,
+          "percentageInAfrica": 0.11491831002332657
+        }
+      ],
+      "population": 4930000,
+      "percentageInCountry": 17,
+      "percentageInAfrica": 0.344755,
+      "languages": ["Sénoufo", "Mandé"],
+      "region": "Nord (Korhogo, Boundiali)",
+      "sources": ["Sources ethnologiques"],
+      "ancientName": "Royaume du Kénédougou",
+      "description": "Peuples agricoles du Nord",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Gur & Mandé",
+      "historicalStatus": "Royaumes sénoufo",
+      "regionalPresence": ["Mali", "Burkina Faso", "Côte d'Ivoire"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Sénoufo",
+          "population": 1643333,
+          "percentageInCountry": 5.66666551724138,
+          "percentageInAfrica": 0.11491831002332657
+        },
+        {
+          "name": "Mandé",
+          "population": 1643333,
+          "percentageInCountry": 5.66666551724138,
+          "percentageInAfrica": 0.11491831002332657
+        },
+        {
+          "name": "Tagwana",
+          "population": 1643333,
+          "percentageInCountry": 5.66666551724138,
+          "percentageInAfrica": 0.11491831002332657
+        }
+      ]
+    },
+    {
+      "groupName": "Mandé du Sud",
+      "subGroups": [
+        {
+          "name": "Dioula",
+          "population": 1546667,
+          "percentageInCountry": 5.33333448275862,
+          "percentageInAfrica": 0.10815868997672413
+        },
+        {
+          "name": "Bambara",
+          "population": 1546667,
+          "percentageInCountry": 5.33333448275862,
+          "percentageInAfrica": 0.10815868997672413
+        },
+        {
+          "name": "Gban",
+          "population": 1546667,
+          "percentageInCountry": 5.33333448275862,
+          "percentageInAfrica": 0.10815868997672413
+        }
+      ],
+      "population": 4640000,
+      "percentageInCountry": 16,
+      "percentageInAfrica": 0.324476,
+      "languages": ["Dioula"],
+      "region": "Nord-Ouest, Centre-Ouest",
+      "sources": ["Histoire mandé"],
+      "ancientName": "Empire du Mali",
+      "description": "Commerçants et agriculteurs, islamisés tôt",
+      "societyType": "Urbaine & sédentaire",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Empire du Mali",
+      "regionalPresence": ["Côte d’Ivoire", "Mali", "Guinée"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Dioula",
+          "population": 1546667,
+          "percentageInCountry": 5.33333448275862,
+          "percentageInAfrica": 0.10815868997672413
+        },
+        {
+          "name": "Bambara",
+          "population": 1546667,
+          "percentageInCountry": 5.33333448275862,
+          "percentageInAfrica": 0.10815868997672413
+        },
+        {
+          "name": "Gban",
+          "population": 1546667,
+          "percentageInCountry": 5.33333448275862,
+          "percentageInAfrica": 0.10815868997672413
+        }
+      ]
+    },
+    {
+      "groupName": "Krou",
+      "subGroups": [
+        {
+          "name": "Bété",
+          "population": 797500,
+          "percentageInCountry": 2.75,
+          "percentageInAfrica": 0.05576925
+        },
+        {
+          "name": "Dida",
+          "population": 797500,
+          "percentageInCountry": 2.75,
+          "percentageInAfrica": 0.05576925
+        },
+        {
+          "name": "Wé",
+          "population": 797500,
+          "percentageInCountry": 2.75,
+          "percentageInAfrica": 0.05576925
+        },
+        {
+          "name": "Guéré",
+          "population": 797500,
+          "percentageInCountry": 2.75,
+          "percentageInAfrica": 0.05576925
+        }
+      ],
+      "population": 3190000,
+      "percentageInCountry": 11,
+      "percentageInAfrica": 0.223077,
+      "languages": ["Bété", "Wé"],
+      "region": "Sud-Ouest (Gagnoa, Man)",
+      "sources": ["Ethnologie krou"],
+      "ancientName": "Royaumes et chefferies Krou",
+      "description": "Peuples forestiers du Sud-Ouest",
+      "societyType": "Forestière",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Krou (Niger-Congo)",
+      "historicalStatus": "Chefferies Krou",
+      "regionalPresence": ["Côte d’Ivoire", "Libéria"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Bété",
+          "population": 797500,
+          "percentageInCountry": 2.75,
+          "percentageInAfrica": 0.05576925
+        },
+        {
+          "name": "Dida",
+          "population": 797500,
+          "percentageInCountry": 2.75,
+          "percentageInAfrica": 0.05576925
+        },
+        {
+          "name": "Wé",
+          "population": 797500,
+          "percentageInCountry": 2.75,
+          "percentageInAfrica": 0.05576925
+        },
+        {
+          "name": "Guéré",
+          "population": 797500,
+          "percentageInCountry": 2.75,
+          "percentageInAfrica": 0.05576925
+        }
+      ]
+    },
+    {
+      "groupName": "Voltaïques / Gur",
+      "subGroups": [
+        {
+          "name": "Lobi",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        },
+        {
+          "name": "Koulango",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        },
+        {
+          "name": "Birifor",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        }
+      ],
+      "population": 2030000,
+      "percentageInCountry": 7,
+      "percentageInAfrica": 0.141958,
+      "languages": ["Gur"],
+      "region": "Nord-Est (Bouna)",
+      "sources": ["Sources régionales"],
+      "ancientName": "Chefferies Gur",
+      "description": "Peuples du Nord-Est transfrontaliers",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Chefferies voltaïques",
+      "regionalPresence": ["Burkina Faso", "Côte d'Ivoire"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Lobi",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        },
+        {
+          "name": "Koulango",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        },
+        {
+          "name": "Birifor",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        }
+      ]
+    },
+    {
+      "groupName": "Lagunaires",
+      "subGroups": [
+        {
+          "name": "Ébrié",
+          "population": 580000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.0405595
+        },
+        {
+          "name": "Attié",
+          "population": 580000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.0405595
+        },
+        {
+          "name": "Avikam",
+          "population": 580000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.0405595
+        },
+        {
+          "name": "Alladian",
+          "population": 580000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.0405595
+        }
+      ],
+      "population": 2320000,
+      "percentageInCountry": 8,
+      "percentageInAfrica": 0.162238,
+      "languages": ["Ébrié", "Attié"],
+      "region": "Sud (Abidjan, littoral)",
+      "sources": ["Anthropologie côtière"],
+      "ancientName": "Chefferies lagunaires",
+      "description": "Pêcheurs, agriculteurs et population urbaine",
+      "societyType": "Côtière & urbaine",
+      "religion": "Christianisme",
+      "linguisticFamily": "Kwa",
+      "historicalStatus": "Chefferies lagunaires",
+      "regionalPresence": ["Côte d’Ivoire"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Ébrié",
+          "population": 580000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.0405595
+        },
+        {
+          "name": "Attié",
+          "population": 580000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.0405595
+        },
+        {
+          "name": "Avikam",
+          "population": 580000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.0405595
+        },
+        {
+          "name": "Alladian",
+          "population": 580000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.0405595
+        }
+      ]
+    },
+    {
+      "groupName": "Malinké",
+      "subGroups": [],
+      "population": 1450000,
+      "percentageInCountry": 5,
+      "percentageInAfrica": 0.101399,
+      "languages": ["Malinké"],
+      "region": "Nord-Ouest",
+      "sources": ["Histoire mandé"],
+      "ancientName": "Empire du Mali",
+      "description": "Peuples islamisés du Nord-Ouest",
+      "societyType": "Sédentaire",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Empire mandé",
+      "regionalPresence": ["Mali", "Guinée", "Côte d’Ivoire"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Peuples forestiers",
+      "subGroups": [
+        {
+          "name": "Oubi",
+          "population": 96667,
+          "percentageInCountry": 0.3333344827586207,
+          "percentageInAfrica": 0.0067600233103448275
+        },
+        {
+          "name": "Bakwé",
+          "population": 96667,
+          "percentageInCountry": 0.3333344827586207,
+          "percentageInAfrica": 0.0067600233103448275
+        },
+        {
+          "name": "Néyo",
+          "population": 96667,
+          "percentageInCountry": 0.3333344827586207,
+          "percentageInAfrica": 0.0067600233103448275
+        }
+      ],
+      "population": 290000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.02028,
+      "languages": ["Diverses langues krou"],
+      "region": "Forêts du Sud-Ouest",
+      "sources": ["Anthropologie"],
+      "ancientName": "Chefferies locales",
+      "description": "Groupes de forêt tropicale",
+      "societyType": "Forestière",
+      "religion": "Traditions",
+      "linguisticFamily": "Krou",
+      "historicalStatus": "Peuples autochtones",
+      "regionalPresence": ["Côte d’Ivoire"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Oubi",
+          "population": 96667,
+          "percentageInCountry": 0.3333344827586207,
+          "percentageInAfrica": 0.0067600233103448275
+        },
+        {
+          "name": "Bakwé",
+          "population": 96667,
+          "percentageInCountry": 0.3333344827586207,
+          "percentageInAfrica": 0.0067600233103448275
+        },
+        {
+          "name": "Néyo",
+          "population": 96667,
+          "percentageInCountry": 0.3333344827586207,
+          "percentageInAfrica": 0.0067600233103448275
+        }
+      ]
+    },
+    {
+      "groupName": "Dioula urbains",
+      "subGroups": [],
+      "population": 870000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.060839,
+      "languages": ["Dioula"],
+      "region": "Grandes villes (Abidjan, Bouaké)",
+      "sources": ["Histoire commerciale mandé"],
+      "ancientName": "Réseaux dioula",
+      "description": "Importants réseaux marchands transnationaux",
+      "societyType": "Urbaine",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Réseaux commerciaux mandé",
+      "regionalPresence": ["Mali", "Burkina Faso", "Côte d'Ivoire"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 580000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.040559,
+      "languages": ["Divers"],
+      "region": "National",
+      "sources": ["Estimations diverses"],
+      "ancientName": "Divers royaumes",
+      "description": "Ensemble des petites communautés",
+      "societyType": "Variable",
+      "religion": "Christianisme / Islam / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Côte d'Ivoire"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Populations étrangères intégrées",
+      "subGroups": [
+        {
+          "name": "Burkinabè",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        },
+        {
+          "name": "Maliens",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        },
+        {
+          "name": "Guinéens",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        }
+      ],
+      "population": 2030000,
+      "percentageInCountry": 7,
+      "percentageInAfrica": 0.141958,
+      "languages": ["Dioula", "Bambara", "diverses"],
+      "region": "Zones urbaines & agricoles",
+      "sources": ["Données migratoires"],
+      "ancientName": "Migrations ouest-africaines",
+      "description": "Main-d'œuvre et populations voisines établies",
+      "societyType": "Urbaine & agricole",
+      "religion": "Islam + christianisme",
+      "linguisticFamily": "Divers (mandé, gur, krou)",
+      "historicalStatus": "Migrations régionales",
+      "regionalPresence": ["Afrique de l’Ouest"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Burkinabè",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        },
+        {
+          "name": "Maliens",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        },
+        {
+          "name": "Guinéens",
+          "population": 676667,
+          "percentageInCountry": 2.3333344827586204,
+          "percentageInAfrica": 0.047319356643349755
+        }
+      ]
+    }
+  ]
+}

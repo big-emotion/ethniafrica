@@ -6,8 +6,8 @@
   - « Central Sudanic » (terme académique)
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central (macro-groupe)
-- Région historique : RDC, Ouganda, Soudan du Sud, RCA, Tchad
-- Pays actuels : République démocratique du Congo, Ouganda, Soudan du Sud, République centrafricaine, Tchad
+- Région historique : COD, UGA, SDN du Sud, CAF, TCD
+- Pays actuels : République démocratique du COG, UGA, SDN du Sud, République centrafricaine, TCD
 - Identifiant peuple (ID) : PPL_SCT_MACRO
 
 # 1. Ethnies incluses dans le peuple
@@ -24,7 +24,7 @@
 - Origines anciennes : Les peuples Soudaniques Centraux sont originaires des régions du Haut-Nil et du nord-est de la RDC. Leur présence dans la région remonte à plusieurs siècles. Diversité linguistique importante.
 - Routes migratoires : 
   - Migrations depuis les régions du Haut-Nil
-  - Expansion vers la RDC, l'Ouganda, le Soudan du Sud, la RCA et le Tchad
+  - Expansion vers la COD, l'UGA, le SSD, la RCA et le Tchad
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.
 - Influences externes : Contacts avec les peuples bantous, nilotiques et sahariens, influence du christianisme et de l'islam.

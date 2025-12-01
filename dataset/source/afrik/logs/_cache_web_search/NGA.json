@@ -1,0 +1,208 @@
+{
+  "countryCode": "NGA",
+  "countryName": "République fédérale du Nigeria",
+  "peoples": [
+    {
+      "name": "Hausa",
+      "alternativeNames": ["Haoussa"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_TCHADIQUE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Fulani",
+      "alternativeNames": ["Peul", "Fulɓe"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ATLANTIQUE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Yoruba",
+      "alternativeNames": ["Yorùbá"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Igbo",
+      "alternativeNames": ["Ǹdị́ Ìgbò"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Ijaw",
+      "alternativeNames": ["Izon", "Ijo"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Delta du Niger",
+      "source": "web_search"
+    },
+    {
+      "name": "Kanuri",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_SAHARIENNE",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Tiv",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Ibibio",
+      "alternativeNames": ["Efik"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Edo",
+      "alternativeNames": ["Bini"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Nupe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Gbagyi",
+      "alternativeNames": ["Gwari"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Eket",
+      "alternativeNames": [],
+      "type": "sous-ethnie",
+      "parentPeople": "Ibibio",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Yungur",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ADAMAWA_UBANGI",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Bariba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Mousgoum",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_TCHADIQUE",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Urhobo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Itsekiri",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Isoko",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Annang",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Ogoni",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Jukun",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Berom",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Idoma",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Igede",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre-Est",
+      "source": "web_search"
+    }
+  ],
+  "timestamp": "2025-11-30T19:21:37.145Z",
+  "sourcesUsed": ["web_search"],
+  "sourcesPending": [
+    "CIA World Factbook",
+    "Ethnologue",
+    "UNESCO",
+    "IWGIA",
+    "Encyclopaedia Africana"
+  ]
+}

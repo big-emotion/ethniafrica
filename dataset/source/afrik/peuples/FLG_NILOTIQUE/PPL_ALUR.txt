@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Alur (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique occidental
-- Région historique : Nord-ouest de l'Ouganda, Nord-est de la RDC
-- Pays actuels : Ouganda, République démocratique du Congo
+- Région historique : Nord-ouest de l'UGA, Nord-est de la RDC
+- Pays actuels : UGA, République démocratique du Congo
 - Identifiant peuple (ID) : PPL_ALUR
 
 # 1. Ethnies incluses dans le peuple

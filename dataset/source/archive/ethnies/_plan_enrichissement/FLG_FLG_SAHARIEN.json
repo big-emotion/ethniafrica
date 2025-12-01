@@ -1,0 +1,423 @@
+{
+  "batchId": "FLG_FLG_SAHARIEN",
+  "flgId": "FLG_SAHARIEN",
+  "totalEthnies": 32,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_BERI_BERI_DU_TCHAD",
+      "nom_ethnie": "Beri du Tchad",
+      "PPL_ID": "PPL_BERI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BERI/ETH_BERI_BERI_DU_TCHAD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Beri%20du%20Tchad",
+        "unesco": "https://www.unesco.org/en/search?q=Beri%20du%20Tchad%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BERI_BERI_DU_SOUDAN",
+      "nom_ethnie": "Beri du Soudan",
+      "PPL_ID": "PPL_BERI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BERI/ETH_BERI_BERI_DU_SOUDAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Beri%20du%20Soudan",
+        "unesco": "https://www.unesco.org/en/search?q=Beri%20du%20Soudan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BIDEYAT_BIDEYAT_DU_TCHAD",
+      "nom_ethnie": "Bideyat du Tchad",
+      "PPL_ID": "PPL_BIDEYAT",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BIDEYAT/ETH_BIDEYAT_BIDEYAT_DU_TCHAD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bideyat%20du%20Tchad",
+        "unesco": "https://www.unesco.org/en/search?q=Bideyat%20du%20Tchad%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BIDEYAT_BIDEYAT_DU_SOUDAN",
+      "nom_ethnie": "Bideyat du Soudan",
+      "PPL_ID": "PPL_BIDEYAT",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BIDEYAT/ETH_BIDEYAT_BIDEYAT_DU_SOUDAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bideyat%20du%20Soudan",
+        "unesco": "https://www.unesco.org/en/search?q=Bideyat%20du%20Soudan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BUDUMA_BUDUMA_DU_TCHAD",
+      "nom_ethnie": "Buduma du Tchad",
+      "PPL_ID": "PPL_BUDUMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUDUMA/ETH_BUDUMA_BUDUMA_DU_TCHAD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Buduma%20du%20Tchad",
+        "unesco": "https://www.unesco.org/en/search?q=Buduma%20du%20Tchad%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BUDUMA_BUDUMA_DU_NIGER",
+      "nom_ethnie": "Buduma du Niger",
+      "PPL_ID": "PPL_BUDUMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUDUMA/ETH_BUDUMA_BUDUMA_DU_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Buduma%20du%20Niger",
+        "unesco": "https://www.unesco.org/en/search?q=Buduma%20du%20Niger%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BUDUMA_BUDUMA_DU_NIGERIA",
+      "nom_ethnie": "Buduma du Nigeria",
+      "PPL_ID": "PPL_BUDUMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUDUMA/ETH_BUDUMA_BUDUMA_DU_NIGERIA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Buduma%20du%20Nigeria",
+        "unesco": "https://www.unesco.org/en/search?q=Buduma%20du%20Nigeria%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DAZA_DAZA_DU_TCHAD",
+      "nom_ethnie": "Daza du Tchad",
+      "PPL_ID": "PPL_DAZA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DAZA/ETH_DAZA_DAZA_DU_TCHAD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Daza%20du%20Tchad",
+        "unesco": "https://www.unesco.org/en/search?q=Daza%20du%20Tchad%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DAZA_DAZA_DU_NIGER",
+      "nom_ethnie": "Daza du Niger",
+      "PPL_ID": "PPL_DAZA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DAZA/ETH_DAZA_DAZA_DU_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Daza%20du%20Niger",
+        "unesco": "https://www.unesco.org/en/search?q=Daza%20du%20Niger%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KANEMBU_KANEMBU_DU_NORD",
+      "nom_ethnie": "Kanembu du Nord",
+      "PPL_ID": "PPL_KANEMBU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KANEMBU/ETH_KANEMBU_KANEMBU_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kanembu%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Kanembu%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KANEMBU_KANEMBU_DU_SUD",
+      "nom_ethnie": "Kanembu du Sud",
+      "PPL_ID": "PPL_KANEMBU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KANEMBU/ETH_KANEMBU_KANEMBU_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kanembu%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Kanembu%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KANURI_KANURI_DU_NIGERIA",
+      "nom_ethnie": "Kanuri du Nigeria",
+      "PPL_ID": "PPL_KANURI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KANURI/ETH_KANURI_KANURI_DU_NIGERIA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kanuri%20du%20Nigeria",
+        "unesco": "https://www.unesco.org/en/search?q=Kanuri%20du%20Nigeria%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KANURI_KANURI_DU_NIGER",
+      "nom_ethnie": "Kanuri du Niger",
+      "PPL_ID": "PPL_KANURI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KANURI/ETH_KANURI_KANURI_DU_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kanuri%20du%20Niger",
+        "unesco": "https://www.unesco.org/en/search?q=Kanuri%20du%20Niger%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KANURI_KANURI_DU_TCHAD",
+      "nom_ethnie": "Kanuri du Tchad",
+      "PPL_ID": "PPL_KANURI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KANURI/ETH_KANURI_KANURI_DU_TCHAD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kanuri%20du%20Tchad",
+        "unesco": "https://www.unesco.org/en/search?q=Kanuri%20du%20Tchad%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KANURI_KANURI_DU_CAMEROUN",
+      "nom_ethnie": "Kanuri du Cameroun",
+      "PPL_ID": "PPL_KANURI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KANURI/ETH_KANURI_KANURI_DU_CAMEROUN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kanuri%20du%20Cameroun",
+        "unesco": "https://www.unesco.org/en/search?q=Kanuri%20du%20Cameroun%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KREDA_KREDA_DU_NORD",
+      "nom_ethnie": "Kreda du Nord",
+      "PPL_ID": "PPL_KREDA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KREDA/ETH_KREDA_KREDA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kreda%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Kreda%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KREDA_KREDA_DU_SUD",
+      "nom_ethnie": "Kreda du Sud",
+      "PPL_ID": "PPL_KREDA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KREDA/ETH_KREDA_KREDA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kreda%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Kreda%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAHARIEN_MACRO_KANURI",
+      "nom_ethnie": "Kanuri",
+      "PPL_ID": "PPL_SAHARIEN_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAHARIEN_MACRO/ETH_SAHARIEN_MACRO_KANURI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kanuri",
+        "unesco": "https://www.unesco.org/en/search?q=Kanuri%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAHARIEN_MACRO_KANEMBU",
+      "nom_ethnie": "Kanembu",
+      "PPL_ID": "PPL_SAHARIEN_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAHARIEN_MACRO/ETH_SAHARIEN_MACRO_KANEMBU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kanembu",
+        "unesco": "https://www.unesco.org/en/search?q=Kanembu%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAHARIEN_MACRO_TOUBOU",
+      "nom_ethnie": "Toubou",
+      "PPL_ID": "PPL_SAHARIEN_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAHARIEN_MACRO/ETH_SAHARIEN_MACRO_TOUBOU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Toubou",
+        "unesco": "https://www.unesco.org/en/search?q=Toubou%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAHARIEN_MACRO_ZAGHAWA",
+      "nom_ethnie": "Zaghawa",
+      "PPL_ID": "PPL_SAHARIEN_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAHARIEN_MACRO/ETH_SAHARIEN_MACRO_ZAGHAWA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Zaghawa",
+        "unesco": "https://www.unesco.org/en/search?q=Zaghawa%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAHARIEN_MACRO_DAZA",
+      "nom_ethnie": "Daza",
+      "PPL_ID": "PPL_SAHARIEN_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAHARIEN_MACRO/ETH_SAHARIEN_MACRO_DAZA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Daza",
+        "unesco": "https://www.unesco.org/en/search?q=Daza%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAHARIEN_MACRO_TEDA",
+      "nom_ethnie": "Teda",
+      "PPL_ID": "PPL_SAHARIEN_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAHARIEN_MACRO/ETH_SAHARIEN_MACRO_TEDA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Teda",
+        "unesco": "https://www.unesco.org/en/search?q=Teda%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TEDA_TEDA_DU_TCHAD",
+      "nom_ethnie": "Teda du Tchad",
+      "PPL_ID": "PPL_TEDA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TEDA/ETH_TEDA_TEDA_DU_TCHAD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Teda%20du%20Tchad",
+        "unesco": "https://www.unesco.org/en/search?q=Teda%20du%20Tchad%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TEDA_TEDA_DU_NIGER",
+      "nom_ethnie": "Teda du Niger",
+      "PPL_ID": "PPL_TEDA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TEDA/ETH_TEDA_TEDA_DU_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Teda%20du%20Niger",
+        "unesco": "https://www.unesco.org/en/search?q=Teda%20du%20Niger%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TEDA_TEDA_DE_LIBYE",
+      "nom_ethnie": "Teda de Libye",
+      "PPL_ID": "PPL_TEDA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TEDA/ETH_TEDA_TEDA_DE_LIBYE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Teda%20de%20Libye",
+        "unesco": "https://www.unesco.org/en/search?q=Teda%20de%20Libye%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TOUBOU_TEDA_TOUBOU_DU_NORD",
+      "nom_ethnie": "Teda (Toubou du Nord)",
+      "PPL_ID": "PPL_TOUBOU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TOUBOU/ETH_TOUBOU_TEDA_TOUBOU_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Teda%20(Toubou%20du%20Nord)",
+        "unesco": "https://www.unesco.org/en/search?q=Teda%20(Toubou%20du%20Nord)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TOUBOU_DAZA_TOUBOU_DU_SUD",
+      "nom_ethnie": "Daza (Toubou du Sud)",
+      "PPL_ID": "PPL_TOUBOU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TOUBOU/ETH_TOUBOU_DAZA_TOUBOU_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Daza%20(Toubou%20du%20Sud)",
+        "unesco": "https://www.unesco.org/en/search?q=Daza%20(Toubou%20du%20Sud)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_YERIMA_YERIMA_DU_NORD",
+      "nom_ethnie": "Yerima du Nord",
+      "PPL_ID": "PPL_YERIMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_YERIMA/ETH_YERIMA_YERIMA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Yerima%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Yerima%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_YERIMA_YERIMA_DU_SUD",
+      "nom_ethnie": "Yerima du Sud",
+      "PPL_ID": "PPL_YERIMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_YERIMA/ETH_YERIMA_YERIMA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Yerima%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Yerima%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ZAGHAWA_ZAGHAWA_DU_TCHAD",
+      "nom_ethnie": "Zaghawa du Tchad",
+      "PPL_ID": "PPL_ZAGHAWA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ZAGHAWA/ETH_ZAGHAWA_ZAGHAWA_DU_TCHAD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Zaghawa%20du%20Tchad",
+        "unesco": "https://www.unesco.org/en/search?q=Zaghawa%20du%20Tchad%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ZAGHAWA_ZAGHAWA_DU_SOUDAN",
+      "nom_ethnie": "Zaghawa du Soudan",
+      "PPL_ID": "PPL_ZAGHAWA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ZAGHAWA/ETH_ZAGHAWA_ZAGHAWA_DU_SOUDAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Zaghawa%20du%20Soudan",
+        "unesco": "https://www.unesco.org/en/search?q=Zaghawa%20du%20Soudan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

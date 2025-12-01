@@ -1,0 +1,44 @@
+{
+  "countryName": "Niger",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "pas d’État unifié ; zones touareg",
+        "haoussa",
+        "zarma-sonraï",
+        "peul",
+        "toubou",
+        "kanouri"
+      ]
+    },
+    {
+      "period": "Le nom « Niger » vient du fleuve Niger (probable origine",
+      "names": ["Ni Gir", "Négher"]
+    },
+    {
+      "period": "Empire songhaï (Gao)",
+      "names": ["influence sur l’ouest"]
+    },
+    {
+      "period": "Empire Kanem-Bornou",
+      "names": ["influence sur le sud-est"]
+    },
+    {
+      "period": "1900",
+      "names": ["Conquête française"]
+    },
+    {
+      "period": "1922",
+      "names": ["Colonie du Niger"]
+    },
+    {
+      "period": "1960",
+      "names": ["Indépendance → République du Niger"]
+    }
+  ],
+  "description": "",
+  "ethnicGroupsSummary": "- Haoussa (~55 %) : sud du pays ; langue haoussa ; sociétés marchandes.\n- Zarma / Songhaï (~22 %) : ouest (Niamey, Tillabéri) ; héritiers de l’empire songhaï.\n- Touareg (~10 %) : nomades du Nord ; confédérations Kel Air, Kel Ifoghas ; langue tamasheq.\n- Peul / Fulani (~9 %) : pasteurs transhumants ; langue fulfulde ; islam.\n- Kanouri (~4 %) : sud-est ; héritiers de l’empire Kanem-Bornou.\n- Toubou (~1 %) : nord-est désertique ; langue toubou (teda-daza).",
+  "ethnicities": []
+}

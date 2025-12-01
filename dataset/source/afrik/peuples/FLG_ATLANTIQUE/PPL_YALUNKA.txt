@@ -2,7 +2,7 @@
 - Nom principal : Yalunka
 - Auto-appellation : Yalunka / Jalunga
 - Famille linguistique : Niger-Congo – Atlantique
-- Région historique : Guinée (Fouta-Djallon), Sierra Leone
+- Région historique : Guinée (Fouta-Djallon), SLE
 - Identifiant : PPL_YALUNKA
 
 # 1. Ethnies incluses

@@ -1,0 +1,644 @@
+{
+  "batchId": "FLG_FLG_BENOUECONGO",
+  "flgId": "FLG_BENOUECONGO",
+  "totalEthnies": 49,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_ADJA_ADJA_DU_TOGO_PLATEAUX",
+      "nom_ethnie": "Adja du Togo (Plateaux)",
+      "PPL_ID": "PPL_ADJA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ADJA/ETH_ADJA_ADJA_DU_TOGO_PLATEAUX.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Adja%20du%20Togo%20(Plateaux)",
+        "unesco": "https://www.unesco.org/en/search?q=Adja%20du%20Togo%20(Plateaux)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ADJA_ADJA_DU_BENIN_MONO_COUFFO",
+      "nom_ethnie": "Adja du Bénin (Mono, Couffo)",
+      "PPL_ID": "PPL_ADJA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ADJA/ETH_ADJA_ADJA_DU_BENIN_MONO_COUFFO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Adja%20du%20B%C3%A9nin%20(Mono%2C%20Couffo)",
+        "unesco": "https://www.unesco.org/en/search?q=Adja%20du%20B%C3%A9nin%20(Mono%2C%20Couffo)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AFEMAI_ETSAKO",
+      "nom_ethnie": "Etsako",
+      "PPL_ID": "PPL_AFEMAI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AFEMAI/ETH_AFEMAI_ETSAKO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Etsako",
+        "unesco": "https://www.unesco.org/en/search?q=Etsako%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AFEMAI_OWAN",
+      "nom_ethnie": "Owan",
+      "PPL_ID": "PPL_AFEMAI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AFEMAI/ETH_AFEMAI_OWAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Owan",
+        "unesco": "https://www.unesco.org/en/search?q=Owan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AFEMAI_AKOKO_EDO",
+      "nom_ethnie": "Akoko-Edo",
+      "PPL_ID": "PPL_AFEMAI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AFEMAI/ETH_AFEMAI_AKOKO_EDO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Akoko-Edo",
+        "unesco": "https://www.unesco.org/en/search?q=Akoko-Edo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ALAGO_ALAGO_DE_DOMA",
+      "nom_ethnie": "Alago de Doma",
+      "PPL_ID": "PPL_ALAGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ALAGO/ETH_ALAGO_ALAGO_DE_DOMA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Alago%20de%20Doma",
+        "unesco": "https://www.unesco.org/en/search?q=Alago%20de%20Doma%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ALAGO_ALAGO_RURAUX_DU_CENTRE_DE_NASARAWA",
+      "nom_ethnie": "Alago ruraux du centre de Nasarawa",
+      "PPL_ID": "PPL_ALAGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ALAGO/ETH_ALAGO_ALAGO_RURAUX_DU_CENTRE_DE_NASARAWA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Alago%20ruraux%20du%20centre%20de%20Nasarawa",
+        "unesco": "https://www.unesco.org/en/search?q=Alago%20ruraux%20du%20centre%20de%20Nasarawa%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANAGO_ANAGO_DE_PORTO_NOVO",
+      "nom_ethnie": "Anago de Porto-Novo",
+      "PPL_ID": "PPL_ANAGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANAGO/ETH_ANAGO_ANAGO_DE_PORTO_NOVO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Anago%20de%20Porto-Novo",
+        "unesco": "https://www.unesco.org/en/search?q=Anago%20de%20Porto-Novo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANAGO_ANAGO_DU_TOGO",
+      "nom_ethnie": "Anago du Togo",
+      "PPL_ID": "PPL_ANAGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANAGO/ETH_ANAGO_ANAGO_DU_TOGO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Anago%20du%20Togo",
+        "unesco": "https://www.unesco.org/en/search?q=Anago%20du%20Togo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BASSA_NIGERIA_BASSA_NGE",
+      "nom_ethnie": "Bassa Nge",
+      "PPL_ID": "PPL_BASSA_NIGERIA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BASSA_NIGERIA/ETH_BASSA_NIGERIA_BASSA_NGE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bassa%20Nge",
+        "unesco": "https://www.unesco.org/en/search?q=Bassa%20Nge%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BASSA_NIGERIA_BASSA_KWOMU",
+      "nom_ethnie": "Bassa Kwomu",
+      "PPL_ID": "PPL_BASSA_NIGERIA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BASSA_NIGERIA/ETH_BASSA_NIGERIA_BASSA_KWOMU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bassa%20Kwomu",
+        "unesco": "https://www.unesco.org/en/search?q=Bassa%20Kwomu%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BASSA_NIGERIA_BASSA_KOMO",
+      "nom_ethnie": "Bassa Komo",
+      "PPL_ID": "PPL_BASSA_NIGERIA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BASSA_NIGERIA/ETH_BASSA_NIGERIA_BASSA_KOMO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bassa%20Komo",
+        "unesco": "https://www.unesco.org/en/search?q=Bassa%20Komo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DANGME_ADA",
+      "nom_ethnie": "Ada",
+      "PPL_ID": "PPL_DANGME",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DANGME/ETH_DANGME_ADA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ada",
+        "unesco": "https://www.unesco.org/en/search?q=Ada%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DANGME_KROBO",
+      "nom_ethnie": "Krobo",
+      "PPL_ID": "PPL_DANGME",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DANGME/ETH_DANGME_KROBO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Krobo",
+        "unesco": "https://www.unesco.org/en/search?q=Krobo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DANGME_SHAI",
+      "nom_ethnie": "Shai",
+      "PPL_ID": "PPL_DANGME",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DANGME/ETH_DANGME_SHAI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Shai",
+        "unesco": "https://www.unesco.org/en/search?q=Shai%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_EKPEYE_EKPEYE_D_AHOADA",
+      "nom_ethnie": "Ekpeye d’Ahoada",
+      "PPL_ID": "PPL_EKPEYE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_EKPEYE/ETH_EKPEYE_EKPEYE_D_AHOADA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ekpeye%20d%E2%80%99Ahoada",
+        "unesco": "https://www.unesco.org/en/search?q=Ekpeye%20d%E2%80%99Ahoada%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ESAN_ESAN_D_IRRUA",
+      "nom_ethnie": "Esan d’Irrua",
+      "PPL_ID": "PPL_ESAN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ESAN/ETH_ESAN_ESAN_D_IRRUA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Esan%20d%E2%80%99Irrua",
+        "unesco": "https://www.unesco.org/en/search?q=Esan%20d%E2%80%99Irrua%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ESAN_ESAN_D_UROMI",
+      "nom_ethnie": "Esan d’Uromi",
+      "PPL_ID": "PPL_ESAN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ESAN/ETH_ESAN_ESAN_D_UROMI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Esan%20d%E2%80%99Uromi",
+        "unesco": "https://www.unesco.org/en/search?q=Esan%20d%E2%80%99Uromi%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ESAN_ESAN_RURAL",
+      "nom_ethnie": "Esan rural",
+      "PPL_ID": "PPL_ESAN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ESAN/ETH_ESAN_ESAN_RURAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Esan%20rural",
+        "unesco": "https://www.unesco.org/en/search?q=Esan%20rural%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FON_FON_D_ABOMEY",
+      "nom_ethnie": "Fon d’Abomey",
+      "PPL_ID": "PPL_FON",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FON/ETH_FON_FON_D_ABOMEY.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Fon%20d%E2%80%99Abomey",
+        "unesco": "https://www.unesco.org/en/search?q=Fon%20d%E2%80%99Abomey%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FON_FON_DE_PORTO_NOVO",
+      "nom_ethnie": "Fon de Porto-Novo",
+      "PPL_ID": "PPL_FON",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FON/ETH_FON_FON_DE_PORTO_NOVO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Fon%20de%20Porto-Novo",
+        "unesco": "https://www.unesco.org/en/search?q=Fon%20de%20Porto-Novo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GA_GA_MASHIE",
+      "nom_ethnie": "Ga Mashie",
+      "PPL_ID": "PPL_GA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GA/ETH_GA_GA_MASHIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ga%20Mashie",
+        "unesco": "https://www.unesco.org/en/search?q=Ga%20Mashie%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GA_GA_DE_L_INTERIEUR_ABOKOBI_AMASAMAN",
+      "nom_ethnie": "Ga de l’intérieur (Abokobi, Amasaman)",
+      "PPL_ID": "PPL_GA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GA/ETH_GA_GA_DE_L_INTERIEUR_ABOKOBI_AMASAMAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ga%20de%20l%E2%80%99int%C3%A9rieur%20(Abokobi%2C%20Amasaman)",
+        "unesco": "https://www.unesco.org/en/search?q=Ga%20de%20l%E2%80%99int%C3%A9rieur%20(Abokobi%2C%20Amasaman)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_IGALA_IGALA_DE_IDAH",
+      "nom_ethnie": "Igala de Idah",
+      "PPL_ID": "PPL_IGALA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_IGALA/ETH_IGALA_IGALA_DE_IDAH.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Igala%20de%20Idah",
+        "unesco": "https://www.unesco.org/en/search?q=Igala%20de%20Idah%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_JUKUN_JUKUN_WAPAN",
+      "nom_ethnie": "Jukun Wapan",
+      "PPL_ID": "PPL_JUKUN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_JUKUN/ETH_JUKUN_JUKUN_WAPAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Jukun%20Wapan",
+        "unesco": "https://www.unesco.org/en/search?q=Jukun%20Wapan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_JUKUN_JUKUN_TAKUM",
+      "nom_ethnie": "Jukun Takum",
+      "PPL_ID": "PPL_JUKUN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_JUKUN/ETH_JUKUN_JUKUN_TAKUM.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Jukun%20Takum",
+        "unesco": "https://www.unesco.org/en/search?q=Jukun%20Takum%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KALAIBARI_KALABARI_DE_BUGUMA",
+      "nom_ethnie": "Kalabari de Buguma",
+      "PPL_ID": "PPL_KALAIBARI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KALAIBARI/ETH_KALAIBARI_KALABARI_DE_BUGUMA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kalabari%20de%20Buguma",
+        "unesco": "https://www.unesco.org/en/search?q=Kalabari%20de%20Buguma%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KALAIBARI_KALABARI_DE_TOMBIA",
+      "nom_ethnie": "Kalabari de Tombia",
+      "PPL_ID": "PPL_KALAIBARI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KALAIBARI/ETH_KALAIBARI_KALABARI_DE_TOMBIA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kalabari%20de%20Tombia",
+        "unesco": "https://www.unesco.org/en/search?q=Kalabari%20de%20Tombia%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KUTAEB_KUTEB_DE_TAKUM",
+      "nom_ethnie": "Kuteb de Takum",
+      "PPL_ID": "PPL_KUTAEB",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KUTAEB/ETH_KUTAEB_KUTEB_DE_TAKUM.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kuteb%20de%20Takum",
+        "unesco": "https://www.unesco.org/en/search?q=Kuteb%20de%20Takum%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NEMBE_BRASS_NEMBE",
+      "nom_ethnie": "Brass-Nembe",
+      "PPL_ID": "PPL_NEMBE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NEMBE/ETH_NEMBE_BRASS_NEMBE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Brass-Nembe",
+        "unesco": "https://www.unesco.org/en/search?q=Brass-Nembe%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NEMBE_BASSAN_NEMBE",
+      "nom_ethnie": "Bassan-Nembe",
+      "PPL_ID": "PPL_NEMBE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NEMBE/ETH_NEMBE_BASSAN_NEMBE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bassan-Nembe",
+        "unesco": "https://www.unesco.org/en/search?q=Bassan-Nembe%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_OGBRI_OGBIA_CENTRAL",
+      "nom_ethnie": "Ogbia central",
+      "PPL_ID": "PPL_OGBRI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_OGBRI/ETH_OGBRI_OGBIA_CENTRAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ogbia%20central",
+        "unesco": "https://www.unesco.org/en/search?q=Ogbia%20central%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_OGBRI_OGBIA_FLUVIAL",
+      "nom_ethnie": "Ogbia fluvial",
+      "PPL_ID": "PPL_OGBRI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_OGBRI/ETH_OGBRI_OGBIA_FLUVIAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ogbia%20fluvial",
+        "unesco": "https://www.unesco.org/en/search?q=Ogbia%20fluvial%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ORON_ORON_COTIER",
+      "nom_ethnie": "Oron côtier",
+      "PPL_ID": "PPL_ORON",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ORON/ETH_ORON_ORON_COTIER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Oron%20c%C3%B4tier",
+        "unesco": "https://www.unesco.org/en/search?q=Oron%20c%C3%B4tier%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ORON_ORON_INSULAIRE_ZONE_DE_LA_PRESQU_ILE",
+      "nom_ethnie": "Oron insulaire (zone de la presqu’île)",
+      "PPL_ID": "PPL_ORON",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ORON/ETH_ORON_ORON_INSULAIRE_ZONE_DE_LA_PRESQU_ILE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Oron%20insulaire%20(zone%20de%20la%20presqu%E2%80%99%C3%AEle)",
+        "unesco": "https://www.unesco.org/en/search?q=Oron%20insulaire%20(zone%20de%20la%20presqu%E2%80%99%C3%AEle)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_YORUBA_OYO",
+      "nom_ethnie": "Ọ̀yọ́",
+      "PPL_ID": "PPL_YORUBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_YORUBA/ETH_YORUBA_OYO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%E1%BB%8C%CC%80y%E1%BB%8D%CC%81",
+        "unesco": "https://www.unesco.org/en/search?q=%E1%BB%8C%CC%80y%E1%BB%8D%CC%81%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_YORUBA_EKITI",
+      "nom_ethnie": "Èkìtì",
+      "PPL_ID": "PPL_YORUBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_YORUBA/ETH_YORUBA_EKITI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C3%88k%C3%ACt%C3%AC",
+        "unesco": "https://www.unesco.org/en/search?q=%C3%88k%C3%ACt%C3%AC%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_YORUBA_IJESA",
+      "nom_ethnie": "Ìjẹ̀ṣà",
+      "PPL_ID": "PPL_YORUBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_YORUBA/ETH_YORUBA_IJESA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C3%8Cj%E1%BA%B9%CC%80%E1%B9%A3%C3%A0",
+        "unesco": "https://www.unesco.org/en/search?q=%C3%8Cj%E1%BA%B9%CC%80%E1%B9%A3%C3%A0%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANNANG_ANNANG_CENTRE",
+      "nom_ethnie": "Annang centre",
+      "PPL_ID": "PPL_ANNANG",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANNANG/ETH_ANNANG_ANNANG_CENTRE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Annang%20centre",
+        "unesco": "https://www.unesco.org/en/search?q=Annang%20centre%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANNANG_SUD",
+      "nom_ethnie": "Annang sud",
+      "PPL_ID": "PPL_ANNANG",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANNANG/ETH_ANNANG_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Annang%20sud",
+        "unesco": "https://www.unesco.org/en/search?q=Annang%20sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_IJAW_IZON",
+      "nom_ethnie": "Izon",
+      "PPL_ID": "PPL_IJAW",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_IJAW/ETH_IJAW_IZON.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Izon",
+        "unesco": "https://www.unesco.org/en/search?q=Izon%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_IJAW_IBANI",
+      "nom_ethnie": "Ibani",
+      "PPL_ID": "PPL_IJAW",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_IJAW/ETH_IJAW_IBANI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ibani",
+        "unesco": "https://www.unesco.org/en/search?q=Ibani%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_IJAW_ANDONI_ELEMENTS_IJOIDES",
+      "nom_ethnie": "Andoni (éléments ijoïdes)",
+      "PPL_ID": "PPL_IJAW",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_IJAW/ETH_IJAW_ANDONI_ELEMENTS_IJOIDES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Andoni%20(%C3%A9l%C3%A9ments%20ijo%C3%AFdes)",
+        "unesco": "https://www.unesco.org/en/search?q=Andoni%20(%C3%A9l%C3%A9ments%20ijo%C3%AFdes)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ITSEKIRI_ITSEKIRI_DE_WARRI",
+      "nom_ethnie": "Itsekiri de Warri",
+      "PPL_ID": "PPL_ITSEKIRI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ITSEKIRI/ETH_ITSEKIRI_ITSEKIRI_DE_WARRI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Itsekiri%20de%20Warri",
+        "unesco": "https://www.unesco.org/en/search?q=Itsekiri%20de%20Warri%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NUPE_NUPE_DE_BIDA",
+      "nom_ethnie": "Nupe de Bida",
+      "PPL_ID": "PPL_NUPE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NUPE/ETH_NUPE_NUPE_DE_BIDA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nupe%20de%20Bida",
+        "unesco": "https://www.unesco.org/en/search?q=Nupe%20de%20Bida%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NUPE_NUPE_KOKOLI",
+      "nom_ethnie": "Nupe Kokoli",
+      "PPL_ID": "PPL_NUPE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NUPE/ETH_NUPE_NUPE_KOKOLI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nupe%20Kokoli",
+        "unesco": "https://www.unesco.org/en/search?q=Nupe%20Kokoli%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NUPE_NUPE_YAGBA_ELEMENTS",
+      "nom_ethnie": "Nupe Yagba (éléments)",
+      "PPL_ID": "PPL_NUPE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NUPE/ETH_NUPE_NUPE_YAGBA_ELEMENTS.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nupe%20Yagba%20(%C3%A9l%C3%A9ments)",
+        "unesco": "https://www.unesco.org/en/search?q=Nupe%20Yagba%20(%C3%A9l%C3%A9ments)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TIV_TIV_DU_BENUE",
+      "nom_ethnie": "Tiv du Benue",
+      "PPL_ID": "PPL_TIV",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TIV/ETH_TIV_TIV_DU_BENUE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tiv%20du%20Benue",
+        "unesco": "https://www.unesco.org/en/search?q=Tiv%20du%20Benue%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TIV_TIV_DU_TARABA",
+      "nom_ethnie": "Tiv du Taraba",
+      "PPL_ID": "PPL_TIV",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TIV/ETH_TIV_TIV_DU_TARABA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tiv%20du%20Taraba",
+        "unesco": "https://www.unesco.org/en/search?q=Tiv%20du%20Taraba%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

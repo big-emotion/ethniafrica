@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_EWONDO",
+  "timestamp": "2025-01-25T21:15:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/ewon1239",
+      "data": {
+        "langue": "Ewondo",
+        "code_iso": "ewo",
+        "famille": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Northwest Bantu > Yaunde-Fang",
+        "pays": ["Cameroun"],
+        "region": "Afrique centrale",
+        "glottocode": "ewon1239",
+        "auto_appellation": "Ewondo"
+      },
+      "timestamp": "2025-01-25T21:15:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/ewo",
+      "data": {
+        "langue": "Ewondo",
+        "code_iso": "ewo",
+        "famille": "Niger-Congo",
+        "pays": ["Cameroon"],
+        "auto_appellation": "Ewondo"
+      },
+      "timestamp": "2025-01-25T21:15:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "ewo",
+    "langue_principale": "Ewondo",
+    "famille_linguistique": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Northwest Bantu > Yaunde-Fang",
+    "pays_principaux": [],
+    "region_generale": "Afrique centrale",
+    "auto_appellation": "Ewondo"
+  }
+}

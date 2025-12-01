@@ -1,0 +1,121 @@
+{
+  "countryName": "Algérie",
+  "region": "afrique_du_nord",
+  "ethnicities": [
+    {
+      "groupName": "Arabes algériens",
+      "subGroups": [],
+      "population": 33580000,
+      "percentageInCountry": 73,
+      "percentageInAfrica": 2.348252,
+      "languages": ["Arabe algérien (Darija)"],
+      "region": "Nord, grandes villes (Alger, Oran, Constantine)",
+      "sources": ["ONS Algérie", "sources historiques"],
+      "ancientName": "Ifriqiya, Maghreb central, Califats",
+      "description": "Population majoritaire arabo-berbérisée",
+      "societyType": "Urbaine & agricole",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Sémitique (arabe) + substrat berbère",
+      "historicalStatus": "Califats arabes, dynasties locales",
+      "regionalPresence": ["Algérie"],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Amazigh / Berbères",
+      "subGroups": [
+        {
+          "name": "Kabyles",
+          "population": 6900000,
+          "percentageInCountry": 15,
+          "percentageInAfrica": 0.482517
+        },
+        {
+          "name": "Chaouis",
+          "population": 1840000,
+          "percentageInCountry": 4,
+          "percentageInAfrica": 0.128671
+        },
+        {
+          "name": "Mozabites",
+          "population": 920000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.064336
+        },
+        {
+          "name": "Touaregs",
+          "population": 460000,
+          "percentageInCountry": 1,
+          "percentageInAfrica": 0.032168
+        }
+      ],
+      "population": 10120000,
+      "percentageInCountry": 22,
+      "percentageInAfrica": 0.707692,
+      "languages": ["Taqbaylit (kabyle)", "Tachawit", "Tumzabt", "Tamasheq"],
+      "region": "Kabylie (Tizi Ouzou, Béjaïa), Aurès (Batna, Khenchela), M'Zab (Ghardaïa), Sahara (Tamanrasset, Illizi)",
+      "sources": [
+        "Histoire amazighe",
+        "linguistique",
+        "Sources ethnologiques",
+        "Ethnologie saharienne"
+      ],
+      "ancientName": "Royaumes kabyles (Aït Abbas, Koukou)",
+      "description": "Groupe amazigh le plus important",
+      "societyType": "Montagnarde",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Berbère (afro-asiatique)",
+      "historicalStatus": "Royaumes kabyles",
+      "regionalPresence": ["Algérie", "Mali", "Niger"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Groupes sahariens",
+      "subGroups": [
+        {
+          "name": "Harratines / Gnawa",
+          "population": 460000,
+          "percentageInCountry": 1,
+          "percentageInAfrica": 0.032168
+        },
+        {
+          "name": "Peuples noirs sahariens",
+          "population": 460000,
+          "percentageInCountry": 1,
+          "percentageInAfrica": 0.032168
+        }
+      ],
+      "population": 920000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.064336,
+      "languages": ["Arabe saharien", "Diverses langues"],
+      "region": "Sud et oasis, Tamanrasset, Adrar",
+      "sources": ["Sources anthropologiques", "Anthropologie saharienne"],
+      "ancientName": "Sahara précolonial",
+      "description": "Populations sahariennes métissées",
+      "societyType": "Oasienne",
+      "religion": "Islam",
+      "linguisticFamily": "Sémitique + berbère",
+      "historicalStatus": "Sociétés oasiennes",
+      "regionalPresence": ["Sahara"],
+      "isGroupWithSubgroups": true
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 1380000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.096503,
+      "languages": ["Arabe", "amazigh", "français"],
+      "region": "National",
+      "sources": ["Estimations générales"],
+      "ancientName": "Époques diverses",
+      "description": "Ensemble des petites minorités",
+      "societyType": "Variable",
+      "religion": "Islam / Christianisme",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Algérie"],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

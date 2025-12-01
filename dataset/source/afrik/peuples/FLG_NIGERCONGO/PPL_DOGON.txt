@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Dogon (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Dogon (branche isolée du Niger-Congo)
-- Région historique : Plateau de Bandiagara, Mali
-- Pays actuels : Mali
+- Région historique : Plateau de Bandiagara, MLI
+- Pays actuels : MLI
 - Identifiant peuple (ID) : PPL_DOGON
 
 # 1. Ethnies incluses dans le peuple
@@ -90,7 +90,7 @@
 - Répartition par pays : 
   - Mali : 1 380 000
 - Année de référence : 2025
-- Source : Anthropologie Dogon, INSTAT Mali, recensements nationaux
+- Source : Anthropologie Dogon, INSTAT MLI, recensements nationaux
 
 # 8. Sources
 - SIL Ethnologue – Dogon languages

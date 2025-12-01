@@ -1,0 +1,230 @@
+# Nom du pays
+- Nom officiel actuel : République de l'Ouganda (Republic of Uganda, Jamhuri ya Uganda)
+- Étymologie du nom : Le nom "Ouganda" vient du royaume du Buganda, le plus puissant royaume précolonial de la région. "Buganda" signifie "pays des Baganda" en langue luganda. Les Britanniques ont utilisé "Uganda" (forme anglaise) pour désigner le protectorat, qui incluait plusieurs royaumes (Buganda, Bunyoro, Toro, Ankole). Le nom a été officialisé lors de l'indépendance en 1962.
+- Personne / peuple / administration à l'origine du nom : Le nom "Ouganda" vient du royaume du Buganda, nommé par les Baganda. Les Britanniques ont utilisé "Uganda" (forme anglaise) pour désigner le protectorat (1894-1962). Le nom a été officialisé lors de l'indépendance (1962).
+- Identifiant pays (ISO 3166-1 alpha-3) : UGA
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de l'Ouganda était peuplé de diverses sociétés bantoues et nilotiques. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations bantoues vers la région. Développement de royaumes et chefferies (Buganda, Bunyoro, Toro, Ankole). Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Consolidation des royaumes (Buganda, Bunyoro, Toro, Ankole). Le royaume du Buganda était le plus puissant. Les Européens utilisaient le terme "Uganda" pour désigner la région.
+- Colonisation : 1894-1962 : Protectorat britannique de l'Ouganda (Uganda Protectorate). Les Britanniques ont établi un protectorat sur plusieurs royaumes (Buganda, Bunyoro, Toro, Ankole). Le nom "Uganda" est officialisé par les Britanniques.
+- Période contemporaine : 1962 : Indépendance (9 octobre 1962), proclamation de la République de l'Ouganda. Le nom "Ouganda" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume du Buganda] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Baganda
+  - Centres politiques : Kampala (capitale du royaume)
+  - Rôle historique : Royaume du Buganda, l'un des plus puissants États précoloniaux de la région des Grands Lacs. Monarchie (Kabaka) avec un conseil de chefs (Lukiiko). Plus de 50 clans reconnus. Alliance avec les Britanniques au XIXe siècle. Participation centrale à la formation de l'État ougandais moderne.
+
+- [Royaume du Bunyoro] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Banyoro
+  - Centres politiques : Hoima (capitale du royaume)
+  - Rôle historique : Royaume du Bunyoro, ancien royaume puissant, rival du Buganda. Traditions royales, résistance à la colonisation britannique.
+
+- [Royaume du Toro] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Batooro
+  - Centres politiques : Fort Portal (capitale du royaume)
+  - Rôle historique : Royaume du Toro, scission du Bunyoro au XIXe siècle. Traditions royales.
+
+- [Royaume d'Ankole] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Banyankole
+  - Centres politiques : Mbarara (capitale du royaume)
+  - Rôle historique : Royaume d'Ankole, traditions pastorales, élevage de bovins à longues cornes (Ankole-Watusi).
+
+- [Royaume de Busoga] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Basoga
+  - Centres politiques : Jinja (capitale du royaume)
+  - Rôle historique : Royaume de Busoga, fédération de 11 principautés historiques, dirigée par le Kyabazinga (roi) de Busoga.
+
+- [Protectorat britannique de l'Ouganda] :
+  - Période : 1894 - 1962
+  - Peuples dominants : Tous les peuples ougandais sous protectorat britannique
+  - Centres politiques : Entebbe (capitale coloniale), Kampala
+  - Rôle historique : Protectorat britannique, résistance des peuples autochtones, développement de l'administration coloniale, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Baganda
+  - Auto-appellation (endonyme) : Baganda (pluriel), Muganda (singulier)
+  - Exonymes / appellations historiques : Ganda (terme utilisé par les Européens), "Buganda tribe" (terme colonial administratif)
+  - Identifiant peuple (PPL_) : PPL_BAGANDA
+  - Région principale : Centre de l'Ouganda
+  - Langues parlées : Luganda (lug, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Baganda" est l'auto-appellation. "Buganda tribe" est un terme colonial administratif. Pas de terme péjoratif connu. Groupe majoritaire, royaume du Buganda, monarchie (Kabaka).
+
+- Peuple 2 :
+  - Nom : Banyankole
+  - Auto-appellation (endonyme) : Banyankole
+  - Exonymes / appellations historiques : Banyankole (terme utilisé par les Européens), "Ankole" (nom du royaume)
+  - Identifiant peuple (PPL_) : PPL_BANYANKOLE
+  - Région principale : Sud-ouest de l'Ouganda
+  - Langues parlées : Runyankole (nyn, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Banyankole" est l'auto-appellation. Pas de terme péjoratif connu. Royaume d'Ankole, traditions pastorales, élevage de bovins à longues cornes (Ankole-Watusi).
+
+- Peuple 3 :
+  - Nom : Basoga
+  - Auto-appellation (endonyme) : Basoga (pluriel), Musoga (singulier)
+  - Exonymes / appellations historiques : Soga (terme utilisé par les Européens), "Busoga tribes" (terminologie coloniale)
+  - Identifiant peuple (PPL_) : PPL_BASOGA
+  - Région principale : Est de l'Ouganda
+  - Langues parlées : Lusoga (xog, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Basoga" est l'auto-appellation. "Busoga tribes" est une terminologie coloniale. Pas de terme péjoratif connu. Royaume de Busoga, fédération de 11 principautés historiques.
+
+- Peuple 4 :
+  - Nom : Acholi
+  - Auto-appellation (endonyme) : Acholi
+  - Exonymes / appellations historiques : Acholi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_ACHOLI
+  - Région principale : Nord de l'Ouganda
+  - Langues parlées : Acholi (ach, ISO 639-3), anglais
+  - Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Acholi" est l'auto-appellation. Pas de terme péjoratif connu. Groupe nilotique du nord de l'Ouganda.
+
+- Peuple 5 :
+  - Nom : Banyoro
+  - Auto-appellation (endonyme) : Banyoro
+  - Exonymes / appellations historiques : Banyoro (terme utilisé par les Européens), "Bunyoro" (nom du royaume)
+  - Identifiant peuple (PPL_) : PPL_BANYORO
+  - Région principale : Ouest de l'Ouganda
+  - Langues parlées : Runyoro (nyo, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Banyoro" est l'auto-appellation. Pas de terme péjoratif connu. Royaume du Bunyoro, ancien royaume puissant, rival du Buganda.
+
+- Peuple 6 :
+  - Nom : Langi
+  - Auto-appellation (endonyme) : Langi
+  - Exonymes / appellations historiques : Langi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LANGI
+  - Région principale : Nord de l'Ouganda
+  - Langues parlées : Lango (laj, ISO 639-3), anglais
+  - Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Langi" est l'auto-appellation. Pas de terme péjoratif connu. Groupe nilotique du nord de l'Ouganda.
+
+- Peuple 7 :
+  - Nom : Batooro
+  - Auto-appellation (endonyme) : Batooro
+  - Exonymes / appellations historiques : Batooro (terme utilisé par les Européens), "Toro" (nom du royaume)
+  - Identifiant peuple (PPL_) : PPL_BATOORO
+  - Région principale : Ouest de l'Ouganda
+  - Langues parlées : Rutooro (ttj, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Batooro" est l'auto-appellation. Pas de terme péjoratif connu. Royaume du Toro, scission du Bunyoro au XIXe siècle.
+
+- Peuple 8 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions de l'Ouganda
+  - Langues parlées : Langues diverses, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Anglais (langue officielle, eng), luganda (lug, langue véhiculaire), runyankole (nyn), lusoga (xog), acholi (ach), runyoro (nyo), lango (laj), rutooro (ttj), swahili (swa)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de l'Ouganda. Traditions bantoues (Baganda, Banyankole, Basoga, Banyoro, Batooro) : royaumes traditionnels, monarchies, traditions royales, tambours royaux, harpes, danses de cour, chants de louange, riche tradition orale. Traditions nilotiques (Acholi, Langi) : traditions pastorales, organisation clanique. Traditions baganda : royaume du Buganda, monarchie (Kabaka), plus de 50 clans reconnus, totems de clans, cérémonies royales. Traditions banyankole : royaume d'Ankole, élevage de bovins à longues cornes (Ankole-Watusi). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La tradition royale baganda est particulièrement riche et préservée.
+- Religions dominantes : Christianisme (catholicisme majoritaire, protestantisme, églises indépendantes africaines), islam (minorité), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, esprits balubaale, rituels)
+- Modes de vie : Agriculture (bananes, café, coton, cultures vivrières), élevage (bovins, caprins, élevage pastoral), pêche (lac Victoria, lacs), commerce et activités urbaines (zones urbaines, Kampala, Jinja, Mbarara). Urbanisation modérée. Économie basée sur l'agriculture (café, coton, bananes), l'élevage, la pêche, et les services. L'Ouganda est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important.
+- Organisation sociale : Organisation en royaumes traditionnels (Buganda, Bunyoro, Toro, Ankole, Busoga), chefferies traditionnelles, structures claniques patrilinéaires (majorité des groupes bantous) et patrilinéaires (groupes nilotiques). Importance des lignages et des familles étendues. Rôle des conseils d'anciens (Lukiiko chez les Baganda). Traditions d'initiation et de passage à l'âge adulte. Système patrilinéaire (majorité des groupes). La monarchie baganda (Kabaka) est particulièrement importante.
+- Relations régionales : Relations historiques avec le Kenya (commerce, migrations, peuples transfrontaliers, frontière), la Tanzanie (commerce, frontière), le Rwanda (commerce, frontière), le Soudan du Sud (commerce, frontière), la RDC (commerce, frontière). Intégration dans la Communauté d'Afrique de l'Est (EAC). Relations commerciales et culturelles transfrontalières. L'Ouganda est un pays de transit pour le commerce régional.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples bantous et nilotiques. Migrations bantoues vers la région. Développement de royaumes et chefferies.
+- Moyen Âge : Migrations bantoues continues. Développement de structures politiques locales. Formation des royaumes (Buganda, Bunyoro, Toro, Ankole, Busoga).
+- Époque précoloniale : Consolidation des royaumes (Buganda, Bunyoro, Toro, Ankole, Busoga). Le royaume du Buganda était le plus puissant. Commerce régional. Développement des traditions culturelles. XIXe siècle : Alliance du Buganda avec les Britanniques.
+- Colonisation : 1894-1962 : Protectorat britannique de l'Ouganda. Résistance des peuples autochtones (notamment résistance du Bunyoro). Développement de l'administration coloniale. XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1950s-1962 : Mouvement pour l'indépendance, Milton Obote, indépendance (9 octobre 1962), proclamation de la République de l'Ouganda. Milton Obote devient premier premier ministre.
+- Période post-indépendance : République de l'Ouganda (1962), présidence de Milton Obote (1962-1971, 1980-1985), dictature d'Idi Amin Dada (1971-1979, génocide, exil des Asiatiques), guerre civile (1980s), présidence de Yoweri Museveni (depuis 1986), stabilité relative, développement économique, défis de gouvernance. Défis : pauvreté, développement économique, sécurité (LRA, Lord's Resistance Army, 1987-2006), VIH/sida, gouvernance démocratique. L'Ouganda est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Uganda
+- SIL Ethnologue – Languages of Uganda
+- Recensements ougandais
+- Études anthropologiques sur les peuples de l'Ouganda
+- Études historiques sur les royaumes précoloniaux (Buganda, Bunyoro, Toro, Ankole, Busoga)
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Baganda
+- Identifiant peuple (PPL_) : PPL_BAGANDA
+- Population : 8 500 000
+- Pourcentage dans le pays : 17,0%
+- Pourcentage en Afrique : N/A
+- Région : Centre de l'Ouganda
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : lug
+
+### Peuple : Banyankole
+- Identifiant peuple (PPL_) : PPL_BANYANKOLE
+- Population : 3 500 000
+- Pourcentage dans le pays : 7,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest de l'Ouganda
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : nyn
+
+### Peuple : Basoga
+- Identifiant peuple (PPL_) : PPL_BASOGA
+- Population : 3 000 000
+- Pourcentage dans le pays : 6,0%
+- Pourcentage en Afrique : N/A
+- Région : Est de l'Ouganda
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : xog
+
+### Peuple : Acholi
+- Identifiant peuple (PPL_) : PPL_ACHOLI
+- Population : 2 000 000
+- Pourcentage dans le pays : 4,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord de l'Ouganda
+- Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Code ISO 639-3 (langue principale) : ach
+
+### Peuple : Banyoro
+- Identifiant peuple (PPL_) : PPL_BANYORO
+- Population : 1 500 000
+- Pourcentage dans le pays : 3,0%
+- Pourcentage en Afrique : N/A
+- Région : Ouest de l'Ouganda
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : nyo
+
+### Peuple : Langi
+- Identifiant peuple (PPL_) : PPL_LANGI
+- Population : 1 500 000
+- Pourcentage dans le pays : 3,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord de l'Ouganda
+- Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Code ISO 639-3 (langue principale) : laj
+
+### Peuple : Batooro
+- Identifiant peuple (PPL_) : PPL_BATOORO
+- Population : 1 000 000
+- Pourcentage dans le pays : 2,0%
+- Pourcentage en Afrique : N/A
+- Région : Ouest de l'Ouganda
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : ttj
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 30 000 000
+- Pourcentage dans le pays : 58,0%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de l'Ouganda
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Ouganda 2025 : 50 000 000 (estimations ONU/UNFPA)**
+

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Makonde (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone P)
-- Région historique : Sud-est de la Tanzanie, Nord du Mozambique
-- Pays actuels : Tanzanie, Mozambique
+- Région historique : Sud-est de la TZA, Nord du Mozambique
+- Pays actuels : TZA, MOZ
 - Identifiant peuple (ID) : PPL_MAKONDE
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Makonde language (kde)
-- CIA World Factbook – Tanzania, Mozambique
+- CIA World Factbook – Tanzania, MOZ
 - Recensements nationaux
 - Études anthropologiques sur les peuples bantous
 

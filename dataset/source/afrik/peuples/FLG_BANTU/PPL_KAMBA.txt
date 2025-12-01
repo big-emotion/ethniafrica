@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone E)
 - Région historique : Centre-est du Kenya
-- Pays actuels : Kenya
+- Pays actuels : KEN
 - Identifiant peuple (ID) : PPL_KAMBA
 
 # 1. Ethnies incluses dans le peuple

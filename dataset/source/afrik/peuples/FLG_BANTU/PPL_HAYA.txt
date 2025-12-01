@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone J)
 - Région historique : Nord-ouest de la Tanzanie
-- Pays actuels : Tanzanie
+- Pays actuels : TZA
 - Identifiant peuple (ID) : PPL_HAYA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Haya sont originaires du nord-ouest de la Tanzanie, dans la région des Grands Lacs. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).
+- Origines anciennes : Les Haya sont originaires du nord-ouest de la TZA, dans la région des Grands Lacs. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).
 - Routes migratoires : 
   - Migrations depuis les régions des Grands Lacs
   - Expansion vers le nord-ouest de la Tanzanie

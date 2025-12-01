@@ -1,0 +1,84 @@
+# Nom du pays
+- Nom officiel actuel : Union des Comores (Udzima wa Komori en comorien)
+- Étymologie du nom : Le nom "Comores" vient de l'arabe "جزر القمر" (Juzur al-Qamar), signifiant "îles de la lune". En comorien, le pays est appelé "Komori" ou "Udzima wa Komori" (Union des Comores).
+- Personne / peuple / administration à l'origine du nom : Le nom a été donné par les navigateurs arabes et perses qui ont visité l'archipel dès le IXe siècle, en référence à la beauté des îles sous la lune.
+- Identifiant pays (ISO 3166-1 alpha-3) : COM
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : L'archipel était connu des navigateurs arabes et perses sous le nom de "Juzur al-Qamar" (îles de la lune). Les Grecs anciens mentionnent des îles dans cette région sous le nom de "Menuthias".
+- Moyen Âge : L'archipel est mentionné dans les récits de voyageurs arabes et perses (Ibn Battuta, al-Idrisi) sous le nom de "Juzur al-Qamar". Les îles étaient des points d'escale importants sur les routes commerciales de l'océan Indien.
+- Époque précoloniale : Les îles étaient organisées en sultanats indépendants (sultanats de Grande Comore, Anjouan, Mohéli). Chaque île avait son propre sultanat avec des dynasties locales.
+- Colonisation : Les îles sont devenues un protectorat français en 1886 sous le nom de "Protectorat des Comores". En 1912, elles sont intégrées à la colonie de Madagascar sous le nom de "Territoire des Comores". Le terme "Comores" est la francisation de "Qamar".
+- Période contemporaine : Après l'indépendance en 1975, le pays prend le nom d'"État comorien" puis "République fédérale islamique des Comores" (1978), puis "Union des Comores" depuis 2001. Le nom officiel en français est "Union des Comores" et en comorien "Udzima wa Komori".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Sultanats des Comores] :
+  - Période : IXe siècle - 1886
+  - Peuples dominants : Comoriens (Shimasiwa), avec influences arabes, perses et swahilies
+  - Centres politiques : Moroni (Grande Comore), Mutsamudu (Anjouan), Fomboni (Mohéli)
+  - Rôle historique : Les sultanats comoriens étaient des entités politiques indépendantes qui contrôlaient le commerce dans l'océan Indien. Ils ont développé une culture islamique swahilie distinctive avec des influences bantoues, arabes et perses.
+
+- [Protectorat français des Comores] :
+  - Période : 1886 - 1975
+  - Peuples dominants : Comoriens sous administration coloniale française
+  - Centres politiques : Dzaoudzi (siège du protectorat, puis Moroni)
+  - Rôle historique : Période de colonisation française qui a unifié administrativement les trois îles principales (Grande Comore, Anjouan, Mohéli) tout en maintenant Mayotte sous souveraineté française.
+
+- [Union des Comores] :
+  - Période : 1975 - présent
+  - Peuples dominants : Comoriens (Shimasiwa)
+  - Centres politiques : Moroni (capitale)
+  - Rôle historique : État indépendant depuis 1975, avec une histoire politique mouvementée incluant plusieurs coups d'État. L'Union des Comores est membre de la Ligue arabe, de l'Organisation de la coopération islamique et de l'Union africaine.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Comorien
+  - Auto-appellation (endonyme) : Shimasiwa (gens des îles)
+  - Exonymes / appellations historiques : Comorians (terme utilisé par les Européens), "Qamari" (terme arabe historique)
+  - Identifiant peuple (PPL_) : PPL_COMORIEN
+  - Région principale : Archipel des Comores (Grande Comore, Anjouan, Mohéli)
+  - Langues parlées : Langues comoriennes (shingazidja, shindzuani, shimwali), français, arabe
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, branche swahilie)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Comorien" est neutre et accepté. L'auto-appellation "Shimasiwa" (gens des îles) reflète l'identité insulaire du peuple. Le terme historique arabe "Qamari" fait référence à l'origine du nom "Comores" (îles de la lune).
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Shingazidja (zdj) - Grande Comore
+  - Shindzuani (wni) - Anjouan
+  - Shimwali (wlc) - Mohéli
+  - Shimaore (swb) - Mayotte (parlé par une minorité aux Comores)
+  - Français (langue officielle)
+  - Arabe (langue liturgique et administrative)
+- Traditions culturelles : Architecture en pierre traditionnelle, mariage grand-comorien (Anda), poésie et musique orientale-swahilie, artisanat (poterie, tissage), danse traditionnelle
+- Religions dominantes : Islam sunnite (religion d'État depuis 2018), avec syncrétisme avec certaines croyances traditionnelles
+- Modes de vie : Vie principalement rurale et côtière, agriculture (vanille, ylang-ylang, clous de girofle), pêche, commerce
+- Organisation sociale : Système de notables (Anda, Shungu), structure clanique patrilinéaire, organisation en familles étendues et lignages, autorité des oulémas et chefs religieux
+- Relations régionales : Relations historiques avec les Swahili, interactions avec les peuples malgaches, contacts commerciaux avec Arabes, Perses, Shirazi, diaspora importante en France et à Madagascar
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement de l'archipel par des populations bantoues et swahilies dès le premier millénaire. Arrivée de l'islam au IXe siècle via les commerçants arabes et perses. Développement de sultanats indépendants sur chaque île.
+- Moyen Âge : Apogée des sultanats comoriens (XIIe-XVIe siècles) avec un commerce florissant dans l'océan Indien. Contacts intensifs avec les civilisations swahilie, arabe, perse et malgache. Architecture en pierre caractéristique (palais, mosquées).
+- Époque précoloniale : Maintien des sultanats jusqu'au XIXe siècle. Résistance aux tentatives de colonisation portugaise et française. Rivalités entre sultanats des différentes îles.
+- Colonisation : Établissement du protectorat français en 1886. Intégration à la colonie de Madagascar en 1912. Développement de plantations (vanille, ylang-ylang). Résistance passive à la colonisation.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1960-1970. Indépendance proclamée en 1975. Mayotte choisit de rester française lors du référendum de 1976, créant un contentieux territorial qui perdure.
+- Période post-indépendance : Histoire politique mouvementée avec plusieurs coups d'État (1975, 1995, 1999). Instabilité politique et séparatisme à Anjouan. Adoption de la Constitution de l'Union des Comores en 2001 établissant une fédération. Adoption de l'islam comme religion d'État en 2018. Défis économiques et sociaux persistants.
+
+# 7. Sources
+- CIA World Factbook – Comoros
+- SIL Ethnologue – Comorian languages (swb, wni, zdj, wlc)
+- Recensements nationaux comoriens
+- Études anthropologiques sur les peuples bantous de l'océan Indien
+- Comoros Cultural Studies
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Comorien
+- Identifiant peuple (PPL_) : PPL_COMORIEN
+- Population : 900 000 - 1 000 000
+- Pourcentage dans le pays : ~98-99%
+- Pourcentage en Afrique : ~0.07%
+- Région : Archipel des Comores (Grande Comore, Anjouan, Mohéli)
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : zdj (shingazidja), wni (shindzuani), wlc (shimwali)
+

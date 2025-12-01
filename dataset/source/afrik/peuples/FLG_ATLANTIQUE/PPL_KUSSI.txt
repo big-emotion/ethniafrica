@@ -2,7 +2,7 @@
 - Nom principal : Kassanga / Kussi
 - Auto-appellation : Kassanga / Kussi
 - Famille linguistique : Niger-Congo – Atlantique
-- Région historique : Sénégal (Casamance), Guinée-Bissau
+- Région historique : Sénégal (Casamance), GIN-Bissau
 - Identifiant peuple : PPL_KUSSI
 
 # 1. Ethnies incluses

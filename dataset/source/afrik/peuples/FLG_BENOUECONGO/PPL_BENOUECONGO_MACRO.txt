@@ -8,7 +8,7 @@
   - regroupements trop larges ou non scientifiquement cohérents
   - héritages de classifications coloniales
 - Famille linguistique : Niger-Congo – Bénoué-Congo
-- Région : Nigeria, Bénin, Togo, Ghana, Cameroun
+- Région : NGA, BEN, TGO, GHA, CMR
 - Identifiant peuple : PPL_BENOUECONGO_MACRO
 
 # 1. Ethnies incluses
@@ -21,7 +21,7 @@
 
 # 3. Organisation
 - Pas de structure politique unique.
-- États historiques variés : Oyo, Dahomey, Bénin, Idah, Kwararafa…
+- États historiques variés : Oyo, Dahomey, BEN, Idah, Kwararafa…
 
 # 4. Langues
 - Yoruba, Igbo, Fon, Ewe
@@ -46,4 +46,4 @@
 
 # 8. Sources
 - Synthèse AFRIK 2025
-- UNESCO / Ethnologue / archives historiques du Nigeria, Bénin, Togo, Ghana
+- UNESCO / Ethnologue / archives historiques du NGA, BEN, TGO, GHA

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou
 - Région historique : Afrique centrale
-- Pays actuels : République démocratique du Congo, République centrafricaine
+- Pays actuels : République démocratique du COG, République centrafricaine
 - Identifiant peuple (ID) : PPL_HOBA
 
 # 1. Ethnies incluses dans le peuple

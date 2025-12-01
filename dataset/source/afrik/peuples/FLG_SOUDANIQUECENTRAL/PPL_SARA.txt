@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Sara (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central
-- Région historique : Tchad, RCA
-- Pays actuels : Tchad, République centrafricaine
+- Région historique : TCD, CAF
+- Pays actuels : TCD, République centrafricaine
 - Identifiant peuple (ID) : PPL_SARA
 
 # 1. Ethnies incluses dans le peuple

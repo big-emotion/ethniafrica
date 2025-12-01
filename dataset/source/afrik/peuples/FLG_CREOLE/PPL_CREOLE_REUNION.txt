@@ -5,7 +5,7 @@
 - Famille linguistique principale : Créole (FLG_CREOLE)
 - Groupe ethno-linguistique : Créole afro-français
 - Région historique : La Réunion
-- Pays actuels : France (La Réunion)
+- Pays actuels : REU (La Réunion, territoire français)
 - Identifiant peuple (ID) : PPL_CREOLE_REUNION
 
 # 1. Ethnies incluses dans le peuple

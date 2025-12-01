@@ -1,0 +1,207 @@
+# Nom du pays
+- Nom officiel actuel : République Islamique de Mauritanie (Al-Jumhūriyyah al-Islāmiyyah al-Mūrītāniyyah)
+- Étymologie du nom : Le nom "Mauritanie" vient du terme "Mauretania" utilisé par les Romains pour désigner la région de l'Afrique du Nord-Ouest. Le nom moderne "Mauritanie" a été adopté par les Français lors de la colonisation (1904-1960). Le terme "Maures" (Beidhane) désigne les populations arabophones nomades de la région. Les Européens utilisaient "Pays des Maures" pour désigner la région.
+- Personne / peuple / administration à l'origine du nom : Les Français ont adopté le nom "Mauritanie" lors de la création du protectorat (1904) puis de la colonie (1920). Le nom fait référence aux "Maures" (Beidhane), populations arabophones nomades de la région. Le terme "Mauretania" était utilisé par les Romains pour désigner une région différente (actuel Maroc et Algérie occidentale), sans continuité réelle avec la Mauritanie moderne.
+- Identifiant pays (ISO 3166-1 alpha-3) : MRT
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la Mauritanie était peuplé de Berbères Sanhaja (Lemtouna, Massufa, Godala) et de populations négro-africaines (Halpulaar, Wolof, Soninké, Bambara). Pas de nom unifié pour l'ensemble du territoire.
+- Moyen Âge : VIIe-XIIe siècles : Empire Almoravide (fondé par les Sanhaja du Sahara). Termes locaux : "Bilad Chinguetti" (pays de Chinguetti), "trilhad" (pays des nomades). Développement des tribus Maures (Beidhane), nomades arabophones hassaniya, héritières des Sanhaja berbères.
+- Époque précoloniale : Tribus Maures (Beidhane), populations négro-africaines (Halpulaar, Soninké, Wolof, Bambara) dans la vallée du fleuve Sénégal. Stratification sociale maure (Hassane, Zawiya, Znaga, Haratine). Les Européens utilisaient "Pays des Maures" (Mauretania dérivé de l'Antiquité, mais sans continuité réelle).
+- Colonisation : 1904 : Protectorat français. 1920 : Colonie de "Mauritanie" (AOF, Afrique-Occidentale française). Le nom "Mauritanie" est officialisé par les Français.
+- Période contemporaine : 1960 : Indépendance, République Islamique de Mauritanie. Le nom "Mauritanie" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Empire Almoravide] :
+  - Période : VIIe siècle - XIIe siècle
+  - Peuples dominants : Berbères Sanhaja (Lemtouna, Massufa, Godala)
+  - Centres politiques : Aoudaghost, Marrakech (capitale de l'empire)
+  - Rôle historique : Empire berbère puissant fondé par les Sanhaja du Sahara, expansion vers le Maghreb et l'Andalousie, islamisation, développement du commerce transsaharien. L'empire Almoravide a joué un rôle majeur dans l'histoire de la région.
+
+- [Tribus Maures (Beidhane)] :
+  - Période : Moyen Âge - présent
+  - Peuples dominants : Maures (Beidhane), arabophones hassaniya
+  - Centres politiques : Tribus nomades, confédérations tribales
+  - Rôle historique : Tribus Maures nomades, société stratifiée (Hassane : nobles guerriers, Zawiya : lettrés religieux, Znaga : tributaires, Haratine : anciennement serviles). Héritiers des Sanhaja berbères, arabisation progressive. Organisation tribale et nomade.
+
+- [Chefferies Halpulaar] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Halpulaar (Toucouleur et Peul)
+  - Centres politiques : Chefferies traditionnelles (vallée du fleuve Sénégal)
+  - Rôle historique : Chefferies Halpulaar, agriculture et pastoralisme, islam, résistance à la colonisation française.
+
+- [Chefferies Soninké] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Soninké
+  - Centres politiques : Chefferies traditionnelles (vallée du fleuve Sénégal)
+  - Rôle historique : Chefferies Soninké, commerce et agriculture, héritiers de l'ancien empire du Ghana, islam.
+
+- [Colonie française de Mauritanie] :
+  - Période : 1904 - 1960
+  - Peuples dominants : Tous les peuples mauritaniens sous domination coloniale
+  - Centres politiques : Saint-Louis (capitale coloniale, aujourd'hui au Sénégal), Nouakchott (fondée en 1958)
+  - Rôle historique : Colonisation française, résistance des peuples autochtones, développement de l'administration coloniale, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Maures / Beidhane
+  - Auto-appellation (endonyme) : Beidhane (بيضان, "Blancs"), Hassaniya (حسانية)
+  - Exonymes / appellations historiques : "Maures" (terme utilisé par les Européens), "Arabes mauritaniens" (terme descriptif)
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Nord et centre de la Mauritanie
+  - Langues parlées : Hassaniya (arabe mauritanien, mry, ISO 639-3), arabe standard
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Beidhane" est l'auto-appellation (signifie "Blancs" en hassaniya). "Maures" est l'exonyme le plus courant. Les Maures sont arabophones hassaniya, héritiers des Sanhaja berbères. Société stratifiée : Hassane (nobles guerriers), Zawiya (lettrés religieux), Znaga (tributaires). Société nomade traditionnelle.
+
+- Peuple 2 :
+  - Nom : Haratine
+  - Auto-appellation (endonyme) : Haratine (حراطين)
+  - Exonymes / appellations historiques : "Haratine" (terme local), "Esclaves" (terme historique, problématique), "Affranchis" (terme descriptif)
+  - Identifiant peuple (PPL_) : PPL_HARATINE
+  - Région principale : Toutes les régions de la Mauritanie
+  - Langues parlées : Hassaniya (mry, ISO 639-3), arabe standard
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Haratine" est l'auto-appellation. Les Haratine sont des populations arabo-berbères anciennement serviles. L'esclavage a été officiellement aboli en Mauritanie en 1981, mais des pratiques persistent. Le terme "Esclaves" est historique et problématique, il doit être contextualisé. Les Haratine parlent hassaniya et sont culturellement proches des Maures, mais forment un groupe social distinct avec une histoire de servitude.
+
+- Peuple 3 :
+  - Nom : Halpulaar
+  - Auto-appellation (endonyme) : Halpulaar (Toucouleur et Peul)
+  - Exonymes / appellations historiques : "Toucouleur" (terme français), "Peul" (terme français), "Fulani" (terme anglais), "Pulaar" (terme local)
+  - Identifiant peuple (PPL_) : PPL_HALPULAAR
+  - Région principale : Sud de la Mauritanie (vallée du fleuve Sénégal)
+  - Langues parlées : Pulaar (fuc, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Halpulaar" est l'auto-appellation (signifie "ceux qui parlent pulaar"). "Toucouleur" et "Peul" sont des exonymes français. "Fulani" est un exonyme anglais. Les Halpulaar regroupent les Toucouleur et les Peul, qui parlent la même langue (pulaar). Agriculture et pastoralisme, islam.
+
+- Peuple 4 :
+  - Nom : Soninké
+  - Auto-appellation (endonyme) : Soninké
+  - Exonymes / appellations historiques : "Soninké" (terme utilisé par les Européens), "Sarakollé" (terme français, moins utilisé)
+  - Identifiant peuple (PPL_) : PPL_SONINKE
+  - Région principale : Sud de la Mauritanie (vallée du fleuve Sénégal)
+  - Langues parlées : Soninké (snk, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Soninké" est l'auto-appellation. "Sarakollé" est un terme français moins utilisé. Les Soninké sont héritiers de l'ancien empire du Ghana. Commerce et agriculture, islam.
+
+- Peuple 5 :
+  - Nom : Wolof
+  - Auto-appellation (endonyme) : Wolof
+  - Exonymes / appellations historiques : "Wolof" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_WOLOF
+  - Région principale : Sud-ouest de la Mauritanie (côte, vallée du fleuve Sénégal)
+  - Langues parlées : Wolof (wol, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Wolof" est l'auto-appellation. Pas de terme péjoratif connu. Commerce côtier, islam.
+
+- Peuple 6 :
+  - Nom : Bambara
+  - Auto-appellation (endonyme) : Bambara
+  - Exonymes / appellations historiques : "Bambara" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BAMBARA
+  - Région principale : Sud de la Mauritanie
+  - Langues parlées : Bambara (bam, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bambara" est l'auto-appellation. Pas de terme péjoratif connu. Agriculture, islam.
+
+- Peuple 7 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Diverses régions de la Mauritanie
+  - Langues parlées : Langues diverses, français
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Arabe (langue officielle, ara), hassaniya (mry, langue véhiculaire maure), pulaar (fuc, Halpulaar), soninké (snk), wolof (wol), bambara (bam), français (fra)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de la Mauritanie. Traditions maures (Beidhane) : poésie hassaniya, musique maure, traditions nomades, architecture saharienne (tentes, ksour), artisanat (bijoux, tissage). Traditions halpulaar (Toucouleur et Peul) : poésie pulaar, traditions islamiques, agriculture et pastoralisme. Traditions soninké : commerce, agriculture, héritage de l'empire du Ghana. Traditions wolof : commerce côtier, culture wolof. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La poésie hassaniya est un élément majeur de la culture maure.
+- Religions dominantes : Islam (sunnite majoritaire, école malékite), toutes les communautés sont musulmanes
+- Modes de vie : Nomadisme traditionnel (Maures, Beidhane), sédentarisation croissante. Agriculture (vallée du fleuve Sénégal, Halpulaar, Soninké, Wolof, Bambara). Pastoralisme (Maures, Halpulaar). Commerce transsaharien (Maures). Pêche (côte atlantique). Urbanisation modérée (Nouakchott, Nouadhibou). Économie basée sur l'élevage (Maures), l'agriculture (vallée du fleuve Sénégal), la pêche, et l'exploitation minière (fer, or). La Mauritanie est un pays saharien avec une grande partie du territoire couverte par le désert.
+- Organisation sociale : Société maure stratifiée (Hassane : nobles guerriers, Zawiya : lettrés religieux, Znaga : tributaires, Haratine : anciennement serviles). Organisation tribale et nomade (Maures). Structures familiales traditionnelles (Halpulaar, Soninké, Wolof, Bambara). Structures étatiques modernes (république islamique). La stratification sociale maure (Hassane, Zawiya, Znaga, Haratine) est un élément important de l'organisation sociale traditionnelle.
+- Relations régionales : Relations avec le Maghreb (Maroc, Algérie), relations avec l'Afrique de l'Ouest (Mali, Sénégal, Guinée), relations avec l'Afrique subsaharienne. Intégration dans l'Union du Maghreb arabe (UMA). Relations commerciales transsahariennes. La Mauritanie est un pays de transition entre l'Afrique du Nord et l'Afrique subsaharienne.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence berbère Sanhaja (Lemtouna, Massufa, Godala) et populations négro-africaines (Halpulaar, Wolof, Soninké, Bambara). Pas de structures politiques unifiées.
+- Moyen Âge : VIIe-XIIe siècles : Empire Almoravide (fondé par les Sanhaja du Sahara), expansion vers le Maghreb et l'Andalousie, islamisation. Développement des tribus Maures (Beidhane), nomades arabophones hassaniya, héritières des Sanhaja berbères. Arabisation progressive. Stratification sociale maure (Hassane, Zawiya, Znaga, Haratine).
+- Époque précoloniale : Consolidation des tribus Maures (Beidhane), organisation tribale et nomade. Populations négro-africaines (Halpulaar, Soninké, Wolof, Bambara) dans la vallée du fleuve Sénégal. Commerce transsaharien. Développement des traditions culturelles.
+- Colonisation : 1904 : Protectorat français. 1920 : Colonie de "Mauritanie" (AOF). Résistance des peuples autochtones (notamment résistance des Maures). Développement de l'administration coloniale. XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1950s-1960 : Mouvement pour l'indépendance, Mokhtar Ould Daddah, indépendance (28 novembre 1960), proclamation de la République Islamique de Mauritanie.
+- Période post-indépendance : République Islamique de Mauritanie (1960), présidence de Mokhtar Ould Daddah (1960-1978), coups d'État (1978, 1984, 2005, 2008), abolition officielle de l'esclavage (1981, mais pratiques persistantes), conflit du Sahara occidental (1975-1979), tensions ethniques (1989-1991, expulsion de Négro-Mauritaniens), transition démocratique (depuis 2007), présidence de Mohamed Ould Abdel Aziz (2008-2019), Mohamed Ould Ghazouani (depuis 2019). Défis : esclavage (pratiques persistantes malgré l'abolition officielle), tensions ethniques, développement économique, sécurité (terrorisme).
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Mauritania
+- SIL Ethnologue – Languages of Mauritania
+- Minority Rights Group – Haratine in Mauritania
+- Anti-Slavery International – Slavery in Mauritania
+- Recensements mauritaniens
+- Études anthropologiques sur les peuples de Mauritanie
+- Études historiques sur l'empire Almoravide
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Maures / Beidhane
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 1 900 000
+- Pourcentage dans le pays : 40,0%
+- Pourcentage en Afrique : 1,1%
+- Région : Nord et centre de la Mauritanie
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : mry
+
+### Peuple : Haratine
+- Identifiant peuple (PPL_) : PPL_HARATINE
+- Population : 1 425 000
+- Pourcentage dans le pays : 30,0%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la Mauritanie
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : mry
+
+### Peuple : Halpulaar
+- Identifiant peuple (PPL_) : PPL_HALPULAAR
+- Population : 570 000
+- Pourcentage dans le pays : 12,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud de la Mauritanie (vallée du fleuve Sénégal)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : fuc
+
+### Peuple : Soninké
+- Identifiant peuple (PPL_) : PPL_SONINKE
+- Population : 475 000
+- Pourcentage dans le pays : 10,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud de la Mauritanie (vallée du fleuve Sénégal)
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : snk
+
+### Peuple : Wolof
+- Identifiant peuple (PPL_) : PPL_WOLOF
+- Population : 95 000
+- Pourcentage dans le pays : 2,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest de la Mauritanie (côte, vallée du fleuve Sénégal)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : wol
+
+### Peuple : Bambara
+- Identifiant peuple (PPL_) : PPL_BAMBARA
+- Population : 95 000
+- Pourcentage dans le pays : 2,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud de la Mauritanie
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : bam
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 190 000
+- Pourcentage dans le pays : 4,0%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la Mauritanie
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Mauritanie 2025 : 4 750 000 (estimations ONU/UNFPA)**
+

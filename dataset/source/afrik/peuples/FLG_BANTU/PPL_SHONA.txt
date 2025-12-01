@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Shona (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Zimbabwe, Mozambique
-- Pays actuels : Zimbabwe, Mozambique
+- Région historique : ZWE, MOZ
+- Pays actuels : ZWE, MOZ
 - Identifiant peuple (ID) : PPL_SHONA
 
 # 1. Ethnies incluses dans le peuple
@@ -77,7 +77,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Shona language (sna)
-- CIA World Factbook – Zimbabwe, Mozambique
+- CIA World Factbook – ZWE, MOZ
 - Recensements nationaux
 - Études anthropologiques sur les peuples bantous
 - Études historiques sur le royaume du Grand Zimbabwe

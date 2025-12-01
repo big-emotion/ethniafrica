@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : « Ijaw » (terme utilisé par les Européens), « Ijo » (variante)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Ijoid (sous-groupe du Bénoué-Congo)
-- Région historique : Delta du Niger, côte du Nigeria
-- Pays actuels : Nigeria
+- Région historique : Delta du NER, côte du Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_IJAW
 
 # 1. Ethnies incluses dans le peuple

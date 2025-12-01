@@ -1,0 +1,214 @@
+# Nom du pays
+- Nom officiel actuel : République unie de Tanzanie (Jamhuri ya Muungano wa Tanzania)
+- Étymologie du nom : Le nom "Tanzanie" est une combinaison de "Tanganyika" et "Zanzibar", créé lors de l'unification en 1964. "Tanganyika" vient probablement du swahili "tanga" (voile) et "nyika" (plaine désertique), ou de "tanga" (voile) et "hika" (étendre). "Zanzibar" vient de l'arabe "Zanj" (noir) et "barr" (côte), signifiant "côte des Noirs".
+- Personne / peuple / administration à l'origine du nom : Le nom "Tanzanie" a été créé en 1964 lors de l'unification du Tanganyika et de Zanzibar. "Tanganyika" était le nom colonial allemand puis britannique. "Zanzibar" était le nom du sultanat puis protectorat.
+- Identifiant pays (ISO 3166-1 alpha-3) : TZA
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de groupes bantous, nilotiques et couchitiques sans nom unifié. Les peuples autochtones (Sukuma, Chaga, Maasai, etc.) avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Développement des cités-États swahili sur la côte (Kilwa, Zanzibar, Pemba). Commerce avec les Arabes, les Indiens et les Perses.
+- Époque précoloniale : Mosaïque de peuples bantous (Sukuma, Chaga, Nyamwezi, Haya), nilotiques (Maasai, Luo) et couchitiques. Cité-États swahili sur la côte. Sultanat de Zanzibar. Pas de nom unifié pour l'ensemble du territoire.
+- Colonisation : 1885-1918 : Afrique orientale allemande (Deutsch-Ostafrika), incluant le Tanganyika. 1919-1961 : Territoire sous mandat britannique (Tanganyika). 1890-1963 : Protectorat britannique de Zanzibar.
+- Période contemporaine : 1961 : Indépendance du Tanganyika. 1963 : Indépendance de Zanzibar. 1964 : Unification sous le nom de "République unie de Tanzanie". Le nom officiel en swahili est "Jamhuri ya Muungano wa Tanzania".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Cités-États swahili] :
+  - Période : VIIIe - XIXe siècles
+  - Peuples dominants : Swahili
+  - Centres politiques : Kilwa, Zanzibar, Pemba, Mombasa
+  - Rôle historique : Cités-États swahili puissantes sur la côte, commerce avec les Arabes, les Indiens et les Européens. Civilisation swahili ancienne.
+
+- [Sultanat de Zanzibar] :
+  - Période : XIXe - XXe siècles
+  - Peuples dominants : Swahili, Arabes
+  - Centres politiques : Zanzibar (capitale)
+  - Rôle historique : Sultanat puissant, commerce d'esclaves et d'épices. Influence sur la côte est-africaine.
+
+- [Royaumes bantous] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Sukuma, Chaga, Nyamwezi, Haya
+  - Centres politiques : Régions centrales et occidentales
+  - Rôle historique : Royaumes et chefferies bantous, organisation politique traditionnelle, agriculture.
+
+- [Afrique orientale allemande] :
+  - Période : 1885 - 1918
+  - Peuples dominants : Tous les peuples tanzaniens sous administration coloniale allemande
+  - Centres politiques : Dar es Salaam (capitale coloniale)
+  - Rôle historique : Colonie allemande, résistance tanzanienne (guerre Maji Maji, 1905-1907).
+
+- [Tanganyika] :
+  - Période : 1919 - 1961
+  - Peuples dominants : Tous les peuples tanzaniens sous mandat britannique
+  - Centres politiques : Dar es Salaam (capitale)
+  - Rôle historique : Mandat britannique puis tutelle de l'ONU. Mouvements nationalistes.
+
+- [République unie de Tanzanie] :
+  - Période : 1964 - présent
+  - Peuples dominants : Tous les peuples tanzaniens
+  - Centres politiques : Dodoma (capitale depuis 1996), Dar es Salaam (ancienne capitale)
+  - Rôle historique : Unification du Tanganyika et de Zanzibar en 1964. Histoire politique stable avec parti unique puis multipartisme. Développement économique, hub est-africain.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Sukuma
+  - Auto-appellation (endonyme) : Sukuma
+  - Exonymes / appellations historiques : Sukuma (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SUKUMA
+  - Région principale : Nord-Ouest (région du lac Victoria)
+  - Langues parlées : Sukuma, swahili, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone F)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Sukuma" est neutre et accepté.
+
+- Peuple 2 :
+  - Nom : Swahili (Tanzanie)
+  - Auto-appellation (endonyme) : Swahili
+  - Exonymes / appellations historiques : Swahili (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SWAHILI_TANZANIE
+  - Région principale : Côte (Zanzibar, Pemba, Dar es Salaam)
+  - Langues parlées : Swahili, arabe, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone G)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Swahili" est neutre et accepté.
+
+- Peuple 3 :
+  - Nom : Chaga
+  - Auto-appellation (endonyme) : Chaga
+  - Exonymes / appellations historiques : Chaga (terme utilisé par les Européens), Chagga (variante)
+  - Identifiant peuple (PPL_) : PPL_CHAGA (à vérifier si fichier existe)
+  - Région principale : Nord (mont Kilimandjaro)
+  - Langues parlées : Chaga, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Chaga" est neutre et accepté.
+
+- Peuple 4 :
+  - Nom : Haya
+  - Auto-appellation (endonyme) : Haya
+  - Exonymes / appellations historiques : Haya (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_HAYA (à vérifier si fichier existe)
+  - Région principale : Nord-Ouest (région du lac Victoria)
+  - Langues parlées : Haya, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Haya" est neutre et accepté.
+
+- Peuple 5 :
+  - Nom : Nyamwezi
+  - Auto-appellation (endonyme) : Nyamwezi
+  - Exonymes / appellations historiques : Nyamwezi (terme utilisé par les Européens, signifiant "peuple de la lune")
+  - Identifiant peuple (PPL_) : PPL_NYAMWEZI (à vérifier si fichier existe)
+  - Région principale : Centre-Ouest
+  - Langues parlées : Nyamwezi, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Nyamwezi" est neutre et accepté.
+
+- Peuple 6 :
+  - Nom : Maasai
+  - Auto-appellation (endonyme) : Maasai
+  - Exonymes / appellations historiques : Maasai (terme utilisé par les Européens), Masai (variante)
+  - Identifiant peuple (PPL_) : PPL_MAASAI
+  - Région principale : Nord (région d'Arusha)
+  - Langues parlées : Maasai, swahili, anglais
+  - Famille linguistique : FLG_NILOTIQUE (Nilotique oriental)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Maasai" est neutre et accepté.
+
+- Peuple 7 :
+  - Nom : Hehe
+  - Auto-appellation (endonyme) : Hehe
+  - Exonymes / appellations historiques : Hehe (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_HEHE (à vérifier si fichier existe)
+  - Région principale : Centre-Sud (Iringa)
+  - Langues parlées : Hehe, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Hehe" est neutre et accepté.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Swahili (swa) - langue nationale et officielle
+  - Anglais - langue officielle
+  - Sukuma (suk) - langue régionale majeure
+  - Plus de 120 langues locales
+- Traditions culturelles : Musique traditionnelle (taarab, ngoma), danse traditionnelle, poésie orale, artisanat (vannerie, poterie, bijoux), architecture traditionnelle, élevage pastoral (Maasai)
+- Religions dominantes : Christianisme (catholique majoritaire, protestant), islam (minorité, surtout sur la côte et à Zanzibar), croyances traditionnelles (syncrétisme)
+- Modes de vie : Vie principalement rurale, agriculture (café, thé, coton, manioc, maïs), élevage (bovins, caprins), pêche (lacs et côtes), tourisme, commerce, urbanisation croissante
+- Organisation sociale : Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, groupes d'âge (Maasai), importance des ancêtres
+- Relations régionales : Relations historiques avec les peuples du Kenya, de l'Ouganda, du Rwanda, du Burundi, de la RDC, du Mozambique. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par des groupes bantous, nilotiques et couchitiques. Développement de royaumes et chefferies indépendants.
+- Moyen Âge : Développement des cités-États swahili sur la côte (VIIIe-XIXe siècles). Commerce avec les Arabes, les Indiens et les Perses. Civilisation swahili ancienne.
+- Époque précoloniale : Sultanat de Zanzibar (XIXe siècle) : commerce d'esclaves et d'épices. Royaumes bantous de l'intérieur. Pas d'unification politique.
+- Colonisation : 1885 : Afrique orientale allemande. Résistance tanzanienne (guerre Maji Maji, 1905-1907). 1919 : Mandat britannique (Tanganyika). 1890 : Protectorat britannique de Zanzibar.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Indépendance du Tanganyika en 1961. Indépendance de Zanzibar en 1963. Julius Nyerere devient premier président.
+- Période post-indépendance : 1964 : Unification du Tanganyika et de Zanzibar. Première République (1964-1992) : parti unique, socialisme africain (Ujamaa). Deuxième République depuis 1992 : multipartisme, développement économique, stabilité politique, hub est-africain.
+
+# 7. Sources
+- CIA World Factbook – Tanzania
+- SIL Ethnologue – Languages of Tanzania
+- Recensements nationaux tanzaniens
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples tanzaniens
+- Études historiques sur les cités-États swahili
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Sukuma
+- Identifiant peuple (PPL_) : PPL_SUKUMA
+- Population : ~5 000 000 - 6 000 000 (estimation, ~10% de la population)
+- Pourcentage dans le pays : ~10%
+- Pourcentage en Afrique : ~0.35%
+- Région : Nord-Ouest (région du lac Victoria)
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : suk (Sukuma)
+
+### Peuple : Swahili (Tanzanie)
+- Identifiant peuple (PPL_) : PPL_SWAHILI_TANZANIE
+- Population : ~1 500 000 - 2 000 000 (estimation, ~3% de la population)
+- Pourcentage dans le pays : ~3%
+- Pourcentage en Afrique : ~0.14%
+- Région : Côte (Zanzibar, Pemba, Dar es Salaam)
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : swa (Swahili)
+
+### Peuple : Chaga
+- Identifiant peuple (PPL_) : PPL_CHAGA (à vérifier)
+- Population : ~2 000 000 (estimation, ~4% de la population)
+- Pourcentage dans le pays : ~4%
+- Pourcentage en Afrique : ~0.14%
+- Région : Nord (mont Kilimandjaro)
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : cgg (Chaga)
+
+### Peuple : Haya
+- Identifiant peuple (PPL_) : PPL_HAYA (à vérifier)
+- Population : ~1 200 000 (estimation, ~2.5% de la population)
+- Pourcentage dans le pays : ~2.5%
+- Pourcentage en Afrique : ~0.08%
+- Région : Nord-Ouest (région du lac Victoria)
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : hay (Haya)
+
+### Peuple : Nyamwezi
+- Identifiant peuple (PPL_) : PPL_NYAMWEZI (à vérifier)
+- Population : ~1 500 000 (estimation, ~3% de la population)
+- Pourcentage dans le pays : ~3%
+- Pourcentage en Afrique : ~0.10%
+- Région : Centre-Ouest
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : nym (Nyamwezi)
+
+### Peuple : Maasai
+- Identifiant peuple (PPL_) : PPL_MAASAI
+- Population : ~800 000 (estimation pour la Tanzanie, sur 2 500 000 total)
+- Pourcentage dans le pays : ~1.5%
+- Pourcentage en Afrique : ~0.06%
+- Région : Nord (région d'Arusha)
+- Famille linguistique : FLG_NILOTIQUE (Nilotique)
+- Code ISO 639-3 (langue principale) : mas (Maasai)
+
+### Peuple : Hehe
+- Identifiant peuple (PPL_) : PPL_HEHE (à vérifier)
+- Population : ~800 000 (estimation, ~1.5% de la population)
+- Pourcentage dans le pays : ~1.5%
+- Pourcentage en Afrique : ~0.06%
+- Région : Centre-Sud (Iringa)
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : heh (Hehe)
+

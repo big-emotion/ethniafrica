@@ -1,0 +1,243 @@
+# Nom du pays
+- Nom officiel actuel : République du Malawi (Republic of Malawi, Dziko la Malaŵi)
+- Étymologie du nom : Le nom "Malawi" vient du mot "Maravi", nom d'un ancien royaume qui dominait la région aux XVIe-XVIIe siècles. "Maravi" signifie "flammes" ou "reflets" en langue chewa, en référence aux reflets du soleil sur le lac Malawi. Le nom a été officialisé lors de l'indépendance en 1964.
+- Personne / peuple / administration à l'origine du nom : Le nom "Malawi" vient de l'ancien royaume de Maravi. Le nom "Nyasaland" (pays du Nyasa, du nom du lac) était utilisé pendant la colonisation britannique. Le nom "Malawi" a été officialisé à l'indépendance en 1964 par le président Hastings Kamuzu Banda.
+- Identifiant pays (ISO 3166-1 alpha-3) : MWI
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Malawi était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations bantoues vers la région. Développement de chefferies et royaumes locaux. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : XVIe-XVIIe siècles : Royaume de Maravi, puissant royaume qui dominait la région. Le royaume était centré sur le lac Malawi (lac Nyasa). Développement des chefferies Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni, Tonga. Commerce régional et avec les Portugais. Les Européens utilisaient le terme "Nyasaland" (pays du Nyasa) pour désigner la région.
+- Colonisation : 1891-1964 : Protectorat britannique du Nyasaland (Nyasaland Protectorate). Les Britanniques ont établi un protectorat sur le Nyasaland en 1891. Le territoire était administré comme un protectorat britannique jusqu'à l'indépendance en 1964.
+- Période contemporaine : 1964 : Indépendance du Nyasaland (6 juillet 1964), proclamation de la République du Malawi. Le nom "Malawi" a été officialisé à l'indépendance pour remplacer "Nyasaland".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume de Maravi] :
+  - Période : XVIe siècle - XVIIe siècle
+  - Peuples dominants : Chewa, autres peuples bantous
+  - Centres politiques : Centres autour du lac Malawi
+  - Rôle historique : Royaume de Maravi puissant, système matrilinéaire, développement du commerce régional, relations avec les Portugais. Le royaume était centré sur le lac Malawi (lac Nyasa). Fondation du royaume par les Chewa.
+
+- [Chefferies Chewa] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Chewa
+  - Centres politiques : Chefferies traditionnelles (centre du Malawi)
+  - Rôle historique : Chefferies Chewa, système matrilinéaire, traditions culturelles (masques Gule Wamkulu, rituel initiatique majeur), agriculture (maïs). Héritiers du royaume de Maravi.
+
+- [Chefferies Tumbuka] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Tumbuka
+  - Centres politiques : Chefferies traditionnelles (nord du Malawi)
+  - Rôle historique : Chefferies Tumbuka, traditions culturelles, structures lignagères patrilinéaires.
+
+- [Chefferies Yao] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Yao
+  - Centres politiques : Chefferies traditionnelles (sud du Malawi)
+  - Rôle historique : Chefferies Yao, traditions islamiques, commerce régional, résistance à la colonisation britannique.
+
+- [Protectorat britannique du Nyasaland] :
+  - Période : 1891 - 1964
+  - Peuples dominants : Tous les peuples malawiens sous protectorat britannique
+  - Centres politiques : Zomba (capitale coloniale)
+  - Rôle historique : Protectorat britannique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Yao). Développement du mouvement indépendantiste au XXe siècle, leadership de Hastings Kamuzu Banda.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Chewa
+  - Auto-appellation (endonyme) : Achewa
+  - Exonymes / appellations historiques : Chewa (terme utilisé par les Européens), Cewa (variante coloniale)
+  - Identifiant peuple (PPL_) : PPL_CHEWA
+  - Région principale : Centre du Malawi
+  - Langues parlées : Chewa / Chichewa (nya, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone N) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Achewa" est l'auto-appellation. "Chewa" est l'exonyme le plus courant. "Cewa" est une variante coloniale moins utilisée. Pas de terme péjoratif connu. Héritiers du royaume de Maravi.
+
+- Peuple 2 :
+  - Nom : Tumbuka
+  - Auto-appellation (endonyme) : Tumbuka
+  - Exonymes / appellations historiques : Tumbuka (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TUMBUKA
+  - Région principale : Nord du Malawi
+  - Langues parlées : Tumbuka (tum, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone N) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Tumbuka" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 3 :
+  - Nom : Lomwe
+  - Auto-appellation (endonyme) : Lomwe
+  - Exonymes / appellations historiques : Lomwe (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LOMWE
+  - Région principale : Sud-est du Malawi
+  - Langues parlées : Lomwe (lon, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Lomwe" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 4 :
+  - Nom : Yao
+  - Auto-appellation (endonyme) : Yao
+  - Exonymes / appellations historiques : Yao (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_YAO_MALAWI
+  - Région principale : Sud du Malawi
+  - Langues parlées : Yao (yao, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Yao" est l'auto-appellation. Pas de terme péjoratif connu. Traditions islamiques, commerce régional.
+
+- Peuple 5 :
+  - Nom : Nyanja
+  - Auto-appellation (endonyme) : Nyanja
+  - Exonymes / appellations historiques : Nyanja (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NYANJA
+  - Région principale : Centre et sud du Malawi
+  - Langues parlées : Nyanja (ny, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Nyanja" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 6 :
+  - Nom : Sena
+  - Auto-appellation (endonyme) : Sena
+  - Exonymes / appellations historiques : Sena (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SENA
+  - Région principale : Sud du Malawi
+  - Langues parlées : Sena (seh, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Sena" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 7 :
+  - Nom : Ngoni
+  - Auto-appellation (endonyme) : Ngoni
+  - Exonymes / appellations historiques : Ngoni (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NGONI
+  - Région principale : Centre et nord du Malawi
+  - Langues parlées : Ngoni (ngo, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Ngoni" est l'auto-appellation. Pas de terme péjoratif connu. Migrants zoulous du XIXe siècle.
+
+- Peuple 8 :
+  - Nom : Tonga
+  - Auto-appellation (endonyme) : Tonga
+  - Exonymes / appellations historiques : Tonga (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TONGA
+  - Région principale : Nord du Malawi (lac Malawi)
+  - Langues parlées : Tonga (toi, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Tonga" est l'auto-appellation. Pas de terme péjoratif connu. Peuple du lac Malawi.
+
+- Peuple 9 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions du Malawi
+  - Langues parlées : Langues diverses, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Anglais (langue officielle, eng), Chewa / Chichewa (nya, langue nationale), Tumbuka (tum), Lomwe (lon), Yao (yao), Nyanja (ny), Sena (seh), Ngoni (ngo), Tonga (toi)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique du Malawi. Traditions bantoues : masques Gule Wamkulu (Chewa, rituel initiatique majeur), musiques traditionnelles, danses traditionnelles. Traditions matrilinéaires (Chewa, système matrilinéaire). Traditions patrilinéaires (Tumbuka, autres peuples). Traditions islamiques (Yao). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Le lac Malawi (lac Nyasa) est un élément central de la culture et de l'économie malawienne.
+- Religions dominantes : Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), islam (minorité, Yao), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels)
+- Modes de vie : Agriculture (maïs, tabac, thé, cultures vivrières), pêche (lac Malawi, importante source de protéines), élevage (bovins, caprins), commerce et activités urbaines (zones urbaines, Lilongwe, Blantyre). Urbanisation modérée. Économie basée sur l'agriculture (maïs, tabac, thé, principales exportations), la pêche, et les services. Le Malawi est l'un des pays les plus pauvres d'Afrique.
+- Organisation sociale : Organisation en royaumes historiques (royaume de Maravi), chefferies traditionnelles (Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni, Tonga), structures claniques matrilinéaires (Chewa) et patrilinéaires (Tumbuka, autres peuples). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système matrilinéaire (Chewa).
+- Relations régionales : Relations historiques avec le Mozambique (commerce, migrations, peuples transfrontaliers, frontière), la Zambie (Tumbuka, commerce, frontière), la Tanzanie (commerce, frontière). Intégration dans la SADC (Communauté de développement d'Afrique australe). Relations commerciales et culturelles transfrontalières. Le lac Malawi est partagé avec le Mozambique et la Tanzanie.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales.
+- Moyen Âge : Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.
+- Époque précoloniale : XVIe-XVIIe siècles : Royaume de Maravi, puissant royaume qui dominait la région, centré sur le lac Malawi. Consolidation des chefferies Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni, Tonga. Commerce régional et avec les Portugais. XIXe siècle : Migrations Ngoni (migrants zoulous). Développement des traditions culturelles.
+- Colonisation : 1891 : Établissement du protectorat britannique du Nyasaland. Période coloniale britannique (1891-1964), développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Yao). XXe siècle : Développement du mouvement indépendantiste, leadership de Hastings Kamuzu Banda.
+- Lutte pour l'indépendance : 1950s-1964 : Mouvement pour l'indépendance mené par Hastings Kamuzu Banda et le Parti du congrès du Malawi (MCP). 1964 : Indépendance du Nyasaland (6 juillet 1964), proclamation de la République du Malawi. Hastings Kamuzu Banda devient premier président.
+- Période post-indépendance : 1964-1994 : Présidence de Hastings Kamuzu Banda, régime autoritaire, parti unique. 1994-présent : Transition démocratique, élections multipartites, présidence de Bakili Muluzi (1994-2004), Bingu wa Mutharika (2004-2012), Joyce Banda (2012-2014), Peter Mutharika (2014-2020), Lazarus Chakwera (depuis 2020). Défis : pauvreté, développement économique, VIH/sida, sécurité alimentaire. Le Malawi est l'un des pays les plus pauvres d'Afrique.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Malawi
+- CIA World Factbook – Malawi
+- ONU / UNFPA – Démographie Malawi 2025
+- Recensements malawiens
+- Études anthropologiques sur les peuples du Malawi
+- Études historiques sur le royaume de Maravi
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Chewa
+- Identifiant peuple (PPL_) : PPL_CHEWA
+- Population : 6 500 000
+- Pourcentage dans le pays : 32.5%
+- Pourcentage en Afrique : N/A
+- Région : Centre du Malawi
+- Famille linguistique : Niger-Congo – Bantou (Zone N) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : nya
+
+### Peuple : Tumbuka
+- Identifiant peuple (PPL_) : PPL_TUMBUKA
+- Population : 2 000 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Malawi
+- Famille linguistique : Niger-Congo – Bantou (Zone N) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : tum
+
+### Peuple : Lomwe
+- Identifiant peuple (PPL_) : PPL_LOMWE
+- Population : 2 500 000
+- Pourcentage dans le pays : 12.5%
+- Pourcentage en Afrique : N/A
+- Région : Sud-est du Malawi
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : lon
+
+### Peuple : Yao
+- Identifiant peuple (PPL_) : PPL_YAO_MALAWI
+- Population : 2 000 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Malawi
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : yao
+
+### Peuple : Nyanja
+- Identifiant peuple (PPL_) : PPL_NYANJA
+- Population : 1 500 000
+- Pourcentage dans le pays : 7.5%
+- Pourcentage en Afrique : N/A
+- Région : Centre et sud du Malawi
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : ny
+
+### Peuple : Sena
+- Identifiant peuple (PPL_) : PPL_SENA
+- Population : 1 000 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Malawi
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : seh
+
+### Peuple : Ngoni
+- Identifiant peuple (PPL_) : PPL_NGONI
+- Population : 1 000 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Centre et nord du Malawi
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : ngo
+
+### Peuple : Tonga
+- Identifiant peuple (PPL_) : PPL_TONGA
+- Population : 800 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Malawi (lac Malawi)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : toi
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 1 700 000
+- Pourcentage dans le pays : 8.5%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Malawi
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Malawi 2025 : 20 000 000 (estimations ONU/UNFPA)**
+

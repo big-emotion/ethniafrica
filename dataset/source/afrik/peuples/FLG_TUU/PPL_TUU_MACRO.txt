@@ -8,8 +8,8 @@
   - « Tuu » (terme linguistique moderne)
 - Famille linguistique principale : Khoïsan – Tuu (FLG_TUU)
 - Groupe ethno-linguistique : Tuu (macro-groupe)
-- Région historique : Désert du Kalahari (Botswana, Afrique du Sud, Namibie)
-- Pays actuels : Botswana, Afrique du Sud, Namibie
+- Région historique : Désert du Kalahari (BWA, Afrique du Sud, NAM)
+- Pays actuels : BWA, Afrique du Sud, NAM
 - Identifiant peuple (ID) : PPL_TUU_MACRO
 
 # 1. Ethnies incluses dans le peuple

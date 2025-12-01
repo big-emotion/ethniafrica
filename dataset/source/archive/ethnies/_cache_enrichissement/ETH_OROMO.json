@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_OROMO",
+  "timestamp": "2025-01-25T21:10:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/orom1235",
+      "data": {
+        "langue": "Oromo",
+        "code_iso": "orm",
+        "famille": "Afro-Asiatic > Cushitic > East Cushitic > Oromoid",
+        "pays": ["Éthiopie", "Kenya", "Somalie"],
+        "region": "Afrique de l'Est",
+        "glottocode": "orom1235",
+        "auto_appellation": "Afaan Oromoo"
+      },
+      "timestamp": "2025-01-25T21:10:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/orm",
+      "data": {
+        "langue": "Oromo",
+        "code_iso": "orm",
+        "famille": "Afro-Asiatic",
+        "pays": ["Ethiopia", "Kenya", "Somalia"],
+        "auto_appellation": "Afaan Oromoo"
+      },
+      "timestamp": "2025-01-25T21:10:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "orm",
+    "langue_principale": "Oromo",
+    "famille_linguistique": "Afro-Asiatic > Cushitic > East Cushitic > Oromoid",
+    "pays_principaux": ["Kenya"],
+    "region_generale": "Afrique de l'Est",
+    "auto_appellation": "Afaan Oromoo"
+  }
+}

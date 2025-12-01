@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Herero (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone R)
-- Région historique : Namibie, Botswana, Angola
-- Pays actuels : Namibie, Botswana, Angola
+- Région historique : NAM, BWA, AGO
+- Pays actuels : NAM, BWA, AGO
 - Identifiant peuple (ID) : PPL_HERERO
 
 # 1. Ethnies incluses dans le peuple
@@ -14,10 +14,10 @@
 - Ethnie 3 : Herero d'Angola
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Herero sont originaires de la Namibie, du Botswana et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R).
+- Origines anciennes : Les Herero sont originaires de la NAM, du Botswana et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers la Namibie, le Botswana et l'Angola
+  - Expansion vers la NAM, le Botswana et l'Angola
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.
 - Influences externes : Contacts avec les peuples khoïsan, influence du christianisme.

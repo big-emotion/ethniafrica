@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Kwa
 - Région historique : Sud-est de la Côte d'Ivoire
-- Pays actuels : Côte d'Ivoire
+- Pays actuels : CIV
 - Identifiant peuple (ID) : PPL_AKYE
 
 # 1. Ethnies incluses dans le peuple

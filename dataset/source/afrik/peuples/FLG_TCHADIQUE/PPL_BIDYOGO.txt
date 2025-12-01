@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
 - Groupe ethno-linguistique : Tchadique
 - Région historique : Guinée-Bissau
-- Pays actuels : Guinée-Bissau
+- Pays actuels : GIN-Bissau
 - Identifiant peuple (ID) : PPL_BIDYOGO
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Bidyogo sont originaires de la Guinée-Bissau, dans les îles Bijagos. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique.
+- Origines anciennes : Les Bidyogo sont originaires de la GNB, dans les îles Bijagos. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique.
 - Routes migratoires : 
   - Migrations vers les îles Bijagos
   - Expansion dans les îles

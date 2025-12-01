@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone N)
 - Région historique : Zimbabwe
-- Pays actuels : Zimbabwe
+- Pays actuels : ZWE
 - Identifiant peuple (ID) : PPL_TONGA_ZIM
 
 # 1. Ethnies incluses dans le peuple
@@ -19,7 +19,7 @@
   - Migrations depuis les régions bantoues
   - Expansion vers le Zimbabwe
   - Déplacements vers les zones urbaines
-- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Tonga de Zambie, du Malawi et du Mozambique.
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Tonga de ZMB, du Malawi et du Mozambique.
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.
 
 # 3. Organisation et structure interne

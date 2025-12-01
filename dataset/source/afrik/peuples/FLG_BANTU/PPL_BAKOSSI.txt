@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe ethno-linguistique : Bantous des montagnes du Cameroun (région des Bakossi Mountains)
 - Région historique : Pentes ouest et est du Mont Mwanenguba et du Mont Kupe
-- Pays actuels : Cameroun
+- Pays actuels : CMR
 - Identifiant peuple (ID) : PPL_BAKOSSI
 
 # 1. Ethnies incluses dans le peuple

@@ -7,7 +7,7 @@
 - Famille linguistique principale : Afro-asiatique – Sémitique éthiopien
 - Groupe ethno-linguistique : Sémitique du Nord
 - Région historique : Hautes terres du centre et du nord-ouest de l’Éthiopie (Gojjam, Gondar, Wollo)
-- Pays actuels : Éthiopie (principalement), diaspora mondiale
+- Pays actuels : ETH (principalement), diaspora mondiale
 - Identifiant peuple (ID) : PPL_AMHARA
 
 # 1. Ethnies incluses dans le peuple
@@ -31,7 +31,7 @@
 - Langue principale : Amharique
 - Code ISO : amh
 - Sous-famille : Sémitique éthiopien
-- Rôle : Langue nationale et administrative de l’Éthiopie, langue liturgique en partie héritée du ge’ez.
+- Rôle : Langue nationale et administrative de l’ETH, langue liturgique en partie héritée du ge’ez.
 
 # 5. Culture, rites et traditions
 - Religion majoritaire : Christianisme orthodoxe (Église Tewahedo).

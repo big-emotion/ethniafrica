@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Ndebele (terme utilisé par les Européens), Matabele
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Zimbabwe, Afrique du Sud
-- Pays actuels : Zimbabwe, Afrique du Sud
+- Région historique : ZWE, Afrique du Sud
+- Pays actuels : ZWE, Afrique du Sud
 - Identifiant peuple (ID) : PPL_NDEBELE
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Ndebele language (nde)
-- CIA World Factbook – Zimbabwe, South Africa
+- CIA World Factbook – ZWE, South Africa
 - Recensements nationaux
 - Études anthropologiques sur les peuples bantous
 

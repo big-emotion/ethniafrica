@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bénoué-Congo (Edoïde)
 - Région historique : Nigeria (Edo State)
-- Pays actuels : Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_EDO
 
 # 1. Ethnies incluses dans le peuple
@@ -41,7 +41,7 @@
   - Cultes royaux
   - Rites de passage (initiation, fêtes de naissance)
   - Cérémonies liées à la royauté
-- Symboles : Bronzes du Bénin, symboles royaux
+- Symboles : Bronzes du BEN, symboles royaux
 - Arts et musique : 
   - Bronzes du Bénin
   - Masques et têtes d'Ifé (liens culturels)

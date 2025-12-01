@@ -5,7 +5,7 @@
 - Famille linguistique : Afro-asiatique – Sémitique éthiopien
 - Groupe ethno-linguistique : Sémitique du Sud
 - Région historique : Ville historique de Harar
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - ID peuple : PPL_HARARI
 
 # 1. Ethnies incluses

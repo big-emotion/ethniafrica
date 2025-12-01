@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Kpana (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (sous-groupe du Mandé occidental)
-- Région historique : Sierra Leone, Guinée
-- Pays actuels : Sierra Leone, Guinée
+- Région historique : SLE, GIN
+- Pays actuels : SLE, GIN
 - Identifiant peuple (ID) : PPL_KPANA
 
 # 1. Ethnies incluses dans le peuple

@@ -8,7 +8,7 @@
 - Famille linguistique principale : Khoïsan – Tuu (FLG_TUU)
 - Groupe ethno-linguistique : Tuu (ǀXam)
 - Région historique : Afrique du Sud (province du Cap)
-- Pays actuels : Afrique du Sud (peuple éteint)
+- Pays actuels : ZAF (peuple éteint)
 - Identifiant peuple (ID) : PPL_XAM
 
 # 1. Ethnies incluses dans le peuple

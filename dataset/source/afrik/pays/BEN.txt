@@ -1,0 +1,236 @@
+# Nom du pays
+- Nom officiel actuel : République du Bénin (République du Bénin)
+- Étymologie du nom : Le nom "Bénin" provient de l'ancien royaume du Bénin (actuel Nigeria), mais a été choisi pour le pays en 1975 pour remplacer "Dahomey". Le nom "Dahomey" venait du royaume du Dahomey (XVIIe-XIXe siècles), lui-même nommé d'après "Danhomé" (dans le ventre de Dan), fondé par le roi Houegbadja. Le choix de "Bénin" en 1975 visait à créer une identité nationale neutre, sans référence à un groupe ethnique spécifique.
+- Personne / peuple / administration à l'origine du nom : Le nom "Bénin" a été choisi par le gouvernement de la République populaire du Bénin en 1975, sous la présidence de Mathieu Kérékou. Il remplace "Dahomey", nom colonial français dérivé du royaume du Dahomey (fondé par les Fon). Le nom "Bénin" fait référence à l'ancien royaume du Bénin (actuel Nigeria), mais a été adopté pour sa neutralité ethnique.
+- Identifiant pays (ISO 3166-1 alpha-3) : BEN
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Bénin était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (Dahomey, Nikki, Kétou, etc.).
+- Moyen Âge : Développement de royaumes et chefferies : royaume du Dahomey (Fon, XVIIe-XIXe siècles), royaume de Nikki (Bariba), royaume de Kétou (Yoruba/Nago), royaumes Adja-Ewe. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et chefferies autonomes : royaume du Dahomey (puissant État militarisé, célèbre pour ses Amazones), royaume de Nikki (Bariba), royaume de Kétou (Yoruba), chefferies Adja-Ewe, peuples Somba/Otamari de l'Atacora. Les Français utilisaient le terme "Dahomey" pour désigner la région.
+- Colonisation : 1894-1960 : Colonie du Dahomey (partie de l'Afrique-Occidentale française, AOF). Les Français ont conquis le royaume du Dahomey en 1894 et ont établi la colonie du Dahomey. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960.
+- Période contemporaine : 1960-1975 : République du Dahomey (indépendance le 1er août 1960). 1975-1990 : République populaire du Bénin (changement de nom le 30 novembre 1975, régime marxiste-léniniste sous Mathieu Kérékou). Depuis 1990 : République du Bénin (retour à la démocratie multipartite, nouvelle constitution en 1990).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume du Dahomey] :
+  - Période : XVIIe siècle - 1894
+  - Peuples dominants : Fon
+  - Centres politiques : Abomey (capitale), Allada, Ouidah
+  - Rôle historique : Royaume du Dahomey puissant et militarisé, célèbre pour son armée et ses Amazones (guerrières). Expansion territoriale, commerce avec les Européens (traite des esclaves), résistance à la colonisation française. Influence culturelle majeure (vodun, art royal). Conquête française en 1894.
+
+- [Royaume de Nikki] :
+  - Période : Précolonial - XIXe siècle
+  - Peuples dominants : Bariba (Baatonu)
+  - Centres politiques : Nikki (capitale), Parakou
+  - Rôle historique : Royaume de Nikki, État bariba puissant dans le Borgou. Tradition de cavalerie, organisation politique centralisée. Résistance à la colonisation française.
+
+- [Royaume de Kétou] :
+  - Période : Précolonial - XIXe siècle
+  - Peuples dominants : Yoruba (Nago)
+  - Centres politiques : Kétou (capitale)
+  - Rôle historique : Royaume de Kétou, État yoruba lié culturellement au Nigeria. Relations avec le royaume d'Oyo. Influence culturelle yoruba (Ifá, masques Gẹ̀lẹ̀dẹ́).
+
+- [Royaumes Adja-Ewe] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Adja, Ewe
+  - Centres politiques : Tado (centre historique), chefferies locales
+  - Rôle historique : Royaumes et chefferies Adja-Ewe, centre originel des migrations Gbe vers Abomey et le sud Togo. Traditions culturelles Gbe (masques, rites agraires).
+
+- [Colonie du Dahomey] :
+  - Période : 1894 - 1960
+  - Peuples dominants : Tous les peuples béninois sous domination française
+  - Centres politiques : Porto-Novo (capitale administrative), Cotonou (port principal)
+  - Rôle historique : Colonie française, intégration dans l'AOF (Afrique-Occidentale française). Exploitation économique (huile de palme, coton), développement de l'administration coloniale, résistance des peuples autochtones, développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Fon
+  - Auto-appellation (endonyme) : Fɔ̀ngbè / Fon
+  - Exonymes / appellations historiques : Fon (terme français accepté), Dahoméens (lié à l'ancien royaume du Dahomey)
+  - Identifiant peuple (PPL_) : PPL_FON
+  - Région principale : Sud du Bénin (Abomey, Porto-Novo, Cotonou)
+  - Langues parlées : Fon (fon, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_BENOUECONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Fon" est l'auto-appellation et est utilisé de manière respectueuse. "Dahoméens" fait référence au royaume historique et n'est pas péjoratif, mais est moins utilisé aujourd'hui.
+
+- Peuple 2 :
+  - Nom : Adja-Ewe
+  - Auto-appellation (endonyme) : Adja / Adyá, Ewe
+  - Exonymes / appellations historiques : Adja, Ewe (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_ADJA, PPL_EWE
+  - Région principale : Sud-ouest du Bénin (Mono, Couffo), frontière avec le Togo
+  - Langues parlées : Adja (ajg, ISO 639-3), Ewe (ewe, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_BENOUECONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Adja" et "Ewe" sont les auto-appellations respectives. Pas de terme péjoratif connu.
+
+- Peuple 3 :
+  - Nom : Yoruba / Nago
+  - Auto-appellation (endonyme) : Yoruba, Anagó / Nago
+  - Exonymes / appellations historiques : Yoruba, Nago (termes utilisés par les Européens), "Nago" peut avoir une connotation réductrice dans certains contextes mais est accepté comme auto-appellation par les Anago
+  - Identifiant peuple (PPL_) : PPL_YORUBA, PPL_ANAGO
+  - Région principale : Sud-est du Bénin (Porto-Novo, Kétou), frontière avec le Nigeria
+  - Langues parlées : Yoruba (yor, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bénoué-Congo (Yorubaïde) (FLG_BENOUECONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Yoruba" et "Anagó" sont les auto-appellations. "Nago" est une variante exonyme qui peut avoir une connotation réductrice dans certains contextes historiques, mais est accepté comme auto-appellation par les Anago du Bénin et du Togo.
+
+- Peuple 4 :
+  - Nom : Bariba
+  - Auto-appellation (endonyme) : Baatonu
+  - Exonymes / appellations historiques : Bariba (terme utilisé par les Européens et les Français), Baatonu (auto-appellation)
+  - Identifiant peuple (PPL_) : PPL_BARIBA
+  - Région principale : Nord du Bénin (Borgou, Alibori), royaume de Nikki
+  - Langues parlées : Baatonu (bci, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Baatonu" est l'auto-appellation, "Bariba" est l'exonyme le plus courant. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Dendi
+  - Auto-appellation (endonyme) : Dendi
+  - Exonymes / appellations historiques : Dendi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_DENDI
+  - Région principale : Nord du Bénin, frontière avec le Niger et le Nigeria
+  - Langues parlées : Dendi (ddn, ISO 639-3), français
+  - Famille linguistique : Nilo-saharien – Songhay (FLG_SONGHAY)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Dendi" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 6 :
+  - Nom : Peul / Fulani
+  - Auto-appellation (endonyme) : Fulɓe (pluriel), Pullo (singulier)
+  - Exonymes / appellations historiques : Peul (terme français), Fulani (terme haoussa), Fula (terme anglophone), "Fellata" (terme haoussa parfois péjoratif, à éviter)
+  - Identifiant peuple (PPL_) : PPL_FULA
+  - Région principale : Nord du Bénin (pasteurs nomades et sédentaires)
+  - Langues parlées : Fulfulde (ful, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fulɓe" est l'auto-appellation. "Peul" et "Fulani" sont des exonymes acceptés. "Fellata" peut avoir une connotation péjorative dans certains contextes et doit être évité.
+
+- Peuple 7 :
+  - Nom : Otamari / Somba
+  - Auto-appellation (endonyme) : Otamari, Somba
+  - Exonymes / appellations historiques : Otamari, Somba (termes utilisés par les Européens et les Français)
+  - Identifiant peuple (PPL_) : PPL_OTAMARI_SOMBA
+  - Région principale : Nord-ouest du Bénin (Atacora), célèbres pour leurs tatas somba (habitations fortifiées)
+  - Langues parlées : Otamari (otm, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Otamari" et "Somba" sont les auto-appellations. Les tatas somba (habitations fortifiées) sont classés au patrimoine mondial de l'UNESCO. Pas de terme péjoratif connu.
+
+- Peuple 8 :
+  - Nom : Lamba
+  - Auto-appellation (endonyme) : Lamba
+  - Exonymes / appellations historiques : Lamba (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LAMBA
+  - Région principale : Nord-ouest du Bénin (sociétés montagnardes)
+  - Langues parlées : Lamba (lam, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Lamba" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), Fon (fon), Yoruba (yor), Adja (ajg), Ewe (ewe), Baatonu (bci), Dendi (ddn), Fulfulde (ful), Otamari (otm), Lamba (lam), Gurma (gux)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique du Bénin. Traditions Gbe (Fon, Adja, Ewe) avec vodun, divination Ifá, masques. Traditions yoruba (Ifá, masques Gẹ̀lẹ̀dẹ́). Traditions bariba (cavalerie, royaume de Nikki). Traditions somba (tatas fortifiées, architecture unique). Art royal du Dahomey (bronzes, sculptures sur bois). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.
+- Religions dominantes : Religions traditionnelles africaines (vodun très présent, surtout chez les Fon), christianisme (catholicisme majoritaire, protestantisme en croissance), islam (minoritaire, surtout dans le nord)
+- Modes de vie : Agriculture (sud, cultures vivrières, palmiers à huile, coton), élevage (nord, Peuls), commerce et activités urbaines (zones côtières, Cotonou, Porto-Novo). Urbanisation croissante. Économie basée sur l'agriculture (coton, ananas, noix de cajou), le commerce transfrontalier, et les services.
+- Organisation sociale : Organisation en royaumes historiques (Dahomey, Nikki, Kétou), chefferies traditionnelles, structures claniques patrilinéaires et matrilinéaires selon les groupes. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions monarchiques (royaume du Dahomey, royaume de Nikki).
+- Relations régionales : Relations historiques avec le Nigeria (Yoruba, commerce), le Togo (Adja-Ewe, frontière), le Niger (Dendi, commerce transsaharien), le Burkina Faso (Gurma, commerce). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Influence culturelle majeure du vodun dans la diaspora afro-atlantique.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par diverses sociétés sans nom unifié. Développement de chefferies et royaumes locaux. Arrivée et expansion des peuples Gbe (Adja, Fon, Ewe) dans le sud.
+- Moyen Âge : Formation et développement du royaume du Dahomey (XVIIe siècle), royaume de Nikki (Bariba), royaume de Kétou (Yoruba). Développement de réseaux commerciaux régionaux et transatlantiques. Expansion du royaume du Dahomey, développement de l'armée et des Amazones.
+- Époque précoloniale : Apogée du royaume du Dahomey (XVIIe-XIXe siècles), État militarisé puissant, commerce avec les Européens (traite des esclaves, huile de palme). Résistance à la colonisation européenne. Relations avec le royaume d'Oyo (Nigeria). Développement de l'art royal (bronzes, sculptures).
+- Colonisation : 1894 : Conquête du royaume du Dahomey par les Français, établissement de la colonie du Dahomey. Période coloniale française (1894-1960), intégration dans l'AOF. Exploitation économique (huile de palme, coton), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, formation de partis politiques.
+- Lutte pour l'indépendance : 1958 : Référendum sur l'autonomie, le Dahomey vote "oui" à la Communauté française. 1960 : Indépendance du Dahomey (1er août 1960), proclamation de la République du Dahomey. Période d'instabilité politique (1960-1972), plusieurs coups d'État.
+- Période post-indépendance : 1972-1990 : Régime marxiste-léniniste sous Mathieu Kérékou, changement de nom pour "République populaire du Bénin" (1975). 1990 : Retour à la démocratie multipartite, nouvelle constitution, changement de nom pour "République du Bénin". Période de démocratisation et de développement économique. Défis de développement, pauvreté, inégalités sociales. Le Bénin est considéré comme un modèle de démocratie en Afrique de l'Ouest.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Benin
+- CIA World Factbook – Benin
+- ONU / UNFPA – Démographie Bénin 2025
+- Law, Robin – "The Kingdom of Allada"
+- Bay, Edna G. – "Wives of the Leopard: Gender, Politics, and Culture in the Kingdom of Dahomey"
+- Archives du Royaume d'Abomey
+- UNESCO – Tatas somba du Bénin (patrimoine mondial)
+- Recensements béninois
+- Études anthropologiques sur les peuples du Bénin
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Fon
+- Identifiant peuple (PPL_) : PPL_FON
+- Population : 5 320 000
+- Pourcentage dans le pays : 38%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Bénin (Abomey, Porto-Novo, Cotonou)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_BENOUECONGO)
+- Code ISO 639-3 (langue principale) : fon
+
+### Peuple : Adja-Ewe
+- Identifiant peuple (PPL_) : PPL_ADJA, PPL_EWE
+- Population : 2 240 000
+- Pourcentage dans le pays : 16%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest du Bénin (Mono, Couffo), frontière avec le Togo
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_BENOUECONGO)
+- Code ISO 639-3 (langue principale) : ajg, ewe
+
+### Peuple : Yoruba / Nago
+- Identifiant peuple (PPL_) : PPL_YORUBA, PPL_ANAGO
+- Population : 1 680 000
+- Pourcentage dans le pays : 12%
+- Pourcentage en Afrique : N/A
+- Région : Sud-est du Bénin (Porto-Novo, Kétou), frontière avec le Nigeria
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Yorubaïde) (FLG_BENOUECONGO)
+- Code ISO 639-3 (langue principale) : yor
+
+### Peuple : Bariba
+- Identifiant peuple (PPL_) : PPL_BARIBA
+- Population : 1 260 000
+- Pourcentage dans le pays : 9%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Bénin (Borgou, Alibori), royaume de Nikki
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : bci
+
+### Peuple : Dendi
+- Identifiant peuple (PPL_) : PPL_DENDI
+- Population : 840 000
+- Pourcentage dans le pays : 6%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Bénin, frontière avec le Niger et le Nigeria
+- Famille linguistique : Nilo-saharien – Songhay (FLG_SONGHAY)
+- Code ISO 639-3 (langue principale) : ddn
+
+### Peuple : Peul / Fulani
+- Identifiant peuple (PPL_) : PPL_FULA
+- Population : 980 000
+- Pourcentage dans le pays : 7%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Bénin (pasteurs nomades et sédentaires)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : ful
+
+### Peuple : Otamari / Somba
+- Identifiant peuple (PPL_) : PPL_OTAMARI_SOMBA
+- Population : 700 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Nord-ouest du Bénin (Atacora), tatas somba
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : otm
+
+### Peuple : Lamba
+- Identifiant peuple (PPL_) : PPL_LAMBA
+- Population : 280 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Nord-ouest du Bénin (sociétés montagnardes)
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : lam
+
+### Autres peuples
+- Identifiant peuple (PPL_) : PPL_GURMA, PPL_SONGHAY_GURMA, autres
+- Population : 700 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Bénin
+- Famille linguistique : Diverses (FLG_GUR, FLG_SONGHAY principalement)
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Bénin 2025 : 14 000 000 (estimations ONU/UNFPA)**
+

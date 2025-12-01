@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_AKAN_ASHANTI",
+  "timestamp": "2025-01-25T22:40:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/asha1252",
+      "data": {
+        "langue": "Asante Twi",
+        "code_iso": "asa",
+        "famille": "Atlantic-Congo > Volta-Congo > Kwa > Potou-Tano > Tano > Central > Akan",
+        "pays": ["Ghana"],
+        "region": "Ashanti Region, Ghana",
+        "glottocode": "asha1252",
+        "auto_appellation": "Asante"
+      },
+      "timestamp": "2025-01-25T22:40:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/asa",
+      "data": {
+        "langue": "Asante Twi",
+        "code_iso": "asa",
+        "famille": "Niger-Congo",
+        "pays": ["Ghana"],
+        "auto_appellation": "Asante"
+      },
+      "timestamp": "2025-01-25T22:40:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "asa",
+    "langue_principale": "Asante Twi",
+    "famille_linguistique": "Atlantic-Congo > Volta-Congo > Kwa > Potou-Tano > Tano > Central > Akan",
+    "pays_principaux": ["Ghana"],
+    "region_generale": "Ashanti Region, Ghana",
+    "auto_appellation": "Asante"
+  }
+}

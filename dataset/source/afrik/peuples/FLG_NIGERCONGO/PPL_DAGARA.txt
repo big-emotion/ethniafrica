@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Dagara (terme utilisé par les Européens), Dagaaba
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Gur
-- Région historique : Burkina Faso, Ghana
-- Pays actuels : Burkina Faso, Ghana
+- Région historique : BFA, GHA
+- Pays actuels : BFA, GHA
 - Identifiant peuple (ID) : PPL_DAGARA
 
 # 1. Ethnies incluses dans le peuple
@@ -80,7 +80,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Dagaare language (dga)
-- CIA World Factbook – Burkina Faso, Ghana
+- CIA World Factbook – BFA, GHA
 - Recensements nationaux
 - Études anthropologiques sur les peuples gur
 - Upper West Ghana cultural studies

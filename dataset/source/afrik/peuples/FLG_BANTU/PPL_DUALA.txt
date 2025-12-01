@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe ethno-linguistique : Bantous côtiers (Sawa)
 - Région historique : Littoral camerounais (Wouri)
-- Pays actuels : Cameroun
+- Pays actuels : CMR
 - Identifiant peuple (ID) : PPL_DUALA
 
 # 1. Ethnies incluses dans le peuple

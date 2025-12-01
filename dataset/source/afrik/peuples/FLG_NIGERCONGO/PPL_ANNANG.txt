@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bénoué-Congo
 - Région historique : Sud-est du Nigeria
-- Pays actuels : Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_ANNANG
 
 # 1. Ethnies incluses dans le peuple

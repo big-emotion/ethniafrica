@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe ethno-linguistique : Bantous des Grands Lacs (Est de l’Ouganda)
 - Région historique : Royaume de Busoga (entre lac Victoria et lac Kyoga)
-- Pays actuels : Ouganda
+- Pays actuels : UGA
 - Identifiant peuple (ID) : PPL_BASOGA
 
 # 1. Ethnies incluses dans le peuple
@@ -41,7 +41,7 @@
 - Royaumes / chefferies : Royaume de Busoga, reconnu comme l’une des monarchies traditionnelles de l’Ouganda.
 - Relations avec peuples voisins : Relations d’échanges et parfois de tensions avec Baganda, Banyoro et autres peuples de la région.
 - Conflits / alliances : Alliances variées pendant la période précoloniale et coloniale ; participation à la vie politique de l’État ougandais moderne.
-- Diaspora : Migration vers Kampala et d’autres villes d’Ouganda, ainsi que diaspora plus large liée à l’émigration contemporaine.
+- Diaspora : Migration vers Kampala et d’autres villes d’UGA, ainsi que diaspora plus large liée à l’émigration contemporaine.
 
 # 7. Démographie globale
 - Population totale (tous pays) : 3 500 000

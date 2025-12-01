@@ -1,0 +1,134 @@
+# Nom du pays
+- Nom officiel actuel : République tunisienne (Al-Jumhūriyyah at-Tūnisiyyah)
+- Étymologie du nom : Le nom "Tunisie" vient de "Tunis", la capitale. Le nom "Tunis" vient probablement de "Tynes" (ancien nom berbère) ou de "Tunès" (nom punique). Le nom arabe "Tūnis" (تونس) est utilisé depuis le Moyen Âge.
+- Personne / peuple / administration à l'origine du nom : Le nom "Tunisie" vient de "Tunis", fondée par les Berbères puis développée par les Arabes. Le nom a été officialisé lors de la colonisation française.
+- Identifiant pays (ISO 3166-1 alpha-3) : TUN
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Ifriqiya (nom berbère), Africa (nom romain, origine du nom du continent), Carthage (ancienne capitale punique). Le territoire était peuplé de Berbères et de Phéniciens.
+- Moyen Âge : Ifriqiya (nom arabe), Tunis (capitale). Dynasties arabes et berbères (Aghlabides, Fatimides, Zirides, Hafsides).
+- Époque précoloniale : Régence de Tunis (1574-1881), État ottoman semi-autonome dirigé par des beys. Le territoire était appelé "Ifriqiya" ou "Tunis".
+- Colonisation : 1881-1956 : Protectorat français de Tunisie. Le nom "Tunisie" est officialisé par l'administration coloniale française.
+- Période contemporaine : 1956 : Indépendance, république tunisienne. Le nom officiel en arabe est "Al-Jumhūriyyah at-Tūnisiyyah".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Carthage] :
+  - Période : 814 av. J.-C. - 146 av. J.-C.
+  - Peuples dominants : Phéniciens, Berbères
+  - Centres politiques : Carthage
+  - Rôle historique : Empire carthaginois puissant, rivalité avec Rome, guerres puniques, destruction de Carthage (146 av. J.-C.).
+
+- [Afrique romaine] :
+  - Période : 146 av. J.-C. - 439 apr. J.-C.
+  - Peuples dominants : Romains, Berbères
+  - Centres politiques : Carthage (reconstruite)
+  - Rôle historique : Province romaine prospère, christianisation, développement urbain et commercial.
+
+- [Royaume vandale] :
+  - Période : 439-534
+  - Peuples dominants : Vandales, Berbères
+  - Centres politiques : Carthage
+  - Rôle historique : Royaume vandale en Afrique du Nord, résistance berbère.
+
+- [Califat omeyyade et abbasside] :
+  - Période : 647-909
+  - Peuples dominants : Arabes, Berbères
+  - Centres politiques : Kairouan
+  - Rôle historique : Conquête arabe, islamisation, fondation de Kairouan, développement de l'Ifriqiya.
+
+- [Dynastie aghlabide] :
+  - Période : 800-909
+  - Peuples dominants : Arabes, Berbères
+  - Centres politiques : Kairouan
+  - Rôle historique : Dynastie arabe indépendante, développement économique et culturel, conquête de la Sicile.
+
+- [Dynastie fatimide] :
+  - Période : 909-1171
+  - Peuples dominants : Berbères, Arabes
+  - Centres politiques : Mahdia, puis Le Caire
+  - Rôle historique : Dynastie chiite ismaélienne, expansion vers l'Égypte, développement culturel.
+
+- [Dynastie hafside] :
+  - Période : 1229-1574
+  - Peuples dominants : Berbères, Arabes
+  - Centres politiques : Tunis
+  - Rôle historique : Dynastie berbère indépendante, développement de Tunis, résistance aux puissances européennes.
+
+- [Régence de Tunis] :
+  - Période : 1574-1881
+  - Peuples dominants : Turcs ottomans, Arabes, Berbères
+  - Centres politiques : Tunis
+  - Rôle historique : État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes.
+
+- [Protectorat français] :
+  - Période : 1881-1956
+  - Peuples dominants : Tous les peuples tunisiens sous domination coloniale
+  - Centres politiques : Tunis
+  - Rôle historique : Colonisation française, résistance tunisienne, mouvements nationalistes.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Arabes de Tunisie
+  - Auto-appellation (endonyme) : Al-'Arab (العرب), Tūnisiyyūn (تونسيون)
+  - Exonymes / appellations historiques : Arabes, Arabophones, Tunisiens
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Toutes les régions de Tunisie, majoritaires dans les plaines et les villes
+  - Langues parlées : Arabe tunisien (darija), arabe standard
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Arabes de Tunisie sont majoritairement arabisés (métissés avec les Berbères). Le terme "Tunisien" est également utilisé.
+
+- Peuple 2 :
+  - Nom : Berbères de Tunisie
+  - Auto-appellation (endonyme) : Imazighen (ⵉⵎⴰⵣⵉⵖⵏ)
+  - Exonymes / appellations historiques : « Berbère » (terme colonial, considéré problématique ; auto-appellation correcte : Amazigh / Imazighen)
+  - Identifiant peuple (PPL_) : PPL_AMAZIGH_MACRO (groupe minoritaire en Tunisie)
+  - Région principale : Sud de la Tunisie (régions de Matmata, Douiret, Chenini), île de Djerba
+  - Langues parlées : Tamazight tunisien (berbère tunisien, en déclin), arabe tunisien
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Berbère" est considéré comme problématique car il vient du grec "barbaros" (étranger) et a été utilisé par les colonisateurs. L'auto-appellation correcte est "Amazigh" (pluriel : Imazighen). Les Berbères de Tunisie sont une minorité (environ 1-2% de la population).
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Arabe tunisien (aeb), arabe standard (ara), tamazight tunisien (ber, en déclin), français (fra)
+- Traditions culturelles : Musique malouf, mezoued, poésie arabe, artisanat (poterie, tissage, bijoux), architecture traditionnelle (maisons troglodytes du Sud), fêtes religieuses et culturelles
+- Religions dominantes : Islam sunnite (école malékite majoritaire), soufisme important
+- Modes de vie : Urbanisation importante, agriculture (plaines côtières), pastoralisme (régions intérieures), industrie, tourisme, commerce
+- Organisation sociale : Structures familiales traditionnelles, organisation communautaire, structures étatiques modernes, république parlementaire
+- Relations régionales : Relations avec le Maghreb (Union du Maghreb arabe), relations avec l'Europe (Union européenne), relations avec le monde arabe (Ligue arabe), rôle dans la paix au Moyen-Orient
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence berbère depuis la préhistoire, fondation de Carthage par les Phéniciens (814 av. J.-C.), développement de l'empire carthaginois, guerres puniques avec Rome.
+- Moyen Âge : Conquête arabe (647), islamisation progressive, dynasties arabes et berbères (Aghlabides, Fatimides, Hafsides), développement du commerce et de la culture.
+- Époque précoloniale : Régence de Tunis (1574-1881), État ottoman semi-autonome, développement économique et culturel, résistance aux puissances européennes.
+- Colonisation : Protectorat français (1881-1956), résistance tunisienne, mouvements nationalistes (Parti du Destour, Néo-Destour).
+- Lutte pour l'indépendance : Mouvement nationaliste (Habib Bourguiba), indépendance (1956), développement de l'État moderne.
+- Période post-indépendance : République tunisienne (1956), modernisation de l'État, développement économique, révolution de 2011 (printemps arabe), transition démocratique.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Tunisia
+- Ethnologue – Languages of Tunisia
+- Minority Rights Group – Amazigh in Tunisia
+- Wikipedia – Tunisia, Berber people in Tunisia
+- Recensements tunisiens
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Arabes de Tunisie
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 11 760 000
+- Pourcentage dans le pays : 98,0%
+- Pourcentage en Afrique : 6,5%
+- Région : Toutes les régions
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : aeb
+
+### Peuple : Berbères de Tunisie
+- Identifiant peuple (PPL_) : PPL_AMAZIGH_MACRO
+- Population : 240 000
+- Pourcentage dans le pays : 2,0%
+- Pourcentage en Afrique : 0,1%
+- Région : Sud (Matmata, Douiret, Chenini), Djerba
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : ber (en déclin), aeb (langue quotidienne)
+
+**Total population Tunisie 2025 : 12 000 000 (estimations ONU/UNFPA)**
+

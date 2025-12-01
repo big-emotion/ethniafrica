@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bénoué-Congo
 - Région historique : Nigeria (État de Kogi, centre)
-- Pays actuels : Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_EBIRA
 
 # 1. Ethnies incluses dans le peuple

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Kwa (sous-groupe Akan)
 - Région historique : Côte du Ghana (Central, Western)
-- Pays actuels : Ghana
+- Pays actuels : GHA
 - Identifiant peuple (ID) : PPL_FANTE
 
 # 1. Ethnies incluses dans le peuple

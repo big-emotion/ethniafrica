@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Zande (terme utilisé par les Européens), Azande
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central
-- Région historique : Sud-Soudan, RDC, RCA
-- Pays actuels : Soudan du Sud, République démocratique du Congo, République centrafricaine
+- Région historique : Sud-SDN, COD, CAF
+- Pays actuels : SDN du Sud, République démocratique du COG, République centrafricaine
 - Identifiant peuple (ID) : PPL_ZANDE
 
 # 1. Ethnies incluses dans le peuple
@@ -14,10 +14,10 @@
 - Ethnie 3 : Zande de RCA
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Zande sont originaires du Sud-Soudan, de la RDC et de la RCA. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central. Formation d'un royaume.
+- Origines anciennes : Les Zande sont originaires du Sud-SDN, de la RDC et de la RCA. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central. Formation d'un royaume.
 - Routes migratoires : 
   - Migrations depuis les régions du Haut-Nil
-  - Expansion vers le Sud-Soudan, la RDC et la RCA
+  - Expansion vers le Sud-SDN, la RDC et la RCA
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Formation d'un royaume Zande. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples bantous, influence du christianisme.

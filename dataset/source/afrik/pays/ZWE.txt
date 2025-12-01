@@ -1,0 +1,130 @@
+# Nom du pays
+- Nom officiel actuel : République du Zimbabwe (Republic of Zimbabwe)
+- Étymologie du nom : Le nom "Zimbabwe" vient du terme shona "dzimba-dza-mabwe", qui signifie "maisons de pierre" ou "grandes maisons de pierre". Ce terme fait référence aux ruines du Grand Zimbabwe, un site archéologique majeur construit entre le XIe et le XVe siècle.
+- Personne / peuple / administration à l'origine du nom : Le nom "Zimbabwe" a été adopté lors de l'indépendance en 1980, remplaçant "Rhodésie du Sud". Il rend hommage à l'ancienne civilisation du Grand Zimbabwe, construite par le peuple Shona.
+- Identifiant pays (ISO 3166-1 alpha-3) : ZWE
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de groupes bantous et khoïsan. Présence de civilisations anciennes.
+- Moyen Âge : Royaume du Grand Zimbabwe (XIe-XVe siècles), centre commercial majeur, civilisation shona avancée. Autres royaumes shona (Mutapa, Rozvi).
+- Époque précoloniale : Royaumes shona (Mutapa, Rozvi), royaume Ndebele (Mthwakazi). Le territoire était divisé entre plusieurs entités politiques.
+- Colonisation : 1890-1980 : Rhodésie du Sud (Southern Rhodesia), colonie britannique puis colonie autonome. Le nom "Rhodésie" vient de Cecil Rhodes, colonisateur britannique. Déclaration unilatérale d'indépendance (1965-1979).
+- Période contemporaine : 1980 : Indépendance, République du Zimbabwe. Le nom "Zimbabwe" remplace "Rhodésie du Sud" et rend hommage à l'ancienne civilisation du Grand Zimbabwe.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume du Grand Zimbabwe] :
+  - Période : XIe siècle - XVe siècle
+  - Peuples dominants : Shona
+  - Centres politiques : Grand Zimbabwe (ruines actuelles)
+  - Rôle historique : Royaume puissant, centre commercial majeur, architecture en pierre sèche remarquable, déclin au XVe siècle.
+
+- [Royaume Mutapa] :
+  - Période : XVe siècle - XVIIe siècle
+  - Peuples dominants : Shona
+  - Centres politiques : Régions du nord et de l'est
+  - Rôle historique : Successeur du Grand Zimbabwe, commerce avec les Portugais, déclin progressif.
+
+- [Royaume Rozvi] :
+  - Période : XVIIe siècle - XIXe siècle
+  - Peuples dominants : Shona
+  - Centres politiques : Régions centrales
+  - Rôle historique : Royaume shona puissant, résistance aux Portugais, déclin face aux Ndebele et aux Britanniques.
+
+- [Royaume Ndebele (Mthwakazi)] :
+  - Période : XIXe siècle - 1893
+  - Peuples dominants : Ndebele
+  - Centres politiques : Bulawayo
+  - Rôle historique : Royaume ndebele fondé par Mzilikazi, expansion territoriale, résistance à la colonisation britannique, défaite en 1893.
+
+- [Rhodésie du Sud] :
+  - Période : 1890-1980
+  - Peuples dominants : Tous les peuples zimbabwéens sous domination coloniale
+  - Centres politiques : Salisbury (Harare)
+  - Rôle historique : Colonisation britannique, ségrégation raciale (apartheid), déclaration unilatérale d'indépendance (1965), guerre de libération (1964-1979), indépendance (1980).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Shona
+  - Auto-appellation (endonyme) : Shona
+  - Exonymes / appellations historiques : Shona (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SHONA
+  - Région principale : Toutes les régions du Zimbabwe, majoritaires dans les régions centrales, orientales et septentrionales
+  - Langues parlées : Shona (sna)
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Shona" est l'auto-appellation. Les Shona sont les bâtisseurs du Grand Zimbabwe et constituent la majorité de la population zimbabwéenne.
+
+- Peuple 2 :
+  - Nom : Ndebele (Zimbabwe)
+  - Auto-appellation (endonyme) : Ndebele
+  - Exonymes / appellations historiques : Ndebele (terme utilisé par les Européens), parfois appelés « Matabele » (terme historique)
+  - Identifiant peuple (PPL_) : PPL_NDEBELE_ZIM
+  - Région principale : Sud-ouest du Zimbabwe (Matabeleland)
+  - Langues parlées : Ndebele (nde)
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Ndebele" est l'auto-appellation. "Matabele" est un terme historique mais moins utilisé aujourd'hui. Les Ndebele du Zimbabwe sont liés aux Ndebele d'Afrique du Sud.
+
+- Peuple 3 :
+  - Nom : Tonga (Zimbabwe)
+  - Auto-appellation (endonyme) : Tonga
+  - Exonymes / appellations historiques : Tonga (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TONGA_ZIM
+  - Région principale : Nord-ouest du Zimbabwe (vallée du Zambèze, Binga)
+  - Langues parlées : Tonga (tzl)
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tonga" est l'auto-appellation. Les Tonga du Zimbabwe sont liés aux Tonga de Zambie et ont été déplacés lors de la construction du barrage de Kariba.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Shona (sna), Ndebele (nde), Tonga (tzl), anglais (eng)
+- Traditions culturelles : Sculptures en pierre (art shona), peinture murale traditionnelle (Ndebele), musique traditionnelle, danses traditionnelles, poésie orale, artisanat (poterie, tissage, sculpture)
+- Religions dominantes : Christianisme (protestantisme majoritaire, catholicisme), croyances traditionnelles (syncrétisme), rôle important des ancêtres
+- Modes de vie : Agriculture (maïs, millet, sorgho, tabac), élevage, exploitation minière (or, platine, diamants), urbanisation croissante, commerce
+- Organisation sociale : Structures traditionnelles (royaumes, chefferies), systèmes patrilinéaires (Shona, Ndebele) et matrilinéaires (Tonga), structures étatiques modernes, république présidentielle
+- Relations régionales : Relations avec les pays d'Afrique australe (SADC), échanges commerciaux, rôle dans la région
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence humaine depuis la préhistoire, migrations bantoues, établissement de royaumes shona.
+- Moyen Âge : Royaume du Grand Zimbabwe (XIe-XVe siècles), civilisation shona avancée, architecture en pierre sèche remarquable, centre commercial majeur, déclin au XVe siècle.
+- Époque précoloniale : Royaumes shona (Mutapa, Rozvi), royaume Ndebele (Mthwakazi), expansion territoriale, résistance aux Portugais.
+- Colonisation : Colonisation britannique (1890), Rhodésie du Sud (1923), ségrégation raciale (apartheid), déclaration unilatérale d'indépendance (1965).
+- Lutte pour l'indépendance : Guerre de libération (1964-1979), mouvements nationalistes (ZANU, ZAPU), accords de Lancaster House (1979), indépendance (18 avril 1980).
+- Période post-indépendance : République du Zimbabwe (1980), Robert Mugabe (1980-2017), réforme agraire controversée (années 2000), crise économique, transition politique (2017), défis économiques et politiques.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Zimbabwe
+- Ethnologue – Languages of Zimbabwe
+- Wikipedia – Zimbabwe, Great Zimbabwe, Shona people, Ndebele people
+- Études anthropologiques sur les peuples bantous du Zimbabwe
+- Études historiques sur le royaume du Grand Zimbabwe
+- Recensements zimbabwéens
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Shona
+- Identifiant peuple (PPL_) : PPL_SHONA
+- Population : 13 600 000
+- Pourcentage dans le pays : 80,0%
+- Pourcentage en Afrique : 7,6%
+- Région : Toutes les régions (majoritaires dans les régions centrales, orientales et septentrionales)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : sna
+
+### Peuple : Ndebele (Zimbabwe)
+- Identifiant peuple (PPL_) : PPL_NDEBELE_ZIM
+- Population : 1 700 000
+- Pourcentage dans le pays : 10,0%
+- Pourcentage en Afrique : 0,9%
+- Région : Sud-ouest (Matabeleland)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : nde
+
+### Peuple : Tonga (Zimbabwe)
+- Identifiant peuple (PPL_) : PPL_TONGA_ZIM
+- Population : 650 000
+- Pourcentage dans le pays : 3,8%
+- Pourcentage en Afrique : 0,4%
+- Région : Nord-ouest (vallée du Zambèze, Binga)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : tzl
+
+**Total population Zimbabwe 2025 : 17 000 000 (estimations ONU/UNFPA)**
+

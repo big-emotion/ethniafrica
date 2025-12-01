@@ -7,8 +7,8 @@
   - « Kx'a » (terme linguistique moderne)
 - Famille linguistique principale : Khoïsan – Kx'a (FLG_KXA)
 - Groupe ethno-linguistique : Kx'a (macro-groupe)
-- Région historique : Désert du Kalahari (Namibie, Botswana, Angola)
-- Pays actuels : Namibie, Botswana, Angola
+- Région historique : Désert du Kalahari (NAM, BWA, AGO)
+- Pays actuels : NAM, BWA, AGO
 - Identifiant peuple (ID) : PPL_KXA_MACRO
 
 # 1. Ethnies incluses dans le peuple

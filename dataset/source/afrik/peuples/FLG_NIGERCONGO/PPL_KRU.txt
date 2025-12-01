@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : « Kru » (terme utilisé par les Européens), parfois appelés « Krou » (terme générique)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Krou occidental
-- Région historique : Libéria, Côte d'Ivoire
-- Pays actuels : Libéria, Côte d'Ivoire
+- Région historique : Libéria, CIV
+- Pays actuels : LBR, CIV
 - Identifiant peuple (ID) : PPL_KRU
 
 # 1. Ethnies incluses dans le peuple

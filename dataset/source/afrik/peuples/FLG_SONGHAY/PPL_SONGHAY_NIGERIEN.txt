@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Songhay (FLG_SONGHAY)
 - Groupe ethno-linguistique : Songhay
 - Région historique : Niger
-- Pays actuels : Niger
+- Pays actuels : NER
 - Identifiant peuple (ID) : PPL_SONGHAY_NIGERIEN
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Songhay Nigériens sont originaires du Niger, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Songhay Nigériens sont originaires du NER, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long du fleuve Niger

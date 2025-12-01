@@ -1,0 +1,249 @@
+# Nom du pays
+- Nom officiel actuel : République de Namibie (Republic of Namibia, Republiek van Namibië)
+- Étymologie du nom : Le nom "Namibie" vient du désert du Namib, qui borde la côte atlantique du pays. "Namib" signifie "vaste lieu" ou "endroit vide" en langue nama. Le nom a été adopté lors de l'indépendance en 1990. Auparavant, le territoire était appelé "Afrique du Sud-Ouest" (South West Africa, Suidwes-Afrika) pendant la colonisation sud-africaine.
+- Personne / peuple / administration à l'origine du nom : Le nom "Namibie" vient du désert du Namib, nommé par les Nama. Le nom a été adopté lors de l'indépendance en 1990 pour remplacer "Afrique du Sud-Ouest" (nom colonial sud-africain). Le nom "Namibie" a été proposé par les nationalistes namibiens.
+- Identifiant pays (ISO 3166-1 alpha-3) : NAM
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la Namibie était peuplé de peuples khoïsan (San, Nama) et de peuples bantous (Herero, Ovambo). Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Présence continue des peuples khoïsan et bantous. Migrations bantoues vers la région. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Développement des chefferies bantoues (Ovambo, Herero, Kavango) et des groupes khoïsan (Nama, San). Commerce régional. Les Européens utilisaient le terme "Afrique du Sud-Ouest" pour désigner la région.
+- Colonisation : 1884-1915 : Colonie allemande du Sud-Ouest africain (Deutsch-Südwestafrika). 1915-1990 : Mandat puis colonie sud-africaine (Afrique du Sud-Ouest, South West Africa, Suidwes-Afrika). Le nom "Afrique du Sud-Ouest" est utilisé par les Allemands puis par les Sud-Africains.
+- Période contemporaine : 1990 : Indépendance (21 mars 1990), proclamation de la République de Namibie. Le nom "Namibie" est officialisé pour remplacer "Afrique du Sud-Ouest".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Peuples khoïsan] :
+  - Période : Préhistorique - présent
+  - Peuples dominants : San, Nama
+  - Centres politiques : Groupes nomades et semi-nomades
+  - Rôle historique : Peuples autochtones de la Namibie, chasseurs-cueilleurs (San), pasteurs (Nama), résistance à la colonisation.
+
+- [Chefferies Ovambo] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Ovambo
+  - Centres politiques : Chefferies traditionnelles (nord de la Namibie)
+  - Rôle historique : Chefferies Ovambo, agriculture et élevage, résistance à la colonisation, rôle majeur dans la lutte pour l'indépendance (SWAPO).
+
+- [Chefferies Herero] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Herero
+  - Centres politiques : Chefferies traditionnelles (centre de la Namibie)
+  - Rôle historique : Chefferies Herero, tradition pastorale forte, résistance à la colonisation allemande (guerre des Herero, 1904-1908, génocide).
+
+- [Chefferies Kavango] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Kavango
+  - Centres politiques : Chefferies traditionnelles (nord-est de la Namibie)
+  - Rôle historique : Chefferies Kavango, agriculture et élevage, traditions culturelles.
+
+- [Colonie allemande du Sud-Ouest africain] :
+  - Période : 1884 - 1915
+  - Peuples dominants : Tous les peuples namibiens sous domination coloniale allemande
+  - Centres politiques : Windhoek (capitale coloniale)
+  - Rôle historique : Colonisation allemande, guerre des Herero (1904-1908, génocide), résistance des peuples autochtones, développement de l'économie coloniale.
+
+- [Colonie sud-africaine (Afrique du Sud-Ouest)] :
+  - Période : 1915 - 1990
+  - Peuples dominants : Tous les peuples namibiens sous domination coloniale sud-africaine
+  - Centres politiques : Windhoek (capitale coloniale)
+  - Rôle historique : Colonisation sud-africaine, apartheid, résistance namibienne (SWAPO), guerre d'indépendance (1966-1990), mouvements nationalistes.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Ovambo
+  - Auto-appellation (endonyme) : Ovambo
+  - Exonymes / appellations historiques : Ovambo (terme utilisé par les Européens), "Ambo" (variante)
+  - Identifiant peuple (PPL_) : PPL_OVAMBO
+  - Région principale : Nord de la Namibie
+  - Langues parlées : Ovambo (kwn, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Ovambo" est l'auto-appellation. Pas de terme péjoratif connu. Groupe bantou majoritaire, rôle majeur dans la lutte pour l'indépendance (SWAPO).
+
+- Peuple 2 :
+  - Nom : Kavango
+  - Auto-appellation (endonyme) : Kavango
+  - Exonymes / appellations historiques : Kavango (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KAVANGO
+  - Région principale : Nord-est de la Namibie
+  - Langues parlées : Kavango (kng, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kavango" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 3 :
+  - Nom : Herero
+  - Auto-appellation (endonyme) : Ovaherero
+  - Exonymes / appellations historiques : Herero (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_HERERO
+  - Région principale : Centre de la Namibie
+  - Langues parlées : Herero (her, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Ovaherero" est l'auto-appellation. "Herero" est l'exonyme le plus courant. Pas de terme péjoratif connu. Tradition pastorale forte, victimes du génocide allemand (1904-1908).
+
+- Peuple 4 :
+  - Nom : Damara
+  - Auto-appellation (endonyme) : Damara
+  - Exonymes / appellations historiques : Damara (terme utilisé par les Européens), "Bergdamara" (terme historique, peut être problématique)
+  - Identifiant peuple (PPL_) : PPL_DAMARA
+  - Région principale : Centre de la Namibie
+  - Langues parlées : Damara (naq, ISO 639-3), anglais
+  - Famille linguistique : Khoïsan – Khoe (FLG_KHOE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Damara" est l'auto-appellation. "Bergdamara" est un terme historique qui peut être problématique dans certains contextes. Groupe khoïsan du centre de la Namibie.
+
+- Peuple 5 :
+  - Nom : Nama
+  - Auto-appellation (endonyme) : Nama
+  - Exonymes / appellations historiques : "Nama" (auto-appellation), "Hottentot" (terme colonial péjoratif, à éviter), "Khoikhoi" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_NAMA
+  - Région principale : Sud de la Namibie
+  - Langues parlées : Nama (naq, ISO 639-3), anglais
+  - Famille linguistique : Khoïsan – Khoe (FLG_KHOE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Nama" est l'auto-appellation. "Hottentot" est un terme colonial péjoratif qui doit être évité. "Khoikhoi" est un terme historique. Groupe khoïsan pasteur du sud de la Namibie.
+
+- Peuple 6 :
+  - Nom : Himba
+  - Auto-appellation (endonyme) : Himba
+  - Exonymes / appellations historiques : Himba (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_HIMBA
+  - Région principale : Nord-ouest de la Namibie
+  - Langues parlées : Himba (her, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Himba" est l'auto-appellation. Pas de terme péjoratif connu. Groupe herero semi-nomade, tradition pastorale, culture traditionnelle préservée.
+
+- Peuple 7 :
+  - Nom : San
+  - Auto-appellation (endonyme) : San
+  - Exonymes / appellations historiques : "San" (auto-appellation), "Bushmen" (terme colonial, peut être problématique), "Basarwa" (terme utilisé au Botswana)
+  - Identifiant peuple (PPL_) : PPL_SAN
+  - Région principale : Est de la Namibie (désert du Kalahari)
+  - Langues parlées : Langues khoïsan (diverses, ISO 639-3 variées), anglais
+  - Famille linguistique : Khoïsan (FLG_KHOE, FLG_TUU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "San" est l'auto-appellation. "Bushmen" est un terme colonial qui peut être problématique dans certains contextes. "Basarwa" est un terme utilisé au Botswana. Chasseurs-cueilleurs, peuples autochtones de la Namibie.
+
+- Peuple 8 :
+  - Nom : Blancs namibiens
+  - Auto-appellation (endonyme) : Variées selon les groupes (Afrikaners, Allemands namibiens)
+  - Exonymes / appellations historiques : "Blancs" (terme descriptif, peut être problématique), "Colons" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_BLANCS_NAMIBIENS
+  - Région principale : Toutes les régions de la Namibie, majoritairement urbains
+  - Langues parlées : Afrikaans, allemand, anglais
+  - Famille linguistique : Indo-européenne (langues germaniques)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Blancs namibiens sont descendants de colons allemands et afrikaners. Le terme "Blanc" peut être problématique et doit être utilisé avec précaution. Le terme "Colon" est historique et doit être contextualisé. Ils sont majoritairement chrétiens.
+
+- Peuple 9 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions de la Namibie
+  - Langues parlées : Langues diverses, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Anglais (langue officielle, eng), ovambo (kwn), kavango (kng), herero (her), damara (naq), nama (naq), langues khoïsan (diverses), afrikaans (afr), allemand (deu)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de la Namibie. Traditions bantoues (Ovambo, Herero, Kavango, Himba) : masques, sculptures, musiques traditionnelles, danses traditionnelles, traditions pastorales (Herero, Himba). Traditions khoïsan (Nama, San, Damara) : art rupestre (San), traditions de chasse-cueillette (San), traditions pastorales (Nama), poésie orale. Traditions européennes (Blancs namibiens) : influence culturelle allemande et afrikaner. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. L'art rupestre san est réputé internationalement.
+- Religions dominantes : Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels), toutes les communautés sont majoritairement chrétiennes
+- Modes de vie : Agriculture (Ovambo, Kavango, maïs, millet, cultures vivrières), pastoralisme (Herero, Himba, Nama, élevage de bovins), chasse-cueillette (San, désert du Kalahari), commerce et activités urbaines (zones urbaines, Windhoek, Swakopmund). Urbanisation modérée. Économie basée sur l'exploitation minière (diamants, uranium, zinc), l'agriculture, l'élevage, la pêche, et le tourisme. La Namibie est l'un des pays les plus développés d'Afrique, avec un IDH élevé.
+- Organisation sociale : Organisation en chefferies traditionnelles (Ovambo, Herero, Kavango), structures claniques patrilinéaires (majorité des groupes bantous) et patrilinéaires (groupes khoïsan). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système patrilinéaire (majorité des groupes).
+- Relations régionales : Relations historiques avec l'Angola (commerce, migrations, peuples transfrontaliers, frontière), l'Afrique du Sud (commerce, migrations, frontière), le Botswana (commerce, frontière), la Zambie (commerce, frontière). Intégration dans la SADC (Communauté de développement d'Afrique australe). Relations commerciales et culturelles transfrontalières. La Namibie est un pays de transit pour le commerce régional.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence des peuples khoïsan (San, Nama) depuis la préhistoire. Migrations bantoues vers la région. Développement de chefferies locales.
+- Moyen Âge : Présence continue des peuples khoïsan et bantous. Migrations bantoues continues. Développement de structures politiques locales. Commerce régional.
+- Époque précoloniale : Consolidation des chefferies bantoues (Ovambo, Herero, Kavango) et des groupes khoïsan (Nama, San). Commerce régional. Développement des traditions culturelles.
+- Colonisation : 1884-1915 : Colonie allemande du Sud-Ouest africain, guerre des Herero (1904-1908, génocide), résistance des peuples autochtones. 1915-1990 : Colonie sud-africaine (Afrique du Sud-Ouest), apartheid, résistance namibienne (SWAPO), guerre d'indépendance (1966-1990).
+- Lutte pour l'indépendance : 1966-1990 : Guerre d'indépendance menée par la SWAPO (Organisation du peuple du Sud-Ouest africain), Sam Nujoma, résistance armée contre l'Afrique du Sud. 1988 : Accords de New York, retrait des troupes sud-africaines. 1990 : Indépendance (21 mars 1990), proclamation de la République de Namibie. Sam Nujoma devient premier président.
+- Période post-indépendance : République de Namibie (1990), présidence de Sam Nujoma (1990-2005), Hifikepunye Pohamba (2005-2015), Hage Geingob (2015-2024), Nangolo Mbumba (depuis 2024). Stabilité politique, démocratie multipartite, développement économique, réconciliation nationale. Défis : inégalités économiques, chômage, VIH/sida, développement rural. La Namibie est l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Namibia
+- SIL Ethnologue – Languages of Namibia
+- Recensements namibiens
+- Études anthropologiques sur les peuples de Namibie
+- Études historiques sur la colonisation allemande et sud-africaine, le génocide des Herero, la guerre d'indépendance
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Ovambo
+- Identifiant peuple (PPL_) : PPL_OVAMBO
+- Population : 1 300 000
+- Pourcentage dans le pays : 50,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord de la Namibie
+- Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : kwn
+
+### Peuple : Kavango
+- Identifiant peuple (PPL_) : PPL_KAVANGO
+- Population : 240 000
+- Pourcentage dans le pays : 9,2%
+- Pourcentage en Afrique : N/A
+- Région : Nord-est de la Namibie
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : kng
+
+### Peuple : Herero
+- Identifiant peuple (PPL_) : PPL_HERERO
+- Population : 180 000
+- Pourcentage dans le pays : 6,9%
+- Pourcentage en Afrique : N/A
+- Région : Centre de la Namibie
+- Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : her
+
+### Peuple : Damara
+- Identifiant peuple (PPL_) : PPL_DAMARA
+- Population : 180 000
+- Pourcentage dans le pays : 6,9%
+- Pourcentage en Afrique : N/A
+- Région : Centre de la Namibie
+- Famille linguistique : Khoïsan – Khoe (FLG_KHOE)
+- Code ISO 639-3 (langue principale) : naq
+
+### Peuple : Nama
+- Identifiant peuple (PPL_) : PPL_NAMA
+- Population : 130 000
+- Pourcentage dans le pays : 5,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud de la Namibie
+- Famille linguistique : Khoïsan – Khoe (FLG_KHOE)
+- Code ISO 639-3 (langue principale) : naq
+
+### Peuple : Himba
+- Identifiant peuple (PPL_) : PPL_HIMBA
+- Population : 50 000
+- Pourcentage dans le pays : 1,9%
+- Pourcentage en Afrique : N/A
+- Région : Nord-ouest de la Namibie
+- Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : her
+
+### Peuple : San
+- Identifiant peuple (PPL_) : PPL_SAN
+- Population : 80 000
+- Pourcentage dans le pays : 3,1%
+- Pourcentage en Afrique : N/A
+- Région : Est de la Namibie (désert du Kalahari)
+- Famille linguistique : Khoïsan (FLG_KHOE, FLG_TUU)
+- Code ISO 639-3 (langue principale) : N/A (langues khoïsan diverses)
+
+### Peuple : Blancs namibiens
+- Identifiant peuple (PPL_) : PPL_BLANCS_NAMIBIENS
+- Population : 150 000
+- Pourcentage dans le pays : 5,8%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la Namibie, majoritairement urbains
+- Famille linguistique : Indo-européenne (langues germaniques)
+- Code ISO 639-3 (langue principale) : afr, deu
+
+### Peuple : Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 300 000
+- Pourcentage dans le pays : 11,5%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la Namibie
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Namibie 2025 : 2 600 000 (estimations ONU/UNFPA)**
+

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (Mandé occidental)
 - Région historique : Mali
-- Pays actuels : Mali
+- Pays actuels : MLI
 - Identifiant peuple (ID) : PPL_MARAKA
 
 # 1. Ethnies incluses dans le peuple

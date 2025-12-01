@@ -1,0 +1,39 @@
+{
+  "countryName": "Gambie",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "territoires mandinka",
+        "wolof",
+        "fula",
+        "jola",
+        "serahule",
+        "aucun État unifié"
+      ]
+    },
+    {
+      "period": "XVe siècle",
+      "names": ["Gambia", "Kambra / Kambaa"]
+    },
+    {
+      "period": "XVIIe–XIXe siècle",
+      "names": ["zones de commerce anglais", "français et portugais"]
+    },
+    {
+      "period": "1889",
+      "names": ["Gambia Colony and Protectorate"]
+    },
+    {
+      "period": "1965",
+      "names": ["Indépendance — The Gambia"]
+    },
+    {
+      "period": "1970",
+      "names": ["République de Gambie (nom actuel)"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

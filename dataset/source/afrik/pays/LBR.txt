@@ -1,0 +1,379 @@
+# Nom du pays
+- Nom officiel actuel : République du Libéria (Republic of Liberia)
+- Étymologie du nom : Le nom "Libéria" vient du latin "liber" (libre), en référence à la fondation du pays comme colonie pour les esclaves affranchis des États-Unis. Le nom a été donné par l'American Colonization Society (Société américaine de colonisation) qui a fondé la colonie en 1822.
+- Personne / peuple / administration à l'origine du nom : Le nom "Libéria" a été donné par l'American Colonization Society lors de la fondation de la colonie en 1822. Le nom signifie "terre de la liberté" en latin, en référence à la libération des esclaves afro-américains. Le nom a été officialisé à l'indépendance en 1847.
+- Identifiant pays (ISO 3166-1 alpha-3) : LBR
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Libéria était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations de peuples mandé, krou et atlantiques vers la région. Développement de chefferies et royaumes locaux. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de chefferies et royaumes autonomes : chefferies Kpelle, Bassa, Grebo, Gio, Mano, Krahn, Gola, Kru, Klao, Mandingo, et autres peuples autochtones. Les Européens utilisaient des termes génériques pour désigner la région (Côte des Grains, Côte du Poivre).
+- Colonisation : 1822-1847 : Colonie de l'American Colonization Society (ACS). Les Américains ont fondé la colonie du Libéria en 1822 pour y installer des esclaves affranchis des États-Unis. Le territoire était administré par l'ACS jusqu'à l'indépendance en 1847.
+- Période contemporaine : 1847 : Indépendance du Libéria (26 juillet 1847), proclamation de la République du Libéria. Le Libéria est le premier pays africain à avoir proclamé son indépendance. Le nom "Libéria" est officialisé.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Chefferies Kpelle] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Kpelle
+  - Centres politiques : Chefferies traditionnelles (intérieur)
+  - Rôle historique : Chefferies Kpelle puissantes, système lignager, traditions forestières. Résistance à la colonisation américaine. Rôle politique majeur dans le Libéria contemporain.
+
+- [Chefferies Bassa] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Bassa
+  - Centres politiques : Chefferies traditionnelles (côte, centre et sud)
+  - Rôle historique : Chefferies Bassa, l'un des peuples les plus anciens de la côte libérienne, sociétés initiatiques traditionnelles, masques et rituels. Interaction avec les missions afro-américaines au XIXe siècle. Rôle important dans le Libéria moderne.
+
+- [Chefferies Grebo] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Grebo
+  - Centres politiques : Chefferies traditionnelles (côte sud-est)
+  - Rôle historique : Chefferies Grebo, traditions côtières, résistance à la colonisation américaine.
+
+- [Chefferies Gio] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Gio
+  - Centres politiques : Chefferies traditionnelles (nord)
+  - Rôle historique : Chefferies Gio, traditions forestières, structures lignagères.
+
+- [Chefferies Mano] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Mano
+  - Centres politiques : Chefferies traditionnelles (nord)
+  - Rôle historique : Chefferies Mano, traditions forestières, structures lignagères.
+
+- [Chefferies Krahn] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Krahn
+  - Centres politiques : Chefferies traditionnelles (est)
+  - Rôle historique : Chefferies Krahn, traditions forestières, structures lignagères.
+
+- [Chefferies Gola] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Gola
+  - Centres politiques : Chefferies traditionnelles (ouest)
+  - Rôle historique : Chefferies Gola, traditions forestières, structures lignagères.
+
+- [Colonie de l'American Colonization Society] :
+  - Période : 1822 - 1847
+  - Peuples dominants : Afro-Américains (Américano-Libériens), peuples autochtones sous domination
+  - Centres politiques : Monrovia (capitale coloniale)
+  - Rôle historique : Colonie de l'ACS, installation d'esclaves affranchis des États-Unis, développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Kpelle
+  - Auto-appellation (endonyme) : Kpelle
+  - Exonymes / appellations historiques : Kpelle (terme utilisé par les Européens), "Guerzé" (terme utilisé au Libéria, alternatif)
+  - Identifiant peuple (PPL_) : PPL_KPELLE
+  - Région principale : Intérieur du Libéria
+  - Langues parlées : Kpelle (kpe, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kpelle" est l'auto-appellation. "Guerzé" est un terme alternatif accepté au Libéria. Pas de terme péjoratif connu.
+
+- Peuple 2 :
+  - Nom : Bassa
+  - Auto-appellation (endonyme) : Bassa
+  - Exonymes / appellations historiques : Bassa (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BASSA_LIBERIA
+  - Région principale : Côte libérienne (centre et sud)
+  - Langues parlées : Bassa (bsq, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bassa" est l'auto-appellation. Pas de terme péjoratif connu. L'un des peuples les plus anciens de la côte libérienne.
+
+- Peuple 3 :
+  - Nom : Grebo
+  - Auto-appellation (endonyme) : Grebo
+  - Exonymes / appellations historiques : Grebo (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_GREBO
+  - Région principale : Côte sud-est
+  - Langues parlées : Grebo (grb, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Grebo" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 4 :
+  - Nom : Gio
+  - Auto-appellation (endonyme) : Gio
+  - Exonymes / appellations historiques : Gio (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_GIO
+  - Région principale : Nord du Libéria
+  - Langues parlées : Gio (gej, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Gio" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Mano
+  - Auto-appellation (endonyme) : Mano
+  - Exonymes / appellations historiques : Mano (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MANO
+  - Région principale : Nord du Libéria
+  - Langues parlées : Mano (mev, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mano" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 6 :
+  - Nom : Kru
+  - Auto-appellation (endonyme) : Kru
+  - Exonymes / appellations historiques : Kru (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KRU
+  - Région principale : Côte du Libéria
+  - Langues parlées : Kru (klu, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kru" est l'auto-appellation. Pas de terme péjoratif connu. Navigateurs et pêcheurs, célébrité maritime historique. Résistance forte aux Européens.
+
+- Peuple 7 :
+  - Nom : Gola
+  - Auto-appellation (endonyme) : Gola
+  - Exonymes / appellations historiques : Gola (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_GOLA
+  - Région principale : Ouest du Libéria
+  - Langues parlées : Gola (gol, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Gola" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 8 :
+  - Nom : Vai
+  - Auto-appellation (endonyme) : Vai
+  - Exonymes / appellations historiques : Vai (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_VAI
+  - Région principale : Côte ouest du Libéria
+  - Langues parlées : Vai (vai, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Vai" est l'auto-appellation. Pas de terme péjoratif connu. Inventeurs de l'écriture Vai, un des rares systèmes d'écriture indigènes d'Afrique.
+
+- Peuple 9 :
+  - Auto-appellation (endonyme) : Mandinka / Mandiŋka
+  - Exonymes / appellations historiques : Mandingo (terme utilisé par les Européens), Mandinka (terme alternatif), "Mandingo" (terme historique, parfois péjoratif)
+  - Identifiant peuple (PPL_) : PPL_MANDINKA, PPL_MALINKE
+  - Région principale : Toutes les régions du Libéria
+  - Langues parlées : Mandinka (mnk, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mandinka" ou "Mandiŋka" est l'auto-appellation. "Mandingo" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité.
+
+- Peuple 10 :
+  - Nom : Loma
+  - Auto-appellation (endonyme) : Loma
+  - Exonymes / appellations historiques : Loma (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LOMA
+  - Région principale : Nord du Libéria
+  - Langues parlées : Loma (lom, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Loma" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 11 :
+  - Nom : Kissi
+  - Auto-appellation (endonyme) : Kissi
+  - Exonymes / appellations historiques : Kissi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KISSI
+  - Région principale : Nord du Libéria
+  - Langues parlées : Kissi (kqs, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kissi" est l'auto-appellation. Pas de terme péjoratif connu. Lié aux Kissi de Guinée/Sierra Leone.
+
+- Peuple 12 :
+  - Nom : Mandingo / Mandinka
+  - Auto-appellation (endonyme) : Mandinka / Mandiŋka
+  - Exonymes / appellations historiques : Mandingo (terme utilisé par les Européens), Mandinka (terme alternatif), "Mandingo" (terme historique, parfois péjoratif)
+  - Identifiant peuple (PPL_) : PPL_MANDINKA, PPL_MALINKE
+  - Région principale : Toutes les régions du Libéria
+  - Langues parlées : Mandinka (mnk, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mandinka" ou "Mandiŋka" est l'auto-appellation. "Mandingo" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité.
+
+- Peuple 13 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes (Kru, Klao, Loma, Vai, etc.)
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions du Libéria
+  - Langues parlées : Langues diverses, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation (Kru, Klao, Loma, Vai, etc.). Pas de terme péjoratif connu.
+
+- Peuple 14 :
+  - Nom : Dei
+  - Auto-appellation (endonyme) : Dei
+  - Exonymes / appellations historiques : Dei (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_DEI
+  - Région principale : Côte du Libéria
+  - Langues parlées : Dei, anglais
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Dei" est l'auto-appellation. Pas de terme péjoratif connu. Anciens habitants côtiers.
+
+- Peuple 15 :
+  - Nom : Mende
+  - Auto-appellation (endonyme) : Mende
+  - Exonymes / appellations historiques : Mende (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MENDE
+  - Région principale : Diverses régions du Libéria
+  - Langues parlées : Mende (men, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mende" est l'auto-appellation. Pas de terme péjoratif connu. Migrants transfrontaliers.
+
+- Peuple 16 :
+  - Nom : Américano-Libériens
+  - Auto-appellation (endonyme) : Américano-Libériens / Congo People
+  - Exonymes / appellations historiques : Américano-Libériens (terme utilisé par les Européens), "Congo People" (terme utilisé au Libéria, parfois péjoratif)
+  - Identifiant peuple (PPL_) : PPL_AMERICANO_LIBERIENS
+  - Région principale : Zones urbaines, côte (Monrovia)
+  - Langues parlées : Anglais (eng, ISO 639-3), créole libérien
+  - Famille linguistique : Créole (FLG_CREOLE) / Anglais (FLG_INDOEUROPEEN)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Américano-Libériens" est l'auto-appellation. "Congo People" est un terme utilisé au Libéria qui peut avoir une connotation péjorative dans certains contextes et doit être évité. Descendants d'esclaves affranchis des États-Unis.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Anglais (langue officielle, eng), Kpelle (kpe), Bassa (bsq), Grebo (grb), Gio (gej), Mano (mev), Kru (klu), Vai (vai), Gola (gol), Loma (lom), Kissi (kqs), Mandinka (mnk), Mende (men), langues diverses
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique du Libéria (plus de 20 ethnies). Traditions mandé (Kpelle, Bassa, Gio, Mano, Vai, Loma, Mandingo, Mende, griots, kora, musique mandingue). Traditions krou (Grebo, Kru, masques, rituels). Traditions atlantiques (Gola, Kissi, Dei, traditions côtières). Traditions afro-américaines (Américano-Libériens, culture créole libérienne). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Sociétés initiatiques traditionnelles (Bassa, autres peuples). Le système d'écriture Vai est un élément unique en Afrique de l'Ouest.
+- Religions dominantes : Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), islam (minorité, Mandingo), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels)
+- Modes de vie : Agriculture (riz, manioc, cultures vivrières), exploitation forestière (bois précieux), exploitation minière (fer, diamants, or), pêche (côtière), commerce et activités urbaines (zones urbaines, Monrovia). Urbanisation modérée. Économie basée sur l'agriculture, l'exploitation forestière, l'exploitation minière, et les services. Dépendance économique importante.
+- Organisation sociale : Organisation en chefferies traditionnelles (Kpelle, Bassa, Grebo, Gio, Mano, Kru, Vai, Gola, Loma, Kissi, Mandingo, Mende, Dei), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Sociétés initiatiques traditionnelles (Bassa, autres peuples). Traditions d'initiation et de passage à l'âge adulte. Hiérarchie sociale entre Américano-Libériens et peuples autochtones (historique, en déclin). Les Kpelle, Bassa, Grebo, Kru et Vai sont les groupes structurels anciens.
+- Relations régionales : Relations historiques avec la Sierra Leone (commerce, migrations, frontière), la Guinée (Kpelle, commerce, frontière), la Côte d'Ivoire (commerce, frontière). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Relations avec les États-Unis (fondation, diaspora, commerce).
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples mandé, krou et atlantiques. Migrations vers la région. Développement de chefferies locales.
+- Moyen Âge : Migrations continues. Développement de structures politiques locales. Contacts avec les peuples voisins.
+- Époque précoloniale : Consolidation des chefferies Kpelle, Bassa, Grebo, Gio, Mano, Kru, Vai, Gola, Loma, Kissi, Mandingo, Mende, Dei. Les Vai développent un des rares systèmes d'écriture indigènes (l'écriture Vai). Les Kru, connus comme marins, résistent fortement aux Européens. Commerce régional et côtier. Contacts avec les Européens (Portugais, Britanniques, Américains). Commerce des esclaves le long de la côte. Les Portugais appellent la zone "Grain Coast" (Côte du Poivre) pour le commerce de malaguetta.
+- Colonisation : 1822 : Fondation de la colonie du Libéria par l'American Colonization Society (ACS). Période coloniale américaine (1822-1847), installation d'esclaves affranchis des États-Unis, développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1840s : Mouvement pour l'indépendance mené par les dirigeants américano-libériens. 1847 : Indépendance du Libéria (26 juillet 1847), proclamation de la République du Libéria. Le Libéria est le premier pays africain à avoir proclamé son indépendance. Joseph Jenkins Roberts devient premier président.
+- Période post-indépendance : 1847-1980 : Domination politique des Américano-Libériens, présidence de plusieurs présidents américano-libériens. Les Américano-Libériens ont dominé l'État pendant plus d'un siècle. 1980 : Coup d'État, présidence de Samuel Doe (1980-1990), fin de la domination américano-libérienne. 1989-2003 : Guerres civiles libériennes, conflits ethniques, instabilité politique. 2003-présent : Transition démocratique, élection d'Ellen Johnson Sirleaf (2006-2018, première femme présidente d'Afrique), puis George Weah (2018-2024). Défis : pauvreté, reconstruction post-conflit, développement économique, réconciliation nationale. Le Libéria est l'un des pays les plus pauvres d'Afrique. La société est marquée par une dualité historique entre autochtones et descendants d'esclaves affranchis.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Liberia
+- CIA World Factbook – Liberia
+- ONU / UNFPA – Démographie Libéria 2025
+- Recensements libériens
+- Études anthropologiques sur les peuples du Libéria
+- Études historiques sur la fondation du Libéria et l'American Colonization Society
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Kpelle
+- Identifiant peuple (PPL_) : PPL_KPELLE
+- Population : 1 040 000
+- Pourcentage dans le pays : 20%
+- Pourcentage en Afrique : N/A
+- Région : Intérieur du Libéria
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : kpe
+
+### Peuple : Bassa
+- Identifiant peuple (PPL_) : PPL_BASSA_LIBERIA
+- Population : 675 000
+- Pourcentage dans le pays : 13%
+- Pourcentage en Afrique : N/A
+- Région : Côte libérienne (centre et sud)
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : bsq
+
+### Peuple : Grebo
+- Identifiant peuple (PPL_) : PPL_GREBO
+- Population : 520 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Côte sud-est
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+- Code ISO 639-3 (langue principale) : grb
+
+### Peuple : Gio / Dan
+- Identifiant peuple (PPL_) : PPL_GIO
+- Population : 415 000
+- Pourcentage dans le pays : 8%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Libéria
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : gej
+
+### Peuple : Mano
+- Identifiant peuple (PPL_) : PPL_MANO
+- Population : 365 000
+- Pourcentage dans le pays : 7%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Libéria
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : mev
+
+### Peuple : Kru
+- Identifiant peuple (PPL_) : PPL_KRU
+- Population : 365 000
+- Pourcentage dans le pays : 7%
+- Pourcentage en Afrique : N/A
+- Région : Côte du Libéria
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+- Code ISO 639-3 (langue principale) : klu
+
+### Peuple : Vai
+- Identifiant peuple (PPL_) : PPL_VAI
+- Population : 310 000
+- Pourcentage dans le pays : 6%
+- Région : Côte ouest du Libéria
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : vai
+
+### Peuple : Gola
+- Identifiant peuple (PPL_) : PPL_GOLA
+- Population : 260 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Ouest du Libéria
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : gol
+
+### Peuple : Loma
+- Identifiant peuple (PPL_) : PPL_LOMA
+- Population : 155 000
+- Pourcentage dans le pays : 3%
+- Région : Nord du Libéria
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : lom
+
+### Peuple : Kissi
+- Identifiant peuple (PPL_) : PPL_KISSI
+- Population : 210 000
+- Pourcentage dans le pays : 4%
+- Région : Nord du Libéria
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : kqs
+
+### Peuple : Mandingo / Mandinka
+- Identifiant peuple (PPL_) : PPL_MANDINKA, PPL_MALINKE
+- Population : 105 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions du Libéria
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : mnk
+
+### Peuple : Dei
+- Identifiant peuple (PPL_) : PPL_DEI
+- Population : 105 000
+- Pourcentage dans le pays : 2%
+- Région : Côte du Libéria
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : N/A
+
+### Peuple : Mende
+- Identifiant peuple (PPL_) : PPL_MENDE
+- Population : 105 000
+- Pourcentage dans le pays : 2%
+- Région : Diverses régions du Libéria
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : men
+
+### Autres peuples autochtones
+- Identifiant peuple (PPL_) : N/A
+- Population : 600 000
+- Pourcentage dans le pays : 11%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Libéria
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+### Peuple : Américano-Libériens
+- Identifiant peuple (PPL_) : PPL_AMERICANO_LIBERIENS
+- Population : 105 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Zones urbaines, côte (Monrovia)
+- Famille linguistique : Créole (FLG_CREOLE) / Anglais (FLG_INDOEUROPEEN)
+- Code ISO 639-3 (langue principale) : eng
+
+**Total population Libéria 2025 : 5 200 000 (estimations ONU/UNFPA)**
+

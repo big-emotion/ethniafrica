@@ -1,0 +1,167 @@
+# Nom du pays
+- Nom officiel actuel : République de Guinée équatoriale (República de Guinea Ecuatorial)
+- Étymologie du nom : Le nom "Guinée équatoriale" provient de "Guinée" (du portugais "Guiné", terme utilisé pour désigner la côte ouest-africaine) et "équatoriale" (en référence à la position du pays près de l'équateur). Le nom espagnol "Guinea Ecuatorial" a été officialisé lors de la colonisation espagnole.
+- Personne / peuple / administration à l'origine du nom : Le nom "Guinée équatoriale" a été donné par les Espagnols lors de la colonisation. Le terme "Guinée" vient des navigateurs portugais, et "équatoriale" fait référence à la position géographique du pays près de l'équateur. Le nom a été officialisé à l'indépendance en 1968.
+- Identifiant pays (ISO 3166-1 alpha-3) : GNQ
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la Guinée équatoriale était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations bantoues vers la région. Développement de chefferies et royaumes locaux dans les forêts équatoriales. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de chefferies et royaumes autonomes : chefferies Fang, peuples Bubi (île de Bioko), peuples Ndowe (littoral), peuples Annobon (île d'Annobón). Les Portugais utilisaient le terme "Guiné" pour désigner la région côtière.
+- Colonisation : 1778-1968 : Colonie espagnole de Guinée équatoriale (Guinea Española, puis Guinea Ecuatorial). Les Espagnols ont pris possession du territoire en 1778 (traité avec le Portugal). Le territoire était administré comme une colonie espagnole jusqu'à l'indépendance en 1968.
+- Période contemporaine : 1968 : Indépendance de la Guinée équatoriale (12 octobre 1968), proclamation de la République de Guinée équatoriale. Le nom officiel est "República de Guinea Ecuatorial" (République de Guinée équatoriale).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Chefferies Fang] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Fang
+  - Centres politiques : Chefferies lignagères traditionnelles (Río Muni, continent)
+  - Rôle historique : Chefferies Fang puissantes, système lignager, traditions forestières, masques fang (notamment ngil), boîtes à reliques (byeri). Migration nord-sud depuis le Cameroun septentrional. Rôle politique majeur dans la Guinée équatoriale contemporaine.
+
+- [Royaume Bubi] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Bubi
+  - Centres politiques : Île de Bioko (Fernando Póo)
+  - Rôle historique : Royaume Bubi sur l'île de Bioko, système monarchique traditionnel, traditions insulaires. Résistance à la colonisation espagnole. Organisation sociale unique.
+
+- [Peuples Ndowe] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Ndowe
+  - Centres politiques : Chefferies traditionnelles (littoral)
+  - Rôle historique : Peuples Ndowe du littoral, traditions côtières, commerce côtier. Contacts avec les Européens.
+
+- [Peuples Annobon] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Annobon
+  - Centres politiques : Île d'Annobón
+  - Rôle historique : Peuples Annobon de l'île d'Annobón, traditions insulaires, société créole (métissage afro-portugais). Contacts avec les Portugais et les Espagnols.
+
+- [Colonie espagnole de Guinée équatoriale] :
+  - Période : 1778 - 1968
+  - Peuples dominants : Tous les peuples équato-guinéens sous domination espagnole
+  - Centres politiques : Malabo (capitale coloniale, île de Bioko), Bata (capitale continentale)
+  - Rôle historique : Colonie espagnole, exploitation économique (cacao, café, bois), développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Bubi). Développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Fang
+  - Auto-appellation (endonyme) : Fan / Pangwe
+  - Exonymes / appellations historiques : Fang (terme utilisé par les Européens), "Pahouins" (ancienne étiquette coloniale, terme problématique)
+  - Identifiant peuple (PPL_) : PPL_FANG, PPL_FANG_EQGUINEE
+  - Région principale : Río Muni (continent, forêts équatoriales)
+  - Langues parlées : Fang (fan, ISO 639-3), espagnol, français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fan" ou "Pangwe" est l'auto-appellation. "Fang" est l'exonyme le plus courant. "Pahouins" est une ancienne étiquette coloniale qui peut avoir une connotation péjorative et doit être évitée. Rôle politique important en Guinée équatoriale contemporaine.
+
+- Peuple 2 :
+  - Nom : Bubi
+  - Auto-appellation (endonyme) : Bubi
+  - Exonymes / appellations historiques : Bubi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BUBI
+  - Région principale : Île de Bioko (Fernando Póo)
+  - Langues parlées : Bubi (buw, ISO 639-3), espagnol
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bubi" est l'auto-appellation. Pas de terme péjoratif connu. Peuple autochtone de l'île de Bioko, royaume traditionnel.
+
+- Peuple 3 :
+  - Nom : Ndowe
+  - Auto-appellation (endonyme) : Ndowe
+  - Exonymes / appellations historiques : Ndowe (terme utilisé par les Européens), "Playeros" (terme espagnol, littéralement "plage", parfois utilisé)
+  - Identifiant peuple (PPL_) : PPL_NDOWE
+  - Région principale : Littoral (Río Muni)
+  - Langues parlées : Ndowe (ndo, ISO 639-3), espagnol
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Ndowe" est l'auto-appellation. "Playeros" est un terme espagnol descriptif (littéralement "plage") parfois utilisé mais moins préféré. Pas de terme péjoratif connu. Peuples du littoral.
+
+- Peuple 4 :
+  - Nom : Annobon
+  - Auto-appellation (endonyme) : Annobon
+  - Exonymes / appellations historiques : Annobon (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_ANNOBON
+  - Région principale : Île d'Annobón
+  - Langues parlées : Annobon (fab, ISO 639-3), espagnol, créole
+  - Famille linguistique : Créole (FLG_CREOLE) / Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Annobon" est l'auto-appellation. Pas de terme péjoratif connu. Peuple insulaire, société créole (métissage afro-portugais).
+
+- Peuple 5 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions de la Guinée équatoriale
+  - Langues parlées : Langues diverses, espagnol, français
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Espagnol (langue officielle, spa), Français (langue officielle, fra), Fang (fan, langue nationale), Bubi (buw), Ndowe (ndo), Annobon (fab), Portugais (langue officielle, por)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de la Guinée équatoriale. Traditions bantoues forestières (Fang, masques fang, boîtes à reliques byeri, traditions d'initiation). Traditions insulaires (Bubi, royaume traditionnel, traditions uniques de l'île de Bioko). Traditions côtières (Ndowe, commerce côtier). Traditions créoles (Annobon, métissage afro-portugais). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.
+- Religions dominantes : Christianisme (catholicisme majoritaire, 90%+), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, byeri)
+- Modes de vie : Agriculture (cacao, café, cultures vivrières), exploitation forestière (bois précieux), pêche (côtière), exploitation pétrolière (première source de revenus depuis les années 1990), commerce et activités urbaines (zones urbaines, Malabo, Bata). Urbanisation modérée. Économie basée sur l'exploitation pétrolière (première source de revenus), l'exploitation forestière, et l'agriculture. La Guinée équatoriale est l'un des pays les plus riches d'Afrique subsaharienne grâce au pétrole.
+- Organisation sociale : Organisation en chefferies lignagères traditionnelles (Fang, système lignager, clanisme fort), royaume traditionnel (Bubi, système monarchique), chefferies traditionnelles (Ndowe), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte.
+- Relations régionales : Relations historiques avec le Cameroun (Fang, commerce, frontière), le Gabon (Fang, commerce, frontière), le Nigeria (commerce, frontière maritime). Intégration dans la CEMAC (Communauté économique et monétaire de l'Afrique centrale). Relations commerciales et culturelles transfrontalières. Relations avec l'Espagne (colonisation, diaspora).
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales dans les forêts équatoriales et sur les îles.
+- Moyen Âge : Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.
+- Époque précoloniale : Consolidation des chefferies Fang (Río Muni), royaume Bubi (île de Bioko), peuples Ndowe (littoral), peuples Annobon (île d'Annobón). Migration des Fang depuis le Cameroun septentrional. Développement des traditions artistiques (masques, sculptures). Commerce régional. Contacts avec les Européens (Portugais, puis Espagnols).
+- Colonisation : 1778 : Prise de possession espagnole du territoire (traité avec le Portugal). Période coloniale espagnole (1778-1968), exploitation économique (cacao, café, bois), développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Bubi). XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1950s-1968 : Mouvement pour l'indépendance mené par les dirigeants équato-guinéens. 1968 : Indépendance de la Guinée équatoriale (12 octobre 1968), proclamation de la République de Guinée équatoriale. Francisco Macías Nguema devient premier président.
+- Période post-indépendance : 1968-1979 : Présidence de Francisco Macías Nguema, régime dictatorial et répressif. 1979-présent : Coup d'État, présidence de Teodoro Obiang Nguema Mbasogo (depuis 1979), régime autoritaire. Découverte et exploitation du pétrole (années 1990). Défis : inégalités sociales, corruption, dépendance au pétrole, droits de l'homme. La Guinée équatoriale est l'un des pays les plus riches d'Afrique subsaharienne grâce au pétrole, mais avec de fortes inégalités.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Equatorial Guinea
+- CIA World Factbook – Equatorial Guinea
+- ONU / UNFPA – Démographie Guinée équatoriale 2025
+- Recensements équato-guinéens
+- Études anthropologiques sur les peuples de la Guinée équatoriale
+- Études sur l'art équato-guinéen (masques, sculptures)
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Fang
+- Identifiant peuple (PPL_) : PPL_FANG, PPL_FANG_EQGUINEE
+- Population : 1 200 000
+- Pourcentage dans le pays : 80%
+- Pourcentage en Afrique : N/A
+- Région : Río Muni (continent, forêts équatoriales)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : fan
+
+### Peuple : Bubi
+- Identifiant peuple (PPL_) : PPL_BUBI
+- Population : 90 000
+- Pourcentage dans le pays : 6%
+- Pourcentage en Afrique : N/A
+- Région : Île de Bioko (Fernando Póo)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : buw
+
+### Peuple : Ndowe
+- Identifiant peuple (PPL_) : PPL_NDOWE
+- Population : 60 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Littoral (Río Muni)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : ndo
+
+### Peuple : Annobon
+- Identifiant peuple (PPL_) : PPL_ANNOBON
+- Population : 15 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Île d'Annobón
+- Famille linguistique : Créole (FLG_CREOLE) / Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : fab
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 135 000
+- Pourcentage dans le pays : 9%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la Guinée équatoriale
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Guinée équatoriale 2025 : 1 500 000 (estimations ONU/UNFPA)**
+

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Dyula (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé occidental
-- Région historique : Côte d'Ivoire, Burkina Faso, Mali
-- Pays actuels : Côte d'Ivoire, Burkina Faso, Mali
+- Région historique : CIV, BFA, MLI
+- Pays actuels : CIV, BFA, MLI
 - Identifiant peuple (ID) : PPL_DYULA
 
 # 1. Ethnies incluses dans le peuple
@@ -17,7 +17,7 @@
 - Origines anciennes : Marchands mandé islamisés dès le Moyen Âge. Diffusion le long des routes commerciales transsahariennes.
 - Routes migratoires : 
   - Diffusion le long des routes commerciales transsahariennes
-  - Expansion vers la Côte d'Ivoire, le Burkina Faso et le Mali
+  - Expansion vers la CIV, le Burkina Faso et le Mali
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes commerciaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Influence profonde de l'islam, rôle majeur dans les réseaux commerciaux transsahariens.

@@ -8,7 +8,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (branche sénégambienne)
 - Région historique : Zones forestières d'Afrique de l'Ouest et centrale
-- Pays actuels : Guinée, Côte d'Ivoire, Cameroun, Gabon, et autres pays forestiers
+- Pays actuels : GIN, CIV, CMR, GAB, et autres pays forestiers
 - Identifiant peuple (ID) : PPL_FULA_FORET
 
 # 1. Ethnies incluses dans le peuple
@@ -19,7 +19,7 @@
 - Origines anciennes : Les Fula des zones forestières sont originaires de la bande sahélienne. Leur présence dans les zones forestières remonte aux migrations historiques.
 - Routes migratoires : 
   - Migrations depuis les zones sahéliennes vers les zones forestières
-  - Expansion vers la Guinée, la Côte d'Ivoire, le Cameroun, le Gabon
+  - Expansion vers la GIN, la CIV, le CMR, le Gabon
   - Adaptation aux environnements forestiers
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Adaptation aux environnements forestiers.
 - Influences externes : Contacts avec les peuples forestiers, influence de l'islam.

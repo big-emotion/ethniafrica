@@ -1,0 +1,213 @@
+# Nom du pays
+- Nom officiel actuel : République de Guinée (République de Guinée)
+- Étymologie du nom : Le nom "Guinée" provient du portugais "Guiné", terme utilisé par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine au sud du Sénégal. L'origine du terme "Guiné" est incertaine, mais pourrait dériver du berbère "Akal n-Iguinawen" (terre des Noirs) ou d'un terme local. Les Français ont adapté ce nom pour leur colonie.
+- Personne / peuple / administration à l'origine du nom : Le nom "Guinée" a été donné par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine. Les Français ont officialisé ce nom lors de la création de la colonie de Guinée française en 1891. Le nom a été officialisé à l'indépendance en 1958.
+- Identifiant pays (ISO 3166-1 alpha-3) : GIN
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la Guinée était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Développement de royaumes et empires : empire du Mali (XIIIe-XVIe siècle), empire Songhai, influence de l'empire du Ghana. Le territoire était au cœur du Mandé médiéval. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et entités politiques : empire du Mali (centre historique du Mandé), théocratie peule du Fouta Djallon (XVIIIe-XIXe siècle), royaumes Malinké, peuples forestiers (Kissi, Toma, Guerzé), Soussou (côte). Les Européens utilisaient le terme "Guinée" pour désigner la région côtière.
+- Colonisation : 1891-1958 : Colonie française de Guinée (Guinée française). Les Français ont créé la colonie de Guinée en 1891. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1958.
+- Période contemporaine : 1958 : Indépendance de la Guinée (2 octobre 1958), proclamation de la République de Guinée. La Guinée est la seule colonie française à avoir voté "NON" au référendum de 1958 sur la Communauté française, obtenant ainsi l'indépendance immédiate sous la direction de Sékou Touré.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Empire du Mali] :
+  - Période : XIIIe siècle - XVIe siècle
+  - Peuples dominants : Malinké, autres peuples mandé
+  - Centres politiques : Niani (capitale historique, aujourd'hui en Guinée), autres centres
+  - Rôle historique : Empire du Mali puissant, centre historique du Mandé, berceau de la culture mandé. La Guinée était au cœur de l'empire du Mali. Développement de l'islam, commerce transsaharien, épopée de Soundiata. Rôle majeur dans la diffusion culturelle mandé.
+
+- [Théocratie peule du Fouta Djallon] :
+  - Période : XVIIIe siècle - XIXe siècle
+  - Peuples dominants : Peul / Fula
+  - Centres politiques : Fouta Djallon (hauts plateaux)
+  - Rôle historique : Théocratie peule du Fouta Djallon, l'un des plus importants États peuls d'Afrique de l'Ouest. État islamique structuré, système d'émirats, résistance à la colonisation française. Traditions peules et islamiques.
+
+- [Royaumes Malinké] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Malinké
+  - Centres politiques : Chefferies traditionnelles malinké (Haute-Guinée)
+  - Rôle historique : Royaumes Malinké, héritiers du Mandé, traditions de l'empire du Mali, système lignager, castes artisanales (numu, djeli), importance des griots. Rôle majeur dans la diffusion culturelle mandé.
+
+- [Peuples forestiers] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Kissi, Toma, Guerzé / Kpelle
+  - Centres politiques : Chefferies traditionnelles (Guinée forestière)
+  - Rôle historique : Peuples forestiers de Guinée forestière, culturellement distincts du nord mandé et du Fouta Djallon. Traditions forestières, structures lignagères. Résistance à la colonisation.
+
+- [Peuples Soussou] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Soussou
+  - Centres politiques : Chefferies traditionnelles (Basse-Guinée, côte)
+  - Rôle historique : Peuples Soussou de la côte, rôle commercial important, traditions maritimes. Conakry et la Basse-Guinée sont dominées par les Soussou.
+
+- [Colonie française de Guinée] :
+  - Période : 1891 - 1958
+  - Peuples dominants : Tous les peuples guinéens sous domination française
+  - Centres politiques : Conakry (capitale coloniale)
+  - Rôle historique : Colonie française, exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance du Fouta Djallon). Développement du mouvement indépendantiste au XXe siècle, leadership de Sékou Touré.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Peul / Fula
+  - Auto-appellation (endonyme) : Fulɓe (pluriel), Pullo (singulier)
+  - Exonymes / appellations historiques : Peul (terme français), Fulani (terme haoussa), Fula (terme anglophone), "Fellata" (terme haoussa parfois péjoratif, à éviter)
+  - Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+  - Région principale : Fouta Djallon (hauts plateaux, centre)
+  - Langues parlées : Fulfulde (ful, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fulɓe" est l'auto-appellation. "Peul" et "Fulani" sont des exonymes acceptés. "Fellata" peut avoir une connotation péjorative dans certains contextes et doit être évité. Le Fouta Djallon fut l'un des plus importants États peuls d'Afrique de l'Ouest.
+
+- Peuple 2 :
+  - Nom : Malinké
+  - Auto-appellation (endonyme) : Maninka / Mandinka
+  - Exonymes / appellations historiques : Malinké (terme français), Mandinka (terme anglophone), "Mandingo" (terme historique, parfois péjoratif)
+  - Identifiant peuple (PPL_) : PPL_MALINKE
+  - Région principale : Haute-Guinée (nord-est)
+  - Langues parlées : Malinké / Mandinka (mlq, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Maninka" ou "Mandinka" est l'auto-appellation. "Malinké" est l'exonyme français accepté. "Mandingo" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité. Les Malinké sont héritiers du Mandé et de l'empire du Mali.
+
+- Peuple 3 :
+  - Nom : Soussou
+  - Auto-appellation (endonyme) : Soussou
+  - Exonymes / appellations historiques : Soussou (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SOUSSOU
+  - Région principale : Basse-Guinée (côte, Conakry)
+  - Langues parlées : Soussou (sus, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Soussou" est l'auto-appellation. Pas de terme péjoratif connu. Population littorale et urbaine de Basse-Guinée. Conakry et la Basse-Guinée sont dominées par les Soussou.
+
+- Peuple 4 :
+  - Nom : Kissi
+  - Auto-appellation (endonyme) : Kissi
+  - Exonymes / appellations historiques : Kissi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KISSI
+  - Région principale : Guinée forestière (sud)
+  - Langues parlées : Kissi (kqs, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kissi" est l'auto-appellation. Pas de terme péjoratif connu. Peuple forestier du sud.
+
+- Peuple 5 :
+  - Nom : Guerzé / Kpelle
+  - Auto-appellation (endonyme) : Kpelle
+  - Exonymes / appellations historiques : Kpelle (terme utilisé par les Européens), Guerzé (terme alternatif)
+  - Identifiant peuple (PPL_) : PPL_KPELLE
+  - Région principale : Guinée forestière (sud)
+  - Langues parlées : Kpelle (kpe, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kpelle" est l'auto-appellation. "Guerzé" est un terme alternatif accepté. Pas de terme péjoratif connu. Groupe de Guinée forestière.
+
+- Peuple 6 :
+  - Nom : Toma / Loma
+  - Auto-appellation (endonyme) : Toma, Loma
+  - Exonymes / appellations historiques : Toma, Loma (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TOMA_LOMA
+  - Région principale : Guinée forestière (montagnes)
+  - Langues parlées : Toma (tod, ISO 639-3), Loma (lom, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Toma" et "Loma" sont les auto-appellations respectives. Pas de terme péjoratif connu. Populations montagnardes de Guinée forestière.
+
+- Peuple 7 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes (Bagha, Yalunka, Manon, Bassari)
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions de la Guinée
+  - Langues parlées : Langues diverses, français
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation (Bagha, Yalunka, Manon, Bassari, etc.). Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), Fulfulde (ful), Malinké / Mandinka (mlq), Soussou (sus), Kissi (kqs), Kpelle (kpe), Toma (tod), Loma (lom), langues diverses
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de la Guinée. Traditions mandé (Malinké, Soussou, Kpelle, Toma, Loma, griots, kora, musique mandingue, épopée de Soundiata). Traditions peules (Fouta Djallon, poésie peule, traditions islamiques). Traditions forestières (Kissi, Toma, Loma, Guerzé, masques, traditions d'initiation). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La Guinée forestière est culturellement distincte du nord mandé et du Fouta Djallon.
+- Religions dominantes : Islam sunnite (majoritaire, 85%+), christianisme (minorité), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques)
+- Modes de vie : Agriculture (riz, mil, arachides, cultures vivrières), élevage (Peuls, bovins), exploitation minière (bauxite, or, diamants), commerce et activités urbaines (zones urbaines, Conakry). Urbanisation modérée. Économie basée sur l'exploitation minière (bauxite, première source de revenus), l'agriculture, et les services. La Guinée possède d'importantes ressources minières.
+- Organisation sociale : Organisation en empires historiques (empire du Mali, centre du Mandé), théocraties (Fouta Djallon, système d'émirats), chefferies traditionnelles (Malinké, Soussou, peuples forestiers), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Système de castes (Malinké, numu, djeli, griots). Traditions d'initiation et de passage à l'âge adulte.
+- Relations régionales : Relations historiques avec le Mali (Malinké, héritage de l'empire du Mali), le Sénégal (Peuls, commerce), la Sierra Leone (peuples forestiers, frontière), le Liberia (Kpelle, frontière), la Côte d'Ivoire (Malinké, commerce, frontière). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest) et l'UEMOA (Union économique et monétaire ouest-africaine). Relations commerciales et culturelles transfrontalières.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples mandé, atlantiques et forestiers. Développement de chefferies et royaumes locaux.
+- Moyen Âge : XIIIe-XVIe siècle : Empire du Mali, centre historique du Mandé, berceau de la culture mandé. La Guinée était au cœur de l'empire du Mali. Développement de l'islam, commerce transsaharien, épopée de Soundiata. Rôle majeur dans la diffusion culturelle mandé. Influence de l'empire Songhai et de l'empire du Ghana.
+- Époque précoloniale : XVIIIe-XIXe siècle : Théocratie peule du Fouta Djallon, l'un des plus importants États peuls d'Afrique de l'Ouest. Consolidation des royaumes Malinké (Haute-Guinée). Développement des peuples Soussou (Basse-Guinée, côte). Peuples forestiers (Guinée forestière). Commerce régional et transsaharien. Résistance aux pressions extérieures.
+- Colonisation : 1891 : Création de la colonie française de Guinée. Période coloniale française (1891-1958), exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance du Fouta Djallon). XXe siècle : Développement du mouvement indépendantiste, leadership de Sékou Touré.
+- Lutte pour l'indépendance : 1950s-1958 : Mouvement pour l'indépendance mené par Sékou Touré et le Parti démocratique de Guinée (PDG). 1958 : Référendum sur la Communauté française, la Guinée vote "NON" (seule colonie à voter NON). Indépendance de la Guinée (2 octobre 1958), proclamation de la République de Guinée. Sékou Touré devient président.
+- Période post-indépendance : 1958-1984 : Présidence de Sékou Touré, régime socialiste, politique d'isolement, répression politique. 1984-2008 : Régime militaire, présidence de Lansana Conté. 2008-2010 : Régime militaire, présidence de Moussa Dadis Camara puis Sékouba Konaté. 2010-présent : Transition démocratique, élection d'Alpha Condé (2010-2021) puis de Mamady Doumbouya (depuis 2021, coup d'État). Défis : pauvreté, instabilité politique, développement économique, gestion des ressources minières. La Guinée possède d'importantes ressources minières (bauxite, or, diamants).
+
+# 7. Sources
+- SIL Ethnologue – Languages of Guinea
+- CIA World Factbook – Guinea
+- ONU / UNFPA – Démographie Guinée 2025
+- Niane, Djibril Tamsir – "Soundjata ou l'épopée mandingue"
+- Levtzion, Nehemia – "Ancient Ghana and Mali"
+- Recensements guinéens
+- Études anthropologiques sur les peuples de la Guinée
+- Études historiques sur l'empire du Mali et le Fouta Djallon
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Peul / Fula
+- Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+- Population : 4 950 000
+- Pourcentage dans le pays : 33%
+- Pourcentage en Afrique : N/A
+- Région : Fouta Djallon (hauts plateaux, centre)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : ful
+
+### Peuple : Malinké
+- Identifiant peuple (PPL_) : PPL_MALINKE
+- Population : 4 350 000
+- Pourcentage dans le pays : 29%
+- Pourcentage en Afrique : N/A
+- Région : Haute-Guinée (nord-est)
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : mlq
+
+### Peuple : Soussou
+- Identifiant peuple (PPL_) : PPL_SOUSSOU
+- Population : 3 150 000
+- Pourcentage dans le pays : 21%
+- Pourcentage en Afrique : N/A
+- Région : Basse-Guinée (côte, Conakry)
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : sus
+
+### Peuple : Kissi
+- Identifiant peuple (PPL_) : PPL_KISSI
+- Population : 750 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Guinée forestière (sud)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : kqs
+
+### Peuple : Guerzé / Kpelle
+- Identifiant peuple (PPL_) : PPL_KPELLE
+- Population : 750 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Guinée forestière (sud)
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : kpe
+
+### Peuple : Toma / Loma
+- Identifiant peuple (PPL_) : PPL_TOMA_LOMA
+- Population : 450 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Guinée forestière (montagnes)
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : tod, lom
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 600 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la Guinée
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Guinée 2025 : 15 000 000 (estimations ONU/UNFPA)**
+

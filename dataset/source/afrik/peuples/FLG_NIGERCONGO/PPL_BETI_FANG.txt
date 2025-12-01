@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : « Beti-Pahouin » (catégorie coloniale englobante, terme problématique)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone A)
-- Région historique : Plateau du Centre-Sud Cameroun, Guinée équatoriale
-- Pays actuels : Cameroun, Guinée équatoriale
+- Région historique : Plateau du Centre-Sud CMR, GIN équatoriale
+- Pays actuels : CMR, GIN équatoriale
 - Identifiant peuple (ID) : PPL_BETI_FANG
 
 # 1. Ethnies incluses dans le peuple
@@ -66,7 +66,7 @@
   - Résistance à la colonisation
   - Participation aux mouvements politiques
   - Conflits territoriaux
-- Diaspora : Présente dans les villes du Cameroun, de la Guinée équatoriale et dans les pays occidentaux.
+- Diaspora : Présente dans les villes du CMR, de la Guinée équatoriale et dans les pays occidentaux.
 
 # 7. Démographie globale
 - Population totale (tous pays) : 3 000 000 - 4 000 000

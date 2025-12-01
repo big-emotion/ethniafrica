@@ -41,9 +41,9 @@
   ~35 millions
 
 # 2. Peuples associés
-- Peuple 1 : Wolof
-- Peuple 2 : Peuls / Fulbe
-- Peuple 3 : Diola (Joola)
+- Peuple 1 : Wolof (PPL_WOLOF)
+- Peuple 2 : Peuls / Fulbe (PPL_FULANI, PPL_FULA)
+- Peuple 3 : Diola (Joola) (PPL_DIOLA)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Wolof

@@ -30,11 +30,11 @@
 - Nombre total de locuteurs : ~500 millions
 
 # 2. Peuples associés
-- Arabes
-- Amazighs (Berbères)
-- Haoussa
-- Somali
-- Oromo
+- Peuple 1 : Arabes (PPL_ARABES)
+- Peuple 2 : Amazighs (Berbères) (PPL_AMAZIGH)
+- Peuple 3 : Haoussa (PPL_HAUSA)
+- Peuple 4 : Somali (PPL_SOMALI)
+- Peuple 5 : Oromo (PPL_OROMO)
 
 # 3. Ethnies associées (liste synthétique)
 - Kabyles

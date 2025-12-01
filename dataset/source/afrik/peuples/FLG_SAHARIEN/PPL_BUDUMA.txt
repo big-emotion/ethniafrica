@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Buduma (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
 - Groupe ethno-linguistique : Saharien (Kanembu)
-- Région historique : Tchad, Niger, Nigeria
-- Pays actuels : Tchad, Niger, Nigeria
+- Région historique : TCD, NER, NGA
+- Pays actuels : TCD, NER, NGA
 - Identifiant peuple (ID) : PPL_BUDUMA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Buduma du Nigeria
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Buduma sont originaires du Tchad, du Niger et du Nigeria, dans la région du lac Tchad. Leur présence dans la région remonte à plusieurs siècles. Ils sont traditionnellement des pêcheurs et éleveurs du lac Tchad.
+- Origines anciennes : Les Buduma sont originaires du TCD, du Niger et du NGA, dans la région du lac Tchad. Leur présence dans la région remonte à plusieurs siècles. Ils sont traditionnellement des pêcheurs et éleveurs du lac Tchad.
 - Routes migratoires : 
   - Migrations autour du lac Tchad
   - Expansion le long des zones lacustres
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Buduma language (bdm)
-- CIA World Factbook – Chad, Niger, Nigeria
+- CIA World Factbook – Chad, NER, NGA
 - Recensements nationaux
 - Études anthropologiques sur les peuples sahariens
 

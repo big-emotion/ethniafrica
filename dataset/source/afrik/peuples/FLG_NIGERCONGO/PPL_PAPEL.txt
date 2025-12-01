@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (sous-groupe du Niger-Congo)
 - Région historique : Guinée-Bissau
-- Pays actuels : Guinée-Bissau
+- Pays actuels : GIN-Bissau
 - Identifiant peuple (ID) : PPL_PAPEL
 
 # 1. Ethnies incluses dans le peuple

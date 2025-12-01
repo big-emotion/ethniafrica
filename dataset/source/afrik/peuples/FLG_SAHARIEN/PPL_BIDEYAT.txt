@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Bideyat (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
 - Groupe ethno-linguistique : Saharien (Zaghawa)
-- Région historique : Tchad, Soudan
-- Pays actuels : Tchad, Soudan
+- Région historique : TCD, SDN
+- Pays actuels : TCD, SDN
 - Identifiant peuple (ID) : PPL_BIDEYAT
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Bideyat sont originaires du Tchad et du Soudan, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Zaghawa.
+- Origines anciennes : Les Bideyat sont originaires du Tchad et du SDN, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Zaghawa.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones sahéliennes

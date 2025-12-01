@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone G)
 - Région historique : Centre de la Tanzanie
-- Pays actuels : Tanzanie
+- Pays actuels : TZA
 - Identifiant peuple (ID) : PPL_HEHE
 
 # 1. Ethnies incluses dans le peuple

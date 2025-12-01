@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe ethno-linguistique : Couchitiques orientaux (Highland East Cushitic)
 - Région historique : Sud de l'Éthiopie (région des nations, nationalités et peuples du Sud)
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - Identifiant peuple (ID) : PPL_KONSO
 
 # 1. Ethnies incluses dans le peuple
@@ -15,7 +15,7 @@
 - Ethnie 4 : Konso de l'Ouest
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Konso sont originaires du sud de l'Éthiopie, dans la région actuelle de la zone de Konso. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Konso sont originaires du sud de l'ETH, dans la région actuelle de la zone de Konso. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les hauts plateaux vers les zones actuelles
   - Expansion le long des terrasses agricoles

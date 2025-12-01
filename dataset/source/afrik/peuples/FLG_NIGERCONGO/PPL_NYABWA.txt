@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Nyabwa (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Kru
-- Région historique : Côte d'Ivoire, Libéria
-- Pays actuels : Côte d'Ivoire, Libéria
+- Région historique : CIV, Libéria
+- Pays actuels : CIV, Libéria
 - Identifiant peuple (ID) : PPL_NYABWA
 
 # 1. Ethnies incluses dans le peuple

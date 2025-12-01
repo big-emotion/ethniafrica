@@ -7,7 +7,7 @@
 - Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
 - Groupe ethno-linguistique : Malayo-polynésien (macro-groupe)
 - Région historique : Madagascar
-- Pays actuels : Madagascar
+- Pays actuels : MDG
 - Identifiant peuple (ID) : PPL_AUSTRO_MACRO
 
 # 1. Ethnies incluses dans le peuple

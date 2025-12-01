@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_AARI_AARI_DU_NORD",
+  "timestamp": "2025-01-25T22:00:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/aari1241",
+      "data": {
+        "langue": "Aari",
+        "code_iso": "aiw",
+        "famille": "Afro-Asiatic > Omotic > North Omotic > Dizoid",
+        "pays": ["Ethiopia"],
+        "region": "Southwestern Ethiopia",
+        "glottocode": "aari1241",
+        "auto_appellation": "Aari"
+      },
+      "timestamp": "2025-01-25T22:00:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/aiw",
+      "data": {
+        "langue": "Aari",
+        "code_iso": "aiw",
+        "famille": "Afro-Asiatic",
+        "pays": ["Ethiopia"],
+        "auto_appellation": "Aari"
+      },
+      "timestamp": "2025-01-25T22:00:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "aiw",
+    "langue_principale": "Aari",
+    "famille_linguistique": "Afro-Asiatic > Omotic > North Omotic > Dizoid",
+    "pays_principaux": ["Ethiopia"],
+    "region_generale": "Southwestern Ethiopia",
+    "auto_appellation": "Aari"
+  }
+}

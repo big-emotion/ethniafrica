@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Kpelle (terme utilisé par les Européens), « Guerze » (terme utilisé au Libéria)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (sous-groupe du Mandé occidental)
-- Région historique : Libéria, Guinée
-- Pays actuels : Libéria, Guinée
+- Région historique : Libéria, GIN
+- Pays actuels : LBR, GIN
 - Identifiant peuple (ID) : PPL_KPELLE
 
 # 1. Ethnies incluses dans le peuple

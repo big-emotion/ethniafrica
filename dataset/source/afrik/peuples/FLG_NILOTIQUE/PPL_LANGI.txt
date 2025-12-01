@@ -1,0 +1,61 @@
+# Nom du peuple
+- Nom principal du peuple : Langi
+- Auto-appellation (endonyme) : Langi
+- Exonymes / appellations historiques : Lango
+- Origine des termes (exonymes) : Le terme 'Lango' est parfois utilisé comme variante
+- Pourquoi certains termes posent problème (si applicable) : N/A
+- Usage contemporain des appellations : N/A
+- Famille linguistique principale : FLG_NILOTIQUE
+- Groupe ethno-linguistique : Nilotique occidental (Luo)
+- Région historique : Nord de l'Ouganda
+- Pays actuels : UGA
+- Identifiant peuple (ID) : PPL_LANGI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Langi
+- Ethnie 2 : N/A
+- Ethnie 3 : N/A
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes (théories archéologiques, linguistiques, génétiques) : Les Langi sont originaires du nord de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).
+- Période de formation estimée : N/A
+- Routes migratoires principales : Migrations depuis les régions du Nil supérieur. Expansion vers le nord de l'Ouganda. Déplacements vers les zones urbaines.
+- Zones d'établissement historiques : Nord de l'Ouganda
+- Unifications / divisions : N/A
+- Influences externes (peuples voisins, colonisation, commerce) : N/A
+- Événements historiques majeurs ayant façonné le peuple : N/A
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Structure clanique patrilinéaire.
+- Organisation clanique : N/A
+- Rôle des lignages : N/A
+- Autorité religieuse : N/A
+
+# 4. Langues et sous-familles
+- Langue principale : Lango (laj)
+- Codes ISO : laj
+- Dialectes : N/A
+- Rôle véhiculaire : N/A
+
+# 5. Culture, rites et traditions
+- Rites majeurs : Traditions pastorales. Organisation clanique. Cérémonies de mariage traditionnelles. Rites de passage. Cérémonies liées à l'élevage.
+- Symboles : N/A
+- Arts et musique : N/A
+- Spiritualités : N/A
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : N/A
+- Relations avec peuples voisins : N/A
+- Conflits / alliances : N/A
+- Diaspora : N/A
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1,500,000
+- Répartition par pays : UGA: 1,500,000
+- Année de référence : 2025
+- Source : Fiche pays UGA, estimations ONU
+
+# 8. Sources
+- Fiche pays UGA
+- SIL Ethnologue – Lango language (laj)
+- CIA World Factbook – Uganda

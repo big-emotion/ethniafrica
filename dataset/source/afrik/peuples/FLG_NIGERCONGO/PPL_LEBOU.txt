@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (sous-groupe du Niger-Congo)
 - Région historique : Sénégal (Cap-Vert)
-- Pays actuels : Sénégal
+- Pays actuels : SEN
 - Identifiant peuple (ID) : PPL_LEBOU
 
 # 1. Ethnies incluses dans le peuple

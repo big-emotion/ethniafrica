@@ -1,0 +1,471 @@
+{
+  "countryCode": "GHA",
+  "countryName": "République du Ghana",
+  "peoples": [
+    {
+      "name": "Akan",
+      "alternativeNames": ["Ashanti", "Asante", "Twi", "Fante"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre, Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Mole-Dagbani",
+      "alternativeNames": ["Dagomba", "Mamprusi"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Ewe",
+      "alternativeNames": ["Eʋe"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Volta",
+      "source": "web_search"
+    },
+    {
+      "name": "Ga-Dangme",
+      "alternativeNames": ["Ga", "Dangme"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Grande Accra",
+      "source": "web_search"
+    },
+    {
+      "name": "Guan",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Gurma",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Ashanti",
+      "alternativeNames": ["Asante"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Fante",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Akuapem",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Akyem",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Bono",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Ahanta",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Nzema",
+      "alternativeNames": ["Nzima"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Sefwi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Wassa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Denkyira",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Aowin",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Assin",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Twifo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Dagomba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Mamprusi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Nanumba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Mossi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Anlo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Volta",
+      "source": "web_search"
+    },
+    {
+      "name": "Tongu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Volta",
+      "source": "web_search"
+    },
+    {
+      "name": "Ga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Grande Accra",
+      "source": "web_search"
+    },
+    {
+      "name": "Dangme",
+      "alternativeNames": ["Ada"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Grande Accra",
+      "source": "web_search"
+    },
+    {
+      "name": "Krobo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Grande Accra",
+      "source": "web_search"
+    },
+    {
+      "name": "Konkomba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Bimoba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Bassari",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Gonja",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Larteh",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Anum",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Boso",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Hausa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_TCHADIQUE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Fulani",
+      "alternativeNames": ["Peul"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ATLANTIQUE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Dagaaba",
+      "alternativeNames": ["Dagaare"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Sisala",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kasena",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Frafra",
+      "alternativeNames": ["Gurune"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Talensi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Nabdam",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Bulsa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Kusasi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Wala",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Chumburung",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Krachi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Nchumuru",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Adele",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nkonya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Tafi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Avatime",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Logba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Tutrugbu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyangbo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Siwu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NIGERCONGO",
+      "region": "Est",
+      "source": "web_search"
+    }
+  ],
+  "timestamp": "2025-11-30T19:38:45.235Z",
+  "sourcesUsed": ["web_search"],
+  "sourcesPending": [
+    "CIA World Factbook",
+    "Ethnologue",
+    "UNESCO",
+    "IWGIA",
+    "Encyclopaedia Africana"
+  ]
+}

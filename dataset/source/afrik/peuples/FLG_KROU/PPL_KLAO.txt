@@ -2,7 +2,7 @@
 - Nom principal : Klao / Krao
 - Auto-appellation : Klao / Kru
 - Famille linguistique : Niger-Congo – Krou
-- Région historique : Liberia, Côte d’Ivoire
+- Région historique : LBR, Côte d’Ivoire
 - Identifiant peuple : PPL_KLAO
 
 # 1. Ethnies incluses

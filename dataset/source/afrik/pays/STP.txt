@@ -1,0 +1,149 @@
+# Nom du pays
+- Nom officiel actuel : République démocratique de São Tomé-et-Príncipe (República Democrática de São Tomé e Príncipe)
+- Étymologie du nom : Le nom "São Tomé" vient de "Saint Thomas" en portugais, en l'honneur de l'apôtre Thomas. L'île a été découverte par les Portugais le 21 décembre 1470, jour de la fête de saint Thomas. Le nom "Príncipe" vient de "Prince" en portugais, en l'honneur du prince héritier du Portugal. L'île a été nommée "Ilha do Príncipe" (île du Prince) en 1471. Le nom "São Tomé-et-Príncipe" a été officialisé lors de l'indépendance en 1975.
+- Personne / peuple / administration à l'origine du nom : Les Portugais ont nommé l'île principale "São Tomé" en l'honneur de l'apôtre Thomas (découverte le 21 décembre 1470, jour de la fête de saint Thomas). L'île secondaire a été nommée "Príncipe" en l'honneur du prince héritier du Portugal (1471). Le nom "São Tomé-et-Príncipe" a été officialisé lors de l'indépendance (1975).
+- Identifiant pays (ISO 3166-1 alpha-3) : STP
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Les îles de São Tomé-et-Príncipe étaient inhabitées. Pas de présence humaine avant l'arrivée des Portugais.
+- Moyen Âge : Les îles restent inhabitées. Pas de présence humaine permanente.
+- Époque précoloniale : Les îles restent inhabitées jusqu'à l'arrivée des Portugais. Pas de structures politiques ou sociales.
+- Colonisation : 1470-1975 : Colonie portugaise de São Tomé-et-Príncipe. 1470 : Découverte de São Tomé par les Portugais. 1471 : Découverte de Príncipe par les Portugais. Colonisation portugaise, développement de l'économie de plantation (canne à sucre, café, cacao), importation massive d'esclaves africains (notamment d'Angola), développement des peuples créoles (Forros, Angolar, Tongas). Le nom "São Tomé-et-Príncipe" est officialisé par les Portugais.
+- Période contemporaine : 1975 : Indépendance (12 juillet 1975), proclamation de la République démocratique de São Tomé-et-Príncipe. Le nom "São Tomé-et-Príncipe" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Îles déserte] :
+  - Période : Avant 1470
+  - Peuples dominants : Aucun (îles inhabitée)
+  - Centres politiques : Aucun
+  - Rôle historique : Les îles de São Tomé-et-Príncipe étaient inhabitée avant l'arrivée des Portugais en 1470.
+
+- [Colonie portugaise de São Tomé-et-Príncipe] :
+  - Période : 1470 - 1975
+  - Peuples dominants : Portugais, esclaves africains, créoles (Forros, Angolar, Tongas)
+  - Centres politiques : São Tomé (capitale coloniale)
+  - Rôle historique : Colonisation portugaise, développement de l'économie de plantation (canne à sucre, café, cacao), importation massive d'esclaves africains (notamment d'Angola), développement des peuples créoles (Forros : esclaves affranchis, Angolar : créoles côtières, Tongas : travailleurs contractuels). Le terme "forros" signifie "libres" en portugais, faisant référence aux esclaves affranchis. Résistance des peuples autochtones, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Forros
+  - Auto-appellation (endonyme) : Forros
+  - Exonymes / appellations historiques : Forros (terme utilisé pour les créoles libres de São Tomé-et-Príncipe)
+  - Identifiant peuple (PPL_) : PPL_FORROS
+  - Région principale : Toutes les îles de São Tomé-et-Príncipe
+  - Langues parlées : Forro (créole de São Tomé, cri, ISO 639-3), portugais
+  - Famille linguistique : Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Forros" est l'auto-appellation. Le terme "forros" signifie "libres" en portugais, faisant référence aux esclaves affranchis. Pas de terme péjoratif connu. Groupe créole majoritaire, formé à partir du contact entre les populations africaines (notamment d'Angola) et les colons portugais à partir du XVe siècle.
+
+- Peuple 2 :
+  - Nom : Angolar
+  - Auto-appellation (endonyme) : Angolar
+  - Exonymes / appellations historiques : Angolar (terme utilisé pour les créoles de São Tomé-et-Príncipe)
+  - Identifiant peuple (PPL_) : PPL_ANGOLAR
+  - Région principale : Zones côtières de São Tomé
+  - Langues parlées : Angolar (créole de São Tomé, aoa, ISO 639-3), portugais
+  - Famille linguistique : Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Angolar" est l'auto-appellation. Pas de terme péjoratif connu. Groupe créole côtière, formé à partir du contact entre les populations africaines (notamment d'Angola) et les colons portugais.
+
+- Peuple 3 :
+  - Nom : Tongas
+  - Auto-appellation (endonyme) : Tongas
+  - Exonymes / appellations historiques : Tongas (terme utilisé pour les travailleurs contractuels), "Serviçais" (terme historique, peut être problématique)
+  - Identifiant peuple (PPL_) : PPL_TONGAS
+  - Région principale : Toutes les îles de São Tomé-et-Príncipe
+  - Langues parlées : Portugais, créoles locaux
+  - Famille linguistique : Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Tongas" est l'auto-appellation. "Serviçais" est un terme historique qui peut être problématique dans certains contextes. Les Tongas sont descendants de travailleurs contractuels arrivés au XIXe et XXe siècles (notamment du Cap-Vert, d'Angola, du Mozambique).
+
+- Peuple 4 :
+  - Nom : Portugais santoméens
+  - Auto-appellation (endonyme) : Variées selon les groupes (Portugais santoméens)
+  - Exonymes / appellations historiques : "Portugais" (terme générique), "Colons" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_PORTUGAIS_SANTOMEENS
+  - Région principale : Toutes les îles de São Tomé-et-Príncipe, majoritairement urbains
+  - Langues parlées : Portugais, créoles locaux
+  - Famille linguistique : Indo-européenne (langues romanes)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Portugais santoméens sont descendants de colons portugais. Le terme "Colon" est historique et doit être contextualisé. Ils sont majoritairement catholiques.
+
+- Peuple 5 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les îles de São Tomé-et-Príncipe
+  - Langues parlées : Langues diverses, portugais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Portugais (langue officielle, por), forro (cri, langue véhiculaire), angolar (aoa)
+- Traditions culturelles : Culture créole santoméenne unique, résultat du métissage afro-portugais. Traditions créoles : musique traditionnelle créole, danse traditionnelle, poésie orale, artisanat. Festivals traditionnels créoles (Carnaval, etc.). Traditions culinaires créoles. Identité créole forte et distincte. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture créole santoméenne est riche et préservée.
+- Religions dominantes : Christianisme (catholicisme majoritaire), religions traditionnelles africaines (syncrétisme fréquent, croyances traditionnelles préservées dans certaines communautés)
+- Modes de vie : Agriculture (cacao, café, noix de coco, cultures vivrières), pêche (côte atlantique), commerce et activités urbaines (zones urbaines, São Tomé). Urbanisation modérée. Économie basée sur l'agriculture (cacao, café, principales exportations), la pêche, et le tourisme. São Tomé-et-Príncipe est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important (pétrole offshore, tourisme).
+- Organisation sociale : Société créole multiethnique. Structures familiales traditionnelles créoles. Organisation communautaire (communautés créoles). Structures étatiques modernes (république démocratique). Cohabitation pacifique des différentes communautés. Système politique démocratique stable.
+- Relations régionales : Relations avec l'Afrique (membre de l'Union africaine, CPLP), relations avec le Portugal (relations historiques, coopération), relations avec les îles de l'océan Atlantique. São Tomé-et-Príncipe est un petit État insulaire avec des relations régionales limitées.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Les îles de São Tomé-et-Príncipe étaient inhabitée. Pas de présence humaine avant l'arrivée des Portugais.
+- Moyen Âge : Les îles restent inhabitée. Pas de présence humaine permanente.
+- Époque précoloniale : Les îles restent inhabitée jusqu'à l'arrivée des Portugais. Pas de structures politiques ou sociales.
+- Colonisation : 1470 : Découverte de São Tomé par les Portugais (21 décembre 1470, jour de la fête de saint Thomas). 1471 : Découverte de Príncipe par les Portugais. Colonisation portugaise (1470-1975), développement de l'économie de plantation (canne à sucre, café, cacao), importation massive d'esclaves africains (notamment d'Angola), développement des peuples créoles (Forros : esclaves affranchis, Angolar : créoles côtières, Tongas : travailleurs contractuels). Le terme "forros" signifie "libres" en portugais, faisant référence aux esclaves affranchis.
+- Lutte pour l'indépendance : 1950s-1975 : Mouvements nationalistes, MLSTP (Mouvement pour la libération de São Tomé-et-Príncipe), indépendance (12 juillet 1975), proclamation de la République démocratique de São Tomé-et-Príncipe. Manuel Pinto da Costa devient premier président.
+- Période post-indépendance : République démocratique de São Tomé-et-Príncipe (1975), présidence de Manuel Pinto da Costa (1975-1991), transition démocratique (1991), élections multipartites, présidence de Miguel Trovoada (1991-2001), Fradique de Menezes (2001-2011), Manuel Pinto da Costa (2011-2016), Evaristo Carvalho (2016-2021), Carlos Vila Nova (depuis 2021). Stabilité politique relative, démocratie multipartite, développement économique. Défis : pauvreté, développement économique, dépendance aux exportations de cacao et café, potentiel pétrolier offshore. São Tomé-et-Príncipe est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important (pétrole offshore, tourisme).
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – São Tomé and Príncipe
+- SIL Ethnologue – Languages of São Tomé and Príncipe
+- Recensements santoméens
+- Études anthropologiques sur les peuples de São Tomé-et-Príncipe
+- Études historiques sur la colonisation portugaise et le développement des peuples créoles
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Forros
+- Identifiant peuple (PPL_) : PPL_FORROS
+- Population : 100 000
+- Pourcentage dans le pays : 45,5%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles de São Tomé-et-Príncipe
+- Famille linguistique : Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : cri
+
+### Peuple : Angolar
+- Identifiant peuple (PPL_) : PPL_ANGOLAR
+- Population : 10 000
+- Pourcentage dans le pays : 4,5%
+- Pourcentage en Afrique : N/A
+- Région : Zones côtières de São Tomé
+- Famille linguistique : Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : aoa
+
+### Peuple : Tongas
+- Identifiant peuple (PPL_) : PPL_TONGAS
+- Population : 50 000
+- Pourcentage dans le pays : 22,7%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles de São Tomé-et-Príncipe
+- Famille linguistique : Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : N/A
+
+### Peuple : Portugais santoméens
+- Identifiant peuple (PPL_) : PPL_PORTUGAIS_SANTOMEENS
+- Population : 10 000
+- Pourcentage dans le pays : 4,5%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles de São Tomé-et-Príncipe, majoritairement urbains
+- Famille linguistique : Indo-européenne (langues romanes)
+- Code ISO 639-3 (langue principale) : por
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 50 000
+- Pourcentage dans le pays : 22,7%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles de São Tomé-et-Príncipe
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population São Tomé-et-Príncipe 2025 : 220 000 (estimations ONU/UNFPA)**
+

@@ -2,7 +2,7 @@
 - Nom principal : Susu / Soussou
 - Auto-appellation : Sosoxui / Susu
 - Famille linguistique : Niger-Congo – Mandé
-- Région historique : Guinée côtière, Sierra Leone
+- Région historique : Guinée côtière, SLE
 - Identifiant : PPL_SUSU
 
 # 1. Ethnies incluses

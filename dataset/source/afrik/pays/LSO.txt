@@ -1,0 +1,92 @@
+# Nom du pays
+- Nom officiel actuel : Royaume du Lesotho (Kingdom of Lesotho, Muso oa Lesotho)
+- Étymologie du nom : Le nom "Lesotho" signifie "pays des Sotho" en langue sesotho. Il s'agit du nom traditionnel du royaume. Le nom a été officialisé lors de l'indépendance en 1966. Le pays était auparavant connu sous le nom de "Basutoland" (pays des Basotho) pendant la colonisation britannique.
+- Personne / peuple / administration à l'origine du nom : Le nom "Lesotho" est le nom traditionnel du royaume sotho. Le nom "Basutoland" a été donné par les Britanniques lors de la colonisation. Le roi Moshoeshoe Ier est considéré comme le fondateur du royaume moderne. Le nom "Lesotho" a été officialisé à l'indépendance en 1966.
+- Identifiant pays (ISO 3166-1 alpha-3) : LSO
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Lesotho était peuplé de peuples khoïsan sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations bantoues vers la région. Développement de chefferies locales. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Formation du royaume sotho au XIXe siècle sous le roi Moshoeshoe Ier. Le royaume était connu sous le nom traditionnel "Lesotho" (pays des Sotho). Expansion du royaume sotho, résistance aux Zoulous et aux Boers. Consolidation du royaume traditionnel.
+- Colonisation : 1868-1966 : Protectorat britannique du Basutoland. Les Britanniques ont établi un protectorat sur le Basutoland en 1868. Le nom "Basutoland" (pays des Basotho) a été officialisé par les Britanniques. Le territoire était administré comme un protectorat britannique jusqu'à l'indépendance en 1966.
+- Période contemporaine : 1966 : Indépendance du Basutoland (4 octobre 1966), proclamation du royaume du Lesotho. Le nom traditionnel "Lesotho" a été restauré à l'indépendance.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume sotho] :
+  - Période : XIXe siècle - présent
+  - Peuples dominants : Sotho / Basotho
+  - Centres politiques : Maseru (capitale), Thaba Bosiu (forteresse historique)
+  - Rôle historique : Royaume sotho traditionnel, système monarchique constitutionnel, traditions culturelles sotho. Le royaume a résisté à la colonisation et a maintenu son indépendance relative sous protectorat britannique. Le roi Moshoeshoe Ier est considéré comme le fondateur du royaume moderne. Thaba Bosiu était la forteresse historique du royaume.
+
+- [Protectorat britannique du Basutoland] :
+  - Période : 1868 - 1966
+  - Peuples dominants : Tous les peuples sotho sous protectorat britannique
+  - Centres politiques : Maseru (capitale administrative)
+  - Rôle historique : Protectorat britannique, développement de l'administration coloniale, préservation relative de l'autonomie du royaume sotho. Résistance aux pressions coloniales. Développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Sotho / Basotho
+  - Auto-appellation (endonyme) : Basotho (pluriel), Mosotho (singulier)
+  - Exonymes / appellations historiques : Sotho (terme utilisé par les Européens), Basotho (terme alternatif accepté)
+  - Identifiant peuple (PPL_) : PPL_SOTHO, PPL_SOTHO_SUD, PPL_SESOTHO_NATL
+  - Région principale : Toutes les régions du Lesotho
+  - Langues parlées : Sesotho / Sotho du Sud (sot, ISO 639-3), anglais, afrikaans
+  - Famille linguistique : Niger-Congo – Bantou (Zone S) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Basotho" (pluriel) ou "Mosotho" (singulier) est l'auto-appellation. "Sotho" est l'exonyme le plus courant et accepté. Pas de terme péjoratif connu.
+
+- Peuple 2 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes d'origine
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Zones urbaines, régions frontalières
+  - Langues parlées : Langues d'origine, sesotho, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation selon son origine (Zoulou, Xhosa, autres peuples bantous, etc.). Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Sesotho / Sotho du Sud (sot, langue nationale), Anglais (eng, langue officielle), Afrikaans (afr)
+- Traditions culturelles : Traditions culturelles sotho riches et préservées. Cérémonies royales traditionnelles, traditions d'initiation. Musique et danse traditionnelles sotho. Artisanat traditionnel (vannerie, poterie, tissage). Architecture traditionnelle (huttes rondes). Système monarchique constitutionnel avec traditions ancestrales. Thaba Bosiu (forteresse historique) est un symbole important de l'identité sotho.
+- Religions dominantes : Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, croyances traditionnelles)
+- Modes de vie : Agriculture (maïs, sorgho, blé, cultures vivrières), élevage (bovins, ovins, importance symbolique du bétail), commerce et activités urbaines (zones urbaines, Maseru). Urbanisation modérée. Économie basée sur l'agriculture, l'élevage, l'exploitation de l'eau (exportation vers l'Afrique du Sud), et les services. Dépendance économique importante de l'Afrique du Sud. Le Lesotho est enclavé dans l'Afrique du Sud.
+- Organisation sociale : Organisation en royaume traditionnel (système monarchique constitutionnel), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle central du roi (Morena) et de la reine mère (Mofumahali). Système de conseils traditionnels. Traditions d'initiation et de passage à l'âge adulte.
+- Relations régionales : Relations historiques avec l'Afrique du Sud (commerce, migrations, dépendance économique, frontière), le Botswana (commerce, frontière). Intégration dans la SADC (Communauté de développement d'Afrique australe). Relations commerciales et culturelles transfrontalières. Dépendance économique importante de l'Afrique du Sud. Le Lesotho est complètement enclavé dans l'Afrique du Sud.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples khoïsan. Migrations bantoues vers la région. Développement de chefferies locales.
+- Moyen Âge : Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.
+- Époque précoloniale : XIXe siècle : Formation du royaume sotho sous le roi Moshoeshoe Ier. Expansion du royaume sotho. Résistance aux Zoulous et aux Boers. Consolidation du royaume traditionnel. Thaba Bosiu était la forteresse historique du royaume. Développement des traditions culturelles sotho.
+- Colonisation : 1868 : Établissement du protectorat britannique du Basutoland. Période coloniale britannique (1868-1966), développement de l'administration coloniale, préservation relative de l'autonomie du royaume sotho. Résistance aux pressions coloniales. XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1950s-1960s : Mouvement pour l'indépendance mené par les dirigeants sotho. 1966 : Indépendance du Basutoland (4 octobre 1966), proclamation du royaume du Lesotho. Le roi Moshoeshoe II devient monarque constitutionnel.
+- Période post-indépendance : 1966-1990 : Période de stabilité politique relative, présidence de Leabua Jonathan (1966-1986), puis coups d'État. 1990-présent : Transition démocratique, instabilité politique, coups d'État récurrents. Défis : pauvreté, dépendance économique de l'Afrique du Sud, VIH/sida, développement économique. Le Lesotho est l'un des pays les plus pauvres d'Afrique. Le royaume est un État enclavé dans l'Afrique du Sud.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Lesotho
+- CIA World Factbook – Lesotho
+- ONU / UNFPA – Démographie Lesotho 2025
+- Recensements lesothans
+- Études anthropologiques sur les peuples sotho
+- Études historiques sur le royaume du Lesotho et Moshoeshoe Ier
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Sotho / Basotho
+- Identifiant peuple (PPL_) : PPL_SOTHO, PPL_SOTHO_SUD, PPL_SESOTHO_NATL
+- Population : 2 200 000
+- Pourcentage dans le pays : 99%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions du Lesotho
+- Famille linguistique : Niger-Congo – Bantou (Zone S) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : sot
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 20 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Zones urbaines, régions frontalières
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Lesotho 2025 : 2 220 000 (estimations ONU/UNFPA)**
+

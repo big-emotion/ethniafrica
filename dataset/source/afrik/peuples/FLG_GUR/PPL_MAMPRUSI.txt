@@ -2,7 +2,7 @@
 - Nom principal : Mamprusi
 - Auto-appellation : Mamprugu / Mamprusi
 - Famille linguistique : Niger-Congo – Gur
-- Région historique : Ghana (Nord-Est), Burkina Faso
+- Région historique : Ghana (Nord-Est), BFA
 - Identifiant : PPL_MAMPRUSI
 
 # 1. Ethnies incluses

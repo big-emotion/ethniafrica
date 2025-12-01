@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Toubou (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
 - Groupe ethno-linguistique : Saharien (Toubou)
-- Région historique : Tchad, Niger, Libye
-- Pays actuels : Tchad, Niger, Libye
+- Région historique : TCD, NER, LBY
+- Pays actuels : TCD, NER, LBY
 - Identifiant peuple (ID) : PPL_TOUBOU
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Toubou sont originaires du Tchad, du Niger et de la Libye, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Toubou sont originaires du TCD, du Niger et de la LBY, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones désertiques
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Toubou languages (tbv, dzg)
-- CIA World Factbook – Chad, Niger, Libya
+- CIA World Factbook – Chad, NER, Libya
 - Recensements nationaux
 - Études anthropologiques sur les peuples sahariens
 

@@ -1,0 +1,37 @@
+{
+  "countryName": "Madagascar",
+  "region": "afrique_de_l_est",
+  "ancientNames": [
+    {
+      "period": "Avant l’unification",
+      "names": [
+        "île peuplée de clans austronésiens (Merina",
+        "Betsimisaraka) et bantous (Sakalava",
+        "Antandroy",
+        "Antemoro)"
+      ]
+    },
+    {
+      "period": "7e–12e siècles",
+      "names": ["Afrique de l"]
+    },
+    {
+      "period": "1500s",
+      "names": ["São Lourenço"]
+    },
+    {
+      "period": "17e–19e siècle",
+      "names": ["Malagasy", "Madagascar"]
+    },
+    {
+      "period": "1896",
+      "names": ["Colonie française (Colonie de Madagascar)"]
+    },
+    {
+      "period": "1960",
+      "names": ["Indépendance → République malgache"]
+    }
+  ],
+  "description": "L'île associe éléments austronésiens (langue malgache, navigation, rizières) et bantous (musique, organisation sociale). Les Merina unifient une partie du territoire au XIXe siècle. La France impose une colonie jusqu’en 1960.",
+  "ethnicities": []
+}

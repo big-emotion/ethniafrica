@@ -1,0 +1,36 @@
+{
+  "countryName": "Bénin",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "royaumes Fon (Dahomey)",
+        "Adja–Ewe",
+        "Yoruba/Nago (Kétou)",
+        "Bariba (Nikki)",
+        "Otamari/Somba (Atacora)",
+        "Dendi (héritiers Songhai)"
+      ]
+    },
+    {
+      "period": "1894",
+      "names": ["Colonie du Dahomey (AOF)"]
+    },
+    {
+      "period": "1960",
+      "names": ["République du Dahomey"]
+    },
+    {
+      "period": "1975",
+      "names": ["République populaire du Bénin"]
+    },
+    {
+      "period": "Depuis 1990",
+      "names": ["République du Bénin"]
+    }
+  ],
+  "description": "",
+  "ethnicGroupsSummary": "- Fon (~38 %) : héritiers du Dahomey, dominants au sud.",
+  "ethnicities": []
+}

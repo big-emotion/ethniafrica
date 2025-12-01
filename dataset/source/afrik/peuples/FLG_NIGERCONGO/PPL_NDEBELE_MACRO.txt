@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Ndebele (terme utilisé par les Européens), parfois appelés « Matabele » (terme historique)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Zimbabwe, Afrique du Sud
-- Pays actuels : Zimbabwe, Afrique du Sud
+- Région historique : ZWE, Afrique du Sud
+- Pays actuels : ZWE, Afrique du Sud
 - Identifiant peuple (ID) : PPL_NDEBELE_MACRO
 
 # 1. Ethnies incluses dans le peuple

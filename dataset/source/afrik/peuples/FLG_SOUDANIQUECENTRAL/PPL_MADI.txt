@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Madi (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central (Moru-Madi)
-- Région historique : Ouganda, Soudan du Sud
-- Pays actuels : Ouganda, Soudan du Sud
+- Région historique : UGA, SDN du Sud
+- Pays actuels : UGA, SDN du Sud
 - Identifiant peuple (ID) : PPL_MADI
 
 # 1. Ethnies incluses dans le peuple

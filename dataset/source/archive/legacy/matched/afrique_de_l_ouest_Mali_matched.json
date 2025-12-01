@@ -1,0 +1,476 @@
+{
+  "countryName": "Mali",
+  "region": "afrique_de_l_ouest",
+  "countryDescription": {
+    "countryName": "Mali",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant l’époque impériale",
+        "names": [
+          "territoires proto‑mandé",
+          "soninke",
+          "peuls",
+          "bozo ; aucun nom unifié"
+        ]
+      },
+      {
+        "period": "IIIe–XIIIe siècle",
+        "names": ["Empire du Ghana (Wagadu)", "dominé par les Soninke"]
+      },
+      {
+        "period": "XIIIe–XVIe siècle",
+        "names": [
+          "Empire du Mali (fondé par Soundiata Keïta)",
+          "capitale Niani"
+        ]
+      },
+      {
+        "period": "XVe–XVIe siècle",
+        "names": ["Empire Songhai (Gao", "Tombouctou", "Djenné)"]
+      },
+      {
+        "period": "Royaumes touaregs",
+        "names": ["Kel Adagh", "Ifoghas", "Tagelmoust"]
+      },
+      {
+        "period": "1892–1958",
+        "names": ["Soudan français (AOF)"]
+      },
+      {
+        "period": "1959–1960",
+        "names": ["Fédération du Mali"]
+      },
+      {
+        "period": "Depuis 1960",
+        "names": ["République du Mali"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Bambara / Mandé du Sud",
+      "subGroups": [
+        {
+          "name": "Bambara",
+          "population": 3450000,
+          "percentageInCountry": 15,
+          "percentageInAfrica": 0.2412585
+        },
+        {
+          "name": "Malinké du Sud",
+          "population": 3450000,
+          "percentageInCountry": 15,
+          "percentageInAfrica": 0.2412585
+        }
+      ],
+      "population": 6900000,
+      "percentageInCountry": 30,
+      "percentageInAfrica": 0.482517,
+      "languages": ["Bambara", "Mandingue"],
+      "region": "Bamako, Ségou, Koulikoro",
+      "sources": ["INSTAT Mali", "histoire mandé"],
+      "ancientName": "Empire du Mali",
+      "description": "Groupe agricole majeur, héritier direct du monde mandingue",
+      "societyType": "Sédentaire agricole",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Mandé (Niger-Congo)",
+      "historicalStatus": "Empire du Mali",
+      "regionalPresence": ["Mali", "Guinée", "Côte d’Ivoire"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Bambara",
+          "population": 3450000,
+          "percentageInCountry": 15,
+          "percentageInAfrica": 0.2412585
+        },
+        {
+          "name": "Malinké du Sud",
+          "population": 3450000,
+          "percentageInCountry": 15,
+          "percentageInAfrica": 0.2412585
+        }
+      ]
+    },
+    {
+      "groupName": "Peul / Fulani",
+      "subGroups": [
+        {
+          "name": "Fulɓe",
+          "population": 1303333,
+          "percentageInCountry": 5.666665217391305,
+          "percentageInAfrica": 0.09114231002327365
+        },
+        {
+          "name": "Mbororo",
+          "population": 1303333,
+          "percentageInCountry": 5.666665217391305,
+          "percentageInAfrica": 0.09114231002327365
+        },
+        {
+          "name": "Toucouleur",
+          "population": 1303333,
+          "percentageInCountry": 5.666665217391305,
+          "percentageInAfrica": 0.09114231002327365
+        }
+      ],
+      "population": 3910000,
+      "percentageInCountry": 17,
+      "percentageInAfrica": 0.273427,
+      "languages": ["Fulfulde"],
+      "region": "Macina, Mopti, Ségou",
+      "sources": ["Ethnologie sahélienne"],
+      "ancientName": "Empire peul du Macina",
+      "description": "Pasteurs nomades et agro-pasteurs",
+      "societyType": "Pastorale & agro-pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Atlantique (Niger-Congo)",
+      "historicalStatus": "Empire du Macina",
+      "regionalPresence": ["Mali", "Niger", "Guinée", "Burkina"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Fulɓe",
+          "population": 1303333,
+          "percentageInCountry": 5.666665217391305,
+          "percentageInAfrica": 0.09114231002327365
+        },
+        {
+          "name": "Mbororo",
+          "population": 1303333,
+          "percentageInCountry": 5.666665217391305,
+          "percentageInAfrica": 0.09114231002327365
+        },
+        {
+          "name": "Toucouleur",
+          "population": 1303333,
+          "percentageInCountry": 5.666665217391305,
+          "percentageInAfrica": 0.09114231002327365
+        }
+      ]
+    },
+    {
+      "groupName": "Soninké",
+      "subGroups": [
+        {
+          "name": "Soninké",
+          "population": 1035000,
+          "percentageInCountry": 4.5,
+          "percentageInAfrica": 0.0723775
+        },
+        {
+          "name": "Sarakhollé",
+          "population": 1035000,
+          "percentageInCountry": 4.5,
+          "percentageInAfrica": 0.0723775
+        }
+      ],
+      "population": 2070000,
+      "percentageInCountry": 9,
+      "percentageInAfrica": 0.144755,
+      "languages": ["Soninké"],
+      "region": "Ouest (Kayes)",
+      "sources": ["Histoire Soninké"],
+      "ancientName": "Empire du Ghana",
+      "description": "Peuple ancien du commerce transsaharien",
+      "societyType": "Sédentaire & commerçante",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Empire du Ghana",
+      "regionalPresence": ["Mali", "Mauritanie", "Sénégal"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Soninké",
+          "population": 1035000,
+          "percentageInCountry": 4.5,
+          "percentageInAfrica": 0.0723775
+        },
+        {
+          "name": "Sarakhollé",
+          "population": 1035000,
+          "percentageInCountry": 4.5,
+          "percentageInAfrica": 0.0723775
+        }
+      ]
+    },
+    {
+      "groupName": "Malinké",
+      "subGroups": [
+        {
+          "name": "Malinké",
+          "population": 1380000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.0965035
+        },
+        {
+          "name": "Diakhanké",
+          "population": 1380000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.0965035
+        }
+      ],
+      "population": 2760000,
+      "percentageInCountry": 12,
+      "percentageInAfrica": 0.193007,
+      "languages": ["Malinké"],
+      "region": "Ouest & Sud-Ouest",
+      "sources": ["Sources mandingues"],
+      "ancientName": "Empire du Mali",
+      "description": "Important peuple agricole & islamisé",
+      "societyType": "Sédentaire",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Empire du Mali",
+      "regionalPresence": ["Mali", "Guinée"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Malinké",
+          "population": 1380000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.0965035
+        },
+        {
+          "name": "Diakhanké",
+          "population": 1380000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.0965035
+        }
+      ]
+    },
+    {
+      "groupName": "Dogon",
+      "subGroups": [],
+      "population": 1380000,
+      "percentageInCountry": 6,
+      "percentageInAfrica": 0.096503,
+      "languages": ["Dogon"],
+      "region": "Plateau de Bandiagara",
+      "sources": ["Anthropologie Dogon"],
+      "ancientName": "Royaumes Dogon",
+      "description": "Peuple montagnard à forte tradition cosmologique",
+      "societyType": "Montagnarde",
+      "religion": "Traditions + Islam",
+      "linguisticFamily": "Dogon (Niger-Congo)",
+      "historicalStatus": "Royaumes Dogon",
+      "regionalPresence": ["Mali"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Touareg",
+      "subGroups": [
+        {
+          "name": "Kel Adagh",
+          "population": 613333,
+          "percentageInCountry": 2.666665217391304,
+          "percentageInAfrica": 0.042890310023369564
+        },
+        {
+          "name": "Iwellemmeden",
+          "population": 613333,
+          "percentageInCountry": 2.666665217391304,
+          "percentageInAfrica": 0.042890310023369564
+        },
+        {
+          "name": "Imghad",
+          "population": 613333,
+          "percentageInCountry": 2.666665217391304,
+          "percentageInAfrica": 0.042890310023369564
+        }
+      ],
+      "population": 1840000,
+      "percentageInCountry": 8,
+      "percentageInAfrica": 0.128671,
+      "languages": ["Tamasheq"],
+      "region": "Nord (Kidal, Tombouctou, Gao)",
+      "sources": ["Études sahéliennes"],
+      "ancientName": "Confédérations touaregs",
+      "description": "Pasteurs nomades du Sahara",
+      "societyType": "Nomade",
+      "religion": "Islam",
+      "linguisticFamily": "Berbère (Afro-asiatique)",
+      "historicalStatus": "Confédérations Kel",
+      "regionalPresence": ["Mali", "Niger", "Algérie"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Kel Adagh",
+          "population": 613333,
+          "percentageInCountry": 2.666665217391304,
+          "percentageInAfrica": 0.042890310023369564
+        },
+        {
+          "name": "Iwellemmeden",
+          "population": 613333,
+          "percentageInCountry": 2.666665217391304,
+          "percentageInAfrica": 0.042890310023369564
+        },
+        {
+          "name": "Imghad",
+          "population": 613333,
+          "percentageInCountry": 2.666665217391304,
+          "percentageInAfrica": 0.042890310023369564
+        }
+      ]
+    },
+    {
+      "groupName": "Songhaï",
+      "subGroups": [
+        {
+          "name": "Songhaï",
+          "population": 1150000,
+          "percentageInCountry": 5,
+          "percentageInAfrica": 0.0804195
+        },
+        {
+          "name": "Zarma",
+          "population": 1150000,
+          "percentageInCountry": 5,
+          "percentageInAfrica": 0.0804195
+        }
+      ],
+      "population": 2300000,
+      "percentageInCountry": 10,
+      "percentageInAfrica": 0.160839,
+      "languages": ["Songhaï"],
+      "region": "Gao, Tombouctou",
+      "sources": ["Histoire Songhaï"],
+      "ancientName": "Empire Songhaï",
+      "description": "Peuple fluvial, commerçant et guerrier",
+      "societyType": "Fluviale & agricole",
+      "religion": "Islam",
+      "linguisticFamily": "Nilo-saharien influencé",
+      "historicalStatus": "Empire Songhaï",
+      "regionalPresence": ["Mali", "Niger"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Songhaï",
+          "population": 1150000,
+          "percentageInCountry": 5,
+          "percentageInAfrica": 0.0804195
+        },
+        {
+          "name": "Zarma",
+          "population": 1150000,
+          "percentageInCountry": 5,
+          "percentageInAfrica": 0.0804195
+        }
+      ]
+    },
+    {
+      "groupName": "Bozo",
+      "subGroups": [],
+      "population": 920000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.064336,
+      "languages": ["Bozo"],
+      "region": "Rives du Niger (Mopti, Djenné)",
+      "sources": ["Anthropologie fluviale"],
+      "ancientName": "Chefferies Bozo",
+      "description": "Pêcheurs traditionnels du Niger",
+      "societyType": "Fluviale",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Peuples Bozo",
+      "regionalPresence": ["Mali"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Bobo",
+      "subGroups": [
+        {
+          "name": "Mali",
+          "population": 460000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.032168
+        }
+      ],
+      "population": 460000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.032168,
+      "languages": ["Bobo"],
+      "region": "Sud (Sikasso)",
+      "sources": ["Sources régionales"],
+      "ancientName": "Chefferies Bobo",
+      "description": "Agriculteurs & forgerons",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Royaumes Bobo",
+      "regionalPresence": ["Mali", "Burkina Faso"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Mali",
+          "population": 460000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.032168
+        }
+      ]
+    },
+    {
+      "groupName": "Minianka",
+      "subGroups": [],
+      "population": 575000,
+      "percentageInCountry": 2.5,
+      "percentageInAfrica": 0.04021,
+      "languages": ["Minianka"],
+      "region": "Sud (Koutiala)",
+      "sources": ["Ethnologie Minianka"],
+      "ancientName": "Chefferies Minianka",
+      "description": "Groupe agricole important",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Groupes Minianka",
+      "regionalPresence": ["Mali"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Sénoufo",
+      "subGroups": [],
+      "population": 575000,
+      "percentageInCountry": 2.5,
+      "percentageInAfrica": 0.04021,
+      "languages": ["Sénoufo"],
+      "region": "Sud (Sikasso)",
+      "sources": ["Anthropologie Sénoufo"],
+      "ancientName": "Royaumes Sénoufo",
+      "description": "Peuple initiatique Poro, agriculteur",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Royaumes Sénoufo",
+      "regionalPresence": ["Mali", "Côte d’Ivoire"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 230000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.016084,
+      "languages": ["Divers"],
+      "region": "National",
+      "sources": ["INSTAT estimations"],
+      "ancientName": "Divers royaumes",
+      "description": "Groupes variés",
+      "societyType": "Variable",
+      "religion": "Islam / Christianisme / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Mali"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

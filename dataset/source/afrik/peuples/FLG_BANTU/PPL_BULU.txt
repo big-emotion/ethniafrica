@@ -5,7 +5,7 @@
 - Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe : Bantous forestiers camerounais
 - Région historique : Sud Cameroun
-- Pays actuels : Cameroun
+- Pays actuels : CMR
 - Identifiant peuple : PPL_BULU
 
 # 1. Ethnies incluses

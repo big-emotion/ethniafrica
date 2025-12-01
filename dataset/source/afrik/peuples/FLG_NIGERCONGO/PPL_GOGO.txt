@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantous de Tanzanie centrale
 - Région historique : Dodoma, Manyoni, Mpwapwa
-- Pays actuels : Tanzanie
+- Pays actuels : TZA
 - Identifiant peuple (ID) : PPL_GOGO
 
 # 1. Ethnies incluses dans le peuple

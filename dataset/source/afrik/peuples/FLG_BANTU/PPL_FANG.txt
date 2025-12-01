@@ -3,9 +3,9 @@
 - Auto-appellation : Fan / Pahouin / Pangwe
 - Exonymes historiques : « Pahouins » (ancienne étiquette coloniale)
 - Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
-- Groupe : Bantous forestiers (Gabon, Guinée Équatoriale, Cameroun)
+- Groupe : Bantous forestiers (GAB, GIN Équatoriale, CMR)
 - Région historique : Forêts équatoriales
-- Pays actuels : Gabon, Guinée équatoriale, Cameroun
+- Pays actuels : GAB, GIN équatoriale, CMR
 - Identifiant : PPL_FANG
 
 # 1. Ethnies incluses

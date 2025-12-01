@@ -1,0 +1,238 @@
+# Nom du pays
+- Nom officiel actuel : République de Guinée-Bissau (República da Guiné-Bissau)
+- Étymologie du nom : Le nom "Guinée-Bissau" combine "Guinée" (du portugais "Guiné", terme utilisé pour désigner la côte ouest-africaine) et "Bissau" (nom de la capitale, dérivé du nom d'un chef local ou d'un terme local). Le nom "Bissau" a été ajouté en 1973 lors de l'indépendance pour différencier le pays de la Guinée-Conakry (Guinée).
+- Personne / peuple / administration à l'origine du nom : Le nom "Guinée" a été donné par les navigateurs portugais au XVe siècle. Le nom "Guiné Portuguesa" (Guinée portugaise) a été utilisé pendant la colonisation. Le nom "Guinée-Bissau" a été officialisé lors de l'indépendance en 1973 par le PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert) pour différencier le pays de la Guinée-Conakry.
+- Identifiant pays (ISO 3166-1 alpha-3) : GNB
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la Guinée-Bissau était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : XIIe-XVIe siècle : Zones d'influence des royaumes mandé (Mali, Kaabu). Développement du royaume mandinka de Kaabu (grand royaume mandinka installé en Casamance et Guinée-Bissau). Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et peuples autonomes : royaume mandinka de Kaabu (dominant), peuples côtiers (Papel, Manjak), peuples forestiers et insulaires (Bijagó), Balante, Fula, Mandinka. Les Portugais utilisaient le terme "Guiné" pour désigner la région.
+- Colonisation : 1446-1879 : Arrivée des Portugais (1446), la région est nommée "Guiné de Cabo Verde" (Guinée du Cap-Vert). Les Portugais implantent des comptoirs dès le XVe siècle mais ne contrôlent l'intérieur qu'au XIXe siècle. 1879 : Colonie distincte du Cap-Vert, nommée "Guiné Portuguesa" (Guinée portugaise). Le territoire était administré comme une colonie portugaise jusqu'à l'indépendance en 1973.
+- Période contemporaine : 1973 : Indépendance de la Guinée-Bissau (24 septembre 1973), proclamation de la République de Guinée-Bissau. Le nom "Bissau" a été ajouté pour différencier le pays de la Guinée-Conakry. Indépendance obtenue après la lutte du PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume mandinka de Kaabu] :
+  - Période : XIIe siècle - XIXe siècle
+  - Peuples dominants : Mandinka
+  - Centres politiques : Kaabu (capitale historique)
+  - Rôle historique : Grand royaume mandinka installé en Casamance et Guinée-Bissau, héritier de l'empire du Mali. État puissant et structuré, système monarchique, traditions mandé. Domination de la région jusqu'au XIXe siècle. Résistance à la colonisation portugaise.
+
+- [Peuples côtiers] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Papel, Manjak, Mancanha
+  - Centres politiques : Chefferies traditionnelles côtières
+  - Rôle historique : Peuples côtiers et forestiers, rôle commercial important, traditions maritimes. Relations avec la Casamance (Sénégal). Résistance à la colonisation portugaise.
+
+- [Peuples Bijagó] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Bijagó / Bidyogo
+  - Centres politiques : Îles Bijagó (archipel)
+  - Rôle historique : Peuple insulaire, société matrilinéaire, traditions maritimes, résistance à la colonisation portugaise. Organisation sociale unique (matrilinéaire).
+
+- [Colonie portugaise de Guinée] :
+  - Période : 1879 - 1973
+  - Peuples dominants : Tous les peuples guinéens-bissau sous domination portugaise
+  - Centres politiques : Bissau (capitale coloniale)
+  - Rôle historique : Colonie portugaise, exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Balante). Développement du mouvement indépendantiste au XXe siècle, formation du PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert) en 1956.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Balante
+  - Auto-appellation (endonyme) : Balanta
+  - Exonymes / appellations historiques : Balante (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BALANTA
+  - Région principale : Centre et littoral de la Guinée-Bissau
+  - Langues parlées : Balanta (ble, ISO 639-3), portugais, créole
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Balanta" est l'auto-appellation. Pas de terme péjoratif connu. Peuple agro-forestier et égalitaire, très présent au centre et littoral. Rôle central dans l'histoire de Guinée-Bissau. Résistance notable au colonialisme portugais.
+
+- Peuple 2 :
+  - Nom : Fula / Peul
+  - Auto-appellation (endonyme) : Fulɓe (pluriel), Pullo (singulier)
+  - Exonymes / appellations historiques : Peul (terme français), Fulani (terme haoussa), Fula (terme anglophone), "Fellata" (terme haoussa parfois péjoratif, à éviter)
+  - Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+  - Région principale : Toutes les régions de la Guinée-Bissau
+  - Langues parlées : Fulfulde (ful, ISO 639-3), portugais, créole
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fulɓe" est l'auto-appellation. "Peul" et "Fulani" sont des exonymes acceptés. "Fellata" peut avoir une connotation péjorative dans certains contextes et doit être évité. Pasteurs et commerçants musulmans.
+
+- Peuple 3 :
+  - Nom : Mandinka
+  - Auto-appellation (endonyme) : Mandinka / Mandiŋka
+  - Exonymes / appellations historiques : Mandinka (terme utilisé par les Européens), Mandingue (forme française), "Mandingo" (terme historique, parfois péjoratif)
+  - Identifiant peuple (PPL_) : PPL_MANDINKA, PPL_MALINKE
+  - Région principale : Toutes les régions de la Guinée-Bissau
+  - Langues parlées : Mandinka (mnk, ISO 639-3), portugais, créole
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mandinka" ou "Mandiŋka" est l'auto-appellation. "Mandingue" est l'exonyme français accepté. "Mandingo" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité. Héritiers du royaume de Kaabu.
+
+- Peuple 4 :
+  - Nom : Papel
+  - Auto-appellation (endonyme) : Papel
+  - Exonymes / appellations historiques : Papel (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_PAPEL
+  - Région principale : Zone de Bissau (littoral)
+  - Langues parlées : Papel (pbo, ISO 639-3), portugais, créole
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Papel" est l'auto-appellation. Pas de terme péjoratif connu. Peuple autochtone de la zone de Bissau.
+
+- Peuple 5 :
+  - Nom : Manjak
+  - Auto-appellation (endonyme) : Manjak
+  - Exonymes / appellations historiques : Manjak (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MANJAK
+  - Région principale : Littoral et zones côtières
+  - Langues parlées : Manjak (mfv, ISO 639-3), portugais, créole
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Manjak" est l'auto-appellation. Pas de terme péjoratif connu. Peuple côtier et forestier lié à la Casamance.
+
+- Peuple 6 :
+  - Nom : Mancanha
+  - Auto-appellation (endonyme) : Mancanha
+  - Exonymes / appellations historiques : Mancanha (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MANCANHA
+  - Région principale : Littoral et zones côtières
+  - Langues parlées : Mancanha (mcs, ISO 639-3), portugais, créole
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mancanha" est l'auto-appellation. Pas de terme péjoratif connu. Famille proche des Manjak.
+
+- Peuple 7 :
+  - Nom : Bijagó / Bidyogo
+  - Auto-appellation (endonyme) : Bijagó / Bidyogo
+  - Exonymes / appellations historiques : Bijagó, Bidyogo (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BIJAGO_BIDYOGO
+  - Région principale : Îles Bijagó (archipel)
+  - Langues parlées : Bijagó (bjg, ISO 639-3), portugais, créole
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bijagó" ou "Bidyogo" est l'auto-appellation. Pas de terme péjoratif connu. Peuple insulaire, société matrilinéaire.
+
+- Peuple 8 :
+  - Nom : Nalu
+  - Auto-appellation (endonyme) : Nalu
+  - Exonymes / appellations historiques : Nalu (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NALU
+  - Région principale : Sud du pays
+  - Langues parlées : Nalu (naj, ISO 639-3), portugais, créole
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Nalu" est l'auto-appellation. Pas de terme péjoratif connu. Sud du pays, sociétés anciennes.
+
+- Peuple 9 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes (Beafada, Felupe, Tanda, Soussou)
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions de la Guinée-Bissau
+  - Langues parlées : Langues diverses, portugais, créole
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation (Beafada, Felupe, Tanda, Soussou, etc.). Pas de terme péjoratif connu. Minorités transfrontalières.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Portugais (langue officielle, por), Créole guinéen-bissau (crioulo, langue véhiculaire), Balanta (ble), Fulfulde (ful), Mandinka (mnk), Papel (pbo), Manjak (mfv), Mancanha (mcs), Bijagó (bjg), Nalu (naj)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de la Guinée-Bissau. Traditions atlantiques (Balante, Papel, Manjak, Mancanha, Bijagó, Nalu, rites d'initiation, musiques polyrythmiques, cérémonies agricoles). Traditions mandé (Mandinka, héritiers du royaume de Kaabu, griots, kora). Traditions peules (Fula, poésie peule, traditions islamiques). Traditions insulaires (Bijagó, société matrilinéaire, traditions maritimes). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.
+- Religions dominantes : Islam sunnite (majoritaire, 45%+), christianisme (minorité), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, rites d'initiation)
+- Modes de vie : Agriculture (riz, arachides, cultures vivrières), élevage (Fula, bovins), pêche (côtière et fluviale), commerce et activités urbaines (zones urbaines, Bissau). Urbanisation modérée. Économie basée sur l'agriculture (arachides, riz, principale exportation), la pêche, et les services. Dépendance économique importante.
+- Organisation sociale : Organisation en royaumes historiques (Kaabu, système monarchique mandé), chefferies traditionnelles (Balante, société égalitaire sans chefferie héréditaire, décisions prises collectivement par les anciens), structures claniques patrilinéaires et matrilinéaires (Bijagó, société matrilinéaire). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte.
+- Relations régionales : Relations historiques avec le Sénégal (Casamance, Manjak, commerce, frontière), la Guinée (Fula, Mandinka, commerce, frontière), le Cap-Vert (PAIGC, lutte commune pour l'indépendance). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest) et l'UEMOA (Union économique et monétaire ouest-africaine). Relations commerciales et culturelles transfrontalières. Relations avec le Cap-Vert (lutte commune pour l'indépendance, PAIGC).
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples atlantiques, mandé et forestiers. Développement de chefferies et royaumes locaux.
+- Moyen Âge : XIIe-XVIe siècle : Zones d'influence des royaumes mandé (Mali, Kaabu). Développement du royaume mandinka de Kaabu, grand royaume mandinka installé en Casamance et Guinée-Bissau, héritier de l'empire du Mali. Domination de la région. Commerce régional et transsaharien.
+- Époque précoloniale : Consolidation du royaume mandinka de Kaabu, peuples côtiers (Papel, Manjak), peuples forestiers et insulaires (Bijagó), Balante, Fula. Commerce régional et côtier. Contacts avec les Européens (Portugais, dès 1446).
+- Colonisation : 1446 : Arrivée des Portugais, la région est nommée "Guiné de Cabo Verde". Les Portugais implantent des comptoirs dès le XVe siècle mais ne contrôlent l'intérieur qu'au XIXe siècle. 1879 : Colonie distincte du Cap-Vert, nommée "Guiné Portuguesa". Période coloniale portugaise (1879-1973), exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Balante). XXe siècle : Développement du mouvement indépendantiste, formation du PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert) en 1956.
+- Lutte pour l'indépendance : 1956-1973 : Lutte pour l'indépendance menée par le PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert), dirigé par Amílcar Cabral. Lutte armée contre le Portugal. 1973 : Indépendance de la Guinée-Bissau (24 septembre 1973), proclamation de la République de Guinée-Bissau. Assassinat d'Amílcar Cabral en 1973. Le nom "Bissau" a été ajouté pour différencier le pays de la Guinée-Conakry.
+- Période post-indépendance : 1973-1980 : Présidence de Luís Cabral (frère d'Amílcar Cabral). 1980-présent : Coup d'État, présidence de João Bernardo Vieira (1980-1999, 2005-2009), puis périodes d'instabilité politique, coups d'État récurrents. Défis : pauvreté, instabilité politique, développement économique, trafic de drogue. La Guinée-Bissau est l'un des pays les plus pauvres d'Afrique.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Guinea-Bissau
+- CIA World Factbook – Guinea-Bissau
+- ONU / UNFPA – Démographie Guinée-Bissau 2025
+- Cabral, Amílcar – "Unity and Struggle: Speeches and Writings"
+- Recensements guinéens-bissau
+- Études anthropologiques sur les peuples de la Guinée-Bissau
+- Études historiques sur le royaume de Kaabu
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Balante
+- Identifiant peuple (PPL_) : PPL_BALANTA
+- Population : 540 000
+- Pourcentage dans le pays : 26%
+- Pourcentage en Afrique : N/A
+- Région : Centre et littoral de la Guinée-Bissau
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : ble
+
+### Peuple : Fula / Peul
+- Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+- Population : 375 000
+- Pourcentage dans le pays : 18%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la Guinée-Bissau
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : ful
+
+### Peuple : Mandinka
+- Identifiant peuple (PPL_) : PPL_MANDINKA, PPL_MALINKE
+- Population : 290 000
+- Pourcentage dans le pays : 14%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la Guinée-Bissau
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : mnk
+
+### Peuple : Papel
+- Identifiant peuple (PPL_) : PPL_PAPEL
+- Population : 210 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Zone de Bissau (littoral)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : pbo
+
+### Peuple : Manjak
+- Identifiant peuple (PPL_) : PPL_MANJAK
+- Population : 190 000
+- Pourcentage dans le pays : 9%
+- Pourcentage en Afrique : N/A
+- Région : Littoral et zones côtières
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : mfv
+
+### Peuple : Mancanha
+- Identifiant peuple (PPL_) : PPL_MANCANHA
+- Population : 100 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Littoral et zones côtières
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : mcs
+
+### Peuple : Bijagó / Bidyogo
+- Identifiant peuple (PPL_) : PPL_BIJAGO_BIDYOGO
+- Population : 65 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Îles Bijagó (archipel)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : bjg
+
+### Peuple : Nalu
+- Identifiant peuple (PPL_) : PPL_NALU
+- Population : 40 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Sud du pays
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : naj
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 240 000
+- Pourcentage dans le pays : 12%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la Guinée-Bissau (minorités transfrontalières)
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Guinée-Bissau 2025 : 2 050 000 (estimations ONU/UNFPA)**
+

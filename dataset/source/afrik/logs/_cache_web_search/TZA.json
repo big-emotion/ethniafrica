@@ -1,0 +1,631 @@
+{
+  "countryCode": "TZA",
+  "countryName": "République unie de Tanzanie",
+  "peoples": [
+    {
+      "name": "Sukuma",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Swahili",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Chaga",
+      "alternativeNames": ["Chagga"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Haya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyamwezi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Maasai",
+      "alternativeNames": ["Masai"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOTIQUE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Hehe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre-Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Gogo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Ha",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Makonde",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Yao",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Zaramo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Pare",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Shambaa",
+      "alternativeNames": ["Shambala"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Digo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Segeju",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Rufiji",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Ndengereko",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Matumbi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Machinga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Mwera",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Makua",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Ngoni",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Bena",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre-Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Pangwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Kinga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Kisi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Manda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Ngindo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Ndamba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Vidunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Kaguru",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Sagala",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Luguru",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Kutu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Kwere",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Doe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Zigua",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Bondei",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Shirazi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Zanzibar",
+      "source": "web_search"
+    },
+    {
+      "name": "Tumbatu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Zanzibar",
+      "source": "web_search"
+    },
+    {
+      "name": "Hadimu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Zanzibar",
+      "source": "web_search"
+    },
+    {
+      "name": "Kwere",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Côte",
+      "source": "web_search"
+    },
+    {
+      "name": "Kara",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Jita",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kerewe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Zinza",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Sumbwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyakyusa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Ngonde",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Lambya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Safwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Iwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mambwe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Fipa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Rungwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Pimbwe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Rungu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mpoto",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Tongwe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Bende",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kimbu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Konongo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Sukuma",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyaturu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Iramba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Isanzu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Rangi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Mbugwe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Burunge",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Gorowa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Iraqw",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Alagwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Datoga",
+      "alternativeNames": ["Tatoga"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOTIQUE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Iraqw",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Hadza",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ISOLAT",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Sandawe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ISOLAT",
+      "region": "Centre",
+      "source": "web_search"
+    }
+  ],
+  "timestamp": "2025-11-30T19:41:00.902Z",
+  "sourcesUsed": ["web_search"],
+  "sourcesPending": [
+    "CIA World Factbook",
+    "Ethnologue",
+    "UNESCO",
+    "IWGIA",
+    "Encyclopaedia Africana"
+  ]
+}

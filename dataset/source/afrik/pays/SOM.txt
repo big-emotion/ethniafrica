@@ -1,0 +1,154 @@
+# Nom du pays
+- Nom officiel actuel : République fédérale de Somalie (Federal Republic of Somalia, Jamhuuriyadda Federaalka Soomaaliya)
+- Étymologie du nom : Le nom "Somalie" provient du peuple Somali (Soomaali), majoritaire dans le pays. Le terme "Somali" est utilisé par ce peuple pour se désigner lui-même. Le nom "Somalie" a été officialisé lors de l'indépendance en 1960, fusionnant les territoires britannique (Somaliland britannique) et italien (Somalie italienne). Le nom "Somaliland" (terre des Somalis) était utilisé par les Britanniques.
+- Personne / peuple / administration à l'origine du nom : Le peuple Somali (Soomaali) est à l'origine du nom. Le nom "Somalie" a été officialisé lors de l'indépendance en 1960 par le gouvernement somalien, fusionnant les territoires britannique et italien.
+- Identifiant pays (ISO 3166-1 alpha-3) : SOM
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Présence de peuples couchitiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. Développement de royaumes et de sultanats locaux.
+- Moyen Âge : Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes et persans. La région était connue sous le nom de "Bilad al-Barbar" (pays des Berbères) par les Arabes, mais les Somali se désignaient comme "Soomaali".
+- Époque précoloniale : Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes, persans et européens. La région était connue sous le nom de "Somalie" par les Européens, mais les Somali se désignaient comme "Soomaali".
+- Colonisation : 1884-1960 : Somaliland britannique (nord). 1889-1941 : Somalie italienne (sud). 1941-1950 : Administration britannique (toute la Somalie). 1950-1960 : Territoire sous tutelle italienne (Somalie italienne). Développement de l'économie de plantation (bananes, canne à sucre), exploitation minière, mouvements nationalistes (XXe siècle). Le nom "Somalie" est officialisé par les colonisateurs.
+- Période contemporaine : 1960 : Indépendance (1er juillet 1960), fusion des territoires britannique et italien, proclamation de la République de Somalie. 2012 : Proclamation de la République fédérale de Somalie. Le nom "Somalie" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Sultanat d'Ajuran] :
+  - Période : XIIIe siècle - XVIIe siècle
+  - Peuples dominants : Somali (clans Hawiye, Darod)
+  - Centres politiques : Mogadiscio, Merca, Barawa
+  - Rôle historique : Sultanat somali puissant, contrôle du commerce dans la Corne de l'Afrique, résistance aux Portugais, développement de l'islam.
+
+- [Sultanat d'Ifat] :
+  - Période : XIIIe siècle - XVe siècle
+  - Peuples dominants : Somali (clans Dir, Hawiye)
+  - Centres politiques : Ifat (Éthiopie actuelle)
+  - Rôle historique : Sultanat somali, expansion vers l'Éthiopie, conflits avec l'empire d'Éthiopie, développement de l'islam.
+
+- [Sultanat d'Adal] :
+  - Période : XVe siècle - XVIe siècle
+  - Peuples dominants : Somali (clans Dir, Hawiye, Darod)
+  - Centres politiques : Zeila, Harar
+  - Rôle historique : Sultanat somali puissant, expansion vers l'Éthiopie, guerre avec l'empire d'Éthiopie, développement de l'islam.
+
+- [Sultanat de Mogadiscio] :
+  - Période : Xe siècle - XIXe siècle
+  - Peuples dominants : Somali (clans Hawiye), Arabes, Persans
+  - Centres politiques : Mogadiscio
+  - Rôle historique : Sultanat somali, centre commercial important, contacts avec les commerçants arabes et persans, développement de l'islam.
+
+- [Somaliland britannique] :
+  - Période : 1884 - 1960
+  - Peuples dominants : Britanniques, Somali (clans Isaaq, Dir, Darod)
+  - Centres politiques : Hargeisa (capitale coloniale)
+  - Rôle historique : Colonisation britannique, développement de l'économie pastorale, mouvements nationalistes (XXe siècle).
+
+- [Somalie italienne] :
+  - Période : 1889 - 1960
+  - Peuples dominants : Italiens, Somali (clans Hawiye, Darod, Rahanweyn)
+  - Centres politiques : Mogadiscio (capitale coloniale)
+  - Rôle historique : Colonisation italienne, développement de l'économie de plantation (bananes, canne à sucre), exploitation minière, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Somali
+  - Auto-appellation (endonyme) : Soomaali
+  - Exonymes / appellations historiques : "Somalies" (forme coloniale française, connotation réductrice), "Somali" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SOMALI
+  - Région principale : Toute la Somalie
+  - Langues parlées : Somali (som, ISO 639-3), arabe, anglais, italien
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Soomaali" est l'auto-appellation. Le terme "Somalies" est une forme coloniale française qui peut être considérée comme réductrice. Le terme "Somali" est utilisé par les Européens et est généralement accepté. Groupe couchitique majoritaire, originaire de la Corne de l'Afrique. Organisation en clans (Darod, Hawiye, Dir, Isaaq, Rahanweyn).
+
+- Peuple 2 :
+  - Nom : Bantous somaliens
+  - Auto-appellation (endonyme) : Variées selon les groupes (Bantu, Jareer, Gosha)
+  - Exonymes / appellations historiques : "Bantous" (terme générique), "Jareer" (terme somali, peut être péjoratif), "Gosha" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_BANTOUS_SOMALIENS
+  - Région principale : Sud de la Somalie (vallée du Juba, vallée du Shabelle)
+  - Langues parlées : Langues bantoues (swh, ISO 639-3), somali, arabe
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Bantous somaliens sont descendants d'esclaves bantous importés d'Afrique de l'Est. Le terme "Jareer" (cheveux crépus) peut être considéré comme péjoratif. Le terme "Gosha" (forêt) est historique. Chaque groupe a sa propre auto-appellation. Groupe bantou minoritaire, historiquement marginalisé.
+
+- Peuple 3 :
+  - Nom : Arabes somaliens
+  - Auto-appellation (endonyme) : Variées selon les groupes (Arabes somaliens)
+  - Exonymes / appellations historiques : "Arabes" (terme générique)
+  - Identifiant peuple (PPL_) : PPL_ARABES_SOMALIENS
+  - Région principale : Zones côtières (Mogadiscio, Merca, Barawa)
+  - Langues parlées : Arabe (arb, ISO 639-3), somali
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Arabes somaliens sont descendants d'immigrants arabes arrivés au Moyen Âge. Pas de terme péjoratif connu. Groupe sémitique minoritaire, historiquement commerçants.
+
+- Peuple 4 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les régions de la Somalie
+  - Langues parlées : Langues diverses, somali, arabe
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Somali (langue officielle, som), arabe (langue officielle, arb), anglais (eng), italien (ita)
+- Traditions culturelles : Traditions couchitiques (Somali) : poésie orale (gabay), musiques traditionnelles, danse traditionnelle, artisanat (tissage, poterie), élevage pastoral de chameaux, rituels liés aux pluies et à la mobilité pastorale. Traditions bantoues (Bantous somaliens) : musiques traditionnelles, danse traditionnelle, artisanat, agriculture. Traditions arabes (Arabes somaliens) : musiques traditionnelles, danse traditionnelle, artisanat, commerce. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture somalienne est riche et préservée, avec une forte tradition orale (poésie).
+- Religions dominantes : Islam sunnite (quasi-totalité de la population, environ 99%), religions traditionnelles africaines (syncrétisme rare, moins de 1%)
+- Modes de vie : Élevage pastoral (chameaux, bovins, caprins, ovins, mode de vie nomade), agriculture (maïs, sorgho, bananes, canne à sucre, cultures vivrières), pêche (océan Indien, importante source de protéines), commerce et activités urbaines (zones urbaines, Mogadiscio). Urbanisation importante. Économie basée sur l'élevage pastoral (secteur majeur), l'agriculture (bananes, canne à sucre), la pêche, et les envois de fonds de la diaspora. La Somalie est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante de l'élevage et de l'agriculture.
+- Organisation sociale : Société clanique très structurée (clans Somali : Darod, Hawiye, Dir, Isaaq, Rahanweyn). Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (assemblées shir, chefs traditionnels : ugaas, suldaan). Structures étatiques modernes (république fédérale, mais instabilité politique et conflits récents). Système politique fédéral, mais instabilité politique et conflits récents (guerre civile depuis 1991, État fragile).
+- Relations régionales : Relations avec l'Afrique de l'Est (IGAD, Union africaine), relations avec le Moyen-Orient (Ligue arabe, pays du Golfe), relations avec l'Europe (Union européenne, Italie, Royaume-Uni), relations avec les États-Unis. La Somalie est membre de l'IGAD, de l'Union africaine et de la Ligue arabe.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence de peuples couchitiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. Développement de royaumes et de sultanats locaux.
+- Moyen Âge : Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes et persans. La région était connue sous le nom de "Bilad al-Barbar" (pays des Berbères) par les Arabes, mais les Somali se désignaient comme "Soomaali".
+- Époque précoloniale : Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes, persans et européens. La région était connue sous le nom de "Somalie" par les Européens, mais les Somali se désignaient comme "Soomaali".
+- Colonisation : 1884-1960 : Somaliland britannique (nord), développement de l'économie pastorale. 1889-1941 : Somalie italienne (sud), développement de l'économie de plantation (bananes, canne à sucre), exploitation minière. 1941-1950 : Administration britannique (toute la Somalie). 1950-1960 : Territoire sous tutelle italienne (Somalie italienne), mouvements nationalistes (XXe siècle).
+- Lutte pour l'indépendance : 1950s-1960 : Mouvements nationalistes, SYL (Somali Youth League), indépendance (1er juillet 1960), fusion des territoires britannique et italien, proclamation de la République de Somalie. Aden Abdullah Osman Daar devient premier président.
+- Période post-indépendance : République de Somalie (1960), présidence d'Aden Abdullah Osman Daar (1960-1967), Abdirashid Ali Shermarke (1967-1969), coup d'État (1969), présidence de Siad Barre (1969-1991, régime socialiste, guerre avec l'Éthiopie, 1977-1978), guerre civile (depuis 1991, État effondré, conflits claniques, famine, interventions internationales), transition fédérale (2012), proclamation de la République fédérale de Somalie, Hassan Sheikh Mohamud (2012-2017, 2022-), Mohamed Abdullahi Mohamed (2017-2022). Stabilité politique fragile, État fédéral, reconstruction post-conflit, développement économique (élevage, agriculture, pêche). La Somalie est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante de l'élevage et de l'agriculture.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Somalia
+- SIL Ethnologue – Languages of Somalia
+- Recensements somaliens
+- Études anthropologiques sur les peuples de Somalie
+- Études historiques sur la colonisation britannique et italienne
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Somali
+- Identifiant peuple (PPL_) : PPL_SOMALI
+- Population : 15 300 000
+- Pourcentage dans le pays : 85,0%
+- Pourcentage en Afrique : N/A
+- Région : Toute la Somalie
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : som
+
+### Peuple : Bantous somaliens
+- Identifiant peuple (PPL_) : PPL_BANTOUS_SOMALIENS
+- Population : 900 000
+- Pourcentage dans le pays : 5,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud de la Somalie (vallée du Juba, vallée du Shabelle)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : swh
+
+### Peuple : Arabes somaliens
+- Identifiant peuple (PPL_) : PPL_ARABES_SOMALIENS
+- Population : 450 000
+- Pourcentage dans le pays : 2,5%
+- Pourcentage en Afrique : N/A
+- Région : Zones côtières (Mogadiscio, Merca, Barawa)
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : arb
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 1 350 000
+- Pourcentage dans le pays : 7,5%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la Somalie
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Somalie 2025 : 18 000 000 (estimations ONU/UNFPA)**
+

@@ -6,8 +6,8 @@
   - Note importante : Les distinctions Hutu/Tutsi/Twa sont des constructions sociales et politiques complexes, historiquement instrumentalisées par le colonialisme. Ces termes doivent être contextualisés.
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone J)
-- Région historique : Rwanda, RDC, Ouganda, Burundi
-- Pays actuels : Rwanda, RDC, Ouganda, Burundi
+- Région historique : RWA, COD, UGA, BDI
+- Pays actuels : RWA, COD, UGA, BDI
 - Identifiant peuple (ID) : PPL_RWANDAIS_HUTU
 
 # 1. Ethnies incluses dans le peuple
@@ -18,10 +18,10 @@
 - Ethnie 5 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Hutu sont originaires de la région du Rwanda, de la RDC, de l'Ouganda et du Burundi. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Les distinctions Hutu/Tutsi sont des constructions sociales complexes.
+- Origines anciennes : Les Hutu sont originaires de la région du RWA, de la COD, de l'Ouganda et du Burundi. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Les distinctions Hutu/Tutsi sont des constructions sociales complexes.
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Rwanda, la RDC, l'Ouganda et le Burundi
+  - Expansion vers le RWA, la COD, l'Ouganda et le Burundi
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une langue commune (kinyarwanda/kirundi) et une identité culturelle. Distinctions sociales historiques avec les Tutsi.
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme. Instrumentalisation coloniale des distinctions sociales.

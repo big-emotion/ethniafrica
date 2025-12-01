@@ -1,0 +1,60 @@
+# Nom du clan
+- Nom principal : À préciser (autres segments lignagers internes)
+- Identifiant clan (ID) : CLN_BAGANDA_A_PRECISER_AUTRES_SEGMENTS_LIGNAGERS_INTERNES
+- Auto-appellation : N/A
+- Exonymes et termes coloniaux (connotation, origine, contextualisation) : N/A (connotation, origine, contextualisation) : N/A
+- Sous-ethnie parente (si applicable) : N/A
+- Identifiant sous-ethnie parente (SUB_) : N/A
+- Ethnie parente : N/A
+- Identifiant ethnie parente (ETH_) : N/A
+- Peuple d'appartenance : BAGANDA
+- Identifiant peuple (ID) : PPL_BAGANDA
+- Langue parlée : N/A
+- Code ISO 639-3 : N/A
+- Famille linguistique : BANTU
+- Identifiant famille linguistique (FLG) : FLG_BANTU
+
+# 1. Structure clanique
+- Totem / Ancêtre fondateur : N/A
+- Système de filiation (patrilinéaire / matrilinéaire / bilatéral) : N/A
+- Maison royale / lignage noble (si applicable) : N/A
+- Segment matrimonial : N/A
+- Relations avec autres clans : N/A
+# 2. Origines et histoire du clan
+- Origines anciennes : N/A
+- Ancêtre fondateur : N/A
+- Migrations du clan : N/A
+- Formation du clan : N/A
+- Relations avec l'ethnie/sous-ethnie mère : N/A
+- Rôle dans les royaumes / empires : N/A
+# 3. Territoires / Répartition géographique
+- Pays : N/A
+- Régions principales : N/A
+- Zones historiques : N/A
+- Diaspora interne : N/A
+- Diaspora externe : N/A
+# 4. Organisation sociale et culturelle
+- Mode de vie : N/A
+- Structure familiale : N/A
+- Rites de passage : N/A
+- Religion(s) / spiritualités : N/A
+- Autorités traditionnelles : N/A
+- Rôle social spécifique : N/A
+- Relations matrimoniales avec autres clans : N/A
+# 5. Économie traditionnelle / modes de subsistance
+- Agriculture : N/A
+- Élevage : N/A
+- Artisanat : N/A
+- Pêche / chasse / cueillette : N/A
+- Commerce et réseaux économiques : N/A
+# 6. Interactions historiques
+- Alliances : N/A
+- Conflits : N/A
+- Rôle dans les États précoloniaux : N/A
+- Rôle dans la période coloniale : N/A
+- Mouvements modernes : N/A
+- Figures majeures du clan : N/A
+# 7. Sources
+- [Titre] – [Auteur/URL]
+- Etc.
+

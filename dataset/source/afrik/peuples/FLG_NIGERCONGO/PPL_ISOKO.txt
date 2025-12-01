@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Isoko (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Edoid (sous-groupe du Bénoué-Congo)
-- Région historique : Delta du Niger, sud du Nigeria
-- Pays actuels : Nigeria
+- Région historique : Delta du NER, sud du Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_ISOKO
 
 # 1. Ethnies incluses dans le peuple

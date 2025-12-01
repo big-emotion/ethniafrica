@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (sous-groupe du Niger-Congo)
 - Région historique : Sierra Leone
-- Pays actuels : Sierra Leone
+- Pays actuels : SLE
 - Identifiant peuple (ID) : PPL_TEMNE
 
 # 1. Ethnies incluses dans le peuple

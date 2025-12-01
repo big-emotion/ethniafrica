@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Mende (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (Mandé méridional)
-- Région historique : Sierra Leone, Libéria
-- Pays actuels : Sierra Leone, Libéria
+- Région historique : SLE, Libéria
+- Pays actuels : SLE, Libéria
 - Identifiant peuple (ID) : PPL_MENDE
 
 # 1. Ethnies incluses dans le peuple

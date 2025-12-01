@@ -1,0 +1,142 @@
+# Nom du pays
+- Nom officiel actuel : République de Djibouti (République de Djibouti)
+- Étymologie du nom : Le nom "Djibouti" provient de la ville de Djibouti, fondée par les Français en 1888. L'origine du nom de la ville est incertaine, mais pourrait dériver du mot afar "gabouti" (panier en fibres de palmier) ou d'une légende locale. Le nom a été adopté pour le pays à l'indépendance en 1977.
+- Personne / peuple / administration à l'origine du nom : Le nom "Djibouti" a été donné par les Français lors de la fondation de la ville de Djibouti en 1888. Le nom a été officialisé pour le pays à l'indépendance en 1977, remplaçant "Territoire français des Afars et des Issas". Le nom reflète l'identité de la capitale et du pays.
+- Identifiant pays (ISO 3166-1 alpha-3) : DJI
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de Djibouti était peuplé de peuples Afar et Somali sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires (Adal, Dankali, etc.).
+- Moyen Âge : Développement de sultanats et chefferies : sultanat d'Adal (Afar), chefferies Somali (Issa, Gadabursi, Isaaq). Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de sultanats et chefferies autonomes : sultanat d'Adal (Afar, aussi appelé Dankali), chefferies Somali (Issa, Gadabursi, Isaaq). Les Européens utilisaient les termes "Côte française des Somalis" ou "Pays des Afars et des Issas" pour désigner la région.
+- Colonisation : 1862-1885 : Traités français avec les sultans afar et les chefs somali. 1896 : Côte française des Somalis (colonie française). 1967 : Territoire français des Afars et des Issas (changement de nom). Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1977.
+- Période contemporaine : 1977 : Indépendance de Djibouti (27 juin 1977), proclamation de la République de Djibouti. Le nom "Djibouti" remplace "Territoire français des Afars et des Issas".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Sultanat d'Adal] :
+  - Période : Précolonial - XIXe siècle
+  - Peuples dominants : Afar
+  - Centres politiques : Aussa (capitale du sultanat), chefferies afar
+  - Rôle historique : Sultanat d'Adal (aussi appelé Dankali), État afar puissant dans la région. Pastoralisme nomade, commerce transsaharien. Relations avec les empires éthiopiens et les sultanats somali.
+
+- [Chefferies Somali] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Somali (Issa, Gadabursi, Isaaq)
+  - Centres politiques : Chefferies traditionnelles somali
+  - Rôle historique : Chefferies Somali organisées en clans patrilinéaires (Issa, Gadabursi, Isaaq). Pastoralisme nomade, système clanique très structuré. Relations avec les sultanats somali voisins.
+
+- [Côte française des Somalis] :
+  - Période : 1896 - 1967
+  - Peuples dominants : Tous les peuples djiboutiens sous domination française
+  - Centres politiques : Djibouti-ville (capitale coloniale)
+  - Rôle historique : Colonie française, développement de Djibouti-ville comme port stratégique. Exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones. Rôle stratégique du port de Djibouti.
+
+- [Territoire français des Afars et des Issas] :
+  - Période : 1967 - 1977
+  - Peuples dominants : Tous les peuples djiboutiens sous domination française
+  - Centres politiques : Djibouti-ville (capitale administrative)
+  - Rôle historique : Territoire français, changement de nom pour refléter la composition ethnique (Afars et Issa). Développement du mouvement indépendantiste. Indépendance en 1977.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Somali
+  - Auto-appellation (endonyme) : Soomaali
+  - Exonymes / appellations historiques : Somali (terme utilisé par les Européens), "Somalies" (forme coloniale française, dépassée), Issa, Gadabursi, Isaaq (noms des clans)
+  - Identifiant peuple (PPL_) : PPL_SOMALI
+  - Région principale : Sud de Djibouti (Issa majoritaires politiquement), Gadabursi, Isaaq
+  - Langues parlées : Somali (som, ISO 639-3), français, arabe
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Soomaali" est l'auto-appellation. "Somali" est l'exonyme le plus courant. "Somalies" est une forme coloniale française dépassée. Les clans (Issa, Gadabursi, Isaaq) sont des sous-groupes somali. Pas de terme péjoratif connu.
+
+- Peuple 2 :
+  - Nom : Afar
+  - Auto-appellation (endonyme) : Qafár
+  - Exonymes / appellations historiques : Afar (terme utilisé par les Européens), "Danakil" (terme européen et arabe ancien, connotation péjorative, à éviter), "Dankali" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_AFAR
+  - Région principale : Nord et Centre de Djibouti
+  - Langues parlées : Afar (aar, ISO 639-3), français, arabe
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Qafár" est l'auto-appellation. "Afar" est l'exonyme le plus courant et accepté. "Danakil" est un terme européen et arabe ancien qui peut avoir une connotation péjorative et doit être évité. "Dankali" est un terme historique utilisé pour désigner les Afar et peut être utilisé dans un contexte historique, mais "Afar" est préféré.
+
+- Peuple 3 :
+  - Nom : Arabes
+  - Auto-appellation (endonyme) : Arabes
+  - Exonymes / appellations historiques : Arabes (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Zones urbaines, Djibouti-ville
+  - Langues parlées : Arabe (arabe yéménite, arb, ISO 639-3), français
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Arabes" est l'auto-appellation. Les Arabes de Djibouti sont principalement originaires du Yémen (Hadramout). Pas de terme péjoratif connu.
+
+- Peuple 4 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes d'origine
+  - Exonymes / appellations historiques : Migrants (terme descriptif)
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Zones urbaines, Djibouti-ville
+  - Langues parlées : Langues d'origine, français, arabe
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation selon son origine (Éthiopie, Somalie, Comores, etc.). Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), Arabe (langue officielle, arb), Somali (som, langue nationale), Afar (aar, langue nationale)
+- Traditions culturelles : Traditions couchitiques (Somali, Afar) : pastoralisme nomade, système clanique patrilinéaire, poésie orale (gabay chez les Somali, poésie guerrière chez les Afar). Traditions arabes (commerce, religion). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Architecture nomade (Afar). Élevage pastoral de chameaux et de bovins.
+- Religions dominantes : Islam (sunnite majoritaire, école chaféite), toutes les communautés sont musulmanes
+- Modes de vie : Pastoralisme nomade (Somali, Afar, élevage de chameaux et de bovins), commerce et activités urbaines (zones urbaines, Djibouti-ville). Urbanisation importante. Économie basée sur les services (port de Djibouti, services logistiques, bases militaires étrangères), le commerce de transit, et l'élevage pastoral.
+- Organisation sociale : Organisation en clans patrilinéaires (Somali, système clanique très structuré), sultanats (Afar, sultanat d'Aussa). Importance des lignages et des familles étendues. Rôle des chefs traditionnels (ugaas, suldaan chez les Somali, sultans chez les Afar). Assemblées traditionnelles (shir chez les Somali).
+- Relations régionales : Relations historiques avec l'Éthiopie (commerce, peuples transfrontaliers), l'Érythrée (Afar, frontière), la Somalie (Somali, frontière). Intégration dans l'IGAD (Autorité intergouvernementale pour le développement). Relations commerciales et culturelles transfrontalières. Rôle stratégique du port de Djibouti pour l'Éthiopie (accès à la mer).
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples Afar et Somali, populations couchitiques anciennes de la Corne de l'Afrique. Développement du pastoralisme nomade.
+- Moyen Âge : Développement du sultanat d'Adal (Afar), chefferies Somali (Issa, Gadabursi, Isaaq). Développement de réseaux commerciaux régionaux et transsahariens. Relations avec les empires éthiopiens et les sultanats somali.
+- Époque précoloniale : Consolidation du sultanat d'Adal (Afar), chefferies Somali organisées en clans. Pastoralisme nomade développé. Commerce transsaharien. Contacts avec les Européens (Français, Britanniques).
+- Colonisation : 1862-1885 : Traités français avec les sultans afar et les chefs somali. 1888 : Fondation de Djibouti-ville par les Français. 1896 : Création de la colonie de Côte française des Somalis. Période coloniale française (1896-1977), développement du port de Djibouti comme port stratégique. 1967 : Changement de nom pour "Territoire français des Afars et des Issas". Développement du mouvement indépendantiste au XXe siècle.
+- Lutte pour l'indépendance : 1970s : Mouvement pour l'indépendance mené par les dirigeants djiboutiens. 1977 : Indépendance de Djibouti (27 juin 1977), proclamation de la République de Djibouti. Le nom "Djibouti" remplace "Territoire français des Afars et des Issas".
+- Période post-indépendance : 1977-présent : République de Djibouti, présidence de Hassan Gouled Aptidon (1977-1999) puis d'Ismaïl Omar Guelleh (depuis 1999). Stabilité politique relative. Défis : pauvreté, dépendance aux services portuaires et aux bases militaires étrangères, tensions ethniques (Afar/Somali). Le port de Djibouti est stratégique pour l'Éthiopie (accès à la mer) et accueille des bases militaires étrangères (France, États-Unis, Chine, etc.).
+
+# 7. Sources
+- SIL Ethnologue – Languages of Djibouti
+- CIA World Factbook – Djibouti
+- ONU / UNFPA – Démographie Djibouti 2025
+- Recensements djiboutiens
+- Études anthropologiques sur les peuples de Djibouti
+- Études historiques sur le sultanat d'Adal
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Somali
+- Identifiant peuple (PPL_) : PPL_SOMALI
+- Population : 650 000
+- Pourcentage dans le pays : 60%
+- Pourcentage en Afrique : N/A
+- Région : Sud de Djibouti (Issa majoritaires politiquement), Gadabursi, Isaaq
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : som
+
+### Peuple : Afar
+- Identifiant peuple (PPL_) : PPL_AFAR
+- Population : 380 000
+- Pourcentage dans le pays : 35%
+- Pourcentage en Afrique : N/A
+- Région : Nord et Centre de Djibouti
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : aar
+
+### Peuple : Arabes
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 35 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Zones urbaines, Djibouti-ville
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : arb
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 25 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Zones urbaines, Djibouti-ville
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Djibouti 2025 : 1 090 000 (estimations ONU/UNFPA)**
+

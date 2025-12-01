@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Berbère (Amazigh)
 - Groupe ethno-linguistique : Berbère oriental (branche chaouie)
 - Région historique : Massif de l’Aurès (Algérie)
-- Pays actuels : Algérie
+- Pays actuels : DZA
 - ID peuple : PPL_CHAOUI
 
 # 1. Ethnies incluses

@@ -4,7 +4,7 @@
 - Exonymes / appellations historiques : Ngbande (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central
-- Région historique : RCA, RDC
+- Région historique : CAF, COD
 - Pays actuels : République centrafricaine, République démocratique du Congo
 - Identifiant peuple (ID) : PPL_NGBANDE
 

@@ -1,0 +1,618 @@
+{
+  "batchId": "FLG_FLG_BANTU",
+  "flgId": "FLG_BANTU",
+  "totalEthnies": 47,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_BUGANDA_BAGANDA_DU_NORD",
+      "nom_ethnie": "Baganda du Nord",
+      "PPL_ID": "PPL_BUGANDA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUGANDA/ETH_BUGANDA_BAGANDA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Baganda%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Baganda%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BUGANDA_BAGANDA_DU_SUD",
+      "nom_ethnie": "Baganda du Sud",
+      "PPL_ID": "PPL_BUGANDA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUGANDA/ETH_BUGANDA_BAGANDA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Baganda%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Baganda%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HAVU_HAVU_DU_NORD",
+      "nom_ethnie": "Havu du Nord",
+      "PPL_ID": "PPL_HAVU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HAVU/ETH_HAVU_HAVU_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Havu%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Havu%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HAVU_HAVU_DU_SUD",
+      "nom_ethnie": "Havu du Sud",
+      "PPL_ID": "PPL_HAVU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HAVU/ETH_HAVU_HAVU_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Havu%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Havu%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HOBA_HOBA_DE_RDC",
+      "nom_ethnie": "Hoba de RDC",
+      "PPL_ID": "PPL_HOBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HOBA/ETH_HOBA_HOBA_DE_RDC.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Hoba%20de%20RDC",
+        "unesco": "https://www.unesco.org/en/search?q=Hoba%20de%20RDC%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HOBA_HOBA_DE_RCA",
+      "nom_ethnie": "Hoba de RCA",
+      "PPL_ID": "PPL_HOBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HOBA/ETH_HOBA_HOBA_DE_RCA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Hoba%20de%20RCA",
+        "unesco": "https://www.unesco.org/en/search?q=Hoba%20de%20RCA%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HUNDE_HUNDE_DU_NORD",
+      "nom_ethnie": "Hunde du Nord",
+      "PPL_ID": "PPL_HUNDE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HUNDE/ETH_HUNDE_HUNDE_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Hunde%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Hunde%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HUNDE_HUNDE_DU_SUD",
+      "nom_ethnie": "Hunde du Sud",
+      "PPL_ID": "PPL_HUNDE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HUNDE/ETH_HUNDE_HUNDE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Hunde%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Hunde%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HUTU_BURUNDI_HUTU_DES_HAUTES_TERRES_DU_BURUNDI",
+      "nom_ethnie": "Hutu des hautes terres du Burundi",
+      "PPL_ID": "PPL_HUTU_BURUNDI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HUTU_BURUNDI/ETH_HUTU_BURUNDI_HUTU_DES_HAUTES_TERRES_DU_BURUNDI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Hutu%20des%20hautes%20terres%20du%20Burundi",
+        "unesco": "https://www.unesco.org/en/search?q=Hutu%20des%20hautes%20terres%20du%20Burundi%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HUTU_BURUNDI_HUTU_DES_PLAINES_ET_COLLINES_RURALES",
+      "nom_ethnie": "Hutu des plaines et collines rurales",
+      "PPL_ID": "PPL_HUTU_BURUNDI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HUTU_BURUNDI/ETH_HUTU_BURUNDI_HUTU_DES_PLAINES_ET_COLLINES_RURALES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Hutu%20des%20plaines%20et%20collines%20rurales",
+        "unesco": "https://www.unesco.org/en/search?q=Hutu%20des%20plaines%20et%20collines%20rurales%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NANDE_NANDE_DU_NORD",
+      "nom_ethnie": "Nande du Nord",
+      "PPL_ID": "PPL_NANDE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NANDE/ETH_NANDE_NANDE_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nande%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Nande%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NANDE_NANDE_DU_SUD",
+      "nom_ethnie": "Nande du Sud",
+      "PPL_ID": "PPL_NANDE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NANDE/ETH_NANDE_NANDE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nande%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Nande%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NDEBELE_SA_NDEBELE_DU_NORD",
+      "nom_ethnie": "Ndebele du Nord",
+      "PPL_ID": "PPL_NDEBELE_SA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NDEBELE_SA/ETH_NDEBELE_SA_NDEBELE_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ndebele%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Ndebele%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NDEBELE_SA_NDEBELE_DU_SUD",
+      "nom_ethnie": "Ndebele du Sud",
+      "PPL_ID": "PPL_NDEBELE_SA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NDEBELE_SA/ETH_NDEBELE_SA_NDEBELE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ndebele%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Ndebele%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_RWENDAIS_HUTU_HUTU_DU_NORD",
+      "nom_ethnie": "Hutu du Nord",
+      "PPL_ID": "PPL_RWENDAIS_HUTU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_RWENDAIS_HUTU/ETH_RWENDAIS_HUTU_HUTU_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Hutu%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Hutu%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_RWENDAIS_HUTU_HUTU_DU_SUD",
+      "nom_ethnie": "Hutu du Sud",
+      "PPL_ID": "PPL_RWENDAIS_HUTU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_RWENDAIS_HUTU/ETH_RWENDAIS_HUTU_HUTU_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Hutu%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Hutu%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_RWENDAIS_TUTSI_TUTSI_DU_NORD",
+      "nom_ethnie": "Tutsi du Nord",
+      "PPL_ID": "PPL_RWENDAIS_TUTSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_RWENDAIS_TUTSI/ETH_RWENDAIS_TUTSI_TUTSI_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tutsi%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Tutsi%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_RWENDAIS_TUTSI_TUTSI_DU_SUD",
+      "nom_ethnie": "Tutsi du Sud",
+      "PPL_ID": "PPL_RWENDAIS_TUTSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_RWENDAIS_TUTSI/ETH_RWENDAIS_TUTSI_TUTSI_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tutsi%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Tutsi%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TONGA_ZAMBIA_TONGA_DE_ZAMBIE_SOUTHERN_PROVINCE",
+      "nom_ethnie": "Tonga de Zambie (Southern Province)",
+      "PPL_ID": "PPL_TONGA_ZAMBIA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TONGA_ZAMBIA/ETH_TONGA_ZAMBIA_TONGA_DE_ZAMBIE_SOUTHERN_PROVINCE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tonga%20de%20Zambie%20(Southern%20Province)",
+        "unesco": "https://www.unesco.org/en/search?q=Tonga%20de%20Zambie%20(Southern%20Province)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TONGA_ZAMBIA_TONGA_DE_ZIMBABWE_BINGA_VALLEE_DU_ZAMBEZE",
+      "nom_ethnie": "Tonga de Zimbabwe (Binga, vallée du Zambèze)",
+      "PPL_ID": "PPL_TONGA_ZAMBIA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TONGA_ZAMBIA/ETH_TONGA_ZAMBIA_TONGA_DE_ZIMBABWE_BINGA_VALLEE_DU_ZAMBEZE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tonga%20de%20Zimbabwe%20(Binga%2C%20vall%C3%A9e%20du%20Zamb%C3%A8ze)",
+        "unesco": "https://www.unesco.org/en/search?q=Tonga%20de%20Zimbabwe%20(Binga%2C%20vall%C3%A9e%20du%20Zamb%C3%A8ze)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TUTSI_BURUNDI_TUTSI_DES_COLLINES_CENTRALES",
+      "nom_ethnie": "Tutsi des collines centrales",
+      "PPL_ID": "PPL_TUTSI_BURUNDI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TUTSI_BURUNDI/ETH_TUTSI_BURUNDI_TUTSI_DES_COLLINES_CENTRALES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tutsi%20des%20collines%20centrales",
+        "unesco": "https://www.unesco.org/en/search?q=Tutsi%20des%20collines%20centrales%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TUTSI_BURUNDI_TUTSI_DES_REGIONS_DU_NORD_ET_SUD",
+      "nom_ethnie": "Tutsi des régions du nord et sud",
+      "PPL_ID": "PPL_TUTSI_BURUNDI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TUTSI_BURUNDI/ETH_TUTSI_BURUNDI_TUTSI_DES_REGIONS_DU_NORD_ET_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tutsi%20des%20r%C3%A9gions%20du%20nord%20et%20sud",
+        "unesco": "https://www.unesco.org/en/search?q=Tutsi%20des%20r%C3%A9gions%20du%20nord%20et%20sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WOLOF_BANTU_WOLOF_DU_SENEGAL",
+      "nom_ethnie": "Wolof du Sénégal",
+      "PPL_ID": "PPL_WOLOF_BANTU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WOLOF_BANTU/ETH_WOLOF_BANTU_WOLOF_DU_SENEGAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wolof%20du%20S%C3%A9n%C3%A9gal",
+        "unesco": "https://www.unesco.org/en/search?q=Wolof%20du%20S%C3%A9n%C3%A9gal%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WOLOF_BANTU_WOLOF_DE_GAMBIE",
+      "nom_ethnie": "Wolof de Gambie",
+      "PPL_ID": "PPL_WOLOF_BANTU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WOLOF_BANTU/ETH_WOLOF_BANTU_WOLOF_DE_GAMBIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wolof%20de%20Gambie",
+        "unesco": "https://www.unesco.org/en/search?q=Wolof%20de%20Gambie%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WOLOF_BANTU_WOLOF_DE_MAURITANIE",
+      "nom_ethnie": "Wolof de Mauritanie",
+      "PPL_ID": "PPL_WOLOF_BANTU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WOLOF_BANTU/ETH_WOLOF_BANTU_WOLOF_DE_MAURITANIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wolof%20de%20Mauritanie",
+        "unesco": "https://www.unesco.org/en/search?q=Wolof%20de%20Mauritanie%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BASOGA_BASOGA_DES_DIFFERENTS_PRINCIPALITES_SOUS_CHEFFERIES_DE_BUSOGA",
+      "nom_ethnie": "Basoga des différents principalités (sous-chefferies de Busoga)",
+      "PPL_ID": "PPL_BASOGA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BASOGA/ETH_BASOGA_BASOGA_DES_DIFFERENTS_PRINCIPALITES_SOUS_CHEFFERIES_DE_BUSOGA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Basoga%20des%20diff%C3%A9rents%20principalit%C3%A9s%20(sous-chefferies%20de%20Busoga)",
+        "unesco": "https://www.unesco.org/en/search?q=Basoga%20des%20diff%C3%A9rents%20principalit%C3%A9s%20(sous-chefferies%20de%20Busoga)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BASSA_CAM_BASSA_DES_REGIONS_DE_NYONG_ET_KELLE",
+      "nom_ethnie": "Bassa des régions de Nyong-et-Kellé",
+      "PPL_ID": "PPL_BASSA_CAM",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BASSA_CAM/ETH_BASSA_CAM_BASSA_DES_REGIONS_DE_NYONG_ET_KELLE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bassa%20des%20r%C3%A9gions%20de%20Nyong-et-Kell%C3%A9",
+        "unesco": "https://www.unesco.org/en/search?q=Bassa%20des%20r%C3%A9gions%20de%20Nyong-et-Kell%C3%A9%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BASSA_CAM_BASSA_DES_ZONES_DE_SANAGA_MARITIME_ET_NKAM",
+      "nom_ethnie": "Bassa des zones de Sanaga-Maritime et Nkam",
+      "PPL_ID": "PPL_BASSA_CAM",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BASSA_CAM/ETH_BASSA_CAM_BASSA_DES_ZONES_DE_SANAGA_MARITIME_ET_NKAM.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bassa%20des%20zones%20de%20Sanaga-Maritime%20et%20Nkam",
+        "unesco": "https://www.unesco.org/en/search?q=Bassa%20des%20zones%20de%20Sanaga-Maritime%20et%20Nkam%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BEMBA_BEMBA_DU_NORD",
+      "nom_ethnie": "Bemba du Nord",
+      "PPL_ID": "PPL_BEMBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BEMBA/ETH_BEMBA_BEMBA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bemba%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Bemba%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BEMBA_GROUPES_APPARENTES_LUBA_BEMBA",
+      "nom_ethnie": "Groupes apparentés Luba-Bemba",
+      "PPL_ID": "PPL_BEMBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BEMBA/ETH_BEMBA_GROUPES_APPARENTES_LUBA_BEMBA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Groupes%20apparent%C3%A9s%20Luba-Bemba",
+        "unesco": "https://www.unesco.org/en/search?q=Groupes%20apparent%C3%A9s%20Luba-Bemba%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BULU_BULU_DU_SUD_CAMEROUNAIS",
+      "nom_ethnie": "Bulu du Sud camerounais",
+      "PPL_ID": "PPL_BULU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BULU/ETH_BULU_BULU_DU_SUD_CAMEROUNAIS.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bulu%20du%20Sud%20camerounais",
+        "unesco": "https://www.unesco.org/en/search?q=Bulu%20du%20Sud%20camerounais%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CHEWA_CHEWA_DE_LA_DIASPORA_ZAMBIENNE",
+      "nom_ethnie": "Chewa de la diaspora zambienne",
+      "PPL_ID": "PPL_CHEWA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CHEWA/ETH_CHEWA_CHEWA_DE_LA_DIASPORA_ZAMBIENNE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Chewa%20de%20la%20diaspora%20zambienne",
+        "unesco": "https://www.unesco.org/en/search?q=Chewa%20de%20la%20diaspora%20zambienne%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_EMBU_EMBU_DU_CENTRE",
+      "nom_ethnie": "Embu du centre",
+      "PPL_ID": "PPL_EMBU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_EMBU/ETH_EMBU_EMBU_DU_CENTRE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Embu%20du%20centre",
+        "unesco": "https://www.unesco.org/en/search?q=Embu%20du%20centre%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_EMBU_EMBU_DE_RUNYENJES",
+      "nom_ethnie": "Embu de Runyenjes",
+      "PPL_ID": "PPL_EMBU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_EMBU/ETH_EMBU_EMBU_DE_RUNYENJES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Embu%20de%20Runyenjes",
+        "unesco": "https://www.unesco.org/en/search?q=Embu%20de%20Runyenjes%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_EMBU_GROUPES_PROCHES_ELEMENTS_MBEERE",
+      "nom_ethnie": "Groupes proches (éléments Mbeere)",
+      "PPL_ID": "PPL_EMBU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_EMBU/ETH_EMBU_GROUPES_PROCHES_ELEMENTS_MBEERE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Groupes%20proches%20(%C3%A9l%C3%A9ments%20Mbeere)",
+        "unesco": "https://www.unesco.org/en/search?q=Groupes%20proches%20(%C3%A9l%C3%A9ments%20Mbeere)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KONGO_KONGO_DE_RDC",
+      "nom_ethnie": "Kongo de RDC",
+      "PPL_ID": "PPL_KONGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KONGO/ETH_KONGO_KONGO_DE_RDC.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kongo%20de%20RDC",
+        "unesco": "https://www.unesco.org/en/search?q=Kongo%20de%20RDC%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_LOZI_LOZI_DU_BOTSWANA",
+      "nom_ethnie": "Lozi du Botswana",
+      "PPL_ID": "PPL_LOZI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_LOZI/ETH_LOZI_LOZI_DU_BOTSWANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Lozi%20du%20Botswana",
+        "unesco": "https://www.unesco.org/en/search?q=Lozi%20du%20Botswana%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MONGO_MONGO_DU_NORD",
+      "nom_ethnie": "Mongo du Nord",
+      "PPL_ID": "PPL_MONGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MONGO/ETH_MONGO_MONGO_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mongo%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Mongo%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MONGO_MONGO_DU_SUD",
+      "nom_ethnie": "Mongo du Sud",
+      "PPL_ID": "PPL_MONGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MONGO/ETH_MONGO_MONGO_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mongo%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Mongo%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SANGO_SANGO_DE_RCA",
+      "nom_ethnie": "Sango de RCA",
+      "PPL_ID": "PPL_SANGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SANGO/ETH_SANGO_SANGO_DE_RCA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sango%20de%20RCA",
+        "unesco": "https://www.unesco.org/en/search?q=Sango%20de%20RCA%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SANGO_SANGO_DE_RDC",
+      "nom_ethnie": "Sango de RDC",
+      "PPL_ID": "PPL_SANGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SANGO/ETH_SANGO_SANGO_DE_RDC.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sango%20de%20RDC",
+        "unesco": "https://www.unesco.org/en/search?q=Sango%20de%20RDC%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TEKKE_TEKKE_DU_NORD",
+      "nom_ethnie": "Tekke du Nord",
+      "PPL_ID": "PPL_TEKKE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TEKKE/ETH_TEKKE_TEKKE_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tekke%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Tekke%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TEKKE_TEKKE_DU_SUD",
+      "nom_ethnie": "Tekke du Sud",
+      "PPL_ID": "PPL_TEKKE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TEKKE/ETH_TEKKE_TEKKE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tekke%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Tekke%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_XHOSA_XHOSA_DU_NORD",
+      "nom_ethnie": "Xhosa du Nord",
+      "PPL_ID": "PPL_XHOSA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_XHOSA/ETH_XHOSA_XHOSA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Xhosa%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Xhosa%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_XHOSA_XHOSA_DU_SUD",
+      "nom_ethnie": "Xhosa du Sud",
+      "PPL_ID": "PPL_XHOSA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_XHOSA/ETH_XHOSA_XHOSA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Xhosa%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Xhosa%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ZULU_ZOULOU_DU_NORD",
+      "nom_ethnie": "Zoulou du Nord",
+      "PPL_ID": "PPL_ZULU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ZULU/ETH_ZULU_ZOULOU_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Zoulou%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Zoulou%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ZULU_ZOULOU_DU_SUD",
+      "nom_ethnie": "Zoulou du Sud",
+      "PPL_ID": "PPL_ZULU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ZULU/ETH_ZULU_ZOULOU_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Zoulou%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Zoulou%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "countryName": "Djibouti",
+  "region": "afrique_de_l_est",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "territoires Afar et Somali (Issa",
+        "Gadabursi",
+        "Isaaq) sans État unifié"
+      ]
+    },
+    {
+      "period": "1977",
+      "names": ["Indépendance → République de Djibouti"]
+    }
+  ],
+  "description": "Territoire structuré par les peuples afars (anciennes chefferies Adal/Dankali) et les somalis (Issa, Gadabursi, Isaaq). La France fonde Djibouti-ville, puis un État moderne émerge à l’indépendance.",
+  "ethnicities": []
+}

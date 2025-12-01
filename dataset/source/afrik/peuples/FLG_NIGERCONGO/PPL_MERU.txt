@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone E)
 - Région historique : Kenya
-- Pays actuels : Kenya
+- Pays actuels : KEN
 - Identifiant peuple (ID) : PPL_MERU
 
 # 1. Ethnies incluses dans le peuple

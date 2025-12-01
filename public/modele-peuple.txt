@@ -1,7 +1,10 @@
 # Nom du peuple
 - Nom principal du peuple :
-- Auto-appellation :
+- Auto-appellation (endonyme) :
 - Exonymes / appellations historiques :
+- Origine des termes (exonymes) :
+- Pourquoi certains termes posent problème (si applicable) :
+- Usage contemporain des appellations :
 - Famille linguistique principale :
 - Groupe ethno-linguistique :
 - Région historique :
@@ -14,10 +17,13 @@
 - Ethnie 3 :
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes :
-- Routes migratoires :
+- Origines anciennes (théories archéologiques, linguistiques, génétiques) :
+- Période de formation estimée :
+- Routes migratoires principales :
+- Zones d'établissement historiques :
 - Unifications / divisions :
-- Influences externes :
+- Influences externes (peuples voisins, colonisation, commerce) :
+- Événements historiques majeurs ayant façonné le peuple :
 
 # 3. Organisation et structure interne
 - Système politique traditionnel :

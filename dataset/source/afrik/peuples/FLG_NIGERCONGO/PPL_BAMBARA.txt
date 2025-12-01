@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Bambara (terme utilisé par les Européens), Bamana
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé
-- Région historique : Mali, Burkina Faso, Sénégal, Côte d'Ivoire
-- Pays actuels : Mali, Burkina Faso, Sénégal, Côte d'Ivoire
+- Région historique : MLI, BFA, SEN, CIV
+- Pays actuels : MLI, BFA, SEN, CIV
 - Identifiant peuple (ID) : PPL_BAMBARA
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Bambara de Côte d'Ivoire
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Bambara sont originaires du Mali, du Burkina Faso, du Sénégal et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Mandé de la famille Niger-Congo. Formation de l'empire Bambara.
+- Origines anciennes : Les Bambara sont originaires du MLI, du BFA, du Sénégal et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Mandé de la famille Niger-Congo. Formation de l'empire Bambara.
 - Routes migratoires : 
   - Migrations depuis les régions ouest-africaines
-  - Expansion vers le Mali, le Burkina Faso, le Sénégal et la Côte d'Ivoire
+  - Expansion vers le MLI, le BFA, le Sénégal et la Côte d'Ivoire
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Formation de l'empire Bambara. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples ouest-africains, influence de l'islam.

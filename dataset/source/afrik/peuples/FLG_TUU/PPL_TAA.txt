@@ -7,8 +7,8 @@
   - « Taa » (terme linguistique)
 - Famille linguistique principale : Khoïsan – Tuu (FLG_TUU)
 - Groupe ethno-linguistique : Tuu (Taa)
-- Région historique : Désert du Kalahari (Botswana, Namibie)
-- Pays actuels : Botswana, Namibie
+- Région historique : Désert du Kalahari (BWA, NAM)
+- Pays actuels : BWA, NAM
 - Identifiant peuple (ID) : PPL_TAA
 
 # 1. Ethnies incluses dans le peuple

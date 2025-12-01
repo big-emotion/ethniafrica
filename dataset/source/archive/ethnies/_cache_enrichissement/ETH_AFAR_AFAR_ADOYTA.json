@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_AFAR_AFAR_ADOYTA",
+  "timestamp": "2025-01-25T22:35:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/afar1241",
+      "data": {
+        "langue": "Afar",
+        "code_iso": "aar",
+        "famille": "Afro-Asiatic > Cushitic > East Cushitic > Lowland East Cushitic > Saho-Afar",
+        "pays": ["Ethiopia", "Djibouti", "Eritrea"],
+        "region": "Afar Region, Ethiopia",
+        "glottocode": "afar1241",
+        "auto_appellation": "Qafár"
+      },
+      "timestamp": "2025-01-25T22:35:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/aar",
+      "data": {
+        "langue": "Afar",
+        "code_iso": "aar",
+        "famille": "Afro-Asiatic",
+        "pays": ["Ethiopia", "Djibouti", "Eritrea"],
+        "auto_appellation": "Qafár"
+      },
+      "timestamp": "2025-01-25T22:35:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "aar",
+    "langue_principale": "Afar",
+    "famille_linguistique": "Afro-Asiatic > Cushitic > East Cushitic > Lowland East Cushitic > Saho-Afar",
+    "pays_principaux": ["Ethiopia", "Djibouti", "Eritrea"],
+    "region_generale": "Afar Region, Ethiopia",
+    "auto_appellation": "Qafár"
+  }
+}

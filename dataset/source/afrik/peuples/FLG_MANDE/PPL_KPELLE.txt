@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Kpelle (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
 - Groupe ethno-linguistique : Mandé occidental
-- Région historique : Libéria, Guinée
-- Pays actuels : Libéria, Guinée
+- Région historique : Libéria, GIN
+- Pays actuels : LBR, GIN
 - Identifiant peuple (ID) : PPL_KPELLE
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Kpelle sont originaires du Libéria et de la Guinée, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Kpelle sont originaires du Libéria et de la GIN, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones forestières
@@ -75,7 +75,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Kpelle language (kpe)
-- CIA World Factbook – Liberia, Guinea
+- CIA World Factbook – LBR, Guinea
 - Recensements libériens et guinéens
 - Études anthropologiques sur les peuples mandé
 

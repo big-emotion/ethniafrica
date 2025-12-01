@@ -2,7 +2,7 @@
 - Nom principal : Jahanka
 - Auto-appellation : Jahanka
 - Famille linguistique : Niger-Congo – Mandé
-- Région : Mali, Guinée
+- Région : MLI, GIN
 - Identifiant : PPL_JAHANKA
 
 # 1. Ethnies incluses

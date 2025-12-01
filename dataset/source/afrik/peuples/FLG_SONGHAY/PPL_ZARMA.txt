@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Zarma (terme utilisé par les Européens), parfois appelés Djerma
 - Famille linguistique principale : Nilo-saharien – Songhay (FLG_SONGHAY)
 - Groupe ethno-linguistique : Songhay
-- Région historique : Niger, Nigeria
-- Pays actuels : Niger, Nigeria
+- Région historique : NER, NGA
+- Pays actuels : NER, NGA
 - Identifiant peuple (ID) : PPL_ZARMA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Zarma sont originaires du Niger et du Nigeria, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Zarma sont originaires du Niger et du NGA, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long du fleuve Niger
@@ -75,7 +75,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Zarma language (dje)
-- CIA World Factbook – Niger, Nigeria
+- CIA World Factbook – NER, NGA
 - Recensements nigériens et nigérianes
 - Études anthropologiques sur les peuples songhay
 

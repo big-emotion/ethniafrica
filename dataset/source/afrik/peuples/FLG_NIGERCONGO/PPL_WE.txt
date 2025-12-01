@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : We (terme utilisé par les Européens), parfois appelés « Guéré » (terme alternatif)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Kru (sous-groupe du Niger-Congo)
-- Région historique : Côte d'Ivoire, Liberia
-- Pays actuels : Côte d'Ivoire, Liberia
+- Région historique : CIV, LBR
+- Pays actuels : CIV, LBR
 - Identifiant peuple (ID) : PPL_WE
 
 # 1. Ethnies incluses dans le peuple

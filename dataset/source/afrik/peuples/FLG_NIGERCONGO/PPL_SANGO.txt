@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Sango (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Oubanguien
-- Région historique : RCA, RDC, Congo, Cameroun
-- Pays actuels : RCA, RDC, Congo, Cameroun
+- Région historique : CAF, COD, COG, CMR
+- Pays actuels : CAF, COD, COG, CMR
 - Identifiant peuple (ID) : PPL_SANGO
 
 # 1. Ethnies incluses dans le peuple
@@ -16,10 +16,10 @@
 - Ethnie 5 : Autres locuteurs sango
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les locuteurs sango sont originaires de la région de la RCA, de la RDC, du Congo et du Cameroun. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe oubanguien. Le sango est une langue véhiculaire importante.
+- Origines anciennes : Les locuteurs sango sont originaires de la région de la CAF, de la COD, du Congo et du Cameroun. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe oubanguien. Le sango est une langue véhiculaire importante.
 - Routes migratoires : 
   - Migrations depuis les régions oubanguiennes
-  - Expansion vers la RCA, la RDC, le Congo et le Cameroun
+  - Expansion vers la CAF, la COD, le Congo et le Cameroun
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une langue commune (sango).
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.
@@ -37,7 +37,7 @@
   - Sango standard
   - Sango populaire
   - Variantes régionales
-- Rôle véhiculaire : Le sango est parlé par de nombreux locuteurs en RCA, en RDC, au Congo et au Cameroun. Le français et d'autres langues sont également utilisés.
+- Rôle véhiculaire : Le sango est parlé par de nombreux locuteurs en CAF, en COD, au Congo et au Cameroun. Le français et d'autres langues sont également utilisés.
 
 # 5. Culture, rites et traditions
 - Rites majeurs : 

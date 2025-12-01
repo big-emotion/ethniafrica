@@ -2,7 +2,7 @@
 - Nom principal : Bobo / Bobo-Madare
 - Auto-appellation : Bobo
 - Famille linguistique : Niger-Congo – Mandé
-- Région historique : Burkina Faso, Mali
+- Région historique : BFA, MLI
 - Identifiant : PPL_BOBO
 
 # 1. Ethnies incluses

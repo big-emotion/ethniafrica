@@ -2,7 +2,7 @@
 - Nom principal : Gurma / Gourma
 - Auto-appellation : Gulimanceba / Gourmantché
 - Famille linguistique : Niger-Congo – Gur
-- Région historique : Burkina Faso, Niger, Bénin, Togo
+- Région historique : BFA, NER, BEN, TGO
 - Identifiant peuple : PPL_GURMA
 
 # 1. Ethnies incluses

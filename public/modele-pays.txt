@@ -18,22 +18,16 @@
   - Centres politiques :
   - Rôle historique :
 
-# 3. Groupes ethniques majeurs
-- Groupe 1 :
+# 3. Peuples majeurs
+- Peuple 1 :
   - Nom :
-  - Identifiant ethnie (ETH_) :
+  - Auto-appellation (endonyme) :
+  - Exonymes / appellations historiques :
   - Identifiant peuple (PPL_) :
   - Région principale :
   - Langues parlées :
   - Famille linguistique :
   - Remarque sur les appellations (termes péjoratifs / auto-appellation) :
-
-# 4. Sous-groupes associés
-- Groupe principal :
-  - Sous-groupe :
-    - Nom :
-    - Identifiant sous-groupe (SUB_) :
-    - Identifiant clan (CLN_) :
 
 # 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
 - Langues principales (avec ISO 639-3) :
@@ -56,8 +50,7 @@
 - Etc.
 
 # DONNÉES DÉMOGRAPHIQUES
-### Ethnie : [Nom]
-- Identifiant ethnie (ETH_) :
+### Peuple : [Nom]
 - Identifiant peuple (PPL_) :
 - Population :
 - Pourcentage dans le pays :
@@ -65,9 +58,3 @@
 - Région :
 - Famille linguistique :
 - Code ISO 639-3 (langue principale) :
-
-#### Sous-groupe : [Nom]
-- Identifiant (SUB_) :
-- Population :
-- Pourcentage dans le pays :
-- Pourcentage en Afrique :

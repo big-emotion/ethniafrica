@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique occidental
 - Région historique : Sud-Soudan
-- Pays actuels : Soudan du Sud
+- Pays actuels : SDN du Sud
 - Identifiant peuple (ID) : PPL_SHILLUK
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Shilluk sont originaires du Soudan du Sud, dans la région du Nil Blanc. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo). Formation d'un royaume.
+- Origines anciennes : Les Shilluk sont originaires du SSD, dans la région du Nil Blanc. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo). Formation d'un royaume.
 - Routes migratoires : 
   - Migrations depuis les régions du Nil supérieur
   - Expansion le long du Nil Blanc

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Shona (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Zimbabwe, Mozambique
-- Pays actuels : Zimbabwe, Mozambique
+- Région historique : ZWE, MOZ
+- Pays actuels : ZWE, MOZ
 - Identifiant peuple (ID) : PPL_SHONA
 
 # 1. Ethnies incluses dans le peuple

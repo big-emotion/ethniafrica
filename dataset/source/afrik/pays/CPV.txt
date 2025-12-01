@@ -1,0 +1,86 @@
+# Nom du pays
+- Nom officiel actuel : République du Cabo Verde (República de Cabo Verde)
+- Étymologie du nom : Le nom "Cabo Verde" (Cap-Vert en français) provient du portugais "Cabo Verde" (Cap Vert), en référence au Cap Vert continental situé au Sénégal, près duquel les îles ont été découvertes. Les navigateurs portugais ont nommé les îles "Ilhas de Cabo Verde" (Îles du Cap Vert) en référence à ce cap. Le nom officiel international a été normalisé en "Cabo Verde" en 2013.
+- Personne / peuple / administration à l'origine du nom : Le nom "Cabo Verde" a été donné par les navigateurs portugais et génois qui ont découvert les îles en 1456-1462. Le nom fait référence au Cap Vert continental (Sénégal), près duquel les îles sont situées. Le nom officiel international a été normalisé en "Cabo Verde" en 2013 par les autorités cap-verdiennes.
+- Identifiant pays (ISO 3166-1 alpha-3) : CPV
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Les îles du Cap-Vert étaient inhabitées avant l'arrivée des Européens. Aucune population autochtone connue. Pas de nom pour les îles.
+- Moyen Âge : Les îles étaient inconnues des Européens jusqu'au XVe siècle. Pas de nom pour les îles.
+- Époque précoloniale : Les îles étaient inhabitées. Découverte par les navigateurs portugais et génois en 1456-1462. Nom donné : "Ilhas de Cabo Verde" (Îles du Cap Vert), en référence au Cap Vert continental (Sénégal).
+- Colonisation : 1462-1975 : Colonie portugaise du Cap-Vert. Les Portugais ont commencé la colonisation en 1462. Les îles sont devenues un centre majeur de la traite atlantique (XVIe-XVIIIe siècles), notamment l'île de Santiago. Formation d'une société créole métissée (européens portugais et africains). Le territoire était administré comme une colonie portugaise jusqu'à l'indépendance en 1975.
+- Période contemporaine : 1975 : Indépendance du Cap-Vert (5 juillet 1975), proclamation de la République de Cabo Verde. 2013 : Normalisation du nom officiel international en "Cabo Verde" (au lieu de "Cap-Vert" en français).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Colonie portugaise du Cap-Vert] :
+  - Période : 1462 - 1975
+  - Peuples dominants : Créoles cap-verdiens (métissage afro-européen), colons portugais, esclaves africains
+  - Centres politiques : Ribeira Grande (capitale historique, île de Santiago), puis Praia (capitale moderne)
+  - Rôle historique : Colonie portugaise, centre majeur de la traite atlantique (XVIe-XVIIIe siècles). Formation d'une société créole métissée unique. Développement du mouvement indépendantiste au XXe siècle (PAIGC, Parti africain pour l'indépendance de la Guinée et du Cap-Vert).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Créoles cap-verdiens
+  - Auto-appellation (endonyme) : Crioulo / Kriolu, Caboverdiano
+  - Exonymes / appellations historiques : Créole cap-verdien (terme utilisé pour les créoles du Cap-Vert), "Crioulo" (terme portugais)
+  - Identifiant peuple (PPL_) : PPL_CREOLE_CABOVERDIEN
+  - Région principale : Toutes les îles du Cap-Vert
+  - Langues parlées : Créole cap-verdien / Kriolu (kea, ISO 639-3), portugais
+  - Famille linguistique : Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Crioulo" ou "Kriolu" est l'auto-appellation. "Créole cap-verdien" est un exonyme accepté. Pas de terme péjoratif connu. Les Créoles cap-verdiens sont un peuple métissé formé à partir du contact entre les populations africaines (wolof, mandinka, balante, peul, bijagó) et les colons portugais à partir du XVe siècle.
+
+- Peuple 2 :
+  - Nom : Africains d'origine récente
+  - Auto-appellation (endonyme) : Variées selon les groupes d'origine
+  - Exonymes / appellations historiques : Migrants africains (terme descriptif)
+  - Identifiant peuple (PPL_) : PPL_AFRICAINS_D_ORIGINE_RECENTE
+  - Région principale : Zones urbaines, toutes les îles
+  - Langues parlées : Langues d'origine (wolof, mandinka, etc.), créole cap-verdien, portugais
+  - Famille linguistique : Diverses (FLG_ATLANTIQUE, FLG_MANDE principalement)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation selon son origine (Guinée-Bissau, Sénégal, Nigeria, Ghana, etc.). Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Portugais (langue officielle, por), Créole cap-verdien / Kriolu (kea, langue nationale et véhiculaire)
+- Traditions culturelles : Culture créole cap-verdienne unique, résultat du métissage afro-européen. Musique traditionnelle créole (morna, coladeira, funaná, batuque). Danse traditionnelle. Poésie orale. Artisanat. Festivals traditionnels créoles (Carnaval, etc.). Traditions culinaires créoles (cachupa, etc.). Identité créole forte et distincte.
+- Religions dominantes : Christianisme (catholicisme majoritaire, protestantisme en croissance), religions traditionnelles africaines (syncrétisme fréquent, préservées dans certaines communautés)
+- Modes de vie : Agriculture (subsistance, maïs, haricots, manioc), pêche (activité économique importante), commerce et activités urbaines (zones urbaines, Praia, Mindelo). Urbanisation importante. Économie basée sur les services (tourisme, commerce), les transferts de la diaspora, l'agriculture et la pêche. Diaspora importante (États-Unis, Portugal, France, Pays-Bas).
+- Organisation sociale : Organisation en communautés créoles. Structure basée sur les familles créoles. Organisation en familles étendues. Importance de l'héritage créole. Rôle des conseils d'anciens. Organisation par île (Barlavento / Sotavento).
+- Relations régionales : Relations historiques avec le Sénégal (commerce, migrations, origines africaines), la Guinée-Bissau (commerce, migrations, lutte pour l'indépendance commune avec le PAIGC), le Portugal (colonisation, diaspora). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Diaspora importante dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Les îles du Cap-Vert étaient inhabitées avant l'arrivée des Européens. Aucune population autochtone connue. Pas de peuplement préhistorique identifié.
+- Moyen Âge : Les îles étaient inconnues des Européens jusqu'au XVe siècle. Pas de contacts avec les civilisations africaines ou européennes.
+- Époque précoloniale : 1456-1462 : Découverte des îles par les navigateurs portugais et génois. Nom donné : "Ilhas de Cabo Verde" (Îles du Cap Vert). 1462 : Début de la colonisation portugaise. Peuplement par les colons portugais et les esclaves africains (wolof, mandinka, balante, peul, bijagó). Formation d'une société créole métissée dès le XVe siècle.
+- Colonisation : XVIe-XVIIIe siècles : Les îles deviennent un centre majeur de la traite atlantique, notamment l'île de Santiago. Développement de Ribeira Grande comme centre commercial. Formation progressive de l'identité créole cap-verdienne. Période coloniale portugaise longue (1462-1975). XXe siècle : Développement du mouvement indépendantiste, formation du PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert) en 1956.
+- Lutte pour l'indépendance : 1956-1975 : Lutte pour l'indépendance menée par le PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert), dirigé par Amílcar Cabral. Lutte commune avec la Guinée-Bissau. 1975 : Indépendance du Cap-Vert (5 juillet 1975), proclamation de la République de Cabo Verde. Séparation du PAIGC en deux partis distincts (PAICV pour le Cap-Vert, PAIGC pour la Guinée-Bissau).
+- Période post-indépendance : 1975-1990 : Régime de parti unique (PAICV). 1990 : Transition vers la démocratie multipartite, nouvelle constitution. Période de stabilité politique et de développement économique. Défis : pauvreté, dépendance aux importations, sécheresses récurrentes, émigration importante. Le Cap-Vert est considéré comme un modèle de démocratie et de stabilité en Afrique de l'Ouest. 2013 : Normalisation du nom officiel international en "Cabo Verde".
+
+# 7. Sources
+- SIL Ethnologue – Languages of Cape Verde
+- CIA World Factbook – Cape Verde
+- ONU / UNFPA – Démographie Cap-Vert 2025
+- Cabral, Amílcar – "Unity and Struggle: Speeches and Writings"
+- Recensements cap-verdiens
+- Études anthropologiques sur les peuples créoles du Cap-Vert
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Créoles cap-verdiens
+- Identifiant peuple (PPL_) : PPL_CREOLE_CABOVERDIEN
+- Population : 575 000
+- Pourcentage dans le pays : 99%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles du Cap-Vert
+- Famille linguistique : Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : kea
+
+### Peuple : Africains d'origine récente
+- Identifiant peuple (PPL_) : PPL_AFRICAINS_D_ORIGINE_RECENTE
+- Population : 6 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Zones urbaines, toutes les îles
+- Famille linguistique : Diverses (FLG_ATLANTIQUE, FLG_MANDE principalement)
+- Code ISO 639-3 (langue principale) : N/A (langues d'origine)
+
+**Total population Cap-Vert 2025 : 581 000 (estimations ONU/UNFPA)**
+

@@ -1,0 +1,397 @@
+{
+  "batchId": "FLG_FLG_GUR",
+  "flgId": "FLG_GUR",
+  "totalEthnies": 30,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_BUSSA_BISSA_DU_CENTRE_SUD_BURKINA_FASO",
+      "nom_ethnie": "Bissa du Centre-Sud (Burkina Faso)",
+      "PPL_ID": "PPL_BUSSA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUSSA/ETH_BUSSA_BISSA_DU_CENTRE_SUD_BURKINA_FASO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bissa%20du%20Centre-Sud%20(Burkina%20Faso)",
+        "unesco": "https://www.unesco.org/en/search?q=Bissa%20du%20Centre-Sud%20(Burkina%20Faso)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BUSSA_BISSA_DU_NORD_GHANA",
+      "nom_ethnie": "Bissa du Nord-Ghana",
+      "PPL_ID": "PPL_BUSSA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUSSA/ETH_BUSSA_BISSA_DU_NORD_GHANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bissa%20du%20Nord-Ghana",
+        "unesco": "https://www.unesco.org/en/search?q=Bissa%20du%20Nord-Ghana%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BUSSA_BISSA_DU_TOGO",
+      "nom_ethnie": "Bissa du Togo",
+      "PPL_ID": "PPL_BUSSA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUSSA/ETH_BUSSA_BISSA_DU_TOGO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bissa%20du%20Togo",
+        "unesco": "https://www.unesco.org/en/search?q=Bissa%20du%20Togo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KASEENA_KASSENA_DU_BURKINA",
+      "nom_ethnie": "Kassena du Burkina",
+      "PPL_ID": "PPL_KASEENA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KASEENA/ETH_KASEENA_KASSENA_DU_BURKINA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kassena%20du%20Burkina",
+        "unesco": "https://www.unesco.org/en/search?q=Kassena%20du%20Burkina%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KASEENA_KASSENA_DU_GHANA",
+      "nom_ethnie": "Kassena du Ghana",
+      "PPL_ID": "PPL_KASEENA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KASEENA/ETH_KASEENA_KASSENA_DU_GHANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kassena%20du%20Ghana",
+        "unesco": "https://www.unesco.org/en/search?q=Kassena%20du%20Ghana%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KOULOUGO_KOULANGO_DU_NORD_EST_IVOIRIEN",
+      "nom_ethnie": "Koulango du Nord-Est ivoirien",
+      "PPL_ID": "PPL_KOULOUGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KOULOUGO/ETH_KOULOUGO_KOULANGO_DU_NORD_EST_IVOIRIEN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Koulango%20du%20Nord-Est%20ivoirien",
+        "unesco": "https://www.unesco.org/en/search?q=Koulango%20du%20Nord-Est%20ivoirien%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KUSASI_KUSASI_DU_GHANA",
+      "nom_ethnie": "Kusasi du Ghana",
+      "PPL_ID": "PPL_KUSASI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KUSASI/ETH_KUSASI_KUSASI_DU_GHANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kusasi%20du%20Ghana",
+        "unesco": "https://www.unesco.org/en/search?q=Kusasi%20du%20Ghana%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KUSASI_KUSASI_DU_BURKINA_FASO",
+      "nom_ethnie": "Kusasi du Burkina Faso",
+      "PPL_ID": "PPL_KUSASI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KUSASI/ETH_KUSASI_KUSASI_DU_BURKINA_FASO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kusasi%20du%20Burkina%20Faso",
+        "unesco": "https://www.unesco.org/en/search?q=Kusasi%20du%20Burkina%20Faso%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NABT_NABIT_DE_BONGO",
+      "nom_ethnie": "Nabit de Bongo",
+      "PPL_ID": "PPL_NABT",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NABT/ETH_NABT_NABIT_DE_BONGO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nabit%20de%20Bongo",
+        "unesco": "https://www.unesco.org/en/search?q=Nabit%20de%20Bongo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TAAL_GROUPES_TALOMSI_RURAUX",
+      "nom_ethnie": "Groupes Talomsi ruraux",
+      "PPL_ID": "PPL_TAAL",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TAAL/ETH_TAAL_GROUPES_TALOMSI_RURAUX.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Groupes%20Talomsi%20ruraux",
+        "unesco": "https://www.unesco.org/en/search?q=Groupes%20Talomsi%20ruraux%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TALENSI_TALENSI_DU_NORD",
+      "nom_ethnie": "Talensi du Nord",
+      "PPL_ID": "PPL_TALENSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TALENSI/ETH_TALENSI_TALENSI_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Talensi%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Talensi%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TALENSI_TALENSI_RURAUX_DES_COLLINES",
+      "nom_ethnie": "Talensi ruraux des collines",
+      "PPL_ID": "PPL_TALENSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TALENSI/ETH_TALENSI_TALENSI_RURAUX_DES_COLLINES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Talensi%20ruraux%20des%20collines",
+        "unesco": "https://www.unesco.org/en/search?q=Talensi%20ruraux%20des%20collines%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WIYANA_WIYA_DU_NORD",
+      "nom_ethnie": "Wiyã du nord",
+      "PPL_ID": "PPL_WIYANA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WIYANA/ETH_WIYANA_WIYA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wiy%C3%A3%20du%20nord",
+        "unesco": "https://www.unesco.org/en/search?q=Wiy%C3%A3%20du%20nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WIYANA_WIYA_RURAUX",
+      "nom_ethnie": "Wiyã ruraux",
+      "PPL_ID": "PPL_WIYANA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WIYANA/ETH_WIYANA_WIYA_RURAUX.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wiy%C3%A3%20ruraux",
+        "unesco": "https://www.unesco.org/en/search?q=Wiy%C3%A3%20ruraux%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BWABA_BWA_DE_DEDOUGOU",
+      "nom_ethnie": "Bwa de Dédougou",
+      "PPL_ID": "PPL_BWABA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BWABA/ETH_BWABA_BWA_DE_DEDOUGOU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bwa%20de%20D%C3%A9dougou",
+        "unesco": "https://www.unesco.org/en/search?q=Bwa%20de%20D%C3%A9dougou%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BWABA_BWA_DU_NORD",
+      "nom_ethnie": "Bwa du nord",
+      "PPL_ID": "PPL_BWABA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BWABA/ETH_BWABA_BWA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bwa%20du%20nord",
+        "unesco": "https://www.unesco.org/en/search?q=Bwa%20du%20nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BWABA_BWABA_RURAUX",
+      "nom_ethnie": "Bwaba ruraux",
+      "PPL_ID": "PPL_BWABA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BWABA/ETH_BWABA_BWABA_RURAUX.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bwaba%20ruraux",
+        "unesco": "https://www.unesco.org/en/search?q=Bwaba%20ruraux%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DAGARA_DAGARA_DU_BURKINA",
+      "nom_ethnie": "Dagara du Burkina",
+      "PPL_ID": "PPL_DAGARA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DAGARA/ETH_DAGARA_DAGARA_DU_BURKINA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Dagara%20du%20Burkina",
+        "unesco": "https://www.unesco.org/en/search?q=Dagara%20du%20Burkina%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FRAFRA_FRAFRA_DU_NORD",
+      "nom_ethnie": "Frafra du nord",
+      "PPL_ID": "PPL_FRAFRA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FRAFRA/ETH_FRAFRA_FRAFRA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Frafra%20du%20nord",
+        "unesco": "https://www.unesco.org/en/search?q=Frafra%20du%20nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FRAFRA_GURENSI_RURAL",
+      "nom_ethnie": "Gurensi rural",
+      "PPL_ID": "PPL_FRAFRA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FRAFRA/ETH_FRAFRA_GURENSI_RURAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gurensi%20rural",
+        "unesco": "https://www.unesco.org/en/search?q=Gurensi%20rural%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GURMA_GOURMANTCHE_DU_BURKINA",
+      "nom_ethnie": "Gourmantché du Burkina",
+      "PPL_ID": "PPL_GURMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GURMA/ETH_GURMA_GOURMANTCHE_DU_BURKINA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gourmantch%C3%A9%20du%20Burkina",
+        "unesco": "https://www.unesco.org/en/search?q=Gourmantch%C3%A9%20du%20Burkina%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GURMA_GULMANCEBA_DU_NIGER",
+      "nom_ethnie": "Gulmanceba du Niger",
+      "PPL_ID": "PPL_GURMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GURMA/ETH_GURMA_GULMANCEBA_DU_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gulmanceba%20du%20Niger",
+        "unesco": "https://www.unesco.org/en/search?q=Gulmanceba%20du%20Niger%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MAMPRUSI_MAMPRUSI_DE_LA_FRONTIERE_BURKINABE",
+      "nom_ethnie": "Mamprusi de la frontière burkinabè",
+      "PPL_ID": "PPL_MAMPRUSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MAMPRUSI/ETH_MAMPRUSI_MAMPRUSI_DE_LA_FRONTIERE_BURKINABE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mamprusi%20de%20la%20fronti%C3%A8re%20burkinab%C3%A8",
+        "unesco": "https://www.unesco.org/en/search?q=Mamprusi%20de%20la%20fronti%C3%A8re%20burkinab%C3%A8%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MOSSI_MOOSE_DU_PLATEAU_CENTRAL",
+      "nom_ethnie": "Moose du plateau central",
+      "PPL_ID": "PPL_MOSSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MOSSI/ETH_MOSSI_MOOSE_DU_PLATEAU_CENTRAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Moose%20du%20plateau%20central",
+        "unesco": "https://www.unesco.org/en/search?q=Moose%20du%20plateau%20central%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NANKANA_NANKANI_DU_GHANA",
+      "nom_ethnie": "Nankani du Ghana",
+      "PPL_ID": "PPL_NANKANA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NANKANA/ETH_NANKANA_NANKANI_DU_GHANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nankani%20du%20Ghana",
+        "unesco": "https://www.unesco.org/en/search?q=Nankani%20du%20Ghana%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NANKANA_NANKANA_DES_ZONES_RURALES",
+      "nom_ethnie": "Nankana des zones rurales",
+      "PPL_ID": "PPL_NANKANA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NANKANA/ETH_NANKANA_NANKANA_DES_ZONES_RURALES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nankana%20des%20zones%20rurales",
+        "unesco": "https://www.unesco.org/en/search?q=Nankana%20des%20zones%20rurales%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SENUFO_SENOUFO_TAGWANA",
+      "nom_ethnie": "Sénoufo Tagwana",
+      "PPL_ID": "PPL_SENUFO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SENUFO/ETH_SENUFO_SENOUFO_TAGWANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=S%C3%A9noufo%20Tagwana",
+        "unesco": "https://www.unesco.org/en/search?q=S%C3%A9noufo%20Tagwana%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SENUFO_SENOUFO_NYARAFOLO",
+      "nom_ethnie": "Sénoufo Nyarafolo",
+      "PPL_ID": "PPL_SENUFO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SENUFO/ETH_SENUFO_SENOUFO_NYARAFOLO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=S%C3%A9noufo%20Nyarafolo",
+        "unesco": "https://www.unesco.org/en/search?q=S%C3%A9noufo%20Nyarafolo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SENUFO_SENOUFO_KAFIBELE",
+      "nom_ethnie": "Sénoufo Kafibele",
+      "PPL_ID": "PPL_SENUFO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SENUFO/ETH_SENUFO_SENOUFO_KAFIBELE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=S%C3%A9noufo%20Kafibele",
+        "unesco": "https://www.unesco.org/en/search?q=S%C3%A9noufo%20Kafibele%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SENUFO_SENOUFO_NAFARA",
+      "nom_ethnie": "Sénoufo Nafara",
+      "PPL_ID": "PPL_SENUFO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SENUFO/ETH_SENUFO_SENOUFO_NAFARA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=S%C3%A9noufo%20Nafara",
+        "unesco": "https://www.unesco.org/en/search?q=S%C3%A9noufo%20Nafara%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

@@ -7,8 +7,8 @@
   - « Nǀuu » (appellation linguistique)
 - Famille linguistique principale : Khoïsan – Tuu (FLG_TUU)
 - Groupe ethno-linguistique : Tuu (Taa)
-- Région historique : Désert du Kalahari (Afrique du Sud, Botswana)
-- Pays actuels : Afrique du Sud, Botswana
+- Région historique : Désert du Kalahari (Afrique du Sud, BWA)
+- Pays actuels : ZAF, BWA
 - Identifiant peuple (ID) : PPL_NUU
 
 # 1. Ethnies incluses dans le peuple

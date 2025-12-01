@@ -4,7 +4,7 @@
 - Famille linguistique : Afro-asiatique – Couchitique
 - Groupe : Couchitique oriental
 - Région historique : Kembata-Tembaro (Éthiopie)
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - ID peuple : PPL_KAMBATA
 
 # 1. Ethnies incluses

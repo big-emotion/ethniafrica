@@ -1,0 +1,59 @@
+# Nom du peuple
+- Nom principal du peuple : Lwena
+- Auto-appellation (endonyme) : Lwena
+- Exonymes / appellations historiques : Luvale
+- Origine des termes (exonymes) : N/A
+- Pourquoi certains termes posent problème (si applicable) : N/A (si applicable) :
+- Usage contemporain des appellations : N/A
+- Famille linguistique principale : FLG_NIGERCONGO
+- Groupe ethno-linguistique : N/A
+- Région historique : Est
+- Pays actuels : AGO
+- Identifiant peuple (ID) : PPL_LWENA
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Lwena
+- Ethnie 2 : N/A
+- Ethnie 3 : N/A
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes (théories archéologiques, linguistiques, génétiques) : N/A
+- Période de formation estimée : N/A
+- Routes migratoires principales : N/A
+- Zones d'établissement historiques : Est
+- Unifications / divisions : N/A
+- Influences externes (peuples voisins, colonisation, commerce) : N/A
+- Événements historiques majeurs ayant façonné le peuple : N/A
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : N/A
+- Organisation clanique : N/A
+- Rôle des lignages : N/A
+- Autorité religieuse : N/A
+
+# 4. Langues et sous-familles
+- Langue principale : N/A
+- Codes ISO : N/A
+- Dialectes : N/A
+- Rôle véhiculaire : N/A
+
+# 5. Culture, rites et traditions
+- Rites majeurs : N/A
+- Symboles : N/A
+- Arts et musique : N/A
+- Spiritualités : N/A
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : N/A
+- Relations avec peuples voisins : N/A
+- Conflits / alliances : N/A
+- Diaspora : N/A
+
+# 7. Démographie globale
+- Population totale (tous pays) : 0
+- Répartition par pays : 
+- Année de référence : 2025
+- Source : N/A
+
+# 8. Sources
+- Recherche web

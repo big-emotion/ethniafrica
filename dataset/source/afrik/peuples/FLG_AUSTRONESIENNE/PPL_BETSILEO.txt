@@ -5,7 +5,7 @@
 - Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
 - Groupe ethno-linguistique : Malayo-polynésien
 - Région historique : Hautes terres centrales de Madagascar (sud)
-- Pays actuels : Madagascar
+- Pays actuels : MDG
 - Identifiant peuple (ID) : PPL_BETSILEO
 
 # 1. Ethnies incluses dans le peuple

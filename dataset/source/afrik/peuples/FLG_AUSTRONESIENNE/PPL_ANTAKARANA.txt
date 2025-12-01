@@ -5,7 +5,7 @@
 - Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
 - Groupe ethno-linguistique : Malayo-polynésien
 - Région historique : Nord de Madagascar
-- Pays actuels : Madagascar
+- Pays actuels : MDG
 - Identifiant peuple (ID) : PPL_ANTAKARANA
 
 # 1. Ethnies incluses dans le peuple

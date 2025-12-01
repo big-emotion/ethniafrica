@@ -42,9 +42,9 @@
   >70 millions
 
 # 2. Peuples associés
-- Peuple 1 : Haoussa / Hausa
-- Peuple 2 : Massa
-- Peuple 3 : Bura
+- Peuple 1 : Haoussa / Hausa (PPL_HAUSA)
+- Peuple 2 : Massa (PPL_MASSA)
+- Peuple 3 : Bura (PPL_BURA)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Haoussa

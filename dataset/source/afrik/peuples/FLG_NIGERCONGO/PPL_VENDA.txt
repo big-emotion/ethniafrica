@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Venda (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Afrique du Sud, Zimbabwe
-- Pays actuels : Afrique du Sud, Zimbabwe
+- Région historique : Afrique du Sud, ZWE
+- Pays actuels : ZAF, ZWE
 - Identifiant peuple (ID) : PPL_VENDA
 
 # 1. Ethnies incluses dans le peuple

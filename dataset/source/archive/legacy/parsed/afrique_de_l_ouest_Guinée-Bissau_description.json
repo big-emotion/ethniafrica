@@ -1,0 +1,45 @@
+{
+  "countryName": "Guinée-Bissau",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "territoires Balante",
+        "Papel",
+        "Manjak",
+        "Mandinka",
+        "Fula",
+        "Bijagó ; aucun État unifié"
+      ]
+    },
+    {
+      "period": "Du XIIe au XVIe siècle",
+      "names": ["zones d’influence des royaumes mandé (Mali", "Kaabu)"]
+    },
+    {
+      "period": "Kaabu (Empire du Kaabu)",
+      "names": ["grand royaume mandinka installé en Casamance et Guinée-Bissau"]
+    },
+    {
+      "period": "1446",
+      "names": ["Guiné"]
+    },
+    {
+      "period": "“Guiné de Cabo Verde”",
+      "names": ["nom colonial portugais"]
+    },
+    {
+      "period": "1879",
+      "names": ["Guiné Portuguesa"]
+    },
+    {
+      "period": "1973",
+      "names": [
+        "Indépendance → République de Guinée-Bissau (Bissau ajouté pour différencier de la Guinée-Conakry)"
+      ]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

@@ -2,7 +2,7 @@
 - Nom principal : Dagara / Dagaaba
 - Auto-appellation : Dagara / Dagao
 - Famille linguistique : Niger-Congo – Gur
-- Région : Burkina Faso, Ghana
+- Région : BFA, GHA
 - Identifiant : PPL_DAGARA
 
 # 1. Ethnies incluses

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Sesotho (terme utilisé par les Européens), parfois appelés « Basotho » (terme alternatif)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Lesotho, Afrique du Sud
-- Pays actuels : Lesotho, Afrique du Sud
+- Région historique : LSO, Afrique du Sud
+- Pays actuels : LSO, Afrique du Sud
 - Identifiant peuple (ID) : PPL_SESOTHO_NATL
 
 # 1. Ethnies incluses dans le peuple

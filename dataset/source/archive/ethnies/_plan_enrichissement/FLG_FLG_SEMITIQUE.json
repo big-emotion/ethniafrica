@@ -1,0 +1,436 @@
+{
+  "batchId": "FLG_FLG_SEMITIQUE",
+  "flgId": "FLG_SEMITIQUE",
+  "totalEthnies": 33,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_AMHARA_GOJJAM_AMHARA",
+      "nom_ethnie": "Gojjam Amhara",
+      "PPL_ID": "PPL_AMHARA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AMHARA/ETH_AMHARA_GOJJAM_AMHARA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gojjam%20Amhara",
+        "unesco": "https://www.unesco.org/en/search?q=Gojjam%20Amhara%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AMHARA_GONDAR_AMHARA",
+      "nom_ethnie": "Gondar Amhara",
+      "PPL_ID": "PPL_AMHARA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AMHARA/ETH_AMHARA_GONDAR_AMHARA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gondar%20Amhara",
+        "unesco": "https://www.unesco.org/en/search?q=Gondar%20Amhara%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AMHARA_WOLLO_AMHARA",
+      "nom_ethnie": "Wollo Amhara",
+      "PPL_ID": "PPL_AMHARA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AMHARA/ETH_AMHARA_WOLLO_AMHARA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wollo%20Amhara",
+        "unesco": "https://www.unesco.org/en/search?q=Wollo%20Amhara%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_ARABES_DU_MAGHREB_MAROC_ALGERIE_TUNISIE_LIBYE",
+      "nom_ethnie": "Arabes du Maghreb (Maroc, Algérie, Tunisie, Libye)",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_ARABES_DU_MAGHREB_MAROC_ALGERIE_TUNISIE_LIBYE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Arabes%20du%20Maghreb%20(Maroc%2C%20Alg%C3%A9rie%2C%20Tunisie%2C%20Libye)",
+        "unesco": "https://www.unesco.org/en/search?q=Arabes%20du%20Maghreb%20(Maroc%2C%20Alg%C3%A9rie%2C%20Tunisie%2C%20Libye)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_ARABES_D_EGYPTE",
+      "nom_ethnie": "Arabes d'Égypte",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_ARABES_D_EGYPTE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Arabes%20d'%C3%89gypte",
+        "unesco": "https://www.unesco.org/en/search?q=Arabes%20d'%C3%89gypte%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_ARABES_DU_SOUDAN",
+      "nom_ethnie": "Arabes du Soudan",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_ARABES_DU_SOUDAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Arabes%20du%20Soudan",
+        "unesco": "https://www.unesco.org/en/search?q=Arabes%20du%20Soudan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_ARABES_DE_MAURITANIE",
+      "nom_ethnie": "Arabes de Mauritanie",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_ARABES_DE_MAURITANIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Arabes%20de%20Mauritanie",
+        "unesco": "https://www.unesco.org/en/search?q=Arabes%20de%20Mauritanie%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_ARABES_DU_TCHAD",
+      "nom_ethnie": "Arabes du Tchad",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_ARABES_DU_TCHAD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Arabes%20du%20Tchad",
+        "unesco": "https://www.unesco.org/en/search?q=Arabes%20du%20Tchad%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_ARABES_DE_DJIBOUTI",
+      "nom_ethnie": "Arabes de Djibouti",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_ARABES_DE_DJIBOUTI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Arabes%20de%20Djibouti",
+        "unesco": "https://www.unesco.org/en/search?q=Arabes%20de%20Djibouti%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_ARABES_DE_SOMALIE",
+      "nom_ethnie": "Arabes de Somalie",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_ARABES_DE_SOMALIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Arabes%20de%20Somalie",
+        "unesco": "https://www.unesco.org/en/search?q=Arabes%20de%20Somalie%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_ARABES_DES_COMORES",
+      "nom_ethnie": "Arabes des Comores",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_ARABES_DES_COMORES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Arabes%20des%20Comores",
+        "unesco": "https://www.unesco.org/en/search?q=Arabes%20des%20Comores%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARABES_AFRIQUE_BEDOUINS_SAHARIENS",
+      "nom_ethnie": "Bédouins sahariens",
+      "PPL_ID": "PPL_ARABES_AFRIQUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARABES_AFRIQUE/ETH_ARABES_AFRIQUE_BEDOUINS_SAHARIENS.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=B%C3%A9douins%20sahariens",
+        "unesco": "https://www.unesco.org/en/search?q=B%C3%A9douins%20sahariens%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARGOBBA_ARGOBBA_DU_SHEWA",
+      "nom_ethnie": "Argobba du Shewa",
+      "PPL_ID": "PPL_ARGOBBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARGOBBA/ETH_ARGOBBA_ARGOBBA_DU_SHEWA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Argobba%20du%20Shewa",
+        "unesco": "https://www.unesco.org/en/search?q=Argobba%20du%20Shewa%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ARGOBBA_ARGOBBA_DU_HARAR",
+      "nom_ethnie": "Argobba du Harar",
+      "PPL_ID": "PPL_ARGOBBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ARGOBBA/ETH_ARGOBBA_ARGOBBA_DU_HARAR.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Argobba%20du%20Harar",
+        "unesco": "https://www.unesco.org/en/search?q=Argobba%20du%20Harar%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GURAGE_SODDO_GURAGE",
+      "nom_ethnie": "Soddo Gurage",
+      "PPL_ID": "PPL_GURAGE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GURAGE/ETH_GURAGE_SODDO_GURAGE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Soddo%20Gurage",
+        "unesco": "https://www.unesco.org/en/search?q=Soddo%20Gurage%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GURAGE_SEBAT_BET_GURAGE",
+      "nom_ethnie": "Sebat Bet Gurage",
+      "PPL_ID": "PPL_GURAGE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GURAGE/ETH_GURAGE_SEBAT_BET_GURAGE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sebat%20Bet%20Gurage",
+        "unesco": "https://www.unesco.org/en/search?q=Sebat%20Bet%20Gurage%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GURAGE_KISTANE_SAYETE",
+      "nom_ethnie": "Kistane (Sayete)",
+      "PPL_ID": "PPL_GURAGE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GURAGE/ETH_GURAGE_KISTANE_SAYETE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kistane%20(Sayete)",
+        "unesco": "https://www.unesco.org/en/search?q=Kistane%20(Sayete)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HABESHA_AMHARA",
+      "nom_ethnie": "Amhara",
+      "PPL_ID": "PPL_HABESHA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HABESHA/ETH_HABESHA_AMHARA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Amhara",
+        "unesco": "https://www.unesco.org/en/search?q=Amhara%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HABESHA_TIGREENS_TIGRAY",
+      "nom_ethnie": "Tigréens (Tigray)",
+      "PPL_ID": "PPL_HABESHA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HABESHA/ETH_HABESHA_TIGREENS_TIGRAY.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tigr%C3%A9ens%20(Tigray)",
+        "unesco": "https://www.unesco.org/en/search?q=Tigr%C3%A9ens%20(Tigray)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HABESHA_TIGRE_ERYTHREE",
+      "nom_ethnie": "Tigré (Érythrée)",
+      "PPL_ID": "PPL_HABESHA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HABESHA/ETH_HABESHA_TIGRE_ERYTHREE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tigr%C3%A9%20(%C3%89rythr%C3%A9e)",
+        "unesco": "https://www.unesco.org/en/search?q=Tigr%C3%A9%20(%C3%89rythr%C3%A9e)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HABESHA_GURAGE",
+      "nom_ethnie": "Guragé",
+      "PPL_ID": "PPL_HABESHA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HABESHA/ETH_HABESHA_GURAGE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gurag%C3%A9",
+        "unesco": "https://www.unesco.org/en/search?q=Gurag%C3%A9%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HABESHA_ARGOBBA",
+      "nom_ethnie": "Argobba",
+      "PPL_ID": "PPL_HABESHA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HABESHA/ETH_HABESHA_ARGOBBA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Argobba",
+        "unesco": "https://www.unesco.org/en/search?q=Argobba%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HABESHA_HARARI",
+      "nom_ethnie": "Harari",
+      "PPL_ID": "PPL_HABESHA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HABESHA/ETH_HABESHA_HARARI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Harari",
+        "unesco": "https://www.unesco.org/en/search?q=Harari%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HABESHA_GAFAT_ETEINT",
+      "nom_ethnie": "Gafat (éteint)",
+      "PPL_ID": "PPL_HABESHA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HABESHA/ETH_HABESHA_GAFAT_ETEINT.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gafat%20(%C3%A9teint)",
+        "unesco": "https://www.unesco.org/en/search?q=Gafat%20(%C3%A9teint)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HABESHA_GEEZ_ETEINT_LANGUE_LITURGIQUE",
+      "nom_ethnie": "Geez (éteint, langue liturgique)",
+      "PPL_ID": "PPL_HABESHA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HABESHA/ETH_HABESHA_GEEZ_ETEINT_LANGUE_LITURGIQUE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Geez%20(%C3%A9teint%2C%20langue%20liturgique)",
+        "unesco": "https://www.unesco.org/en/search?q=Geez%20(%C3%A9teint%2C%20langue%20liturgique)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HARARI_HARARI_URBAINS_ADARE",
+      "nom_ethnie": "Harari urbains (Adare)",
+      "PPL_ID": "PPL_HARARI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HARARI/ETH_HARARI_HARARI_URBAINS_ADARE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Harari%20urbains%20(Adare)",
+        "unesco": "https://www.unesco.org/en/search?q=Harari%20urbains%20(Adare)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HARARI_GROUPES_HARARI_DIASPORIQUES",
+      "nom_ethnie": "Groupes harari diasporiques",
+      "PPL_ID": "PPL_HARARI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HARARI/ETH_HARARI_GROUPES_HARARI_DIASPORIQUES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Groupes%20harari%20diasporiques",
+        "unesco": "https://www.unesco.org/en/search?q=Groupes%20harari%20diasporiques%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TIGRAY_AKELE_GUZAY",
+      "nom_ethnie": "Akele Guzay",
+      "PPL_ID": "PPL_TIGRAY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TIGRAY/ETH_TIGRAY_AKELE_GUZAY.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Akele%20Guzay",
+        "unesco": "https://www.unesco.org/en/search?q=Akele%20Guzay%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TIGRAY_ENDERTA",
+      "nom_ethnie": "Enderta",
+      "PPL_ID": "PPL_TIGRAY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TIGRAY/ETH_TIGRAY_ENDERTA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Enderta",
+        "unesco": "https://www.unesco.org/en/search?q=Enderta%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TIGRE_TIGRE_DU_NORD_REGION_DE_SAHEL",
+      "nom_ethnie": "Tigré du Nord (région de Sahel)",
+      "PPL_ID": "PPL_TIGRE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TIGRE/ETH_TIGRE_TIGRE_DU_NORD_REGION_DE_SAHEL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tigr%C3%A9%20du%20Nord%20(r%C3%A9gion%20de%20Sahel)",
+        "unesco": "https://www.unesco.org/en/search?q=Tigr%C3%A9%20du%20Nord%20(r%C3%A9gion%20de%20Sahel)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TIGRE_TIGRE_DU_SUD_REGION_DE_SEMHAR",
+      "nom_ethnie": "Tigré du Sud (région de Semhar)",
+      "PPL_ID": "PPL_TIGRE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TIGRE/ETH_TIGRE_TIGRE_DU_SUD_REGION_DE_SEMHAR.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tigr%C3%A9%20du%20Sud%20(r%C3%A9gion%20de%20Semhar)",
+        "unesco": "https://www.unesco.org/en/search?q=Tigr%C3%A9%20du%20Sud%20(r%C3%A9gion%20de%20Semhar)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TIGRE_TIGRE_DE_L_EST_REGION_COTIERE",
+      "nom_ethnie": "Tigré de l'Est (région côtière)",
+      "PPL_ID": "PPL_TIGRE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TIGRE/ETH_TIGRE_TIGRE_DE_L_EST_REGION_COTIERE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tigr%C3%A9%20de%20l'Est%20(r%C3%A9gion%20c%C3%B4ti%C3%A8re)",
+        "unesco": "https://www.unesco.org/en/search?q=Tigr%C3%A9%20de%20l'Est%20(r%C3%A9gion%20c%C3%B4ti%C3%A8re)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TIGRE_TIGRE_DE_L_OUEST_REGIONS_FRONTALIERES",
+      "nom_ethnie": "Tigré de l'Ouest (régions frontalières)",
+      "PPL_ID": "PPL_TIGRE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TIGRE/ETH_TIGRE_TIGRE_DE_L_OUEST_REGIONS_FRONTALIERES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tigr%C3%A9%20de%20l'Ouest%20(r%C3%A9gions%20frontali%C3%A8res)",
+        "unesco": "https://www.unesco.org/en/search?q=Tigr%C3%A9%20de%20l'Ouest%20(r%C3%A9gions%20frontali%C3%A8res)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

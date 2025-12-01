@@ -10,7 +10,7 @@
   - « Fellata » associé à des stéréotypes historiques négatifs
 - Famille linguistique principale : Niger-Congo – Atlantique (branche sénégambienne)
 - Région historique : Bande sahélienne de l’Atlantique au Tchad
-- Pays actuels : Sénégal, Guinée, Mali, Burkina Faso, Niger, Nigéria, Cameroun, Tchad, etc.
+- Pays actuels : SEN, GIN, MLI, BFA, NER, Nigéria, CMR, TCD, etc.
 - Identifiant peuple (ID) : PPL_FULANI
 
 # 1. Ethnies incluses dans le peuple

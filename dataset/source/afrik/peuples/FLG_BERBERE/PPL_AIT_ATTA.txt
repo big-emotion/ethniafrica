@@ -5,7 +5,7 @@
 - Famille linguistique : Afro-asiatique – Berbère (Amazigh)
 - Groupe : Chleuhs / Zenata méridional selon les sources
 - Région historique : Sud-est du Maroc (Saghro, Drâa, Tafilalet)
-- Pays actuels : Maroc
+- Pays actuels : MAR
 - ID peuple : PPL_AIT_ATTA
 
 # 1. Ethnies incluses dans le peuple

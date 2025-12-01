@@ -5,7 +5,7 @@
 - Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
 - Groupe ethno-linguistique : Malayo-polynésien
 - Région historique : Ouest de Madagascar
-- Pays actuels : Madagascar
+- Pays actuels : MDG
 - Identifiant peuple (ID) : PPL_ANTSALOVA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Antsalova sont originaires de l'ouest de Madagascar, dans la région d'Antsalova. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues.
+- Origines anciennes : Les Antsalova sont originaires de l'ouest de MDG, dans la région d'Antsalova. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues.
 - Routes migratoires : 
   - Migrations dans l'ouest
   - Expansion depuis les zones côtières

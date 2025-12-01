@@ -1,0 +1,169 @@
+{
+  "countryCode": "LBR",
+  "countryName": "République du Libéria",
+  "peoples": [
+    {
+      "name": "Kpelle",
+      "alternativeNames": ["Guerzé"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Intérieur du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Bassa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Côte libérienne (centre et sud)",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Grebo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Côte sud-est",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Gio",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Mano",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Kru",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Côte du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Gola",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ATLANTIQUE",
+      "region": "Ouest du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Vai",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Côte ouest du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Mandinka",
+      "alternativeNames": ["Mandingo"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Toutes les régions du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Loma",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Kissi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Krahn",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Ouest du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Gbandi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Mende",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Sud du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Dei",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ATLANTIQUE",
+      "region": "Ouest du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Belle",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Bandi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Mahn",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud du Libéria",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Americo-Liberians",
+      "alternativeNames": ["Congo People", "Settlers"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_UNKNOWN",
+      "region": "Monrovia et côte",
+      "source": "CIA World Factbook"
+    },
+    {
+      "name": "Fula",
+      "alternativeNames": ["Fulani", "Peul"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ATLANTIQUE",
+      "region": "Nord du Libéria",
+      "source": "CIA World Factbook"
+    }
+  ],
+  "timestamp": "2025-01-30T19:15:00.000Z",
+  "sourcesUsed": ["CIA World Factbook"],
+  "sourcesPending": []
+}

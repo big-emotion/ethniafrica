@@ -4,7 +4,7 @@
 - Exonymes historiques : Cewa
 - Famille : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe : Bantous de Malawi–Mozambique
-- Région principale : Malawi central, Mozambique Ouest
+- Région principale : Malawi central, MOZ Ouest
 - Identifiant : PPL_CHEWA
 
 # 1. Ethnies incluses

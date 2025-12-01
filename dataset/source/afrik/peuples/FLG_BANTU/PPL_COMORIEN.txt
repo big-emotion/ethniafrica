@@ -5,7 +5,7 @@
 - Famille : Niger-Congo – Bantu (FLG_BANTU, branche swahilie)
 - Groupe : Bantous de l’océan Indien
 - Région historique : Archipel des Comores
-- Pays actuels : Comores, Mayotte
+- Pays actuels : COM, Mayotte
 - Identifiant : PPL_COMORIEN
 
 # 1. Ethnies incluses

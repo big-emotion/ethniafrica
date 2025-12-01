@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe ethno-linguistique : Omotique du Nord
 - Région historique : Sud-ouest de l'Éthiopie
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - Identifiant peuple (ID) : PPL_BENCH
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Bench sont originaires du sud-ouest de l'Éthiopie, dans la région des nations, nationalités et peuples du Sud. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Bench sont originaires du sud-ouest de l'ETH, dans la région des nations, nationalités et peuples du Sud. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des hauts plateaux

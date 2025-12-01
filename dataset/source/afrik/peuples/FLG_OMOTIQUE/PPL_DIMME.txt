@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe ethno-linguistique : Omotique
 - Région historique : Sud-ouest de l'Éthiopie
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - Identifiant peuple (ID) : PPL_DIMME
 
 # 1. Ethnies incluses dans le peuple

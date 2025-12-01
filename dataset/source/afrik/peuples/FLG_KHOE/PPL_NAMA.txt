@@ -7,8 +7,8 @@
   - « Khoikhoi » (terme historique)
 - Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
 - Groupe ethno-linguistique : Khoe central
-- Région historique : Namibie, Afrique du Sud
-- Pays actuels : Namibie, Afrique du Sud
+- Région historique : NAM, Afrique du Sud
+- Pays actuels : NAM, Afrique du Sud
 - Identifiant peuple (ID) : PPL_NAMA
 
 # 1. Ethnies incluses dans le peuple

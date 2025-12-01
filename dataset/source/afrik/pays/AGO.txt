@@ -1,0 +1,241 @@
+# Nom du pays
+- Nom officiel actuel : République d'Angola (República de Angola)
+- Étymologie du nom : Le nom "Angola" dérive de "Ngola", titre des rois du royaume Ndongo. Les Portugais ont utilisé ce terme pour désigner la région qu'ils colonisaient à partir du XVIe siècle. "Ngola" était le titre royal du souverain du royaume Ndongo, l'un des royaumes précoloniaux les plus puissants de la région.
+- Personne / peuple / administration à l'origine du nom : Le nom provient du royaume Ndongo et de son titre royal "Ngola". Les Portugais ont adopté et généralisé ce terme lors de la colonisation à partir de 1575. Le nom a été officialisé comme "Colónia de Angola" pendant la période coloniale portugaise (1575-1975).
+- Identifiant pays (ISO 3166-1 alpha-3) : AGO
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de l'Angola était peuplé de peuples Khoisan (San et Khoikhoi), premiers habitants de la région, sans nom unifié pour l'ensemble du territoire. Les peuples autochtones avaient leurs propres noms pour leurs territoires et royaumes.
+- Moyen Âge : Développement de royaumes bantous puissants : royaume Kongo (XIVe-XVIIe siècles), royaume Ndongo (XVe-XVIIe siècles), royaume Matamba, royaumes Ovimbundu, et Empire Lunda (XVIe-XIXe siècles). Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et chefferies autonomes : royaume Kongo, royaume Ndongo, royaume Matamba, royaumes Ovimbundu, Empire Lunda. Les Portugais utilisaient le terme "Angola" basé sur le titre "Ngola" des rois du Ndongo.
+- Colonisation : 1575-1975 : Colónia de Angola (période coloniale portugaise). Les Portugais ont fondé la colonie d'Angola en 1575 avec Luanda comme capitale. Le territoire était administré comme une colonie portugaise pendant près de 400 ans.
+- Période contemporaine : 1975 : République populaire d'Angola (proclamée à l'indépendance le 11 novembre 1975). Depuis les années 1990 : République d'Angola (nom officiel actuel). Le pays a connu une longue guerre civile (1975-2002) entre le MPLA (Mouvement populaire de libération de l'Angola) et l'UNITA (Union nationale pour l'indépendance totale de l'Angola).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume Kongo] :
+  - Période : XIVe siècle - XVIIe siècle (apogée), déclin progressif jusqu'au XIXe siècle
+  - Peuples dominants : Kongo (Bakongo)
+  - Centres politiques : Mbanza Kongo (capitale historique, aujourd'hui en Angola), São Salvador
+  - Rôle historique : Royaume Kongo puissant et centralisé, contacts précoces avec les Portugais dès le XVe siècle, conversion au christianisme, commerce avec l'Europe, déclin progressif face à la traite des esclaves et aux conflits internes.
+
+- [Royaume Ndongo] :
+  - Période : XVe siècle - XVIIe siècle
+  - Peuples dominants : Ambundu (Mbundu)
+  - Centres politiques : Kabasa (capitale), région de Luanda
+  - Rôle historique : Royaume Ndongo puissant, résistance à la colonisation portugaise sous la reine Nzinga (Njinga Mbande, 1583-1663), guerre contre les Portugais, alliance avec le royaume Matamba, source du nom "Angola" (dérivé de "Ngola", titre royal).
+
+- [Royaume Matamba] :
+  - Période : XVIe siècle - XIXe siècle
+  - Peuples dominants : Ambundu, populations locales
+  - Centres politiques : Matamba (capitale)
+  - Rôle historique : Royaume Matamba, refuge de la reine Nzinga après la chute du Ndongo, résistance à la colonisation portugaise, maintien de l'indépendance jusqu'au XIXe siècle.
+
+- [Royaumes Ovimbundu] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Ovimbundu
+  - Centres politiques : Hauts plateaux du centre-sud de l'Angola, chefferies traditionnelles
+  - Rôle historique : Royaumes Ovimbundu organisés en chefferies, agriculture développée, commerce régional, résistance à la colonisation, groupe ethnique le plus nombreux de l'Angola contemporain.
+
+- [Empire Lunda] :
+  - Période : XVIe siècle - XIXe siècle
+  - Peuples dominants : Lunda, Tshokwe (Chokwe)
+  - Centres politiques : Mwata Yamvo (capitale), expansion sur Angola, RDC et Zambie
+  - Rôle historique : Empire Lunda puissant et expansionniste, contrôle d'un vaste territoire transfrontalier, commerce à longue distance, art chokwe renommé, déclin face à la colonisation européenne.
+
+- [Colónia de Angola] :
+  - Période : 1575 - 1975
+  - Peuples dominants : Tous les peuples angolais sous domination portugaise
+  - Centres politiques : Luanda (capitale coloniale)
+  - Rôle historique : Colonie portugaise pendant près de 400 ans, exploitation économique (esclavage, ressources naturelles), résistance des peuples autochtones, développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Ovimbundu
+  - Auto-appellation (endonyme) : Ovimbundu
+  - Exonymes / appellations historiques : Ovimbundu (terme utilisé par les Européens et les Portugais)
+  - Identifiant peuple (PPL_) : PPL_OVIMBUNDU
+  - Région principale : Hauts plateaux du centre-sud de l'Angola
+  - Langues parlées : Umbundu (umb, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Ovimbundu" est l'auto-appellation du peuple et est utilisé de manière respectueuse. Pas de terme péjoratif connu.
+
+- Peuple 2 :
+  - Nom : Ambundu
+  - Auto-appellation (endonyme) : Ambundu
+  - Exonymes / appellations historiques : Ambundu, Mbundu (termes utilisés par les Européens et les Portugais)
+  - Identifiant peuple (PPL_) : PPL_AMBUNDU
+  - Région principale : Région de Luanda et centre-nord de l'Angola
+  - Langues parlées : Kimbundu (kmb, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Ambundu" est l'auto-appellation du peuple. "Mbundu" est une variante exonyme acceptée. Pas de terme péjoratif connu.
+
+- Peuple 3 :
+  - Nom : Kongo
+  - Auto-appellation (endonyme) : Bakongo
+  - Exonymes / appellations historiques : Kongo, Bakongo (termes utilisés par les Européens et les Portugais)
+  - Identifiant peuple (PPL_) : PPL_KONGO
+  - Région principale : Nord de l'Angola (notamment Cabinda), frontière avec la RDC et le Congo
+  - Langues parlées : Kikongo (kon, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone H) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bakongo" est l'auto-appellation (pluriel), "Kongo" est l'exonyme le plus courant. Pas de terme péjoratif connu.
+
+- Peuple 4 :
+  - Nom : Lunda
+  - Auto-appellation (endonyme) : Lunda
+  - Exonymes / appellations historiques : Lunda (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LUNDA
+  - Région principale : Nord-est de l'Angola (Lunda Norte, Lunda Sul), frontière avec la RDC et la Zambie
+  - Langues parlées : Lunda (lun, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone K) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Lunda" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Tshokwe
+  - Auto-appellation (endonyme) : Tshokwe
+  - Exonymes / appellations historiques : Tshokwe, Chokwe (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TSHOKWE
+  - Région principale : Est de l'Angola, frontière avec la RDC et la Zambie
+  - Langues parlées : Tshokwe / Chokwe (cjk, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone K) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Tshokwe" est l'auto-appellation, "Chokwe" est une variante exonyme acceptée. Pas de terme péjoratif connu.
+
+- Peuple 6 :
+  - Nom : Nyaneka-Nkhumbi
+  - Auto-appellation (endonyme) : Nyaneka, Nkhumbi
+  - Exonymes / appellations historiques : Nyaneka-Nkhumbi (terme utilisé par les Européens et les Portugais)
+  - Identifiant peuple (PPL_) : PPL_NYANEKA_NKHUMBI
+  - Région principale : Sud-ouest de l'Angola
+  - Langues parlées : Nyaneka, Nkhumbi, portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Nyaneka" et "Nkhumbi" sont les auto-appellations des deux groupes principaux. Pas de terme péjoratif connu.
+
+- Peuple 7 :
+  - Nom : Ganguela
+  - Auto-appellation (endonyme) : Ganguela (terme générique pour plusieurs groupes)
+  - Exonymes / appellations historiques : Ganguela (terme utilisé par les Européens et les Portugais)
+  - Identifiant peuple (PPL_) : PPL_GANGUELA
+  - Région principale : Est de l'Angola
+  - Langues parlées : Langues ganguela (plusieurs langues bantoues), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone K, Zone R) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Ganguela" est un terme générique utilisé pour désigner plusieurs groupes ethniques de l'est de l'Angola. Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 8 :
+  - Nom : Khoisan
+  - Auto-appellation (endonyme) : San, Khoikhoi (selon les groupes)
+  - Exonymes / appellations historiques : "Bushmen" (terme colonial péjoratif, à éviter), "Hottentots" (terme colonial péjoratif, à éviter), Khoisan (terme académique)
+  - Identifiant peuple (PPL_) : PPL_SAN, PPL_KHOIKHOI
+  - Région principale : Sud de l'Angola, zones arides et semi-arides
+  - Langues parlées : Langues khoïsan (plusieurs langues), portugais
+  - Famille linguistique : Khoïsan (FLG_KHOE, FLG_KXA, FLG_TUU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les termes "Bushmen" et "Hottentots" sont des exonymes coloniaux péjoratifs et doivent être évités. "San" et "Khoikhoi" sont les auto-appellations respectives. "Khoisan" est un terme académique utilisé pour désigner l'ensemble des peuples de cette famille linguistique. Les Khoisan sont les premiers habitants de l'Angola et de l'Afrique australe.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Portugais (langue officielle, por), Umbundu (umb), Kimbundu (kmb), Kikongo (kon), Lunda (lun), Tshokwe / Chokwe (cjk), Nyaneka, Nkhumbi, langues ganguela, langues khoïsan
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de l'Angola. Traditions bantoues (Ovimbundu, Ambundu, Kongo, Lunda, Tshokwe), traditions khoïsan (San, Khoikhoi). Art chokwe renommé (sculptures, masques). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.
+- Religions dominantes : Christianisme (catholicisme majoritaire, protestantisme en croissance), croyances traditionnelles africaines (syncrétisme fréquent), islam (minoritaire, surtout dans les zones urbaines)
+- Modes de vie : Agriculture (hauts plateaux, Ovimbundu), élevage (Nyaneka-Nkhumbi), chasse-cueillette (Khoisan), commerce et activités urbaines (zones côtières, Luanda). Urbanisation croissante depuis l'indépendance. Économie basée sur le pétrole et les diamants.
+- Organisation sociale : Organisation en chefferies traditionnelles (Ovimbundu, Ambundu), royaumes historiques (Kongo, Ndongo, Lunda), structures claniques patrilinéaires et matrilinéaires selon les groupes. Importance des lignages et des familles étendues. Rôle des conseils d'anciens.
+- Relations régionales : Relations historiques avec la RDC (Kongo, Lunda, Tshokwe), le Congo, la Zambie (Lunda, Tshokwe), la Namibie (Ovambo, Khoisan). Intégration dans la SADC (Communauté de développement de l'Afrique australe). Relations commerciales et culturelles transfrontalières.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples Khoisan (San et Khoikhoi), premiers habitants de la région. Arrivée des peuples bantous à partir du Ier millénaire de notre ère, expansion progressive vers le sud et l'est.
+- Moyen Âge : Formation et apogée du royaume Kongo (XIVe-XVIIe siècles), royaume Ndongo (XVe-XVIIe siècles), royaume Matamba, royaumes Ovimbundu, Empire Lunda (XVIe-XIXe siècles). Développement de réseaux commerciaux régionaux et transatlantiques.
+- Époque précoloniale : Contacts précoces avec les Portugais dès le XVe siècle (royaume Kongo). Commerce avec l'Europe, introduction du christianisme. Résistance à la colonisation portugaise (reine Nzinga du Ndongo et Matamba, XVIIe siècle). Traite des esclaves transatlantique, impact démographique et social majeur.
+- Colonisation : 1575 : Fondation de la colonie portugaise d'Angola par Paulo Dias de Novais, établissement de Luanda. Période coloniale portugaise longue (1575-1975), exploitation économique, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, formation du MPLA (Mouvement populaire de libération de l'Angola) et de l'UNITA (Union nationale pour l'indépendance totale de l'Angola).
+- Lutte pour l'indépendance : 1961-1974 : Guerre d'indépendance contre le Portugal, menée par le MPLA, l'UNITA et le FNLA (Front national de libération de l'Angola). 1974 : Révolution des Œillets au Portugal, fin de la dictature portugaise. 1975 : Indépendance de l'Angola (11 novembre 1975), proclamation de la République populaire d'Angola.
+- Période post-indépendance : 1975-2002 : Guerre civile angolaise entre le MPLA (soutenu par l'URSS et Cuba) et l'UNITA (soutenu par les États-Unis et l'Afrique du Sud). Conflit long et destructeur, millions de déplacés et de réfugiés. 2002 : Fin de la guerre civile après la mort de Jonas Savimbi (leader de l'UNITA). Période de reconstruction et de développement économique (pétrole, diamants). Défis de développement, pauvreté, inégalités sociales.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Angola
+- CIA World Factbook – Angola
+- ONU / UNFPA – Démographie Angola 2025
+- Vansina, Jan – "How Societies Are Born: Governance in West Central Africa Before 1600"
+- Miller, Joseph C. – "Kings and Kinsmen: Early Mbundu States in Angola"
+- Heywood, Linda M. – "Contested Power in Angola, 1840s to the Present"
+- Recensements angolais
+- Études anthropologiques sur les peuples bantous et khoïsan d'Angola
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Ovimbundu
+- Identifiant peuple (PPL_) : PPL_OVIMBUNDU
+- Population : 13 000 000
+- Pourcentage dans le pays : 37%
+- Pourcentage en Afrique : N/A
+- Région : Hauts plateaux du centre-sud de l'Angola
+- Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : umb
+
+### Peuple : Ambundu
+- Identifiant peuple (PPL_) : PPL_AMBUNDU
+- Population : 9 000 000
+- Pourcentage dans le pays : 25%
+- Pourcentage en Afrique : N/A
+- Région : Région de Luanda et centre-nord de l'Angola
+- Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : kmb
+
+### Peuple : Kongo
+- Identifiant peuple (PPL_) : PPL_KONGO
+- Population : 4 700 000
+- Pourcentage dans le pays : 13%
+- Pourcentage en Afrique : N/A
+- Région : Nord de l'Angola (notamment Cabinda), frontière avec la RDC et le Congo
+- Famille linguistique : Niger-Congo – Bantou (Zone H) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : kon
+
+### Peuple : Lunda
+- Identifiant peuple (PPL_) : PPL_LUNDA
+- Population : 1 400 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Nord-est de l'Angola (Lunda Norte, Lunda Sul), frontière avec la RDC et la Zambie
+- Famille linguistique : Niger-Congo – Bantou (Zone K) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : lun
+
+### Peuple : Tshokwe
+- Identifiant peuple (PPL_) : PPL_TSHOKWE
+- Population : 1 500 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Est de l'Angola, frontière avec la RDC et la Zambie
+- Famille linguistique : Niger-Congo – Bantou (Zone K) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : cjk
+
+### Peuple : Nyaneka-Nkhumbi
+- Identifiant peuple (PPL_) : PPL_NYANEKA_NKHUMBI
+- Population : 1 500 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest de l'Angola
+- Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : N/A
+
+### Peuple : Ganguela
+- Identifiant peuple (PPL_) : PPL_GANGUELA
+- Population : 900 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Est de l'Angola
+- Famille linguistique : Niger-Congo – Bantou (Zone K, Zone R) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : N/A
+
+### Peuple : Khoisan
+- Identifiant peuple (PPL_) : PPL_SAN, PPL_KHOIKHOI
+- Population : 350 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Sud de l'Angola, zones arides et semi-arides
+- Famille linguistique : Khoïsan (FLG_KHOE, FLG_KXA, FLG_TUU)
+- Code ISO 639-3 (langue principale) : N/A (plusieurs langues khoïsan)
+
+### Autres peuples
+- Identifiant peuple (PPL_) : PPL_OVAMBO, PPL_KWANYAMA, PPL_HIMBA, PPL_HERERO, PPL_KAVANGO, PPL_KONGO_CABINDA, PPL_LUNDA_NORTE, autres
+- Population : 1 150 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de l'Angola
+- Famille linguistique : Diverses (FLG_NIGERCONGO principalement)
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Angola 2025 : 35 000 000 (estimations ONU/UNFPA)**
+

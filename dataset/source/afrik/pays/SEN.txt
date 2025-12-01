@@ -1,0 +1,192 @@
+# Nom du pays
+- Nom officiel actuel : République du Sénégal
+- Étymologie du nom : Le nom "Sénégal" vient probablement de "Sunugal" (notre pirogue en wolof), expression wolof donnée par les navigateurs locaux aux Portugais au XVe siècle. Les Portugais ont ensuite nommé le fleuve "Rio de Senega" puis le territoire "Senega".
+- Personne / peuple / administration à l'origine du nom : Le nom a été donné par les Portugais au XVe siècle, probablement dérivé de l'expression wolof "Sunugal" (notre pirogue). Le fleuve Sénégal a été nommé en premier, puis le territoire.
+- Identifiant pays (ISO 3166-1 alpha-3) : SEN
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de groupes wolof, sérère, peul, mandinka, jola sans nom unifié. Les empires régionaux (Ghana, Mali, Songhai) ont influencé la région.
+- Moyen Âge : XIIIe-XVIe siècles : Empire du Jolof (Wolof) avec royaumes vassaux (Cayor, Baol, Waalo, Sine, Saloum). Fouta Toro (théocratie peule).
+- Époque précoloniale : Royaumes wolof (Jolof, Cayor, Baol, Waalo), royaumes sérères (Sine, Saloum), théocratie peule du Fouta Toro, royaumes jola de Casamance. Commerce transsaharien et commerce côtier.
+- Colonisation : XVe siècle : premiers contacts portugais (nom "Senega"). 1659 : Fondation de Saint-Louis par les Français. 1895 : Intégration à l'Afrique-Occidentale française (AOF). Le territoire est appelé "Sénégal" par les colonisateurs.
+- Période contemporaine : Indépendance en 1960 sous le nom de "République du Sénégal". Le nom officiel en français est "République du Sénégal".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Empire du Jolof] :
+  - Période : XIIIe - XVIe siècles
+  - Peuples dominants : Wolof
+  - Centres politiques : Jolof (capitale), Cayor, Baol, Waalo
+  - Rôle historique : Empire wolof puissant qui unifiait plusieurs royaumes. Commerce transsaharien et commerce côtier. Influence culturelle majeure.
+
+- [Royaumes sérères] :
+  - Période : Précolonial - XIXe siècle
+  - Peuples dominants : Sérère
+  - Centres politiques : Sine, Saloum
+  - Rôle historique : Royaumes sérères indépendants réputés pour leur résistance à l'islamisation et leur organisation politique.
+
+- [Fouta Toro] :
+  - Période : XVIIIe - XIXe siècles
+  - Peuples dominants : Peul (Toucouleurs)
+  - Centres politiques : Fouta Toro (vallée du fleuve Sénégal)
+  - Rôle historique : Théocratie peule islamisée, modèle politique et religieux pour la région.
+
+- [Sénégal français] :
+  - Période : 1895 - 1960
+  - Peuples dominants : Tous les peuples sénégalais sous administration coloniale française
+  - Centres politiques : Saint-Louis (capitale coloniale), Dakar
+  - Rôle historique : Colonie française intégrée à l'AOF. Développement de Dakar comme capitale administrative. Résistance sénégalaise et mouvements nationalistes.
+
+- [République du Sénégal] :
+  - Période : 1960 - présent
+  - Peuples dominants : Tous les peuples sénégalais
+  - Centres politiques : Dakar (capitale)
+  - Rôle historique : Indépendance en 1960. Histoire politique stable avec démocratie multipartite. Modèle de stabilité en Afrique de l'Ouest.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Wolof
+  - Auto-appellation (endonyme) : Wolof
+  - Exonymes / appellations historiques : Wolof (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_WOLOF
+  - Région principale : Dakar, Thiès, Saint-Louis
+  - Langues parlées : Wolof, français
+  - Famille linguistique : FLG_NIGERCONGO (Atlantique)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Wolof" est neutre et accepté.
+
+- Peuple 2 :
+  - Nom : Peul / Fulani
+  - Auto-appellation (endonyme) : Fulɓe (pluriel), Pullo (singulier)
+  - Exonymes / appellations historiques : Peul (terme français), Fulani (terme haoussa), "Fellata" (terme haoussa, parfois péjoratif - éviter)
+  - Identifiant peuple (PPL_) : PPL_FULA
+  - Région principale : Nord, vallée du fleuve Sénégal (Fouta Toro)
+  - Langues parlées : Pulaar, français
+  - Famille linguistique : FLG_ATLANTIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Fellata" peut être péjoratif. L'auto-appellation "Fulɓe" est préférée. "Peul" et "Fulani" sont acceptés.
+
+- Peuple 3 :
+  - Nom : Sérère
+  - Auto-appellation (endonyme) : Sérère
+  - Exonymes / appellations historiques : Sérère (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SERERE
+  - Région principale : Centre-Ouest (Fatick, Kaolack)
+  - Langues parlées : Sérère, français
+  - Famille linguistique : FLG_ATLANTIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Sérère" est neutre et accepté.
+
+- Peuple 4 :
+  - Nom : Diola / Jola
+  - Auto-appellation (endonyme) : Joola / Ajamat
+  - Exonymes / appellations historiques : Diola (terme français), Jola (terme local)
+  - Identifiant peuple (PPL_) : PPL_DIOLA
+  - Région principale : Casamance (Ziguinchor)
+  - Langues parlées : Jola, français
+  - Famille linguistique : FLG_ATLANTIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les termes "Diola" et "Jola" sont neutres et acceptés. L'auto-appellation "Joola" est préférée.
+
+- Peuple 5 :
+  - Nom : Mandinka / Mandingue
+  - Auto-appellation (endonyme) : Mandinka
+  - Exonymes / appellations historiques : Mandinka (terme utilisé par les Européens), Mandingue (terme français)
+  - Identifiant peuple (PPL_) : PPL_MALINKE
+  - Région principale : Est (Tambacounda, Kédougou)
+  - Langues parlées : Mandinka, français
+  - Famille linguistique : FLG_MANDE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Mandinka" est neutre et accepté.
+
+- Peuple 6 :
+  - Nom : Soninké
+  - Auto-appellation (endonyme) : Soninké
+  - Exonymes / appellations historiques : Soninké (terme utilisé par les Européens), Sarakolé (terme alternatif)
+  - Identifiant peuple (PPL_) : PPL_SONINKE
+  - Région principale : Vallée du fleuve Sénégal, Est
+  - Langues parlées : Soninké, français
+  - Famille linguistique : FLG_NIGERCONGO (Mandé)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Soninké" est neutre et accepté. "Sarakolé" est une variante acceptée.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Wolof (wol) - langue véhiculaire nationale
+  - Pulaar (fuc) - Peul
+  - Sérère (srr) - Sérère
+  - Jola (dyo) - Diola
+  - Mandinka (mnk) - Mandinka
+  - Soninké (snk) - Soninké
+  - Français - langue officielle
+- Traditions culturelles : Musique traditionnelle (sabar, mbalax), danse traditionnelle, poésie orale (griot), artisanat (vannerie, poterie, tissage), architecture traditionnelle, lutte sénégalaise
+- Religions dominantes : Islam (soufi majoritaire : Tidjaniya, Mouridisme), christianisme (minorité), croyances traditionnelles (syncrétisme)
+- Modes de vie : Vie principalement rurale, agriculture (arachides, mil, sorgho, riz), élevage (bovins, caprins), pêche (côtes et fleuves), commerce, urbanisation croissante
+- Organisation sociale : Système de chefferies traditionnelles, structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des griots (gardiens de la tradition orale), système de confréries soufies
+- Relations régionales : Relations historiques avec les peuples de la Gambie, de la Mauritanie, du Mali, de la Guinée. Diaspora importante en France, en Italie, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par des groupes wolof, sérère, peul, mandinka, jola. Influence des empires régionaux (Ghana, Mali, Songhai).
+- Moyen Âge : Développement de l'empire du Jolof (XIIIe-XVIe siècles). Royaumes sérères du Sine et du Saloum. Théocratie peule du Fouta Toro. Commerce transsaharien et commerce côtier.
+- Époque précoloniale : Apogée des royaumes wolof et sérères. Commerce avec les Européens (or, ivoire, esclaves). Résistance à l'islamisation pour certains groupes (Sérère).
+- Colonisation : XVe siècle : premiers contacts portugais. 1659 : Fondation de Saint-Louis par les Français. 1895 : Intégration à l'AOF. Développement de Dakar comme capitale administrative. Résistance sénégalaise.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1960. Léopold Sédar Senghor devient premier président.
+- Période post-indépendance : Première République (1960-1980) : présidence de Senghor, stabilité politique. Deuxième République (1981-2000) : présidence d'Abdou Diouf. Troisième République depuis 2000 : alternance démocratique, stabilité politique, développement économique.
+
+# 7. Sources
+- CIA World Factbook – Senegal
+- SIL Ethnologue – Languages of Senegal
+- Recensements nationaux sénégalais (ANSD)
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples sénégalais
+- Études historiques sur l'empire du Jolof
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Wolof
+- Identifiant peuple (PPL_) : PPL_WOLOF
+- Population : 7 380 000
+- Pourcentage dans le pays : 41.0%
+- Pourcentage en Afrique : 0.52%
+- Région : Dakar, Thiès, Saint-Louis
+- Famille linguistique : FLG_NIGERCONGO (Atlantique)
+- Code ISO 639-3 (langue principale) : wol (Wolof)
+
+### Peuple : Peul / Fulani
+- Identifiant peuple (PPL_) : PPL_FULA
+- Population : 4 500 000
+- Pourcentage dans le pays : 25.0%
+- Pourcentage en Afrique : 0.31%
+- Région : Nord, vallée du fleuve Sénégal (Fouta Toro)
+- Famille linguistique : FLG_ATLANTIQUE
+- Code ISO 639-3 (langue principale) : fuc (Pulaar)
+
+### Peuple : Sérère
+- Identifiant peuple (PPL_) : PPL_SERERE
+- Population : 2 700 000
+- Pourcentage dans le pays : 15.0%
+- Pourcentage en Afrique : 0.19%
+- Région : Centre-Ouest (Fatick, Kaolack)
+- Famille linguistique : FLG_ATLANTIQUE
+- Code ISO 639-3 (langue principale) : srr (Sérère)
+
+### Peuple : Diola / Jola
+- Identifiant peuple (PPL_) : PPL_DIOLA
+- Population : 900 000
+- Pourcentage dans le pays : 5.0%
+- Pourcentage en Afrique : 0.06%
+- Région : Casamance (Ziguinchor)
+- Famille linguistique : FLG_ATLANTIQUE
+- Code ISO 639-3 (langue principale) : dyo (Jola)
+
+### Peuple : Mandinka / Mandingue
+- Identifiant peuple (PPL_) : PPL_MALINKE
+- Population : 720 000
+- Pourcentage dans le pays : 4.0%
+- Pourcentage en Afrique : 0.05%
+- Région : Est (Tambacounda, Kédougou)
+- Famille linguistique : FLG_MANDE
+- Code ISO 639-3 (langue principale) : mnk (Mandinka)
+
+### Peuple : Soninké
+- Identifiant peuple (PPL_) : PPL_SONINKE
+- Population : 360 000
+- Pourcentage dans le pays : 2.0%
+- Pourcentage en Afrique : 0.025%
+- Région : Vallée du fleuve Sénégal, Est
+- Famille linguistique : FLG_NIGERCONGO (Mandé)
+- Code ISO 639-3 (langue principale) : snk (Soninké)
+

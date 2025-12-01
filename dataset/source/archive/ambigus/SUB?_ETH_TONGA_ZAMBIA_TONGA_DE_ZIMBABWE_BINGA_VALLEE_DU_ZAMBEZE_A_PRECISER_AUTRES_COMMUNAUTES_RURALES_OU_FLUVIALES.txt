@@ -1,0 +1,59 @@
+# Nom de la sous-ethnie
+- Nom principal : À préciser (autres communautés rurales ou fluviales)
+- Identifiant sous-ethnie (ID) : SUB_ETH_TONGA_ZAMBIA_TONGA_DE_ZIMBABWE_BINGA_VALLEE_DU_ZAMBEZE_A_PRECISER_AUTRES_COMMUNAUTES_RURALES_OU_FLUVIALES
+- Auto-appellation : N/A
+- Exonymes et termes coloniaux (connotation, origine, contextualisation) : N/A (connotation, origine, contextualisation) : N/A
+- Ethnie parente : Tonga de Zimbabwe (Binga, vallée du Zambèze)
+- Identifiant ethnie parente (ETH_) : ETH_TONGA_DE_ZIMBABWE_BINGA_VALL_E_DU_ZAMB_ZE
+- Peuple d'appartenance : TONGA ZAMBIA
+- Identifiant peuple (ID) : PPL_TONGA_ZAMBIA
+- Langue parlée : Tonga (Zambie/ZW)
+- Code ISO 639-3 : toi
+- Famille linguistique : FLG_BANTU
+- Identifiant famille linguistique (FLG) : FLG_BANTU
+
+# 1. Clans et lignages internes
+- Clans : N/A
+  - Nom : N/A
+  - Identifiant (CLN_) : N/A
+- Lignages : N/A
+  - Nom : N/A
+  - Identifiant (CLN_) : N/A
+# 2. Origines et histoire du groupe
+- Origines anciennes : N/A
+- Migrations majeures : N/A
+- Formation du groupe : N/A
+- Relations avec l'ethnie mère : N/A
+- Relations avec les peuples voisins : N/A
+- Rôle dans les royaumes / empires : N/A
+# 3. Territoires / Répartition géographique
+- Pays : N/A
+- Régions principales : N/A
+- Zones historiques : N/A
+- Diaspora interne : N/A
+- Diaspora externe : N/A
+# 4. Organisation sociale et culturelle
+- Mode de vie : N/A
+- Structure familiale : N/A
+- Organisation clanique : N/A
+- Rites de passage : N/A
+- Religion(s) / spiritualités : N/A
+- Autorités traditionnelles : N/A
+- Particularités sociales par rapport à l'ethnie mère : N/A
+# 5. Économie traditionnelle / modes de subsistance
+- Agriculture : N/A
+- Élevage : N/A
+- Artisanat : N/A
+- Pêche / chasse / cueillette : N/A
+- Commerce et réseaux économiques : N/A
+# 6. Interactions historiques
+- Alliances : N/A
+- Conflits : N/A
+- Rôle dans les États précoloniaux : N/A
+- Rôle dans la période coloniale : N/A
+- Mouvements modernes : N/A
+- Figures majeures du groupe : N/A
+# 7. Sources
+- [Titre] – [Auteur/URL]
+- Etc.
+

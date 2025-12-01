@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_TUAREG_KEL_AIR",
+  "timestamp": "2025-01-25T21:20:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/tama1369",
+      "data": {
+        "langue": "Tamajaq (Tuareg)",
+        "code_iso": "taq",
+        "famille": "Afro-Asiatic > Berber > Tuareg",
+        "pays": ["Niger", "Mali", "Algérie", "Libye", "Burkina Faso"],
+        "region": "Afrique du Nord et Sahel",
+        "glottocode": "tama1369",
+        "auto_appellation": "Tamajaq"
+      },
+      "timestamp": "2025-01-25T21:20:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/taq",
+      "data": {
+        "langue": "Tamajaq",
+        "code_iso": "taq",
+        "famille": "Afro-Asiatic",
+        "pays": ["Niger", "Mali", "Algeria", "Libya", "Burkina Faso"],
+        "auto_appellation": "Tamajaq"
+      },
+      "timestamp": "2025-01-25T21:20:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "taq",
+    "langue_principale": "Tamajaq (Tuareg)",
+    "famille_linguistique": "Afro-Asiatic > Berber > Tuareg",
+    "pays_principaux": ["Niger", "Mali", "Burkina Faso"],
+    "region_generale": "Afrique du Nord et Sahel",
+    "auto_appellation": "Tamajaq"
+  }
+}

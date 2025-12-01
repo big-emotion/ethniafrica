@@ -8,7 +8,7 @@
 - Famille linguistique principale : Créole (FLG_CREOLE)
 - Groupe ethno-linguistique : Créole (macro-groupe)
 - Région historique : Zones côtières d'Afrique de l'Ouest, îles de l'océan Indien
-- Pays actuels : Guinée-Bissau, Cap-Vert, São Tomé-et-Príncipe, Sierra Leone, Maurice, Seychelles, Réunion, et autres
+- Pays actuels : GIN-Bissau, CPV, São Tomé-et-Príncipe, SLE, MUS, SYC, Réunion, et autres
 - Identifiant peuple (ID) : PPL_CREOLE_MACRO
 
 # 1. Ethnies incluses dans le peuple
@@ -41,9 +41,9 @@
 - Langue principale : Langues créoles (Créole cap-verdien, Crioulo, Krio, Créole mauricien, etc.)
 - Codes ISO : kea (Créole cap-verdien), pov (Crioulo), kri (Krio), mfe (Créole mauricien), crs (Créole seychellois), rcf (Créole réunionnais), et autres
 - Dialectes : 
-  - Créoles afro-portugais (Cap-Vert, Guinée-Bissau, São Tomé)
+  - Créoles afro-portugais (CPV, GIN-Bissau, São Tomé)
   - Créoles afro-anglais (Sierra Leone)
-  - Créoles afro-français (Maurice, Seychelles, Réunion)
+  - Créoles afro-français (MUS, SYC, Réunion)
   - Nombreuses variantes régionales
 - Rôle véhiculaire : Les langues créoles sont parlées par les peuples créoles. Les langues européennes (portugais, anglais, français) sont utilisées dans l'éducation et l'administration.
 

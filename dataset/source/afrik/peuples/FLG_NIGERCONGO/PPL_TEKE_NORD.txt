@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Teke (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone B)
-- Région historique : RDC, Congo, Gabon
-- Pays actuels : RDC, Congo, Gabon
+- Région historique : COD, COG, GAB
+- Pays actuels : COD, COG, GAB
 - Identifiant peuple (ID) : PPL_TEKE_NORD
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Sous-groupes régionaux du Nord
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Teke du Nord sont originaires de la région de la RDC, du Congo et du Gabon. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone B).
+- Origines anciennes : Les Teke du Nord sont originaires de la région de la COD, du Congo et du Gabon. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone B).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers la RDC, le Congo et le Gabon
+  - Expansion vers la COD, le Congo et le Gabon
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Teke du Sud.
 - Influences externes : Contacts avec les commerçants européens, influence du christianisme.

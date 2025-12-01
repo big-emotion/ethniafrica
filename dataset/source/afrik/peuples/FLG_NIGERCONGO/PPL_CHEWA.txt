@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Cewa (variante coloniale), Chewa (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone N)
-- Région historique : Malawi central, Mozambique Ouest
-- Pays actuels : Malawi, Mozambique, Zambie
+- Région historique : Malawi central, MOZ Ouest
+- Pays actuels : MWI, MOZ, ZMB
 - Identifiant peuple (ID) : PPL_CHEWA
 
 # 1. Ethnies incluses dans le peuple
@@ -18,7 +18,7 @@
 - Origines anciennes : Lointaine migration bantoue de la région du Congo. Les Chewa sont originaires du Malawi central et du Mozambique Ouest. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N) de la famille Niger-Congo. Fondation du royaume de Maravi.
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Malawi, le Mozambique et la Zambie
+  - Expansion vers le MWI, le Mozambique et la Zambie
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Fondation du royaume de Maravi. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Influence des missionnaires européens. Contacts avec les peuples bantous voisins, influence du christianisme.
@@ -81,7 +81,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Chichewa language (nya)
-- CIA World Factbook – Malawi, Mozambique, Zambia
+- CIA World Factbook – MWI, MOZ, Zambia
 - Recensements nationaux
 - Études anthropologiques sur les peuples bantous
 - Malawi National Archives

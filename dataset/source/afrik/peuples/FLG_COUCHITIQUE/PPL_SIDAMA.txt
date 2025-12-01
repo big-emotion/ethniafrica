@@ -4,7 +4,7 @@
 - Famille linguistique : Afro-asiatique – Couchitique
 - Groupe : Couchitique oriental
 - Région historique : Sidama (Éthiopie sud)
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - ID : PPL_SIDAMA
 
 # 1. Ethnies incluses

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Susu (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (sous-groupe du Niger-Congo)
-- Région historique : Guinée, Sierra Leone
-- Pays actuels : Guinée, Sierra Leone
+- Région historique : GIN, SLE
+- Pays actuels : GIN, SLE
 - Identifiant peuple (ID) : PPL_SUSU
 
 # 1. Ethnies incluses dans le peuple

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Balanta (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique
-- Région historique : Guinée-Bissau, Sénégal
-- Pays actuels : Guinée-Bissau, Sénégal
+- Région historique : GNB, SEN
+- Pays actuels : GIN-Bissau, SEN
 - Identifiant peuple (ID) : PPL_BALANTA
 
 # 1. Ethnies incluses dans le peuple

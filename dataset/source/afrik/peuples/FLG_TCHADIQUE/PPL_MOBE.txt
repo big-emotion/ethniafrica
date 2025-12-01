@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
 - Groupe ethno-linguistique : Tchadique
 - Région historique : Cameroun
-- Pays actuels : Cameroun
+- Pays actuels : CMR
 - Identifiant peuple (ID) : PPL_MOBE
 
 # 1. Ethnies incluses dans le peuple

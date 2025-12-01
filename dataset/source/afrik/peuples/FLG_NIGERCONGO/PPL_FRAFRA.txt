@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Frafra (terme utilisé par les Européens), Gurunsi
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Gur
-- Région historique : Nord du Ghana, Burkina Faso
-- Pays actuels : Ghana, Burkina Faso
+- Région historique : Nord du GHA, BFA
+- Pays actuels : GHA, BFA
 - Identifiant peuple (ID) : PPL_FRAFRA
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Frafra language
-- CIA World Factbook – Ghana, Burkina Faso
+- CIA World Factbook – GHA, BFA
 - Recensements nationaux
 - Études anthropologiques sur les peuples gur
 

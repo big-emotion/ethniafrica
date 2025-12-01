@@ -1,0 +1,45 @@
+{
+  "countryName": "Érythrée",
+  "region": "afrique_de_l_est",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "royaumes et chefferies du haut plateau (Tigrinya)",
+        "zones Beja (Bilen",
+        "Hedareb)",
+        "et peuples Afar du littoral"
+      ]
+    },
+    {
+      "period": "Antiquité",
+      "names": ["partie du royaume dAksoum (Axumite Empire)"]
+    },
+    {
+      "period": "Moyen Âge",
+      "names": ["provinces tigrigna et afar liées à lÉthiopie historique"]
+    },
+    {
+      "period": "XVe–XVIIIe siècle",
+      "names": ["entités Beja (Beni Amer", "Hadarib)"]
+    },
+    {
+      "period": "1890",
+      "names": ["Eritrea", "mer Érythrée"]
+    },
+    {
+      "period": "1952",
+      "names": ["Fédération Éthiopie–Érythrée"]
+    },
+    {
+      "period": "1962",
+      "names": ["Annexion → province éthiopienne"]
+    },
+    {
+      "period": "1993",
+      "names": ["Indépendance → State of Eritrea"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

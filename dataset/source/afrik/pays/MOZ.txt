@@ -1,0 +1,256 @@
+# Nom du pays
+- Nom officiel actuel : République du Mozambique (República de Moçambique)
+- Étymologie du nom : Le nom "Mozambique" vient de "Mozambique", nom d'une île au large de la côte nord du pays. L'île a été nommée d'après le sultan Mussa bin Bique (ou Musa al-Biq), qui régnait sur l'île au XVe siècle. Les Portugais ont utilisé le nom de l'île pour désigner toute la colonie.
+- Personne / peuple / administration à l'origine du nom : Le nom "Mozambique" vient de l'île de Mozambique, nommée d'après le sultan Mussa bin Bique (ou Musa al-Biq), qui régnait sur l'île au XVe siècle. Les Portugais ont utilisé le nom de l'île pour désigner toute la colonie portugaise en Afrique de l'Est.
+- Identifiant pays (ISO 3166-1 alpha-3) : MOZ
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Mozambique était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations bantoues vers la région. Développement de chefferies et royaumes locaux. Commerce avec les Arabes et les Swahili (côte). Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Développement des chefferies bantoues (Makua, Tsonga, Shona, Sena, Ndau, Makonde, Yao, Chopi, Tonga). Commerce avec les Arabes et les Swahili (côte, développement des cités-États swahilies). Les Portugais utilisaient le terme "Moçambique" pour désigner la colonie.
+- Colonisation : 1498-1975 : Colonie portugaise du Mozambique (Moçambique). Les Portugais ont établi des comptoirs commerciaux à partir de 1498 (Vasco de Gama). Colonisation progressive, développement de l'économie coloniale (esclavage, plantations, mines). Le nom "Moçambique" est officialisé par les Portugais.
+- Période contemporaine : 1975 : Indépendance (25 juin 1975), proclamation de la République populaire du Mozambique. 1990 : Adoption de la constitution démocratique, République du Mozambique. Le nom "Mozambique" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Chefferies bantoues] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Makua, Tsonga, Shona, Sena, Ndau, Makonde, Yao, Chopi, Tonga
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies bantoues, développement des traditions culturelles, agriculture, commerce régional.
+
+- [Cités-États swahilies] :
+  - Période : Moyen Âge - XIXe siècle
+  - Peuples dominants : Swahili, Arabes, populations bantoues côtières
+  - Centres politiques : Sofala, Quelimane, Angoche, Mozambique (île)
+  - Rôle historique : Cités-États swahilies, commerce avec les Arabes et les Portugais, développement du commerce transocéanique, islamisation côtière.
+
+- [Royaumes Shona] :
+  - Période : Précolonial
+  - Peuples dominants : Shona, Ndau
+  - Centres politiques : Royaumes shona (Zimbabwe, Mozambique)
+  - Rôle historique : Royaumes shona, héritage du Grand Zimbabwe, commerce régional, traditions shona.
+
+- [Colonie portugaise du Mozambique] :
+  - Période : 1498 - 1975
+  - Peuples dominants : Tous les peuples mozambicains sous domination coloniale portugaise
+  - Centres politiques : Lourenço Marques (capitale coloniale, aujourd'hui Maputo), Beira, Nampula
+  - Rôle historique : Colonisation portugaise, développement de l'économie coloniale (esclavage, plantations, mines), résistance des peuples autochtones, mouvements nationalistes (XXe siècle), guerre de libération (1964-1974).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Makua
+  - Auto-appellation (endonyme) : Makua
+  - Exonymes / appellations historiques : Makua (terme utilisé par les Européens), "Macua" (variante)
+  - Identifiant peuple (PPL_) : PPL_MAKUA
+  - Région principale : Nord du Mozambique
+  - Langues parlées : Makua (vmw, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone P) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Makua" est l'auto-appellation. Pas de terme péjoratif connu. Groupe bantou majoritaire au nord du Mozambique.
+
+- Peuple 2 :
+  - Nom : Tsonga
+  - Auto-appellation (endonyme) : Tsonga
+  - Exonymes / appellations historiques : Tsonga (terme utilisé par les Européens), "Shangaan" (terme historique, peut être problématique)
+  - Identifiant peuple (PPL_) : PPL_TSONGA
+  - Région principale : Sud du Mozambique
+  - Langues parlées : Tsonga (tso, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Tsonga" est l'auto-appellation. "Shangaan" est un terme historique qui peut être problématique dans certains contextes. Groupe bantou du sud du Mozambique.
+
+- Peuple 3 :
+  - Nom : Shona
+  - Auto-appellation (endonyme) : Shona
+  - Exonymes / appellations historiques : Shona (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SHONA
+  - Région principale : Centre du Mozambique
+  - Langues parlées : Shona (sna, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Shona" est l'auto-appellation. Pas de terme péjoratif connu. Héritiers des royaumes shona, héritage du Grand Zimbabwe.
+
+- Peuple 4 :
+  - Nom : Sena
+  - Auto-appellation (endonyme) : Sena
+  - Exonymes / appellations historiques : Sena (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SENA_MOZ
+  - Région principale : Centre du Mozambique
+  - Langues parlées : Sena (seh, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone N) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Sena" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Ndau
+  - Auto-appellation (endonyme) : Ndau
+  - Exonymes / appellations historiques : Ndau (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NDAU
+  - Région principale : Centre du Mozambique
+  - Langues parlées : Ndau (ndc, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Ndau" est l'auto-appellation. Pas de terme péjoratif connu. Groupe shona du centre du Mozambique.
+
+- Peuple 6 :
+  - Nom : Makonde
+  - Auto-appellation (endonyme) : Makonde
+  - Exonymes / appellations historiques : Makonde (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MAKONDE_MOZ
+  - Région principale : Nord du Mozambique
+  - Langues parlées : Makonde (kde, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (Zone P) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Makonde" est l'auto-appellation. Pas de terme péjoratif connu. Art réputé (sculptures makonde).
+
+- Peuple 7 :
+  - Nom : Yao
+  - Auto-appellation (endonyme) : Yao
+  - Exonymes / appellations historiques : Yao (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_YAO_MOZ
+  - Région principale : Nord du Mozambique
+  - Langues parlées : Yao (yao, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Yao" est l'auto-appellation. Pas de terme péjoratif connu. Traditions islamiques, commerce régional.
+
+- Peuple 8 :
+  - Nom : Chopi
+  - Auto-appellation (endonyme) : Chopi
+  - Exonymes / appellations historiques : Chopi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_CHOPI
+  - Région principale : Sud du Mozambique
+  - Langues parlées : Chopi (cce, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Chopi" est l'auto-appellation. Pas de terme péjoratif connu. Musique traditionnelle réputée (timbila, xylophone).
+
+- Peuple 9 :
+  - Nom : Tonga
+  - Auto-appellation (endonyme) : Tonga
+  - Exonymes / appellations historiques : Tonga (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TONGA
+  - Région principale : Centre du Mozambique
+  - Langues parlées : Tonga (toi, ISO 639-3), portugais
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Tonga" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 10 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions du Mozambique
+  - Langues parlées : Langues diverses, portugais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Portugais (langue officielle, por), makua (vmw), tsonga (tso), shona (sna), sena (seh), ndau (ndc), makonde (kde), yao (yao), chopi (cce), tonga (toi), swahili (swa, côte)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique du Mozambique. Traditions bantoues : masques, sculptures, musiques traditionnelles, danses traditionnelles. Traditions shona : héritage du Grand Zimbabwe, traditions royales. Traditions makonde : art réputé (sculptures makonde, masques). Traditions chopi : musique traditionnelle réputée (timbila, xylophone). Traditions swahilies (côte) : commerce, islam, architecture swahilie. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. L'art makonde est réputé internationalement.
+- Religions dominantes : Christianisme (catholicisme majoritaire, protestantisme, églises indépendantes africaines), islam (minorité, côte, Yao), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels)
+- Modes de vie : Agriculture (maïs, manioc, riz, cultures vivrières), pêche (côte atlantique, importante source de protéines), élevage (bovins, caprins), commerce et activités urbaines (zones urbaines, Maputo, Beira, Nampula). Urbanisation modérée. Économie basée sur l'agriculture, la pêche, l'exploitation minière (charbon, gaz naturel), et les services. Le Mozambique est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important (gaz naturel, charbon).
+- Organisation sociale : Organisation en chefferies traditionnelles (Makua, Tsonga, Shona, Sena, Ndau, Makonde, Yao, Chopi, Tonga), structures claniques matrilinéaires (majorité des groupes bantous) et patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système matrilinéaire (majorité des groupes bantous).
+- Relations régionales : Relations historiques avec l'Afrique du Sud (commerce, migrations, peuples transfrontaliers, frontière), le Zimbabwe (Shona, commerce, frontière), la Tanzanie (commerce, frontière), le Malawi (commerce, frontière), la Zambie (commerce, frontière). Intégration dans la SADC (Communauté de développement d'Afrique australe). Relations commerciales et culturelles transfrontalières. Le Mozambique est un pays de transit pour le commerce régional.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales.
+- Moyen Âge : Migrations bantoues continues. Développement de structures politiques locales. Commerce avec les Arabes et les Swahili (côte, développement des cités-États swahilies). Islamisation côtière.
+- Époque précoloniale : Développement des chefferies bantoues (Makua, Tsonga, Shona, Sena, Ndau, Makonde, Yao, Chopi, Tonga). Commerce avec les Arabes et les Swahili (côte, cités-États swahilies : Sofala, Quelimane, Angoche, Mozambique). Royaumes shona (héritage du Grand Zimbabwe). Développement des traditions culturelles.
+- Colonisation : 1498 : Arrivée des Portugais (Vasco de Gama). Colonisation portugaise progressive (1498-1975), développement de l'économie coloniale (esclavage, plantations, mines). Résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, guerre de libération (1964-1974), FRELIMO (Front de libération du Mozambique).
+- Lutte pour l'indépendance : 1964-1974 : Guerre de libération menée par le FRELIMO (Front de libération du Mozambique), Samora Machel, Eduardo Mondlane. 1974 : Révolution des Œillets au Portugal, fin de la dictature portugaise. 1975 : Indépendance (25 juin 1975), proclamation de la République populaire du Mozambique. Samora Machel devient premier président.
+- Période post-indépendance : République populaire du Mozambique (1975-1990), régime socialiste, guerre civile (1977-1992, RENAMO contre FRELIMO). 1990 : Adoption de la constitution démocratique, République du Mozambique. 1992 : Accords de paix (Rome), fin de la guerre civile. 1990s-présent : Transition démocratique, élections multipartites, présidence de Joaquim Chissano (1986-2005), Armando Guebuza (2005-2015), Filipe Nyusi (depuis 2015). Défis : pauvreté, développement économique, reconstruction post-guerre, VIH/sida, sécurité (terrorisme dans le nord, depuis 2017). Le Mozambique est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important (gaz naturel, charbon).
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Mozambique
+- SIL Ethnologue – Languages of Mozambique
+- Recensements mozambicains
+- Études anthropologiques sur les peuples du Mozambique
+- Études historiques sur la colonisation portugaise et la guerre de libération
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Makua
+- Identifiant peuple (PPL_) : PPL_MAKUA
+- Population : 7 000 000
+- Pourcentage dans le pays : 23,3%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (Zone P) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : vmw
+
+### Peuple : Tsonga
+- Identifiant peuple (PPL_) : PPL_TSONGA
+- Population : 4 500 000
+- Pourcentage dans le pays : 15,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : tso
+
+### Peuple : Shona
+- Identifiant peuple (PPL_) : PPL_SHONA
+- Population : 3 000 000
+- Pourcentage dans le pays : 10,0%
+- Pourcentage en Afrique : N/A
+- Région : Centre du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : sna
+
+### Peuple : Sena
+- Identifiant peuple (PPL_) : PPL_SENA_MOZ
+- Population : 2 200 000
+- Pourcentage dans le pays : 7,3%
+- Pourcentage en Afrique : N/A
+- Région : Centre du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (Zone N) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : seh
+
+### Peuple : Ndau
+- Identifiant peuple (PPL_) : PPL_NDAU
+- Population : 1 800 000
+- Pourcentage dans le pays : 6,0%
+- Pourcentage en Afrique : N/A
+- Région : Centre du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : ndc
+
+### Peuple : Makonde
+- Identifiant peuple (PPL_) : PPL_MAKONDE_MOZ
+- Population : 1 500 000
+- Pourcentage dans le pays : 5,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (Zone P) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : kde
+
+### Peuple : Yao
+- Identifiant peuple (PPL_) : PPL_YAO_MOZ
+- Population : 800 000
+- Pourcentage dans le pays : 2,7%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : yao
+
+### Peuple : Chopi
+- Identifiant peuple (PPL_) : PPL_CHOPI
+- Population : 600 000
+- Pourcentage dans le pays : 2,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : cce
+
+### Peuple : Tonga
+- Identifiant peuple (PPL_) : PPL_TONGA
+- Population : 500 000
+- Pourcentage dans le pays : 1,7%
+- Pourcentage en Afrique : N/A
+- Région : Centre du Mozambique
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : toi
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 6 600 000
+- Pourcentage dans le pays : 22,0%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Mozambique
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Mozambique 2025 : 30 000 000 (estimations ONU/UNFPA)**
+

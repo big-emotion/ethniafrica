@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone A)
 - Région historique : Nigeria
-- Pays actuels : Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_URHOBO
 
 # 1. Ethnies incluses dans le peuple

@@ -1,0 +1,167 @@
+# Nom du pays
+- Nom officiel actuel : République du Soudan du Sud (Republic of South Sudan)
+- Étymologie du nom : Le nom "Soudan du Sud" provient de sa position géographique par rapport au Soudan, dont il s'est séparé en 2011. Le terme "Soudan" vient de l'arabe "Bilād as-Sūdān" (بلاد السودان), signifiant "pays des Noirs". Le nom "Soudan du Sud" a été officialisé lors de l'indépendance en 2011 pour distinguer le nouveau pays du Soudan (au nord).
+- Personne / peuple / administration à l'origine du nom : Le nom "Soudan du Sud" a été officialisé lors de l'indépendance en 2011 par le gouvernement sud-soudanais, suite au référendum d'autodétermination et à la sécession du Soudan.
+- Identifiant pays (ISO 3166-1 alpha-3) : SSD
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Présence de peuples nilotiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de "Nubie" par les Égyptiens et les Grecs.
+- Moyen Âge : Présence de peuples nilotiques (Dinka, Nuer, Shilluk) dans la région. Développement de chefferies et de royaumes locaux. La région était connue sous le nom de "Bilād as-Sūdān" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.
+- Époque précoloniale : Présence de peuples nilotiques (Dinka, Nuer, Shilluk) et soudaniques centraux (Zande) dans la région. Développement de chefferies et de royaumes locaux (royaume Shilluk, royaume Zande). La région était connue sous le nom de "Soudan du Sud" par les Européens, mais les populations locales avaient leurs propres appellations.
+- Colonisation : 1899-1956 : Partie du condominium anglo-égyptien (Soudan anglo-égyptien). Développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle). Le nom "Soudan du Sud" est utilisé par les colonisateurs pour distinguer la région méridionale du Soudan.
+- Période contemporaine : 1956-2011 : Partie du Soudan indépendant. 2011 : Indépendance (9 juillet 2011), proclamation de la République du Soudan du Sud. Le nom "Soudan du Sud" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume Shilluk] :
+  - Période : XVe siècle - XIXe siècle
+  - Peuples dominants : Shilluk
+  - Centres politiques : Fashoda (Kodok)
+  - Rôle historique : Royaume shilluk puissant, contrôle du commerce dans la région du Nil Blanc, résistance aux Arabes et aux colonisateurs.
+
+- [Royaume Zande] :
+  - Période : XVIIe siècle - XIXe siècle
+  - Peuples dominants : Zande
+  - Centres politiques : Variés selon les périodes
+  - Rôle historique : Royaume zande puissant, contrôle du commerce dans la région, résistance aux colonisateurs.
+
+- [Chefferies Dinka] :
+  - Période : Depuis plusieurs siècles
+  - Peuples dominants : Dinka
+  - Centres politiques : Chefferies territoriales (cieng)
+  - Rôle historique : Organisation politique traditionnelle des Dinka, chefferies territoriales, résistance aux colonisateurs.
+
+- [Chefferies Nuer] :
+  - Période : Depuis plusieurs siècles
+  - Peuples dominants : Nuer
+  - Centres politiques : Groupes d'âge, chefferies traditionnelles
+  - Rôle historique : Organisation politique traditionnelle des Nuer, groupes d'âge, résistance aux colonisateurs.
+
+- [Condominium anglo-égyptien] :
+  - Période : 1899 - 1956
+  - Peuples dominants : Britanniques, Égyptiens, Dinka, Nuer, Shilluk, Zande, autres groupes
+  - Centres politiques : Djouba (capitale administrative)
+  - Rôle historique : Colonisation britannique et égyptienne, développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Dinka
+  - Auto-appellation (endonyme) : Jieng (singulier) / Muonyjang (pluriel)
+  - Exonymes / appellations historiques : "Dinka" (terme utilisé par les Arabes et les colonisateurs), "Denka" (variante)
+  - Identifiant peuple (PPL_) : PPL_DINKA
+  - Région principale : Région du Nil Blanc, marais du Sudd
+  - Langues parlées : Dinka (din, ISO 639-3), anglais, arabe
+  - Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Jieng" / "Muonyjang" sont les auto-appellations. Le terme "Dinka" est utilisé par les Arabes et les colonisateurs. Pas de terme péjoratif connu. Groupe nilotique majoritaire, originaire de la région du Sudd (marais du Nil Blanc).
+
+- Peuple 2 :
+  - Nom : Nuer
+  - Auto-appellation (endonyme) : Naath
+  - Exonymes / appellations historiques : "Nuer" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NUER
+  - Région principale : Région du Nil Blanc, zones marécageuses (Sudd)
+  - Langues parlées : Nuer (nus, ISO 639-3), anglais, arabe
+  - Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Naath" est l'auto-appellation. Le terme "Nuer" est utilisé par les Européens. Pas de terme péjoratif connu. Groupe nilotique, originaire du Soudan du Sud et de l'Éthiopie, dans la région du Nil supérieur.
+
+- Peuple 3 :
+  - Nom : Shilluk
+  - Auto-appellation (endonyme) : Chollo
+  - Exonymes / appellations historiques : "Shilluk" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SHILLUK
+  - Région principale : Région du Nil Blanc (Fashoda, Kodok)
+  - Langues parlées : Shilluk (shk, ISO 639-3), anglais, arabe
+  - Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Chollo" est l'auto-appellation. Le terme "Shilluk" est utilisé par les Européens. Pas de terme péjoratif connu. Groupe nilotique, royaume Shilluk (XVe siècle - XIXe siècle).
+
+- Peuple 4 :
+  - Nom : Zande
+  - Auto-appellation (endonyme) : Azande
+  - Exonymes / appellations historiques : "Zande" (terme utilisé par les Européens), "Azande"
+  - Identifiant peuple (PPL_) : PPL_ZANDE
+  - Région principale : Sud-Ouest du Soudan du Sud
+  - Langues parlées : Zande (zne, ISO 639-3), anglais, arabe
+  - Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Azande" est l'auto-appellation. Le terme "Zande" est utilisé par les Européens. Pas de terme péjoratif connu. Groupe soudanique central, royaume Zande (XVIIe siècle - XIXe siècle).
+
+- Peuple 5 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les régions du Soudan du Sud
+  - Langues parlées : Langues diverses, anglais, arabe
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Anglais (langue officielle, eng), arabe (langue officielle, arb), dinka (din), nuer (nus), shilluk (shk), zande (zne)
+- Traditions culturelles : Traditions nilotiques (Dinka, Nuer, Shilluk) : poésie orale, musiques traditionnelles, danse traditionnelle, artisanat (poterie, tissage), élevage pastoral de bovins, rituels liés au bétail, scarifications. Traditions soudaniques centrales (Zande) : musiques traditionnelles, danse traditionnelle, artisanat, royaume traditionnel. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture sud-soudanaise est riche et préservée, avec une forte tradition orale (poésie).
+- Religions dominantes : Christianisme (majoritaire, environ 60%, principalement catholicisme et anglicanisme), religions traditionnelles africaines (syncrétisme fréquent, environ 30%), islam (minorité, environ 10%)
+- Modes de vie : Élevage pastoral (bovins, mode de vie nomade et semi-nomade), agriculture (sorgho, millet, maïs, cultures vivrières), pêche (Nil Blanc, importante source de protéines), commerce et activités urbaines (zones urbaines, Djouba). Urbanisation limitée. Économie basée sur l'élevage pastoral (secteur majeur), l'agriculture (sorgho, millet), et l'exploitation pétrolière (secteur majeur). Le Soudan du Sud est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole.
+- Organisation sociale : Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (chefferies, groupes d'âge). Structures étatiques modernes (république, mais instabilité politique et conflits récents). Système politique démocratique, mais instabilité politique et conflits récents (guerre civile depuis 2013, État fragile).
+- Relations régionales : Relations avec l'Afrique de l'Est (IGAD, Union africaine), relations avec le Soudan (relations complexes, conflits frontaliers), relations avec l'Europe (Union européenne), relations avec les États-Unis. Le Soudan du Sud est membre de l'IGAD et de l'Union africaine.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence de peuples nilotiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de "Nubie" par les Égyptiens et les Grecs.
+- Moyen Âge : Présence de peuples nilotiques (Dinka, Nuer, Shilluk) dans la région. Développement de chefferies et de royaumes locaux. La région était connue sous le nom de "Bilād as-Sūdān" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.
+- Époque précoloniale : Présence de peuples nilotiques (Dinka, Nuer, Shilluk) et soudaniques centraux (Zande) dans la région. Développement de chefferies et de royaumes locaux (royaume Shilluk, royaume Zande). La région était connue sous le nom de "Soudan du Sud" par les Européens, mais les populations locales avaient leurs propres appellations.
+- Colonisation : 1899-1956 : Partie du condominium anglo-égyptien (Soudan anglo-égyptien), développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle).
+- Lutte pour l'indépendance : 1955-1972 : Première guerre civile soudanaise (rébellion Anyanya), accord d'Addis-Abeba (1972, autonomie régionale). 1983-2005 : Deuxième guerre civile soudanaise (rébellion SPLA/M), accord de paix global (2005, autonomie régionale, référendum d'autodétermination). 2011 : Référendum d'autodétermination (98,83% pour l'indépendance), indépendance (9 juillet 2011), proclamation de la République du Soudan du Sud. Salva Kiir Mayardit devient premier président.
+- Période post-indépendance : République du Soudan du Sud (2011), présidence de Salva Kiir Mayardit (depuis 2011), guerre civile (2013-2020, conflit entre forces gouvernementales et rebelles, violences ethniques, crimes de guerre), accord de paix (2020), transition politique, reconstruction post-conflit. Stabilité politique fragile, État en transition, conflits récents (guerre civile 2013-2020), développement économique (élevage, agriculture, exploitation pétrolière). Le Soudan du Sud est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – South Sudan
+- SIL Ethnologue – Languages of South Sudan
+- Recensements sud-soudanais
+- Études anthropologiques sur les peuples du Soudan du Sud
+- Études historiques sur la colonisation britannique et égyptienne
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Dinka
+- Identifiant peuple (PPL_) : PPL_DINKA
+- Population : 4 500 000
+- Pourcentage dans le pays : 40,0%
+- Pourcentage en Afrique : N/A
+- Région : Région du Nil Blanc, marais du Sudd
+- Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Code ISO 639-3 (langue principale) : din
+
+### Peuple : Nuer
+- Identifiant peuple (PPL_) : PPL_NUER
+- Population : 1 800 000
+- Pourcentage dans le pays : 16,0%
+- Pourcentage en Afrique : N/A
+- Région : Région du Nil Blanc, zones marécageuses (Sudd)
+- Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Code ISO 639-3 (langue principale) : nus
+
+### Peuple : Shilluk
+- Identifiant peuple (PPL_) : PPL_SHILLUK
+- Population : 500 000
+- Pourcentage dans le pays : 4,5%
+- Pourcentage en Afrique : N/A
+- Région : Région du Nil Blanc (Fashoda, Kodok)
+- Famille linguistique : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
+- Code ISO 639-3 (langue principale) : shk
+
+### Peuple : Zande
+- Identifiant peuple (PPL_) : PPL_ZANDE
+- Population : 1 000 000
+- Pourcentage dans le pays : 9,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud-Ouest du Soudan du Sud
+- Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+- Code ISO 639-3 (langue principale) : zne
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 3 400 000
+- Pourcentage dans le pays : 30,5%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions du Soudan du Sud
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Soudan du Sud 2025 : 11 200 000 (estimations ONU/UNFPA)**
+

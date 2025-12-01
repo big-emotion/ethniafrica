@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone M)
 - Région historique : Nord de la Zambie
-- Pays actuels : Zambie, RDC
+- Pays actuels : ZMB, COD
 - Identifiant peuple (ID) : PPL_BEMBA
 
 # 1. Ethnies incluses dans le peuple

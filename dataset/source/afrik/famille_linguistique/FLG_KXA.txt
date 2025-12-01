@@ -41,9 +41,9 @@
   ~20 000–30 000
 
 # 2. Peuples associés
-- Peuple 1 : Ju|’hoansi
-- Peuple 2 : ǂHoan
-- Peuple 3 : Autres groupes ju minoritaires
+- Peuple 1 : Ju|'hoansi (PPL_JUHOANSI)
+- Peuple 2 : ǂHoan (PPL_HOAN)
+- Peuple 3 : Autres groupes ju minoritaires (PPL_SAN)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Ju|’hoansi  

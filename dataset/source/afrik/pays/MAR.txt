@@ -1,0 +1,208 @@
+# Nom du pays
+- Nom officiel actuel : Royaume du Maroc (Al-Mamlaka al-Maġribiyya)
+- Étymologie du nom : Le nom "Maroc" vient de "Marrakech", ancienne capitale du pays. Le nom arabe "Al-Maġrib" (المغرب) signifie "l'Occident" ou "le couchant". Le nom officiel est "Al-Mamlaka al-Maġribiyya" (Royaume du Maroc).
+- Personne / peuple / administration à l'origine du nom : Le nom "Maroc" vient de "Marrakech", fondée par les Almoravides au XIe siècle. Le nom arabe "Al-Maġrib" est utilisé depuis le Moyen Âge.
+- Identifiant pays (ISO 3166-1 alpha-3) : MAR
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Maurétanie (province romaine), royaumes berbères (Maures). Le territoire était peuplé de Berbères (Amazighs).
+- Moyen Âge : Al-Maġrib (nom arabe), Marrakech (capitale, origine du nom "Maroc"). Dynasties berbères (Idrissides, Almoravides, Almohades, Mérinides).
+- Époque précoloniale : Royaume du Maroc (dynasties alaouites depuis 1666), État chérifien. Le nom "Maroc" est utilisé en Europe depuis le Moyen Âge.
+- Colonisation : 1912-1956 : Protectorat français et espagnol. Le Maroc est divisé en zones française et espagnole, avec Tanger comme zone internationale.
+- Période contemporaine : 1956 : Indépendance, royaume du Maroc. Le nom officiel en arabe est "Al-Mamlaka al-Maġribiyya".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes berbères antiques] :
+  - Période : Antiquité
+  - Peuples dominants : Berbères (Amazighs)
+  - Centres politiques : Volubilis, Lixus
+  - Rôle historique : Royaumes berbères indépendants, résistance à Rome, développement du commerce transsaharien.
+
+- [Dynastie idrisside] :
+  - Période : 789-974
+  - Peuples dominants : Berbères, Arabes
+  - Centres politiques : Fès
+  - Rôle historique : Premier État musulman au Maroc, fondation de Fès, islamisation.
+
+- [Dynastie almoravide] :
+  - Période : 1040-1147
+  - Peuples dominants : Berbères sanhadja
+  - Centres politiques : Marrakech
+  - Rôle historique : Empire berbère puissant, unification du Maghreb et de l'Andalousie, fondation de Marrakech.
+
+- [Dynastie almohade] :
+  - Période : 1121-1269
+  - Peuples dominants : Berbères masmouda
+  - Centres politiques : Marrakech, Rabat
+  - Rôle historique : Empire berbère le plus puissant, unification du Maghreb et de l'Andalousie, développement culturel.
+
+- [Dynastie mérinide] :
+  - Période : 1244-1465
+  - Peuples dominants : Berbères zénètes
+  - Centres politiques : Fès
+  - Rôle historique : Dynastie berbère, développement de Fès, architecture mérinide.
+
+- [Dynastie alaouite] :
+  - Période : 1666-présent
+  - Peuples dominants : Tous les peuples marocains
+  - Centres politiques : Fès, Meknès, Rabat
+  - Rôle historique : Dynastie régnante actuelle, unification du Maroc, résistance à la colonisation.
+
+- [Protectorat français et espagnol] :
+  - Période : 1912-1956
+  - Peuples dominants : Tous les peuples marocains sous domination coloniale
+  - Centres politiques : Rabat (zone française), Tétouan (zone espagnole)
+  - Rôle historique : Colonisation française et espagnole, résistance marocaine, mouvement nationaliste.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Arabes du Maroc
+  - Auto-appellation (endonyme) : Al-'Arab (العرب), Maġribiyyūn (مغاربة)
+  - Exonymes / appellations historiques : Arabes, Arabophones, Maures (terme historique)
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Toutes les régions du Maroc, majoritaires dans les plaines et les villes
+  - Langues parlées : Arabe marocain (darija), arabe standard
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Arabes du Maroc sont majoritairement arabisés (métissés avec les Berbères). Le terme "Maure" est historique.
+
+- Peuple 2 :
+  - Nom : Chleuhs
+  - Auto-appellation (endonyme) : Išelḥiyen
+  - Exonymes / appellations historiques : « Chleuh » (terme français ; pas péjoratif mais d'origine extérieure), « Berbère » (terme colonial, considéré problématique)
+  - Identifiant peuple (PPL_) : PPL_CHLEUH
+  - Région principale : Sud-Ouest marocain (Souss, Haut Atlas, Anti-Atlas)
+  - Langues parlées : Tachelhit (shi)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Berbère" est considéré comme problématique. L'auto-appellation est "Išelḥiyen". Les Chleuhs sont héritiers des tribus masmouda historiques.
+
+- Peuple 3 :
+  - Nom : Rifains
+  - Auto-appellation (endonyme) : Imazighen n Arrif
+  - Exonymes / appellations historiques : « Berbères du Rif » (ancien terme européen)
+  - Identifiant peuple (PPL_) : PPL_RIFAIN
+  - Région principale : Rif (Nord du Maroc)
+  - Langues parlées : Tarifit (rif)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Berbère" est considéré comme problématique. L'auto-appellation est "Imazighen n Arrif". Rôle historique dans la République du Rif (1921-1926).
+
+- Peuple 4 :
+  - Nom : Aït Atta
+  - Auto-appellation (endonyme) : Aït Atta
+  - Exonymes / appellations historiques : Aït Atta (nom de la confédération)
+  - Identifiant peuple (PPL_) : PPL_AIT_ATTA
+  - Région principale : Sud-est marocain (confédération Aït Atta)
+  - Langues parlées : Tachelhit (shi)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Confédération amazighe du sud-est marocain.
+
+- Peuple 5 :
+  - Nom : Aït Yafelman
+  - Auto-appellation (endonyme) : Aït Yafelman, Aït Ouirra
+  - Exonymes / appellations historiques : Aït Yafelman (nom de la confédération)
+  - Identifiant peuple (PPL_) : PPL_AIT_HDZ
+  - Région principale : Atlas marocain (confédérations amazighes)
+  - Langues parlées : Tachelhit (shi), tamazight central
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Confédérations amazighes de l'Atlas marocain.
+
+- Peuple 6 :
+  - Nom : Ghomara
+  - Auto-appellation (endonyme) : Ghomara
+  - Exonymes / appellations historiques : Ghomara (nom du groupe)
+  - Identifiant peuple (PPL_) : PPL_GHOMARA
+  - Région principale : Nord-ouest du Rif
+  - Langues parlées : Ghomara (gho)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Petit groupe amazigh du nord-ouest du Rif.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Arabe marocain (ary), arabe standard (ara), tachelhit (shi), tarifit (rif), tamazight central (tzm), français (fra), espagnol (spa)
+- Traditions culturelles : Musique andalouse, chaâbi, ahwach, ahidous, poésie amazighe, artisanat (bijoux, poterie, tissage), architecture traditionnelle (riads, kasbahs), fêtes amazighes (Yennayer)
+- Religions dominantes : Islam sunnite (école malékite majoritaire), soufisme important
+- Modes de vie : Urbanisation croissante, agriculture (plaines), pastoralisme (montagnes), commerce, industrie, tourisme
+- Organisation sociale : Structures familiales traditionnelles, organisation tribale (confédérations), structures étatiques modernes, monarchie constitutionnelle
+- Relations régionales : Relations avec l'Europe (Union européenne), relations avec le Maghreb (Union du Maghreb arabe), relations avec l'Afrique subsaharienne, rôle dans la Ligue arabe
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence berbère depuis la préhistoire, royaumes berbères antiques, domination romaine (Maurétanie), christianisation partielle.
+- Moyen Âge : Conquête arabe (VIIe-VIIIe siècles), islamisation, dynasties berbères (Idrissides, Almoravides, Almohades, Mérinides), développement du commerce transsaharien.
+- Époque précoloniale : Dynastie alaouite (1666-présent), unification du Maroc, résistance aux puissances européennes, développement économique et culturel.
+- Colonisation : Protectorat français et espagnol (1912-1956), résistance marocaine (guerre du Rif, 1921-1926), mouvements nationalistes.
+- Lutte pour l'indépendance : Mouvement nationaliste (Parti de l'Istiqlal), indépendance (1956), récupération des zones espagnoles (1956-1975).
+- Période post-indépendance : Royaume du Maroc (1956), modernisation de l'État, développement économique, printemps arabe (2011), réformes constitutionnelles.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Morocco
+- Ethnologue – Languages of Morocco
+- IRCAM (Institut royal de la culture amazighe)
+- Minority Rights Group – Amazigh in Morocco
+- Wikipedia – Morocco, Berber people, Chleuh, Rifains
+- Recensements marocains
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Arabes du Maroc
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 25 900 000
+- Pourcentage dans le pays : 70,0%
+- Pourcentage en Afrique : 14,4%
+- Région : Toutes les régions
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : ary
+
+### Peuple : Chleuhs
+- Identifiant peuple (PPL_) : PPL_CHLEUH
+- Population : 8 000 000
+- Pourcentage dans le pays : 21,6%
+- Pourcentage en Afrique : 4,4%
+- Région : Sud-Ouest (Souss, Haut Atlas, Anti-Atlas)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : shi
+
+### Peuple : Rifains
+- Identifiant peuple (PPL_) : PPL_RIFAIN
+- Population : 1 200 000
+- Pourcentage dans le pays : 3,2%
+- Pourcentage en Afrique : 0,7%
+- Région : Rif (Nord)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : rif
+
+### Peuple : Aït Atta
+- Identifiant peuple (PPL_) : PPL_AIT_ATTA
+- Population : 500 000
+- Pourcentage dans le pays : 1,4%
+- Pourcentage en Afrique : 0,3%
+- Région : Sud-est
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : shi
+
+### Peuple : Aït Yafelman
+- Identifiant peuple (PPL_) : PPL_AIT_HDZ
+- Population : 800 000
+- Pourcentage dans le pays : 2,2%
+- Pourcentage en Afrique : 0,4%
+- Région : Atlas
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : shi, tzm
+
+### Peuple : Ghomara
+- Identifiant peuple (PPL_) : PPL_GHOMARA
+- Population : 100 000
+- Pourcentage dans le pays : 0,3%
+- Pourcentage en Afrique : 0,06%
+- Région : Nord-ouest du Rif
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : gho
+
+### Peuple : Autres groupes amazighs
+- Identifiant peuple (PPL_) : N/A
+- Population : 500 000
+- Pourcentage dans le pays : 1,3%
+- Pourcentage en Afrique : 0,3%
+- Région : Diverses régions
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : Variées
+
+**Total population Maroc 2025 : 37 000 000 (estimations ONU/UNFPA)**
+

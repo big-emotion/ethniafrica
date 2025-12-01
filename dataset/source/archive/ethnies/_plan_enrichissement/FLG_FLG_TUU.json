@@ -1,0 +1,215 @@
+{
+  "batchId": "FLG_FLG_TUU",
+  "flgId": "FLG_TUU",
+  "totalEthnies": 16,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_GHOWA_G_OWA_DU_NORD",
+      "nom_ethnie": "Gǀowa du Nord",
+      "PPL_ID": "PPL_GHOWA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GHOWA/ETH_GHOWA_G_OWA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=G%C7%80owa%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=G%C7%80owa%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GHOWA_G_OWA_DU_SUD",
+      "nom_ethnie": "Gǀowa du Sud",
+      "PPL_ID": "PPL_GHOWA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GHOWA/ETH_GHOWA_G_OWA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=G%C7%80owa%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=G%C7%80owa%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KATIA_KATIA_DU_NORD",
+      "nom_ethnie": "Katia du Nord",
+      "PPL_ID": "PPL_KATIA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KATIA/ETH_KATIA_KATIA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Katia%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Katia%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KATIA_KATIA_DU_SUD",
+      "nom_ethnie": "Katia du Sud",
+      "PPL_ID": "PPL_KATIA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KATIA/ETH_KATIA_KATIA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Katia%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Katia%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NUU_N_UU_D_AFRIQUE_DU_SUD",
+      "nom_ethnie": "Nǀuu d'Afrique du Sud",
+      "PPL_ID": "PPL_NUU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NUU/ETH_NUU_N_UU_D_AFRIQUE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=N%C7%80uu%20d'Afrique%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=N%C7%80uu%20d'Afrique%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NUU_N_UU_DU_BOTSWANA",
+      "nom_ethnie": "Nǀuu du Botswana",
+      "PPL_ID": "PPL_NUU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NUU/ETH_NUU_N_UU_DU_BOTSWANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=N%C7%80uu%20du%20Botswana",
+        "unesco": "https://www.unesco.org/en/search?q=N%C7%80uu%20du%20Botswana%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TAA_XOO_DU_NORD_BOTSWANA",
+      "nom_ethnie": "ǃXóõ du Nord (Botswana)",
+      "PPL_ID": "PPL_TAA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TAA/ETH_TAA_XOO_DU_NORD_BOTSWANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%83X%C3%B3%C3%B5%20du%20Nord%20(Botswana)",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%83X%C3%B3%C3%B5%20du%20Nord%20(Botswana)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TAA_XOO_DU_SUD_BOTSWANA",
+      "nom_ethnie": "ǃXóõ du Sud (Botswana)",
+      "PPL_ID": "PPL_TAA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TAA/ETH_TAA_XOO_DU_SUD_BOTSWANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%83X%C3%B3%C3%B5%20du%20Sud%20(Botswana)",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%83X%C3%B3%C3%B5%20du%20Sud%20(Botswana)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TAA_XOO_DE_L_EST",
+      "nom_ethnie": "ǃXóõ de l'Est",
+      "PPL_ID": "PPL_TAA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TAA/ETH_TAA_XOO_DE_L_EST.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%83X%C3%B3%C3%B5%20de%20l'Est",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%83X%C3%B3%C3%B5%20de%20l'Est%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TUU_MACRO_XOO_TAA_VIVANT",
+      "nom_ethnie": "ǃXóõ (Taa) - vivant",
+      "PPL_ID": "PPL_TUU_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TUU_MACRO/ETH_TUU_MACRO_XOO_TAA_VIVANT.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%83X%C3%B3%C3%B5%20(Taa)%20-%20vivant",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%83X%C3%B3%C3%B5%20(Taa)%20-%20vivant%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TUU_MACRO_N_UU_EN_DANGER_CRITIQUE",
+      "nom_ethnie": "Nǀuu - en danger critique",
+      "PPL_ID": "PPL_TUU_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TUU_MACRO/ETH_TUU_MACRO_N_UU_EN_DANGER_CRITIQUE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=N%C7%80uu%20-%20en%20danger%20critique",
+        "unesco": "https://www.unesco.org/en/search?q=N%C7%80uu%20-%20en%20danger%20critique%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TUU_MACRO_XAM_ETEINT",
+      "nom_ethnie": "ǀXam - éteint",
+      "PPL_ID": "PPL_TUU_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TUU_MACRO/ETH_TUU_MACRO_XAM_ETEINT.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%80Xam%20-%20%C3%A9teint",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%80Xam%20-%20%C3%A9teint%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WEST_TAA_WEST_TAA_DU_NORD",
+      "nom_ethnie": "West Taa du Nord",
+      "PPL_ID": "PPL_WEST_TAA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WEST_TAA/ETH_WEST_TAA_WEST_TAA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=West%20Taa%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=West%20Taa%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WEST_TAA_WEST_TAA_DU_SUD",
+      "nom_ethnie": "West Taa du Sud",
+      "PPL_ID": "PPL_WEST_TAA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WEST_TAA/ETH_WEST_TAA_WEST_TAA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=West%20Taa%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=West%20Taa%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_XAM_XAM_DU_NORD",
+      "nom_ethnie": "ǀXam du Nord",
+      "PPL_ID": "PPL_XAM",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_XAM/ETH_XAM_XAM_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%80Xam%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%80Xam%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_XAM_XAM_DU_SUD",
+      "nom_ethnie": "ǀXam du Sud",
+      "PPL_ID": "PPL_XAM",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_XAM/ETH_XAM_XAM_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%80Xam%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%80Xam%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

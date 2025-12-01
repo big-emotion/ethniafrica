@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Kwa
 - Région historique : Centre du Ghana
-- Pays actuels : Ghana
+- Pays actuels : GHA
 - Identifiant peuple (ID) : PPL_ASANTE
 
 # 1. Ethnies incluses dans le peuple

@@ -6,8 +6,8 @@
   - « Nilo-hamitique » (terme colonial obsolète et rejeté)
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique (macro-groupe)
-- Région historique : Soudan du Sud, Soudan, Éthiopie, Ouganda, Kenya, Tanzanie
-- Pays actuels : Soudan du Sud, Soudan, Éthiopie, Ouganda, Kenya, Tanzanie
+- Région historique : SSD, SDN, ETH, UGA, KEN, TZA
+- Pays actuels : SDN du Sud, SDN, ETH, UGA, KEN, TZA
 - Identifiant peuple (ID) : PPL_NILOTIQUE_MACRO
 
 # 1. Ethnies incluses dans le peuple

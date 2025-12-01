@@ -49,10 +49,10 @@
   ~350 millions
 
 # 2. Peuples associés
-- Peuple 1 : Kongo
-- Peuple 2 : Luba
-- Peuple 3 : Zoulou
-- (autres : Shona, Tswana, Ganda, Xhosa, Fang, Kikuyu…)
+- Peuple 1 : Kongo (PPL_KONGO)
+- Peuple 2 : Luba (PPL_LUBA)
+- Peuple 3 : Zoulou (PPL_ZULU)
+- (autres : Shona (PPL_SHONA), Tswana (PPL_TSWANA), Ganda (PPL_GANDA), Xhosa (PPL_XHOSA), Fang (PPL_FANG), Kikuyu (PPL_KIKUYU)…)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Kongo

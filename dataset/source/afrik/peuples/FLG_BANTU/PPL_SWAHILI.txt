@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone G)
 - Région historique : Côtes de l'Afrique de l'Est
-- Pays actuels : Kenya, Tanzanie, Mozambique, Comores
+- Pays actuels : KEN, TZA, MOZ, COM
 - Identifiant peuple (ID) : PPL_SWAHILI
 
 # 1. Ethnies incluses dans le peuple

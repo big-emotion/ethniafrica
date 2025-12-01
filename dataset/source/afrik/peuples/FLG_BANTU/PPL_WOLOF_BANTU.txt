@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou
 - Région historique : Afrique de l'Ouest
-- Pays actuels : Sénégal, Gambie, Mauritanie
+- Pays actuels : SEN, GMB, MRT
 - Identifiant peuple (ID) : PPL_WOLOF_BANTU
 
 # 1. Ethnies incluses dans le peuple
@@ -14,10 +14,10 @@
 - Ethnie 3 : Wolof de Mauritanie
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Wolof sont originaires du Sénégal, de la Gambie et de la Mauritanie. Leur présence dans la région remonte à plusieurs siècles. Classification linguistique à vérifier (le wolof est généralement classé dans les langues atlantiques, pas bantoues).
+- Origines anciennes : Les Wolof sont originaires du SEN, de la Gambie et de la Mauritanie. Leur présence dans la région remonte à plusieurs siècles. Classification linguistique à vérifier (le wolof est généralement classé dans les langues atlantiques, pas bantoues).
 - Routes migratoires : 
   - Migrations depuis les régions ouest-africaines
-  - Expansion vers le Sénégal, la Gambie et la Mauritanie
+  - Expansion vers le SEN, la Gambie et la Mauritanie
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples ouest-africains, influence de l'islam.

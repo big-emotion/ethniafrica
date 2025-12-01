@@ -1,5 +1,13 @@
 # Refonte complète du projet Afrik – Prompt pour Cursor
 
+> **⚠️ NOTE IMPORTANTE :** Ce fichier est obsolète et ne correspond pas à la méthodologie AFRIK simplifiée.
+>
+> **Utilisez plutôt :** [`refonte_cursor_prompt_afrik.md`](./refonte_cursor_prompt_afrik.md)
+>
+> Ce fichier est conservé à des fins de référence historique uniquement.
+
+---
+
 Tu es mon assistant développeur dans Cursor.
 
 Le projet **existe déjà** : c’est un site Next.js autour du projet **Afrik / EthniAfrica**.  

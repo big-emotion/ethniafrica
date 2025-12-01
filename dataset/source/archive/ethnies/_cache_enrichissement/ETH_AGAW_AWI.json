@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_AGAW_AWI",
+  "timestamp": "2025-01-25T22:30:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/awng1244",
+      "data": {
+        "langue": "Awi",
+        "code_iso": "agw",
+        "famille": "Afro-Asiatic > Cushitic > Central Cushitic > Agaw",
+        "pays": ["Ethiopia"],
+        "region": "Amhara Region, Ethiopia",
+        "glottocode": "awng1244",
+        "auto_appellation": "Awi"
+      },
+      "timestamp": "2025-01-25T22:30:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/agw",
+      "data": {
+        "langue": "Awi",
+        "code_iso": "agw",
+        "famille": "Afro-Asiatic",
+        "pays": ["Ethiopia"],
+        "auto_appellation": "Awi"
+      },
+      "timestamp": "2025-01-25T22:30:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "agw",
+    "langue_principale": "Awi",
+    "famille_linguistique": "Afro-Asiatic > Cushitic > Central Cushitic > Agaw",
+    "pays_principaux": ["Ethiopia"],
+    "region_generale": "Amhara Region, Ethiopia",
+    "auto_appellation": "Awi"
+  }
+}

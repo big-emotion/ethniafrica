@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Lunda (terme utilisé par les Européens), Balunda
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone K)
-- Région historique : RDC, Angola, Zambie
-- Pays actuels : République démocratique du Congo, Angola, Zambie
+- Région historique : COD, AGO, ZMB
+- Pays actuels : République démocratique du COG, AGO, ZMB
 - Identifiant peuple (ID) : PPL_LUNDA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,10 +14,10 @@
 - Ethnie 3 : Lunda de Zambie
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Lunda sont originaires de la RDC, de l'Angola et de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone K). Formation du royaume Lunda.
+- Origines anciennes : Les Lunda sont originaires de la COD, de l'Angola et de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone K). Formation du royaume Lunda.
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers la RDC, l'Angola et la Zambie
+  - Expansion vers la COD, l'Angola et la Zambie
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Formation du royaume Lunda. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples bantous voisins, influence du christianisme.

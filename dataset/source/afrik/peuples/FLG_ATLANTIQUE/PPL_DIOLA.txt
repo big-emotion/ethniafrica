@@ -2,7 +2,7 @@
 - Nom principal : Diola / Jola
 - Auto-appellation : Joola / Ajamat
 - Famille linguistique : Niger-Congo – Atlantique
-- Région historique : Casamance (Sénégal), Gambie, Guinée-Bissau
+- Région historique : Casamance (Sénégal), GMB, GIN-Bissau
 - Identifiant : PPL_DIOLA
 
 # 1. Ethnies incluses

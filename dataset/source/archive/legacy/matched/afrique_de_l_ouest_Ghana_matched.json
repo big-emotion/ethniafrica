@@ -1,0 +1,492 @@
+{
+  "countryName": "Ghana",
+  "region": "afrique_de_l_ouest",
+  "countryDescription": {
+    "countryName": "Ghana",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "royaumes Akan (Bono",
+          "Akwamu",
+          "Denkyira",
+          "Asante",
+          "Fante",
+          "Akuapem)",
+          "peuples Ga–Dangme",
+          "Guan",
+          "Gur et Mandé"
+        ]
+      },
+      {
+        "period": "Empire du Ghana (Wagadu)",
+        "names": [
+          "IIIe–XIIIe s. — ⚠️ situé en Mauritanie/Mali",
+          "pas dans le Ghana actuel"
+        ]
+      },
+      {
+        "period": "XVe–XIXe siècle",
+        "names": ["présence portugaise", "néerlandaise puis britannique"]
+      },
+      {
+        "period": "Nom colonial",
+        "names": ["Côte-de-l’Or (Gold Coast)"]
+      },
+      {
+        "period": "1957",
+        "names": ["Ghana"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Akan (~47.5 %) : Ashanti, Fante, Akyem, Akuapem, Denkyira.\n- Mole‑Dagbani (~16.6 %) : Dagomba, Mamprusi.",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Akan",
+      "subGroups": [
+        {
+          "name": "Ashanti",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Fante",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Akuapem",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Akyem",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Kwahu",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Bono",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        }
+      ],
+      "population": 15980000,
+      "percentageInCountry": 47,
+      "percentageInAfrica": 1.117483,
+      "languages": ["Twi", "Fante"],
+      "region": "Ashanti, Centre, Est, Côte (Cape Coast, Kumasi)",
+      "sources": ["GSS Ghana", "histoire akan"],
+      "ancientName": "Royaume Ashanti, confédérations akan",
+      "description": "Groupe majoritaire du Ghana, matrilinéaire, puissantes chefferies",
+      "societyType": "Sédentaire agricole & urbaine",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Kwa (Niger-Congo)",
+      "historicalStatus": "Empire Ashanti",
+      "regionalPresence": ["Ghana", "Côte d’Ivoire"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Ashanti",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Fante",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Akuapem",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Akyem",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Kwahu",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        },
+        {
+          "name": "Bono",
+          "population": 2663333,
+          "percentageInCountry": 7.833332352941176,
+          "percentageInAfrica": 0.18624714335663328
+        }
+      ]
+    },
+    {
+      "groupName": "Mole-Dagbani",
+      "subGroups": [
+        {
+          "name": "Dagomba",
+          "population": 1813333,
+          "percentageInCountry": 5.333332352941176,
+          "percentageInAfrica": 0.12680664335661765
+        },
+        {
+          "name": "Mamprusi",
+          "population": 1813333,
+          "percentageInCountry": 5.333332352941176,
+          "percentageInAfrica": 0.12680664335661765
+        },
+        {
+          "name": "Nanumba",
+          "population": 1813333,
+          "percentageInCountry": 5.333332352941176,
+          "percentageInAfrica": 0.12680664335661765
+        }
+      ],
+      "population": 5440000,
+      "percentageInCountry": 16,
+      "percentageInAfrica": 0.38042,
+      "languages": ["Dagbani", "Mampruli"],
+      "region": "Nord (Tamale, Yendi, Gushegu)",
+      "sources": ["Ethnologie nord-ghanéenne"],
+      "ancientName": "Royaumes Dagomba et Mamprusi",
+      "description": "Peuples agricoles et royaux du Nord",
+      "societyType": "Sédentaire",
+      "religion": "Islam + Christianisme",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Royaumes du Nord",
+      "regionalPresence": ["Ghana"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Dagomba",
+          "population": 1813333,
+          "percentageInCountry": 5.333332352941176,
+          "percentageInAfrica": 0.12680664335661765
+        },
+        {
+          "name": "Mamprusi",
+          "population": 1813333,
+          "percentageInCountry": 5.333332352941176,
+          "percentageInAfrica": 0.12680664335661765
+        },
+        {
+          "name": "Nanumba",
+          "population": 1813333,
+          "percentageInCountry": 5.333332352941176,
+          "percentageInAfrica": 0.12680664335661765
+        }
+      ]
+    },
+    {
+      "groupName": "Ewe",
+      "subGroups": [],
+      "population": 4760000,
+      "percentageInCountry": 14,
+      "percentageInAfrica": 0.332867,
+      "languages": ["Ewe"],
+      "region": "Volta, Sud-Est",
+      "sources": ["Histoire ewe"],
+      "ancientName": "Royaumes Anlo Ewe",
+      "description": "Peuple côtier et de savane, transfrontalier",
+      "societyType": "Sédentaire & littorale",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Kwa",
+      "historicalStatus": "Royaumes Anlo",
+      "regionalPresence": ["Ghana", "Togo"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Ga-Dangme",
+      "subGroups": [
+        {
+          "name": "Ga",
+          "population": 1275000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.089161
+        },
+        {
+          "name": "Adangme",
+          "population": 1275000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.089161
+        }
+      ],
+      "population": 2550000,
+      "percentageInCountry": 7.5,
+      "percentageInAfrica": 0.178322,
+      "languages": ["Ga", "Adangme"],
+      "region": "Grand Accra",
+      "sources": ["Anthropologie côtière"],
+      "ancientName": "Chefferies Ga",
+      "description": "Population côtière de la capitale",
+      "societyType": "Urbaine & littorale",
+      "religion": "Christianisme",
+      "linguisticFamily": "Kwa",
+      "historicalStatus": "Chefferies Ga",
+      "regionalPresence": ["Ghana"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Ga",
+          "population": 1275000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.089161
+        },
+        {
+          "name": "Adangme",
+          "population": 1275000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.089161
+        }
+      ]
+    },
+    {
+      "groupName": "Guan",
+      "subGroups": [
+        {
+          "name": "Guan",
+          "population": 850000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0594405
+        },
+        {
+          "name": "sous-groupes divers",
+          "population": 850000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0594405
+        }
+      ],
+      "population": 1700000,
+      "percentageInCountry": 5,
+      "percentageInAfrica": 0.118881,
+      "languages": ["Langues guan"],
+      "region": "Centre-Est",
+      "sources": ["Sources ethnologiques"],
+      "ancientName": "Chefferies Guan",
+      "description": "Peuples anciens du Ghana central",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Kwa / Gur",
+      "historicalStatus": "Chefferies Guan",
+      "regionalPresence": ["Ghana"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Guan",
+          "population": 850000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0594405
+        },
+        {
+          "name": "sous-groupes divers",
+          "population": 850000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0594405
+        }
+      ]
+    },
+    {
+      "groupName": "Gurma / Bissa",
+      "subGroups": [
+        {
+          "name": "Gurma",
+          "population": 510000,
+          "percentageInCountry": 1.5,
+          "percentageInAfrica": 0.0356645
+        },
+        {
+          "name": "Bissa",
+          "population": 510000,
+          "percentageInCountry": 1.5,
+          "percentageInAfrica": 0.0356645
+        }
+      ],
+      "population": 1020000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0.071329,
+      "languages": ["Gurma", "Bissa"],
+      "region": "Nord-Est",
+      "sources": ["Anthropologie Gur"],
+      "ancientName": "Royaumes Gurma",
+      "description": "Populations transfrontalières Burkina–Togo–Ghana",
+      "societyType": "Sédentaire",
+      "religion": "Islam + traditions",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Royaumes Gurma",
+      "regionalPresence": ["Burkina Faso", "Ghana", "Togo"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Gurma",
+          "population": 510000,
+          "percentageInCountry": 1.5,
+          "percentageInAfrica": 0.0356645
+        },
+        {
+          "name": "Bissa",
+          "population": 510000,
+          "percentageInCountry": 1.5,
+          "percentageInAfrica": 0.0356645
+        }
+      ]
+    },
+    {
+      "groupName": "Mamprusi",
+      "subGroups": [],
+      "population": 680000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.047552,
+      "languages": ["Mampruli"],
+      "region": "Nord",
+      "sources": ["Ethnologie ghanéenne"],
+      "ancientName": "Royaume Mamprusi",
+      "description": "Peuple royal du Nord",
+      "societyType": "Sédentaire",
+      "religion": "Islam",
+      "linguisticFamily": "Gur",
+      "historicalStatus": "Royaume Mamprusi",
+      "regionalPresence": ["Ghana"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Keta & Nzema",
+      "subGroups": [
+        {
+          "name": "Nzema",
+          "population": 283333,
+          "percentageInCountry": 0.8333323529411765,
+          "percentageInAfrica": 0.01981364335647059
+        },
+        {
+          "name": "Ahanta",
+          "population": 283333,
+          "percentageInCountry": 0.8333323529411765,
+          "percentageInAfrica": 0.01981364335647059
+        },
+        {
+          "name": "autres côtiers",
+          "population": 283333,
+          "percentageInCountry": 0.8333323529411765,
+          "percentageInAfrica": 0.01981364335647059
+        }
+      ],
+      "population": 850000,
+      "percentageInCountry": 2.5,
+      "percentageInAfrica": 0.059441,
+      "languages": ["Nzema", "Ahanta"],
+      "region": "Ouest (Axim, Ankobra)",
+      "sources": ["Sources littorales"],
+      "ancientName": "Chefferies côtières ouest",
+      "description": "Pêcheurs & agriculteurs côtiers",
+      "societyType": "Littorale",
+      "religion": "Christianisme",
+      "linguisticFamily": "Kwa",
+      "historicalStatus": "Chefferies Nzema",
+      "regionalPresence": ["Ghana"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Nzema",
+          "population": 283333,
+          "percentageInCountry": 0.8333323529411765,
+          "percentageInAfrica": 0.01981364335647059
+        },
+        {
+          "name": "Ahanta",
+          "population": 283333,
+          "percentageInCountry": 0.8333323529411765,
+          "percentageInAfrica": 0.01981364335647059
+        },
+        {
+          "name": "autres côtiers",
+          "population": 283333,
+          "percentageInCountry": 0.8333323529411765,
+          "percentageInAfrica": 0.01981364335647059
+        }
+      ]
+    },
+    {
+      "groupName": "Autochtones forestiers",
+      "subGroups": [
+        {
+          "name": "Abron forestiers",
+          "population": 85000,
+          "percentageInCountry": 0.25,
+          "percentageInAfrica": 0.005944
+        },
+        {
+          "name": "petits groupes",
+          "population": 85000,
+          "percentageInCountry": 0.25,
+          "percentageInAfrica": 0.005944
+        }
+      ],
+      "population": 170000,
+      "percentageInCountry": 0.5,
+      "percentageInAfrica": 0.011888,
+      "languages": ["Diverses langues"],
+      "region": "Forêt de l’Ouest",
+      "sources": ["Anthropologie"],
+      "ancientName": "Chefferies locales anciennes",
+      "description": "Groupes de forêt tropicale",
+      "societyType": "Forestière",
+      "religion": "Traditions",
+      "linguisticFamily": "Kwa",
+      "historicalStatus": "Local",
+      "regionalPresence": ["Ghana"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Abron forestiers",
+          "population": 85000,
+          "percentageInCountry": 0.25,
+          "percentageInAfrica": 0.005944
+        },
+        {
+          "name": "petits groupes",
+          "population": 85000,
+          "percentageInCountry": 0.25,
+          "percentageInAfrica": 0.005944
+        }
+      ]
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 340000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.023776,
+      "languages": ["Divers"],
+      "region": "National",
+      "sources": ["Estimations diverses"],
+      "ancientName": "Divers royaumes",
+      "description": "Communautés variées",
+      "societyType": "Variable",
+      "religion": "Christianisme / Islam / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Ghana"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

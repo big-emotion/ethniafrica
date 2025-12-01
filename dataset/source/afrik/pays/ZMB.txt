@@ -1,0 +1,168 @@
+# Nom du pays
+- Nom officiel actuel : République de Zambie (Republic of Zambia)
+- Étymologie du nom : Le nom "Zambie" vient du fleuve Zambèze (Zambezi), qui traverse le pays. Le nom a été adopté lors de l'indépendance en 1964, remplaçant "Rhodésie du Nord" (Northern Rhodesia).
+- Personne / peuple / administration à l'origine du nom : Le nom "Zambie" a été proposé par les nationalistes zambiens lors de l'indépendance. Le fleuve Zambèze tire son nom des peuples locaux (probablement d'origine bantoue).
+- Identifiant pays (ISO 3166-1 alpha-3) : ZMB
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de groupes bantous et khoïsan. Pas d'entité politique unifiée.
+- Moyen Âge : Présence de royaumes bantous (royaume Lunda, royaume Bemba, royaume Barotseland). Migrations bantoues depuis le nord.
+- Époque précoloniale : Royaumes et chefferies bantous (Barotseland, royaume Bemba, royaume Lunda). Le territoire était divisé entre plusieurs entités politiques.
+- Colonisation : 1890-1964 : Rhodésie du Nord (Northern Rhodesia), protectorat britannique puis colonie britannique. Le nom "Rhodésie" vient de Cecil Rhodes, colonisateur britannique.
+- Période contemporaine : 1964 : Indépendance, République de Zambie. Le nom "Zambie" remplace "Rhodésie du Nord".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume Barotseland] :
+  - Période : XVIIIe siècle - 1964
+  - Peuples dominants : Lozi
+  - Centres politiques : Lealui, Mongu
+  - Rôle historique : Royaume puissant de l'ouest de la Zambie, protectorat britannique séparé, intégration à la Zambie en 1964.
+
+- [Royaume Bemba] :
+  - Période : XVIIIe siècle - XIXe siècle
+  - Peuples dominants : Bemba
+  - Centres politiques : Kasama, régions du nord
+  - Rôle historique : Royaume bemba structuré, dirigé par le Chitimukulu, expansion territoriale, résistance à la colonisation.
+
+- [Empire Lunda] :
+  - Période : XVIIe siècle - XIXe siècle
+  - Peuples dominants : Lunda
+  - Centres politiques : Régions du nord-ouest (extension depuis l'Angola et la RDC)
+  - Rôle historique : Empire lunda influent, commerce transsaharien, relations avec les Portugais.
+
+- [Chefferies Tonga] :
+  - Période : Précoloniale - coloniale
+  - Peuples dominants : Tonga
+  - Centres politiques : Vallée du Zambèze, Southern Province
+  - Rôle historique : Chefferies décentralisées, déplacements forcés lors de la construction du barrage de Kariba (années 1950).
+
+- [Rhodésie du Nord] :
+  - Période : 1890-1964
+  - Peuples dominants : Tous les peuples zambiens sous domination coloniale
+  - Centres politiques : Livingstone (capitale initiale), puis Lusaka (depuis 1935)
+  - Rôle historique : Colonisation britannique, exploitation minière (cuivre), mouvements nationalistes, indépendance (1964).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Bemba
+  - Auto-appellation (endonyme) : Aɓemba
+  - Exonymes / appellations historiques : BaBemba (forme bantoue)
+  - Identifiant peuple (PPL_) : PPL_BEMBA
+  - Région principale : Nord de la Zambie (Northern Province, Luapula Province, Copperbelt)
+  - Langues parlées : Bemba (bem)
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Bemba" est l'auto-appellation. Le peuple bemba a un royaume traditionnel dirigé par le Chitimukulu.
+
+- Peuple 2 :
+  - Nom : Tonga
+  - Auto-appellation (endonyme) : Batonga (sg. Mutonga)
+  - Exonymes / appellations historiques : Tonga (forme générique), BaTonga (pluriel bantou)
+  - Identifiant peuple (PPL_) : PPL_TONGA_ZAMBIA
+  - Région principale : Sud de la Zambie (Southern Province, vallée du Zambèze)
+  - Langues parlées : Tonga (toi)
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tonga" est largement accepté. Les Tonga ont été déplacés lors de la construction du barrage de Kariba.
+
+- Peuple 3 :
+  - Nom : Lozi
+  - Auto-appellation (endonyme) : Lozi
+  - Exonymes / appellations historiques : Lozi (terme utilisé par les Européens), Barotse (terme historique)
+  - Identifiant peuple (PPL_) : PPL_LOZI
+  - Région principale : Ouest de la Zambie (Western Province, ancien Barotseland)
+  - Langues parlées : Lozi (loz)
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Lozi" est l'auto-appellation. Les Lozi ont un royaume traditionnel (Barotseland) avec le roi (Litunga).
+
+- Peuple 4 :
+  - Nom : Chewa / Nyanja
+  - Auto-appellation (endonyme) : Achewa
+  - Exonymes / appellations historiques : Cewa, Nyanja (terme utilisé au Malawi et en Zambie)
+  - Identifiant peuple (PPL_) : PPL_CHEWA
+  - Région principale : Est de la Zambie (Eastern Province, Central Province)
+  - Langues parlées : Chewa / Nyanja (nya)
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Chewa" est l'auto-appellation. "Nyanja" signifie "lac" et fait référence au lac Malawi. Les Chewa sont principalement au Malawi mais ont une présence importante en Zambie.
+
+- Peuple 5 :
+  - Nom : Lunda
+  - Auto-appellation (endonyme) : Lunda
+  - Exonymes / appellations historiques : Lunda (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LUNDA
+  - Région principale : Nord-ouest de la Zambie (North-Western Province)
+  - Langues parlées : Lunda (lun)
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Lunda" est l'auto-appellation. Les Lunda font partie de l'ancien empire Lunda qui s'étendait sur l'Angola, la RDC et la Zambie.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Bemba (bem), Tonga (toi), Lozi (loz), Chewa/Nyanja (nya), Lunda (lun), anglais (eng)
+- Traditions culturelles : Musique traditionnelle (tamtams, polyrythmes), danses traditionnelles, masques rituels (Gule Wamkulu chez les Chewa), artisanat (poterie, tissage, sculpture), cérémonies royales (Barotseland, royaume Bemba)
+- Religions dominantes : Christianisme (protestantisme majoritaire, catholicisme), croyances traditionnelles (syncrétisme)
+- Modes de vie : Agriculture (maïs, millet, sorgho), élevage, exploitation minière (cuivre), urbanisation croissante, commerce
+- Organisation sociale : Structures traditionnelles (royaumes, chefferies), systèmes matrilinéaires (Bemba, Chewa) et patrilinéaires (Lozi), structures étatiques modernes, république présidentielle
+- Relations régionales : Relations avec les pays d'Afrique australe (SADC), échanges commerciaux, rôle dans la région des Grands Lacs
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence humaine depuis la préhistoire, migrations bantoues depuis le nord, établissement de royaumes et chefferies.
+- Moyen Âge : Formation de royaumes bantous (Barotseland, royaume Bemba, empire Lunda), commerce transsaharien, contacts avec les Portugais.
+- Époque précoloniale : Royaumes et chefferies bantous, expansion territoriale, résistance aux incursions extérieures.
+- Colonisation : Protectorat britannique (1890), Rhodésie du Nord (1924), exploitation minière (cuivre), mouvements nationalistes (années 1950-1960).
+- Lutte pour l'indépendance : Mouvement nationaliste (United National Independence Party - UNIP, Kenneth Kaunda), indépendance (24 octobre 1964).
+- Période post-indépendance : République de Zambie (1964), socialisme zambien (1964-1991), multipartisme (1991), développement économique basé sur le cuivre, défis économiques et politiques.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Zambia
+- Ethnologue – Languages of Zambia
+- Zambia Statistics Agency
+- Wikipedia – Zambia, Bemba people, Lozi people, Tonga people
+- Études anthropologiques sur les peuples bantous de Zambie
+- Recensements zambiens
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Bemba
+- Identifiant peuple (PPL_) : PPL_BEMBA
+- Population : 4 500 000
+- Pourcentage dans le pays : 20,5%
+- Pourcentage en Afrique : 2,5%
+- Région : Nord (Northern Province, Luapula, Copperbelt)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : bem
+
+### Peuple : Tonga
+- Identifiant peuple (PPL_) : PPL_TONGA_ZAMBIA
+- Population : 1 200 000
+- Pourcentage dans le pays : 5,5%
+- Pourcentage en Afrique : 0,7%
+- Région : Sud (Southern Province, vallée du Zambèze)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : toi
+
+### Peuple : Lozi
+- Identifiant peuple (PPL_) : PPL_LOZI
+- Population : 600 000
+- Pourcentage dans le pays : 2,7%
+- Pourcentage en Afrique : 0,3%
+- Région : Ouest (Western Province, Barotseland)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : loz
+
+### Peuple : Chewa / Nyanja
+- Identifiant peuple (PPL_) : PPL_CHEWA
+- Population : 1 100 000
+- Pourcentage dans le pays : 5,0%
+- Pourcentage en Afrique : 0,6%
+- Région : Est (Eastern Province, Central Province)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : nya
+
+### Peuple : Lunda
+- Identifiant peuple (PPL_) : PPL_LUNDA
+- Population : 500 000
+- Pourcentage dans le pays : 2,3%
+- Pourcentage en Afrique : 0,3%
+- Région : Nord-ouest (North-Western Province)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : lun
+
+**Total population Zambie 2025 : 22 000 000 (estimations ONU/UNFPA)**
+

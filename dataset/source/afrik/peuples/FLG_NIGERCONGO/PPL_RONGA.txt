@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Ronga (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Mozambique, Afrique du Sud
-- Pays actuels : Mozambique, Afrique du Sud
+- Région historique : MOZ, Afrique du Sud
+- Pays actuels : MOZ, Afrique du Sud
 - Identifiant peuple (ID) : PPL_RONGA
 
 # 1. Ethnies incluses dans le peuple

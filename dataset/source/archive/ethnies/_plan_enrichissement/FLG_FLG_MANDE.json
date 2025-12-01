@@ -1,0 +1,436 @@
+{
+  "batchId": "FLG_FLG_MANDE",
+  "flgId": "FLG_MANDE",
+  "totalEthnies": 33,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_BASSA_BASSA_DE_BUCHANAN",
+      "nom_ethnie": "Bassa de Buchanan",
+      "PPL_ID": "PPL_BASSA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BASSA/ETH_BASSA_BASSA_DE_BUCHANAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bassa%20de%20Buchanan",
+        "unesco": "https://www.unesco.org/en/search?q=Bassa%20de%20Buchanan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BASSA_BASSA_DE_LA_COTE_SUD",
+      "nom_ethnie": "Bassa de la côte sud",
+      "PPL_ID": "PPL_BASSA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BASSA/ETH_BASSA_BASSA_DE_LA_COTE_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bassa%20de%20la%20c%C3%B4te%20sud",
+        "unesco": "https://www.unesco.org/en/search?q=Bassa%20de%20la%20c%C3%B4te%20sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GBELE_GBELE_DU_NORD",
+      "nom_ethnie": "Gbélé du Nord",
+      "PPL_ID": "PPL_GBELE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GBELE/ETH_GBELE_GBELE_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gb%C3%A9l%C3%A9%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Gb%C3%A9l%C3%A9%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_GBELE_GBELE_DU_SUD",
+      "nom_ethnie": "Gbélé du Sud",
+      "PPL_ID": "PPL_GBELE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_GBELE/ETH_GBELE_GBELE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Gb%C3%A9l%C3%A9%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Gb%C3%A9l%C3%A9%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDE_MACRO_MALINKE_MANDINKA",
+      "nom_ethnie": "Malinké / Mandinka",
+      "PPL_ID": "PPL_MANDE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDE_MACRO/ETH_MANDE_MACRO_MALINKE_MANDINKA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Malink%C3%A9%20%2F%20Mandinka",
+        "unesco": "https://www.unesco.org/en/search?q=Malink%C3%A9%20%2F%20Mandinka%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDE_MACRO_BAMBARA",
+      "nom_ethnie": "Bambara",
+      "PPL_ID": "PPL_MANDE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDE_MACRO/ETH_MANDE_MACRO_BAMBARA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bambara",
+        "unesco": "https://www.unesco.org/en/search?q=Bambara%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDE_MACRO_DIOULA",
+      "nom_ethnie": "Dioula",
+      "PPL_ID": "PPL_MANDE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDE_MACRO/ETH_MANDE_MACRO_DIOULA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Dioula",
+        "unesco": "https://www.unesco.org/en/search?q=Dioula%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDE_MACRO_SONINKE",
+      "nom_ethnie": "Soninké",
+      "PPL_ID": "PPL_MANDE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDE_MACRO/ETH_MANDE_MACRO_SONINKE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sonink%C3%A9",
+        "unesco": "https://www.unesco.org/en/search?q=Sonink%C3%A9%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDE_MACRO_KPELLE",
+      "nom_ethnie": "Kpelle",
+      "PPL_ID": "PPL_MANDE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDE_MACRO/ETH_MANDE_MACRO_KPELLE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kpelle",
+        "unesco": "https://www.unesco.org/en/search?q=Kpelle%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDE_MACRO_LOBI",
+      "nom_ethnie": "Lobi",
+      "PPL_ID": "PPL_MANDE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDE_MACRO/ETH_MANDE_MACRO_LOBI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Lobi",
+        "unesco": "https://www.unesco.org/en/search?q=Lobi%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAMBARA_BAMANA_DE_SEGOU",
+      "nom_ethnie": "Bamana de Ségou",
+      "PPL_ID": "PPL_BAMBARA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAMBARA/ETH_BAMBARA_BAMANA_DE_SEGOU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bamana%20de%20S%C3%A9gou",
+        "unesco": "https://www.unesco.org/en/search?q=Bamana%20de%20S%C3%A9gou%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAMBARA_BAMANA_DE_KOULIKORO",
+      "nom_ethnie": "Bamana de Koulikoro",
+      "PPL_ID": "PPL_BAMBARA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAMBARA/ETH_BAMBARA_BAMANA_DE_KOULIKORO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bamana%20de%20Koulikoro",
+        "unesco": "https://www.unesco.org/en/search?q=Bamana%20de%20Koulikoro%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAMBARA_BAMANA_DE_DIOILA",
+      "nom_ethnie": "Bamana de Dioïla",
+      "PPL_ID": "PPL_BAMBARA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAMBARA/ETH_BAMBARA_BAMANA_DE_DIOILA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bamana%20de%20Dio%C3%AFla",
+        "unesco": "https://www.unesco.org/en/search?q=Bamana%20de%20Dio%C3%AFla%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_JAHANKA_FAMILLES_LIGNAGERES_ISLAMIQUES",
+      "nom_ethnie": "Familles lignagères islamiques",
+      "PPL_ID": "PPL_JAHANKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_JAHANKA/ETH_JAHANKA_FAMILLES_LIGNAGERES_ISLAMIQUES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Familles%20lignag%C3%A8res%20islamiques",
+        "unesco": "https://www.unesco.org/en/search?q=Familles%20lignag%C3%A8res%20islamiques%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KONO_KONO_DU_NORD_EST",
+      "nom_ethnie": "Kono du Nord-Est",
+      "PPL_ID": "PPL_KONO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KONO/ETH_KONO_KONO_DU_NORD_EST.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kono%20du%20Nord-Est",
+        "unesco": "https://www.unesco.org/en/search?q=Kono%20du%20Nord-Est%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KONO_KONO_DU_SUD_EST",
+      "nom_ethnie": "Kono du Sud-Est",
+      "PPL_ID": "PPL_KONO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KONO/ETH_KONO_KONO_DU_SUD_EST.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kono%20du%20Sud-Est",
+        "unesco": "https://www.unesco.org/en/search?q=Kono%20du%20Sud-Est%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KPANA_KPANA_DU_NORD",
+      "nom_ethnie": "Kpana du Nord",
+      "PPL_ID": "PPL_KPANA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KPANA/ETH_KPANA_KPANA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kpana%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Kpana%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KPANA_KPANA_DU_SUD",
+      "nom_ethnie": "Kpana du Sud",
+      "PPL_ID": "PPL_KPANA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KPANA/ETH_KPANA_KPANA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kpana%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Kpana%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MALINKE_MANDINKA_DU_SENEGAL_ET_DE_LA_GAMBIE",
+      "nom_ethnie": "Mandinka du Sénégal et de la Gambie",
+      "PPL_ID": "PPL_MALINKE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MALINKE/ETH_MALINKE_MANDINKA_DU_SENEGAL_ET_DE_LA_GAMBIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mandinka%20du%20S%C3%A9n%C3%A9gal%20et%20de%20la%20Gambie",
+        "unesco": "https://www.unesco.org/en/search?q=Mandinka%20du%20S%C3%A9n%C3%A9gal%20et%20de%20la%20Gambie%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MALINKE_MALINKE_DU_BURKINA_FASO",
+      "nom_ethnie": "Malinké du Burkina Faso",
+      "PPL_ID": "PPL_MALINKE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MALINKE/ETH_MALINKE_MALINKE_DU_BURKINA_FASO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Malink%C3%A9%20du%20Burkina%20Faso",
+        "unesco": "https://www.unesco.org/en/search?q=Malink%C3%A9%20du%20Burkina%20Faso%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDINGUE_MANDINKA_DE_GAMBIE",
+      "nom_ethnie": "Mandinka de Gambie",
+      "PPL_ID": "PPL_MANDINGUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDINGUE/ETH_MANDINGUE_MANDINKA_DE_GAMBIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mandinka%20de%20Gambie",
+        "unesco": "https://www.unesco.org/en/search?q=Mandinka%20de%20Gambie%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDINGUE_MANDINKA_DE_CASAMANCE",
+      "nom_ethnie": "Mandinka de Casamance",
+      "PPL_ID": "PPL_MANDINGUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDINGUE/ETH_MANDINGUE_MANDINKA_DE_CASAMANCE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mandinka%20de%20Casamance",
+        "unesco": "https://www.unesco.org/en/search?q=Mandinka%20de%20Casamance%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANDINGUE_MANDINKA_DU_MALI",
+      "nom_ethnie": "Mandinka du Mali",
+      "PPL_ID": "PPL_MANDINGUE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANDINGUE/ETH_MANDINGUE_MANDINKA_DU_MALI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mandinka%20du%20Mali",
+        "unesco": "https://www.unesco.org/en/search?q=Mandinka%20du%20Mali%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MARAKA_MARAKA_DU_MALI",
+      "nom_ethnie": "Maraka du Mali",
+      "PPL_ID": "PPL_MARAKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MARAKA/ETH_MARAKA_MARAKA_DU_MALI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Maraka%20du%20Mali",
+        "unesco": "https://www.unesco.org/en/search?q=Maraka%20du%20Mali%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MARAKA_MARAKA_DU_SENEGAL",
+      "nom_ethnie": "Maraka du Sénégal",
+      "PPL_ID": "PPL_MARAKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MARAKA/ETH_MARAKA_MARAKA_DU_SENEGAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Maraka%20du%20S%C3%A9n%C3%A9gal",
+        "unesco": "https://www.unesco.org/en/search?q=Maraka%20du%20S%C3%A9n%C3%A9gal%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MENDE_MENDE_DU_SUD",
+      "nom_ethnie": "Mende du Sud",
+      "PPL_ID": "PPL_MENDE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MENDE/ETH_MENDE_MENDE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mende%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Mende%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MENDE_MENDE_DU_NORD",
+      "nom_ethnie": "Mende du Nord",
+      "PPL_ID": "PPL_MENDE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MENDE/ETH_MENDE_MENDE_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mende%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Mende%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONINKE_SONINKE_DU_GAJAAGA",
+      "nom_ethnie": "Soninké du Gajaaga",
+      "PPL_ID": "PPL_SONINKE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONINKE/ETH_SONINKE_SONINKE_DU_GAJAAGA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sonink%C3%A9%20du%20Gajaaga",
+        "unesco": "https://www.unesco.org/en/search?q=Sonink%C3%A9%20du%20Gajaaga%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONINKE_SONINKE_DU_WAALO",
+      "nom_ethnie": "Soninké du Waalo",
+      "PPL_ID": "PPL_SONINKE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONINKE/ETH_SONINKE_SONINKE_DU_WAALO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sonink%C3%A9%20du%20Waalo",
+        "unesco": "https://www.unesco.org/en/search?q=Sonink%C3%A9%20du%20Waalo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONINKE_SONINKE_DU_GUIDIMAKHA",
+      "nom_ethnie": "Soninké du Guidimakha",
+      "PPL_ID": "PPL_SONINKE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONINKE/ETH_SONINKE_SONINKE_DU_GUIDIMAKHA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sonink%C3%A9%20du%20Guidimakha",
+        "unesco": "https://www.unesco.org/en/search?q=Sonink%C3%A9%20du%20Guidimakha%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SUSU_SUSU_DU_LITTORAL",
+      "nom_ethnie": "Susu du littoral",
+      "PPL_ID": "PPL_SUSU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SUSU/ETH_SUSU_SUSU_DU_LITTORAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Susu%20du%20littoral",
+        "unesco": "https://www.unesco.org/en/search?q=Susu%20du%20littoral%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_VAI_VAI_DE_LIBERIA_GRAND_CAPE_MOUNT",
+      "nom_ethnie": "Vai de Liberia (Grand Cape Mount)",
+      "PPL_ID": "PPL_VAI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_VAI/ETH_VAI_VAI_DE_LIBERIA_GRAND_CAPE_MOUNT.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Vai%20de%20Liberia%20(Grand%20Cape%20Mount)",
+        "unesco": "https://www.unesco.org/en/search?q=Vai%20de%20Liberia%20(Grand%20Cape%20Mount)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_VAI_VAI_DE_SIERRA_LEONE_PUJEHUN_ZIMMI",
+      "nom_ethnie": "Vai de Sierra Leone (Pujehun / Zimmi)",
+      "PPL_ID": "PPL_VAI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_VAI/ETH_VAI_VAI_DE_SIERRA_LEONE_PUJEHUN_ZIMMI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Vai%20de%20Sierra%20Leone%20(Pujehun%20%2F%20Zimmi)",
+        "unesco": "https://www.unesco.org/en/search?q=Vai%20de%20Sierra%20Leone%20(Pujehun%20%2F%20Zimmi)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

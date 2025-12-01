@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Rundi (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone J)
-- Région historique : Burundi, RDC, Tanzanie
-- Pays actuels : Burundi, RDC, Tanzanie
+- Région historique : BDI, COD, TZA
+- Pays actuels : BDI, COD, TZA
 - Identifiant peuple (ID) : PPL_RUNDI
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Autres locuteurs rundi
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les locuteurs rundi sont originaires de la région du Burundi, de la RDC et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).
+- Origines anciennes : Les locuteurs rundi sont originaires de la région du BDI, de la RDC et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Burundi, la RDC et la Tanzanie
+  - Expansion vers le BDI, la RDC et la Tanzanie
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une langue commune (rundi).
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.
@@ -35,7 +35,7 @@
 - Dialectes : 
   - Dialectes régionaux
   - Variantes entre pays
-- Rôle véhiculaire : Le rundi est parlé par de nombreux locuteurs au Burundi, en RDC et en Tanzanie. Le français, le swahili et d'autres langues sont également utilisés selon les pays.
+- Rôle véhiculaire : Le rundi est parlé par de nombreux locuteurs au BDI, en RDC et en Tanzanie. Le français, le swahili et d'autres langues sont également utilisés selon les pays.
 
 # 5. Culture, rites et traditions
 - Rites majeurs : 

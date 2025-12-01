@@ -41,9 +41,9 @@
   ~2 000–3 000
 
 # 2. Peuples associés
-- Peuple 1 : ǃXóõ (Taa)
-- Peuple 2 : ǀXam (ancien peuple d’Afrique du Sud)
-- Peuple 3 : Sous-groupes du Kalahari méridional
+- Peuple 1 : ǃXóõ (Taa) (PPL_XOO)
+- Peuple 2 : ǀXam (ancien peuple d'Afrique du Sud) (PPL_XAM)
+- Peuple 3 : Sous-groupes du Kalahari méridional (PPL_SAN)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : ǃXóõ (Botswana)  

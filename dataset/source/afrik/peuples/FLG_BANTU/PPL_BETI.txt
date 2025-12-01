@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe ethno-linguistique : Bantous forestiers du Cameroun
 - Région historique : Plateau du Centre-Sud Cameroun
-- Pays actuels : Cameroun, Guinée équatoriale
+- Pays actuels : CMR, GIN équatoriale
 - Identifiant peuple (ID) : PPL_BETI
 
 # 1. Ethnies incluses dans le peuple

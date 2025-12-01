@@ -1,0 +1,261 @@
+# Nom du pays
+- Nom officiel actuel : République d'Afrique du Sud (Republic of South Africa)
+- Étymologie du nom : Le nom "Afrique du Sud" est géographique, désignant la position du pays à l'extrémité australe du continent africain. Le nom a été officialisé en 1961 lors de la proclamation de la République. Avant cela, le territoire était appelé "Union sud-africaine" (1910-1961).
+- Personne / peuple / administration à l'origine du nom : Le nom "Afrique du Sud" est géographique et a été officialisé par les autorités sud-africaines en 1961. Les navigateurs portugais utilisaient "Cabo da Boa Esperança" (Cap de Bonne-Espérance) pour désigner la région du Cap.
+- Identifiant pays (ISO 3166-1 alpha-3) : ZAF
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de peuples Khoisan (San et Khoikhoi), Nguni, Sotho-Tswana, Venda et Tsonga sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Développement de royaumes Nguni (proto-Zoulou, Xhosa, Swazi, Ndebele), chefferies Sotho-Tswana, royaumes Venda et Tsonga. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de sociétés autonomes : Khoisan (San et Khoikhoi), royaumes Nguni, chefferies Sotho-Tswana, royaumes Venda et Tsonga. Pas d'unification politique.
+- Colonisation : 1488 : Découverte du Cap de Bonne-Espérance par les Portugais. 1652-1795 : Colonie hollandaise du Cap (Dutch Cape Colony). 1795-1910 : Colonie britannique du Cap (British Cape Colony). XIXe siècle : États boers (Transvaal, Orange Free State, Natal).
+- Période contemporaine : 1910-1961 : Union sud-africaine (Union of South Africa). 1961 : République d'Afrique du Sud (Republic of South Africa). Le nom officiel en anglais est "Republic of South Africa" et en afrikaans "Republiek van Suid-Afrika".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes Nguni] :
+  - Période : Précolonial - XIXe siècle
+  - Peuples dominants : Zulu, Xhosa, Swazi, Ndebele
+  - Centres politiques : KwaZulu-Natal, Eastern Cape
+  - Rôle historique : Royaumes Nguni puissants, expansion zouloue sous Shaka (début XIXe siècle), résistance à la colonisation.
+
+- [Royaume zoulou] :
+  - Période : Début XIXe - fin XIXe siècles
+  - Peuples dominants : Zulu
+  - Centres politiques : KwaZulu-Natal
+  - Rôle historique : Royaume zoulou puissant fondé par Shaka, expansion territoriale, résistance aux Britanniques (guerres anglo-zouloues, 1879).
+
+- [Chefferies Sotho-Tswana] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Sotho, Tswana, Pedi
+  - Centres politiques : Lesotho, provinces du nord
+  - Rôle historique : Chefferies Sotho-Tswana, organisation politique traditionnelle, résistance à la colonisation.
+
+- [Colonie du Cap] :
+  - Période : 1652 - 1910
+  - Peuples dominants : Khoisan, colons européens, esclaves
+  - Centres politiques : Le Cap (capitale coloniale)
+  - Rôle historique : Colonie hollandaise puis britannique, développement de l'apartheid, résistance des peuples autochtones.
+
+- [États boers] :
+  - Période : XIXe siècle
+  - Peuples dominants : Boers (Afrikaners), peuples autochtones
+  - Centres politiques : Transvaal, Orange Free State
+  - Rôle historique : Républiques boers indépendantes, guerres anglo-boers (1880-1881, 1899-1902).
+
+- [Union sud-africaine] :
+  - Période : 1910 - 1961
+  - Peuples dominants : Tous les peuples sud-africains sous régime ségrégationniste
+  - Centres politiques : Pretoria, Le Cap (capitale législative)
+  - Rôle historique : Unification des colonies britanniques et républiques boers, développement de l'apartheid (1948-1994).
+
+- [République d'Afrique du Sud] :
+  - Période : 1961 - présent
+  - Peuples dominants : Tous les peuples sud-africains
+  - Centres politiques : Pretoria (capitale administrative), Le Cap (capitale législative), Bloemfontein (capitale judiciaire)
+  - Rôle historique : Apartheid (1948-1994), résistance (ANC, etc.), transition démocratique (1994), développement économique, défis de réconciliation et d'égalité.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Zulu
+  - Auto-appellation (endonyme) : Zulu
+  - Exonymes / appellations historiques : Zulu (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_ZULU
+  - Région principale : KwaZulu-Natal
+  - Langues parlées : Zulu, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Zulu" est neutre et accepté.
+
+- Peuple 2 :
+  - Nom : Xhosa
+  - Auto-appellation (endonyme) : AmaXhosa
+  - Exonymes / appellations historiques : Xhosa (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_XHOSA
+  - Région principale : Eastern Cape
+  - Langues parlées : Xhosa, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Xhosa" est neutre et accepté. L'auto-appellation "AmaXhosa" est préférée.
+
+- Peuple 3 :
+  - Nom : Pedi
+  - Auto-appellation (endonyme) : Pedi
+  - Exonymes / appellations historiques : Pedi (terme utilisé par les Européens), parfois appelés "Northern Sotho"
+  - Identifiant peuple (PPL_) : PPL_PEDI (à vérifier si fichier existe)
+  - Région principale : Limpopo
+  - Langues parlées : Pedi, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Pedi" est neutre et accepté.
+
+- Peuple 4 :
+  - Nom : Sotho (Sud)
+  - Auto-appellation (endonyme) : Basotho
+  - Exonymes / appellations historiques : Sotho (terme utilisé par les Européens), "Southern Sotho"
+  - Identifiant peuple (PPL_) : PPL_SOTHO
+  - Région principale : Free State, Gauteng
+  - Langues parlées : Sesotho, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Sotho" est neutre et accepté. L'auto-appellation "Basotho" est préférée.
+
+- Peuple 5 :
+  - Nom : Tswana
+  - Auto-appellation (endonyme) : Tswana
+  - Exonymes / appellations historiques : Tswana (terme utilisé par les Européens), parfois appelés "Setswana" (terme alternatif)
+  - Identifiant peuple (PPL_) : PPL_TSWANA
+  - Région principale : North West
+  - Langues parlées : Setswana, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tswana" est neutre et accepté.
+
+- Peuple 6 :
+  - Nom : Tsonga
+  - Auto-appellation (endonyme) : Tsonga
+  - Exonymes / appellations historiques : Tsonga (terme utilisé par les Européens), parfois appelés "Shangaan" (terme alternatif)
+  - Identifiant peuple (PPL_) : PPL_TSONGA
+  - Région principale : Limpopo, Mpumalanga
+  - Langues parlées : Tsonga, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tsonga" est neutre et accepté.
+
+- Peuple 7 :
+  - Nom : Venda
+  - Auto-appellation (endonyme) : Venda
+  - Exonymes / appellations historiques : Venda (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_VENDA
+  - Région principale : Limpopo
+  - Langues parlées : Venda, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Venda" est neutre et accepté.
+
+- Peuple 8 :
+  - Nom : Swazi
+  - Auto-appellation (endonyme) : Swazi
+  - Exonymes / appellations historiques : Swazi (terme utilisé par les Européens), parfois appelés "Swati" (terme alternatif)
+  - Identifiant peuple (PPL_) : PPL_SWAZI
+  - Région principale : Mpumalanga
+  - Langues parlées : Swazi, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Swazi" est neutre et accepté.
+
+- Peuple 9 :
+  - Nom : Ndebele
+  - Auto-appellation (endonyme) : Ndebele
+  - Exonymes / appellations historiques : Ndebele (terme utilisé par les Européens), parfois appelés "Matabele" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_NDEBELE
+  - Région principale : Mpumalanga, Limpopo
+  - Langues parlées : Ndebele, anglais, afrikaans
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone S)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Ndebele" est neutre et accepté.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Zulu (zul) - langue véhiculaire majeure
+  - Xhosa (xho) - langue véhiculaire majeure
+  - Afrikaans (afr) - langue officielle
+  - Anglais - langue officielle
+  - Sesotho (sot) - langue officielle
+  - Setswana (tsn) - langue officielle
+  - Plus de 9 langues officielles au total
+- Traditions culturelles : Musique traditionnelle (maskandi, mbaqanga), danse traditionnelle, poésie orale, artisanat (perles, poterie, vannerie), architecture traditionnelle, lutte traditionnelle
+- Religions dominantes : Christianisme (protestant majoritaire, catholique), croyances traditionnelles (syncrétisme), islam (minorité), hindouisme (minorité)
+- Modes de vie : Vie principalement rurale et urbaine, agriculture (maïs, blé, canne à sucre), élevage (bovins, ovins), pêche (côtes), exploitation minière (or, diamants, platine), industrie, services, urbanisation importante
+- Organisation sociale : Système de chefferies traditionnelles, structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens
+- Relations régionales : Relations historiques avec les peuples du Lesotho, du Botswana, du Zimbabwe, du Mozambique, de l'Eswatini, de la Namibie. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par des peuples Khoisan (San et Khoikhoi), puis migrations bantoues (Nguni, Sotho-Tswana). Développement de royaumes et chefferies indépendants.
+- Moyen Âge : Développement de royaumes Nguni (proto-Zoulou, Xhosa, Swazi, Ndebele), chefferies Sotho-Tswana, royaumes Venda et Tsonga. Pas d'unification politique.
+- Époque précoloniale : Expansion zouloue sous Shaka (début XIXe siècle). Royaumes Nguni puissants. Résistance à la colonisation européenne.
+- Colonisation : 1488 : Découverte du Cap par les Portugais. 1652 : Installation hollandaise au Cap. 1795 : Colonie britannique. XIXe siècle : États boers (Transvaal, Orange Free State). Guerres anglo-boers (1880-1881, 1899-1902). 1910 : Union sud-africaine.
+- Lutte pour l'indépendance : L'Afrique du Sud était déjà indépendante (1910), mais sous régime ségrégationniste. Apartheid (1948-1994) : système de ségrégation raciale. Résistance (ANC, etc.). Transition démocratique (1994).
+- Période post-indépendance : Apartheid (1948-1994) : système de ségrégation raciale, résistance, sanctions internationales. Transition démocratique (1994) : élection de Nelson Mandela, réconciliation nationale. République démocratique depuis 1994 : développement économique, défis de réconciliation et d'égalité.
+
+# 7. Sources
+- CIA World Factbook – South Africa
+- SIL Ethnologue – Languages of South Africa
+- Recensements nationaux sud-africains
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples sud-africains
+- Études historiques sur l'apartheid et la transition démocratique
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Zulu
+- Identifiant peuple (PPL_) : PPL_ZULU
+- Population : 17 000 000
+- Pourcentage dans le pays : 27.0%
+- Pourcentage en Afrique : 1.19%
+- Région : KwaZulu-Natal
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : zul (Zulu)
+
+### Peuple : Xhosa
+- Identifiant peuple (PPL_) : PPL_XHOSA
+- Population : 10 000 000
+- Pourcentage dans le pays : 16.0%
+- Pourcentage en Afrique : 0.70%
+- Région : Eastern Cape
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : xho (Xhosa)
+
+### Peuple : Pedi
+- Identifiant peuple (PPL_) : PPL_PEDI (à vérifier)
+- Population : 6 000 000
+- Pourcentage dans le pays : 9.5%
+- Pourcentage en Afrique : 0.42%
+- Région : Limpopo
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : nso (Pedi)
+
+### Peuple : Sotho (Sud)
+- Identifiant peuple (PPL_) : PPL_SOTHO
+- Population : 4 500 000
+- Pourcentage dans le pays : 7.1%
+- Pourcentage en Afrique : 0.31%
+- Région : Free State, Gauteng
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : sot (Sesotho)
+
+### Peuple : Tswana
+- Identifiant peuple (PPL_) : PPL_TSWANA
+- Population : 3 000 000
+- Pourcentage dans le pays : 4.8%
+- Pourcentage en Afrique : 0.21%
+- Région : North West
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : tsn (Setswana)
+
+### Peuple : Tsonga
+- Identifiant peuple (PPL_) : PPL_TSONGA
+- Population : 2 500 000
+- Pourcentage dans le pays : 4.0%
+- Pourcentage en Afrique : 0.17%
+- Région : Limpopo, Mpumalanga
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : tso (Tsonga)
+
+### Peuple : Venda
+- Identifiant peuple (PPL_) : PPL_VENDA
+- Population : 1 500 000
+- Pourcentage dans le pays : 2.4%
+- Pourcentage en Afrique : 0.10%
+- Région : Limpopo
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : ven (Venda)
+
+### Peuple : Swazi
+- Identifiant peuple (PPL_) : PPL_SWAZI
+- Population : 1 800 000
+- Pourcentage dans le pays : 2.9%
+- Pourcentage en Afrique : 0.13%
+- Région : Mpumalanga
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : ssw (Swazi)
+
+### Peuple : Ndebele
+- Identifiant peuple (PPL_) : PPL_NDEBELE
+- Population : 900 000
+- Pourcentage dans le pays : 1.4%
+- Pourcentage en Afrique : 0.06%
+- Région : Mpumalanga, Limpopo
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : nbl (Ndebele)
+

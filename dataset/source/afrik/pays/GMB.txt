@@ -1,0 +1,218 @@
+# Nom du pays
+- Nom officiel actuel : République de Gambie (Republic of The Gambia)
+- Étymologie du nom : Le nom "Gambie" provient du fleuve Gambie qui traverse le pays. Le nom du fleuve vient probablement du portugais "Gambia" ou du terme local "Kambra" / "Kambaa". Les Britanniques ont adopté ce nom pour leur colonie. Le nom officiel inclut l'article "The" (La Gambie) pour le distinguer de la Zambie.
+- Personne / peuple / administration à l'origine du nom : Le nom "Gambie" a été donné par les navigateurs portugais au XVe siècle en référence au fleuve Gambie. Les Britanniques ont officialisé ce nom lors de la colonisation. Le nom a été officialisé à l'indépendance en 1965.
+- Identifiant pays (ISO 3166-1 alpha-3) : GMB
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la Gambie était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Développement de royaumes et chefferies : royaumes Mandinka, chefferies Wolof, peuples Fula. Pas de nom unifié pour l'ensemble du territoire. Le fleuve Gambie était une voie commerciale importante.
+- Époque précoloniale : Mosaïque de royaumes et chefferies autonomes : royaumes Mandinka (héritiers de l'empire du Mali), chefferies Wolof, peuples Fula (pasteurs), Jola, Serer. Les Portugais utilisaient le terme "Gambia" pour désigner la région du fleuve Gambie.
+- Colonisation : 1888-1965 : Colonie britannique de Gambie (Gambia Colony and Protectorate). Les Britanniques ont établi une colonie sur le fleuve Gambie en 1888. Le territoire était administré comme une colonie britannique jusqu'à l'indépendance en 1965.
+- Période contemporaine : 1965 : Indépendance de la Gambie (18 février 1965), proclamation de la République de Gambie. 1970 : Proclamation de la République (24 avril 1970). Le nom officiel est "Republic of The Gambia" (République de Gambie).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes Mandinka] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Mandinka
+  - Centres politiques : Chefferies traditionnelles mandinka
+  - Rôle historique : Royaumes Mandinka, héritiers de l'empire du Mali (XIIIe-XVIe siècle), système lignager, castes artisanales (numu, djeli), importance des griots. Rôle majeur dans la diffusion culturelle mandé. Traditions islamiques.
+
+- [Chefferies Wolof] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Wolof
+  - Centres politiques : Chefferies traditionnelles wolof
+  - Rôle historique : Chefferies Wolof, traditions islamiques, commerce régional. Relations avec les royaumes wolof du Sénégal.
+
+- [Peuples Fula] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Fula / Peul
+  - Centres politiques : Communautés pastorales
+  - Rôle historique : Peuples Fula pasteurs nomades et sédentaires, traditions islamiques, pastoralisme. Commerce et migrations.
+
+- [Colonie britannique de Gambie] :
+  - Période : 1888 - 1965
+  - Peuples dominants : Tous les peuples gambiens sous domination britannique
+  - Centres politiques : Bathurst (aujourd'hui Banjul, capitale coloniale)
+  - Rôle historique : Colonie britannique, développement de Bathurst comme port commercial, exploitation économique (arachides), développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Mandinka
+  - Auto-appellation (endonyme) : Mandinka / Mandiŋka
+  - Exonymes / appellations historiques : Mandinka (terme utilisé par les Européens), Mandingue (forme française), "Mandingo" (terme historique, parfois péjoratif)
+  - Identifiant peuple (PPL_) : PPL_MANDINKA, PPL_MANDINGUE
+  - Région principale : Toutes les régions de la Gambie, majoritaires
+  - Langues parlées : Mandinka (mnk, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mandinka" ou "Mandiŋka" est l'auto-appellation. "Mandingue" est l'exonyme français accepté. "Mandingo" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité.
+
+- Peuple 2 :
+  - Nom : Fula / Peul
+  - Auto-appellation (endonyme) : Fulɓe (pluriel), Pullo (singulier)
+  - Exonymes / appellations historiques : Peul (terme français), Fulani (terme haoussa), Fula (terme anglophone), "Fellata" (terme haoussa parfois péjoratif, à éviter)
+  - Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+  - Région principale : Toutes les régions de la Gambie
+  - Langues parlées : Fulfulde (ful, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fulɓe" est l'auto-appellation. "Peul" et "Fulani" sont des exonymes acceptés. "Fellata" peut avoir une connotation péjorative dans certains contextes et doit être évité.
+
+- Peuple 3 :
+  - Nom : Wolof
+  - Auto-appellation (endonyme) : Wolof
+  - Exonymes / appellations historiques : Wolof (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_WOLOF
+  - Région principale : Zones urbaines, régions côtières
+  - Langues parlées : Wolof (wol, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Wolof" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 4 :
+  - Nom : Jola
+  - Auto-appellation (endonyme) : Jola / Diola
+  - Exonymes / appellations historiques : Jola, Diola (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_DIOLA, PPL_JOLA
+  - Région principale : Régions côtières et sud
+  - Langues parlées : Jola (dyo, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Jola" ou "Diola" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Serahule / Soninke
+  - Auto-appellation (endonyme) : Soninke
+  - Exonymes / appellations historiques : Serahule (terme utilisé en Gambie), Soninke (terme utilisé au Mali, Sénégal)
+  - Identifiant peuple (PPL_) : PPL_SERAHULE_SONINKE
+  - Région principale : Diverses régions de la Gambie
+  - Langues parlées : Soninke (snk, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Soninke" est l'auto-appellation. "Serahule" est un terme utilisé en Gambie. Pas de terme péjoratif connu. Peuple mandé commerçant.
+
+- Peuple 6 :
+  - Nom : Serer
+  - Auto-appellation (endonyme) : Serer
+  - Exonymes / appellations historiques : Serer (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SERER
+  - Région principale : Régions côtières (extension des groupes sérères du Sénégal)
+  - Langues parlées : Serer (srr, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Serer" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 7 :
+  - Nom : Manjak / Bainuk
+  - Auto-appellation (endonyme) : Manjak, Bainuk
+  - Exonymes / appellations historiques : Manjak, Bainuk (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MANJAK_BAINUK
+  - Région principale : Zones côtières et transfrontalières
+  - Langues parlées : Manjak, Bainuk, anglais
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Manjak" et "Bainuk" sont les auto-appellations respectives. Pas de terme péjoratif connu. Groupes côtiers et transfrontaliers.
+
+- Peuple 8 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions de la Gambie
+  - Langues parlées : Langues diverses, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Anglais (langue officielle, eng), Mandinka (mnk, langue nationale), Fulfulde (ful), Wolof (wol), Jola (dyo), Soninke (snk), Serer (srr), Manjak, Bainuk
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de la Gambie. Traditions mandé (Mandinka, griots, kora, musique mandingue, rites initiatiques kankurang). Traditions atlantiques (Wolof, Fula, Jola, Serer). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Traditions islamiques (majorité musulmane).
+- Religions dominantes : Islam sunnite (majoritaire, 90%+), christianisme (minorité), religions traditionnelles africaines (syncrétisme fréquent)
+- Modes de vie : Agriculture (arachides, mil, riz, cultures vivrières), élevage (Fula, bovins), pêche (côtière et fluviale), commerce et activités urbaines (zones urbaines, Banjul). Urbanisation modérée. Économie basée sur l'agriculture (arachides, principale exportation), la pêche, le tourisme, et les services. Dépendance économique importante du Sénégal.
+- Organisation sociale : Organisation en royaumes historiques (Mandinka, héritage de l'empire du Mali), chefferies traditionnelles (Wolof, Jola, Serer), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Système de castes (Mandinka, numu, djeli, griots). Traditions d'initiation et de passage à l'âge adulte.
+- Relations régionales : Relations historiques avec le Sénégal (commerce, migrations, peuples transfrontaliers, frontière), le Mali (Mandinka, héritage de l'empire du Mali). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Dépendance économique importante du Sénégal. La Gambie est enclavée dans le Sénégal sauf pour sa côte atlantique.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples mandé et atlantiques. Développement de chefferies et royaumes locaux.
+- Moyen Âge : Expansion de l'empire du Mali (XIIIe-XVIe siècle), influence mandé sur la région. Développement des royaumes Mandinka. Arrivée de l'islam. Commerce transsaharien et côtier. Le fleuve Gambie était une voie commerciale importante.
+- Époque précoloniale : Consolidation des royaumes Mandinka (héritiers de l'empire du Mali), chefferies Wolof, peuples Fula pasteurs. Commerce régional et transsaharien. Contacts avec les Européens (Portugais, puis Britanniques). Commerce des esclaves le long du fleuve Gambie.
+- Colonisation : 1888 : Établissement de la colonie britannique de Gambie. Période coloniale britannique (1888-1965), développement de Bathurst (Banjul) comme port commercial, exploitation économique (arachides), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1950s-1960s : Mouvement pour l'indépendance mené par les dirigeants gambiens. 1965 : Indépendance de la Gambie (18 février 1965), proclamation de la République de Gambie. Dawda Jawara devient premier ministre puis président.
+- Période post-indépendance : 1965-1994 : Présidence de Dawda Jawara, période de stabilité politique et de démocratie. 1994 : Coup d'État militaire, présidence de Yahya Jammeh (1994-2017). 2017 : Transition démocratique, élection d'Adama Barrow. Défis : pauvreté, dépendance économique du Sénégal, développement économique. La Gambie est l'un des plus petits pays d'Afrique.
+
+# 7. Sources
+- SIL Ethnologue – Languages of The Gambia
+- CIA World Factbook – The Gambia
+- ONU / UNFPA – Démographie Gambie 2025
+- Recensements gambiens
+- Études anthropologiques sur les peuples de la Gambie
+- Études historiques sur l'empire du Mali et la Sénégambie
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Mandinka
+- Identifiant peuple (PPL_) : PPL_MANDINKA, PPL_MANDINGUE
+- Population : 900 000
+- Pourcentage dans le pays : 34%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la Gambie, majoritaires (vallée du fleuve)
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : mnk
+
+### Peuple : Fula / Peul
+- Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+- Population : 580 000
+- Pourcentage dans le pays : 22%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la Gambie (zones pastorales)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : ful
+
+### Peuple : Wolof
+- Identifiant peuple (PPL_) : PPL_WOLOF
+- Population : 320 000
+- Pourcentage dans le pays : 12%
+- Pourcentage en Afrique : N/A
+- Région : Zones urbaines, régions côtières (nord-ouest)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : wol
+
+### Peuple : Jola
+- Identifiant peuple (PPL_) : PPL_DIOLA, PPL_JOLA
+- Population : 290 000
+- Pourcentage dans le pays : 11%
+- Pourcentage en Afrique : N/A
+- Région : Régions côtières et sud (frontière casamançaise)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : dyo
+
+### Peuple : Serahule / Soninke
+- Identifiant peuple (PPL_) : PPL_SERAHULE_SONINKE
+- Population : 240 000
+- Pourcentage dans le pays : 9%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la Gambie
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : N/A
+
+### Peuple : Serer
+- Identifiant peuple (PPL_) : PPL_SERER
+- Population : 80 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Régions côtières (extension des groupes sérères du Sénégal)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : srr
+
+### Peuple : Manjak / Bainuk
+- Identifiant peuple (PPL_) : PPL_MANJAK_BAINUK
+- Population : 80 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Zones côtières et transfrontalières
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : N/A
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 160 000
+- Pourcentage dans le pays : 6%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la Gambie (minorités urbaines et transfrontalières)
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Gambie 2025 : 2 650 000 (estimations ONU/UNFPA)**
+

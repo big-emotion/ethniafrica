@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_ADJA_ADJA_DU_TOGO_PLATEAUX",
+  "timestamp": "2025-01-25T22:30:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/adja1241",
+      "data": {
+        "langue": "Adja",
+        "code_iso": "ajg",
+        "famille": "Atlantic-Congo > Volta-Congo > Kwa > Gbe > Aja",
+        "pays": ["Togo", "Benin"],
+        "region": "Plateaux region, Togo; Mono and Couffo departments, Benin",
+        "glottocode": "adja1241",
+        "auto_appellation": "Adja"
+      },
+      "timestamp": "2025-01-25T22:30:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/ajg",
+      "data": {
+        "langue": "Adja",
+        "code_iso": "ajg",
+        "famille": "Niger-Congo",
+        "pays": ["Togo", "Benin"],
+        "auto_appellation": "Adja"
+      },
+      "timestamp": "2025-01-25T22:30:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "ajg",
+    "langue_principale": "Adja",
+    "famille_linguistique": "Atlantic-Congo > Volta-Congo > Kwa > Gbe > Aja",
+    "pays_principaux": ["Togo", "Benin"],
+    "region_generale": "Plateaux region, Togo; Mono and Couffo departments, Benin",
+    "auto_appellation": "Adja"
+  }
+}

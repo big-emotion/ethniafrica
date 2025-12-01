@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_BAMILEKE_BAF",
+  "timestamp": "2025-01-25T21:20:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/bafu1247",
+      "data": {
+        "langue": "Bafut",
+        "code_iso": "bfd",
+        "famille": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Northwest Bantu > Grassfields > Eastern Grassfields > Mbam-Nkam > Ngemba",
+        "pays": ["Cameroun"],
+        "region": "Afrique centrale",
+        "glottocode": "bafu1247",
+        "auto_appellation": "Bafut"
+      },
+      "timestamp": "2025-01-25T21:20:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/bfd",
+      "data": {
+        "langue": "Bafut",
+        "code_iso": "bfd",
+        "famille": "Niger-Congo",
+        "pays": ["Cameroon"],
+        "auto_appellation": "Bafut"
+      },
+      "timestamp": "2025-01-25T21:20:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "bfd",
+    "langue_principale": "Bafut",
+    "famille_linguistique": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Northwest Bantu > Grassfields > Eastern Grassfields > Mbam-Nkam > Ngemba",
+    "pays_principaux": [],
+    "region_generale": "Afrique centrale",
+    "auto_appellation": "Bafut"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "countryName": "Guinée-Bissau",
+  "region": "afrique_de_l_ouest",
+  "countryDescription": {
+    "countryName": "Guinée-Bissau",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires Balante",
+          "Papel",
+          "Manjak",
+          "Mandinka",
+          "Fula",
+          "Bijagó ; aucun État unifié"
+        ]
+      },
+      {
+        "period": "Du XIIe au XVIe siècle",
+        "names": ["zones d’influence des royaumes mandé (Mali", "Kaabu)"]
+      },
+      {
+        "period": "Kaabu (Empire du Kaabu)",
+        "names": [
+          "grand royaume mandinka installé en Casamance et Guinée-Bissau"
+        ]
+      },
+      {
+        "period": "1446",
+        "names": ["Guiné"]
+      },
+      {
+        "period": "“Guiné de Cabo Verde”",
+        "names": ["nom colonial portugais"]
+      },
+      {
+        "period": "1879",
+        "names": ["Guiné Portuguesa"]
+      },
+      {
+        "period": "1973",
+        "names": [
+          "Indépendance → République de Guinée-Bissau (Bissau ajouté pour différencier de la Guinée-Conakry)"
+        ]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Balanta",
+      "subGroups": [],
+      "population": 674854,
+      "percentageInCountry": 30,
+      "percentageInAfrica": 0.044158,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Fula (Peul)",
+      "subGroups": [],
+      "population": 674854,
+      "percentageInCountry": 30,
+      "percentageInAfrica": 0.044158,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Manjaco",
+      "subGroups": [],
+      "population": 314932,
+      "percentageInCountry": 14,
+      "percentageInAfrica": 0.020607,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Mandinga",
+      "subGroups": [],
+      "population": 292437,
+      "percentageInCountry": 13,
+      "percentageInAfrica": 0.019135,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Papel",
+      "subGroups": [],
+      "population": 157466,
+      "percentageInCountry": 7,
+      "percentageInAfrica": 0.010304,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres non spécifiés",
+      "subGroups": [],
+      "population": 134971,
+      "percentageInCountry": 6,
+      "percentageInAfrica": 0.008832,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

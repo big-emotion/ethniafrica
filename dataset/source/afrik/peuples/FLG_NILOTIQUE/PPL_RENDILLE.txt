@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique oriental
 - Région historique : Nord du Kenya
-- Pays actuels : Kenya
+- Pays actuels : KEN
 - Identifiant peuple (ID) : PPL_RENDILLE
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Rendille sont originaires du nord du Kenya, dans la région aride. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
+- Origines anciennes : Les Rendille sont originaires du nord du KEN, dans la région aride. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
 - Routes migratoires : 
   - Migrations depuis les régions du Nil supérieur
   - Expansion vers le nord du Kenya

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Bénoué-Congo
 - Groupe ethno-linguistique : Volta-Congo → Igboïde
 - Région historique : Forêt orientale du Nigeria
-- Pays actuels : Nigeria, Cameroun, Guinée Éq., diaspora
+- Pays actuels : NGA, CMR, GIN Éq., diaspora
 - Identifiant peuple (ID) : PPL_IGBO
 
 # 1. Ethnies incluses dans le peuple

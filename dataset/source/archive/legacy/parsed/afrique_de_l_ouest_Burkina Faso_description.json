@@ -1,0 +1,42 @@
+{
+  "countryName": "Burkina Faso",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant l'époque moderne",
+      "names": [
+        "mosaïque de royaumes mossi",
+        "peuples gur",
+        "lobi/birifor",
+        "peuls et groupes mandé"
+      ]
+    },
+    {
+      "period": "XIe–XIXe siècle",
+      "names": [
+        "royaumes mossi (Wogodogo",
+        "Yatenga",
+        "Tenkodogo",
+        "Fada N’Gourma)"
+      ]
+    },
+    {
+      "period": "Périodes précoloniales",
+      "names": ["royaumes Lobi", "Bobo", "Dagara", "Gourounsi", "Senoufo"]
+    },
+    {
+      "period": "1919",
+      "names": ["Haute-Volta (AOF)"]
+    },
+    {
+      "period": "1958",
+      "names": ["République de Haute-Volta"]
+    },
+    {
+      "period": "1984",
+      "names": ["Burkina Faso (Thomas Sankara)"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

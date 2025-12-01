@@ -1,0 +1,199 @@
+# Nom du pays
+- Nom officiel actuel : République de Sierra Leone (Republic of Sierra Leone)
+- Étymologie du nom : Le nom "Sierra Leone" vient de l'espagnol "Sierra Leona" (montagnes du lion), donné par l'explorateur portugais Pedro de Sintra en 1462. Il aurait vu des montagnes qui ressemblaient à des lions rugissants, d'où le nom "Serra Lyoa" (montagnes du lion) en portugais, qui est devenu "Sierra Leone" en espagnol puis en anglais. Le nom a été conservé par les Britanniques lors de la colonisation.
+- Personne / peuple / administration à l'origine du nom : L'explorateur portugais Pedro de Sintra a nommé la région "Serra Lyoa" (montagnes du lion) en 1462, en référence aux montagnes qui ressemblaient à des lions rugissants. Le nom a été anglicisé en "Sierra Leone" par les Britanniques.
+- Identifiant pays (ISO 3166-1 alpha-3) : SLE
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Pas de présence humaine documentée dans la région avant l'arrivée des peuples atlantiques et mandé.
+- Moyen Âge : Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux.
+- Époque précoloniale : Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux. Contacts avec les commerçants européens (Portugais, Britanniques) à partir du XVe siècle. La région était connue sous le nom de "Serra Lyoa" (montagnes du lion) par les Portugais.
+- Colonisation : 1787-1808 : Colonie de Freetown (établissement pour esclaves libérés). 1808-1961 : Colonie britannique de Sierra Leone. Développement de la colonie de Freetown pour les esclaves libérés (Nova Scotians, Maroons de Jamaïque), formation du peuple Krio, expansion coloniale britannique, développement de l'économie de plantation (palmier à huile, café, cacao), exploitation minière (diamants, or). Le nom "Sierra Leone" est officialisé par les Britanniques.
+- Période contemporaine : 1961 : Indépendance (27 avril 1961), proclamation de la République de Sierra Leone. Le nom "Sierra Leone" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Chefferies Temne] :
+  - Période : XVe siècle - XIXe siècle
+  - Peuples dominants : Temne
+  - Centres politiques : Chefferies indépendantes (Rokel, Port Loko, etc.)
+  - Rôle historique : Organisation politique traditionnelle des Temne, chefferies indépendantes, résistance à la colonisation britannique.
+
+- [Chefferies Mende] :
+  - Période : XVIe siècle - XIXe siècle
+  - Peuples dominants : Mende
+  - Centres politiques : Chefferies indépendantes (Bo, Kenema, etc.)
+  - Rôle historique : Organisation politique traditionnelle des Mende, chefferies indépendantes, sociétés initiatiques (Poro, Sande/Bundu), résistance à la colonisation britannique.
+
+- [Colonie de Freetown] :
+  - Période : 1787 - 1808
+  - Peuples dominants : Krio (esclaves libérés), Britanniques
+  - Centres politiques : Freetown (capitale coloniale)
+  - Rôle historique : Établissement de la colonie de Freetown pour les esclaves libérés (Nova Scotians, Maroons de Jamaïque), formation du peuple Krio, développement de la société créole.
+
+- [Colonie britannique de Sierra Leone] :
+  - Période : 1808 - 1961
+  - Peuples dominants : Britanniques, Krio, Temne, Mende, Limba, autres peuples
+  - Centres politiques : Freetown (capitale coloniale)
+  - Rôle historique : Colonisation britannique, expansion coloniale, développement de l'économie de plantation (palmier à huile, café, cacao), exploitation minière (diamants, or), mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Temne
+  - Auto-appellation (endonyme) : Temne
+  - Exonymes / appellations historiques : Temne (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TEMNE
+  - Région principale : Nord et centre de la Sierra Leone
+  - Langues parlées : Temne (tem, ISO 639-3), anglais, krio
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Temne" est l'auto-appellation. Pas de terme péjoratif connu. Groupe atlantique majoritaire, originaire de la région de la Sierra Leone.
+
+- Peuple 2 :
+  - Nom : Mende
+  - Auto-appellation (endonyme) : Mende
+  - Exonymes / appellations historiques : Mende (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MENDE
+  - Région principale : Sud-Est de la Sierra Leone
+  - Langues parlées : Mende (men, ISO 639-3), anglais, krio
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mende" est l'auto-appellation. Pas de terme péjoratif connu. Groupe mandé majoritaire, lié aux peuplements forestiers guinéens.
+
+- Peuple 3 :
+  - Nom : Limba
+  - Auto-appellation (endonyme) : Limba
+  - Exonymes / appellations historiques : Limba (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LIMBA
+  - Région principale : Nord de la Sierra Leone
+  - Langues parlées : Limba (lia, ISO 639-3), anglais, krio, temne
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Limba" est l'auto-appellation. Pas de terme péjoratif connu. Probablement l'un des peuples autochtones les plus anciens de Sierra Leone.
+
+- Peuple 4 :
+  - Nom : Krio
+  - Auto-appellation (endonyme) : Krio
+  - Exonymes / appellations historiques : Krio (terme utilisé pour les créoles de Sierra Leone), "Creole" (terme générique)
+  - Identifiant peuple (PPL_) : PPL_KRIO
+  - Région principale : Freetown et zones côtières
+  - Langues parlées : Krio (kri, ISO 639-3), anglais
+  - Famille linguistique : Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Krio" est l'auto-appellation. Pas de terme péjoratif connu. Peuple créole formé à partir du contact entre les populations africaines libérées (Nova Scotians, Maroons de Jamaïque) et les colons britanniques à partir du XVIIIe siècle.
+
+- Peuple 5 :
+  - Nom : Kuranko
+  - Auto-appellation (endonyme) : Kuranko
+  - Exonymes / appellations historiques : Kuranko (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KURANKO
+  - Région principale : Nord de la Sierra Leone
+  - Langues parlées : Kuranko (knk, ISO 639-3), anglais, krio
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kuranko" est l'auto-appellation. Pas de terme péjoratif connu. Groupe mandé, lié aux peuplements forestiers guinéens.
+
+- Peuple 6 :
+  - Nom : Yalunka
+  - Auto-appellation (endonyme) : Yalunka
+  - Exonymes / appellations historiques : Yalunka (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_YALUNKA
+  - Région principale : Nord de la Sierra Leone
+  - Langues parlées : Yalunka (yal, ISO 639-3), anglais, krio
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Yalunka" est l'auto-appellation. Pas de terme péjoratif connu. Groupe mandé, lié aux peuplements forestiers guinéens.
+
+- Peuple 7 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les régions de la Sierra Leone
+  - Langues parlées : Langues diverses, anglais, krio
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Anglais (langue officielle, eng), krio (langue nationale, lingua franca, kri), temne (tem), mende (men), limba (lia), kuranko (knk), yalunka (yal)
+- Traditions culturelles : Traditions atlantiques (Temne, Limba) : masques Ragbenle, musiques polyphoniques, récoltes rituelles, sociétés initiatiques. Traditions mandé (Mende, Kuranko, Yalunka) : masques Sowei (Sande), musiques polyrythmiques, artisanat de la forêt, sociétés initiatiques (Poro, Sande/Bundu). Traditions créoles (Krio) : musique traditionnelle créole, danse traditionnelle, poésie orale, artisanat. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture sierra-léonaise est riche et préservée.
+- Religions dominantes : Islam (majoritaire, environ 60%), christianisme (environ 30%, protestantisme majoritaire), religions traditionnelles africaines (syncrétisme fréquent, environ 10%)
+- Modes de vie : Agriculture (riz, sorgho, palmier à huile, café, cacao, cultures vivrières), élevage (bovins, caprins, ovins), pêche (océan Atlantique, importante source de protéines), exploitation minière (diamants, or, bauxite, rutile), commerce et activités urbaines (zones urbaines, Freetown). Urbanisation importante. Économie basée sur l'exploitation minière (diamants, or), l'agriculture (palmier à huile, café, cacao), et les services. La Sierra Leone est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.
+- Organisation sociale : Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires, matrilinéaires). Organisation communautaire (chefferies, communautés créoles). Structures étatiques modernes (république démocratique). Sociétés initiatiques (Poro, Sande/Bundu, Ragbenle). Système politique démocratique, mais instabilité politique et conflits récents (guerre civile 1991-2002).
+- Relations régionales : Relations avec l'Afrique de l'Ouest (CEDEAO, Union du fleuve Mano), relations avec l'Europe (Union européenne, Royaume-Uni), relations avec les États-Unis. La Sierra Leone est membre de la CEDEAO et de l'Union africaine.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux.
+- Moyen Âge : Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux. Contacts avec les commerçants européens (Portugais, Britanniques) à partir du XVe siècle.
+- Époque précoloniale : Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux. Contacts avec les commerçants européens (Portugais, Britanniques) à partir du XVe siècle. La région était connue sous le nom de "Serra Lyoa" (montagnes du lion) par les Portugais.
+- Colonisation : 1787-1808 : Colonie de Freetown (établissement pour esclaves libérés), formation du peuple Krio. 1808-1961 : Colonie britannique de Sierra Leone, expansion coloniale, développement de l'économie de plantation (palmier à huile, café, cacao), exploitation minière (diamants, or), mouvements nationalistes (XXe siècle).
+- Lutte pour l'indépendance : 1950s-1961 : Mouvements nationalistes, SLPP (Sierra Leone People's Party), APC (All People's Congress), indépendance (27 avril 1961), proclamation de la République de Sierra Leone. Milton Margai devient premier Premier ministre.
+- Période post-indépendance : République de Sierra Leone (1961), présidence de Siaka Stevens (1968-1985, régime autoritaire, parti unique), présidence de Joseph Momoh (1985-1992), coup d'État (1992), guerre civile (1991-2002, conflit sanglant, diamants de sang, crimes de guerre), transition démocratique (2002), élections multipartites, présidence d'Ahmed Tejan Kabbah (1996-1997, 1998-2007), Ernest Bai Koroma (2007-2018), Julius Maada Bio (depuis 2018). Stabilité politique fragile, démocratie multipartite, reconstruction post-conflit, développement économique (exploitation minière, agriculture). La Sierra Leone est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Sierra Leone
+- SIL Ethnologue – Languages of Sierra Leone
+- Recensements sierra-léonais
+- Études anthropologiques sur les peuples de Sierra Leone
+- Études historiques sur la colonisation britannique
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Temne
+- Identifiant peuple (PPL_) : PPL_TEMNE
+- Population : 2 250 000
+- Pourcentage dans le pays : 30,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord et centre de la Sierra Leone
+- Famille linguistique : Niger-Congo – Atlantique (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : tem
+
+### Peuple : Mende
+- Identifiant peuple (PPL_) : PPL_MENDE
+- Population : 1 800 000
+- Pourcentage dans le pays : 24,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud-Est de la Sierra Leone
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : men
+
+### Peuple : Limba
+- Identifiant peuple (PPL_) : PPL_LIMBA
+- Population : 540 000
+- Pourcentage dans le pays : 7,2%
+- Pourcentage en Afrique : N/A
+- Région : Nord de la Sierra Leone
+- Famille linguistique : Niger-Congo – Atlantique (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : lia
+
+### Peuple : Krio
+- Identifiant peuple (PPL_) : PPL_KRIO
+- Population : 600 000
+- Pourcentage dans le pays : 8,0%
+- Pourcentage en Afrique : N/A
+- Région : Freetown et zones côtières
+- Famille linguistique : Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : kri
+
+### Peuple : Kuranko
+- Identifiant peuple (PPL_) : PPL_KURANKO
+- Population : 450 000
+- Pourcentage dans le pays : 6,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord de la Sierra Leone
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : knk
+
+### Peuple : Yalunka
+- Identifiant peuple (PPL_) : PPL_YALUNKA
+- Population : 300 000
+- Pourcentage dans le pays : 4,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord de la Sierra Leone
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : yal
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 1 560 000
+- Pourcentage dans le pays : 20,8%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la Sierra Leone
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Sierra Leone 2025 : 7 500 000 (estimations ONU/UNFPA)**
+

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Songhay (FLG_SONGHAY)
 - Groupe ethno-linguistique : Songhay
 - Région historique : Mali
-- Pays actuels : Mali
+- Pays actuels : MLI
 - Identifiant peuple (ID) : PPL_KOYRA_CHIINI
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Koyra Chiini sont originaires du Mali, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Koyra Chiini sont originaires du MLI, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long du fleuve Niger

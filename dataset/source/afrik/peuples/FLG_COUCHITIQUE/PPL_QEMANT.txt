@@ -8,7 +8,7 @@
 - Famille linguistique : Afro-asiatique – Couchitique
 - Groupe : Couchitique central
 - Région historique : Nord-Ouest Éthiopie (Gondar)
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - ID : PPL_QEMANT
 
 # 1. Ethnies incluses

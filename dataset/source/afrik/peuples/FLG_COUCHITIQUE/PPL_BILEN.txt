@@ -5,7 +5,7 @@
 - Famille linguistique : Afro-asiatique – Couchitique
 - Groupe : Couchitique central
 - Région historique : Érythrée (Keren et Sahel)
-- Pays actuels : Érythrée
+- Pays actuels : ERI
 - ID : PPL_BILEN
 
 # 1. Ethnies incluses

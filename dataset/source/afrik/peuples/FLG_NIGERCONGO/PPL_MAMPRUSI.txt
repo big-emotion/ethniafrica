@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Mamprusi (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Gur
-- Région historique : Ghana, Burkina Faso
-- Pays actuels : Ghana, Burkina Faso
+- Région historique : GHA, BFA
+- Pays actuels : GHA, BFA
 - Identifiant peuple (ID) : PPL_MAMPRUSI
 
 # 1. Ethnies incluses dans le peuple

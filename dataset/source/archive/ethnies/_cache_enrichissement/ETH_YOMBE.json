@@ -1,0 +1,49 @@
+{
+  "ETH_ID": "ETH_YOMBE",
+  "timestamp": "2025-01-25T21:15:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/yomb1244",
+      "data": {
+        "langue": "Yombe",
+        "code_iso": "yom",
+        "famille": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central-Western Bantu",
+        "pays": [
+          "République démocratique du Congo",
+          "République du Congo",
+          "Angola"
+        ],
+        "region": "Afrique centrale",
+        "glottocode": "yomb1244",
+        "auto_appellation": "Kiyombe"
+      },
+      "timestamp": "2025-01-25T21:15:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/yom",
+      "data": {
+        "langue": "Yombe",
+        "code_iso": "yom",
+        "famille": "Niger-Congo",
+        "pays": [
+          "Democratic Republic of the Congo",
+          "Republic of the Congo",
+          "Angola"
+        ],
+        "auto_appellation": "Kiyombe"
+      },
+      "timestamp": "2025-01-25T21:15:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "yom",
+    "langue_principale": "Yombe",
+    "famille_linguistique": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central-Western Bantu",
+    "pays_principaux": ["Angola"],
+    "region_generale": "Afrique centrale",
+    "auto_appellation": "Kiyombe"
+  }
+}

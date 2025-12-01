@@ -5,7 +5,7 @@
 - Famille linguistique : Afro-asiatique – Couchitique
 - Groupe : Couchitique oriental
 - Région historique : Région Hadiya (Éthiopie)
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - Identifiant : PPL_HADIYA
 
 # 1. Ethnies incluses

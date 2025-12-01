@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Maban (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique
-- Région historique : Soudan du Sud, Tchad
-- Pays actuels : Soudan du Sud, Tchad
+- Région historique : SSD, TCD
+- Pays actuels : SDN du Sud, TCD
 - Identifiant peuple (ID) : PPL_MABAN
 
 # 1. Ethnies incluses dans le peuple

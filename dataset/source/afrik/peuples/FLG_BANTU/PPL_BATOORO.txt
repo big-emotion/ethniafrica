@@ -1,0 +1,61 @@
+# Nom du peuple
+- Nom principal du peuple : Batooro
+- Auto-appellation (endonyme) : Batooro
+- Exonymes / appellations historiques : Toro
+- Origine des termes (exonymes) : Le terme 'Toro' vient du nom du royaume historique du Toro
+- Pourquoi certains termes posent problème (si applicable) : N/A
+- Usage contemporain des appellations : N/A
+- Famille linguistique principale : FLG_BANTU
+- Groupe ethno-linguistique : Bantou (Zone J)
+- Région historique : Ouest de l'Ouganda
+- Pays actuels : UGA
+- Identifiant peuple (ID) : PPL_BATOORO
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Batooro
+- Ethnie 2 : N/A
+- Ethnie 3 : N/A
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes (théories archéologiques, linguistiques, génétiques) : Les Batooro sont originaires de l'ouest de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Formation du royaume du Toro, scission du Bunyoro au XIXe siècle.
+- Période de formation estimée : N/A
+- Routes migratoires principales : Migrations depuis les régions des Grands Lacs. Expansion vers l'ouest de l'Ouganda. Déplacements vers les zones urbaines.
+- Zones d'établissement historiques : Ouest de l'Ouganda
+- Unifications / divisions : N/A
+- Influences externes (peuples voisins, colonisation, commerce) : N/A
+- Événements historiques majeurs ayant façonné le peuple : N/A
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : Organisation en royaume traditionnel (Toro). Système de conseils d'anciens pour la gouvernance. Structure clanique patrilinéaire.
+- Organisation clanique : N/A
+- Rôle des lignages : N/A
+- Autorité religieuse : N/A
+
+# 4. Langues et sous-familles
+- Langue principale : Rutooro (ttj)
+- Codes ISO : ttj
+- Dialectes : N/A
+- Rôle véhiculaire : N/A
+
+# 5. Culture, rites et traditions
+- Rites majeurs : Traditions royales. Cérémonies royales. Cérémonies de mariage traditionnelles. Rites de passage. Cérémonies liées à l'agriculture.
+- Symboles : N/A
+- Arts et musique : N/A
+- Spiritualités : N/A
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : Royaume du Toro (XIXe siècle - présent). Scission du Bunyoro au XIXe siècle. Traditions royales.
+- Relations avec peuples voisins : N/A
+- Conflits / alliances : N/A
+- Diaspora : N/A
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1,000,000
+- Répartition par pays : UGA: 1,000,000
+- Année de référence : 2025
+- Source : Fiche pays UGA, estimations ONU
+
+# 8. Sources
+- Fiche pays UGA
+- SIL Ethnologue – Rutooro language (ttj)
+- CIA World Factbook – Uganda

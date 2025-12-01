@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Tsonga (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Afrique du Sud, Mozambique, Zimbabwe
-- Pays actuels : Afrique du Sud, Mozambique, Zimbabwe
+- Région historique : Afrique du Sud, MOZ, ZWE
+- Pays actuels : ZAF, MOZ, ZWE
 - Identifiant peuple (ID) : PPL_TSONGA
 
 # 1. Ethnies incluses dans le peuple

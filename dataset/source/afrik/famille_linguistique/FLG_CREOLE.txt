@@ -60,9 +60,9 @@
   ~10 millions (dont plusieurs langues officielles)
 
 # 2. Peuples associés
-- Peuple 1 : Cap-Verdiens
-- Peuple 2 : Sierra-Léonais (Krio)
-- Peuple 3 : Mauriciens / Seychellois
+- Peuple 1 : Cap-Verdiens (PPL_CAP_VERDIEN)
+- Peuple 2 : Sierra-Léonais (Krio) (PPL_KRIO)
+- Peuple 3 : Mauriciens / Seychellois (PPL_MAURICIEN, PPL_SEYCHELLOIS)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Cap-Verdiens (Kriolu)

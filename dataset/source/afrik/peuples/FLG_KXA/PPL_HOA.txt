@@ -8,7 +8,7 @@
 - Famille linguistique principale : Khoïsan – Kx'a (FLG_KXA)
 - Groupe ethno-linguistique : Kx'a (ǂHoan)
 - Région historique : Désert du Kalahari (Botswana)
-- Pays actuels : Botswana
+- Pays actuels : BWA
 - Identifiant peuple (ID) : PPL_HOA
 
 # 1. Ethnies incluses dans le peuple

@@ -2,7 +2,7 @@
 - Nom principal : Tiv
 - Auto-appellation : Tiv
 - Famille linguistique : Niger-Congo – Bénoué-Congo
-- Région historique : Nigeria (Benue State), Cameroun
+- Région historique : Nigeria (Benue State), CMR
 - Identifiant peuple : PPL_TIV
 
 # 1. Ethnies incluses

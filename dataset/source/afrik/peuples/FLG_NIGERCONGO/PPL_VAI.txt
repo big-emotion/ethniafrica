@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Vai (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (sous-groupe du Niger-Congo)
-- Région historique : Liberia, Sierra Leone
-- Pays actuels : Liberia, Sierra Leone
+- Région historique : LBR, SLE
+- Pays actuels : LBR, SLE
 - Identifiant peuple (ID) : PPL_VAI
 
 # 1. Ethnies incluses dans le peuple

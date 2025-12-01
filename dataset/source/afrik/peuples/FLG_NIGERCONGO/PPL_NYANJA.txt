@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Nyanja (terme utilisé par les Européens), parfois appelés « Chewa » (terme alternatif)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone N)
-- Région historique : Malawi, Zambie, Mozambique, Zimbabwe
-- Pays actuels : Malawi, Zambie, Mozambique, Zimbabwe
+- Région historique : MWI, ZMB, MOZ, ZWE
+- Pays actuels : MWI, ZMB, MOZ, ZWE
 - Identifiant peuple (ID) : PPL_NYANJA
 
 # 1. Ethnies incluses dans le peuple
@@ -16,10 +16,10 @@
 - Ethnie 5 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Nyanja sont originaires de la région du Malawi, de la Zambie, du Mozambique et du Zimbabwe. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).
+- Origines anciennes : Les Nyanja sont originaires de la région du MWI, de la ZMB, du Mozambique et du Zimbabwe. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Malawi, la Zambie, le Mozambique et le Zimbabwe
+  - Expansion vers le MWI, la ZMB, le Mozambique et le Zimbabwe
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.

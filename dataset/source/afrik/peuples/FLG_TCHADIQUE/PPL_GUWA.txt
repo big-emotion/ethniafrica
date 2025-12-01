@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
 - Groupe ethno-linguistique : Tchadique
 - Région historique : Nord-est du Nigeria
-- Pays actuels : Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_GUWA
 
 # 1. Ethnies incluses dans le peuple

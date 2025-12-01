@@ -1,0 +1,186 @@
+# Nom du pays
+- Nom officiel actuel : République fédérale démocratique d'Éthiopie (የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ)
+- Étymologie du nom : Le nom "Éthiopie" vient du grec "Αἰθιοπία" (Aithiopia), signifiant "pays des visages brûlés" ou "pays des Noirs". Le terme était utilisé par les Grecs anciens pour désigner les terres au sud de l'Égypte. Le nom amharique "Ityop'iya" (ኢትዮጵያ) est dérivé du grec.
+- Personne / peuple / administration à l'origine du nom : Le nom "Éthiopie" a été utilisé par les Grecs anciens et adopté par les royaumes éthiopiens. Le nom amharique "Ityop'iya" est dérivé du grec. Le pays s'est appelé "Abyssinie" par les Européens jusqu'au XXe siècle.
+- Identifiant pays (ISO 3166-1 alpha-3) : ETH
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était connu sous le nom de "Pount" par les Égyptiens anciens. Les Grecs anciens utilisaient "Éthiopie" pour désigner les terres au sud de l'Égypte. Royaume d'Axoum (Ier-VIIe siècles).
+- Moyen Âge : Empire d'Éthiopie (XIIIe-XXe siècles) avec dynasties salomonides. Le nom "Éthiopie" était utilisé par les royaumes éthiopiens. Les Européens utilisaient "Abyssinie" (dérivé de "Habesha").
+- Époque précoloniale : Empire d'Éthiopie avec empereur (Negus Negast). Le nom "Éthiopie" était utilisé officiellement. "Abyssinie" était le nom utilisé par les Européens.
+- Colonisation : L'Éthiopie n'a jamais été colonisée (sauf occupation italienne brève, 1936-1941). Le nom "Éthiopie" était maintenu. "Abyssinie" était le nom utilisé par les Européens jusqu'au XXe siècle.
+- Période contemporaine : 1974 : Chute de l'empire, République socialiste d'Éthiopie. 1991 : Transition démocratique. 1995 : République fédérale démocratique d'Éthiopie (nom actuel). Le nom officiel en amharique est "የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume d'Axoum] :
+  - Période : Ier - VIIe siècles
+  - Peuples dominants : Habesha (précurseurs des Amhara et Tigréens)
+  - Centres politiques : Axoum (capitale)
+  - Rôle historique : Royaume puissant, christianisation (IVe siècle), commerce avec l'Arabie, l'Inde et la Méditerranée. Centre intellectuel et religieux.
+
+- [Empire d'Éthiopie] :
+  - Période : XIIIe - XXe siècles
+  - Peuples dominants : Amhara, Tigréens, Oromo, autres peuples éthiopiens
+  - Centres politiques : Gondar, Addis-Abeba (capitale depuis 1889)
+  - Rôle historique : Empire puissant avec dynasties salomonides, christianisation, expansion territoriale, résistance à la colonisation.
+
+- [République socialiste d'Éthiopie] :
+  - Période : 1974 - 1991
+  - Peuples dominants : Tous les peuples éthiopiens sous régime socialiste
+  - Centres politiques : Addis-Abeba (capitale)
+  - Rôle historique : Chute de l'empire (1974), régime socialiste (Derg), guerre civile, famine.
+
+- [République fédérale démocratique d'Éthiopie] :
+  - Période : 1995 - présent
+  - Peuples dominants : Tous les peuples éthiopiens
+  - Centres politiques : Addis-Abeba (capitale)
+  - Rôle historique : Transition démocratique (1991), fédéralisme ethnique (1995), développement économique, défis de gouvernance et de stabilité.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Oromo
+  - Auto-appellation (endonyme) : Oromoo
+  - Exonymes / appellations historiques : "Galla" (terme colonial et éthiopien ancien, péjoratif, rejeté par les Oromo)
+  - Identifiant peuple (PPL_) : PPL_OROMO
+  - Région principale : Oromia (centre, est, sud)
+  - Langues parlées : Oromo, amharique, anglais
+  - Famille linguistique : FLG_COUCHITIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Galla" est colonial et péjoratif, totalement rejeté. L'auto-appellation "Oromoo" est préférée. Le terme "Galla" était utilisé par les sources abyssiniennes médiévales avec connotation négative.
+
+- Peuple 2 :
+  - Nom : Amhara
+  - Auto-appellation (endonyme) : አማራ (Āmara)
+  - Exonymes / appellations historiques : "Abyssins" (terme européen ancien, colonial et imprécis), "Habesha" (terme englobant Amhara + Tigray)
+  - Identifiant peuple (PPL_) : PPL_AMHARA
+  - Région principale : Hautes terres du centre et du nord-ouest (Gojjam, Gondar, Wollo)
+  - Langues parlées : Amharique, anglais
+  - Famille linguistique : FLG_SEMITIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Abyssins" est colonial et imprécis. L'auto-appellation "Āmara" est préférée. "Habesha" peut être revendiqué ou rejeté selon le contexte.
+
+- Peuple 3 :
+  - Nom : Somali
+  - Auto-appellation (endonyme) : Soomaali
+  - Exonymes / appellations historiques : Somali (terme utilisé par les Européens), "Somalies" (forme coloniale française)
+  - Identifiant peuple (PPL_) : PPL_SOMALI
+  - Région principale : Ogaden (Est)
+  - Langues parlées : Somali, amharique, anglais
+  - Famille linguistique : FLG_COUCHITIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Somali" est neutre et accepté. L'auto-appellation "Soomaali" est préférée.
+
+- Peuple 4 :
+  - Nom : Tigréens
+  - Auto-appellation (endonyme) : Tigray (ትግራይ)
+  - Exonymes / appellations historiques : Tigréens (terme utilisé par les Européens), "Habesha" (terme englobant)
+  - Identifiant peuple (PPL_) : PPL_TIGRE (à vérifier si fichier existe)
+  - Région principale : Tigray (Nord)
+  - Langues parlées : Tigrinya, amharique, anglais
+  - Famille linguistique : FLG_SEMITIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tigréens" est neutre et accepté. L'auto-appellation "Tigray" est préférée.
+
+- Peuple 5 :
+  - Nom : Sidama
+  - Auto-appellation (endonyme) : Sidama
+  - Exonymes / appellations historiques : Sidama (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SIDAMA
+  - Région principale : Sidama (Sud)
+  - Langues parlées : Sidama, amharique, anglais
+  - Famille linguistique : FLG_COUCHITIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Sidama" est neutre et accepté.
+
+- Peuple 6 :
+  - Nom : Gurage
+  - Auto-appellation (endonyme) : Gurage
+  - Exonymes / appellations historiques : Gurage (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_GURAGE (à vérifier si fichier existe)
+  - Région principale : Centre-Sud
+  - Langues parlées : Gurage, amharique, anglais
+  - Famille linguistique : FLG_SEMITIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Gurage" est neutre et accepté.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Oromo (orm) - langue régionale majeure
+  - Amharique (amh) - langue nationale et officielle
+  - Somali (som) - langue régionale
+  - Tigrinya (tir) - langue régionale
+  - Sidama (sid) - langue régionale
+  - Anglais - langue officielle
+  - Plus de 80 langues locales
+- Traditions culturelles : Musique traditionnelle (azmari, begena), danse traditionnelle, poésie orale (qené), artisanat (tissage, poterie, croix éthiopiennes), architecture traditionnelle (églises rupestres de Lalibela), système gadaa (Oromo)
+- Religions dominantes : Christianisme orthodoxe éthiopien (majoritaire), islam (minorité importante), croyances traditionnelles (syncrétisme)
+- Modes de vie : Vie principalement rurale, agriculture (café, teff, sorgho, maïs), élevage (bovins, caprins, dromadaires), pêche (lacs), commerce, urbanisation croissante
+- Organisation sociale : Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, système gadaa (Oromo), importance des ancêtres
+- Relations régionales : Relations historiques avec les peuples d'Érythrée, du Soudan, du Soudan du Sud, du Kenya, de la Somalie, de Djibouti. Diaspora importante aux États-Unis, en Europe, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par des groupes couchitiques, sémitiques et nilotiques. Royaume d'Axoum (Ier-VIIe siècles) : christianisation (IVe siècle), commerce avec l'Arabie et l'Inde.
+- Moyen Âge : Empire d'Éthiopie (XIIIe-XXe siècles) avec dynasties salomonides. Expansion territoriale, christianisation, résistance à l'islam. Centre intellectuel et religieux.
+- Époque précoloniale : Apogée de l'empire d'Éthiopie. Expansion territoriale, christianisation, résistance à la colonisation. L'Éthiopie reste indépendante (sauf occupation italienne brève, 1936-1941).
+- Colonisation : L'Éthiopie n'a jamais été colonisée (sauf occupation italienne, 1936-1941). Résistance éthiopienne, maintien de l'indépendance.
+- Lutte pour l'indépendance : L'Éthiopie a toujours été indépendante (sauf occupation italienne, 1936-1941). Mouvements de modernisation et de réforme.
+- Période post-indépendance : Chute de l'empire (1974) : révolution, régime socialiste (Derg). Guerre civile, famine. Transition démocratique (1991). République fédérale démocratique (1995) : fédéralisme ethnique, développement économique, défis de gouvernance et de stabilité.
+
+# 7. Sources
+- CIA World Factbook – Ethiopia
+- SIL Ethnologue – Languages of Ethiopia
+- Recensements nationaux éthiopiens
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples éthiopiens
+- Études historiques sur l'empire d'Éthiopie et le royaume d'Axoum
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Oromo
+- Identifiant peuple (PPL_) : PPL_OROMO
+- Population : ~20 000 000 - 25 000 000 (estimation, ~35% de la population)
+- Pourcentage dans le pays : ~35%
+- Pourcentage en Afrique : ~1.4%
+- Région : Oromia (centre, est, sud)
+- Famille linguistique : FLG_COUCHITIQUE
+- Code ISO 639-3 (langue principale) : orm (Oromo)
+
+### Peuple : Amhara
+- Identifiant peuple (PPL_) : PPL_AMHARA
+- Population : ~20 000 000 - 25 000 000 (estimation, ~27% de la population)
+- Pourcentage dans le pays : ~27%
+- Pourcentage en Afrique : ~1.4%
+- Région : Hautes terres du centre et du nord-ouest (Gojjam, Gondar, Wollo)
+- Famille linguistique : FLG_SEMITIQUE
+- Code ISO 639-3 (langue principale) : amh (Amharique)
+
+### Peuple : Somali
+- Identifiant peuple (PPL_) : PPL_SOMALI
+- Population : ~5 000 000 - 6 000 000 (estimation, ~6% de la population)
+- Pourcentage dans le pays : ~6%
+- Pourcentage en Afrique : ~0.35%
+- Région : Ogaden (Est)
+- Famille linguistique : FLG_COUCHITIQUE
+- Code ISO 639-3 (langue principale) : som (Somali)
+
+### Peuple : Tigréens
+- Identifiant peuple (PPL_) : PPL_TIGRE (à vérifier)
+- Population : ~7 000 000 - 8 000 000 (estimation, ~6% de la population)
+- Pourcentage dans le pays : ~6%
+- Pourcentage en Afrique : ~0.5%
+- Région : Tigray (Nord)
+- Famille linguistique : FLG_SEMITIQUE
+- Code ISO 639-3 (langue principale) : tir (Tigrinya)
+
+### Peuple : Sidama
+- Identifiant peuple (PPL_) : PPL_SIDAMA
+- Population : ~3 900 000 (estimation, ~4% de la population)
+- Pourcentage dans le pays : ~4%
+- Pourcentage en Afrique : ~0.27%
+- Région : Sidama (Sud)
+- Famille linguistique : FLG_COUCHITIQUE
+- Code ISO 639-3 (langue principale) : sid (Sidama)
+
+### Peuple : Gurage
+- Identifiant peuple (PPL_) : PPL_GURAGE (à vérifier)
+- Population : ~2 000 000 (estimation, ~2% de la population)
+- Pourcentage dans le pays : ~2%
+- Pourcentage en Afrique : ~0.14%
+- Région : Centre-Sud
+- Famille linguistique : FLG_SEMITIQUE
+- Code ISO 639-3 (langue principale) : sgw (Gurage)
+

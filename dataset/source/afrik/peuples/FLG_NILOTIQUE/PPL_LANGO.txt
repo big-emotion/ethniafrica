@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique occidental
 - Région historique : Centre-nord de l'Ouganda
-- Pays actuels : Ouganda
+- Pays actuels : UGA
 - Identifiant peuple (ID) : PPL_LANGO
 
 # 1. Ethnies incluses dans le peuple

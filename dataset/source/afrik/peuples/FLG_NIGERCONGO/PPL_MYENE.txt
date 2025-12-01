@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone B)
 - Région historique : Gabon
-- Pays actuels : Gabon
+- Pays actuels : GAB
 - Identifiant peuple (ID) : PPL_MYENE
 
 # 1. Ethnies incluses dans le peuple

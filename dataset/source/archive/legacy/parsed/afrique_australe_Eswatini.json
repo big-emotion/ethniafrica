@@ -1,0 +1,60 @@
+{
+  "countryName": "Eswatini",
+  "region": "afrique_australe",
+  "ethnicities": [
+    {
+      "groupName": "Swazi (Nguni)",
+      "subGroups": [],
+      "population": 1194994,
+      "percentageInCountry": 97,
+      "percentageInAfrica": 0.078192,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Zoulous et autres Nguni",
+      "subGroups": [],
+      "population": 24639,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.001612,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Européens",
+      "subGroups": [],
+      "population": 12320,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.000806,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

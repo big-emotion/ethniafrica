@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Sena (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone N)
-- Région historique : Mozambique, Malawi, Zambie
-- Pays actuels : Mozambique, Malawi, Zambie
+- Région historique : MOZ, MWI, ZMB
+- Pays actuels : MOZ, MWI, ZMB
 - Identifiant peuple (ID) : PPL_SENA
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Sena sont originaires de la région du Mozambique, du Malawi et de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).
+- Origines anciennes : Les Sena sont originaires de la région du MOZ, du Malawi et de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Mozambique, le Malawi et la Zambie
+  - Expansion vers le MOZ, le Malawi et la Zambie
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.

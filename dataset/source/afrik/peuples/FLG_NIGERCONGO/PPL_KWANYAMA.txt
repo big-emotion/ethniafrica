@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Kwanyama (terme utilisé par les Européens), parfois appelés « Ovambo » (terme générique)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone R)
-- Région historique : Namibie, Angola
-- Pays actuels : Namibie, Angola
+- Région historique : NAM, AGO
+- Pays actuels : NAM, AGO
 - Identifiant peuple (ID) : PPL_KWANYAMA
 
 # 1. Ethnies incluses dans le peuple

@@ -1,0 +1,599 @@
+{
+  "countryCode": "ZMB",
+  "countryName": "République de Zambie",
+  "peoples": [
+    {
+      "name": "Bemba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Tonga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Lozi",
+      "alternativeNames": ["Barotse"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Chewa",
+      "alternativeNames": ["Nyanja", "Achewa"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Ngoni",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Luvale",
+      "alternativeNames": ["Lwena"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kaonde",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Tumbuka",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nsenga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lamba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lenje",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Soli",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Ila",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Tonga-Ila",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Leya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Tokaleya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Gova",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "We",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Totela",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Subiya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mashi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mukulu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mbunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Luchazi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwena",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Chokwe",
+      "alternativeNames": ["Tshokwe"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda-Ndembu",
+      "alternativeNames": ["Ndembu"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda-Kazembe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Bisa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Ushi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Tabwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Lungu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Mambwe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Namwanga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyika",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Wandya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Mwanga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Lamba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lenje",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Soli",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Swaka",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Ambo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Unga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Bisa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Mwanga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala-Bisa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala-Lamba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala-Lenje",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala-Soli",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala-Swaka",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala-Ambo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Lala-Unga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyanja",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Tumbuka",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nsenga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Ngoni",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Senga",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Kunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nkoya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Luyana",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kwandi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kwangwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mashi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mukulu",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mbunda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Luchazi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Lwena",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Chokwe",
+      "alternativeNames": ["Tshokwe"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda-Ndembu",
+      "alternativeNames": ["Ndembu"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Lunda-Kazembe",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BANTU",
+      "region": "Nord",
+      "source": "web_search"
+    }
+  ],
+  "timestamp": "2025-11-30T19:45:43.270Z",
+  "sourcesUsed": ["web_search"],
+  "sourcesPending": [
+    "CIA World Factbook",
+    "Ethnologue",
+    "UNESCO",
+    "IWGIA",
+    "Encyclopaedia Africana"
+  ]
+}

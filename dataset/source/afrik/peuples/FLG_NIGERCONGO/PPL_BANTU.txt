@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou
 - Région historique : Afrique centrale, orientale et australe
-- Pays actuels : Multiple pays d'Afrique
+- Pays actuels : Multiple pays d'Afrique (voir peuples bantous spécifiques)
 - Identifiant peuple (ID) : PPL_BANTU
 
 # 1. Ethnies incluses dans le peuple

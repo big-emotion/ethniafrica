@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_SHONA",
+  "timestamp": "2025-01-25T21:15:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/core1255",
+      "data": {
+        "langue": "Shona",
+        "code_iso": "sna",
+        "famille": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central Bantu > Shona",
+        "pays": ["Zimbabwe", "Mozambique", "Botswana", "Zambie"],
+        "region": "Afrique australe",
+        "glottocode": "core1255",
+        "auto_appellation": "chiShona"
+      },
+      "timestamp": "2025-01-25T21:15:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/sna",
+      "data": {
+        "langue": "Shona",
+        "code_iso": "sna",
+        "famille": "Niger-Congo",
+        "pays": ["Zimbabwe", "Mozambique", "Botswana", "Zambia"],
+        "auto_appellation": "chiShona"
+      },
+      "timestamp": "2025-01-25T21:15:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "sna",
+    "langue_principale": "Shona",
+    "famille_linguistique": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central Bantu > Shona",
+    "pays_principaux": ["Zimbabwe", "Mozambique", "Botswana"],
+    "region_generale": "Afrique australe",
+    "auto_appellation": "chiShona"
+  }
+}

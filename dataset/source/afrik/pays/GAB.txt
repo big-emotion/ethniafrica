@@ -1,0 +1,211 @@
+# Nom du pays
+- Nom officiel actuel : République gabonaise (République gabonaise)
+- Étymologie du nom : Le nom "Gabon" provient du portugais "Gabão" (gabardine, manteau), donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo qui ressemble à une gabardine. Le terme a été adapté en "Gabon" par les Français.
+- Personne / peuple / administration à l'origine du nom : Le nom "Gabon" a été donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo. Les Français ont adapté ce nom lors de la colonisation. Le nom a été officialisé lors de l'indépendance en 1960.
+- Identifiant pays (ISO 3166-1 alpha-3) : GAB
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Gabon était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations bantoues vers la région. Développement de chefferies et royaumes locaux dans les forêts équatoriales. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de chefferies et royaumes autonomes : chefferies Fang, Punu, Nzebi, Teke, Myene, Mbete, et autres peuples bantous forestiers. Les Portugais utilisaient le terme "Gabão" pour désigner la région de l'estuaire du Komo.
+- Colonisation : 1885-1960 : Colonie française du Gabon (partie de l'Afrique-Équatoriale française, AEF). Les Français ont créé la colonie du Gabon en 1885. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960.
+- Période contemporaine : 1960 : Indépendance du Gabon (17 août 1960), proclamation de la République gabonaise. Le nom "Gabon" est officialisé.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Chefferies Fang] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Fang
+  - Centres politiques : Chefferies lignagères traditionnelles
+  - Rôle historique : Chefferies Fang puissantes, système lignager, traditions forestières, masques fang (notamment ngil), boîtes à reliques (byeri). Migration nord-sud depuis le Cameroun septentrional. Rôle politique majeur dans le Gabon contemporain.
+
+- [Chefferies Punu] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Punu
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies Punu, traditions artistiques réputées (masques blancs punu), structures lignagères. Traditions forestières.
+
+- [Chefferies Nzebi] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Nzebi
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies Nzebi, traditions forestières, structures lignagères.
+
+- [Chefferies Teke] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Teke
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies Teke, traditions forestières, structures lignagères. Relations avec les Teke du Congo.
+
+- [Chefferies Myene] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Myene
+  - Centres politiques : Chefferies traditionnelles côtières
+  - Rôle historique : Chefferies Myene côtières, traditions maritimes, commerce côtier. Contacts avec les Européens.
+
+- [Colonie française du Gabon] :
+  - Période : 1885 - 1960
+  - Peuples dominants : Tous les peuples gabonais sous domination française
+  - Centres politiques : Libreville (capitale coloniale)
+  - Rôle historique : Colonie française, intégration dans l'AEF. Exploitation économique (bois, caoutchouc, puis pétrole), développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Fang
+  - Auto-appellation (endonyme) : Fan / Pangwe
+  - Exonymes / appellations historiques : Fang (terme utilisé par les Européens), "Pahouins" (ancienne étiquette coloniale, terme problématique)
+  - Identifiant peuple (PPL_) : PPL_FANG
+  - Région principale : Nord du Gabon (forêts équatoriales)
+  - Langues parlées : Fang (fan, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fan" ou "Pangwe" est l'auto-appellation. "Fang" est l'exonyme le plus courant. "Pahouins" est une ancienne étiquette coloniale qui peut avoir une connotation péjorative et doit être évitée.
+
+- Peuple 2 :
+  - Nom : Punu
+  - Auto-appellation (endonyme) : Punu
+  - Exonymes / appellations historiques : Punu (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_PUNU
+  - Région principale : Sud du Gabon
+  - Langues parlées : Punu (puu, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Punu" est l'auto-appellation. Pas de terme péjoratif connu. Traditions artistiques réputées (masques blancs punu).
+
+- Peuple 3 :
+  - Nom : Nzebi
+  - Auto-appellation (endonyme) : Nzebi
+  - Exonymes / appellations historiques : Nzebi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NZEBI
+  - Région principale : Centre et Sud du Gabon
+  - Langues parlées : Nzebi (nzb, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Nzebi" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 4 :
+  - Nom : Teke
+  - Auto-appellation (endonyme) : Teke
+  - Exonymes / appellations historiques : Teke (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TEKE
+  - Région principale : Est du Gabon
+  - Langues parlées : Teke (teg, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Teke" est l'auto-appellation. Pas de terme péjoratif connu. Relations avec les Teke du Congo.
+
+- Peuple 5 :
+  - Nom : Myene
+  - Auto-appellation (endonyme) : Myene
+  - Exonymes / appellations historiques : Myene (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MYENE
+  - Région principale : Côte du Gabon (Libreville, Port-Gentil)
+  - Langues parlées : Myene (mye, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Myene" est l'auto-appellation. Pas de terme péjoratif connu. Traditions maritimes et côtières.
+
+- Peuple 6 :
+  - Nom : Mbete
+  - Auto-appellation (endonyme) : Mbete
+  - Exonymes / appellations historiques : Mbete (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MBETE
+  - Région principale : Centre du Gabon
+  - Langues parlées : Mbete (zmt, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mbete" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 7 :
+  - Nom : Autres peuples bantous
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_PEUPLES_BANTOUS
+  - Région principale : Diverses régions du Gabon
+  - Langues parlées : Langues bantoues diverses, français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), Fang (fan), Punu (puu), Nzebi (nzb), Teke (teg), Myene (mye), Mbete (zmt), langues bantoues diverses
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique du Gabon (plus de 40 ethnies). Traditions bantoues forestières : masques fang (notamment ngil), masques blancs punu, boîtes à reliques (byeri), traditions d'initiation. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Art gabonais réputé (masques, sculptures, reliquaires).
+- Religions dominantes : Christianisme (catholicisme majoritaire, protestantisme en croissance), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, byeri)
+- Modes de vie : Agriculture (cultures vivrières, cacao, café), exploitation forestière (bois précieux), pêche (côtière), commerce et activités urbaines (zones urbaines, Libreville, Port-Gentil). Urbanisation importante. Économie basée sur l'exploitation pétrolière (première source de revenus), l'exploitation forestière, et les services. Le Gabon est l'un des pays les plus riches d'Afrique subsaharienne.
+- Organisation sociale : Organisation en chefferies lignagères traditionnelles (Fang, Punu, Nzebi, Teke, Myene, Mbete), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Clanisme fort (Fang).
+- Relations régionales : Relations historiques avec le Cameroun (Fang, commerce, frontière), le Congo (Teke, commerce, frontière), la Guinée équatoriale (Fang, commerce, frontière). Intégration dans la CEMAC (Communauté économique et monétaire de l'Afrique centrale). Relations commerciales et culturelles transfrontalières. Immigration importante de travailleurs (Cameroun, Congo, autres pays d'Afrique centrale).
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales dans les forêts équatoriales.
+- Moyen Âge : Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.
+- Époque précoloniale : Consolidation des chefferies Fang, Punu, Nzebi, Teke, Myene, Mbete. Migration des Fang depuis le Cameroun septentrional. Développement des traditions artistiques (masques, sculptures). Commerce régional. Contacts avec les Européens (Portugais, puis Français).
+- Colonisation : 1885 : Création de la colonie française du Gabon, intégration dans l'AEF. Période coloniale française (1885-1960), exploitation économique (bois, caoutchouc, puis pétrole), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1950s-1960s : Mouvement pour l'indépendance mené par les dirigeants gabonais. 1960 : Indépendance du Gabon (17 août 1960), proclamation de la République gabonaise. Léon M'ba devient premier président.
+- Période post-indépendance : 1960-1967 : Présidence de Léon M'ba. 1967-2009 : Présidence d'Omar Bongo (1967-2009), période de stabilité politique et de développement économique basé sur le pétrole. 2009-présent : Présidence d'Ali Bongo Ondimba (fils d'Omar Bongo). Défis : dépendance au pétrole, inégalités sociales, corruption. Le Gabon est l'un des pays les plus riches d'Afrique subsaharienne grâce à ses ressources pétrolières et forestières.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Gabon
+- CIA World Factbook – Gabon
+- ONU / UNFPA – Démographie Gabon 2025
+- Recensements gabonais
+- Études anthropologiques sur les peuples du Gabon
+- Études sur l'art gabonais (masques, sculptures)
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Fang
+- Identifiant peuple (PPL_) : PPL_FANG
+- Population : 1 200 000
+- Pourcentage dans le pays : 50%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Gabon (forêts équatoriales)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : fan
+
+### Peuple : Punu
+- Identifiant peuple (PPL_) : PPL_PUNU
+- Population : 240 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Gabon
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : puu
+
+### Peuple : Nzebi
+- Identifiant peuple (PPL_) : PPL_NZEBI
+- Population : 240 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Centre et Sud du Gabon
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : nzb
+
+### Peuple : Teke
+- Identifiant peuple (PPL_) : PPL_TEKE
+- Population : 120 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Est du Gabon
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : teg
+
+### Peuple : Myene
+- Identifiant peuple (PPL_) : PPL_MYENE
+- Population : 120 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Côte du Gabon (Libreville, Port-Gentil)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : mye
+
+### Peuple : Mbete
+- Identifiant peuple (PPL_) : PPL_MBETE
+- Population : 120 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Centre du Gabon
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : zmt
+
+### Autres peuples bantous
+- Identifiant peuple (PPL_) : N/A
+- Population : 360 000
+- Pourcentage dans le pays : 15%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Gabon
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Gabon 2025 : 2 400 000 (estimations ONU/UNFPA)**
+

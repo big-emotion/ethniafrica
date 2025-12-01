@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Sérère (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (sous-groupe du Niger-Congo)
-- Région historique : Sénégal, Gambie
-- Pays actuels : Sénégal, Gambie
+- Région historique : SEN, GMB
+- Pays actuels : SEN, GMB
 - Identifiant peuple (ID) : PPL_SERER
 
 # 1. Ethnies incluses dans le peuple

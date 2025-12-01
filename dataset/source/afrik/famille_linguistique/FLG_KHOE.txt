@@ -42,9 +42,9 @@
   ~250 000–350 000
 
 # 2. Peuples associés
-- Peuple 1 : Nama
-- Peuple 2 : Damara
-- Peuple 3 : Khwe
+- Peuple 1 : Nama (PPL_NAMA)
+- Peuple 2 : Damara (PPL_DAMARA)
+- Peuple 3 : Khwe (PPL_KHWE)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Nama  

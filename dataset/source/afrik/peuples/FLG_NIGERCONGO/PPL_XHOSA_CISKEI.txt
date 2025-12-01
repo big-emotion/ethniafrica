@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
 - Région historique : Afrique du Sud (Ciskei)
-- Pays actuels : Afrique du Sud
+- Pays actuels : ZAF
 - Identifiant peuple (ID) : PPL_XHOSA_CISKEI
 
 # 1. Ethnies incluses dans le peuple

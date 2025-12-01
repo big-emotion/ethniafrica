@@ -1,0 +1,38 @@
+{
+  "countryName": "Égypte",
+  "region": "afrique_du_nord",
+  "ancientNames": [
+    {
+      "period": "Antiquité (égyptien pharaonique)",
+      "names": [
+        "Kemet (Terre Noire)",
+        "Deshret (Terre Rouge)",
+        "Ta-Mery (Terre bien-aimée)",
+        "Ta-Wy (Les Deux Terres)"
+      ]
+    },
+    {
+      "period": "Période grecque",
+      "names": ["Aigyptos (Αἴγυπτος)"]
+    },
+    {
+      "period": "Période romaine",
+      "names": ["Aegyptus"]
+    },
+    {
+      "period": "Période islamique",
+      "names": ["Miṣr / Masr ; capitale Al-Qāhira (Le Caire)"]
+    },
+    {
+      "period": "1922–1953",
+      "names": ["Royaume d’Égypte"]
+    },
+    {
+      "period": "Depuis 1953",
+      "names": ["Égypte / République arabe d"]
+    }
+  ],
+  "description": "",
+  "ethnicGroupsSummary": "- Arabes égyptianisés (~90 %) : héritiers des anciens Égyptiens arabisés ; dominants dans la vallée et le delta.",
+  "ethnicities": []
+}

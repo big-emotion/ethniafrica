@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Kgalagadi (terme utilisé par les Européens)
 - Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
 - Groupe ethno-linguistique : Khoe
-- Région historique : Botswana, Afrique du Sud
-- Pays actuels : Botswana, Afrique du Sud
+- Région historique : BWA, Afrique du Sud
+- Pays actuels : BWA, Afrique du Sud
 - Identifiant peuple (ID) : PPL_KGALAGADI
 
 # 1. Ethnies incluses dans le peuple
@@ -74,7 +74,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Kgalagadi language (xkv)
-- CIA World Factbook – Botswana, South Africa
+- CIA World Factbook – BWA, South Africa
 - Recensements nationaux
 - Études anthropologiques sur les peuples khoisan
 

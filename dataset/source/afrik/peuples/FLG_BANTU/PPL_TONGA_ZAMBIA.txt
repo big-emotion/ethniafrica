@@ -3,9 +3,9 @@
 - Auto-appellation : Batonga (sg. Mutonga)
 - Exonymes / appellations historiques : Tonga (forme générique) ; BaTonga (pluriel bantou)
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
-- Groupe ethno-linguistique : Bantous d’Afrique australe (Zambie, Zimbabwe)
+- Groupe ethno-linguistique : Bantous d’Afrique australe (ZMB, ZWE)
 - Région historique : Vallée du Zambèze, rives nord et sud
-- Pays actuels : Zambie, Zimbabwe
+- Pays actuels : ZMB, ZWE
 - Identifiant peuple (ID) : PPL_TONGA_ZAMBIA
 
 # 1. Ethnies incluses dans le peuple

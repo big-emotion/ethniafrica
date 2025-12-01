@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Berbère
 - Groupe ethno-linguistique : Berbère nord-algérien (Zenati)
 - Région historique : Mont Chenoua (Tipasa – Algérie)
-- Pays actuels : Algérie
+- Pays actuels : DZA
 - Identifiant peuple : PPL_CHENOUA
 
 # 1. Ethnies incluses dans le peuple

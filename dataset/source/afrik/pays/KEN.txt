@@ -1,0 +1,274 @@
+# Nom du pays
+- Nom officiel actuel : République du Kenya (Republic of Kenya)
+- Étymologie du nom : Le nom "Kenya" vient du mont Kenya, appelé "Kirinyaga" (montagne de blancheur) par les Kikuyu. Les explorateurs européens du XIXe siècle ont utilisé "Kenya" d'après le mont Kenya. Le nom a été officialisé lors de la colonisation britannique.
+- Personne / peuple / administration à l'origine du nom : Le nom vient du mont Kenya, appelé "Kirinyaga" par les Kikuyu. Les explorateurs européens ont popularisé le terme "Kenya" au XIXe siècle. Le nom a été officialisé par les Britanniques lors de la colonisation.
+- Identifiant pays (ISO 3166-1 alpha-3) : KEN
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de groupes bantous, nilotiques et couchitiques sans nom unifié. Les peuples autochtones (Kikuyu, Luo, Maasai, etc.) avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Développement de royaumes et chefferies indépendants. Commerce avec les Arabes et les Swahili sur la côte.
+- Époque précoloniale : Mosaïque de peuples bantous (Kikuyu, Luhya, Kamba, Meru), nilotiques (Luo, Maasai, Samburu, Pokot, Turkana) et couchitiques (Somali, Borana). Commerce côtier swahili. Pas de nom unifié pour l'ensemble du territoire.
+- Colonisation : 1895 : Protectorat britannique de l'Afrique de l'Est. 1920 : Colonie du Kenya. Le nom "Kenya" est imposé par les colonisateurs britanniques.
+- Période contemporaine : Indépendance en 1963 sous le nom de "République du Kenya". Le nom officiel en anglais est "Republic of Kenya" et en swahili "Jamhuri ya Kenya".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes swahili] :
+  - Période : VIIIe - XIXe siècles
+  - Peuples dominants : Swahili
+  - Centres politiques : Mombasa, Lamu, Malindi
+  - Rôle historique : Cités-États swahili sur la côte, commerce avec les Arabes, les Indiens et les Européens. Civilisation swahili ancienne.
+
+- [Royaumes bantous] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Kikuyu, Luhya, Kamba, Meru
+  - Centres politiques : Mont Kenya, régions centrales et occidentales
+  - Rôle historique : Royaumes et chefferies bantous, organisation politique traditionnelle, agriculture.
+
+- [Confédérations nilotiques] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Luo, Maasai, Samburu, Pokot, Turkana
+  - Centres politiques : Rift Valley, Nyanza
+  - Rôle historique : Confédérations nilotiques, tradition pastorale, organisation par groupes d'âge.
+
+- [Protectorat de l'Afrique de l'Est] :
+  - Période : 1895 - 1920
+  - Peuples dominants : Tous les peuples kenyans sous administration coloniale britannique
+  - Centres politiques : Mombasa, Nairobi
+  - Rôle historique : Protectorat britannique, développement de Nairobi comme centre administratif.
+
+- [Colonie du Kenya] :
+  - Période : 1920 - 1963
+  - Peuples dominants : Tous les peuples kenyans sous administration coloniale britannique
+  - Centres politiques : Nairobi (capitale coloniale)
+  - Rôle historique : Colonie britannique, résistance kenyane (Mau Mau), mouvements nationalistes.
+
+- [République du Kenya] :
+  - Période : 1963 - présent
+  - Peuples dominants : Tous les peuples kenyans
+  - Centres politiques : Nairobi (capitale)
+  - Rôle historique : Indépendance en 1963. Histoire politique avec alternance démocratique. Développement économique, hub est-africain.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Kikuyu
+  - Auto-appellation (endonyme) : Gĩkũyũ
+  - Exonymes / appellations historiques : Kikuyu (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KIKUYU
+  - Région principale : Centre (Nyeri, Kiambu)
+  - Langues parlées : Kikuyu, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou, Zone E)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kikuyu" est neutre et accepté. L'auto-appellation "Gĩkũyũ" est préférée.
+
+- Peuple 2 :
+  - Nom : Luhya
+  - Auto-appellation (endonyme) : Luhya
+  - Exonymes / appellations historiques : Luhya (terme utilisé par les Européens), parfois appelés "Baluhya" (pluriel)
+  - Identifiant peuple (PPL_) : PPL_LUHYA (à vérifier si fichier existe)
+  - Région principale : Ouest
+  - Langues parlées : Luhya, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Luhya" est neutre et accepté.
+
+- Peuple 3 :
+  - Nom : Kalenjin
+  - Auto-appellation (endonyme) : Kalenjin
+  - Exonymes / appellations historiques : Kalenjin (terme utilisé par les Européens), groupe comprenant Nandi, Kipsigis, Pokot, Tugen, Marakwet
+  - Identifiant peuple (PPL_) : PPL_KALENJIN (à vérifier si fichier existe)
+  - Région principale : Rift Valley
+  - Langues parlées : Kalenjin, swahili, anglais
+  - Famille linguistique : FLG_NILOTIQUE (Nilotique)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kalenjin" est neutre et accepté.
+
+- Peuple 4 :
+  - Nom : Luo
+  - Auto-appellation (endonyme) : Luo
+  - Exonymes / appellations historiques : Luo (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LUO (à vérifier si fichier existe)
+  - Région principale : Nyanza
+  - Langues parlées : Luo, swahili, anglais
+  - Famille linguistique : FLG_NILOTIQUE (Nilotique)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Luo" est neutre et accepté.
+
+- Peuple 5 :
+  - Nom : Kamba
+  - Auto-appellation (endonyme) : Kamba
+  - Exonymes / appellations historiques : Kamba (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KAMBA
+  - Région principale : Sud-Est
+  - Langues parlées : Kamba, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou, Zone E)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kamba" est neutre et accepté.
+
+- Peuple 6 :
+  - Nom : Somali
+  - Auto-appellation (endonyme) : Soomaali
+  - Exonymes / appellations historiques : Somali (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SOMALI (à vérifier si fichier existe)
+  - Région principale : Nord-Est (Garissa, Wajir)
+  - Langues parlées : Somali, swahili, anglais
+  - Famille linguistique : FLG_COUCHITIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Somali" est neutre et accepté. L'auto-appellation "Soomaali" est préférée.
+
+- Peuple 7 :
+  - Nom : Kisii
+  - Auto-appellation (endonyme) : Kisii
+  - Exonymes / appellations historiques : Kisii (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KISII (à vérifier si fichier existe)
+  - Région principale : Sud-Ouest
+  - Langues parlées : Kisii, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kisii" est neutre et accepté.
+
+- Peuple 8 :
+  - Nom : Meru
+  - Auto-appellation (endonyme) : Meru
+  - Exonymes / appellations historiques : Meru (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MERU (à vérifier si fichier existe)
+  - Région principale : Mont Kenya
+  - Langues parlées : Meru, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Meru" est neutre et accepté.
+
+- Peuple 9 :
+  - Nom : Mijikenda
+  - Auto-appellation (endonyme) : Mijikenda
+  - Exonymes / appellations historiques : Mijikenda (terme signifiant "neuf peuples" en swahili), groupe comprenant Giriama, Digo, Chonyi
+  - Identifiant peuple (PPL_) : PPL_MIJIKENDA (à vérifier si fichier existe)
+  - Région principale : Côte
+  - Langues parlées : Mijikenda, swahili, anglais
+  - Famille linguistique : FLG_BANTU (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Mijikenda" est neutre et accepté.
+
+- Peuple 10 :
+  - Nom : Maasai
+  - Auto-appellation (endonyme) : Maasai
+  - Exonymes / appellations historiques : Maasai (terme utilisé par les Européens), Masai (variante)
+  - Identifiant peuple (PPL_) : PPL_MAASAI
+  - Région principale : Rift Valley
+  - Langues parlées : Maasai, swahili, anglais
+  - Famille linguistique : FLG_NILOTIQUE (Nilotique oriental)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Maasai" est neutre et accepté.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Swahili (swa) - langue nationale et officielle
+  - Anglais - langue officielle
+  - Kikuyu (kik) - langue régionale majeure
+  - Luhya (luy) - langue régionale
+  - Luo (luo) - langue régionale
+  - Kamba (kam) - langue régionale
+  - Plus de 40 langues locales
+- Traditions culturelles : Musique traditionnelle (benga, taarab), danse traditionnelle, poésie orale, artisanat (vannerie, poterie, bijoux maasai), architecture traditionnelle, élevage pastoral (Maasai, Samburu, Turkana)
+- Religions dominantes : Christianisme (protestant majoritaire, catholique), islam (minorité, surtout sur la côte), croyances traditionnelles (syncrétisme)
+- Modes de vie : Vie principalement rurale, agriculture (thé, café, maïs, haricots), élevage (bovins, caprins, dromadaires), pêche (lacs), tourisme, commerce, urbanisation croissante
+- Organisation sociale : Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, groupes d'âge (Maasai, Samburu), importance des ancêtres
+- Relations régionales : Relations historiques avec les peuples de Tanzanie, d'Ouganda, d'Éthiopie, de Somalie, du Soudan du Sud. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par des groupes bantous, nilotiques et couchitiques. Développement de royaumes et chefferies indépendants.
+- Moyen Âge : Développement des cités-États swahili sur la côte (VIIIe-XIXe siècles). Commerce avec les Arabes, les Indiens et les Européens. Civilisation swahili ancienne.
+- Époque précoloniale : Mosaïque de peuples bantous, nilotiques et couchitiques. Commerce côtier swahili. Pas d'unification politique.
+- Colonisation : 1895 : Protectorat britannique de l'Afrique de l'Est. 1920 : Colonie du Kenya. Développement de Nairobi comme centre administratif. Résistance kenyane (Mau Mau, 1952-1960).
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Révolte des Mau Mau (1952-1960). Indépendance obtenue en 1963. Jomo Kenyatta devient premier président.
+- Période post-indépendance : Première République (1963-1978) : présidence de Jomo Kenyatta, stabilité politique. Deuxième République (1978-2002) : présidence de Daniel arap Moi. Troisième République depuis 2002 : alternance démocratique, développement économique, hub est-africain.
+
+# 7. Sources
+- CIA World Factbook – Kenya
+- SIL Ethnologue – Languages of Kenya
+- Recensements nationaux kenyans
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples kenyans
+- Études historiques sur la colonisation et l'indépendance
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Kikuyu
+- Identifiant peuple (PPL_) : PPL_KIKUYU
+- Population : 9 300 000
+- Pourcentage dans le pays : 17.0%
+- Pourcentage en Afrique : 0.65%
+- Région : Centre (Nyeri, Kiambu)
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : kik (Kikuyu)
+
+### Peuple : Luhya
+- Identifiant peuple (PPL_) : PPL_LUHYA (à vérifier)
+- Population : 7 700 000
+- Pourcentage dans le pays : 14.0%
+- Pourcentage en Afrique : 0.54%
+- Région : Ouest
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : luy (Luhya)
+
+### Peuple : Kalenjin
+- Identifiant peuple (PPL_) : PPL_KALENJIN (à vérifier)
+- Population : 7 200 000
+- Pourcentage dans le pays : 13.0%
+- Pourcentage en Afrique : 0.50%
+- Région : Rift Valley
+- Famille linguistique : FLG_NILOTIQUE (Nilotique)
+- Code ISO 639-3 (langue principale) : kln (Kalenjin)
+
+### Peuple : Luo
+- Identifiant peuple (PPL_) : PPL_LUO (à vérifier)
+- Population : 5 600 000
+- Pourcentage dans le pays : 10.0%
+- Pourcentage en Afrique : 0.39%
+- Région : Nyanza
+- Famille linguistique : FLG_NILOTIQUE (Nilotique)
+- Code ISO 639-3 (langue principale) : luo (Luo)
+
+### Peuple : Kamba
+- Identifiant peuple (PPL_) : PPL_KAMBA
+- Population : 5 600 000
+- Pourcentage dans le pays : 10.0%
+- Pourcentage en Afrique : 0.39%
+- Région : Sud-Est
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : kam (Kamba)
+
+### Peuple : Somali
+- Identifiant peuple (PPL_) : PPL_SOMALI (à vérifier)
+- Population : 3 300 000
+- Pourcentage dans le pays : 6.0%
+- Pourcentage en Afrique : 0.23%
+- Région : Nord-Est (Garissa, Wajir)
+- Famille linguistique : FLG_COUCHITIQUE
+- Code ISO 639-3 (langue principale) : som (Somali)
+
+### Peuple : Kisii
+- Identifiant peuple (PPL_) : PPL_KISII (à vérifier)
+- Population : 3 300 000
+- Pourcentage dans le pays : 6.0%
+- Pourcentage en Afrique : 0.23%
+- Région : Sud-Ouest
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : kss (Kisii)
+
+### Peuple : Meru
+- Identifiant peuple (PPL_) : PPL_MERU (à vérifier)
+- Population : 2 200 000
+- Pourcentage dans le pays : 4.0%
+- Pourcentage en Afrique : 0.15%
+- Région : Mont Kenya
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : mer (Meru)
+
+### Peuple : Mijikenda
+- Identifiant peuple (PPL_) : PPL_MIJIKENDA (à vérifier)
+- Population : 2 700 000
+- Pourcentage dans le pays : 5.0%
+- Pourcentage en Afrique : 0.19%
+- Région : Côte
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : nyf (Giriama), dig (Digo)
+
+### Peuple : Maasai
+- Identifiant peuple (PPL_) : PPL_MAASAI
+- Population : 1 100 000
+- Pourcentage dans le pays : 2.0%
+- Pourcentage en Afrique : 0.08%
+- Région : Rift Valley
+- Famille linguistique : FLG_NILOTIQUE (Nilotique)
+- Code ISO 639-3 (langue principale) : mas (Maasai)
+

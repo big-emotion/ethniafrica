@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Wandya (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone J)
-- Région historique : RDC, Ouganda
-- Pays actuels : RDC, Ouganda
+- Région historique : COD, UGA
+- Pays actuels : COD, UGA
 - Identifiant peuple (ID) : PPL_WANDYA
 
 # 1. Ethnies incluses dans le peuple

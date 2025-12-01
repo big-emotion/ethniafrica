@@ -1,0 +1,501 @@
+{
+  "batchId": "FLG_FLG_AUSTRONESIENNE",
+  "flgId": "FLG_AUSTRONESIENNE",
+  "totalEthnies": 38,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_ANTAKARANA_ANTAKARANA_DU_NORD",
+      "nom_ethnie": "Antakarana du Nord",
+      "PPL_ID": "PPL_ANTAKARANA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANTAKARANA/ETH_ANTAKARANA_ANTAKARANA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antakarana%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Antakarana%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANTAKARANA_ANTAKARANA_DU_SUD",
+      "nom_ethnie": "Antakarana du Sud",
+      "PPL_ID": "PPL_ANTAKARANA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANTAKARANA/ETH_ANTAKARANA_ANTAKARANA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antakarana%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Antakarana%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANTAMBAHOAKA_ANTAMBAHOAKA_DU_NORD",
+      "nom_ethnie": "Antambahoaka du Nord",
+      "PPL_ID": "PPL_ANTAMBAHOAKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANTAMBAHOAKA/ETH_ANTAMBAHOAKA_ANTAMBAHOAKA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antambahoaka%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Antambahoaka%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANTAMBAHOAKA_ANTAMBAHOAKA_DU_SUD",
+      "nom_ethnie": "Antambahoaka du Sud",
+      "PPL_ID": "PPL_ANTAMBAHOAKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANTAMBAHOAKA/ETH_ANTAMBAHOAKA_ANTAMBAHOAKA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antambahoaka%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Antambahoaka%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANTANDROY_ANTANDROY_DU_NORD",
+      "nom_ethnie": "Antandroy du Nord",
+      "PPL_ID": "PPL_ANTANDROY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANTANDROY/ETH_ANTANDROY_ANTANDROY_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antandroy%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Antandroy%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANTANDROY_ANTANDROY_DU_SUD",
+      "nom_ethnie": "Antandroy du Sud",
+      "PPL_ID": "PPL_ANTANDROY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANTANDROY/ETH_ANTANDROY_ANTANDROY_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antandroy%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Antandroy%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANTSALOVA_ANTSALOVA_DU_NORD",
+      "nom_ethnie": "Antsalova du Nord",
+      "PPL_ID": "PPL_ANTSALOVA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANTSALOVA/ETH_ANTSALOVA_ANTSALOVA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antsalova%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Antsalova%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANTSALOVA_ANTSALOVA_DU_SUD",
+      "nom_ethnie": "Antsalova du Sud",
+      "PPL_ID": "PPL_ANTSALOVA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANTSALOVA/ETH_ANTSALOVA_ANTSALOVA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antsalova%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Antsalova%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_MERINA",
+      "nom_ethnie": "Merina",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_MERINA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Merina",
+        "unesco": "https://www.unesco.org/en/search?q=Merina%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_BETSIMISARAKA",
+      "nom_ethnie": "Betsimisaraka",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_BETSIMISARAKA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Betsimisaraka",
+        "unesco": "https://www.unesco.org/en/search?q=Betsimisaraka%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_SAKALAVA",
+      "nom_ethnie": "Sakalava",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_SAKALAVA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sakalava",
+        "unesco": "https://www.unesco.org/en/search?q=Sakalava%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_ANTANDROY",
+      "nom_ethnie": "Antandroy",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_ANTANDROY.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antandroy",
+        "unesco": "https://www.unesco.org/en/search?q=Antandroy%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_BETSILEO",
+      "nom_ethnie": "Betsileo",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_BETSILEO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Betsileo",
+        "unesco": "https://www.unesco.org/en/search?q=Betsileo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_TSIMIHETY",
+      "nom_ethnie": "Tsimihety",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_TSIMIHETY.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tsimihety",
+        "unesco": "https://www.unesco.org/en/search?q=Tsimihety%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_ANTAKARANA",
+      "nom_ethnie": "Antakarana",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_ANTAKARANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antakarana",
+        "unesco": "https://www.unesco.org/en/search?q=Antakarana%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_VEZO",
+      "nom_ethnie": "Vezo",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_VEZO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Vezo",
+        "unesco": "https://www.unesco.org/en/search?q=Vezo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_TANOSY_ANTANOSY",
+      "nom_ethnie": "Tanosy (Antanosy)",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_TANOSY_ANTANOSY.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tanosy%20(Antanosy)",
+        "unesco": "https://www.unesco.org/en/search?q=Tanosy%20(Antanosy)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_ANTAMBAHOAKA",
+      "nom_ethnie": "Antambahoaka",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_ANTAMBAHOAKA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antambahoaka",
+        "unesco": "https://www.unesco.org/en/search?q=Antambahoaka%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_BEZANOZANO",
+      "nom_ethnie": "Bezanozano",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_BEZANOZANO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bezanozano",
+        "unesco": "https://www.unesco.org/en/search?q=Bezanozano%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_MIKEA",
+      "nom_ethnie": "Mikea",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_MIKEA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mikea",
+        "unesco": "https://www.unesco.org/en/search?q=Mikea%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_AUSTRO_MACRO_ANTSALOVA",
+      "nom_ethnie": "Antsalova",
+      "PPL_ID": "PPL_AUSTRO_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_AUSTRO_MACRO/ETH_AUSTRO_MACRO_ANTSALOVA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antsalova",
+        "unesco": "https://www.unesco.org/en/search?q=Antsalova%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BETSILEO_BETSILEO_DU_NORD",
+      "nom_ethnie": "Betsileo du Nord",
+      "PPL_ID": "PPL_BETSILEO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BETSILEO/ETH_BETSILEO_BETSILEO_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Betsileo%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Betsileo%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BETSILEO_BETSILEO_DU_SUD",
+      "nom_ethnie": "Betsileo du Sud",
+      "PPL_ID": "PPL_BETSILEO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BETSILEO/ETH_BETSILEO_BETSILEO_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Betsileo%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Betsileo%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BETSIMISARAKA_BETSIMISARAKA_DU_NORD",
+      "nom_ethnie": "Betsimisaraka du Nord",
+      "PPL_ID": "PPL_BETSIMISARAKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BETSIMISARAKA/ETH_BETSIMISARAKA_BETSIMISARAKA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Betsimisaraka%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Betsimisaraka%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BETSIMISARAKA_BETSIMISARAKA_DU_SUD",
+      "nom_ethnie": "Betsimisaraka du Sud",
+      "PPL_ID": "PPL_BETSIMISARAKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BETSIMISARAKA/ETH_BETSIMISARAKA_BETSIMISARAKA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Betsimisaraka%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Betsimisaraka%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BEZANOZANO_BEZANOZANO_DU_NORD",
+      "nom_ethnie": "Bezanozano du Nord",
+      "PPL_ID": "PPL_BEZANOZANO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BEZANOZANO/ETH_BEZANOZANO_BEZANOZANO_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bezanozano%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Bezanozano%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BEZANOZANO_BEZANOZANO_DU_SUD",
+      "nom_ethnie": "Bezanozano du Sud",
+      "PPL_ID": "PPL_BEZANOZANO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BEZANOZANO/ETH_BEZANOZANO_BEZANOZANO_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bezanozano%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Bezanozano%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MERINA_MERINA_DES_HAUTES_TERRES",
+      "nom_ethnie": "Merina des hautes terres",
+      "PPL_ID": "PPL_MERINA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MERINA/ETH_MERINA_MERINA_DES_HAUTES_TERRES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Merina%20des%20hautes%20terres",
+        "unesco": "https://www.unesco.org/en/search?q=Merina%20des%20hautes%20terres%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MIKEA_MIKEA_DU_NORD",
+      "nom_ethnie": "Mikea du Nord",
+      "PPL_ID": "PPL_MIKEA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MIKEA/ETH_MIKEA_MIKEA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mikea%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Mikea%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MIKEA_MIKEA_DU_SUD",
+      "nom_ethnie": "Mikea du Sud",
+      "PPL_ID": "PPL_MIKEA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MIKEA/ETH_MIKEA_MIKEA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mikea%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Mikea%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAKALAVA_SAKALAVA_DU_MENABE",
+      "nom_ethnie": "Sakalava du Menabe",
+      "PPL_ID": "PPL_SAKALAVA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAKALAVA/ETH_SAKALAVA_SAKALAVA_DU_MENABE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sakalava%20du%20Menabe",
+        "unesco": "https://www.unesco.org/en/search?q=Sakalava%20du%20Menabe%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAKALAVA_SAKALAVA_DU_BOINA",
+      "nom_ethnie": "Sakalava du Boina",
+      "PPL_ID": "PPL_SAKALAVA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAKALAVA/ETH_SAKALAVA_SAKALAVA_DU_BOINA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sakalava%20du%20Boina",
+        "unesco": "https://www.unesco.org/en/search?q=Sakalava%20du%20Boina%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TANOSY_ANTANOSY_DU_NORD",
+      "nom_ethnie": "Antanosy du Nord",
+      "PPL_ID": "PPL_TANOSY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TANOSY/ETH_TANOSY_ANTANOSY_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antanosy%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Antanosy%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TANOSY_ANTANOSY_DU_SUD",
+      "nom_ethnie": "Antanosy du Sud",
+      "PPL_ID": "PPL_TANOSY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TANOSY/ETH_TANOSY_ANTANOSY_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Antanosy%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Antanosy%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TSIMIHETY_TSIMIHETY_DU_NORD",
+      "nom_ethnie": "Tsimihety du Nord",
+      "PPL_ID": "PPL_TSIMIHETY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TSIMIHETY/ETH_TSIMIHETY_TSIMIHETY_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tsimihety%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Tsimihety%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TSIMIHETY_TSIMIHETY_DU_SUD",
+      "nom_ethnie": "Tsimihety du Sud",
+      "PPL_ID": "PPL_TSIMIHETY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TSIMIHETY/ETH_TSIMIHETY_TSIMIHETY_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tsimihety%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Tsimihety%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_VEZO_VEZO_DU_NORD",
+      "nom_ethnie": "Vezo du Nord",
+      "PPL_ID": "PPL_VEZO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_VEZO/ETH_VEZO_VEZO_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Vezo%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Vezo%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_VEZO_VEZO_DU_SUD",
+      "nom_ethnie": "Vezo du Sud",
+      "PPL_ID": "PPL_VEZO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_VEZO/ETH_VEZO_VEZO_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Vezo%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Vezo%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

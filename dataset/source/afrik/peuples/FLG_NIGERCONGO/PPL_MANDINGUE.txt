@@ -7,8 +7,8 @@
   - « Mandingo » (terme historique, parfois péjoratif → éviter)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (Mandé occidental)
-- Région historique : Afrique de l'Ouest (Mali, Guinée, Sénégal, Côte d'Ivoire, Gambie, Guinée-Bissau, Sierra Leone)
-- Pays actuels : Mali, Guinée, Sénégal, Côte d'Ivoire, Gambie, Guinée-Bissau, Sierra Leone
+- Région historique : Afrique de l'Ouest (MLI, GIN, SEN, CIV, GMB, GIN-Bissau, SLE)
+- Pays actuels : MLI, GIN, SEN, CIV, GMB, GIN-Bissau, SLE
 - Identifiant peuple (ID) : PPL_MANDINGUE
 
 # 1. Ethnies incluses dans le peuple
@@ -25,7 +25,7 @@
 - Origines anciennes : Les Mandingue sont originaires de l'Afrique de l'Ouest. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé (Mandé occidental). Ancien empire du Mali.
 - Routes migratoires : 
   - Migrations depuis les régions mandé
-  - Expansion vers le Mali, la Guinée, le Sénégal, la Côte d'Ivoire, la Gambie, la Guinée-Bissau et la Sierra Leone
+  - Expansion vers le MLI, la GIN, le SEN, la CIV, la GMB, la Guinée-Bissau et la Sierra Leone
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en royaume traditionnel (ancien empire du Mali). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples voisins, influence de l'islam.

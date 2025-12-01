@@ -1,0 +1,60 @@
+{
+  "countryName": "Libye",
+  "region": "afrique_du_nord",
+  "ethnicities": [
+    {
+      "groupName": "Arabes & Berbères arabisés",
+      "subGroups": [],
+      "population": 6523608,
+      "percentageInCountry": 92,
+      "percentageInAfrica": 0.426861,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Touaregs & Toubous",
+      "subGroups": [],
+      "population": 425453,
+      "percentageInCountry": 6,
+      "percentageInAfrica": 0.027839,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    },
+    {
+      "groupName": "Subsahariens (immigrés)",
+      "subGroups": [],
+      "population": 141818,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.00928,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false
+    }
+  ]
+}

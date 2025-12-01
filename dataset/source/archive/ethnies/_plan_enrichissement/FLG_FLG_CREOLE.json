@@ -1,0 +1,319 @@
+{
+  "batchId": "FLG_FLG_CREOLE",
+  "flgId": "FLG_CREOLE",
+  "totalEthnies": 24,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_ANAFRO_CRIOULO_CRIOULO_DE_GUINEE_BISSAU",
+      "nom_ethnie": "Crioulo de Guinée-Bissau",
+      "PPL_ID": "PPL_ANAFRO_CRIOULO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANAFRO_CRIOULO/ETH_ANAFRO_CRIOULO_CRIOULO_DE_GUINEE_BISSAU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Crioulo%20de%20Guin%C3%A9e-Bissau",
+        "unesco": "https://www.unesco.org/en/search?q=Crioulo%20de%20Guin%C3%A9e-Bissau%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ANGOLAR_ANGOLAR_DE_SAO_TOME",
+      "nom_ethnie": "Angolar de São Tomé",
+      "PPL_ID": "PPL_ANGOLAR",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ANGOLAR/ETH_ANGOLAR_ANGOLAR_DE_SAO_TOME.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Angolar%20de%20S%C3%A3o%20Tom%C3%A9",
+        "unesco": "https://www.unesco.org/en/search?q=Angolar%20de%20S%C3%A3o%20Tom%C3%A9%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_CABOVERDIEN_CREOLE_DE_SANTIAGO",
+      "nom_ethnie": "Créole de Santiago",
+      "PPL_ID": "PPL_CREOLE_CABOVERDIEN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_CABOVERDIEN/ETH_CREOLE_CABOVERDIEN_CREOLE_DE_SANTIAGO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9ole%20de%20Santiago",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9ole%20de%20Santiago%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_CABOVERDIEN_CREOLE_DE_SAO_VICENTE",
+      "nom_ethnie": "Créole de São Vicente",
+      "PPL_ID": "PPL_CREOLE_CABOVERDIEN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_CABOVERDIEN/ETH_CREOLE_CABOVERDIEN_CREOLE_DE_SAO_VICENTE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9ole%20de%20S%C3%A3o%20Vicente",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9ole%20de%20S%C3%A3o%20Vicente%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_CABOVERDIEN_CREOLE_DE_FOGO",
+      "nom_ethnie": "Créole de Fogo",
+      "PPL_ID": "PPL_CREOLE_CABOVERDIEN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_CABOVERDIEN/ETH_CREOLE_CABOVERDIEN_CREOLE_DE_FOGO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9ole%20de%20Fogo",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9ole%20de%20Fogo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_CABOVERDIEN_CREOLE_DE_BRAVA",
+      "nom_ethnie": "Créole de Brava",
+      "PPL_ID": "PPL_CREOLE_CABOVERDIEN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_CABOVERDIEN/ETH_CREOLE_CABOVERDIEN_CREOLE_DE_BRAVA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9ole%20de%20Brava",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9ole%20de%20Brava%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_CABOVERDIEN_AUTRES_ILES",
+      "nom_ethnie": "Autres îles",
+      "PPL_ID": "PPL_CREOLE_CABOVERDIEN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_CABOVERDIEN/ETH_CREOLE_CABOVERDIEN_AUTRES_ILES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Autres%20%C3%AEles",
+        "unesco": "https://www.unesco.org/en/search?q=Autres%20%C3%AEles%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_MACRO_CREOLES_CAP_VERDIENS",
+      "nom_ethnie": "Créoles cap-verdiens",
+      "PPL_ID": "PPL_CREOLE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_MACRO/ETH_CREOLE_MACRO_CREOLES_CAP_VERDIENS.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9oles%20cap-verdiens",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9oles%20cap-verdiens%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_MACRO_CRIOULO_DE_GUINEE_BISSAU",
+      "nom_ethnie": "Crioulo de Guinée-Bissau",
+      "PPL_ID": "PPL_CREOLE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_MACRO/ETH_CREOLE_MACRO_CRIOULO_DE_GUINEE_BISSAU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Crioulo%20de%20Guin%C3%A9e-Bissau",
+        "unesco": "https://www.unesco.org/en/search?q=Crioulo%20de%20Guin%C3%A9e-Bissau%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_MACRO_KRIO_DE_SIERRA_LEONE",
+      "nom_ethnie": "Krio de Sierra Leone",
+      "PPL_ID": "PPL_CREOLE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_MACRO/ETH_CREOLE_MACRO_KRIO_DE_SIERRA_LEONE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Krio%20de%20Sierra%20Leone",
+        "unesco": "https://www.unesco.org/en/search?q=Krio%20de%20Sierra%20Leone%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_MACRO_CREOLES_DE_SAO_TOME_ET_PRINCIPE",
+      "nom_ethnie": "Créoles de São Tomé-et-Príncipe",
+      "PPL_ID": "PPL_CREOLE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_MACRO/ETH_CREOLE_MACRO_CREOLES_DE_SAO_TOME_ET_PRINCIPE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9oles%20de%20S%C3%A3o%20Tom%C3%A9-et-Pr%C3%ADncipe",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9oles%20de%20S%C3%A3o%20Tom%C3%A9-et-Pr%C3%ADncipe%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_MACRO_CREOLES_DE_MAURICE",
+      "nom_ethnie": "Créoles de Maurice",
+      "PPL_ID": "PPL_CREOLE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_MACRO/ETH_CREOLE_MACRO_CREOLES_DE_MAURICE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9oles%20de%20Maurice",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9oles%20de%20Maurice%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_MACRO_CREOLES_DES_SEYCHELLES",
+      "nom_ethnie": "Créoles des Seychelles",
+      "PPL_ID": "PPL_CREOLE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_MACRO/ETH_CREOLE_MACRO_CREOLES_DES_SEYCHELLES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9oles%20des%20Seychelles",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9oles%20des%20Seychelles%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_MACRO_CREOLES_DE_LA_REUNION",
+      "nom_ethnie": "Créoles de la Réunion",
+      "PPL_ID": "PPL_CREOLE_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_MACRO/ETH_CREOLE_MACRO_CREOLES_DE_LA_REUNION.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9oles%20de%20la%20R%C3%A9union",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9oles%20de%20la%20R%C3%A9union%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_MAURICE_CREOLE_DE_MAURICE",
+      "nom_ethnie": "Créole de Maurice",
+      "PPL_ID": "PPL_CREOLE_MAURICE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_MAURICE/ETH_CREOLE_MAURICE_CREOLE_DE_MAURICE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9ole%20de%20Maurice",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9ole%20de%20Maurice%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_REUNION_CREOLE_DE_LA_REUNION",
+      "nom_ethnie": "Créole de la Réunion",
+      "PPL_ID": "PPL_CREOLE_REUNION",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_REUNION/ETH_CREOLE_REUNION_CREOLE_DE_LA_REUNION.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9ole%20de%20la%20R%C3%A9union",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9ole%20de%20la%20R%C3%A9union%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_CREOLE_SEYCHELLES_CREOLE_DES_SEYCHELLES",
+      "nom_ethnie": "Créole des Seychelles",
+      "PPL_ID": "PPL_CREOLE_SEYCHELLES",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_CREOLE_SEYCHELLES/ETH_CREOLE_SEYCHELLES_CREOLE_DES_SEYCHELLES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9ole%20des%20Seychelles",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9ole%20des%20Seychelles%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FORROS_FORROS_DE_SAO_TOME",
+      "nom_ethnie": "Forros de São Tomé",
+      "PPL_ID": "PPL_FORROS",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FORROS/ETH_FORROS_FORROS_DE_SAO_TOME.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Forros%20de%20S%C3%A3o%20Tom%C3%A9",
+        "unesco": "https://www.unesco.org/en/search?q=Forros%20de%20S%C3%A3o%20Tom%C3%A9%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FORROS_FORROS_DE_PRINCIPE",
+      "nom_ethnie": "Forros de Príncipe",
+      "PPL_ID": "PPL_FORROS",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FORROS/ETH_FORROS_FORROS_DE_PRINCIPE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Forros%20de%20Pr%C3%ADncipe",
+        "unesco": "https://www.unesco.org/en/search?q=Forros%20de%20Pr%C3%ADncipe%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KHOISAN_CREOLE_CREOLES_AVEC_INFLUENCES_KHOISAN_D_AFRIQUE_DU_SUD",
+      "nom_ethnie": "Créoles avec influences khoisan d'Afrique du Sud",
+      "PPL_ID": "PPL_KHOISAN_CREOLE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KHOISAN_CREOLE/ETH_KHOISAN_CREOLE_CREOLES_AVEC_INFLUENCES_KHOISAN_D_AFRIQUE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9oles%20avec%20influences%20khoisan%20d'Afrique%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9oles%20avec%20influences%20khoisan%20d'Afrique%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KHOISAN_CREOLE_CREOLES_AVEC_INFLUENCES_KHOISAN_DE_NAMIBIE",
+      "nom_ethnie": "Créoles avec influences khoisan de Namibie",
+      "PPL_ID": "PPL_KHOISAN_CREOLE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KHOISAN_CREOLE/ETH_KHOISAN_CREOLE_CREOLES_AVEC_INFLUENCES_KHOISAN_DE_NAMIBIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Cr%C3%A9oles%20avec%20influences%20khoisan%20de%20Namibie",
+        "unesco": "https://www.unesco.org/en/search?q=Cr%C3%A9oles%20avec%20influences%20khoisan%20de%20Namibie%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KRIO_KRIO_DE_FREETOWN",
+      "nom_ethnie": "Krio de Freetown",
+      "PPL_ID": "PPL_KRIO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KRIO/ETH_KRIO_KRIO_DE_FREETOWN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Krio%20de%20Freetown",
+        "unesco": "https://www.unesco.org/en/search?q=Krio%20de%20Freetown%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KRIO_KRIO_DES_PROVINCES",
+      "nom_ethnie": "Krio des provinces",
+      "PPL_ID": "PPL_KRIO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KRIO/ETH_KRIO_KRIO_DES_PROVINCES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Krio%20des%20provinces",
+        "unesco": "https://www.unesco.org/en/search?q=Krio%20des%20provinces%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_PAPELO_PAPELO_DE_GUINEE_BISSAU",
+      "nom_ethnie": "Papelo de Guinée-Bissau",
+      "PPL_ID": "PPL_PAPELO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_PAPELO/ETH_PAPELO_PAPELO_DE_GUINEE_BISSAU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Papelo%20de%20Guin%C3%A9e-Bissau",
+        "unesco": "https://www.unesco.org/en/search?q=Papelo%20de%20Guin%C3%A9e-Bissau%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

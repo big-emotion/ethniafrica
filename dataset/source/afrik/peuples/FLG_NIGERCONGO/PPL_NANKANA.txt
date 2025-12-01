@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Gur
 - Région historique : Ghana
-- Pays actuels : Ghana
+- Pays actuels : GHA
 - Identifiant peuple (ID) : PPL_NANKANA
 
 # 1. Ethnies incluses dans le peuple

@@ -1,0 +1,161 @@
+# Nom du pays
+- Nom officiel actuel : République de Maurice (Republic of Mauritius, Repiblik Moris)
+- Étymologie du nom : Le nom "Maurice" vient du prince Maurice de Nassau (Maurice d'Orange), en l'honneur duquel l'île a été nommée par les Néerlandais en 1598. Le nom créole "Moris" est dérivé de "Maurice". L'île était auparavant appelée "Dina Arobi" (île déserte) par les Arabes.
+- Personne / peuple / administration à l'origine du nom : Les Néerlandais ont nommé l'île "Mauritius" en l'honneur du prince Maurice de Nassau (Maurice d'Orange), stathouder des Provinces-Unies. Les Français l'ont appelée "Île de France" (1715-1810), puis les Britanniques ont restauré le nom "Mauritius" (1810).
+- Identifiant pays (ISO 3166-1 alpha-3) : MUS
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : L'île Maurice était inhabitée. Les Arabes l'ont appelée "Dina Arobi" (île déserte) mais ne l'ont pas colonisée.
+- Moyen Âge : L'île reste inhabitée. Les Arabes connaissent l'île mais ne s'y installent pas.
+- Époque précoloniale : L'île reste inhabitée jusqu'à l'arrivée des Européens. Pas de nom unifié avant la colonisation.
+- Colonisation : 1598 : Arrivée des Néerlandais, nom "Mauritius" (en l'honneur du prince Maurice de Nassau). 1638-1710 : Colonisation néerlandaise (abandonnée en 1710). 1715-1810 : Colonisation française, nom "Île de France". 1810-1968 : Colonisation britannique, nom "Mauritius" restauré.
+- Période contemporaine : 1968 : Indépendance, République de Maurice. Le nom "Maurice" est officiel en français, "Mauritius" en anglais, "Moris" en créole.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Île déserte] :
+  - Période : Avant 1598
+  - Peuples dominants : Aucun (île inhabitée)
+  - Centres politiques : Aucun
+  - Rôle historique : L'île Maurice était inhabitée avant l'arrivée des Européens. Les Arabes connaissaient l'île mais ne l'ont pas colonisée.
+
+- [Colonie néerlandaise] :
+  - Période : 1638-1710
+  - Peuples dominants : Néerlandais, esclaves africains et malgaches
+  - Centres politiques : Port-Louis (établissement néerlandais)
+  - Rôle historique : Première colonisation européenne, introduction d'esclaves africains et malgaches, exploitation du bois d'ébène, abandon de la colonie en 1710.
+
+- [Colonie française (Île de France)] :
+  - Période : 1715-1810
+  - Peuples dominants : Français, esclaves africains et malgaches, colons français
+  - Centres politiques : Port-Louis (capitale)
+  - Rôle historique : Colonisation française intensive, développement de l'économie sucrière, importation massive d'esclaves africains et malgaches, développement du créole mauricien, base navale française dans l'océan Indien.
+
+- [Colonie britannique] :
+  - Période : 1810-1968
+  - Peuples dominants : Britanniques, Créoles mauriciens, immigrants indiens, immigrants chinois
+  - Centres politiques : Port-Louis (capitale)
+  - Rôle historique : Colonisation britannique, abolition de l'esclavage (1835), immigration massive d'Indiens (travailleurs engagés, 1834-1920), immigration chinoise (commerce), développement de la société multiethnique, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Indo-Mauriciens
+  - Auto-appellation (endonyme) : Variées selon les groupes (Hindous, Musulmans, Tamouls, Telugu, Marathi, etc.)
+  - Exonymes / appellations historiques : "Coolies" (terme colonial péjoratif pour les travailleurs engagés indiens), "Indiens" (terme générique)
+  - Identifiant peuple (PPL_) : PPL_INDO_MAURICIENS
+  - Région principale : Toutes les régions de Maurice, majoritaires
+  - Langues parlées : Hindi, ourdou, tamoul, telugu, marathi, bhojpuri, créole mauricien, anglais, français
+  - Famille linguistique : Indo-européenne (langues indiennes), Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Coolie" est un terme colonial péjoratif utilisé pour désigner les travailleurs engagés indiens. Il doit être évité. Les Indo-Mauriciens sont majoritairement hindous, avec des minorités musulmanes et chrétiennes. Ils sont descendants d'immigrants indiens arrivés entre 1834 et 1920 comme travailleurs engagés dans les plantations de canne à sucre.
+
+- Peuple 2 :
+  - Nom : Créoles mauriciens
+  - Auto-appellation (endonyme) : Kreol Morisien
+  - Exonymes / appellations historiques : Créole mauricien (terme utilisé pour les créoles de Maurice), "Noirs" (terme générique, peut être problématique)
+  - Identifiant peuple (PPL_) : PPL_CREOLE_MAURICE
+  - Région principale : Toutes les régions de Maurice
+  - Langues parlées : Créole mauricien (mfe, ISO 639-3), français, anglais
+  - Famille linguistique : Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kreol Morisien" est l'auto-appellation. Les Créoles mauriciens sont descendants d'esclaves africains et malgaches, métissés avec les colons français. Le terme "Noir" peut être problématique et doit être utilisé avec précaution. Culture créole riche (séga, musique traditionnelle).
+
+- Peuple 3 :
+  - Nom : Sino-Mauriciens
+  - Auto-appellation (endonyme) : Variées selon les groupes (Chinois mauriciens)
+  - Exonymes / appellations historiques : "Chinois" (terme générique), "Sino-Mauriciens" (terme descriptif)
+  - Identifiant peuple (PPL_) : PPL_SINO_MAURICIENS
+  - Région principale : Toutes les régions de Maurice, majoritairement urbains
+  - Langues parlées : Créole mauricien, français, anglais, hakka, cantonais, mandarin
+  - Famille linguistique : Sino-tibétaine, Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Sino-Mauriciens sont descendants d'immigrants chinois arrivés au XIXe et XXe siècles, principalement pour le commerce. Ils sont majoritairement chrétiens (catholicisme) ou bouddhistes.
+
+- Peuple 4 :
+  - Nom : Franco-Mauriciens
+  - Auto-appellation (endonyme) : Variées selon les groupes (Français mauriciens, Blancs mauriciens)
+  - Exonymes / appellations historiques : "Français" (terme générique), "Blancs" (terme descriptif, peut être problématique), "Colons" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_FRANCO_MAURICIENS
+  - Région principale : Toutes les régions de Maurice, majoritairement urbains
+  - Langues parlées : Français, créole mauricien, anglais
+  - Famille linguistique : Indo-européenne (langues romanes), Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Franco-Mauriciens sont descendants de colons français. Le terme "Blanc" peut être problématique et doit être utilisé avec précaution. Le terme "Colon" est historique et doit être contextualisé. Ils sont majoritairement catholiques.
+
+- Peuple 5 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les régions de Maurice
+  - Langues parlées : Créole mauricien, français, anglais, langues diverses
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Anglais (langue officielle, eng), français (langue officielle, fra), créole mauricien (langue véhiculaire, mfe), hindi (hin), ourdou (urd), tamoul (tam), telugu (tel), marathi (mar), bhojpuri (bho), hakka (hak), cantonais (yue), mandarin (cmn)
+- Traditions culturelles : Diversité culturelle exceptionnelle reflétant la mosaïque ethnique de Maurice. Traditions indiennes (hindouisme, fêtes indiennes, Diwali, Holi, musique indienne, cuisine indienne). Traditions créoles (séga, musique créole mauricienne, danse créole, culture créole). Traditions chinoises (fêtes chinoises, Nouvel An chinois, cuisine chinoise). Traditions françaises (influence culturelle française, cuisine française). Traditions africaines (héritage des esclaves africains et malgaches). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Le séga est la musique traditionnelle créole mauricienne.
+- Religions dominantes : Hindouisme (majoritaire, environ 48%), christianisme (catholicisme majoritaire, environ 26%), islam (environ 17%), bouddhisme (minorité, Sino-Mauriciens), religions traditionnelles africaines (syncrétisme fréquent)
+- Modes de vie : Urbanisation importante (Port-Louis, Curepipe, Quatre Bornes, Vacoas-Phoenix). Économie diversifiée : tourisme (secteur majeur), industrie textile, canne à sucre (agriculture), services financiers (centre financier offshore), pêche, commerce. Économie basée sur les services (tourisme, finance), l'industrie (textile), et l'agriculture (canne à sucre). Maurice est l'un des pays les plus développés d'Afrique.
+- Organisation sociale : Société multiethnique et multiculturelle. Structures familiales traditionnelles variées selon les groupes ethniques. Organisation communautaire (communautés indiennes, créoles, chinoises, françaises). Structures étatiques modernes (république parlementaire). Cohabitation pacifique des différentes communautés. Système politique démocratique stable.
+- Relations régionales : Relations avec l'Afrique (membre de l'Union africaine, SADC), relations avec l'Asie (relations avec l'Inde, la Chine), relations avec l'Europe (Union européenne, France, Royaume-Uni), relations avec les îles de l'océan Indien (Seychelles, Réunion, Madagascar). Maurice est un centre financier et touristique régional.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : L'île Maurice était inhabitée. Les Arabes connaissaient l'île (appelée "Dina Arobi", île déserte) mais ne l'ont pas colonisée.
+- Moyen Âge : L'île reste inhabitée. Pas de présence humaine permanente.
+- Époque précoloniale : L'île reste inhabitée jusqu'à l'arrivée des Européens. Pas de structures politiques ou sociales.
+- Colonisation : 1598 : Arrivée des Néerlandais, nom "Mauritius" (en l'honneur du prince Maurice de Nassau). 1638-1710 : Colonisation néerlandaise (abandonnée en 1710). 1715-1810 : Colonisation française, nom "Île de France", développement de l'économie sucrière, importation massive d'esclaves africains et malgaches, développement du créole mauricien. 1810-1968 : Colonisation britannique, abolition de l'esclavage (1835), immigration massive d'Indiens (travailleurs engagés, 1834-1920), immigration chinoise (commerce), développement de la société multiethnique.
+- Lutte pour l'indépendance : 1930s-1968 : Mouvements nationalistes, Parti travailliste mauricien, Seewoosagur Ramgoolam, indépendance (12 mars 1968).
+- Période post-indépendance : République de Maurice (1968), développement économique (tourisme, industrie textile, services financiers), stabilité politique, démocratie multipartite, développement social. Maurice est l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Mauritius
+- SIL Ethnologue – Languages of Mauritius
+- Recensements mauriciens
+- Études anthropologiques sur les peuples de Maurice
+- Histoire de Maurice (colonisation, immigration indienne, créolisation)
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Indo-Mauriciens
+- Identifiant peuple (PPL_) : PPL_INDO_MAURICIENS
+- Population : 750 000
+- Pourcentage dans le pays : 57,7%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de Maurice
+- Famille linguistique : Indo-européenne (langues indiennes), Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : hin, urd, tam, tel, mar, bho, mfe
+
+### Peuple : Créoles mauriciens
+- Identifiant peuple (PPL_) : PPL_CREOLE_MAURICE
+- Population : 400 000
+- Pourcentage dans le pays : 30,8%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de Maurice
+- Famille linguistique : Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : mfe
+
+### Peuple : Sino-Mauriciens
+- Identifiant peuple (PPL_) : PPL_SINO_MAURICIENS
+- Population : 30 000
+- Pourcentage dans le pays : 2,3%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de Maurice, majoritairement urbains
+- Famille linguistique : Sino-tibétaine, Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : hak, yue, cmn, mfe
+
+### Peuple : Franco-Mauriciens
+- Identifiant peuple (PPL_) : PPL_FRANCO_MAURICIENS
+- Population : 20 000
+- Pourcentage dans le pays : 1,5%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de Maurice, majoritairement urbains
+- Famille linguistique : Indo-européenne (langues romanes), Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : fra, mfe
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 100 000
+- Pourcentage dans le pays : 7,7%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de Maurice
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Maurice 2025 : 1 300 000 (estimations ONU/UNFPA)**
+

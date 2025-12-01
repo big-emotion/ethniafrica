@@ -7,8 +7,8 @@
   - « Mandingo » (terme historique, parfois péjoratif)
 - Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
 - Groupe ethno-linguistique : Mandé (macro-groupe)
-- Région historique : Afrique de l'Ouest (Mali, Guinée, Sénégal, Côte d'Ivoire, Burkina Faso, etc.)
-- Pays actuels : Mali, Guinée, Sénégal, Gambie, Côte d'Ivoire, Burkina Faso, Sierra Leone, Libéria, et autres pays d'Afrique de l'Ouest
+- Région historique : Afrique de l'Ouest (MLI, GIN, SEN, CIV, BFA, etc.)
+- Pays actuels : MLI, GIN, SEN, GMB, CIV, BFA, SLE, Libéria, et autres pays d'Afrique de l'Ouest
 - Identifiant peuple (ID) : PPL_MANDE_MACRO
 
 # 1. Ethnies incluses dans le peuple
@@ -21,10 +21,10 @@
 - Ethnie 7 : Autres groupes mandé
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les peuples Mandé sont originaires de la région du Mandé (Mali, Guinée), berceau de l'empire du Mali. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les peuples Mandé sont originaires de la région du Mandé (MLI, GIN), berceau de l'empire du Mali. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
-  - Expansion depuis le Mandé vers l'ouest (Sénégal, Gambie)
-  - Migrations vers le sud (Côte d'Ivoire, Burkina Faso, Sierra Leone, Libéria)
+  - Expansion depuis le Mandé vers l'ouest (SEN, GMB)
+  - Migrations vers le sud (CIV, BFA, SLE, Libéria)
   - Déplacements vers les zones urbaines
   - Diaspora historique vers les Amériques (traite transatlantique)
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Diversité linguistique importante.
@@ -52,7 +52,7 @@
   - Rites de passage (circoncision, fêtes de naissance)
   - Pèlerinage à La Mecque (Hajj)
   - Cérémonies de griots
-- Symboles : Symboles de l'empire du Mali, symboles islamiques, symboles culturels mandé.
+- Symboles : Symboles de l'empire du MLI, symboles islamiques, symboles culturels mandé.
 - Arts et musique : 
   - Musique traditionnelle (kora, balafon, djembé)
   - Tradition des griots (jaliya)

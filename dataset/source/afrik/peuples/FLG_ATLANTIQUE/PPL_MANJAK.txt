@@ -3,7 +3,7 @@
 - Auto-appellation : Manjaku / Manjak
 - Exonymes historiques : Manjack / Manejak (formes coloniales)
 - Famille linguistique : Niger-Congo – Atlantique
-- Région historique : Guinée-Bissau, Sénégal
+- Région historique : GNB, SEN
 - Identifiant : PPL_MANJAK
 
 # 1. Ethnies incluses

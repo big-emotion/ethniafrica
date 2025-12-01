@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique méridional
 - Région historique : Centre-nord de la Tanzanie
-- Pays actuels : Tanzanie
+- Pays actuels : TZA
 - Identifiant peuple (ID) : PPL_DATOGA
 
 # 1. Ethnies incluses dans le peuple

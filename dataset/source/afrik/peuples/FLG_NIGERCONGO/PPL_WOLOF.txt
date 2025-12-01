@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Wolof (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (sous-groupe du Niger-Congo)
-- Région historique : Sénégal, Gambie, Mauritanie
-- Pays actuels : Sénégal, Gambie, Mauritanie
+- Région historique : SEN, GMB, MRT
+- Pays actuels : SEN, GMB, MRT
 - Identifiant peuple (ID) : PPL_WOLOF
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Wolof sont originaires de la région du Sénégal, de la Gambie et de la Mauritanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe atlantique.
+- Origines anciennes : Les Wolof sont originaires de la région du SEN, de la Gambie et de la Mauritanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe atlantique.
 - Routes migratoires : 
   - Migrations depuis les régions atlantiques
-  - Expansion vers le Sénégal, la Gambie et la Mauritanie
+  - Expansion vers le SEN, la Gambie et la Mauritanie
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les commerçants européens, influence de l'islam.

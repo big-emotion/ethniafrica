@@ -39,9 +39,9 @@
   >300 millions
 
 # 2. Peuples associés
-- Peuple 1 : Arabes
-- Peuple 2 : Amhara
-- Peuple 3 : Tigréens
+- Peuple 1 : Arabes (PPL_ARABES)
+- Peuple 2 : Amhara (PPL_AMHARA)
+- Peuple 3 : Tigréens (PPL_TIGRE)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Amhara

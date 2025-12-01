@@ -1,0 +1,567 @@
+{
+  "countryCode": "ETH",
+  "countryName": "République fédérale démocratique d'Éthiopie",
+  "peoples": [
+    {
+      "name": "Oromo",
+      "alternativeNames": ["Oromos"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Oromia",
+      "source": "web_search"
+    },
+    {
+      "name": "Amhara",
+      "alternativeNames": ["Amharas"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_SEMITIQUE",
+      "region": "Amhara",
+      "source": "web_search"
+    },
+    {
+      "name": "Somali",
+      "alternativeNames": ["Somalis"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Somali",
+      "source": "web_search"
+    },
+    {
+      "name": "Tigréens",
+      "alternativeNames": ["Tigray"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_SEMITIQUE",
+      "region": "Tigray",
+      "source": "web_search"
+    },
+    {
+      "name": "Sidama",
+      "alternativeNames": ["Sidamas"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sidama",
+      "source": "web_search"
+    },
+    {
+      "name": "Gurage",
+      "alternativeNames": ["Gurages"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_SEMITIQUE",
+      "region": "Centre-Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Afar",
+      "alternativeNames": ["Afars"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Afar",
+      "source": "web_search"
+    },
+    {
+      "name": "Wolayta",
+      "alternativeNames": ["Welaytas"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Hadiya",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Gamo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Gedeo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Silte",
+      "alternativeNames": ["Silt'e"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_SEMITIQUE",
+      "region": "Centre-Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Gumuz",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOSAHARIENNE",
+      "region": "Benishangul-Gumaz",
+      "source": "web_search"
+    },
+    {
+      "name": "Berta",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOSAHARIENNE",
+      "region": "Benishangul-Gumaz",
+      "source": "web_search"
+    },
+    {
+      "name": "Shinasha",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest Amhara",
+      "source": "web_search"
+    },
+    {
+      "name": "Ari",
+      "alternativeNames": ["Aari"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Hammer",
+      "alternativeNames": ["Hamer", "Hamers"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Mursi",
+      "alternativeNames": ["Mursis"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Karo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Suri",
+      "alternativeNames": ["Surma", "Surmas"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Bodi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Nyangatom",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOSAHARIENNE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Dassanech",
+      "alternativeNames": ["Dassanetchs", "Daasanach"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Dorze",
+      "alternativeNames": ["Dorzés"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kaffa",
+      "alternativeNames": ["Kaffas", "Kafa"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Sheko",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOSAHARIENNE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Majang",
+      "alternativeNames": ["Majangir"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOSAHARIENNE",
+      "region": "Gambela",
+      "source": "web_search"
+    },
+    {
+      "name": "Yem",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Harari",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_SEMITIQUE",
+      "region": "Harar",
+      "source": "web_search"
+    },
+    {
+      "name": "Argobba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_SEMITIQUE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Irob",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Tigray",
+      "source": "web_search"
+    },
+    {
+      "name": "Kunama",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOSAHARIENNE",
+      "region": "Tigray",
+      "source": "web_search"
+    },
+    {
+      "name": "Agaw",
+      "alternativeNames": ["Awi"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Qemant",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Konso",
+      "alternativeNames": ["Konsos"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Kambatta",
+      "alternativeNames": ["Kambatta"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Borana",
+      "alternativeNames": ["Boranas"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Bench",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Gofa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kullo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Koorete",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Timbaro",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Nuer",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOSAHARIENNE",
+      "region": "Gambela",
+      "source": "web_search"
+    },
+    {
+      "name": "Gidole",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mocha",
+      "alternativeNames": ["Shekkacho"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Me'en",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Basketo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Burji",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Male",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Anuak",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_NILOSAHARIENNE",
+      "region": "Gambela",
+      "source": "web_search"
+    },
+    {
+      "name": "Libido",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Qabena",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Gawwada",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Saho",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Tigray",
+      "source": "web_search"
+    },
+    {
+      "name": "Dizi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Melo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mao",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Oyda",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Zayse",
+      "alternativeNames": ["Zayse-Zergulla"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Tsamay",
+      "alternativeNames": ["Tsamai"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Mosiye",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Fadashi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Benishangul-Gumaz",
+      "source": "web_search"
+    },
+    {
+      "name": "Chara",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Arbore",
+      "alternativeNames": ["Arborés"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Dime",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Nao",
+      "alternativeNames": ["Nayi"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Kachama",
+      "alternativeNames": ["Kachama-Ganjule"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Alaba",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Kamir",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_COUCHITIQUE",
+      "region": "Amhara",
+      "source": "web_search"
+    }
+  ],
+  "timestamp": "2025-11-30T19:33:59.694Z",
+  "sourcesUsed": ["web_search"],
+  "sourcesPending": [
+    "CIA World Factbook",
+    "Ethnologue",
+    "UNESCO",
+    "IWGIA",
+    "Encyclopaedia Africana"
+  ]
+}

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bénoué-Congo (Cross-River)
 - Région historique : Nigeria (Calabar, Cross River)
-- Pays actuels : Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_EFIK
 
 # 1. Ethnies incluses dans le peuple

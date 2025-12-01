@@ -1,0 +1,173 @@
+# Nom du pays
+- Nom officiel actuel : République du Soudan (Republic of the Sudan, جمهورية السودان)
+- Étymologie du nom : Le nom "Soudan" provient de l'arabe "Bilād as-Sūdān" (بلاد السودان), signifiant "pays des Noirs". Ce terme était historiquement utilisé par les géographes arabes pour désigner la région subsaharienne habitée par des populations noires africaines, par opposition au "Bilād al-Bayḍā" (pays des Blancs) qui désignait l'Afrique du Nord. Le nom "Soudan" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle.
+- Personne / peuple / administration à l'origine du nom : Les géographes arabes médiévaux ont utilisé le terme "Bilād as-Sūdān" (pays des Noirs) pour désigner la région. Le nom "Soudan" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle lors de la création du Soudan anglo-égyptien.
+- Identifiant pays (ISO 3166-1 alpha-3) : SDN
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Présence de royaumes nubiens (Koush, Méroé) dans la région. Contacts avec les civilisations égyptiennes. La région était connue sous le nom de "Nubie" par les Égyptiens et les Grecs.
+- Moyen Âge : Présence de royaumes chrétiens nubiens (Makurie, Nobatie, Alodie). Expansion de l'islam à partir du VIIe siècle. La région était connue sous le nom de "Bilād as-Sūdān" (pays des Noirs) par les géographes arabes.
+- Époque précoloniale : Présence de royaumes et de sultanats (Sultanat de Sennar, Sultanat de Darfour). Expansion de l'islam et de l'arabisation. La région était connue sous le nom de "Bilād as-Sūdān" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.
+- Colonisation : 1821-1885 : Conquête égyptienne du Soudan. 1899-1956 : Condominium anglo-égyptien (Soudan anglo-égyptien). Développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle). Le nom "Soudan" est officialisé par les colonisateurs britanniques et égyptiens.
+- Période contemporaine : 1956 : Indépendance (1er janvier 1956), proclamation de la République du Soudan. 2011 : Sécession du Soudan du Sud. Le nom "Soudan" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume de Koush] :
+  - Période : VIIIe siècle av. J.-C. - IVe siècle apr. J.-C.
+  - Peuples dominants : Nubiens
+  - Centres politiques : Napata, Méroé
+  - Rôle historique : Royaume nubien puissant, rival de l'Égypte, développement de la civilisation méroïtique, contacts avec les civilisations méditerranéennes.
+
+- [Royaume de Méroé] :
+  - Période : IVe siècle av. J.-C. - IVe siècle apr. J.-C.
+  - Peuples dominants : Nubiens
+  - Centres politiques : Méroé
+  - Rôle historique : Royaume nubien puissant, développement de la civilisation méroïtique, contacts avec les civilisations méditerranéennes, déclin au IVe siècle.
+
+- [Royaumes chrétiens nubiens] :
+  - Période : VIe siècle - XVe siècle
+  - Peuples dominants : Nubiens
+  - Centres politiques : Dongola (Makurie), Faras (Nobatie), Soba (Alodie)
+  - Rôle historique : Royaumes chrétiens nubiens, résistance à l'islam, déclin au XVe siècle, conversion progressive à l'islam.
+
+- [Sultanat de Sennar] :
+  - Période : XVIe siècle - 1821
+  - Peuples dominants : Arabes soudanais, Nubiens, Beja
+  - Centres politiques : Sennar
+  - Rôle historique : Sultanat islamique puissant, contrôle du commerce dans la vallée du Nil, résistance aux Ottomans, conquête égyptienne (1821).
+
+- [Sultanat de Darfour] :
+  - Période : XVIIe siècle - 1916
+  - Peuples dominants : Four, Arabes soudanais, autres groupes
+  - Centres politiques : El Fasher
+  - Rôle historique : Sultanat islamique, contrôle du commerce transsaharien, résistance à la colonisation britannique, conquête britannique (1916).
+
+- [Condominium anglo-égyptien] :
+  - Période : 1899 - 1956
+  - Peuples dominants : Britanniques, Égyptiens, Arabes soudanais, Nubiens, Beja, autres groupes
+  - Centres politiques : Khartoum (capitale coloniale)
+  - Rôle historique : Colonisation britannique et égyptienne, développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Arabes soudanais
+  - Auto-appellation (endonyme) : Al-'Arab (العرب)
+  - Exonymes / appellations historiques : "Arabes" (terme générique), "Arabophones" (terme descriptif), "Maures" (terme historique pour certains groupes sahariens)
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Toute la vallée du Nil, zones urbaines
+  - Langues parlées : Arabe soudanais (arb, ISO 639-3), arabe standard, anglais
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Al-'Arab" (العرب) est l'auto-appellation. Le terme "Maures" est historique et peut être considéré comme réducteur. Le terme "Arabophones" est descriptif. Groupe sémitique majoritaire, descendants d'immigrants arabes arrivés à partir du VIIe siècle, métissages avec les populations nubiennes et africaines.
+
+- Peuple 2 :
+  - Nom : Beja
+  - Auto-appellation (endonyme) : Bidhaawyeet / Hadendoa
+  - Exonymes / appellations historiques : "Bedja" (forme européenne), "Blemmyes" (Antiquité, terme grec)
+  - Identifiant peuple (PPL_) : PPL_BEJA
+  - Région principale : Est du Soudan (mer Rouge), zones désertiques
+  - Langues parlées : Beja (bej, ISO 639-3), arabe soudanais
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bidhaawyeet" / "Hadendoa" sont les auto-appellations. Le terme "Bedja" est une forme européenne. Le terme "Blemmyes" est un terme grec antique. Groupe couchitique, probable descendance des Blemmyes antiques, pastoralisme semi-nomade.
+
+- Peuple 3 :
+  - Nom : Nubiens
+  - Auto-appellation (endonyme) : Variées selon les groupes (Nubiens, Noba)
+  - Exonymes / appellations historiques : "Nubiens" (terme utilisé par les Européens), "Noba" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_NUBIENS
+  - Région principale : Nord du Soudan (vallée du Nil, Nubie)
+  - Langues parlées : Nubien (kdi, fia, ISO 639-3), arabe soudanais
+  - Famille linguistique : Nilo-saharien – Soudanique oriental (FLG_NILOSAHARIEN)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Nubiens" / "Noba" sont les auto-appellations. Pas de terme péjoratif connu. Groupe nilo-saharien, descendants des anciens royaumes nubiens (Koush, Méroé), christianisation puis islamisation.
+
+- Peuple 4 :
+  - Nom : Four
+  - Auto-appellation (endonyme) : Four
+  - Exonymes / appellations historiques : "Four" (terme utilisé par les Européens), "Fur" (terme alternatif)
+  - Identifiant peuple (PPL_) : PPL_FOUR
+  - Région principale : Ouest du Soudan (Darfour)
+  - Langues parlées : Four (fvr, ISO 639-3), arabe soudanais
+  - Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Four" est l'auto-appellation. Pas de terme péjoratif connu. Groupe soudanique central, originaire du Darfour, sultanat de Darfour (XVIIe siècle - 1916).
+
+- Peuple 5 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les régions du Soudan
+  - Langues parlées : Langues diverses, arabe soudanais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Arabe soudanais (langue officielle, arb), anglais (langue officielle, eng), beja (bej), nubien (kdi, fia), four (fvr)
+- Traditions culturelles : Traditions arabes (Arabes soudanais) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat, architecture islamique. Traditions couchitiques (Beja) : poésie orale, coiffure traditionnelle hadendoa, pastoralisme semi-nomade. Traditions nilo-sahariennes (Nubiens, Four) : musiques traditionnelles, danse traditionnelle, artisanat, architecture traditionnelle. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture soudanaise est riche et préservée, avec une forte tradition orale (poésie).
+- Religions dominantes : Islam sunnite (majoritaire, environ 97%), christianisme (environ 3%, principalement orthodoxe copte), religions traditionnelles africaines (syncrétisme rare, moins de 1%)
+- Modes de vie : Agriculture (coton, arachides, sorgho, millet, cultures vivrières), élevage (bovins, caprins, ovins, chameaux, mode de vie nomade et semi-nomade), pêche (Nil, importante source de protéines), exploitation minière (or, pétrole), commerce et activités urbaines (zones urbaines, Khartoum). Urbanisation importante. Économie basée sur l'agriculture (coton, arachides), l'exploitation minière (or, pétrole), et les services. Le Soudan est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.
+- Organisation sociale : Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (tribus, clans). Structures étatiques modernes (république, mais instabilité politique et conflits récents). Système politique démocratique, mais instabilité politique et conflits récents (guerre civile, Darfour, sécession du Soudan du Sud en 2011).
+- Relations régionales : Relations avec l'Afrique de l'Est (IGAD, Union africaine), relations avec le Moyen-Orient (Ligue arabe, pays du Golfe), relations avec l'Europe (Union européenne), relations avec les États-Unis. Le Soudan est membre de l'IGAD, de l'Union africaine et de la Ligue arabe.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence de royaumes nubiens (Koush, Méroé) dans la région. Contacts avec les civilisations égyptiennes. La région était connue sous le nom de "Nubie" par les Égyptiens et les Grecs.
+- Moyen Âge : Présence de royaumes chrétiens nubiens (Makurie, Nobatie, Alodie). Expansion de l'islam à partir du VIIe siècle. La région était connue sous le nom de "Bilād as-Sūdān" (pays des Noirs) par les géographes arabes.
+- Époque précoloniale : Présence de royaumes et de sultanats (Sultanat de Sennar, Sultanat de Darfour). Expansion de l'islam et de l'arabisation. La région était connue sous le nom de "Bilād as-Sūdān" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.
+- Colonisation : 1821-1885 : Conquête égyptienne du Soudan, développement de l'économie de plantation (coton, arachides). 1899-1956 : Condominium anglo-égyptien (Soudan anglo-égyptien), développement de l'économie de plantation, exploitation minière, mouvements nationalistes (XXe siècle).
+- Lutte pour l'indépendance : 1950s-1956 : Mouvements nationalistes, Umma Party, National Unionist Party, indépendance (1er janvier 1956), proclamation de la République du Soudan. Ismail al-Azhari devient premier Premier ministre.
+- Période post-indépendance : République du Soudan (1956), présidence d'Ismail al-Azhari (1956-1958), coups d'État (1958, 1969), présidence de Gaafar Nimeiry (1969-1985, régime socialiste, guerre civile avec le Soudan du Sud, 1955-1972, 1983-2005), présidence d'Omar el-Béchir (1989-2019, régime islamiste, guerre civile, Darfour, 2003-2020), révolution (2019), transition démocratique (2019-2021), coup d'État (2021), guerre civile (depuis 2023, conflit entre forces armées et paramilitaires). Stabilité politique fragile, État en transition, conflits récents (guerre civile, Darfour, sécession du Soudan du Sud en 2011), développement économique (agriculture, exploitation minière). Le Soudan est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Sudan
+- SIL Ethnologue – Languages of Sudan
+- Recensements soudanais
+- Études anthropologiques sur les peuples du Soudan
+- Études historiques sur la colonisation britannique et égyptienne
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Arabes soudanais
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 35 000 000
+- Pourcentage dans le pays : 70,0%
+- Pourcentage en Afrique : N/A
+- Région : Toute la vallée du Nil, zones urbaines
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : arb
+
+### Peuple : Beja
+- Identifiant peuple (PPL_) : PPL_BEJA
+- Population : 2 250 000
+- Pourcentage dans le pays : 4,5%
+- Pourcentage en Afrique : N/A
+- Région : Est du Soudan (mer Rouge), zones désertiques
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : bej
+
+### Peuple : Nubiens
+- Identifiant peuple (PPL_) : PPL_NUBIENS
+- Population : 2 500 000
+- Pourcentage dans le pays : 5,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Soudan (vallée du Nil, Nubie)
+- Famille linguistique : Nilo-saharien – Soudanique oriental (FLG_NILOSAHARIEN)
+- Code ISO 639-3 (langue principale) : kdi, fia
+
+### Peuple : Four
+- Identifiant peuple (PPL_) : PPL_FOUR
+- Population : 2 000 000
+- Pourcentage dans le pays : 4,0%
+- Pourcentage en Afrique : N/A
+- Région : Ouest du Soudan (Darfour)
+- Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+- Code ISO 639-3 (langue principale) : fvr
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 8 250 000
+- Pourcentage dans le pays : 16,5%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions du Soudan
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Soudan 2025 : 50 000 000 (estimations ONU/UNFPA)**
+

@@ -1,0 +1,59 @@
+# Nom de la sous-ethnie
+- Nom principal : Tado
+- Identifiant sous-ethnie (ID) : SUB_ETH_ADJA_ADJA_DU_BENIN_MONO_COUFFO_TADO
+- Auto-appellation : N/A
+- Exonymes et termes coloniaux (connotation, origine, contextualisation) : N/A (connotation, origine, contextualisation) : N/A
+- Ethnie parente : Adja du Bénin (Mono, Couffo)
+- Identifiant ethnie parente (ETH_) : ETH_ADJA_DU_B_NIN_MONO_COUFFO
+- Peuple d'appartenance : ADJA
+- Identifiant peuple (ID) : PPL_ADJA
+- Langue parlée : N/A
+- Code ISO 639-3 : N/A
+- Famille linguistique : FLG_BENOUECONGO
+- Identifiant famille linguistique (FLG) : FLG_BENOUECONGO
+
+# 1. Clans et lignages internes
+- Clans : N/A
+  - Nom : N/A
+  - Identifiant (CLN_) : N/A
+- Lignages : N/A
+  - Nom : N/A
+  - Identifiant (CLN_) : N/A
+# 2. Origines et histoire du groupe
+- Origines anciennes : N/A
+- Migrations majeures : N/A
+- Formation du groupe : N/A
+- Relations avec l'ethnie mère : N/A
+- Relations avec les peuples voisins : N/A
+- Rôle dans les royaumes / empires : N/A
+# 3. Territoires / Répartition géographique
+- Pays : N/A
+- Régions principales : N/A
+- Zones historiques : N/A
+- Diaspora interne : N/A
+- Diaspora externe : N/A
+# 4. Organisation sociale et culturelle
+- Mode de vie : N/A
+- Structure familiale : N/A
+- Organisation clanique : N/A
+- Rites de passage : N/A
+- Religion(s) / spiritualités : N/A
+- Autorités traditionnelles : N/A
+- Particularités sociales par rapport à l'ethnie mère : N/A
+# 5. Économie traditionnelle / modes de subsistance
+- Agriculture : N/A
+- Élevage : N/A
+- Artisanat : N/A
+- Pêche / chasse / cueillette : N/A
+- Commerce et réseaux économiques : N/A
+# 6. Interactions historiques
+- Alliances : N/A
+- Conflits : N/A
+- Rôle dans les États précoloniaux : N/A
+- Rôle dans la période coloniale : N/A
+- Mouvements modernes : N/A
+- Figures majeures du groupe : N/A
+# 7. Sources
+- [Titre] – [Auteur/URL]
+- Etc.
+

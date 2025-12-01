@@ -1,11 +1,11 @@
 # Nom du peuple
 - Nom principal du peuple : Habesha
 - Auto-appellation : Habesha (አበሻ) / Habeshat
-- Exonymes / appellations historiques : Abyssin (terme historique européen), Éthiopiens (terme géographique moderne)
+- Exonymes / appellations historiques : Abyssin (terme historique européen), ETHns (terme géographique moderne)
 - Famille linguistique principale : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
 - Groupe ethno-linguistique : Sémitiques méridionaux (éthiosémitiques)
 - Région historique : Hauts plateaux éthiopiens et érythréens
-- Pays actuels : Éthiopie, Érythrée, diaspora
+- Pays actuels : ETH, ERI, diaspora
 - Identifiant peuple (ID) : PPL_HABESHA
 
 # 1. Ethnies incluses dans le peuple

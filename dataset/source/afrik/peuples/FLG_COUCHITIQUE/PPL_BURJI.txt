@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe ethno-linguistique : Couchitiques orientaux (Highland East Cushitic)
 - Région historique : Sud de l'Éthiopie (région Oromia, zone de Burji)
-- Pays actuels : Éthiopie, Kenya
+- Pays actuels : ETH, KEN
 - Identifiant peuple (ID) : PPL_BURJI
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Burji sont originaires du sud de l'Éthiopie, dans la région actuelle de la zone de Burji. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Burji sont originaires du sud de l'ETH, dans la région actuelle de la zone de Burji. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les hauts plateaux vers les zones actuelles
   - Expansion vers le Kenya (région de Marsabit)
@@ -75,7 +75,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Burji language (bji)
-- CIA World Factbook – Ethiopia, Kenya
+- CIA World Factbook – Ethiopia, KEN
 - Recensements éthiopiens et kenyans
 - Études anthropologiques sur les peuples couchitiques du sud de l'Éthiopie
 

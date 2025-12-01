@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone G, branche swahilie)
 - Région historique : Archipel des Comores
-- Pays actuels : Comores, Mayotte
+- Pays actuels : COM, Mayotte
 - Identifiant peuple (ID) : PPL_COMORIEN
 
 # 1. Ethnies incluses dans le peuple
@@ -68,7 +68,7 @@
   - Participation aux mouvements politiques
   - Conflits territoriaux
   - Alliances commerciales et politiques
-- Diaspora : Diaspora comorienne importante dans les grandes villes (France, Madagascar, etc.).
+- Diaspora : Diaspora comorienne importante dans les grandes villes (France, MDG, etc.).
 
 # 7. Démographie globale
 - Population totale (tous pays) : 1 150 000 - 1 300 000

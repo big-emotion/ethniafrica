@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_ZULU",
+  "timestamp": "2025-01-25T21:05:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/zulu1249",
+      "data": {
+        "langue": "Zulu",
+        "code_iso": "zul",
+        "famille": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central Bantu > Shona > Nguni",
+        "pays": ["Afrique du Sud", "Eswatini", "Lesotho", "Zimbabwe"],
+        "region": "Afrique australe",
+        "glottocode": "zulu1249",
+        "auto_appellation": "isiZulu"
+      },
+      "timestamp": "2025-01-25T21:05:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/zul",
+      "data": {
+        "langue": "Zulu",
+        "code_iso": "zul",
+        "famille": "Niger-Congo",
+        "pays": ["South Africa", "Eswatini", "Lesotho", "Zimbabwe"],
+        "auto_appellation": "isiZulu"
+      },
+      "timestamp": "2025-01-25T21:05:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "zul",
+    "langue_principale": "Zulu",
+    "famille_linguistique": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central Bantu > Shona > Nguni",
+    "pays_principaux": ["Eswatini", "Lesotho", "Zimbabwe"],
+    "region_generale": "Afrique australe",
+    "auto_appellation": "isiZulu"
+  }
+}

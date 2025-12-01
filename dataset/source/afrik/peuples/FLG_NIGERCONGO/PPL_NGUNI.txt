@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Nguni (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Afrique du Sud, Eswatini, Lesotho, Zimbabwe, Mozambique
-- Pays actuels : Afrique du Sud, Eswatini, Lesotho, Zimbabwe, Mozambique
+- Région historique : Afrique du Sud, SWZ, LSO, ZWE, MOZ
+- Pays actuels : ZAF, SWZ, LSO, ZWE, MOZ
 - Identifiant peuple (ID) : PPL_NGUNI
 
 # 1. Ethnies incluses dans le peuple
@@ -17,10 +17,10 @@
 - Ethnie 6 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Nguni sont originaires de la région de l'Afrique du Sud, de l'Eswatini, du Lesotho, du Zimbabwe et du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).
+- Origines anciennes : Les Nguni sont originaires de la région de l'Afrique du Sud, de l'SWZ, du LSO, du Zimbabwe et du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers l'Afrique du Sud, l'Eswatini, le Lesotho, le Zimbabwe et le Mozambique
+  - Expansion vers l'Afrique du Sud, l'SWZ, le LSO, le Zimbabwe et le Mozambique
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Diversité interne importante.
 - Influences externes : Contacts avec les peuples khoïsan, influence du christianisme.

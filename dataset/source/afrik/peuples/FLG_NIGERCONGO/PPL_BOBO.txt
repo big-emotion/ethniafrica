@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Bobo (terme utilisé par les Européens), Bobo-Madare
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé
-- Région historique : Burkina Faso, Mali
-- Pays actuels : Burkina Faso, Mali
+- Région historique : BFA, MLI
+- Pays actuels : BFA, MLI
 - Identifiant peuple (ID) : PPL_BOBO
 
 # 1. Ethnies incluses dans le peuple
@@ -79,7 +79,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Bobo language (bwq)
-- CIA World Factbook – Burkina Faso, Mali
+- CIA World Factbook – BFA, MLI
 - Recensements nationaux
 - Études anthropologiques sur les peuples mandé
 - Burkina Faso Ethnographic Studies

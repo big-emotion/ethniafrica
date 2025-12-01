@@ -9,7 +9,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (branche sénégambienne)
 - Région historique : Bande sahélienne de l'Atlantique au Tchad
-- Pays actuels : Niger, Nigeria, Cameroun, Tchad, RCA, et autres pays d'Afrique de l'Ouest et centrale
+- Pays actuels : NER, NGA, CMR, TCD, CAF, et autres pays d'Afrique de l'Ouest et centrale
 - Identifiant peuple (ID) : PPL_FULA_NOMADES
 
 # 1. Ethnies incluses dans le peuple

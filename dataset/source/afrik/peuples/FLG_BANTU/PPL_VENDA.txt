@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone S)
 - Région historique : Nord de l'Afrique du Sud, Sud du Zimbabwe
-- Pays actuels : Afrique du Sud, Zimbabwe
+- Pays actuels : ZAF, ZWE
 - Identifiant peuple (ID) : PPL_VENDA
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Venda language (ven)
-- CIA World Factbook – South Africa, Zimbabwe
+- CIA World Factbook – South Africa, ZWE
 - Recensements nationaux
 - Études anthropologiques sur les peuples bantous
 

@@ -4,27 +4,27 @@
 - Exonymes / appellations historiques : Kinyarwanda (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone J)
-- Région historique : Rwanda, Burundi, Ouganda, RDC
-- Pays actuels : Rwanda, Burundi, Ouganda, RDC
+- Région historique : RWA, BDI, UGA, COD
+- Pays actuels : RWA, BDI, UGA, COD
 - Identifiant peuple (ID) : PPL_KINYARWANDA
 
 # 1. Ethnies incluses dans le peuple
-- Ethnie 1 : Hutu (Rwanda, Burundi)
-- Ethnie 2 : Tutsi (Rwanda, Burundi)
-- Ethnie 3 : Twa (Rwanda, Burundi)
+- Ethnie 1 : Hutu (RWA, BDI)
+- Ethnie 2 : Tutsi (RWA, BDI)
+- Ethnie 3 : Twa (RWA, BDI)
 - Ethnie 4 : Autres locuteurs kinyarwanda
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les locuteurs kinyarwanda sont originaires du Rwanda, du Burundi, de l'Ouganda et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).
+- Origines anciennes : Les locuteurs kinyarwanda sont originaires du RWA, du BDI, de l'Ouganda et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Rwanda, le Burundi, l'Ouganda et la RDC
+  - Expansion vers le RWA, le BDI, l'Ouganda et la RDC
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes ethniques distincts (Hutu, Tutsi, Twa) mais partageant une langue commune (kinyarwanda).
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.
 
 # 3. Organisation et structure interne
-- Système politique traditionnel : Organisation en royaumes traditionnels (Rwanda, Burundi). Système de conseils d'anciens pour la gouvernance.
+- Système politique traditionnel : Organisation en royaumes traditionnels (RWA, BDI). Système de conseils d'anciens pour la gouvernance.
 - Organisation clanique : Structure clanique patrilinéaire. Organisation en familles étendues et lignages.
 - Rôle des lignages : Lignages patrilinéaires déterminant l'identité et les alliances.
 - Autorité religieuse : Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux.

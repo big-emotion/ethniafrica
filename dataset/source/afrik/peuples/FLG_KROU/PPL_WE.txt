@@ -7,8 +7,8 @@
   - « Krahn » (terme utilisé au Libéria)
 - Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
 - Groupe ethno-linguistique : Krou occidental
-- Région historique : Ouest de la Côte d'Ivoire, est du Libéria
-- Pays actuels : Côte d'Ivoire, Libéria
+- Région historique : Ouest de la CIV, est du Libéria
+- Pays actuels : CIV, Libéria
 - Identifiant peuple (ID) : PPL_WE
 
 # 1. Ethnies incluses dans le peuple
@@ -79,7 +79,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Wè/Guéré/Krahn language (wec)
-- CIA World Factbook – Côte d'Ivoire, Liberia
+- CIA World Factbook – CIV, LBR
 - Recensements ivoiriens et libériens
 - Études anthropologiques sur les peuples krou
 - Études sur l'art wè (masques)

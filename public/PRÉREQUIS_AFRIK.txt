@@ -1,5 +1,5 @@
 # PRÉREQUIS_OFFICIELS_DU_PROJET_AFRIK
-# VERSION 2.1 — Document maître (Architecture + Workflow + Identifiants)
+# VERSION 3.0 — Document maître (Architecture + Workflow + Identifiants)
 
 
 ========================================================
@@ -8,10 +8,10 @@
 
 Ce document établit :
 
-• l’architecture du projet Afrik  
+• l'architecture du projet Afrik  
 • les identifiants uniques  
 • le référentiel linguistique  
-• la classification famille → peuple → ethnie → sous-ethnie → clan  
+• la classification famille linguistique → langue → peuple → pays  
 • les sources officielles  
 • la méthodologie démographique  
 • les règles de nommage  
@@ -28,9 +28,6 @@ ID pays : ISO 3166-1 alpha-3
 ID famille linguistique : FLG_xxxx  
 ID langue : code ISO 639-3  
 ID peuple : PPL_xxxx  
-ID ethnie : ETH_xxxx  
-ID sous-ethnie : SUB_xxxx  
-ID clan : CLN_xxxx  
 
 
 ========================================================
@@ -58,11 +55,10 @@ Chaque langue doit indiquer :
 3. HIÉRARCHIE AFRIK
 ========================================================
 
-Niveau 1 — Famille linguistique  
-Niveau 2 — Peuple  
-Niveau 3 — Ethnie  
-Niveau 4 — Sous-ethnie  
-Niveau 5 — Clan  
+Niveau 1 — Famille linguistique (FLG_*)  
+Niveau 2 — Langue (code ISO 639-3)  
+Niveau 3 — Peuple (PPL_*)  
+Niveau 4 — Pays (ISO 3166-1 alpha-3)  
 
 
 ========================================================
@@ -84,10 +80,9 @@ Obligatoire :
 ========================================================
 
 Population pays = ONU / UNFPA (2025)  
-% ethniques = CIA / SIL / UNESCO + anthropologie  
+% peuples par pays = CIA / SIL / UNESCO + anthropologie  
 Somme = 100 %  
-Chaque peuple = somme ethnies  
-Chaque ethnie = somme par pays  
+Chaque peuple = population totale (tous pays)  
 Langue = total locuteurs  
 
 
@@ -108,7 +103,6 @@ ASCL Leiden
 
 famille_linguistique.csv  
 peuple_demographie_globale.csv  
-ethnie_demographie_par_pays.csv  
 pays_demographie.csv  
 
 
@@ -117,10 +111,9 @@ pays_demographie.csv
 ========================================================
 
 Fichiers TXT :  
-pays-xxxx.txt  
-peuple-xxxx.txt  
-ethnie-xxxx.txt  
-famille-xxxx.txt  
+- Familles linguistiques : FLG_xxxxx.txt  
+- Peuples : PPL_xxxxx.txt (organisés par famille linguistique)  
+- Pays : [code ISO 3166-1 alpha-3].txt  
 
 ID : MAJUSCULES, sans espaces
 
@@ -142,12 +135,10 @@ Tous les ID doivent être identiques partout.
 1. Familles linguistiques  
 2. Langues  
 3. Peuples  
-4. Ethnies  
-5. Sous-ethnies  
-6. Pays  
-7. Démographies CSV  
-8. Validation  
-9. Publication  
+4. Pays  
+5. Démographies CSV  
+6. Validation  
+7. Publication  
 
 FICHIERS DE SUIVI OBLIGATOIRES :
 
@@ -163,5 +154,5 @@ si elle n’est pas reflétée dans ces deux fichiers.
 
 
 ========================================================
-FIN DU DOCUMENT — PRÉREQUIS_AFRIK.txt (VERSION 2.1)
+FIN DU DOCUMENT — PRÉREQUIS_AFRIK.txt (VERSION 3.0)
 ========================================================

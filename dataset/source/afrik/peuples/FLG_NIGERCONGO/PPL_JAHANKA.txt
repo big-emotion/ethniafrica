@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Jahanka (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (sous-groupe du Mandé occidental)
-- Région historique : Guinée, Mali, Sénégal
-- Pays actuels : Guinée, Mali, Sénégal
+- Région historique : GIN, MLI, SEN
+- Pays actuels : GIN, MLI, SEN
 - Identifiant peuple (ID) : PPL_JAHANKA
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Jahanka sont originaires de la région de la Guinée, du Mali et du Sénégal. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé.
+- Origines anciennes : Les Jahanka sont originaires de la région de la GIN, du Mali et du Sénégal. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
-  - Expansion vers la Guinée, le Mali et le Sénégal
+  - Expansion vers la GIN, le Mali et le Sénégal
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les peuples voisins (Malinké, Soninké).
 - Influences externes : Contacts avec les peuples voisins, influence de l'islam, et plus récemment de la modernisation.

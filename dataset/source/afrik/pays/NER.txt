@@ -1,0 +1,211 @@
+# Nom du pays
+- Nom officiel actuel : République du Niger (République du Niger)
+- Étymologie du nom : Le nom "Niger" vient du fleuve Niger, qui traverse le pays. Le nom du fleuve vient du terme berbère "n-igere-n" (rivière des rivières) ou du terme touareg "egerew n-igerewen" (grande rivière). Le nom a été adopté lors de l'indépendance en 1960. Auparavant, le territoire était appelé "Colonie du Niger" pendant la colonisation française.
+- Personne / peuple / administration à l'origine du nom : Le nom "Niger" vient du fleuve Niger, nommé par les Berbères ou les Touareg. Le nom a été adopté par les Français lors de la création de la colonie (1922) puis officialisé lors de l'indépendance (1960).
+- Identifiant pays (ISO 3166-1 alpha-3) : NER
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Niger était peuplé de diverses sociétés (Hausa, Zarma, Peul, Touareg, Kanuri). Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Développement des cités-États hausa (Kano, Katsina, Zaria), royaumes songhay, chefferies peules, confédérations touarègues. Commerce transsaharien. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Consolidation des cités-États hausa, royaumes songhay, chefferies peules, confédérations touarègues. Commerce transsaharien. Les Européens utilisaient le terme "Niger" pour désigner la région du fleuve Niger.
+- Colonisation : 1890-1960 : Colonie française du Niger (Colonie du Niger). Les Français ont établi un protectorat puis une colonie sur le territoire. Le nom "Niger" est officialisé par les Français.
+- Période contemporaine : 1960 : Indépendance (3 août 1960), proclamation de la République du Niger. Le nom "Niger" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Cités-États hausa] :
+  - Période : Moyen Âge - présent
+  - Peuples dominants : Hausa
+  - Centres politiques : Kano, Katsina, Zaria (Zazzau), autres cités-États
+  - Rôle historique : Cités-États hausa, islamisation ancienne, commerce transsaharien, développement urbain, émirats hausa. Les cités-États hausa ont joué un rôle majeur dans l'histoire de la région.
+
+- [Royaumes songhay] :
+  - Période : Moyen Âge - XIXe siècle
+  - Peuples dominants : Songhay, Zarma
+  - Centres politiques : Gao, Tombouctou, autres centres songhay
+  - Rôle historique : Royaumes songhay, empire songhay (XVe-XVIe siècles), commerce transsaharien, développement culturel et intellectuel. L'empire songhay a été l'un des plus grands empires d'Afrique de l'Ouest.
+
+- [Chefferies peules] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Peul (Fulani)
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies peules, pastoralisme, islam, résistance à la colonisation.
+
+- [Confédérations touarègues] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Touareg
+  - Centres politiques : Confédérations tribales touarègues
+  - Rôle historique : Confédérations touarègues, nomadisme saharien, commerce transsaharien, résistance à la colonisation, rébellions touarègues (1990s-2010s).
+
+- [Royaume du Kanem-Bornou] :
+  - Période : Moyen Âge - XIXe siècle
+  - Peuples dominants : Kanuri
+  - Centres politiques : Kanem, Bornou
+  - Rôle historique : Royaume du Kanem-Bornou, islamisation, commerce transsaharien, développement culturel.
+
+- [Colonie française du Niger] :
+  - Période : 1890 - 1960
+  - Peuples dominants : Tous les peuples nigériens sous domination coloniale française
+  - Centres politiques : Niamey (capitale coloniale)
+  - Rôle historique : Colonisation française, résistance des peuples autochtones, développement de l'administration coloniale, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Hausa
+  - Auto-appellation (endonyme) : Hausawa
+  - Exonymes / appellations historiques : "Haoussa" (transcription coloniale française), "Al-Sūdān" (ancienne appellation arabo-islamique large, non spécifique)
+  - Identifiant peuple (PPL_) : PPL_HAUSA
+  - Région principale : Sud du Niger
+  - Langues parlées : Hausa (hau, ISO 639-3), français
+  - Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Hausawa" est l'auto-appellation. "Haoussa" est la transcription coloniale française. Pas de terme péjoratif connu. Groupe majoritaire, cités-États hausa, islamisation ancienne.
+
+- Peuple 2 :
+  - Nom : Zarma
+  - Auto-appellation (endonyme) : Zarma
+  - Exonymes / appellations historiques : Zarma (terme utilisé par les Européens), "Djerma" (variante)
+  - Identifiant peuple (PPL_) : PPL_ZARMA
+  - Région principale : Ouest du Niger (fleuve Niger)
+  - Langues parlées : Zarma (dje, ISO 639-3), français
+  - Famille linguistique : Nilo-saharien – Songhay (FLG_SONGHAY)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Zarma" est l'auto-appellation. "Djerma" est une variante moins utilisée. Pas de terme péjoratif connu. Héritiers des royaumes songhay, langue véhiculaire au Niger.
+
+- Peuple 3 :
+  - Nom : Peul
+  - Auto-appellation (endonyme) : Fulɓe
+  - Exonymes / appellations historiques : "Peul" (terme français), "Fulani" (terme anglais), "Fellata" (terme historique, peut avoir une connotation péjorative)
+  - Identifiant peuple (PPL_) : PPL_FULANI
+  - Région principale : Toutes les régions du Niger
+  - Langues parlées : Fulfulde (ful, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fulɓe" est l'auto-appellation. "Peul" et "Fulani" sont des exonymes acceptés. "Fellata" peut avoir une connotation péjorative dans certains contextes et doit être évité. Pasteurs et commerçants musulmans.
+
+- Peuple 4 :
+  - Nom : Touareg
+  - Auto-appellation (endonyme) : Kel Tamasheq, Imuhagh
+  - Exonymes / appellations historiques : "Touareg" (terme français), "Tuareg" (terme anglais), "Berbères du Sahara" (terme descriptif)
+  - Identifiant peuple (PPL_) : PPL_TUAREG
+  - Région principale : Nord du Niger (Sahara)
+  - Langues parlées : Tamasheq (tmh, ISO 639-3), français
+  - Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kel Tamasheq" ou "Imuhagh" sont les auto-appellations. "Touareg" est l'exonyme le plus courant. "Berbère" est un terme descriptif mais peut être problématique dans certains contextes. Nomades sahariens, commerce transsaharien, rébellions touarègues (1990s-2010s).
+
+- Peuple 5 :
+  - Nom : Kanuri
+  - Auto-appellation (endonyme) : Kanuri
+  - Exonymes / appellations historiques : Kanuri (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KANURI
+  - Région principale : Sud-est du Niger
+  - Langues parlées : Kanuri (kau, ISO 639-3), français
+  - Famille linguistique : Nilo-saharien – Saharien (FLG_SAHARIEN)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kanuri" est l'auto-appellation. Pas de terme péjoratif connu. Héritiers du royaume du Kanem-Bornou.
+
+- Peuple 6 :
+  - Nom : Toubou
+  - Auto-appellation (endonyme) : Toubou
+  - Exonymes / appellations historiques : Toubou (terme utilisé par les Européens), "Teda" (sous-groupe)
+  - Identifiant peuple (PPL_) : PPL_TOUBOU
+  - Région principale : Nord-est du Niger (Sahara)
+  - Langues parlées : Toubou (tuv, ISO 639-3), français
+  - Famille linguistique : Nilo-saharien – Saharien (FLG_SAHARIEN)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Toubou" est l'auto-appellation. Pas de terme péjoratif connu. Nomades sahariens.
+
+- Peuple 7 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions du Niger
+  - Langues parlées : Langues diverses, français
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), hausa (hau, langue véhiculaire), zarma (dje), fulfulde (ful), tamasheq (tmh), kanuri (kau), toubou (tuv)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique du Niger. Traditions hausa : cités-États hausa, émirats, islamisation ancienne, commerce transsaharien, architecture hausa, poésie hausa. Traditions songhay : héritage de l'empire songhay, commerce transsaharien, traditions intellectuelles. Traditions peules : pastoralisme, poésie peule, traditions islamiques. Traditions touarègues : nomadisme saharien, commerce transsaharien, poésie touarègue, musique touarègue (guitare, chant), artisanat touareg (bijoux, cuir). Traditions kanuri : héritage du royaume du Kanem-Bornou, traditions islamiques. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La poésie touarègue est réputée internationalement.
+- Religions dominantes : Islam (sunnite majoritaire, école malékite), toutes les communautés sont majoritairement musulmanes
+- Modes de vie : Agriculture (sud, hausa, zarma, kanuri, millet, sorgho, cultures vivrières), pastoralisme (peul, touareg, toubou, élevage de bovins, caprins, chameaux), commerce transsaharien (touareg, hausa), commerce et activités urbaines (zones urbaines, Niamey, Zinder, Maradi). Urbanisation modérée. Économie basée sur l'agriculture, l'élevage, l'exploitation minière (uranium, or), et le commerce. Le Niger est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants.
+- Organisation sociale : Organisation en cités-États hausa (émirats), chefferies traditionnelles (zarma, peul, kanuri), confédérations touarègues (tribus nomades). Structures claniques patrilinéaires (majorité des groupes). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système patrilinéaire (majorité des groupes).
+- Relations régionales : Relations historiques avec le Nigeria (commerce, migrations, peuples transfrontaliers, frontière), le Mali (commerce, frontière), l'Algérie (commerce, frontière), la Libye (commerce, frontière), le Tchad (commerce, frontière), le Burkina Faso (commerce, frontière), le Bénin (commerce, frontière). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Le Niger est un pays de transit pour le commerce régional et transsaharien.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence des peuples hausa, songhay, peul, touareg, kanuri. Développement de structures politiques locales.
+- Moyen Âge : Développement des cités-États hausa (Kano, Katsina, Zaria), islamisation ancienne, commerce transsaharien. Empire songhay (XVe-XVIe siècles), développement culturel et intellectuel. Royaume du Kanem-Bornou, islamisation. Développement des chefferies peules et des confédérations touarègues.
+- Époque précoloniale : Consolidation des cités-États hausa, royaumes songhay, chefferies peules, confédérations touarègues. Commerce transsaharien intensif. Développement des traditions culturelles.
+- Colonisation : 1890-1960 : Colonie française du Niger. Résistance des peuples autochtones (notamment résistance touarègue). Développement de l'administration coloniale. XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1950s-1960 : Mouvement pour l'indépendance, Hamani Diori, indépendance (3 août 1960), proclamation de la République du Niger. Hamani Diori devient premier président.
+- Période post-indépendance : République du Niger (1960), présidence de Hamani Diori (1960-1974), coups d'État (1974, 1996, 1999, 2010), rébellions touarègues (1990s-2010s), transition démocratique (depuis 1999), présidence de Mamadou Tandja (1999-2010), Mahamadou Issoufou (2011-2021), Mohamed Bazoum (2021-2023), coup d'État (2023), Abdourahamane Tiani (depuis 2023). Défis : pauvreté, développement économique, sécurité (terrorisme, rébellions touarègues), changement climatique (désertification). Le Niger est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Niger
+- SIL Ethnologue – Languages of Niger
+- Recensements nigériens
+- Études anthropologiques sur les peuples du Niger
+- Études historiques sur les cités-États hausa, l'empire songhay, le royaume du Kanem-Bornou
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Hausa
+- Identifiant peuple (PPL_) : PPL_HAUSA
+- Population : 11 000 000
+- Pourcentage dans le pays : 44,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Niger
+- Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Code ISO 639-3 (langue principale) : hau
+
+### Peuple : Zarma
+- Identifiant peuple (PPL_) : PPL_ZARMA
+- Population : 2 200 000
+- Pourcentage dans le pays : 8,8%
+- Pourcentage en Afrique : N/A
+- Région : Ouest du Niger (fleuve Niger)
+- Famille linguistique : Nilo-saharien – Songhay (FLG_SONGHAY)
+- Code ISO 639-3 (langue principale) : dje
+
+### Peuple : Peul
+- Identifiant peuple (PPL_) : PPL_FULANI
+- Population : 2 000 000
+- Pourcentage dans le pays : 8,0%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions du Niger
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : ful
+
+### Peuple : Touareg
+- Identifiant peuple (PPL_) : PPL_TUAREG
+- Population : 1 500 000
+- Pourcentage dans le pays : 6,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Niger (Sahara)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : tmh
+
+### Peuple : Kanuri
+- Identifiant peuple (PPL_) : PPL_KANURI
+- Population : 1 000 000
+- Pourcentage dans le pays : 4,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud-est du Niger
+- Famille linguistique : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Code ISO 639-3 (langue principale) : kau
+
+### Peuple : Toubou
+- Identifiant peuple (PPL_) : PPL_TOUBOU
+- Population : 500 000
+- Pourcentage dans le pays : 2,0%
+- Pourcentage en Afrique : N/A
+- Région : Nord-est du Niger (Sahara)
+- Famille linguistique : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Code ISO 639-3 (langue principale) : tuv
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 6 800 000
+- Pourcentage dans le pays : 27,2%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Niger
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Niger 2025 : 25 000 000 (estimations ONU/UNFPA)**
+

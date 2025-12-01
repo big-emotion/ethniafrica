@@ -1,0 +1,66 @@
+# Nom du clan
+- Nom principal :
+- Identifiant clan (ID) :
+- Auto-appellation :
+- Exonymes et termes coloniaux (connotation, origine, contextualisation) :
+- Sous-ethnie parente (si applicable) :
+- Identifiant sous-ethnie parente (SUB_) :
+- Ethnie parente :
+- Identifiant ethnie parente (ETH_) :
+- Peuple d'appartenance :
+- Identifiant peuple (ID) :
+- Langue parlée :
+- Code ISO 639-3 :
+- Famille linguistique :
+- Identifiant famille linguistique (FLG) :
+
+# 1. Structure clanique
+- Totem / Ancêtre fondateur :
+- Système de filiation (patrilinéaire / matrilinéaire / bilatéral) :
+- Maison royale / lignage noble (si applicable) :
+- Segment matrimonial :
+- Relations avec autres clans :
+
+# 2. Origines et histoire du clan
+- Origines anciennes :
+- Ancêtre fondateur :
+- Migrations du clan :
+- Formation du clan :
+- Relations avec l'ethnie/sous-ethnie mère :
+- Rôle dans les royaumes / empires :
+
+# 3. Territoires / Répartition géographique
+- Pays :
+- Régions principales :
+- Zones historiques :
+- Diaspora interne :
+- Diaspora externe :
+
+# 4. Organisation sociale et culturelle
+- Mode de vie :
+- Structure familiale :
+- Rites de passage :
+- Religion(s) / spiritualités :
+- Autorités traditionnelles :
+- Rôle social spécifique :
+- Relations matrimoniales avec autres clans :
+
+# 5. Économie traditionnelle / modes de subsistance
+- Agriculture :
+- Élevage :
+- Artisanat :
+- Pêche / chasse / cueillette :
+- Commerce et réseaux économiques :
+
+# 6. Interactions historiques
+- Alliances :
+- Conflits :
+- Rôle dans les États précoloniaux :
+- Rôle dans la période coloniale :
+- Mouvements modernes :
+- Figures majeures du clan :
+
+# 7. Sources
+- [Titre] – [Auteur/URL]
+- Etc.
+

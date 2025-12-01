@@ -3,7 +3,7 @@
 - Auto-appellation : Senufo / Syénfo
 - Appellations historiques : Sénoufo (forme française), Syenfo
 - Famille linguistique : Niger-Congo – Gur (élément Gur dans le cadre AFRIK)
-- Région historique : Côte d’Ivoire, Mali, Burkina Faso
+- Région historique : Côte d’Ivoire, MLI, BFA
 - Identifiant peuple : PPL_SENUFO
 
 # 1. Ethnies incluses

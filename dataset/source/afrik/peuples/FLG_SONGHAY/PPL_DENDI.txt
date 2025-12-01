@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Dendi (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Songhay (FLG_SONGHAY)
 - Groupe ethno-linguistique : Songhay
-- Région historique : Bénin, Niger, Nigeria
-- Pays actuels : Bénin, Niger, Nigeria
+- Région historique : BEN, NER, NGA
+- Pays actuels : BEN, NER, NGA
 - Identifiant peuple (ID) : PPL_DENDI
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Dendi du Nigeria
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Dendi sont originaires du Bénin, du Niger et du Nigeria, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Dendi sont originaires du BEN, du Niger et du NGA, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long du fleuve Niger
@@ -34,7 +34,7 @@
 - Dialectes : 
   - Dialectes régionaux
   - Variantes entre pays
-- Rôle véhiculaire : Le dendi est parlé par la majorité des Dendi. Le français (Bénin, Niger) et l'anglais (Nigeria) sont utilisés dans l'éducation et l'administration.
+- Rôle véhiculaire : Le dendi est parlé par la majorité des Dendi. Le français (BEN, NER) et l'anglais (Nigeria) sont utilisés dans l'éducation et l'administration.
 
 # 5. Culture, rites et traditions
 - Rites majeurs : 
@@ -75,7 +75,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Dendi language (ddn)
-- CIA World Factbook – Benin, Niger, Nigeria
+- CIA World Factbook – Benin, NER, NGA
 - Recensements nationaux
 - Études anthropologiques sur les peuples songhay
 

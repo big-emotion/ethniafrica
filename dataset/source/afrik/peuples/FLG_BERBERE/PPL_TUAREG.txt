@@ -5,7 +5,7 @@
 - Famille linguistique principale : Afro-asiatique – Berbère (Amazigh)
 - Groupe ethno-linguistique : Tamasheq
 - Région historique : Sahara central (Ahaggar, Azawagh, Air, Adrar, Adagh)
-- Pays actuels : Mali, Niger, Algérie, Libye, Burkina Faso
+- Pays actuels : MLI, NER, DZA, LBY, BFA
 - Identifiant peuple (ID) : PPL_TUAREG
 
 # 1. Ethnies incluses dans le peuple
@@ -36,7 +36,7 @@
 
 # 6. Rôle historique et interactions régionales
 - Grands acteurs du commerce transsaharien.
-- Conflits coloniaux (France) ; rébellions modernes (Mali, Niger).
+- Conflits coloniaux (France) ; rébellions modernes (MLI, NER).
 - Relations avec Songhay, Maures, Peuls.
 
 # 7. Démographie globale

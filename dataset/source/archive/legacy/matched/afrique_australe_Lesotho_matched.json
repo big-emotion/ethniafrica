@@ -1,0 +1,45 @@
+{
+  "countryName": "Lesotho",
+  "region": "afrique_australe",
+  "countryDescription": null,
+  "ethnicities": [
+    {
+      "groupName": "Basotho (Sotho)",
+      "subGroups": [],
+      "population": 2416618,
+      "percentageInCountry": 99.7,
+      "percentageInAfrica": 0.158127,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Européens, Asiatiques, autres",
+      "subGroups": [],
+      "population": 7272,
+      "percentageInCountry": 0.3,
+      "percentageInAfrica": 0.000476,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

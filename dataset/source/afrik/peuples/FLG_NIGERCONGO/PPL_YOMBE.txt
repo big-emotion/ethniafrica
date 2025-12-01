@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Yombe (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone H)
-- Région historique : RDC, Congo, Angola
-- Pays actuels : RDC, Congo, Angola
+- Région historique : COD, COG, AGO
+- Pays actuels : COD, COG, AGO
 - Identifiant peuple (ID) : PPL_YOMBE
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Yombe sont originaires de la région de la RDC, du Congo et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).
+- Origines anciennes : Les Yombe sont originaires de la région de la COD, du Congo et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers la RDC, le Congo et l'Angola
+  - Expansion vers la COD, le Congo et l'Angola
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les commerçants européens, influence du christianisme.

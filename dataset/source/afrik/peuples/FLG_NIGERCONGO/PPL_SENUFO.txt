@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Sénufo (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Gur
-- Région historique : Côte d'Ivoire, Mali, Burkina Faso
-- Pays actuels : Côte d'Ivoire, Mali, Burkina Faso
+- Région historique : CIV, MLI, BFA
+- Pays actuels : CIV, MLI, BFA
 - Identifiant peuple (ID) : PPL_SENUFO
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Sénufo sont originaires de la région de la Côte d'Ivoire, du Mali et du Burkina Faso. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe gur.
+- Origines anciennes : Les Sénufo sont originaires de la région de la CIV, du Mali et du Burkina Faso. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe gur.
 - Routes migratoires : 
   - Migrations depuis les régions gur
-  - Expansion vers la Côte d'Ivoire, le Mali et le Burkina Faso
+  - Expansion vers la CIV, le Mali et le Burkina Faso
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme et de l'islam.

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Konkomba (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Gur
-- Région historique : Ghana, Togo
-- Pays actuels : Ghana, Togo
+- Région historique : GHA, TGO
+- Pays actuels : GHA, TGO
 - Identifiant peuple (ID) : PPL_KONKOMBA
 
 # 1. Ethnies incluses dans le peuple

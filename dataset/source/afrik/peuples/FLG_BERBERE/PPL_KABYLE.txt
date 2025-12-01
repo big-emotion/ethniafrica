@@ -6,8 +6,8 @@
   - « Berbère » (terme colonial, considéré problématique ; auto-appellation correcte : Amazigh / Imazighen)
 - Famille linguistique principale : Afro-asiatique – Berbère (Amazigh)
 - Groupe ethno-linguistique : Berbère du Nord (branche zenatienne)
-- Région historique : Kabylie (nord de l’Algérie, massif de l’Atlas tellien)
-- Pays actuels : Algérie (principal), diaspora mondiale
+- Région historique : Kabylie (nord de l’DZA, massif de l’Atlas tellien)
+- Pays actuels : DZA (principal), diaspora mondiale
 - Identifiant peuple (ID) : PPL_KABYLE
 
 # 1. Ethnies incluses dans le peuple

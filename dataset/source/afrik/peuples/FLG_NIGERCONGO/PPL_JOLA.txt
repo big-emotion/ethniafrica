@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : « Diola » (terme français), « Jola » (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (sous-groupe du Niger-Congo)
-- Région historique : Sénégal, Gambie, Guinée-Bissau
-- Pays actuels : Sénégal, Gambie, Guinée-Bissau
+- Région historique : SEN, GMB, GIN-Bissau
+- Pays actuels : SEN, GMB, GIN-Bissau
 - Identifiant peuple (ID) : PPL_JOLA
 
 # 1. Ethnies incluses dans le peuple

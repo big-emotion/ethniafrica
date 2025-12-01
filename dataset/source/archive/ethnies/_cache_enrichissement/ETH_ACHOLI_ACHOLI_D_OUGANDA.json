@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_ACHOLI_ACHOLI_D_OUGANDA",
+  "timestamp": "2025-01-25T22:00:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/acho1242",
+      "data": {
+        "langue": "Acholi",
+        "code_iso": "ach",
+        "famille": "Nilo-Saharan > Eastern Sudanic > Nilotic > Western Nilotic > Northern > Luo > Southern Luo",
+        "pays": ["Uganda", "South Sudan"],
+        "region": "Northern Uganda, South Sudan",
+        "glottocode": "acho1242",
+        "auto_appellation": "Acholi"
+      },
+      "timestamp": "2025-01-25T22:00:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/ach",
+      "data": {
+        "langue": "Acholi",
+        "code_iso": "ach",
+        "famille": "Nilo-Saharan",
+        "pays": ["Uganda", "South Sudan"],
+        "auto_appellation": "Acholi"
+      },
+      "timestamp": "2025-01-25T22:00:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "ach",
+    "langue_principale": "Acholi",
+    "famille_linguistique": "Nilo-Saharan > Eastern Sudanic > Nilotic > Western Nilotic > Northern > Luo > Southern Luo",
+    "pays_principaux": ["Uganda", "South Sudan"],
+    "region_generale": "Northern Uganda, South Sudan",
+    "auto_appellation": "Acholi"
+  }
+}

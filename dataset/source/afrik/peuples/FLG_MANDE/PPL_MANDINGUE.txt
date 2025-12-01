@@ -3,8 +3,8 @@
 - Auto-appellation : Mandinka / Mandiŋka
 - Exonymes historiques : Mandingue (forme française)
 - Famille linguistique : Niger-Congo – Mandé (occidental)
-- Région historique : Mali, Sénégal, Gambie
-- Pays actuels : Sénégal, Gambie, Mali, Guinée, Côte d’Ivoire, Sierra Leone
+- Région historique : MLI, SEN, GMB
+- Pays actuels : SEN, GMB, MLI, GIN, Côte d’Ivoire, SLE
 - Identifiant : PPL_MANDINKA
 
 # 1. Ethnies incluses

@@ -4,7 +4,7 @@
 - Exonymes historiques :
   - Guéré (terme ivoirien français, accepté mais extérieur)
 - Famille linguistique : Niger-Congo – Krou
-- Région historique : Ouest ivoirien (Duékoué, Guiglo), Liberia
+- Région historique : Ouest ivoirien (Duékoué, Guiglo), LBR
 - Identifiant : PPL_GUERE
 
 # 1. Ethnies incluses

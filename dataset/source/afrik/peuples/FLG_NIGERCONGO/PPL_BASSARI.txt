@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Bassari (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique
-- Région historique : Sénégal, Guinée
-- Pays actuels : Sénégal, Guinée
+- Région historique : SEN, GIN
+- Pays actuels : SEN, GIN
 - Identifiant peuple (ID) : PPL_BASSARI
 
 # 1. Ethnies incluses dans le peuple

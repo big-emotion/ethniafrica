@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Sotho-Tswana (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Lesotho, Afrique du Sud, Botswana
-- Pays actuels : Lesotho, Afrique du Sud, Botswana
+- Région historique : LSO, Afrique du Sud, BWA
+- Pays actuels : LSO, Afrique du Sud, BWA
 - Identifiant peuple (ID) : PPL_SOTHO_TSWANA
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Sotho-Tswana sont originaires de la région du Lesotho, de l'Afrique du Sud et du Botswana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).
+- Origines anciennes : Les Sotho-Tswana sont originaires de la région du LSO, de l'Afrique du Sud et du Botswana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Lesotho, l'Afrique du Sud et le Botswana
+  - Expansion vers le LSO, l'Afrique du Sud et le Botswana
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune (Sotho-Tswana).
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.

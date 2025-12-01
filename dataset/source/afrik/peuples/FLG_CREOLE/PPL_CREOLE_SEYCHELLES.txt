@@ -5,7 +5,7 @@
 - Famille linguistique principale : Créole (FLG_CREOLE)
 - Groupe ethno-linguistique : Créole afro-français
 - Région historique : Seychelles
-- Pays actuels : Seychelles
+- Pays actuels : SYC
 - Identifiant peuple (ID) : PPL_CREOLE_SEYCHELLES
 
 # 1. Ethnies incluses dans le peuple

@@ -2,7 +2,7 @@
 - Nom principal : Ewe
 - Auto-appellation : Eʋe / Eʋegbe
 - Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe)
-- Région : Ghana (Volta), Togo, Bénin
+- Région : Ghana (Volta), TGO, BEN
 - Identifiant peuple : PPL_EWE
 
 # 1. Ethnies incluses

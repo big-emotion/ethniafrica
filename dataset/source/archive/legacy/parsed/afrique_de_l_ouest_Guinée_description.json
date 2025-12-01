@@ -1,0 +1,41 @@
+{
+  "countryName": "Guinée",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant les États modernes",
+      "names": [
+        "territoires Mandé",
+        "Peul/Fula",
+        "peuples forestiers (Kissi",
+        "Toma",
+        "Guerzé)",
+        "Soussou"
+      ]
+    },
+    {
+      "period": "Influences impériales",
+      "names": [
+        "Empire du Mali (XIIIe–XVIe s.)",
+        "Empire Songhai",
+        "Empire du Ghana (influence commerciale)"
+      ]
+    },
+    {
+      "period": "XVIIIe–XIXe s.",
+      "names": ["Théocratie peule du Fouta Djallon"]
+    },
+    {
+      "period": "1891",
+      "names": ["Guinée française"]
+    },
+    {
+      "period": "1958",
+      "names": [
+        "Indépendance — République de Guinée (seule colonie à dire NON en 1958)"
+      ]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

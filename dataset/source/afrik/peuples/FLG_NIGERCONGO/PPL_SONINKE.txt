@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Soninké (terme utilisé par les Européens), parfois appelés « Sarakolé » (terme alternatif)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (sous-groupe du Niger-Congo)
-- Région historique : Mali, Sénégal, Mauritanie, Gambie
-- Pays actuels : Mali, Sénégal, Mauritanie, Gambie
+- Région historique : MLI, SEN, MRT, GMB
+- Pays actuels : MLI, SEN, MRT, GMB
 - Identifiant peuple (ID) : PPL_SONINKE
 
 # 1. Ethnies incluses dans le peuple
@@ -16,10 +16,10 @@
 - Ethnie 5 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Soninké sont originaires de la région du Mali, du Sénégal, de la Mauritanie et de la Gambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé. Ancien empire du Ghana.
+- Origines anciennes : Les Soninké sont originaires de la région du MLI, du SEN, de la Mauritanie et de la Gambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé. Ancien empire du Ghana.
 - Routes migratoires : 
   - Migrations depuis les régions mandé
-  - Expansion vers le Mali, le Sénégal, la Mauritanie et la Gambie
+  - Expansion vers le MLI, le SEN, la Mauritanie et la Gambie
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Héritage de l'empire du Ghana.
 - Influences externes : Contacts avec les peuples voisins, influence de l'islam.

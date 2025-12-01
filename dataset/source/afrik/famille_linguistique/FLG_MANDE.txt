@@ -44,9 +44,9 @@
   ~30 millions
 
 # 2. Peuples associés
-- Peuple 1 : Mandingues (Bambara, Malinké, Mandinka, Dioula)
-- Peuple 2 : Soninké
-- Peuple 3 : Kpelle
+- Peuple 1 : Mandingues (Bambara, Malinké, Mandinka, Dioula) (PPL_MANDINGUE)
+- Peuple 2 : Soninké (PPL_SONINKE)
+- Peuple 3 : Kpelle (PPL_KPELLE)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Bambara

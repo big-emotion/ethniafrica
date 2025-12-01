@@ -6,8 +6,8 @@
   - « Langues sahariennes » (terme académique)
 - Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
 - Groupe ethno-linguistique : Saharien (macro-groupe)
-- Région historique : Tchad, Niger, Nigeria, Soudan, Libye
-- Pays actuels : Tchad, Niger, Nigeria, Soudan, Libye, Cameroun
+- Région historique : TCD, NER, NGA, SDN, LBY
+- Pays actuels : TCD, NER, NGA, SDN, LBY, CMR
 - Identifiant peuple (ID) : PPL_SAHARIEN_MACRO
 
 # 1. Ethnies incluses dans le peuple
@@ -38,10 +38,10 @@
 - Langue principale : Langues sahariennes (Kanuri, Kanembu, Toubou, Zaghawa, etc.)
 - Codes ISO : kau (Kanuri), kbl (Kanembu), tbv (Teda), zag (Zaghawa), dzg (Daza), et autres
 - Dialectes : 
-  - Kanuri (Nigeria, Niger, Tchad, Cameroun)
+  - Kanuri (NGA, NER, TCD, CMR)
   - Kanembu (Tchad)
-  - Toubou (Tchad, Niger, Libye)
-  - Zaghawa (Tchad, Soudan)
+  - Toubou (TCD, NER, LBY)
+  - Zaghawa (TCD, SDN)
   - Nombreuses variantes régionales
 - Rôle véhiculaire : Les langues sahariennes sont parlées par les peuples Sahariens. L'arabe, le français, l'anglais et d'autres langues sont également utilisés selon les pays.
 

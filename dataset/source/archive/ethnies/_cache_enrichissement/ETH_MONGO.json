@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_MONGO",
+  "timestamp": "2025-01-25T21:10:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/mong1338",
+      "data": {
+        "langue": "Mongo",
+        "code_iso": "lol",
+        "famille": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central-Western Bantu",
+        "pays": ["République démocratique du Congo"],
+        "region": "Afrique centrale",
+        "glottocode": "mong1338",
+        "auto_appellation": "Lomongo"
+      },
+      "timestamp": "2025-01-25T21:10:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/lol",
+      "data": {
+        "langue": "Mongo",
+        "code_iso": "lol",
+        "famille": "Niger-Congo",
+        "pays": ["Democratic Republic of the Congo"],
+        "auto_appellation": "Lomongo"
+      },
+      "timestamp": "2025-01-25T21:10:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "lol",
+    "langue_principale": "Mongo",
+    "famille_linguistique": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central-Western Bantu",
+    "pays_principaux": [],
+    "region_generale": "Afrique centrale",
+    "auto_appellation": "Lomongo"
+  }
+}

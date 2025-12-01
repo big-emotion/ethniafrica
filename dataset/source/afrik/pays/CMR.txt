@@ -1,0 +1,250 @@
+# Nom du pays
+- Nom officiel actuel : République du Cameroun (Republic of Cameroon)
+- Étymologie du nom : Le nom "Cameroun" dérive du portugais "Rio dos Camarões" (Rivière des crevettes), donné par les navigateurs portugais au XVe siècle en référence au fleuve Wouri, riche en crevettes. Le terme "Camarões" a été adapté en "Cameroun" par les Français et "Cameroons" par les Britanniques.
+- Personne / peuple / administration à l'origine du nom : Le nom "Cameroun" provient des navigateurs portugais qui ont exploré la côte camerounaise au XVe siècle. Le terme "Rio dos Camarões" (Rivière des crevettes) a été donné au fleuve Wouri et a ensuite été généralisé pour désigner l'ensemble du territoire. Les colonisateurs allemands, français et britanniques ont adapté ce nom.
+- Identifiant pays (ISO 3166-1 alpha-3) : CMR
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Cameroun était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaume Bamoun, chefferies Bamiléké, etc.).
+- Moyen Âge : Développement de royaumes et chefferies : royaume Bamoun, chefferies Bamiléké, royaumes Beti-Fang-Bulu, sultanats Mandara et Kotoko, peuples Sawa. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et chefferies autonomes : royaume Bamoun, chefferies Bamiléké (Grassfields), royaumes Beti-Fang-Bulu, sultanats Mandara et Kotoko, peuples Sawa (côtiers), peuples forestiers, pygmées Baka. Les Portugais utilisaient le terme "Rio dos Camarões" pour désigner la région du fleuve Wouri.
+- Colonisation : 1884-1916 : Kamerun (colonie allemande). Les Allemands ont établi la colonie du Kamerun en 1884. 1916-1960 : Cameroun français et Cameroons britanniques (mandats de la SDN puis de l'ONU après la Première Guerre mondiale). Le territoire était divisé entre la France (Cameroun français) et le Royaume-Uni (Cameroons britanniques).
+- Période contemporaine : 1960 : République du Cameroun (indépendance du Cameroun français, 1er janvier 1960). 1961 : République fédérale du Cameroun (réunification avec le Cameroun britannique, 1er octobre 1961). 1972 : République unie du Cameroun (abolition du fédéralisme). 1984 : République du Cameroun (nom actuel).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume Bamoun] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Bamoun
+  - Centres politiques : Foumban (capitale du royaume)
+  - Rôle historique : Royaume Bamoun puissant et structuré, système monarchique (sultan), résistance à la colonisation allemande et française. Traditions artistiques et culturelles riches (écriture bamoun, art royal). Autorité coutumière encore active aujourd'hui.
+
+- [Chefferies Bamiléké] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Bamiléké
+  - Centres politiques : Chefferies traditionnelles de l'Ouest (Grassfields)
+  - Rôle historique : Chefferies Bamiléké puissantes et structurées, système de chefferies traditionnelles, traditions agricoles et artisanales développées. Résistance à la colonisation. Rôle économique majeur dans le Cameroun contemporain.
+
+- [Royaumes Beti-Fang-Bulu] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Beti, Fang, Bulu, Ewondo
+  - Centres politiques : Chefferies traditionnelles du Centre-Sud
+  - Rôle historique : Royaumes et chefferies Beti-Fang-Bulu, traditions forestières, culte des ancêtres, masques et sculptures. Rôle politique majeur dans le Cameroun contemporain.
+
+- [Sultanats Mandara et Kotoko] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Mandara, Kotoko, peuples du Nord
+  - Centres politiques : Maroua, Garoua, sultanats traditionnels
+  - Rôle historique : Sultanats Mandara et Kotoko, influence islamique, commerce transsaharien. Traditions politiques et religieuses islamiques.
+
+- [Colonie du Kamerun] :
+  - Période : 1884 - 1916
+  - Peuples dominants : Tous les peuples camerounais sous domination allemande
+  - Centres politiques : Douala (capitale coloniale)
+  - Rôle historique : Colonie allemande, développement de l'infrastructure (chemins de fer, ports), exploitation économique, résistance des peuples autochtones. Défaite allemande en 1916, partition du territoire.
+
+- [Cameroun français et Cameroons britanniques] :
+  - Période : 1916 - 1960/1961
+  - Peuples dominants : Tous les peuples camerounais sous mandats français et britannique
+  - Centres politiques : Yaoundé (Cameroun français), Buea (Cameroons britanniques)
+  - Rôle historique : Mandats de la SDN puis de l'ONU, administration française et britannique, développement du mouvement indépendantiste au XXe siècle. Indépendance du Cameroun français (1960) puis réunification avec le Cameroun britannique (1961).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Beti-Fang-Bulu
+  - Auto-appellation (endonyme) : Beti, Fang, Bulu, Ewondo
+  - Exonymes / appellations historiques : "Beti-Pahouin" (catégorie coloniale englobante, terme problématique), "Pahouins" (ancienne étiquette coloniale pour les Fang)
+  - Identifiant peuple (PPL_) : PPL_BETI, PPL_BETI_FANG, PPL_FANG, PPL_BULU, PPL_EWONDO
+  - Région principale : Centre-Sud du Cameroun (forêts équatoriales)
+  - Langues parlées : Ewondo (ewo, ISO 639-3), Bulu (bum, ISO 639-3), Fang (fan, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bantou (Zone A) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Beti", "Fang", "Bulu" et "Ewondo" sont les auto-appellations respectives. "Beti-Pahouin" est une catégorie coloniale englobante qui regroupe artificiellement plusieurs peuples distincts et doit être évitée. "Pahouins" est une ancienne étiquette coloniale pour les Fang et doit être évitée.
+
+- Peuple 2 :
+  - Nom : Bamiléké
+  - Auto-appellation (endonyme) : Bamiléké
+  - Exonymes / appellations historiques : Bamiléké (terme utilisé par les Européens et les colonisateurs)
+  - Identifiant peuple (PPL_) : PPL_BAMILEKE
+  - Région principale : Ouest du Cameroun (Grassfields)
+  - Langues parlées : Bamiléké (bax, ISO 639-3, code générique), français, anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone A) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Bamiléké" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 3 :
+  - Nom : Peul / Fulani
+  - Auto-appellation (endonyme) : Fulɓe (pluriel), Pullo (singulier)
+  - Exonymes / appellations historiques : Peul (terme français), Fulani (terme haoussa), Fula (terme anglophone), "Fellata" (terme haoussa parfois péjoratif, à éviter)
+  - Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+  - Région principale : Nord du Cameroun, Adamaoua (pasteurs nomades et sédentaires)
+  - Langues parlées : Fulfulde (ful, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fulɓe" est l'auto-appellation. "Peul" et "Fulani" sont des exonymes acceptés. "Fellata" peut avoir une connotation péjorative dans certains contextes et doit être évité.
+
+- Peuple 4 :
+  - Nom : Kirdi
+  - Auto-appellation (endonyme) : Variées selon les groupes (Mafa, Mofu, Kapsiki, etc.)
+  - Exonymes / appellations historiques : "Kirdi" (terme haoussa signifiant "païen", utilisé pour désigner les peuples non islamisés du Nord)
+  - Identifiant peuple (PPL_) : PPL_KIRDI
+  - Région principale : Extrême-Nord du Cameroun (montagnes)
+  - Langues parlées : Langues tchadiques (plusieurs langues), français
+  - Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kirdi" est un terme haoussa signifiant "païen" utilisé pour désigner les peuples non islamisés du Nord. Ce terme peut avoir une connotation péjorative et doit être utilisé avec précaution. Chaque groupe a sa propre auto-appellation (Mafa, Mofu, Kapsiki, etc.).
+
+- Peuple 5 :
+  - Nom : Sawa / Peuples côtiers
+  - Auto-appellation (endonyme) : Sawa, Duala, Bassa, Bakoko, Bakweri
+  - Exonymes / appellations historiques : Sawa (terme générique pour les peuples côtiers), Duala, Bassa, Bakoko, Bakweri
+  - Identifiant peuple (PPL_) : PPL_DUALA, PPL_BASSA_CAM, autres
+  - Région principale : Littoral du Cameroun (Douala, côte atlantique)
+  - Langues parlées : Duala (dua, ISO 639-3), Bassa (bas, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bantou (Zone A) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Sawa" est un terme générique pour les peuples côtiers. "Duala", "Bassa", "Bakoko", "Bakweri" sont les auto-appellations respectives. Pas de terme péjoratif connu.
+
+- Peuple 6 :
+  - Nom : Peuples forestiers du Sud et de l'Est
+  - Auto-appellation (endonyme) : Maka, Kaka, Koonzime, etc.
+  - Exonymes / appellations historiques : Maka, Kaka, Koonzime (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_PEUPLES_FORESTIERS_DU_SUD_ET_DE_L_EST
+  - Région principale : Sud et Est du Cameroun (forêts équatoriales)
+  - Langues parlées : Langues bantoues (plusieurs langues), français
+  - Famille linguistique : Niger-Congo – Bantou (Zone A) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 7 :
+  - Nom : Pygmées / Autochtones
+  - Auto-appellation (endonyme) : Baka, Bagyeli, Medzan
+  - Exonymes / appellations historiques : "Pygmées" (terme anthropologique, parfois considéré comme péjoratif), "Baka", "Bagyeli", "Medzan"
+  - Identifiant peuple (PPL_) : PPL_PYGMEES_AUTOCHTONES
+  - Région principale : Forêts du Sud et de l'Est du Cameroun
+  - Langues parlées : Langues bantoues (plusieurs langues), langues oubanguiennes, français
+  - Famille linguistique : Diverses (FLG_BANTU principalement)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Pygmées" est un terme anthropologique qui peut être considéré comme péjoratif par certains groupes. "Baka", "Bagyeli" et "Medzan" sont les auto-appellations respectives. Il est préférable d'utiliser les auto-appellations spécifiques.
+
+- Peuple 8 :
+  - Nom : Hausa
+  - Auto-appellation (endonyme) : Hausa
+  - Exonymes / appellations historiques : Hausa (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_HAUSA
+  - Région principale : Nord du Cameroun, zones urbaines
+  - Langues parlées : Hausa (hau, ISO 639-3), français
+  - Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Hausa" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 9 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_TIV, PPL_IGBO, autres
+  - Région principale : Diverses régions du Cameroun
+  - Langues parlées : Langues diverses, français, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), anglais (langue officielle, eng), Ewondo (ewo), Bulu (bum), Fang (fan), Bamiléké (bax), Fulfulde (ful), Duala (dua), Bassa (bas), Hausa (hau), langues tchadiques, langues bantoues
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique du Cameroun (plus de 280 ethnies). Traditions bantoues (Beti-Fang-Bulu, Bamiléké, Sawa). Traditions peules (pastoralisme, poésie). Traditions islamiques (Nord, sultanats). Traditions pygmées (chasse-cueillette, forêts). Art royal (royaume Bamoun, écriture bamoun). Masques et sculptures (Beti-Fang, Bamiléké). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.
+- Religions dominantes : Christianisme (catholicisme et protestantisme, surtout dans le sud), islam (surtout dans le nord), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques)
+- Modes de vie : Agriculture (Bamiléké, Beti-Fang, cultures vivrières, cacao, café), élevage (Peuls, bovins), chasse-cueillette (Pygmées), commerce et activités urbaines (zones urbaines, Douala, Yaoundé). Urbanisation croissante. Économie basée sur l'agriculture (cacao, café, coton, bananes), l'exploitation pétrolière, et les services.
+- Organisation sociale : Organisation en royaumes historiques (Bamoun, système monarchique), chefferies traditionnelles (Bamiléké, Grassfields), sultanats (Mandara, Kotoko), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Organisation égalitaire chez les Pygmées (chasseurs-cueilleurs).
+- Relations régionales : Relations historiques avec le Nigeria (commerce, peuples transfrontaliers), le Tchad (commerce, peuples transfrontaliers), la RCA (commerce, peuples transfrontaliers), la Guinée équatoriale (Fang, commerce). Intégration dans la CEMAC (Communauté économique et monétaire de l'Afrique centrale) et la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Bilingualisme français-anglais unique en Afrique.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par diverses sociétés sans nom unifié. Développement de chefferies et royaumes locaux. Arrivée et expansion des peuples bantous dans le sud et de l'est.
+- Moyen Âge : Formation et développement du royaume Bamoun, chefferies Bamiléké (Grassfields), royaumes Beti-Fang-Bulu. Développement de réseaux commerciaux régionaux et transsahariens. Arrivée de l'islam dans le nord (sultanats Mandara et Kotoko).
+- Époque précoloniale : Consolidation du royaume Bamoun, chefferies Bamiléké puissantes, royaumes Beti-Fang-Bulu. Développement des sultanats islamiques dans le nord. Peuples Sawa (côtiers) actifs dans le commerce côtier. Contacts avec les Européens (Portugais, puis Allemands, Français, Britanniques).
+- Colonisation : 1884 : Établissement de la colonie allemande du Kamerun. Période coloniale allemande (1884-1916), développement de l'infrastructure, exploitation économique, résistance des peuples autochtones. 1916 : Défaite allemande, partition du territoire entre la France et le Royaume-Uni. 1916-1960/1961 : Mandats français et britannique (SDN puis ONU). Développement du mouvement indépendantiste au XXe siècle.
+- Lutte pour l'indépendance : 1960 : Indépendance du Cameroun français (1er janvier 1960), proclamation de la République du Cameroun. 1961 : Réunification avec le Cameroun britannique (1er octobre 1961), création de la République fédérale du Cameroun. 1972 : Abolition du fédéralisme, création de la République unie du Cameroun.
+- Période post-indépendance : 1984 : Changement de nom pour "République du Cameroun" (nom actuel). Période de stabilité politique relative sous la présidence de Paul Biya (depuis 1982). Défis : pauvreté, inégalités sociales, tensions anglophones/francophones, corruption. Le Cameroun est un pays bilingue (français-anglais) unique en Afrique.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Cameroon
+- CIA World Factbook – Cameroon
+- ONU / UNFPA – Démographie Cameroun 2025
+- Geschiere, Peter – "The Modernity of Witchcraft: Politics and the Occult in Postcolonial Africa"
+- Archives du royaume Bamoun (Foumban)
+- Recensements camerounais
+- Études anthropologiques sur les peuples du Cameroun
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Beti-Fang-Bulu
+- Identifiant peuple (PPL_) : PPL_BETI, PPL_BETI_FANG, PPL_FANG, PPL_BULU, PPL_EWONDO
+- Population : 6 600 000
+- Pourcentage dans le pays : 22%
+- Pourcentage en Afrique : N/A
+- Région : Centre-Sud du Cameroun (forêts équatoriales)
+- Famille linguistique : Niger-Congo – Bantou (Zone A) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : ewo, bum, fan
+
+### Peuple : Bamiléké
+- Identifiant peuple (PPL_) : PPL_BAMILEKE
+- Population : 5 700 000
+- Pourcentage dans le pays : 19%
+- Pourcentage en Afrique : N/A
+- Région : Ouest du Cameroun (Grassfields)
+- Famille linguistique : Niger-Congo – Bantou (Zone A) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : bax
+
+### Peuple : Peul / Fulani
+- Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+- Population : 3 000 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Cameroun, Adamaoua (pasteurs nomades et sédentaires)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : ful
+
+### Peuple : Kirdi
+- Identifiant peuple (PPL_) : PPL_KIRDI
+- Population : 3 600 000
+- Pourcentage dans le pays : 12%
+- Pourcentage en Afrique : N/A
+- Région : Extrême-Nord du Cameroun (montagnes)
+- Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Code ISO 639-3 (langue principale) : N/A (plusieurs langues tchadiques)
+
+### Peuple : Sawa / Peuples côtiers
+- Identifiant peuple (PPL_) : PPL_DUALA, PPL_BASSA_CAM, autres
+- Population : 2 250 000
+- Pourcentage dans le pays : 15%
+- Pourcentage en Afrique : N/A
+- Région : Littoral du Cameroun (Douala, côte atlantique)
+- Famille linguistique : Niger-Congo – Bantou (Zone A) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : dua, bas
+
+### Peuple : Peuples forestiers du Sud et de l'Est
+- Identifiant peuple (PPL_) : PPL_PEUPLES_FORESTIERS_DU_SUD_ET_DE_L_EST
+- Population : 1 800 000
+- Pourcentage dans le pays : 6%
+- Pourcentage en Afrique : N/A
+- Région : Sud et Est du Cameroun (forêts équatoriales)
+- Famille linguistique : Niger-Congo – Bantou (Zone A) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : N/A (plusieurs langues bantoues)
+
+### Peuple : Pygmées / Autochtones
+- Identifiant peuple (PPL_) : PPL_PYGMEES_AUTOCHTONES
+- Population : 600 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Forêts du Sud et de l'Est du Cameroun
+- Famille linguistique : Diverses (FLG_BANTU principalement)
+- Code ISO 639-3 (langue principale) : N/A (plusieurs langues)
+
+### Peuple : Hausa
+- Identifiant peuple (PPL_) : PPL_HAUSA
+- Population : 1 200 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Cameroun, zones urbaines
+- Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Code ISO 639-3 (langue principale) : hau
+
+### Autres peuples
+- Identifiant peuple (PPL_) : PPL_TIV, PPL_IGBO, autres
+- Population : 1 200 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Cameroun
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Cameroun 2025 : 30 000 000 (estimations ONU/UNFPA)**
+

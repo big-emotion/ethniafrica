@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Krahn (terme utilisé par les Européens), parfois appelés « Guéré » en Côte d'Ivoire
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Krou occidental
-- Région historique : Libéria, Côte d'Ivoire
-- Pays actuels : Libéria, Côte d'Ivoire
+- Région historique : Libéria, CIV
+- Pays actuels : LBR, CIV
 - Identifiant peuple (ID) : PPL_KRAHN
 
 # 1. Ethnies incluses dans le peuple

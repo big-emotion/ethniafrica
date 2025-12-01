@@ -1,0 +1,193 @@
+# Nom du pays
+- Nom officiel actuel : République de Côte d'Ivoire (République de Côte d'Ivoire)
+- Étymologie du nom : Le nom "Côte d'Ivoire" provient du français et fait référence au commerce de l'ivoire qui se pratiquait le long de la côte atlantique depuis le XVe siècle. Les navigateurs portugais utilisaient le terme "Costa do Marfim" (Côte d'Ivoire en portugais) pour désigner cette région riche en éléphants et en ivoire. Le nom a été officialisé par les Français lors de la création de la colonie en 1893.
+- Personne / peuple / administration à l'origine du nom : Le nom "Côte d'Ivoire" a été donné par les navigateurs européens (portugais, puis français) à partir du XVe siècle en référence au commerce de l'ivoire pratiqué le long de la côte. Les Français ont officialisé ce nom lors de la création de la colonie de Côte d'Ivoire en 1893. Le nom n'est pas traduit dans les langues étrangères (contrairement à d'autres pays) pour préserver l'identité nationale.
+- Identifiant pays (ISO 3166-1 alpha-3) : CIV
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la Côte d'Ivoire était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaumes Akan, chefferies Krou, etc.).
+- Moyen Âge : Développement de royaumes Akan (Baoulé, Agni, Abron) migrés depuis le Ghana, peuples Krou forestiers (Bété, Wé, Dida), populations Mandé du Nord (héritage de l'empire du Mali), peuples voltaiques (Sénoufo, Lobi, Koulango). Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et chefferies autonomes : royaumes Akan (Baoulé, Agni, Abron), peuples Krou (Bété, Wé, Dida), Mandé du Nord (Malinké, Dioula), Mandé du Sud (Dan, Gouro, Wan), peuples voltaiques (Sénoufo, Lobi, Koulango). Les Européens utilisaient le terme "Côte d'Ivoire" ou "Costa do Marfim" pour désigner la région côtière riche en commerce d'ivoire.
+- Colonisation : 1893-1960 : Colonie de Côte d'Ivoire (partie de l'Afrique-Occidentale française, AOF). Les Français ont créé la colonie de Côte d'Ivoire en 1893. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960.
+- Période contemporaine : 1960 : Indépendance de la Côte d'Ivoire (7 août 1960), proclamation de la République de Côte d'Ivoire. Le nom "Côte d'Ivoire" est officiel et n'est pas traduit dans les langues étrangères pour préserver l'identité nationale.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes Akan] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Baoulé, Agni, Abron, Attié
+  - Centres politiques : Chefferies traditionnelles akan, royaumes locaux
+  - Rôle historique : Royaumes Akan migrés depuis le Ghana, système politique traditionnel akan (matrilinéaire), traditions culturelles akan. Les Baoulé forment l'un des groupes les plus influents du pays. Résistance à la colonisation française.
+
+- [Peuples Krou] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Bété, Wé, Dida
+  - Centres politiques : Chefferies traditionnelles krou
+  - Rôle historique : Peuples Krou forestiers, traditions artistiques réputées (masques, sculptures), structures lignagères, chefferies locales. Résistance à la colonisation française.
+
+- [Peuples Mandé du Nord] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Malinké, Dioula, Bambara
+  - Centres politiques : Chefferies traditionnelles mandé
+  - Rôle historique : Peuples Mandé du Nord liés historiquement à l'empire du Mali, tradition islamique, commerce transsaharien. Rôle majeur dans le commerce et l'islamisation de la région.
+
+- [Peuples Mandé du Sud] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Dan (Yacouba), Gouro, Wan
+  - Centres politiques : Chefferies traditionnelles mandé
+  - Rôle historique : Peuples Mandé du Sud, traditions forestières, masques et sculptures. Relations avec les peuples Krou voisins.
+
+- [Peuples Voltaïques / Gur] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Sénoufo, Lobi, Koulango
+  - Centres politiques : Chefferies traditionnelles gur
+  - Rôle historique : Peuples voltaiques/gur, traditions agricoles, cérémonies d'initiation (Poro chez les Sénoufo). Résistance à la colonisation française.
+
+- [Colonie de Côte d'Ivoire] :
+  - Période : 1893 - 1960
+  - Peuples dominants : Tous les peuples ivoiriens sous domination française
+  - Centres politiques : Abidjan (capitale coloniale puis économique), Yamoussoukro (capitale politique depuis 1983)
+  - Rôle historique : Colonie française, intégration dans l'AOF. Exploitation économique (cacao, café, bois), développement de l'administration coloniale, résistance des peuples autochtones, développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Akan
+  - Auto-appellation (endonyme) : Akan, Baoulé, Agni, Abron, Attié
+  - Exonymes / appellations historiques : Akan (terme utilisé par les Européens), Baoulé, Agni, Abron, Attié
+  - Identifiant peuple (PPL_) : PPL_AKAN
+  - Région principale : Centre, Est et Sud de la Côte d'Ivoire
+  - Langues parlées : Baoulé, Agni, Abron, Attié (dialectes akan, aka, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Kwa (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Akan" est un terme générique. "Baoulé", "Agni", "Abron", "Attié" sont les auto-appellations respectives des sous-groupes. Pas de terme péjoratif connu.
+
+- Peuple 2 :
+  - Nom : Voltaïques / Gur
+  - Auto-appellation (endonyme) : Sénufo, Lobi, Koulango
+  - Exonymes / appellations historiques : Sénufo, Lobi, Koulango (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SENUFO, PPL_LOBI
+  - Région principale : Nord de la Côte d'Ivoire
+  - Langues parlées : Sénufo (sen, sef, seq, ISO 639-3), Lobi (lob, ISO 639-3), Koulango, français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Sénufo", "Lobi", "Koulango" sont les auto-appellations respectives. Pas de terme péjoratif connu.
+
+- Peuple 3 :
+  - Nom : Mandé du Nord
+  - Auto-appellation (endonyme) : Maninka / Mandinka, Dioula
+  - Exonymes / appellations historiques : Malinké (terme français), Mandinka (terme anglophone), Dioula (terme utilisé pour les commerçants mandé), "Mandingo" (terme historique, parfois péjoratif)
+  - Identifiant peuple (PPL_) : PPL_MALINKE
+  - Région principale : Nord de la Côte d'Ivoire
+  - Langues parlées : Malinké / Mandinka (mlq, ISO 639-3), Dioula (diu, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Maninka" ou "Mandinka" est l'auto-appellation. "Malinké" est l'exonyme français accepté. "Mandingo" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité. "Dioula" est un terme utilisé pour désigner les commerçants mandé et est accepté.
+
+- Peuple 4 :
+  - Nom : Mandé du Sud
+  - Auto-appellation (endonyme) : Dan, Yacouba, Gouro, Wan
+  - Exonymes / appellations historiques : Dan, Yacouba (terme alternatif pour Dan), Gouro, Wan (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MANDE_DU_SUD
+  - Région principale : Ouest de la Côte d'Ivoire
+  - Langues parlées : Dan (dnj, ISO 639-3), Gouro (goa, ISO 639-3), Wan (wan, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Dan" est l'auto-appellation, "Yacouba" est une variante exonyme acceptée. "Gouro" et "Wan" sont les auto-appellations. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Krou
+  - Auto-appellation (endonyme) : Bété, Wé, Dida
+  - Exonymes / appellations historiques : Bété, Wé, Guéré (terme utilisé pour Wé), Dida (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BETE, PPL_WE
+  - Région principale : Centre-Ouest et Ouest de la Côte d'Ivoire (forêts)
+  - Langues parlées : Bété (beb, btv, ISO 639-3), Wé / Guéré (wec, ISO 639-3), Dida (gud, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bété", "Wé" et "Dida" sont les auto-appellations. "Guéré" est un exonyme utilisé pour Wé et est accepté. Pas de terme péjoratif connu. Les peuples Krou possèdent une tradition artistique très réputée (masques, sculptures).
+
+- Peuple 6 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_DIOLA, autres
+  - Région principale : Diverses régions de la Côte d'Ivoire
+  - Langues parlées : Langues diverses, français
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), Baoulé, Agni, Abron, Attié (dialectes akan, aka), Sénufo (sen, sef, seq), Malinké / Mandinka (mlq), Dioula (diu), Bété (beb, btv), Wé / Guéré (wec), Dida (gud), Dan (dnj), Gouro (goa), Wan (wan), Lobi (lob)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de la Côte d'Ivoire. Traditions akan (Baoulé, Agni, Abron, système matrilinéaire, masques). Traditions krou (Bété, Wé, Dida, masques forestiers réputés, sculptures). Traditions mandé (Malinké, Dioula, Dan, Gouro, traditions islamiques et forestières). Traditions gur (Sénufo, Lobi, cérémonies d'initiation Poro, masques). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Art ivoirien réputé (masques, sculptures).
+- Religions dominantes : Christianisme (catholicisme majoritaire, protestantisme en croissance), islam (surtout dans le nord), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques)
+- Modes de vie : Agriculture (cacao, café, cultures vivrières, palmiers à huile), élevage (bovins), commerce et activités urbaines (zones urbaines, Abidjan, Yamoussoukro). Urbanisation croissante. Économie basée sur l'agriculture (cacao, café, palmiers à huile, coton), l'exploitation forestière, et les services. La Côte d'Ivoire est le premier producteur mondial de cacao.
+- Organisation sociale : Organisation en royaumes historiques (Akan, système matrilinéaire), chefferies traditionnelles (Krou, Mandé, Gur), structures claniques patrilinéaires et matrilinéaires selon les groupes. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation (Poro chez les Sénufo).
+- Relations régionales : Relations historiques avec le Ghana (Akan, commerce), le Mali (Mandé, commerce transsaharien), le Burkina Faso (Sénufo, Lobi, commerce), le Liberia (Krou, frontière). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest) et l'UEMOA (Union économique et monétaire ouest-africaine). Relations commerciales et culturelles transfrontalières. Immigration importante de travailleurs agricoles (Burkina Faso, Mali).
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par diverses sociétés sans nom unifié. Développement de chefferies et royaumes locaux. Arrivée et expansion des peuples Akan depuis le Ghana.
+- Moyen Âge : Migrations des royaumes Akan depuis le Ghana (Baoulé, Agni, Abron). Développement des peuples Krou forestiers. Arrivée des peuples Mandé du Nord (héritage de l'empire du Mali). Développement de réseaux commerciaux régionaux et transsahariens. Commerce de l'ivoire le long de la côte.
+- Époque précoloniale : Consolidation des royaumes Akan, peuples Krou forestiers, peuples Mandé (Nord et Sud), peuples voltaiques (Sénoufo, Lobi, Koulango). Commerce côtier avec les Européens (ivoire, esclaves). Résistance aux pressions extérieures. Développement des traditions artistiques (masques, sculptures).
+- Colonisation : 1893 : Création de la colonie de Côte d'Ivoire par les Français, intégration dans l'AOF. Période coloniale française (1893-1960), exploitation économique (cacao, café, bois), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, formation de partis politiques (PDCI-RDA, Parti démocratique de Côte d'Ivoire).
+- Lutte pour l'indépendance : 1958 : Référendum sur l'autonomie, la Côte d'Ivoire vote "oui" à la Communauté française. 1960 : Indépendance de la Côte d'Ivoire (7 août 1960), proclamation de la République de Côte d'Ivoire. Présidence de Félix Houphouët-Boigny (1960-1993).
+- Période post-indépendance : 1960-1993 : Présidence de Félix Houphouët-Boigny, période de stabilité politique et de développement économique ("miracle ivoirien"). 1993-2011 : Période d'instabilité politique, coups d'État, crises électorales, guerre civile (2002-2011). 2011-présent : Période de stabilisation et de reconstruction. Défis : réconciliation nationale, développement économique, gestion des migrations. La Côte d'Ivoire est le premier producteur mondial de cacao.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Côte d'Ivoire
+- CIA World Factbook – Côte d'Ivoire
+- ONU / UNFPA – Démographie Côte d'Ivoire 2025
+- Memel-Fotê, Harris – "Le modèle politique ivoirien"
+- Archives culturelles ivoiriennes
+- Recensements ivoiriens
+- Études anthropologiques sur les peuples de la Côte d'Ivoire
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Akan
+- Identifiant peuple (PPL_) : PPL_AKAN
+- Population : 11 340 000
+- Pourcentage dans le pays : 42%
+- Pourcentage en Afrique : N/A
+- Région : Centre, Est et Sud de la Côte d'Ivoire
+- Famille linguistique : Niger-Congo – Kwa (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : aka
+
+### Peuple : Voltaïques / Gur
+- Identifiant peuple (PPL_) : PPL_SENUFO, PPL_LOBI
+- Population : 4 590 000
+- Pourcentage dans le pays : 17%
+- Pourcentage en Afrique : N/A
+- Région : Nord de la Côte d'Ivoire
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : sen, sef, seq, lob
+
+### Peuple : Mandé du Nord
+- Identifiant peuple (PPL_) : PPL_MALINKE
+- Population : 4 320 000
+- Pourcentage dans le pays : 16%
+- Pourcentage en Afrique : N/A
+- Région : Nord de la Côte d'Ivoire
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : mlq, diu
+
+### Peuple : Mandé du Sud
+- Identifiant peuple (PPL_) : PPL_MANDE_DU_SUD
+- Population : 2 700 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Ouest de la Côte d'Ivoire
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : dnj, goa, wan
+
+### Peuple : Krou
+- Identifiant peuple (PPL_) : PPL_BETE, PPL_WE
+- Population : 2 970 000
+- Pourcentage dans le pays : 11%
+- Pourcentage en Afrique : N/A
+- Région : Centre-Ouest et Ouest de la Côte d'Ivoire (forêts)
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+- Code ISO 639-3 (langue principale) : beb, btv, wec, gud
+
+### Autres peuples
+- Identifiant peuple (PPL_) : PPL_DIOLA, autres
+- Population : 1 080 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la Côte d'Ivoire
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Côte d'Ivoire 2025 : 27 000 000 (estimations ONU/UNFPA)**
+

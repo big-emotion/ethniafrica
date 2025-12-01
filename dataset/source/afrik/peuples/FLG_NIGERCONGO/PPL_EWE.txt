@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Ewe (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bénoué-Congo (Gbe)
-- Région historique : Ghana (Volta), Togo, Bénin
-- Pays actuels : Ghana, Togo, Bénin
+- Région historique : Ghana (Volta), TGO, BEN
+- Pays actuels : GHA, TGO, BEN
 - Identifiant peuple (ID) : PPL_EWE
 
 # 1. Ethnies incluses dans le peuple
@@ -33,7 +33,7 @@
 - Langue principale : Ewe
 - Codes ISO : ewe (ISO 639-3)
 - Dialectes : 
-  - Dialectes régionaux (Ghana, Togo, Bénin)
+  - Dialectes régionaux (GHA, TGO, BEN)
   - Variantes entre groupes
 - Rôle véhiculaire : L'ewe est parlé par la majorité des Ewe. Le français, l'anglais et d'autres langues sont également utilisés selon les pays.
 
@@ -74,7 +74,7 @@
   - Togo : 3 500 000
   - Bénin : 2 800 000
 - Année de référence : 2025
-- Source : Ethnologue (ewe), Ghana & Togo Gbe Studies
+- Source : Ethnologue (ewe), GHA & Togo Gbe Studies
 
 # 8. Sources
 - SIL Ethnologue – Ewe language (ewe)

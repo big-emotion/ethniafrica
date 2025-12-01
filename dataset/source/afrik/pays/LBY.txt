@@ -1,0 +1,163 @@
+# Nom du pays
+- Nom officiel actuel : État de Libye (Dawlat Lībiyā)
+- Étymologie du nom : Le nom "Libye" vient du grec "Libya", qui désignait l'Afrique du Nord dans l'Antiquité. Le nom arabe "Lībiyā" (ليبيا) est utilisé depuis le XXe siècle. L'ancien nom était "Tripolitaine" (région de Tripoli) et "Cyrénaïque" (région de Benghazi).
+- Personne / peuple / administration à l'origine du nom : Le nom "Libye" a été officialisé lors de l'indépendance (1951). Le nom vient de l'Antiquité grecque.
+- Identifiant pays (ISO 3166-1 alpha-3) : LBY
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Libya (grec), Libye (latin). Le territoire était peuplé de Berbères (Libyens), Grecs (Cyrénaïque), Phéniciens (Tripolitaine).
+- Moyen Âge : Ifriqiya (nom arabe pour la région), Barqa (Cyrénaïque), Tarabulus (Tripoli). Domination arabe puis ottomane.
+- Époque précoloniale : Régences de Tripoli et de Benghazi (1551-1911), États ottomans semi-autonomes. Le territoire était divisé en Tripolitaine et Cyrénaïque.
+- Colonisation : 1911-1951 : Colonie italienne de Libye. Le nom "Libye" est officialisé par les Italiens.
+- Période contemporaine : 1951 : Indépendance, royaume de Libye, puis république (1969), État de Libye (2011). Le nom officiel en arabe est "Dawlat Lībiyā".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes berbères antiques] :
+  - Période : Antiquité
+  - Peuples dominants : Berbères (Libyens)
+  - Centres politiques : Divers centres tribaux
+  - Rôle historique : Royaumes berbères indépendants, résistance à Rome, développement du commerce transsaharien.
+
+- [Cyrénaïque grecque] :
+  - Période : 631 av. J.-C. - 96 av. J.-C.
+  - Peuples dominants : Grecs, Berbères
+  - Centres politiques : Cyrène, Apollonia
+  - Rôle historique : Colonie grecque prospère, développement de la culture grecque en Afrique du Nord.
+
+- [Tripolitaine romaine] :
+  - Période : 146 av. J.-C. - 439 apr. J.-C.
+  - Peuples dominants : Romains, Berbères, Phéniciens
+  - Centres politiques : Leptis Magna, Sabratha, Oea (Tripoli)
+  - Rôle historique : Province romaine prospère, développement urbain et commercial, art romain.
+
+- [Califat omeyyade et abbasside] :
+  - Période : 643-909
+  - Peuples dominants : Arabes, Berbères
+  - Centres politiques : Barqa, Tripoli
+  - Rôle historique : Conquête arabe, islamisation, développement du commerce transsaharien.
+
+- [Régence de Tripoli] :
+  - Période : 1551-1911
+  - Peuples dominants : Turcs ottomans, Arabes, Berbères
+  - Centres politiques : Tripoli
+  - Rôle historique : État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes.
+
+- [Colonie italienne] :
+  - Période : 1911-1951
+  - Peuples dominants : Tous les peuples libyens sous domination coloniale
+  - Centres politiques : Tripoli, Benghazi
+  - Rôle historique : Colonisation italienne, résistance libyenne (Omar al-Mukhtar), développement économique limité.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Arabes de Libye
+  - Auto-appellation (endonyme) : Al-'Arab (العرب), Lībiyyūn (ليبيون)
+  - Exonymes / appellations historiques : Arabes, Arabophones, Libyens
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Toutes les régions de Libye, majoritaires dans les plaines côtières et les villes
+  - Langues parlées : Arabe libyen (darija), arabe standard
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Arabes de Libye sont majoritairement arabisés (métissés avec les Berbères). Le terme "Libyen" est également utilisé.
+
+- Peuple 2 :
+  - Nom : Nafusi
+  - Auto-appellation (endonyme) : Inafusen
+  - Exonymes / appellations historiques : « Nefoussa » (forme arabe), « Berbère » (terme colonial, considéré problématique)
+  - Identifiant peuple (PPL_) : PPL_NAFUSI
+  - Région principale : Djebel Nafousa (montagnes de l'ouest)
+  - Langues parlées : Nafusi (jbn)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Berbère" est considéré comme problématique. L'auto-appellation est "Inafusen". Les Nafusi sont ibadites (branche de l'islam).
+
+- Peuple 3 :
+  - Nom : Touaregs
+  - Auto-appellation (endonyme) : Kel Tamasheq / Imuhagh
+  - Exonymes / appellations historiques : Touaregs (exonyme français), « Berbère » (terme colonial, considéré problématique)
+  - Identifiant peuple (PPL_) : PPL_TUAREG
+  - Région principale : Fezzan (sud-ouest), désert libyen
+  - Langues parlées : Tamasheq (tmh)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Touareg" est un exonyme français. L'auto-appellation est "Kel Tamasheq" (ceux qui parlent tamasheq) ou "Imuhagh". Le terme "Berbère" est considéré comme problématique.
+
+- Peuple 4 :
+  - Nom : Toubou
+  - Auto-appellation (endonyme) : Teda / Daza
+  - Exonymes / appellations historiques : Toubou (exonyme français), Teda, Daza
+  - Identifiant peuple (PPL_) : PPL_TOUBOU
+  - Région principale : Sud-est (région frontalière avec le Tchad)
+  - Langues parlées : Teda (tud), Daza (dzg)
+  - Famille linguistique : Nilo-saharienne – Saharienne (FLG_SAHARIEN)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Peuple saharien présent principalement au Tchad et au Niger, minorité en Libye.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Arabe libyen (ayl), arabe standard (ara), nafusi (jbn), tamasheq (tmh), teda (tud), daza (dzg)
+- Traditions culturelles : Musique libyenne, poésie arabe et amazighe, artisanat (bijoux, poterie), architecture traditionnelle (maisons troglodytes), fêtes religieuses
+- Religions dominantes : Islam sunnite (école malékite majoritaire), ibadisme (Nafusi), soufisme important
+- Modes de vie : Urbanisation importante (Tripoli, Benghazi), agriculture (côtes), pastoralisme (intérieur), industrie pétrolière, commerce
+- Organisation sociale : Structures familiales traditionnelles, organisation tribale (importante en Libye), structures étatiques modernes (instables depuis 2011)
+- Relations régionales : Relations avec le Maghreb (Union du Maghreb arabe), relations avec l'Afrique subsaharienne, relations avec l'Europe, rôle dans la Ligue arabe, instabilité politique depuis 2011
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence berbère depuis la préhistoire, colonies grecques (Cyrénaïque), colonies phéniciennes (Tripolitaine), domination romaine, christianisation partielle.
+- Moyen Âge : Conquête arabe (643), islamisation progressive, développement du commerce transsaharien, domination ottomane (1551).
+- Époque précoloniale : Régence de Tripoli (1551-1911), État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes.
+- Colonisation : Colonie italienne (1911-1951), résistance libyenne (Omar al-Mukhtar, 1923-1931), développement économique limité.
+- Lutte pour l'indépendance : Résistance à l'occupation italienne, indépendance (1951), royaume de Libye.
+- Période post-indépendance : Royaume de Libye (1951-1969), coup d'État de Kadhafi (1969), république (1969-2011), révolution de 2011, guerre civile, instabilité politique.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Libya
+- Ethnologue – Languages of Libya
+- Minority Rights Group – Amazigh in Libya
+- CNRS – Berbères
+- Wikipedia – Libya, Berber people in Libya, Nafusi
+- Recensements libyens
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Arabes de Libye
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 6 300 000
+- Pourcentage dans le pays : 90,0%
+- Pourcentage en Afrique : 3,5%
+- Région : Toutes les régions
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : ayl
+
+### Peuple : Nafusi
+- Identifiant peuple (PPL_) : PPL_NAFUSI
+- Population : 225 000
+- Pourcentage dans le pays : 3,2%
+- Pourcentage en Afrique : 0,1%
+- Région : Djebel Nafousa (ouest)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : jbn
+
+### Peuple : Touaregs
+- Identifiant peuple (PPL_) : PPL_TUAREG
+- Population : 200 000
+- Pourcentage dans le pays : 2,9%
+- Pourcentage en Afrique : 0,1%
+- Région : Fezzan (sud-ouest)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : tmh
+
+### Peuple : Toubou
+- Identifiant peuple (PPL_) : PPL_TOUBOU
+- Population : 100 000
+- Pourcentage dans le pays : 1,4%
+- Pourcentage en Afrique : 0,06%
+- Région : Sud-est (frontière avec le Tchad)
+- Famille linguistique : Nilo-saharienne – Saharienne (FLG_SAHARIEN)
+- Code ISO 639-3 (langue principale) : tud, dzg
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : N/A
+- Population : 175 000
+- Pourcentage dans le pays : 2,5%
+- Pourcentage en Afrique : 0,1%
+- Région : Diverses régions
+- Famille linguistique : Variées
+- Code ISO 639-3 (langue principale) : Variées
+
+**Total population Libye 2025 : 7 000 000 (estimations ONU/UNFPA)**

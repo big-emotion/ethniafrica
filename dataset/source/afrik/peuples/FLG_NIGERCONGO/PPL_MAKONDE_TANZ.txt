@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone P)
 - Région historique : Tanzanie
-- Pays actuels : Tanzanie
+- Pays actuels : TZA
 - Identifiant peuple (ID) : PPL_MAKONDE_TANZ
 
 # 1. Ethnies incluses dans le peuple

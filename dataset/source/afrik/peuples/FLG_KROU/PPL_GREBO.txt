@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
 - Groupe ethno-linguistique : Krou occidental
 - Région historique : Sud-est du Libéria, sud-ouest de la Côte d'Ivoire
-- Pays actuels : Libéria, Côte d'Ivoire
+- Pays actuels : LBR, CIV
 - Identifiant peuple (ID) : PPL_GREBO
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Grebo sont originaires du sud-est du Libéria et du sud-ouest de la Côte d'Ivoire, dans la région côtière. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Grebo sont originaires du sud-est du Libéria et du sud-ouest de la CIV, dans la région côtière. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones côtières
   - Expansion le long des zones côtières
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Grebo language (grb)
-- CIA World Factbook – Liberia, Côte d'Ivoire
+- CIA World Factbook – LBR, CIV
 - Recensements libériens et ivoiriens
 - Études anthropologiques sur les peuples krou
 

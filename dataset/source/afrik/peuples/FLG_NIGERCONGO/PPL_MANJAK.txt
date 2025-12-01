@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Manjak (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (sous-groupe du Niger-Congo)
-- Région historique : Guinée-Bissau, Sénégal
-- Pays actuels : Guinée-Bissau, Sénégal
+- Région historique : GNB, SEN
+- Pays actuels : GIN-Bissau, SEN
 - Identifiant peuple (ID) : PPL_MANJAK
 
 # 1. Ethnies incluses dans le peuple

@@ -1,0 +1,43 @@
+{
+  "countryName": "Maroc",
+  "region": "afrique_du_nord",
+  "ancientNames": [
+    {
+      "period": "Avant les conquêtes",
+      "names": [
+        "pas de nom unifié ; territoires amazighs (Imazighen)",
+        "royaumes du Souss",
+        "émirat de Nekor",
+        "tribus du Rif et de l’Atlas"
+      ]
+    },
+    {
+      "period": "Antiquité",
+      "names": ["Maurétanie (royaumes Maure & Massyle)"]
+    },
+    {
+      "period": "Conquête islamique",
+      "names": ["Maghrib al‑Aqsa"]
+    },
+    {
+      "period": "Dynasties",
+      "names": [
+        "Idrissides",
+        "Almoravides",
+        "Almohades",
+        "Mérinides",
+        "Wattassides",
+        "Saâdiens",
+        "Alaouites"
+      ]
+    },
+    {
+      "period": "1956",
+      "names": ["Royaume du Maroc"]
+    }
+  ],
+  "description": "Le Maroc se structure autour de dynasties amazighes et arabo‑islamiques : Maurétanie antique, premiers royaumes islamiques avec les Idrissides, expansion almoravide et almohade, puis dynasties mérinides, saâdiennes et enfin alaouite. L’identité amazighe constitue le socle historique ; l’arabisation se renforce du XIe au XVIe siècle. En 1956, fin du protectorat et naissance du Royaume du Maroc moderne.",
+  "ethnicGroupsSummary": "- Arabes marocains (~65 %) : Hilaliens, Maqil, Andalous ; majoritaires dans les plaines et grandes villes.\n- Amazighs (~37 %) : répartis en 3 grands ensembles :\n* Chleuh / Souss (tashelhit)\n* Rifains (tarifit)\n* Amazighs du Moyen‑Atlas (tamazight)\n- Sahraouis (~4 %) : nomades hassanophones du Sud.\n- Gnawa (~1 %) : confréries afro‑marocaines issues de populations subsahariennes.\n- Haratin (~1 %) : populations oasiennes du Drâa et du Sahara.\n- Jbala (~3 %) : montagnards arabophones du Rif occidental.\n- Autres minorités (~1 %) : juifs marocains, subsahariens, groupes urbains divers.",
+  "notes": "- Le Maroc est bilingue culturellement : amazighité ancienne + arabité médiévale.\n- Le Rif, l’Atlas et le Souss sont les trois grands bassins amazighs.\n- Les populations sahariennes (Hassaniya) relient le Maroc à la Mauritanie.",
+  "ethnicities": []
+}

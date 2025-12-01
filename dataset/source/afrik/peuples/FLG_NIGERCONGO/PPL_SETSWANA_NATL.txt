@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Setswana (terme utilisé par les Européens), parfois appelés « Tswana » (terme alternatif)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Botswana, Afrique du Sud
-- Pays actuels : Botswana, Afrique du Sud
+- Région historique : BWA, Afrique du Sud
+- Pays actuels : BWA, Afrique du Sud
 - Identifiant peuple (ID) : PPL_SETSWANA_NATL
 
 # 1. Ethnies incluses dans le peuple

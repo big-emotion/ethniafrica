@@ -1,0 +1,210 @@
+# Nom du pays
+- Nom officiel actuel : République algérienne démocratique et populaire (Al-Jumhūriyyah al-Jazā'iriyyah ad-Dīmuqrāṭiyyah ash-Sha'biyyah)
+- Étymologie du nom : Le nom "Algérie" vient de "Al-Djazair" (الجزائر), qui signifie "les îles" en arabe, en référence aux îlots situés face à la baie d'Alger. Le nom a été donné par les Ottomans au XVIe siècle. Le terme français "Algérie" a été officialisé lors de la colonisation française (1830-1962).
+- Personne / peuple / administration à l'origine du nom : Les Ottomans ont nommé la région "Al-Djazair" au XVIe siècle. Le nom français "Algérie" a été officialisé par l'administration coloniale française en 1839.
+- Identifiant pays (ISO 3166-1 alpha-3) : DZA
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire correspondait à la Numidie (royaumes numides), à la Maurétanie césarienne (région côtière), et à des territoires contrôlés par Carthage puis par Rome. Les peuples autochtones étaient les Numides (Berbères).
+- Moyen Âge : Région du Maghreb central, contrôlée par diverses dynasties berbères et arabes (Rustamides, Fatimides, Zirides, Hammadides, Almohades, Zianides). Nom arabe "Al-Djazair" apparaît au Moyen Âge.
+- Époque précoloniale : Régence d'Alger (1516-1830), État ottoman semi-autonome dirigé par des deys. Le territoire était appelé "Al-Djazair" par les Ottomans et les populations locales.
+- Colonisation : 1830-1962 : Algérie française (colonie puis département français). Le nom "Algérie" est officialisé en 1839 par l'administration coloniale française.
+- Période contemporaine : 1962 : Indépendance, République algérienne démocratique et populaire. Le nom officiel en arabe est "Al-Jumhūriyyah al-Jazā'iriyyah ad-Dīmuqrāṭiyyah ash-Sha'biyyah".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes numides] :
+  - Période : IIIe siècle av. J.-C. - Ier siècle apr. J.-C.
+  - Peuples dominants : Numides (Berbères)
+  - Centres politiques : Cirta (Constantine), Hippo Regius (Annaba)
+  - Rôle historique : Royaumes numides puissants (Massinissa, Jugurtha), résistance à Rome, unification partielle de la Numidie.
+
+- [Royaume de Massinissa] :
+  - Période : 202-148 av. J.-C.
+  - Peuples dominants : Numides
+  - Centres politiques : Cirta
+  - Rôle historique : Unification de la Numidie, alliance avec Rome contre Carthage, développement de l'agriculture et du commerce.
+
+- [Royaume de Jugurtha] :
+  - Période : 118-105 av. J.-C.
+  - Peuples dominants : Numides
+  - Centres politiques : Cirta
+  - Rôle historique : Résistance à la domination romaine, guerre de Jugurtha (112-105 av. J.-C.).
+
+- [Maurétanie césarienne] :
+  - Période : Ier siècle av. J.-C. - Ve siècle apr. J.-C.
+  - Peuples dominants : Berbères, Romains
+  - Centres politiques : Caesarea (Cherchell), Tipasa
+  - Rôle historique : Province romaine, romanisation partielle, développement urbain et commercial.
+
+- [Dynastie rustamide] :
+  - Période : 776-909
+  - Peuples dominants : Berbères ibadites
+  - Centres politiques : Tahert (Tiaret)
+  - Rôle historique : État berbère ibadite, centre intellectuel et commercial, résistance aux Fatimides.
+
+- [Dynastie zianide] :
+  - Période : 1235-1556
+  - Peuples dominants : Berbères zénètes
+  - Centres politiques : Tlemcen
+  - Rôle historique : Royaume berbère indépendant, résistance aux Mérinides et aux Hafsides, centre culturel et commercial.
+
+- [Régence d'Alger] :
+  - Période : 1516-1830
+  - Peuples dominants : Berbères, Arabes, Turcs ottomans
+  - Centres politiques : Alger
+  - Rôle historique : État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes.
+
+- [Algérie française] :
+  - Période : 1830-1962
+  - Peuples dominants : Tous les peuples algériens sous domination coloniale
+  - Centres politiques : Alger (capitale coloniale)
+  - Rôle historique : Colonisation française, résistance algérienne, guerre d'indépendance (1954-1962).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Arabes d'Algérie
+  - Auto-appellation (endonyme) : Al-'Arab (العرب)
+  - Exonymes / appellations historiques : Arabes, Arabophones, Maures (terme historique pour certains groupes sahariens)
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Toutes les régions d'Algérie, majoritaires dans les plaines et les villes
+  - Langues parlées : Arabe algérien (darija), arabe standard
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Arabe" est l'auto-appellation. Les Arabes d'Algérie sont majoritairement arabisés (métissés avec les Berbères). Le terme "Maure" est historique et désigne certains groupes sahariens.
+
+- Peuple 2 :
+  - Nom : Kabyles
+  - Auto-appellation (endonyme) : Leqbayel / Iqbayliyen
+  - Exonymes / appellations historiques : « Kabyle » (exonyme arabe devenu courant ; non péjoratif mais issu d'une classification extérieure), « Berbère » (terme colonial, considéré problématique ; auto-appellation correcte : Amazigh / Imazighen)
+  - Identifiant peuple (PPL_) : PPL_KABYLE
+  - Région principale : Kabylie (nord de l'Algérie, massif de l'Atlas tellien)
+  - Langues parlées : Kabyle (tamaziɣt taqbaylit)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Berbère" est considéré comme problématique car il vient du grec "barbaros" (étranger) et a été utilisé par les colonisateurs. L'auto-appellation correcte est "Amazigh" (pluriel : Imazighen). Le terme "Kabyle" est un exonyme arabe mais est largement accepté.
+
+- Peuple 3 :
+  - Nom : Chaouis
+  - Auto-appellation (endonyme) : Ishawiyen / Icawiyen
+  - Exonymes / appellations historiques : « Chaouïa » (exonyme arabe utilisé depuis le Moyen Âge ; non péjoratif mais extérieur)
+  - Identifiant peuple (PPL_) : PPL_CHAOUI
+  - Région principale : Massif de l'Aurès (est de l'Algérie)
+  - Langues parlées : Chaoui (tachawit)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Chaoui" est un exonyme arabe mais est largement accepté. L'auto-appellation est "Ishawiyen" ou "Icawiyen".
+
+- Peuple 4 :
+  - Nom : Mozabites
+  - Auto-appellation (endonyme) : Imazighen du Mzab
+  - Exonymes / appellations historiques : Mozabites (exonyme français), « Berbère » (terme colonial, considéré problématique)
+  - Identifiant peuple (PPL_) : PPL_MOZABITE
+  - Région principale : Vallée du Mzab (Ghardaïa)
+  - Langues parlées : Mozabite (tumzabt)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Berbère" est considéré comme problématique. L'auto-appellation est "Imazighen du Mzab". Les Mozabites sont ibadites (branche de l'islam).
+
+- Peuple 5 :
+  - Nom : Chenoua
+  - Auto-appellation (endonyme) : Ičenwa
+  - Exonymes / appellations historiques : Chenoua (exonyme français)
+  - Identifiant peuple (PPL_) : PPL_CHENOUA
+  - Région principale : Mont Chenoua (région de Tipaza)
+  - Langues parlées : Chenoua (tacenwit)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Petit peuple amazigh de la côte algérienne. L'auto-appellation est "Ičenwa".
+
+- Peuple 6 :
+  - Nom : Touaregs
+  - Auto-appellation (endonyme) : Kel Tamasheq / Imuhagh
+  - Exonymes / appellations historiques : Touaregs (exonyme français), « Berbère » (terme colonial, considéré problématique)
+  - Identifiant peuple (PPL_) : PPL_TUAREG
+  - Région principale : Sahara algérien (Ahaggar, Tassili n'Ajjer)
+  - Langues parlées : Tamasheq (tamahaq)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Touareg" est un exonyme français. L'auto-appellation est "Kel Tamasheq" (ceux qui parlent tamasheq) ou "Imuhagh". Le terme "Berbère" est considéré comme problématique.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Arabe algérien (arq), arabe standard (ara), kabyle (kab), chaoui (shy), mozabite (mzb), tamasheq (tmh), français (fra)
+- Traditions culturelles : Musique chaâbi, raï, poésie arabe et amazighe, artisanat (bijoux, poterie, tissage), fêtes amazighes (Yennayer), architecture traditionnelle (ksour, maisons de Kabylie, villes du Mzab)
+- Religions dominantes : Islam sunnite (école malékite majoritaire), ibadisme (Mozabites), soufisme important
+- Modes de vie : Urbanisation croissante, agriculture (plaines), pastoralisme (montagnes, Sahara), commerce, industrie pétrolière et gazière
+- Organisation sociale : Structures familiales traditionnelles, systèmes d'autogestion communautaire (tajmaât en Kabylie), organisation tribale (Sahara), structures étatiques modernes
+- Relations régionales : Relations avec le Maghreb (Maroc, Tunisie, Libye), échanges transsahariens, relations avec l'Europe, rôle dans l'Union africaine et la Ligue arabe
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence humaine depuis la préhistoire (sites archéologiques, art rupestre du Tassili). Royaumes numides (Massinissa, Jugurtha), domination carthaginoise puis romaine, christianisation partielle.
+- Moyen Âge : Conquête arabe (VIIe-VIIIe siècles), islamisation progressive, dynasties berbères (Rustamides, Zirides, Hammadides, Zianides), résistance aux Fatimides et aux Almohades.
+- Époque précoloniale : Régence d'Alger (1516-1830), État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes, commerce transsaharien.
+- Colonisation : Conquête française (1830), résistance algérienne (Émir Abdelkader, révolte de Mokrani), colonisation de peuplement, développement de l'économie coloniale, mouvements nationalistes (XXe siècle).
+- Lutte pour l'indépendance : Guerre d'indépendance (1954-1962), Front de libération nationale (FLN), accords d'Évian (1962), indépendance (5 juillet 1962).
+- Période post-indépendance : République algérienne (1962), socialisme algérien, nationalisation des hydrocarbures, guerre civile (1991-2002), printemps arabe (2011), mouvement Hirak (2019), transition politique.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Algeria
+- Ethnologue – Languages of Algeria
+- Minority Rights Group – Amazigh in Algeria
+- CNRS – Berbères
+- Salem Chaker – travaux sur les Berbères
+- Encyclopaedia of Islam – Algeria
+- Joshua Project – Berber, Kabyle in Algeria
+- Joshua Project – Berber, Shawiya in Algeria
+- UNPO – Kabylia
+- Wikipedia – Algeria, Kabyle people, Chaoui people, Numidia
+- Recensements algériens
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Arabes d'Algérie
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 31 500 000
+- Pourcentage dans le pays : 70,0%
+- Pourcentage en Afrique : 17,5%
+- Région : Toutes les régions
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : arq
+
+### Peuple : Kabyles
+- Identifiant peuple (PPL_) : PPL_KABYLE
+- Population : 10 000 000
+- Pourcentage dans le pays : 22,2%
+- Pourcentage en Afrique : 5,6%
+- Région : Kabylie (nord)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : kab
+
+### Peuple : Chaouis
+- Identifiant peuple (PPL_) : PPL_CHAOUI
+- Population : 2 870 000
+- Pourcentage dans le pays : 6,4%
+- Pourcentage en Afrique : 1,6%
+- Région : Massif de l'Aurès (est)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : shy
+
+### Peuple : Mozabites
+- Identifiant peuple (PPL_) : PPL_MOZABITE
+- Population : 150 000
+- Pourcentage dans le pays : 0,3%
+- Pourcentage en Afrique : 0,1%
+- Région : Vallée du Mzab (Ghardaïa)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : mzb
+
+### Peuple : Chenoua
+- Identifiant peuple (PPL_) : PPL_CHENOUA
+- Population : 65 000
+- Pourcentage dans le pays : 0,1%
+- Pourcentage en Afrique : 0,04%
+- Région : Mont Chenoua (Tipaza)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : cnu
+
+### Peuple : Touaregs
+- Identifiant peuple (PPL_) : PPL_TUAREG
+- Population : 50 000
+- Pourcentage dans le pays : 0,1%
+- Pourcentage en Afrique : 0,03%
+- Région : Sahara algérien (Ahaggar, Tassili)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : tmh
+
+**Total population Algérie 2025 : 45 000 000 (estimations ONU/UNFPA)**
+

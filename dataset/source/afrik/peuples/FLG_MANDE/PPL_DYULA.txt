@@ -2,7 +2,7 @@
 - Nom principal : Dyula
 - Auto-appellation : Jula / Dyula
 - Famille linguistique : Niger-Congo – Mandé (occidental)
-- Région historique : Côte d’Ivoire, Burkina Faso, Mali
+- Région historique : Côte d’Ivoire, BFA, MLI
 - Identifiant : PPL_DYULA
 
 # 1. Ethnies incluses

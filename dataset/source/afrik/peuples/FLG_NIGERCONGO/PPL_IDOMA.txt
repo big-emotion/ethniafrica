@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Idomoid (sous-groupe du Bénoué-Congo)
 - Région historique : Centre du Nigeria (État de Benue)
-- Pays actuels : Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_IDOMA
 
 # 1. Ethnies incluses dans le peuple
@@ -18,7 +18,7 @@
 - Ethnie 7 : Otukpo
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Idoma sont originaires de la région du centre du Nigeria, dans l'actuel État de Benue. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Idoma sont originaires de la région du centre du NGA, dans l'actuel État de Benue. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long de la rivière Benue

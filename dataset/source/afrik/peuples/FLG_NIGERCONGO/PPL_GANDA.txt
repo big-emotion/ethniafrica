@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantous des Grands Lacs (Ouganda)
 - Région historique : Royaume du Buganda (région centrale de l'actuelle Ouganda)
-- Pays actuels : Ouganda (principal), petites communautés dans les pays voisins
+- Pays actuels : UGA (principal), petites communautés dans les pays voisins
 - Identifiant peuple (ID) : PPL_GANDA
 
 # 1. Ethnies incluses dans le peuple

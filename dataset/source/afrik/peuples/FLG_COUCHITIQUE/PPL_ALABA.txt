@@ -3,7 +3,7 @@
 - Auto-appellation : Halaba
 - Famille linguistique : Afro-asiatique – Couchitique
 - Région historique : Halaba Zone (Éthiopie Sud)
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - ID : PPL_ALABA
 
 # 1. Ethnies incluses

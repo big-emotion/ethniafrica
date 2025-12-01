@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone J)
 - Région historique : Ouest de l'Ouganda
-- Pays actuels : Ouganda
+- Pays actuels : UGA
 - Identifiant peuple (ID) : PPL_BANYORO
 
 # 1. Ethnies incluses dans le peuple

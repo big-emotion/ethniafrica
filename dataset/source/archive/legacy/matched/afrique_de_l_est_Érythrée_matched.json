@@ -1,0 +1,203 @@
+{
+  "countryName": "Érythrée",
+  "region": "afrique_de_l_est",
+  "countryDescription": {
+    "countryName": "Érythrée",
+    "region": "afrique_de_l_est",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "royaumes et chefferies du haut plateau (Tigrinya)",
+          "zones Beja (Bilen",
+          "Hedareb)",
+          "et peuples Afar du littoral"
+        ]
+      },
+      {
+        "period": "Antiquité",
+        "names": ["partie du royaume dAksoum (Axumite Empire)"]
+      },
+      {
+        "period": "Moyen Âge",
+        "names": ["provinces tigrigna et afar liées à lÉthiopie historique"]
+      },
+      {
+        "period": "XVe–XVIIIe siècle",
+        "names": ["entités Beja (Beni Amer", "Hadarib)"]
+      },
+      {
+        "period": "1890",
+        "names": ["Eritrea", "mer Érythrée"]
+      },
+      {
+        "period": "1952",
+        "names": ["Fédération Éthiopie–Érythrée"]
+      },
+      {
+        "period": "1962",
+        "names": ["Annexion → province éthiopienne"]
+      },
+      {
+        "period": "1993",
+        "names": ["Indépendance → State of Eritrea"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Tigrinya",
+      "subGroups": [],
+      "population": 3900000,
+      "percentageInCountry": 55,
+      "percentageInAfrica": 0,
+      "languages": ["Tigrinya"],
+      "region": "Plateaux (Asmara)",
+      "sources": ["EthnoAtlas"],
+      "ancientName": "Aksoum",
+      "description": "Groupe majoritaire du plateau",
+      "societyType": "Sédentaire agricole",
+      "religion": "Christianisme orthodoxe",
+      "linguisticFamily": "Sémitique",
+      "historicalStatus": "Autochtone",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Tigre",
+      "subGroups": [],
+      "population": 2100000,
+      "percentageInCountry": 30,
+      "percentageInAfrica": 0,
+      "languages": ["Tigre"],
+      "region": "Nord-ouest",
+      "sources": ["EthnoAtlas"],
+      "ancientName": "Beja/Tigre anciens",
+      "description": "Peuple musulman du Sahel",
+      "societyType": "Pastorale",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Couchitique",
+      "historicalStatus": "Autochtone",
+      "regionalPresence": ["Soudan", "Érythrée"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Afar",
+      "subGroups": [],
+      "population": 350000,
+      "percentageInCountry": 5,
+      "percentageInAfrica": 0,
+      "languages": ["Afar"],
+      "region": "Côte, Sud-est",
+      "sources": ["UN Data"],
+      "ancientName": "Adal/Danakil",
+      "description": "Nomades du littoral",
+      "societyType": "Pastorale nomade",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Couchitique",
+      "historicalStatus": "Autochtone",
+      "regionalPresence": ["Djibouti", "Éthiopie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Saho",
+      "subGroups": [],
+      "population": 280000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0,
+      "languages": ["Saho"],
+      "region": "Centre-sud",
+      "sources": ["EthnoAtlas"],
+      "ancientName": "Saho",
+      "description": "Semi-nomades musulmans",
+      "societyType": "Agro-pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Couchitique",
+      "historicalStatus": "Autochtone",
+      "regionalPresence": ["Éthiopie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Bilen",
+      "subGroups": [],
+      "population": 140000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0,
+      "languages": ["Bilen"],
+      "region": "Keren",
+      "sources": ["EthnoAtlas"],
+      "ancientName": "Beja/Bilen",
+      "description": "Peuple mixte musulman & chrétien",
+      "societyType": "Sédentaire",
+      "religion": "Islam/Christianisme",
+      "linguisticFamily": "Couchitique",
+      "historicalStatus": "Autochtone",
+      "regionalPresence": ["—"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Hedareb",
+      "subGroups": [],
+      "population": 140000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0,
+      "languages": ["Beja"],
+      "region": "Nord",
+      "sources": ["EthnoAtlas"],
+      "ancientName": "Beja",
+      "description": "Nomades du désert",
+      "societyType": "Pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Couchitique",
+      "historicalStatus": "Transfrontalier",
+      "regionalPresence": ["Soudan"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Rashaida",
+      "subGroups": [],
+      "population": 70000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0,
+      "languages": ["Arabe"],
+      "region": "Est côtier",
+      "sources": ["EthnoAtlas"],
+      "ancientName": "Arabes du Hedjaz",
+      "description": "Nomades arabes",
+      "societyType": "Pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Sémitique",
+      "historicalStatus": "Migrants anciens",
+      "regionalPresence": ["Arabie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 70000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0,
+      "languages": ["Divers"],
+      "region": "Urbain",
+      "sources": ["UN Data"],
+      "ancientName": "—",
+      "description": "Minorités diverses",
+      "societyType": "Urbaine",
+      "religion": "Divers",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Récents",
+      "regionalPresence": ["Afrique de l'Est"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

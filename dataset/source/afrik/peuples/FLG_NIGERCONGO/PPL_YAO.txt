@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Yao (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone P)
-- Région historique : Malawi, Mozambique, Tanzanie
-- Pays actuels : Malawi, Mozambique, Tanzanie
+- Région historique : MWI, MOZ, TZA
+- Pays actuels : MWI, MOZ, TZA
 - Identifiant peuple (ID) : PPL_YAO
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Yao sont originaires de la région du Malawi, du Mozambique et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).
+- Origines anciennes : Les Yao sont originaires de la région du MWI, du Mozambique et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Malawi, le Mozambique et la Tanzanie
+  - Expansion vers le MWI, le Mozambique et la Tanzanie
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les commerçants arabes et européens, influence de l'islam.

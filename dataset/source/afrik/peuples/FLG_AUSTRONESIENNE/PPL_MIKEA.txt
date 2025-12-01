@@ -5,7 +5,7 @@
 - Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
 - Groupe ethno-linguistique : Malayo-polynésien
 - Région historique : Sud-ouest de Madagascar
-- Pays actuels : Madagascar
+- Pays actuels : MDG
 - Identifiant peuple (ID) : PPL_MIKEA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Mikea sont originaires du sud-ouest de Madagascar, dans la forêt. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Tradition de chasseurs-cueilleurs.
+- Origines anciennes : Les Mikea sont originaires du sud-ouest de MDG, dans la forêt. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Tradition de chasseurs-cueilleurs.
 - Routes migratoires : 
   - Migrations dans le sud-ouest
   - Expansion dans les zones forestières

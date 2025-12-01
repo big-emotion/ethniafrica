@@ -1,0 +1,440 @@
+{
+  "countryName": "Sénégal",
+  "region": "afrique_de_l_ouest",
+  "countryDescription": {
+    "countryName": "Sénégal",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires wolof",
+          "sérère",
+          "peul",
+          "mandinka",
+          "jola ; empires régionaux (Ghana",
+          "Mali",
+          "Songhai)"
+        ]
+      },
+      {
+        "period": "XIIIe–XVIe siècle",
+        "names": ["Empire du Jolof (Wolof)"]
+      },
+      {
+        "period": "Royaumes",
+        "names": [
+          "Cayor",
+          "Baol",
+          "Waalo",
+          "Sine",
+          "Saloum",
+          "Fouta Toro (théocratie peule)"
+        ]
+      },
+      {
+        "period": "XVe siècle",
+        "names": ["Senega", "Sunugal"]
+      },
+      {
+        "period": "1659",
+        "names": ["Fondation de Saint‑Louis par les Français"]
+      },
+      {
+        "period": "1895",
+        "names": ["Intégration à l’AOF"]
+      },
+      {
+        "period": "1960",
+        "names": ["Indépendance — République du Sénégal"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Wolof (~41 %) : peuple dominant culturellement ; anciens du royaume du Jolof.\n- Peul / Pular (~30 %) : Toucouleurs et Peuls du nord et de l’est.\n- Sérère (~15 %) : populations du Sine et du Saloum.",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Wolof",
+      "subGroups": [],
+      "population": 7380000,
+      "percentageInCountry": 41,
+      "percentageInAfrica": 0.516084,
+      "languages": ["Wolof"],
+      "region": "Dakar, Thiès, Saint-Louis",
+      "sources": ["ANSD Sénégal", "histoire wolof"],
+      "ancientName": "Royaumes wolof (Jolof, Waalo, Cayor, Baol)",
+      "description": "Groupe majoritaire, très urbanisé et commerçant",
+      "societyType": "Urbaine & agricole",
+      "religion": "Islam soufi (Tidjaniya, Mouridisme)",
+      "linguisticFamily": "Atlantique (Niger-Congo)",
+      "historicalStatus": "Empire du Jolof",
+      "regionalPresence": ["Sénégal", "Gambie", "Mauritanie"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Peul / Fulani",
+      "subGroups": [
+        {
+          "name": "Peul",
+          "population": 2250000,
+          "percentageInCountry": 12.5,
+          "percentageInAfrica": 0.1573425
+        },
+        {
+          "name": "Toucouleur",
+          "population": 2250000,
+          "percentageInCountry": 12.5,
+          "percentageInAfrica": 0.1573425
+        }
+      ],
+      "population": 4500000,
+      "percentageInCountry": 25,
+      "percentageInAfrica": 0.314685,
+      "languages": ["Pulaar"],
+      "region": "Nord, vallée du fleuve Sénégal (Fouta Toro)",
+      "sources": ["Ethnologie sahélienne"],
+      "ancientName": "Royaumes Fouta Toro, empire toucouleur",
+      "description": "Pasteurs et cultivateurs islamisés tôt",
+      "societyType": "Pastorale & agro-pastorale",
+      "religion": "Islam",
+      "linguisticFamily": "Atlantique (Fulani)",
+      "historicalStatus": "Fouta Toro / Empire toucouleur",
+      "regionalPresence": ["Sénégal", "Mali", "Mauritanie"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Peul",
+          "population": 2250000,
+          "percentageInCountry": 12.5,
+          "percentageInAfrica": 0.1573425
+        },
+        {
+          "name": "Toucouleur",
+          "population": 2250000,
+          "percentageInCountry": 12.5,
+          "percentageInAfrica": 0.1573425
+        }
+      ]
+    },
+    {
+      "groupName": "Sérère",
+      "subGroups": [
+        {
+          "name": "Sine",
+          "population": 675000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.04720275
+        },
+        {
+          "name": "Saloum",
+          "population": 675000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.04720275
+        },
+        {
+          "name": "Ndut",
+          "population": 675000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.04720275
+        },
+        {
+          "name": "Safène",
+          "population": 675000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.04720275
+        }
+      ],
+      "population": 2700000,
+      "percentageInCountry": 15,
+      "percentageInAfrica": 0.188811,
+      "languages": ["Sérère"],
+      "region": "Centre-Ouest (Fatick, Kaolack)",
+      "sources": ["Histoire sereer"],
+      "ancientName": "Royaumes du Sine et du Saloum",
+      "description": "Peuple agricole ancien non islamisé à l’origine",
+      "societyType": "Sédentaire agricole",
+      "religion": "Islam + Christianisme + traditions",
+      "linguisticFamily": "Niger-Congo (Cangin)",
+      "historicalStatus": "Royaumes Sine & Saloum",
+      "regionalPresence": ["Sénégal"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Sine",
+          "population": 675000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.04720275
+        },
+        {
+          "name": "Saloum",
+          "population": 675000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.04720275
+        },
+        {
+          "name": "Ndut",
+          "population": 675000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.04720275
+        },
+        {
+          "name": "Safène",
+          "population": 675000,
+          "percentageInCountry": 3.75,
+          "percentageInAfrica": 0.04720275
+        }
+      ]
+    },
+    {
+      "groupName": "Diola / Jola",
+      "subGroups": [
+        {
+          "name": "Diola du Fogny",
+          "population": 450000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0314685
+        },
+        {
+          "name": "Casamance",
+          "population": 450000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0314685
+        }
+      ],
+      "population": 900000,
+      "percentageInCountry": 5,
+      "percentageInAfrica": 0.062937,
+      "languages": ["Jola"],
+      "region": "Casamance (Ziguinchor)",
+      "sources": ["Anthropologie casamançaise"],
+      "ancientName": "Chefferies Diola",
+      "description": "Peuple agricole et forestier, structures égalitaires",
+      "societyType": "Forestière & sédentaire",
+      "religion": "Islam + Christianisme + traditions",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Chefferies Diola",
+      "regionalPresence": ["Sénégal", "Gambie", "Guinée-Bissau"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Diola du Fogny",
+          "population": 450000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0314685
+        },
+        {
+          "name": "Casamance",
+          "population": 450000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.0314685
+        }
+      ]
+    },
+    {
+      "groupName": "Mandinka / Mandingue",
+      "subGroups": [
+        {
+          "name": "Mandinka",
+          "population": 360000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.025175
+        },
+        {
+          "name": "Bambara",
+          "population": 360000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.025175
+        }
+      ],
+      "population": 720000,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.05035,
+      "languages": ["Mandinka"],
+      "region": "Est (Tambacounda, Kédougou)",
+      "sources": ["Sources mandingues"],
+      "ancientName": "Empire du Mali",
+      "description": "Commerçants et agriculteurs islamisés depuis longtemps",
+      "societyType": "Sédentaire",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Empire du Mali",
+      "regionalPresence": ["Sénégal", "Gambie", "Mali"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Mandinka",
+          "population": 360000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.025175
+        },
+        {
+          "name": "Bambara",
+          "population": 360000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.025175
+        }
+      ]
+    },
+    {
+      "groupName": "Soninké",
+      "subGroups": [],
+      "population": 360000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0.025175,
+      "languages": ["Soninké"],
+      "region": "Vallée du fleuve Sénégal, Est",
+      "sources": ["Histoire soninké"],
+      "ancientName": "Empire du Ghana",
+      "description": "Peuple ancien du commerce transsaharien",
+      "societyType": "Agro-pastorale & commerçante",
+      "religion": "Islam",
+      "linguisticFamily": "Mandé",
+      "historicalStatus": "Empire du Ghana",
+      "regionalPresence": ["Mali", "Mauritanie", "Sénégal"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Groupes casamançais",
+      "subGroups": [
+        {
+          "name": "Balante",
+          "population": 60000,
+          "percentageInCountry": 0.3333333333333333,
+          "percentageInAfrica": 0.004195666666666666
+        },
+        {
+          "name": "Mancagne",
+          "population": 60000,
+          "percentageInCountry": 0.3333333333333333,
+          "percentageInAfrica": 0.004195666666666666
+        },
+        {
+          "name": "Papel",
+          "population": 60000,
+          "percentageInCountry": 0.3333333333333333,
+          "percentageInAfrica": 0.004195666666666666
+        }
+      ],
+      "population": 180000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.012587,
+      "languages": ["Diverses langues"],
+      "region": "Casamance",
+      "sources": ["Anthropologie"],
+      "ancientName": "Chefferies traditionnelles",
+      "description": "Peuples de forêt et de côte",
+      "societyType": "Sédentaire",
+      "religion": "Christianisme + traditions",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Chefferies locales",
+      "regionalPresence": ["Sénégal"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Balante",
+          "population": 60000,
+          "percentageInCountry": 0.3333333333333333,
+          "percentageInAfrica": 0.004195666666666666
+        },
+        {
+          "name": "Mancagne",
+          "population": 60000,
+          "percentageInCountry": 0.3333333333333333,
+          "percentageInAfrica": 0.004195666666666666
+        },
+        {
+          "name": "Papel",
+          "population": 60000,
+          "percentageInCountry": 0.3333333333333333,
+          "percentageInAfrica": 0.004195666666666666
+        }
+      ]
+    },
+    {
+      "groupName": "Lébou",
+      "subGroups": [],
+      "population": 90000,
+      "percentageInCountry": 0.5,
+      "percentageInAfrica": 0.006294,
+      "languages": ["Wolof-Lébou"],
+      "region": "Dakar (presqu'île du Cap-Vert)",
+      "sources": ["Histoire lébou"],
+      "ancientName": "République lébou (ancienne organisation)",
+      "description": "Pêcheurs, propriétaires traditionnels de Dakar",
+      "societyType": "Côtière urbaine",
+      "religion": "Islam soufi",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Communautés Lébou",
+      "regionalPresence": ["Sénégal"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Peuples autochtones",
+      "subGroups": [
+        {
+          "name": "Bassari",
+          "population": 45000,
+          "percentageInCountry": 0.25,
+          "percentageInAfrica": 0.003147
+        },
+        {
+          "name": "Bedik",
+          "population": 45000,
+          "percentageInCountry": 0.25,
+          "percentageInAfrica": 0.003147
+        }
+      ],
+      "population": 90000,
+      "percentageInCountry": 0.5,
+      "percentageInAfrica": 0.006294,
+      "languages": ["Bassari", "Bedik"],
+      "region": "Kédougou",
+      "sources": ["Ethnologie"],
+      "ancientName": "Groupes pré-mandingues",
+      "description": "Peuples montagnards autochtones",
+      "societyType": "Montagnarde",
+      "religion": "Traditions + Christianisme",
+      "linguisticFamily": "Niger-Congo",
+      "historicalStatus": "Groupes autochtones",
+      "regionalPresence": ["Sénégal"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Bassari",
+          "population": 45000,
+          "percentageInCountry": 0.25,
+          "percentageInAfrica": 0.003147
+        },
+        {
+          "name": "Bedik",
+          "population": 45000,
+          "percentageInCountry": 0.25,
+          "percentageInAfrica": 0.003147
+        }
+      ]
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 180000,
+      "percentageInCountry": 1,
+      "percentageInAfrica": 0.012587,
+      "languages": ["Diverses langues"],
+      "region": "National",
+      "sources": ["ANSD estimations"],
+      "ancientName": "Divers royaumes",
+      "description": "Groupes minoritaires",
+      "societyType": "Variable",
+      "religion": "Islam / Christianisme / traditions",
+      "linguisticFamily": "Divers",
+      "historicalStatus": "Divers",
+      "regionalPresence": ["Sénégal"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

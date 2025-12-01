@@ -1,0 +1,1227 @@
+[
+  {
+    "countryName": "Afrique du Sud",
+    "region": "afrique_australe",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "aucun nom unifié ; territoire composé de peuples Khoisan",
+          "Nguni",
+          "Sotho-Tswana",
+          "Venda et Tsonga"
+        ]
+      },
+      {
+        "period": "Noms utilisés par les navigateurs (1488–1652)",
+        "names": ["Cabo da Boa Esperança", "Terra dos Fumos", "Southern Africa"]
+      },
+      {
+        "period": "1652–1795",
+        "names": ["Dutch Cape Colony (Colonie du Cap)"]
+      },
+      {
+        "period": "1795–1910",
+        "names": ["British Cape Colony"]
+      },
+      {
+        "period": "XIXe siècle",
+        "names": ["États boers (Transvaal", "Orange Free State", "Natal)"]
+      },
+      {
+        "period": "1910–1961",
+        "names": ["Union of South Africa"]
+      },
+      {
+        "period": "Depuis 1961",
+        "names": ["Republic of South Africa"]
+      }
+    ],
+    "description": "Avant 1652, l’Afrique du Sud était un ensemble de sociétés autonomes : Khoisan (San et Khoikhoi), royaumes Nguni (proto-Zoulou, Xhosa, Swazi, Ndebele), chefferies Sotho-Tswana, royaumes Venda et Tsonga.\nLes navigateurs portugais nomment seulement le cap et les zones côtières. À partir de 1652, installation hollandaise au Cap, puis domination britannique. Les Boers fondent plusieurs républiques. L’union est créée en 1910 avant la République en 1961.",
+    "ethnicGroupsSummary": "- Nguni (~60–63 % des Black Africans) : Zoulous, Xhosa, Swazi, Ndebele, Hlubi.\n- Sotho-Tswana (~25–27 %) : Pedi, Sotho du Sud, Tswana.\n- Tsonga (Shangaan) : ~4 %.\n- Venda : ~2,5 %.\n- Khoisan : ~1 % (Khoikhoi + San).\n- Coloureds : ~9 %.\n- Blancs sud-africains : ~7 % (Afrikaners + anglophones).\n- Indian/Asian : ~2,7 %.",
+    "notes": "- Aucune entité politique unifiée avant 1910.\n- Les Khoisan sont les premiers habitants connus.\n- Les grandes migrations bantoues ont façonné la carte ethnique dès le Ier millénaire.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Angola",
+    "region": "afrique_australe",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "aucun nom unifié ; territoire composé des peuples Khoisan",
+          "Ovimbundu",
+          "Mbundu",
+          "Kongo",
+          "Lunda",
+          "Chokwe"
+        ]
+      },
+      {
+        "period": "Noms pré-coloniaux issus des royaumes",
+        "names": ["Ndongo", "Kongo", "Lunda"]
+      },
+      {
+        "period": "1575–1975",
+        "names": ["Colónia de Angola (période coloniale portugaise)"]
+      },
+      {
+        "period": "1975",
+        "names": ["République populaire d’Angola"]
+      },
+      {
+        "period": "Depuis les années 1990",
+        "names": ["République d’Angola"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Ovimbundu (~37 %) : agriculteurs des hauts plateaux du centre-sud.\n- Mbundu / Ambundu (~25 %) : autour de Luanda, héritiers du Royaume Ndongo.\n- Bakongo (~13 %) : héritiers du Royaume Kongo.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Cameroun",
+    "region": "afrique_centrale",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "aucun nom unifié ; territoire composé de royaumes Bamoun",
+          "chefferies Bamiléké",
+          "Beti-Fang-Bulu",
+          "sultanats Mandara et Kotoko",
+          "peuples Sawa et pygmées Baka"
+        ]
+      },
+      {
+        "period": "1472",
+        "names": ["Rio dos Camarões (Portugais) → origine du mot Cameroun"]
+      },
+      {
+        "period": "1884–1916",
+        "names": ["Kamerun (colonie allemande)"]
+      },
+      {
+        "period": "1916–1960",
+        "names": ["Cameroun français & Cameroons britanniques"]
+      },
+      {
+        "period": "1960",
+        "names": ["République du Cameroun"]
+      },
+      {
+        "period": "1961",
+        "names": ["République fédérale du Cameroun"]
+      },
+      {
+        "period": "1972",
+        "names": ["République unie du Cameroun"]
+      },
+      {
+        "period": "1984",
+        "names": ["République du Cameroun (nom actuel)"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Beti-Fang-Bulu (~22 %) : groupes forestiers du Centre-Sud.\n- Bamiléké / Grassfields (~19 %) : chefferies puissantes de l’Ouest.\n- Peuls / Fulani (~10 %) : pasteurs du Nord & Adamaoua.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "République démocratique du Congo",
+    "region": "afrique_centrale",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "aucun nom unifié ; mosaïque de royaumes et chefferies (Empire Luba",
+          "Empire Lunda",
+          "Royaume Kongo",
+          "royaumes Mangbetu",
+          "sultanats Zande",
+          "chefferies Mongo",
+          "etc.)"
+        ]
+      },
+      {
+        "period": "1885–1908",
+        "names": ["État indépendant du Congo (propriété du roi Léopold II)"]
+      },
+      {
+        "period": "1908–1960",
+        "names": ["Congo belge"]
+      },
+      {
+        "period": "1960–1964",
+        "names": ["République du Congo (Léopoldville)"]
+      },
+      {
+        "period": "1971–1997",
+        "names": ["Zaïre"]
+      },
+      {
+        "period": "Depuis 1997",
+        "names": ["République démocratique du Congo"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Tchad",
+    "region": "afrique_centrale",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": ["pas d’État unifié ; empires sahéliens et royaumes soudanais"]
+      },
+      {
+        "period": "Empire du Kanem (VIIIe–XIVe siècle)",
+        "names": ["autour du lac Tchad"]
+      },
+      {
+        "period": "Empire du Bornou (XIVe–XIXe siècle)",
+        "names": ["domination kanouri"]
+      },
+      {
+        "period": "Royaume du Baguirmi (XVIe–XIXe siècle)",
+        "names": ["peuple Barma"]
+      },
+      {
+        "period": "Royaume du Ouaddaï (XVIe–XIXe siècle)",
+        "names": ["dynastie arabe mahri"]
+      },
+      {
+        "period": "Nom “Tchad”",
+        "names": ["Tsade / Chad", "grand lac"]
+      },
+      {
+        "period": "1900–1920",
+        "names": ["conquête française"]
+      },
+      {
+        "period": "1920",
+        "names": ["Colonie du Tchad (AEF)"]
+      },
+      {
+        "period": "1960",
+        "names": ["Indépendance → République du Tchad"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Djibouti",
+    "region": "afrique_de_l_est",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires Afar et Somali (Issa",
+          "Gadabursi",
+          "Isaaq) sans État unifié"
+        ]
+      },
+      {
+        "period": "1977",
+        "names": ["Indépendance → République de Djibouti"]
+      }
+    ],
+    "description": "Territoire structuré par les peuples afars (anciennes chefferies Adal/Dankali) et les somalis (Issa, Gadabursi, Isaaq). La France fonde Djibouti-ville, puis un État moderne émerge à l’indépendance.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Érythrée",
+    "region": "afrique_de_l_est",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "royaumes et chefferies du haut plateau (Tigrinya)",
+          "zones Beja (Bilen",
+          "Hedareb)",
+          "et peuples Afar du littoral"
+        ]
+      },
+      {
+        "period": "Antiquité",
+        "names": ["partie du royaume dAksoum (Axumite Empire)"]
+      },
+      {
+        "period": "Moyen Âge",
+        "names": ["provinces tigrigna et afar liées à lÉthiopie historique"]
+      },
+      {
+        "period": "XVe–XVIIIe siècle",
+        "names": ["entités Beja (Beni Amer", "Hadarib)"]
+      },
+      {
+        "period": "1890",
+        "names": ["Eritrea", "mer Érythrée"]
+      },
+      {
+        "period": "1952",
+        "names": ["Fédération Éthiopie–Érythrée"]
+      },
+      {
+        "period": "1962",
+        "names": ["Annexion → province éthiopienne"]
+      },
+      {
+        "period": "1993",
+        "names": ["Indépendance → State of Eritrea"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Éthiopie",
+    "region": "afrique_de_l_est",
+    "ancientNames": [
+      {
+        "period": "Avant −1000",
+        "names": [
+          "aucun nom unifié ; territoires occupés par Afar",
+          "Agaw",
+          "proto-Sémitiques",
+          "liens avec Sabéens"
+        ]
+      },
+      {
+        "period": "~−1000 à −400",
+        "names": ["Royaume de D’mt (premier proto-État éthiopien)"]
+      },
+      {
+        "period": "Ier – Xe siècle",
+        "names": ["Empire d’Aksoum (un des plus grands empires antiques)"]
+      },
+      {
+        "period": "1270–1974",
+        "names": ["Empire d’Abyssinie (Abyssinia / Habesha)"]
+      },
+      {
+        "period": "1936–1941",
+        "names": ["Africa Orientale Italiana (occupation italienne)"]
+      },
+      {
+        "period": "1974–1991",
+        "names": ["République populaire d’Éthiopie (Derg)"]
+      },
+      {
+        "period": "Depuis 1991",
+        "names": ["République fédérale démocratique d’Éthiopie"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Kenya",
+    "region": "afrique_de_l_est",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires Luo",
+          "Luhya",
+          "Kikuyu",
+          "Kamba",
+          "Maasai",
+          "Samburu",
+          "Turkana",
+          "Somali",
+          "Borana",
+          "Pokot",
+          "Meru",
+          "Mijikenda"
+        ]
+      },
+      {
+        "period": "XIXe siècle",
+        "names": ["Kenya"]
+      },
+      {
+        "period": "1895",
+        "names": ["Afrique de l"]
+      },
+      {
+        "period": "1920",
+        "names": ["Colonie du Kenya"]
+      },
+      {
+        "period": "1963",
+        "names": ["Indépendance → République du Kenya"]
+      }
+    ],
+    "description": "Le Kenya regroupe populations bantoues (Kikuyu, Luhya, Kamba, Meru), nilotiques (Luo, Maasai, Samburu, Pokot, Turkana) et couchitiques (Somali, Borana, Rendille). Le pays devient un hub est-africain sous colonisation britannique et accède à l'indépendance en 1963.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Madagascar",
+    "region": "afrique_de_l_est",
+    "ancientNames": [
+      {
+        "period": "Avant l’unification",
+        "names": [
+          "île peuplée de clans austronésiens (Merina",
+          "Betsimisaraka) et bantous (Sakalava",
+          "Antandroy",
+          "Antemoro)"
+        ]
+      },
+      {
+        "period": "7e–12e siècles",
+        "names": ["Afrique de l"]
+      },
+      {
+        "period": "1500s",
+        "names": ["São Lourenço"]
+      },
+      {
+        "period": "17e–19e siècle",
+        "names": ["Malagasy", "Madagascar"]
+      },
+      {
+        "period": "1896",
+        "names": ["Colonie française (Colonie de Madagascar)"]
+      },
+      {
+        "period": "1960",
+        "names": ["Indépendance → République malgache"]
+      }
+    ],
+    "description": "L'île associe éléments austronésiens (langue malgache, navigation, rizières) et bantous (musique, organisation sociale). Les Merina unifient une partie du territoire au XIXe siècle. La France impose une colonie jusqu’en 1960.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Bénin",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "royaumes Fon (Dahomey)",
+          "Adja–Ewe",
+          "Yoruba/Nago (Kétou)",
+          "Bariba (Nikki)",
+          "Otamari/Somba (Atacora)",
+          "Dendi (héritiers Songhai)"
+        ]
+      },
+      {
+        "period": "1894",
+        "names": ["Colonie du Dahomey (AOF)"]
+      },
+      {
+        "period": "1960",
+        "names": ["République du Dahomey"]
+      },
+      {
+        "period": "1975",
+        "names": ["République populaire du Bénin"]
+      },
+      {
+        "period": "Depuis 1990",
+        "names": ["République du Bénin"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Fon (~38 %) : héritiers du Dahomey, dominants au sud.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Burkina Faso",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant l'époque moderne",
+        "names": [
+          "mosaïque de royaumes mossi",
+          "peuples gur",
+          "lobi/birifor",
+          "peuls et groupes mandé"
+        ]
+      },
+      {
+        "period": "XIe–XIXe siècle",
+        "names": [
+          "royaumes mossi (Wogodogo",
+          "Yatenga",
+          "Tenkodogo",
+          "Fada N’Gourma)"
+        ]
+      },
+      {
+        "period": "Périodes précoloniales",
+        "names": ["royaumes Lobi", "Bobo", "Dagara", "Gourounsi", "Senoufo"]
+      },
+      {
+        "period": "1919",
+        "names": ["Haute-Volta (AOF)"]
+      },
+      {
+        "period": "1958",
+        "names": ["République de Haute-Volta"]
+      },
+      {
+        "period": "1984",
+        "names": ["Burkina Faso (Thomas Sankara)"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Cabo Verde (Cap-Vert)",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant le XVe siècle",
+        "names": [
+          "les îles étaient inhabitées (aucune population autochtone connue)"
+        ]
+      },
+      {
+        "period": "1456–1462",
+        "names": ["Découverte par des navigateurs portugais et génois"]
+      },
+      {
+        "period": "1462",
+        "names": ["Début de la colonisation portugaise"]
+      },
+      {
+        "period": "XVIe–XVIIIe siècles",
+        "names": ["centre majeur de traite atlantique (île de Santiago)"]
+      },
+      {
+        "period": "1956–1973",
+        "names": ["Lutte pour l’indépendance (PAIGC)"]
+      },
+      {
+        "period": "1975",
+        "names": ["República de Cabo Verde"]
+      },
+      {
+        "period": "2013",
+        "names": ["Nom officiel international normalisé : Cabo Verde"]
+      }
+    ],
+    "description": "Les îles étaient vierges jusqu’à l’arrivée des Portugais. Dès le XVe siècle, un peuplement métissé apparaît : européens (portugais) et africains (principalement wolof, mandinka, balante, peul, bijagó). Les îles deviennent une plaque tournante de la traite. La société créole se forme très tôt. L’indépendance est obtenue en 1975.",
+    "ethnicGroupsSummary": "- Caboverdiens / Crioulos (~99 %) : population métissée afro‑européenne ; identité créole forte ; langues : portugais + crioulo (kriolu).\nSous‑ensembles régionaux :\n• Santome / Santiago Creoles\n• Barlavento Creoles (São Vicente, Santo Antão…)\n• Sotavento Creoles (Santiago, Fogo, Maio, Brava)\n- Africains d’origine récente (~1 %) : migrants de la CEDEAO (Guinée-Bissau, Sénégal, Nigéria, Ghana…).",
+    "notes": "- Le Cap-Vert est l’un des rares pays africains historiquement non peuplés avant la colonisation.\n- L’identité nationale est fondée sur la créolisation afro‑lusophone.\n- La linguistique distingue plusieurs variétés de Kriolu (Barlavento / Sotavento).",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Côte d’Ivoire",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "royaumes Akan (Baoulé",
+          "Agni",
+          "Abron)",
+          "peuples Krou (Bété",
+          "Wé",
+          "Dida)",
+          "Mandé du Nord (Malinké",
+          "Dioula)",
+          "Mandé du Sud (Dan",
+          "Gouro",
+          "Wan)",
+          "peuples voltaiques (Sénoufo",
+          "Lobi",
+          "Koulango)"
+        ]
+      },
+      {
+        "period": "XVe siècle",
+        "names": ["Côte d", "(Costa do Marfim), lié au commerce de l"]
+      },
+      {
+        "period": "1893",
+        "names": ["Colonie de Côte d’Ivoire (AOF)"]
+      },
+      {
+        "period": "Depuis 1960",
+        "names": ["République de Côte d’Ivoire (nom non traduit)"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Akan (~42 %) : Baoulé, Agni, Abron, Attié.\n- Voltaïques / Gur (~17 %) : Sénoufo, Lobi, Koulango.\n- Mandé du Nord (~16 %) : Malinké, Dioula, Bambara.\n- Mandé du Sud (~10 %) : Dan/Yacouba, Gouro, Wan.\n- Krou (~11 %) : Bété, Dida, Wé (Guéré, Wobé).\n- Autres (~4 %) : migrants régionaux et groupes urbains.",
+    "notes": "- Les Baoulé forment l’un des groupes les plus influents du pays.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Gambie",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires mandinka",
+          "wolof",
+          "fula",
+          "jola",
+          "serahule",
+          "aucun État unifié"
+        ]
+      },
+      {
+        "period": "XVe siècle",
+        "names": ["Gambia", "Kambra / Kambaa"]
+      },
+      {
+        "period": "XVIIe–XIXe siècle",
+        "names": ["zones de commerce anglais", "français et portugais"]
+      },
+      {
+        "period": "1889",
+        "names": ["Gambia Colony and Protectorate"]
+      },
+      {
+        "period": "1965",
+        "names": ["Indépendance — The Gambia"]
+      },
+      {
+        "period": "1970",
+        "names": ["République de Gambie (nom actuel)"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Ghana",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "royaumes Akan (Bono",
+          "Akwamu",
+          "Denkyira",
+          "Asante",
+          "Fante",
+          "Akuapem)",
+          "peuples Ga–Dangme",
+          "Guan",
+          "Gur et Mandé"
+        ]
+      },
+      {
+        "period": "Empire du Ghana (Wagadu)",
+        "names": [
+          "IIIe–XIIIe s. — ⚠️ situé en Mauritanie/Mali",
+          "pas dans le Ghana actuel"
+        ]
+      },
+      {
+        "period": "XVe–XIXe siècle",
+        "names": ["présence portugaise", "néerlandaise puis britannique"]
+      },
+      {
+        "period": "Nom colonial",
+        "names": ["Côte-de-l’Or (Gold Coast)"]
+      },
+      {
+        "period": "1957",
+        "names": ["Ghana"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Akan (~47.5 %) : Ashanti, Fante, Akyem, Akuapem, Denkyira.\n- Mole‑Dagbani (~16.6 %) : Dagomba, Mamprusi.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Guinée",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant les États modernes",
+        "names": [
+          "territoires Mandé",
+          "Peul/Fula",
+          "peuples forestiers (Kissi",
+          "Toma",
+          "Guerzé)",
+          "Soussou"
+        ]
+      },
+      {
+        "period": "Influences impériales",
+        "names": [
+          "Empire du Mali (XIIIe–XVIe s.)",
+          "Empire Songhai",
+          "Empire du Ghana (influence commerciale)"
+        ]
+      },
+      {
+        "period": "XVIIIe–XIXe s.",
+        "names": ["Théocratie peule du Fouta Djallon"]
+      },
+      {
+        "period": "1891",
+        "names": ["Guinée française"]
+      },
+      {
+        "period": "1958",
+        "names": [
+          "Indépendance — République de Guinée (seule colonie à dire NON en 1958)"
+        ]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Guinée-Bissau",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires Balante",
+          "Papel",
+          "Manjak",
+          "Mandinka",
+          "Fula",
+          "Bijagó ; aucun État unifié"
+        ]
+      },
+      {
+        "period": "Du XIIe au XVIe siècle",
+        "names": ["zones d’influence des royaumes mandé (Mali", "Kaabu)"]
+      },
+      {
+        "period": "Kaabu (Empire du Kaabu)",
+        "names": [
+          "grand royaume mandinka installé en Casamance et Guinée-Bissau"
+        ]
+      },
+      {
+        "period": "1446",
+        "names": ["Guiné"]
+      },
+      {
+        "period": "“Guiné de Cabo Verde”",
+        "names": ["nom colonial portugais"]
+      },
+      {
+        "period": "1879",
+        "names": ["Guiné Portuguesa"]
+      },
+      {
+        "period": "1973",
+        "names": [
+          "Indépendance → République de Guinée-Bissau (Bissau ajouté pour différencier de la Guinée-Conakry)"
+        ]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Liberia",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires Kpelle",
+          "Bassa",
+          "Grebo",
+          "Kru",
+          "Vai",
+          "Gio",
+          "Mano",
+          "Dei",
+          "Gola",
+          "Kissi ; aucun État national unifié"
+        ]
+      },
+      {
+        "period": "XVIe–XVIIIe siècle",
+        "names": ["Grain Coast"]
+      },
+      {
+        "period": "XIXe siècle",
+        "names": ["implantation de la American Colonization Society (ACS)"]
+      },
+      {
+        "period": "1822",
+        "names": ["Liberia"]
+      },
+      {
+        "period": "1847",
+        "names": [
+          "Indépendance du Liberia (première république noire d’Afrique)"
+        ]
+      },
+      {
+        "period": "Nom officiel depuis 1847",
+        "names": ["Republic of Liberia"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Mali",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant l’époque impériale",
+        "names": [
+          "territoires proto‑mandé",
+          "soninke",
+          "peuls",
+          "bozo ; aucun nom unifié"
+        ]
+      },
+      {
+        "period": "IIIe–XIIIe siècle",
+        "names": ["Empire du Ghana (Wagadu)", "dominé par les Soninke"]
+      },
+      {
+        "period": "XIIIe–XVIe siècle",
+        "names": [
+          "Empire du Mali (fondé par Soundiata Keïta)",
+          "capitale Niani"
+        ]
+      },
+      {
+        "period": "XVe–XVIe siècle",
+        "names": ["Empire Songhai (Gao", "Tombouctou", "Djenné)"]
+      },
+      {
+        "period": "Royaumes touaregs",
+        "names": ["Kel Adagh", "Ifoghas", "Tagelmoust"]
+      },
+      {
+        "period": "1892–1958",
+        "names": ["Soudan français (AOF)"]
+      },
+      {
+        "period": "1959–1960",
+        "names": ["Fédération du Mali"]
+      },
+      {
+        "period": "Depuis 1960",
+        "names": ["République du Mali"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Niger",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "pas d’État unifié ; zones touareg",
+          "haoussa",
+          "zarma-sonraï",
+          "peul",
+          "toubou",
+          "kanouri"
+        ]
+      },
+      {
+        "period": "Le nom « Niger » vient du fleuve Niger (probable origine",
+        "names": ["Ni Gir", "Négher"]
+      },
+      {
+        "period": "Empire songhaï (Gao)",
+        "names": ["influence sur l’ouest"]
+      },
+      {
+        "period": "Empire Kanem-Bornou",
+        "names": ["influence sur le sud-est"]
+      },
+      {
+        "period": "1900",
+        "names": ["Conquête française"]
+      },
+      {
+        "period": "1922",
+        "names": ["Colonie du Niger"]
+      },
+      {
+        "period": "1960",
+        "names": ["Indépendance → République du Niger"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Haoussa (~55 %) : sud du pays ; langue haoussa ; sociétés marchandes.\n- Zarma / Songhaï (~22 %) : ouest (Niamey, Tillabéri) ; héritiers de l’empire songhaï.\n- Touareg (~10 %) : nomades du Nord ; confédérations Kel Air, Kel Ifoghas ; langue tamasheq.\n- Peul / Fulani (~9 %) : pasteurs transhumants ; langue fulfulde ; islam.\n- Kanouri (~4 %) : sud-est ; héritiers de l’empire Kanem-Bornou.\n- Toubou (~1 %) : nord-est désertique ; langue toubou (teda-daza).",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Nigéria",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "sultanats haoussa (Kano",
+          "Katsina",
+          "Zaria)",
+          "califat de Sokoto",
+          "empire Kanem‑Bornou",
+          "royaume d’Oyo",
+          "Ile‑Ife",
+          "chefferies igbo",
+          "royaumes ijaw",
+          "itsekiri",
+          "urhobo",
+          "royaume du Bénin"
+        ]
+      },
+      {
+        "period": "XVe–XVIe siècle",
+        "names": [
+          "premiers contacts portugais sur les côtes (Lagos",
+          "Bénin",
+          "Calabar)"
+        ]
+      },
+      {
+        "period": "XIXe siècle",
+        "names": [
+          "expansion britannique ; création des protectorats Nord et Sud"
+        ]
+      },
+      {
+        "period": "1914",
+        "names": ["Amalgamation"]
+      },
+      {
+        "period": "1960",
+        "names": ["Fédération du Nigeria"]
+      },
+      {
+        "period": "1963",
+        "names": ["République fédérale du Nigeria (nom actuel)"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Sénégal",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires wolof",
+          "sérère",
+          "peul",
+          "mandinka",
+          "jola ; empires régionaux (Ghana",
+          "Mali",
+          "Songhai)"
+        ]
+      },
+      {
+        "period": "XIIIe–XVIe siècle",
+        "names": ["Empire du Jolof (Wolof)"]
+      },
+      {
+        "period": "Royaumes",
+        "names": [
+          "Cayor",
+          "Baol",
+          "Waalo",
+          "Sine",
+          "Saloum",
+          "Fouta Toro (théocratie peule)"
+        ]
+      },
+      {
+        "period": "XVe siècle",
+        "names": ["Senega", "Sunugal"]
+      },
+      {
+        "period": "1659",
+        "names": ["Fondation de Saint‑Louis par les Français"]
+      },
+      {
+        "period": "1895",
+        "names": ["Intégration à l’AOF"]
+      },
+      {
+        "period": "1960",
+        "names": ["Indépendance — République du Sénégal"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Wolof (~41 %) : peuple dominant culturellement ; anciens du royaume du Jolof.\n- Peul / Pular (~30 %) : Toucouleurs et Peuls du nord et de l’est.\n- Sérère (~15 %) : populations du Sine et du Saloum.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Sierra Leone",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires Mende",
+          "Temne",
+          "Limba",
+          "Kono",
+          "Loko",
+          "Krim",
+          "Sherbro",
+          "Fulla",
+          "Susu ; aucune entité nationale unifiée"
+        ]
+      },
+      {
+        "period": "XVe siècle",
+        "names": ["Serra Lyoa / Serra Leoa", "Montagnes du Lion"]
+      },
+      {
+        "period": "XVIIe–XVIIIe siècle",
+        "names": ["zones de traite atlantique sur la côte"]
+      },
+      {
+        "period": "1787",
+        "names": [
+          "fondation de Freetown comme colonie pour anciens esclaves libérés (Black Poor",
+          "Nova Scotians)"
+        ]
+      },
+      {
+        "period": "XIXe siècle",
+        "names": ["Protectorat britannique sur l’intérieur"]
+      },
+      {
+        "period": "1961",
+        "names": ["Indépendance — Sierra Leone"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Togo",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "aucun nom unifié ; territoires Ewe",
+          "Mina",
+          "Adja",
+          "Kabye",
+          "Tem/Kotokoli",
+          "Gourma",
+          "Moba",
+          "Akposso",
+          "Akebu",
+          "Ana",
+          "Ifè",
+          "Bassar"
+        ]
+      },
+      {
+        "period": "Région côtière appelée par les Européens",
+        "names": ["Côte des Esclaves"]
+      },
+      {
+        "period": "1884",
+        "names": ["Protectorat allemand — Togoland (Deutsch‑Togoland)"]
+      },
+      {
+        "period": "1916–1960",
+        "names": ["Partition entre Togo français et British Togoland"]
+      },
+      {
+        "period": "1960",
+        "names": ["Indépendance — République togolaise"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Algérie",
+    "region": "afrique_du_nord",
+    "ancientNames": [
+      {
+        "period": "Époque pré-berbère",
+        "names": ["aucun nom unifié ; peuples proto‑amazighs"]
+      },
+      {
+        "period": "Antiquité",
+        "names": [
+          "Numidie (Massyles & Massæsyles)",
+          "Maurétanie (Bocchus",
+          "Juba II)"
+        ]
+      },
+      {
+        "period": "Époque romaine",
+        "names": [
+          "Africa Nova",
+          "Numidia",
+          "Maurétanie Césarienne",
+          "Sitifienne"
+        ]
+      },
+      {
+        "period": "Période vandale & byzantine",
+        "names": ["Africa (province d’Orient)"]
+      },
+      {
+        "period": "Période islamique",
+        "names": [
+          "Ifriqiya ; royaumes rustémide",
+          "ziride",
+          "hammadide",
+          "zianide"
+        ]
+      },
+      {
+        "period": "1515–1830",
+        "names": ["Régence d’Alger (Empire ottoman)"]
+      },
+      {
+        "period": "1830–1962",
+        "names": ["Algérie française"]
+      },
+      {
+        "period": "Depuis 1962",
+        "names": ["République algérienne démocratique et populaire"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Arabes (~85 %) : majorité linguistique moderne, héritage arabo‑berbère.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Égypte",
+    "region": "afrique_du_nord",
+    "ancientNames": [
+      {
+        "period": "Antiquité (égyptien pharaonique)",
+        "names": [
+          "Kemet (Terre Noire)",
+          "Deshret (Terre Rouge)",
+          "Ta-Mery (Terre bien-aimée)",
+          "Ta-Wy (Les Deux Terres)"
+        ]
+      },
+      {
+        "period": "Période grecque",
+        "names": ["Aigyptos (Αἴγυπτος)"]
+      },
+      {
+        "period": "Période romaine",
+        "names": ["Aegyptus"]
+      },
+      {
+        "period": "Période islamique",
+        "names": ["Miṣr / Masr ; capitale Al-Qāhira (Le Caire)"]
+      },
+      {
+        "period": "1922–1953",
+        "names": ["Royaume d’Égypte"]
+      },
+      {
+        "period": "Depuis 1953",
+        "names": ["Égypte / République arabe d"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Arabes égyptianisés (~90 %) : héritiers des anciens Égyptiens arabisés ; dominants dans la vallée et le delta.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Maroc",
+    "region": "afrique_du_nord",
+    "ancientNames": [
+      {
+        "period": "Avant les conquêtes",
+        "names": [
+          "pas de nom unifié ; territoires amazighs (Imazighen)",
+          "royaumes du Souss",
+          "émirat de Nekor",
+          "tribus du Rif et de l’Atlas"
+        ]
+      },
+      {
+        "period": "Antiquité",
+        "names": ["Maurétanie (royaumes Maure & Massyle)"]
+      },
+      {
+        "period": "Conquête islamique",
+        "names": ["Maghrib al‑Aqsa"]
+      },
+      {
+        "period": "Dynasties",
+        "names": [
+          "Idrissides",
+          "Almoravides",
+          "Almohades",
+          "Mérinides",
+          "Wattassides",
+          "Saâdiens",
+          "Alaouites"
+        ]
+      },
+      {
+        "period": "1956",
+        "names": ["Royaume du Maroc"]
+      }
+    ],
+    "description": "Le Maroc se structure autour de dynasties amazighes et arabo‑islamiques : Maurétanie antique, premiers royaumes islamiques avec les Idrissides, expansion almoravide et almohade, puis dynasties mérinides, saâdiennes et enfin alaouite. L’identité amazighe constitue le socle historique ; l’arabisation se renforce du XIe au XVIe siècle. En 1956, fin du protectorat et naissance du Royaume du Maroc moderne.",
+    "ethnicGroupsSummary": "- Arabes marocains (~65 %) : Hilaliens, Maqil, Andalous ; majoritaires dans les plaines et grandes villes.\n- Amazighs (~37 %) : répartis en 3 grands ensembles :\n* Chleuh / Souss (tashelhit)\n* Rifains (tarifit)\n* Amazighs du Moyen‑Atlas (tamazight)\n- Sahraouis (~4 %) : nomades hassanophones du Sud.\n- Gnawa (~1 %) : confréries afro‑marocaines issues de populations subsahariennes.\n- Haratin (~1 %) : populations oasiennes du Drâa et du Sahara.\n- Jbala (~3 %) : montagnards arabophones du Rif occidental.\n- Autres minorités (~1 %) : juifs marocains, subsahariens, groupes urbains divers.",
+    "notes": "- Le Maroc est bilingue culturellement : amazighité ancienne + arabité médiévale.\n- Le Rif, l’Atlas et le Souss sont les trois grands bassins amazighs.\n- Les populations sahariennes (Hassaniya) relient le Maroc à la Mauritanie.",
+    "ethnicities": []
+  },
+  {
+    "countryName": "Mauritanie",
+    "region": "afrique_du_nord",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires berbères Sanhaja (Lemtouna",
+          "Massufa",
+          "Godala)",
+          "populations négro-africaines halpulaar",
+          "wolof",
+          "soninké",
+          "bambara ; aucun État unifié"
+        ]
+      },
+      {
+        "period": "VIIe–XIIe siècles",
+        "names": ["empire Almoravide (fondé par les Sanhaja du Sahara)"]
+      },
+      {
+        "period": "Termes locaux",
+        "names": ["pays de Chinguetti"]
+      },
+      {
+        "period": "1904",
+        "names": ["Protectorat français"]
+      },
+      {
+        "period": "1920",
+        "names": ["Mauritanie"]
+      },
+      {
+        "period": "1960",
+        "names": ["Indépendance → République Islamique de Mauritanie"]
+      }
+    ],
+    "description": "",
+    "ethnicGroupsSummary": "- Maures / Beidhane (~40 %) : arabophones hassaniya ; nobles guerriers (Hassane), lettrés religieux (Zawiya), Znaga ; société nomade.\n- Haratine (~30 %) : populations arabo-berbères anciennement serviles ; langue hassaniya.\n- Halpulaar (~12 %) : Toucouleur + Peul ; langue pulaar ; islam ; agriculteurs/pasteurs du fleuve.\n- Soninké (~10 %) : marchands et agriculteurs mandé ; langue soninké.",
+    "ethnicities": []
+  }
+]

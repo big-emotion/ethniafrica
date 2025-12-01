@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Podoko (terme utilisé par les Européens)
 - Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
 - Groupe ethno-linguistique : Tchadique (Biu-Mandara)
-- Région historique : Nord-est du Nigeria, Nord du Cameroun
-- Pays actuels : Nigeria, Cameroun
+- Région historique : Nord-est du NGA, Nord du Cameroun
+- Pays actuels : NGA, CMR
 - Identifiant peuple (ID) : PPL_PODOKO
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Podoko language (pbi)
-- CIA World Factbook – Nigeria, Cameroon
+- CIA World Factbook – NGA, Cameroon
 - Recensements nationaux
 - Études anthropologiques sur les peuples tchadiques
 

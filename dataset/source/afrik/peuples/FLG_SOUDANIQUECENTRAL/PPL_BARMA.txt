@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central
 - Région historique : Tchad
-- Pays actuels : Tchad
+- Pays actuels : TCD
 - Identifiant peuple (ID) : PPL_BARMA
 
 # 1. Ethnies incluses dans le peuple

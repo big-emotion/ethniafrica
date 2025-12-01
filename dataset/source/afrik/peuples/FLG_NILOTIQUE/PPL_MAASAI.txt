@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Maasai (terme utilisé par les Européens), Masai
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique oriental
-- Région historique : Kenya, Tanzanie
-- Pays actuels : Kenya, Tanzanie
+- Région historique : KEN, TZA
+- Pays actuels : KEN, TZA
 - Identifiant peuple (ID) : PPL_MAASAI
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Maasai sont originaires du Kenya et de la Tanzanie, dans la région du Rift est-africain. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
+- Origines anciennes : Les Maasai sont originaires du Kenya et de la TZA, dans la région du Rift est-africain. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
 - Routes migratoires : 
   - Migrations depuis les régions du Nil supérieur
   - Expansion vers le Rift est-africain
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Maasai language (mas)
-- CIA World Factbook – Kenya, Tanzania
+- CIA World Factbook – KEN, Tanzania
 - Recensements nationaux
 - Études anthropologiques sur les peuples nilotiques
 

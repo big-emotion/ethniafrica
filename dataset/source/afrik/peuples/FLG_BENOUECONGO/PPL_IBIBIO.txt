@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
 - Groupe ethno-linguistique : Cross River (sous-groupe du Bénoué-Congo)
 - Région historique : Sud-est du Nigeria (État d'Akwa Ibom, Cross River)
-- Pays actuels : Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_IBIBIO
 
 # 1. Ethnies incluses dans le peuple

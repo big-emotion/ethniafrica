@@ -7,13 +7,13 @@
   - « !Kung » (appellation linguistique)
 - Famille linguistique principale : Khoïsan – Kx'a (FLG_KXA)
 - Groupe ethno-linguistique : Kx'a (Juu)
-- Région historique : Désert du Kalahari (Namibie, Botswana, Angola)
-- Pays actuels : Namibie, Botswana, Angola
+- Région historique : Désert du Kalahari (NAM, BWA, AGO)
+- Pays actuels : NAM, BWA, AGO
 - Identifiant peuple (ID) : PPL_KUNG
 
 # 1. Ethnies incluses dans le peuple
-- Ethnie 1 : !Kung du Nord (Angola, Namibie)
-- Ethnie 2 : !Kung du Sud (Botswana, Namibie)
+- Ethnie 1 : !Kung du Nord (AGO, NAM)
+- Ethnie 2 : !Kung du Sud (BWA, NAM)
 - Ethnie 3 : !Kung de l'Est
 - Ethnie 4 : Sous-groupes régionaux
 

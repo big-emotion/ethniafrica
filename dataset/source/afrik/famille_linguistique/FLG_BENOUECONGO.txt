@@ -52,9 +52,9 @@
   >400 millions
 
 # 2. Peuples associés
-- Peuple 1 : Yoruba
-- Peuple 2 : Igbo
-- Peuple 3 : Edo / Bini
+- Peuple 1 : Yoruba (PPL_YORUBA)
+- Peuple 2 : Igbo (PPL_IGBO)
+- Peuple 3 : Edo / Bini (PPL_EDO)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Yoruba

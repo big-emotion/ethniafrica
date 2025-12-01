@@ -29,9 +29,9 @@
 - Nombre total de locuteurs : ~27 millions
 
 # 2. Peuples associés
-- Peuple 1 : Malgaches (Merina)
-- Peuple 2 : Malgaches (Betsimisaraka)
-- Peuple 3 : Malgaches (Sakalava)
+- Peuple 1 : Malgaches (Merina) (PPL_MERINA)
+- Peuple 2 : Malgaches (Betsimisaraka) (PPL_BETSIMISARAKA)
+- Peuple 3 : Malgaches (Sakalava) (PPL_SAKALAVA)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Merina

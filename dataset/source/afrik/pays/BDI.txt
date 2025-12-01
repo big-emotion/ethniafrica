@@ -1,0 +1,120 @@
+# Nom du pays
+- Nom officiel actuel : République du Burundi (Republika y'Uburundi)
+- Étymologie du nom : Le nom "Burundi" vient probablement du kirundi "Uburundi" signifiant "pays" ou "territoire". Le nom fait référence au royaume précolonial du Burundi.
+- Personne / peuple / administration à l'origine du nom : Le nom vient du royaume précolonial du Burundi (Royaume du Burundi), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.
+- Identifiant pays (ISO 3166-1 alpha-3) : BDI
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de groupes bantous et nilotiques sans nom unifié. Les Twa (pygmées) sont considérés comme les premiers habitants.
+- Moyen Âge : Développement du royaume du Burundi à partir du XVIe siècle. Le royaume s'appelait "Burundi" ou "Uburundi".
+- Époque précoloniale : Royaume du Burundi (XVIe - XIXe siècles) avec une monarchie centralisée. Le nom "Burundi" était utilisé pour désigner le royaume et son territoire.
+- Colonisation : 1885-1916 : Protectorat allemand de l'Afrique orientale allemande (Deutsch-Ostafrika), incluant le Burundi. 1916-1962 : Ruanda-Urundi sous mandat belge (puis tutelle de l'ONU). Les Belges ont divisé administrativement le Rwanda et le Burundi mais conservé les noms.
+- Période contemporaine : Indépendance en 1962 sous le nom de "Royaume du Burundi" (monarchie), puis "République du Burundi" depuis 1966. Le nom officiel en français est "République du Burundi" et en kirundi "Republika y'Uburundi".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume du Burundi] :
+  - Période : XVIe siècle - 1966
+  - Peuples dominants : Tutsi (noblesse), Hutu (majorité), Twa (minorité)
+  - Centres politiques : Gitega (capitale royale), Muramvya
+  - Rôle historique : Royaume centralisé avec une monarchie sacrée (mwami). Système de chefferies hiérarchisées. Expansion territoriale et unification culturelle. Distinctions sociales complexes entre Hutu, Tutsi et Twa, instrumentalisées par le colonialisme.
+
+- [Ruanda-Urundi] :
+  - Période : 1916 - 1962
+  - Peuples dominants : Tous les peuples burundais sous administration coloniale belge
+  - Centres politiques : Usumbura (Bujumbura, capitale administrative)
+  - Rôle historique : Mandat belge puis tutelle de l'ONU. Politique coloniale de division et d'instrumentalisation des distinctions Hutu/Tutsi. Introduction de cartes d'identité ethniques.
+
+- [République du Burundi] :
+  - Période : 1966 - présent
+  - Peuples dominants : Tous les peuples burundais
+  - Centres politiques : Bujumbura (capitale)
+  - Rôle historique : Indépendance en 1962 (monarchie). Coup d'État de 1966 : abolition de la monarchie, proclamation de la République. Histoire politique mouvementée avec plusieurs coups d'État et périodes de violences ethniques (1972, 1993, 2015).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Hutu (Burundi)
+  - Auto-appellation (endonyme) : Abahutu
+  - Exonymes / appellations historiques : Hutu (terme historique non péjoratif). "Races du Burundi" (catégorisation coloniale problématique). L'administration coloniale belge a figé les catégories Hutu/Tutsi en termes "racialisés", ce qui a exacerbé les tensions sociales et politiques.
+  - Identifiant peuple (PPL_) : PPL_HUTU_BURUNDI
+  - Région principale : Plateaux du Burundi (majorité)
+  - Langues parlées : Kirundi, français, anglais
+  - Famille linguistique : FLG_BANTU (Bantou, Zone J)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Hutu" a été instrumentalisé par le colonialisme belge. L'auto-appellation "Abahutu" est préférée. Ces distinctions doivent être contextualisées historiquement.
+
+- Peuple 2 :
+  - Nom : Tutsi (Burundi)
+  - Auto-appellation (endonyme) : Abatutsi
+  - Exonymes / appellations historiques : "Hamites" (terme colonial raciste, totalement rejeté). La thèse hamitique était une construction raciste européenne visant à opposer les peuples de la région et à légitimer des hiérarchies coloniales.
+  - Identifiant peuple (PPL_) : PPL_TUTSI_BURUNDI
+  - Région principale : Plateaux du Burundi
+  - Langues parlées : Kirundi, français, anglais
+  - Famille linguistique : FLG_BANTU (Bantou, Zone J)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Hamites" est totalement rejeté comme construction raciste coloniale. L'auto-appellation "Abatutsi" est préférée. Ces distinctions doivent être contextualisées historiquement.
+
+- Peuple 3 :
+  - Nom : Twa
+  - Auto-appellation (endonyme) : Abatwa
+  - Exonymes / appellations historiques : Twa, Pygmées (terme parfois considéré comme péjoratif)
+  - Identifiant peuple (PPL_) : PPL_TWA (à vérifier si fichier existe)
+  - Région principale : Forêts et zones rurales
+  - Langues parlées : Kirundi, langues twa
+  - Famille linguistique : FLG_BANTU (Bantou) / langues pygmées
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Pygmée" peut être considéré comme péjoratif. L'auto-appellation "Abatwa" est préférée. Les Twa sont les premiers habitants du Burundi.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Kirundi (run) - langue nationale et officielle
+  - Français - langue officielle
+  - Anglais - langue officielle
+  - Swahili - langue véhiculaire régionale
+- Traditions culturelles : Tambours royaux (ingoma), danse traditionnelle (intore), poésie orale, artisanat (vannerie, poterie), architecture traditionnelle, élevage bovin (importance symbolique et économique)
+- Religions dominantes : Christianisme (catholique majoritaire, protestant), croyances traditionnelles (syncrétisme), islam (minorité)
+- Modes de vie : Vie principalement rurale, agriculture (café, thé, bananes, haricots, sorgho), élevage (bovins, caprins), pêche (lac Tanganyika), commerce
+- Organisation sociale : Système de chefferies traditionnelles (historique), structure clanique patrilinéaire (ubwoko), organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens (historique)
+- Relations régionales : Relations historiques avec les peuples du Rwanda, de la RDC, de la Tanzanie. Diaspora importante en Belgique, en RDC, en Tanzanie, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par les Twa (pygmées), puis migrations bantoues (Hutu) et nilotiques (Tutsi) depuis plusieurs siècles. Formation de structures sociales complexes.
+- Moyen Âge : Développement du royaume du Burundi à partir du XVIe siècle. Expansion territoriale et unification culturelle. Système monarchique centralisé avec distinctions sociales entre Hutu, Tutsi et Twa.
+- Époque précoloniale : Apogée du royaume du Burundi (XIXe siècle) avec expansion territoriale. Système de chefferies hiérarchisées. Distinctions sociales complexes mais perméables.
+- Colonisation : 1885 : Protectorat allemand. 1916 : Occupation belge. 1923 : Mandat belge (Ruanda-Urundi). Politique coloniale de division et d'instrumentalisation des distinctions Hutu/Tutsi. Introduction de cartes d'identité ethniques. "Thèse hamitique" coloniale raciste.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Indépendance en 1962 sous forme de monarchie constitutionnelle. Première République en 1966 après coup d'État.
+- Période post-indépendance : Première République (1966-1987) : régime Tutsi, tensions ethniques. Massacres de 1972 : extermination de dizaines de milliers de Hutu. Deuxième République (1987-1993) : transition démocratique. Assassinat du président Ndadaye (1993) : guerre civile. Troisième République depuis 2005 : processus de paix, défis de réconciliation et de développement.
+
+# 7. Sources
+- CIA World Factbook – Burundi
+- SIL Ethnologue – Kirundi language (run)
+- Recensements nationaux burundais
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les Grands Lacs
+- Études historiques sur le royaume du Burundi
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Hutu (Burundi)
+- Identifiant peuple (PPL_) : PPL_HUTU_BURUNDI
+- Population : ~9 000 000 - 10 000 000 (estimation, ~85% de la population)
+- Pourcentage dans le pays : ~85%
+- Pourcentage en Afrique : ~0.7%
+- Région : Plateaux du Burundi
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : run (Kirundi)
+
+### Peuple : Tutsi (Burundi)
+- Identifiant peuple (PPL_) : PPL_TUTSI_BURUNDI
+- Population : ~1 700 000 (estimation, ~14% de la population)
+- Pourcentage dans le pays : ~14%
+- Pourcentage en Afrique : ~0.12%
+- Région : Plateaux du Burundi
+- Famille linguistique : FLG_BANTU (Bantou)
+- Code ISO 639-3 (langue principale) : run (Kirundi)
+
+### Peuple : Twa
+- Identifiant peuple (PPL_) : PPL_TWA (à vérifier)
+- Population : ~30 000 - 50 000 (estimation, ~0.3% de la population)
+- Pourcentage dans le pays : ~0.3%
+- Pourcentage en Afrique : ~0.003%
+- Région : Forêts et zones rurales
+- Famille linguistique : FLG_BANTU (Bantou) / langues pygmées
+- Code ISO 639-3 (langue principale) : run (Kirundi)
+

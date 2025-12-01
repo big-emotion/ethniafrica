@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Kera (terme utilisé par les Européens)
 - Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
 - Groupe ethno-linguistique : Tchadique
-- Région historique : Tchad, Cameroun
-- Pays actuels : Tchad, Cameroun
+- Région historique : TCD, CMR
+- Pays actuels : TCD, CMR
 - Identifiant peuple (ID) : PPL_KERA
 
 # 1. Ethnies incluses dans le peuple

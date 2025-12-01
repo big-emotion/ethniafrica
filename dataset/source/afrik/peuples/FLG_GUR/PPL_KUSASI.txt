@@ -2,7 +2,7 @@
 - Nom principal : Kusasi
 - Auto-appellation : Kusaal / Kusasi
 - Famille linguistique : Niger-Congo – Gur
-- Région : Ghana (Bawku), Burkina Faso
+- Région : Ghana (Bawku), BFA
 - Identifiant : PPL_KUSASI
 
 # 1. Ethnies incluses

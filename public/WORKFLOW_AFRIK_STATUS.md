@@ -1,6 +1,6 @@
 # WORKFLOW_AFRIK_STATUS.md
 
-# Version 1.0 — Suivi de progression du Workflow AFRIK
+# Version 2.0 — Suivi de progression du Workflow AFRIK (Simplifié)
 
 # Ce fichier sert de tableau de bord. Coche au fur et à mesure.
 
@@ -8,15 +8,17 @@
 
 ## 0. ÉTAT GLOBAL DU PROJET
 
-- [x] Familles linguistiques
+- [x] Familles linguistiques (24/24)
 - [x] Langues principales
-- [x] Peuples (905/905 générés)
-- [ ] Ethnies
-- [ ] Sous-ethnies & clans
-- [ ] Pays
+- [x] Peuples (681+ fiches synchronisées avec peuples réels - 53 pays traités)
+- [x] Pays (55/55)
 - [ ] CSV démographies
 - [ ] Validation globale
 - [ ] Publication
+
+**Terminé :** Synchronisation peuples réels vs documentés (53 pays traités dans l'ordre croissant, du moins au plus nombreux)
+
+**Note :** Le projet a été simplifié pour se concentrer uniquement sur familles linguistiques, langues, peuples et pays. Les données ethnies/sous-ethnies/clans ont été déplacées dans `/dataset/source/archive/`.
 
 ---
 
@@ -103,7 +105,7 @@ CSV :
 
 ---
 
-# 3. ÉTAPE 3 — PEUPLES (COMPLET — 905/905)
+# 3. ÉTAPE 3 — PEUPLES (COMPLET — 592/592)
 
 - [x] PPL_KONGO
 - [x] PPL_BETI_FANG
@@ -121,112 +123,73 @@ CSV :
 - [x] PPL_SWAHILI
 - [x] PPL_SAN
 - [x] PPL_KHOÏKHOÏ
-- [x] ... et 889 autres peuples (905 au total)
+- [x] ... et 576 autres peuples (592 au total)
 
 **Tous les peuples ont été générés selon le modèle modele-peuple.txt**
 
-CSV :
-
-- [ ] peuple_demographie_globale.csv rempli (à compléter)
-
----
-
-# 4. ÉTAPE 4 — ETHNIES
-
-- [ ] ETH_LUBA
-- [ ] ETH_MONGO
-- [ ] ETH_KONGO
-- [ ] ETH_YOMBE
-- [ ] ETH_VILI
-- [ ] ETH_FANG
-- [ ] ETH_EWONDO
-- [ ] ETH_BAMILEKE_BAF
-- [ ] ETH_SHONA
-- [ ] ETH_ZULU
-- [ ] ETH_XHOSA
-- [ ] ETH_EWE
-- [ ] ETH_IGBO
-- [ ] ETH_YORUBA
-- [ ] ETH_TUAREG_KEL_AIR
-- [ ] ETH_MASAAI
-- [ ] ETH_DINKA
-- [ ] ETH_OROMO
-- [ ] ETH_SOMALI
+**Note :** Après nettoyage des déclinaisons (\_RURAL, \_URBAIN, \_DIASPORA, \_GLOBAL), il reste 592 peuples principaux.
 
 CSV :
 
-- [ ] ethnie_demographie_par_pays.csv rempli
+- [ ] peuple_demographie_globale.csv rempli (302 entrées sur 592 peuples)
 
 ---
 
-# 5. ÉTAPE 5 — SOUS-ETHNIES & CLANS
+# 4. ÉTAPE 4 — PAYS (55 pays)
 
-- [ ] SUB_LUBA_KASAI
-- [ ] SUB_LUBA_KATANGA
-- [ ] SUB_KONGO_VILI
-- [ ] CLN_BAVOVOKO
-- [ ] CLN_MASAAI_LAIKIPIA
-- [ ] SUB_ZULU_NORD
-- [ ] SUB_EWE_ANLO
-
-(etc.)
-
----
-
-# 6. ÉTAPE 6 — PAYS (55 pays)
-
-- [ ] Algérie
-- [ ] Angola
-- [ ] Bénin
-- [ ] Botswana
-- [ ] Burkina Faso
-- [ ] Burundi
-- [ ] Cameroun
-- [ ] Cap-Vert
-- [ ] Comores
-- [ ] Côte d'Ivoire
-- [ ] Djibouti
-- [ ] Égypte
-- [ ] Érythrée
-- [ ] Eswatini
-- [ ] Éthiopie
-- [ ] Gabon
-- [ ] Gambie
-- [ ] Ghana
-- [ ] Guinée
-- [ ] Guinée-Bissau
-- [ ] Guinée équatoriale
-- [ ] Kenya
-- [ ] Lesotho
-- [ ] Libéria
-- [ ] Libye
-- [ ] Madagascar
-- [ ] Malawi
-- [ ] Mali
-- [ ] Maroc
-- [ ] Maurice
-- [ ] Mauritanie
-- [ ] Mozambique
-- [ ] Namibie
-- [ ] Niger
-- [ ] Nigeria
-- [ ] Ouganda
-- [ ] RCA
-- [ ] RDC
-- [ ] Rwanda
-- [ ] Sao Tomé-et-Principe
-- [ ] Sénégal
-- [ ] Seychelles
-- [ ] Sierra Leone
-- [ ] Somalie
-- [ ] Soudan
-- [ ] Soudan du Sud
-- [ ] Tanzanie
-- [ ] Tchad
-- [ ] Togo
-- [ ] Tunisie
-- [ ] Zambie
-- [ ] Zimbabwe
+- [x] Algérie
+- [x] Angola
+- [x] Afrique du Sud
+- [x] Bénin
+- [x] Botswana
+- [x] Burkina Faso
+- [x] Burundi
+- [x] Cameroun
+- [x] Cap-Vert
+- [x] Comores
+- [x] Côte d'Ivoire
+- [x] Djibouti
+- [x] Égypte
+- [x] Érythrée
+- [x] Eswatini
+- [x] Éthiopie
+- [x] Gabon
+- [x] Gambie
+- [x] Ghana
+- [x] Guinée
+- [x] Guinée-Bissau
+- [x] Guinée équatoriale
+- [x] Kenya
+- [x] Lesotho
+- [x] Libéria
+- [x] Libye
+- [x] Madagascar
+- [x] Malawi
+- [x] Mali
+- [x] Maroc
+- [x] Maurice
+- [x] Mauritanie
+- [x] Mozambique
+- [x] Namibie
+- [x] Niger
+- [x] Nigeria
+- [x] Ouganda
+- [x] RCA
+- [x] RDC
+- [x] Rwanda
+- [x] Sao Tomé-et-Principe
+- [x] Sénégal
+- [x] Seychelles
+- [x] Sierra Leone
+- [x] Somalie
+- [x] Soudan
+- [x] Soudan du Sud
+- [x] Tanzanie
+- [x] Tchad
+- [x] Togo
+- [x] Tunisie
+- [x] Zambie
+- [x] Zimbabwe
 
 CSV :
 
@@ -234,28 +197,28 @@ CSV :
 
 ---
 
-# 7. ÉTAPE 7 — DÉMOGRAPHIE (COHÉRENCE 100%)
+# 5. ÉTAPE 5 — DÉMOGRAPHIE (COHÉRENCE 100%)
 
-- [ ] Somme ethnies = 100 % (par pays)
-- [ ] Peuples = somme ethnies
+- [ ] Somme peuples = 100 % (par pays)
+- [ ] Peuples = population totale (tous pays)
 - [ ] Familles linguistiques = somme locuteurs
 - [ ] Réconciliation sources (ONU / CIA / SIL)
 - [ ] Vérification année référence (2025)
 
 ---
 
-# 8. ÉTAPE 8 — VALIDATION
+# 6. ÉTAPE 6 — VALIDATION
 
 - [ ] IDs cohérents
 - [ ] Langue → famille linguistique OK
-- [ ] Ethnie → peuple OK
 - [ ] Peuple → pays OK
 - [ ] Termes coloniaux contextualisés
 - [ ] Sections TXT complètes
+- [ ] Origines et appellations (exonymes/endonymes) enrichies
 
 ---
 
-# 9. ÉTAPE 9 — PUBLICATION
+# 7. ÉTAPE 7 — PUBLICATION
 
 - [ ] Upload TXT
 - [ ] Upload CSV
@@ -264,9 +227,18 @@ CSV :
 
 ---
 
-# 10. ÉTAPE 10 — MISE À JOUR
+# NOTES IMPORTANTES
 
-- [ ] Vérifier ONU 2026
-- [ ] Ajouter ethnies manquantes
-- [ ] Ajouter sous-groupes
-- [ ] Corriger incohérences
+**Données archivées :**
+
+- Les fichiers ethnies (1716 fichiers ETH\_\*.txt) ont été déplacés dans `/dataset/source/archive/ethnies/`
+- Les fichiers sous-ethnies (36 fichiers SUB\_\*.txt) ont été déplacés dans `/dataset/source/archive/sous_ethnies/`
+- Les fichiers clans (8 fichiers CLN\_\*.txt) ont été déplacés dans `/dataset/source/archive/clans/`
+- Les fichiers ambigus (4 fichiers) ont été déplacés dans `/dataset/source/archive/ambigus/`
+
+**Focus du projet :**
+Le projet se concentre désormais sur l'enrichissement qualitatif des familles linguistiques, langues, peuples et pays, avec un accent particulier sur :
+
+- Les origines et migrations
+- Les appellations (exonymes et endonymes)
+- La contextualisation des termes coloniaux

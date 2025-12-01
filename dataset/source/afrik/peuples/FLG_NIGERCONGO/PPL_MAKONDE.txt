@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Makonde (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone P)
-- Région historique : Mozambique, Tanzanie
-- Pays actuels : Mozambique, Tanzanie
+- Région historique : MOZ, TZA
+- Pays actuels : MOZ, TZA
 - Identifiant peuple (ID) : PPL_MAKONDE
 
 # 1. Ethnies incluses dans le peuple

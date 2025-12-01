@@ -6,6 +6,13 @@ Une application web open source pour explorer les peuples d'Afrique par région,
 
 Page "À propos" disponible sur `/about` ou `/{lang}/about` (ex. `/fr/about`, `/en/about`).
 
+## 📚 Documentation complète
+
+Pour une documentation complète du projet (architecture, méthodologie AFRIK, choix techniques et fonctionnels, etc.), consultez :
+
+- **[PROJET_ETHNIAFRICA.md](PROJET_ETHNIAFRICA.md)** - Documentation complète du projet
+- **[DOCUMENTATION.md](DOCUMENTATION.md)** - Index de navigation vers toute la documentation
+
 ## Liens utiles
 
 - À propos / Contexte: `/{lang}/about` (ex. `/fr/about`, `/en/about`)

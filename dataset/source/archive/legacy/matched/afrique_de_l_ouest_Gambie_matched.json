@@ -1,0 +1,263 @@
+{
+  "countryName": "Gambie",
+  "region": "afrique_de_l_ouest",
+  "countryDescription": {
+    "countryName": "Gambie",
+    "region": "afrique_de_l_ouest",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires mandinka",
+          "wolof",
+          "fula",
+          "jola",
+          "serahule",
+          "aucun État unifié"
+        ]
+      },
+      {
+        "period": "XVe siècle",
+        "names": ["Gambia", "Kambra / Kambaa"]
+      },
+      {
+        "period": "XVIIe–XIXe siècle",
+        "names": ["zones de commerce anglais", "français et portugais"]
+      },
+      {
+        "period": "1889",
+        "names": ["Gambia Colony and Protectorate"]
+      },
+      {
+        "period": "1965",
+        "names": ["Indépendance — The Gambia"]
+      },
+      {
+        "period": "1970",
+        "names": ["République de Gambie (nom actuel)"]
+      }
+    ],
+    "description": "",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Mandinka",
+      "subGroups": [
+        {
+          "name": "Jahanka",
+          "population": 939757,
+          "percentageInCountry": 33.3,
+          "percentageInAfrica": 0.061491
+        }
+      ],
+      "population": 939757,
+      "percentageInCountry": 33.3,
+      "percentageInAfrica": 0.061491,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Jahanka",
+          "population": 939757,
+          "percentageInCountry": 33.3,
+          "percentageInAfrica": 0.061491
+        }
+      ]
+    },
+    {
+      "groupName": "Peul",
+      "subGroups": [
+        {
+          "name": "Fulani",
+          "population": 171207,
+          "percentageInCountry": 6.066666666666666,
+          "percentageInAfrica": 0.011202666666666666
+        },
+        {
+          "name": "Tukulur",
+          "population": 171207,
+          "percentageInCountry": 6.066666666666666,
+          "percentageInAfrica": 0.011202666666666666
+        },
+        {
+          "name": "Lorobo",
+          "population": 171207,
+          "percentageInCountry": 6.066666666666666,
+          "percentageInAfrica": 0.011202666666666666
+        }
+      ],
+      "population": 513621,
+      "percentageInCountry": 18.2,
+      "percentageInAfrica": 0.033608,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Fulani",
+          "population": 171207,
+          "percentageInCountry": 6.066666666666666,
+          "percentageInAfrica": 0.011202666666666666
+        },
+        {
+          "name": "Tukulur",
+          "population": 171207,
+          "percentageInCountry": 6.066666666666666,
+          "percentageInAfrica": 0.011202666666666666
+        },
+        {
+          "name": "Lorobo",
+          "population": 171207,
+          "percentageInCountry": 6.066666666666666,
+          "percentageInAfrica": 0.011202666666666666
+        }
+      ]
+    },
+    {
+      "groupName": "Wolof",
+      "subGroups": [],
+      "population": 364050,
+      "percentageInCountry": 12.9,
+      "percentageInAfrica": 0.023821,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Jola",
+      "subGroups": [
+        {
+          "name": "Karoninka",
+          "population": 310430,
+          "percentageInCountry": 11,
+          "percentageInAfrica": 0.020312
+        }
+      ],
+      "population": 310430,
+      "percentageInCountry": 11,
+      "percentageInAfrica": 0.020312,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Karoninka",
+          "population": 310430,
+          "percentageInCountry": 11,
+          "percentageInAfrica": 0.020312
+        }
+      ]
+    },
+    {
+      "groupName": "Serahuleh (Soninké)",
+      "subGroups": [],
+      "population": 203191,
+      "percentageInCountry": 7.2,
+      "percentageInAfrica": 0.013295,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Sérère",
+      "subGroups": [],
+      "population": 98773,
+      "percentageInCountry": 3.5,
+      "percentageInAfrica": 0.006463,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 112884,
+      "percentageInCountry": 4,
+      "percentageInAfrica": 0.007386,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Non-Gambiens",
+      "subGroups": [],
+      "population": 279387,
+      "percentageInCountry": 9.9,
+      "percentageInAfrica": 0.018281,
+      "languages": [],
+      "region": "",
+      "sources": [],
+      "ancientName": "",
+      "description": "",
+      "societyType": "",
+      "religion": "",
+      "linguisticFamily": "",
+      "historicalStatus": "",
+      "regionalPresence": [],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

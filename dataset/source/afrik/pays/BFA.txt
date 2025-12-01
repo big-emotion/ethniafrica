@@ -1,0 +1,266 @@
+# Nom du pays
+- Nom officiel actuel : Burkina Faso (Burkina Faso)
+- Étymologie du nom : Le nom "Burkina Faso" signifie "Pays des hommes intègres" en mooré (langue mossi) et en dioula (langue mandé). "Burkina" vient du mooré et signifie "intègres" ou "honnêtes", tandis que "Faso" vient du dioula et signifie "pays" ou "patrie". Le nom a été adopté en 1984 par le président Thomas Sankara pour remplacer "Haute-Volta", nom colonial français.
+- Personne / peuple / administration à l'origine du nom : Le nom "Burkina Faso" a été choisi par le président Thomas Sankara en 1984 lors de la révolution burkinabè. Il remplace "Haute-Volta" (nom colonial français dérivé du fleuve Volta). Le nom reflète l'identité pan-africaine et la diversité linguistique du pays (mooré et dioula).
+- Identifiant pays (ISO 3166-1 alpha-3) : BFA
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Burkina Faso était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaumes mossi, chefferies gur, etc.).
+- Moyen Âge : Développement de royaumes mossi (XIe-XIXe siècles) : Wogodogo (Ouagadougou), Yatenga, Tenkodogo, Fada N'Gourma. Développement de chefferies gur (Bobo, Gourounsi, Dagara, etc.). Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et chefferies autonomes : royaumes mossi (Wogodogo, Yatenga, Tenkodogo, Fada N'Gourma), chefferies Bobo, Lobi, Dagara, Gourounsi, Senoufo. Peuples Peuls et Touaregs en transhumance dans le nord. Les Européens utilisaient le terme "Haute-Volta" pour désigner la région (dérivé du fleuve Volta).
+- Colonisation : 1919-1960 : Haute-Volta (partie de l'Afrique-Occidentale française, AOF). Les Français ont créé la colonie de Haute-Volta en 1919, puis l'ont dissoute en 1932 (territoire réparti entre le Soudan français, la Côte d'Ivoire et le Niger). 1947 : Rétablissement de la Haute-Volta. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960.
+- Période contemporaine : 1960-1984 : République de Haute-Volta (indépendance le 5 août 1960). 1984 : Burkina Faso (changement de nom le 4 août 1984 par Thomas Sankara). Le nom "Burkina Faso" est officiel depuis 1984.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes Mossi] :
+  - Période : XIe siècle - XIXe siècle (apogée), maintien jusqu'à la colonisation
+  - Peuples dominants : Mossi (Moose)
+  - Centres politiques : Ouagadougou (Wogodogo, capitale du royaume de Ouagadougou), Yatenga, Tenkodogo, Fada N'Gourma
+  - Rôle historique : Royaumes mossi puissants et structurés, système monarchique (naaba), résistance à l'empire Songhay et aux Français. Légende fondatrice de Yennenga et Naaba Wedraogo. Autorité coutumière puissante encore active aujourd'hui.
+
+- [Royaume de Fada N'Gourma] :
+  - Période : Précolonial - XIXe siècle
+  - Peuples dominants : Gourmantché
+  - Centres politiques : Fada N'Gourma (capitale)
+  - Rôle historique : Royaume de Fada N'Gourma, État gourmantché puissant dans l'est du Burkina Faso. Résistance à la colonisation française.
+
+- [Chefferies Gur] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Bobo, Gourounsi, Dagara, Lobi, Birifor
+  - Centres politiques : Chefferies traditionnelles locales
+  - Rôle historique : Chefferies gur organisées en structures politiques traditionnelles. Traditions agricoles et artisanales. Résistance à la colonisation.
+
+- [Colonie de Haute-Volta] :
+  - Période : 1919-1932, 1947-1960
+  - Peuples dominants : Tous les peuples burkinabés sous domination française
+  - Centres politiques : Ouagadougou (capitale administrative)
+  - Rôle historique : Colonie française, intégration dans l'AOF. Dissolution (1932) puis rétablissement (1947). Exploitation économique (coton, arachides), développement de l'administration coloniale, résistance des peuples autochtones, développement du mouvement indépendantiste au XXe siècle.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Mossi
+  - Auto-appellation (endonyme) : Moaga (singulier), Moose (pluriel)
+  - Exonymes / appellations historiques : Mossi (terme utilisé par les Européens et les Français), Mossé (forme ancienne)
+  - Identifiant peuple (PPL_) : PPL_MOSSI
+  - Région principale : Plateau central du Burkina Faso (Ouagadougou, Yatenga, Tenkodogo)
+  - Langues parlées : Mooré (mos, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Moose" est l'auto-appellation (pluriel), "Mossi" est l'exonyme le plus courant. Pas de terme péjoratif connu.
+
+- Peuple 2 :
+  - Nom : Peul / Fulani
+  - Auto-appellation (endonyme) : Fulɓe (pluriel), Pullo (singulier)
+  - Exonymes / appellations historiques : Peul (terme français), Fulani (terme haoussa), Fula (terme anglophone), "Fellata" (terme haoussa parfois péjoratif, à éviter)
+  - Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+  - Région principale : Nord du Burkina Faso, Sahel (pasteurs nomades et sédentaires)
+  - Langues parlées : Fulfulde (ful, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fulɓe" est l'auto-appellation. "Peul" et "Fulani" sont des exonymes acceptés. "Fellata" peut avoir une connotation péjorative dans certains contextes et doit être évité.
+
+- Peuple 3 :
+  - Nom : Gourmantché
+  - Auto-appellation (endonyme) : Gourmantché
+  - Exonymes / appellations historiques : Gourmantché (terme utilisé par les Européens et les Français)
+  - Identifiant peuple (PPL_) : PPL_GOURMANTCHE
+  - Région principale : Est du Burkina Faso (Fada N'Gourma)
+  - Langues parlées : Gourmantché (gux, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Gourmantché" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 4 :
+  - Nom : Bobo
+  - Auto-appellation (endonyme) : Bobo
+  - Exonymes / appellations historiques : Bobo (terme utilisé par les Européens et les Français)
+  - Identifiant peuple (PPL_) : PPL_BOBO
+  - Région principale : Ouest du Burkina Faso
+  - Langues parlées : Bobo (bwq, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Bobo" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Lobi / Birifor
+  - Auto-appellation (endonyme) : Lobi, Birifor
+  - Exonymes / appellations historiques : Lobi, Birifor (termes utilisés par les Européens et les Français)
+  - Identifiant peuple (PPL_) : PPL_LOBI_BIRIFOR
+  - Région principale : Sud-ouest du Burkina Faso, frontière avec la Côte d'Ivoire et le Ghana
+  - Langues parlées : Lobi (lob, ISO 639-3), Birifor (bfo, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Lobi" et "Birifor" sont les auto-appellations respectives. Pas de terme péjoratif connu.
+
+- Peuple 6 :
+  - Nom : Bissa
+  - Auto-appellation (endonyme) : Bissa
+  - Exonymes / appellations historiques : Bissa (terme utilisé par les Européens et les Français)
+  - Identifiant peuple (PPL_) : PPL_BISSA
+  - Région principale : Centre-sud du Burkina Faso
+  - Langues parlées : Bissa (bib, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Bissa" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 7 :
+  - Nom : Gourounsi
+  - Auto-appellation (endonyme) : Gourounsi
+  - Exonymes / appellations historiques : Gourounsi (terme utilisé par les Européens et les Français)
+  - Identifiant peuple (PPL_) : PPL_GOUROUNSI
+  - Région principale : Centre-ouest du Burkina Faso
+  - Langues parlées : Gourounsi (gur, ISO 639-3, code générique), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Gourounsi" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 8 :
+  - Nom : Dagara
+  - Auto-appellation (endonyme) : Dagara
+  - Exonymes / appellations historiques : Dagara (terme utilisé par les Européens et les Français)
+  - Identifiant peuple (PPL_) : PPL_DAGARA
+  - Région principale : Sud-ouest du Burkina Faso, frontière avec le Ghana
+  - Langues parlées : Dagara (dga, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Dagara" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 9 :
+  - Nom : Senoufo
+  - Auto-appellation (endonyme) : Senoufo
+  - Exonymes / appellations historiques : Senoufo (terme utilisé par les Européens et les Français)
+  - Identifiant peuple (PPL_) : PPL_SENUFO
+  - Région principale : Sud-ouest du Burkina Faso, frontière avec la Côte d'Ivoire et le Mali
+  - Langues parlées : Senoufo (syc, ISO 639-3, code générique), français
+  - Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Senoufo" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 10 :
+  - Nom : Touareg
+  - Auto-appellation (endonyme) : Kel Tamasheq / Imuhagh
+  - Exonymes / appellations historiques : Touareg (terme français), "Targui" (terme arabe), "Berbères du désert" (terme descriptif)
+  - Identifiant peuple (PPL_) : PPL_TUAREG
+  - Région principale : Nord du Burkina Faso, Sahara
+  - Langues parlées : Tamasheq (taq, ISO 639-3), français
+  - Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kel Tamasheq" ou "Imuhagh" sont les auto-appellations. "Touareg" est l'exonyme français le plus courant. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), Mooré (mos), Fulfulde (ful), Gourmantché (gux), Bobo (bwq), Lobi (lob), Birifor (bfo), Bissa (bib), Gourounsi (gur), Dagara (dga), Senoufo (syc), Tamasheq (taq)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique du Burkina Faso. Traditions mossi (masques, rituels des bois sacrés, culte des ancêtres, artisanat). Traditions gur (Bobo, Gourounsi, Dagara, Lobi). Traditions mandé (Bissa). Traditions peules (pastoralisme, poésie élogieuse). Traditions touarègues (nomadisme, culture du désert). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.
+- Religions dominantes : Islam (majoritaire, surtout dans le nord), christianisme (catholicisme et protestantisme, surtout dans le sud), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques)
+- Modes de vie : Agriculture (Mossi, Bobo, Gourounsi, Dagara, cultures vivrières, coton), élevage (Peuls, Touaregs, bovins, chameaux), artisanat (forgerons Bobo, cuivre, cuir). Commerce et activités urbaines (zones urbaines, Ouagadougou). Urbanisation croissante. Économie basée sur l'agriculture (coton, arachides, mil, sorgho), l'élevage, et l'exploitation minière (or).
+- Organisation sociale : Organisation en royaumes historiques (Mossi, système monarchique naaba), chefferies traditionnelles (Gur), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Organisation pastorale nomade (Peuls, Touaregs).
+- Relations régionales : Relations historiques avec le Mali (commerce, peuples transfrontaliers), la Côte d'Ivoire (commerce, migrations), le Ghana (Dagara, commerce), le Niger (Touaregs, commerce transsaharien). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest) et l'UEMOA (Union économique et monétaire ouest-africaine). Relations commerciales et culturelles transfrontalières.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par diverses sociétés sans nom unifié. Développement de chefferies et royaumes locaux. Arrivée et expansion des peuples gur et mandé dans la région.
+- Moyen Âge : Formation et développement des royaumes mossi (XIe siècle), légende fondatrice de Yennenga et Naaba Wedraogo. Apogée des royaumes mossi (Wogodogo, Yatenga, Tenkodogo, Fada N'Gourma). Développement de réseaux commerciaux régionaux et transsahariens. Résistance aux empires voisins (Songhay, Mali).
+- Époque précoloniale : Consolidation des royaumes mossi, système monarchique (naaba). Développement des chefferies gur (Bobo, Gourounsi, Dagara, Lobi). Peuples Peuls et Touaregs en transhumance dans le nord. Résistance aux pressions extérieures. Commerce transsaharien.
+- Colonisation : 1896-1897 : Conquête française des royaumes mossi. 1919 : Création de la colonie de Haute-Volta par les Français, intégration dans l'AOF. 1932 : Dissolution de la Haute-Volta (territoire réparti entre le Soudan français, la Côte d'Ivoire et le Niger). 1947 : Rétablissement de la Haute-Volta. Période coloniale française, exploitation économique (coton, arachides), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, formation de partis politiques.
+- Lutte pour l'indépendance : 1958 : Référendum sur l'autonomie, la Haute-Volta vote "oui" à la Communauté française. 1960 : Indépendance de la Haute-Volta (5 août 1960), proclamation de la République de Haute-Volta. Période d'instabilité politique (1960-1983), plusieurs coups d'État.
+- Période post-indépendance : 1983-1987 : Révolution burkinabè sous Thomas Sankara, changement de nom pour "Burkina Faso" (1984), réformes sociales et économiques. 1987 : Assassinat de Thomas Sankara, prise de pouvoir de Blaise Compaoré. 2014 : Insurrection populaire, chute de Blaise Compaoré. Période de transition et de démocratisation. Défis : pauvreté, insécurité (terrorisme dans le nord), inégalités sociales. Le Burkina Faso est un pays sahélien confronté à des défis sécuritaires et économiques majeurs.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Burkina Faso
+- CIA World Factbook – Burkina Faso
+- ONU / UNFPA – Démographie Burkina Faso 2025
+- Izard, Michel – "Le Yatenga précolonial"
+- Archives royales du Moogho Naaba (Ouagadougou)
+- Recensements burkinabés
+- Études anthropologiques sur les peuples du Burkina Faso
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Mossi
+- Identifiant peuple (PPL_) : PPL_MOSSI
+- Population : 11 500 000
+- Pourcentage dans le pays : 50%
+- Pourcentage en Afrique : N/A
+- Région : Plateau central du Burkina Faso (Ouagadougou, Yatenga, Tenkodogo)
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : mos
+
+### Peuple : Peul / Fulani
+- Identifiant peuple (PPL_) : PPL_FULA, PPL_FULANI
+- Population : 2 300 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Burkina Faso, Sahel (pasteurs nomades et sédentaires)
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Code ISO 639-3 (langue principale) : ful
+
+### Peuple : Gourmantché
+- Identifiant peuple (PPL_) : PPL_GOURMANTCHE
+- Population : 1 610 000
+- Pourcentage dans le pays : 7%
+- Pourcentage en Afrique : N/A
+- Région : Est du Burkina Faso (Fada N'Gourma)
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : gux
+
+### Peuple : Bobo
+- Identifiant peuple (PPL_) : PPL_BOBO
+- Population : 920 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Ouest du Burkina Faso
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : bwq
+
+### Peuple : Lobi / Birifor
+- Identifiant peuple (PPL_) : PPL_LOBI_BIRIFOR
+- Population : 1 150 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest du Burkina Faso, frontière avec la Côte d'Ivoire et le Ghana
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : lob, bfo
+
+### Peuple : Bissa
+- Identifiant peuple (PPL_) : PPL_BISSA
+- Population : 690 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Centre-sud du Burkina Faso
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Code ISO 639-3 (langue principale) : bib
+
+### Peuple : Gourounsi
+- Identifiant peuple (PPL_) : PPL_GOUROUNSI
+- Population : 690 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Centre-ouest du Burkina Faso
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : gur
+
+### Peuple : Dagara
+- Identifiant peuple (PPL_) : PPL_DAGARA
+- Population : 920 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest du Burkina Faso, frontière avec le Ghana
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : dga
+
+### Peuple : Senoufo
+- Identifiant peuple (PPL_) : PPL_SENUFO
+- Population : 690 000
+- Pourcentage dans le pays : 3%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest du Burkina Faso, frontière avec la Côte d'Ivoire et le Mali
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Code ISO 639-3 (langue principale) : syc
+
+### Peuple : Touareg
+- Identifiant peuple (PPL_) : PPL_TUAREG
+- Population : 230 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Burkina Faso, Sahara
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : taq
+
+### Autres peuples
+- Identifiant peuple (PPL_) : PPL_GURMA, autres
+- Population : 2 300 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Burkina Faso
+- Famille linguistique : Diverses (FLG_GUR, FLG_MANDE principalement)
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Burkina Faso 2025 : 23 000 000 (estimations ONU/UNFPA)**
+

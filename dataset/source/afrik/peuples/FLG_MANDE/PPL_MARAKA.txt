@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Maraka (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
 - Groupe ethno-linguistique : Mandé occidental
-- Région historique : Mali, Sénégal
-- Pays actuels : Mali, Sénégal
+- Région historique : MLI, SEN
+- Pays actuels : MLI, SEN
 - Identifiant peuple (ID) : PPL_MARAKA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Maraka sont originaires du Mali et du Sénégal, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Maraka sont originaires du Mali et du SEN, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones sahéliennes
@@ -74,7 +74,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Maraka language
-- CIA World Factbook – Mali, Senegal
+- CIA World Factbook – MLI, Senegal
 - Recensements maliens et sénégalais
 - Études anthropologiques sur les peuples mandé
 

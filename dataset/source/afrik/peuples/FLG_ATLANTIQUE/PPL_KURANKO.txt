@@ -3,7 +3,7 @@
 - Auto-appellation : Kuranko
 - Appellations historiques : parfois classé Mandé → classification mixte Atlantique/Mandé
 - Famille linguistique : Niger-Congo – Atlantique (classification AFRIK)
-- Région historique : Sierra Leone (Nord), Guinée (forêts)
+- Région historique : Sierra Leone (Nord), GIN (forêts)
 - Identifiant : PPL_KURANKO
 
 # 1. Ethnies incluses

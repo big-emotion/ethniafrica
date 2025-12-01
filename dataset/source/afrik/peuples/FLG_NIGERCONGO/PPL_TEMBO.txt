@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone J)
 - Région historique : RDC
-- Pays actuels : RDC
+- Pays actuels : COD
 - Identifiant peuple (ID) : PPL_TEMBO
 
 # 1. Ethnies incluses dans le peuple

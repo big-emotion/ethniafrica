@@ -7,8 +7,8 @@
   - « !Kung » (ancienne appellation, moins précise)
 - Famille linguistique principale : Khoïsan – Kx'a (FLG_KXA)
 - Groupe ethno-linguistique : Kx'a (Juu)
-- Région historique : Désert du Kalahari (nord-est de la Namibie, nord-ouest du Botswana)
-- Pays actuels : Namibie, Botswana
+- Région historique : Désert du Kalahari (nord-est de la NAM, nord-ouest du Botswana)
+- Pays actuels : NAM, BWA
 - Identifiant peuple (ID) : PPL_JUHOANSI
 
 # 1. Ethnies incluses dans le peuple

@@ -1,0 +1,43 @@
+{
+  "countryName": "Afrique du Sud",
+  "region": "afrique_australe",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "aucun nom unifié ; territoire composé de peuples Khoisan",
+        "Nguni",
+        "Sotho-Tswana",
+        "Venda et Tsonga"
+      ]
+    },
+    {
+      "period": "Noms utilisés par les navigateurs (1488–1652)",
+      "names": ["Cabo da Boa Esperança", "Terra dos Fumos", "Southern Africa"]
+    },
+    {
+      "period": "1652–1795",
+      "names": ["Dutch Cape Colony (Colonie du Cap)"]
+    },
+    {
+      "period": "1795–1910",
+      "names": ["British Cape Colony"]
+    },
+    {
+      "period": "XIXe siècle",
+      "names": ["États boers (Transvaal", "Orange Free State", "Natal)"]
+    },
+    {
+      "period": "1910–1961",
+      "names": ["Union of South Africa"]
+    },
+    {
+      "period": "Depuis 1961",
+      "names": ["Republic of South Africa"]
+    }
+  ],
+  "description": "Avant 1652, l’Afrique du Sud était un ensemble de sociétés autonomes : Khoisan (San et Khoikhoi), royaumes Nguni (proto-Zoulou, Xhosa, Swazi, Ndebele), chefferies Sotho-Tswana, royaumes Venda et Tsonga.\nLes navigateurs portugais nomment seulement le cap et les zones côtières. À partir de 1652, installation hollandaise au Cap, puis domination britannique. Les Boers fondent plusieurs républiques. L’union est créée en 1910 avant la République en 1961.",
+  "ethnicGroupsSummary": "- Nguni (~60–63 % des Black Africans) : Zoulous, Xhosa, Swazi, Ndebele, Hlubi.\n- Sotho-Tswana (~25–27 %) : Pedi, Sotho du Sud, Tswana.\n- Tsonga (Shangaan) : ~4 %.\n- Venda : ~2,5 %.\n- Khoisan : ~1 % (Khoikhoi + San).\n- Coloureds : ~9 %.\n- Blancs sud-africains : ~7 % (Afrikaners + anglophones).\n- Indian/Asian : ~2,7 %.",
+  "notes": "- Aucune entité politique unifiée avant 1910.\n- Les Khoisan sont les premiers habitants connus.\n- Les grandes migrations bantoues ont façonné la carte ethnique dès le Ier millénaire.",
+  "ethnicities": []
+}

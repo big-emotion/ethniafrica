@@ -4,7 +4,7 @@
 - Exonymes historiques : « Bedja » (forme européenne), « Blemmyes » (Antiquité)
 - Famille linguistique : Afro-asiatique – Couchitique
 - Groupe : Couchitique septentrional
-- Région historique : Soudan, Érythrée, Égypte
+- Région historique : SDN, ERI, EGY
 - ID : PPL_BEJA
 
 # 1. Ethnies incluses
@@ -30,7 +30,7 @@
 - Pastoralisme semi-nomade.
 
 # 6. Histoire
-- Interactions anciennes avec Axoum, Égypte, Arabes.
+- Interactions anciennes avec Axoum, EGY, Arabes.
 - Rôle stratégique en mer Rouge.
 
 # 7. Démographie

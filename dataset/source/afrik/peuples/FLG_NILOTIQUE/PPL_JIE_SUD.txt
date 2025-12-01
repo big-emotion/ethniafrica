@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique oriental
 - Région historique : Nord-est de l'Ouganda (région sud)
-- Pays actuels : Ouganda
+- Pays actuels : UGA
 - Identifiant peuple (ID) : PPL_JIE_SUD
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Communautés urbaines
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Jie du Sud sont originaires du nord-est de l'Ouganda, dans la région sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental, liés aux Jie du Nord.
+- Origines anciennes : Les Jie du Sud sont originaires du nord-est de l'UGA, dans la région sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental, liés aux Jie du Nord.
 - Routes migratoires : 
   - Migrations depuis les régions du Nil supérieur
   - Expansion vers le nord-est de l'Ouganda (région sud)

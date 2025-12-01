@@ -2,7 +2,7 @@
 - Nom principal : Kassena
 - Auto-appellation : Kassena / Kasena
 - Famille linguistique : Niger-Congo – Gur
-- Région historique : Burkina Faso (Tiébélé), Ghana (Upper East)
+- Région historique : Burkina Faso (Tiébélé), GHA (Upper East)
 - Identifiant : PPL_KASEENA
 
 # 1. Ethnies incluses

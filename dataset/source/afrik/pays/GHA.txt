@@ -1,0 +1,198 @@
+# Nom du pays
+- Nom officiel actuel : République du Ghana (Republic of Ghana)
+- Étymologie du nom : Le nom "Ghana" a été choisi lors de l'indépendance en 1957 en référence à l'empire du Ghana (Wagadu), un ancien empire ouest-africain (IIIe-XIIIe siècles). Cependant, l'empire historique du Ghana était situé en Mauritanie et au Mali actuels, pas dans le territoire du Ghana moderne. Le nom est donc symbolique et ne correspond pas à l'ancienne localisation de l'empire.
+- Personne / peuple / administration à l'origine du nom : Le nom "Ghana" a été choisi par Kwame Nkrumah et les nationalistes ghanéens lors de l'indépendance en 1957 pour honorer l'héritage historique de l'empire du Ghana, bien que l'empire historique ne se trouvait pas sur le territoire actuel.
+- Identifiant pays (ISO 3166-1 alpha-3) : GHA
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de royaumes Akan (Bono, Akwamu, Denkyira, Asante, Fante, Akuapem), peuples Ga-Dangme, Guan, Gur et Mandé sans nom unifié. L'empire du Ghana (Wagadu) était situé en Mauritanie/Mali, pas dans le Ghana actuel.
+- Moyen Âge : Développement des royaumes Akan (XIIIe-XIXe siècles). Royaume Ashanti (Asante) devient le plus puissant. Commerce avec les Européens (or, esclaves).
+- Époque précoloniale : Royaumes Akan puissants (Ashanti, Denkyira, Akwamu), peuples Ga-Dangme sur la côte, royaumes gur au nord (Dagomba, Mamprusi). Commerce côtier avec les Européens. Pas de nom unifié pour l'ensemble du territoire.
+- Colonisation : XVe-XIXe siècles : présence portugaise, néerlandaise puis britannique. Nom colonial : "Côte-de-l'Or" (Gold Coast). Le territoire est appelé "Gold Coast" par les colonisateurs européens.
+- Période contemporaine : Indépendance en 1957 sous le nom de "Ghana" (choisi en référence à l'empire historique). Le nom officiel en anglais est "Republic of Ghana".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaumes Akan] :
+  - Période : XIIIe - XIXe siècles
+  - Peuples dominants : Akan (Ashanti, Fante, Akyem, Akuapem, Denkyira)
+  - Centres politiques : Kumasi (capitale Ashanti), Cape Coast, Accra
+  - Rôle historique : Royaumes Akan puissants, commerce de l'or, résistance à la colonisation. Royaume Ashanti particulièrement puissant.
+
+- [Royaume Ashanti] :
+  - Période : XVIIe - XIXe siècles
+  - Peuples dominants : Ashanti (Akan)
+  - Centres politiques : Kumasi (capitale)
+  - Rôle historique : Royaume Akan le plus puissant, expansion territoriale, commerce de l'or, résistance aux Britanniques. Guerres anglo-ashanti (XIXe siècle).
+
+- [Royaumes Ga-Dangme] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Ga, Dangme
+  - Centres politiques : Accra, régions côtières
+  - Rôle historique : Peuples côtiers, commerce avec les Européens, présence historique à Accra.
+
+- [Royaumes gur] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Dagomba, Mamprusi
+  - Centres politiques : Nord
+  - Rôle historique : Royaumes gur liés aux Mossi et aux Mandé, organisation politique traditionnelle.
+
+- [Côte-de-l'Or] :
+  - Période : 1874 - 1957
+  - Peuples dominants : Tous les peuples ghanéens sous administration coloniale britannique
+  - Centres politiques : Accra (capitale coloniale), Cape Coast
+  - Rôle historique : Colonie britannique, résistance ghanéenne (guerres anglo-ashanti), mouvements nationalistes.
+
+- [République du Ghana] :
+  - Période : 1957 - présent
+  - Peuples dominants : Tous les peuples ghanéens
+  - Centres politiques : Accra (capitale)
+  - Rôle historique : Premier État indépendant d'Afrique subsaharienne (1957). Histoire politique avec alternance démocratique et régimes militaires. Développement économique, modèle de démocratie en Afrique.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Akan
+  - Auto-appellation (endonyme) : Akan
+  - Exonymes / appellations historiques : Akan (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_AKAN
+  - Région principale : Centre, Sud, Ouest
+  - Langues parlées : Akan (Twi, Fante), anglais
+  - Famille linguistique : FLG_NIGERCONGO (Kwa)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Akan" est neutre et accepté.
+
+- Peuple 2 :
+  - Nom : Mole-Dagbani
+  - Auto-appellation (endonyme) : Dagomba, Mamprusi
+  - Exonymes / appellations historiques : Mole-Dagbani (terme utilisé par les Européens), Dagomba, Mamprusi
+  - Identifiant peuple (PPL_) : PPL_DAGOMBA (à vérifier si fichier existe)
+  - Région principale : Nord
+  - Langues parlées : Dagbani, Mampruli, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Gur)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Mole-Dagbani" est neutre et accepté.
+
+- Peuple 3 :
+  - Nom : Ewe
+  - Auto-appellation (endonyme) : Eʋe / Eʋegbe
+  - Exonymes / appellations historiques : Ewe (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_EWE
+  - Région principale : Volta (Est)
+  - Langues parlées : Ewe, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Gbe)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Ewe" est neutre et accepté. L'auto-appellation "Eʋe" est préférée.
+
+- Peuple 4 :
+  - Nom : Ga-Dangme
+  - Auto-appellation (endonyme) : Gã / Ga (Ga), Dangme / Adaŋme (Dangme)
+  - Exonymes / appellations historiques : Ga-Dangme (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_GA_DANGME
+  - Région principale : Grande Accra
+  - Langues parlées : Ga, Dangme, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Ga-Dangme)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Ga-Dangme" est neutre et accepté. Les auto-appellations "Gã" et "Dangme" sont préférées.
+
+- Peuple 5 :
+  - Nom : Guan
+  - Auto-appellation (endonyme) : Guan
+  - Exonymes / appellations historiques : Guan (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_GUAN (à vérifier si fichier existe)
+  - Région principale : Centre
+  - Langues parlées : Guan, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Kwa)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Guan" est neutre et accepté.
+
+- Peuple 6 :
+  - Nom : Gurma
+  - Auto-appellation (endonyme) : Gurma
+  - Exonymes / appellations historiques : Gurma (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_GURMA
+  - Région principale : Nord-Est
+  - Langues parlées : Gurma, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Gur)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Gurma" est neutre et accepté.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Akan (aka) - langue véhiculaire nationale (Twi, Fante)
+  - Ewe (ewe) - langue régionale
+  - Ga (gaa) - langue régionale
+  - Dangme (ada) - langue régionale
+  - Dagbani (dag) - langue régionale
+  - Anglais - langue officielle
+  - Plus de 80 langues locales
+- Traditions culturelles : Musique traditionnelle (highlife, hiplife), danse traditionnelle, poésie orale, artisanat (kente, adinkra), architecture traditionnelle, festivals (Homowo, Akwasidae)
+- Religions dominantes : Christianisme (protestant majoritaire, catholique), islam (minorité, surtout au nord), croyances traditionnelles (syncrétisme)
+- Modes de vie : Vie principalement rurale, agriculture (cacao, or, pétrole, manioc, igname, riz), élevage (bovins, caprins), pêche (côtes), exploitation minière (or, diamants), commerce, urbanisation croissante
+- Organisation sociale : Système de chefferies traditionnelles (chieftaincy), structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des ancêtres, système de confréries religieuses
+- Relations régionales : Relations historiques avec les peuples du Togo, du Bénin, de la Côte d'Ivoire, du Burkina Faso. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par des groupes Akan, Ga-Dangme, Guan, Gur. Développement de royaumes indépendants.
+- Moyen Âge : Développement des royaumes Akan (XIIIe-XIXe siècles). Royaume Ashanti devient le plus puissant. Commerce de l'or avec les Européens.
+- Époque précoloniale : Apogée du royaume Ashanti (XVIIe-XIXe siècles). Expansion territoriale, commerce de l'or, résistance aux Britanniques. Guerres anglo-ashanti (XIXe siècle).
+- Colonisation : XVe siècle : premiers contacts portugais. XVIIe-XIXe siècles : présence néerlandaise, danoise, britannique. 1874 : Colonie britannique (Gold Coast). Résistance ghanéenne (guerres anglo-ashanti).
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1957. Kwame Nkrumah devient premier président. Premier État indépendant d'Afrique subsaharienne.
+- Période post-indépendance : Première République (1957-1966) : présidence de Nkrumah, socialisme africain. Régimes militaires (1966-1992). Quatrième République depuis 1992 : alternance démocratique, développement économique, modèle de démocratie en Afrique.
+
+# 7. Sources
+- CIA World Factbook – Ghana
+- SIL Ethnologue – Languages of Ghana
+- Recensements nationaux ghanéens
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples ghanéens
+- Études historiques sur le royaume Ashanti
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Akan
+- Identifiant peuple (PPL_) : PPL_AKAN
+- Population : 17 575 000
+- Pourcentage dans le pays : 47.5%
+- Pourcentage en Afrique : 1.23%
+- Région : Centre, Sud, Ouest
+- Famille linguistique : FLG_NIGERCONGO (Kwa)
+- Code ISO 639-3 (langue principale) : aka (Akan)
+
+### Peuple : Mole-Dagbani
+- Identifiant peuple (PPL_) : PPL_DAGOMBA (à vérifier)
+- Population : 6 160 000
+- Pourcentage dans le pays : 16.6%
+- Pourcentage en Afrique : 0.43%
+- Région : Nord
+- Famille linguistique : FLG_NIGERCONGO (Gur)
+- Code ISO 639-3 (langue principale) : dag (Dagbani)
+
+### Peuple : Ewe
+- Identifiant peuple (PPL_) : PPL_EWE
+- Population : 5 140 000
+- Pourcentage dans le pays : 13.9%
+- Pourcentage en Afrique : 0.36%
+- Région : Volta (Est)
+- Famille linguistique : FLG_NIGERCONGO (Gbe)
+- Code ISO 639-3 (langue principale) : ewe (Ewe)
+
+### Peuple : Ga-Dangme
+- Identifiant peuple (PPL_) : PPL_GA_DANGME
+- Population : 2 740 000
+- Pourcentage dans le pays : 7.4%
+- Pourcentage en Afrique : 0.19%
+- Région : Grande Accra
+- Famille linguistique : FLG_NIGERCONGO (Ga-Dangme)
+- Code ISO 639-3 (langue principale) : gaa (Ga), ada (Dangme)
+
+### Peuple : Guan
+- Identifiant peuple (PPL_) : PPL_GUAN (à vérifier)
+- Population : 1 630 000
+- Pourcentage dans le pays : 4.4%
+- Pourcentage en Afrique : 0.11%
+- Région : Centre
+- Famille linguistique : FLG_NIGERCONGO (Kwa)
+- Code ISO 639-3 (langue principale) : gua (Guan)
+
+### Peuple : Gurma
+- Identifiant peuple (PPL_) : PPL_GURMA
+- Population : 1 170 000
+- Pourcentage dans le pays : 3.2%
+- Pourcentage en Afrique : 0.08%
+- Région : Nord-Est
+- Famille linguistique : FLG_NIGERCONGO (Gur)
+- Code ISO 639-3 (langue principale) : gux (Gurma)
+

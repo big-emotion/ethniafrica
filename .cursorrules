@@ -1,5 +1,5 @@
 # RÈGLES DU PROJET AFRIK - ETHNIAFRICA
-# Version 1.0 - Règles automatiques pour génération de fichiers AFRIK
+# Version 2.0 - Règles automatiques pour génération de fichiers AFRIK (Simplifié)
 
 ## CONTEXTE DU PROJET
 
@@ -7,12 +7,14 @@ Ce projet génère des fichiers de données ethnographiques et linguistiques sur
 
 ## STRUCTURE DES DOSSIERS
 
-- Modèles de référence : `/public/modele-*.txt` (modele-pays.txt, modele-peuple.txt, modele-ethnie.txt, modele-linguistique.txt)
+- Modèles de référence : `/public/modele-*.txt` (modele-pays.txt, modele-peuple.txt, modele-linguistique.txt)
 - Fichiers générés : `/dataset/source/afrik/`
   - Familles linguistiques : `/dataset/source/afrik/famille_linguistique/FLG_*.txt`
   - Peuples : `/dataset/source/afrik/peuples/FLG_*/PPL_*.txt` (organisés par famille linguistique)
+  - Pays : `/dataset/source/afrik/pays/` (à créer)
 - CSV démographiques : `/public/*.csv` et `/dataset/source/afrik/peuples/*.csv`
 - Documentation : `/public/INSTRUCTIONS_AFRIK.txt`, `/public/PRÉREQUIS_AFRIK.txt`, `/public/WORKFLOW_AFRIK_STATUS.md`
+- Archive : `/dataset/source/archive/` (ethnies, sous-ethnies, clans, ambigus - données non essentielles)
 
 ## RÈGLE D'ACTIVATION AUTOMATIQUE
 
@@ -23,9 +25,7 @@ Lorsque l'utilisateur demande :
 - "Génère le peuple X" / "Fais-moi la fiche du peuple X"
   → Générer un fichier `.txt` basé STRICTEMENT sur `modele-peuple.txt`
   → Placer dans `/dataset/source/afrik/peuples/FLG_*/PPL_*.txt` (dossier correspondant à la famille linguistique)
-
-- "Génère l'ethnie X" / "Fais-moi la fiche de l'ethnie X"
-  → Générer un fichier `.txt` basé STRICTEMENT sur `modele-ethnie.txt`
+  → Mettre l'accent sur les origines, migrations et appellations (exonymes/endonymes)
 
 - "Génère la famille linguistique X" / "Fais-moi la fiche de la famille linguistique X"
   → Générer un fichier `.txt` basé STRICTEMENT sur `modele-linguistique.txt`
@@ -51,21 +51,17 @@ Chaque fichier TXT doit inclure les identifiants suivants lorsqu'ils existent :
 - ID famille linguistique : `FLG_xxxxx` (ex: FLG_BANTU)
 - ID langue : code ISO 639-3 (ex: swa, lin, kin)
 - ID peuple : `PPL_xxxxx` (ex: PPL_COMORIEN)
-- ID ethnie : `ETH_xxxxx` (ex: ETH_LUBA)
-- ID sous-ethnie : `SUB_xxxxx` (ex: SUB_LUBA_KASAI)
-- ID clan : `CLN_xxxxx` (ex: CLN_BAVOVOKO)
 - ID pays : ISO 3166-1 alpha-3 (ex: COM, ZAF, CMR)
 
 Les CSV DOIVENT utiliser les mêmes identifiants.
 
 ## HIÉRARCHIE AFRIK
 
-Respecter strictement la hiérarchie :
+Respecter strictement la hiérarchie simplifiée :
 1. Famille linguistique (FLG_)
-2. Peuple (PPL_)
-3. Ethnie (ETH_)
-4. Sous-ethnie (SUB_)
-5. Clan (CLN_)
+2. Langue (code ISO 639-3)
+3. Peuple (PPL_)
+4. Pays (ISO 3166-1 alpha-3)
 
 ## TERMES PÉJORATIFS / COLONIAUX (OBLIGATOIRE)
 
@@ -81,15 +77,16 @@ Si un terme historique est péjoratif, colonial, imposé, raciste ou problémati
 Sections concernées :
 - "Appellations historiques"
 - "Exonymes et termes coloniaux"
-- "Groupes ethniques majeurs"
+- "Auto-appellation" (endonyme)
+- "Exonymes / appellations historiques"
 
 ## RECHERCHE WEB (OBLIGATOIRE)
 
 AUCUNE donnée ne doit être inventée. TOUJOURS effectuer une recherche web pour :
-- Nom du pays/peuple/ethnie/famille linguistique
-- Appellations historiques
+- Nom du pays/peuple/famille linguistique
+- Appellations historiques (exonymes et endonymes)
+- Origines et migrations
 - Royaumes, civilisations, dynasties
-- Groupes ethniques et sous-groupes
 - Langues et codes ISO 639-3
 - Démographie (ONU, UNFPA, CIA, SIL)
 - Sources académiques
@@ -99,12 +96,11 @@ Utiliser le navigateur si nécessaire pour trouver des informations fiables.
 ## DÉMOGRAPHIE : MÉTHODOLOGIE AFRIK
 
 1. Utiliser les chiffres ONU / UNFPA pour les populations nationales (année 2025)
-2. Utiliser les % ethniques des sources fiables (CIA, SIL, UNESCO, recherches anthropologiques)
-3. La somme des ethnies d'un pays = EXACTEMENT 100%
+2. Utiliser les % des peuples par pays des sources fiables (CIA, SIL, UNESCO, recherches anthropologiques)
+3. La somme des peuples d'un pays = EXACTEMENT 100%
 4. Remplir les CSV correspondants :
    - `famille_linguistique.csv`
    - `peuple_demographie_globale.csv`
-   - `ethnie_demographie_par_pays.csv`
    - `pays_demographie.csv`
 5. Corriger automatiquement si incohérence détectée
 6. Toujours inclure : population, pourcentage (si applicable), source, année 2025
@@ -114,8 +110,7 @@ Utiliser le navigateur si nécessaire pour trouver des informations fiables.
 CSV officiels à maintenir :
 1. `famille_linguistique.csv`
 2. `peuple_demographie_globale.csv`
-3. `ethnie_demographie_par_pays.csv`
-4. `pays_demographie.csv`
+3. `pays_demographie.csv`
 
 Chaque entrée doit contenir :
 - identifiant
@@ -139,12 +134,10 @@ Respecter l'ordre obligatoire :
 1. Familles linguistiques
 2. Langues
 3. Peuples
-4. Ethnies
-5. Sous-ethnies & clans
-6. Pays
-7. Démographies CSV
-8. Validation
-9. Publication
+4. Pays
+5. Démographies CSV
+6. Validation
+7. Publication
 
 ## FICHIERS DE SUIVI (OBLIGATOIRES)
 
@@ -172,7 +165,7 @@ Toujours citer les sources dans la section "Sources" de chaque fichier.
 Fichiers TXT :
 - Familles linguistiques : `FLG_xxxxx.txt` (ex: FLG_BANTU.txt)
 - Peuples : `PPL_xxxxx.txt` (ex: PPL_COMORIEN.txt)
-- Ethnies : `ETH_xxxxx.txt` (ex: ETH_LUBA.txt)
+- Pays : `[code ISO 3166-1 alpha-3].txt` (ex: COM.txt, ZAF.txt)
 
 ID : MAJUSCULES, sans espaces, underscore pour séparer
 
@@ -195,7 +188,7 @@ CSV :
 L'agent doit :
 - Avertir si une étape est tentée hors workflow
 - Détecter les identifiants manquants et les proposer
-- Proposer des regroupements si un pays a trop d'ethnies
+- Mettre l'accent sur les origines, migrations et appellations (exonymes/endonymes)
 - Signaler les incohérences
 - Proposer les corrections automatiquement
 

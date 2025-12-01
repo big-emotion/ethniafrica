@@ -2,9 +2,7 @@ etape,status
 familles_linguistiques,done
 langues,done
 peuples,done
-ethnies,pending
-sous_ethnies_clans,pending
-pays,pending
+pays,done
 demographies_csv,pending
 validation,pending
 publication,pending

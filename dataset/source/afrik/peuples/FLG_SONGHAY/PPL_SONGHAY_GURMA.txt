@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Songhay Gurma (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Songhay (FLG_SONGHAY)
 - Groupe ethno-linguistique : Songhay
-- Région historique : Burkina Faso, Bénin
-- Pays actuels : Burkina Faso, Bénin
+- Région historique : BFA, BEN
+- Pays actuels : BFA, BEN
 - Identifiant peuple (ID) : PPL_SONGHAY_GURMA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Songhay Gurma sont originaires du Burkina Faso et du Bénin, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Songhay Gurma sont originaires du Burkina Faso et du BEN, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long du fleuve Niger
@@ -74,7 +74,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Songhay Gurma language
-- CIA World Factbook – Burkina Faso, Benin
+- CIA World Factbook – BFA, Benin
 - Recensements nationaux
 - Études anthropologiques sur les peuples songhay
 

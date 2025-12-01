@@ -1,0 +1,140 @@
+{
+  "countryName": "Djibouti",
+  "region": "afrique_de_l_est",
+  "countryDescription": {
+    "countryName": "Djibouti",
+    "region": "afrique_de_l_est",
+    "ancientNames": [
+      {
+        "period": "Avant la colonisation",
+        "names": [
+          "territoires Afar et Somali (Issa",
+          "Gadabursi",
+          "Isaaq) sans État unifié"
+        ]
+      },
+      {
+        "period": "1977",
+        "names": ["Indépendance → République de Djibouti"]
+      }
+    ],
+    "description": "Territoire structuré par les peuples afars (anciennes chefferies Adal/Dankali) et les somalis (Issa, Gadabursi, Isaaq). La France fonde Djibouti-ville, puis un État moderne émerge à l’indépendance.",
+    "ethnicities": []
+  },
+  "ethnicities": [
+    {
+      "groupName": "Somali",
+      "subGroups": [
+        {
+          "name": "Issa",
+          "population": 450000,
+          "percentageInCountry": 41,
+          "percentageInAfrica": 0
+        },
+        {
+          "name": "Gadabursi",
+          "population": 120000,
+          "percentageInCountry": 11,
+          "percentageInAfrica": 0
+        },
+        {
+          "name": "Isaaq",
+          "population": 80000,
+          "percentageInCountry": 7,
+          "percentageInAfrica": 0
+        }
+      ],
+      "population": 650000,
+      "percentageInCountry": 59,
+      "percentageInAfrica": 0,
+      "languages": ["Somali"],
+      "region": "Sud, Ouest (Djibouti-ville, Dikhil), Nord-Ouest, Zones urbaines",
+      "sources": ["EthnoAtlas", "UN Data", "Djibouti Stat 2024"],
+      "ancientName": "Issa clans",
+      "description": "Sous-clan somali majoritaire, influent politiquement",
+      "societyType": "Pastorale nomade",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Couchitique",
+      "historicalStatus": "Autochtone",
+      "regionalPresence": ["Somalie", "Ethiopie", "Somaliland"],
+      "isGroupWithSubgroups": true,
+      "matchedSubgroups": [
+        {
+          "name": "Issa",
+          "population": 450000,
+          "percentageInCountry": 41,
+          "percentageInAfrica": 0
+        },
+        {
+          "name": "Gadabursi",
+          "population": 120000,
+          "percentageInCountry": 11,
+          "percentageInAfrica": 0
+        },
+        {
+          "name": "Isaaq",
+          "population": 80000,
+          "percentageInCountry": 7,
+          "percentageInAfrica": 0
+        }
+      ]
+    },
+    {
+      "groupName": "Afar",
+      "subGroups": [],
+      "population": 380000,
+      "percentageInCountry": 35,
+      "percentageInAfrica": 0,
+      "languages": ["Afar"],
+      "region": "Nord et Centre",
+      "sources": ["UN Data"],
+      "ancientName": "Adal, Dankali",
+      "description": "Peuple fondateur des anciens sultanats afar",
+      "societyType": "Pastorale nomade",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Couchitique",
+      "historicalStatus": "Autochtone",
+      "regionalPresence": ["Éthiopie", "Érythrée"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Arabes",
+      "subGroups": [],
+      "population": 35000,
+      "percentageInCountry": 3,
+      "percentageInAfrica": 0,
+      "languages": ["Arabe"],
+      "region": "Djibouti-ville",
+      "sources": ["EthnoAtlas"],
+      "ancientName": "Hadramout",
+      "description": "Commerçants et familles religieuses arabes",
+      "societyType": "Urbaine",
+      "religion": "Islam sunnite",
+      "linguisticFamily": "Sémitique",
+      "historicalStatus": "Migrants historiques",
+      "regionalPresence": ["Yémen"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    },
+    {
+      "groupName": "Autres",
+      "subGroups": [],
+      "population": 25000,
+      "percentageInCountry": 2,
+      "percentageInAfrica": 0,
+      "languages": ["Divers"],
+      "region": "Djibouti-ville",
+      "sources": ["Djibouti Stat"],
+      "ancientName": "—",
+      "description": "Migrants et minorités récentes",
+      "societyType": "Urbaine",
+      "religion": "Divers",
+      "linguisticFamily": "—",
+      "historicalStatus": "Minorités modernes",
+      "regionalPresence": ["Afrique de l'Est"],
+      "isGroupWithSubgroups": false,
+      "matchedSubgroups": []
+    }
+  ]
+}

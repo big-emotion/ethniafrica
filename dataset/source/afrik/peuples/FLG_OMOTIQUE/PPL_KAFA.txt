@@ -5,7 +5,7 @@
 - Famille linguistique : Afro-asiatique – Omotique
 - Groupe : Omotique sud
 - Région historique : Kaffa Zone (Éthiopie), hauteurs du sud-ouest
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - Identifiant peuple : PPL_KAFA
 
 # 1. Ethnies incluses

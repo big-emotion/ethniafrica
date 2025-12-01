@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe ethno-linguistique : Bantous du littoral et du centre camerounais
 - Région historique : Nyong-et-Kellé, Sanaga-Maritime, Nkam et zones voisines (Centre et Littoral)
-- Pays actuels : Cameroun
+- Pays actuels : CMR
 - Identifiant peuple (ID) : PPL_BASSA_CAM
 
 # 1. Ethnies incluses dans le peuple

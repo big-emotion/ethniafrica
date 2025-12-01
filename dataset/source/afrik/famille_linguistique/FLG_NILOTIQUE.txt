@@ -42,9 +42,9 @@
   >10 millions
 
 # 2. Peuples associés
-- Peuple 1 : Dinka
-- Peuple 2 : Nuer
-- Peuple 3 : Maasai
+- Peuple 1 : Dinka (PPL_DINKA)
+- Peuple 2 : Nuer (PPL_NUER)
+- Peuple 3 : Maasai (PPL_MAASAI)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Dinka  

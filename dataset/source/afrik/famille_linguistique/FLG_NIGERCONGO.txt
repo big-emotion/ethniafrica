@@ -45,9 +45,9 @@
   ~600 millions
 
 # 2. Peuples associés
-- Peuple 1 : Yoruba
-- Peuple 2 : Igbo
-- Peuple 3 : Akan
+- Peuple 1 : Yoruba (PPL_YORUBA)
+- Peuple 2 : Igbo (PPL_IGBO)
+- Peuple 3 : Akan (PPL_AKAN)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Yoruba

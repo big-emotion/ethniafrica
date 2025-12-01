@@ -7,8 +7,8 @@
   - « San » (terme générique, parfois utilisé)
 - Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
 - Groupe ethno-linguistique : Khoe
-- Région historique : Botswana, Namibie
-- Pays actuels : Botswana, Namibie
+- Région historique : BWA, NAM
+- Pays actuels : BWA, NAM
 - Identifiant peuple (ID) : PPL_KXOE
 
 # 1. Ethnies incluses dans le peuple
@@ -17,7 +17,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Kxoe sont originaires du Botswana et de la Namibie, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.
+- Origines anciennes : Les Kxoe sont originaires du Botswana et de la NAM, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones désertiques
@@ -77,7 +77,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Kxoe language (xuu)
-- CIA World Factbook – Botswana, Namibia
+- CIA World Factbook – BWA, Namibia
 - Recensements nationaux
 - Études anthropologiques sur les peuples khoisan
 

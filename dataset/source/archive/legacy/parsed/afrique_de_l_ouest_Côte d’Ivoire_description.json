@@ -1,0 +1,41 @@
+{
+  "countryName": "Côte d’Ivoire",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "royaumes Akan (Baoulé",
+        "Agni",
+        "Abron)",
+        "peuples Krou (Bété",
+        "Wé",
+        "Dida)",
+        "Mandé du Nord (Malinké",
+        "Dioula)",
+        "Mandé du Sud (Dan",
+        "Gouro",
+        "Wan)",
+        "peuples voltaiques (Sénoufo",
+        "Lobi",
+        "Koulango)"
+      ]
+    },
+    {
+      "period": "XVe siècle",
+      "names": ["Côte d", "(Costa do Marfim), lié au commerce de l"]
+    },
+    {
+      "period": "1893",
+      "names": ["Colonie de Côte d’Ivoire (AOF)"]
+    },
+    {
+      "period": "Depuis 1960",
+      "names": ["République de Côte d’Ivoire (nom non traduit)"]
+    }
+  ],
+  "description": "",
+  "ethnicGroupsSummary": "- Akan (~42 %) : Baoulé, Agni, Abron, Attié.\n- Voltaïques / Gur (~17 %) : Sénoufo, Lobi, Koulango.\n- Mandé du Nord (~16 %) : Malinké, Dioula, Bambara.\n- Mandé du Sud (~10 %) : Dan/Yacouba, Gouro, Wan.\n- Krou (~11 %) : Bété, Dida, Wé (Guéré, Wobé).\n- Autres (~4 %) : migrants régionaux et groupes urbains.",
+  "notes": "- Les Baoulé forment l’un des groupes les plus influents du pays.",
+  "ethnicities": []
+}

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone G)
 - Région historique : Côte est de l'Afrique
-- Pays actuels : Somalie
+- Pays actuels : SOM
 - Identifiant peuple (ID) : PPL_SWAHILI_SOMALIE
 
 # 1. Ethnies incluses dans le peuple
@@ -19,7 +19,7 @@
   - Migrations depuis les régions bantoues
   - Expansion vers la côte est de l'Afrique
   - Déplacements vers les zones urbaines
-- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Swahili de Tanzanie, du Kenya et du Mozambique.
+- Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Swahili de TZA, du Kenya et du Mozambique.
 - Influences externes : Contacts avec les commerçants arabes, indiens et européens, influence de l'islam.
 
 # 3. Organisation et structure interne

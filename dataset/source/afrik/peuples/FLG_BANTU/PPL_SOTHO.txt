@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Sotho (terme utilisé par les Européens), Basotho
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Lesotho, Afrique du Sud
-- Pays actuels : Lesotho, Afrique du Sud
+- Région historique : LSO, Afrique du Sud
+- Pays actuels : LSO, Afrique du Sud
 - Identifiant peuple (ID) : PPL_SOTHO
 
 # 1. Ethnies incluses dans le peuple
@@ -77,7 +77,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Sotho language (sot)
-- CIA World Factbook – Lesotho, South Africa
+- CIA World Factbook – LSO, South Africa
 - Recensements nationaux
 - Études anthropologiques sur les peuples bantous
 - Études historiques sur le royaume du Lesotho

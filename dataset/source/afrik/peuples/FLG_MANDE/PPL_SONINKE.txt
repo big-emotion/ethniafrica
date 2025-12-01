@@ -3,7 +3,7 @@
 - Auto-appellation : Soninke / Sooninke
 - Exonymes historiques : Sarakolé (terme utilisé mais perçu comme extérieur ; non péjoratif mais moins préféré)
 - Famille linguistique : Niger-Congo – Mandé
-- Région historique : Mauritanie, Mali, Sénégal
+- Région historique : MRT, MLI, SEN
 - Identifiant : PPL_SONINKE
 
 # 1. Ethnies incluses

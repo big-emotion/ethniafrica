@@ -4,7 +4,7 @@
 - Exonymes historiques : Vey (ancienne forme anglophone, non péjorative)
 - Famille linguistique principale : Niger-Congo – Mandé (occidental)
 - Région historique : Côte ouest du Liberia et Sierra Leone (région littorale)
-- Pays actuels : Liberia (principal), Sierra Leone
+- Pays actuels : LBR (principal), SLE
 - Identifiant peuple : PPL_VAI
 
 # 1. Ethnies incluses dans le peuple

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Daza (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
 - Groupe ethno-linguistique : Saharien (Toubou)
-- Région historique : Tchad, Niger
-- Pays actuels : Tchad, Niger
+- Région historique : TCD, NER
+- Pays actuels : TCD, NER
 - Identifiant peuple (ID) : PPL_DAZA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Daza sont originaires du Tchad et du Niger, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Toubou.
+- Origines anciennes : Les Daza sont originaires du Tchad et du NER, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Toubou.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones désertiques
@@ -74,7 +74,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Daza language (dzg)
-- CIA World Factbook – Chad, Niger
+- CIA World Factbook – Chad, NER
 - Recensements nationaux
 - Études anthropologiques sur les peuples sahariens
 

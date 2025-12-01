@@ -41,9 +41,9 @@
   ~3 millions
 
 # 2. Peuples associés
-- Peuple 1 : Bété
-- Peuple 2 : Dida
-- Peuple 3 : Grebo
+- Peuple 1 : Bété (PPL_BETE)
+- Peuple 2 : Dida (PPL_DIDA)
+- Peuple 3 : Grebo (PPL_GREBO)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Bété  

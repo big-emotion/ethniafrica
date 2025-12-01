@@ -1,0 +1,359 @@
+{
+  "countryCode": "CIV",
+  "countryName": "République de Côte d'Ivoire",
+  "peoples": [
+    {
+      "name": "Baoulé",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Agni",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Abron",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Attié",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Abouré",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Adioukrou",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Abé",
+      "alternativeNames": ["Abbey"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Ebrié",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Abidji",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Nzima",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Ehotilé",
+      "alternativeNames": ["Bétibé", "Mekyibo"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Alladian",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Akyé",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    },
+    {
+      "name": "Anyi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Yohouré",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Centre",
+      "source": "web_search"
+    },
+    {
+      "name": "Sénufo",
+      "alternativeNames": ["Sénoufo"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_GUR",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Lobi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_GUR",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Koulango",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_GUR",
+      "region": "Nord-Est",
+      "source": "web_search"
+    },
+    {
+      "name": "Malinké",
+      "alternativeNames": ["Maninka", "Mandinka"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Dioula",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord",
+      "source": "web_search"
+    },
+    {
+      "name": "Bambara",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mahouka",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Nord-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Dan",
+      "alternativeNames": ["Yacouba"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Gouro",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Wan",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Gban",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Guro",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Mano",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Toura",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_MANDE",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Bété",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Centre-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Wé",
+      "alternativeNames": ["Guéré", "Wobé"],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Dida",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Centre-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kru",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Aizi",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Bakwé",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kodia Krou",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Wonnin",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Godié",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Neyo",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Niaboua",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kouzié",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_KROU",
+      "region": "Sud-Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Diola",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_ATLANTIQUE",
+      "region": "Ouest",
+      "source": "web_search"
+    },
+    {
+      "name": "Kwa",
+      "alternativeNames": [],
+      "type": "ethnie",
+      "familyLinguistic": "FLG_BENOUECONGO",
+      "region": "Sud",
+      "source": "web_search"
+    }
+  ],
+  "timestamp": "2025-11-30T19:36:06.096Z",
+  "sourcesUsed": ["web_search"],
+  "sourcesPending": [
+    "CIA World Factbook",
+    "Ethnologue",
+    "UNESCO",
+    "IWGIA",
+    "Encyclopaedia Africana"
+  ]
+}

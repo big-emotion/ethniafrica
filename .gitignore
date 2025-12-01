@@ -70,7 +70,6 @@ Thumbs.db
 # Dataset
 dataset/*
 !dataset/source/
-dataset/source/*
 !dataset/source/**/*
 # Ignorer les fichiers système dans dataset
 dataset/**/.DS_Store

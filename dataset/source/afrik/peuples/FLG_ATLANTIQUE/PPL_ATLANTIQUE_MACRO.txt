@@ -3,7 +3,7 @@
 - Auto-appellation : Diverses selon les sous-groupes
 - Appellations historiques : « Sénégambien » (terme large non péjoratif)
 - Famille linguistique : Niger-Congo – Atlantique
-- Région principale : Sénégal, Gambie, Guinée-Bissau, Guinée, Sierra Leone
+- Région principale : SEN, GMB, GIN-Bissau, GIN, SLE
 - Identifiant : PPL_ATLANTIQUE_MACRO
 
 # 1. Ethnies incluses

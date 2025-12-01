@@ -3,7 +3,7 @@
 - Auto-appellation : Limba
 - Famille linguistique : Niger-Congo – Atlantique
 - Région historique : Sierra Leone (Nord)
-- Pays actuels : Sierra Leone
+- Pays actuels : SLE
 - Identifiant : PPL_LIMBA
 
 # 1. Ethnies incluses

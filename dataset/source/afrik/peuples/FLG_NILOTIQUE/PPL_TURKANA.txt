@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique oriental
 - Région historique : Nord-ouest du Kenya
-- Pays actuels : Kenya
+- Pays actuels : KEN
 - Identifiant peuple (ID) : PPL_TURKANA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Turkana sont originaires du nord-ouest du Kenya, dans la région aride du Rift est-africain. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
+- Origines anciennes : Les Turkana sont originaires du nord-ouest du KEN, dans la région aride du Rift est-africain. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.
 - Routes migratoires : 
   - Migrations depuis les régions du Nil supérieur
   - Expansion vers le nord-ouest du Kenya

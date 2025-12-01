@@ -1,0 +1,43 @@
+{
+  "countryName": "Liberia",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "territoires Kpelle",
+        "Bassa",
+        "Grebo",
+        "Kru",
+        "Vai",
+        "Gio",
+        "Mano",
+        "Dei",
+        "Gola",
+        "Kissi ; aucun État national unifié"
+      ]
+    },
+    {
+      "period": "XVIe–XVIIIe siècle",
+      "names": ["Grain Coast"]
+    },
+    {
+      "period": "XIXe siècle",
+      "names": ["implantation de la American Colonization Society (ACS)"]
+    },
+    {
+      "period": "1822",
+      "names": ["Liberia"]
+    },
+    {
+      "period": "1847",
+      "names": ["Indépendance du Liberia (première république noire d’Afrique)"]
+    },
+    {
+      "period": "Nom officiel depuis 1847",
+      "names": ["Republic of Liberia"]
+    }
+  ],
+  "description": "",
+  "ethnicities": []
+}

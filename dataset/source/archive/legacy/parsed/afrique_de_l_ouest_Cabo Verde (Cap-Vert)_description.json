@@ -1,0 +1,40 @@
+{
+  "countryName": "Cabo Verde (Cap-Vert)",
+  "region": "afrique_de_l_ouest",
+  "ancientNames": [
+    {
+      "period": "Avant le XVe siècle",
+      "names": [
+        "les îles étaient inhabitées (aucune population autochtone connue)"
+      ]
+    },
+    {
+      "period": "1456–1462",
+      "names": ["Découverte par des navigateurs portugais et génois"]
+    },
+    {
+      "period": "1462",
+      "names": ["Début de la colonisation portugaise"]
+    },
+    {
+      "period": "XVIe–XVIIIe siècles",
+      "names": ["centre majeur de traite atlantique (île de Santiago)"]
+    },
+    {
+      "period": "1956–1973",
+      "names": ["Lutte pour l’indépendance (PAIGC)"]
+    },
+    {
+      "period": "1975",
+      "names": ["República de Cabo Verde"]
+    },
+    {
+      "period": "2013",
+      "names": ["Nom officiel international normalisé : Cabo Verde"]
+    }
+  ],
+  "description": "Les îles étaient vierges jusqu’à l’arrivée des Portugais. Dès le XVe siècle, un peuplement métissé apparaît : européens (portugais) et africains (principalement wolof, mandinka, balante, peul, bijagó). Les îles deviennent une plaque tournante de la traite. La société créole se forme très tôt. L’indépendance est obtenue en 1975.",
+  "ethnicGroupsSummary": "- Caboverdiens / Crioulos (~99 %) : population métissée afro‑européenne ; identité créole forte ; langues : portugais + crioulo (kriolu).\nSous‑ensembles régionaux :\n• Santome / Santiago Creoles\n• Barlavento Creoles (São Vicente, Santo Antão…)\n• Sotavento Creoles (Santiago, Fogo, Maio, Brava)\n- Africains d’origine récente (~1 %) : migrants de la CEDEAO (Guinée-Bissau, Sénégal, Nigéria, Ghana…).",
+  "notes": "- Le Cap-Vert est l’un des rares pays africains historiquement non peuplés avant la colonisation.\n- L’identité nationale est fondée sur la créolisation afro‑lusophone.\n- La linguistique distingue plusieurs variétés de Kriolu (Barlavento / Sotavento).",
+  "ethnicities": []
+}

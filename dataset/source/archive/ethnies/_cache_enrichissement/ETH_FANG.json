@@ -1,0 +1,51 @@
+{
+  "ETH_ID": "ETH_FANG",
+  "timestamp": "2025-01-25T21:05:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/fang1246",
+      "data": {
+        "langue": "Fang",
+        "code_iso": "fan",
+        "famille": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Northwest Bantu > Bube-Fang",
+        "pays": [
+          "Gabon",
+          "Guinée équatoriale",
+          "Cameroun",
+          "République du Congo"
+        ],
+        "region": "Afrique centrale",
+        "glottocode": "fang1246",
+        "auto_appellation": "Fang"
+      },
+      "timestamp": "2025-01-25T21:05:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/fan",
+      "data": {
+        "langue": "Fang",
+        "code_iso": "fan",
+        "famille": "Niger-Congo",
+        "pays": [
+          "Gabon",
+          "Equatorial Guinea",
+          "Cameroon",
+          "Republic of the Congo"
+        ],
+        "auto_appellation": "Fang"
+      },
+      "timestamp": "2025-01-25T21:05:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "fan",
+    "langue_principale": "Fang",
+    "famille_linguistique": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Northwest Bantu > Bube-Fang",
+    "pays_principaux": ["Gabon"],
+    "region_generale": "Afrique centrale",
+    "auto_appellation": "Fang"
+  }
+}

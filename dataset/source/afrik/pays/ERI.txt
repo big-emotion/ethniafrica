@@ -1,0 +1,239 @@
+# Nom du pays
+- Nom officiel actuel : État d'Érythrée (State of Eritrea, Hagere Ertra)
+- Étymologie du nom : Le nom "Érythrée" vient du grec "Erythraia" (Ἐρυθραία), dérivé de "Mare Erythraeum" (mer Érythrée), nom donné par les Grecs à la mer Rouge. Le terme signifie "rouge" en grec, en référence à la couleur de la mer Rouge. Les Italiens ont adopté ce nom pour leur colonie en 1890.
+- Personne / peuple / administration à l'origine du nom : Le nom "Érythrée" a été donné par les Italiens lors de la création de la colonie italienne en 1890, en référence à la "mer Érythrée" (mer Rouge) mentionnée par les Grecs anciens. Le nom a été officialisé à l'indépendance en 1993.
+- Identifiant pays (ISO 3166-1 alpha-3) : ERI
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Partie du royaume d'Aksoum (Axumite Empire). Le territoire était intégré dans l'empire aksoumite, centre de la civilisation éthiopienne ancienne.
+- Moyen Âge : Provinces tigrigna et afar liées à l'Éthiopie historique. Développement des royaumes et chefferies du haut plateau (Tigrinya), zones Beja (Bilen, Hedareb), et peuples Afar du littoral.
+- Époque précoloniale : XVe-XVIIIe siècle : entités Beja (Beni Amer, Hadarib). Mosaïque de royaumes et chefferies : royaumes tigrigna (haut plateau), chefferies Beja (centre), peuples Afar (littoral). Pas de nom unifié pour l'ensemble du territoire.
+- Colonisation : 1890-1941 : Colonie italienne "Eritrea" (nom dérivé de Mare Erythraeum : "mer Érythrée" / mer Rouge). Les Italiens ont créé la colonie d'Érythrée en 1890. 1941-1952 : Administration britannique (après la défaite italienne). 1952-1962 : Fédération Éthiopie-Érythrée (autonomie sous l'Éthiopie). 1962-1991 : Annexion par l'Éthiopie, province éthiopienne.
+- Période contemporaine : 1991 : Libération de l'Érythrée par le Front populaire de libération de l'Érythrée (FPLE). 1993 : Indépendance de l'Érythrée (24 mai 1993), proclamation de l'État d'Érythrée (State of Eritrea).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume d'Aksoum] :
+  - Période : Antiquité - VIIe siècle
+  - Peuples dominants : Tigrinya, Tigré, autres peuples érythréens
+  - Centres politiques : Aksoum (capitale historique, aujourd'hui en Éthiopie)
+  - Rôle historique : Royaume d'Aksoum puissant, centre de la civilisation éthiopienne ancienne, christianisation précoce, commerce avec l'Inde et la Méditerranée. L'Érythrée était partie intégrante de l'empire aksoumite.
+
+- [Royaumes et chefferies tigrigna] :
+  - Période : Moyen Âge - présent
+  - Peuples dominants : Tigrinya
+  - Centres politiques : Hauts plateaux (Asmara, Mendefera)
+  - Rôle historique : Royaumes et chefferies tigrigna sur les hauts plateaux, héritiers d'Aksoum, christianisme orthodoxe, structures villageoises lignagères. Rôle central de l'Église Tewahedo.
+
+- [Chefferies Beja] :
+  - Période : XVe siècle - présent
+  - Peuples dominants : Beja (Bilen, Hedareb, Beni Amer)
+  - Centres politiques : Keren, régions centrales
+  - Rôle historique : Chefferies Beja, organisation tribale, islam et christianisme mixte (Bilen). Relations avec le Soudan.
+
+- [Peuples Afar] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Afar
+  - Centres politiques : Littoral et sud-est
+  - Rôle historique : Peuples Afar nomades pastoraux, sultanat d'Aussa, traditions couchitiques, pastoralisme de dromadaires.
+
+- [Colonie italienne d'Érythrée] :
+  - Période : 1890 - 1941
+  - Peuples dominants : Tous les peuples érythréens sous domination italienne
+  - Centres politiques : Asmara (capitale coloniale)
+  - Rôle historique : Colonie italienne, développement d'Asmara comme ville coloniale, exploitation économique, résistance des peuples autochtones. Défaite italienne en 1941.
+
+- [Fédération Éthiopie-Érythrée] :
+  - Période : 1952 - 1962
+  - Peuples dominants : Tous les peuples érythréens sous fédération éthiopienne
+  - Centres politiques : Asmara (capitale fédérale)
+  - Rôle historique : Fédération avec l'Éthiopie, autonomie limitée, développement du mouvement indépendantiste.
+
+- [Province éthiopienne] :
+  - Période : 1962 - 1991
+  - Peuples dominants : Tous les peuples érythréens sous domination éthiopienne
+  - Centres politiques : Asmara (capitale provinciale)
+  - Rôle historique : Annexion par l'Éthiopie, guerre d'indépendance (1961-1991), lutte menée par le Front populaire de libération de l'Érythrée (FPLE).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Tigrinya
+  - Auto-appellation (endonyme) : ትግራይ (Təgray)
+  - Exonymes / appellations historiques : Tigrinya (terme utilisé par les Européens), Tigréens (terme parfois utilisé, mais à distinguer de Tigré), "Abyssins" (terme oriental/colonial englobant, imprécis, à éviter)
+  - Identifiant peuple (PPL_) : PPL_TIGRAY
+  - Région principale : Hauts plateaux (Asmara, Mendefera)
+  - Langues parlées : Tigrinya (tir, ISO 639-3), anglais, arabe
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Təgray" est l'auto-appellation. "Tigrinya" est l'exonyme le plus courant. "Abyssins" est un terme oriental/colonial englobant et imprécis qui doit être évité. Distinction importante avec les Tigré (musulmans) qui parlent une langue distincte.
+
+- Peuple 2 :
+  - Nom : Tigré
+  - Auto-appellation (endonyme) : Tigré (ትግረ) / Tigrayit
+  - Exonymes / appellations historiques : Tigré (terme utilisé par les Européens), parfois confondu avec Tigréens (Tigray)
+  - Identifiant peuple (PPL_) : PPL_TIGRE
+  - Région principale : Nord-ouest, Sahel (régions côtières et basses terres)
+  - Langues parlées : Tigré (tig, ISO 639-3), arabe, tigrinya
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Tigré" ou "Tigrayit" est l'auto-appellation. "Tigré" est l'exonyme le plus courant. Distinction importante avec les Tigréens (Tigray) qui parlent le tigrinya et habitent les hauts plateaux. Les Tigré sont majoritairement musulmans, contrairement aux Tigréens chrétiens.
+
+- Peuple 3 :
+  - Nom : Afar
+  - Auto-appellation (endonyme) : Qafár
+  - Exonymes / appellations historiques : Afar (terme utilisé par les Européens), "Danakil" (terme européen et arabe ancien, connotation péjorative, à éviter)
+  - Identifiant peuple (PPL_) : PPL_AFAR
+  - Région principale : Littoral et sud-est
+  - Langues parlées : Afar (aar, ISO 639-3), arabe
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Qafár" est l'auto-appellation. "Afar" est l'exonyme le plus courant et accepté. "Danakil" est un terme européen et arabe ancien qui peut avoir une connotation péjorative et doit être évité.
+
+- Peuple 4 :
+  - Nom : Saho
+  - Auto-appellation (endonyme) : Saho
+  - Exonymes / appellations historiques : Saho (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SAHO
+  - Région principale : Centre-sud et côtes
+  - Langues parlées : Saho (ssy, ISO 639-3), arabe, tigrinya
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Saho" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Bilen
+  - Auto-appellation (endonyme) : Bilen
+  - Exonymes / appellations historiques : Bilen (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BILEN
+  - Région principale : Keren (centre)
+  - Langues parlées : Bilen (znl, ISO 639-3), tigrinya, arabe
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bilen" est l'auto-appellation. Pas de terme péjoratif connu. Peuple agaw d'Érythrée, bilinguisme bilen/tigrinya.
+
+- Peuple 6 :
+  - Nom : Hedareb / Beja
+  - Auto-appellation (endonyme) : Bega / Hadendowa
+  - Exonymes / appellations historiques : Beja, Hedareb (terme utilisé pour les Beja d'Érythrée)
+  - Identifiant peuple (PPL_) : PPL_BEJA
+  - Région principale : Régions frontalières avec le Soudan
+  - Langues parlées : Beja (bej, ISO 639-3), tigré, arabe
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Bega" ou "Hadendowa" est l'auto-appellation. "Beja" est l'exonyme le plus courant. "Hedareb" est un terme spécifique pour les Beja d'Érythrée. Pas de terme péjoratif connu. Peuple beja transfrontalier (Soudan-Érythrée).
+
+- Peuple 7 :
+  - Nom : Rashaida
+  - Auto-appellation (endonyme) : Rashaida
+  - Exonymes / appellations historiques : Rashaida (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_RASHAIDA
+  - Région principale : Désert, régions frontalières
+  - Langues parlées : Arabe bedawi (arabe dialectal), arabe standard
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Rashaida" est l'auto-appellation. Arabes venus d'Arabie au XIXe siècle. Pas de terme péjoratif connu.
+
+- Peuple 8 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes (Nara, Kunama)
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions d'Érythrée
+  - Langues parlées : Langues diverses (Nara, Kunama), tigrinya, arabe
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation (Nara, Kunama, etc.). Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Tigrinya (tir, langue nationale), Tigré (tig), Afar (aar), Saho (ssy), Bilen (znl), Beja (bej), Arabe (arb), Anglais (eng, langue officielle)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de l'Érythrée. Traditions tigrigna (hauts plateaux, christianisme orthodoxe, héritage d'Aksoum). Traditions tigré (basses terres, islam, organisation tribale). Traditions couchitiques (Afar, Saho, Bilen, Beja, pastoralisme nomade). Traditions arabes (Rashaida, commerce). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Architecture rupestre (Tigrinya). Poésie orale (Afar, Tigré).
+- Religions dominantes : Christianisme orthodoxe (Tigrinya, majoritaire), islam sunnite (Tigré, Afar, Saho, Rashaida, Beja), christianisme catholique et protestant (minorités)
+- Modes de vie : Agriculture (hauts plateaux, Tigrinya, cultures vivrières), pastoralisme nomade (Afar, Beja, élevage de dromadaires et bovins), commerce et activités urbaines (zones urbaines, Asmara). Urbanisation modérée. Économie basée sur l'agriculture, l'élevage pastoral, les services, et les transferts de la diaspora.
+- Organisation sociale : Organisation en royaumes historiques (Tigrinya, héritage d'Aksoum), chefferies traditionnelles (Tigré, Beja, organisation tribale), sultanats (Afar, sultanat d'Aussa), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Rôle central de l'Église Tewahedo (Tigrinya).
+- Relations régionales : Relations historiques avec l'Éthiopie (Tigrinya, Tigray, commerce, conflits), le Soudan (Beja, Tigré, frontière, réfugiés), Djibouti (Afar, frontière). Intégration dans l'IGAD (Autorité intergouvernementale pour le développement). Relations commerciales et culturelles transfrontalières. Diaspora importante (États-Unis, Europe, Moyen-Orient).
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Partie du royaume d'Aksoum (Antiquité - VIIe siècle), centre de la civilisation éthiopienne ancienne, christianisation précoce, commerce avec l'Inde et la Méditerranée. Développement des royaumes et chefferies tigrigna sur les hauts plateaux.
+- Moyen Âge : Provinces tigrigna et afar liées à l'Éthiopie historique. Développement des chefferies Beja (XVe-XVIIIe siècle). Relations avec les empires éthiopiens et les sultanats de la Corne de l'Afrique.
+- Époque précoloniale : Consolidation des royaumes tigrigna, chefferies Beja, peuples Afar nomades. Commerce régional et transsaharien. Contacts avec les Européens (Italiens, Britanniques).
+- Colonisation : 1890 : Création de la colonie italienne d'Érythrée. Période coloniale italienne (1890-1941), développement d'Asmara comme ville coloniale, exploitation économique, résistance des peuples autochtones. 1941 : Défaite italienne, administration britannique. 1952 : Fédération Éthiopie-Érythrée (autonomie limitée). 1962 : Annexion par l'Éthiopie, province éthiopienne.
+- Lutte pour l'indépendance : 1961-1991 : Guerre d'indépendance de l'Érythrée, lutte menée par le Front populaire de libération de l'Érythrée (FPLE). Résistance armée contre l'Éthiopie. 1991 : Libération de l'Érythrée par le FPLE. 1993 : Indépendance de l'Érythrée (24 mai 1993), proclamation de l'État d'Érythrée (State of Eritrea).
+- Période post-indépendance : 1993-présent : État d'Érythrée, présidence d'Isaias Afwerki (depuis 1993). Guerre frontalière avec l'Éthiopie (1998-2000). Défis : pauvreté, développement économique, relations avec l'Éthiopie, diaspora importante. L'Érythrée est un État autoritaire avec un service militaire obligatoire prolongé.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Eritrea
+- CIA World Factbook – Eritrea
+- ONU / UNFPA – Démographie Érythrée 2025
+- Connell, Dan – "Against All Odds: A Chronicle of the Eritrean Revolution"
+- Pool, David – "From Guerrillas to Government: The Eritrean People's Liberation Front"
+- Bereketeab, Redie – "Eritrea: The Making of a Nation"
+- Recensements érythréens
+- Études anthropologiques sur les peuples de l'Érythrée
+- Encyclopaedia Aethiopica
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Tigrinya
+- Identifiant peuple (PPL_) : PPL_TIGRAY
+- Population : 3 900 000
+- Pourcentage dans le pays : 55%
+- Pourcentage en Afrique : N/A
+- Région : Hauts plateaux (Asmara, Mendefera)
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : tir
+
+### Peuple : Tigré
+- Identifiant peuple (PPL_) : PPL_TIGRE
+- Population : 2 100 000
+- Pourcentage dans le pays : 30%
+- Pourcentage en Afrique : N/A
+- Région : Nord-ouest, Sahel (régions côtières et basses terres)
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : tig
+
+### Peuple : Afar
+- Identifiant peuple (PPL_) : PPL_AFAR
+- Population : 350 000
+- Pourcentage dans le pays : 5%
+- Pourcentage en Afrique : N/A
+- Région : Littoral et sud-est
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : aar
+
+### Peuple : Saho
+- Identifiant peuple (PPL_) : PPL_SAHO
+- Population : 280 000
+- Pourcentage dans le pays : 4%
+- Pourcentage en Afrique : N/A
+- Région : Centre-sud et côtes
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : ssy
+
+### Peuple : Bilen
+- Identifiant peuple (PPL_) : PPL_BILEN
+- Population : 140 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Keren (centre)
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : znl
+
+### Peuple : Hedareb / Beja
+- Identifiant peuple (PPL_) : PPL_BEJA
+- Population : 140 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Régions frontalières avec le Soudan
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : bej
+
+### Peuple : Rashaida
+- Identifiant peuple (PPL_) : PPL_RASHAIDA
+- Population : 70 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Désert, régions frontalières
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : arb (arabe bedawi)
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 70 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions d'Érythrée
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Érythrée 2025 : 7 050 000 (estimations ONU/UNFPA)**
+

@@ -1,0 +1,51 @@
+{
+  "ETH_ID": "ETH_KONGO",
+  "timestamp": "2025-01-25T21:00:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/kiko1244",
+      "data": {
+        "langue": "Kikongo",
+        "code_iso": "kng",
+        "famille": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central-Western Bantu",
+        "pays": [
+          "République démocratique du Congo",
+          "Angola",
+          "République du Congo",
+          "Gabon"
+        ],
+        "region": "Afrique centrale",
+        "glottocode": "kiko1244",
+        "auto_appellation": "Kikongo"
+      },
+      "timestamp": "2025-01-25T21:00:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/kng",
+      "data": {
+        "langue": "Kikongo",
+        "code_iso": "kng",
+        "famille": "Niger-Congo",
+        "pays": [
+          "Democratic Republic of the Congo",
+          "Angola",
+          "Republic of the Congo",
+          "Gabon"
+        ],
+        "auto_appellation": "Kikongo"
+      },
+      "timestamp": "2025-01-25T21:00:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "kng",
+    "langue_principale": "Kikongo",
+    "famille_linguistique": "Niger-Congo > Volta-Congo > Benue-Congo > Bantoid > Southern Bantoid > Narrow Bantu > Central-Western Bantu",
+    "pays_principaux": ["Angola", "Gabon"],
+    "region_generale": "Afrique centrale",
+    "auto_appellation": "Kikongo"
+  }
+}

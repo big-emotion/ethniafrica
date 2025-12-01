@@ -30,29 +30,25 @@
 - Peuple 2 :
 - Peuple 3 :
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 :
-- Ethnie 2 :
-- Ethnie 3 :
-(+ renvoi vers les fichiers ethniques dédiés)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
 - Particularités phonologiques :
 - Liens avec les familles voisines :
 - Innovations clés :
 
-# 5. Histoire et origines
-- Origine probable :
-- Diffusion des langues :
-- Ruptures historiques :
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+- Période d'émergence estimée :
+- Diffusion des langues (routes migratoires, expansion) :
+- Ruptures historiques (séparations, fusions) :
 - Zones de contact et métissages :
+- Événements historiques majeurs ayant influencé la famille :
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
 - Répartition par pays :
 - Importance historique :
 
-# 7. Sources
+# 6. Sources
 - [Titre] – [Auteur/URL]
 - [Titre] – [Auteur/URL]

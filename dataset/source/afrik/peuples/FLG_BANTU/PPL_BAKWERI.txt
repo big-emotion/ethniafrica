@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe ethno-linguistique : Bantous côtiers et montagnards du Mont Cameroun (Sawa)
 - Région historique : Pentes sud-est du Mont Cameroun (Fako)
-- Pays actuels : Cameroun
+- Pays actuels : CMR
 - Identifiant peuple (ID) : PPL_BAKWERI
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : À préciser (autres segments internes et lignages locaux)
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Installation ancienne sur les pentes fertiles du Mont Cameroun, au sein de l’ensemble des peuples sawa (côtiers).
+- Origines anciennes : Installation ancienne sur les pentes fertiles du Mont CMR, au sein de l’ensemble des peuples sawa (côtiers).
 - Routes migratoires : Déplacements internes le long des pentes et vers le littoral ; mobilité liée à l’agriculture et aux plantations.
 - Unifications / divisions : Organisation en villages autonomes, unifiés par langue, culture et récits d’origine.
 - Influences externes : Forte exposition aux colonisations allemande, puis britannique et française ; intégration dans l’économie de plantation (banane, hévéa).

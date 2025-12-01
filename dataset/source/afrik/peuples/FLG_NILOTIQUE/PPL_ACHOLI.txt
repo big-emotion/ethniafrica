@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Acholi (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique occidental
-- Région historique : Nord de l'Ouganda, Sud-Soudan
-- Pays actuels : Ouganda, Soudan du Sud
+- Région historique : Nord de l'UGA, Sud-Soudan
+- Pays actuels : UGA, SDN du Sud
 - Identifiant peuple (ID) : PPL_ACHOLI
 
 # 1. Ethnies incluses dans le peuple

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Gbagyi (terme utilisé par les Européens), Gwari (variante)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bénoué-Congo
-- Région historique : Nigeria (FCT Abuja, Niger State, Kaduna)
-- Pays actuels : Nigeria
+- Région historique : Nigeria (FCT Abuja, NER State, Kaduna)
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_GBAGYI
 
 # 1. Ethnies incluses dans le peuple

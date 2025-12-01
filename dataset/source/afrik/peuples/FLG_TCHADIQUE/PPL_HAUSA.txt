@@ -7,7 +7,7 @@
 - Famille linguistique principale : Afro-asiatique – Tchadique
 - Groupe ethno-linguistique : Tchadique occidental
 - Région historique : Sahel central (Kano, Katsina, Zaria)
-- Pays actuels : Nigeria, Niger, Cameroun, Ghana, Tchad, Soudan
+- Pays actuels : NGA, NER, CMR, GHA, TCD, SDN
 - Identifiant peuple : PPL_HAUSA
 
 # 1. Ethnies incluses dans le peuple

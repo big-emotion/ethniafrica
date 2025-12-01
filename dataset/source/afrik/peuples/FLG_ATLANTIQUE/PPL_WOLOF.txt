@@ -2,7 +2,7 @@
 - Nom principal : Wolof
 - Auto-appellation : Wolof
 - Famille linguistique : Niger-Congo – Atlantique
-- Région historique : Sénégal (Cayor, Baol), Gambie, Mauritanie
+- Région historique : Sénégal (Cayor, Baol), GMB, MRT
 - Identifiant : PPL_WOLOF
 
 # 1. Ethnies incluses

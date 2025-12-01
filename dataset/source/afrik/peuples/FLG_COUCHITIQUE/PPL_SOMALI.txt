@@ -5,8 +5,8 @@
   - « Somalies » (forme coloniale française)
 - Famille linguistique : Afro-asiatique – Couchitique
 - Groupe ethno-linguistique : Couchitique oriental
-- Région historique : Somalie historique (Somalie, Djibouti, Ogaden)
-- Pays actuels : Somalie, Somaliland, Djibouti, Éthiopie, Kenya
+- Région historique : Somalie historique (SOM, DJI, Ogaden)
+- Pays actuels : SOM, Somaliland, DJI, ETH, KEN
 - Identifiant peuple : PPL_SOMALI
 
 # 1. Ethnies incluses dans le peuple

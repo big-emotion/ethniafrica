@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Ngoni (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone N)
-- Région historique : Malawi, Tanzanie, Zambie, Mozambique
-- Pays actuels : Malawi, Tanzanie, Zambie, Mozambique
+- Région historique : MWI, TZA, ZMB, MOZ
+- Pays actuels : MWI, TZA, ZMB, MOZ
 - Identifiant peuple (ID) : PPL_NGONI
 
 # 1. Ethnies incluses dans le peuple
@@ -16,10 +16,10 @@
 - Ethnie 5 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Ngoni sont originaires de la région du Malawi, de la Tanzanie, de la Zambie et du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N). Migrations historiques depuis le Sud.
+- Origines anciennes : Les Ngoni sont originaires de la région du MWI, de la TZA, de la Zambie et du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N). Migrations historiques depuis le Sud.
 - Routes migratoires : 
   - Migrations depuis les régions bantoues du Sud
-  - Expansion vers le Malawi, la Tanzanie, la Zambie et le Mozambique
+  - Expansion vers le MWI, la TZA, la Zambie et le Mozambique
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Migrations historiques importantes.
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.

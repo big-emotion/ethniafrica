@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Luo Pagu (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique occidental
-- Région historique : Ouganda, Kenya
-- Pays actuels : Ouganda, Kenya
+- Région historique : UGA, KEN
+- Pays actuels : UGA, KEN
 - Identifiant peuple (ID) : PPL_LUO_PAGU
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Luo language (luo)
-- CIA World Factbook – Uganda, Kenya
+- CIA World Factbook – Uganda, KEN
 - Recensements nationaux
 - Études anthropologiques sur les peuples nilotiques
 

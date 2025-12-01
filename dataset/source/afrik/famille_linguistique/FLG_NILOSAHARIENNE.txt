@@ -49,9 +49,9 @@
   50–70 millions
 
 # 2. Peuples associés
-- Peuple 1 : Dinka
-- Peuple 2 : Maasai
-- Peuple 3 : Kanuri
+- Peuple 1 : Dinka (PPL_DINKA)
+- Peuple 2 : Maasai (PPL_MAASAI)
+- Peuple 3 : Kanuri (PPL_KANURI)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Dinka  

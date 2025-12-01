@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Bwaba (terme utilisé par les Européens), Bobo-Oulé
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Gur
-- Région historique : Burkina Faso, Mali
-- Pays actuels : Burkina Faso, Mali
+- Région historique : BFA, MLI
+- Pays actuels : BFA, MLI
 - Identifiant peuple (ID) : PPL_BWABA
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Bwaba language (bwo)
-- CIA World Factbook – Burkina Faso, Mali
+- CIA World Factbook – BFA, MLI
 - Recensements nationaux
 - Études anthropologiques sur les peuples gur
 

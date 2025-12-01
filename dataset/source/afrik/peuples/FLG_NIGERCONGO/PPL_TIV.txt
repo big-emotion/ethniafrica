@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Tiv (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone A)
-- Région historique : Nigeria, Cameroun
-- Pays actuels : Nigeria, Cameroun
+- Région historique : NGA, CMR
+- Pays actuels : NGA, CMR
 - Identifiant peuple (ID) : PPL_TIV
 
 # 1. Ethnies incluses dans le peuple

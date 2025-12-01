@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Gola (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique
-- Région historique : Libéria, Sierra Leone (zones forestières)
-- Pays actuels : Libéria (principal), Sierra Leone
+- Région historique : Libéria, SLE (zones forestières)
+- Pays actuels : LBR (principal), SLE
 - Identifiant peuple (ID) : PPL_GOLA
 
 # 1. Ethnies incluses dans le peuple
@@ -79,7 +79,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Gola language (gol)
-- CIA World Factbook – Liberia, Sierra Leone
+- CIA World Factbook – LBR, SLE
 - Sierra Leone & Liberia Cultural Studies
 - Recensements nationaux
 

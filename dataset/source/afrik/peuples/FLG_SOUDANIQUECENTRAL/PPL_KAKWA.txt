@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Kakwa (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central
-- Région historique : Ouganda, Soudan du Sud, RDC
-- Pays actuels : Ouganda, Soudan du Sud, République démocratique du Congo
+- Région historique : UGA, SDN du Sud, COD
+- Pays actuels : UGA, SDN du Sud, République démocratique du Congo
 - Identifiant peuple (ID) : PPL_KAKWA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,10 +14,10 @@
 - Ethnie 3 : Kakwa de RDC
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Kakwa sont originaires de l'Ouganda, du Soudan du Sud et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.
+- Origines anciennes : Les Kakwa sont originaires de l'UGA, du Soudan du Sud et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.
 - Routes migratoires : 
   - Migrations depuis les régions du Haut-Nil
-  - Expansion vers l'Ouganda, le Soudan du Sud et la RDC
+  - Expansion vers l'UGA, le Soudan du Sud et la RDC
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples nilotiques et bantous, influence du christianisme.

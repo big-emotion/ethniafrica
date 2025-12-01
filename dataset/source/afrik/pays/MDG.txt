@@ -1,0 +1,208 @@
+# Nom du pays
+- Nom officiel actuel : République de Madagascar (Repoblikan'i Madagasikara)
+- Étymologie du nom : Le nom "Madagascar" vient probablement de "Madageiscar", mentionné par Marco Polo au XIIIe siècle, qui faisait référence à Mogadiscio en Somalie. Les Portugais ont ensuite appliqué ce nom à l'île qu'ils appelaient "São Lourenço". En malgache, le pays est appelé "Madagasikara".
+- Personne / peuple / administration à l'origine du nom : Le nom a été popularisé par les navigateurs européens (portugais, français) à partir du XVIe siècle. L'origine exacte est incertaine, mais pourrait provenir d'une confusion avec Mogadiscio.
+- Identifiant pays (ISO 3166-1 alpha-3) : MDG
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : L'île était connue des navigateurs arabes et swahilis, mais n'avait pas de nom unique. Les Grecs anciens mentionnent des îles dans cette région.
+- Moyen Âge : Les navigateurs arabes et swahilis connaissaient l'île mais sans nom spécifique. Marco Polo mentionne "Madageiscar" au XIIIe siècle (référence probable à Mogadiscio).
+- Époque précoloniale : Les Portugais appellent l'île "São Lourenço" (Saint-Laurent) au XVIe siècle. Les Européens utilisent progressivement "Madagascar" à partir du XVIIe siècle. Les peuples autochtones utilisent des noms régionaux (Imerina, Menabe, etc.).
+- Colonisation : Les Français établissent la "Colonie de Madagascar" en 1896. Le nom "Madagascar" devient officiel. Les Malgaches continuent d'utiliser "Madagasikara" en malgache.
+- Période contemporaine : Après l'indépendance en 1960, le pays prend le nom de "République malgache" puis "République de Madagascar". Le nom officiel en français est "République de Madagascar" et en malgache "Repoblikan'i Madagasikara".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume Merina] :
+  - Période : XVIe siècle - 1896
+  - Peuples dominants : Merina (Hova, Andriana)
+  - Centres politiques : Antananarivo (capitale du royaume)
+  - Rôle historique : Le royaume Merina a unifié une grande partie de Madagascar au XIXe siècle sous les règnes de Radama I et Ranavalona I. Il a résisté à la colonisation française jusqu'en 1896.
+
+- [Royaumes Sakalava] :
+  - Période : XVIIe - XIXe siècles
+  - Peuples dominants : Sakalava (Menabe, Boina)
+  - Centres politiques : Morondava (Menabe), Mahajanga (Boina)
+  - Rôle historique : Les royaumes Sakalava étaient des puissances maritimes qui contrôlaient le commerce sur la côte ouest. Ils ont résisté à l'expansion merina.
+
+- [Confédération Betsimisaraka] :
+  - Période : XVIIIe siècle
+  - Peuples dominants : Betsimisaraka
+  - Centres politiques : Toamasina (Tamatave)
+  - Rôle historique : Confédération formée au XVIIIe siècle par Ratsimilaho, unifiant les peuples de la côte est pour résister aux raids malgaches et européens.
+
+- [Colonie française de Madagascar] :
+  - Période : 1896 - 1960
+  - Peuples dominants : Tous les peuples malgaches sous administration coloniale française
+  - Centres politiques : Antananarivo (capitale coloniale)
+  - Rôle historique : Période de colonisation française qui a unifié administrativement toute l'île. Résistance malgache (révolte de 1947).
+
+- [République de Madagascar] :
+  - Période : 1960 - présent
+  - Peuples dominants : Tous les peuples malgaches
+  - Centres politiques : Antananarivo (capitale)
+  - Rôle historique : État indépendant depuis 1960, avec une histoire politique mouvementée incluant plusieurs coups d'État et périodes de transition.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Merina
+  - Auto-appellation (endonyme) : Merina
+  - Exonymes / appellations historiques : Hova (terme historique, parfois utilisé de manière péjorative), Imerina
+  - Identifiant peuple (PPL_) : PPL_MERINA
+  - Région principale : Hautes terres centrales (Antananarivo, Analamanga)
+  - Langues parlées : Malgache (dialecte merina), français
+  - Famille linguistique : FLG_AUSTRONESIENNE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Hova" était historiquement utilisé pour désigner la classe moyenne merina, mais peut avoir des connotations péjoratives dans certains contextes. L'auto-appellation "Merina" est préférée.
+
+- Peuple 2 :
+  - Nom : Betsimisaraka
+  - Auto-appellation (endonyme) : Betsimisaraka
+  - Exonymes / appellations historiques : Betsimisaraka (terme signifiant "les nombreux inséparables")
+  - Identifiant peuple (PPL_) : PPL_BETSIMISARAKA
+  - Région principale : Côte est (Atsinanana)
+  - Langues parlées : Malgache (dialecte betsimisaraka), français
+  - Famille linguistique : FLG_AUSTRONESIENNE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Betsimisaraka" est neutre et accepté.
+
+- Peuple 3 :
+  - Nom : Betsileo
+  - Auto-appellation (endonyme) : Betsileo
+  - Exonymes / appellations historiques : Betsileo (terme signifiant "les nombreux invincibles")
+  - Identifiant peuple (PPL_) : PPL_BETSILEO
+  - Région principale : Hautes terres du sud
+  - Langues parlées : Malgache (dialecte betsileo), français
+  - Famille linguistique : FLG_AUSTRONESIENNE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Betsileo" est neutre et accepté.
+
+- Peuple 4 :
+  - Nom : Sakalava
+  - Auto-appellation (endonyme) : Sakalava
+  - Exonymes / appellations historiques : Sakalava (terme signifiant "ceux des longues vallées")
+  - Identifiant peuple (PPL_) : PPL_SAKALAVA
+  - Région principale : Côte ouest et nord-ouest
+  - Langues parlées : Malgache (dialecte sakalava), français
+  - Famille linguistique : FLG_AUSTRONESIENNE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Sakalava" est neutre et accepté.
+
+- Peuple 5 :
+  - Nom : Antandroy
+  - Auto-appellation (endonyme) : Antandroy
+  - Exonymes / appellations historiques : Antandroy (terme signifiant "ceux des épines")
+  - Identifiant peuple (PPL_) : PPL_ANTANDROY
+  - Région principale : Sud (Androy)
+  - Langues parlées : Malgache (dialecte antandroy), français
+  - Famille linguistique : FLG_AUSTRONESIENNE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Antandroy" est neutre et accepté.
+
+- Peuple 6 :
+  - Nom : Tsimihety
+  - Auto-appellation (endonyme) : Tsimihety
+  - Exonymes / appellations historiques : Tsimihety (terme signifiant "ceux qui ne se coupent pas les cheveux")
+  - Identifiant peuple (PPL_) : PPL_TSIMIHETY
+  - Région principale : Nord-Centre
+  - Langues parlées : Malgache (dialecte tsimihety), français
+  - Famille linguistique : FLG_AUSTRONESIENNE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tsimihety" est neutre et accepté.
+
+- Peuple 7 :
+  - Nom : Antakarana
+  - Auto-appellation (endonyme) : Antakarana
+  - Exonymes / appellations historiques : Antakarana
+  - Identifiant peuple (PPL_) : PPL_ANTAKARANA
+  - Région principale : Nord
+  - Langues parlées : Malgache (dialecte antakarana), français, arabe
+  - Famille linguistique : FLG_AUSTRONESIENNE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Antakarana" est neutre et accepté. Groupe austronésien islamisé.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Malgache (mlg) - langue nationale et officielle, avec de nombreux dialectes régionaux
+  - Français - langue officielle
+  - Arabe - langue liturgique pour les communautés musulmanes
+- Traditions culturelles : Famadihana (retournement des morts), riziculture en terrasses (hautes terres), élevage de zébus (côtes et sud), architecture en pierre traditionnelle, musique traditionnelle (valiha, sodina), danse traditionnelle (hira gasy), poésie orale (hainteny), artisanat (tissage, vannerie)
+- Religions dominantes : Croyances traditionnelles (culte des ancêtres - razana), christianisme (catholique et protestant), islam (minorité, surtout dans le nord et sur les côtes), syncrétisme religieux très présent
+- Modes de vie : Vie principalement rurale, agriculture (riz, manioc, vanille, café), élevage (zébus), pêche (côtes), commerce
+- Organisation sociale : Système de fokonolona (communautés villageoises), structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des ancêtres (razana), système de castes chez les Merina (andriana, hova, andevo)
+- Relations régionales : Relations historiques avec les peuples swahilis, interactions avec les peuples de l'océan Indien, diaspora importante en France, Réunion, Mayotte, et dans les pays occidentaux
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement de l'île par des migrations austronésiennes (500-700 ap. J.-C.) depuis l'Asie du Sud-Est (probablement Bornéo) et migrations bantoues depuis l'Afrique de l'Est. Fusion des cultures austronésienne et bantoue créant une culture malgache unique.
+- Moyen Âge : Développement de royaumes et chefferies sur toute l'île. Contacts avec les navigateurs arabes et swahilis. Introduction de l'islam dans certaines régions côtières.
+- Époque précoloniale : Apogée des royaumes Sakalava (XVIIe-XVIIIe siècles) sur la côte ouest. Formation de la confédération Betsimisaraka (XVIIIe siècle) sur la côte est. Expansion et unification du royaume Merina (XIXe siècle) sous Radama I et Ranavalona I. Tentatives de modernisation et résistance à l'influence européenne.
+- Colonisation : Établissement du protectorat français en 1885, puis colonie en 1896. Résistance malgache à la colonisation. Révolte de 1947 violemment réprimée (tens of thousands de morts). Développement de plantations (vanille, café, girofle) et exploitation des ressources.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1960. Première République malgache.
+- Période post-indépendance : Histoire politique mouvementée avec plusieurs coups d'État (1972, 2009). Périodes de transition et instabilité politique. Défis économiques et sociaux persistants. Crises politiques récurrentes affectant le développement.
+
+# 7. Sources
+- CIA World Factbook – Madagascar
+- SIL Ethnologue – Malagasy language (mlg)
+- Recensements nationaux malgaches
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples malgaches
+- Études historiques sur les royaumes malgaches
+- Encyclopédie de Madagascar
+
+# DONNÉES DÉMOGRAPHIES
+### Peuple : Merina
+- Identifiant peuple (PPL_) : PPL_MERINA
+- Population : 5 000 000 - 6 000 000
+- Pourcentage dans le pays : ~26-30%
+- Pourcentage en Afrique : ~0.4%
+- Région : Hautes terres centrales
+- Famille linguistique : FLG_AUSTRONESIENNE
+- Code ISO 639-3 (langue principale) : mlg
+
+### Peuple : Betsimisaraka
+- Identifiant peuple (PPL_) : PPL_BETSIMISARAKA
+- Population : 2 500 000 - 3 000 000
+- Pourcentage dans le pays : ~15%
+- Pourcentage en Afrique : ~0.2%
+- Région : Côte est
+- Famille linguistique : FLG_AUSTRONESIENNE
+- Code ISO 639-3 (langue principale) : mlg
+
+### Peuple : Betsileo
+- Identifiant peuple (PPL_) : PPL_BETSILEO
+- Population : 1 500 000 - 2 000 000
+- Pourcentage dans le pays : ~12%
+- Pourcentage en Afrique : ~0.15%
+- Région : Hautes terres du sud
+- Famille linguistique : FLG_AUSTRONESIENNE
+- Code ISO 639-3 (langue principale) : mlg
+
+### Peuple : Sakalava
+- Identifiant peuple (PPL_) : PPL_SAKALAVA
+- Population : 1 000 000 - 1 500 000
+- Pourcentage dans le pays : ~6%
+- Pourcentage en Afrique : ~0.1%
+- Région : Côte ouest et nord-ouest
+- Famille linguistique : FLG_AUSTRONESIENNE
+- Code ISO 639-3 (langue principale) : mlg
+
+### Peuple : Antandroy
+- Identifiant peuple (PPL_) : PPL_ANTANDROY
+- Population : 800 000 - 1 000 000
+- Pourcentage dans le pays : ~5%
+- Pourcentage en Afrique : ~0.08%
+- Région : Sud (Androy)
+- Famille linguistique : FLG_AUSTRONESIENNE
+- Code ISO 639-3 (langue principale) : mlg
+
+### Peuple : Tsimihety
+- Identifiant peuple (PPL_) : PPL_TSIMIHETY
+- Population : 500 000 - 800 000
+- Pourcentage dans le pays : ~3%
+- Pourcentage en Afrique : ~0.05%
+- Région : Nord-Centre
+- Famille linguistique : FLG_AUSTRONESIENNE
+- Code ISO 639-3 (langue principale) : mlg
+
+### Peuple : Antakarana
+- Identifiant peuple (PPL_) : PPL_ANTAKARANA
+- Population : 300 000 - 500 000
+- Pourcentage dans le pays : ~2%
+- Pourcentage en Afrique : ~0.03%
+- Région : Nord
+- Famille linguistique : FLG_AUSTRONESIENNE
+- Code ISO 639-3 (langue principale) : mlg
+

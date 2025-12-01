@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Saharien (FLG_SAHARIEN)
 - Groupe ethno-linguistique : Saharien
 - Région historique : Tchad
-- Pays actuels : Tchad
+- Pays actuels : TCD
 - Identifiant peuple (ID) : PPL_YERIMA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Yerima sont originaires du Tchad, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Yerima sont originaires du TCD, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones sahéliennes

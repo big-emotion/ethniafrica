@@ -5,7 +5,7 @@
 - Famille linguistique principale : Austronésienne (FLG_AUSTRONESIENNE)
 - Groupe ethno-linguistique : Malayo-polynésien
 - Région historique : Sud de Madagascar
-- Pays actuels : Madagascar
+- Pays actuels : MDG
 - Identifiant peuple (ID) : PPL_ANTANDROY
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Antandroy sont originaires du sud de Madagascar, dans la région aride. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues.
+- Origines anciennes : Les Antandroy sont originaires du sud de MDG, dans la région aride. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues.
 - Routes migratoires : 
   - Migrations dans le sud aride
   - Expansion depuis les zones pastorales

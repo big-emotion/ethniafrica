@@ -1,0 +1,41 @@
+{
+  "countryName": "Kenya",
+  "region": "afrique_de_l_est",
+  "ancientNames": [
+    {
+      "period": "Avant la colonisation",
+      "names": [
+        "territoires Luo",
+        "Luhya",
+        "Kikuyu",
+        "Kamba",
+        "Maasai",
+        "Samburu",
+        "Turkana",
+        "Somali",
+        "Borana",
+        "Pokot",
+        "Meru",
+        "Mijikenda"
+      ]
+    },
+    {
+      "period": "XIXe siècle",
+      "names": ["Kenya"]
+    },
+    {
+      "period": "1895",
+      "names": ["Afrique de l"]
+    },
+    {
+      "period": "1920",
+      "names": ["Colonie du Kenya"]
+    },
+    {
+      "period": "1963",
+      "names": ["Indépendance → République du Kenya"]
+    }
+  ],
+  "description": "Le Kenya regroupe populations bantoues (Kikuyu, Luhya, Kamba, Meru), nilotiques (Luo, Maasai, Samburu, Pokot, Turkana) et couchitiques (Somali, Borana, Rendille). Le pays devient un hub est-africain sous colonisation britannique et accède à l'indépendance en 1963.",
+  "ethnicities": []
+}

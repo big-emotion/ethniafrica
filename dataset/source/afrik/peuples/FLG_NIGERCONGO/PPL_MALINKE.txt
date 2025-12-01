@@ -7,8 +7,8 @@
   - « Mandingo » (terme historique, parfois péjoratif → éviter)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Mandé (Mandé occidental)
-- Région historique : Mali, Guinée, Sénégal, Côte d'Ivoire, Gambie, Guinée-Bissau
-- Pays actuels : Mali, Guinée, Sénégal, Côte d'Ivoire, Gambie, Guinée-Bissau
+- Région historique : MLI, GIN, SEN, CIV, GMB, GIN-Bissau
+- Pays actuels : MLI, GIN, SEN, CIV, GMB, GIN-Bissau
 - Identifiant peuple (ID) : PPL_MALINKE
 
 # 1. Ethnies incluses dans le peuple
@@ -21,10 +21,10 @@
 - Ethnie 7 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Malinké sont originaires de la région du Mali, de la Guinée, du Sénégal, de la Côte d'Ivoire, de la Gambie et de la Guinée-Bissau. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé (Mandé occidental). Ancien empire du Mali.
+- Origines anciennes : Les Malinké sont originaires de la région du MLI, de la GIN, du SEN, de la CIV, de la Gambie et de la Guinée-Bissau. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé (Mandé occidental). Ancien empire du Mali.
 - Routes migratoires : 
   - Migrations depuis les régions mandé
-  - Expansion vers le Mali, la Guinée, le Sénégal, la Côte d'Ivoire, la Gambie et la Guinée-Bissau
+  - Expansion vers le MLI, la GIN, le SEN, la CIV, la Gambie et la Guinée-Bissau
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en royaume traditionnel (ancien empire du Mali). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples voisins, influence de l'islam.

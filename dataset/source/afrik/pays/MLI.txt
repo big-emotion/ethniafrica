@@ -1,0 +1,224 @@
+# Nom du pays
+- Nom officiel actuel : République du Mali
+- Étymologie du nom : Le nom "Mali" vient de l'empire du Mali (XIIIe-XVIe siècles), l'un des plus grands empires d'Afrique de l'Ouest. "Mali" signifie "hippopotame" en mandingue, ou "lieu où vit le roi" selon certaines interprétations. Le nom a été choisi lors de l'indépendance en référence à l'empire historique.
+- Personne / peuple / administration à l'origine du nom : Le nom vient de l'empire du Mali historique, fondé par Soundiata Keïta au XIIIe siècle. Le nom a été choisi lors de l'indépendance en 1960 pour honorer cet héritage historique.
+- Identifiant pays (ISO 3166-1 alpha-3) : MLI
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de groupes proto-mandé, soninké, peuls, bozo sans nom unifié. Les empires régionaux (Ghana, Mali, Songhai) ont dominé la région.
+- Moyen Âge : IIIe-XIIIe siècles : Empire du Ghana (Wagadu), dominé par les Soninké. XIIIe-XVIe siècles : Empire du Mali (fondé par Soundiata Keïta), capitale Niani. XVe-XVIe siècles : Empire Songhai (Gao, Tombouctou, Djenné).
+- Époque précoloniale : Empires du Ghana, du Mali et Songhai. Royaumes touaregs (Kel Adagh, Ifoghas, Tagelmoust). Royaumes bambara. Commerce transsaharien majeur.
+- Colonisation : 1892-1958 : Soudan français (AOF). Le territoire est appelé "Soudan français" par les colonisateurs français. 1959-1960 : Fédération du Mali (avec le Sénégal).
+- Période contemporaine : Indépendance en 1960 sous le nom de "République du Mali". Le nom "Mali" a été choisi en référence à l'empire historique du Mali.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Empire du Ghana] :
+  - Période : IIIe - XIIIe siècles
+  - Peuples dominants : Soninké
+  - Centres politiques : Koumbi Saleh (capitale)
+  - Rôle historique : Premier grand empire d'Afrique de l'Ouest, réputé pour son commerce de l'or. Modèle politique et économique pour les empires suivants.
+
+- [Empire du Mali] :
+  - Période : XIIIe - XVIe siècles
+  - Peuples dominants : Malinké, Bambara
+  - Centres politiques : Niani (capitale), Kangaba
+  - Rôle historique : Un des plus grands empires d'Afrique de l'Ouest, fondé par Soundiata Keïta. Commerce transsaharien, diffusion de l'islam, centre culturel majeur (Tombouctou).
+
+- [Empire Songhai] :
+  - Période : XVe - XVIe siècles
+  - Peuples dominants : Songhai
+  - Centres politiques : Gao (capitale), Tombouctou, Djenné
+  - Rôle historique : Empire puissant qui a succédé au Mali. Centre intellectuel et commercial majeur. Conquête marocaine en 1591.
+
+- [Royaumes bambara] :
+  - Période : XVIIe - XIXe siècles
+  - Peuples dominants : Bambara
+  - Centres politiques : Ségou, Kaarta
+  - Rôle historique : Royaumes bambara puissants qui ont résisté à l'expansion peule et touarègue.
+
+- [Confédérations touarègues] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Touareg (Kel Tamasheq)
+  - Centres politiques : Ahaggar, Azawagh, Air, Adagh
+  - Rôle historique : Confédérations nomades du Sahara, contrôle des routes transsahariennes.
+
+- [Soudan français] :
+  - Période : 1892 - 1960
+  - Peuples dominants : Tous les peuples maliens sous administration coloniale française
+  - Centres politiques : Bamako (capitale coloniale)
+  - Rôle historique : Colonie française intégrée à l'AOF. Résistance malienne et mouvements nationalistes.
+
+- [République du Mali] :
+  - Période : 1960 - présent
+  - Peuples dominants : Tous les peuples maliens
+  - Centres politiques : Bamako (capitale)
+  - Rôle historique : Indépendance en 1960. Histoire politique mouvementée avec plusieurs coups d'État. Conflits avec les Touaregs. Transition démocratique et défis de développement.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Bambara
+  - Auto-appellation (endonyme) : Bamana
+  - Exonymes / appellations historiques : Bambara (terme utilisé par les Européens), Bamana
+  - Identifiant peuple (PPL_) : PPL_BAMBARA
+  - Région principale : Centre (Bamako, Ségou)
+  - Langues parlées : Bambara, français
+  - Famille linguistique : FLG_NIGERCONGO (Mandé)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Bambara" est neutre et accepté. L'auto-appellation "Bamana" est également utilisée.
+
+- Peuple 2 :
+  - Nom : Peul / Fulani
+  - Auto-appellation (endonyme) : Fulɓe (pluriel), Pullo (singulier)
+  - Exonymes / appellations historiques : Peul (terme français), Fulani (terme haoussa), "Fellata" (terme haoussa, parfois péjoratif - éviter)
+  - Identifiant peuple (PPL_) : PPL_FULA
+  - Région principale : Macina, Mopti
+  - Langues parlées : Pulaar, français
+  - Famille linguistique : FLG_ATLANTIQUE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Fellata" peut être péjoratif. L'auto-appellation "Fulɓe" est préférée. "Peul" et "Fulani" sont acceptés.
+
+- Peuple 3 :
+  - Nom : Dogon
+  - Auto-appellation (endonyme) : Dogon
+  - Exonymes / appellations historiques : Dogon (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_DOGON
+  - Région principale : Plateau de Bandiagara
+  - Langues parlées : Dogon, français
+  - Famille linguistique : FLG_NIGERCONGO (Dogon)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Dogon" est neutre et accepté.
+
+- Peuple 4 :
+  - Nom : Touareg
+  - Auto-appellation (endonyme) : Kel Tamasheq / Imajaghan
+  - Exonymes / appellations historiques : Touareg (exonyme arabo-berbère, connotation historiquement ambiguë ; pas insultant mais marqué par les récits coloniaux)
+  - Identifiant peuple (PPL_) : PPL_TUAREG
+  - Région principale : Nord (Ahaggar, Azawagh, Air, Adagh)
+  - Langues parlées : Tamasheq, français, arabe
+  - Famille linguistique : FLG_BERBERE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Touareg" est un exonyme marqué par les récits coloniaux. L'auto-appellation "Kel Tamasheq" ou "Imajaghan" est préférée.
+
+- Peuple 5 :
+  - Nom : Soninké
+  - Auto-appellation (endonyme) : Soninké
+  - Exonymes / appellations historiques : Soninké (terme utilisé par les Européens), Sarakolé (terme alternatif)
+  - Identifiant peuple (PPL_) : PPL_SONINKE
+  - Région principale : Kayes
+  - Langues parlées : Soninké, français
+  - Famille linguistique : FLG_NIGERCONGO (Mandé)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Soninké" est neutre et accepté. "Sarakolé" est une variante acceptée.
+
+- Peuple 6 :
+  - Nom : Songhai
+  - Auto-appellation (endonyme) : Songhai
+  - Exonymes / appellations historiques : Songhai (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SONGHAI (à vérifier si fichier existe)
+  - Région principale : Gao, Tombouctou, région du Moyen Niger
+  - Langues parlées : Songhai, français
+  - Famille linguistique : FLG_NILOSAHARIENNE (à vérifier)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Songhai" est neutre et accepté.
+
+- Peuple 7 :
+  - Nom : Malinké
+  - Auto-appellation (endonyme) : Maninka / Mandinka
+  - Exonymes / appellations historiques : Malinké (terme français), Mandinka (terme anglophone), "Mandingo" (terme historique, parfois péjoratif - éviter)
+  - Identifiant peuple (PPL_) : PPL_MALINKE
+  - Région principale : Kangaba, Kita
+  - Langues parlées : Malinké, français
+  - Famille linguistique : FLG_MANDE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Mandingo" peut être péjoratif. L'auto-appellation "Maninka" ou "Mandinka" est préférée. "Malinké" est accepté.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Bambara (bam) - langue véhiculaire nationale
+  - Pulaar (fuc) - Peul
+  - Dogon (dts) - Dogon
+  - Tamasheq (tmh) - Touareg
+  - Soninké (snk) - Soninké
+  - Songhai (ses) - Songhai
+  - Malinké (mlq) - Malinké
+  - Français - langue officielle
+- Traditions culturelles : Musique traditionnelle (griot, kora), danse traditionnelle, poésie orale (épopée de Soundiata), artisanat (vannerie, poterie, tissage, cuir), architecture traditionnelle (mosquées de Djenné, Tombouctou), art rupestre dogon
+- Religions dominantes : Islam (sunnite majoritaire), croyances traditionnelles (syncrétisme), christianisme (minorité)
+- Modes de vie : Vie principalement rurale, agriculture (mil, sorgho, riz, coton), élevage (bovins, caprins, dromadaires), pêche (fleuve Niger), commerce transsaharien, nomadisme pastoral (Touaregs, Peuls)
+- Organisation sociale : Système de chefferies traditionnelles, structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des griots (gardiens de la tradition orale), confédérations touarègues (tawsit)
+- Relations régionales : Relations historiques avec les peuples du Sénégal, de la Mauritanie, du Burkina Faso, du Niger, de la Guinée, de l'Algérie. Diaspora importante en France et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par des groupes proto-mandé, soninké, peuls, bozo. Développement des premiers royaumes et empires.
+- Moyen Âge : Empire du Ghana (IIIe-XIIIe siècles) : premier grand empire, commerce de l'or. Empire du Mali (XIIIe-XVIe siècles) : apogée sous Soundiata Keïta, centre culturel (Tombouctou). Empire Songhai (XVe-XVIe siècles) : succède au Mali, conquête marocaine en 1591.
+- Époque précoloniale : Royaumes bambara (Ségou, Kaarta). Confédérations touarègues. Commerce transsaharien majeur. Résistance à l'expansion coloniale.
+- Colonisation : 1892 : Création du Soudan français. Résistance malienne (Samory Touré, etc.). Intégration à l'AOF. Développement de Bamako comme capitale administrative.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. 1959-1960 : Fédération du Mali (avec le Sénégal). Indépendance en 1960. Modibo Keïta devient premier président.
+- Période post-indépendance : Première République (1960-1968) : présidence de Modibo Keïta, socialisme. Coup d'État de 1968 : régime militaire. Deuxième République (1992-2012) : transition démocratique. Coup d'État de 2012 : instabilité politique. Conflits avec les Touaregs. Transition démocratique en cours.
+
+# 7. Sources
+- CIA World Factbook – Mali
+- SIL Ethnologue – Languages of Mali
+- Recensements nationaux maliens
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples maliens
+- Études historiques sur les empires du Ghana, du Mali et Songhai
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Bambara
+- Identifiant peuple (PPL_) : PPL_BAMBARA
+- Population : 7 700 000
+- Pourcentage dans le pays : 35.0%
+- Pourcentage en Afrique : 0.54%
+- Région : Centre (Bamako, Ségou)
+- Famille linguistique : FLG_NIGERCONGO (Mandé)
+- Code ISO 639-3 (langue principale) : bam (Bambara)
+
+### Peuple : Peul / Fulani
+- Identifiant peuple (PPL_) : PPL_FULA
+- Population : 3 740 000
+- Pourcentage dans le pays : 17.0%
+- Pourcentage en Afrique : 0.26%
+- Région : Macina, Mopti
+- Famille linguistique : FLG_ATLANTIQUE
+- Code ISO 639-3 (langue principale) : fuc (Pulaar)
+
+### Peuple : Dogon
+- Identifiant peuple (PPL_) : PPL_DOGON
+- Population : 1 760 000
+- Pourcentage dans le pays : 8.0%
+- Pourcentage en Afrique : 0.12%
+- Région : Plateau de Bandiagara
+- Famille linguistique : FLG_NIGERCONGO (Dogon)
+- Code ISO 639-3 (langue principale) : dts (Dogon)
+
+### Peuple : Touareg
+- Identifiant peuple (PPL_) : PPL_TUAREG
+- Population : 1 980 000
+- Pourcentage dans le pays : 9.0%
+- Pourcentage en Afrique : 0.14%
+- Région : Nord (Ahaggar, Azawagh, Air, Adagh)
+- Famille linguistique : FLG_BERBERE
+- Code ISO 639-3 (langue principale) : tmh (Tamasheq)
+
+### Peuple : Soninké
+- Identifiant peuple (PPL_) : PPL_SONINKE
+- Population : 1 760 000
+- Pourcentage dans le pays : 8.0%
+- Pourcentage en Afrique : 0.12%
+- Région : Kayes
+- Famille linguistique : FLG_NIGERCONGO (Mandé)
+- Code ISO 639-3 (langue principale) : snk (Soninké)
+
+### Peuple : Songhai
+- Identifiant peuple (PPL_) : PPL_SONGHAI (à vérifier)
+- Population : 1 320 000
+- Pourcentage dans le pays : 6.0%
+- Pourcentage en Afrique : 0.09%
+- Région : Gao, Tombouctou, région du Moyen Niger
+- Famille linguistique : FLG_NILOSAHARIENNE (à vérifier)
+- Code ISO 639-3 (langue principale) : ses (Songhai)
+
+### Peuple : Malinké
+- Identifiant peuple (PPL_) : PPL_MALINKE
+- Population : 1 540 000
+- Pourcentage dans le pays : 7.0%
+- Pourcentage en Afrique : 0.11%
+- Région : Kangaba, Kita
+- Famille linguistique : FLG_MANDE
+- Code ISO 639-3 (langue principale) : mlq (Malinké)
+

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Khoisan Créole (terme utilisé pour les créoles avec influences khoisan)
 - Famille linguistique principale : Créole (FLG_CREOLE)
 - Groupe ethno-linguistique : Créole avec influences khoisan
-- Région historique : Afrique du Sud, Namibie
-- Pays actuels : Afrique du Sud, Namibie
+- Région historique : Afrique du Sud, NAM
+- Pays actuels : ZAF, NAM
 - Identifiant peuple (ID) : PPL_KHOISAN_CREOLE
 
 # 1. Ethnies incluses dans le peuple

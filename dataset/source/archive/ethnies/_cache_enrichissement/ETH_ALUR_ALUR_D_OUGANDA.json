@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_ALUR_ALUR_D_OUGANDA",
+  "timestamp": "2025-01-25T22:40:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/alur1250",
+      "data": {
+        "langue": "Alur",
+        "code_iso": "alz",
+        "famille": "Nilo-Saharan > Eastern Sudanic > Nilotic > Western Nilotic > Northern > Luo > Southern Luo",
+        "pays": ["Uganda", "Democratic Republic of the Congo"],
+        "region": "Northern Uganda, DRC",
+        "glottocode": "alur1250",
+        "auto_appellation": "Alur"
+      },
+      "timestamp": "2025-01-25T22:40:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/alz",
+      "data": {
+        "langue": "Alur",
+        "code_iso": "alz",
+        "famille": "Nilo-Saharan",
+        "pays": ["Uganda", "Democratic Republic of the Congo"],
+        "auto_appellation": "Alur"
+      },
+      "timestamp": "2025-01-25T22:40:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "alz",
+    "langue_principale": "Alur",
+    "famille_linguistique": "Nilo-Saharan > Eastern Sudanic > Nilotic > Western Nilotic > Northern > Luo > Southern Luo",
+    "pays_principaux": ["Uganda", "Democratic Republic of the Congo"],
+    "region_generale": "Northern Uganda, DRC",
+    "auto_appellation": "Alur"
+  }
+}

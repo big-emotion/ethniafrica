@@ -6,7 +6,7 @@
   - terme administratif colonial utilisé pour regrouper des populations très diverses
   - non pertinent scientifiquement comme catégorie ethnolinguistique
 - Famille linguistique : Niger-Congo – Gur
-- Région : Burkina Faso, Ghana, Togo, Bénin, Côte d’Ivoire
+- Région : BFA, GHA, TGO, BEN, Côte d’Ivoire
 - Identifiant : PPL_GUR_MACRO
 
 # 1. Ethnies incluses

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Lingala (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone C)
-- Région historique : RDC, Congo, RCA
-- Pays actuels : RDC, Congo, RCA
+- Région historique : COD, COG, CAF
+- Pays actuels : COD, COG, CAF
 - Identifiant peuple (ID) : PPL_LINGALA
 
 # 1. Ethnies incluses dans le peuple
@@ -15,10 +15,10 @@
 - Ethnie 4 : Autres locuteurs lingala
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les locuteurs lingala sont originaires de la région de la RDC, du Congo et de la RCA. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone C). Le lingala est une langue véhiculaire importante.
+- Origines anciennes : Les locuteurs lingala sont originaires de la région de la COD, du Congo et de la RCA. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone C). Le lingala est une langue véhiculaire importante.
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers la RDC, le Congo et la RCA
+  - Expansion vers la COD, le Congo et la RCA
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une langue commune (lingala).
 - Influences externes : Contacts avec les peuples voisins, influence du christianisme.
@@ -36,7 +36,7 @@
   - Lingala standard
   - Lingala populaire
   - Variantes régionales
-- Rôle véhiculaire : Le lingala est parlé par de nombreux locuteurs en RDC, au Congo et en RCA. Le français et d'autres langues sont également utilisés.
+- Rôle véhiculaire : Le lingala est parlé par de nombreux locuteurs en COD, au Congo et en RCA. Le français et d'autres langues sont également utilisés.
 
 # 5. Culture, rites et traditions
 - Rites majeurs : 

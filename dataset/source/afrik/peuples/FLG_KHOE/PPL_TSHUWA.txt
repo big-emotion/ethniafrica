@@ -5,7 +5,7 @@
 - Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
 - Groupe ethno-linguistique : Khoe
 - Région historique : Botswana
-- Pays actuels : Botswana
+- Pays actuels : BWA
 - Identifiant peuple (ID) : PPL_TSHUWA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Tshuwa sont originaires du Botswana, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.
+- Origines anciennes : Les Tshuwa sont originaires du BWA, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones désertiques

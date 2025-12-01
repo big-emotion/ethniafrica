@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantu (Zone E)
 - Région historique : Kenya (Province orientale)
-- Pays actuels : Kenya
+- Pays actuels : KEN
 - Identifiant peuple (ID) : PPL_EMBU
 
 # 1. Ethnies incluses dans le peuple
@@ -68,7 +68,7 @@
 - Répartition par pays : 
   - Kenya : 600 000
 - Année de référence : 2025
-- Source : Ethnologue (ebu), Kenya National Bureau of Statistics
+- Source : Ethnologue (ebu), KEN National Bureau of Statistics
 
 # 8. Sources
 - SIL Ethnologue – Embu language (ebu)

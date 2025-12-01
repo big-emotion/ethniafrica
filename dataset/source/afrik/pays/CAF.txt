@@ -1,0 +1,211 @@
+# Nom du pays
+- Nom officiel actuel : République centrafricaine (République centrafricaine, Ködörösêse tî Bêafrîka)
+- Étymologie du nom : Le nom "Centrafrique" ou "République centrafricaine" vient de la position géographique du pays au centre de l'Afrique. Le nom a été adopté lors de l'indépendance en 1960. Auparavant, le territoire était appelé "Oubangui-Chari" pendant la colonisation française (1903-1960), du nom des deux fleuves principaux (Oubangui et Chari).
+- Personne / peuple / administration à l'origine du nom : Le nom "République centrafricaine" a été adopté lors de l'indépendance (1960) pour remplacer "Oubangui-Chari" (nom colonial français). Le nom fait référence à la position géographique du pays au centre de l'Afrique.
+- Identifiant pays (ISO 3166-1 alpha-3) : CAF
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la RCA était peuplé de diverses sociétés (Banda, Gbaya, Ngbande, Sango, Manja, Aka). Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Migrations de peuples soudaniques centraux (Banda, Ngbande) et bantous (Gbaya, Sango, Manja). Développement de chefferies locales. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Consolidation des chefferies (Banda, Gbaya, Ngbande, Sango, Manja, Aka). Commerce régional. Les Européens utilisaient le terme "Oubangui-Chari" pour désigner la région.
+- Colonisation : 1903-1960 : Colonie française de l'Oubangui-Chari (Oubangui-Chari). Les Français ont établi une colonie sur le territoire, nommée d'après les deux fleuves principaux (Oubangui et Chari). Le nom "Oubangui-Chari" est officialisé par les Français.
+- Période contemporaine : 1960 : Indépendance (13 août 1960), proclamation de la République centrafricaine. Le nom "République centrafricaine" est officialisé pour remplacer "Oubangui-Chari".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Chefferies Banda] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Banda
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies Banda, organisation clanique, traditions culturelles.
+
+- [Chefferies Gbaya] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Gbaya
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies Gbaya, organisation clanique, traditions culturelles, résistance à la colonisation française.
+
+- [Chefferies Ngbande] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Ngbande
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies Ngbande, organisation clanique, traditions culturelles.
+
+- [Chefferies Sango] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Sango
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Chefferies Sango, développement du sango comme langue véhiculaire.
+
+- [Peuples Aka] :
+  - Période : Préhistorique - présent
+  - Peuples dominants : Aka (Pygmées)
+  - Centres politiques : Groupes nomades et semi-nomades
+  - Rôle historique : Peuples autochtones de la RCA, chasseurs-cueilleurs, traditions forestières, marginalisation historique.
+
+- [Colonie française de l'Oubangui-Chari] :
+  - Période : 1903 - 1960
+  - Peuples dominants : Tous les peuples centrafricains sous domination coloniale française
+  - Centres politiques : Bangui (capitale coloniale)
+  - Rôle historique : Colonisation française, résistance des peuples autochtones (notamment résistance des Gbaya), développement de l'administration coloniale, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Banda
+  - Auto-appellation (endonyme) : Banda
+  - Exonymes / appellations historiques : Banda (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BANDA
+  - Région principale : Centre et est de la RCA
+  - Langues parlées : Banda (bpd, ISO 639-3), sango, français
+  - Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Banda" est l'auto-appellation. Pas de terme péjoratif connu. Groupe soudanique central majoritaire.
+
+- Peuple 2 :
+  - Nom : Gbaya
+  - Auto-appellation (endonyme) : Gbaya
+  - Exonymes / appellations historiques : Gbaya (terme utilisé par les Européens), "Gbaya-Manza-Ngbaka" (groupe linguistique)
+  - Identifiant peuple (PPL_) : PPL_GBAYA
+  - Région principale : Ouest de la RCA
+  - Langues parlées : Gbaya (gya, ISO 639-3), sango, français
+  - Famille linguistique : Niger-Congo – Oubanguien (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Gbaya" est l'auto-appellation. Pas de terme péjoratif connu. Groupe oubanguien, résistance à la colonisation française.
+
+- Peuple 3 :
+  - Nom : Ngbande
+  - Auto-appellation (endonyme) : Ngbande
+  - Exonymes / appellations historiques : Ngbande (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NGBANDE
+  - Région principale : Sud-ouest de la RCA
+  - Langues parlées : Ngbande (ngb, ISO 639-3), sango, français
+  - Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Ngbande" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 4 :
+  - Nom : Sango
+  - Auto-appellation (endonyme) : Sango
+  - Exonymes / appellations historiques : Sango (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SANGO
+  - Région principale : Toutes les régions de la RCA
+  - Langues parlées : Sango (sag, ISO 639-3, langue véhiculaire), français
+  - Famille linguistique : Niger-Congo – Oubanguien (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Sango" est l'auto-appellation. Pas de terme péjoratif connu. Le sango est une langue véhiculaire importante en RCA, parlée par la majorité de la population.
+
+- Peuple 5 :
+  - Nom : Manja
+  - Auto-appellation (endonyme) : Manja
+  - Exonymes / appellations historiques : Manja (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MANJA
+  - Région principale : Centre de la RCA
+  - Langues parlées : Manja (mzv, ISO 639-3), sango, français
+  - Famille linguistique : Niger-Congo – Oubanguien (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Manja" est l'auto-appellation. Pas de terme péjoratif connu.
+
+- Peuple 6 :
+  - Nom : Aka
+  - Auto-appellation (endonyme) : Aka
+  - Exonymes / appellations historiques : "Aka" (auto-appellation), "Pygmées" (terme colonial, peut être problématique), "Baaka" (variante)
+  - Identifiant peuple (PPL_) : PPL_AKA
+  - Région principale : Sud-ouest de la RCA (forêts)
+  - Langues parlées : Aka (akf, ISO 639-3), sango, français
+  - Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Aka" est l'auto-appellation. "Pygmées" est un terme colonial qui peut être problématique dans certains contextes. Chasseurs-cueilleurs, peuples autochtones de la RCA, marginalisation historique.
+
+- Peuple 7 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : N/A (groupes non encore documentés individuellement)
+  - Région principale : Diverses régions de la RCA
+  - Langues parlées : Langues diverses, sango, français
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), sango (sag, langue nationale et véhiculaire), banda (bpd), gbaya (gya), ngbande (ngb), manja (mzv), aka (akf)
+- Traditions culturelles : Diversité culturelle importante reflétant la mosaïque ethnique de la RCA. Traditions soudaniques centrales (Banda, Ngbande) : masques, sculptures, musiques traditionnelles, danses traditionnelles. Traditions oubanguiennes (Gbaya, Sango, Manja) : masques, sculptures, musiques traditionnelles, danses traditionnelles. Traditions aka (Pygmées) : chasse-cueillette, traditions forestières, musiques polyrythmiques, danses traditionnelles. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. L'art centrafricain est réputé (masques, sculptures).
+- Religions dominantes : Christianisme (catholicisme majoritaire, protestantisme, églises indépendantes africaines), islam (minorité, nord), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels)
+- Modes de vie : Agriculture (manioc, millet, sorgho, cultures vivrières), chasse-cueillette (Aka, forêts), élevage (bovins, caprins), commerce et activités urbaines (zones urbaines, Bangui). Urbanisation modérée. Économie basée sur l'agriculture, l'exploitation minière (diamants, or, uranium), et le commerce. La RCA est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants et des conflits récurrents.
+- Organisation sociale : Organisation en chefferies traditionnelles (Banda, Gbaya, Ngbande, Sango, Manja), structures claniques patrilinéaires (majorité des groupes). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système patrilinéaire (majorité des groupes). Groupes nomades et semi-nomades (Aka, chasseurs-cueilleurs).
+- Relations régionales : Relations historiques avec le Tchad (commerce, migrations, peuples transfrontaliers, frontière), le Soudan (commerce, frontière), le Soudan du Sud (commerce, frontière), la RDC (commerce, frontière), le Congo (commerce, frontière), le Cameroun (commerce, frontière). Intégration dans la CEMAC (Communauté économique et monétaire de l'Afrique centrale). Relations commerciales et culturelles transfrontalières. La RCA est un pays de transit pour le commerce régional.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples soudaniques centraux (Banda, Ngbande) et bantous (Gbaya, Sango, Manja). Présence des peuples Aka (Pygmées) depuis la préhistoire. Développement de chefferies locales.
+- Moyen Âge : Migrations de peuples soudaniques centraux et bantous. Développement de structures politiques locales. Commerce régional.
+- Époque précoloniale : Consolidation des chefferies (Banda, Gbaya, Ngbande, Sango, Manja). Commerce régional. Développement des traditions culturelles. Développement du sango comme langue véhiculaire.
+- Colonisation : 1903-1960 : Colonie française de l'Oubangui-Chari. Résistance des peuples autochtones (notamment résistance des Gbaya). Développement de l'administration coloniale. XXe siècle : Développement du mouvement indépendantiste.
+- Lutte pour l'indépendance : 1950s-1960 : Mouvement pour l'indépendance, Barthélemy Boganda, indépendance (13 août 1960), proclamation de la République centrafricaine. David Dacko devient premier président.
+- Période post-indépendance : République centrafricaine (1960), présidence de David Dacko (1960-1966, 1979-1981), dictature de Jean-Bédel Bokassa (1966-1979, empire centrafricain, 1976-1979), coups d'État (1979, 1981, 2003, 2013), présidence d'André Kolingba (1981-1993), Ange-Félix Patassé (1993-2003), François Bozizé (2003-2013), Michel Djotodia (2013-2014), Catherine Samba-Panza (2014-2016), Faustin-Archange Touadéra (depuis 2016). Conflits récurrents (guerres civiles, 2012-2013, 2013-2014, 2014-présent), instabilité politique, violences intercommunautaires. Défis : pauvreté, développement économique, sécurité (conflits récurrents, groupes armés), VIH/sida. La RCA est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants et des conflits récurrents.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Central African Republic
+- SIL Ethnologue – Languages of Central African Republic
+- Recensements centrafricains
+- Études anthropologiques sur les peuples de la RCA
+- Études historiques sur la colonisation française
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Banda
+- Identifiant peuple (PPL_) : PPL_BANDA
+- Population : 2 000 000
+- Pourcentage dans le pays : 28,6%
+- Pourcentage en Afrique : N/A
+- Région : Centre et est de la RCA
+- Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+- Code ISO 639-3 (langue principale) : bpd
+
+### Peuple : Gbaya
+- Identifiant peuple (PPL_) : PPL_GBAYA
+- Population : 1 500 000
+- Pourcentage dans le pays : 21,4%
+- Pourcentage en Afrique : N/A
+- Région : Ouest de la RCA
+- Famille linguistique : Niger-Congo – Oubanguien (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : gya
+
+### Peuple : Ngbande
+- Identifiant peuple (PPL_) : PPL_NGBANDE
+- Population : 500 000
+- Pourcentage dans le pays : 7,1%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest de la RCA
+- Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+- Code ISO 639-3 (langue principale) : ngb
+
+### Peuple : Sango
+- Identifiant peuple (PPL_) : PPL_SANGO
+- Population : 1 000 000
+- Pourcentage dans le pays : 14,3%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions de la RCA
+- Famille linguistique : Niger-Congo – Oubanguien (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : sag
+
+### Peuple : Manja
+- Identifiant peuple (PPL_) : PPL_MANJA
+- Population : 300 000
+- Pourcentage dans le pays : 4,3%
+- Pourcentage en Afrique : N/A
+- Région : Centre de la RCA
+- Famille linguistique : Niger-Congo – Oubanguien (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : mzv
+
+### Peuple : Aka
+- Identifiant peuple (PPL_) : PPL_AKA
+- Population : 200 000
+- Pourcentage dans le pays : 2,9%
+- Pourcentage en Afrique : N/A
+- Région : Sud-ouest de la RCA (forêts)
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : akf
+
+### Autres peuples
+- Identifiant peuple (PPL_) : N/A
+- Population : 1 500 000
+- Pourcentage dans le pays : 21,4%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions de la RCA
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population RCA 2025 : 7 000 000 (estimations ONU/UNFPA)**
+

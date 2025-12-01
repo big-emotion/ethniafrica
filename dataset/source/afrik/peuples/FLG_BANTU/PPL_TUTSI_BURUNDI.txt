@@ -6,7 +6,7 @@
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe ethno-linguistique : Bantous des Grands Lacs
 - Région historique : Plateaux du Burundi
-- Pays actuels : Burundi (principal), Rwanda (communautés), diaspora
+- Pays actuels : BDI (principal), RWA (communautés), diaspora
 - Identifiant peuple (ID) : PPL_TUTSI_BURUNDI
 
 # 1. Ethnies incluses dans le peuple

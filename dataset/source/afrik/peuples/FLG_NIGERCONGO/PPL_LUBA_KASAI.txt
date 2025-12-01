@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone L)
 - Région historique : RDC (Kasaï)
-- Pays actuels : RDC
+- Pays actuels : COD
 - Identifiant peuple (ID) : PPL_LUBA_KASAI
 
 # 1. Ethnies incluses dans le peuple

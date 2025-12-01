@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Ndau (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Mozambique, Zimbabwe
-- Pays actuels : Mozambique, Zimbabwe
+- Région historique : MOZ, ZWE
+- Pays actuels : MOZ, ZWE
 - Identifiant peuple (ID) : PPL_NDAU
 
 # 1. Ethnies incluses dans le peuple

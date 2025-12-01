@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Akan (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Kwa
-- Région historique : Ghana, Côte d'Ivoire
-- Pays actuels : Ghana, Côte d'Ivoire
+- Région historique : GHA, CIV
+- Pays actuels : GHA, CIV
 - Identifiant peuple (ID) : PPL_AKAN
 
 # 1. Ethnies incluses dans le peuple
@@ -84,7 +84,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Akan language (aka)
-- CIA World Factbook – Ghana, Côte d'Ivoire
+- CIA World Factbook – GHA, CIV
 - Recensements nationaux
 - Études anthropologiques sur les peuples akan
 - Études historiques sur le royaume Ashanti

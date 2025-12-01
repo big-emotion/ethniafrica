@@ -43,9 +43,9 @@
   >20 millions
 
 # 2. Peuples associés
-- Peuple 1 : Mossi
-- Peuple 2 : Dagomba
-- Peuple 3 : Gourmantché
+- Peuple 1 : Mossi (PPL_MOSSI)
+- Peuple 2 : Dagomba (PPL_DAGOMBA)
+- Peuple 3 : Gourmantché (PPL_GOURMANTCHE)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Mossi

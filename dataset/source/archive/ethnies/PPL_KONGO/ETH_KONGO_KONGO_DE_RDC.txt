@@ -1,0 +1,73 @@
+# Nom de l’ethnie
+- Nom principal : Kongo de RDC
+- Identifiant ethnie (ID) : ETH_KONGO_KONGO_DE_RDC
+- Auto-appellation : N/A
+- Exonymes et termes coloniaux (connotation, origine, contextualisation) : N/A
+- Peuple d’appartenance : Kongo
+- Identifiant peuple (ID) : PPL_KONGO
+- Langue parlée : Kikongo
+- Code ISO 639-3 : kng
+- Famille linguistique : Niger-Congo
+- Identifiant famille linguistique (FLG) : FLG_BANTU
+
+# 1. Sous-groupes internes
+- Sous-ethnies :N/A
+  - Nom :N/A
+  - Identifiant (SUB_) :N/A
+- Clans :N/A
+  - Nom :N/A
+  - Identifiant (CLN_) :N/A
+- Lignages :N/A
+  - Nom :N/A
+  - Identifiant (CLN_) :N/A
+
+# 2. Origines et histoire du groupe
+- Origines anciennes :N/A
+- Migrations majeures :N/A
+- Formation du groupe :N/A
+- Relations avec les peuples voisins :N/A
+- Rôle dans les royaumes / empires :N/A
+
+# 3. Territoires / Répartition géographique
+- Pays :N/A
+- Régions principales :N/A
+- Zones historiques :N/A
+- Diaspora interne :N/A
+- Diaspora externe :N/A
+
+# 4. Organisation sociale et culturelle
+- Mode de vie :N/A
+- Structure familiale :N/A
+- Organisation clanique :N/A
+- Rites de passage :N/A
+- Religion(s) / spiritualités :N/A
+- Autorités traditionnelles :N/A
+
+# 5. Économie traditionnelle / modes de subsistance
+- Agriculture :N/A
+- Élevage :N/A
+- Artisanat :N/A
+- Pêche / chasse / cueillette :N/A
+- Commerce et réseaux économiques :N/A
+
+# 6. Démographie (pays par pays)
+- Population totale :N/A
+- Population par pays :N/A
+  - Code pays (ISO) :N/A
+  - Région :N/A
+  - Population :N/A
+  - Pourcentage dans le pays :N/A
+  - Source :N/A
+  - Année de référence (2025) :N/A
+
+# 7. Interactions historiques
+- Alliances :N/A
+- Conflits :N/A
+- Rôle dans les États précoloniaux :N/A
+- Rôle dans la période coloniale :N/A
+- Mouvements modernes :N/A
+- Figures majeures du groupe :N/A
+
+# 8. Sources
+- [Titre] – [Auteur/URL]
+- Etc.

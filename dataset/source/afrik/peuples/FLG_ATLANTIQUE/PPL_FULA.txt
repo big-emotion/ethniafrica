@@ -9,23 +9,23 @@
 - Famille linguistique principale : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Groupe ethno-linguistique : Atlantique (branche sénégambienne)
 - Région historique : Bande sahélienne de l'Atlantique au Tchad
-- Pays actuels : Sénégal, Guinée, Mali, Burkina Faso, Niger, Nigeria, Cameroun, Tchad, Soudan, et autres pays d'Afrique de l'Ouest et centrale
+- Pays actuels : SEN, GIN, MLI, BFA, NER, NGA, CMR, TCD, SDN, et autres pays d'Afrique de l'Ouest et centrale
 - Identifiant peuple (ID) : PPL_FULA
 
 # 1. Ethnies incluses dans le peuple
-- Ethnie 1 : Fulɓe Toroɓe (Fouta Toro, Sénégal/Mauritanie)
-- Ethnie 2 : Fulɓe Wodaabe (Niger, Nigeria, Cameroun)
-- Ethnie 3 : Fulɓe Jalooɓe (Fouta Djallon, Guinée)
+- Ethnie 1 : Fulɓe Toroɓe (Fouta Toro, SEN/Mauritanie)
+- Ethnie 2 : Fulɓe Wodaabe (NER, NGA, CMR)
+- Ethnie 3 : Fulɓe Jalooɓe (Fouta Djallon, GIN)
 - Ethnie 4 : Fulɓe Kuniari
-- Ethnie 5 : Fulɓe Mbororo (pasteurs nomades, Cameroun, Tchad, RCA)
-- Ethnie 6 : Fulɓe Adamawa (Nigeria, Cameroun)
+- Ethnie 5 : Fulɓe Mbororo (pasteurs nomades, CMR, TCD, CAF)
+- Ethnie 6 : Fulɓe Adamawa (NGA, CMR)
 - Ethnie 7 : Fulɓe Sokoto (Nigeria)
 
 # 2. Origines, migrations et formation du peuple
 - Origines anciennes : Les Fula sont originaires de la région sénégambienne. Leur présence dans cette région remonte à l'Antiquité, avec des origines probablement liées aux populations de la vallée du Sénégal.
 - Routes migratoires : 
   - Expansion pastorale vers l'est (Sahel) entre le XVe et XVIIIe siècles
-  - Migrations depuis le Fouta Djallon (Guinée) vers le Mali, Burkina Faso, Niger
+  - Migrations depuis le Fouta Djallon (Guinée) vers le MLI, BFA, NER
   - Expansion vers le Nigeria et le Cameroun (jihad peul du XIXe siècle)
   - Migrations vers le Tchad et la République centrafricaine
 - Unifications / divisions : Formation d'États peuls (Fouta Toro, Fouta Djallon, Sokoto, Macina). Diversification en groupes sédentaires et nomades (Mbororo). Maintien d'une identité culturelle et linguistique commune.
@@ -41,9 +41,9 @@
 - Langue principale : Fulfulde / Pulaar / Pular
 - Codes ISO : ful (ISO 639-3), fub (fulfulde du Cameroun), fuc (pulaar du Sénégal), fuf (pular de Guinée), fuh (fulfulde du Nigeria)
 - Dialectes : 
-  - Pulaar (Sénégal, Mauritanie)
-  - Pular (Guinée, Sierra Leone)
-  - Fulfulde (Mali, Burkina Faso, Niger, Nigeria, Cameroun, Tchad)
+  - Pulaar (SEN, MRT)
+  - Pular (GIN, SLE)
+  - Fulfulde (MLI, BFA, NER, NGA, CMR, TCD)
   - Variantes régionales nombreuses
 - Rôle véhiculaire : Le fulfulde/pulaar est parlé par la majorité des Fula. Il sert de langue véhiculaire dans certaines régions du Sahel. L'arabe, le français, l'anglais sont également utilisés selon les pays.
 
@@ -75,7 +75,7 @@
   - Interactions avec les Haoussa
   - Relations avec les Songhay
   - Contacts commerciaux avec les peuples de l'intérieur
-  - Relations avec les peuples bantous (Cameroun, Tchad)
+  - Relations avec les peuples bantous (CMR, TCD)
 - Conflits / alliances : 
   - Jihads peuls du XIXe siècle (Sokoto, Macina, Fouta Djallon)
   - Résistance à la colonisation française et britannique

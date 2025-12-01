@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : « Kongo » (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone H)
-- Région historique : Bas-Congo, Angola, Gabon
-- Pays actuels : RDC, Angola, Congo, Gabon
+- Région historique : Bas-COG, AGO, GAB
+- Pays actuels : COD, AGO, COG, GAB
 - Identifiant peuple (ID) : PPL_KONGO
 
 # 1. Ethnies incluses dans le peuple
@@ -16,10 +16,10 @@
 - Ethnie 5 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Kongo sont originaires de la région du Bas-Congo, de l'Angola, du Congo et du Gabon. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).
+- Origines anciennes : Les Kongo sont originaires de la région du Bas-COG, de l'AGO, du Congo et du Gabon. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers le Bas-Congo, l'Angola, le Congo et le Gabon
+  - Expansion vers le Bas-COG, l'AGO, le Congo et le Gabon
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Ancien royaume du Kongo.
 - Influences externes : Contacts avec les commerçants européens (XVe-XIXe siècles), influence du christianisme.

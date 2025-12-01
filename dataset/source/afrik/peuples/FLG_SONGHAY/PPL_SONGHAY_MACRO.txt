@@ -7,23 +7,23 @@
   - « Sonrai » (variante historique)
 - Famille linguistique principale : Nilo-saharien – Songhay (FLG_SONGHAY)
 - Groupe ethno-linguistique : Songhay (macro-groupe)
-- Région historique : Mali, Niger, Bénin, Burkina Faso, Nigeria
-- Pays actuels : Mali, Niger, Bénin, Burkina Faso, Nigeria
+- Région historique : MLI, NER, BEN, BFA, NGA
+- Pays actuels : MLI, NER, BEN, BFA, NGA
 - Identifiant peuple (ID) : PPL_SONGHAY_MACRO
 
 # 1. Ethnies incluses dans le peuple
 - Ethnie 1 : Songhay du Mali
 - Ethnie 2 : Zarma du Niger
-- Ethnie 3 : Dendi (Bénin, Niger, Nigeria)
+- Ethnie 3 : Dendi (BEN, NER, NGA)
 - Ethnie 4 : Koyra Chiini (Mali)
 - Ethnie 5 : Koyra Boro Seyo (Mali)
-- Ethnie 6 : Songhay Gurma (Burkina Faso, Bénin)
+- Ethnie 6 : Songhay Gurma (BFA, BEN)
 - Ethnie 7 : Autres groupes songhay
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les peuples Songhay sont originaires de la région du fleuve Niger, berceau de l'empire Songhay. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les peuples Songhay sont originaires de la région du fleuve NER, berceau de l'empire Songhay. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
-  - Expansion depuis la région de Gao (Mali) vers l'est (Niger) et le sud (Bénin, Burkina Faso, Nigeria)
+  - Expansion depuis la région de Gao (Mali) vers l'est (Niger) et le sud (BEN, BFA, NGA)
   - Migrations le long du fleuve Niger
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Diversité linguistique importante.
@@ -41,10 +41,10 @@
 - Dialectes : 
   - Songhay du Mali
   - Zarma du Niger
-  - Dendi (Bénin, Niger, Nigeria)
+  - Dendi (BEN, NER, NGA)
   - Koyra Chiini (Mali)
   - Koyra Boro Seyo (Mali)
-  - Songhay Gurma (Burkina Faso, Bénin)
+  - Songhay Gurma (BFA, BEN)
   - Nombreuses variantes régionales
 - Rôle véhiculaire : Les langues songhay sont parlées par les peuples Songhay. Le zarma sert de langue véhiculaire au Niger. Le français, l'anglais et d'autres langues sont également utilisés selon les pays.
 

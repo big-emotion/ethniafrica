@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Nuer (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique central
-- Région historique : Sud-Soudan, Éthiopie
-- Pays actuels : Soudan du Sud, Éthiopie
+- Région historique : Sud-SDN, ETH
+- Pays actuels : SDN du Sud, ETH
 - Identifiant peuple (ID) : PPL_NUER
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Nuer sont originaires du Soudan du Sud et de l'Éthiopie, dans la région du Nil supérieur. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique central.
+- Origines anciennes : Les Nuer sont originaires du Soudan du Sud et de l'ETH, dans la région du Nil supérieur. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique central.
 - Routes migratoires : 
   - Migrations depuis les régions du Nil supérieur
   - Expansion vers les zones marécageuses (Sudd)

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Nzebi (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone B)
-- Région historique : Gabon, Congo
-- Pays actuels : Gabon, Congo
+- Région historique : GAB, COG
+- Pays actuels : GAB, COG
 - Identifiant peuple (ID) : PPL_NZEBI
 
 # 1. Ethnies incluses dans le peuple

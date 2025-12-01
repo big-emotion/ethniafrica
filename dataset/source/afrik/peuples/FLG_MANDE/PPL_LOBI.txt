@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Lobi (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
 - Groupe ethno-linguistique : Mandé
-- Région historique : Burkina Faso, Côte d'Ivoire, Ghana
-- Pays actuels : Burkina Faso, Côte d'Ivoire, Ghana
+- Région historique : BFA, CIV, GHA
+- Pays actuels : BFA, CIV, GHA
 - Identifiant peuple (ID) : PPL_LOBI
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Lobi du Ghana
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Lobi sont originaires du Burkina Faso, de la Côte d'Ivoire et du Ghana, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Lobi sont originaires du BFA, de la Côte d'Ivoire et du GHA, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones frontalières
@@ -34,7 +34,7 @@
 - Dialectes : 
   - Dialectes régionaux
   - Variantes entre pays
-- Rôle véhiculaire : Le lobi est parlé par la majorité des Lobi. Le français (Burkina Faso, Côte d'Ivoire) et l'anglais (Ghana) sont utilisés dans l'éducation et l'administration.
+- Rôle véhiculaire : Le lobi est parlé par la majorité des Lobi. Le français (BFA, CIV) et l'anglais (Ghana) sont utilisés dans l'éducation et l'administration.
 
 # 5. Culture, rites et traditions
 - Rites majeurs : 
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Lobi language (lob)
-- CIA World Factbook – Burkina Faso, Côte d'Ivoire, Ghana
+- CIA World Factbook – BFA, CIV, GHA
 - Recensements nationaux
 - Études anthropologiques sur les peuples mandé
 - Études sur l'art lobi (sculpture)

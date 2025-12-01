@@ -1,0 +1,179 @@
+# Nom du pays
+- Nom officiel actuel : République arabe d'Égypte (Jumhūriyyat Miṣr al-ʻArabiyyah)
+- Étymologie du nom : Le nom "Égypte" vient du grec "Aigyptos", lui-même dérivé de "Hikuptah" (nom d'un temple de Memphis). Le nom arabe "Miṣr" (مصر) signifie "pays" ou "frontière" et est utilisé depuis l'Antiquité. L'ancien nom égyptien était "Kemet" (terre noire).
+- Personne / peuple / administration à l'origine du nom : Le nom "Égypte" a été donné par les Grecs. Le nom arabe "Miṣr" est utilisé depuis la conquête arabe (VIIe siècle).
+- Identifiant pays (ISO 3166-1 alpha-3) : EGY
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Kemet (terre noire, ancien nom égyptien), Aigyptos (grec), Aegyptus (latin). Civilisation pharaonique (vers 3100 av. J.-C. - 30 av. J.-C.).
+- Moyen Âge : Miṣr (arabe), Égypte (français). Domination arabe (VIIe siècle), puis turque (XVIe siècle).
+- Époque précoloniale : Miṣr (nom arabe), Égypte ottomane (1517-1882), État semi-autonome sous les Mamelouks puis les Ottomans.
+- Colonisation : 1882-1922 : Protectorat britannique, puis royaume d'Égypte (1922-1953). Le nom "Égypte" est officialisé.
+- Période contemporaine : 1953 : République d'Égypte, puis République arabe d'Égypte (1958). Le nom officiel en arabe est "Jumhūriyyat Miṣr al-ʻArabiyyah".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Ancien Empire égyptien] :
+  - Période : 2686-2181 av. J.-C.
+  - Peuples dominants : Égyptiens anciens
+  - Centres politiques : Memphis
+  - Rôle historique : Construction des pyramides, développement de l'écriture hiéroglyphique, centralisation du pouvoir pharaonique.
+
+- [Moyen Empire égyptien] :
+  - Période : 2055-1650 av. J.-C.
+  - Peuples dominants : Égyptiens anciens
+  - Centres politiques : Thèbes
+  - Rôle historique : Expansion territoriale, développement de la littérature et des arts, période de prospérité.
+
+- [Nouvel Empire égyptien] :
+  - Période : 1550-1069 av. J.-C.
+  - Peuples dominants : Égyptiens anciens
+  - Centres politiques : Thèbes, Memphis
+  - Rôle historique : Apogée de la puissance égyptienne, expansion en Nubie et au Levant, règnes de Thoutmosis III, Akhenaton, Ramsès II.
+
+- [Royaume ptolémaïque] :
+  - Période : 305-30 av. J.-C.
+  - Peuples dominants : Grecs, Égyptiens
+  - Centres politiques : Alexandrie
+  - Rôle historique : Dynastie grecque, hellénisation de l'Égypte, développement d'Alexandrie comme centre culturel.
+
+- [Égypte romaine et byzantine] :
+  - Période : 30 av. J.-C. - 641 apr. J.-C.
+  - Peuples dominants : Romains, Grecs, Égyptiens, Coptes
+  - Centres politiques : Alexandrie
+  - Rôle historique : Province romaine puis byzantine, christianisation, développement du copte.
+
+- [Califat omeyyade et abbasside] :
+  - Période : 641-969
+  - Peuples dominants : Arabes, Égyptiens, Coptes
+  - Centres politiques : Fostat (Le Caire)
+  - Rôle historique : Conquête arabe, islamisation progressive, arabisation linguistique.
+
+- [Califat fatimide] :
+  - Période : 969-1171
+  - Peuples dominants : Arabes, Berbères, Égyptiens, Coptes
+  - Centres politiques : Le Caire
+  - Rôle historique : Dynastie chiite ismaélienne, fondation du Caire, développement culturel et commercial.
+
+- [Sultanat mamelouk] :
+  - Période : 1250-1517
+  - Peuples dominants : Mamelouks (Turcs, Circassiens), Arabes, Égyptiens, Coptes
+  - Centres politiques : Le Caire
+  - Rôle historique : État mamelouk puissant, résistance aux Mongols et aux Croisés, développement économique et culturel.
+
+- [Égypte ottomane] :
+  - Période : 1517-1882
+  - Peuples dominants : Turcs ottomans, Arabes, Égyptiens, Coptes
+  - Centres politiques : Le Caire
+  - Rôle historique : Province ottomane, autonomie croissante sous les Mamelouks, modernisation sous Méhémet Ali (1805-1848).
+
+- [Protectorat britannique] :
+  - Période : 1882-1922
+  - Peuples dominants : Tous les peuples égyptiens sous domination britannique
+  - Centres politiques : Le Caire
+  - Rôle historique : Occupation britannique, développement du canal de Suez, mouvements nationalistes.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Arabes d'Égypte
+  - Auto-appellation (endonyme) : Al-'Arab (العرب), Miṣriyyūn (مصريون, Égyptiens)
+  - Exonymes / appellations historiques : Arabes, Arabophones, Égyptiens
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Toutes les régions d'Égypte, majoritaires dans la vallée du Nil et le delta
+  - Langues parlées : Arabe égyptien (darija), arabe standard
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Arabes d'Égypte sont majoritairement arabisés (descendants des anciens Égyptiens arabisés). Le terme "Égyptien" (Miṣriyyūn) est également utilisé.
+
+- Peuple 2 :
+  - Nom : Coptes
+  - Auto-appellation (endonyme) : Aqbaṭ (أقباط), Copte (ⲟⲩⲣⲉⲙⲛ̀ⲭⲏⲙⲓ)
+  - Exonymes / appellations historiques : Coptes (du grec "Aigyptios"), Égyptiens chrétiens
+  - Identifiant peuple (PPL_) : N/A (groupe non listé dans les fichiers PPL_ mais présent en Égypte)
+  - Région principale : Toutes les régions d'Égypte, concentrés dans la Haute-Égypte et les grandes villes
+  - Langues parlées : Arabe égyptien, copte (langue liturgique)
+  - Famille linguistique : Afro-asiatique – Égyptien (langue copte, dérivée de l'égyptien ancien)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Coptes sont les descendants des anciens Égyptiens qui ont conservé le christianisme. Le terme "Copte" vient du grec "Aigyptios" (Égyptien). Ils représentent environ 10-15% de la population égyptienne.
+
+- Peuple 3 :
+  - Nom : Siwi
+  - Auto-appellation (endonyme) : Isiwan
+  - Exonymes / appellations historiques : « Berbères de Siwa » (ancien ethnonyme européen, non péjoratif)
+  - Identifiant peuple (PPL_) : PPL_SIWI
+  - Région principale : Oasis de Siwa (désert occidental)
+  - Langues parlées : Siwi (swh)
+  - Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Petit peuple amazigh isolé dans l'oasis de Siwa. Le terme "Berbère" est considéré comme problématique, l'auto-appellation est "Isiwan".
+
+- Peuple 4 :
+  - Nom : Beja
+  - Auto-appellation (endonyme) : Bega / Hadendowa
+  - Exonymes / appellations historiques : Beja, Bédouins de la mer Rouge
+  - Identifiant peuple (PPL_) : PPL_BEJA
+  - Région principale : Sud-est de l'Égypte (région frontalière avec le Soudan)
+  - Langues parlées : Beja (bedawiyet)
+  - Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Peuple ancien de la mer Rouge, présent principalement au Soudan et en Érythrée, minorité en Égypte.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Arabe égyptien (arz), arabe standard (ara), copte (cop, langue liturgique), siwi (swh), beja (bej), nubien (fia, ken), anglais (eng)
+- Traditions culturelles : Musique égyptienne classique et populaire, cinéma égyptien, littérature arabe, calligraphie, architecture islamique et copte, fêtes religieuses (musulmanes et coptes)
+- Religions dominantes : Islam sunnite (école chaféite majoritaire), christianisme copte orthodoxe (10-15%), autres confessions chrétiennes (minorités)
+- Modes de vie : Urbanisation importante (Le Caire, Alexandrie), agriculture dans la vallée du Nil et le delta, industrie, tourisme, commerce
+- Organisation sociale : Structures familiales traditionnelles, organisation communautaire (quartiers, villages), structures étatiques modernes, rôle important de l'armée
+- Relations régionales : Relations avec le monde arabe (Ligue arabe), relations avec l'Afrique (Union africaine), relations avec l'Europe et les États-Unis, rôle dans la paix au Moyen-Orient
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Civilisation pharaonique (vers 3100 av. J.-C. - 30 av. J.-C.), construction des pyramides, développement de l'écriture, expansion territoriale, conquête par Alexandre le Grand (332 av. J.-C.).
+- Moyen Âge : Conquête arabe (641), islamisation progressive, dynasties arabes et turques (Omeyyades, Abbassides, Fatimides, Mamelouks), développement du commerce et de la culture.
+- Époque précoloniale : Domination ottomane (1517-1882), autonomie sous Méhémet Ali, modernisation de l'État, construction du canal de Suez (1869).
+- Colonisation : Occupation britannique (1882), protectorat britannique, développement économique, mouvements nationalistes (début XXe siècle).
+- Lutte pour l'indépendance : Révolution de 1919, indépendance formelle (1922), révolution de 1952, proclamation de la république (1953), nationalisation du canal de Suez (1956).
+- Période post-indépendance : République arabe d'Égypte (1958), union avec la Syrie (1958-1961), guerre des Six Jours (1967), guerre du Kippour (1973), paix avec Israël (1979), printemps arabe (2011), transition politique.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Egypt
+- Ethnologue – Languages of Egypt
+- Joshua Project – Coptic in Egypt
+- Encyclopaedia of Islam – Egypt
+- Wikipedia – Egypt, Copts, Siwa Oasis
+- Recensements égyptiens
+- Siwa Heritage Foundation
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Arabes d'Égypte
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 94 500 000
+- Pourcentage dans le pays : 90,0%
+- Pourcentage en Afrique : 52,5%
+- Région : Toutes les régions
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : arz
+
+### Peuple : Coptes
+- Identifiant peuple (PPL_) : N/A
+- Population : 10 500 000
+- Pourcentage dans le pays : 10,0%
+- Pourcentage en Afrique : 5,8%
+- Région : Toutes les régions (concentrés en Haute-Égypte)
+- Famille linguistique : Afro-asiatique – Égyptien (langue copte)
+- Code ISO 639-3 (langue principale) : cop (langue liturgique), arz (langue quotidienne)
+
+### Peuple : Siwi
+- Identifiant peuple (PPL_) : PPL_SIWI
+- Population : 30 000
+- Pourcentage dans le pays : 0,03%
+- Pourcentage en Afrique : 0,02%
+- Région : Oasis de Siwa
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Code ISO 639-3 (langue principale) : swh
+
+### Peuple : Beja
+- Identifiant peuple (PPL_) : PPL_BEJA
+- Population : 50 000
+- Pourcentage dans le pays : 0,05%
+- Pourcentage en Afrique : 0,03%
+- Région : Sud-est (frontière avec le Soudan)
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Code ISO 639-3 (langue principale) : bej
+
+**Total population Égypte 2025 : 105 000 000 (estimations ONU/UNFPA)**

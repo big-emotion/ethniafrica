@@ -42,9 +42,9 @@
   ~4–5 millions
 
 # 2. Peuples associés
-- Peuple 1 : Wolaytta
-- Peuple 2 : Gamo
-- Peuple 3 : Ari
+- Peuple 1 : Wolaytta (PPL_WOLAYTTA)
+- Peuple 2 : Gamo (PPL_GAMO)
+- Peuple 3 : Ari (PPL_ARI)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Wolaytta

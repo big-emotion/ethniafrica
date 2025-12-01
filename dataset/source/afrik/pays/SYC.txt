@@ -1,0 +1,155 @@
+# Nom du pays
+- Nom officiel actuel : République des Seychelles (Republic of Seychelles, Repiblik Sesel)
+- Étymologie du nom : Le nom "Seychelles" vient de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV, roi de France. Les îles ont été nommées "Seychelles" par les Français en 1756 en son honneur. Le nom créole "Sesel" est dérivé de "Seychelles". Auparavant, les îles étaient appelées "Îles de la Ligne" ou "Îles de la Soif" par les navigateurs.
+- Personne / peuple / administration à l'origine du nom : Les Français ont nommé les îles "Seychelles" en l'honneur de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV (1756). Le nom a été conservé par les Britanniques puis officialisé lors de l'indépendance (1976).
+- Identifiant pays (ISO 3166-1 alpha-3) : SYC
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Les îles des Seychelles étaient inhabitée. Pas de présence humaine avant l'arrivée des Européens.
+- Moyen Âge : Les îles restent inhabitée. Pas de présence humaine permanente.
+- Époque précoloniale : Les îles restent inhabitée jusqu'à l'arrivée des Européens. Les navigateurs utilisaient les termes "Îles de la Ligne" ou "Îles de la Soif". Pas de structures politiques ou sociales.
+- Colonisation : 1756-1814 : Colonie française des Seychelles. 1814-1976 : Colonie britannique des Seychelles. Les Français ont nommé les îles "Seychelles" en 1756. Colonisation française puis britannique, développement de l'économie de plantation (coco, vanille, épices), importation d'esclaves africains et malgaches, développement du peuple créole seychellois. Le nom "Seychelles" est officialisé par les Français puis conservé par les Britanniques.
+- Période contemporaine : 1976 : Indépendance (29 juin 1976), proclamation de la République des Seychelles. Le nom "Seychelles" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Îles déserte] :
+  - Période : Avant 1756
+  - Peuples dominants : Aucun (îles inhabitée)
+  - Centres politiques : Aucun
+  - Rôle historique : Les îles des Seychelles étaient inhabitée avant l'arrivée des Européens en 1756.
+
+- [Colonie française des Seychelles] :
+  - Période : 1756 - 1814
+  - Peuples dominants : Français, esclaves africains et malgaches, créoles seychellois
+  - Centres politiques : Mahé (capitale coloniale)
+  - Rôle historique : Colonisation française, développement de l'économie de plantation (coco, vanille, épices), importation d'esclaves africains et malgaches, développement du peuple créole seychellois.
+
+- [Colonie britannique des Seychelles] :
+  - Période : 1814 - 1976
+  - Peuples dominants : Britanniques, créoles seychellois, immigrants indiens, immigrants chinois
+  - Centres politiques : Victoria (capitale coloniale)
+  - Rôle historique : Colonisation britannique, abolition de l'esclavage (1835), immigration indienne et chinoise (commerce), développement de la société multiethnique, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Créoles seychellois
+  - Auto-appellation (endonyme) : Kreol Seselwa
+  - Exonymes / appellations historiques : Créole seychellois (terme utilisé pour les créoles des Seychelles)
+  - Identifiant peuple (PPL_) : PPL_CREOLE_SEYCHELLES
+  - Région principale : Toutes les îles des Seychelles
+  - Langues parlées : Créole seychellois (Kreol Seselwa, crs, ISO 639-3), français, anglais
+  - Famille linguistique : Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kreol Seselwa" est l'auto-appellation. Pas de terme péjoratif connu. Groupe créole majoritaire, formé à partir du contact entre les populations africaines (notamment de Madagascar et d'Afrique de l'Est), malgaches, indiennes et les colons français à partir du XVIIIe siècle.
+
+- Peuple 2 :
+  - Nom : Indo-Seychellois
+  - Auto-appellation (endonyme) : Variées selon les groupes (Indiens seychellois)
+  - Exonymes / appellations historiques : "Indiens" (terme générique), "Indo-Seychellois" (terme descriptif)
+  - Identifiant peuple (PPL_) : PPL_INDO_SEYCHELLOIS
+  - Région principale : Toutes les îles des Seychelles, majoritairement urbains
+  - Langues parlées : Créole seychellois, français, anglais, hindi, gujarati, tamoul
+  - Famille linguistique : Indo-européenne (langues indiennes), Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Indo-Seychellois sont descendants d'immigrants indiens arrivés au XIXe et XXe siècles, principalement pour le commerce. Ils sont majoritairement hindous ou musulmans.
+
+- Peuple 3 :
+  - Nom : Sino-Seychellois
+  - Auto-appellation (endonyme) : Variées selon les groupes (Chinois seychellois)
+  - Exonymes / appellations historiques : "Chinois" (terme générique), "Sino-Seychellois" (terme descriptif)
+  - Identifiant peuple (PPL_) : PPL_SINO_SEYCHELLOIS
+  - Région principale : Toutes les îles des Seychelles, majoritairement urbains
+  - Langues parlées : Créole seychellois, français, anglais, hakka, cantonais, mandarin
+  - Famille linguistique : Sino-tibétaine, Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Sino-Seychellois sont descendants d'immigrants chinois arrivés au XIXe et XXe siècles, principalement pour le commerce. Ils sont majoritairement chrétiens (catholicisme) ou bouddhistes.
+
+- Peuple 4 :
+  - Nom : Franco-Seychellois
+  - Auto-appellation (endonyme) : Variées selon les groupes (Français seychellois)
+  - Exonymes / appellations historiques : "Français" (terme générique), "Colons" (terme historique)
+  - Identifiant peuple (PPL_) : PPL_FRANCO_SEYCHELLOIS
+  - Région principale : Toutes les îles des Seychelles, majoritairement urbains
+  - Langues parlées : Français, créole seychellois, anglais
+  - Famille linguistique : Indo-européenne (langues romanes), Créole (FLG_CREOLE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les Franco-Seychellois sont descendants de colons français. Le terme "Colon" est historique et doit être contextualisé. Ils sont majoritairement catholiques.
+
+- Peuple 5 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les îles des Seychelles
+  - Langues parlées : Langues diverses, créole seychellois, français, anglais
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Créole seychellois (langue nationale, crs), français (langue officielle, fra), anglais (langue officielle, eng)
+- Traditions culturelles : Culture créole seychelloise unique, résultat du métissage afro-européen-asiatique. Traditions créoles : musique traditionnelle créole (séga, moutia), danse traditionnelle, poésie orale, artisanat. Festivals traditionnels créoles (Carnaval, etc.). Traditions culinaires créoles. Traditions indiennes (hindouisme, fêtes indiennes, Diwali). Traditions chinoises (fêtes chinoises, Nouvel An chinois). Traditions françaises (influence culturelle française). Identité créole forte et distincte. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture créole seychelloise est riche et préservée.
+- Religions dominantes : Christianisme (catholicisme majoritaire), hindouisme (minorité, Indo-Seychellois), islam (minorité, Indo-Seychellois), bouddhisme (minorité, Sino-Seychellois), religions traditionnelles africaines (syncrétisme fréquent)
+- Modes de vie : Agriculture (coco, vanille, épices, cultures vivrières), pêche (océan Indien, importante source de protéines), commerce et activités urbaines (zones urbaines, Victoria). Urbanisation importante. Économie basée sur le tourisme (secteur majeur), la pêche, l'agriculture (coco, vanille, épices), et les services financiers. Les Seychelles sont l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée.
+- Organisation sociale : Société créole multiethnique et multiculturelle. Structures familiales traditionnelles créoles. Organisation communautaire (communautés créoles, indiennes, chinoises, françaises). Structures étatiques modernes (république démocratique). Cohabitation pacifique des différentes communautés. Système politique démocratique stable.
+- Relations régionales : Relations avec l'Afrique (membre de l'Union africaine, SADC), relations avec l'Asie (relations avec l'Inde, la Chine), relations avec l'Europe (Union européenne, France, Royaume-Uni), relations avec les îles de l'océan Indien (Maurice, Réunion, Madagascar). Les Seychelles sont un centre touristique régional.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Les îles des Seychelles étaient inhabitée. Pas de présence humaine avant l'arrivée des Européens.
+- Moyen Âge : Les îles restent inhabitée. Pas de présence humaine permanente.
+- Époque précoloniale : Les îles restent inhabitée jusqu'à l'arrivée des Européens. Les navigateurs utilisaient les termes "Îles de la Ligne" ou "Îles de la Soif". Pas de structures politiques ou sociales.
+- Colonisation : 1756-1814 : Colonie française des Seychelles, développement de l'économie de plantation (coco, vanille, épices), importation d'esclaves africains et malgaches, développement du peuple créole seychellois. 1814-1976 : Colonie britannique des Seychelles, abolition de l'esclavage (1835), immigration indienne et chinoise (commerce), développement de la société multiethnique.
+- Lutte pour l'indépendance : 1960s-1976 : Mouvements nationalistes, SPUP (Seychelles People's United Party), SDP (Seychelles Democratic Party), indépendance (29 juin 1976), proclamation de la République des Seychelles. James Mancham devient premier président.
+- Période post-indépendance : République des Seychelles (1976), présidence de James Mancham (1976-1977), coup d'État (1977), présidence de France-Albert René (1977-2004, régime socialiste, parti unique jusqu'en 1991), transition démocratique (1991), élections multipartites, présidence de James Michel (2004-2016), Danny Faure (2016-2020), Wavel Ramkalawan (depuis 2020). Stabilité politique, démocratie multipartite, développement économique (tourisme, pêche, services financiers). Les Seychelles sont l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Seychelles
+- SIL Ethnologue – Languages of Seychelles
+- Recensements seychellois
+- Études anthropologiques sur les peuples des Seychelles
+- Études historiques sur la colonisation française et britannique
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Créoles seychellois
+- Identifiant peuple (PPL_) : PPL_CREOLE_SEYCHELLES
+- Population : 90 000
+- Pourcentage dans le pays : 90,0%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles des Seychelles
+- Famille linguistique : Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : crs
+
+### Peuple : Indo-Seychellois
+- Identifiant peuple (PPL_) : PPL_INDO_SEYCHELLOIS
+- Population : 5 000
+- Pourcentage dans le pays : 5,0%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles des Seychelles, majoritairement urbains
+- Famille linguistique : Indo-européenne (langues indiennes), Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : hin, guj, tam, crs
+
+### Peuple : Sino-Seychellois
+- Identifiant peuple (PPL_) : PPL_SINO_SEYCHELLOIS
+- Population : 2 000
+- Pourcentage dans le pays : 2,0%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles des Seychelles, majoritairement urbains
+- Famille linguistique : Sino-tibétaine, Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : hak, yue, cmn, crs
+
+### Peuple : Franco-Seychellois
+- Identifiant peuple (PPL_) : PPL_FRANCO_SEYCHELLOIS
+- Population : 1 000
+- Pourcentage dans le pays : 1,0%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles des Seychelles, majoritairement urbains
+- Famille linguistique : Indo-européenne (langues romanes), Créole (FLG_CREOLE)
+- Code ISO 639-3 (langue principale) : fra, crs
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 2 000
+- Pourcentage dans le pays : 2,0%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les îles des Seychelles
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Seychelles 2025 : 100 000 (estimations ONU/UNFPA)**
+

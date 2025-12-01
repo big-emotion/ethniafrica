@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : « Hutu » (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone J)
-- Région historique : Burundi, Rwanda
-- Pays actuels : Burundi, Rwanda
+- Région historique : BDI, RWA
+- Pays actuels : BDI, RWA
 - Identifiant peuple (ID) : PPL_KIRUNDI_HUTU
 
 # 1. Ethnies incluses dans le peuple

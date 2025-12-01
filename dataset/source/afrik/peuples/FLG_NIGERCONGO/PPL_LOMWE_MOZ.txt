@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone P)
 - Région historique : Mozambique
-- Pays actuels : Mozambique
+- Pays actuels : MOZ
 - Identifiant peuple (ID) : PPL_LOMWE_MOZ
 
 # 1. Ethnies incluses dans le peuple

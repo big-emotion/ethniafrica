@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Macro-groupe Beti-Pahouin
 - Région historique : Centre du Cameroun (Yaoundé)
-- Pays actuels : Cameroun
+- Pays actuels : CMR
 - Identifiant peuple (ID) : PPL_EWONDO
 
 # 1. Ethnies incluses dans le peuple

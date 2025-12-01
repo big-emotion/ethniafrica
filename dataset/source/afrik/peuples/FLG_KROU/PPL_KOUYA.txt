@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
 - Groupe ethno-linguistique : Krou
 - Région historique : Côte d'Ivoire
-- Pays actuels : Côte d'Ivoire
+- Pays actuels : CIV
 - Identifiant peuple (ID) : PPL_KOUYA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Kouya sont originaires de la Côte d'Ivoire, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Kouya sont originaires de la CIV, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones forestières

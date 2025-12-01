@@ -1,0 +1,208 @@
+# Nom du pays
+- Nom officiel actuel : République du Botswana (Republic of Botswana)
+- Étymologie du nom : Le nom "Botswana" dérive de "Tswana", le nom du peuple majoritaire, avec le préfixe "Bo-" qui signifie "pays de" en setswana. "Botswana" signifie donc "pays des Tswana". Le nom a été adopté à l'indépendance en 1966 pour remplacer "Bechuanaland", nom colonial britannique.
+- Personne / peuple / administration à l'origine du nom : Le nom "Botswana" a été choisi par les dirigeants tswana à l'indépendance en 1966. Il remplace "Bechuanaland", nom colonial britannique dérivé de "Bechuana" (ancienne orthographe de "Tswana"). Le nom "Botswana" reflète l'identité du peuple majoritaire (Batswana).
+- Identifiant pays (ISO 3166-1 alpha-3) : BWA
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel du Botswana était peuplé de peuples Khoisan (San et Khoikhoi), premiers habitants de la région, sans nom unifié pour l'ensemble du territoire. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Arrivée et expansion des peuples bantous (Tswana) dans la région. Développement de chefferies tswana. Contacts entre peuples bantous et Khoisan. Pas de nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de chefferies tswana autonomes (Bakwena, Bangwato, Bangwaketse, Batawana, etc.). Peuples Khoisan (San) dans le désert du Kalahari. Les Européens utilisaient le terme "Bechuanaland" pour désigner la région.
+- Colonisation : 1885-1966 : Protectorat du Bechuanaland (British Bechuanaland Protectorate). Les Britanniques ont établi le protectorat en 1885 pour protéger les chefferies tswana contre l'expansion boer et allemande. Le territoire était administré depuis le Cap (Afrique du Sud) puis depuis Londres. Pas de colonisation de peuplement britannique importante.
+- Période contemporaine : 1966 : Indépendance du Botswana (30 septembre 1966), proclamation de la République du Botswana. Le nom "Botswana" remplace "Bechuanaland". Le pays a connu une stabilité politique remarquable depuis l'indépendance, avec une démocratie multipartite et une économie basée sur les diamants.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Chefferies Tswana] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Tswana (Batswana)
+  - Centres politiques : Gaborone (capitale moderne), chefferies traditionnelles (Bakwena, Bangwato, Bangwaketse, Batawana, etc.)
+  - Rôle historique : Chefferies tswana organisées en structures politiques traditionnelles. Système de kgotla (assemblée traditionnelle). Résistance à la colonisation. Rôle majeur dans l'indépendance du Botswana.
+
+- [Protectorat du Bechuanaland] :
+  - Période : 1885 - 1966
+  - Peuples dominants : Tous les peuples botswanais sous protectorat britannique
+  - Centres politiques : Mafikeng (capitale administrative, en Afrique du Sud), puis Gaborone (à partir de 1965)
+  - Rôle historique : Protectorat britannique, administration indirecte (respect des chefferies traditionnelles). Pas de colonisation de peuplement. Développement du mouvement indépendantiste au XXe siècle. Menace d'annexion par l'Afrique du Sud évitée.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Tswana
+  - Auto-appellation (endonyme) : Batswana (pluriel), Motswana (singulier)
+  - Exonymes / appellations historiques : Tswana (terme utilisé par les Européens), Batswana, "Bechuana" (ancienne orthographe coloniale, dépassée)
+  - Identifiant peuple (PPL_) : PPL_TSWANA
+  - Région principale : Tout le Botswana (peuple majoritaire)
+  - Langues parlées : Setswana / Tswana (tsn, ISO 639-3), anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone S) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Batswana" est l'auto-appellation (pluriel), "Tswana" est l'exonyme le plus courant. "Bechuana" est une ancienne orthographe coloniale dépassée. Pas de terme péjoratif connu.
+
+- Peuple 2 :
+  - Nom : Kgalagadi
+  - Auto-appellation (endonyme) : Kgalagadi
+  - Exonymes / appellations historiques : Kgalagadi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KGALAGADI
+  - Région principale : Désert du Kalahari (Botswana)
+  - Langues parlées : Kgalagadi (xkv, ISO 639-3), setswana, anglais
+  - Famille linguistique : Khoïsan – Khoe (FLG_KHOE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kgalagadi" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 3 :
+  - Nom : San
+  - Auto-appellation (endonyme) : Variées selon les groupes (Ju|'hoansi, ǂHoan, etc.)
+  - Exonymes / appellations historiques : "Bushmen" (terme colonial péjoratif, à éviter), "San" (terme générique, parfois utilisé), "Khoisan" (terme académique)
+  - Identifiant peuple (PPL_) : PPL_SAN, PPL_KXA_MACRO, PPL_TUU_MACRO, PPL_HOA, PPL_KXOE
+  - Région principale : Désert du Kalahari (Botswana)
+  - Langues parlées : Langues khoïsan (plusieurs langues), setswana, anglais
+  - Famille linguistique : Khoïsan (FLG_KXA, FLG_TUU, FLG_KHOE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les termes "Bushmen" et "Hottentots" sont des exonymes coloniaux péjoratifs et doivent être évités. "San" est un terme générique parfois utilisé, mais chaque groupe a sa propre auto-appellation (Ju|'hoansi, ǂHoan, etc.). "Khoisan" est un terme académique utilisé pour désigner l'ensemble des peuples de cette famille linguistique. Les San sont les premiers habitants du Botswana et de l'Afrique australe.
+
+- Peuple 4 :
+  - Nom : Kalanga
+  - Auto-appellation (endonyme) : Kalanga
+  - Exonymes / appellations historiques : Kalanga (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KALANGA
+  - Région principale : Nord-est du Botswana, frontière avec le Zimbabwe
+  - Langues parlées : Kalanga (kck, ISO 639-3), setswana, anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone S) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kalanga" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 5 :
+  - Nom : Herero
+  - Auto-appellation (endonyme) : Ovaherero
+  - Exonymes / appellations historiques : Herero (terme utilisé par les Européens), Ovaherero
+  - Identifiant peuple (PPL_) : PPL_HERERO
+  - Région principale : Nord-ouest du Botswana, frontière avec la Namibie
+  - Langues parlées : Otjiherero (her, ISO 639-3), setswana, anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Ovaherero" est l'auto-appellation (pluriel), "Herero" est l'exonyme le plus courant. Pas de terme péjoratif connu.
+
+- Peuple 6 :
+  - Nom : Mbukushu
+  - Auto-appellation (endonyme) : Mbukushu
+  - Exonymes / appellations historiques : Mbukushu (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MBUKUSHU
+  - Région principale : Nord du Botswana (Okavango), frontière avec la Namibie et l'Angola
+  - Langues parlées : Mbukushu (mhw, ISO 639-3), setswana, anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone K) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Mbukushu" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 7 :
+  - Nom : Yeyi
+  - Auto-appellation (endonyme) : Yeyi
+  - Exonymes / appellations historiques : Yeyi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_YEYI
+  - Région principale : Nord du Botswana (Okavango)
+  - Langues parlées : Yeyi (yey, ISO 639-3), setswana, anglais
+  - Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Yeyi" est l'auto-appellation du peuple. Pas de terme péjoratif connu.
+
+- Peuple 8 :
+  - Nom : Autres peuples
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_SHUA, PPL_TSHUWA, autres
+  - Région principale : Diverses régions du Botswana
+  - Langues parlées : Langues khoïsan, setswana, anglais
+  - Famille linguistique : Diverses (FLG_KHOE, FLG_KXA, FLG_TUU principalement)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Setswana / Tswana (langue nationale, tsn), anglais (langue officielle, eng), Kgalagadi (xkv), langues khoïsan (plusieurs langues), Kalanga (kck), Otjiherero (her), Mbukushu (mhw), Yeyi (yey)
+- Traditions culturelles : Traditions tswana dominantes (kgotla, assemblées traditionnelles). Traditions khoisan (chasse-cueillette, art rupestre). Traditions herero (élevage, vêtements traditionnels). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Art rupestre san (patrimoine mondial UNESCO).
+- Religions dominantes : Christianisme (protestantisme majoritaire, catholicisme), religions traditionnelles africaines (syncrétisme fréquent), croyances khoisan traditionnelles
+- Modes de vie : Agriculture et élevage (Tswana, Herero), chasse-cueillette (San), commerce et activités urbaines (zones urbaines, Gaborone). Urbanisation croissante. Économie basée sur les diamants, l'élevage (bovins), et le tourisme (safaris, désert du Kalahari).
+- Organisation sociale : Organisation en chefferies traditionnelles tswana (kgotla, assemblées traditionnelles). Structure clanique patrilinéaire. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Organisation égalitaire chez les San (chasseurs-cueilleurs).
+- Relations régionales : Relations historiques avec l'Afrique du Sud (commerce, migrations), la Namibie (frontière, peuples transfrontaliers), le Zimbabwe (Kalanga, commerce). Intégration dans la SADC (Communauté de développement de l'Afrique australe). Relations commerciales et culturelles transfrontalières. Dépendance économique historique de l'Afrique du Sud.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement initial par les peuples Khoisan (San et Khoikhoi), premiers habitants de la région, présence depuis des dizaines de milliers d'années. Art rupestre san (patrimoine mondial UNESCO).
+- Moyen Âge : Arrivée et expansion des peuples bantous (Tswana) dans la région à partir du Ier millénaire de notre ère. Développement de chefferies tswana. Contacts entre peuples bantous et Khoisan. Développement de réseaux commerciaux régionaux.
+- Époque précoloniale : Consolidation des chefferies tswana (Bakwena, Bangwato, Bangwaketse, Batawana, etc.). Système de kgotla (assemblée traditionnelle). Résistance aux raids boers et aux pressions extérieures. Peuples Khoisan (San) dans le désert du Kalahari, mode de vie de chasseurs-cueilleurs.
+- Colonisation : 1885 : Établissement du protectorat du Bechuanaland par les Britanniques pour protéger les chefferies tswana contre l'expansion boer et allemande. Période du protectorat britannique (1885-1966), administration indirecte (respect des chefferies traditionnelles). Pas de colonisation de peuplement britannique importante. Menace d'annexion par l'Afrique du Sud évitée grâce à la résistance des chefs tswana. XXe siècle : Développement du mouvement indépendantiste, formation de partis politiques.
+- Lutte pour l'indépendance : 1960s : Mouvement pour l'indépendance mené par les dirigeants tswana (Seretse Khama, etc.). 1965 : Transfert de la capitale de Mafikeng (Afrique du Sud) à Gaborone. 1966 : Indépendance du Botswana (30 septembre 1966), proclamation de la République du Botswana. Le nom "Botswana" remplace "Bechuanaland".
+- Période post-indépendance : 1966-présent : Stabilité politique remarquable, démocratie multipartite, présidence de Seretse Khama (1966-1980). Découverte et exploitation des diamants (années 1970), transformation économique. Développement économique et social, amélioration des indicateurs de développement. Défis : VIH/sida, inégalités sociales, dépendance aux diamants. Le Botswana est considéré comme un modèle de démocratie et de développement en Afrique.
+
+# 7. Sources
+- SIL Ethnologue – Languages of Botswana
+- CIA World Factbook – Botswana
+- ONU / UNFPA – Démographie Botswana 2025
+- Schapera, Isaac – "A Handbook of Tswana Law and Custom"
+- Parsons, Neil – "A New History of Southern Africa"
+- UNESCO – Art rupestre san du Botswana (patrimoine mondial)
+- Recensements botswanais
+- Études anthropologiques sur les peuples du Botswana
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Tswana
+- Identifiant peuple (PPL_) : PPL_TSWANA
+- Population : 1 800 000
+- Pourcentage dans le pays : 79%
+- Pourcentage en Afrique : N/A
+- Région : Tout le Botswana (peuple majoritaire)
+- Famille linguistique : Niger-Congo – Bantou (Zone S) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : tsn
+
+### Peuple : Kgalagadi
+- Identifiant peuple (PPL_) : PPL_KGALAGADI
+- Population : 50 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Désert du Kalahari (Botswana)
+- Famille linguistique : Khoïsan – Khoe (FLG_KHOE)
+- Code ISO 639-3 (langue principale) : xkv
+
+### Peuple : San
+- Identifiant peuple (PPL_) : PPL_SAN, PPL_KXA_MACRO, PPL_TUU_MACRO, PPL_HOA, PPL_KXOE
+- Population : 50 000
+- Pourcentage dans le pays : 2%
+- Pourcentage en Afrique : N/A
+- Région : Désert du Kalahari (Botswana)
+- Famille linguistique : Khoïsan (FLG_KXA, FLG_TUU, FLG_KHOE)
+- Code ISO 639-3 (langue principale) : N/A (plusieurs langues khoïsan)
+
+### Peuple : Kalanga
+- Identifiant peuple (PPL_) : PPL_KALANGA
+- Population : 150 000
+- Pourcentage dans le pays : 7%
+- Pourcentage en Afrique : N/A
+- Région : Nord-est du Botswana, frontière avec le Zimbabwe
+- Famille linguistique : Niger-Congo – Bantou (Zone S) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : kck
+
+### Peuple : Herero
+- Identifiant peuple (PPL_) : PPL_HERERO
+- Population : 20 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Nord-ouest du Botswana, frontière avec la Namibie
+- Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : her
+
+### Peuple : Mbukushu
+- Identifiant peuple (PPL_) : PPL_MBUKUSHU
+- Population : 30 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Botswana (Okavango), frontière avec la Namibie et l'Angola
+- Famille linguistique : Niger-Congo – Bantou (Zone K) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : mhw
+
+### Peuple : Yeyi
+- Identifiant peuple (PPL_) : PPL_YEYI
+- Population : 30 000
+- Pourcentage dans le pays : 1%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Botswana (Okavango)
+- Famille linguistique : Niger-Congo – Bantou (Zone R) (FLG_BANTU)
+- Code ISO 639-3 (langue principale) : yey
+
+### Autres peuples
+- Identifiant peuple (PPL_) : PPL_SHUA, PPL_TSHUWA, autres
+- Population : 150 000
+- Pourcentage dans le pays : 7%
+- Pourcentage en Afrique : N/A
+- Région : Diverses régions du Botswana
+- Famille linguistique : Diverses (FLG_KHOE, FLG_KXA, FLG_TUU, FLG_BANTU principalement)
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Botswana 2025 : 2 280 000 (estimations ONU/UNFPA)**
+

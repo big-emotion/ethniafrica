@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Swazi (terme utilisé par les Européens), parfois appelés « Swati » (terme alternatif)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Eswatini, Afrique du Sud
-- Pays actuels : Eswatini, Afrique du Sud
+- Région historique : SWZ, Afrique du Sud
+- Pays actuels : SWZ, Afrique du Sud
 - Identifiant peuple (ID) : PPL_SWAZI
 
 # 1. Ethnies incluses dans le peuple

@@ -1,0 +1,41 @@
+{
+  "ETH_ID": "ETH_AFEMAI_ETSAKO",
+  "timestamp": "2025-01-25T22:30:00Z",
+  "sources": {
+    "glottolog": {
+      "url": "https://glottolog.org/resource/languoid/id/etsa1235",
+      "data": {
+        "langue": "Etsako",
+        "code_iso": "ets",
+        "famille": "Atlantic-Congo > Volta-Congo > Benue-Congo > Edoid > North-Central",
+        "pays": ["Nigeria"],
+        "region": "Edo State, Nigeria",
+        "glottocode": "etsa1235",
+        "auto_appellation": "Etsako"
+      },
+      "timestamp": "2025-01-25T22:30:00Z",
+      "success": true
+    },
+    "ethnologue": {
+      "url": "https://www.ethnologue.com/language/ets",
+      "data": {
+        "langue": "Etsako",
+        "code_iso": "ets",
+        "famille": "Niger-Congo",
+        "pays": ["Nigeria"],
+        "auto_appellation": "Etsako"
+      },
+      "timestamp": "2025-01-25T22:30:00Z",
+      "success": true
+    }
+  },
+  "consolidated": {
+    "sources_utilisees": ["Glottolog", "Ethnologue (SIL)"],
+    "code_iso": "ets",
+    "langue_principale": "Etsako",
+    "famille_linguistique": "Atlantic-Congo > Volta-Congo > Benue-Congo > Edoid > North-Central",
+    "pays_principaux": ["Nigeria"],
+    "region_generale": "Edo State, Nigeria",
+    "auto_appellation": "Etsako"
+  }
+}

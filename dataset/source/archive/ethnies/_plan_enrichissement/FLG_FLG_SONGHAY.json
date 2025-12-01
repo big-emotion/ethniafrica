@@ -1,0 +1,306 @@
+{
+  "batchId": "FLG_FLG_SONGHAY",
+  "flgId": "FLG_SONGHAY",
+  "totalEthnies": 23,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_DENDI_DENDI_DU_BENIN",
+      "nom_ethnie": "Dendi du Bénin",
+      "PPL_ID": "PPL_DENDI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DENDI/ETH_DENDI_DENDI_DU_BENIN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Dendi%20du%20B%C3%A9nin",
+        "unesco": "https://www.unesco.org/en/search?q=Dendi%20du%20B%C3%A9nin%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DENDI_DENDI_DU_NIGER",
+      "nom_ethnie": "Dendi du Niger",
+      "PPL_ID": "PPL_DENDI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DENDI/ETH_DENDI_DENDI_DU_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Dendi%20du%20Niger",
+        "unesco": "https://www.unesco.org/en/search?q=Dendi%20du%20Niger%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DENDI_DENDI_DU_NIGERIA",
+      "nom_ethnie": "Dendi du Nigeria",
+      "PPL_ID": "PPL_DENDI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DENDI/ETH_DENDI_DENDI_DU_NIGERIA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Dendi%20du%20Nigeria",
+        "unesco": "https://www.unesco.org/en/search?q=Dendi%20du%20Nigeria%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KOYRA_BORO_SEYO_KOYRA_BORO_SEYO_DU_NORD",
+      "nom_ethnie": "Koyra Boro Seyo du Nord",
+      "PPL_ID": "PPL_KOYRA_BORO_SEYO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KOYRA_BORO_SEYO/ETH_KOYRA_BORO_SEYO_KOYRA_BORO_SEYO_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Koyra%20Boro%20Seyo%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Koyra%20Boro%20Seyo%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KOYRA_BORO_SEYO_KOYRA_BORO_SEYO_DU_SUD",
+      "nom_ethnie": "Koyra Boro Seyo du Sud",
+      "PPL_ID": "PPL_KOYRA_BORO_SEYO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KOYRA_BORO_SEYO/ETH_KOYRA_BORO_SEYO_KOYRA_BORO_SEYO_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Koyra%20Boro%20Seyo%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Koyra%20Boro%20Seyo%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KOYRA_CHIINI_KOYRA_CHIINI_DU_NORD",
+      "nom_ethnie": "Koyra Chiini du Nord",
+      "PPL_ID": "PPL_KOYRA_CHIINI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KOYRA_CHIINI/ETH_KOYRA_CHIINI_KOYRA_CHIINI_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Koyra%20Chiini%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Koyra%20Chiini%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KOYRA_CHIINI_KOYRA_CHIINI_DU_SUD",
+      "nom_ethnie": "Koyra Chiini du Sud",
+      "PPL_ID": "PPL_KOYRA_CHIINI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KOYRA_CHIINI/ETH_KOYRA_CHIINI_KOYRA_CHIINI_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Koyra%20Chiini%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Koyra%20Chiini%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KURTEY_KURTEY_DU_NORD",
+      "nom_ethnie": "Kurtey du Nord",
+      "PPL_ID": "PPL_KURTEY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KURTEY/ETH_KURTEY_KURTEY_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kurtey%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Kurtey%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KURTEY_KURTEY_DU_SUD",
+      "nom_ethnie": "Kurtey du Sud",
+      "PPL_ID": "PPL_KURTEY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KURTEY/ETH_KURTEY_KURTEY_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kurtey%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Kurtey%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_GURMA_SONGHAY_GURMA_DU_BURKINA_FASO",
+      "nom_ethnie": "Songhay Gurma du Burkina Faso",
+      "PPL_ID": "PPL_SONGHAY_GURMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_GURMA/ETH_SONGHAY_GURMA_SONGHAY_GURMA_DU_BURKINA_FASO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Songhay%20Gurma%20du%20Burkina%20Faso",
+        "unesco": "https://www.unesco.org/en/search?q=Songhay%20Gurma%20du%20Burkina%20Faso%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_GURMA_SONGHAY_GURMA_DU_BENIN",
+      "nom_ethnie": "Songhay Gurma du Bénin",
+      "PPL_ID": "PPL_SONGHAY_GURMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_GURMA/ETH_SONGHAY_GURMA_SONGHAY_GURMA_DU_BENIN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Songhay%20Gurma%20du%20B%C3%A9nin",
+        "unesco": "https://www.unesco.org/en/search?q=Songhay%20Gurma%20du%20B%C3%A9nin%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_MACRO_SONGHAY_DU_MALI",
+      "nom_ethnie": "Songhay du Mali",
+      "PPL_ID": "PPL_SONGHAY_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_MACRO/ETH_SONGHAY_MACRO_SONGHAY_DU_MALI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Songhay%20du%20Mali",
+        "unesco": "https://www.unesco.org/en/search?q=Songhay%20du%20Mali%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_MACRO_ZARMA_DU_NIGER",
+      "nom_ethnie": "Zarma du Niger",
+      "PPL_ID": "PPL_SONGHAY_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_MACRO/ETH_SONGHAY_MACRO_ZARMA_DU_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Zarma%20du%20Niger",
+        "unesco": "https://www.unesco.org/en/search?q=Zarma%20du%20Niger%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_MACRO_DENDI_BENIN_NIGER_NIGERIA",
+      "nom_ethnie": "Dendi (Bénin, Niger, Nigeria)",
+      "PPL_ID": "PPL_SONGHAY_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_MACRO/ETH_SONGHAY_MACRO_DENDI_BENIN_NIGER_NIGERIA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Dendi%20(B%C3%A9nin%2C%20Niger%2C%20Nigeria)",
+        "unesco": "https://www.unesco.org/en/search?q=Dendi%20(B%C3%A9nin%2C%20Niger%2C%20Nigeria)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_MACRO_KOYRA_CHIINI_MALI",
+      "nom_ethnie": "Koyra Chiini (Mali)",
+      "PPL_ID": "PPL_SONGHAY_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_MACRO/ETH_SONGHAY_MACRO_KOYRA_CHIINI_MALI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Koyra%20Chiini%20(Mali)",
+        "unesco": "https://www.unesco.org/en/search?q=Koyra%20Chiini%20(Mali)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_MACRO_KOYRA_BORO_SEYO_MALI",
+      "nom_ethnie": "Koyra Boro Seyo (Mali)",
+      "PPL_ID": "PPL_SONGHAY_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_MACRO/ETH_SONGHAY_MACRO_KOYRA_BORO_SEYO_MALI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Koyra%20Boro%20Seyo%20(Mali)",
+        "unesco": "https://www.unesco.org/en/search?q=Koyra%20Boro%20Seyo%20(Mali)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_MACRO_SONGHAY_GURMA_BURKINA_FASO_BENIN",
+      "nom_ethnie": "Songhay Gurma (Burkina Faso, Bénin)",
+      "PPL_ID": "PPL_SONGHAY_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_MACRO/ETH_SONGHAY_MACRO_SONGHAY_GURMA_BURKINA_FASO_BENIN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Songhay%20Gurma%20(Burkina%20Faso%2C%20B%C3%A9nin)",
+        "unesco": "https://www.unesco.org/en/search?q=Songhay%20Gurma%20(Burkina%20Faso%2C%20B%C3%A9nin)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_NIGERIEN_SONGHAY_DU_NORD_NIGER",
+      "nom_ethnie": "Songhay du Nord (Niger)",
+      "PPL_ID": "PPL_SONGHAY_NIGERIEN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_NIGERIEN/ETH_SONGHAY_NIGERIEN_SONGHAY_DU_NORD_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Songhay%20du%20Nord%20(Niger)",
+        "unesco": "https://www.unesco.org/en/search?q=Songhay%20du%20Nord%20(Niger)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SONGHAY_NIGERIEN_SONGHAY_DU_SUD_NIGER",
+      "nom_ethnie": "Songhay du Sud (Niger)",
+      "PPL_ID": "PPL_SONGHAY_NIGERIEN",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SONGHAY_NIGERIEN/ETH_SONGHAY_NIGERIEN_SONGHAY_DU_SUD_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Songhay%20du%20Sud%20(Niger)",
+        "unesco": "https://www.unesco.org/en/search?q=Songhay%20du%20Sud%20(Niger)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WOGO_WOGO_DU_NORD",
+      "nom_ethnie": "Wogo du Nord",
+      "PPL_ID": "PPL_WOGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WOGO/ETH_WOGO_WOGO_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wogo%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Wogo%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WOGO_WOGO_DU_SUD",
+      "nom_ethnie": "Wogo du Sud",
+      "PPL_ID": "PPL_WOGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WOGO/ETH_WOGO_WOGO_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wogo%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Wogo%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ZARMA_ZARMA_DU_NIGER",
+      "nom_ethnie": "Zarma du Niger",
+      "PPL_ID": "PPL_ZARMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ZARMA/ETH_ZARMA_ZARMA_DU_NIGER.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Zarma%20du%20Niger",
+        "unesco": "https://www.unesco.org/en/search?q=Zarma%20du%20Niger%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_ZARMA_ZARMA_DU_NIGERIA",
+      "nom_ethnie": "Zarma du Nigeria",
+      "PPL_ID": "PPL_ZARMA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_ZARMA/ETH_ZARMA_ZARMA_DU_NIGERIA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Zarma%20du%20Nigeria",
+        "unesco": "https://www.unesco.org/en/search?q=Zarma%20du%20Nigeria%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

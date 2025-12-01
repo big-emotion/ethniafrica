@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Dafing (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo – Mandé (FLG_MANDE)
 - Groupe ethno-linguistique : Mandé occidental
-- Région historique : Burkina Faso, Mali
-- Pays actuels : Burkina Faso, Mali
+- Région historique : BFA, MLI
+- Pays actuels : BFA, MLI
 - Identifiant peuple (ID) : PPL_DAFING
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Dafing sont originaires du Burkina Faso et du Mali, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
+- Origines anciennes : Les Dafing sont originaires du Burkina Faso et du MLI, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones sahéliennes
@@ -74,7 +74,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Dafing language (dtn)
-- CIA World Factbook – Burkina Faso, Mali
+- CIA World Factbook – BFA, MLI
 - Recensements burkinabé et maliens
 - Études anthropologiques sur les peuples mandé
 

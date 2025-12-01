@@ -8,11 +8,11 @@
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique (branche sénégambienne)
 - Région historique : Bande sahélienne de l'Atlantique au Tchad
-- Pays actuels : Sénégal, Mali, Burkina Faso, Niger, Nigeria, Cameroun, Tchad, et autres pays sahéliens
+- Pays actuels : SEN, MLI, BFA, NER, NGA, CMR, TCD, et autres pays sahéliens
 - Identifiant peuple (ID) : PPL_FULA_SAHEL
 
 # 1. Ethnies incluses dans le peuple
-- Ethnie 1 : Fulɓe Toroɓe (Fouta Toro, Sénégal/Mauritanie)
+- Ethnie 1 : Fulɓe Toroɓe (Fouta Toro, SEN/Mauritanie)
 - Ethnie 2 : Fulɓe du Sahel central
 - Ethnie 3 : Fulɓe du Sahel oriental
 
@@ -20,7 +20,7 @@
 - Origines anciennes : Les Fula du Sahel sont originaires de la bande sahélienne. Leur présence dans cette région remonte à plusieurs siècles. Ils font partie du groupe Atlantique de la famille Niger-Congo.
 - Routes migratoires : 
   - Expansion pastorale vers l'est (Sahel) entre le XVe et XVIIIe siècles
-  - Migrations depuis le Fouta Toro et le Fouta Djallon vers le Mali, Burkina Faso, Niger
+  - Migrations depuis le Fouta Toro et le Fouta Djallon vers le MLI, BFA, NER
   - Expansion vers le Nigeria et le Cameroun
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Adaptation aux environnements sahéliens.
 - Influences externes : Influence profonde de l'islam, rôle majeur dans les réseaux islamiques du Sahel. Contacts avec les peuples mandé, haoussa, et autres groupes sahéliens.
@@ -35,8 +35,8 @@
 - Langue principale : Fulfulde / Pulaar / Pular
 - Codes ISO : ful (ISO 639-3), fub, fuc, fuf, fuh
 - Dialectes : 
-  - Pulaar (Sénégal, Mauritanie)
-  - Fulfulde (Mali, Burkina Faso, Niger, Nigeria, Cameroun, Tchad)
+  - Pulaar (SEN, MRT)
+  - Fulfulde (MLI, BFA, NER, NGA, CMR, TCD)
   - Variantes régionales sahéliennes
 - Rôle véhiculaire : Le fulfulde/pulaar est parlé par la majorité des Fula du Sahel. Il sert de langue véhiculaire dans certaines régions du Sahel. L'arabe, le français et d'autres langues sont également utilisés selon les pays.
 

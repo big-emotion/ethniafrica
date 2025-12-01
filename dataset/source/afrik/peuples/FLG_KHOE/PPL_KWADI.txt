@@ -5,7 +5,7 @@
 - Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
 - Groupe ethno-linguistique : Khoe
 - Région historique : Angola
-- Pays actuels : Angola
+- Pays actuels : AGO
 - Identifiant peuple (ID) : PPL_KWADI
 
 # 1. Ethnies incluses dans le peuple
@@ -13,7 +13,7 @@
 - Ethnie 2 : Sous-groupes régionaux
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Kwadi sont originaires de l'Angola, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.
+- Origines anciennes : Les Kwadi sont originaires de l'AGO, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.
 - Routes migratoires : 
   - Migrations depuis les régions intérieures vers les zones actuelles
   - Expansion le long des zones désertiques

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central
 - Région historique : Sud-Soudan
-- Pays actuels : Soudan du Sud
+- Pays actuels : SDN du Sud
 - Identifiant peuple (ID) : PPL_BONGO
 
 # 1. Ethnies incluses dans le peuple

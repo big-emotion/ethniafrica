@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Tswana (terme utilisé par les Européens), Batswana
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone S)
-- Région historique : Botswana, Afrique du Sud
-- Pays actuels : Botswana, Afrique du Sud
+- Région historique : BWA, Afrique du Sud
+- Pays actuels : BWA, Afrique du Sud
 - Identifiant peuple (ID) : PPL_TSWANA
 
 # 1. Ethnies incluses dans le peuple
@@ -76,7 +76,7 @@
 
 # 8. Sources
 - SIL Ethnologue – Tswana language (tsn)
-- CIA World Factbook – Botswana, South Africa
+- CIA World Factbook – BWA, South Africa
 - Recensements nationaux
 - Études anthropologiques sur les peuples bantous
 

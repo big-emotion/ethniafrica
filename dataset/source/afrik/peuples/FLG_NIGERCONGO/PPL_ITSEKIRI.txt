@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : « Jekri » (terme utilisé par les Européens), « Warri » (nom de la ville principale)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Yoruboid (sous-groupe du Bénoué-Congo)
-- Région historique : Delta du Niger, sud-ouest du Nigeria
-- Pays actuels : Nigeria
+- Région historique : Delta du NER, sud-ouest du Nigeria
+- Pays actuels : NGA
 - Identifiant peuple (ID) : PPL_ITSEKIRI
 
 # 1. Ethnies incluses dans le peuple

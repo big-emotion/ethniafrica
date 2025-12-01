@@ -1,0 +1,202 @@
+{
+  "batchId": "FLG_FLG_KXA",
+  "flgId": "FLG_KXA",
+  "totalEthnies": 15,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_BUGAKWE_BUGAKWE_DU_NORD",
+      "nom_ethnie": "Bugakwe du Nord",
+      "PPL_ID": "PPL_BUGAKWE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUGAKWE/ETH_BUGAKWE_BUGAKWE_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bugakwe%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Bugakwe%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BUGAKWE_BUGAKWE_DU_SUD",
+      "nom_ethnie": "Bugakwe du Sud",
+      "PPL_ID": "PPL_BUGAKWE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BUGAKWE/ETH_BUGAKWE_BUGAKWE_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bugakwe%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Bugakwe%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HOA_HOAN_DU_NORD",
+      "nom_ethnie": "ǂHoan du Nord",
+      "PPL_ID": "PPL_HOA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HOA/ETH_HOA_HOAN_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%82Hoan%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%82Hoan%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_HOA_HOAN_DU_SUD",
+      "nom_ethnie": "ǂHoan du Sud",
+      "PPL_ID": "PPL_HOA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_HOA/ETH_HOA_HOAN_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%82Hoan%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%82Hoan%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_JUHOANSI_JU_HOANSI_DU_NORD_NAMIBIE",
+      "nom_ethnie": "Ju|'hoansi du Nord (Namibie)",
+      "PPL_ID": "PPL_JUHOANSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_JUHOANSI/ETH_JUHOANSI_JU_HOANSI_DU_NORD_NAMIBIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ju%7C'hoansi%20du%20Nord%20(Namibie)",
+        "unesco": "https://www.unesco.org/en/search?q=Ju%7C'hoansi%20du%20Nord%20(Namibie)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_JUHOANSI_JU_HOANSI_DU_SUD_BOTSWANA",
+      "nom_ethnie": "Ju|'hoansi du Sud (Botswana)",
+      "PPL_ID": "PPL_JUHOANSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_JUHOANSI/ETH_JUHOANSI_JU_HOANSI_DU_SUD_BOTSWANA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ju%7C'hoansi%20du%20Sud%20(Botswana)",
+        "unesco": "https://www.unesco.org/en/search?q=Ju%7C'hoansi%20du%20Sud%20(Botswana)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KUNG_KUNG_DU_NORD_ANGOLA_NAMIBIE",
+      "nom_ethnie": "!Kung du Nord (Angola, Namibie)",
+      "PPL_ID": "PPL_KUNG",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KUNG/ETH_KUNG_KUNG_DU_NORD_ANGOLA_NAMIBIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=!Kung%20du%20Nord%20(Angola%2C%20Namibie)",
+        "unesco": "https://www.unesco.org/en/search?q=!Kung%20du%20Nord%20(Angola%2C%20Namibie)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KUNG_KUNG_DU_SUD_BOTSWANA_NAMIBIE",
+      "nom_ethnie": "!Kung du Sud (Botswana, Namibie)",
+      "PPL_ID": "PPL_KUNG",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KUNG/ETH_KUNG_KUNG_DU_SUD_BOTSWANA_NAMIBIE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=!Kung%20du%20Sud%20(Botswana%2C%20Namibie)",
+        "unesco": "https://www.unesco.org/en/search?q=!Kung%20du%20Sud%20(Botswana%2C%20Namibie)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KUNG_KUNG_DE_L_EST",
+      "nom_ethnie": "!Kung de l'Est",
+      "PPL_ID": "PPL_KUNG",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KUNG/ETH_KUNG_KUNG_DE_L_EST.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=!Kung%20de%20l'Est",
+        "unesco": "https://www.unesco.org/en/search?q=!Kung%20de%20l'Est%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KXA_MACRO_JU_HOANSI",
+      "nom_ethnie": "Ju|'hoansi",
+      "PPL_ID": "PPL_KXA_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KXA_MACRO/ETH_KXA_MACRO_JU_HOANSI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ju%7C'hoansi",
+        "unesco": "https://www.unesco.org/en/search?q=Ju%7C'hoansi%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KXA_MACRO_HOAN",
+      "nom_ethnie": "ǂHoan",
+      "PPL_ID": "PPL_KXA_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KXA_MACRO/ETH_KXA_MACRO_HOAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=%C7%82Hoan",
+        "unesco": "https://www.unesco.org/en/search?q=%C7%82Hoan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KXA_MACRO_KUNG_DIVERSES_VARIETES",
+      "nom_ethnie": "!Kung (diverses variétés)",
+      "PPL_ID": "PPL_KXA_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KXA_MACRO/ETH_KXA_MACRO_KUNG_DIVERSES_VARIETES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=!Kung%20(diverses%20vari%C3%A9t%C3%A9s)",
+        "unesco": "https://www.unesco.org/en/search?q=!Kung%20(diverses%20vari%C3%A9t%C3%A9s)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KXA_MACRO_BUGAKWE",
+      "nom_ethnie": "Bugakwe",
+      "PPL_ID": "PPL_KXA_MACRO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KXA_MACRO/ETH_KXA_MACRO_BUGAKWE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bugakwe",
+        "unesco": "https://www.unesco.org/en/search?q=Bugakwe%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TSAO_KXA_TSHAO_DU_NORD",
+      "nom_ethnie": "Tshao du Nord",
+      "PPL_ID": "PPL_TSAO_KXA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TSAO_KXA/ETH_TSAO_KXA_TSHAO_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tshao%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Tshao%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TSAO_KXA_TSHAO_DU_SUD",
+      "nom_ethnie": "Tshao du Sud",
+      "PPL_ID": "PPL_TSAO_KXA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TSAO_KXA/ETH_TSAO_KXA_TSHAO_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Tshao%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Tshao%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

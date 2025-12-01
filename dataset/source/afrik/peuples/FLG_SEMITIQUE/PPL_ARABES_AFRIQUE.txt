@@ -5,11 +5,11 @@
 - Famille linguistique principale : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
 - Groupe ethno-linguistique : Sémitiques occidentaux
 - Région historique : Péninsule arabique (origines), Afrique du Nord, Corne de l'Afrique, Sahel
-- Pays actuels : Maroc, Algérie, Tunisie, Libye, Égypte, Soudan, Mauritanie, Tchad, Djibouti, Somalie, Comores, et communautés dans toute l'Afrique
+- Pays actuels : MAR, DZA, TUN, LBY, EGY, SDN, MRT, TCD, DJI, SOM, COM, et communautés dans toute l'Afrique
 - Identifiant peuple (ID) : PPL_ARABES_AFRIQUE
 
 # 1. Ethnies incluses dans le peuple
-- Ethnie 1 : Arabes du Maghreb (Maroc, Algérie, Tunisie, Libye)
+- Ethnie 1 : Arabes du Maghreb (MAR, DZA, TUN, LBY)
 - Ethnie 2 : Arabes d'Égypte
 - Ethnie 3 : Arabes du Soudan
 - Ethnie 4 : Arabes de Mauritanie
@@ -24,8 +24,8 @@
 - Origines anciennes : Les Arabes sont originaires de la péninsule arabique. La présence arabe en Afrique remonte aux migrations pré-islamiques et s'est intensifiée avec l'expansion de l'islam à partir du VIIe siècle.
 - Routes migratoires : 
   - Expansion vers l'Afrique du Nord (Maghreb) à partir du VIIe siècle
-  - Migration vers la vallée du Nil (Égypte, Soudan)
-  - Expansion vers la Corne de l'Afrique (Somalie, Djibouti)
+  - Migration vers la vallée du Nil (EGY, SDN)
+  - Expansion vers la Corne de l'Afrique (SOM, DJI)
   - Traversée du Sahara vers le Sahel
   - Navigation vers les îles de l'océan Indien (Comores)
 - Unifications / divisions : Diversification en groupes régionaux distincts tout en maintenant une identité culturelle et linguistique commune. Métissages avec les populations berbères, africaines et autres groupes locaux.
@@ -45,7 +45,7 @@
   - Arabe égyptien
   - Arabe soudanais
   - Arabe tchadien
-  - Arabe hassaniya (Mauritanie, Sahara occidental)
+  - Arabe hassaniya (MRT, Sahara occidental)
   - Arabe comorien (shikomori avec influences bantoues)
 - Rôle véhiculaire : L'arabe est langue officielle dans tous les pays arabes d'Afrique. L'arabe standard moderne est utilisé dans l'éducation, les médias et l'administration. Les dialectes sont utilisés dans la vie quotidienne.
 
@@ -60,7 +60,7 @@
   - Musique arabe classique et populaire (chaâbi, raï, malouf)
   - Poésie arabe classique et moderne
   - Calligraphie et arts décoratifs islamiques
-  - Danse traditionnelle (belly dance en Égypte, danses bédouines)
+  - Danse traditionnelle (belly dance en EGY, danses bédouines)
 - Spiritualités : Islam sunnite majoritaire (écoles malékite, chaféite, hanafite). Minorités chiites et ibadites. Soufisme important dans certaines régions. Préservation de certaines traditions pré-islamiques dans certaines communautés.
 
 # 6. Rôle historique et interactions régionales
@@ -100,7 +100,7 @@
 - Source : Estimations basées sur CIA World Factbook, ONU, recensements nationaux, et études démographiques régionales
 
 # 8. Sources
-- CIA World Factbook – Country profiles (Égypte, Algérie, Maroc, etc.)
+- CIA World Factbook – Country profiles (EGY, DZA, MAR, etc.)
 - ONU – Population data 2025
 - Hourani, Albert – *A History of the Arab Peoples*
 - Lapidus, Ira M. – *A History of Islamic Societies*

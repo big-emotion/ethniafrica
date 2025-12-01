@@ -4,7 +4,7 @@
 - Famille linguistique : Afro-asiatique – Omotique
 - Groupe : Omotique sud-occidental
 - Région : Bench-Sheko Zone (Éthiopie)
-- Pays actuels : Éthiopie
+- Pays actuels : ETH
 - ID : PPL_SHEKO
 
 # 1. Ethnies incluses

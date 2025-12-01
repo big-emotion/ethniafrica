@@ -1,0 +1,167 @@
+# Nom du pays
+- Nom officiel actuel : République du Tchad (Republic of Chad, جمهورية تشاد)
+- Étymologie du nom : Le nom "Tchad" vient du lac Tchad, qui occupe une position centrale dans la région. Le terme "Tchad" (ou "Chad" en anglais) est dérivé du mot kanembu "tsade" ou "sade", signifiant "grande étendue d'eau" ou "lac". Le lac Tchad était un centre important pour les royaumes historiques de la région (Kanem-Bornou). Le nom "Tchad" a été officialisé par les colonisateurs français au début du XXe siècle.
+- Personne / peuple / administration à l'origine du nom : Le nom "Tchad" vient du lac Tchad, nommé par les peuples locaux (Kanembu). Le nom "Tchad" a été officialisé par les colonisateurs français au début du XXe siècle lors de la création de la colonie du Tchad.
+- Identifiant pays (ISO 3166-1 alpha-3) : TCD
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Présence de peuples sahariens et soudaniques centraux dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de "Kanem" par les géographes arabes.
+- Moyen Âge : Présence de peuples sahariens (Kanembu, Toubou) et soudaniques centraux (Sara) dans la région. Développement du royaume du Kanem (VIIIe-XIVe siècles) et du royaume du Bornou (XIVe-XIXe siècles). La région était connue sous le nom de "Kanem" ou "Bornou" par les géographes arabes.
+- Époque précoloniale : Présence de peuples sahariens (Kanembu, Toubou), soudaniques centraux (Sara), et arabes dans la région. Développement du royaume du Kanem-Bornou. La région était connue sous le nom de "Kanem" ou "Bornou" par les géographes arabes, mais les populations locales avaient leurs propres appellations.
+- Colonisation : 1900-1960 : Colonie française du Tchad. Développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle). Le nom "Tchad" est officialisé par les colonisateurs français.
+- Période contemporaine : 1960 : Indépendance (11 août 1960), proclamation de la République du Tchad. Le nom "Tchad" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume du Kanem] :
+  - Période : VIIIe siècle - XIVe siècle
+  - Peuples dominants : Kanembu, Kanuri
+  - Centres politiques : Njimi (capitale du Kanem)
+  - Rôle historique : Royaume saharien puissant, contrôle du commerce transsaharien, expansion de l'islam, développement de la civilisation kanembu.
+
+- [Royaume du Bornou] :
+  - Période : XIVe siècle - XIXe siècle
+  - Peuples dominants : Kanembu, Kanuri, Arabes
+  - Centres politiques : Ngazargamu (capitale du Bornou)
+  - Rôle historique : Royaume saharien puissant, continuation du royaume du Kanem, contrôle du commerce transsaharien, expansion de l'islam, résistance aux colonisateurs.
+
+- [Royaume du Kanem-Bornou] :
+  - Période : VIIIe siècle - XIXe siècle
+  - Peuples dominants : Kanembu, Kanuri, Arabes, Toubou
+  - Centres politiques : Njimi (Kanem), Ngazargamu (Bornou)
+  - Rôle historique : Royaume saharien puissant, contrôle du commerce transsaharien, expansion de l'islam, développement de la civilisation kanembu, résistance aux colonisateurs.
+
+- [Chefferies Sara] :
+  - Période : Depuis plusieurs siècles
+  - Peuples dominants : Sara
+  - Centres politiques : Chefferies traditionnelles
+  - Rôle historique : Organisation politique traditionnelle des Sara, chefferies territoriales, résistance aux colonisateurs.
+
+- [Colonie française du Tchad] :
+  - Période : 1900 - 1960
+  - Peuples dominants : Français, Sara, Kanembu, Toubou, Arabes, autres groupes
+  - Centres politiques : Fort-Lamy (N'Djamena, capitale coloniale)
+  - Rôle historique : Colonisation française, développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Sara
+  - Auto-appellation (endonyme) : Sara
+  - Exonymes / appellations historiques : "Sara" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SARA
+  - Région principale : Sud du Tchad
+  - Langues parlées : Sara (sre, ISO 639-3), français, arabe
+  - Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Sara" est l'auto-appellation. Pas de terme péjoratif connu. Groupe soudanique central majoritaire, originaire du Tchad et de la RCA.
+
+- Peuple 2 :
+  - Nom : Arabes tchadiens
+  - Auto-appellation (endonyme) : Al-'Arab (العرب)
+  - Exonymes / appellations historiques : "Arabes" (terme générique), "Arabophones" (terme descriptif), "Baggara" (terme historique pour certains groupes arabes nomades)
+  - Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+  - Région principale : Centre et est du Tchad, zones désertiques
+  - Langues parlées : Arabe tchadien (arb, ISO 639-3), français
+  - Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Al-'Arab" (العرب) est l'auto-appellation. Le terme "Baggara" (éleveurs de bovins) est historique et descriptif. Groupe sémitique, descendants d'immigrants arabes arrivés à partir du VIIe siècle, métissages avec les populations locales.
+
+- Peuple 3 :
+  - Nom : Kanembu
+  - Auto-appellation (endonyme) : Kanembu
+  - Exonymes / appellations historiques : "Kanembu" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KANEMBU
+  - Région principale : Nord du Tchad (région du lac Tchad)
+  - Langues parlées : Kanembu (kbl, ISO 639-3), arabe, français
+  - Famille linguistique : Nilo-saharien – Saharien (FLG_SAHARIEN)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kanembu" est l'auto-appellation. Pas de terme péjoratif connu. Groupe saharien, historiquement lié au royaume du Kanem-Bornou.
+
+- Peuple 4 :
+  - Nom : Toubou
+  - Auto-appellation (endonyme) : Toubou
+  - Exonymes / appellations historiques : "Toubou" (terme utilisé par les Européens), "Teda" (Toubou du Nord), "Daza" (Toubou du Sud)
+  - Identifiant peuple (PPL_) : PPL_TOUBOU
+  - Région principale : Nord du Tchad (Sahara), zones désertiques
+  - Langues parlées : Toubou (tbv, dzg, ISO 639-3), arabe, français
+  - Famille linguistique : Nilo-saharien – Saharien (FLG_SAHARIEN)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Toubou" est l'auto-appellation. "Teda" et "Daza" sont les noms des sous-groupes. Pas de terme péjoratif connu. Groupe saharien, originaire du Tchad, du Niger et de la Libye, dans la région du Sahara central.
+
+- Peuple 5 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les régions du Tchad
+  - Langues parlées : Langues diverses, français, arabe
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), arabe (langue officielle, arb), sara (sre), kanembu (kbl), toubou (tbv, dzg)
+- Traditions culturelles : Traditions soudaniques centrales (Sara) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat (poterie, tissage), agriculture. Traditions arabes (Arabes tchadiens) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat, élevage pastoral. Traditions sahariennes (Kanembu, Toubou) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat, élevage pastoral, commerce transsaharien. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture tchadienne est riche et préservée, avec une forte tradition orale (poésie).
+- Religions dominantes : Islam sunnite (majoritaire, environ 55%), christianisme (environ 40%, principalement catholicisme), religions traditionnelles africaines (syncrétisme fréquent, environ 5%)
+- Modes de vie : Agriculture (coton, arachides, sorgho, millet, cultures vivrières), élevage (bovins, caprins, ovins, chameaux, mode de vie nomade et semi-nomade), pêche (lac Tchad, importante source de protéines), exploitation minière (pétrole, or), commerce et activités urbaines (zones urbaines, N'Djamena). Urbanisation limitée. Économie basée sur l'agriculture (coton, arachides), l'élevage pastoral, et l'exploitation pétrolière (secteur majeur). Le Tchad est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole.
+- Organisation sociale : Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (tribus, clans, chefferies). Structures étatiques modernes (république, mais instabilité politique et conflits récents). Système politique démocratique, mais instabilité politique et conflits récents (guerre civile, rébellions, coups d'État).
+- Relations régionales : Relations avec l'Afrique centrale (CEEAC, Union africaine), relations avec le Sahel (G5 Sahel), relations avec le Moyen-Orient (Ligue arabe), relations avec l'Europe (Union européenne, France), relations avec les États-Unis. Le Tchad est membre de la CEEAC, de l'Union africaine et de la Ligue arabe.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence de peuples sahariens et soudaniques centraux dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de "Kanem" par les géographes arabes.
+- Moyen Âge : Présence de peuples sahariens (Kanembu, Toubou) et soudaniques centraux (Sara) dans la région. Développement du royaume du Kanem (VIIIe-XIVe siècles) et du royaume du Bornou (XIVe-XIXe siècles). La région était connue sous le nom de "Kanem" ou "Bornou" par les géographes arabes.
+- Époque précoloniale : Présence de peuples sahariens (Kanembu, Toubou), soudaniques centraux (Sara), et arabes dans la région. Développement du royaume du Kanem-Bornou. La région était connue sous le nom de "Kanem" ou "Bornou" par les géographes arabes, mais les populations locales avaient leurs propres appellations.
+- Colonisation : 1900-1960 : Colonie française du Tchad, développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle).
+- Lutte pour l'indépendance : 1950s-1960 : Mouvements nationalistes, PPT (Parti progressiste tchadien), indépendance (11 août 1960), proclamation de la République du Tchad. François Tombalbaye devient premier président.
+- Période post-indépendance : République du Tchad (1960), présidence de François Tombalbaye (1960-1975, régime autoritaire, parti unique), coup d'État (1975), guerre civile (1965-1979, 2005-2010), présidence d'Hissène Habré (1982-1990, régime autoritaire, crimes contre l'humanité), présidence d'Idriss Déby (1990-2021, régime autoritaire, rébellions), mort d'Idriss Déby (2021), transition militaire, présidence de Mahamat Idriss Déby (depuis 2021). Stabilité politique fragile, État en transition, conflits récents (guerre civile, rébellions, coups d'État), développement économique (agriculture, élevage, exploitation pétrolière). Le Tchad est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Chad
+- SIL Ethnologue – Languages of Chad
+- Recensements tchadiens
+- Études anthropologiques sur les peuples du Tchad
+- Études historiques sur la colonisation française
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Sara
+- Identifiant peuple (PPL_) : PPL_SARA
+- Population : 3 000 000
+- Pourcentage dans le pays : 18,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Tchad
+- Famille linguistique : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
+- Code ISO 639-3 (langue principale) : sre
+
+### Peuple : Arabes tchadiens
+- Identifiant peuple (PPL_) : PPL_ARABES_AFRIQUE
+- Population : 2 500 000
+- Pourcentage dans le pays : 15,0%
+- Pourcentage en Afrique : N/A
+- Région : Centre et est du Tchad, zones désertiques
+- Famille linguistique : Afro-asiatique – Sémitique (FLG_SEMITIQUE)
+- Code ISO 639-3 (langue principale) : arb
+
+### Peuple : Kanembu
+- Identifiant peuple (PPL_) : PPL_KANEMBU
+- Population : 650 000
+- Pourcentage dans le pays : 3,9%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Tchad (région du lac Tchad)
+- Famille linguistique : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Code ISO 639-3 (langue principale) : kbl
+
+### Peuple : Toubou
+- Identifiant peuple (PPL_) : PPL_TOUBOU
+- Population : 400 000
+- Pourcentage dans le pays : 2,4%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Tchad (Sahara), zones désertiques
+- Famille linguistique : Nilo-saharien – Saharien (FLG_SAHARIEN)
+- Code ISO 639-3 (langue principale) : tbv, dzg
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 10 450 000
+- Pourcentage dans le pays : 60,7%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions du Tchad
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Tchad 2025 : 17 000 000 (estimations ONU/UNFPA)**
+

@@ -7,7 +7,7 @@
 - Famille linguistique principale : Khoïsan – Khoe (FLG_KHOE)
 - Groupe ethno-linguistique : Khoe central
 - Région historique : Namibie
-- Pays actuels : Namibie
+- Pays actuels : NAM
 - Identifiant peuple (ID) : PPL_DAMARA
 
 # 1. Ethnies incluses dans le peuple

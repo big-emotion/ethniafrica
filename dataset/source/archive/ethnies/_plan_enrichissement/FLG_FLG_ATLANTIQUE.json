@@ -1,0 +1,566 @@
+{
+  "batchId": "FLG_FLG_ATLANTIQUE",
+  "flgId": "FLG_ATLANTIQUE",
+  "totalEthnies": 43,
+  "ethnies": [
+    {
+      "ETH_ID": "ETH_BAGA_BAGA_SITEMU",
+      "nom_ethnie": "Baga Sitemu",
+      "PPL_ID": "PPL_BAGA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAGA/ETH_BAGA_BAGA_SITEMU.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Baga%20Sitemu",
+        "unesco": "https://www.unesco.org/en/search?q=Baga%20Sitemu%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAGA_BAGA_KALUM",
+      "nom_ethnie": "Baga Kalum",
+      "PPL_ID": "PPL_BAGA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAGA/ETH_BAGA_BAGA_KALUM.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Baga%20Kalum",
+        "unesco": "https://www.unesco.org/en/search?q=Baga%20Kalum%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAGA_BAGA_KOBA",
+      "nom_ethnie": "Baga Koba",
+      "PPL_ID": "PPL_BAGA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAGA/ETH_BAGA_BAGA_KOBA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Baga%20Koba",
+        "unesco": "https://www.unesco.org/en/search?q=Baga%20Koba%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAGA_BAGA_MANDORI",
+      "nom_ethnie": "Baga Mandori",
+      "PPL_ID": "PPL_BAGA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAGA/ETH_BAGA_BAGA_MANDORI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Baga%20Mandori",
+        "unesco": "https://www.unesco.org/en/search?q=Baga%20Mandori%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BIJAOGO_BIJOGO_D_ORANGO",
+      "nom_ethnie": "Bijogo d’Orango",
+      "PPL_ID": "PPL_BIJAOGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BIJAOGO/ETH_BIJAOGO_BIJOGO_D_ORANGO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bijogo%20d%E2%80%99Orango",
+        "unesco": "https://www.unesco.org/en/search?q=Bijogo%20d%E2%80%99Orango%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BIJAOGO_BIJOGO_DE_FORMOSA",
+      "nom_ethnie": "Bijogo de Formosa",
+      "PPL_ID": "PPL_BIJAOGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BIJAOGO/ETH_BIJAOGO_BIJOGO_DE_FORMOSA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bijogo%20de%20Formosa",
+        "unesco": "https://www.unesco.org/en/search?q=Bijogo%20de%20Formosa%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BIJAOGO_BIJOGO_DE_UNO",
+      "nom_ethnie": "Bijogo de Uno",
+      "PPL_ID": "PPL_BIJAOGO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BIJAOGO/ETH_BIJAOGO_BIJOGO_DE_UNO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bijogo%20de%20Uno",
+        "unesco": "https://www.unesco.org/en/search?q=Bijogo%20de%20Uno%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DIOLA_JOLA_FOGNY",
+      "nom_ethnie": "Jola Fogny",
+      "PPL_ID": "PPL_DIOLA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DIOLA/ETH_DIOLA_JOLA_FOGNY.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Jola%20Fogny",
+        "unesco": "https://www.unesco.org/en/search?q=Jola%20Fogny%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DIOLA_JOLA_BAYOT",
+      "nom_ethnie": "Jola Bayot",
+      "PPL_ID": "PPL_DIOLA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DIOLA/ETH_DIOLA_JOLA_BAYOT.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Jola%20Bayot",
+        "unesco": "https://www.unesco.org/en/search?q=Jola%20Bayot%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DIOLA_JOLA_KASA",
+      "nom_ethnie": "Jola Kasa",
+      "PPL_ID": "PPL_DIOLA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DIOLA/ETH_DIOLA_JOLA_KASA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Jola%20Kasa",
+        "unesco": "https://www.unesco.org/en/search?q=Jola%20Kasa%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_DIOLA_JOLA_FELUP",
+      "nom_ethnie": "Jola Felup",
+      "PPL_ID": "PPL_DIOLA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_DIOLA/ETH_DIOLA_JOLA_FELUP.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Jola%20Felup",
+        "unesco": "https://www.unesco.org/en/search?q=Jola%20Felup%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FULANI_FUL_E_TORO_E",
+      "nom_ethnie": "Fulɓe Toroɓe",
+      "PPL_ID": "PPL_FULANI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FULANI/ETH_FULANI_FUL_E_TORO_E.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ful%C9%93e%20Toro%C9%93e",
+        "unesco": "https://www.unesco.org/en/search?q=Ful%C9%93e%20Toro%C9%93e%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FULANI_FUL_E_WODAABE",
+      "nom_ethnie": "Fulɓe Wodaabe",
+      "PPL_ID": "PPL_FULANI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FULANI/ETH_FULANI_FUL_E_WODAABE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ful%C9%93e%20Wodaabe",
+        "unesco": "https://www.unesco.org/en/search?q=Ful%C9%93e%20Wodaabe%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FULANI_FUL_E_JALOO_E",
+      "nom_ethnie": "Fulɓe Jalooɓe",
+      "PPL_ID": "PPL_FULANI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FULANI/ETH_FULANI_FUL_E_JALOO_E.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ful%C9%93e%20Jaloo%C9%93e",
+        "unesco": "https://www.unesco.org/en/search?q=Ful%C9%93e%20Jaloo%C9%93e%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FULANI_FUL_E_KUNIARI",
+      "nom_ethnie": "Fulɓe Kuniari",
+      "PPL_ID": "PPL_FULANI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FULANI/ETH_FULANI_FUL_E_KUNIARI.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ful%C9%93e%20Kuniari",
+        "unesco": "https://www.unesco.org/en/search?q=Ful%C9%93e%20Kuniari%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_FULANI_FUL_E_MBORORO_PASTEURS_NOMADES",
+      "nom_ethnie": "Fulɓe Mbororo (pasteurs nomades)",
+      "PPL_ID": "PPL_FULANI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_FULANI/ETH_FULANI_FUL_E_MBORORO_PASTEURS_NOMADES.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Ful%C9%93e%20Mbororo%20(pasteurs%20nomades)",
+        "unesco": "https://www.unesco.org/en/search?q=Ful%C9%93e%20Mbororo%20(pasteurs%20nomades)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KURANKO_KURANKO_DU_NORD_SIERRA_LEONE",
+      "nom_ethnie": "Kuranko du Nord Sierra Leone",
+      "PPL_ID": "PPL_KURANKO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KURANKO/ETH_KURANKO_KURANKO_DU_NORD_SIERRA_LEONE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kuranko%20du%20Nord%20Sierra%20Leone",
+        "unesco": "https://www.unesco.org/en/search?q=Kuranko%20du%20Nord%20Sierra%20Leone%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KURANKO_KURANKO_DE_GUINEE",
+      "nom_ethnie": "Kuranko de Guinée",
+      "PPL_ID": "PPL_KURANKO",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KURANKO/ETH_KURANKO_KURANKO_DE_GUINEE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kuranko%20de%20Guin%C3%A9e",
+        "unesco": "https://www.unesco.org/en/search?q=Kuranko%20de%20Guin%C3%A9e%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_KUSSI_KUSSI_KASSANGA_DU_SENEGAL",
+      "nom_ethnie": "Kussi-Kassanga du Sénégal",
+      "PPL_ID": "PPL_KUSSI",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_KUSSI/ETH_KUSSI_KUSSI_KASSANGA_DU_SENEGAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Kussi-Kassanga%20du%20S%C3%A9n%C3%A9gal",
+        "unesco": "https://www.unesco.org/en/search?q=Kussi-Kassanga%20du%20S%C3%A9n%C3%A9gal%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_LIMBA_LIMBA_DU_NORD",
+      "nom_ethnie": "Limba du Nord",
+      "PPL_ID": "PPL_LIMBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_LIMBA/ETH_LIMBA_LIMBA_DU_NORD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Limba%20du%20Nord",
+        "unesco": "https://www.unesco.org/en/search?q=Limba%20du%20Nord%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_LIMBA_LIMBA_DU_SUD",
+      "nom_ethnie": "Limba du Sud",
+      "PPL_ID": "PPL_LIMBA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_LIMBA/ETH_LIMBA_LIMBA_DU_SUD.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Limba%20du%20Sud",
+        "unesco": "https://www.unesco.org/en/search?q=Limba%20du%20Sud%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANKANYA_MANKANYA_DU_SENEGAL_REGION_DE_ZIGUINCHOR",
+      "nom_ethnie": "Mankanya du Sénégal (région de Ziguinchor)",
+      "PPL_ID": "PPL_MANKANYA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANKANYA/ETH_MANKANYA_MANKANYA_DU_SENEGAL_REGION_DE_ZIGUINCHOR.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mankanya%20du%20S%C3%A9n%C3%A9gal%20(r%C3%A9gion%20de%20Ziguinchor)",
+        "unesco": "https://www.unesco.org/en/search?q=Mankanya%20du%20S%C3%A9n%C3%A9gal%20(r%C3%A9gion%20de%20Ziguinchor)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANKANYA_MANKANYA_DE_GUINEE_BISSAU_ZONE_LITTORALE",
+      "nom_ethnie": "Mankanya de Guinée-Bissau (zone littorale)",
+      "PPL_ID": "PPL_MANKANYA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANKANYA/ETH_MANKANYA_MANKANYA_DE_GUINEE_BISSAU_ZONE_LITTORALE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Mankanya%20de%20Guin%C3%A9e-Bissau%20(zone%20littorale)",
+        "unesco": "https://www.unesco.org/en/search?q=Mankanya%20de%20Guin%C3%A9e-Bissau%20(zone%20littorale)%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_NALU_NALU_DU_LITTORAL",
+      "nom_ethnie": "Nalu du littoral",
+      "PPL_ID": "PPL_NALU",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_NALU/ETH_NALU_NALU_DU_LITTORAL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Nalu%20du%20littoral",
+        "unesco": "https://www.unesco.org/en/search?q=Nalu%20du%20littoral%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAPEY_SAPEY_DE_SIERRA_LEONE",
+      "nom_ethnie": "Sapey de Sierra Leone",
+      "PPL_ID": "PPL_SAPEY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAPEY/ETH_SAPEY_SAPEY_DE_SIERRA_LEONE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sapey%20de%20Sierra%20Leone",
+        "unesco": "https://www.unesco.org/en/search?q=Sapey%20de%20Sierra%20Leone%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SAPEY_SAPEY_DE_GUINEE_FORESTIERE",
+      "nom_ethnie": "Sapey de Guinée forestière",
+      "PPL_ID": "PPL_SAPEY",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SAPEY/ETH_SAPEY_SAPEY_DE_GUINEE_FORESTIERE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sapey%20de%20Guin%C3%A9e%20foresti%C3%A8re",
+        "unesco": "https://www.unesco.org/en/search?q=Sapey%20de%20Guin%C3%A9e%20foresti%C3%A8re%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SERERE_SAPEY_DE_SIERRA_LEONE",
+      "nom_ethnie": "Sapey de Sierra Leone",
+      "PPL_ID": "PPL_SERERE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SERERE/ETH_SERERE_SAPEY_DE_SIERRA_LEONE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sapey%20de%20Sierra%20Leone",
+        "unesco": "https://www.unesco.org/en/search?q=Sapey%20de%20Sierra%20Leone%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_SERERE_SAPEY_DE_GUINEE_FORESTIERE",
+      "nom_ethnie": "Sapey de Guinée forestière",
+      "PPL_ID": "PPL_SERERE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_SERERE/ETH_SERERE_SAPEY_DE_GUINEE_FORESTIERE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Sapey%20de%20Guin%C3%A9e%20foresti%C3%A8re",
+        "unesco": "https://www.unesco.org/en/search?q=Sapey%20de%20Guin%C3%A9e%20foresti%C3%A8re%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_YALUNKA_YALUNKA_DE_GUINEE",
+      "nom_ethnie": "Yalunka de Guinée",
+      "PPL_ID": "PPL_YALUNKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_YALUNKA/ETH_YALUNKA_YALUNKA_DE_GUINEE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Yalunka%20de%20Guin%C3%A9e",
+        "unesco": "https://www.unesco.org/en/search?q=Yalunka%20de%20Guin%C3%A9e%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_YALUNKA_YALUNKA_DE_SIERRA_LEONE",
+      "nom_ethnie": "Yalunka de Sierra Leone",
+      "PPL_ID": "PPL_YALUNKA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_YALUNKA/ETH_YALUNKA_YALUNKA_DE_SIERRA_LEONE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Yalunka%20de%20Sierra%20Leone",
+        "unesco": "https://www.unesco.org/en/search?q=Yalunka%20de%20Sierra%20Leone%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAINOUK_BAINOUK_GUNYAAMOLO",
+      "nom_ethnie": "Bainouk Gunyaamolo",
+      "PPL_ID": "PPL_BAINOUK",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAINOUK/ETH_BAINOUK_BAINOUK_GUNYAAMOLO.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bainouk%20Gunyaamolo",
+        "unesco": "https://www.unesco.org/en/search?q=Bainouk%20Gunyaamolo%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAINOUK_BAINOUK_KASSANGA",
+      "nom_ethnie": "Bainouk Kassanga",
+      "PPL_ID": "PPL_BAINOUK",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAINOUK/ETH_BAINOUK_BAINOUK_KASSANGA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bainouk%20Kassanga",
+        "unesco": "https://www.unesco.org/en/search?q=Bainouk%20Kassanga%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BAINOUK_BAINOUK_KASA",
+      "nom_ethnie": "Bainouk Kasa",
+      "PPL_ID": "PPL_BAINOUK",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BAINOUK/ETH_BAINOUK_BAINOUK_KASA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Bainouk%20Kasa",
+        "unesco": "https://www.unesco.org/en/search?q=Bainouk%20Kasa%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BALANTA_BALANTA_BRASSA",
+      "nom_ethnie": "Balanta Brassa",
+      "PPL_ID": "PPL_BALANTA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BALANTA/ETH_BALANTA_BALANTA_BRASSA.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Balanta%20Brassa",
+        "unesco": "https://www.unesco.org/en/search?q=Balanta%20Brassa%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BALANTA_BALANTA_MANE",
+      "nom_ethnie": "Balanta Mane",
+      "PPL_ID": "PPL_BALANTA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BALANTA/ETH_BALANTA_BALANTA_MANE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Balanta%20Mane",
+        "unesco": "https://www.unesco.org/en/search?q=Balanta%20Mane%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_BALANTA_BALANTA_KENTOHE",
+      "nom_ethnie": "Balanta Kentohe",
+      "PPL_ID": "PPL_BALANTA",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_BALANTA/ETH_BALANTA_BALANTA_KENTOHE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Balanta%20Kentohe",
+        "unesco": "https://www.unesco.org/en/search?q=Balanta%20Kentohe%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANJAK_MANJAK_BRAME",
+      "nom_ethnie": "Manjak Brame",
+      "PPL_ID": "PPL_MANJAK",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANJAK/ETH_MANJAK_MANJAK_BRAME.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Manjak%20Brame",
+        "unesco": "https://www.unesco.org/en/search?q=Manjak%20Brame%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANJAK_MANJAK_FOGAN",
+      "nom_ethnie": "Manjak Fogan",
+      "PPL_ID": "PPL_MANJAK",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANJAK/ETH_MANJAK_MANJAK_FOGAN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Manjak%20Fogan",
+        "unesco": "https://www.unesco.org/en/search?q=Manjak%20Fogan%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_MANJAK_MANJAK_ESSIN",
+      "nom_ethnie": "Manjak Essin",
+      "PPL_ID": "PPL_MANJAK",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_MANJAK/ETH_MANJAK_MANJAK_ESSIN.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Manjak%20Essin",
+        "unesco": "https://www.unesco.org/en/search?q=Manjak%20Essin%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_PAPEL_PAPEL_DU_CENTRE",
+      "nom_ethnie": "Papel du centre",
+      "PPL_ID": "PPL_PAPEL",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_PAPEL/ETH_PAPEL_PAPEL_DU_CENTRE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Papel%20du%20centre",
+        "unesco": "https://www.unesco.org/en/search?q=Papel%20du%20centre%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_TEMNE_TEMNE_DU_CENTRE",
+      "nom_ethnie": "Temne du Centre",
+      "PPL_ID": "PPL_TEMNE",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_TEMNE/ETH_TEMNE_TEMNE_DU_CENTRE.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Temne%20du%20Centre",
+        "unesco": "https://www.unesco.org/en/search?q=Temne%20du%20Centre%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WOLOF_WOLOF_DU_CAYOR",
+      "nom_ethnie": "Wolof du Cayor",
+      "PPL_ID": "PPL_WOLOF",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WOLOF/ETH_WOLOF_WOLOF_DU_CAYOR.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wolof%20du%20Cayor",
+        "unesco": "https://www.unesco.org/en/search?q=Wolof%20du%20Cayor%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    },
+    {
+      "ETH_ID": "ETH_WOLOF_WOLOF_DU_BAOL",
+      "nom_ethnie": "Wolof du Baol",
+      "PPL_ID": "PPL_WOLOF",
+      "fichier_ETH": "dataset/source/afrik/ethnies/PPL_WOLOF/ETH_WOLOF_WOLOF_DU_BAOL.txt",
+      "urls": {
+        "glottolog": "https://glottolog.org/resource/languoid/id",
+        "ethnologue": "https://www.ethnologue.com/search?q=Wolof%20du%20Baol",
+        "unesco": "https://www.unesco.org/en/search?q=Wolof%20du%20Baol%20africa",
+        "cia": "https://www.cia.gov/the-world-factbook/"
+      },
+      "cacheExists": false
+    }
+  ]
+}

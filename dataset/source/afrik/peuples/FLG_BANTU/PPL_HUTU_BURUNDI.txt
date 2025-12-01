@@ -6,7 +6,7 @@
 - Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe ethno-linguistique : Bantous des Grands Lacs (Burundi)
 - Région historique : Plateaux du Burundi
-- Pays actuels : Burundi (principal), Rwanda, diaspora régionale
+- Pays actuels : BDI (principal), RWA, diaspora régionale
 - Identifiant peuple (ID) : PPL_HUTU_BURUNDI
 
 # 1. Ethnies incluses dans le peuple
@@ -41,11 +41,11 @@
 - Royaumes / chefferies : Intégration dans le royaume du Burundi (Mwami).
 - Relations avec Tutsi et Twa : Relations historiques complexes.
 - Conflits / alliances : Tensions politico-ethniques coloniales et postcoloniales.
-- Diaspora : Présente dans Rwanda, Tanzanie, Ouganda.
+- Diaspora : Présente dans RWA, TZA, UGA.
 
 # 7. Démographie globale
 - Population totale 2025 : ≈ 6 300 000 (Burundi)
-- Répartition : BURUNDI (principal), Rwanda (~ petites communautés)
+- Répartition : BURUNDI (principal), RWA (~ petites communautés)
 - Source : peuple_demographie_globale.csv (PPL_HUTU_BURUNDI)
 
 # 8. Sources

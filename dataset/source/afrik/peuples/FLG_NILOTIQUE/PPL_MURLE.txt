@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Murle (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Nilotique (FLG_NILOTIQUE)
 - Groupe ethno-linguistique : Nilotique méridional
-- Région historique : Sud-Soudan, Éthiopie
-- Pays actuels : Soudan du Sud, Éthiopie
+- Région historique : Sud-SDN, ETH
+- Pays actuels : SDN du Sud, ETH
 - Identifiant peuple (ID) : PPL_MURLE
 
 # 1. Ethnies incluses dans le peuple

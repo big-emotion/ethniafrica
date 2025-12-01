@@ -6,7 +6,7 @@
   - utilisé par les explorateurs européens pour désigner les Afar comme groupe marginal
   - usage considéré offensant par les communautés afar
 - Famille linguistique : Afro-asiatique – Couchitique
-- Région : Afar (Éthiopie), Djibouti, Érythrée
+- Région : Afar (Éthiopie), DJI, ERI
 - ID peuple : PPL_AFAR
 
 # 1. Ethnies incluses

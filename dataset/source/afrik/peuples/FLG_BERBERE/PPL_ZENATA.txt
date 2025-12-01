@@ -3,7 +3,7 @@
 - Auto-appellation : — (macro-groupe historique)
 - Appellations historiques : Zenata / Iznaten
 - Famille linguistique principale : Afro-asiatique – Berbère
-- Région historique : Maghreb oriental et central (Algérie, Maroc, Tunisie)
+- Région historique : Maghreb oriental et central (DZA, MAR, TUN)
 - Pays actuels : — (groupe historique non homogène)
 - ID peuple : PPL_ZENATA
 

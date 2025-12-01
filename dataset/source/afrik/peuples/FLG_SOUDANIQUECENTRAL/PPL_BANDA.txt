@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Banda (terme utilisé par les Européens)
 - Famille linguistique principale : Nilo-saharien – Soudanique central (FLG_SOUDANIQUECENTRAL)
 - Groupe ethno-linguistique : Soudanique central
-- Région historique : RCA, RDC, Soudan du Sud
-- Pays actuels : République centrafricaine, République démocratique du Congo, Soudan du Sud
+- Région historique : CAF, COD, SDN du Sud
+- Pays actuels : République centrafricaine, République démocratique du COG, SDN du Sud
 - Identifiant peuple (ID) : PPL_BANDA
 
 # 1. Ethnies incluses dans le peuple
@@ -14,10 +14,10 @@
 - Ethnie 3 : Banda du Soudan du Sud
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Banda sont originaires de la RCA, de la RDC et du Soudan du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.
+- Origines anciennes : Les Banda sont originaires de la CAF, de la RDC et du Soudan du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.
 - Routes migratoires : 
   - Migrations depuis les régions du Haut-Nil
-  - Expansion vers la RCA, la RDC et le Soudan du Sud
+  - Expansion vers la CAF, la RDC et le Soudan du Sud
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples bantous, influence du christianisme.

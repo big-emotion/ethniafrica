@@ -1,11 +1,11 @@
 # Nom du peuple
 - Nom principal du peuple : Yoruba
 - Auto-appellation : Yorùbá (Yorùbá ènìyàn)
-- Exonymes / appellations historiques : « Nago » (terme colonial, connotation réductrice) ; « Aku » (diaspora, Sierra Leone)
+- Exonymes / appellations historiques : « Nago » (terme colonial, connotation réductrice) ; « Aku » (diaspora, SLE)
 - Famille linguistique principale : Bénoué-Congo (Nigéro-Congo)
 - Groupe ethno-linguistique : Volta-Congo → Yoruboïde
 - Région historique : Sud-Ouest du Nigeria (Forêt–Savane)
-- Pays actuels : Nigeria, Bénin, Togo, Ghana, diaspora afro-atlantique
+- Pays actuels : NGA, BEN, TGO, GHA, diaspora afro-atlantique
 - Identifiant peuple (ID) : PPL_YORUBA
 
 # 1. Ethnies incluses dans le peuple

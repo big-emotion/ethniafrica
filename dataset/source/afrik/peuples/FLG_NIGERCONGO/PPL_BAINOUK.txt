@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Bainouk (terme utilisé par les Européens), Banyun
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Atlantique
-- Région historique : Sénégal, Gambie, Guinée-Bissau
-- Pays actuels : Sénégal, Gambie, Guinée-Bissau
+- Région historique : SEN, GMB, GIN-Bissau
+- Pays actuels : SEN, GMB, GIN-Bissau
 - Identifiant peuple (ID) : PPL_BAINOUK
 
 # 1. Ethnies incluses dans le peuple
@@ -14,10 +14,10 @@
 - Ethnie 3 : Bainouk de Guinée-Bissau
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Bainouk sont originaires du Sénégal, de la Gambie et de la Guinée-Bissau. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Atlantique de la famille Niger-Congo.
+- Origines anciennes : Les Bainouk sont originaires du SEN, de la Gambie et de la Guinée-Bissau. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Atlantique de la famille Niger-Congo.
 - Routes migratoires : 
   - Migrations depuis les régions ouest-africaines
-  - Expansion vers le Sénégal, la Gambie et la Guinée-Bissau
+  - Expansion vers le SEN, la Gambie et la Guinée-Bissau
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples ouest-africains, influence de l'islam et du christianisme.

@@ -4,8 +4,8 @@
 - Exonymes / appellations historiques : Tonga (terme utilisé par les Européens)
 - Famille linguistique principale : Niger-Congo (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : Bantou (Zone N)
-- Région historique : Zambie, Zimbabwe
-- Pays actuels : Zambie, Zimbabwe
+- Région historique : ZMB, ZWE
+- Pays actuels : ZMB, ZWE
 - Identifiant peuple (ID) : PPL_TONGA_LAC
 
 # 1. Ethnies incluses dans le peuple
@@ -14,7 +14,7 @@
 - Ethnie 3 : Sous-groupes régionaux du lac
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes : Les Tonga du lac sont originaires de la région de la Zambie et du Zimbabwe, autour du lac Kariba. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).
+- Origines anciennes : Les Tonga du lac sont originaires de la région de la Zambie et du ZWE, autour du lac Kariba. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
   - Expansion vers la Zambie et le Zimbabwe

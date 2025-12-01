@@ -1,14 +1,14 @@
 # INSTRUCTIONS DU PROJET AFRIK
-# VERSION 1.1 — Document opérationnel pour IA et développeurs
+# VERSION 2.0 — Document opérationnel pour IA et développeurs
 
 
 ========================================================
 0. OBJECTIF DU DOCUMENT
 ========================================================
 
-Ce document définit les règles que doit suivre l’IA pour :
+Ce document définit les règles que doit suivre l'IA pour :
 
-• générer les fichiers TXT Afrik (pays, peuples, ethnies, familles linguistiques)  
+• générer les fichiers TXT Afrik (pays, peuples, familles linguistiques)  
 • générer et mettre à jour les CSV démographiques  
 • utiliser les identifiants Afrik  
 • respecter le workflow officiel  
@@ -31,20 +31,15 @@ Lorsque l’utilisateur écrit :
 → L’IA doit automatiquement produire un fichier `.txt`  
 → basé STRICTEMENT sur `modele-pays.txt`.
 
-Lorsque l’utilisateur écrit :
+Lorsque l'utilisateur écrit :
 
 • « Génère le peuple X »  
-→ L’IA doit utiliser `modele-peuple.txt`.
+→ L'IA doit utiliser `modele-peuple.txt`.
 
-Lorsque l’utilisateur écrit :
-
-• « Génère l’ethnie X »  
-→ L’IA doit utiliser `modele-ethnie.txt`.
-
-Lorsque l’utilisateur écrit :
+Lorsque l'utilisateur écrit :
 
 • « Génère la famille linguistique X »  
-→ L’IA doit utiliser `modele-linguistique.txt`.
+→ L'IA doit utiliser `modele-linguistique.txt`.
 
 Lorsque l’utilisateur demande :
 
@@ -72,10 +67,10 @@ Chaque ligne doit être remplie.
 3. UTILISATION DES PRÉREQUIS AFRIK
 ========================================================
 
-L’IA doit respecter intégralement :
+L'IA doit respecter intégralement :
 
-• la hiérarchie (famille → peuple → ethnie → sous-ethnie → clan)  
-• les identifiants internes Afrik (ID pays, ID peuple, ID ethnie, ID sous-ethnie, ID clan)  
+• la hiérarchie (famille linguistique → langue → peuple → pays)  
+• les identifiants internes Afrik (ID pays, ID peuple, ID famille linguistique, code ISO 639-3)  
 • les règles de nommage  
 • la méthodologie démographique Afrik  
 • les règles sur les termes péjoratifs  
@@ -114,14 +109,11 @@ Particulièrement dans :
 5. IDENTIFIANTS AFRIK (OBLIGATOIRE)
 ========================================================
 
-Chaque fichier TXT doit inclure les ID suivants lorsqu’ils existent :
+Chaque fichier TXT doit inclure les ID suivants lorsqu'ils existent :
 
 • ID famille linguistique : FLG_xxxxx  
 • ID langue : code ISO 639-3  
 • ID peuple : PPL_xxxxx  
-• ID ethnie : ETH_xxxxx  
-• ID sous-ethnie : SUB_xxxxx  
-• ID clan : CLN_xxxxx  
 • ID pays : ISO 3166-1 alpha-3  
 
 Les CSV DOIVENT utiliser les mêmes identifiants.
@@ -134,13 +126,12 @@ Les CSV DOIVENT utiliser les mêmes identifiants.
 L’IA doit :
 
 1. Utiliser les chiffres ONU / UNFPA pour les populations nationales (année 2025).  
-2. Utiliser les % ethniques des sources fiables (CIA, SIL, UNESCO, recherches anthropologiques).  
-3. La somme des ethnies d’un pays = EXACTEMENT 100 %.  
+2. Utiliser les % des peuples par pays des sources fiables (CIA, SIL, UNESCO, recherches anthropologiques).  
+3. La somme des peuples d'un pays = EXACTEMENT 100 %.  
 4. Remplir les CSV correspondants :
 
    - famille_linguistique.csv  
    - peuple_demographie_globale.csv  
-   - ethnie_demographie_par_pays.csv  
    - pays_demographie.csv
 
 5. Corriger automatiquement si incohérence.  
@@ -159,12 +150,11 @@ Aucune donnée ne doit être inventée.
 
 L’IA doit effectuer une recherche web pour :
 
-• Nom du pays  
-• Appellations historiques  
+• Nom du pays / peuple / famille linguistique  
+• Appellations historiques (exonymes et endonymes)  
+• Origines et migrations  
 • Royaumes, civilisations, dynasties  
-• Groupes ethniques  
-• Sous-groupes  
-• Langues  
+• Langues et codes ISO 639-3  
 • Démographie  
 • Sources utilisées  
 
@@ -177,8 +167,7 @@ CSV officiels :
 
 1. famille_linguistique.csv  
 2. peuple_demographie_globale.csv  
-3. ethnie_demographie_par_pays.csv  
-4. pays_demographie.csv  
+3. pays_demographie.csv  
 
 Chaque entrée doit contenir :
 
@@ -209,12 +198,10 @@ L’IA doit corriger si incohérence.
 1️⃣ Familles linguistiques  
 2️⃣ Langues  
 3️⃣ Peuples  
-4️⃣ Ethnies  
-5️⃣ Sous-ethnies & clans  
-6️⃣ Pays  
-7️⃣ Démographies CSV  
-8️⃣ Validation  
-9️⃣ Publication  
+4️⃣ Pays  
+5️⃣ Démographies CSV  
+6️⃣ Validation  
+7️⃣ Publication  
 
 
 ========================================================
@@ -240,11 +227,11 @@ L’IA doit proposer les mises à jour des deux fichiers dès qu’une étape es
 11. RÉACTIONS INTELLIGENTES DE L’IA
 ========================================================
 
-L’IA doit :
+L'IA doit :
 
 • avertir si une étape est tentée hors workflow  
 • détecter les identifiants manquants et les proposer  
-• proposer des regroupements si un pays a trop d’ethnies  
+• mettre l'accent sur les origines et appellations (exonymes/endonymes)  
 • signaler les incohérences  
 • proposer les corrections  
 
@@ -265,5 +252,5 @@ CSV :
 
 
 ========================================================
-FIN DU DOCUMENT — INSTRUCTIONS_AFRIK.txt (VERSION 1.1)
+FIN DU DOCUMENT — INSTRUCTIONS_AFRIK.txt (VERSION 2.0)
 ========================================================

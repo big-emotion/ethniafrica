@@ -1,0 +1,65 @@
+# Nom de la sous-ethnie
+- Nom principal :
+- Identifiant sous-ethnie (ID) :
+- Auto-appellation :
+- Exonymes et termes coloniaux (connotation, origine, contextualisation) :
+- Ethnie parente :
+- Identifiant ethnie parente (ETH_) :
+- Peuple d'appartenance :
+- Identifiant peuple (ID) :
+- Langue parlée :
+- Code ISO 639-3 :
+- Famille linguistique :
+- Identifiant famille linguistique (FLG) :
+
+# 1. Clans et lignages internes
+- Clans :
+  - Nom :
+  - Identifiant (CLN_) :
+- Lignages :
+  - Nom :
+  - Identifiant (CLN_) :
+
+# 2. Origines et histoire du groupe
+- Origines anciennes :
+- Migrations majeures :
+- Formation du groupe :
+- Relations avec l'ethnie mère :
+- Relations avec les peuples voisins :
+- Rôle dans les royaumes / empires :
+
+# 3. Territoires / Répartition géographique
+- Pays :
+- Régions principales :
+- Zones historiques :
+- Diaspora interne :
+- Diaspora externe :
+
+# 4. Organisation sociale et culturelle
+- Mode de vie :
+- Structure familiale :
+- Organisation clanique :
+- Rites de passage :
+- Religion(s) / spiritualités :
+- Autorités traditionnelles :
+- Particularités sociales par rapport à l'ethnie mère :
+
+# 5. Économie traditionnelle / modes de subsistance
+- Agriculture :
+- Élevage :
+- Artisanat :
+- Pêche / chasse / cueillette :
+- Commerce et réseaux économiques :
+
+# 6. Interactions historiques
+- Alliances :
+- Conflits :
+- Rôle dans les États précoloniaux :
+- Rôle dans la période coloniale :
+- Mouvements modernes :
+- Figures majeures du groupe :
+
+# 7. Sources
+- [Titre] – [Auteur/URL]
+- Etc.
+

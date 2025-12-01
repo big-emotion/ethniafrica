@@ -1,0 +1,54 @@
+code_pays,nom_pays,peuples_reels_estimes,peuples_documentes,couverture_pourcent,peuples_a_creer,priorite,statut
+AGO,AGO,90+,49,54.4%,82+,HAUTE,✅ Terminé
+CIV,CIV,60+,8,13.3%,54+,HAUTE,✅ Terminé
+ETH,ETH,80+,37,46.3%,74+,HAUTE,✅ Terminé
+GHA,GHA,100+,44,44%,94+,HAUTE,✅ Terminé
+TZA,TZA,100+,69,69%,93+,HAUTE,✅ Terminé
+ZMB,ZMB,70+,46,65.7%,65+,HAUTE,✅ Terminé
+BFA,BFA,60+,10,16.7%,50+,MOYENNE,⏳ À traiter
+KEN,KEN,40+,10,25%,30+,MOYENNE,⏳ À traiter
+MOZ,MOZ,40+,10,25%,30+,MOYENNE,⏳ À traiter
+UGA,UGA,50+,8,16%,42+,MOYENNE,⏳ À traiter
+BDI,BDI,?,3,?,?,FAIBLE,⏳ À traiter
+BEN,BEN,20+,8,40%,12+,FAIBLE,⏳ À traiter
+BWA,BWA,?,8,?,?,FAIBLE,⏳ À traiter
+CAF,CAF,?,7,?,?,FAIBLE,⏳ À traiter
+CMR,CMR,278,9,3.2%,269,CRITIQUE,⏳ À traiter
+COD,COD,200+,0,0%,188+,CRITIQUE,🔄 En cours
+COM,COM,?,1,?,?,FAIBLE,⏳ À traiter
+CPV,CPV,?,2,?,?,FAIBLE,⏳ À traiter
+DJI,DJI,?,4,?,?,FAIBLE,⏳ À traiter
+DZA,DZA,?,6,?,?,FAIBLE,⏳ À traiter
+EGY,EGY,?,4,?,?,FAIBLE,⏳ À traiter
+ERI,ERI,?,8,?,?,FAIBLE,⏳ À traiter
+GAB,GAB,?,7,?,?,FAIBLE,⏳ À traiter
+GIN,GIN,20+,7,35%,13+,FAIBLE,⏳ À traiter
+GMB,GMB,20+,8,40%,12+,FAIBLE,⏳ À traiter
+GNB,GNB,20+,9,45%,11+,FAIBLE,⏳ À traiter
+GNQ,GNQ,?,5,?,?,FAIBLE,⏳ À traiter
+LBR,LBR,20+,21,105%,5+,FAIBLE,✅ Terminé
+LBY,LBY,?,4,?,?,FAIBLE,⏳ À traiter
+LSO,LSO,?,2,?,?,FAIBLE,⏳ À traiter
+MAR,MAR,?,6,?,?,FAIBLE,⏳ À traiter
+MDG,MDG,20+,7,35%,13+,FAIBLE,⏳ À traiter
+MLI,MLI,20+,7,35%,13+,FAIBLE,⏳ À traiter
+MRT,MRT,?,7,?,?,FAIBLE,⏳ À traiter
+MUS,MUS,?,5,?,?,FAIBLE,⏳ À traiter
+MWI,MWI,?,9,?,?,FAIBLE,⏳ À traiter
+NAM,NAM,?,9,?,?,FAIBLE,⏳ À traiter
+NER,NER,20+,7,35%,13+,FAIBLE,⏳ À traiter
+NGA,NGA,250+,14,5.6%,240+,CRITIQUE,✅ Terminé
+RWA,RWA,?,3,?,?,FAIBLE,⏳ À traiter
+SDN,SDN,500+,5,1%,495+,CRITIQUE,⏳ À traiter
+SEN,SEN,20+,6,30%,14+,FAIBLE,⏳ À traiter
+SLE,SLE,?,7,?,?,FAIBLE,⏳ À traiter
+SOM,SOM,?,4,?,?,FAIBLE,⏳ À traiter
+SSD,SSD,?,5,?,?,FAIBLE,⏳ À traiter
+STP,STP,?,5,?,?,FAIBLE,⏳ À traiter
+SWZ,SWZ,?,2,?,?,FAIBLE,⏳ À traiter
+SYC,SYC,?,5,?,?,FAIBLE,⏳ À traiter
+TCD,TCD,200+,5,2.5%,195+,CRITIQUE,⏳ À traiter
+TGO,TGO,?,4,?,?,FAIBLE,⏳ À traiter
+TUN,TUN,?,2,?,?,FAIBLE,⏳ À traiter
+ZAF,ZAF,?,9,?,?,FAIBLE,⏳ À traiter
+ZWE,ZWE,?,3,?,?,FAIBLE,⏳ À traiter

@@ -5,7 +5,7 @@
 - Famille linguistique : Niger-Congo – Bantu (FLG_BANTU)
 - Groupe : Bantous d’Afrique centrale (Zambie)
 - Région historique : Nord de la Zambie
-- Pays actuels : Zambie, RDC, Tanzanie
+- Pays actuels : ZMB, COD, TZA
 - Identifiant peuple : PPL_BEMBA
 
 # 1. Ethnies incluses dans le peuple

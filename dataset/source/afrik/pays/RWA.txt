@@ -1,0 +1,121 @@
+# Nom du pays
+- Nom officiel actuel : République du Rwanda (Repubulika y'u Rwanda)
+- Étymologie du nom : Le nom "Rwanda" vient probablement du verbe "kwanda" signifiant "s'étendre" en kinyarwanda, ou de "ruanda" signifiant "pays" ou "territoire". Le nom fait référence au royaume précolonial du Rwanda.
+- Personne / peuple / administration à l'origine du nom : Le nom vient du royaume précolonial du Rwanda (Royaume du Rwanda), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.
+- Identifiant pays (ISO 3166-1 alpha-3) : RWA
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de groupes bantous et nilotiques sans nom unifié. Les Twa (pygmées) sont considérés comme les premiers habitants.
+- Moyen Âge : Développement du royaume du Rwanda à partir du XVe siècle. Le royaume s'appelait "Rwanda" ou "Imana y'u Rwanda" (Rwanda de Dieu).
+- Époque précoloniale : Royaume du Rwanda (XVe - XIXe siècles) avec une monarchie centralisée. Le nom "Rwanda" était utilisé pour désigner le royaume et son territoire.
+- Colonisation : 1885-1916 : Protectorat allemand de l'Afrique orientale allemande (Deutsch-Ostafrika), incluant le Rwanda. 1916-1962 : Ruanda-Urundi sous mandat belge (puis tutelle de l'ONU). Les Belges ont divisé administrativement le Rwanda et le Burundi mais conservé les noms.
+- Période contemporaine : Indépendance en 1962 sous le nom de "République rwandaise" puis "République du Rwanda". Le nom officiel en français est "République du Rwanda" et en kinyarwanda "Repubulika y'u Rwanda".
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume du Rwanda] :
+  - Période : XVe siècle - 1961
+  - Peuples dominants : Tutsi (noblesse), Hutu (majorité), Twa (minorité)
+  - Centres politiques : Nyanza (capitale royale), Butare
+  - Rôle historique : Royaume centralisé avec une monarchie sacrée (mwami). Système de chefferies hiérarchisées. Expansion territoriale et unification culturelle. Distinctions sociales complexes entre Hutu, Tutsi et Twa, instrumentalisées par le colonialisme.
+
+- [Ruanda-Urundi] :
+  - Période : 1916 - 1962
+  - Peuples dominants : Tous les peuples rwandais sous administration coloniale belge
+  - Centres politiques : Kigali (capitale administrative)
+  - Rôle historique : Mandat belge puis tutelle de l'ONU. Politique coloniale de division et d'instrumentalisation des distinctions Hutu/Tutsi. Introduction de cartes d'identité ethniques.
+
+- [République du Rwanda] :
+  - Période : 1962 - présent
+  - Peuples dominants : Tous les peuples rwandais
+  - Centres politiques : Kigali (capitale)
+  - Rôle historique : Indépendance en 1962. Première République (1962-1973) : tensions ethniques. Deuxième République (1973-1994) : régime Habyarimana. Génocide de 1994. Troisième République depuis 1994 : reconstruction, abolition des distinctions ethniques officielles.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Hutu (Rwandais)
+  - Auto-appellation (endonyme) : Abahutu
+  - Exonymes / appellations historiques : Hutu (terme utilisé par les Européens). Note importante : Les distinctions Hutu/Tutsi/Twa sont des constructions sociales et politiques complexes, historiquement instrumentalisées par le colonialisme.
+  - Identifiant peuple (PPL_) : PPL_RWANDAIS_HUTU
+  - Région principale : Tout le Rwanda (majorité)
+  - Langues parlées : Kinyarwanda, français, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone J)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Hutu" a été instrumentalisé par le colonialisme belge qui a figé les distinctions sociales en catégories "racialisées". L'auto-appellation "Abahutu" est préférée. Ces distinctions doivent être contextualisées historiquement.
+
+- Peuple 2 :
+  - Nom : Tutsi (Rwandais)
+  - Auto-appellation (endonyme) : Abatutsi
+  - Exonymes / appellations historiques : Tutsi, Watutsi (terme historique). Note importante : Les distinctions Hutu/Tutsi/Twa sont des constructions sociales et politiques complexes, historiquement instrumentalisées par le colonialisme.
+  - Identifiant peuple (PPL_) : PPL_RWANDAIS_TUTSI
+  - Région principale : Tout le Rwanda
+  - Langues parlées : Kinyarwanda, français, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone J)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tutsi" a été instrumentalisé par le colonialisme belge. La "thèse hamitique" coloniale était une construction raciste. L'auto-appellation "Abatutsi" est préférée. Ces distinctions doivent être contextualisées historiquement.
+
+- Peuple 3 :
+  - Nom : Twa
+  - Auto-appellation (endonyme) : Abatwa
+  - Exonymes / appellations historiques : Twa, Pygmées (terme parfois considéré comme péjoratif)
+  - Identifiant peuple (PPL_) : PPL_TWA (à vérifier si fichier existe)
+  - Région principale : Forêts et zones rurales
+  - Langues parlées : Kinyarwanda, langues twa
+  - Famille linguistique : FLG_NIGERCONGO (Bantou) / langues pygmées
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Pygmée" peut être considéré comme péjoratif. L'auto-appellation "Abatwa" est préférée. Les Twa sont les premiers habitants du Rwanda.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Kinyarwanda (kin) - langue nationale et officielle
+  - Français - langue officielle
+  - Anglais - langue officielle
+  - Swahili - langue véhiculaire régionale
+- Traditions culturelles : Tambours royaux (ingoma), danse traditionnelle (intore), poésie orale, artisanat (vannerie, poterie), architecture traditionnelle, élevage bovin (importance symbolique et économique)
+- Religions dominantes : Christianisme (catholique majoritaire, protestant), croyances traditionnelles (syncrétisme), islam (minorité)
+- Modes de vie : Vie principalement rurale, agriculture (café, thé, bananes, haricots, sorgho), élevage (bovins, caprins), pêche (lacs), commerce
+- Organisation sociale : Système de chefferies traditionnelles (historique), structure clanique patrilinéaire (ubwoko), organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens (historique)
+- Relations régionales : Relations historiques avec les peuples du Burundi, de la RDC, de l'Ouganda, de la Tanzanie. Diaspora importante en Belgique, en Ouganda, en RDC, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par les Twa (pygmées), puis migrations bantoues (Hutu) et nilotiques (Tutsi) depuis plusieurs siècles. Formation de structures sociales complexes.
+- Moyen Âge : Développement du royaume du Rwanda à partir du XVe siècle. Expansion territoriale et unification culturelle. Système monarchique centralisé avec distinctions sociales entre Hutu, Tutsi et Twa.
+- Époque précoloniale : Apogée du royaume du Rwanda (XIXe siècle) avec expansion territoriale. Système de chefferies hiérarchisées. Distinctions sociales complexes mais perméables.
+- Colonisation : 1885 : Protectorat allemand. 1916 : Occupation belge. 1923 : Mandat belge (Ruanda-Urundi). Politique coloniale de division et d'instrumentalisation des distinctions Hutu/Tutsi. Introduction de cartes d'identité ethniques. "Thèse hamitique" coloniale raciste.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. "Révolution sociale" de 1959-1962 : renversement de la monarchie, exode des Tutsi. Indépendance en 1962. Première République dominée par les Hutu.
+- Période post-indépendance : Première République (1962-1973) : tensions ethniques, exodes répétés des Tutsi. Deuxième République (1973-1994) : régime Habyarimana, politique d'exclusion. Génocide de 1994 : extermination de 800 000 à 1 million de Tutsi et Hutu modérés. Troisième République depuis 1994 : reconstruction, abolition des distinctions ethniques officielles, politique de réconciliation, développement économique remarquable.
+
+# 7. Sources
+- CIA World Factbook – Rwanda
+- SIL Ethnologue – Kinyarwanda language (kin)
+- Recensements nationaux rwandais
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les Grands Lacs
+- Études historiques sur le royaume du Rwanda
+- Commission nationale de lutte contre le génocide
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Hutu (Rwandais)
+- Identifiant peuple (PPL_) : PPL_RWANDAIS_HUTU
+- Population : ~10 000 000 - 11 000 000 (estimation, ~85% de la population)
+- Pourcentage dans le pays : ~85%
+- Pourcentage en Afrique : ~0.7%
+- Région : Tout le Rwanda
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : kin (Kinyarwanda)
+
+### Peuple : Tutsi (Rwandais)
+- Identifiant peuple (PPL_) : PPL_RWANDAIS_TUTSI
+- Population : ~1 500 000 - 2 000 000 (estimation, ~14% de la population)
+- Pourcentage dans le pays : ~14%
+- Pourcentage en Afrique : ~0.14%
+- Région : Tout le Rwanda
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : kin (Kinyarwanda)
+
+### Peuple : Twa
+- Identifiant peuple (PPL_) : PPL_TWA (à vérifier)
+- Population : ~30 000 - 50 000 (estimation, ~0.3% de la population)
+- Pourcentage dans le pays : ~0.3%
+- Pourcentage en Afrique : ~0.003%
+- Région : Forêts et zones rurales
+- Famille linguistique : FLG_NIGERCONGO (Bantou) / langues pygmées
+- Code ISO 639-3 (langue principale) : kin (Kinyarwanda)
+

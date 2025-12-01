@@ -1,0 +1,330 @@
+# Nom du pays
+- Nom officiel actuel : République démocratique du Congo (RDC)
+- Étymologie du nom : Le nom "Congo" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. "Congo" est la forme portugaise de "Kongo". Le fleuve Congo a été nommé d'après ce royaume. "Démocratique" a été ajouté en 1964 pour se distinguer de la République du Congo (Brazzaville).
+- Personne / peuple / administration à l'origine du nom : Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme "Congo" au XVe siècle. Le nom "Zaïre" (1971-1997) venait du fleuve Zaïre (nom portugais du fleuve Congo, dérivé du kikongo "nzadi" signifiant "fleuve").
+- Identifiant pays (ISO 3166-1 alpha-3) : COD
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la RDC était peuplé de nombreuses entités politiques indépendantes sans nom unifié. Les royaumes précoloniaux (Luba, Lunda, Kongo, Mangbetu, Zande) dominaient différentes régions.
+- Moyen Âge : Développement des grands royaumes et empires (Royaume Kongo, Empire Luba, Empire Lunda) sans nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et chefferies indépendants : Empire Luba, Empire Lunda, Royaume Kongo, royaumes Mangbetu, sultanats Zande, chefferies Mongo, etc. Aucun nom unifié pour l'ensemble du territoire.
+- Colonisation : 1885-1908 : "État indépendant du Congo" (propriété privée du roi Léopold II de Belgique). 1908-1960 : "Congo belge" (colonie belge). Le nom "Congo" est imposé par les colonisateurs européens.
+- Période contemporaine : 1960-1964 : "République du Congo" (Léopoldville, pour se distinguer de la République du Congo - Brazzaville). 1964-1971 : "République démocratique du Congo". 1971-1997 : "Zaïre" (sous Mobutu, nom du fleuve). Depuis 1997 : "République démocratique du Congo" (RDC).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume Kongo] :
+  - Période : XIVe - XIXe siècles
+  - Peuples dominants : Kongo (Bakongo)
+  - Centres politiques : Mbanza Kongo (capitale historique), Kongo Central
+  - Rôle historique : Royaume puissant qui a établi des relations avec les Portugais dès le XVe siècle. Influence majeure sur la région ouest de la RDC.
+
+- [Empire Luba] :
+  - Période : XVIe - XIXe siècles
+  - Peuples dominants : Luba (Baluba)
+  - Centres politiques : Kasaï, Katanga (Haut-Lomami, Lualaba)
+  - Rôle historique : Grand empire bantou du centre-sud avec une forte tradition politique et artistique. Influence majeure sur la région du Kasaï et du Katanga.
+
+- [Empire Lunda] :
+  - Période : XVIIe - XIXe siècles
+  - Peuples dominants : Lunda, Tshokwe
+  - Centres politiques : Katanga, frontières angolaises
+  - Rôle historique : Empire transfrontalier puissant réputé pour son art et son organisation politique. Influence sur le sud-est de la RDC.
+
+- [Chefferies Mongo] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Mongo (Nkundo, Ntomba, Ekonda)
+  - Centres politiques : Cuvette centrale (Équateur, Tshuapa)
+  - Rôle historique : Un des plus grands groupes forestiers bantous, organisés en chefferies dans la cuvette équatoriale.
+
+- [Royaumes Mangbetu] :
+  - Période : XVIIIe - XIXe siècles
+  - Peuples dominants : Mangbetu
+  - Centres politiques : Nord-est (Haut-Uele)
+  - Rôle historique : Royaumes réputés pour leur art et leur organisation politique dans le nord-est.
+
+- [Sultanats Zande] :
+  - Période : XVIIIe - XIXe siècles
+  - Peuples dominants : Zande
+  - Centres politiques : Nord-est (Haut-Uele, Bas-Uele)
+  - Rôle historique : Sultanats puissants dans le nord-est, organisés en entités politiques structurées.
+
+- [État indépendant du Congo] :
+  - Période : 1885 - 1908
+  - Peuples dominants : Tous les peuples congolais sous domination de Léopold II
+  - Centres politiques : Boma (capitale coloniale)
+  - Rôle historique : Propriété privée du roi Léopold II, marquée par une exploitation extrême (caoutchouc, ivoire) et des atrocités massives.
+
+- [Congo belge] :
+  - Période : 1908 - 1960
+  - Peuples dominants : Tous les peuples congolais sous administration coloniale belge
+  - Centres politiques : Léopoldville (Kinshasa)
+  - Rôle historique : Colonie belge avec exploitation économique intensive. Résistance congolaise et mouvements nationalistes.
+
+- [République démocratique du Congo] :
+  - Période : 1960 - présent
+  - Peuples dominants : Tous les peuples congolais
+  - Centres politiques : Kinshasa (capitale)
+  - Rôle historique : Indépendance en 1960. Histoire politique mouvementée : crise du Katanga, régime Mobutu (Zaïre), guerres civiles, transition démocratique.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Luba
+  - Auto-appellation (endonyme) : Baluba
+  - Exonymes / appellations historiques : Luba (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LUBA
+  - Région principale : Kasaï, Katanga (Haut-Lomami, Lualaba)
+  - Langues parlées : Tshiluba, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone L)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Luba" est neutre et accepté. L'auto-appellation "Baluba" (pluriel de Muluba) est préférée.
+
+- Peuple 2 :
+  - Nom : Kongo
+  - Auto-appellation (endonyme) : Bakongo
+  - Exonymes / appellations historiques : Kongo (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KONGO
+  - Région principale : Kongo Central, Kinshasa ouest
+  - Langues parlées : Kikongo, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone H)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kongo" est neutre et accepté. L'auto-appellation "Bakongo" (pluriel de Mukongo) est préférée.
+
+- Peuple 3 :
+  - Nom : Mongo
+  - Auto-appellation (endonyme) : Mongo
+  - Exonymes / appellations historiques : Mongo (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MONGO
+  - Région principale : Cuvette centrale (Équateur, Tshuapa)
+  - Langues parlées : Lomongo, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone C)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Mongo" est neutre et accepté.
+
+- Peuple 4 :
+  - Nom : Tetela
+  - Auto-appellation (endonyme) : Batetela
+  - Exonymes / appellations historiques : Tetela (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TETELA
+  - Région principale : Sankuru
+  - Langues parlées : Tetela, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tetela" est neutre et accepté. L'auto-appellation "Batetela" (pluriel de Mutetela) est préférée.
+
+- Peuple 5 :
+  - Nom : Lunda
+  - Auto-appellation (endonyme) : Balunda
+  - Exonymes / appellations historiques : Lunda (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_LUNDA
+  - Région principale : Katanga, frontières angolaises
+  - Langues parlées : Lunda, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone K)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Lunda" est neutre et accepté. L'auto-appellation "Balunda" (pluriel de Mulunda) est préférée.
+
+- Peuple 6 :
+  - Nom : Tshokwe
+  - Auto-appellation (endonyme) : Tshokwe
+  - Exonymes / appellations historiques : Tshokwe, Chokwe (termes utilisés par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TSHOKWE
+  - Région principale : Katanga, frontières angolaises
+  - Langues parlées : Tshokwe, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone K)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tshokwe" est neutre et accepté. "Chokwe" est une variante orthographique.
+
+- Peuple 7 :
+  - Nom : Nande
+  - Auto-appellation (endonyme) : Banande
+  - Exonymes / appellations historiques : Nande (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NANDE
+  - Région principale : Nord-Kivu
+  - Langues parlées : Kinande, français, swahili
+  - Famille linguistique : FLG_NIGERCONGO (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Nande" est neutre et accepté. L'auto-appellation "Banande" (pluriel de Munande) est préférée.
+
+- Peuple 8 :
+  - Nom : Hunde
+  - Auto-appellation (endonyme) : Bahunde
+  - Exonymes / appellations historiques : Hunde (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_HUNDE
+  - Région principale : Nord-Kivu
+  - Langues parlées : Hunde, français, swahili
+  - Famille linguistique : FLG_NIGERCONGO (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Hunde" est neutre et accepté. L'auto-appellation "Bahunde" (pluriel de Muhunde) est préférée.
+
+- Peuple 9 :
+  - Nom : Hutu (Rwandais)
+  - Auto-appellation (endonyme) : Abahutu
+  - Exonymes / appellations historiques : Hutu (terme utilisé par les Européens), parfois utilisé de manière péjorative dans certains contextes historiques
+  - Identifiant peuple (PPL_) : PPL_RWANDAIS_HUTU
+  - Région principale : Sud-Kivu, Nord-Kivu
+  - Langues parlées : Kinyarwanda, français, swahili
+  - Famille linguistique : FLG_NIGERCONGO (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Hutu" peut avoir des connotations négatives dans certains contextes historiques (génocide rwandais). L'auto-appellation "Abahutu" est préférée.
+
+- Peuple 10 :
+  - Nom : Tutsi (Rwandais)
+  - Auto-appellation (endonyme) : Abatutsi
+  - Exonymes / appellations historiques : Tutsi (terme utilisé par les Européens), parfois utilisé de manière péjorative dans certains contextes historiques
+  - Identifiant peuple (PPL_) : PPL_RWANDAIS_TUTSI
+  - Région principale : Sud-Kivu, Nord-Kivu
+  - Langues parlées : Kinyarwanda, français, swahili
+  - Famille linguistique : FLG_NILOTIQUE (Nilotique)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tutsi" peut avoir des connotations négatives dans certains contextes historiques (génocide rwandais). L'auto-appellation "Abatutsi" est préférée.
+
+- Peuple 11 :
+  - Nom : Bemba
+  - Auto-appellation (endonyme) : Bemba
+  - Exonymes / appellations historiques : Bemba (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_BEMBA
+  - Région principale : Katanga sud
+  - Langues parlées : Bemba, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone M)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Bemba" est neutre et accepté.
+
+- Peuple 12 :
+  - Nom : Lingala (locuteurs)
+  - Auto-appellation (endonyme) : Lingala
+  - Exonymes / appellations historiques : Lingala (terme utilisé pour la langue véhiculaire)
+  - Identifiant peuple (PPL_) : PPL_LINGALA
+  - Région principale : Kinshasa, Équateur, Province orientale
+  - Langues parlées : Lingala, français
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone C)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le lingala est une langue véhiculaire importante en RDC, parlée par de nombreux groupes ethniques.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Lingala (lin) - langue véhiculaire nationale
+  - Kikongo (kon) - Kongo Central
+  - Tshiluba (lua) - Kasaï
+  - Swahili (swa) - Kivu, Katanga
+  - Français - langue officielle
+  - Plus de 200 langues locales
+- Traditions culturelles : Art luba (sculptures, masques), art lunda et tshokwe (sculptures en bois), musique traditionnelle (rumba congolaise), danse traditionnelle, artisanat (vannerie, poterie, tissage), architecture traditionnelle
+- Religions dominantes : Christianisme (catholique majoritaire, protestant), croyances traditionnelles (syncrétisme), islam (minorité, surtout dans l'est)
+- Modes de vie : Vie principalement rurale, agriculture (manioc, maïs, riz, arachides), élevage (bovins, caprins), pêche (fleuves et lacs), exploitation minière (cuivre, cobalt, diamants, or), commerce
+- Organisation sociale : Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens
+- Relations régionales : Relations historiques avec les peuples d'Angola, de Zambie, du Congo, de la RCA, du Rwanda, du Burundi, de l'Ouganda. Diaspora importante en Belgique, France, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par des migrations bantoues depuis le premier millénaire. Développement de royaumes et empires puissants (Kongo, Luba, Lunda) avec des systèmes politiques sophistiqués.
+- Moyen Âge : Apogée des royaumes précoloniaux (XIVe-XIXe siècles). Royaume Kongo établit des relations avec les Portugais dès le XVe siècle. Empires Luba et Lunda dominent le centre et le sud-est.
+- Époque précoloniale : Mosaïque de royaumes et chefferies indépendants. Royaumes Mangbetu et sultanats Zande dans le nord-est. Chefferies Mongo dans la cuvette équatoriale. Commerce transsaharien et commerce avec les côtes.
+- Colonisation : 1885 : Création de l'État indépendant du Congo (propriété privée de Léopold II). Exploitation extrême (caoutchouc, ivoire) avec atrocités massives. 1908 : Passage au Congo belge. Exploitation économique intensive (mines, plantations). Résistance congolaise.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1960. Crise du Katanga (sécession 1960-1963). Instabilité politique et interventions étrangères.
+- Période post-indépendance : Régime Mobutu (1965-1997) : Zaïre, dictature, corruption. Première guerre du Congo (1996-1997) : chute de Mobutu. Deuxième guerre du Congo (1998-2003) : "guerre mondiale africaine". Transition démocratique difficile. Défis de reconstruction et de stabilisation.
+
+# 7. Sources
+- CIA World Factbook – Democratic Republic of the Congo
+- SIL Ethnologue – Languages of DRC
+- Recensements nationaux congolais
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples congolais
+- Études historiques sur les royaumes précoloniaux
+- Ethnologie du Congo
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Luba
+- Identifiant peuple (PPL_) : PPL_LUBA
+- Population : 18 360 000
+- Pourcentage dans le pays : 18.0%
+- Pourcentage en Afrique : 1.28%
+- Région : Kasaï, Katanga (Haut-Lomami, Lualaba)
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : lua (Tshiluba)
+
+### Peuple : Kongo
+- Identifiant peuple (PPL_) : PPL_KONGO
+- Population : 12 240 000
+- Pourcentage dans le pays : 12.0%
+- Pourcentage en Afrique : 0.86%
+- Région : Kongo Central, Kinshasa ouest
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : kon (Kikongo)
+
+### Peuple : Mongo
+- Identifiant peuple (PPL_) : PPL_MONGO
+- Population : 17 340 000
+- Pourcentage dans le pays : 17.0%
+- Pourcentage en Afrique : 1.21%
+- Région : Cuvette centrale (Équateur, Tshuapa)
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : lom (Lomongo)
+
+### Peuple : Tetela
+- Identifiant peuple (PPL_) : PPL_TETELA
+- Population : 7 140 000
+- Pourcentage dans le pays : 7.0%
+- Pourcentage en Afrique : 0.50%
+- Région : Sankuru
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : tll (Tetela)
+
+### Peuple : Lunda
+- Identifiant peuple (PPL_) : PPL_LUNDA
+- Population : 2 040 000 (estimation pour la RDC, sur 4 080 000 total)
+- Pourcentage dans le pays : 2.0%
+- Pourcentage en Afrique : 0.14%
+- Région : Katanga, frontières angolaises
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : lun (Lunda)
+
+### Peuple : Tshokwe
+- Identifiant peuple (PPL_) : PPL_TSHOKWE
+- Population : 2 040 000 (estimation pour la RDC, sur 4 080 000 total Lunda-Chokwe)
+- Pourcentage dans le pays : 2.0%
+- Pourcentage en Afrique : 0.14%
+- Région : Katanga, frontières angolaises
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : cjk (Tshokwe)
+
+### Peuple : Nande
+- Identifiant peuple (PPL_) : PPL_NANDE
+- Population : 2 550 000
+- Pourcentage dans le pays : 2.5%
+- Pourcentage en Afrique : 0.18%
+- Région : Nord-Kivu
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : nnb (Kinande)
+
+### Peuple : Hunde
+- Identifiant peuple (PPL_) : PPL_HUNDE
+- Population : 1 530 000
+- Pourcentage dans le pays : 1.5%
+- Pourcentage en Afrique : 0.11%
+- Région : Nord-Kivu
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : hke (Hunde)
+
+### Peuple : Hutu (Rwandais)
+- Identifiant peuple (PPL_) : PPL_RWANDAIS_HUTU
+- Population : 1 530 000 (estimation pour la RDC, sur 3 060 000 total Grands Lacs)
+- Pourcentage dans le pays : 1.5%
+- Pourcentage en Afrique : 0.11%
+- Région : Sud-Kivu, Nord-Kivu
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : kin (Kinyarwanda)
+
+### Peuple : Tutsi (Rwandais)
+- Identifiant peuple (PPL_) : PPL_RWANDAIS_TUTSI
+- Population : 1 530 000 (estimation pour la RDC, sur 3 060 000 total Grands Lacs)
+- Pourcentage dans le pays : 1.5%
+- Pourcentage en Afrique : 0.11%
+- Région : Sud-Kivu, Nord-Kivu
+- Famille linguistique : FLG_NILOTIQUE (Nilotique)
+- Code ISO 639-3 (langue principale) : kin (Kinyarwanda)
+
+### Peuple : Bemba
+- Identifiant peuple (PPL_) : PPL_BEMBA
+- Population : 1 020 000
+- Pourcentage dans le pays : 1.0%
+- Pourcentage en Afrique : 0.07%
+- Région : Katanga sud
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : bem (Bemba)
+
+### Peuple : Lingala (locuteurs)
+- Identifiant peuple (PPL_) : PPL_LINGALA
+- Population : ~20 000 000 (locuteurs, estimation)
+- Pourcentage dans le pays : ~20% (locuteurs)
+- Pourcentage en Afrique : ~1.4%
+- Région : Kinshasa, Équateur, Province orientale
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : lin (Lingala)
+

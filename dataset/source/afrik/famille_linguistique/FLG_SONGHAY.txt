@@ -44,9 +44,9 @@
   ~3 à 4 millions
 
 # 2. Peuples associés
-- Peuple 1 : Songhay / Sonrai
-- Peuple 2 : Zarma (Djerma)
-- Peuple 3 : Dendi
+- Peuple 1 : Songhay / Sonrai (PPL_SONGHAY)
+- Peuple 2 : Zarma (Djerma) (PPL_ZARMA)
+- Peuple 3 : Dendi (PPL_DENDI)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Songhay de Gao  

@@ -5,7 +5,7 @@
 - Famille linguistique principale : Niger-Congo – Bantou (FLG_BANTU)
 - Groupe ethno-linguistique : Bantou (Zone K)
 - Région historique : Ouest de la Zambie
-- Pays actuels : Zambie, Botswana, Namibie, Angola
+- Pays actuels : ZMB, BWA, NAM, AGO
 - Identifiant peuple (ID) : PPL_LOZI
 
 # 1. Ethnies incluses dans le peuple
@@ -18,7 +18,7 @@
 - Origines anciennes : Les Lozi sont originaires de l'ouest de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone K). Formation du royaume Barotseland.
 - Routes migratoires : 
   - Migrations depuis les régions bantoues
-  - Expansion vers l'ouest de la Zambie, le Botswana, la Namibie et l'Angola
+  - Expansion vers l'ouest de la ZMB, le BWA, la Namibie et l'Angola
   - Déplacements vers les zones urbaines
 - Unifications / divisions : Formation du royaume Barotseland. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.
 - Influences externes : Contacts avec les peuples bantous voisins, influence du christianisme.
