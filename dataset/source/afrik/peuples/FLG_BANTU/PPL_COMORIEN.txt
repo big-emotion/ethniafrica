@@ -1,45 +1,487 @@
 # Nom du peuple
 - Nom principal : Comorien
-- Auto-appellation : Shimasiwa (gens des îles)
-- Exonymes : Comorians
-- Famille : Niger-Congo – Bantu (FLG_BANTU, branche swahilie)
-- Groupe : Bantous de l’océan Indien
-- Région historique : Archipel des Comores
-- Pays actuels : COM, Mayotte
-- Identifiant : PPL_COMORIEN
+- Auto-appellation (endonyme) : Shimasiwa (gens des îles), Wamasiwa (pluriel)
+- Exonymes / appellations historiques : "Comorians" (anglais), "Comoriens" (français)
+- Origine des termes (exonymes) : "Comores" provient de l'arabe "Juzur al-Qamar" (جزر القمر, "îles de la lune"), transcrit en français comme "Comores"
+- Pourquoi certains termes posent problème (si applicable) : Les termes exonymes ne reflètent pas la diversité interne des Comoriens (Ngazidja, Ndzuani, Mwali, Maorais), ni les identités insulaires spécifiques
+- Usage contemporain des appellations : "Comorien" est largement accepté, mais les identités insulaires restent fortes (Ngazidja pour Grande Comore, etc.)
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU, branche swahilie, groupe Sabaki)
+- Groupe ethno-linguistique : Bantous de l'océan Indien, groupe swahili
+- Région historique : Archipel des Comores (océan Indien occidental)
+- Pays actuels : Union des Comores (COM), Mayotte (département français, MYT)
+- Identifiant peuple (ID) : PPL_COMORIEN
 
-# 1. Ethnies incluses
-- Ngazidja (Grande Comore)
-- Ndzuani (Anjouan)
-- Mwali (Mohéli)
-- Maorais (Mayotte)
+# 1. Ethnies incluses dans le peuple
+- **Ngazidja (Grande Comore)** – habitants de la Grande Comore (Ngazidja), langue shingazidja (zdj)
+- **Ndzuani (Anjouan)** – habitants d'Anjouan (Ndzuani), langue shindzuani (wni)
+- **Mwali (Mohéli)** – habitants de Mohéli (Mwali), langue shimwali (wlc)
+- **Maorais (Mayotte)** – habitants de Mayotte (Maore), langue shimaore (swb)
+- **Diaspora comorienne** – communautés comoriennes en France, à Madagascar, en Tanzanie, à Zanzibar
 
-# 2. Origines
-- Mélange bantou → swahili → influences malgaches et arabes.
-- Populations de navigateurs.
+# 2. Origines, migrations et formation du peuple
 
-# 3. Organisation
-- Système de notables (Anda, Shungu)
-- Chefferies insulaires traditionnelles
+## Origines anciennes (théories archéologiques, linguistiques, génétiques) :
 
-# 4. Langue
-- Langues comoriennes (shimaore, shingazidja, shimwali…)
-- ISO : swb, wni, zdj, wlc
+### Composantes ethniques multiples :
 
-# 5. Culture
-- Architecture en pierre
-- Mariage grand-comorien (Anda)
-- Poésie et musique orientale-swahili
+Les Comoriens sont le résultat d'un métissage complexe entre plusieurs vagues migratoires sur plus de 1500 ans :
 
-# 6. Histoire
-- Archipel musulman depuis le IXe siècle.
-- Contacts intensifs avec Swahili, Arabes, Perses, Shirazi.
+**1. Substrat bantou (Ier-VIe siècles) :**
+- **Origine** : migrations bantoues depuis la côte est-africaine (Mozambique, Tanzanie)
+- **Preuves archéologiques** : poteries, outils en fer datant du Ier siècle à Ngazidja
+- **Preuves linguistiques** : les langues comoriennes appartiennent à la famille bantoue, groupe swahili (Sabaki)
+- **Preuves génétiques** : marqueurs génétiques bantous majoritaires dans la population comorienne
 
-# 7. Démographie
-- Population totale : 1 150 000
-- Année : 2025
-- Source : estimations AFRIK + recensements Comores/Mayotte
+**2. Apport austronésien / malgache (VIIe-Xe siècles) :**
+- **Origine** : migrations depuis Madagascar (Malgaches d'origine austronésienne)
+- **Preuves linguistiques** : emprunts lexicaux malgaches dans les langues comoriennes
+- **Preuves culturelles** : techniques agricoles (culture du riz), navigation, architecture
+- **Preuves génétiques** : marqueurs austronésiens présents dans la population
 
-# 8. Sources
-- Ethnologue
-- Comoros Cultural Studies
+**3. Apport arabo-persan / shirazi (VIIIe-XVe siècles) :**
+- **Origine** : marchands et migrants arabes (Oman, Yémen, Hadramaout) et persans (Shiraz, golfe Persique)
+- **Légende shirazi** : tradition orale attribuant l'origine des élites comoriennes à des princes perses de Shiraz (Iran), fuyant les persécutions religieuses
+- **Réalité historique** : la "légende shirazi" est probablement une construction identitaire valorisant une origine prestigieuse, mais reflète des contacts réels avec le monde arabo-persan
+- **Preuves archéologiques** : céramiques perses, monnaies arabes, mosquées anciennes (IXe siècle à Ngazidja)
+- **Preuves linguistiques** : emprunts massifs à l'arabe dans les langues comoriennes, influence de l'arabe sur la syntaxe
+- **Preuves génétiques** : marqueurs génétiques moyen-orientaux (arabes, persans) minoritaires mais significatifs
+- **Impact culturel** : islamisation, architecture swahilie, système de sultanats
+
+**4. Apport swahili (Xe-XVIIIe siècles) :**
+- **Origine** : contacts intensifs avec la côte swahilie (Zanzibar, Kilwa, Mombasa, Lamu)
+- **Preuves linguistiques** : les langues comoriennes sont des langues swahilies, proches du swahili de Zanzibar
+- **Preuves culturelles** : architecture swahilie (maisons en pierre, mosquées), navigation, commerce
+- **Réseau commercial** : intégration dans le réseau commercial swahili de l'océan Indien
+
+### Synthèse des origines :
+
+Les Comoriens sont un peuple **afro-arabo-austronésien**, résultat d'un métissage entre :
+- **60-70% bantou** (substrat africain)
+- **15-20% arabo-persan** (élites marchandes et religieuses)
+- **10-15% austronésien/malgache** (migrations depuis Madagascar)
+- **5-10% autres** (Indiens, Européens, etc.)
+
+## Période de formation estimée :
+- **Ier-VIe siècles** : premières installations bantoues
+- **VIIe-Xe siècles** : arrivée des Malgaches, début de l'islamisation
+- **XIe-XVe siècles** : apogée des sultanats comoriens, consolidation de l'identité swahilie
+- **XVIe-XIXe siècles** : période des sultanats, contacts avec les Européens (Portugais, Français)
+- **1886-1975** : colonisation française
+- **1975** : indépendance de l'Union des Comores (sauf Mayotte)
+
+## Routes migratoires principales :
+- **Depuis la côte est-africaine** : migrations bantoues via le canal du Mozambique
+- **Depuis Madagascar** : migrations malgaches via le canal du Mozambique
+- **Depuis la péninsule arabique** : migrations arabes via l'océan Indien (routes commerciales)
+- **Depuis la côte swahilie** : migrations swahilies depuis Zanzibar, Kilwa, Mombasa
+
+## Zones d'établissement historiques :
+- **Ngazidja (Grande Comore)** : la plus grande île, centre politique et culturel
+  * **Moroni** : capitale actuelle, fondée au Xe siècle par des marchands arabes
+  * **Iconi** : ancienne capitale, centre religieux
+  * **Mitsamiouli** : port historique au nord
+  * **Vouvouni** : village au sud de Moroni, fondé par des familles de Washili (Itsikoudi) et Sidjuwu
+- **Ndzuani (Anjouan)** : île densément peuplée, centre agricole
+  * **Mutsamudu** : capitale, port historique
+  * **Domoni** : ancienne capitale, centre culturel
+- **Mwali (Mohéli)** : la plus petite île, moins peuplée
+  * **Fomboni** : capitale
+- **Maore (Mayotte)** : île restée française
+  * **Mamoudzou** : capitale
+  * **Dzaoudzi** : ancienne capitale
+
+## Unifications / divisions :
+
+### Période pré-coloniale (Xe-XIXe siècles) :
+- **Sultanats multiples** : chaque île était divisée en plusieurs sultanats rivaux
+  * **Ngazidja** : sultanats de Bambao, Itsandra, Hambou, Mitsamiouli, Washili, etc.
+  * **Ndzuani** : sultanat de Ndzuani (unifié au XVe siècle)
+  * **Mwali** : sultanat de Mwali
+  * **Mayotte** : sultanat de Mayotte
+- **Rivalités inter-sultanats** : guerres fréquentes, alliances changeantes
+- **Influence malgache** : raids malgaches (Sakalava) aux XVIIIe-XIXe siècles, déstabilisation politique
+
+### Période coloniale (1886-1975) :
+- **Protectorat français (1886-1912)** : les sultanats deviennent des protectorats français
+- **Colonie française (1912-1946)** : annexion complète, administration coloniale
+- **Territoire d'outre-mer (1946-1975)** : statut de TOM, autonomie limitée
+
+### Indépendance et division (1975-présent) :
+- **Référendum de 1974** : trois îles votent pour l'indépendance, Mayotte vote pour rester française
+- **Indépendance unilatérale (6 juillet 1975)** : proclamation de l'indépendance de l'Union des Comores (Ngazidja, Ndzuani, Mwali)
+- **Mayotte reste française** : statut contesté par l'Union des Comores, revendication territoriale
+- **Instabilité politique** : plus de 20 coups d'État depuis l'indépendance
+- **Sécession d'Anjouan (1997-2008)** : tentative de sécession de Ndzuani, réintégration forcée en 2008
+
+## Influences externes (peuples voisins, colonisation, commerce) :
+- **Swahilis (Zanzibar, côte est-africaine)** : échanges commerciaux, culturels, linguistiques
+- **Malgaches** : migrations, raids, influences culturelles
+- **Arabes (Oman, Yémen, Hadramaout)** : commerce, islamisation, influences architecturales
+- **Persans** : légende shirazi, influences culturelles
+- **Portugais (XVIe siècle)** : premiers contacts européens, commerce
+- **Français (XIXe-XXe siècles)** : colonisation, administration, éducation occidentale
+- **Indiens (Gujaratis)** : commerce, minorité commerçante
+
+## Événements historiques majeurs ayant façonné le peuple :
+- **Islamisation (IXe-Xe siècles)** : conversion à l'islam, fondation des premières mosquées
+- **Apogée des sultanats (XIe-XVe siècles)** : prospérité commerciale, architecture swahilie
+- **Raids malgaches (XVIIIe-XIXe siècles)** : déstabilisation, déclin des sultanats
+- **Colonisation française (1886-1975)** : perte de l'indépendance, transformation sociale
+- **Indépendance (1975)** : division de l'archipel, Mayotte reste française
+- **Instabilité politique (1975-présent)** : coups d'État, crises politiques
+- **Émigration massive vers Mayotte et la France** : diaspora importante
+
+# 3. Organisation et structure interne
+
+## Système politique traditionnel :
+- **Sultanats** : système monarchique, sultan (mfalme) à la tête de chaque sultanat
+- **Conseil des notables (Anda)** : assemblée des chefs de lignages, conseil consultatif du sultan
+- **Chefs de villages (Shungu)** : autorités locales, responsables des communautés villageoises
+- **Système matrilinéaire** : transmission du statut social par la lignée maternelle (spécifique à Ngazidja)
+- **Grand Mariage (Anda)** : institution centrale de l'organisation sociale à Ngazidja, rite de passage obligatoire pour accéder au statut de notable
+
+## Organisation clanique :
+- **Mila (lignage)** : unité de base de l'organisation sociale
+- **Système matrilinéaire (Ngazidja)** : descendance et héritage par la lignée maternelle, les enfants appartiennent au lignage de la mère
+- **Système patrilinéaire (Ndzuani, Mwali, Mayotte)** : descendance et héritage par la lignée paternelle
+- **Exogamie clanique** : interdiction de mariage au sein du même mila
+
+## Rôle des lignages :
+- **Propriété foncière** : la terre appartient au lignage (système matrilinéaire à Ngazidja)
+- **Solidarité économique** : entraide mutuelle, partage des ressources
+- **Grand Mariage** : organisation collective des cérémonies de mariage, financement communautaire
+- **Mémoire généalogique** : transmission orale des généalogies, liens avec les ancêtres shirazi
+
+## Autorité religieuse :
+- **Sultan** : autorité religieuse et politique, descendant des lignées shirazi
+- **Fundi (érudits islamiques)** : enseignants coraniques, imams, juges
+- **Sharif (descendants du Prophète)** : prestige religieux, autorité morale
+- **Marabouts** : guides spirituels, intercesseurs, guérisseurs
+- **Écoles coraniques (madrasa)** : transmission du savoir islamique, éducation des enfants
+
+# 4. Langues et sous-familles
+- Langue principale : Langues comoriennes (shikomori)
+- Codes ISO :
+  * Shingazidja (Grande Comore) : ISO 639-3 : zdj
+  * Shindzuani (Anjouan) : ISO 639-3 : wni
+  * Shimwali (Mohéli) : ISO 639-3 : wlc
+  * Shimaore (Mayotte) : ISO 639-3 : swb
+- Dialectes :
+  * Chaque île a sa propre langue comorienne, mutuellement intelligibles à des degrés variables
+  * Variations régionales au sein de chaque île
+- Rôle véhiculaire :
+  * Langues comoriennes : langues nationales de l'Union des Comores
+  * Arabe : langue religieuse, enseignement coranique
+  * Français : langue officielle (héritage colonial), administration, éducation
+  * Swahili : langue de communication avec la côte est-africaine
+
+# 5. Culture, rites et traditions
+
+## Rites majeurs :
+- **Grand Mariage (Anda, Harusi ya Nkuu)** : cérémonie de mariage traditionnelle à Ngazidja, rite de passage obligatoire pour accéder au statut de notable, festivités durant plusieurs jours, dépenses considérables (maison, bijoux, festins), institution centrale de la société ngazidja
+- **Shungu (intronisation des notables)** : cérémonie d'intronisation des notables après le Grand Mariage, accès au conseil des anciens
+- **Maulida (Mawlid)** : célébration de la naissance du Prophète, récitations coraniques, chants religieux (kasida), processions
+- **Aïd el-Fitr (Korite)** : fin du Ramadan, prières, festins, visites familiales
+- **Aïd el-Adha (Tabaski)** : fête du sacrifice, immolation de moutons, partage de la viande
+- **Baptême (Innde)** : cérémonie de nomination de l'enfant, récitations coraniques, festin familial
+- **Funérailles (Matanga)** : rites islamiques, prières, enterrement selon la charia, veillée funèbre
+
+## Symboles :
+- **Maison en pierre (Nyumba ya mawe)** : symbole de richesse et de statut social, construite lors du Grand Mariage
+- **Bijoux en or (Shingo)** : colliers, bracelets, boucles d'oreilles, symboles de richesse et de féminité
+- **Ylang-ylang** : fleur emblématique des Comores, utilisée en parfumerie, symbole de l'identité comorienne
+- **Pirogue à balancier (Ngalawa)** : embarcation traditionnelle, symbole de la culture maritime
+- **Coran** : livre sacré, symbole de la foi islamique
+
+## Arts et musique :
+- **Architecture swahilie** : maisons en pierre, mosquées anciennes (Iconi, Domoni), portes sculptées, cours intérieures
+- **Musique traditionnelle** :
+  * **Twarab** : musique swahilie influencée par les traditions arabes et indiennes, chants poétiques, instruments (oud, qanun, violon)
+  * **Gabussi** : musique traditionnelle comorienne, chants et danses
+  * **Kasida** : chants religieux, louanges au Prophète
+- **Danse** :
+  * **Shigoma** : danse traditionnelle de Ngazidja
+  * **Wadaha** : danse de mariage
+  * **Mdjandra** : danse rituelle
+- **Artisanat** :
+  * **Vannerie** : paniers, nattes en feuilles de cocotier
+  * **Sculpture sur bois** : portes, meubles, pirogues
+  * **Bijouterie** : bijoux en or et en argent
+  * **Parfumerie** : distillation d'ylang-ylang, jasmin, vanille
+
+## Spiritualités :
+
+### Cosmologie comorienne :
+
+La spiritualité comorienne est dominée par l'islam sunnite (école chaféite), introduit aux IXe-Xe siècles et devenu religion d'État. Cependant, des éléments de croyances pré-islamiques (bantoues, malgaches) persistent, créant un syncrétisme complexe.
+
+### Islam comorien :
+
+**Orthodoxie islamique :**
+- **École chaféite** : école juridique de l'islam sunnite, dominante aux Comores
+- **Soufisme** : influence des confréries soufies (Qadiriyya, Shadhiliyya, Alawiyya), pratiques mystiques
+- **Sharif (descendants du Prophète)** : prestige religieux, autorité morale, lignées prestigieuses
+
+**Pratiques islamiques :**
+- **Salat (prière)** : cinq prières quotidiennes, pilier de la foi
+- **Sawm (jeûne)** : jeûne du Ramadan, observé rigoureusement
+- **Zakat (aumône)** : aumône obligatoire, redistribution de la richesse
+- **Hajj (pèlerinage)** : pèlerinage à La Mecque, idéal spirituel
+- **Maulida (Mawlid)** : célébration de la naissance du Prophète, importance centrale dans la spiritualité comorienne
+- **Écoles coraniques (madrasa)** : éducation religieuse, mémorisation du Coran
+
+### Croyances syncrétiques (persistances pré-islamiques) :
+
+**Djinn / Jini (Esprits) :**
+- Endonyme : Jini (du terme arabe "jinn"), Pepo (terme bantou)
+- Esprits invisibles habitant les lieux sacrés (arbres, sources, grottes, ruines)
+- Ambivalents : peuvent aider ou nuire aux humains
+- Types de jini :
+  * **Jini wa bahari** (esprits de la mer) : habitent l'océan, dangereux pour les pêcheurs
+  * **Jini wa msitu** (esprits de la forêt) : habitent les forêts, gardiens de la nature
+  * **Jini wa nyumba** (esprits domestiques) : habitent les maisons, peuvent causer des maladies
+- Pratiques : offrandes, invocations, protection contre les jini malveillants
+- Exorcisme : pratiqué par les marabouts (fundi), récitations coraniques (ruqya)
+
+**Esprits ancestraux (Roho za wazee) :**
+- Croyance en la présence des ancêtres défunts
+- Rôle : protection, guidance, intercession
+- Culte : visites des tombes, prières pour les défunts, offrandes
+- Réinterprété à travers l'islam : prières pour les morts (dua), visites des tombes (ziyara)
+
+**Sorcellerie et magie (Uchawi) :**
+- **Uchawi** : sorcellerie, magie noire, pratiques occultes
+- **Mchawi** (sorcier) : personne pratiquant la sorcellerie, craint et rejeté socialement
+- **Mauvais œil (Jicho baya)** : croyance en le pouvoir du regard envieux, protection par des talismans
+- **Marabouts (Fundi)** : érudits islamiques pratiquant la guérison spirituelle, la divination, la fabrication de talismans (hirizi)
+- **Talismans (Hirizi)** : amulettes coraniques, protection contre le mauvais œil, les jini, les maladies
+- Ambiguïté : certaines pratiques sont considérées comme islamiques (ruqya, invocations coraniques), d'autres comme hétérodoxes (magie noire, sorcellerie)
+
+**Lieux sacrés :**
+- **Tombes de saints (Makaburi ya walimu)** : tombes de marabouts vénérés, lieux de pèlerinage
+- **Mosquées anciennes** : mosquées historiques (Iconi, Domoni), lieux de prière et de mémoire
+- **Grottes sacrées** : grottes habitées par des jini, lieux interdits ou respectés
+- **Sources sacrées** : sources d'eau considérées comme sacrées, lieux de purification
+
+**Divination et guérison :**
+- **Divination (Ramli)** : pratique divinatoire utilisant le sable, consultation des marabouts
+- **Guérison spirituelle (Ruqya)** : exorcisme par récitations coraniques, invocations
+- **Médecine traditionnelle** : usage de plantes médicinales, massages, ventouses
+- **Possession spirituelle (Pepo)** : croyance en la possession par des esprits, exorcisme rituel
+
+### Conception de l'homme :
+
+**Dualité corps-esprit (vision islamique) :**
+- **Mwili** (corps physique) : enveloppe matérielle, temporaire
+- **Roho** (âme/esprit) : essence spirituelle, éternelle, créée par Allah
+- **Destin (Qadar)** : prédestination divine, acceptation de la volonté d'Allah
+
+**Cycle de vie spirituel (islamique) :**
+1. Création : l'âme est créée par Allah avant la naissance
+2. Naissance : incarnation, début de la vie terrestre
+3. Vie terrestre : épreuve, accomplissement des devoirs religieux
+4. Mort : séparation du corps et de l'âme, retour à Allah
+5. Barzakh : monde intermédiaire entre la mort et la résurrection
+6. Résurrection : jour du jugement dernier
+7. Paradis ou Enfer : récompense ou châtiment éternel
+
+**Concept de personne (Mtu) :**
+- Mtu = personne, être humain
+- L'homme est un serviteur d'Allah (abd), créé pour l'adorer
+- Valeurs : **Heshima** (respect, honneur), **Ukarimu** (générosité, hospitalité), **Ustaarabu** (civilité, urbanité swahilie)
+- Identité collective : appartenance au lignage, à la communauté insulaire, à l'Oummah (communauté musulmane)
+
+### Conception de la nature :
+
+**Sacralité de la création (vision islamique) :**
+- La nature est une création d'Allah, signe de Sa puissance et de Sa sagesse
+- Respect de la création : interdiction de gaspiller, de détruire sans raison
+- Responsabilité humaine : l'homme est le khalife (vicaire) d'Allah sur terre, chargé de gérer la création avec sagesse
+
+**Océan sacré :**
+- L'océan Indien est central dans l'identité comorienne : pêche, commerce, navigation
+- Respect de la mer : offrandes aux esprits de la mer (jini wa bahari) avant la pêche
+- Croyance en des créatures marines mystérieuses (sirènes, monstres marins)
+
+**Volcans sacrés :**
+- **Karthala** (volcan actif de Ngazidja) : montagne sacrée, demeure de jini
+- Respect du volcan : interdiction de le souiller, offrandes lors des éruptions
+
+**Plantes sacrées :**
+- **Ylang-ylang** : fleur sacrée, utilisée en parfumerie et en médecine traditionnelle
+- **Cocotier** : arbre de vie, source de nourriture et de matériaux
+- **Herbes médicinales** : utilisées dans les rituels de guérison et de purification
+
+**Harmonie cosmique :**
+- Équilibre entre l'homme, la nature et Allah
+- Respect des lois divines (charia) : garantie de l'harmonie
+- Respect des ancêtres et des esprits : maintien de l'ordre social et spirituel
+
+### Sources spirituelles :
+- Blanchy, Sophie. *Karana et Banians : les communautés commerçantes d'origine indienne à Madagascar* (1995)
+- Blanchy, Sophie. *La vie quotidienne à Mayotte* (1990)
+- Lambek, Michael. *Knowledge and Practice in Mayotte: Local Discourses of Islam, Sorcery, and Spirit Possession* (1993)
+- Ottenheimer, Martin & Ottenheimer, Harriet. *Historical Dictionary of the Comoro Islands* (1994)
+- Recherches web (2025) – sources académiques et historiques diverses
+
+# 6. Rôle historique et interactions régionales
+
+## Royaumes / chefferies :
+- **Sultanats de Ngazidja** : Bambao, Itsandra, Hambou, Mitsamiouli, Washili, etc. (Xe-XIXe siècles)
+- **Sultanat de Ndzuani** : sultanat unifié d'Anjouan (XVe-XIXe siècles)
+- **Sultanat de Mwali** : sultanat de Mohéli (XVe-XIXe siècles)
+- **Sultanat de Mayotte** : sultanat de Mayotte (XVe-XIXe siècles)
+
+## Relations avec peuples voisins :
+- **Swahilis (Zanzibar, Kilwa, Mombasa)** : échanges commerciaux intenses, influences culturelles, migrations
+- **Malgaches** : migrations, raids (Sakalava), échanges commerciaux
+- **Arabes (Oman, Yémen)** : commerce, islamisation, influences architecturales
+- **Français** : colonisation, administration, éducation
+
+## Conflits / alliances :
+- **Guerres inter-sultanats** : rivalités entre sultanats de Ngazidja, conflits pour le contrôle des ressources
+- **Raids malgaches (XVIIIe-XIXe siècles)** : raids des Sakalava de Madagascar, déstabilisation politique
+- **Résistance à la colonisation française (1886-1912)** : résistance des sultanats, défaite finale
+- **Sécession d'Anjouan (1997-2008)** : tentative de sécession de Ndzuani, réintégration forcée
+
+## Diaspora :
+- **Diaspora en France** : environ 300 000 Comoriens en France (estimation), principalement à Marseille, Paris, Lyon
+- **Diaspora à Mayotte** : environ 100 000 Comoriens des trois îles à Mayotte (estimation)
+- **Diaspora à Madagascar** : communauté comorienne historique à Majunga, Diego-Suarez
+- **Diaspora en Tanzanie / Zanzibar** : communauté comorienne à Dar es Salaam, Zanzibar
+- **Diaspora dans le Golfe** : travailleurs comoriens en Arabie Saoudite, Émirats Arabes Unis
+
+# 7. Démographie globale
+- Population totale (tous pays) : 1 150 000 (estimation 2025)
+- Répartition par pays :
+  * Union des Comores : 850 000 (Ngazidja : 400 000, Ndzuani : 350 000, Mwali : 100 000)
+  * Mayotte : 300 000 (dont environ 100 000 originaires des trois autres îles)
+  * Diaspora : environ 400 000 (France : 300 000, Madagascar : 50 000, autres : 50 000)
+- Année de référence : 2025
+- Source : estimations AFRIK, recensements Comores/Mayotte, Ethnologue
+
+# 8. Origines spécifiques : Moroni, Pangadju, Badjanani, Vouvouni
+
+## Moroni (capitale de l'Union des Comores) :
+
+### Histoire de Moroni :
+- **Fondation** : Xe siècle par des marchands arabes et perses
+- **Étymologie** : "Moroni" pourrait provenir de l'arabe "Mroni" ou "Mro Wa Ntsi" (cœur du feu, en référence au volcan Karthala)
+- **Médina historique** : quartiers anciens de Badjanani et Mtsangani, architecture swahilie
+- **Capitale** : devient capitale de l'Union des Comores en 1962 (auparavant Dzaoudzi à Mayotte)
+
+### Quartiers historiques de Moroni :
+
+**Badjanani (Bab al-Jannah, "Porte du Paradis") :**
+- **Étymologie** : de l'arabe "Bab" (porte) et "Jannah" (paradis), signifiant "Porte du Paradis"
+- **Histoire** : l'un des plus anciens quartiers de Moroni, centre religieux et commercial
+- **Mosquée de Badjanani** : mosquée historique, l'une des plus anciennes des Comores (construction incertaine, possiblement XIIe-XIIIe siècles)
+- **Architecture** : maisons en pierre (nyumba ya mawe), ruelles étroites, style swahili
+- **Population** : familles anciennes, lignées shirazi, notables (Anda)
+- **Origines probables des habitants** :
+  * **Élites shirazi** : descendants des premiers marchands arabes et persans (légende shirazi)
+  * **Bantous** : substrat bantou, populations autochtones
+  * **Malgaches** : apport malgache via les migrations et les mariages
+  * **Swahilis** : influences swahilies depuis Zanzibar et la côte est-africaine
+
+**Pangadju :**
+- **Informations limitées** : peu de sources disponibles sur ce quartier spécifique
+- **Hypothèse** : quartier populaire ou périphérique de Moroni
+- **Origines probables des habitants** :
+  * **Populations rurales** : migrations depuis les villages de l'intérieur de Ngazidja
+  * **Bantous** : substrat bantou majoritaire
+  * **Métissage** : mélange avec les populations arabes et malgaches
+
+**Mtsangani :**
+- **Histoire** : quartier historique de la médina de Moroni, avec Badjanani
+- **Architecture** : maisons en pierre, mosquées anciennes
+- **Population** : familles anciennes, notables
+
+### Origines ethniques des habitants de Moroni :
+
+**Estimation de la composition ethnique de Moroni :**
+- **60-70% bantou** : substrat africain, populations autochtones de Ngazidja
+- **15-20% arabo-persan** : descendants des marchands et migrants arabes et persans (élites shirazi)
+- **10-15% malgache** : apport malgache via les migrations et les mariages
+- **5-10% autres** : Indiens (Gujaratis), Européens, Swahilis
+
+**Caractéristiques des habitants de Moroni :**
+- **Identité urbaine** : forte identité urbaine, distinction avec les populations rurales
+- **Élites shirazi** : familles nobles revendiquant une origine shirazi (persane), prestige social
+- **Grand Mariage** : institution centrale de la société ngazidja, accès au statut de notable
+- **Langue** : shingazidja (langue de Ngazidja), français (langue officielle), arabe (langue religieuse)
+
+## Vouvouni (village au sud de Moroni) :
+
+### Histoire de Vouvouni :
+
+**Étymologie :**
+- **"Vouvouni"** provient d'un conte traditionnel impliquant deux jeunes femmes de la région de **Washili** (centre-sud de Ngazidja), en particulier du village d'**Itsikoudi**
+- **Légende** : ces deux jeunes femmes se sont abritées au pied d'un arbre nommé **Mvouvou**, d'où le nom "Vouvouni" (lieu du Mvouvou)
+
+**Fondation :**
+- **Période estimée** : XVe-XVIIe siècles (estimation, sources orales)
+- **Fondateurs** : familles venant du sud de Ngazidja, notamment du village de **Sidjuwu**, probablement pour fuir des représailles politico-culturelles ou des conflits inter-sultanats
+- **Familles fondatrices** :
+  * **Famille Wahidu** : l'une des familles fondatrices de Vouvouni
+  * **Famille Fédézi (Fédezi)** : lignée importante, union avec la famille Wahidu
+- **Région d'origine : Washili (Itsikoudi, Sidjuwu)** : région du centre-sud de Ngazidja, sultanat de Washili
+
+**Développement :**
+- **Agriculture** : village agricole, culture de l'ylang-ylang, du girofle, de la vanille
+- **Pêche** : activité de pêche côtière
+- **Proximité de Moroni** : intégration progressive dans l'aire urbaine de Moroni
+
+### Origines ethniques des habitants de Vouvouni :
+
+**Composition ethnique estimée :**
+- **70-80% bantou** : substrat bantou majoritaire, populations autochtones de Ngazidja
+- **10-15% arabo-persan** : apport arabo-persan via les mariages et les migrations
+- **5-10% malgache** : apport malgache via les migrations et les mariages
+- **5% autres** : métissages divers
+
+**Caractéristiques des habitants de Vouvouni :**
+- **Identité rurale** : forte identité rurale, distinction avec les populations urbaines de Moroni
+- **Lignages de Washili** : liens généalogiques avec les familles de Washili (Itsikoudi, Sidjuwu)
+- **Agriculture** : économie basée sur l'agriculture (ylang-ylang, girofle, vanille) et la pêche
+- **Langue** : shingazidja (dialecte de Ngazidja)
+
+### Origines probables d'une personne de Moroni / Vouvouni :
+
+**Pour une personne dont les parents sont nés et ont grandi à Moroni (père à Pangadju, mère à Badjanani), avec de la famille originaire de Vouvouni :**
+
+**Origines ethniques probables :**
+1. **Bantou (60-70%)** : substrat bantou majoritaire, populations autochtones de Ngazidja
+2. **Arabo-persan (15-25%)** : apport arabo-persan significatif, surtout si la famille maternelle est de Badjanani (quartier historique, élites shirazi)
+3. **Malgache (10-15%)** : apport malgache via les migrations et les mariages
+4. **Autres (5%)** : métissages divers (Indiens, Swahilis, Européens)
+
+**Lignages probables :**
+- **Lignée maternelle (Badjanani)** : possible lignée shirazi (élite arabo-persane), familles nobles, notables (Anda)
+- **Lignée paternelle (Pangadju)** : possible lignée bantou ou métissée, populations urbaines
+- **Famille de Vouvouni** : lignée de Washili (Itsikoudi, Sidjuwu), familles Wahidu et Fédézi, identité rurale
+
+**Identité culturelle :**
+- **Identité ngazidja** : forte identité insulaire (Grande Comore)
+- **Identité urbaine (Moroni)** : distinction avec les populations rurales
+- **Identité musulmane** : islam sunnite (école chaféite), pratiques religieuses
+- **Identité swahilie** : appartenance au monde swahili de l'océan Indien
+
+**Recommandations pour approfondir les recherches :**
+1. **Recherches généalogiques** : consulter les registres d'état civil, les archives familiales, les traditions orales
+2. **Consultation des anciens** : interroger les anciens de Badjanani, Pangadju et Vouvouni sur les lignages familiaux
+3. **Étude des noms de famille** : les noms de famille comoriens peuvent indiquer des origines (arabes, persanes, bantoues, malgaches)
+4. **Tests génétiques** : tests ADN pour identifier les origines ethniques (bantou, arabo-persan, malgache, etc.)
+5. **Archives coloniales** : consulter les archives françaises (registres de population, recensements)
+
+# 9. Sources
+- Blanchy, Sophie. *Karana et Banians : les communautés commerçantes d'origine indienne à Madagascar* (1995)
+- Blanchy, Sophie. *La vie quotidienne à Mayotte* (1990)
+- Lambek, Michael. *Knowledge and Practice in Mayotte: Local Discourses of Islam, Sorcery, and Spirit Possession* (1993)
+- Ottenheimer, Martin & Ottenheimer, Harriet. *Historical Dictionary of the Comoro Islands* (1994)
+- Allibert, Claude. *Mayotte, plaque tournante et microcosme de l'océan Indien occidental* (1984)
+- Vérin, Pierre. *Les Comores* (1994)
+- Ethnologue (SIL International) – données linguistiques (codes zdj, wni, wlc, swb)
+- Comoros Cultural Studies – études culturelles comoriennes
+- Wikipédia : articles sur Moroni, Vouvouni, Badjanani (sources à vérifier)
+- Recherches web (2025) – sources académiques et historiques diverses
