@@ -1,0 +1,364 @@
+# Nom du peuple
+- Nom principal du peuple : Fulɓe du Massina (Peuls du Massina / Macina)
+- Auto-appellation (endonyme) : Fulɓe Maasina (pluriel), Pullo Maasina (singulier)
+- Exonymes / appellations historiques :
+  * « Peul » (terme français, exonyme colonial)
+  * « Fula » (forme anglophone)
+  * « Fulani » (terme haoussa, largement utilisé)
+  * « Fellata » (terme haoussa, parfois péjoratif → éviter)
+- Origine des termes (exonymes) :
+  * « Peul » : dérivé du wolof « Pël », utilisé par les colonisateurs français
+  * « Fula » : anglicisation du terme
+  * « Fulani » : forme haoussa, devenue courante au Nigeria
+  * « Fellata » : terme haoussa désignant les Peuls de l'est, associé à des stéréotypes
+- Pourquoi certains termes posent problème (si applicable) :
+  * « Fellata » est considéré comme péjoratif, associé à des stéréotypes négatifs (étrangers, nomades indésirables)
+  * Les exonymes « Peul » et « Fula » sont des classifications externes, ne reflétant pas l'auto-identification
+  * Préférer « Fulɓe » (auto-appellation) ou « Peul » (usage francophone neutre)
+- Usage contemporain des appellations :
+  * « Fulɓe » est préféré dans les contextes académiques et communautaires
+  * « Peul » reste largement utilisé en français
+  * « Fulani » est courant en anglais
+  * « Massina » ou « Macina » désigne spécifiquement les Peuls de la région du delta intérieur du Niger au Mali
+- Famille linguistique principale : Niger-Congo – Atlantique (branche sénégambienne)
+- Groupe ethno-linguistique : Atlantique Nord (groupe Fula-Wolof)
+- Région historique : Delta intérieur du Niger (Massina / Macina), Mali central
+- Pays actuels : Mali (principalement région de Mopti, Ségou, Tombouctou), Burkina Faso, Niger
+- Identifiant peuple (ID) : PPL_FULANI_MASSINA
+
+# 1. Ethnies incluses dans le peuple
+- Fulɓe Maasina (Peuls sédentarisés du Massina) – groupe dominant, agriculteurs et éleveurs
+- Fulɓe Jelgooji (Peuls rouges) – pasteurs semi-nomades, éleveurs de bovins
+- Fulɓe Seɓɓe (Peuls blancs) – groupe de pasteurs nomades
+- Fulɓe Toroɓe (Peuls lettrés) – classe cléricale, érudits islamiques, fondateurs de l'empire du Massina
+- Fulɓe Rimaaɓe (anciens captifs intégrés) – descendants d'esclaves affranchis, agriculteurs
+- Fulɓe Wuro (Peuls des villages) – sédentaires, agriculteurs et pêcheurs
+
+# 2. Origines, migrations et formation du peuple
+
+## Origines anciennes (théories archéologiques, linguistiques, génétiques) :
+- **Origine sénégambienne** : les Fulɓe sont originaires de la région du Fouta Toro (Sénégal/Mauritanie) et du Fouta Djallon (Guinée), d'où ils ont migré vers l'est à partir du XIe siècle
+- **Théorie du Sahara** : certaines traditions orales évoquent une origine saharienne ou nord-africaine, mais cette théorie est controversée
+- **Preuves linguistiques** : la langue fulfulde (pulaar, pular) appartient à la famille atlantique, apparentée au wolof et au sérère, confirmant une origine ouest-africaine
+- **Preuves génétiques** : les Fulɓe présentent une diversité génétique complexe, avec des marqueurs ouest-africains, nord-africains et nilotiques, résultat de métissages au cours des migrations
+- **Théorie pastorale** : les Fulɓe sont historiquement un peuple pastoral, spécialisé dans l'élevage bovin, ce qui a influencé leurs migrations à la recherche de pâturages
+
+## Période de formation estimée :
+- **XIe-XIIIe siècles** : premières migrations fulɓe depuis le Fouta Toro vers l'est (Sahel)
+- **XIVe-XVe siècles** : arrivée des Fulɓe dans la région du Massina (delta intérieur du Niger)
+- **XVIe-XVIIIe siècles** : installation progressive, cohabitation avec les populations locales (Bambara, Bozo, Somono)
+- **1818-1862** : apogée de l'empire du Massina sous Sékou Amadou et ses successeurs
+
+## Routes migratoires principales :
+- Migration depuis le Fouta Toro (Sénégal) vers l'est
+- Passage par le Fouta Djallon (Guinée), le Wassoulou (Mali)
+- Arrivée dans le Massina (delta intérieur du Niger) au XIVe-XVe siècles
+- Expansion vers le nord (Tombouctou), l'est (Niger) et le sud (Burkina Faso)
+
+## Zones d'établissement historiques :
+- **Delta intérieur du Niger** : cœur du territoire fulɓe maasina, zone de pâturages et de cultures
+- **Mopti** : capitale historique de l'empire du Massina
+- **Djenné** : centre commercial et religieux majeur
+- **Hamdallaye** : capitale fondée par Sékou Amadou en 1818, centre politique et spirituel de l'empire
+- **Ségou** : région d'expansion fulɓe après la conquête du royaume bambara de Ségou
+
+## Unifications / divisions :
+- **Empire du Massina (Dina du Massina, 1818-1862)** : État théocratique islamique fondé par Sékou Amadou, unification des Fulɓe du Massina sous une autorité religieuse et politique centralisée
+- **Jihad de Sékou Amadou (1818)** : guerre sainte contre les royaumes bambara et les pratiques religieuses syncrétiques, établissement d'un État islamique strict
+- **Succession** : après Sékou Amadou (1845), succession de son fils Amadou Sékou (1845-1853) puis de son petit-fils Amadou Amadou (1853-1862)
+- **Conquête par El Hadj Oumar Tall (1862)** : défaite de l'empire du Massina face à l'empire toucouleur, fin de l'indépendance fulɓe maasina
+- **Colonisation française (1893)** : intégration du Massina dans l'Afrique Occidentale Française (AOF)
+
+## Influences externes (peuples voisins, colonisation, commerce) :
+- **Bambara** : cohabitation et conflits avec le royaume bambara de Ségou, conquête du Ségou par les Fulɓe en 1861
+- **Songhay** : influences culturelles et commerciales de l'empire songhay (Tombouctou, Gao)
+- **Touaregs** : échanges commerciaux et conflits pour le contrôle des routes caravanières
+- **Bozo et Somono** : peuples de pêcheurs du delta intérieur du Niger, intégrés dans l'empire du Massina
+- **Islam** : islamisation progressive depuis le XIe siècle, rôle central dans l'identité fulɓe maasina
+- **Colonisation française (1893-1960)** : imposition du système colonial, fin de l'autonomie politique, introduction de l'éducation occidentale
+
+## Événements historiques majeurs ayant façonné le peuple :
+- **Jihad de Sékou Amadou (1818)** : fondation de l'empire du Massina, révolution religieuse et sociale
+- **Fondation d'Hamdallaye (1818)** : création de la capitale, symbole de l'État théocratique
+- **Conquête du Ségou (1861)** : expansion de l'empire, affirmation de la puissance fulɓe
+- **Défaite face à El Hadj Oumar Tall (1862)** : fin de l'empire du Massina, intégration dans l'empire toucouleur
+- **Colonisation française (1893)** : perte de l'indépendance, résistance et adaptation
+- **Indépendance du Mali (1960)** : renaissance de l'identité fulɓe maasina, revendications culturelles et politiques
+
+# 3. Organisation et structure interne
+
+## Système politique traditionnel :
+- **Dina (État islamique)** : système théocratique fondé sur la charia, gouvernement centralisé
+- **Amiiru (Émir)** : chef suprême de l'empire, autorité religieuse et politique, descendant de Sékou Amadou
+- **Grand Conseil (Conseil des 40 ou 60)** : assemblée de notables et d'érudits islamiques, conseil consultatif de l'Amiiru
+- **Qadi (juges islamiques)** : tribunaux appliquant la charia, justice religieuse
+- **Ardo (chefs de clan)** : autorités locales, responsables des communautés pastorales
+- **Système de provinces** : division administrative en provinces dirigées par des gouverneurs (Diowro)
+
+## Organisation clanique :
+- **Leydi (clan/lignage)** : unité de base de l'organisation sociale, descendance patrilinéaire
+- **Système de castes** : hiérarchie sociale complexe
+  * Rimɓe (nobles, hommes libres) : éleveurs, guerriers, élites
+  * Nyeeɓe (artisans) : forgerons, tisserands, cordonniers (endogamie de caste)
+  * Maabuɓe (griots) : musiciens, généalogistes, médiateurs
+  * Rimaaɓe (anciens captifs) : agriculteurs, travailleurs
+- **Exogamie clanique** : interdiction de mariage au sein du même leydi
+
+## Rôle des lignages :
+- **Propriété du bétail** : le bétail appartient au lignage, géré collectivement
+- **Transhumance** : organisation collective des déplacements saisonniers
+- **Solidarité économique** : entraide mutuelle, partage des ressources
+- **Culte des ancêtres** : honneur aux ancêtres fondateurs, transmission de la mémoire
+
+## Autorité religieuse :
+- **Amiiru** : chef religieux suprême, guide spirituel de la communauté
+- **Modibbo (érudits islamiques)** : enseignants coraniques, imams, juges
+- **Marabouts** : guides spirituels, intercesseurs, guérisseurs
+- **Écoles coraniques** : transmission du savoir islamique, formation des élites religieuses
+
+# 4. Langues et sous-familles
+- Langue principale : Fulfulde (variante Maasina)
+- Codes ISO : ISO 639-1 : ff | ISO 639-2 : ful | ISO 639-3 : ffm (Fulfulde Maasina)
+- Dialectes :
+  * Fulfulde Maasina (dialecte du Massina, Mali central)
+  * Fulfulde Jelgoore (dialecte des pasteurs nomades)
+  * Variations régionales : Mopti, Djenné, Ségou
+- Rôle véhiculaire :
+  * Langue de commerce dans le delta intérieur du Niger
+  * Langue liturgique : enseignement coranique en fulfulde
+  * Langue d'éducation : utilisée dans les écoles coraniques
+  * Lingua franca : langue de communication inter-ethnique dans le Massina
+
+# 5. Culture, rites et traditions
+
+## Rites majeurs :
+- **Sharo / Shadi (épreuve de bravoure)** : rite de passage à l'âge adulte pour les jeunes hommes, flagellation publique démontrant le courage et l'endurance (pratique en déclin)
+- **Korite (Aïd el-Fitr)** : célébration de la fin du Ramadan, prières, festins, aumônes
+- **Tabaski (Aïd el-Adha)** : fête du sacrifice, immolation de moutons, partage de la viande
+- **Mawlid (naissance du Prophète)** : célébration religieuse, récitations coraniques, chants
+- **Mariage (Deftere)** : cérémonie islamique, dot (sadaki), festivités communautaires
+- **Baptême (Innde)** : nomination de l'enfant, cérémonie familiale, offrandes
+- **Funérailles (Janazah)** : rites islamiques, prières, enterrement selon la charia
+
+## Symboles :
+- **Bétail (bovins)** : symbole de richesse, de prestige et d'identité fulɓe, central dans la culture pastorale
+- **Bâton de berger (Lenyol)** : symbole de l'autorité pastorale, insigne du chef de troupeau
+- **Chapeau conique (Tennde)** : couvre-chef traditionnel, symbole d'identité fulɓe
+- **Coran** : livre sacré, symbole de la foi islamique et de l'érudition
+- **Hamdallaye** : ancienne capitale, symbole de l'empire du Massina et de l'idéal théocratique
+
+## Arts et musique :
+- **Poésie pastorale (Diiwal)** : poèmes célébrant le bétail, la beauté des vaches, l'identité fulɓe
+- **Chants de louange (Takaraaji)** : chants élogieux des griots (maabuɓe), généalogies, exploits
+- **Musique traditionnelle** : flûtes (serdu), tambours (gangan), luths (hoddu)
+- **Danses** : danses pastorales, danses de mariage, danses de fête
+- **Artisanat** : tissage, tannerie, bijoux en argent, calebasses décorées
+- **Architecture** : mosquées en banco (terre crue), style soudanais (Djenné, Mopti)
+
+## Spiritualités :
+
+### Cosmologie fulɓe maasina :
+
+La spiritualité des Fulɓe du Massina est aujourd'hui dominée par l'islam sunnite (école malékite), introduit progressivement depuis le XIe siècle et devenu religion d'État sous l'empire du Massina (1818-1862). Cependant, des éléments de la cosmologie pré-islamique persistent dans les pratiques culturelles et les croyances populaires.
+
+### Islam et identité fulɓe maasina :
+
+**Dina (État islamique) :**
+- L'empire du Massina était un État théocratique strict, appliquant la charia dans tous les aspects de la vie
+- Sékou Amadou a mené un jihad pour purifier l'islam des pratiques syncrétiques et imposer une orthodoxie rigoureuse
+- L'islam est devenu le fondement de l'identité fulɓe maasina, indissociable de la culture et de la politique
+
+**Pulaaku (Code de conduite fulɓe) :**
+- Endonyme : Pulaaku (de Pullo, "Peul")
+- Code moral et éthique définissant l'identité fulɓe, intégrant des valeurs pré-islamiques et islamiques
+- Valeurs centrales :
+  * **Munyal** : patience, endurance, maîtrise de soi
+  * **Semteende** : pudeur, modestie, retenue
+  * **Hakkille** : sagesse, intelligence, discernement
+  * **Tiinaade** : courage, bravoure, dignité
+  * **Ngorgu** : générosité, hospitalité
+- Le Pulaaku est considéré comme compatible avec l'islam, voire comme une expression de la piété islamique
+
+**Pratiques islamiques :**
+- **Salat (prière)** : cinq prières quotidiennes, pilier de la foi
+- **Sawm (jeûne)** : jeûne du Ramadan, observé rigoureusement
+- **Zakat (aumône)** : aumône obligatoire, redistribution de la richesse
+- **Hajj (pèlerinage)** : pèlerinage à La Mecque, idéal spirituel
+- **Dhikr (invocation)** : récitation des noms de Dieu, méditation spirituelle
+- **Écoles coraniques** : éducation religieuse, mémorisation du Coran
+
+### Croyances pré-islamiques (persistances) :
+
+Bien que l'islam soit dominant, des éléments de la cosmologie pré-islamique subsistent, souvent réinterprétés à travers le prisme islamique :
+
+**Geno / Gueno (Dieu Suprême pré-islamique)**
+- Endonyme : Geno, Gueno (selon les transcriptions)
+- Dieu créateur dans la cosmologie pré-islamique fulɓe
+- Transcendant, distant, source de toute vie
+- Assimilé à Allah après l'islamisation
+- Persistance dans les expressions linguistiques : "Geno yettii" (Dieu a donné)
+
+**Jinn / Jinne (Esprits)**
+- Endonyme : Jinne (du terme arabe "jinn")
+- Esprits invisibles habitant les lieux sacrés (arbres, sources, rochers)
+- Ambivalents : peuvent aider ou nuire aux humains
+- Croyance islamique intégrée aux traditions fulɓe
+- Pratiques : offrandes, invocations, protection contre les jinne malveillants
+
+**Esprits de la nature :**
+- **Esprits de l'eau** : habitent les rivières, les lacs, les sources (delta intérieur du Niger)
+- **Esprits de la brousse** : gardiens de la faune et de la flore
+- **Esprits du bétail** : protecteurs des troupeaux, invoqués pour la prospérité du bétail
+- Pratiques : offrandes, invocations, respect des lieux sacrés
+
+**Culte des ancêtres (réinterprété) :**
+- Respect et honneur des ancêtres, particulièrement des fondateurs de lignages
+- Invocation des ancêtres lors des cérémonies importantes
+- Réinterprété à travers l'islam : prières pour les défunts, visites des tombes
+- Distinction entre vénération (interdite en islam) et respect (permis)
+
+**Magie et divination (pratiques ambiguës) :**
+- **Marabouts** : érudits islamiques pratiquant la guérison spirituelle, la divination, la fabrication de talismans (gris-gris)
+- **Divination** : consultation des marabouts pour connaître l'avenir, résoudre des problèmes
+- **Talismans (tira)** : amulettes coraniques, protection contre le mauvais œil, les jinne, les maladies
+- Ambiguïté : certaines pratiques sont considérées comme islamiques (ruqya, invocations coraniques), d'autres comme hétérodoxes (magie noire, sorcellerie)
+
+### Conception de l'homme :
+
+**Dualité corps-esprit (vision islamique) :**
+- **Gooto (corps)** : enveloppe matérielle, temporaire
+- **Ruuhu (âme)** : essence spirituelle, éternelle, créée par Allah
+- **Destin (Qadar)** : prédestination divine, acceptation de la volonté d'Allah
+
+**Cycle de vie spirituel (islamique) :**
+1. Création : l'âme est créée par Allah avant la naissance
+2. Naissance : incarnation, début de la vie terrestre
+3. Vie terrestre : épreuve, accomplissement des devoirs religieux
+4. Mort : séparation du corps et de l'âme, retour à Allah
+5. Barzakh : monde intermédiaire entre la mort et la résurrection
+6. Résurrection : jour du jugement dernier
+7. Paradis ou Enfer : récompense ou châtiment éternel
+
+**Concept de personne (Neddo) :**
+- Neddo = personne, être humain
+- L'homme est un serviteur d'Allah (abd), créé pour l'adorer
+- Valeurs : Pulaaku (code de conduite fulɓe), piété islamique, honneur familial
+- Identité collective : appartenance au lignage, à la communauté fulɓe, à l'Oummah (communauté musulmane)
+
+### Conception de la nature :
+
+**Sacralité de la création (vision islamique) :**
+- La nature est une création d'Allah, signe de Sa puissance et de Sa sagesse
+- Respect de la création : interdiction de gaspiller, de détruire sans raison
+- Responsabilité humaine : l'homme est le khalife (vicaire) d'Allah sur terre, chargé de gérer la création avec sagesse
+
+**Bétail sacré (culture pastorale) :**
+- Le bétail (bovins) est au cœur de l'identité fulɓe, source de richesse, de prestige et de survie
+- Relation intime entre le berger et son troupeau : connaissance de chaque animal, poésie pastorale
+- Sacrifice rituel : immolation de bovins lors des fêtes islamiques (Tabaski), offrandes
+- Tabous : interdiction de maltraiter le bétail, respect de la vie animale
+
+**Eau sacrée (delta intérieur du Niger) :**
+- Le delta intérieur du Niger est vital pour les Fulɓe maasina : pâturages, eau pour le bétail, pêche
+- Respect des sources, des rivières, des lacs
+- Croyance en des esprits de l'eau (jinne aquatiques)
+
+**Arbres et plantes sacrés :**
+- Certains arbres sont considérés comme sacrés, demeures de jinne
+- Respect des lieux sacrés : interdiction de couper certains arbres, de souiller les sources
+
+**Harmonie cosmique :**
+- Équilibre entre l'homme, la nature et Allah
+- Respect des lois divines (charia) : garantie de l'harmonie
+- Transhumance : adaptation aux cycles naturels, respect des saisons
+
+### Rites et pratiques spirituelles :
+
+**Prières et invocations :**
+- Salat (prière) : cinq prières quotidiennes, pilier de la foi
+- Dhikr (invocation) : récitation des noms d'Allah, méditation spirituelle
+- Dua (supplication) : prières personnelles, demandes à Allah
+
+**Jeûne et ascèse :**
+- Sawm (jeûne du Ramadan) : abstinence de nourriture, de boisson et de relations sexuelles du lever au coucher du soleil
+- Jeûnes surérogatoires : jeûnes volontaires (lundi, jeudi, jours blancs)
+- Ascèse : renoncement aux plaisirs mondains, recherche de la proximité d'Allah
+
+**Pèlerinage :**
+- Hajj (pèlerinage à La Mecque) : obligation pour tout musulman capable
+- Umrah (petit pèlerinage) : visite de La Mecque en dehors de la période du Hajj
+- Ziyara (visite des tombes de saints) : pratique soufie, visite des tombes de marabouts vénérés
+
+**Éducation coranique :**
+- Écoles coraniques (daara, mahadra) : mémorisation du Coran, apprentissage de la langue arabe
+- Formation des érudits (modibbo) : étude approfondie de la théologie, du droit islamique (fiqh), de la grammaire arabe
+- Transmission du savoir : chaîne de transmission (isnad) des connaissances islamiques
+
+**Maraboutisme (soufisme populaire) :**
+- Vénération des marabouts : érudits islamiques considérés comme des saints (wali)
+- Baraka (bénédiction) : pouvoir spirituel des marabouts, recherche de leur intercession
+- Talismans (tira) : amulettes coraniques, protection spirituelle
+- Guérison spirituelle : exorcismes, invocations coraniques (ruqya)
+
+### Influence de l'empire du Massina :
+
+L'empire du Massina (1818-1862) a profondément marqué la spiritualité fulɓe maasina :
+- **Orthodoxie islamique** : imposition d'une pratique rigoureuse de l'islam, élimination des pratiques syncrétiques
+- **Éducation religieuse** : développement des écoles coraniques, formation d'une élite religieuse
+- **Architecture religieuse** : construction de mosquées (Djenné, Mopti, Hamdallaye)
+- **Mémoire collective** : l'empire du Massina reste un âge d'or dans la mémoire fulɓe, symbole de puissance et de piété
+
+### Sources spirituelles :
+- Ba, Amadou Hampâté. *Vie et enseignement de Tierno Bokar, le sage de Bandiagara* (1980) – témoignage sur la spiritualité fulɓe
+- Ba, Amadou Hampâté & Daget, Jacques. *L'Empire peul du Macina (1818-1853)* (1962) – étude historique de l'empire
+- Bâ, Amadou Hampâté. *Aspects de la civilisation africaine* (1972)
+- Seydou, Christiane. *La poésie pastorale peule* (1977) – étude de la poésie fulɓe
+- Mohammadou, Eldridge. *Traditions historiques des peuples du Cameroun central* (1990)
+- Recherches web (2025) – sources académiques et historiques diverses
+
+# 6. Rôle historique et interactions régionales
+
+## Royaumes / chefferies :
+- **Empire du Massina / Dina du Massina (1818-1862)** : État théocratique islamique fondé par Sékou Amadou, capitale Hamdallaye, apogée de la puissance fulɓe maasina
+- **Royaume de Ségou (conquis en 1861)** : conquête du royaume bambara par les Fulɓe, expansion territoriale
+- **Chefferies pastorales** : organisation en clans dirigés par des Ardo (chefs de clan), autonomie locale
+
+## Relations avec peuples voisins :
+- **Bambara** : conflits et cohabitation, conquête du royaume de Ségou (1861)
+- **Songhay** : échanges commerciaux, influences culturelles (Tombouctou, Gao)
+- **Touaregs** : commerce caravanier, conflits pour le contrôle des routes
+- **Bozo et Somono** : peuples de pêcheurs, intégrés dans l'empire du Massina
+- **Dogon** : cohabitation dans les falaises de Bandiagara
+- **Toucouleurs** : conquête de l'empire du Massina par El Hadj Oumar Tall (1862)
+
+## Conflits / alliances :
+- **Jihad de Sékou Amadou (1818)** : guerre sainte contre les royaumes bambara et les pratiques syncrétiques
+- **Conquête du Ségou (1861)** : défaite du royaume bambara, expansion fulɓe
+- **Guerre contre El Hadj Oumar Tall (1862)** : défaite de l'empire du Massina, fin de l'indépendance
+- **Résistance à la colonisation française (1890-1893)** : résistance armée, défaite finale
+
+## Diaspora :
+- **Diaspora régionale** : migration vers le Burkina Faso, le Niger, le Nigeria
+- **Diaspora urbaine** : migration vers Bamako, Ouagadougou, Niamey
+- **Diaspora internationale** : migration vers l'Europe (France, Belgique), l'Amérique du Nord
+
+# 7. Démographie globale
+- Population totale (Fulɓe Maasina) : environ 2 500 000 (estimation 2025)
+- Répartition par pays :
+  * Mali : 2 000 000 (régions de Mopti, Ségou, Tombouctou)
+  * Burkina Faso : 300 000
+  * Niger : 200 000
+  * Diaspora : estimée à 50 000+
+- Année de référence : 2025
+- Source : Ethnologue (ffm), estimations AFRIK, recensements maliens
+
+# 8. Sources
+- Ba, Amadou Hampâté & Daget, Jacques. *L'Empire peul du Macina (1818-1853)* (1962)
+- Ba, Amadou Hampâté. *Vie et enseignement de Tierno Bokar, le sage de Bandiagara* (1980)
+- Bâ, Amadou Hampâté. *Aspects de la civilisation africaine* (1972)
+- Seydou, Christiane. *La poésie pastorale peule* (1977)
+- Mohammadou, Eldridge. *Traditions historiques des peuples du Cameroun central* (1990)
+- Johnson, John William. *The Epic of Son-Jara: A West African Tradition* (1986)
+- Ethnologue (SIL International) – données linguistiques (code ffm)
+- Recherches web (2025) – sources académiques et historiques diverses
+

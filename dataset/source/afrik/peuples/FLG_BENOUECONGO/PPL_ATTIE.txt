@@ -1,59 +1,159 @@
 # Nom du peuple
 - Nom principal du peuple : Attié
-- Auto-appellation (endonyme) : Attié
-- Exonymes / appellations historiques : N/A
-- Origine des termes (exonymes) : N/A
-- Pourquoi certains termes posent problème (si applicable) : N/A (si applicable) :
-- Usage contemporain des appellations : N/A
-- Famille linguistique principale : FLG_BENOUECONGO
-- Groupe ethno-linguistique : N/A
-- Région historique : Sud-Est
-- Pays actuels : CIV
+- Auto-appellation (endonyme) : Attié, Akyé, Akié, Atyé
+- Exonymes / appellations historiques : Akyé (variante Ghana/Togo/Bénin)
+- Origine des termes (exonymes) : Variantes dialectales du même ethnonyme selon les régions (Ghana, Togo, Bénin, Côte d'Ivoire)
+- Pourquoi certains termes posent problème (si applicable) : Aucun terme péjoratif identifié. Les variantes sont toutes respectueuses et reflètent des différences phonétiques régionales.
+- Usage contemporain des appellations : "Attié" est la forme standard en Côte d'Ivoire, "Akyé" au Ghana
+- Famille linguistique principale : FLG_KWA (Kwa, branche du Niger-Congo)
+- Groupe ethno-linguistique : Akan
+- Région historique : Sud-Est de la Côte d'Ivoire (région des Lagunes, nord d'Abidjan)
+- Pays actuels : CIV (principalement), Ghana, Togo, Bénin (diaspora linguistique)
 - Identifiant peuple (ID) : PPL_ATTIE
 
 # 1. Ethnies incluses dans le peuple
-- Ethnie 1 : Attié
-- Ethnie 2 : N/A
-- Ethnie 3 : N/A
+- Sous-groupes Attié : Nindins (région Anyama-Alépé), Bodins (région Adzopé-Yakassé-Attobrou), Kétins (région Akoupé)
+- Cantons : Ketin, N'gadié (N'kadzun), Attobrou, Attié Lepin, Andokoi, Annapun, Tchoya
+- Note : Les Attié forment un peuple akan relativement homogène avec des sous-divisions territoriales plutôt qu'ethniques
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes (théories archéologiques, linguistiques, génétiques) : N/A
-- Période de formation estimée : N/A
-- Routes migratoires principales : N/A
-- Zones d'établissement historiques : Sud-Est
-- Unifications / divisions : N/A
-- Influences externes (peuples voisins, colonisation, commerce) : N/A
-- Événements historiques majeurs ayant façonné le peuple : N/A
+- Origines anciennes (théories archéologiques, linguistiques, génétiques) : Origines au Ghana actuel, empire Ashanti. Migrations akan vers l'ouest liées aux dynamiques politiques et militaires ashanti. Linguistiquement, les Attié appartiennent aux langues kwa (Niger-Congo), confirmant l'origine akan.
+- Période de formation estimée : XVIIe-XVIIIe siècles (période des grandes migrations akan vers la Côte d'Ivoire)
+- Routes migratoires principales : Ghana (empire Ashanti) → Traversée du fleuve Comoé → Installation sud-est Côte d'Ivoire
+- Légende fondatrice : Conflit avec les Ashanti pour le sabre royal (les Attié auraient récupéré la lame, les Ashanti le manche). Poursuivis par les Ashanti, les Attié, Baoulé et Agni arrivent au fleuve Comoé en crue. La reine Abla Pokou sacrifie son enfant pour permettre la traversée (le fleuve se retire). Après la traversée, les Attié se séparent des Baoulé et Agni pour s'établir à l'ouest et au sud du Comoé.
+- Zones d'établissement historiques : Premier village fondé : Bouapé. Expansion dans la région des Lagunes (Anyama, Akoupé, Adzopé, Alépé, Yakassé-Attobrou), sud-préfectures d'Agou, Assikoi, Bécédi-Brignan, Yakassé-Mé, Bieby
+- Unifications / divisions : Séparation d'avec les Baoulé et Agni après la traversée du Comoé. Maintien d'une identité akan commune avec fragmentation en sous-groupes territoriaux (Nindins, Bodins, Kétins)
+- Influences externes (peuples voisins, colonisation, commerce) : Contact avec peuples lagunaires (partage savoir-faire attiéké), influence Ashanti (structures akan), colonisation française (christianisation, scolarisation), proximité d'Abidjan (urbanisation)
+- Événements historiques majeurs ayant façonné le peuple : Migration légendaire d'Abla Pokou (mythe fondateur commun akan), fondation de Bouapé, résistance à la colonisation française, inscription de l'attiéké au patrimoine UNESCO (2024)
 
 # 3. Organisation et structure interne
-- Système politique traditionnel : N/A
-- Organisation clanique : N/A
-- Rôle des lignages : N/A
-- Autorité religieuse : N/A
+- Système politique traditionnel : Chefferies villageoises autonomes, confédérations temporaires en cas de menace. Chef de village (Agni Sran) assisté de conseils d'anciens et notables. Pas de royaume centralisé, mais réseau de villages liés par alliance et parenté.
+- Organisation clanique : Système matrilinéaire (héritage akan), filiation tracée par la lignée maternelle (Abusua = clan maternel)
+- Système unique de classes d'âge : Fokué (trois générations) : (1) Gnando, (2) Djigbo, (3) M'brechoué. Héritage paternel des classes (fils de M'brechoué → Djigbo, fils de Djigbo → Gnando, rotation). Passage de responsabilités lors de la "fête des générations" (San-Min)
+- Rôle des lignages : Lignages matrilinéaires déterminent héritage matériel et social. Lignage paternel (Ntoro) transmet aspects spirituels et caractère.
+- Autorité religieuse : Anciens, prêtres des cultes ancestraux, détenteurs de statues sacrées, devins
 
 # 4. Langues et sous-familles
-- Langue principale : N/A
-- Codes ISO : N/A
-- Dialectes : N/A
-- Rôle véhiculaire : N/A
+- Langue principale : Attié (ou Akyé, Ci)
+- Codes ISO : ati (ISO 639-3)
+- Famille : Kwa (Niger-Congo), groupe Akan
+- Nombre de locuteurs : ~500 000 (2017), ~838 000 (population totale 2025)
+- Dialectes : Variations entre Nindins, Bodins, Kétins (différences mineures)
+- Particularités : Système phonologique et grammatical unique, considéré comme isolat au sein des langues kwa selon certaines sources
+- Rôle véhiculaire : Langue locale, usage du français comme lingua franca régionale
+- Autres langues parlées : Français (officiel), Abé, Jula, Baoulé, Anyin, Ebrié (contact interethnique)
+- Écriture : Alphabet latin avec diacritiques, lecture gauche → droite
 
 # 5. Culture, rites et traditions
-- Rites majeurs : N/A
-- Symboles : N/A
-- Arts et musique : N/A
-- Spiritualités : N/A
+
+## A. DIVINITÉS ET ESPRITS (Panthéon akan hérité)
+
+Les Attié, en tant qu'Akan, partagent le panthéon spirituel akan, adapté aux spécificités locales :
+
+### Divinités suprêmes
+- **Nyame / Onyame** (Dieu créateur suprême) : Dieu du ciel, créateur de toute vie, distant mais omniprésent. Inaccessible directement, vénéré via intermédiaires (Abosom, ancêtres).
+- **Asase Yaa / Asase Efua** (Déesse de la Terre) : Déesse-mère, fertilité, agriculture. Vénérée le jeudi (jour sacré). Protège récoltes et cycles naturels.
+
+### Divinités intermédiaires (Abosom)
+- **Abosom** (pluriel) : Esprits-divinités liés aux éléments naturels (rivières, forêts, montagnes). Servent d'intermédiaires entre Nyame et humains.
+- **Tano** : Dieu des rivières (particulièrement fleuve Tano), justice, purification, oracles
+- **Bia** : Esprit de la rivière Bia, protection, fertilité
+- **Esprits des forêts** : Gardiens de la forêt, respectés par chasseurs et agriculteurs
+- **Esprits de l'eau** : Associés aux lagunes, rivières, sources (important en zone lagunaire attié)
+
+### Figures culturelles et tricksters
+- **Anansi / Kwaku Anansi** : Esprit-araignée, trickster, héros culturel. Personnage central folklore akan, sagesse paradoxale, ruse. Histoires transmises oralement.
+
+### Ancêtres (Nananom Nsamanfo)
+- **Culte des ancêtres** : Central dans spiritualité attié. Ancêtres = protecteurs famille/communauté, médiateurs entre vivants et monde spirituel.
+- **Statues d'ancêtres** : Sculptures en bois, vénérées, protègent famille, maintiennent cohésion sociale. Art attié réputé pour finesse statues ancestrales.
+- **Culte Logbu** : Pratique rituelle attié utilisant statues/statuettes dans cérémonies, rites passage, réconciliation avec dieux.
+
+## B. COSMOLOGIE AKAN (Conception attié du monde)
+
+### Structure du monde
+- **Trois/quatre niveaux cosmiques** :
+  1. **Ciel / Monde divin (Soro)** : Domaine de Nyame, dieux supérieurs
+  2. **Terre / Monde des vivants (Asase)** : Domaine d'Asase Yaa, humains, animaux, plantes
+  3. **Monde des esprits/ancêtres (Asamando)** : Domaine des morts, ancêtres, esprits intermédiaires
+  4. **Monde souterrain** : Parfois mentionné, lié aux mystères, forces chthoniennes
+
+### Concepts spirituels de la personne humaine
+- **Kra** (force vitale, âme immortelle) : Étincelle divine de Nyame en chaque personne, retourne à Nyame après mort. Survit à la mort physique.
+- **Sunsum** (esprit, personnalité) : Caractère individuel, personnalité, force spirituelle personnelle. Peut devenir esprit après mort.
+- **Ntoro** (héritage spirituel paternel) : Transmis par père, détermine tempérament, aspects caractère
+- **Mogya** (sang maternel) : Transmis par mère, détermine appartenance clanique (Abusua)
+- **Honam** (corps physique) : Enveloppe matérielle, retourne à la terre (Asase Yaa)
+
+### Cycle vie-mort-renaissance
+- Mort = transition vers Asamando (monde ancêtres)
+- Ancêtres veillent sur descendants, interviennent dans monde vivants
+- Réincarnation partielle : Kra peut se réincarner, noms d'ancêtres donnés aux enfants (continuité)
+
+### Temps et espace sacrés
+- **Jours sacrés** : Jeudi (Asase Yaa), interdiction travaux agricoles certains jeudis
+- **Lieux sacrés** : Bosquets sacrés, sources, rivières, tombes ancêtres
+- **Saisons rituelles** : Cérémonies liées cycles agricoles, récoltes
+
+## C. RITES ET CÉRÉMONIES
+
+### Rites d'initiation : Fokué
+- **Fokué** : Danse sacrée martiale, initiation jeunes hommes, préparation guerre ancestrale et responsabilités sociales
+- **Étape Odo** : Regroupement jeunes, apprentissage rythme tambour "Odo", construction propre tambour
+- **Étape San-Min** : Maturité générationnelle, génération prête assumer responsabilités gestion village
+- **Fête des générations** : Passage responsabilités classe dirigeante → suivante (Gnando → Djigbo → M'brechoué → Gnando), transition adolescence → âge adulte
+
+### Rites funéraires
+- Cérémonies élaborées pour honorer défunts, assurer transition vers Asamando
+- Libations, offrandes, danses funéraires
+- Installation statues ancestrales pour certains défunts importants
+
+### Rites agricoles
+- Bénédiction terres avant semis (invocation Asase Yaa)
+- Festivals récoltes (remerciements divinités, ancêtres)
+- Interdits jeudi (repos terre sacrée)
+
+### Rites de purification
+- Cérémonies purification communautaire, guérison, protection
+- Usage eau sacrée, herbes, invocations Abosom
+
+- Symboles : Tabouret royal (héritage akan, pouvoir, continuité), statues ancestrales, tambour Odo, masques rituels
+- Arts et musique : Sculpture bois (statues ancêtres, masques, statuettes fertilité), art plastique très abouti mais méconnu. Musique : tambours (Odo), cloches, balafons. Artistes renommés : Abenan Louis, Le Super Disco d'Anyama-Adjamé (années 1980), Anoman Brou Felix (années 1960). Danse expressive, rôle cérémoniel et festif.
+- Gastronomie : **Attiéké** (semoule manioc fermentée, patrimoine UNESCO 2024), plat emblématique peuples lagunaires, savoir-faire transmis génération en génération par femmes, consommé quotidiennement et cérémonies (mariages, baptêmes, funérailles)
+
+## D. SPIRITUALITÉS CONTEMPORAINES
+
+- **Christianisme** : Majoritaire (~70% population), dont 15% évangéliques. Catholicisme, protestantisme.
+- **Islam** : Minoritaire, pratiqué par petite partie population
+- **Syncrétisme** : Coexistence pratiques traditionnelles (culte ancêtres, vénération nature) et religions abrahamiques. Nombreux chrétiens continuent honorer ancêtres, consulter devins, participer rites traditionnels.
+- **Résistance culturelle** : Jeunes générations urbanisées maintiennent liens villages origine via cérémonies, festivités traditionnelles
 
 # 6. Rôle historique et interactions régionales
-- Royaumes / chefferies : N/A
-- Relations avec peuples voisins : N/A
-- Conflits / alliances : N/A
-- Diaspora : N/A
+- Royaumes / chefferies : Réseau chefferies autonomes, pas de royaume centralisé. Système confédération temporaire pour défense commune. Influence lointaine empire Ashanti (Ghana).
+- Relations avec peuples voisins : Baoulé et Agni (migration commune, séparation après Comoé, relations fraternelles akan). Peuples lagunaires (Abouré, Ebrié : échanges culturels, attiéké). Contacts commerciaux avec Abidjan (proximité).
+- Conflits / alliances : Conflit originel avec Ashanti (sabre royal, légende fondatrice). Alliances ponctuelles avec autres Akan face menaces communes. Résistance colonisation française (fin XIXe-début XXe siècle).
+- Diaspora : Urbanisation massive vers Abidjan (Anyama devenue banlieue abidjanaise). Migration économique vers autres villes ivoiriennes. Petites communautés Ghana, Togo, Bénin (continuité linguistique kwa).
 
 # 7. Démographie globale
-- Population totale (tous pays) : 0
-- Répartition par pays : 
+- Population totale (tous pays) : ~838 000 (2025)
+- Répartition par pays : Côte d'Ivoire : ~838 000 (99%+), Ghana/Togo/Bénin : diaspora linguistique minoritaire
+- Zones principales (CIV) : Anyama, Akoupé, Adzopé, Alépé, Yakassé-Attobrou, Agou, Assikoi, Bécédi-Brignan, Yakassé-Mé, Bieby
 - Année de référence : 2025
-- Source : N/A
+- Source : Joshua Project (2025), Ethnologue/SIL (2017 : 500 000 locuteurs), PeopleGroups.org (839 000)
 
 # 8. Sources
-- Recherche web
+- Wikipedia (français) : Article "Attié (peuple)" https://fr.wikipedia.org/wiki/Attié_(peuple)
+- Wikipedia (français) : Article "Attié (langue)" https://fr.wikipedia.org/wiki/Attié_(langue)
+- Wikipedia (français) : Article "Attiéké" https://fr.wikipedia.org/wiki/Attiéké
+- UNESCO : "Les savoir-faire liés à la fabrication de l'attiéké en Côte d'Ivoire" (2024) https://ich.unesco.org/fr/RL/les-savoir-faire-lies-a-la-fabrication-de-l-attieke-en-cote-d-ivoire-02086
+- Joshua Project : "Attie in Côte d'Ivoire" https://joshuaproject.net/people_groups/10483/IV
+- PeopleGroups.org : "Attie language" https://peoplegroups.org/language/ati/
+- Spirit Land of Africa : "Attie people" https://www.spiritlandofafrica.com/products/list/attie/
+- 101 Last Tribes : "Akye" https://www.101lasttribes.com/tribes/akye.html
+- Rezo-Ivoire : "Le peuple Attié" https://www.rezoivoire.net/ivoire/patrimoine/2826/le-peuple-attie.html
+- Bruno Mignot Art Africain : Sculptures Attié https://www.bruno-mignot.com/galeries/statues-sculptures/
+- Accent Network : "Attie language and culture" https://accentnetwork.com/attie/
+- Friendly Borders : "Attie ethnic group" https://www.friendlyborders.org/world-ethnic-groups/
+- Recherche web académique sur cosmologie akan (Nyame, Asase Yaa, Abosom, Kra, Sunsum, Ntoro)
+- Monica Blackmun Visonà : "Art and authority among the Akye of the Ivory Coast" (référence académique)
+- Firmin Ahoua & Patrice Achie Brouh : "Parlons Akye bodin" (référence linguistique)
