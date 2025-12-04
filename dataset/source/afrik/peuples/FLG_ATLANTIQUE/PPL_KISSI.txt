@@ -1,0 +1,78 @@
+# Nom du peuple
+- Nom principal du peuple : Kissi
+- Auto-appellation : Gissi / Kissi
+- Exonymes / appellations historiques : Gizi, Gisi, Kissien
+- Famille linguistique principale : Niger-Congo – Atlantique (Branche Mel)
+- Groupe ethno-linguistique : Mel (ou Sud-Atlantique)
+- Région historique : Guinée Forestière, Sierra Leone, Liberia
+- Pays actuels : Guinée, Sierra Leone, Liberia
+- Identifiant peuple (ID) : PPL_KISSI
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : Kissi du Nord (Guinée)
+- Ethnie 2 : Kissi du Sud (Sierra Leone, Liberia)
+- Ethnie 3 : Kama (sous-groupe)
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes :
+  Probablement originaires du Fouta-Djalon avant d'être repoussés vers le sud par l'expansion mandingue et peule.
+- Routes migratoires :
+  Migration vers la zone forestière (région de Kissidougou et Guéckédou) et vers la côte.
+- Unifications / divisions :
+  Division linguistique entre Nord et Sud, mais forte unité culturelle autour de la culture du riz.
+- Influences externes :
+  Forte interaction historique avec les Mandingues (Kuranko) et les Mende.
+
+# 3. Organisation et structure interne
+- Système politique traditionnel :
+  Société acéphale organisée en villages autonomes, fédérés en cas de guerre.
+- Organisation clanique :
+  Lignages patrilinéaires forts.
+- Rôle des lignages :
+  Gestion des terres (le riz est sacré) et des alliances matrimoniales.
+- Autorité religieuse :
+  Rôle central des neveux utérins (relations oncle-neveu) et des prêtres de la terre.
+
+# 4. Langues et sous-familles
+- Langue principale : Kissi
+- Codes ISO : kqs (Nord), kss (Sud)
+- Dialectes :
+  - Kissi-le (Nord)
+  - Kissi-fama (Sud)
+- Rôle véhiculaire :
+  Langue identitaire forte, peu véhiculaire en dehors du groupe.
+
+# 5. Culture, rites et traditions
+- Rites majeurs :
+  Initiation Poro (hommes) et Sande (femmes) – marquant l'entrée dans l'âge adulte.
+- Symboles :
+  La "pierre Kissi" (pomdo) : statuettes de pierre ancestrales retrouvées dans les champs, vénérées comme ancêtres.
+- Arts et musique :
+  Usage de flûtes et tambours lors des funérailles.
+- Spiritualités :
+  Animisme agraire centré sur le cycle du riz et le culte des ancêtres (pomdo).
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies :
+  Pas de grand empire centralisé, mais une résistance farouche à la colonisation (notamment française).
+- Relations avec peuples voisins :
+  Alliances complexes avec les guerriers mandingues.
+- Conflits / alliances :
+  Résistance contre Samory Touré au XIXe siècle.
+- Diaspora :
+  Présence dans les capitales (Conakry, Freetown, Monrovia).
+
+# 7. Démographie globale
+- Population totale (tous pays) : ~1 000 000
+- Répartition par pays :
+  - Guinée : ~550 000 (plus grande concentration, Kissidougou, Guéckédou)
+  - Sierra Leone : ~250 000
+  - Liberia : ~150 000
+- Année de référence : 2025
+- Source : Estimations croisées Joshua Project / Ethnologue / Annuaires nationaux.
+
+# 8. Sources
+- Paulme, D. – *Les Gens du Riz*
+- Ethnologue – Kissi (Southern & Northern)
+- Fairhead, J. & Leach, M. – *Misreading the African Landscape*
+
