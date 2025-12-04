@@ -4,24 +4,23 @@
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_ATLANTIQUE
 - Nom français : Atlantique
-- Nom anglais / auto-appellation académique : Atlantic (ou West Atlantic dans certaines sources anciennes)
+- Nom anglais / auto-appellation académique : Atlantic (anciennement West Atlantic)
 - Appellation(s) historique(s) :
-  « Langues atlantique-occidentales », « West Atlantic », parfois confondues dans la littérature coloniale avec les « langues de la côte de Guinée ».
+  « Langues atlantique-occidentales », « West Atlantic ».
+  Souvent confondues dans la littérature coloniale avec les « langues de la côte de Guinée » (Guinea Coast languages), un terme géographique fourre-tout qui regroupait indistinctement diverses familles côtières.
 - Origine du terme historique :
-  Le nom vient de la localisation des peuples parlant ces langues : la façade atlantique de l’Afrique de l’Ouest (Sénégal, Gambie, Guinée-Bissau, Guinée).
+  Le terme est purement géographique, créé par les linguistes (Koelle, puis Westermann et Greenberg) pour désigner les langues "non-mandé" de la côte ouest-africaine (Sénégal à Libéria).
 - Pourquoi le terme pose problème :
-  - L’appellation est purement géographique et reflète une vision extérieure centrée sur les routes atlantiques et coloniales.  
-  - Certains auteurs coloniaux associaient abusivement ces langues aux peuples côtiers impliqués dans le commerce atlantique, sans reconnaître leur diversité interne.  
-  - Elle peut donner une vision réductrice : de nombreuses populations atlantiques vivent aussi à l’intérieur du continent.
-  **→ Aujourd’hui, “Atlantic” reste un terme linguistique neutre, mais il doit être contextualisé.**
+  L'appellation est critiquée car elle est purement géographique et ne garantit pas une unité génétique cohérente. Historiquement, le terme "West Atlantic" a souvent servi de catégorie résiduelle pour classer les langues de la côte ouest-africaine qui ne correspondaient pas aux familles Mandé ou Kwa, créant des confusions avec d'autres groupes côtiers comme les langues Krou (Kru) ou les langues lagunaires. De plus, la diversité interne est telle que certains linguistes (comme Dalby) ont remis en question l'existence de cette famille comme une unité génétique valide, la considérant parfois davantage comme une aire de convergence linguistique.
+  **→ Aujourd’hui, le terme est conservé par convention scientifique pour désigner ce regroupement géographique spécifique.**
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Atlantic languages / Langues atlantiques (groupe du Niger-Congo)
+  Langues atlantiques (branche du Niger-Congo ou du Négro-égyptien selon l'école).
 - Usage contemporain :
-  Sous-famille du Niger-Congo, comprenant des langues majeures comme le wolof et le fula/fulfulde.
+  Regroupe les langues du Sénégal, Gambie, Guinée-Bissau et Guinée (Fula, Wolof, Serer, Diola, Temne, etc.).
 - Aire / répartition géographique générale :
-  Sénégal, Gambie, Guinée-Bissau, sud de la Mauritanie, Guinée.
-- Nombre de langues (estimation) : ~30–40
-- Nombre total de locuteurs (estimation) : ~35 millions
+  Façade atlantique de l’Afrique de l’Ouest, du fleuve Sénégal au Libéria.
+- Nombre de langues (estimation) : ~45–60
+- Nombre total de locuteurs (estimation) : ~35–40 millions
 
 ------------------------------------------
 
@@ -30,60 +29,63 @@
 # 1. Informations générales
 - Nom de la famille : Atlantique
 - Branches internes / sous-groupes :
-  - Nord-Atlantique : Wolof, Peul/Fulfulde, Serer
-  - Sud-Atlantique : Balante, Diola (Joola), Bijago
-  - Bak (Guinée-Bissau)
+  - Nord (Sénégambien) : Wolof, Serer, Fula (Peul/Fulfulde)
+  - Bak : Diola (Joola), Manjak, Balante, Papel
+  - Sud (Mel) : Temne, Kissi, Gola
+  - Bijago (Isolat insulaire)
 - Aire géographique :
-  Sénégambie, Guinée-Bissau, Guinée, sud Mauritanie
+  Sénégal, Gambie, Guinée-Bissau, Guinée, Sierra Leone, Libéria.
 - Nombre de langues :
-  30–40
+  ~45–60
 - Nombre total de locuteurs :
-  ~35 millions
+  ~35–40 millions
 
 # 2. Peuples associés
 - Peuple 1 : Wolof
-- Peuple 2 : Peuls / Fulbe
-- Peuple 3 : Diola (Joola)
+- Peuple 2 : Fulbe (Peuls)
+- Peuple 3 : Serer
 
 # 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Wolof
-- Ethnie 2 : Fula / Fulani
-- Ethnie 3 : Diola / Joola
+- Ethnie 1 : Diola / Joola
+- Ethnie 2 : Temne
+- Ethnie 3 : Kissi
 (+ renvoi aux fiches ethniques dédiées)
 
 # 4. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues tonales, souvent agglutinantes, avec un marquage grammatical par affixes et alternances.
+  Langues à classes nominales marquées (préfixes/suffixes/alternances), flexionnelles et agglutinantes.
 - Particularités phonologiques :
-  Consonnes prénasalisées, harmoniques vocaliques, distinction forte voyelles longues/courtes, certaines langues non tonales (ex. wolof).
+  - Mutation consonantique initiale (alternance de consonnes selon la classe ou le contexte grammatical).
+  - Richesse du système vocalique et consonantique (implosives, prénasalisées).
 - Liens avec les familles voisines :
-  Contacts intenses avec les langues mandé au Mali/Guinée et avec les langues gur (sud Burkina Faso).
-- Innovations clés :
-  - Langue wolof très influente comme lingua franca régionale  
-  - Systèmes noun-class parfois réduits ou restructurés  
-  - Flexion nominale variable selon les branches
+  Forte interaction avec le Mandé (emprunts lexicaux) mais structure grammaticale distincte.
+- Innovations clés (et traits hérités) :
+  - **Le système de classes nominales** : Selon Obenga, ce n'est pas une simple "invention" locale mais un trait fondamental hérité du Négro-égyptien, structurant la pensée par catégories (humains, fluides, végétaux, abstraits) via des affixes de concordance rigoureux.
+  - Alternance consonantique (grammaticale) : Modification de la première consonne du mot pour marquer le pluriel ou la classe (ex: en Peul, pullo / fulbe).
+  - Extension verbale : Richesse des dérivations verbales (causatif, réversif, passif) typique du phylum.
 
 # 5. Histoire et origines
 - Origine probable :
-  Zone sénégambienne, bassin supérieur de la Casamance et de la Gambie.
+  Sénégambie ou zone côtière guinéenne. Obenga situe ces langues dans la continuité des migrations post-pharaoniques vers l'Ouest.
 - Diffusion des langues :
-  Expansion du wolof dans les empires wolofs ; migrations pastorales peules du Fouta-Djalon vers le Sahel.
+  Expansion majeure via le pastoralisme peul (Fula) à travers tout le Sahel, et l'hégémonie politique wolof au Sénégal.
 - Ruptures historiques :
-  - Islamisation des royaumes sénégambiens  
-  - Influence coloniale française (wolof, sérère)  
-  - Pressions démographiques modernes
+  - Commerce atlantique et colonisation (impact sur les zones côtières).
+  - Islamisation ancienne (impact lexical arabe sur le Wolof et le Pulaar).
 - Zones de contact et métissages :
-  Sénégambie, Casamance, Guinée-Bissau (peuples atlantiques + mandé + créoles portugais).
+  Rivières du Sud, Casamance, Fouta-Djalon (contact Peul-Mandingue).
 
 # 6. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  ~35 millions
+  ~35–40 millions
 - Répartition par pays :
-  Sénégal, Gambie, Guinée-Bissau, côté atlantique de la Guinée, sud de la Mauritanie
+  Sénégal, Gambie, Guinée-Bissau, Guinée, Sierra Leone, Libéria, Mauritanie (et diaspora peule jusqu'au Cameroun/Soudan).
 - Importance historique :
-  Langues des grands royaumes wolofs, des confédérations peules (Fouta-Djalon), et des sociétés agricoles de Guinée-Bissau.
+  Langues de grands états (Djolof, Fouta Toro, Fouta Djalon) et vecteurs de l'islam en Afrique de l'Ouest.
 
 # 7. Sources
-- Blench, R. – *Niger-Congo Languages Overview*
-- SIL Ethnologue – Atlantic languages
-- UNESCO – Atlas des langues africaines
+- Obenga, T. – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*
+- Sapir, J. D. – *West Atlantic: An Inventory of the Languages*
+- Greenberg, J. – *The Languages of Africa* (Classification critique)
+- Diop, C. A. – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*
+- UNESCO – *Histoire générale de l'Afrique*
