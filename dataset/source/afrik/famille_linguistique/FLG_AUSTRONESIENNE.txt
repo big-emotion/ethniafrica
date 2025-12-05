@@ -6,7 +6,7 @@
 - Nom français : Austronésienne (présente en Afrique uniquement via Madagascar)
 - Nom anglais / auto-appellation académique : Austronesian / Malayo-Polynesian
 - Appellation(s) historique(s) : —
-- Origine du terme historique : Terme forgé par les linguistes européens du XIXe siècle pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l’Asie du Sud-Est et de l’océan Indien.
+- Origine du terme historique : Terme forgé par le linguiste autrichien Wilhelm Schmidt en 1899 (notamment dans ses travaux sur les langues des mers du Sud) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l’Asie du Sud-Est et de l’océan Indien.
 - Pourquoi le terme pose problème (si applicable) :  
   L’expression ne pose pas de problème direct, mais son utilisation en Afrique peut prêter à confusion car elle désigne une famille mondiale principalement asiatique.  
   En Afrique, seule Madagascar en relève : certains travaux coloniaux minimisaient l’africanité du peuple malgache en insistant uniquement sur l’origine austronésienne, invisibilisant les apports bantous et est-africains.
@@ -48,7 +48,8 @@
 - Liens avec les familles voisines :  
   Emprunts massifs au bantou (swahili, comorien) et à l’arabe, ainsi qu’aux langues françaises et anglaises.
 - Innovations clés :  
-  Complexe dérivationnel verbal ; système riche de morphèmes de voix ; importance de la particule *mi- / maha-* dans la formation verbale.
+  Imagine que les verbes sont comme des Lego : cette langue adore ajouter des petits morceaux (comme *mi-* ou *maha-*) au début des mots pour changer leur sens ou dire qui fait l'action. C'est un système très astucieux pour créer plein de nouveaux mots à partir d'un seul !
+  Par exemple, prends le mot *gaga* (surpris). Si tu ajoutes le bloc *mi-*, ça devient *migaga* (s'étonner). Si tu utilises le bloc *maha-*, ça devient *mahagaga* (c'est étonnant / magique). Hop, deux sens différents avec la même brique de base !
 
 # 5. Histoire et origines
 - Origine probable :  
@@ -70,6 +71,8 @@
   Première et unique implantation austronésienne en Afrique ; point majeur des routes maritimes indo-océaniques.
 
 # 7. Sources
+- Schmidt, W. (1899) – *Die sprachlichen Verhältnisse von Deutsch-Neuguinea* (Origine du terme "Austronesian")
+- Carte de dispersion : https://fr.wikipedia.org/wiki/Austron%C3%A9siens#/media/Fichier:Chronological_dispersal_of_Austronesian_people_across_the_Pacific_(per_Benton_et_al,_2012,_adapted_from_Bellwood,_2011).png
 - Adelaar, K. (2005) – *The Austronesian Languages of Asia and Madagascar*
 - Dahl, O. (1951) – *Southern Barito and Malagasy*
 - UNESCO – Atlas of Languages
