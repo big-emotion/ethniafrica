@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_BERBERE
-- Nom français : Berbère / Amazighe
+- Nom français : Berbère / Amazigh
 - Nom anglais / auto-appellation académique : Berber / Amazigh
 - Appellation(s) historique(s) :
   « Libyque », « Libyco-berbère », « Barbares » (appellation grecque et romaine), « Berbère » (arabe médiéval al-Barbar), « Kabyle », « Touareg » (termes régionalisés).
@@ -11,8 +11,10 @@
   - Le mot « Berbère » vient de l’arabe médiéval « al-Barbar », lui-même probablement issu du terme grec « barbaros » (« celui qui ne parle pas grec »).  
   - Les Romains utilisaient « Libyens » pour désigner les populations autochtones d’Afrique du Nord.
 - Pourquoi le terme pose problème :
-  - « Berbère » est un exonyme, historiquement chargé d’une vision extérieure perçue comme péjorative dans certains contextes.  
-  - Il a été utilisé pendant la colonisation française comme catégorie rigide opposée aux « Arabes ».  
+  - « Berbère » est un exonyme, historiquement chargé d’une vision extérieure perçue comme péjorative (du grec *barbaros*).
+  - **Problème du terme « Libyque » (souvent associé) :**
+  - **Effacement de la diversité** : Il a été utilisé pour créer une catégorie uniforme « libyque », alors qu’il s’agissait de peuples variés (Masaesyles, Massyles, Gétules, Garamantes, etc.) avec des identités politiques distinctes.
+  - **Biais racial** : Au XIXe siècle, certains auteurs coloniaux l’ont associé à des théories raciales dépassées (« mythe chamitique »), opposant artificiellement « Libyques » (blancs) et « Noirs », ce qui fausse complètement la réalité historique africaine et la continuité culturelle du continent.
   - L’usage moderne privilégie **Amazigh** ou **Imazighen** (auto-appellation).
 - Auto-appellation (locuteurs / linguistes contemporains) :
   Amazigh (sing.), Imazighen (plur.), Tamazight (langue)
@@ -22,7 +24,7 @@
 - Aire / répartition géographique générale :
   Maroc, Algérie, Tunisie, Libye, Sahara central (Touaregs), nord du Mali, Niger.
 - Nombre de langues (estimation) :
-  ~30–40 variétés amazighes
+  ~30–40 variétés amazighs
 - Nombre total de locuteurs (estimation) :
   ~25 à 30 millions
 
@@ -31,7 +33,7 @@
 ## MODÈLE STRUCTURÉ AFRIK
 
 # 1. Informations générales
-- Nom de la famille : Berbère / Amazighe
+- Nom de la famille : Berbère / Amazigh
 - Branches internes / sous-groupes :
   - Tamazight du Maroc central  
   - Tarifit (Rif)  
@@ -67,9 +69,10 @@
 - Liens avec les familles voisines :
   Proximité structurelle avec le sémitique et le couchitique; emprunts massifs à l’arabe.
 - Innovations clés :
-  - Écriture en Tifinagh (revitalisée)  
-  - Système dérivationnel extrêmement productif  
-  - Ordre VSO ou VOS fréquent
+  - **Écriture en Tifinagh (revitalisée)** : Système d'écriture alphabétique ancien (Libyco-berbère) conservé par les Touaregs et standardisé récemment (Néo-Tifinagh) pour l'enseignement au Maroc et en Algérie.
+  - **Système dérivationnel extrêmement productif** : La langue fonctionne sur des **racines consonantiques** (comme le sémitique) modifiées par des schèmes et des affixes pour créer des mots.  
+    *Exemple de dérivation verbale* : préfixe *s-* (causatif), *m-* (réciproque), *t-* (passif).
+  - **Ordre VSO ou VOS fréquent** : La phrase commence typiquement par le Verbe, suivi du Sujet puis de l'Objet (VSO), trait caractéristique des langues afro-asiatiques anciennes (comme l'égyptien ancien), bien que le SVO progresse sous influence externe.
 
 # 5. Histoire et origines
 - Origine probable :
@@ -101,3 +104,5 @@
 - UNESCO – Atlas des langues en danger
 - Glottolog – Berber branch
 - Chaker, S. – *Linguistique berbère*
+- Diop, C. A. – *Nations nègres et culture* (Critique de la distinction raciale Berbère/Nègre)
+- Obenga, T. – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*
