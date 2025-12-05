@@ -8,13 +8,20 @@
 - Appellation(s) historique(s) :
   « Langues bantoues » ; « Bantou » (souvent détourné en « race bantoue » dans les systèmes coloniaux du XIXᵉ siècle).
 - Origine du terme historique :
-  Le terme « bantou » vient de la racine proto-Bantu *ba-ntu* (« les gens »).  
-  Les linguistes l’ont adopté scientifiquement au début du XXᵉ siècle pour désigner un sous-groupe du Niger-Congo.  
-  Mais les administrateurs coloniaux l’ont transformé en catégorie raciale (« race bantoue »).
+  Le terme a été créé par le linguiste allemand **Wilhelm Bleek** en 1862 (dans *A Comparative Grammar of South African Languages*).
+  Il vient de la reconstitution du mot pour "gens" ou "humains" (*ba-ntu*, pluriel de *mu-ntu*).
+  Bleek a remarqué que des centaines de langues à travers l'Afrique partageaient ce même mot racine et une grammaire similaire.
+  Malheureusement, les administrateurs coloniaux ont ensuite détourné ce terme linguistique pour en faire une catégorie raciale.
 - Pourquoi le terme pose problème :
   - À l’époque coloniale, « Bantou » fut utilisé pour créer des hiérarchies raciales : la « race bantoue » opposée à la « race nilotique » ou « khoïsan ».  
   - Il a été utilisé pour justifier des politiques ségrégationnistes (Afrique du Sud, Namibie, Afrique orientale).  
-  → Aujourd’hui, **“bantou” est strictement linguistique**, pas racial.
+ - **L'Hypothèse Hamitique (Racisme scientifique)** :
+    Les colonisateurs ont utilisé le terme pour créer une hiérarchie artificielle. Ils opposaient les "Bantous" (vus comme une masse de main-d'œuvre servile, "négroïde" et primitive) aux "Nilotiques" ou "Hamites" (faussement présentés comme une "race supérieure" caucasoïde venue du Nord, née pour commander).
+  - **Figer le fluide** :
+    Avant la colonisation, les distinctions (agriculteurs bantous vs éleveurs nilotiques vs chasseurs khoïsan) étaient souvent perméables et basées sur le mode de vie. La colonisation a transformé ces différences culturelles en "races" biologiques rigides pour appliquer la stratégie du "diviser pour régner" (ex: cristallisation des identités dans les Grands Lacs).
+  - **L'Apartheid** :
+    En Afrique du Sud, le terme "Bantu" est devenu une étiquette administrative oppressante (Bantu Education Act, Bantustans) pour priver les Noirs de citoyenneté et les réduire à une force de travail étrangère sur leur propre terre.
+  → Aujourd’hui, **“bantou” est strictement linguistique**, débarrassé de ces idéologies.
 - Auto-appellation (locuteurs / linguistes contemporains) :
   Bantu languages / Langues bantoues
 - Usage contemporain :
@@ -67,25 +74,48 @@
   - Accord nominal étendu dans toute la phrase  
   - Ordre SVO fréquent
 - Particularités phonologiques :
-  - Systèmes tonals (2 ou 3 tons)  
-  - Consonnes prénasalisées fréquentes  
+  - **Systèmes tonals (Le "Code Morse" africain)** :
+    La plupart des langues bantoues sont tonales (le sens change selon la hauteur du son).
+    *Innovation majeure* : Cela a permis l'invention du **Tambour Parleur** (le *talking drum*). En reproduisant les tons (haut/bas) et le rythme des phrases, les populations pouvaient transmettre des messages complexes sur des dizaines de kilomètres bien avant le télégraphe.
+  - Consonnes prénasalisées fréquentes (ex: *mba*, *ndu*, *ngu*)
   - Harmonies vocaliques dans certaines langues
 - Liens avec les familles voisines :
-  - Contacts majeurs avec les langues nilotiques (Ouganda, Kenya, Tanzanie)  
-  - Interactions avec les langues khoïsan (Afrique australe → clics empruntés en xhosa, zoulou)
-- Innovations clés :
-  - Système de classes nominales extrêmement développé  
-  - Morphologie verbale très riche (extensions verbales)  
-  - Structuration morphosyntaxique régulière à travers 12+ zones géographiques
+  - **Vision classique** : Classification dans la super-famille Niger-Congo (Greenberg).
+  - **Vision de l'École africaine (Diop/Obenga)** :
+    Cheikh Anta Diop et Théophile Obenga placent le Bantou dans la famille **Paléo-africaine** (ou Négro-égyptienne).
+    Ils démontrent des correspondances régulières entre le Bantou et l'Égyptien ancien (pharaonique), suggérant une parenté génétique profonde plutôt qu'une simple proximité géographique.
+  - Contacts majeurs avec les langues nilotiques et khoïsan.
+- Innovations clés (Expliqué simplement) :
+  - **Le "Lego" linguistique (Agglutination)** :
+    Au lieu d'avoir plein de petits mots séparés, les langues bantoues collent des morceaux (préfixes et suffixes) autour d'une racine. Un seul mot peut dire ce qui prendrait toute une phrase en français !
+  - **La Philosophie cachée dans la grammaire (*Ubuntu*)** :
+    La racine *-ntu* signifie "l'Être" ou la "Force".
+    Ce n'est pas juste une règle grammaticale, mais une vision du monde commune à toute la famille bantoue : **"Je suis parce que nous sommes"**.
+    L'humanité (*Bu-ntu*, *U-tu*, *Bo-moto*) ne se définit pas par l'individu seul, mais par sa connexion aux autres.
+    Le philosophe **Alexis Kagame** a montré que tout l'univers bantou est codé dans la langue en 4 catégories de l'Être :
+    1. **Muntu** : L'être doué d'intelligence (humain, ancêtre, Dieu).
+    2. **Kintu** : L'être sans intelligence (animal, plante, minéral).
+    3. **Hantu** : L'être spatio-temporel (le lieu et le temps).
+    4. **Kuntu** : La modalité (la manière d'être, la beauté, le rire).
+  - **Les "Classes" (Bien plus que masculin/féminin)** :
+    En français, on a 2 genres (le/la). En bantou, il y en a souvent plus de 10 ! Une classe pour les humains, une pour les plantes, une pour les objets longs, une pour les liquides...
+  - **L'Accord magique (L'Allitération)** :
+    Le début du mot principal "contamine" tous les autres mots de la phrase. Si le sujet commence par "Ki-", le verbe et l'adjectif commenceront aussi souvent par un son lié à "Ki-". Cela donne une musicalité et un rythme unique à la langue.
 
 # 5. Histoire et origines
 - Origine probable :
   Région Cameroun–Gabon (forêt équatoriale), entre 3000 et 4000 ans.
 - Diffusion des langues :
-  **Expansion bantoue** :  
-  - Phase 1 : Sud Cameroun → sud Nigeria  
-  - Phase 2 : Forêts du Congo → Afrique centrale  
-  - Phase 3 : Afrique orientale (Lac Victoria)  
+  **L'Expansion Bantoue : Le "Package" Technologique**
+  Ce n'était pas une simple migration, mais le déploiement d'un mode de vie supérieur qui a permis une explosion démographique :
+  1. **Métallurgie du Fer** : Capacité à forger des outils agricoles (houes) pour défricher la forêt et des armes pour la défense.
+  2. **Agriculture (Complexe Igname/Palmier)** : Maîtrise des cultures de forêt dense, puis des céréales en savane.
+  3. **Céramique** : Production de poteries (style *Urewe*, *Lelesu*) permettant de stocker et cuire les aliments.
+  
+  **Les 4 Phases de l'Expansion** :
+  - Phase 1 : Sud Cameroun → sud Nigeria (Berceau originel)
+  - Phase 2 : Traversée de la forêt du Congo (via les rivières)
+  - Phase 3 : Afrique orientale (Grands Lacs, adoption du bétail)
   - Phase 4 : Afrique australe (Zambie → Afrique du Sud)
 - Ruptures historiques :
   - Interactions avec les populations pygmées et khoïsan  
@@ -106,6 +136,10 @@
   Langues majeures : Swahili, Lingala, Kinyarwanda, Kirundi, Zulu, Xhosa, Shona, Tswana, Luba, Kikongo…
 
 # 7. Sources
+- Kagame, A. – *La philosophie bantu-rwandaise de l'être*
+- Obenga, T. – *Les Bantu : langues, peuples, civilisations* (Paris, Présence Africaine)
+- Diop, C. A. – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*
+- Bleek, W. – *A Comparative Grammar of South African Languages* (1862)
 - Nurse & Philippson – *The Bantu Languages*
 - Vansina, J. – *Paths in the Rainforests*
 - SIL Ethnologue – Bantu languages
