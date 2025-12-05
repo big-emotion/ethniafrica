@@ -10,9 +10,11 @@
   parfois associées au terme plus large « Volta-Congo » (Greenberg).  
   Anciennement aussi classé dans « Congo-kordofanien ».
 - Origine du terme historique :
-  Le terme « Benue–Congo » dérive de la rivière Bénoué (Benue River, Nigéria), région où les linguistes ont identifié des regroupements cohérents de langues qui ont donné leur nom à la famille.
+  Le terme « Benue–Congo » a été consacré par le linguiste **Joseph Greenberg** (1963) dans sa classification majeure, s'appuyant sur les travaux antérieurs de **Diedrich Westermann**. Il fait référence à la rivière Bénoué (Nigéria), identifiée comme le foyer originel de dispersion.  
+  Cette classification est aujourd'hui **validée par la communauté linguistique internationale** (notamment Kay Williamson, Roger Blench), bien que ses subdivisions internes continuent d'être affinées par la recherche contemporaine.
 - Pourquoi le terme pose problème :
-  - Le terme est géographique et ne reflète pas l’ensemble réel de la famille, beaucoup plus vaste que la région du Bénoué.  
+  - **Décalage géographique** : Le terme est réducteur car il se réfère uniquement à la région de la rivière Bénoué (Nigéria/Cameroun), alors que l'ensemble réel de la famille, via l'expansion bantoue, couvre l'immense majorité de l'Afrique subsaharienne, de l'Afrique centrale jusqu'au Cap de Bonne-Espérance (Afrique du Sud) et à l'Océan Indien.
+  - **Critique épistémologique** : Cette classification (et le Niger-Congo en général) est contestée par l'école de la « parenté génétique » (Cheikh Anta Diop, Théophile Obenga), qui considère ce morcellement comme artificiel et plaide pour une unité linguistique « Négro-égyptienne » plus fondamentale.
   - Certaines classifications coloniales amalgamaient les langues bénoué-congo avec des catégories comme « nègre » ou « soudanais », qui sont aujourd’hui considérées comme raciales et invalides.
   → Aujourd’hui, **Benue–Congo** est un terme neutre, scientifique, mais il doit être utilisé avec précision.
 - Auto-appellation (locuteurs / linguistes contemporains) :
@@ -43,7 +45,8 @@
     - Edoid (Edo/Bini)
     - Idoma, Nupe, Tiv
   - Bantou :
-    - Zones A–S (classification Guthrie), +500 langues
+    - **Zones A–S (classification Guthrie)** :  
+      Système de référence géographique établi par Malcolm Guthrie divisant les langues bantoues en 15 zones (A à S). La zone A correspond au Cameroun/Gabon (origine) et la zone S à l'Afrique australe (terminus de l'expansion). Ce sigle désigne donc l'ensemble total de l'aire bantoue (+500 langues).
 - Aire géographique :
   Nigéria, Cameroun, Afrique centrale et australe
 - Nombre de langues :
@@ -64,11 +67,13 @@
 
 # 4. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues en majorité tonales ; structure SVO ; systèmes de classes nominales hérités mais très variables selon les branches.
+  - **Structure SVO** (Sujet-Verbe-Objet) : L'ordre grammatical standard est identique au français (ex: "L'enfant [S] mange [V] la pomme [O]"), contrairement aux langues SOV ou VSO.
+  - **Langues tonales** : La hauteur de la voix (ton aigu, grave, moyen) change le sens d'un mot. Deux mots avec les mêmes lettres mais des tons différents auront des sens distincts (ex: en Yoruba, "okò" = véhicule / "okó" = houe).
+  - **Systèmes de classes nominales** : Les noms ne sont pas classés par genre (masculin/féminin) mais par catégories sémantiques (ex: classe des humains, classe des arbres, classe des objets, classe des concepts abstraits). Chaque classe possède son propre préfixe qui s'accorde avec tout le reste de la phrase.
 - Particularités phonologiques :
   - Tons lexicaux  
   - Harmonie vocalique  
-  - Consonnes prénasalisées  
+  - **Consonnes prénasalisées** : Combinaison d'un son nasal (m, n) et d'une consonne (b, d, g) prononcés en un seul son indissociable (ex: "Mb" dans Mbeki, "Nd" dans N'Djamena, "Ng" dans Ngorongoro). Très fréquent dans les patronymes et toponymes bantous.  
   - Développement de systèmes consonantiques complexes dans les groupes bantous
 - Liens avec les familles voisines :
   Contacts prolongés avec les langues tchadiques (Hausa), mandé, gur et adamawa.
@@ -79,7 +84,7 @@
 
 # 5. Histoire et origines
 - Origine probable :
-  Région forêt–savane entre Nigéria et Cameroun actuels.
+  Région forêt–savane entre Nigéria et Cameroun actuels (confluence Niger-Bénoué).
 - Diffusion des langues :
   - Expansion ouest-africaine : Yoruba, Igbo, Edo, Tiv  
   - Expansion bantoue : Afrique centrale → orientale → australe
@@ -91,6 +96,12 @@
   - Forêts nigérianes  
   - Grassfields camerounais  
   - Bassin du Congo (contact bantou–pygmées)
+  - **Zone de contact transatlantique (Amériques & Caraïbes)** :  
+    Les locuteurs Bénoué-Congo (Yoruba/Nago, Igbo/Eboe, Bakongo, Mbundu) ont constitué une part majoritaire de la déportation vers les Amériques.  
+    - **Brésil** : Influence Yoruba majeure (Candomblé, lexique Nago).  
+    - **Cuba** : Héritage Yoruba (Santería, Lucumí) et Carabalí (Igbo/Efik).  
+    - **Haïti** : Forte composante Kongo dans le Vodou et la structure grammaticale du Créole haïtien.  
+    - **Jamaïque/Barbade** : Influence Igbo ("Red Eboe") significative.
 
 # 6. Répartition géographique et démographie
 - Nombre total de locuteurs :
@@ -98,10 +109,31 @@
 - Répartition par pays :
   Nigéria, Cameroun, RDC, Angola, Tanzanie, Kenya, Ouganda, Afrique du Sud, Zambie, Malawi, Mozambique, Zimbabwe…
 - Importance historique :
-  Langues des royaumes yoruba et edo ; base de l’expansion bantoue ; rôle géopolitique majeur dans l’histoire africaine.
+  Les peuples Bénoué-Congo ont bâti des civilisations étatiques complexes qui ont structuré l'histoire de l'Afrique de l'Ouest et Centrale.  
+  **Accomplissements et Royaumes majeurs :**  
+  1. **Royaume d'Oyo** (Yoruba) : Empire de cavalerie contrôlant le commerce transsaharien et côtier, système politique de "checks and balances" (Oyomesi).  
+  2. **Royaume du Bénin** (Edo) : Célèbre pour ses murailles géantes (les plus longues du monde préindustriel), son art du bronze (Bronzes du Bénin) et son urbanisme sophistiqué.  
+  3. **Royaume d'Ife** (Yoruba) : Berceau spirituel, art naturaliste en bronze et terre cuite inégalé (XIIe-XVe s.).  
+  4. **Royaume Nri** (Igbo) : Théocratie pacifique sans armée, influence par le prestige religieux et les réseaux commerciaux.  
+  5. **Royaume du Kongo** (Bantou) : État centralisé puissant, diplomatie avec le Vatican et le Portugal dès le XVe siècle.  
+  6. **Royaume Kuba** (Bantou) : Raffinement artistique et politique au centre de la RDC.  
+  7. **Royaume Luba** (Bantou) : Modèle d'organisation politique "sacrée" diffusé dans toute l'Afrique centrale.  
+  8. **Royaume Lunda** (Bantou) : Empire commercial reliant l'Atlantique à l'Océan Indien.  
+  9. **Royaume Zulu** (Bantou) : Révolution militaire de Shaka (Mfacane) en Afrique australe.  
+  10. **Royaume du Monomotapa** (Bantou/Shona) : Successeur du Grand Zimbabwe, commerce de l'or international.  
+  11. **Royaume Ijebu** (Yoruba) : Puissance commerciale et manufacturière.  
+  12. **Royaume de Ketu** (Yoruba) : Gardien des traditions occidentales yorubas.  
+  13. **Confédération Aro** (Igbo) : Réseau commercial et oraculaire dominant le sud-est du Nigéria.
+
+  **Rôle géopolitique :**  
+  Ces entités ont agi comme des verrous stratégiques, contrôlant les interfaces écologiques (forêt/savane, côte/intérieur) et les flux commerciaux (or, ivoire, kola, esclaves). Ils ont développé des diplomaties complexes, des armées permanentes (Oyo, Dahomey, Zulu) et des bureaucraties centralisées qui ont résisté, collaboré ou négocié avec les puissances coloniales jusqu'à la fin du XIXe siècle.
 
 # 7. Sources
 - Nurse & Philippson – *The Bantu Languages*
 - Williamson & Blench – *Niger-Congo Overview*
+- Greenberg, J. H. (1963) – *The Languages of Africa*
+- Obenga, T. – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*
+- Guthrie, M. (1967–1971) – *Comparative Bantu*
 - Glottolog – Benue-Congo
 - SIL Ethnologue – Yoruba, Igbo, Edo, Tiv
+- UNESCO – *Histoire générale de l'Afrique* (Vol 4 & 5)
