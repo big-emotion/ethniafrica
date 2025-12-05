@@ -6,18 +6,23 @@
 - Nom français : Couchitique
 - Nom anglais / auto-appellation académique : Cushitic
 - Appellation(s) historique(s) :
-  « Langues couchitiques », « Langues de Koush/Cush » (référence biblique), anciennement intégrées dans le bloc « hamitique ».
+  « Langues couchitiques », « Langues de Koush/Cush » (référence biblique), anciennement intégrées dans le bloc « chamitique ».
 - Origine du terme historique :
   Le terme « Cushitic » dérive de « Koush/Cush », figure biblique associée à la Nubie.  
   Des linguistes européens du XIXᵉ siècle ont appliqué ce terme aux peuples et langues de la Corne de l’Afrique selon une vision pseudo-généalogique inspirée de la Bible.
 - Pourquoi le terme pose problème :
   - Le mot « couchitique » est hérité d’une grille de lecture biblique/coloniale qui attribuait des origines « extra-africaines » à certains peuples pour les distinguer des Africains « noirs » dans une logique raciale.  
-  - Le concept « hamitique-couchitique » a été utilisé pour justifier des hiérarchies raciales.
+  - **Hiérarchie raciale justifiée** : Le concept « chamitique » (incluant les Couchites) a servi à l’« hypothèse chamitique » (C.G. Seligman), prétendant que toute civilisation en Afrique noire était l’œuvre d’envahisseurs « hamites » à peau claire (Couchites/Berbères/Égyptiens), supérieurs aux « Nègres véritables ». Cela a justifié la domination politique de certaines élites (ex: Rwanda, Éthiopie impériale) sur d’autres populations.
+  - **Héritage idéologique** : Bien que le terme « chamitique » soit abandonné par la science, le terme « couchitique » conserve parfois implicitement cette distinction d’une Afrique « non-nègre » ou « intermédiaire » dans l’imaginaire occidental, coupant la Corne de l’Afrique du reste du continent.
   → Aujourd’hui le terme **couchitique** est maintenu uniquement dans une perspective **linguistique**, dépouillée de son héritage idéologique.
 - Auto-appellation (locuteurs / linguistes contemporains) :
   Cushitic languages / Langues couchitiques
 - Usage contemporain :
-  Branche majeure de l’Afro-asiatique, extrêmement présente en Éthiopie, Somalie, Djibouti, Érythrée et nord du Kenya. Comprend l’oromo, le somali, l’afar, le sidamo, etc.
+  Branche majeure de l’Afro-asiatique, extrêmement présente en Éthiopie, Somalie, Djibouti, Érythrée et nord du Kenya. Comprend :
+  - **Oromo** : Peuple majoritaire d'Éthiopie (~40 millions), locuteurs de l'Afaan Oromo.
+  - **Somali** : Peuple de Somalie, Djibouti, Éthiopie (Ogaden), Kenya ; langue officielle et unifiée.
+  - **Afar** : Peuple nomade du triangle Afar (Éthiopie, Érythrée, Djibouti).
+  - **Sidamo** : Peuple des hautes terres du sud de l'Éthiopie.
 - Aire / répartition géographique générale :
   Corne de l’Afrique
 - Nombre de langues (estimation) : 40–50
@@ -29,6 +34,11 @@
 
 # 1. Informations générales
 - Nom de la famille : Couchitique
+- Définitions des groupes majeurs :
+  - **Oromo** : Plus grand groupe ethnique de la Corne, historiquement organisés par le système démocratique du Gadaa.
+  - **Somali** : Structure clanique patrilinéaire forte, unis par la langue, l'Islam et le droit coutumier (Xeer).
+  - **Afar** : Guerriers et pasteurs du désert Danakil, contrôlant historiquement le commerce du sel.
+  - **Sidamo** : Agriculteurs sédentaires du sud éthiopien, célèbres pour la culture de l'Enset (faux-bananier).
 - Branches internes / sous-groupes :
   - Oromo (Oromoid)
   - Somali (Somaloid)
@@ -63,13 +73,19 @@
 - Liens avec les familles voisines :
   Contacts étroits et anciens avec les langues sémitiques éthiopiennes (amharique, tigrinya) et avec l’omotique.
 - Innovations clés :
-  - Suffixation verbale riche  
-  - Marqueurs morphologiques de genre  
-  - Alternances vocaliques fortes (ex. dans l’oromo)
+  - **Système de focus syntaxique** : Marquage grammatical obligatoire de l'information nouvelle dans la phrase (très développé en Somali avec *baa*, *waa*).
+  - **Polarité de genre** : Inversion du genre grammatical au pluriel (un mot masculin au singulier devient féminin au pluriel, et vice-versa), trait unique au monde.
+  - **Système verbal à suffixes** : Conjugaison par suffixes (au lieu des préfixes sémitiques), innovation propre au Couchitique.
+  - **Systèmes tonals grammaticaux** : Le ton sert à marquer le cas (sujet/objet) plutôt que le sens lexical seul.
 
 # 5. Histoire et origines
 - Origine probable :
   Hautes terres et basses terres de la Corne de l’Afrique (région Oromo–Somalo–Afar).
+  **Perspective Diop/Obenga** :
+  Pour Cheikh Anta Diop et Théophile Obenga, les langues de la Corne de l'Afrique (Couchitique) sont une preuve vivante de la continuité "Négro-égyptienne".
+  - Ils rejettent l'idée d'une origine "asiatique" ou "chamitique blanche".
+  - Ils soulignent que les Égyptiens anciens se considéraient eux-mêmes comme issus du "Pays de Pount" (Corne de l'Afrique/Somalie/Érythrée), ce qui fait du foyer couchitique le **berceau ancestral** de la civilisation pharaonique, et non une périphérie.
+  - La parenté grammaticale (ex: suffixation, structure du verbe) entre l'Égyptien ancien et le Somali/Oromo/Galla est pour eux génétique et directe.
 - Diffusion des langues :
   Expansion de l’oromo du sud au centre de l’Éthiopie (XVIe–XVIIIe siècles) ; diffusion somalie jusqu’au Kenya.
 - Ruptures historiques :
@@ -92,3 +108,6 @@
 - Glottolog — Cushitic branch
 - SIL Ethnologue — Oromo, Somali, Afar
 - UNESCO — Atlas of the World’s Languages
+- Seligman, C.G. — *Races of Africa* (pour l'analyse critique du mythe chamitique)
+- Diop, C. A. — *Antériorité des civilisations nègres* (Lien Égypte-Pount-Couchitique)
+- Obenga, T. — *L'origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*
