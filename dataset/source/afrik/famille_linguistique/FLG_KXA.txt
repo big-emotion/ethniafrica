@@ -20,7 +20,14 @@
 - Usage contemporain :
   Petite famille de langues à clics parlées principalement par les populations Ju et ǂHoan en Namibie et au Botswana.
 - Aire / répartition géographique générale :
-  Nord du désert du Kalahari : Namibie et Botswana.
+  Nord du **désert du Kalahari** : Namibie et Botswana.
+  
+  **Localisation du Kalahari** :
+  - Vaste étendue semi-aride (~930 000 km²) d'Afrique australe
+  - Pays principaux : **Botswana** (majorité), **Namibie** (est), **Afrique du Sud** (nord, province du Cap-Nord)
+  - Extension : Angola, Zambie, Zimbabwe (parties marginales)
+  - Dimensions : ~1 600 km (nord-sud) × ~1 000 km (est-ouest)
+  - Étymologie : du tswana **"Kgala"** (la grande soif) ou **"Kgalagadi"** (lieu sans eau)
 - Nombre de langues (estimation) : 2 à 3
 - Nombre total de locuteurs (estimation) : ~20 000–30 000
 
@@ -34,7 +41,8 @@
   - Juu (Ju|’hoan, Juǀ’Hõasi, d’autres variétés)
   - ǂHoan (ǂHoan)
 - Aire géographique :
-  Nord-Kalahari (Namibie, Botswana)
+  Nord du **Kalahari** (Namibie, Botswana)
+  → Kalahari = désert semi-aride de ~930 000 km² (Botswana, Namibie, Afrique du Sud, Angola, Zambie, Zimbabwe)
 - Nombre de langues :
   2–3
 - Nombre total de locuteurs :
@@ -68,9 +76,23 @@
 
 # 5. Histoire et origines
 - Origine probable :
-  Population très ancienne du Kalahari, antérieure à l’arrivée des Bantous et des Khoekhoe.
+  **Population très ancienne du Kalahari**, antérieure à l'arrivée des Bantous et des Khoekhoe.
+  
+  **Contexte géographique - Le Kalahari** :
+  - Désert semi-aride de ~930 000 km² en Afrique australe
+  - Principalement : **Botswana** (cœur), **Namibie** (est), **Afrique du Sud** (nord)
+  - Extensions : Angola, Zambie, Zimbabwe
+  - Nom d'origine tswana : *Kgala* (la grande soif) ou *Kgalagadi* (lieu sans eau)
+  - Habitat ancestral des populations Ju|'hoansi et ǂHoan depuis des millénaires
+  
+  **Ancienneté des populations** :
+  - Les locuteurs Kx'a représentent l'une des **lignées humaines les plus anciennes** du continent
+  - Populations de chasseurs-cueilleurs présentes bien avant les migrations bantoues (~2000 BP) et khoekhoe
+  - Continuité culturelle et linguistique dans les zones les plus isolées du Kalahari
+  
 - Diffusion des langues :
-  Diffusion limitée géographiquement ; maintien dans des régions isolées du Kalahari.
+  Diffusion **limitée géographiquement** ; maintien dans des régions **isolées** du nord du Kalahari.
+  Absence de grandes migrations : les Kx'a sont restés dans leur territoire ancestral malgré les pressions extérieures.
 - Ruptures historiques :
   - Pertes territoriales massives sous les colonies allemandes et sud-africaines  
   - Pressions économiques modernes (réserves naturelles, déplacements forcés)
@@ -88,7 +110,43 @@
   Représente une des lignées linguistiques et culturelles les plus anciennes du continent africain.
 
 # 7. Sources
-- Sands, B. – études sur les langues Ju  
-- Pakendorf et al. – *Classification of Kx’a languages*  
-- SIL Ethnologue – Ju|’hoan, ǂHoan  
-- UNESCO – langues en danger du Kalahari
+
+## Sources académiques et linguistiques
+- **Sands, Bonny** – Études linguistiques sur les langues Ju, phonologie des clics
+- **Pakendorf, Brigitte et al.** – *Classification of Kx'a languages*, recherches génétiques et linguistiques
+- **Heine, Bernd & Honken, Henry** – Propositions de classification Kx'a (distinctions avec Khoe et Tuu)
+- **SIL Ethnologue** (2025) – Ju|'hoan [ktz], ǂHoan [huc], données démographiques
+- **Glottolog** – Classification Kx'a [kxaa1236]
+- **UNESCO** – Atlas des langues en danger (Kalahari)
+
+## Sources anthropologiques et ethnographiques
+- **Lee, Richard B.** (1979). *The !Kung San: Men, Women and Work in a Foraging Society*. Cambridge University Press.
+  → Étude anthropologique majeure sur les Ju|'hoansi (appelés !Kung dans les travaux anciens)
+- **Marshall, Lorna** (1976). *The !Kung of Nyae Nyae*. Harvard University Press.
+  → Documentation ethnographique détaillée des populations Ju
+- **WIMSA (Working Group of Indigenous Minorities in Southern Africa)** – Organisation représentant les peuples San d'Afrique australe
+- **Kalahari Peoples Fund** – Organisation de soutien aux communautés San
+
+## Géographie et contexte régional
+- **Britannica** – "Kalahari Desert" (géographie, dimensions, localisation)
+- **Études sur le Kalahari** : désert semi-aride de ~930 000 km² (Botswana, Namibie, Afrique du Sud)
+
+## Note sur les intellectuels africains
+**Cheikh Anta Diop** et **Théophile Obenga** :
+- Ces intellectuels africains majeurs ont révolutionné la compréhension de l'histoire africaine ancienne
+- Leurs travaux se sont concentrés sur :
+  - Les civilisations de la vallée du Nil (Égypte, Nubie)
+  - Les migrations et parentés linguistiques africaines (notamment langues Niger-Congo)
+  - La déconstruction des thèses racistes coloniales
+  
+**LIMITE IDENTIFIÉE** : Ni Diop ni Obenga n'ont publié de travaux spécifiques sur les langues Khoisan/Kx'a ou les populations San du Kalahari.
+- Leurs recherches se sont focalisées sur l'Afrique nilotique, sahélienne et subsaharienne
+- Les langues à clics du Kalahari n'ont pas été au centre de leurs classifications linguistiques
+
+**NÉCESSITÉ** : Développer une recherche **endogène San** sur les langues Kx'a, par et pour les locuteurs eux-mêmes.
+→ Les travaux de documentation linguistique doivent impliquer davantage les **communautés Ju|'hoansi et ǂHoan** comme co-chercheurs, pas seulement comme informateurs.
+
+## Recherche autochtone
+- **Manque identifié** : Peu de chercheurs San publient académiquement sur leurs propres langues
+- **Initiatives positives** : WIMSA et organisations locales travaillent à la revitalisation linguistique
+- **Besoin urgent** : Former des linguistes Ju|'hoansi et ǂHoan pour documenter leurs langues de l'intérieur
