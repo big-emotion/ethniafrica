@@ -60,7 +60,7 @@
   - Distinction de longueur vocalique  
   - Tons ou accent contrastif selon les langues
 - Liens avec les familles voisines :
-  - Contacts forts avec les langues bantoues d’Afrique australe (afrikaans, oshiwambo, tswana, zoulou…)  
+  - Contacts forts avec les langues bantoues d’Afrique australe (oshiwambo, tswana, zoulou…) ainsi qu'avec l'afrikaans.
   - Prêts lexicaux dans les deux sens (ex. emprunts de Khoe vers zoulou/xhosa via clics).
 - Innovations clés :
   - Complexité extrême des inventaires consonantiques  
@@ -86,9 +86,13 @@
   Namibie (majorité : Nama/Damara), Botswana (Naro, Khwe), Afrique du Sud, Angola.
 - Importance historique :
   Langues des peuples pastoraux historiques du sud-ouest africain ; mémoire linguistique d’une Afrique pré-bantoue et pré-coloniale.
+- Perspectives régionales :
+  Les travaux de chercheurs locaux (comme Haacke en Namibie ou Chebanne au Botswana) soulignent la résilience de l'identité khoekhoe malgré la marginalisation historique et la pression des langues dominantes.
 
 # 7. Sources
 - Sands, B. – travaux sur les langues Khoe  
 - Pakendorf et al. – *Classification of Khoe languages*  
+- Haacke, W. & Eiseb, E. – *Khoekhoegowab Dictionary* (Référence majeure namibienne)
+- Chebanne, A. – Travaux sur les langues Khoe/San du Botswana (Univ. Botswana)
 - SIL Ethnologue – Khoekhoe, Naro, Khwe  
 - UNESCO – langues en danger (Afrique australe)
