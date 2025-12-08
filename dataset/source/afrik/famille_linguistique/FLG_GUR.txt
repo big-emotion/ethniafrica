@@ -2,23 +2,23 @@
 
 ## HEADER DÉCOLONIAL (obligatoire)
 
-- Identifiant famille linguistique (FLG_xxxxx) : FLG_GUR
-- Nom français : Gur
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_GOUR
+- Nom français : Gour
 - Nom anglais / auto-appellation académique : Gur / Voltaic (terme ancien)
 - Appellation(s) historique(s) :
   « Voltaïque » (ancien terme colonial) ; « Langues voltaïques » (du fleuve Volta).
 - Origine du terme historique :
   Le terme « Voltaic » a été créé par des administrateurs et linguistes coloniaux français pour désigner les langues parlées autour des affluents du fleuve Volta (Burkina Faso, Ghana).  
-  Ce terme a été remplacé par « Gur » (nom plus interne et linguistiquement cohérent).
+  Ce terme a été remplacé par « Gour » (nom plus interne et linguistiquement cohérent).
 - Pourquoi le terme pose problème :
   - « Voltaïque » est un terme purement géographique imposé par l’administration coloniale.  
   - Il ne reflète pas les autonymes ni la diversité interne des langues.  
   - La classification était approximative et parfois racialisée.
-  → **Le terme moderne correct est “Gur”.**
+  → **Le terme moderne correct est “Gour”.**
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Gur languages / Langues gur
+  Gur languages / Langues gour
 - Usage contemporain :
-  Le gur regroupe des langues majeures du Burkina Faso, du Ghana, du Togo et du Bénin, notamment le mooré, le dagbani, le dagaare, le gulmancema.
+  Le gour regroupe des langues majeures du Burkina Faso, du Ghana, du Togo, du Bénin et du nord de la Côte d'Ivoire, notamment le mooré, le dagbani, le sénoufo, le lobi, le koulango.
 - Aire / répartition géographique générale :
   Burkina Faso, Ghana, Côte d’Ivoire nord, Togo nord, Bénin nord
 - Nombre de langues (estimation) : ~70–80
@@ -29,12 +29,15 @@
 ## MODÈLE STRUCTURÉ AFRIK
 
 # 1. Informations générales
-- Nom de la famille : Gur
+- Nom de la famille : Gour
 - Branches internes / sous-groupes :
-  - Central Gur (Mossi, Dagbani, Mandinka du nord Ghana)
-  - Northern Gur
-  - Southern Gur
+  - Central Gour (Mossi, Dagbani, Mandinka du nord Ghana)
+  - Sénoufo (souvent rattaché au Gur ou branche sœur)
+  - Lobi-Dagara
+  - Koulango
   - Oti-Volta (grand sous-groupe)
+
+  *(Attention à ne pas confondre : Les **Gouro** de Côte d'Ivoire parlent une langue Mandé (Mandé Sud) et non une langue Gour, malgré la ressemblance du nom).*
 - Aire géographique :
   Sahel et savanes d’Afrique de l’Ouest
 - Nombre de langues :
@@ -44,13 +47,14 @@
 
 # 2. Peuples associés
 - Peuple 1 : Mossi
-- Peuple 2 : Dagomba
-- Peuple 3 : Gourmantché
+- Peuple 2 : Sénoufo
+- Peuple 3 : Lobi
+- (autres : Dagomba, Gourmantché, Koulango, Kabye)
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Mossi
-- Ethnie 2 : Dagomba
-- Ethnie 3 : Gourmantché
+- Ethnie 2 : Sénoufo
+- Ethnie 3 : Lobi
 (+ renvoi vers futures fiches ethniques)
 
 # 4. Caractéristiques linguistiques
