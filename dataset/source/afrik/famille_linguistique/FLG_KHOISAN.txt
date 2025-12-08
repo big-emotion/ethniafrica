@@ -4,94 +4,117 @@
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_KHOISAN
 - Nom français : Khoïsan (macro-groupe non génétique)
-- Nom anglais / auto-appellation académique : Khoisan (typological group)
+- Nom anglais / auto-appellation académique : Khoisan (typological grouping)
 - Appellation(s) historique(s) :
-  « Khoisan » ; « Hottentot » (terme aujourd’hui offensant) ; « Bushmen » (à contextualiser).  
+  « Khoisan » (Schultze, 1928) ; « Hottentot » (terme raciste et offensant) ; « Bushmen » (péjoratif).
 - Origine du terme historique :
-  Le terme « Khoisan » a été inventé au début du XXᵉ siècle par l’ethnologue L. Schultze pour regrouper deux grands ensembles :  
-  - les Khoekhoe (pasteurs),  
-  - les San (chasseurs-cueilleurs).  
-  Les linguistes ont ensuite repris cette étiquette pour désigner un ensemble de langues à clics, même si aucune filiation génétique solide n’a été démontrée.
+  Le terme « Khoisan » a été inventé au début du XXᵉ siècle par l'ethnologue allemand Leonhard Schultze pour regrouper artificiellement deux grands ensembles :
+  - les Khoekhoe (pasteurs),
+  - les San (chasseurs-cueilleurs).
+  Les linguistes (notamment Greenberg dans les années 1950) ont ensuite étendu cette étiquette pour désigner un vaste ensemble de langues à clics, supposées apparentées.
 - Pourquoi le terme pose problème :
-  - « Khoisan » n’est **pas une famille linguistique génétique** : c’est un regroupement typologique basé uniquement sur les clics.  
-  - Plusieurs termes associés — dont **« Hottentot »** et **« Bushmen »** — ont été utilisés de manière péjorative, raciste ou exotisante.  
-  - Ces termes ont servi à justifier des discriminations et spoliations en Afrique australe.  
-  → Afrik utilise **Khoïsan uniquement comme macro-étiquette technique**, tout en séparant les familles réelles : **Khoe, Kx’a, Tuu**.
+  - **« Khoisan » n'est PAS une famille linguistique génétique** : c'est un regroupement typologique basé uniquement sur la présence de clics consonantiques.
+  - Les recherches modernes (Güldemann, Vossen, Sands) ont démontré que les trois familles regroupées sous « Khoisan » — **Khoe, Kx'a, Tuu** — ne sont **pas apparentées entre elles**.
+  - Plusieurs termes associés — dont **« Hottentot »** et **« Bushmen »** — ont été utilisés de manière péjorative, raciste ou exotisante pour déshumaniser les populations.
+  - Ces termes ont servi à justifier des discriminations, des spoliations territoriales et des génocides en Afrique australe (1904–1908).
+  → Afrik utilise **« Khoïsan » uniquement comme macro-étiquette typologique et historique**, tout en séparant rigoureusement les trois familles génétiques réelles : **Khoe (FLG_KHOE), Kx'a (FLG_KXA), Tuu (FLG_TUU)**.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Les locuteurs se désignent par leurs ethnonymes propres : Nama, ǃXóõ, Ju|’hoansi, Khwe, Naro, etc.
+  Les locuteurs se désignent par leurs ethnonymes propres : Nama, Damara, Ju|'hoansi, ǃXóõ, Khwe, Naro, etc.
+  Les linguistes contemporains utilisent les noms de famille distincts (Khoe-Kwadi, Kx'a, Tuu).
 - Usage contemporain :
-  Catégorie non génétique rassemblant les familles à clics d’Afrique australe.  
-  **Ce n’est pas une famille linguistique**, mais une *aire linguistique*.
+  Catégorie typologique conventionnelle rassemblant les langues à clics d'Afrique australe.
+  **Ce n'est pas une famille linguistique génétique**, mais une **aire linguistique** définie par des traits phonologiques partagés (convergence, non héritage commun).
 - Aire / répartition géographique générale :
   Namibie, Botswana, Afrique du Sud, Angola.
-- Nombre de langues (estimation) : ~30 (toutes familles confondues)
-- Nombre total de locuteurs (estimation) : Faible (beaucoup de langues en danger)
+- Nombre de langues (estimation) : ~30–40 (toutes familles confondues)
+- Nombre total de locuteurs (estimation) : ~300 000–400 000 (surtout Nama/Damara pour Khoe)
 
 ------------------------------------------
 
 ## MODÈLE STRUCTURÉ AFRIK
 
 # 1. Informations générales
-- Nom de la famille : Khoïsan (macro-groupe)
-- Branches internes / sous-groupes :
-  ⚠️ *Important : ce ne sont PAS des sous-familles, mais des familles réellement distinctes* :
-  - Khoe (Khoekhoe, Khwe, Naro…)
-  - Kx’a (Ju|’hoan, ǂHoan)
-  - Tuu (Taa/!Xóõ, ǀXam)
+- Nom de la famille : Khoïsan (macro-groupe typologique contesté)
+- Branches internes / sous-groupes (classification usuelle obsolète) :
+  ⚠️ **Important : ce ne sont PAS des sous-familles génétiques, mais des familles réellement distinctes** :
+  - **Khoe-Kwadi** (FLG_KHOE) : Khoekhoe (Nama, Damara, Griqua) ; Kalahari Khoe (Naro, Khwe, Tshikhwe, Shua…)
+  - **Kx'a** (FLG_KXA) : Ju|'hoan, ǂHoan (famille génétique distincte)
+  - **Tuu** (FLG_TUU) : Taa/ǃXóõ, ǀXam (famille génétique distincte)
 - Aire géographique :
-  Afrique australe (Namibie, Botswana, Afrique du Sud)
+  Afrique australe (Namibie, Botswana, Afrique du Sud, Angola)
 - Nombre de langues :
-  ~30 (selon familles)
+  ~30–40 (selon classifications)
 - Nombre total de locuteurs :
-  Faible : plusieurs langues ont < 5 000 locuteurs
+  ~300 000–400 000 (dont ~250 000–350 000 pour Khoe seul)
 
 # 2. Peuples associés
-- Peuple 1 : Nama (Khoekhoe)
-- Peuple 2 : Ju|’hoansi
-- Peuple 3 : ǃXóõ
+- Nama (Khoe)
+- Damara (Khoe)
+- Ju|'hoansi (Kx'a)
+- ǃXóõ/Taa (Tuu)
+- Khwe (Khoe)
+- Naro (Khoe)
 
 # 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Nama  
-- Ethnie 2 : Ju|’hoansi  
-- Ethnie 3 : ǃXóõ  
-(+ renvoi aux futures fiches ethniques)
+- Nama (Khoe)
+- Damara (Khoe)
+- Ju|'hoansi (Kx'a)
+- ǃXóõ (Tuu)
+- Khwe (Khoe)
+(+ renvoi aux futures fiches ethniques par famille)
 
 # 4. Caractéristiques linguistiques
 - Typologie linguistique :
-  Mélange de langues tonales/non tonales ; structures souvent agglutinantes.
-- Particularités phonologiques :
-  - **Présence de clics** (dental, latéral, palatal, alvéolaire…)  
-  - Inventaires consonantiques parmi les plus complexes du monde  
-  - Distinction de longueur vocalique
-- Liens avec les familles voisines :
-  Contacts profonds avec les langues bantoues d’Afrique australe (ex. clics adoptés dans zoulou et xhosa).
+  **Incohérences majeures entre les trois familles supposées.** Khoe a une morphologie agglutinante et un système pronominal riche ; Kx'a et Tuu ont des structures tonales complexes mais des morphologies plus simples. Aucune proto-langue « khoisan » n'a pu être reconstruite.
+- Particularités phonologiques (trait partagé, mais non hérité) :
+  - **Présence de clics consonantiques** (dental, latéral, palatal, alvéolaire, bilabial…)
+  - Inventaires consonantiques parmi les plus complexes du monde (jusqu'à 80+ phonèmes dans certaines langues Tuu)
+  - Distinction de longueur vocalique et modalités phonationnelles variées
+- Liens avec les familles voisines (Preuves de non-parenté) :
+  - Les trois familles Khoe, Kx'a et Tuu n'ont **aucune loi de correspondance phonétique régulière** entre elles.
+  - Les clics sont un **trait aréal** (convergence due au contact), pas une preuve de parenté génétique.
+  - Des langues bantoues (zoulou, xhosa) ont adopté des clics par emprunt au contact des langues Khoe et Tuu.
+  - **Il n'existe aucun vocabulaire de base commun partagé entre les trois familles.**
 - Innovations clés :
-  - Développement de grands inventaires de clics  
-  - Systèmes verbaux simples mais flexion nominale variable
+  Aucune innovation partagée prouvant une origine commune. Les clics se sont développés indépendamment ou se sont diffusés par contact.
 
 # 5. Histoire et origines
 - Origine probable :
-  Peuples très anciens d’Afrique australe, présents depuis l’Âge de pierre.
+  Le regroupement « Khoisan » est considéré par les linguistes modernes comme une **zone de contact et de traits partagés par convergence**, non comme une parenté génétique.
+  Les trois familles ont des histoires distinctes :
+  - **Khoe** : peuple pastoral du sud-ouest africain (Namibie actuelle)
+  - **Kx'a** : populations anciennes du nord-Kalahari
+  - **Tuu** : populations très anciennes du Kalahari méridional (dont certaines langues sont désormais éteintes, comme le ǀXam)
 - Diffusion des langues :
-  Très peu d’expansion récente ; nombreuses langues en déclin.
+  Expansion hétérogène. Les langues Khoe se sont diffusées avec les pasteurs Khoekhoe. Les langues Kx'a et Tuu sont restées confinées au désert du Kalahari et ont connu une forte régression.
 - Ruptures historiques :
-  - Spoliation des terres par les colons néerlandais et allemands  
-  - Génocide des Herero et Nama (1904–1908)  
-  - Pressions des langues bantoues et européennes
+  - Classification coloniale raciste regroupant artificiellement ces peuples sous l'étiquette « Khoisan » pour les séparer des « Bantous ».
+  - Génocide des Herero et Nama (1904–1908) par les Allemands en Namibie.
+  - Extermination ou déplacements forcés des peuples ǀXam (Tuu) au XIXe siècle en Afrique du Sud.
+  - Apartheid et marginalisation socio-économique persistante.
+  - Pression linguistique de l'afrikaans, de l'anglais et des langues bantoues.
 - Zones de contact et métissages :
-  - Namibie (Nama, Naro)  
-  - Désert du Kalahari (Ju|’hoansi, ǃXóõ)
+  - Désert du Namib et du Kalahari
+  - Zones frontalières Namibie/Botswana/Afrique du Sud
 
 # 6. Répartition géographique et démographie
-- Nombre total de locuteurs :
-  Faible (souvent < 20 000 par langue)
+- Nombre total de locuteurs : ~300 000–400 000 (toutes familles confondues)
 - Répartition par pays :
-  Namibie, Botswana, Afrique du Sud, Angola
+  - **Namibie** : majorité des locuteurs Khoe (Nama/Damara) + petits groupes Kx'a et Tuu
+  - **Botswana** : groupes Khoe (Naro, Khwe, Kgalagadi) + groupes Kx'a (Ju|'hoansi) + groupes Tuu (ǃXóõ/Taa)
+  - **Afrique du Sud** : groupes Khoe résiduels + langues Tuu éteintes (ǀXam)
+  - **Angola** : petits groupes Khoe
 - Importance historique :
-  Patrimoine linguistique et humain unique ; populations parmi les plus anciennes génétiquement documentées.
+  **Patrimoine linguistique et humain unique** ; populations parmi les plus anciennes génétiquement documentées au monde.
+  Cependant, le terme « Khoisan » masque la diversité réelle de ces peuples et perpétue une vision coloniale homogénéisante.
 
 # 7. Sources
-- Sands, B. – études sur les langues à clics  
-- Pakendorf et al. – *Khoe–Kwadi, Kx’a, Tuu classifications*  
-- SIL Ethnologue – Khoisan area  
-- UNESCO – langues en danger d’Afrique australe
+- Schultze, L. (1928) – inventeur du terme « Khoisan »
+- Greenberg, J. (1955) – *The Languages of Africa* (classification « Khoisan » originelle, aujourd'hui obsolète)
+- Güldemann, T. & Vossen, R. (2000) – *Khoisan* (critique de l'unité génétique)
+- Güldemann, T. (2008) – *A linguist's view: Khoe-Kwadi speakers as the earliest food-producers of southern Africa*
+- Sands, B. (1998) – *Eastern and Southern African Khoisan* (travaux sur les langues à clics)
+- Pakendorf et al. – *Classification of Khoe, Kx'a, Tuu languages*
+- Vossen, R. – *Die Khoe-Sprachen*
+- SIL Ethnologue – Khoisan area (aire typologique)
+- UNESCO – langues en danger d'Afrique australe
