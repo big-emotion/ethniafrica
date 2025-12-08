@@ -48,6 +48,12 @@
   - Zone K : Angola (Kimbundu, Umbundu)
   - Zone L : RDC (Luba-Katanga, Luba-Kasai)
   - Zone S : Afrique australe (Zulu, Xhosa, Ndebele)
+
+  **Cas particuliers (Langues véhiculaires de contact) :**
+  Certaines langues bantoues sont nées ou se sont étendues par contact commercial ou colonial, tout en gardant une grammaire bantoue (ce qui les distingue des créoles afro-européens) :
+  - **Lingala** (RDC, Congo) : Issu du Bobangi, standardisé par les missions et l'administration coloniale (parfois qualifié de "créole bantou" mais classé linguistiquement comme bantou).
+  - **Swahili** (Afrique de l'Est) : Base grammaticale bantoue avec fort emprunt lexical arabe.
+  - **Kituba / Kikongo ya Leta** : Simplification véhiculaire du Kikongo utilisée par l'administration.
 - Aire géographique :
   Afrique centrale, orientale et australe
 - Nombre de langues :
