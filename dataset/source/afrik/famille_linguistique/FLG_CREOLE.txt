@@ -21,11 +21,11 @@
   - Il faut éviter d’associer les créoles à une idée de « langue inférieure » — un préjugé colonial encore présent.
   → Afrik utilise **Créole** comme un terme strictement linguistique.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Kriolu, Papiamentu, Pidgin English, Krio, Seychellois, Mauricien, Réunionnais, etc.
+  Kriolu, Papiamentu, Pidgin English (West African Pidgin), Krio, Seychellois, Mauricien, Réunionnais, etc.
 - Usage contemporain :
-  Les créoles d’Afrique sont des langues de contact afro-européennes, devenues langues maternelles et nationales dans plusieurs pays.
+  Les créoles d’Afrique sont des langues de contact afro-européennes (lexique majoritairement européen, grammaire et syntaxe d'origine africaine), devenues langues maternelles et nationales dans plusieurs pays.
 - Aire / répartition géographique générale :
-  Cap-Vert, Guinée-Bissau, Sierra Leone, Cameroun, Ghana, Mozambique côtier, îles de l’océan Indien (Maurice, Seychelles, La Réunion).
+  Cap-Vert, Guinée-Bissau, Sierra Leone, Nigeria, Cameroun, Ghana, Mozambique côtier, îles de l’océan Indien (Maurice, Seychelles, La Réunion).
 - Nombre de langues (estimation) : 15–20
 - Nombre total de locuteurs (estimation) : ~10 millions
 
@@ -52,6 +52,8 @@
 
   **Créoles minoritaires / mixtes :**
   - Annobonais (Fá d’Ambô — Guinée équatoriale)
+
+  *(Note : Le Lingala, le Kituba et le Swahili sont des langues véhiculaires de la famille Bantoue et non des créoles afro-européens, malgré leur histoire liée aux contacts ou à la colonisation. Voir **FLG_BANTU** pour plus de détails).*
 - Aire géographique :
   Afrique de l’Ouest, Afrique centrale côtière, Afrique australe côtière, Océan Indien
 - Nombre de langues :
