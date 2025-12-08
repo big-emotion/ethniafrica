@@ -6,10 +6,15 @@
 - Nom français : Krou
 - Nom anglais / auto-appellation académique : Kru
 - Appellation(s) historique(s) :
-  « Krou » ; « langues krou » ; parfois associées aux ethnonymes « Kru/ Kroo » utilisés dans les archives coloniales maritimes.
+  « Krou » ; « Kru » ; « Kroo » ; « Kroumen » ; variantes historiques : Crua (1588), Croa, Crouw, Crew, Krew.
+  Ces termes désignaient initialement les populations côtières de la région de Settra-Kru (côte libérienne).
 - Origine du terme historique :
-  Le terme « Krou » dérive des populations côtières connues sous le nom de *Kru* ou *Kroo*, identifiées par les navigateurs européens (XVIIᵉ–XIXᵉ siècles) comme marins et intermédiaires commerciaux.  
-  Les linguistes ont ensuite étendu le terme pour désigner un ensemble beaucoup plus large de langues.
+  **Première mention documentée** : 1588, sous la forme « Crua », par **James Welsh**, marchand anglais, dans son récit de voyage publié par Richard Hakluyt.
+  Le terme désignait alors un point géographique de la côte libérienne, au sud-est de la rivière Sinoe, entre les rivières Cestos et Dugbe, correspondant à l'actuel Settra-Kru.
+  → Les Européens ont identifié les populations côtières appelées *Krao* ou *Kra* comme d'excellents marins et travailleurs portuaires.
+  → Au XVIIIᵉ siècle, « Kroumen » devient un terme générique pour désigner les marins côtiers krou employés sur les navires européens.
+  → Les linguistes coloniaux ont ensuite étendu le terme « Krou » pour désigner l'ensemble de la famille linguistique, bien au-delà des seuls groupes côtiers.
+  **Note** : La ressemblance avec le mot anglais « crew » (équipage) est une coïncidence phonétique fortuite, sans lien étymologique.
 - Pourquoi le terme pose problème :
   - « Kru » a historiquement été un terme colonial vague appliqué aux travailleurs côtiers, souvent sans distinction ethnolinguistique.  
   - Les Européens l’ont utilisé comme catégorie professionnelle, effaçant la diversité des groupes (Bété, Dida, Wè, Grebo…).  
@@ -19,9 +24,9 @@
 - Usage contemporain :
   Le krou est une grande sous-famille du Niger-Congo regroupant des langues de Côte d’Ivoire et du Libéria, dont le bété, le dida, le wê, le grebo, etc.
 - Aire / répartition géographique générale :
-  Côte d’Ivoire, Liberia, zones forestières côtières
+  Côte d'Ivoire, Libéria, zones forestières côtières (de Grand-Lahou à Monrovia, ~120 000 km²)
 - Nombre de langues (estimation) : ~30–40
-- Nombre total de locuteurs (estimation) : ~3 millions
+- Nombre total de locuteurs (estimation) : ~10 millions (selon Ethnologue / SIL)
 
 ------------------------------------------
 
@@ -30,25 +35,37 @@
 # 1. Informations générales
 - Nom de la famille : Krou
 - Branches internes / sous-groupes :
-  - Krou oriental : Bété, Dida  
-  - Krou occidental : Grebo, Wè/Krahn  
-  - Sous-groupes supplémentaires : Godié, Néyo, Bassa (selon classifications)
+  - **Krou oriental** : Bété, Dida, Godié, Néyo  
+  - **Krou occidental** : Grebo, Wè/Guéré, Krahn, Bassa
+  - **Krou côtier** : Kroumen (Tepo, Pye, Plapo), groupes maritimes historiques
+  (Classifications variables selon les sources : certains chercheurs intègrent le Bassa au krou occidental, d'autres en font un groupe distinct)
 - Aire géographique :
   Côte d’Ivoire, Libéria
 - Nombre de langues :
-  30–40
+  30–40 (estimation linguistique ; classification en débat)
 - Nombre total de locuteurs :
-  ~3 millions
+  ~10 millions (selon Ethnologue / SIL, répartis entre Côte d'Ivoire et Libéria)
 
 # 2. Peuples associés
-- Peuple 1 : Bété (PPL_BETE)
-- Peuple 2 : Dida (PPL_DIDA)
-- Peuple 3 : Grebo (PPL_GREBO)
+- Peuple 1 : Bété (Côte d'Ivoire)
+- Peuple 2 : Dida (Côte d'Ivoire)
+- Peuple 3 : Grebo (Libéria, Côte d'Ivoire)
+- Peuple 4 : Krahn (Libéria)
+- Peuple 5 : Bassa (Libéria)
+- Peuple 6 : Wè / Guéré (Côte d'Ivoire, Libéria)
+- Peuple 7 : Godié (Côte d'Ivoire)
+- Peuple 8 : Néyo (Côte d'Ivoire)
+- Peuple 9 : Kroumen (groupes côtiers historiques, Côte d'Ivoire et Libéria)
 
 # 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Bété  
-- Ethnie 2 : Dida  
-- Ethnie 3 : Wè / Guéré / Krahn  
+- Ethnie 1 : Bété (Côte d'Ivoire)
+- Ethnie 2 : Dida (Côte d'Ivoire)
+- Ethnie 3 : Wè / Guéré (Côte d'Ivoire, Libéria)
+- Ethnie 4 : Krahn (Libéria)
+- Ethnie 5 : Grebo (Libéria : comtés de Grand Kru, Maryland, River Gee)
+- Ethnie 6 : Bassa (Libéria : comtés de Bong, Grand Bassa, Montserrado, Margibi, River Cess)
+- Ethnie 7 : Godié (Côte d'Ivoire)
+- Ethnie 8 : Néyo (Côte d'Ivoire)
 (+ renvoi vers fiches ethniques dédiées)
 
 # 4. Caractéristiques linguistiques
@@ -59,7 +76,21 @@
   - Systèmes vocaliques complexes  
   - Harmonie vocalique dans certaines langues
 - Liens avec les familles voisines :
-  Contacts intenses avec les langues mandé (au nord) et les langues kwa (au sud-est de la Côte d’Ivoire).
+  **Relations avec les langues mandé (au nord)** :
+  - Contacts historiques marqués par des conflits et des migrations.
+  - Du XVᵉ au XIXᵉ siècle, les petits royaumes mandingues (notamment les groupes Mandé méridionaux) pratiquaient la traite esclavagiste pour alimenter les marchés transsahéliens.
+  - Les razzias mandingues ont poussé de nombreux groupes krou à migrer vers les zones forestières plus profondes pour échapper à ces incursions.
+  - Les invasions mané (XVIᵉ siècle) ont provoqué d'importants déplacements de populations et reconfiguré les territoires.
+  - Malgré ces tensions, des échanges commerciaux et culturels ont existé entre Krou et Mandé.
+  - Emprunts lexicaux limités, mais influence dans l'organisation sociale et le commerce.
+  
+  **Relations avec les langues kwa (au sud-est de la Côte d'Ivoire)** :
+  - Contacts pacifiques et commerciaux.
+  - Zone de transition linguistique dans la région d'Abidjan-Grand-Bassam.
+  
+  **Particularité des Krou face à la traite** :
+  - Les Krou des zones côtières et forestières ont été « largement épargnés » par la traite transatlantique (XVIIᵉ–XVIIIᵉ siècles).
+  - Paradoxalement, les Kroumen (marins krou) ont travaillé comme intermédiaires pour les comptoirs européens, y compris dans le cadre de la traite, tout en résistant à l'asservissement de leurs propres communautés.
 - Innovations clés :
   - Flexion minimale  
   - Importance des tons dans la grammaire  
@@ -67,24 +98,111 @@
 
 # 5. Histoire et origines
 - Origine probable :
-  Forêts guinéo-congolaises de Côte d’Ivoire et du Libéria.
+  Forêts guinéo-congolaises de Côte d'Ivoire et du Libéria.
+  Les Krou sont considérés comme l'un des peuples autochtones les plus anciens de la région forestière côtière ouest-africaine.
+  
 - Diffusion des langues :
-  Migration progressive des groupes krou à travers les forêts ivoiriennes ; interactions historiques avec les mandé du nord.
+  **Migrations anciennes** :
+  - Installation progressive dans la forêt guinéenne, entre le littoral atlantique et les zones de savane au nord.
+  - Zone d'occupation : environ 120 000 km², de Grand-Lahou (Côte d'Ivoire) à Monrovia (Libéria).
+  
+  **Facteurs de migration (XVᵉ–XIXᵉ siècles)** :
+  - Pression des invasions mané (XVIᵉ siècle).
+  - Razzias esclavagistes des royaumes mandingues (alimentant les marchés transsahéliens).
+  - Repli vers les forêts profondes pour échapper aux menaces extérieures.
+  
+  **Particularité côtière** :
+  - Les groupes côtiers (Kroumen) ont développé une culture maritime unique.
+  - Maîtrise exceptionnelle de la navigation côtière et du franchissement des barres (zones de déferlantes).
+  
 - Ruptures historiques :
-  - Colonisation française (Côte d’Ivoire) et américaine/libérienne (Libéria)  
-  - Déplacements massifs pendant les guerres civiles libériennes et ivoiriennes
+  - **XVIᵉ siècle** : Invasions mané, bouleversements démographiques.
+  - **XVIIᵉ–XIXᵉ siècles** : Contacts avec les Européens ; recrutement des Kroumen comme marins et dockers.
+  - **XIXᵉ siècle** : Colonisation française (Côte d'Ivoire) et fondation du Libéria (1847) par d'anciens esclaves afro-américains.
+  - **XXᵉ siècle** : Résistances anti-coloniales en Côte d'Ivoire (notamment dans le pays Bété).
+  - **1989–2003** : Guerres civiles libériennes, déplacements massifs de populations krou (notamment Krahn et Grebo).
+  - **2002–2011** : Crise ivoirienne, impacts sur les populations Bété, Wè et Dida.
+  
 - Zones de contact et métissages :
-  - Région ivoirienne de Gagnoa, Daloa, San-Pédro  
-  - Littoral libérien  
-  - Zones frontalières avec les mandé méridionaux
+  - **Côte d'Ivoire** : Gagnoa, Daloa, Divo, San-Pédro, Tabou (principal port de recrutement des Kroumen).
+  - **Libéria** : Comtés de Grand Kru, Maryland, River Gee, Sinoe, Grand Bassa, Bong.
+  - **Zones frontalières** : Contacts avec les Mandé méridionaux (Dan, Mano), mais aussi tensions historiques.
+  - **Littoral atlantique** : De Grand-Lahou à Monrovia, zone d'intense activité maritime et commerciale.
 
 # 6. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  ~3 millions
+  ~10 millions (estimation Ethnologue / SIL)
+  
 - Répartition par pays :
-  Côte d’Ivoire (Bété, Dida, Wè), Libéria (Grebo, Kru)
+  **Côte d'Ivoire** (majorité des locuteurs) :
+  - Bété : ~1,5 million
+  - Dida : ~300 000
+  - Wè/Guéré : ~500 000
+  - Godié, Néyo : ~100 000
+  - Kroumen côtiers : ~50 000
+  
+  **Libéria** :
+  - Bassa : ~600 000 (comtés de Bong, Grand Bassa, Montserrado, Margibi, River Cess)
+  - Grebo : ~400 000 (comtés de Grand Kru, Maryland, River Gee)
+  - Krahn : ~200 000
+  - Wè (dialectes libériens)
+  
 - Importance historique :
-  Les langues krou ont joué un rôle clé dans les résistances anti-coloniales, les circulations maritimes et la construction des identités ivoiriennes.
+  **Rôle maritime et commercial (XVIᵉ–XXᵉ siècles)** :
+  - Les **Kroumen** étaient des marins et dockers d'élite, réputés pour leur expertise à franchir les barres côtières (zones de déferlantes dangereuses).
+  - Dès le XVIIIᵉ siècle, ils étaient employés par les navires européens pour le transbordement des marchandises entre les bateaux au large et les côtes.
+  - Activité particulièrement développée à **Tabou** (Côte d'Ivoire), principal port de recrutement.
+  - Les Kroumen ont joué un rôle crucial dans le commerce du bois tropical, l'huile de palme et d'autres marchandises coloniales.
+  - **Paradoxe historique** : Bien que travaillant parfois pour des comptoirs esclavagistes, les Kroumen ont largement échappé à l'asservissement et ont maintenu leur autonomie.
+  
+  **Résistances et luttes politiques** :
+  - Les Krou, notamment les Bété et les Wè, ont été au cœur des résistances anti-coloniales en Côte d'Ivoire (XXᵉ siècle).
+  - Figure emblématique : Laurent Gbagbo (Bété), président de Côte d'Ivoire (2000–2011).
+  - Résistance à la pénétration française dans l'arrière-pays ivoirien.
+  
+  **Construction des identités nationales** :
+  - Les langues krou ont joué un rôle majeur dans la diversité linguistique et culturelle de la Côte d'Ivoire et du Libéria.
+  - Au Libéria, les Krou constituent l'un des principaux groupes autochtones face aux Américo-Libériens (descendants d'esclaves affranchis).
+  - Tensions politiques récurrentes entre groupes Krou et autres ethnies (notamment Mandé) en Côte d'Ivoire et au Libéria.
+  
+  **Créolisation linguistique** :
+  - Influence krou sur le créole libérien (« Kreyol » ou « Kru English Pidgin »), issu de la rencontre entre l'anglais créole des Afro-Américains et les langues autochtones krou.
 
 # 7. Sources
-- Williamson & Blench –
+
+## Sources académiques et linguistiques
+- **Williamson, Kay & Blench, Roger** (2000). *Niger-Congo*, in Heine, Bernd & Nurse, Derek (eds.), *African Languages: An Introduction*. Cambridge University Press.
+- **Ethnologue / SIL International** (2025). *Kru languages*. www.ethnologue.com
+- **Glottolog** (2025). *Kru* [krou1244]. glottolog.org
+- **Marchese, Lynell** (1979). *Tense/Aspect and the Development of Auxiliaries in Kru Languages*. Summer Institute of Linguistics.
+- **Marchese, Lynell** (1989). *Kru*, in Bendor-Samuel, John (ed.), *The Niger-Congo Languages*. University Press of America.
+
+## Sources historiques
+- **Welsh, James** (1588). *Relation de voyage* [première mention du terme "Crua"], publiée par Richard Hakluyt.
+  → Source primaire la plus ancienne identifiant les populations « Krao » de la côte libérienne.
+- **Persée** (1980). « Les Kroumen de la côte occidentale d'Afrique ». *Outre-Mers, Revue d'histoire*, vol. 67, n° 246.
+  www.persee.fr/doc/outre_0300-9513_1980_num_67_246_2242
+  → Analyse détaillée de l'origine du terme « Krou » et de l'histoire des Kroumen.
+
+## Sources anthropologiques et ethnographiques
+- **Institut de Recherche pour le Développement (IRD)** – Études sur les migrations mané et les contacts Krou-Mandé.
+  horizon.documentation.ird.fr
+- **African Language Atlas** (UNESCO).
+- **Vansina, Jan** – Travaux sur les migrations et l'histoire des peuples de la forêt guinéenne.
+
+## Sources démographiques
+- **SIL Ethnologue** (2025). Statistiques sur les locuteurs de langues krou.
+- **CIA World Factbook** – Démographie ethnolinguistique du Libéria et de la Côte d'Ivoire.
+- **Recensements nationaux** : Libéria (2008), Côte d'Ivoire (2014).
+
+## Références sur les Kroumen et l'histoire maritime
+- **Images Défense** (France) – « Tabou, Côte d'Ivoire : la barque kroumen, légende d'origine ».
+  imagesdefense.gouv.fr
+  → Documentation sur le rôle des Kroumen dans le commerce maritime et le transbordement.
+- **Rezoivoire.net** – « Les Krous : peuple de Côte d'Ivoire ».
+  → Synthèse des connaissances sur l'histoire et la culture krou.
+
+## Note méthodologique
+La littérature sur les langues krou est dominée par des linguistes occidentaux (notamment américains et français).
+**Manque identifié** : Peu de publications accessibles de chercheurs autochtones krou (Bété, Dida, Grebo, Wè, Bassa) sur leur propre histoire linguistique et culturelle.
+→ Nécessité de développer une recherche endogène et décoloniale sur les langues krou.
