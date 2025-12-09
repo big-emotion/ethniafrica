@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
 
     for (const tag of tags) {
       try {
-        revalidateTag(tag);
+        revalidateTag(tag, "max");
         invalidatedTags.push(tag);
 
         // Incrémenter la version correspondante pour invalider le cache client

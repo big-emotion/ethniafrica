@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import archiver from "archiver";
-import * as XLSX from "xlsx";
+import ExcelJS from "exceljs";
 import { corsOptionsResponse } from "@/lib/api/cors";
 import {
   getRegions,
@@ -141,7 +141,7 @@ function generateCountryCSV(
 
 // Charger toutes les données pour Excel
 async function loadAllDataForExcel() {
-  const workbook = XLSX.utils.book_new();
+  const workbook = new ExcelJS.Workbook();
 
   // Charger les données depuis Supabase
   const totalPopulation = await getTotalPopulationAfrica();
@@ -149,13 +149,12 @@ async function loadAllDataForExcel() {
   const allCountries = await getAllCountries();
 
   // Feuille 1: Index / Résumé
-  const summaryData: (string | number)[][] = [
+  const summarySheet = workbook.addWorksheet("Summary");
+  summarySheet.addRows([
     ["Total Population of Africa", totalPopulation],
     ["Number of Regions", regions.length],
     ["Number of Countries", allCountries.length],
-  ];
-  const summarySheet = XLSX.utils.aoa_to_sheet(summaryData);
-  XLSX.utils.book_append_sheet(workbook, summarySheet, "Summary");
+  ]);
 
   // Feuille par région
   for (const region of regions) {
@@ -165,18 +164,18 @@ async function loadAllDataForExcel() {
     );
 
     // Créer une feuille pour chaque région avec les pays
-    const regionRows: (string | number)[][] = [
-      [
-        "Country",
-        "Population",
-        "% in Region",
-        "% in Africa",
-        "Ethnicity Count",
-      ],
-    ];
+    const regionSheet = workbook.addWorksheet(regionName.substring(0, 31)); // Limite de 31 caractères pour les noms de feuilles
+
+    regionSheet.addRow([
+      "Country",
+      "Population",
+      "% in Region",
+      "% in Africa",
+      "Ethnicity Count",
+    ]);
 
     for (const country of countriesInRegion) {
-      regionRows.push([
+      regionSheet.addRow([
         country.name,
         country.data.population,
         country.data.percentageInRegion.toFixed(2),
@@ -184,13 +183,6 @@ async function loadAllDataForExcel() {
         country.data.ethnicityCount,
       ]);
     }
-
-    const regionSheet = XLSX.utils.aoa_to_sheet(regionRows);
-    XLSX.utils.book_append_sheet(
-      workbook,
-      regionSheet,
-      regionName.substring(0, 31)
-    ); // Limite de 31 caractères pour les noms de feuilles
   }
 
   return workbook;
@@ -287,10 +279,7 @@ export async function GET(request: NextRequest) {
     } else if (format === "excel") {
       // Générer un fichier Excel
       const workbook = await loadAllDataForExcel();
-      const excelBuffer = XLSX.write(workbook, {
-        type: "buffer",
-        bookType: "xlsx",
-      });
+      const excelBuffer = await workbook.xlsx.writeBuffer();
 
       const response = new NextResponse(excelBuffer, {
         status: 200,
