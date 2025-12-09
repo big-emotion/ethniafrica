@@ -1,0 +1,402 @@
+# Nom du peuple
+- Nom principal : Efik
+- Auto-appellation (endonyme) : Efik (pluriel : Mme Efik)
+- Exonymes / appellations historiques : "Calabar people" (terme colonial anglais), "Carabali" (terme utilisé à Cuba pour désigner les esclaves d'origine efik et ibibio)
+- Origine des termes (exonymes) : "Calabar" provient du nom portugais du port (Calabar), devenu synonyme du peuple. "Carabali" est une déformation espagnole de "Calabar", utilisée dans le contexte de la traite atlantique.
+- Pourquoi certains termes posent problème (si applicable) : "Calabar people" est réducteur car il amalgame les Efik avec d'autres groupes de la région (Efut, Qua). "Carabali" est un terme colonial lié à l'esclavage, porteur d'un traumatisme historique.
+- Usage contemporain des appellations : Le terme "Efik" est universellement préféré. "Calabar" reste utilisé géographiquement mais non ethniquement.
+- Famille linguistique principale : Niger-Congo – Bénoué-Congo (branche Cross River, sous-groupe Lower Cross)
+- Groupe ethno-linguistique : Cross River (groupe Efik-Ibibio)
+- Région historique : Calabar (embouchure de la Cross River), sud-est du Nigeria
+- Pays actuels : Nigeria (État de Cross River, principalement Calabar et environs)
+- Identifiant peuple (ID) : PPL_EFIK
+
+# 1. Ethnies incluses dans le peuple
+- Efik du littoral (Calabar proprement dit) – groupe dominant, fondateurs de Creek Town et Duke Town
+- Efik d'Atakpa – communauté historique de Calabar
+- Efik d'Henshaw Town – l'un des quartiers historiques de Calabar
+- Efik d'Obutong – communauté riveraine
+- Efik de Creek Town – l'une des principales divisions historiques
+- Efik de Duke Town – l'autre principale division historique, rivale de Creek Town
+- Efik d'Ikot Nakanda – communauté périphérique
+- Efik d'Ikot Offiong – communauté périphérique
+
+# 2. Origines, migrations et formation du peuple
+
+## Origines anciennes (théories archéologiques, linguistiques, génétiques) :
+- **Théorie migratoire depuis le Cameroun** : selon les traditions orales efik, les ancêtres des Efik auraient migré depuis la région d'Uruan (actuel sud-est du Nigeria, frontière avec le Cameroun) vers le XVe-XVIe siècle
+- **Origine Ibibio** : les Efik sont linguistiquement et culturellement proches des Ibibio, suggérant une origine commune ou une séparation récente
+- **Théorie d'Ibom** : certains récits oraux mentionnent une origine depuis la région d'Ibom (territoire ibibio), suivie d'une migration vers la côte
+- **Influences Igbo et Ibibio** : les Efik ont intégré des éléments culturels de leurs voisins igbo et ibibio, créant une identité syncrétique
+- **Preuves linguistiques** : la langue efik appartient à la famille Cross River, proche de l'ibibio, de l'annang et de l'oron
+- **Preuves génétiques** : les Efik partagent des marqueurs génétiques avec les peuples de la région Cross River et du delta du Niger
+
+## Période de formation estimée :
+- **XVe-XVIe siècles** : migration depuis Uruan vers l'embouchure de la Cross River
+- **XVIIe siècle** : établissement des premières communautés à Creek Town et Duke Town
+- **XVIIIe siècle** : consolidation de l'identité efik distincte, développement du commerce atlantique
+- **XIXe siècle** : apogée de la puissance commerciale efik, Calabar devient un port majeur
+
+## Routes migratoires principales :
+- Migration depuis Uruan (région d'Ibom) vers le sud-est
+- Descente le long de la Cross River vers l'embouchure
+- Établissement progressif sur les rives de la Cross River et de ses affluents
+- Expansion vers les îles et les zones côtières
+
+## Zones d'établissement historiques :
+- **Creek Town (Obio Oko)** : l'une des premières communautés efik, fondée au XVIIe siècle
+- **Duke Town (Atakpa)** : rivale historique de Creek Town, centre commercial majeur
+- **Old Town (Obutong)** : l'une des plus anciennes communautés
+- **Henshaw Town** : quartier historique de Calabar
+- **Îles de la Cross River** : établissements sur les îles fluviales
+
+## Unifications / divisions :
+- **Rivalité Creek Town vs Duke Town** : compétition commerciale et politique entre les deux principales communautés efik (XVIIIe-XIXe siècles)
+- **Système des "Houses"** : organisation en maisons commerciales (Canoe Houses), unités politiques et économiques dirigées par des chefs marchands
+- **Unification coloniale** : sous la colonisation britannique, les communautés efik furent regroupées administrativement sous le Calabar District
+- **Ekpe Society** : société secrète pan-efik servant de force unificatrice malgré les divisions politiques
+
+## Influences externes (peuples voisins, colonisation, commerce) :
+- **Ibibio et Annang** : échanges culturels et linguistiques, mariages inter-ethniques
+- **Igbo** : commerce, partage du système d'écriture Nsibidi
+- **Ijaw** : contacts commerciaux dans le delta du Niger
+- **Portugais (XVe-XVIe siècles)** : premiers contacts européens, introduction du christianisme et du commerce atlantique
+- **Néerlandais (XVIIe siècle)** : commerce de l'huile de palme, de l'ivoire et des esclaves
+- **Britanniques (XVIIIe-XXe siècles)** : commerce intensif, traite atlantique, colonisation (1884), imposition du protectorat de Calabar
+- **Missionnaires chrétiens (XIXe siècle)** : introduction du presbytérianisme (Mary Slessor, Hope Waddell), éducation occidentale, alphabétisation
+
+## Événements historiques majeurs ayant façonné le peuple :
+- **Fondation de Creek Town et Duke Town (XVIIe siècle)** : établissement des centres politiques et commerciaux efik
+- **Traite atlantique (XVIIe-XIXe siècles)** : participation active au commerce des esclaves, enrichissement des élites marchandes, traumatisme collectif
+- **Arrivée des missionnaires presbytériens (1846)** : Hope Waddell établit la première mission à Creek Town, début de la christianisation massive
+- **Traité de protection britannique (1884)** : Calabar devient un protectorat britannique, fin de l'indépendance politique efik
+- **Abolition de l'esclavage et des sacrifices humains (fin XIXe siècle)** : pression britannique et missionnaire pour l'abandon des pratiques traditionnelles
+- **Guerre civile du Biafra (1967-1970)** : bien que non directement impliqués, les Efik furent affectés par le conflit dans le sud-est du Nigeria
+- **Création de l'État de Cross River (1967)** : reconnaissance administrative de la région efik
+
+# 3. Organisation et structure interne
+
+## Système politique traditionnel :
+- **Système des "Houses" (Canoe Houses)** : unités politiques et économiques dirigées par des chefs marchands (Etubom), basées sur le commerce et la navigation
+- **Obong (Roi)** : chef suprême de chaque communauté efik (Obong d'Calabar, Obong de Creek Town, etc.), autorité politique et religieuse
+- **Conseil des chefs (Etubom)** : assemblée des chefs de maisons, décisions collectives
+- **Ekpe Society** : société secrète régulant la vie sociale, politique et économique, tribunal suprême, force de police
+- **Système de titres** : hiérarchie de titres au sein de l'Ekpe (Eyamba, Ebonko, Mboko, etc.)
+
+## Organisation clanique :
+- **Ufok (lignage)** : unité de base de l'organisation sociale, descendance patrilinéaire
+- **Esien Ufok (maison familiale)** : résidence commune du lignage
+- **Système segmentaire** : chaque communauté efik est composée de plusieurs lignages
+- **Exogamie clanique** : interdiction de mariage au sein du même ufok
+
+## Rôle des lignages :
+- **Propriété foncière** : la terre appartient au lignage, gérée collectivement
+- **Solidarité économique** : entraide mutuelle, partage des ressources
+- **Culte des ancêtres** : chaque lignage honore ses ancêtres fondateurs
+- **Transmission des titres** : les titres Ekpe et les positions de pouvoir se transmettent au sein des lignages
+
+## Autorité religieuse :
+- **Obong** : autorité religieuse suprême, médiateur entre Abasi et les hommes
+- **Prêtres d'Ekpe** : gardiens des secrets de la société Ekpe, officiants des rituels
+- **Ndem priests** : prêtres des esprits de l'eau, guérisseurs
+- **Dibia (emprunté aux Igbo)** : devins et guérisseurs traditionnels
+
+# 4. Langues et sous-familles
+- Langue principale : Efik
+- Codes ISO : ISO 639-2 : efi | ISO 639-3 : efi
+- Dialectes :
+  * Efik de Calabar (dialecte standard)
+  * Efik d'Uruan (dialecte archaïque, proche de l'ibibio)
+  * Variations mineures entre Creek Town et Duke Town
+- Rôle véhiculaire :
+  * Langue de commerce dans la région de Calabar (XVIIIe-XIXe siècles)
+  * Langue liturgique : traduction de la Bible par les missionnaires presbytériens (1862)
+  * Langue d'éducation : utilisée dans les écoles missionnaires
+  * Système d'écriture Nsibidi : écriture idéographique ancienne, partagée avec les Igbo et les Ibibio, utilisée par les sociétés secrètes
+
+# 5. Culture, rites et traditions
+
+## Rites majeurs :
+- **Ekpe initiation** : rite d'initiation à la société secrète Ekpe, passage obligé pour les hommes de statut
+- **Ebre ceremony** : cérémonie de mariage traditionnel, négociation de la dot, échange de cadeaux
+- **Ibok ceremony** : rite funéraire, honneur aux défunts, passage vers le monde des ancêtres
+- **Fattening room (Mbopo)** : rite de passage pour les jeunes filles, isolement et préparation au mariage (pratique en déclin)
+- **New Yam Festival (Leboku)** : célébration de la première récolte d'ignames, offrandes aux ancêtres et aux divinités
+- **Ndem ceremony** : rite d'apaisement des esprits de l'eau
+
+## Symboles :
+- **Ekpe drum (Ekwe)** : tambour sacré de la société Ekpe, symbole d'autorité
+- **Leopard (Ekpe)** : animal totémique, symbole de puissance et de justice
+- **Nsibidi symbols** : écriture sacrée, symboles de connaissance ésotérique
+- **Manille (monnaie)** : bracelet de cuivre utilisé comme monnaie et symbole de richesse
+- **Masques Ekpe** : masques représentant l'esprit du léopard
+
+## Arts et musique :
+- **Masques Ekpe** : masques rituels représentant l'esprit du léopard, utilisés lors des cérémonies Ekpe
+- **Nsibidi art** : peintures et gravures utilisant l'écriture Nsibidi, décoration des maisons et des objets sacrés
+- **Sculpture sur bois** : statues, masques, tambours sculptés
+- **Poterie** : tradition de poterie utilitaire et cérémonielle
+- **Tissage** : production de textiles traditionnels
+- **Musique Ekpe** : tambours (Ekwe, Ema), gongs, chants rituels
+- **Ekombi dance** : danse traditionnelle efik, accompagnée de tambours et de chants
+- **Fattening room songs** : chants traditionnels des jeunes filles en isolement
+
+## Spiritualités :
+
+### Cosmologie efik :
+
+La spiritualité efik traditionnelle est un système complexe structurant la compréhension du monde, de l'homme et de la nature. Bien que largement christianisée depuis le XIXe siècle, la cosmologie traditionnelle continue d'influencer les pratiques culturelles contemporaines.
+
+### Structure cosmologique :
+
+**1. Monde Supérieur (Enyong)**
+- Demeure d'Abasi (Dieu suprême)
+- Monde de la lumière et de l'ordre divin
+- Source des bénédictions et des lois morales
+
+**2. Monde des Esprits (Eka Abasi)**
+- Monde invisible coexistant avec le monde physique
+- Demeure des ancêtres, des esprits de la nature et des forces spirituelles
+- Accessible via les rêves, les transes et les rituels
+
+**3. Monde Terrestre (Isong)**
+- Monde physique où vivent les humains
+- Lieu de manifestation des forces spirituelles
+- Espace de l'action morale et du destin
+
+**4. Monde Aquatique (Ndem)**
+- Monde des esprits de l'eau
+- Royaume mystérieux et dangereux
+- Source de richesse (pêche, commerce) mais aussi de dangers
+
+### Divinités et forces spirituelles :
+
+**Abasi / Abassi (Dieu Suprême)**
+- Endonyme : Abasi, Abassi (selon les transcriptions)
+- Créateur de l'univers et de l'humanité
+- Transcendant, distant, rarement invoqué directement
+- Attributs : omniscient, omnipotent, éternel, invisible
+- Pas de culte direct, mais vénération via les esprits et les ancêtres
+- Exonyme : "Supreme God" (anglais)
+
+**Atai (Épouse d'Abasi)**
+- Endonyme : Atai
+- Épouse d'Abasi dans le mythe de création efik
+- Rôle : médiatrice entre Abasi et l'humanité
+- Mythe : selon la tradition, Abasi voulait garder les premiers humains (Etiyin et Ejaw) dans le ciel, mais Atai persuada Abasi de les laisser descendre sur terre, à condition qu'ils ne cultivent pas la terre ni ne se reproduisent. Les humains transgressèrent ces interdits, provoquant la colère d'Abasi et l'introduction de la mort dans le monde.
+- Symbole : ambivalence de la condition humaine, liberté et mortalité
+
+**Eka Abasi (Mère de Dieu / Terre Mère)**
+- Endonyme : Eka Abasi (Eka = mère, Abasi = Dieu)
+- Déesse de la terre et de la fertilité
+- Mère nourricière, protectrice des récoltes
+- Culte : offrandes lors des semailles et des récoltes
+- Sanctuaires : autels dans les champs et les villages
+
+**Ndem (Esprits de l'Eau)**
+- Endonyme : Ndem (pluriel : Mme Ndem)
+- Esprits habitant les rivières, les lacs et l'océan
+- Ambivalents : peuvent apporter richesse (pêche abondante, commerce prospère) ou malheur (noyades, tempêtes)
+- Apparence : souvent décrits comme des êtres mi-humains mi-poissons, d'une beauté surnaturelle
+- Culte : offrandes régulières (nourriture, objets précieux) jetées dans l'eau
+- Prêtres Ndem : médiateurs avec les esprits de l'eau, guérisseurs
+- Tabous : interdiction de pêcher ou de naviguer certains jours sacrés
+- Manifestations : apparitions dans les rêves, possessions spirituelles
+- Exonyme : "Water spirits" (anglais), "Mami Wata" (terme régional, bien que distinct)
+
+**Ekpe (Esprit du Léopard)**
+- Endonyme : Ekpe (léopard)
+- Esprit totémique du léopard, symbole de puissance, de justice et d'autorité
+- Incarné par la société secrète Ekpe
+- Rôle : maintien de l'ordre social, exécution des jugements, protection de la communauté
+- Manifestations : masques Ekpe, tambours sacrés, danses rituelles
+- Culte : cérémonies Ekpe, initiations, sacrifices
+- Tabous : interdiction de tuer un léopard, respect absolu des décisions Ekpe
+- Exonyme : "Leopard Spirit" (anglais), "Ngbe" (terme ibibio apparenté)
+
+**Idiok (Esprits de la Forêt)**
+- Endonyme : Idiok
+- Esprits habitant les forêts sacrées
+- Gardiens de la faune et de la flore
+- Dangereux pour les intrus non initiés
+- Culte : offrandes avant la chasse ou la cueillette
+
+**Ikan (Esprits Ancestraux)**
+- Endonyme : Ikan (ancêtres)
+- Esprits des ancêtres défunts
+- Rôle : protection, guidance, intercession auprès d'Abasi
+- Culte : autels domestiques, offrandes régulières, libations
+- Manifestations : rêves, possessions, apparitions
+- Réincarnation : croyance en la réincarnation des ancêtres dans leurs descendants
+
+**Ekpo (Esprits des Morts)**
+- Endonyme : Ekpo
+- Esprits des morts récents, parfois malveillants
+- Distincts des ancêtres vénérables (Ikan)
+- Rôle : peuvent causer des maladies ou des malheurs s'ils ne sont pas apaisés
+- Culte : rites funéraires élaborés pour assurer le passage paisible vers le monde des ancêtres
+- Masques Ekpo : utilisés lors des cérémonies funéraires
+
+**Abassi Enyong (Dieu du Ciel / Tonnerre)**
+- Endonyme : Abassi Enyong
+- Divinité du tonnerre et des phénomènes célestes
+- Parfois confondu avec Abasi
+- Manifestations : tonnerre, éclairs, pluie
+- Culte : invocations lors des sécheresses ou des tempêtes
+
+**Etefia (Esprit de la Maladie)**
+- Endonyme : Etefia
+- Esprit causant les maladies et les épidémies
+- Apaisé par des offrandes et des rituels de purification
+- Prêtres guérisseurs : spécialistes de l'exorcisme d'Etefia
+
+### Conception de l'homme :
+
+**Dualité corps-esprit :**
+- **Ubong** (corps physique) : enveloppe matérielle, temporaire
+- **Ekpo** (âme/esprit) : essence spirituelle, éternelle
+- **Iso** (ombre/double spirituel) : projection spirituelle de la personne
+
+**Cycle de vie spirituel :**
+1. Pré-existence : l'esprit existe avant la naissance dans le monde spirituel
+2. Naissance : incarnation, attribution du destin
+3. Vie terrestre : accomplissement du destin, actions morales
+4. Mort : séparation du corps et de l'esprit
+5. Passage : rites funéraires pour assurer le voyage vers le monde des ancêtres
+6. Ancestralité : transformation en ancêtre vénérable (Ikan)
+7. Réincarnation : retour possible dans la lignée familiale
+
+**Concept de personne (Mme Efik) :**
+- L'homme est un être social : "Ete owo, ete owo" (Une personne est une personne grâce aux autres personnes)
+- Valeurs : **Ekondo** (respect), **Ubok** (hospitalité), **Ufan** (sagesse), **Ekpri** (courage)
+- Honneur familial : le comportement individuel reflète sur toute la famille et le lignage
+
+### Conception de la nature :
+
+**Sacralité de l'eau :**
+- La Cross River et ses affluents sont sacrés, demeure des Ndem
+- Interdiction de polluer ou de souiller les eaux sacrées
+- Rites de purification aquatique
+
+**Sacralité de la forêt :**
+- Forêts sacrées (Idiok) : lieux interdits, sanctuaires des esprits
+- Arbres sacrés : certains arbres sont considérés comme demeures d'esprits
+- Chasse rituelle : offrandes aux esprits de la forêt avant la chasse
+
+**Animaux totémiques :**
+- **Léopard (Ekpe)** : animal sacré, symbole de puissance et de justice, interdiction de tuer
+- **Python** : serpent sacré, associé aux esprits de l'eau
+- **Tortue** : symbole de sagesse et de longévité
+
+**Plantes sacrées :**
+- **Palmier à huile** : arbre de vie, source de nourriture et de richesse
+- **Igname** : plante sacrée, symbole de fertilité et de prospérité
+- **Herbes médicinales** : utilisées dans les rituels de guérison et de purification
+
+**Harmonie cosmique :**
+- Équilibre entre les mondes : maintien de l'harmonie entre le monde supérieur, le monde des esprits et le monde terrestre
+- Respect des tabous : éviter les actions qui perturbent l'ordre cosmique
+- Purification : rituels de nettoyage après transgression
+
+### Rites et pratiques spirituelles :
+
+**Société secrète Ekpe (Ngbe) :**
+- **Organisation** : société initiatique masculine, hiérarchie de grades (Eyamba, Ebonko, Mboko, Nyamkpe, Bakara, Mboko Mboko, Oku Akama)
+- **Fonctions** : régulation sociale, tribunal suprême, force de police, exécution des jugements
+- **Initiation** : rite de passage obligatoire pour les hommes de statut, épreuves physiques et spirituelles, révélation des secrets Ekpe
+- **Cérémonies** : danses masquées, tambours sacrés, chants rituels
+- **Symboles** : masques du léopard, tambours Ekwe, écriture Nsibidi
+- **Influence** : l'Ekpe a été exporté à Cuba via la traite atlantique, donnant naissance à la société Abakuá
+
+**Divination :**
+- **Ifa divination** : système divinatoire utilisant des noix de palme ou des cauris (emprunté aux Yoruba)
+- **Consultation des ancêtres** : communication avec les esprits ancestraux via les rêves ou les transes
+- **Prêtres-devins** : spécialistes de la divination, consultés avant les décisions importantes
+
+**Sacrifices et offrandes :**
+- **Sacrifices d'animaux** : poulets, chèvres, béliers offerts aux divinités et aux ancêtres
+- **Offrandes alimentaires** : nourriture, vin de palme, noix de kola
+- **Libations** : versement de liquides sur le sol pour honorer les ancêtres
+- **Sacrifices humains** (pratique abolie au XIXe siècle) : offrandes humaines lors des funérailles de personnages importants, pratique interdite par les Britanniques et les missionnaires
+
+**Purification :**
+- **Bains rituels** : purification avec des herbes sacrées et de l'eau de rivière
+- **Fumigation** : purification par la fumée d'herbes sacrées
+- **Exorcisme** : expulsion des esprits malveillants
+
+**Rites funéraires :**
+- **Veillée funèbre** : veille du corps, chants, danses, récits de la vie du défunt
+- **Enterrement** : inhumation avec objets personnels, offrandes
+- **Cérémonies post-funéraires** : rites pour assurer le passage paisible vers le monde des ancêtres
+- **Masques Ekpo** : danses masquées représentant les esprits des morts
+
+### Influence du christianisme :
+
+Depuis l'arrivée des missionnaires presbytériens en 1846 (Hope Waddell, Mary Slessor), la majorité des Efik ont adopté le christianisme, créant un syncrétisme complexe :
+- **Abasi assimilé au Dieu chrétien**
+- **Abandon des sacrifices humains et de certaines pratiques traditionnelles**
+- **Persistance de l'Ekpe** : bien que christianisés, de nombreux Efik maintiennent leur appartenance à l'Ekpe
+- **Syncrétisme** : intégration de pratiques chrétiennes et traditionnelles (culte des ancêtres, offrandes)
+- **Tension** : conflit entre modernité chrétienne et traditions ancestrales
+
+### Influence diasporique (Cuba - Abakuá) :
+
+La société Ekpe a été transplantée à Cuba via la traite atlantique, donnant naissance à la société secrète **Abakuá** (ou Ñáñigo), toujours active aujourd'hui :
+- **Origine** : esclaves efik et ibibio déportés à Cuba (XVIIIe-XIXe siècles)
+- **Structure** : organisation similaire à l'Ekpe, hiérarchie de grades, initiations
+- **Symboles** : masques, tambours, écriture Anaforuana (dérivée du Nsibidi)
+- **Influence** : la société Abakuá a joué un rôle majeur dans la culture afro-cubaine, influençant la musique, la danse et la spiritualité
+
+### Sources spirituelles :
+- Talbot, P. Amaury. *In the Shadow of the Bush* (1912) – étude ethnographique classique des peuples du sud-est du Nigeria
+- Simmons, Donald C. "Efik Divination, Ordeals and Omens" (1956)
+- Aye, Ekei Essien. *Old Calabar Through the Centuries* (2000)
+- Miller, Ivor. *Voice of the Leopard: African Secret Societies and Cuba* (2009) – étude sur l'influence de l'Ekpe à Cuba
+- Noah, Monday Efiong. *Old Calabar: The City States and the Europeans 1800-1885* (1980)
+- Recherches web (2025) – sources académiques et historiques diverses
+
+# 6. Rôle historique et interactions régionales
+
+## Royaumes / chefferies :
+- **Creek Town (Obio Oko)** : l'une des principales communautés efik, fondée au XVIIe siècle, centre politique et religieux
+- **Duke Town (Atakpa)** : rivale de Creek Town, centre commercial majeur, siège des principaux marchands efik
+- **Old Town (Obutong)** : l'une des plus anciennes communautés efik
+- **Henshaw Town** : quartier historique de Calabar
+- **Système des "Houses"** : maisons commerciales (Canoe Houses) dirigées par des chefs marchands (Etubom), unités politiques et économiques autonomes
+
+## Relations avec peuples voisins :
+- **Ibibio et Annang** : peuples apparentés linguistiquement et culturellement, échanges commerciaux et matrimoniaux
+- **Igbo** : commerce, partage du système d'écriture Nsibidi, influences culturelles mutuelles
+- **Ijaw** : contacts commerciaux dans le delta du Niger, compétition pour le contrôle du commerce atlantique
+- **Ekoi** : échanges culturels, influences artistiques
+- **Européens** : relations commerciales intenses (Portugais, Néerlandais, Britanniques) depuis le XVe siècle
+
+## Conflits / alliances :
+- **Rivalité Creek Town vs Duke Town** : compétition commerciale et politique, conflits occasionnels
+- **Guerre contre les Britanniques (1884)** : résistance efik à l'imposition du protectorat britannique, bombardement de Calabar
+- **Abolition de l'esclavage** : pression britannique pour l'abandon de la traite atlantique, reconversion vers le commerce de l'huile de palme
+- **Abolition des sacrifices humains** : campagne missionnaire et coloniale pour l'interdiction des pratiques traditionnelles
+
+## Diaspora :
+- **Diaspora atlantique** : déportation massive lors de la traite négrière (XVIIe-XIXe siècles), présence efik significative à Cuba (société Abakuá), en Jamaïque et aux États-Unis
+- **Diaspora contemporaine** : migration vers les grandes villes nigérianes (Lagos, Abuja) et à l'étranger (Royaume-Uni, États-Unis, Canada)
+- **Influence culturelle** : la société Abakuá à Cuba maintient les traditions efik (masques, tambours, écriture Nsibidi/Anaforuana)
+
+# 7. Démographie globale
+- Population totale : 350 000 (estimation 2025)
+- Répartition par pays :
+  * Nigeria : 350 000 (principalement État de Cross River, Calabar et environs)
+  * Diaspora : estimée à 50 000+ (Cuba, États-Unis, Royaume-Uni, etc.)
+- Année de référence : 2025
+- Source : Ethnologue (efi), Calabar Historical Records, estimations AFRIK
+
+# 8. Sources
+- Talbot, P. Amaury. *In the Shadow of the Bush* (1912)
+- Simmons, Donald C. "Efik Divination, Ordeals and Omens" (1956)
+- Aye, Ekei Essien. *Old Calabar Through the Centuries* (2000)
+- Noah, Monday Efiong. *Old Calabar: The City States and the Europeans 1800-1885* (1980)
+- Miller, Ivor. *Voice of the Leopard: African Secret Societies and Cuba* (2009)
+- Latham, A. J. H. *Old Calabar 1600-1891: The Impact of the International Economy upon a Traditional Society* (1973)
+- Ethnologue (SIL International) – données linguistiques (code efi)
+- Calabar Historical Records – archives historiques de Calabar
+- Recherches web (2025) – sources académiques et historiques diverses

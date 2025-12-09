@@ -1,0 +1,354 @@
+# Nom du peuple
+- Nom principal du peuple : Bété
+- Auto-appellation (endonyme) : Bété (prononcé [bété])
+- Exonymes / appellations historiques : "Bété" est l'appellation la plus courante, utilisée tant par les Bété eux-mêmes que par les autres groupes
+- Origine des termes (exonymes) : Le terme "Bété" est d'origine locale, sans connotation coloniale négative
+- Pourquoi certains termes posent problème (si applicable) : Aucun terme problématique identifié
+- Usage contemporain des appellations : "Bété" est universellement accepté et utilisé
+- Famille linguistique principale : Niger-Congo – Krou (FLG_KROU)
+- Groupe ethno-linguistique : Krou occidental
+- Région historique : Forêt centrale-ouest de la Côte d'Ivoire
+- Pays actuels : Côte d'Ivoire (principalement régions de Gagnoa, Daloa, Issia, Soubré, Guéyo)
+- Identifiant peuple (ID) : PPL_BETE
+
+# 1. Ethnies incluses dans le peuple
+- Bété de Gagnoa – groupe central, région de Gagnoa
+- Bété de Daloa – groupe septentrional, région de Daloa
+- Bété d'Oumé – groupe oriental, région d'Oumé
+- Bété d'Issia – groupe occidental, région d'Issia
+- Bété de Soubré – groupe méridional, région de Soubré
+- Bété de Guéyo – groupe côtier, région de Guéyo
+- 93 sous-groupes distincts selon les études ethnographiques
+
+# 2. Origines, migrations et formation du peuple
+
+## Origines anciennes (théories archéologiques, linguistiques, génétiques) :
+- **Origine forestière** : les Bété sont un peuple forestier ancien, établi dans la forêt centrale-ouest de la Côte d'Ivoire depuis plusieurs siècles
+- **Théorie autochtone** : certaines traditions orales suggèrent que les Bété sont autochtones de leur région actuelle
+- **Théorie migratoire** : d'autres récits évoquent des migrations depuis l'ouest (Liberia, Guinée) ou le nord (savane)
+- **Preuves linguistiques** : la langue bété appartient à la famille krou, apparentée aux langues des peuples Wè, Guéré, Krahn, Grebo
+- **Liens avec les peuples krou** : les Bété partagent des traits culturels et linguistiques avec les autres peuples krou (Wè, Guéré, Krahn)
+
+## Période de formation estimée :
+- **Période ancienne (avant le XVe siècle)** : établissement dans la forêt centrale-ouest de la Côte d'Ivoire
+- **XVe-XVIIIe siècles** : consolidation de l'identité bété, expansion territoriale
+- **XIXe siècle** : contacts avec les peuples voisins (Gouro, Dida, Wè), commerce
+- **1893-1960** : colonisation française, résistance bété
+
+## Routes migratoires principales :
+- Migrations internes dans la forêt centrale-ouest de la Côte d'Ivoire
+- Expansion progressive depuis un foyer central (hypothèse)
+- Mouvements vers le sud (côte) et l'ouest (frontière libérienne)
+
+## Zones d'établissement historiques :
+- **Gagnoa** : centre historique du pays bété
+- **Daloa** : région septentrionale, zone de transition avec la savane
+- **Issia** : région occidentale, contacts avec les Wè
+- **Oumé** : région orientale, contacts avec les Gouro
+- **Soubré** : région méridionale, expansion vers la côte
+- **Guéyo** : région côtière, contacts avec les Dida et les Néyo
+
+## Unifications / divisions :
+- **Absence d'État centralisé** : les Bété n'ont jamais formé de royaume ou d'État centralisé, organisation en villages autonomes
+- **Lignages et clans** : unité de base de l'organisation sociale, chaque village est composé de plusieurs lignages
+- **Alliances inter-villageoises** : alliances temporaires pour la défense ou la chasse
+- **Divisions internes** : rivalités entre villages, conflits fonciers
+
+## Influences externes (peuples voisins, colonisation, commerce) :
+- **Wè et Guéré** : peuples krou voisins, échanges culturels (masques, rites), rivalités territoriales
+- **Gouro** : peuple mandé voisin, échanges commerciaux, influences culturelles
+- **Dida et Néyo** : peuples côtiers, commerce du sel et du poisson
+- **Baoulé** : peuple akan, contacts commerciaux, rivalités
+- **Colonisation française (1893-1960)** : résistance bété, révoltes (1906-1920), pacification forcée, travail forcé, plantations coloniales
+- **Christianisme** : évangélisation par les missionnaires catholiques et protestants (XXe siècle)
+
+## Événements historiques majeurs ayant façonné le peuple :
+- **Résistance à la colonisation française (1893-1920)** : guerres de résistance, révoltes contre le travail forcé et les réquisitions
+- **Pacification coloniale (1920-1945)** : soumission forcée, administration coloniale, plantations de café et de cacao
+- **Indépendance de la Côte d'Ivoire (1960)** : intégration dans l'État ivoirien
+- **Guerre civile ivoirienne (2002-2011)** : région bété fortement affectée, soutien à Laurent Gbagbo (président bété), violences, déplacements de populations
+- **Crise post-électorale (2010-2011)** : affrontements, massacres, traumatisme collectif
+
+# 3. Organisation et structure interne
+
+## Système politique traditionnel :
+- **Villages autonomes** : chaque village (kpata) est indépendant, dirigé par un conseil des anciens
+- **Chef de village (kpatado)** : autorité morale et judiciaire, choisi pour sa sagesse et son âge, non héréditaire
+- **Conseil des anciens (kpata gbagba)** : assemblée des chefs de lignages, décisions collectives
+- **Démocratie villageoise** : importance de la parole et du consensus, palabres publiques
+- **Absence de hiérarchie supra-villageoise** : pas de chefferie régionale ou de royaume
+
+## Organisation clanique :
+- **Lignage (gbagba)** : unité de base de l'organisation sociale, descendance patrilinéaire
+- **Clan (kpa)** : regroupement de plusieurs lignages partageant un ancêtre commun
+- **Exogamie clanique** : interdiction de mariage au sein du même clan
+- **Propriété foncière collective** : la terre appartient au lignage, gérée par le chef de lignage
+
+## Rôle des lignages :
+- **Propriété foncière** : la terre appartient au lignage, non aux individus
+- **Solidarité économique** : entraide mutuelle, partage des ressources
+- **Culte des ancêtres** : chaque lignage honore ses ancêtres fondateurs
+- **Résolution des conflits** : le chef de lignage arbitre les disputes internes
+
+## Autorité religieuse :
+- **Prêtres traditionnels (gbagbato)** : gardiens des rites, intermédiaires avec le monde spirituel
+- **Devins (gbeto)** : spécialistes de la divination, consultés avant les décisions importantes
+- **Guérisseurs (doto)** : praticiens de la médecine traditionnelle, exorcistes
+- **Gardiens des bois sacrés** : responsables des lieux de culte forestiers
+
+# 4. Langues et sous-familles
+- Langue principale : Bété
+- Codes ISO : ISO 639-3 : beb (Bété de Gagnoa), btv (Bété de Daloa), bev (Bété de Guiberoua)
+- Dialectes :
+  * Bété de Gagnoa (dialecte central, le plus parlé)
+  * Bété de Daloa (dialecte septentrional)
+  * Bété d'Oumé (dialecte oriental)
+  * Bété d'Issia (dialecte occidental)
+  * Bété de Soubré (dialecte méridional)
+  * Bété de Guéyo (dialecte côtier)
+  * Variations dialectales importantes, mais intercompréhension mutuelle
+- Rôle véhiculaire :
+  * Langue de communication inter-bété
+  * Utilisée dans les médias locaux (radio, télévision)
+  * Enseignée dans certaines écoles primaires
+  * Coexistence avec le français (langue officielle) et le dioula (langue véhiculaire nationale)
+
+# 5. Culture, rites et traditions
+
+## Rites majeurs :
+- **Initiation masculine (gbagba)** : rite de passage à l'âge adulte, épreuves physiques et spirituelles, enseignement des traditions
+- **Initiation féminine** : rite de passage pour les jeunes filles, préparation au mariage
+- **Mariage (kpakpa)** : cérémonie traditionnelle, dot (kpakpa do), festivités villageoises
+- **Funérailles (do)** : rites funéraires élaborés, veillée, danses, sacrifices, enterrement dans le village
+- **Rites agricoles** : cérémonies pour la fertilité des champs, offrandes aux esprits de la terre
+- **Rites de chasse** : invocations aux esprits de la forêt avant la chasse, offrandes après une prise importante
+
+## Symboles :
+- **Masque Gré (ou Glé)** : masque sacré, symbole de justice et d'autorité, utilisé lors des jugements et des conflits
+- **Masque Gla** : masque de divertissement, utilisé lors des fêtes et des cérémonies
+- **Bois sacrés (kpata do)** : lieux de culte forestiers, interdits aux non-initiés
+- **Tam-tam (gbagba)** : instrument de communication, utilisé pour convoquer les villageois
+- **Calebasse (kpa)** : récipient traditionnel, symbole de partage et d'hospitalité
+
+## Arts et musique :
+- **Masques** : tradition riche de masques sculptés, utilisés lors des cérémonies et des danses
+  * Masque Gré/Glé : masque de justice, cornu, terrifiant
+  * Masque Gla : masque de divertissement, plus léger
+  * Masques zoomorphes : représentant des animaux (buffle, éléphant, léopard)
+- **Sculpture sur bois** : statues, tabourets, portes sculptées
+- **Tissage** : production de pagnes traditionnels
+- **Musique** : percussions (tam-tams, djembés), xylophones, flûtes
+- **Danses** : danses masquées, danses de guerre, danses de réjouissance
+- **Chants** : chants de travail, chants de chasse, chants funéraires
+
+## Spiritualités :
+
+### Cosmologie bété :
+
+La spiritualité bété traditionnelle est un système complexe structurant la compréhension du monde, de l'homme et de la nature. Bien que largement christianisée depuis le XXe siècle, la cosmologie traditionnelle continue d'influencer les pratiques culturelles contemporaines.
+
+### Structure cosmologique :
+
+**1. Monde Supérieur (Kpa)**
+- Demeure du dieu suprême et des grandes forces spirituelles
+- Monde de la lumière et de l'ordre cosmique
+- Source des bénédictions et des lois morales
+
+**2. Monde des Esprits (Gbagba Do)**
+- Monde invisible coexistant avec le monde physique
+- Demeure des ancêtres, des esprits de la nature et des forces spirituelles
+- Accessible via les rêves, les transes et les rituels
+
+**3. Monde Terrestre (Kpata)**
+- Monde physique où vivent les humains
+- Lieu de manifestation des forces spirituelles
+- Espace de l'action morale et du destin
+
+**4. Monde de la Forêt (Do)**
+- Monde sacré de la forêt, demeure des esprits
+- Lieu de danger et de mystère
+- Source de vie (chasse, cueillette, plantes médicinales)
+
+### Divinités et forces spirituelles :
+
+**Dieu Suprême (Gnamien ou Nyamien)**
+- Endonyme : Gnamien, Nyamien (selon les dialectes)
+- Créateur de l'univers et de l'humanité
+- Transcendant, distant, rarement invoqué directement
+- Attributs : omniscient, omnipotent, éternel, invisible
+- Pas de culte direct, mais vénération via les esprits et les ancêtres
+- Exonyme : "Dieu" (français), "God" (anglais)
+
+**Esprits de la Forêt (Do Gbagba)**
+- Endonyme : Do Gbagba (esprits de la forêt)
+- Esprits habitant la forêt, gardiens de la faune et de la flore
+- Ambivalents : peuvent aider ou nuire aux humains
+- Types d'esprits :
+  * **Esprits des arbres** : habitent les grands arbres, protecteurs de la forêt
+  * **Esprits des animaux** : protecteurs des espèces animales (éléphant, léopard, buffle)
+  * **Esprits des rivières** : habitent les cours d'eau, dangereux pour les imprudents
+- Pratiques : offrandes avant la chasse ou la cueillette, respect des lieux sacrés
+- Tabous : interdiction de couper certains arbres, de chasser certains animaux sacrés
+
+**Esprits Ancestraux (Gbagba)**
+- Endonyme : Gbagba (ancêtres)
+- Esprits des ancêtres défunts
+- Rôle : protection, guidance, intercession auprès de Gnamien
+- Culte : autels domestiques, offrandes régulières, libations
+- Manifestations : rêves, possessions, apparitions
+- Réincarnation : croyance en la réincarnation des ancêtres dans leurs descendants
+
+**Masque Gré/Glé (Esprit de Justice)**
+- Endonyme : Gré, Glé (selon les dialectes)
+- Esprit de justice et d'autorité, incarné par le masque Gré
+- Rôle : maintien de l'ordre social, exécution des jugements, résolution des conflits
+- Manifestations : masque cornu terrifiant, danse masquée, voix déformée
+- Culte : cérémonies de justice, initiations, sacrifices
+- Tabous : interdiction de voir le porteur du masque, respect absolu des décisions du Gré
+- Origine : emprunté aux Wè (peuple krou voisin), adapté par les Bété
+- Exonyme : "Masque de justice" (français)
+
+**Masque Gla (Esprit de Divertissement)**
+- Endonyme : Gla
+- Esprit de divertissement et de réjouissance
+- Rôle : animation des fêtes, danses, chants
+- Manifestations : masque plus léger, danses acrobatiques
+- Culte : cérémonies festives, mariages, funérailles
+
+**Esprits de la Terre (Kpata Gbagba)**
+- Endonyme : Kpata Gbagba (esprits de la terre)
+- Esprits habitant la terre, gardiens de la fertilité
+- Rôle : protection des champs, prospérité des récoltes
+- Culte : offrandes lors des semailles et des récoltes, sacrifices
+- Tabous : interdiction de souiller la terre, respect des lieux sacrés
+
+**Sorciers et Sorcières (Doto)**
+- Endonyme : Doto (sorcier), Doto kpa (sorcière)
+- Personnes possédant des pouvoirs occultes, ambivalents
+- Rôle : peuvent guérir ou causer des maladies, protéger ou nuire
+- Pratiques : divination, guérison, exorcisme, envoûtement
+- Ambiguïté : certains doto sont respectés (guérisseurs), d'autres craints (sorciers maléfiques)
+
+### Conception de l'homme :
+
+**Dualité corps-esprit :**
+- **Kpata** (corps physique) : enveloppe matérielle, temporaire
+- **Gbagba** (âme/esprit) : essence spirituelle, éternelle
+- **Do** (ombre/double spirituel) : projection spirituelle de la personne
+
+**Cycle de vie spirituel :**
+1. Pré-existence : l'esprit existe avant la naissance dans le monde des ancêtres
+2. Naissance : incarnation, attribution du destin
+3. Vie terrestre : accomplissement du destin, actions morales
+4. Mort : séparation du corps et de l'esprit
+5. Passage : rites funéraires pour assurer le voyage vers le monde des ancêtres
+6. Ancestralité : transformation en ancêtre vénérable (Gbagba)
+7. Réincarnation : retour possible dans la lignée familiale
+
+**Concept de personne (Kpa) :**
+- Kpa = personne, être humain
+- L'homme est un être social : "Kpa do kpa" (Une personne est une personne grâce aux autres)
+- Valeurs : **Kpakpa** (respect), **Gbagba** (sagesse), **Do** (courage), **Kpa** (solidarité)
+- Honneur familial : le comportement individuel reflète sur toute la famille et le lignage
+
+### Conception de la nature :
+
+**Sacralité de la forêt :**
+- La forêt (Do) est sacrée, demeure des esprits
+- Interdiction de souiller ou de détruire la forêt sans raison
+- Bois sacrés (Kpata Do) : lieux interdits, sanctuaires des esprits
+- Arbres sacrés : certains arbres sont considérés comme demeures d'esprits
+
+**Animaux totémiques :**
+- **Léopard (Gba)** : animal sacré, symbole de puissance et de courage
+- **Éléphant (Kpa)** : symbole de sagesse et de force
+- **Buffle (Do)** : symbole de résistance et de combativité
+- **Python** : serpent sacré, associé aux esprits de l'eau
+
+**Plantes sacrées :**
+- **Kola (Gbagba)** : noix sacrée, offrande rituelle, symbole d'hospitalité
+- **Palmier à huile** : arbre de vie, source de nourriture et de richesse
+- **Herbes médicinales** : utilisées dans les rituels de guérison et de purification
+
+**Harmonie cosmique :**
+- Équilibre entre l'homme, la nature et les esprits
+- Respect des tabous : éviter les actions qui perturbent l'ordre cosmique
+- Purification : rituels de nettoyage après transgression
+
+### Rites et pratiques spirituelles :
+
+**Initiations :**
+- **Initiation masculine (Gbagba)** : rite de passage à l'âge adulte, épreuves physiques et spirituelles, enseignement des secrets
+- **Initiation féminine** : rite de passage pour les jeunes filles, préparation au mariage
+- **Initiation aux masques** : formation des porteurs de masques, révélation des secrets
+
+**Divination :**
+- **Consultation des devins (Gbeto)** : divination par les cauris, les noix de kola, les rêves
+- **Interprétation des signes** : lecture des présages, des rêves, des comportements animaux
+
+**Sacrifices et offrandes :**
+- **Sacrifices d'animaux** : poulets, chèvres, moutons offerts aux esprits et aux ancêtres
+- **Offrandes alimentaires** : nourriture, vin de palme, noix de kola
+- **Libations** : versement de liquides sur le sol pour honorer les ancêtres
+
+**Purification :**
+- **Bains rituels** : purification avec des herbes sacrées et de l'eau de rivière
+- **Fumigation** : purification par la fumée d'herbes sacrées
+- **Exorcisme** : expulsion des esprits malveillants par les guérisseurs
+
+**Rites funéraires :**
+- **Veillée funèbre** : veille du corps, chants, danses, récits de la vie du défunt
+- **Enterrement** : inhumation dans le village, avec objets personnels
+- **Cérémonies post-funéraires** : rites pour assurer le passage paisible vers le monde des ancêtres
+- **Masques funéraires** : danses masquées représentant les esprits des morts
+
+### Influence du christianisme :
+
+Depuis le XXe siècle, la majorité des Bété ont adopté le christianisme (catholicisme, protestantisme), créant un syncrétisme complexe :
+- **Gnamien assimilé au Dieu chrétien**
+- **Persistance des pratiques traditionnelles** : culte des ancêtres, masques, offrandes
+- **Tension** : conflit entre modernité chrétienne et traditions ancestrales
+- **Syncrétisme** : intégration de pratiques chrétiennes et traditionnelles
+
+### Sources spirituelles :
+- Dozon, Jean-Pierre. *La société bété : histoire d'une ethnie de Côte d'Ivoire* (1985)
+- Recherches ethnographiques sur les peuples krou
+- Ethnologue (SIL International) – données linguistiques
+- Recherches web (2025) – sources académiques et historiques diverses
+
+# 6. Rôle historique et interactions régionales
+
+## Royaumes / chefferies :
+- **Absence de royaume centralisé** : les Bété n'ont jamais formé de royaume ou d'État centralisé
+- **Villages autonomes** : organisation en villages indépendants, chacun dirigé par un conseil des anciens
+- **Alliances temporaires** : alliances inter-villageoises pour la défense ou la chasse
+
+## Relations avec peuples voisins :
+- **Wè et Guéré** : peuples krou voisins, échanges culturels (masques, rites), rivalités territoriales
+- **Gouro** : peuple mandé voisin, échanges commerciaux, influences culturelles
+- **Dida et Néyo** : peuples côtiers, commerce du sel et du poisson
+- **Baoulé** : peuple akan, contacts commerciaux, rivalités
+
+## Conflits / alliances :
+- **Guerres inter-villageoises** : conflits fonciers, rivalités
+- **Résistance à la colonisation française (1893-1920)** : guerres de résistance, révoltes contre le travail forcé
+- **Guerre civile ivoirienne (2002-2011)** : soutien à Laurent Gbagbo, affrontements, violences
+
+## Diaspora :
+- **Diaspora urbaine** : migration vers Abidjan, Yamoussoukro, autres villes ivoiriennes
+- **Diaspora internationale** : migration vers la France, les États-Unis, le Canada
+
+# 7. Démographie globale
+- Population totale : 2 500 000 (estimation 2025)
+- Répartition par pays :
+  * Côte d'Ivoire : 2 500 000 (régions de Gagnoa, Daloa, Issia, Soubré, Guéyo)
+  * Diaspora : estimée à 200 000+ (Abidjan, France, etc.)
+- Année de référence : 2025
+- Source : Ethnologue, estimations AFRIK, recensements ivoiriens
+
+# 8. Sources
+- Dozon, Jean-Pierre. *La société bété : histoire d'une ethnie de Côte d'Ivoire* (1985)
+- Ethnologue (SIL International) – données linguistiques (codes beb, btv, bev)
+- Côte d'Ivoire Archives culturelles
+- Recherches web (2025) – sources académiques et historiques diverses
+- Wikipédia : articles sur les Bété (sources à vérifier)
