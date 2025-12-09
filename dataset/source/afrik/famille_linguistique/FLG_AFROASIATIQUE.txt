@@ -53,7 +53,7 @@
 - Particularités phonologiques :  
   Aucune innovation phonétique partagée entre les 5 groupes. Pas de lois de correspondance régulières validant l'unité de la famille "afroasiatique".
 - Liens avec les familles voisines :  
-  La question de la parenté entre l'Égyptien ancien et les langues négro-africaines fait l'objet de recherches. Certaines études identifient des correspondances régulières entre l'Égyptien ancien et le Phylum Négro-africain :
+  La question de la parenté entre l'Égyptien ancien et les langues négro-africaines fait l'objet de recherches. Certaines études identifient des correspondances régulières entre l'Égyptien ancien et la souche Négro-africaine :
   - **Phonétique** : Correspondances régulières observées (ex: Ég. *km* "noir" → Wolof *kem*, Bassa *keèm* ; Ég. *mw* "eau" → Kikongo *mawu*, Éwé *mú*).
   - **Lexique** : Vocabulaire de base commun identifié (Mère, Tête, Soleil, Verbes d'état).
   - **Grammaire** : Similitudes structurelles relevées (préfixes/suffixes, marques du pluriel bantoues, ordre SVO, absence de genre).
