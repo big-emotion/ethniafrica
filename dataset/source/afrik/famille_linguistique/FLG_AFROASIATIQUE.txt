@@ -12,7 +12,7 @@
   Le concept est une construction artificielle sans validité scientifique démontrée (aucune loi phonétique commune, aucune proto-langue reconstruite entre les 5 groupes). Il mélange critères raciaux, bibliques et linguistiques pour nier l'africanité de l'Égypte. Le terme « chamitique » est colonial et obsolète.
 - Auto-appellation (locuteurs / linguistes contemporains) : Afroasiatic / Afro-asiatique (usage conventionnel contesté)
 - Usage contemporain :  
-  Bien que utilisé par convention académique, l'existence de cette famille en tant qu'unité génétique est contestée par les preuves modernes (notamment travaux d'Obenga) qui montrent plutôt une parenté directe entre l'Égyptien ancien et les langues négro-africaines (Niger-Congo, Nilo-saharien).
+  Le terme est utilisé par convention académique, bien que l'existence de cette famille en tant qu'unité génétique fasse l'objet de débats dans la communauté linguistique. Certaines recherches contemporaines suggèrent plutôt une parenté directe entre l'Égyptien ancien et les langues négro-africaines (Niger-Congo, Nilo-saharien).
 - Aire / répartition géographique générale : Afrique du Nord, Sahara, Sahel, Corne de l’Afrique
 - Nombre de langues (estimation) : ~375–400 (regroupement contesté)
 - Nombre total de locuteurs (estimation) : ~500 millions
@@ -52,17 +52,17 @@
   Incohérences majeures entre les groupes supposés. Le sémitique (racines trilitères, masculin/féminin obligatoire) diffère radicalement de l'égyptien ancien (absences de racines trilitères, absence de genre grammatical).
 - Particularités phonologiques :  
   Aucune innovation phonétique partagée entre les 5 groupes. Pas de lois de correspondance régulières validant l'unité de la famille "afroasiatique".
-- Liens avec les familles voisines (Preuves de parenté Égyptien-Afrique Noire) :  
-  Les travaux de Théophile Obenga démontrent des correspondances régulières entre l'Égyptien ancien et le Phylum Négro-africain :
-  - **Phonétique** : Correspondances régulières (ex: Ég. *km* "noir" → Wolof *kem*, Bassa *keèm* ; Ég. *mw* "eau" → Kikongo *mawu*, Éwé *mú*).
-  - **Lexique** : Vocabulaire de base commun (Mère, Tête, Soleil, Verbes d'état).
-  - **Grammaire** : Similitudes structurelles (préfixes/suffixes, marques du pluriel bantoues, ordre SVO, absence de genre).
+- Liens avec les familles voisines :  
+  La question de la parenté entre l'Égyptien ancien et les langues négro-africaines fait l'objet de recherches. Certaines études identifient des correspondances régulières entre l'Égyptien ancien et le Phylum Négro-africain :
+  - **Phonétique** : Correspondances régulières observées (ex: Ég. *km* "noir" → Wolof *kem*, Bassa *keèm* ; Ég. *mw* "eau" → Kikongo *mawu*, Éwé *mú*).
+  - **Lexique** : Vocabulaire de base commun identifié (Mère, Tête, Soleil, Verbes d'état).
+  - **Grammaire** : Similitudes structurelles relevées (préfixes/suffixes, marques du pluriel bantoues, ordre SVO, absence de genre).
 - Innovations clés :  
   Aucune proto-langue "afroasiatique" n'a pu être reconstruite scientifiquement.
 
 # 5. Histoire et origines
 - Origine probable :  
-  Le regroupement "afroasiatique" est considéré par l'école d'Obenga comme une zone de contact et d'emprunts historiques, non comme une parenté génétique. Le Berbère moderne comporte de nombreux emprunts (latins, arabes).
+  Le regroupement "afroasiatique" fait l'objet de différentes interprétations. Certaines approches le considère comme une zone de contact et d'emprunts historiques plutôt que comme une parenté génétique. Le Berbère moderne comporte effectivement de nombreux emprunts (latins, arabes).
 - Diffusion des langues :  
   Expansion hétérogène. Distinction nette entre l'ancrage africain de l'Égypte ancienne et les dynamiques ultérieures du Sémitique et du Berbère.
 - Ruptures historiques :
