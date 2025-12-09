@@ -1,0 +1,396 @@
+# Nom du peuple
+- Nom principal du peuple : Bassa du Cameroun
+- Auto-appellation (endonyme) : Bàsáa, ɓasaá (pluriel : Basaa)
+- Exonymes / appellations historiques : "Bassa", "Basa", "Bassa-Bakoko" (étiquette coloniale agrégée, réductrice)
+- Origine des termes (exonymes) : "Bassa" est une transcription coloniale du terme bàsáa. "Bassa-Bakoko" est une classification coloniale allemande regroupant artificiellement les Bassa et les Bakoko.
+- Pourquoi certains termes posent problème (si applicable) : "Bassa-Bakoko" est réducteur car il amalgame deux peuples distincts (Bassa et Bakoko) sous une même étiquette coloniale, niant leurs spécificités culturelles.
+- Usage contemporain des appellations : "Bassa" ou "Basaa" est universellement accepté. "Bàsáa" (avec tons) est préféré dans les contextes linguistiques.
+- Famille linguistique principale : Niger-Congo – Bantu (FLG_BANTU, zone A40)
+- Groupe ethno-linguistique : Bantous du littoral et du centre camerounais
+- Région historique : Littoral et Centre du Cameroun (Sanaga-Maritime, Nkam, Nyong-et-Kellé)
+- Pays actuels : Cameroun (régions du Littoral, du Centre, du Sud)
+- Identifiant peuple (ID) : PPL_BASSA_CAM
+
+# 1. Ethnies incluses dans le peuple
+- Bassa de Nyong-et-Kellé – groupe central, région d'Éséka, Makak
+- Bassa de Sanaga-Maritime – groupe côtier, région d'Édéa, Dizangué
+- Bassa de Nkam – groupe occidental, région de Yabassi
+- Bassa du Wouri – groupe urbain, région de Douala
+- Bassa de l'Océan – groupe côtier méridional
+- Sous-groupes dialectaux : Bakem, Bon, Bibeng, Diboum, Log, Mpo, etc.
+
+# 2. Origines, migrations et formation du peuple
+
+## Origines anciennes (théories archéologiques, linguistiques, génétiques) :
+
+### Tradition orale (légende migratoire) :
+- **Origine mythique** : selon la tradition orale bassa, le peuple serait originaire de l'**Égypte antique** ou de l'**ancienne Nubie** (frontière Égypte-Soudan), près du Nil
+- **Migrations successives** : après plusieurs invasions et catastrophes naturelles, les Bassa auraient migré vers le sud-ouest
+- **Étapes migratoires** :
+  1. Kanem-Bornou (région du lac Tchad)
+  2. Vallée du Logone (Tchad/Cameroun)
+  3. Monts Mandara (nord du Cameroun)
+  4. Descente vers le sud le long des cours d'eau
+  5. Installation à **Ngog Lituba** (lieu mythique, berceau du peuple bassa)
+- **Ngog Lituba** : lieu sacré considéré comme le point d'origine des Bassa au Cameroun, situé dans la région de Nyong-et-Kellé
+
+### Preuves archéologiques et linguistiques :
+- **Origine bantoue** : les Bassa sont un peuple bantou, appartenant à la grande famille des peuples bantous d'Afrique centrale et australe
+- **Preuves linguistiques** : la langue bassa (basaa) appartient à la famille bantoue (zone A40), apparentée aux langues des peuples voisins (Duala, Bakoko, Banen)
+- **Migrations bantoues** : les Bassa font partie des migrations bantoues depuis le foyer originel (Cameroun/Nigeria) vers l'Afrique centrale et australe (Ier millénaire avant notre ère - Ier millénaire de notre ère)
+- **Preuves génétiques** : les Bassa partagent des marqueurs génétiques bantous avec les autres peuples de la région
+
+### Synthèse :
+La tradition orale bassa évoque une origine nilotique (Égypte, Nubie), mais les preuves linguistiques et génétiques confirment une origine bantoue camerounaise. La légende migratoire reflète probablement des mouvements internes au Cameroun plutôt qu'une migration depuis l'Égypte.
+
+## Période de formation estimée :
+- **Période ancienne (avant le Xe siècle)** : migrations bantoues, installation dans la région du Littoral et du Centre
+- **Xe-XVe siècles** : consolidation de l'identité bassa, expansion territoriale
+- **XVIe-XIXe siècles** : contacts avec les peuples côtiers (Duala), commerce, esclavage
+- **1884-1916** : colonisation allemande (Kamerun)
+- **1916-1960** : colonisation française (Cameroun français)
+
+## Routes migratoires principales :
+- Migrations internes au Cameroun, depuis l'intérieur vers le littoral
+- Descente le long des cours d'eau (Sanaga, Nyong, Nkam)
+- Installation progressive dans les zones forestières du Littoral et du Centre
+
+## Zones d'établissement historiques :
+- **Ngog Lituba** : lieu mythique, berceau du peuple bassa
+- **Édéa** : centre historique bassa, région de Sanaga-Maritime
+- **Éséka** : région de Nyong-et-Kellé, centre culturel bassa
+- **Makak** : région de Nyong-et-Kellé
+- **Yabassi** : région de Nkam
+- **Dizangué** : région côtière de Sanaga-Maritime
+- **Douala** : migration urbaine, diaspora bassa importante
+
+## Unifications / divisions :
+- **Absence d'État centralisé** : les Bassa n'ont jamais formé de royaume ou d'État centralisé avant la colonisation
+- **Chefferies villageoises** : organisation en villages autonomes, chacun dirigé par un chef (mbombok)
+- **Hiérarchie sociale** : société patriarcale et hiérarchisée, neuf classes sociales distinctes
+- **Unification coloniale** : sous la colonisation allemande puis française, les Bassa furent regroupés administrativement
+
+## Influences externes (peuples voisins, colonisation, commerce) :
+- **Duala** : peuple côtier bantou, contacts commerciaux, influences culturelles
+- **Bakoko** : peuple bantou voisin, échanges culturels, mariages inter-ethniques
+- **Banen** : peuple bantou voisin, échanges commerciaux
+- **Ewondo et Eton** : peuples bantous de l'intérieur, contacts
+- **Colonisation allemande (1884-1916)** : administration coloniale, travail forcé, plantations, résistance bassa
+- **Colonisation française (1916-1960)** : administration coloniale, travail forcé, christianisation, éducation occidentale
+- **Christianisme** : évangélisation par les missionnaires catholiques et protestants (XXe siècle)
+
+## Événements historiques majeurs ayant façonné le peuple :
+- **Résistance à la colonisation allemande (1890-1916)** : révoltes contre le travail forcé et les réquisitions
+- **Résistance à la colonisation française (1916-1960)** : mouvements nationalistes, revendications d'indépendance
+- **Rébellion de l'UPC (Union des Populations du Cameroun, 1955-1971)** : participation bassa aux mouvements indépendantistes, répression coloniale et post-coloniale
+- **Indépendance du Cameroun (1960)** : intégration dans l'État camerounais
+- **Urbanisation** : migration massive vers Douala et Yaoundé, diaspora urbaine importante
+
+# 3. Organisation et structure interne
+
+## Système politique traditionnel :
+- **Chefferies villageoises** : chaque village est dirigé par un chef (mbombok)
+- **Chef de village (mbombok)** : autorité politique, judiciaire et religieuse, issu de la famille la plus ancienne et la plus importante
+- **Conseil des anciens (bambombok)** : assemblée des chefs de lignages, conseil consultatif du mbombok
+- **Hiérarchie sociale** : société patriarcale et fortement hiérarchisée, neuf classes sociales distinctes :
+  1. **Bakaambock** : chefs de clans ou de tribus
+  2. **Bambombok** : membres des assemblées politiques
+  3. **Bangéngé** : hommes religieux, prêtres traditionnels
+  4. **Dikoo di mbock** : princes de sang royal
+  5. **Banjehjel** : notables
+  6. **Bonge** : enfants
+  7. **Bôda** : femmes
+  8. **Minkol** : esclaves
+  9. **Minyon** : captifs
+
+## Organisation clanique :
+- **Lignage (mbog)** : unité de base de l'organisation sociale, descendance patrilinéaire
+- **Clan (mbog)** : regroupement de plusieurs lignages partageant un ancêtre commun
+- **Exogamie clanique** : interdiction de mariage au sein du même clan
+- **Propriété foncière collective** : la terre appartient au lignage, gérée par le chef de lignage
+
+## Rôle des lignages :
+- **Propriété foncière** : la terre appartient au lignage, non aux individus
+- **Solidarité économique** : entraide mutuelle, partage des ressources
+- **Culte des ancêtres** : chaque lignage honore ses ancêtres fondateurs
+- **Résolution des conflits** : le chef de lignage arbitre les disputes internes
+
+## Autorité religieuse :
+- **Bangéngé** : hommes religieux, prêtres traditionnels, gardiens des rites
+- **Devins (nganga)** : spécialistes de la divination, consultés avant les décisions importantes
+- **Guérisseurs (nganga)** : praticiens de la médecine traditionnelle, exorcistes
+- **Gardiens des lieux sacrés** : responsables des sanctuaires et des bois sacrés
+
+# 4. Langues et sous-familles
+- Langue principale : Basaa (Bàsáa)
+- Codes ISO : ISO 639-2 : bas | ISO 639-3 : bas
+- Dialectes :
+  * Bakem
+  * Bon
+  * Bibeng
+  * Diboum
+  * Log
+  * Mpo
+  * Variations dialectales selon les régions
+- Rôle véhiculaire :
+  * Langue de communication inter-bassa
+  * Utilisée dans les médias locaux (radio, télévision)
+  * Enseignée dans certaines écoles primaires
+  * Littérature en basaa (poésie, chants épiques, romans)
+  * Coexistence avec le français (langue officielle) et l'anglais (langue co-officielle)
+- Système d'écriture :
+  * Alphabet latin adapté (depuis la colonisation)
+  * Système tonal complexe (tons hauts, bas, descendants)
+  * Classes nominales (caractéristique bantoue)
+
+# 5. Culture, rites et traditions
+
+## Rites majeurs :
+- **Initiation masculine** : rite de passage à l'âge adulte, épreuves physiques et spirituelles, enseignement des traditions
+- **Initiation féminine** : rite de passage pour les jeunes filles, préparation au mariage
+- **Mariage (mbog)** : cérémonie traditionnelle, dot, festivités villageoises
+- **Funérailles (liwa)** : rites funéraires élaborés, veillée, danses, sacrifices, enterrement dans le village
+- **Rites agricoles** : cérémonies pour la fertilité des champs, offrandes aux esprits de la terre
+- **Rites de guérison** : cérémonies de guérison par les nganga, exorcismes
+
+## Symboles :
+- **Ngog Lituba** : lieu sacré, berceau du peuple bassa
+- **Tam-tam (ngoma)** : instrument de communication, utilisé pour convoquer les villageois
+- **Calebasse** : récipient traditionnel, symbole de partage et d'hospitalité
+- **Masques** : masques sculptés, utilisés lors des cérémonies et des danses
+
+## Arts et musique :
+- **Musique traditionnelle** :
+  * **Assiko** : rythme musical et danse traditionnelle bassa, popularisé par Jean Bikoko
+  * **Hongo (ihôňgô)** : rythme de réjouissance, joué lors des mariages, décès, guérisons
+  * **Jingo, Makune, Mandjang, Ngola, Sekele** : autres rythmes traditionnels
+- **Instruments** : tam-tams (ngoma), xylophones (balafons), flûtes, hochets
+- **Danses** : danses traditionnelles accompagnant les rythmes musicaux
+- **Chants épiques** : tradition orale de chants épiques transmettant des enseignements moraux et culturels
+- **Sculpture sur bois** : statues, masques, tabourets, portes sculptées
+- **Poterie** : tradition de poterie utilitaire et cérémonielle
+- **Tissage** : production de pagnes traditionnels
+
+## Cuisine :
+- **Mintoumba** : gâteau traditionnel fait à base de manioc frais fermenté et d'huile de palme rouge, cuit à la vapeur
+- **Mbongo tchobi (sauce ébène)** : sauce noire à base de poisson ou de viande, accompagnée de tubercules cuits à la vapeur
+- **Bongo'o** : plat traditionnel préparé avec du poisson ou de la viande
+- **Ndolé** : plat à base de feuilles de ndolé (vernonia), arachides, viande ou poisson
+
+## Spiritualités :
+
+### Cosmologie bassa :
+
+La spiritualité bassa traditionnelle est un système complexe structurant la compréhension du monde, de l'homme et de la nature. Bien que largement christianisée depuis le XXe siècle, la cosmologie traditionnelle continue d'influencer les pratiques culturelles contemporaines.
+
+### Structure cosmologique :
+
+**1. Monde Supérieur (Enyong)**
+- Demeure de Hilôlômbi (dieu suprême) et des grandes forces spirituelles
+- Monde de la lumière et de l'ordre cosmique
+- Source des bénédictions et des lois morales
+
+**2. Monde des Esprits (Mbog ya Bikom)**
+- Monde invisible coexistant avec le monde physique
+- Demeure des ancêtres (Bikom), des esprits de la nature (Jengu) et des forces spirituelles
+- Accessible via les rêves, les transes et les rituels
+
+**3. Monde Terrestre (Mbog)**
+- Monde physique où vivent les humains
+- Lieu de manifestation des forces spirituelles
+- Espace de l'action morale et du destin
+
+**4. Monde Aquatique (Miengu)**
+- Monde des esprits de l'eau (Jengu/Miengu)
+- Royaume mystérieux et dangereux
+- Source de richesse (pêche) mais aussi de dangers
+
+### Divinités et forces spirituelles :
+
+**Hilôlômbi (Dieu Suprême)**
+- Endonyme : Hilôlômbi ("celui qui vit de toute éternité"), Ngué ("ancêtre commun")
+- Dieu créateur dans le système religieux Mbok (Nyambéisme)
+- Transcendant, distant, source de toute vie
+- Attributs : éternel, omniscient, omnipotent, invisible
+- Pas de culte direct, mais vénération via les ancêtres et les esprits
+- Exonyme : "Dieu" (français), "God" (anglais)
+
+**Nyambe (Nom de Dieu dans le Nyambéisme)**
+- Endonyme : Nyambe (nom principal donné à Dieu par plusieurs peuples bantous)
+- Système de croyance basé sur Nyambe, intégré dans le Mbok (religion bassa)
+- Conception d'un dieu unique, créateur de l'univers
+- Culte : prières, invocations, offrandes
+
+**Jengu / Miengu (Esprits de l'Eau)**
+- Endonyme : Jengu (singulier), Miengu (pluriel)
+- Esprits habitant les rivières, les lacs, l'océan et les sources
+- Ambivalents : peuvent apporter richesse (pêche abondante, prospérité) ou malheur (noyades, tempêtes, maladies)
+- Apparence : souvent décrits comme des êtres mi-humains mi-poissons, d'une beauté surnaturelle, peau claire, cheveux longs
+- Culte : offrandes régulières (nourriture, objets précieux, tissus blancs) jetées dans l'eau
+- Prêtres Jengu : médiateurs avec les esprits de l'eau, guérisseurs, devins
+- Tabous : interdiction de pêcher ou de naviguer certains jours sacrés, respect des lieux sacrés aquatiques
+- Manifestations : apparitions dans les rêves, possessions spirituelles, maladies causées par les Jengu
+- Exonyme : "Water spirits" (anglais), "Mami Wata" (terme régional, bien que distinct)
+- **Note** : les Jengu sont très importants dans la cosmologie des peuples côtiers du Cameroun (Bassa, Duala, Bakoko, etc.)
+
+**Bikom (Esprits Ancestraux)**
+- Endonyme : Bikom (ancêtres), Bikôm bi mbog (ancêtres du lignage)
+- Esprits des ancêtres défunts
+- Rôle : protection, guidance, intercession auprès de Hilôlômbi
+- Culte : autels domestiques, offrandes régulières, libations
+- Manifestations : rêves, possessions, apparitions
+- Réincarnation : croyance en la réincarnation des ancêtres dans leurs descendants
+
+**Esprits de la Forêt (Bikom bi njok)**
+- Endonyme : Bikom bi njok (esprits de la forêt)
+- Esprits habitant la forêt, gardiens de la faune et de la flore
+- Ambivalents : peuvent aider ou nuire aux humains
+- Pratiques : offrandes avant la chasse ou la cueillette, respect des lieux sacrés
+
+**Esprits de la Terre (Bikom bi si)**
+- Endonyme : Bikom bi si (esprits de la terre)
+- Esprits habitant la terre, gardiens de la fertilité
+- Rôle : protection des champs, prospérité des récoltes
+- Culte : offrandes lors des semailles et des récoltes, sacrifices
+
+**Nganga (Guérisseurs / Devins / Sorciers)**
+- Endonyme : Nganga (guérisseur, devin), Nganga ya liemba (sorcier)
+- Personnes possédant des pouvoirs spirituels, ambivalents
+- Rôle : divination, guérison, exorcisme, protection, envoûtement
+- Pratiques : usage de plantes médicinales, invocations, sacrifices, talismans
+- Ambiguïté : certains nganga sont respectés (guérisseurs), d'autres craints (sorciers maléfiques)
+
+### Conception de l'homme :
+
+**Dualité corps-esprit :**
+- **Mbog** (corps physique) : enveloppe matérielle, temporaire
+- **Bikom** (âme/esprit) : essence spirituelle, éternelle
+- **Njel** (ombre/double spirituel) : projection spirituelle de la personne
+
+**Cycle de vie spirituel :**
+1. Pré-existence : l'esprit existe avant la naissance dans le monde des ancêtres
+2. Naissance : incarnation, attribution du destin
+3. Vie terrestre : accomplissement du destin, actions morales
+4. Mort : séparation du corps et de l'esprit
+5. Passage : rites funéraires pour assurer le voyage vers le monde des ancêtres
+6. Ancestralité : transformation en ancêtre vénérable (Bikom)
+7. Réincarnation : retour possible dans la lignée familiale
+
+**Concept de personne (Mut) :**
+- Mut = personne, être humain
+- L'homme est un être social : "Mut a yem mut" (Une personne est une personne grâce aux autres)
+- Valeurs : **Mbog** (respect, solidarité), **Bikom** (sagesse ancestrale), **Njel** (honneur)
+- Identité collective : appartenance au lignage, à la communauté bassa
+
+### Conception de la nature :
+
+**Sacralité de l'eau :**
+- Les rivières (Sanaga, Nyong, Nkam), les lacs et l'océan sont sacrés, demeure des Jengu
+- Interdiction de polluer ou de souiller les eaux sacrées
+- Rites de purification aquatique
+- Sources sacrées : certaines sources sont considérées comme demeures de Jengu
+
+**Sacralité de la forêt :**
+- La forêt est sacrée, demeure des esprits (Bikom bi njok)
+- Bois sacrés : lieux interdits, sanctuaires des esprits
+- Arbres sacrés : certains arbres sont considérés comme demeures d'esprits
+- Chasse rituelle : offrandes aux esprits de la forêt avant la chasse
+
+**Animaux totémiques :**
+- **Python** : serpent sacré, associé aux esprits de l'eau
+- **Léopard** : animal sacré, symbole de puissance et de courage
+- **Crocodile** : animal sacré, associé aux Jengu
+
+**Plantes sacrées :**
+- **Palmier à huile** : arbre de vie, source de nourriture et de richesse
+- **Manioc** : plante sacrée, base de l'alimentation
+- **Herbes médicinales** : utilisées dans les rituels de guérison et de purification
+
+**Harmonie cosmique :**
+- Équilibre entre l'homme, la nature et les esprits
+- Respect des tabous : éviter les actions qui perturbent l'ordre cosmique
+- Purification : rituels de nettoyage après transgression
+
+### Rites et pratiques spirituelles :
+
+**Culte des Jengu (Esprits de l'Eau) :**
+- **Offrandes** : nourriture, tissus blancs, objets précieux jetés dans l'eau
+- **Cérémonies** : danses, chants, invocations au bord de l'eau
+- **Possession** : transes rituelles, possession par les Jengu
+- **Guérison** : les nganga consultent les Jengu pour guérir les maladies causées par les esprits de l'eau
+- **Initiation** : certaines personnes sont "appelées" par les Jengu pour devenir prêtres ou prêtresses
+
+**Divination :**
+- **Consultation des nganga** : divination par les cauris, les noix de kola, les rêves
+- **Interprétation des signes** : lecture des présages, des rêves, des comportements animaux
+
+**Sacrifices et offrandes :**
+- **Sacrifices d'animaux** : poulets, chèvres, moutons offerts aux esprits et aux ancêtres
+- **Offrandes alimentaires** : nourriture, vin de palme, noix de kola
+- **Libations** : versement de liquides sur le sol pour honorer les ancêtres
+
+**Purification :**
+- **Bains rituels** : purification avec des herbes sacrées et de l'eau de rivière
+- **Fumigation** : purification par la fumée d'herbes sacrées
+- **Exorcisme** : expulsion des esprits malveillants par les nganga
+
+**Rites funéraires :**
+- **Veillée funèbre** : veille du corps, chants, danses, récits de la vie du défunt
+- **Enterrement** : inhumation dans le village, avec objets personnels
+- **Cérémonies post-funéraires** : rites pour assurer le passage paisible vers le monde des ancêtres
+
+### Influence du christianisme :
+
+Depuis le XXe siècle, la majorité des Bassa ont adopté le christianisme (catholicisme, protestantisme), créant un syncrétisme complexe :
+- **Hilôlômbi assimilé au Dieu chrétien**
+- **Persistance des pratiques traditionnelles** : culte des Jengu, culte des ancêtres, offrandes
+- **Tension** : conflit entre modernité chrétienne et traditions ancestrales
+- **Syncrétisme** : intégration de pratiques chrétiennes et traditionnelles
+
+### Sources spirituelles :
+- Recherches ethnographiques sur les peuples bantous du Cameroun
+- Études sur le Nyambéisme et le système Mbok
+- Études sur les Jengu/Miengu (esprits de l'eau)
+- Ethnologue (SIL International) – données linguistiques
+- Recherches web (2025) – sources académiques et historiques diverses
+
+# 6. Rôle historique et interactions régionales
+
+## Royaumes / chefferies :
+- **Absence de royaume centralisé** : les Bassa n'ont jamais formé de royaume ou d'État centralisé avant la colonisation
+- **Chefferies villageoises** : organisation en villages autonomes, chacun dirigé par un chef (mbombok)
+- **Alliances inter-villageoises** : alliances temporaires pour la défense ou le commerce
+
+## Relations avec peuples voisins :
+- **Duala** : peuple côtier bantou, contacts commerciaux intenses, influences culturelles, mariages inter-ethniques
+- **Bakoko** : peuple bantou voisin, échanges culturels, mariages inter-ethniques
+- **Banen** : peuple bantou voisin, échanges commerciaux
+- **Ewondo et Eton** : peuples bantous de l'intérieur, contacts
+- **Pygmées (Bagyeli)** : populations autochtones de la forêt, échanges, relations complexes
+
+## Conflits / alliances :
+- **Résistance à la colonisation allemande (1890-1916)** : révoltes contre le travail forcé et les réquisitions
+- **Résistance à la colonisation française (1916-1960)** : mouvements nationalistes, rébellion de l'UPC
+- **Rébellion de l'UPC (1955-1971)** : participation bassa aux mouvements indépendantistes, répression coloniale et post-coloniale, martyrs bassa (Ruben Um Nyobè, leader bassa de l'UPC, assassiné en 1958)
+
+## Diaspora :
+- **Diaspora urbaine** : migration massive vers Douala, Yaoundé, autres villes camerounaises
+- **Diaspora internationale** : migration vers la France, les États-Unis, le Canada, l'Allemagne
+
+# 7. Démographie globale
+- Population totale : 840 000 (estimation 2025)
+- Répartition par pays :
+  * Cameroun : 840 000 (régions du Littoral, du Centre, du Sud)
+  * Diaspora : estimée à 150 000+ (Douala, Yaoundé, France, etc.)
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv (PPL_BASSA_CAM), Ethnologue, recensements camerounais
+
+# 8. Sources
+- Études linguistiques de L. M. Hyman et autres linguistes sur le basaa
+- Recherches ethnographiques sur le peuple Bassa du Cameroun
+- Études sur le Nyambéisme et le système religieux Mbok
+- Études sur les Jengu/Miengu (esprits de l'eau) des peuples côtiers du Cameroun
+- Recueil de chansons épiques du peuple Bassa du Cameroun
+- Ethnologue (SIL International) – données linguistiques (code bas)
+- Wikipédia : articles sur les Bassa du Cameroun (sources à vérifier)
+- Recherches web (2025) – sources académiques et historiques diverses

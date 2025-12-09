@@ -1,0 +1,404 @@
+# Nom du peuple
+- Nom principal du peuple : Igbo
+- Auto-appellation (endonyme) : Ǹdị́ Ìgbò (pluriel), Ọ̀mụ̀ Ìgbò (singulier)
+- Exonymes / appellations historiques : « Ibo » (orthographe coloniale britannique, réductrice et phonétiquement inexacte)
+- Origine des termes (exonymes) : « Ibo » provient d'une transcription coloniale britannique erronée du terme igbo, utilisée dans les documents administratifs coloniaux du XIXe et XXe siècle
+- Pourquoi certains termes posent problème (si applicable) : Le terme « Ibo » est considéré comme colonial et réducteur car il simplifie la prononciation tonale complexe du terme igbo et fut imposé par l'administration coloniale britannique sans consultation des locuteurs natifs. Il perpétue une vision externe et déformée de l'identité igbo.
+- Usage contemporain des appellations : Le terme « Igbo » est désormais universellement préféré dans les contextes académiques, officiels et communautaires. « Ibo » n'est plus utilisé que dans des documents historiques ou par méconnaissance.
+- Famille linguistique principale : Niger-Congo – Bénoué-Congo (branche Volta-Congo, sous-groupe Igboïde)
+- Groupe ethno-linguistique : Igboïde
+- Région historique : Forêt orientale du Nigeria (bassin du Niger inférieur et moyen, région d'Igboland)
+- Pays actuels : Nigeria (États d'Abia, Anambra, Ebonyi, Enugu, Imo, Delta, Rivers), Cameroun (minorités), Guinée équatoriale (diaspora), diaspora mondiale
+- Identifiant peuple (ID) : PPL_IGBO
+
+# 1. Ethnies incluses dans le peuple
+- Onicha (Onitsha) – groupe riverain du Niger, historiquement commerçants
+- Ngwa – groupe méridional, agriculteurs et commerçants
+- Aro – groupe connu pour le réseau commercial et religieux Aro, gardiens de l'oracle d'Arochukwu
+- Nri – groupe central, berceau du royaume de Nri, autorité spirituelle et politique ancienne
+- Mbaise – confédération de communautés du sud-est
+- Owerri – groupe central, connu pour ses traditions artistiques
+- Nsukka – groupe septentrional, zone de transition avec les cultures du Nord
+- Ikwerre – groupe occidental, parfois considéré comme distinct
+- Ezza – groupe oriental, réputé pour leur organisation militaire
+- Afikpo – groupe oriental, connu pour leurs masques et rituels
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes (théories archéologiques, linguistiques, génétiques) :
+  * Preuves archéologiques d'Igbo-Ukwu (IXe siècle) : découverte en 1939 d'objets en bronze sophistiqués, perles de verre et céramiques indiquant une civilisation avancée avec des liens commerciaux transsahariens
+  * Théorie autochtone : les Igbo seraient originaires de la région qu'ils occupent actuellement depuis plusieurs millénaires (5000 ans avant notre ère selon certaines estimations)
+  * Théorie migratoire : certains récits oraux évoquent des migrations depuis le nord (région du Sahara) ou l'est (vallée du Nil), mais ces théories restent controversées
+  * Études linguistiques : la langue igbo appartient à la famille Niger-Congo, suggérant des liens anciens avec d'autres peuples de la région
+  * Études génétiques : les Igbo présentent des marqueurs génétiques bantous et ouest-africains, avec une diversité interne significative
+
+- Période de formation estimée : 
+  * Période néolithique (5000-2000 avant notre ère) : établissement des premières communautés agricoles
+  * Âge du fer (500 avant notre ère - 200 de notre ère) : développement de la métallurgie
+  * IXe-Xe siècles : apogée du royaume de Nri et de la civilisation d'Igbo-Ukwu
+  * XVe-XVIIIe siècles : expansion du réseau commercial Aro
+
+- Routes migratoires principales :
+  * Migrations internes depuis le cœur d'Igboland (région de Nri-Awka) vers les périphéries
+  * Expansion vers le sud et l'ouest (delta du Niger)
+  * Mouvements vers l'est (Cross River)
+
+- Zones d'établissement historiques :
+  * Cœur historique : région de Nri-Awka (Anambra actuel)
+  * Expansion vers Owerri, Orlu, Okigwe (Imo actuel)
+  * Établissements riverains : Onitsha, Oguta, Aboh
+  * Zones orientales : Afikpo, Abakaliki (Ebonyi actuel)
+
+- Unifications / divisions :
+  * Système politique décentralisé : absence d'État centralisé unifié, organisation en villages autonomes (obodo) et confédérations
+  * Royaume de Nri (Xe-XIXe siècles) : autorité spirituelle et politique, mais non impériale, basée sur le prestige religieux de l'Eze Nri
+  * Confédération Aro (XVIIe-XIXe siècles) : réseau commercial et religieux unifiant de nombreuses communautés via l'oracle d'Arochukwu (Ibini Ukpabi)
+  * Guerre civile du Biafra (1967-1970) : tentative de sécession du sud-est du Nigeria, unification politique temporaire des Igbo
+
+- Influences externes (peuples voisins, colonisation, commerce) :
+  * Contacts avec les Ibibio, Ijaw, Efik (peuples côtiers)
+  * Commerce transsaharien (IXe-XVe siècles) : échanges de cuivre, perles, ivoire
+  * Traite atlantique (XVIe-XIXe siècles) : participation via le réseau Aro, impact démographique et social majeur
+  * Colonisation britannique (1900-1960) : imposition du système indirect rule, christianisation massive, introduction de l'éducation occidentale
+  * Influence chrétienne : adoption massive du christianisme (catholicisme, anglicanisme, pentecôtisme) depuis le XIXe siècle
+
+- Événements historiques majeurs ayant façonné le peuple :
+  * Fondation du royaume de Nri (Xe siècle) : établissement d'une autorité spirituelle centrale
+  * Développement du réseau Aro (XVIIe siècle) : création d'un système commercial et religieux pan-igbo
+  * Expédition punitive britannique d'Arochukwu (1901-1902) : destruction de l'oracle d'Arochukwu, fin de l'indépendance politique igbo
+  * Guerre civile du Biafra (1967-1970) : conflit meurtrier (1-3 millions de morts), traumatisme collectif, diaspora massive
+  * Retour et reconstruction post-Biafra (années 1970-présent) : réintégration au Nigeria, développement économique, diaspora mondiale influente
+
+# 3. Organisation et structure interne
+- Système politique traditionnel :
+  * Démocratie villageoise : assemblées d'hommes libres (Oha na Eze, Umunna)
+  * Conseil des anciens (Ndi Ichie) : autorité décisionnelle basée sur l'âge et la sagesse
+  * Système de titres : Ozo, Nze na Ozo (titres honorifiques acquis par mérite et richesse)
+  * Eze Nri : autorité spirituelle suprême du royaume de Nri, considéré comme descendant de la divinité Eri
+  * Absence de monarchie héréditaire centralisée dans la plupart des communautés
+
+- Organisation clanique :
+  * Umunna : lignage patrilinéaire, unité de base de l'organisation sociale
+  * Umunne : lignage maternel, important pour les alliances et la protection
+  * Système segmentaire : villages composés de plusieurs lignages (umunna) descendant d'un ancêtre commun
+  * Exogamie clanique : interdiction de mariage au sein du même umunna
+
+- Rôle des lignages :
+  * Propriété foncière collective : la terre appartient au lignage, non aux individus
+  * Solidarité économique et sociale : entraide mutuelle, résolution des conflits internes
+  * Culte des ancêtres : chaque lignage honore ses ancêtres fondateurs
+
+- Autorité religieuse :
+  * Eze Nri : prêtre-roi du royaume de Nri, médiateur entre Chukwu et les hommes
+  * Dibia : prêtres-devins, guérisseurs, intermédiaires avec le monde spirituel
+  * Ndi Nze na Ozo : titulaires de titres religieux et sociaux, gardiens des traditions
+  * Oracle d'Arochukwu (Ibini Ukpabi) : centre religieux et judiciaire majeur jusqu'en 1902
+
+# 4. Langues et sous-familles
+- Langue principale : Igbo (Ásụ̀sụ́ Ìgbò)
+- Codes ISO : ISO 639-1 : ig | ISO 639-2 : ibo | ISO 639-3 : ibo
+- Dialectes :
+  * Dialectes centraux : Owerri, Umuahia, Orlu (base de l'igbo standard)
+  * Dialectes septentrionaux : Onitsha, Nsukka, Awka
+  * Dialectes méridionaux : Ngwa, Asa, Ikwerre
+  * Dialectes orientaux : Afikpo, Ezza, Izzi
+  * Dialectes occidentaux : Ika, Ukwuani (parfois considérés comme langues distinctes)
+  * Plus de 20 dialectes mutuellement intelligibles
+
+- Rôle véhiculaire :
+  * Igbo standard : développé à partir des dialectes centraux, utilisé dans l'éducation, les médias et l'administration
+  * Langue de communication inter-ethnique dans le sud-est du Nigeria
+  * Langue liturgique : traduction de la Bible (1906-1913), usage dans les églises chrétiennes
+  * Langue de la diaspora : maintenue par les communautés igbo à l'étranger
+
+# 5. Culture, rites et traditions
+
+## Rites majeurs :
+- Iri Ji (Festival de l'igname nouvelle) : cérémonie annuelle célébrant la première récolte d'ignames, offrandes à Ala et aux ancêtres, symbole de renouveau et de prospérité
+- Iwa Akwa / Iru Mgbede : rite de passage à l'âge adulte pour les jeunes hommes
+- Ikwa Ozu : funérailles élaborées, considérées comme le dernier rite de passage vers le monde des ancêtres
+- Igba Nkwu : cérémonie de mariage traditionnel, négociation de la dot (Ime Ego), vin de palme (Igba Nkwu Nwanyi)
+- Igu Aro / Ọmụgwọ : rites de naissance et de purification post-natale
+- Ichi : scarification faciale traditionnelle (pratique en déclin), marque d'identité et de statut social
+
+## Symboles :
+- Ọfọ : bâton rituel symbolisant l'autorité, la vérité et la justice, utilisé lors des serments et des bénédictions
+- Ogu : symbole de l'innocence et de la pureté morale
+- Ọjị (noix de kola) : symbole d'hospitalité, de paix et de communion spirituelle, offert lors des cérémonies
+- Nsibidi : système d'écriture idéographique ancien (partagé avec les Efik et Ibibio), utilisé par les sociétés secrètes
+- Aigle : symbole de puissance et de leadership
+- Igname : symbole de virilité, de prospérité et de statut social
+
+## Arts et musique :
+- Masques Mmanwu : masques rituels représentant des esprits ancestraux ou des divinités, utilisés lors des festivals et cérémonies
+  * Ijele : masque monumental, le plus grand masque d'Afrique, symbole de grandeur
+  * Agbogho Mmuo : masque représentant l'esprit d'une jeune fille, symbole de beauté et de pureté
+  * Okpesu : masque satirique et comique
+- Sculpture sur bois : statues d'Ikenga, portes sculptées, tabourets cérémoniels
+- Poterie : tradition ancienne, notamment à Nkporo et Afikpo
+- Tissage : production de textiles traditionnels (Akwete cloth)
+- Musique : tambours (Ekwe, Igba, Ogene), xylophones (Alo), flûtes (Ọjà)
+- Chants : chants de louange (Egwu Ekpili), chants de travail, berceuses
+- Danse : Atilogwu (danse acrobatique), Mmanwu (danse masquée)
+
+## Spiritualités :
+
+### Cosmologie igbo (Odinani / Omenala) :
+La spiritualité igbo traditionnelle, appelée **Odinani** (lois divines) ou **Omenala** (traditions ancestrales), est un système complexe et sophistiqué qui structure la compréhension igbo de l'univers, de l'homme et de la nature.
+
+### Structure cosmologique :
+
+**1. Elu Igwe (Le Ciel / Monde Supérieur)**
+- Demeure de Chukwu (Dieu suprême) et des grandes divinités (Alusi)
+- Monde de la lumière, de la pureté et de l'ordre cosmique
+- Source de la pluie, du tonnerre et des bénédictions célestes
+
+**2. Ala Mmuo (Monde des Esprits)**
+- Monde invisible coexistant avec le monde physique
+- Demeure des ancêtres (Ndi Ichie), des esprits de la nature et des forces spirituelles
+- Pont entre le ciel et la terre
+- Accessible via les rêves, les transes et les rituels
+
+**3. Ala Mmadu (Terre / Monde des Humains)**
+- Monde physique où vivent les humains
+- Domaine d'Ala (déesse de la terre)
+- Lieu de manifestation des forces spirituelles
+- Espace de l'action morale et du destin individuel
+
+### Divinités et forces spirituelles (Alusi / Arusi) :
+
+**Chukwu / Chi Ukwu (Dieu Suprême)**
+- Endonyme : Chukwu (Chi = esprit/dieu, Ukwu = grand)
+- Créateur de l'univers (Chineke = Chi na eke, "Dieu qui crée")
+- Transcendant, distant, rarement invoqué directement
+- Source de toute vie et de tout pouvoir spirituel
+- Attributs : omniscient, omnipotent, éternel, invisible
+- Pas de culte direct, mais vénération via les Alusi
+
+**Chi (Esprit Personnel / Dieu Personnel)**
+- Endonyme : Chi (pluriel : Chi)
+- Parcelle de Chukwu attribuée à chaque individu à la naissance
+- Détermine le destin (Akara aka, "empreinte de la main")
+- Compagnon spirituel tout au long de la vie
+- Concept : "Onye kwe, Chi ya ekwe" (Si tu consens, ton Chi consent)
+- Culte personnel : autel domestique (Okwu Chi), offrandes régulières
+
+**Ala / Ani (Déesse de la Terre et de la Fertilité)**
+- Endonyme : Ala, Ani, Ana (selon les dialectes)
+- Déesse la plus vénérée après Chukwu
+- Mère de tous les êtres vivants
+- Gardienne de la moralité et de la loi (Omenala)
+- Juge des vivants et des morts
+- Propriétaire de la terre et des récoltes
+- Sanctuaires : Mbari (maisons sacrées avec sculptures)
+- Tabous (Nso Ala) : meurtre, inceste, vol, mensonge sous serment
+- Punitions : maladies, infertilité, mauvaises récoltes
+- Prêtres : Eze Ala (roi/prêtre de la terre)
+- Festivals : Iri Ji (offrande des premières ignames)
+
+**Amadioha / Amadiora (Dieu du Tonnerre et de la Justice)**
+- Endonyme : Amadioha (Ama di oha = "volonté du peuple")
+- Dieu du tonnerre, de la foudre et de la justice divine
+- Punisseur des malfaiteurs et des parjures
+- Symbole : bélier blanc
+- Manifestations : tonnerre, foudre, éclairs
+- Sanctuaires : Amadioha shrines (avec béliers sacrés)
+- Serments : invocation d'Amadioha pour les serments solennels
+- Exonyme : "Thunder God" (anglais)
+
+**Ikenga (Dieu de la Réussite et de la Force Personnelle)**
+- Endonyme : Ikenga (Ike = force, Nga = individu)
+- Divinité de l'accomplissement personnel, de la détermination et du succès
+- Représenté par une statue en bois avec des cornes (symbole de puissance)
+- Culte individuel : chaque homme possède son Ikenga
+- Offrandes : noix de kola, vin de palme, sang d'animaux
+- Invoqué avant les entreprises importantes
+- Symbole de la méritocratie igbo
+
+**Anyanwu (Dieu du Soleil)**
+- Endonyme : Anyanwu (Anya = œil, Anwu = soleil)
+- Divinité solaire, source de lumière et de vie
+- Symbole de vérité et de clarté
+- Moins vénéré que Chukwu, Ala ou Amadioha
+- Associé au cycle jour/nuit, au temps
+
+**Igwe (Dieu du Ciel)**
+- Endonyme : Igwe (ciel, firmament)
+- Parfois confondu avec Chukwu
+- Maître des phénomènes célestes
+- Source de la pluie et de la fertilité agricole
+
+**Njoku Ji (Dieu de l'Igname)**
+- Endonyme : Njoku Ji (Njoku = esprit, Ji = igname)
+- Divinité de l'agriculture et de la prospérité
+- Protecteur des récoltes d'ignames
+- Culte féminin : les femmes sont ses principales prêtresses
+- Sanctuaires : petits autels dans les champs
+
+**Agwu (Dieu de la Divination et de la Guérison)**
+- Endonyme : Agwu Nsi (Agwu = esprit capricieux)
+- Divinité de la divination, de la médecine et de la folie sacrée
+- Patron des dibia (prêtres-devins)
+- Manifestations : transes, visions, inspiration prophétique
+- Ambivalent : peut causer la maladie ou la guérir
+- Initiation : les dibia doivent être "appelés" par Agwu
+
+**Ekwensu (Esprit de la Guerre et du Chaos)**
+- Endonyme : Ekwensu, Ajofia
+- Esprit de la guerre, de la ruse et du désordre
+- Souvent diabolisé par les missionnaires chrétiens (assimilé à Satan)
+- En réalité : force neutre, nécessaire à l'équilibre cosmique
+- Invoqué par les guerriers avant les batailles
+- Symbole : machette, lance
+
+**Ogbanje (Esprits Enfants / Enfants Revenants)**
+- Endonyme : Ogbanje (Ogba = courir, Nje = mourir et revenir)
+- Esprits d'enfants qui meurent et renaissent cycliquement
+- Croyance : certains enfants sont liés à un pacte spirituel avec des compagnons de l'au-delà
+- Rituels : identification et rupture du cycle (recherche de l'Iyi-uwa, objet liant l'enfant au monde spirituel)
+- Exonyme : "Spirit children" (anglais)
+
+**Mmuo (Esprits Ancestraux)**
+- Endonyme : Mmuo (pluriel : Ndi Mmuo)
+- Esprits des ancêtres défunts
+- Rôle : protection, guidance, intercession auprès des Alusi
+- Culte : autels domestiques, offrandes régulières, libations
+- Manifestations : rêves, masques Mmanwu, possessions
+- Réincarnation : croyance en la réincarnation des ancêtres dans leurs descendants
+
+**Ndi Ichie (Ancêtres Vénérables)**
+- Endonyme : Ndi Ichie (les anciens)
+- Ancêtres fondateurs des lignages
+- Autorité morale et spirituelle
+- Consultés lors des décisions importantes
+- Festivals : Iwa Ji, Ikwa Ozu (funérailles)
+
+### Conception de l'homme :
+
+**Dualité corps-esprit :**
+- Ahu (corps physique) : enveloppe matérielle, temporaire
+- Mmuo (âme/esprit) : essence spirituelle, éternelle
+- Chi (dieu personnel) : guide spirituel, détermine le destin
+
+**Cycle de vie spirituel :**
+1. Pré-existence : l'esprit choisit son destin (Ịhụ Ụzọ Ndụ) avant la naissance
+2. Naissance : incarnation, attribution du Chi
+3. Vie terrestre : accomplissement du destin, actions morales
+4. Mort : retour au monde des ancêtres (Ala Mmuo)
+5. Réincarnation : retour dans la lignée familiale (Ilo Uwa)
+
+**Concept de personne (Mmadu) :**
+- Mmadu = Mma (beauté) + Adu (vie) = "belle vie"
+- L'homme est un être social : "Onye aghana nwanne ya" (Nul ne doit abandonner son frère)
+- Valeurs : Omenala (tradition), Obi oma (bon cœur), Ugwu (honneur), Iru ala (travail acharné)
+
+### Conception de la nature :
+
+**Sacralité de la terre (Ala) :**
+- La terre est une divinité vivante, mère nourricière
+- Interdiction de souiller la terre : tabous sur le sang versé, les excréments
+- Propriété collective : la terre appartient aux ancêtres, aux vivants et aux générations futures
+
+**Esprits de la nature :**
+- Mmuo Mmiri (esprits de l'eau) : habitent les rivières, lacs et sources
+- Mmuo Ọhịa (esprits de la forêt) : gardiens des forêts sacrées
+- Agwu Ọhịa (esprits des animaux) : protecteurs de la faune
+
+**Arbres et plantes sacrés :**
+- Ogilisi (Newbouldia laevis) : arbre sacré, planté près des sanctuaires
+- Ọjị (noix de kola) : plante sacrée, offrande rituelle
+- Ede (cocoyam), Ji (igname) : plantes sacrées, symboles de fertilité
+
+**Harmonie cosmique :**
+- Équilibre entre les mondes : maintien de l'harmonie entre Elu Igwe, Ala Mmuo et Ala Mmadu
+- Respect des tabous (Nso) : éviter les actions qui perturbent l'ordre cosmique
+- Purification (Ikpu Aru) : rituels de nettoyage après transgression
+
+### Rites et pratiques spirituelles :
+
+**Divination (Ịgba Afa, Ịgba Eze) :**
+- Afa : système divinatoire utilisant des noix de palme ou des cauris
+- Dibia : prêtre-devin, intermédiaire avec le monde spirituel
+- Consultation : avant les mariages, voyages, entreprises importantes
+
+**Sacrifices et offrandes :**
+- Ịchụ Aja : sacrifice d'animaux (poulets, chèvres, béliers)
+- Ịgọ Mmuo : offrandes aux ancêtres (noix de kola, vin de palme, nourriture)
+- Libations : versement de vin de palme ou d'eau sur le sol
+
+**Purification (Ikpu Aru) :**
+- Ịsa Ahu : bains rituels avec des herbes sacrées
+- Ịkwa Ofo : purification avec le bâton Ofo
+- Expiation : sacrifices pour réparer les transgressions
+
+**Masques et sociétés secrètes :**
+- Mmanwu : masques représentant des esprits ancestraux
+- Sociétés : Ekpe, Okonko, Nze na Ozo (régulation sociale et spirituelle)
+
+### Influence du christianisme :
+
+Depuis le XIXe siècle, la majorité des Igbo ont adopté le christianisme (catholicisme, anglicanisme, pentecôtisme), créant un syncrétisme complexe :
+- Chukwu assimilé au Dieu chrétien
+- Ala parfois identifiée à la Vierge Marie
+- Persistance des pratiques traditionnelles (Iri Ji, culte des ancêtres)
+- Tension entre modernité chrétienne et traditions ancestrales
+
+### Sources spirituelles :
+- Achebe, Chinua. *Things Fall Apart* (1958) – représentation de la spiritualité igbo pré-coloniale
+- Uchendu, Victor. *The Igbo of Southeast Nigeria* (1965)
+- Metuh, Emefie Ikenga. *God and Man in African Religion: A Case Study of the Igbo of Nigeria* (1981)
+- Arinze, Francis. *Sacrifice in Ibo Religion* (1970)
+- Ejizu, Christopher. *Ofo: Igbo Ritual Symbol* (1986)
+
+# 6. Rôle historique et interactions régionales
+
+## Royaumes / chefferies :
+- Royaume de Nri (Xe-XIXe siècles) : autorité spirituelle et politique, l'Eze Nri était considéré comme un prêtre-roi divin, médiateur entre Chukwu et les hommes. Le royaume n'était pas territorial mais basé sur le prestige religieux et l'influence culturelle.
+- Confédération Aro (XVIIe-XIXe siècles) : réseau commercial et religieux centré sur l'oracle d'Arochukwu (Ibini Ukpabi), contrôlait le commerce à longue distance et la traite atlantique
+- Onitsha (XVIe siècle-présent) : royaume riverain fondé par des migrants d'Igala, centre commercial majeur sur le Niger
+- Oguta (XVe siècle-présent) : royaume lacustre, centre de pêche et de commerce
+- Aboh (XVe siècle-présent) : royaume du delta du Niger, intermédiaire entre les Igbo et les Européens
+
+## Relations avec peuples voisins :
+- Ibibio et Efik : échanges commerciaux, partage du système d'écriture Nsibidi, influences culturelles mutuelles
+- Ijaw : relations commerciales et conflictuelles dans le delta du Niger, compétition pour les ressources
+- Igala : influences politiques (royaume d'Onitsha), échanges culturels
+- Edo (Bénin) : commerce, influences artistiques (bronzes)
+- Yoruba : commerce, rivalités territoriales à l'ouest
+
+## Conflits / alliances :
+- Guerre d'Ekumeku (1883-1914) : résistance igbo contre la colonisation britannique
+- Expédition d'Arochukwu (1901-1902) : destruction de l'oracle par les Britanniques
+- Guerre civile du Biafra (1967-1970) : sécession du sud-est du Nigeria, conflit avec le gouvernement fédéral, génocide et famine (1-3 millions de morts)
+- Pogroms anti-Igbo (1966) : massacres dans le nord du Nigeria, déclencheurs de la guerre du Biafra
+
+## Diaspora :
+- Diaspora atlantique : déportation massive lors de la traite négrière (XVIe-XIXe siècles), présence igbo significative aux Caraïbes (Jamaïque, Barbade), aux États-Unis et en Amérique latine
+- Diaspora post-Biafra : migration massive après la guerre civile vers l'Europe (Royaume-Uni, Allemagne), l'Amérique du Nord et l'Asie
+- Diaspora contemporaine : communautés igbo influentes dans le commerce, l'éducation et la politique à travers le monde
+- Associations diasporiques : Ohanaeze Ndigbo (organisation pan-igbo), World Igbo Congress
+
+# 7. Démographie globale
+- Population totale (tous pays) : 39 365 000 (estimation 2025)
+- Répartition par pays :
+  * Nigeria : 38 500 000 (principalement États d'Abia, Anambra, Ebonyi, Enugu, Imo, Delta, Rivers)
+  * Cameroun : 50 000
+  * Guinée équatoriale : 15 000
+  * Diaspora mondiale : 800 000+ (États-Unis, Royaume-Uni, Canada, Allemagne, etc.)
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv, Ethnologue, Nigerian Census, estimations AFRIK
+
+# 8. Sources
+- Achebe, Chinua. *Things Fall Apart* (1958) – roman fondateur sur la société igbo pré-coloniale
+- Uchendu, Victor. *The Igbo of Southeast Nigeria* (1965) – étude anthropologique classique
+- Isichei, Elizabeth. *A History of the Igbo People* (1976)
+- Afigbo, Adiele. *Ropes of Sand: Studies in Igbo History and Culture* (1981)
+- Metuh, Emefie Ikenga. *God and Man in African Religion: A Case Study of the Igbo of Nigeria* (1981)
+- Ejizu, Christopher. *Ofo: Igbo Ritual Symbol* (1986)
+- Oriji, John. *Traditions of Igbo Origin: A Study of Pre-Colonial Population Movements in Africa* (1994)
+- Nwala, T. Uzodinma. *Igbo Philosophy* (1985)
+- Shaw, Thurstan. *Igbo-Ukwu: An Account of Archaeological Discoveries in Eastern Nigeria* (1970) – découvertes archéologiques majeures
+- Arinze, Francis. *Sacrifice in Ibo Religion* (1970)
+- Ethnologue (SIL International) – données linguistiques et démographiques
+- Nigerian Ethnographic Survey – données ethnographiques officielles
+- ALCAM (Atlas Linguistique du Cameroun) – données sur les Igbo du Cameroun
+- Recherches web (2025) – sources académiques et historiques diverses
