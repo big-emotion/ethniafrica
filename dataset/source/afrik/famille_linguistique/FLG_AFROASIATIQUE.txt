@@ -1,40 +1,58 @@
 # Famille linguistique
 
+
+
 ## HEADER DÉCOLONIAL (obligatoire)
+
+
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_AFROASIATIQUE
 - Nom français : Afro-asiatique
 - Nom anglais / auto-appellation académique : Afroasiatic
-- Appellation(s) historique(s) : Hamito-sémitique, Sémito-hamitique, Afrasian
-- Origine du terme historique :  
-  Le terme « hamito-sémitique » a été forgé au XIXe siècle dans un cadre linguistique influencé par la Bible. Les « Hamites » (descendants de Cham) et les « Sémites » (descendants de Sem) étaient regroupés selon une lecture généalogique et non scientifique.
-- Pourquoi le terme pose problème :  
-  Le concept « hamitique » est aujourd’hui considéré comme colonial, racialiste et pseudo-scientifique. Il impliquait une hiérarchie entre peuples supposés « civilisateurs » (Hamites) et autres groupes africains. Le terme est totalement abandonné.
-- Auto-appellation (locuteurs / linguistes contemporains) : Afroasiatic / Afro-asiatique
-- Usage contemporain :  
-  Famille linguistique reconnue comptant environ 375 à 400 langues, incluant les branches berbère, couchitique, omotique, sémitique, tchadique et l’égyptien ancien.
+- Appellation(s) historique(s) : Chamito-sémitique, Sémito-chamitique, Afro-asiatique
+- Origine du terme historique :  
+  Le terme « chamito-sémitique » a été forgé au XIXe siècle par Friedrich Müller dans un but idéologique : séparer l’Égypte ancienne de l’Afrique noire et rattacher l’Afrique du Nord au Moyen-Orient. Il repose sur une classification biblique (Cham/Sem) et non scientifique.
+- Pourquoi le terme pose problème :  
+  Le concept est une construction artificielle sans validité scientifique démontrée (aucune loi phonétique commune, aucune proto-langue reconstruite entre les 5 groupes). Il mélange critères raciaux, bibliques et linguistiques pour nier l'africanité de l'Égypte. Le terme « chamitique » est colonial et obsolète.
+- Auto-appellation (locuteurs / linguistes contemporains) : Afroasiatic / Afro-asiatique (usage conventionnel contesté)
+- Usage contemporain :  
+  Bien que utilisé par convention académique, l'existence de cette famille en tant qu'unité génétique est contestée par les preuves modernes (notamment travaux d'Obenga) qui montrent plutôt une parenté directe entre l'Égyptien ancien et les langues négro-africaines (Niger-Congo, Nilo-saharien).
 - Aire / répartition géographique générale : Afrique du Nord, Sahara, Sahel, Corne de l’Afrique
-- Nombre de langues (estimation) : ~375–400
+- Nombre de langues (estimation) : ~375–400 (regroupement contesté)
 - Nombre total de locuteurs (estimation) : ~500 millions
+
+
 
 ------------------------------------------
 
+
+
 ## MODÈLE STRUCTURÉ AFRIK
 
+
+
 # 1. Informations générales
-- Nom de la famille : Afro-asiatique
-- Branches internes / sous-groupes :  
-  Sémitique, Berbère (Amazigh), Tchadique, Couchitique, Omotique, Égyptien ancien
-- Aire géographique : Afrique du Nord, Sahel, Sahara, Corne de l’Afrique
+- Nom de la famille : Afro-asiatique (concept contesté)
+- Branches internes / sous-groupes (classification usuelle) :  
+  Sémitique, Berbère (Amazigh), Tchadique, Couchitique, Omotique, Égyptien ancien (ce dernier étant rattaché au négro-africain par la nouvelle école).
+- Aire géographique : 
+  - Afrique du Nord
+  - Corne de l’Afrique
+  - Sahel et Sahara
+  - Extensions sahéliennes (Afrique de l'Ouest, Centrale et de l'Est)
 - Nombre de langues : ~375–400
 - Nombre total de locuteurs : ~500 millions
 
+
+
 # 2. Peuples associés
-- Peuple 1 : Arabes (PPL_ARABES)
-- Peuple 2 : Amazighs (Berbères) (PPL_AMAZIGH)
-- Peuple 3 : Haoussa (PPL_HAUSA)
-- Peuple 4 : Somali (PPL_SOMALI)
-- Peuple 5 : Oromo (PPL_OROMO)
+- Arabes
+- Amazighs (Berbères)
+- Haoussa
+- Somali
+- Oromo
+
+
 
 # 3. Ethnies associées (liste synthétique)
 - Kabyles
@@ -43,36 +61,55 @@
 - Amhara
 - Somali
 
+
+
 # 4. Caractéristiques linguistiques
-- Typologie linguistique :  
-  Langues flexionnelles, racines consonantiques (notamment dans le sémitique), systèmes verbaux complexes.
-- Particularités phonologiques :  
-  Consonnes emphatiques, pharyngales, uvulaires, présence de gemination.
-- Liens avec les familles voisines :  
-  Contacts très anciens avec Niger-Congo (Ouest africain) et Nilo-saharien (Sahel).
-- Innovations clés :  
-  Systèmes de dérivation à base consonantique, structuration nominale complexe dans certaines branches.
+- Typologie linguistique :  
+  Incohérences majeures entre les groupes supposés. Le sémitique (racines trilitères, masculin/féminin obligatoire) diffère radicalement de l'égyptien ancien (absences de racines trilitères, absence de genre grammatical).
+- Particularités phonologiques :  
+  Aucune innovation phonétique partagée entre les 5 groupes. Pas de lois de correspondance régulières validant l'unité de la famille "afroasiatique".
+- Liens avec les familles voisines (Preuves de parenté Égyptien-Afrique Noire) :  
+  Les travaux de Théophile Obenga démontrent des correspondances régulières entre l'Égyptien ancien et le Phylum Négro-africain :
+  - **Phonétique** : Correspondances régulières (ex: Ég. *km* "noir" → Wolof *kem*, Bassa *keèm* ; Ég. *mw* "eau" → Kikongo *mawu*, Éwé *mú*).
+  - **Lexique** : Vocabulaire de base commun (Mère, Tête, Soleil, Verbes d'état).
+  - **Grammaire** : Similitudes structurelles (préfixes/suffixes, marques du pluriel bantoues, ordre SVO, absence de genre).
+- Innovations clés :  
+  Aucune proto-langue "afroasiatique" n'a pu être reconstruite scientifiquement.
+
+
 
 # 5. Histoire et origines
-- Origine probable :  
-  Zone saharo-orientale ou Corne de l’Afrique (différents modèles existent).
-- Diffusion des langues :  
-  Expansion dans le Maghreb, le Sahara, le Sahel, le Proche-Orient.
+- Origine probable :  
+  Le regroupement "afroasiatique" est considéré par l'école d'Obenga comme une zone de contact et d'emprunts historiques, non comme une parenté génétique. Le Berbère moderne comporte de nombreux emprunts (latins, arabes).
+- Diffusion des langues :  
+  Expansion hétérogène. Distinction nette entre l'ancrage africain de l'Égypte ancienne et les dynamiques ultérieures du Sémitique et du Berbère.
 - Ruptures historiques :
-  - Extinction de l’égyptien ancien  
-  - Divergence berbère / couchitique / sémitique  
-  - Islamisation et arabisation des régions nord-africaines
-- Zones de contact et métissages :  
-  Vallée du Nil, Sahara, Corne de l’Afrique.
+  - Séparation idéologique artificielle de l'Égypte du reste du continent au XIXe siècle.
+  - Divergences profondes structurelles entre le Sémitique et les langues africaines autochtones.
+- Zones de contact et métissages :  
+  Vallée du Nil, Sahara, Corne de l’Afrique (zones de brassage intense expliquant les emprunts).
+
+
 
 # 6. Répartition géographique et démographie
 - Nombre total de locuteurs : ~500 millions
-- Répartition par pays :  
-  Maroc, Algérie, Tunisie, Libye, Égypte, Tchad, Niger, Éthiopie, Somalie, Soudan
-- Importance historique :  
-  Langues des grandes civilisations nord-africaines et saharo-sahéliennes.
+- Répartition par pays :  
+  - Afrique du Nord : Maroc, Algérie, Tunisie, Libye, Égypte
+  - Corne de l’Afrique : Éthiopie, Érythrée, Djibouti, Somalie
+  - Sahel et Sahara : Mauritanie, Tchad, Soudan, Niger
+  - Extensions sahéliennes :
+    - Afrique de l'Ouest : Nord du Sénégal, Nord du Mali, Nord du Burkina Faso, Nord du Ghana, Nord du Bénin, Nord du Nigeria
+    - Afrique Centrale : Nord du Cameroun
+    - Afrique de l'Est : Nord du Kenya, Nord de la Tanzanie
+- Importance historique :  
+  Le concept regroupe des langues de civilisations majeures, mais masque la parenté culturelle et linguistique profonde de l'Égypte pharaonique avec l'Afrique noire ("Maât" vs "Ubuntu").
+
+
 
 # 7. Sources
-- Hetzron (2003) – *The Semitic Languages*
+- Friedrich Müller (inventeur du terme "chamito-sémitique" et de la classification originelle)
+- Théophile Obenga – *L'origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*
+- Théophile Obenga – *La Philosophie africaine de la période pharaonique*
+- Cheikh Anta Diop – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*
+- Hetzron (2003) – *The Semitic Languages* (pour la classification classique)
 - Glottolog – Afroasiatic overview
-- UNESCO – Atlas of the World’s Languages
