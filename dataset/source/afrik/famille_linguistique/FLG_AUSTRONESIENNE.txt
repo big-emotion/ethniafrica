@@ -6,11 +6,15 @@
 - Nom français : Austronésienne (présente en Afrique uniquement via Madagascar)
 - Nom anglais / auto-appellation académique : Austronesian / Malayo-Polynesian
 - Appellation(s) historique(s) : —
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 - Origine du terme historique : Terme forgé par le linguiste autrichien Wilhelm Schmidt en 1899 (notamment dans ses travaux sur les langues des mers du Sud) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l’Asie du Sud-Est et de l’océan Indien.
 =======
 - Origine du terme historique : Terme forgé par les linguistes européens du XIXe siècle pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l'Asie du Sud-Est et de l'océan Indien. Le terme "Austronesian" a été proposé par Wilhelm Schmidt (1906) pour remplacer l'ancienne dénomination "Malayo-Polynesian" et inclure les langues de Formose (Taiwan).
 >>>>>>> Stashed changes
+=======
+- Origine du terme historique : Terme forgé par le linguiste autrichien Wilhelm Schmidt en 1899 (notamment dans ses travaux sur les langues des mers du Sud) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l’Asie du Sud-Est et de l’océan Indien.
+>>>>>>> 41584091a0c80e0afce400cfe66337521dff28f4
 - Pourquoi le terme pose problème (si applicable) :  
   L'expression ne pose pas de problème direct, mais son utilisation en Afrique peut prêter à confusion car elle désigne une famille mondiale principalement asiatique.  
   En Afrique, seule Madagascar en relève : certains travaux coloniaux minimisaient l'africanité du peuple malgache en insistant uniquement sur l'origine austronésienne, invisibilisant les apports bantous et est-africains.
@@ -57,6 +61,7 @@
 - Nombre total de locuteurs : ~27 millions (en Afrique, Madagascar, 2025) / >300 millions (monde)
 
 # 2. Peuples associés
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 - Peuple 1 : Malgaches (Merina)
 - Peuple 2 : Malgaches (Betsimisaraka)
@@ -68,6 +73,11 @@
 - Peuple 4 : Malgaches (Betsileo) (PPL_BETSILEO)
 - Peuple 5 : Malgaches (Antandroy) (PPL_ANTANDROY)
 >>>>>>> Stashed changes
+=======
+- Peuple 1 : Malgaches (Merina)
+- Peuple 2 : Malgaches (Betsimisaraka)
+- Peuple 3 : Malgaches (Sakalava)
+>>>>>>> 41584091a0c80e0afce400cfe66337521dff28f4
 
 # 3. Caractéristiques linguistiques
 - Typologie linguistique :  
@@ -89,6 +99,7 @@
   - Emprunts aux langues européennes (français, anglais) : *birao* "bureau", *kompitra* "ordinateur"
   - Contact historique avec les langues créoles de l'océan Indien
 - Innovations clés :  
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   Imagine que les verbes sont comme des Lego : cette langue adore ajouter des petits morceaux (comme *mi-* ou *maha-*) au début des mots pour changer leur sens ou dire qui fait l'action. C'est un système très astucieux pour créer plein de nouveaux mots à partir d'un seul !
   Par exemple, prends le mot *gaga* (surpris). Si on ajoute le bloc *mi-*, ça devient *migaga* (s'étonner). Si on utilises le bloc *maha-*, ça devient *mahagaga* (c'est étonnant / magique). Hop, deux sens différents avec la même brique de base !
@@ -99,6 +110,10 @@
   - Système de classes nominales simplifié par rapport au proto-austronésien
   - Préservation de traits archaïques austronésiens perdus dans d'autres branches (ex. : système de numération)
 >>>>>>> Stashed changes
+=======
+  Imagine que les verbes sont comme des Lego : cette langue adore ajouter des petits morceaux (comme *mi-* ou *maha-*) au début des mots pour changer leur sens ou dire qui fait l'action. C'est un système très astucieux pour créer plein de nouveaux mots à partir d'un seul !
+  Par exemple, prends le mot *gaga* (surpris). Si on ajoute le bloc *mi-*, ça devient *migaga* (s'étonner). Si on utilises le bloc *maha-*, ça devient *mahagaga* (c'est étonnant / magique). Hop, deux sens différents avec la même brique de base !
+>>>>>>> 41584091a0c80e0afce400cfe66337521dff28f4
 
 # 4. Histoire et origines
 - Origine probable (théories archéologiques, linguistiques, génétiques) :  
