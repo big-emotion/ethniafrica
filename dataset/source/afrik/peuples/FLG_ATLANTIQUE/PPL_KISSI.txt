@@ -1,59 +1,79 @@
 # Nom du peuple
 - Nom principal du peuple : Kissi
-- Auto-appellation (endonyme) : Kissi
-- Exonymes / appellations historiques : Kissi (terme utilisé par les Européens)
-- Origine des termes (exonymes) : N/A
-- Pourquoi certains termes posent problème (si applicable) : N/A
-- Usage contemporain des appellations : N/A
-- Famille linguistique principale : FLG_ATLANTIQUE
-- Groupe ethno-linguistique : N/A
-- Région historique : Guinée forestière (sud)
-- Pays actuels : GIN
+- Auto-appellation : Gissi / Kissi
+- Exonymes / appellations historiques : Gizi, Gisi, Kissien
+- Famille linguistique principale : Niger-Congo – Atlantique (Branche Mel)
+- Groupe ethno-linguistique : Mel (ou Sud-Atlantique)
+- Région historique : Guinée Forestière, Sierra Leone, Liberia
+- Pays actuels : Guinée, Sierra Leone, Liberia
 - Identifiant peuple (ID) : PPL_KISSI
 
 # 1. Ethnies incluses dans le peuple
-- Ethnie 1 : Kissi
-- Ethnie 2 : N/A
-- Ethnie 3 : N/A
+- Ethnie 1 : Kissi du Nord (Guinée)
+- Ethnie 2 : Kissi du Sud (Sierra Leone, Liberia)
+- Ethnie 3 : Kama (sous-groupe)
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes (théories archéologiques, linguistiques, génétiques) : N/A
-- Période de formation estimée : N/A
-- Routes migratoires principales : N/A
-- Zones d'établissement historiques : Guinée forestière (sud)
-- Unifications / divisions : N/A
-- Influences externes (peuples voisins, colonisation, commerce) : N/A
-- Événements historiques majeurs ayant façonné le peuple : N/A
+- Origines anciennes :
+  Probablement originaires du Fouta-Djalon avant d'être repoussés vers le sud par l'expansion mandingue et peule.
+- Routes migratoires :
+  Migration vers la zone forestière (région de Kissidougou et Guéckédou) et vers la côte.
+- Unifications / divisions :
+  Division linguistique entre Nord et Sud, mais forte unité culturelle autour de la culture du riz.
+- Influences externes :
+  Forte interaction historique avec les Mandingues (Kuranko) et les Mende.
 
 # 3. Organisation et structure interne
-- Système politique traditionnel : N/A
-- Organisation clanique : N/A
-- Rôle des lignages : N/A
-- Autorité religieuse : N/A
+- Système politique traditionnel :
+  Société acéphale organisée en villages autonomes, fédérés en cas de guerre.
+- Organisation clanique :
+  Lignages patrilinéaires forts.
+- Rôle des lignages :
+  Gestion des terres (le riz est sacré) et des alliances matrimoniales.
+- Autorité religieuse :
+  Rôle central des neveux utérins (relations oncle-neveu) et des prêtres de la terre.
 
 # 4. Langues et sous-familles
-- Langue principale : Kissi (kqs)
-- Codes ISO : kqs
-- Dialectes : N/A
-- Rôle véhiculaire : N/A
+- Langue principale : Kissi
+- Codes ISO : kqs (Nord), kss (Sud)
+- Dialectes :
+  - Kissi-le (Nord)
+  - Kissi-fama (Sud)
+- Rôle véhiculaire :
+  Langue identitaire forte, peu véhiculaire en dehors du groupe.
 
 # 5. Culture, rites et traditions
-- Rites majeurs : N/A
-- Symboles : N/A
-- Arts et musique : N/A
-- Spiritualités : N/A
+- Rites majeurs :
+  Initiation Poro (hommes) et Sande (femmes) – marquant l'entrée dans l'âge adulte.
+- Symboles :
+  La "pierre Kissi" (pomdo) : statuettes de pierre ancestrales retrouvées dans les champs, vénérées comme ancêtres.
+- Arts et musique :
+  Usage de flûtes et tambours lors des funérailles.
+- Spiritualités :
+  Animisme agraire centré sur le cycle du riz et le culte des ancêtres (pomdo).
 
 # 6. Rôle historique et interactions régionales
-- Royaumes / chefferies : N/A
-- Relations avec peuples voisins : N/A
-- Conflits / alliances : N/A
-- Diaspora : N/A
+- Royaumes / chefferies :
+  Pas de grand empire centralisé. Figure majeure : Kissi Kaba Keita qui unifia de nombreuses chefferies pour résister à la conquête.
+- Relations avec peuples voisins :
+  Alliances stratégiques, notamment avec les Kuranko de Morige et les Leles de Yombiro sous Kissi Kaba Keita.
+- Conflits / alliances :
+  Lien historique avec l'Empire Wassoulou : Kissi Kaba Keita a servi comme chef de guerre dans l'armée de Samory Touré avant d'unifier les Kissi.
+  Résistance héroïque à la conquête française (1892) par la guérilla. Capitulation en 1893, reconnaissance temporaire comme chef du nord, puis dégradation des relations et exécution de Kissi Kaba Keita à Siguiri.
+- Diaspora :
+  Présence dans les capitales (Conakry, Freetown, Monrovia).
 
 # 7. Démographie globale
-- Population totale (tous pays) : 750,000
-- Répartition par pays : GIN: 750,000
+- Population totale (tous pays) : ~1 000 000
+- Répartition par pays :
+  - Guinée : ~550 000 (plus grande concentration, Kissidougou, Guéckédou)
+  - Sierra Leone : ~250 000
+  - Liberia : ~150 000
 - Année de référence : 2025
-- Source : N/A
+- Source : Estimations croisées Joshua Project / Ethnologue / Annuaires nationaux.
 
 # 8. Sources
-- N/A
+- Paulme, D. – *Les Gens du Riz*
+- Ethnologue – Kissi (Southern & Northern)
+- Fairhead, J. & Leach, M. – *Misreading the African Landscape*
+

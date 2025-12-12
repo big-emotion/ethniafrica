@@ -1,10 +1,6 @@
 # Famille linguistique
 
-
-
 ## HEADER DÉCOLONIAL (obligatoire)
-
-
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_ATLANTIQUE
 - Nom français : Atlantique
@@ -26,15 +22,9 @@
 - Nombre de langues (estimation) : ~45–60
 - Nombre total de locuteurs (estimation) : ~35–40 millions
 
-
-
 ------------------------------------------
 
-
-
 ## MODÈLE STRUCTURÉ AFRIK
-
-
 
 # 1. Informations générales
 - Nom de la famille : Atlantique
@@ -50,22 +40,16 @@
 - Nombre total de locuteurs :
   ~35–40 millions
 
-
-
 # 2. Peuples associés
 - Peuple 1 : Wolof
 - Peuple 2 : Fulbe (Peuls)
 - Peuple 3 : Serer
-
-
 
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Diola / Joola
 - Ethnie 2 : Temne
 - Ethnie 3 : Kissi
 (+ renvoi aux fiches ethniques dédiées)
-
-
 
 # 4. Caractéristiques linguistiques
 - Typologie linguistique :
@@ -80,8 +64,6 @@
   - Alternance consonantique (grammaticale) : Modification de la première consonne du mot pour marquer le pluriel ou la classe (ex: en Peul, pullo "Peul" singulier / fulbe "Peuls" pluriel).
   - Extension verbale : Richesse des dérivations verbales (causatif, réversif, passif) typique du phylum.
 
-
-
 # 5. Histoire et origines
 - Origine probable :
   Sénégambie ou zone côtière guinéenne. 
@@ -94,8 +76,6 @@
 - Zones de contact et métissages :
   Rivières du Sud, Casamance, Fouta-Djalon (contact Peul-Mandingue).
 
-
-
 # 6. Répartition géographique et démographie
 - Nombre total de locuteurs :
   ~35–40 millions
@@ -103,8 +83,6 @@
   Sénégal, Gambie, Guinée-Bissau, Guinée, Sierra Leone, Libéria, Mauritanie (et diaspora peule jusqu'au Cameroun/Soudan).
 - Importance historique :
   Langues de grands états (Djolof, Fouta Toro, Fouta Djalon) et vecteurs de l'islam en Afrique de l'Ouest.
-
-
 
 # 7. Sources
 - Obenga, T. – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*
