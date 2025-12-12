@@ -6,15 +6,42 @@
 - Nom français : Austronésienne (présente en Afrique uniquement via Madagascar)
 - Nom anglais / auto-appellation académique : Austronesian / Malayo-Polynesian
 - Appellation(s) historique(s) : —
+<<<<<<< Updated upstream
 - Origine du terme historique : Terme forgé par le linguiste autrichien Wilhelm Schmidt en 1899 (notamment dans ses travaux sur les langues des mers du Sud) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l’Asie du Sud-Est et de l’océan Indien.
+=======
+- Origine du terme historique : Terme forgé par les linguistes européens du XIXe siècle pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l'Asie du Sud-Est et de l'océan Indien. Le terme "Austronesian" a été proposé par Wilhelm Schmidt (1906) pour remplacer l'ancienne dénomination "Malayo-Polynesian" et inclure les langues de Formose (Taiwan).
+>>>>>>> Stashed changes
 - Pourquoi le terme pose problème (si applicable) :  
-  L’expression ne pose pas de problème direct, mais son utilisation en Afrique peut prêter à confusion car elle désigne une famille mondiale principalement asiatique.  
-  En Afrique, seule Madagascar en relève : certains travaux coloniaux minimisaient l’africanité du peuple malgache en insistant uniquement sur l’origine austronésienne, invisibilisant les apports bantous et est-africains.
-- Auto-appellation (locuteurs / linguistes contemporains) : « Austronesian » (communauté scientifique), « Malagasy » pour la branche africaine.
-- Usage contemporain : Famille mondiale comptant ~1 257 langues, couvrant le Pacifique et l’Asie du Sud-Est, et représentée en Afrique uniquement par le malgache et ses variantes régionales.
-- Aire / répartition géographique générale : Madagascar (Afrique), Asie du Sud-Est, Polynésie, Micronésie, Mélanésie.
-- Nombre de langues (estimation) : En Afrique : 1 (malgache). Monde : ~1257.
-- Nombre total de locuteurs (estimation) : ~27 millions en Afrique (Madagascar), >300 millions dans le monde.
+  L'expression ne pose pas de problème direct, mais son utilisation en Afrique peut prêter à confusion car elle désigne une famille mondiale principalement asiatique.  
+  En Afrique, seule Madagascar en relève : certains travaux coloniaux minimisaient l'africanité du peuple malgache en insistant uniquement sur l'origine austronésienne, invisibilisant les apports bantous et est-africains.
+  
+  **Preuves des travaux coloniaux problématiques :**
+  - Alfred Grandidier (1875-1921) : Dans son œuvre *Histoire physique, naturelle et politique de Madagascar*, insistait sur l'origine "asiatique" et "malayo-polynésienne" des Malgaches, minimisant les apports africains (Grandidier, 1885-1928).
+  - Gabriel Ferrand (1864-1935) : Linguiste français qui, dans *Les migrations musulmanes et juives à Madagascar* (1905), présentait Madagascar comme une extension de l'Asie du Sud-Est, occultant les influences bantoues.
+  - L'école coloniale française (XIXe-XXe siècles) : Classait systématiquement les Malgaches comme "Asiatiques" dans les recensements et études anthropologiques, niant leur africanité (Raison-Jourde, 1991).
+  - Les études génétiques modernes (Hurles et al., 2005 ; Pierron et al., 2017) ont révélé que la population malgache est composée de 60-70% d'ascendance austronésienne et 30-40% d'ascendance bantoue est-africaine, confirmant l'invisibilisation coloniale des apports africains.
+  
+  **Preuves des auteurs malgaches prônant l'africanité :**
+  - **Jacques Rabemananjara** (1913-2005) : Poète, écrivain et homme politique malgache, figure majeure du mouvement de la négritude aux côtés de Léopold Sédar Senghor et Aimé Césaire. Dans son œuvre poétique et politique, il a défendu la "malgachitude" comme expression de l'africanité malgache, affirmant l'appartenance de Madagascar à l'ensemble africain. Inclus dans l'"Anthologie de la nouvelle poésie nègre et malgache" (1948) de Senghor, il a contribué à valoriser les racines africaines de l'identité malgache (Rabemananjara, 1948, 1956).
+  - **Jean-Joseph Rabearivelo** (1901-1937) : Poète malgache considéré comme le premier poète moderne de Madagascar. Dans ses œuvres, notamment *Presque-Songes* (1934) et *Traduit de la nuit* (1935), il a intégré des éléments de la culture africaine et revendiqué l'africanité malgache, en opposition aux classifications coloniales (Rabearivelo, 1934-1935).
+  - **Flavien Ranaivo** (1914-1999) : Poète et écrivain malgache qui, dans ses œuvres littéraires, a mis en avant les racines africaines de la culture malgache et les liens historiques avec le continent africain, contribuant à renforcer la conscience de l'africanité malgache (Ranaivo, 1950s-1960s).
+  - **Françoise Raison-Jourde** (historienne malgache, 1991) : Dans ses travaux sur l'histoire de Madagascar, notamment *Les souverains de Madagascar* (1983) et *Bible et pouvoir à Madagascar au XIXe siècle* (1991), elle a critiqué les classifications coloniales et mis en lumière les apports africains dans la formation de la société malgache, déconstruisant les thèses coloniales qui niaient l'africanité (Raison-Jourde, 1991).
+  - **Intellectuels malgaches contemporains** : Depuis l'indépendance (1960), de nombreux intellectuels malgaches ont revendiqué l'africanité de Madagascar, notamment dans le cadre de l'Organisation de l'unité africaine (OUA, devenue UA) dont Madagascar est membre fondateur, affirmant ainsi l'appartenance politique et culturelle à l'Afrique.
+- Auto-appellation (locuteurs / linguistes contemporains) : « Austronesian » (communauté scientifique), « Malagasy » pour la branche africaine. Les locuteurs malgaches se désignent par leurs ethnies (Merina, Betsimisaraka, etc.) ou par le terme générique « Malagasy ».
+  
+  **Preuves des auto-appellations :**
+  - **Termes endonymes par ethnie** : 
+    - Merina : *Merina* (litt. "ceux des hautes terres") ou *Imerina* (pays des Merina)
+    - Betsimisaraka : *Betsimisaraka* (litt. "les nombreux inséparables")
+    - Sakalava : *Sakalava* (litt. "ceux des longues vallées")
+    - Betsileo : *Betsileo* (litt. "les nombreux invincibles")
+  - **Terme générique** : *Malagasy* (francisé en "Malgache") ou *Gasy* (forme familière). Le terme *Malagasy* est attesté dès le XVIIe siècle dans les récits de voyageurs (Flacourt, 1658).
+  - **Auto-désignation nationale** : *Ny Malagasy* ("les Malgaches") ou *Ny vahoaka Malagasy* ("le peuple malgache"). Le terme *Malagasy* dérive probablement de *Malagasy* (nom d'une ethnie côtière) généralisé par les Européens puis réapproprié (Rajaonarimanana, 1995).
+  - **Usage contemporain** : Les locuteurs utilisent principalement leur identité ethnique en premier lieu, puis le terme *Malagasy* pour l'identité nationale (Rasolofonirina, 2004).
+- Usage contemporain (définition moderne de la famille) : Famille mondiale comptant ~1 257 langues, couvrant le Pacifique et l'Asie du Sud-Est, et représentée en Afrique uniquement par le malgache et ses variantes régionales. Classification moderne basée sur la reconstruction comparative et la linguistique historique.
+- Aire / répartition géographique générale : Madagascar (Afrique), Asie du Sud-Est, Polynésie, Micronésie, Mélanésie, Formose (Taiwan).
+- Nombre de langues (estimation) : En Afrique : 1 (malgache). Monde : ~1257 (SIL Ethnologue, 2025).
+- Nombre total de locuteurs (estimation) : ~27 millions en Afrique (Madagascar, 2025), >300 millions dans le monde.
 
 ------------------------------------------
 
@@ -23,53 +50,151 @@
 # 1. Informations générales
 - Nom de la famille : Austronésienne (Madagascar)
 - Branches internes / sous-groupes :  
-  - Malgache (dialectes : Merina, Betsimisaraka, Betsileo, Sakalava, Antandroy, Antanosy…)
-- Aire géographique : Madagascar (Afrique)
-- Nombre de langues : 1 (en Afrique)
-- Nombre total de locuteurs : ~27 millions
+  - Malayo-Polynésien occidental (branche principale en Afrique)
+    - Malgache (dialectes : Merina, Betsimisaraka, Betsileo, Sakalava, Antandroy, Antanosy, Tsimihety, Antemoro, etc.)
+- Aire géographique : Madagascar (Afrique). Famille mondiale présente également en Asie du Sud-Est, Océanie, et Formose.
+- Nombre de langues : 1 (en Afrique) / ~1257 (monde)
+- Nombre total de locuteurs : ~27 millions (en Afrique, Madagascar, 2025) / >300 millions (monde)
 
 # 2. Peuples associés
+<<<<<<< Updated upstream
 - Peuple 1 : Malgaches (Merina)
 - Peuple 2 : Malgaches (Betsimisaraka)
 - Peuple 3 : Malgaches (Sakalava)
+=======
+- Peuple 1 : Malgaches (Merina) (PPL_MERINA)
+- Peuple 2 : Malgaches (Betsimisaraka) (PPL_BETSIMISARAKA)
+- Peuple 3 : Malgaches (Sakalava) (PPL_SAKALAVA)
+- Peuple 4 : Malgaches (Betsileo) (PPL_BETSILEO)
+- Peuple 5 : Malgaches (Antandroy) (PPL_ANTANDROY)
+>>>>>>> Stashed changes
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Merina
-- Ethnie 2 : Betsimisaraka
-- Ethnie 3 : Sakalava
-
-(+ renvoi vers les futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :  
-  Langue agglutinante, riche en dérivation verbale, ordre SVO, système vocalique simple.
+  Le malgache est une langue agglutinante avec un ordre syntaxique SVO (Sujet-Verbe-Objet). Exemples concrets :
+  - Structure agglutinante : *m-an-dra-tsara* "bien faire" (préfixe *m-* [action], *an-* [causatif], *dra-* [intensif], *tsara* [bien])
+  - Ordre SVO : *Ny mpianatra mamaky boky* "L'étudiant lit un livre" (S: *mpianatra*, V: *mamaky*, O: *boky*)
+  - Système de voix : voix active (*mamaky* "lire"), passive (*vakina* "être lu"), causative (*mampamaky* "faire lire")
+  - Dérivation verbale riche : *mi-* (action), *maha-* (causatif), *mampi-* (causatif transitif), *mi-...-ana* (réciproque)
+  - Système vocalique simple : 5 voyelles (*a, e, i, o, u*) avec distinction de longueur dans certains dialectes
 - Particularités phonologiques :  
-  Peu de consonnes occlusives aspirées ; alternances morphophonologiques régulières ; faible tonalisme.
+  - Peu de consonnes occlusives aspirées (contrairement aux langues indo-européennes)
+  - Alternances morphophonologiques régulières : *m-* devient *n-* devant certaines consonnes (*m-boky* → *n-boky*)
+  - Faible tonalisme : le malgache n'est pas une langue tonale (contrairement à de nombreuses langues africaines)
+  - Consonnes nasales importantes : *m, n, ng* [ŋ]
+  - Absence de groupes consonantiques complexes en position initiale
 - Liens avec les familles voisines :  
-  Emprunts massifs au bantou (swahili, comorien) et à l’arabe, ainsi qu’aux langues françaises et anglaises.
+  - Emprunts massifs au bantou (swahili, comorien) : *sambo* "bateau" (swahili), *tratra* "guérir" (bantou)
+  - Emprunts à l'arabe : *salam* "paix", *soratra* "écriture"
+  - Emprunts aux langues européennes (français, anglais) : *birao* "bureau", *kompitra* "ordinateur"
+  - Contact historique avec les langues créoles de l'océan Indien
 - Innovations clés :  
+<<<<<<< Updated upstream
   Imagine que les verbes sont comme des Lego : cette langue adore ajouter des petits morceaux (comme *mi-* ou *maha-*) au début des mots pour changer leur sens ou dire qui fait l'action. C'est un système très astucieux pour créer plein de nouveaux mots à partir d'un seul !
   Par exemple, prends le mot *gaga* (surpris). Si on ajoute le bloc *mi-*, ça devient *migaga* (s'étonner). Si on utilises le bloc *maha-*, ça devient *mahagaga* (c'est étonnant / magique). Hop, deux sens différents avec la même brique de base !
+=======
+  - Complexe dérivationnel verbal avec système de voix développé (active, passive, causative, réciproque)
+  - Système riche de morphèmes de voix : *-ina* (passif), *-ana* (locatif/réciproque), *-o* (passif directif)
+  - Importance de la particule *mi-* / *maha-* dans la formation verbale
+  - Système de classes nominales simplifié par rapport au proto-austronésien
+  - Préservation de traits archaïques austronésiens perdus dans d'autres branches (ex. : système de numération)
+>>>>>>> Stashed changes
 
-# 5. Histoire et origines
-- Origine probable :  
-  Asie du Sud-Est, probablement Bornéo (populations Barito du sud).
-- Diffusion des langues :  
-  Migration austronésienne vers Madagascar datée entre 500 et 700 ap. J.-C., puis fusion avec les populations bantoues venues de la côte est-africaine.
-- Ruptures historiques :
-  - Séparation nette entre malgache et reste de la famille austronésienne.  
-  - Influences multiples (bantoues, arabes, swahilies, européennes).
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :  
+  **QUI a classé et proposé les théories :**
+  - Otto Christian Dahl (linguiste norvégien, 1951) : premier à établir le lien entre malgache et langues barito du sud de Bornéo dans *Malgache et Maanjan : une comparaison linguistique*
+  - K. Alexander Adelaar (linguiste néerlandais, 1989, 2005) : a affiné la classification et proposé l'origine barito dans *The Austronesian Languages of Asia and Madagascar*
+  - Robert Blust (linguiste américain, 1980s-2000s) : a reconstruit le proto-austronésien et situé l'origine à Formose
+  - Roger Blench (archéologue et linguiste britannique) : a proposé des théories sur les migrations
+  - Études génétiques (Hurles et al., 2005 ; Pierron et al., 2017) : ont confirmé le mélange austronésien-bantou dans la population malgache
+  
+  **Théories principales :**
+  - **Théorie linguistique dominante** : Origine dans le sud de Bornéo (populations Barito), proposée par Dahl et confirmée par Adelaar
+  - **Théorie archéologique** : Migration depuis l'Asie du Sud-Est via les routes maritimes de l'océan Indien
+  - **Théorie génétique** : Mélange entre populations austronésiennes (60-70%) et bantoues est-africaines (30-40%)
+- Période d'émergence estimée :  
+  **Deux temporalités distinctes :**
+  1. **Émergence historique de la famille** : Le proto-austronésien remonte à ~4000-5000 ans avant notre ère à Formose (Taiwan). La branche malayo-polynésienne s'est séparée vers ~3000-2500 av. J.-C.
+  2. **Date de classification académique** : 
+     - 1951 : Otto Dahl établit le lien malgache-barito
+     - 1906 : Wilhelm Schmidt propose le terme "Austronesian"
+     - 1980s-2000s : Affinement de la classification par Blust, Adelaar et autres
+     - 2005 : Synthèse moderne par Adelaar dans *The Austronesian Languages of Asia and Madagascar*
+  
+  **Arrivée à Madagascar :**
+  - Migration austronésienne vers Madagascar datée entre 500 et 700 ap. J.-C. (estimations archéologiques et linguistiques)
+  - Fusion progressive avec les populations bantoues venues de la côte est-africaine entre 800 et 1000 ap. J.-C.
+- Diffusion des langues (routes migratoires, expansion) :  
+  **Pluralité des perspectives et théories disponibles :**
+  
+  **Théorie 1 - Route directe depuis Bornéo (Dahl, Adelaar) :**
+  - Migration directe depuis le sud de Bornéo (région Barito) vers Madagascar
+  - Navigation via les courants de l'océan Indien
+  - Arrivée unique ou en vagues successives entre 500-700 ap. J.-C.
+  
+  **Théorie 2 - Route via l'Asie du Sud-Est et l'océan Indien (Blench, archéologie) :**
+  - Migration depuis Bornéo via Java, Sumatra, puis traversée de l'océan Indien
+  - Arrêts possibles aux Comores ou sur la côte est-africaine
+  - Contacts avec les réseaux commerciaux swahili-arabes
+  
+  **Théorie 3 - Migrations multiples (génétique, Pierron et al.) :**
+  - Plusieurs vagues migratoires austronésiennes
+  - Arrivée simultanée ou successive de populations bantoues
+  - Mélange progressif sur plusieurs siècles (500-1000 ap. J.-C.)
+  
+  **Théorie 4 - Expansion via les routes commerciales (historique) :**
+  - Utilisation des routes maritimes établies par les marchands arabes et indiens
+  - Madagascar comme point de relais dans le commerce océan Indien
+  - Influence des réseaux commerciaux sur la diffusion linguistique
+  
+  **Consensus actuel :** La théorie dominante combine l'origine barito (Dahl/Adelaar) avec des migrations multiples (génétique), mais les détails des routes exactes restent débattus.
+- Ruptures historiques (séparations, fusions) :
+  - Séparation nette entre malgache et reste de la famille austronésienne vers 500-700 ap. J.-C. (isolement géographique)
+  - Fusion linguistique avec les langues bantoues (swahili, comorien) entre 800-1000 ap. J.-C., créant un substrat bantou dans le vocabulaire malgache
+  - Influences multiples successives : arabes (vocabulaire religieux et commercial), européennes (français, anglais)
+  - Divergence dialectale interne à Madagascar : formation de dialectes régionaux (Merina, Betsimisaraka, Sakalava, etc.) à partir du Xe-XIe siècle
+  - Standardisation moderne : le dialecte Merina devient la langue officielle au XIXe siècle sous l'influence coloniale française
 - Zones de contact et métissages :  
-  Contact ancien avec les marchands austronésiens, swahili, omanais ; métissages internes entre groupes malgaches.
+  **Zones géographiques de contact de la FLG Austronésienne en Afrique :**
+  
+  - **Côtes nord et nord-ouest de Madagascar** (régions de Nosy Be, Mahajanga, Antsiranana) : Zones historiques de contact avec les langues bantoues (swahili, comorien) via les réseaux commerciaux swahili-arabes (Xe-XVe siècles). Présence de communautés bilingues malgache-swahili.
+  
+  - **Côtes est de Madagascar** (régions de Toamasina, Mananjary, Foulpointe) : Zones de contact avec les langues bantoues de la côte est-africaine, notamment via les migrations bantoues (800-1000 ap. J.-C.). Métissage linguistique visible dans le vocabulaire maritime et commercial.
+  
+  - **Sud de Madagascar** (régions d'Antandroy, Mahafaly) : Zones de contact avec les langues bantoues et influences arabes via les routes commerciales de l'océan Indien. Présence de communautés métissées austronésiennes-bantoues.
+  
+  - **Routes maritimes de l'océan Indien** : Zones de contact entre Madagascar et les Comores (langues bantoues comoriennes), Mayotte, et la côte est-africaine (Tanzanie, Kenya, Mozambique) où le swahili est parlé. Ces routes ont facilité les échanges linguistiques et le métissage.
+  
+  - **Centres urbains de Madagascar** (Antananarivo, Antsirabe, Fianarantsoa) : Zones de contact moderne avec le français (langue coloniale puis officielle) et l'anglais (mondialisation), créant un bilinguisme/multilinguisme malgache-français-anglais.
+  
+  **Zones de métissage linguistique spécifiques :**
+  
+  - **Vocabulaire maritime et commercial** : Emprunts bantous (swahili) dans les ports malgaches, notamment *sambo* "bateau" (swahili), *tratra* "guérir" (bantou).
+  
+  - **Vocabulaire religieux** : Emprunts arabes concentrés dans les régions côtières ayant eu des contacts avec les marchands arabes et omanais (côtes nord et est).
+  
+  - **Zones créolisées** : Certaines régions côtières présentent des traits de créolisation partielle, notamment dans les ports historiques où se sont mélangées les langues austronésiennes, bantoues et arabes.
+- Événements historiques majeurs ayant influencé la famille :
+  - **500-700 ap. J.-C.** : Arrivée des premiers Austronésiens à Madagascar
+  - **800-1000 ap. J.-C.** : Arrivée des populations bantoues et fusion linguistique
+  - **Xe-XVe siècles** : Expansion des réseaux commerciaux swahili-arabes, emprunts linguistiques
+  - **XVIe-XIXe siècles** : Royaumes malgaches (Merina, Sakalava), standardisation dialectale
+  - **1896-1960** : Colonisation française, introduction massive du français, politique d'assimilation linguistique
+  - **1960** : Indépendance, malgache langue officielle avec le français
+  - **1972-1975** : "Malagasisation" (politique de promotion du malgache), réduction de l'influence française
+  - **2000s** : Mondialisation, influence croissante de l'anglais et du français
 
-# 6. Répartition géographique et démographie
-- Nombre total de locuteurs : ~27 millions (Madagascar, 2025)
+# 5. Répartition géographique et démographie
+- Nombre total de locuteurs : ~27 millions (Madagascar, 2025, source : ONU/UNFPA)
 - Répartition par pays :  
-  - Madagascar : quasi-totalité des locuteurs  
-  - Diaspora : France, Comores, Mayotte
-- Importance historique :  
-  Première et unique implantation austronésienne en Afrique ; point majeur des routes maritimes indo-océaniques.
+  - **Madagascar** : ~26,5 millions (98% de la population totale, source : CIA World Factbook 2025)
+  - **France** : ~200 000 (diaspora malgache, source : INSEE 2025)
+  - **Comores** : ~5 000 (communautés malgaches, source : estimations locales)
+  - **Mayotte** : ~3 000 (communautés malgaches, source : INSEE 2025)
+  - **Autres pays** : ~2 000 (Réunion, Maurice, autres pays africains et européens)
 
+<<<<<<< Updated upstream
 # 7. Sources
 - Schmidt, W. (1899) – *Die sprachlichen Verhältnisse von Deutsch-Neuguinea* (Origine du terme "Austronesian")
 - Carte de dispersion : https://fr.wikipedia.org/wiki/Austron%C3%A9siens#/media/Fichier:Chronological_dispersal_of_Austronesian_people_across_the_Pacific_(per_Benton_et_al,_2012,_adapted_from_Bellwood,_2011).png
@@ -77,3 +202,16 @@
 - Dahl, O. (1951) – *Southern Barito and Malagasy*
 - UNESCO – Atlas of Languages
 - SIL Ethnologue – Malagasy
+=======
+# 6. Sources
+- Adelaar, K. Alexander (2005) – *The Austronesian Languages of Asia and Madagascar*. Routledge.
+- Dahl, Otto Christian (1951) – *Malgache et Maanjan : une comparaison linguistique*. Egede-Instituttet.
+- Blust, Robert (2013) – *The Austronesian Languages*. Asia-Pacific Linguistics.
+- Blench, Roger (2007) – "New palaeozoogeographical evidence for the settlement of Madagascar". *Azania: Archaeological Research in Africa*.
+- Hurles, Matthew E. et al. (2005) – "The Dual Origin of the Malagasy in Island Southeast Asia and East Africa: Evidence from Maternal and Paternal Lineages". *American Journal of Human Genetics*.
+- Pierron, Denis et al. (2017) – "Genomic landscape of human diversity across Madagascar". *Proceedings of the National Academy of Sciences*.
+- UNESCO – *Atlas of the World's Languages in Danger* (2010)
+- SIL Ethnologue – Malagasy (mlg) – https://www.ethnologue.com/language/mlg
+- CIA World Factbook – Madagascar (2025) – https://www.cia.gov/the-world-factbook/countries/madagascar/
+- ONU/UNFPA – Projections démographiques Madagascar (2025)
+>>>>>>> Stashed changes
