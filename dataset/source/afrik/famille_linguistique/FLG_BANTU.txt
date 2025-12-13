@@ -146,7 +146,7 @@
     - **[ǃ]** = clic alvéolaire : son produit avec la langue contre le palais, derrière les dents (son plus fort, comme un bouchon qui saute)
     - **[ǁ]** = clic latéral : son produit sur les côtés de la langue (similaire au son pour appeler un cheval)
   - Exemple xhosa : *cwaka* (« silencieux ») avec clic dental [ǀ]
-  - **Pour écouter ces sons :** Des exemples audio sont disponibles sur des sites de phonétique interactive comme l'IPA Chart (https://www.ipachart.com/) ou dans des dictionnaires en ligne avec prononciation (Forvo, Wiktionary). On peut également écouter des chansons traditionnelles xhosa comme "Qongqothwane" (The Click Song) par Miriam Makeba sur YouTube, qui illustre l'utilisation des clics dans la langue.
+  - **Pour écouter ces sons :** Des exemples audio sont disponibles sur Wikipedia (version anglaise) qui propose des modules audio pour la prononciation des mots en xhosa et zoulou, sur SIL Ethnologue (https://www.ethnologue.com/) qui fournit des informations sur les langues bantoues avec parfois des enregistrements, et sur Glottolog (https://glottolog.org/) qui est une base de données linguistique de référence. On peut également écouter des chansons traditionnelles xhosa comme "Qongqothwane" (The Click Song) par Miriam Makeba sur YouTube, qui illustre l'utilisation des clics dans la langue.
   
   **Emprunts aux langues nilotiques (Afrique de l'Est) :**
   - Contacts historiques dans la région des Grands Lacs (Ouganda, Kenya, Tanzanie) ont conduit à des échanges lexicaux
@@ -391,7 +391,8 @@
 - Colloque UNESCO au Caire (1974) – *Le peuplement de l'Égypte ancienne et le déchiffrement de l'écriture méroïtique*.
 
 **Ressources en ligne pour l'écoute des sons :**
-- IPA Chart – https://www.ipachart.com/
-- Forvo – Dictionnaire de prononciation en ligne
-- Wiktionary – Dictionnaire en ligne avec prononciation
+- Wikipedia (version anglaise) – Modules audio pour la prononciation des mots en xhosa et zoulou (ex. : https://en.wikipedia.org/wiki/Xhosa_language, https://en.wikipedia.org/wiki/Zulu_language)
+- SIL Ethnologue – Informations sur les langues bantoues avec parfois des enregistrements audio (https://www.ethnologue.com/)
+- Glottolog – Base de données linguistique de référence (https://glottolog.org/)
+- Joshua Project – Ressources audio pour les langues (https://www.joshuaproject.net/)
 - YouTube – "Qongqothwane" (The Click Song) par Miriam Makeba
