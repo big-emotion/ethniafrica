@@ -79,6 +79,7 @@
   "devDependencies": {
     "@eslint/js": "^9.32.0",
     "@tailwindcss/typography": "^0.5.16",
+    "@types/marked": "^5.0.2",
     "@types/node": "^22.16.5",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
@@ -92,8 +93,10 @@
     "globals": "^15.11.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
+    "marked": "^17.0.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
+    "puppeteer": "^24.33.0",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.20.6",
     "typescript": "^5.8.3",
