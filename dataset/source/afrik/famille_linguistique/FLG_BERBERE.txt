@@ -3,6 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_BERBERE
+- **Lien avec les familles linguistiques ** : **Afro-asiatique** (branche berbère/amazighe, aux côtés des branches sémitique, égyptienne, couchitique, tchadique et omotique)
 - Nom français : Berbère / Amazighe
 - Nom anglais / auto-appellation académique : Berber / Amazigh
 - Appellation(s) historique(s) :
@@ -12,16 +13,51 @@
   - **Introduction** : Repris par les conquérants arabes sous la forme *al-Barbar* (Ibn Khaldoun, XIVe siècle, *Histoire des Berbères*).
   - **Cristallisation** : Formalisé par l'école algérianiste française (XIXe siècle) pour désigner les populations non-arabophones (ex: Hanoteau & Letourneux, 1872).
 - Pourquoi le terme pose problème :
-  - **Sens péjoratif** : Renvoie à l'idée de "sauvage" ou "non-civilisé" (lien avec "barbare").
-  - **Construction coloniale** : Utilisé par la France pour créer le "Mythe Kabyle" (autochtones assimilables vs Arabes envahisseurs) afin de diviser la résistance anticoloniale.
-  - **Preuves** : Kateb Yacine (écrivain) a dénoncé cette nomination imposée. L'usage est contesté par le mouvement culturel amazigh depuis les années 1940 (PPA-MTLD) et l'Académie Berbère (1966).
+  - **Sens étymologique** : Renvoie à l'idée de "barbare" (celui qui ne parle pas grec/latin), terme historiquement utilisé pour désigner l'étranger.
+  - **Contexte colonial** : L'usage du terme "Berbère" a été étudié par plusieurs chercheurs dans le cadre de l'administration coloniale française en Algérie.
+  - **Recherches académiques sur l'usage colonial du terme** :
+    - **Charles-Robert Ageron** (*Histoire de l'Algérie contemporaine*, 1979) : L'auteur documente les politiques linguistiques et ethnographiques de l'administration coloniale française au Maghreb, notamment les classifications entre populations berbérophones et arabophones. **Conclusion** : Il montre comment ces catégorisations ont servi à structurer l'administration coloniale et ont eu des effets durables sur les identités et les relations intercommunautaires au Maghreb.
+    - **Patricia Lorcin** (*Imperial Identities: Stereotyping, Prejudice and Race in Colonial Algeria*, 1995) : L'auteure analyse les discours ethnographiques produits par l'administration coloniale française (1840-1920), notamment les travaux des Bureaux Arabes sur les populations kabyles. **Conclusion** : Elle démontre que ces classifications ethnographiques ont été instrumentalisées pour élaborer des stratégies politiques différenciées selon les populations, contribuant à façonner les identités coloniales en Algérie.
+    - **Hanoteau & Letourneux** (*La Kabylie et les coutumes kabyles*, 1872-1873) : Étude ethnographique réalisée par des officiers français, décrivant l'organisation sociale et juridique des Kabyles selon les catégories de l'époque. **Conclusion des auteurs** : Ils présentent la société kabyle comme disposant d'institutions démocratiques et d'un système juridique coutumier distinct, la rapprochant des sociétés européennes dans leur analyse comparative.
+    - **Fanny Colonna** (*Instituteurs algériens 1883-1939*, 1975) : L'auteure étudie les politiques scolaires coloniales en Kabylie et leur impact sur la formation des élites locales. **Conclusion** : Elle analyse comment l'école coloniale française en Kabylie a créé une catégorie d'instituteurs algériens qui se sont trouvés dans une position intermédiaire entre colonisateurs et colonisés, influençant les trajectoires éducatives et sociales locales.
+    - **Jean Amrouche** (1906-1962, écrivain) : Dans ses écrits autobiographiques, l'auteur témoigne de son expérience d'intellectuel kabyle francophone dans le contexte colonial. **Témoignage** : Ses écrits illustrent les tensions identitaires vécues par les intellectuels kabyles formés à l'école française, partagés entre deux cultures et deux systèmes de valeurs.
+  - **Critiques du terme "Berbère" par les intellectuels maghrébins** :
+    - **Kateb Yacine** (*Nedjma*, 1956 ; écrits politiques) : L'écrivain algérien a exprimé dans ses œuvres et prises de position publiques sa critique du terme "Berbère" comme exonyme imposé.
+    - **Mouvement culturel amazigh** : Émergence de mouvements de revendication culturelle et linguistique, notamment au sein du PPA-MTLD (années 1940), l'Académie Berbère (Paris, 1966) fondée par Mohand Bessaoud, et le Mouvement Culturel Berbère (MCB) à partir de 1980.
+    - **Mouloud Mammeri** (linguiste, 1917-1989) : Linguiste et écrivain ayant travaillé sur la langue tamazight. L'interdiction d'une de ses conférences en 1980 a été suivie d'événements connus sous le nom de "printemps berbère".
+  - **Usage contemporain post-décolonial** :
+    - Terme "Amazigh/Imazighen" officialisé dans les constitutions marocaine (2011, article 5) et algérienne (2016, article 4).
+    - Reconnaissance institutionnelle : IRCAM (Maroc, 2001), HCA (Algérie, 1995).
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  - **Termes** : **Amazigh** (sing.), **Imazighen** (plur.), **Tamazight** (langue).
-  - **Preuves** : Attesté dans l'Antiquité (tribus *Mazices*, *Maxyes* citées par Hérodote et sources latines).
-  - **Étymologie** : Racine *M-Z-Gh* signifiant "homme libre" ou "noble" dans l'imaginaire populaire (scientifiquement : ethnonymique pur).
-- Usage contemporain :
-  - Terme officiel dans les constitutions marocaine (2011) et algérienne (2016).
-  - Utilisé internationalement (Inalco, universités américaines) comme synonyme respectueux de "Berbère".
+  - **Termes endogènes** :
+    - **Amazigh** (ⴰⵎⴰⵣⵉⵖ) : singulier masculin, désigne un individu amazigh.
+    - **Tamazight** (ⵜⴰⵎⴰⵣⵉⵖⵜ) : singulier féminin, désigne la langue amazighe (sens littéral : "celle des Imazighen").
+    - **Imazighen** (ⵉⵎⴰⵣⵉⵖⵏ) : pluriel masculin, désigne le peuple amazigh dans son ensemble.
+  - **Attestations historiques anciennes** :
+    - **Hérodote** (*Histoires*, Ve siècle av. JC) : Mentionne les tribus *Maxyes* (en Libye orientale) et *Mazyes* (région de Carthage), formes grecques de *Imazighen*.
+    - **Corippus** (VIe siècle ap. JC, *Iohannis*) : Cite les *Mazices*, tribu berbère combattant les Byzantins en Afrique du Nord.
+    - **Inscriptions libyco-berbères** : Le terme apparaît dans des inscriptions antiques sous des formes apparentées (*MZG*, *MZGN*).
+  - **Étymologie et significations** :
+    - **Étymologie populaire** : Racine trilitère *M-Z-Gh* interprétée comme "homme libre" ou "noble" dans la tradition orale et les discours identitaires modernes.
+    - **Analyse linguistique** : Les berbérisants (Chaker, Galand) considèrent qu'il s'agit d'un **ethnonymique pur** sans étymologie sémantique claire. L'interprétation "homme libre" est une construction idéologique moderne, non attestée linguistiquement dans les sources anciennes.
+    - **Consensus scientifique** : Terme autochrone très ancien, possiblement lié à la racine proto-berbère désignant l'identité collective du groupe.
+- Usage contemporain du terme "Amazigh" :
+  - **Reconnaissance constitutionnelle** :
+    - **Maroc** : Constitution de 2011, article 5 : "L'amazighe constitue une langue officielle de l'État, en tant que patrimoine commun à tous les Marocains sans exception."
+    - **Algérie** : Constitution de 2016, article 4 : "Tamazight est également langue nationale et officielle."
+  - **Institutions officielles** :
+    - **IRCAM** (Institut Royal de la Culture Amazighe, Maroc, créé en 2001) : Standardisation de la langue et promotion de la culture amazighe.
+    - **HCA** (Haut-Commissariat à l'Amazighité, Algérie, créé en 1995) : Promotion et développement de la langue et de la culture amazighes.
+  - **Usage académique international** :
+    - **Inalco** (Institut National des Langues et Civilisations Orientales, Paris) : Utilise "Amazigh/Berbère" dans ses enseignements.
+    - **Universités nord-américaines** (UCLA, Harvard, Princeton) : Privilégient "Amazigh" dans les départements d'études africaines et de linguistique.
+    - **UNESCO** : Reconnaît "Amazigh" comme appellation respectueuse dans ses documents officiels (Atlas des langues en danger, 2011).
+  - **Médias et diaspora** :
+    - Chaînes TV berbérophones : **Berbère Télévision** (France), **Tamazight TV** (Algérie), **Tamazight TV8** (Maroc).
+    - Associations diasporiques : Privilégient "Amazigh" dans leurs dénominations (Congrès Mondial Amazigh, CMA).
+  - **Coexistence terminologique** :
+    - Dans l'usage courant : "Berbère" reste utilisé par commodité historique, mais "Amazigh" s'impose progressivement comme terme de référence privilégié par les locuteurs et les militants culturels.
+    - Dans la recherche académique : Double usage "Amazigh/Berbère" avec une tendance croissante à privilégier "Amazigh" dans les publications récentes.
 - Aire / répartition géographique générale :
   - De l'Oasis de Siwa (Égypte) aux Canaries (historique), et de la Méditerranée au fleuve Niger (Sahel).
 - Nombre de langues (estimation) :
@@ -55,8 +91,20 @@
 # 3. Caractéristiques linguistiques
 - Typologie linguistique :
   - **Type** : Langue flexionnelle (fusio-agglutinante) à racine consonantique.
-  - **Morphologie** : Système de racine et schème.
-    - *Exemple* : Racine **K-T-B** (écrire) -> *yura* (il a écrit), *yaru* (il écrit), *tira* (écriture).
+  - **Morphologie** : Système de racine et schème (racines trilitères ou bilitères).
+      - *Exemple berbère 1* : Racine **R-W** (enfanter, naître)
+      - *aru* = enfanter, accoucher (verbe)
+      - *tarwa* = enfants, progéniture (nom féminin)
+      - *arraw* = fils, garçon (nom masculin)
+    - *Exemple berbère 2* : Racine **K-R-Z** (labourer)
+      - *yekrez* = il a labouré
+      - *takrza* = labour (action)
+      - *amkraz* = laboureur (agent)
+    - *Exemple berbère 3* : Racine **F-S-R** (répandre, étaler)
+      - *yufser* = il a répandu
+      - *tafesra* = expansion
+      - *amfasar* = diffuseur
+    - **Note** : Le berbère a également emprunté des racines arabes (ex: *R-W* "écrire" de l'arabe, d'où *yura* "il a écrit", *tira* "écriture"), mais le système natif berbère fonctionne sur le même principe.
   - **Genre et Nombre** : Marquage circonfixe (autour du mot).
     - *Exemple* : *A-rgaz* (homme) -> *I-rgaz-en* (hommes). *T-a-mgar-t* (femme) -> *T-i-mgar-in* (femmes).
 - Particularités phonologiques :
@@ -73,24 +121,92 @@
   - **Écriture Tifinagh** : Alphabet géométrique autochtone, conservé par les Touaregs et réintroduit au Nord.
 
 # 4. Histoire et origines
-- Origine probable :
-  - **Classification** : Marcel Cohen (1947), Joseph Greenberg (1963) classent le berbère dans l'Afro-asiatique.
-  - **Théorie archéologique** : Gabriel Camps (1974) lie le proto-berbère au Néolithique de tradition capsienne (7000 av. JC).
-- Période d'émergence :
-  - **Divergence** : Séparation de l'Afro-asiatique commun vers 10 000 - 8 000 av. JC.
-  - **Attestation** : Noms libyques dans les textes égyptiens (Ancien Empire, vers 2300 av. JC).
-- Diffusion :
-  - **Théorie de la continuité** : Développement sur place au Maghreb depuis le Paléolithique (Ibéromaurusien) avec apports néolithiques orientaux.
-  - **Expansion** : Diffusion vers le Sahara (Touaregs) avec l'élevage pastoral (5000-2000 av. JC).
-- Zones de contact :
-  - **Méditerranée** : Échanges intenses avec Phéniciens, Romains, Vandales. Métissage linguistique partiel (substrat).
-  - **Sahel** : Zone de convergence avec les langues Songhay et Hausa (emprunts mutuels de vocabulaire pastoral).
-- Événements :
-  - **Antiquité** : Royaumes de Numidie et Maurétanie.
-  - **Moyen Âge** : Islamisation (VIIe s.) et arabisation linguistique progressive des plaines.
-  - **Moderne** : Résistance coloniale (Abd el-Krim, Fatma N'Soumer).
 
-# 5. Répartition
+## 4.1. Origine et classification linguistique
+- **Appartenance à la famille afro-asiatique** :
+  - **Marcel Cohen** (*Essai comparatif sur le vocabulaire et la phonétique du chamito-sémitique*, 1947) : Premier à établir systématiquement les correspondances phonétiques entre le berbère et les autres branches afro-asiatiques (sémitique, égyptien, couchitique).
+  - **Joseph Greenberg** (*The Languages of Africa*, 1963) : Confirme l'appartenance du berbère à l'Afro-asiatique et propose une classification interne en 5-6 branches dont le berbère constitue une branche distincte et ancienne.
+  - **Lionel Bender** (années 1990s) et **Christopher Ehret** (2000s) : Affinent la position du berbère comme branche précocement divergente, possiblement la première ou deuxième à se séparer du proto-afro-asiatique.
+
+## 4.2. Origines géographiques et archéologiques
+- **Foyer d'origine du proto-berbère** :
+  - **Théorie nord-africaine (majoritaire - école occidentale)** : 
+    - **Gabriel Camps** (*Les Berbères : mémoire et identité*, 1987) : Associe les locuteurs proto-berbères aux populations du **Néolithique capsien** (9000-4500 av. JC) en Afrique du Nord centrale (Tunisie, Algérie orientale).
+    - **Preuves archéologiques** : Continuité culturelle entre le Capsien et les cultures néolithiques maghrébines (céramique cardiale, pastoralisme précoce).
+  - **Théorie du Sahara oriental (minoritaire)** :
+    - **Christopher Ehret** (*The Civilizations of Africa*, 2002) : Propose une origine saharienne ou nilotique pour le proto-afro-asiatique, avec migration berbère vers l'ouest du Maghreb lors de l'assèchement du Sahara (6000-4000 av. JC).
+  - **Théorie afrocentrique de l'unité égyptienne-berbère (Cheikh Anta Diop)** :
+    - **Cheikh Anta Diop** (*Nations nègres et culture*, 1954 ; *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*, 1977) :
+      - **Thèse principale** : Conteste la séparation artificielle entre Afrique du Nord et Afrique subsaharienne. Propose une **continuité culturelle et linguistique** entre l'Égypte pharaonique, les Berbères et les populations africaines subsahariennes.
+      - **Critique de la classification afro-asiatique** : Considère le terme "afro-asiatique" (anciennement "chamito-sémitique") comme une **construction coloniale** visant à détacher l'Afrique du Nord de son africanité et à la rattacher artificiellement à l'Asie occidentale.
+      - **Preuves linguistiques proposées** : Identifie des cognats entre l'égyptien ancien, le berbère et les langues d'Afrique de l'Ouest (wolof, sérère, peul). Exemple : parenté supposée entre racines berbères et égyptiennes via le substrat africain commun.
+      - **Contexte géographique** : Les Berbères seraient issus d'une **migration sud-nord** depuis le Sahara et la vallée du Nil, et non d'une migration proche-orientale.
+    - **Théophile Obenga** (*Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*, 1993) :
+      - Collaborateur de Cheikh Anta Diop, affine l'hypothèse d'une famille linguistique "négro-égyptienne" incluant le berbère comme branche périphérique.
+      - Conteste la méthodologie comparatiste euro-centrée de Greenberg et propose une reclassification basée sur les correspondances phonétiques avec les langues Niger-Congo.
+    - **Écho dans la communauté scientifique** :
+      - **Fort retentissement en Afrique** : Les travaux de Diop ont été fondateurs pour l'historiographie africaine post-coloniale et restent enseignés dans les universités africaines (Dakar, Abidjan, Le Caire).
+      - **Débat international** : Reconnaissance de l'apport méthodologique (critique de l'eurocentrisme) mais controverses sur les preuves linguistiques. Colloque de l'UNESCO au Caire (1974) : débat entre Diop et les linguistes occidentaux sur la classification de l'égyptien.
+      - **Influence politique et culturelle** : Impact majeur sur le panafricanisme et les mouvements de revendication identitaire berbères anti-colonialistes.
+    - **Points de divergence avec le consensus académique** :
+      - La parenté berbère-égyptien-subsaharien n'est pas confirmée par la linguistique comparée moderne (correspondances phonétiques insuffisantes selon Greenberg, Ehret, Blench).
+      - La théorie de la migration sud-nord contredit les données archéologiques et génétiques actuelles (consensus Capsien/Ibéromaurusien).
+  - **Consensus actuel (synthèse)** : 
+    - Développement **in situ** au Maghreb depuis le Paléolithique supérieur (culture **ibéromaurusienne**, 22000-9000 av. JC), avec apports néolithiques venus du Proche-Orient et du Sahara.
+    - Reconnaissance de l'apport critique de Diop sur l'africanité des Berbères et la déconstruction des biais coloniaux, mais maintien de la classification afro-asiatique sur des bases linguistiques comparatives.
+
+## 4.3. Chronologie de divergence
+- **Séparation du proto-afro-asiatique** :
+  - **Datation glottochronologique** : Divergence estimée entre **12 000 et 8 000 av. JC** (avant l'ère commune).
+  - **Contexte climatique** : Correspond à la fin de la dernière glaciation et au début du Néolithique au Proche-Orient.
+- **Premières attestations écrites** :
+  - **Textes égyptiens** : Mentions de populations libyennes dès l'**Ancien Empire égyptien** (vers **2300 av. JC**). Les Égyptiens désignent leurs voisins occidentaux sous les noms de *Tjehenu*, *Tjemehu*, *Lebu* (Libyens).
+  - **Inscriptions libyques** : Premières inscriptions en alphabet **libyque** (ancêtre du tifinagh) datées du **IIIe siècle av. JC** en Numidie (Algérie actuelle).
+  - **Sources puniques et grecques** : Mentions des royaumes berbères (Massyles, Masaesyles, Maures) dès le **IVe siècle av. JC**.
+
+## 4.4. Diffusion et expansion géographique
+- **Expansion vers le Sahara** :
+  - **Période** : Entre **6000 et 2000 av. JC**, lors de la phase humide du Sahara néolithique ("Sahara vert").
+  - **Preuves** : Art rupestre saharien (Tassili n'Ajjer, Tibesti) montrant le pastoralisme, ancêtre des cultures touarègues actuelles.
+  - **Résultat** : Installation des ancêtres des Touaregs dans le Sahara central et méridional.
+- **Expansion côtière et montagneuse** :
+  - **Atlas et Rif** : Occupation continue des zones montagneuses depuis le Néolithique.
+  - **Littoral méditerranéen** : Contact précoce avec les navigateurs phéniciens (Carthage, fondée en **814 av. JC**).
+- **Contraction territoriale** :
+  - Après l'assèchement du Sahara (vers **2000 av. JC**), repli vers les zones refuges : montagnes de l'Atlas, oasis sahariennes, littoral méditerranéen.
+
+## 4.5. Zones et périodes de contact linguistique
+- **Période antique (IXe siècle av. JC - Ve siècle ap. JC)** :
+  - **Phéniciens/Puniques** (IXe-IIe siècle av. JC) : Emprunts commerciaux et maritimes (ex: toponymie côtière).
+  - **Romains** (IIe siècle av. JC - Ve siècle ap. JC) : Emprunts administratifs et techniques. Exemple : *aɣyul* (âne) < latin *asinus*, *abaḍuḍ* (légume) < latin *paducula*.
+  - **Grecs** : Contacts limités, surtout via Cyrène (Libye) et colonies méditerranéennes.
+- **Période médiévale (VIIe-XVe siècle)** :
+  - **Arabisation** (à partir du VIIe siècle) :
+    - Invasions hilaliennes (XIe siècle) : Bouleversement linguistique majeur. Arabisation massive des plaines fertiles.
+    - Emprunts massifs de l'arabe : vocabulaire religieux (*tazallit* < *salat* "prière"), administratif, et quotidien.
+    - Maintien du berbère dans les zones refuges : montagnes (Kabyle, Rif, Atlas), déserts (Touaregs), oasis isolées.
+- **Période saharienne et sahélienne** :
+  - **Sahel** (XIe-XIXe siècle) : Contacts avec les langues **Songhay** et **Hausa** via les routes transsahariennes. Emprunts mutuels dans le vocabulaire pastoral, commercial et artisanal.
+
+## 4.6. Événements historiques majeurs
+- **Antiquité (IIIe siècle av. JC - Ve siècle ap. JC)** :
+  - **Royaumes numides** : Massinissa (roi des Massyles, 202-148 av. JC), Jugurtha (guerre contre Rome, 112-105 av. JC).
+  - **Royaumes maures** : Juba II (roi savant, 25 av. JC - 23 ap. JC), Maurétanie Tingitane et Césarienne.
+  - **Romanisation partielle** : Villes berbères romanisées (Timgad, Cuicul), mais maintien linguistique berbère dans les campagnes.
+- **Moyen Âge (VIIe-XVe siècle)** :
+  - **Islamisation** (à partir de 647 ap. JC) : Conquête arabe progressive, résistances berbères (Kahina, 695-702 ap. JC).
+  - **Dynasties berbères** : Almoravides (1040-1147), Almohades (1121-1269), Mérinides (1244-1465) : usage du berbère dans l'administration et l'armée.
+  - **Arabisation linguistique progressive** : Conversion à l'islam mais maintien de la langue berbère dans de nombreuses régions.
+- **Période coloniale et moderne (XIXe-XXIe siècle)** :
+  - **Résistance anticoloniale** : 
+    - **Abd el-Krim** (Rif, Maroc, 1920-1926) : Soulèvement rifain contre l'Espagne et la France.
+    - **Fatma N'Soumer** (Kabylie, Algérie, 1830-1857) : Résistance contre la colonisation française.
+  - **Renouveau culturel amazigh** (XXe-XXIe siècle) :
+    - Printemps berbère (Algérie, 1980).
+    - Reconnaissance constitutionnelle (Maroc 2011, Algérie 2016).
+    - Standardisation de la langue (IRCAM, HCA).
+
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
   - ~35 millions (Estimation).
 - Répartition par pays :
