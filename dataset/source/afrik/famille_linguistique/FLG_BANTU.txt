@@ -49,6 +49,10 @@
 
 # 1. Informations générales
 - Nom de la famille : Bantou
+- Liens entre familles linguistiques :
+  - **Famille parente directe** : Bénoué-Congo (FLG_BENOUECONGO)
+  - **Famille parente supérieure** : Niger-Congo (FLG_NIGERCONGO)
+  - **Relation** : Bantou est un sous-groupe de Bénoué-Congo, qui est lui-même un sous-groupe de Niger-Congo
 - Branches internes / sous-groupes :
   Classification Guthrie (zones A à S) regroupant :
   - Zone A : Cameroun, Gabon (Duala, Bassa, Fang, Beti…)
