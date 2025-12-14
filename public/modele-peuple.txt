@@ -17,19 +17,32 @@
 - Ethnie 3 :
 
 # 2. Origines, migrations et formation du peuple
-- Origines anciennes (théories archéologiques, linguistiques, génétiques) :
-- Période de formation estimée :
-- Routes migratoires principales :
-- Zones d'établissement historiques :
-- Unifications / divisions :
-- Influences externes (peuples voisins, colonisation, commerce) :
-- Événements historiques majeurs ayant façonné le peuple :
+
+## Origines anciennes (théories archéologiques, linguistiques, génétiques) :
+
+## Période de formation estimée :
+
+## Routes migratoires principales :
+
+## Zones d'établissement historiques :
+
+## Unifications / divisions :
+
+## Influences externes (peuples voisins, colonisation, commerce) :
+
+## Événements historiques majeurs ayant façonné le peuple :
 
 # 3. Organisation et structure interne
-- Système politique traditionnel :
-- Organisation clanique :
-- Rôle des lignages :
-- Autorité religieuse :
+
+## Système politique traditionnel :
+
+## Organisation clanique :
+
+## Systèmes de classes d'âge (si applicable) :
+
+## Rôle des lignages :
+
+## Autorité religieuse :
 
 # 4. Langues et sous-familles
 - Langue principale :
@@ -38,16 +51,194 @@
 - Rôle véhiculaire :
 
 # 5. Culture, rites et traditions
-- Rites majeurs :
-- Symboles :
-- Arts et musique :
-- Spiritualités :
+
+## A. DIVINITÉS ET ESPRITS
+
+### Divinité suprême :
+- Endonyme (nom local) :
+- Exonyme (nom externe) :
+- Attributs et rôle :
+- Mode de vénération :
+
+### Divinités intermédiaires :
+- Nom et rôle :
+- Domaine d'action :
+
+### Esprits de la nature :
+- Esprits de la forêt :
+- Esprits de l'eau (rivières, sources, lagunes) :
+- Esprits de la terre :
+- Autres esprits :
+
+### Figures culturelles et héros :
+- Tricksters (personnages rusés) :
+- Héros culturels :
+- Figures mythologiques :
+
+### Ancêtres (culte des ancêtres) :
+- Rôle des ancêtres :
+- Pratiques cultuelles :
+- Statues et objets sacrés :
+
+## B. COSMOLOGIE (Conception du monde)
+
+### Structure du monde :
+- Monde supérieur (ciel, divinités) :
+- Monde intermédiaire (esprits) :
+- Monde terrestre (vivants) :
+- Monde souterrain / des morts :
+
+### Concepts spirituels de la personne humaine :
+- Âme / force vitale :
+- Esprit / personnalité :
+- Corps physique :
+- Héritage spirituel paternel :
+- Héritage maternel (sang, clan) :
+
+### Cycle vie-mort-renaissance :
+- Conception de la mort :
+- Monde des ancêtres :
+- Réincarnation / renaissance :
+
+### Temps et espace sacrés :
+- Jours sacrés :
+- Lieux sacrés (bois sacrés, sources, montagnes) :
+- Saisons rituelles :
+
+## C. CONCEPTION DE LA PERSONNE ET DE LA NATURE
+
+### Dualité corps-esprit :
+- Corps physique :
+- Essence spirituelle :
+- Double spirituel :
+
+### Cycle de vie spirituel :
+- Pré-existence :
+- Naissance et incarnation :
+- Vie terrestre :
+- Mort et passage :
+- Ancestralité :
+- Réincarnation :
+
+### Concept de personne :
+- Définition de la personne :
+- Valeurs morales :
+- Honneur familial :
+
+### Sacralité de la nature :
+- Conception de la forêt :
+- Bois sacrés :
+- Arbres sacrés :
+
+### Animaux totémiques :
+- Animal 1 (symbolisme) :
+- Animal 2 (symbolisme) :
+- Animal 3 (symbolisme) :
+
+### Plantes sacrées :
+- Plante 1 (usage rituel) :
+- Plante 2 (usage rituel) :
+- Plante 3 (usage rituel) :
+
+### Harmonie cosmique :
+- Équilibre homme-nature-esprits :
+- Respect des tabous :
+- Rituels de purification :
+
+## D. RITES ET PRATIQUES SPIRITUELLES
+
+### Rites d'initiation :
+- Initiation masculine :
+- Initiation féminine :
+- Initiation aux sociétés secrètes :
+- Initiation aux masques :
+
+### Rites funéraires :
+- Veillée funèbre :
+- Enterrement :
+- Cérémonies post-funéraires :
+- Masques funéraires :
+
+### Rites agricoles :
+- Bénédiction des terres :
+- Festivals des récoltes :
+- Offrandes aux esprits de la terre :
+
+### Rites de purification :
+- Bains rituels :
+- Fumigation :
+- Exorcisme :
+
+### Divination :
+- Méthodes divinatoires :
+- Consultation des devins :
+- Interprétation des signes :
+
+### Sacrifices et offrandes :
+- Sacrifices d'animaux :
+- Offrandes alimentaires :
+- Libations :
+
+### Autres rites majeurs :
+- Rite 1 :
+- Rite 2 :
+- Rite 3 :
+
+## E. SYMBOLES, ARTS ET CULTURE MATÉRIELLE
+
+### Symboles :
+- Symbole 1 :
+- Symbole 2 :
+- Symbole 3 :
+
+### Arts et musique :
+- Sculpture :
+- Masques :
+- Tissage :
+- Instruments de musique :
+- Danses :
+- Chants :
+- Artistes renommés :
+
+### Gastronomie :
+- Plats emblématiques :
+- Savoir-faire culinaires :
+- Patrimoine gastronomique :
+- Aliments rituels :
+
+## F. SPIRITUALITÉS CONTEMPORAINES
+
+### Christianisme :
+- Pourcentage de la population :
+- Dénominations (catholicisme, protestantisme, évangélisme) :
+- Syncrétisme chrétien-traditionnel :
+
+### Islam :
+- Pourcentage de la population :
+- Pratiques spécifiques :
+- Syncrétisme islamique-traditionnel :
+
+### Religions traditionnelles :
+- Persistance des pratiques :
+- Gardiens des traditions :
+
+### Syncrétisme religieux :
+- Coexistence des pratiques :
+- Adaptations contemporaines :
+
+### Résistance culturelle :
+- Transmission aux jeunes générations :
+- Revitalisation culturelle :
 
 # 6. Rôle historique et interactions régionales
-- Royaumes / chefferies :
-- Relations avec peuples voisins :
-- Conflits / alliances :
-- Diaspora :
+
+## Royaumes / chefferies :
+
+## Relations avec peuples voisins :
+
+## Conflits / alliances :
+
+## Diaspora :
 
 # 7. Démographie globale
 - Population totale (tous pays) :
