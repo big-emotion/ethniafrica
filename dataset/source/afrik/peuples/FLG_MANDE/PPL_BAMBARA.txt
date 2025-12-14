@@ -1,43 +1,833 @@
 # Nom du peuple
 - Nom principal du peuple : Bambara
-- Auto-appellation : Bamana
-- Exonymes historiques :
-  - « Bambara » (forme coloniale ; non péjorative mais extérieure)
-- Famille linguistique : Niger-Congo – Mandé occidental
-- Région historique : Mali (Bamako, Ségou, Koulikoro)
-- Pays actuels : MLI, BFA, Côte d’Ivoire, GIN
-- Identifiant peuple : PPL_BAMBARA
+- Auto-appellation (endonyme) : Bamana (prononcé [bamana])
+- Exonymes / appellations historiques :
+  - "Bambara" (forme coloniale française, dérivée de "Ban-Mana" = "ceux qui refusent", en référence à leur résistance à l'islam)
+  - "Banmana" (variante orthographique)
+  - "Bamana" (forme standardisée contemporaine)
+- Origine des termes (exonymes) :
+  - Le terme "Bambara" provient de l'expression "Ban-Mana" signifiant "ceux qui refusent" (de se convertir à l'islam), utilisé par les Peuls et les commerçants musulmans pour désigner les Bambara qui résistaient à l'islamisation
+  - Le terme a été adopté par les colonisateurs français et est devenu l'appellation standard en français
+  - "Bamana" est l'auto-appellation endonyme, signifiant simplement "peuple" ou "groupe"
+- Pourquoi certains termes posent problème (si applicable) :
+  - Le terme "Bambara" n'est pas péjoratif en soi, mais il reflète une perspective extérieure (celle des musulmans et des colonisateurs) qui définit le peuple par sa résistance à l'islam plutôt que par son identité propre
+  - L'usage contemporain privilégie de plus en plus "Bamana" pour respecter l'auto-appellation
+- Usage contemporain des appellations :
+  - "Bambara" reste largement utilisé en français et dans les sources académiques
+  - "Bamana" est de plus en plus privilégié dans les milieux académiques et culturels pour respecter l'auto-appellation
+  - Les deux termes sont acceptés, mais "Bamana" est plus respectueux de l'identité du peuple
+- Famille linguistique principale : Niger-Congo – Mandé occidental (FLG_MANDE)
+- Groupe ethno-linguistique : Mandé central, sous-groupe Mandingue
+- Région historique : Mali central et méridional (Bamako, Ségou, Koulikoro, Dioïla, Sikasso)
+- Pays actuels : MLI (principalement), BFA, CIV, GIN, SEN
+- Identifiant peuple (ID) : PPL_BAMBARA
 
-# 1. Ethnies incluses
-- Bamana de Ségou
-- Bamana de Koulikoro
-- Bamana de Dioïla
+# 1. Ethnies incluses dans le peuple
+- Bamana de Ségou – groupe central, région de Ségou, héritiers directs du royaume de Ségou
+- Bamana de Bamako – groupe urbain, région de Bamako (capitale du Mali)
+- Bamana de Koulikoro – groupe occidental, région de Koulikoro
+- Bamana de Dioïla – groupe méridional, région de Dioïla
+- Bamana de Sikasso – groupe oriental, région de Sikasso
+- Bamana de Niono – groupe septentrional, région de Niono
+- Note : Les Bambara forment un peuple relativement homogène avec des subdivisions territoriales plutôt qu'ethniques, organisées autour des anciennes chefferies et des zones d'établissement historique
 
-# 2. Origines
-- Héritiers du royaume de Ségou (XVIIIe siècle).
-- Peuplement mandé ancien du Haut Niger.
+# 2. Origines, migrations et formation du peuple
 
-# 3. Organisation
-- Système lignager patrilinéaire.
-- Sociétés initiatiques (*Komo*, *Nama*).
+## Origines anciennes (théories archéologiques, linguistiques, génétiques) :
 
-# 4. Langue
-- Bambara (bamanankan)
-- ISO : bam
+**Origines mandé anciennes :**
+- Les Bambara appartiennent au groupe mandé, dont l'histoire remonte à au moins 7 000 ans
+- Les premières civilisations mandé ont établi des centres urbains près de Tichitt (Mauritanie méridionale actuelle) vers 2500 avant notre ère
+- Vers 250 avant notre ère, un sous-groupe mandé, les Bozo, ont fondé la ville de Djenné
+- Entre 300 et 1100 de notre ère, les Soninké mandé ont dominé l'ouest du Mali, dirigeant l'Empire du Ghana
 
-# 5. Culture
-- Masques rituels.
-- Grande tradition musicale (balafon, ngoni).
-- Culte des ancêtres.
+**Théories linguistiques :**
+- La langue bambara (bamanankan) appartient à la famille mandé occidentale, confirmant l'origine mandé commune
+- Les Bambara partagent des traits linguistiques avec les autres peuples mandingues (Malinké, Dioula, Mandinka)
+- La linguistique comparative suggère une séparation progressive des différents groupes mandé à partir d'un foyer commun
 
-# 6. Histoire
-- Royaume bambara de Ségou.
-- Résistance à l'expansion islamique puis coloniale.
+**Théories archéologiques :**
+- Les sites archéologiques du Haut Niger révèlent une occupation humaine ancienne
+- Les vestiges de l'Empire du Mali (XIIIe-XVe siècles) montrent une continuité culturelle avec les Bambara
+- Les traditions orales bambara font remonter leurs origines à l'Empire du Mali
 
-# 7. Démographie
-- Population : 7 787 000
-- Année : 2025
+**Théories génétiques :**
+- Les études génétiques confirment les liens entre les peuples mandé
+- Les Bambara partagent des marqueurs génétiques avec les autres groupes mandingues
+- La diversité génétique suggère des migrations et des mélanges anciens dans la région du Haut Niger
+
+## Période de formation estimée :
+
+**Période ancienne (avant le XVIIe siècle) :**
+- **XIIIe-XVe siècles** : Héritage de l'Empire du Mali, période de consolidation des identités mandé
+- **XVe-XVIe siècles** : Déclin de l'Empire du Mali, fragmentation en royaumes et chefferies
+- **XVIe-XVIIe siècles** : Établissement des Bambara dans la région du Haut Niger, formation de chefferies autonomes
+
+**Période de formation du royaume (XVIIe-XVIIIe siècles) :**
+- **Milieu du XVIIe siècle** : Fondation du royaume de Ségou par Barama Ngolo et Nia Ngolo
+- **1652-1682** : Règne de Kaladian Coulibaly, expansion du royaume vers Tombouctou
+- **1712** : Biton Coulibaly (Mamari Coulibaly) réorganise la milice des jeunes (ton) en armée professionnelle, véritable fondation de l'Empire bambara de Ségou
+- **1712-1861** : Apogée et expansion de l'Empire bambara de Ségou
+
+**Période de déclin et résistance (XIXe siècle) :**
+- **1818** : Défaite majeure face à Shehu Ahmadu Lobbo de Macina
+- **1861** : Conquête de Ségou par El Hadj Omar Tall, fin de l'Empire bambara
+- **1890-1898** : Résistance à la colonisation française, révoltes
+
+**Période coloniale et post-coloniale (XXe-XXIe siècles) :**
+- **1898-1960** : Colonisation française, intégration dans l'Afrique-Occidentale française
+- **1960** : Indépendance du Mali, rôle central des Bambara dans la construction nationale
+- **1990-2025** : Crises politiques, islamisation progressive, maintien des traditions
+
+## Routes migratoires principales :
+
+**Migrations anciennes :**
+- **Foyer originel** : Région du Haut Niger (Mali actuel)
+- **Expansion depuis le Haut Niger** : Les Bambara se sont établis progressivement dans les régions centrales et méridionales du Mali
+- **Mouvements vers l'ouest** : Expansion vers Koulikoro, Bamako
+- **Mouvements vers le sud** : Expansion vers Dioïla, Sikasso
+- **Mouvements vers l'est** : Contacts avec les peuples sénoufo et bobo
+
+**Migrations récentes :**
+- **Urbanisation** : Migration massive vers Bamako (capitale) depuis les années 1960
+- **Migration économique** : Déplacement vers les zones minières (or, bauxite)
+- **Migration transfrontalière** : Vers le Burkina Faso, la Côte d'Ivoire, la Guinée (commerce, agriculture)
+- **Diaspora internationale** : Vers la France, les États-Unis, le Canada (depuis les années 1980)
+
+## Zones d'établissement historiques :
+
+**Région de Ségou :**
+- **Ségou** : Capitale historique de l'Empire bambara, centre politique et culturel
+- **San** : Ville importante sur le fleuve Niger
+- **Markala** : Zone agricole fertile
+
+**Région de Bamako :**
+- **Bamako** : Capitale moderne du Mali, importante communauté bambara urbaine
+- **Kati** : Ville proche de Bamako, zone de transition
+
+**Région de Koulikoro :**
+- **Koulikoro** : Ville sur le fleuve Niger, zone agricole
+- **Kangaba** : Zone historique, berceau des traditions mandingues
+
+**Région de Dioïla :**
+- **Dioïla** : Zone méridionale, agriculture et élevage
+- **Bougouni** : Zone de contact avec les peuples sénoufo
+
+**Région de Sikasso :**
+- **Sikasso** : Zone orientale, agriculture (coton, arachide)
+- **Koutiala** : Zone agricole
+
+## Unifications / divisions :
+
+**Formation de l'Empire de Ségou :**
+- **Avant 1712** : Chefferies bambara autonomes, rivalités internes
+- **1712** : Unification par Biton Coulibaly, création d'une armée professionnelle à partir des milices de jeunes (ton)
+- **1712-1766** : Consolidation de l'Empire, expansion territoriale
+- **1766-1818** : Apogée sous Ngolo Diara et ses successeurs, expansion maximale
+
+**Divisions internes :**
+- **Rivalités dynastiques** : Conflits entre les familles Coulibaly et Diarra
+- **Révoltes régionales** : Résistance des chefferies locales à l'autorité centrale
+- **Séparations territoriales** : Formation du royaume de Kaarta (Bambara occidentaux)
+
+**Déclin et fragmentation :**
+- **1818** : Défaite face aux Peuls de Macina, perte de territoires
+- **1861** : Conquête par El Hadj Omar Tall, fin de l'unité politique
+- **1890-1960** : Fragmentation sous la colonisation française
+- **1960-2025** : Unité culturelle maintenue malgré l'absence d'unité politique
+
+## Influences externes (peuples voisins, colonisation, commerce) :
+
+**Empire du Mali (XIIIe-XVe siècles) :**
+- Héritage politique et culturel de l'Empire du Mali
+- Transmission des traditions mandingues (griots, musique, art)
+- Influence sur l'organisation sociale et politique
+
+**Peuples voisins :**
+- **Peuls (Fulani)** : Relations complexes, commerce, conflits religieux (résistance bambara à l'islamisation peule)
+- **Songhaï** : Contacts commerciaux le long du Niger, influences culturelles
+- **Dogon** : Relations commerciales, échanges culturels
+- **Sénoufo** : Contacts commerciaux, influences artistiques
+- **Bobo** : Relations commerciales, échanges culturels
+- **Malinké** : Relations fraternelles (peuples mandingues apparentés)
+- **Soninké** : Relations historiques (héritage commun de l'Empire du Ghana)
+
+**Islam :**
+- **Résistance initiale** : Les Bambara ont résisté à l'islamisation jusqu'au XIXe siècle
+- **Jihad peul (XIXe siècle)** : Conquête par El Hadj Omar Tall (1861), conversions forcées
+- **Islamisation progressive** : Adoption progressive de l'islam avec syncrétisme des pratiques traditionnelles
+- **Syncrétisme contemporain** : Mélange d'islam et de pratiques traditionnelles (culte des ancêtres, sociétés initiatiques)
+
+**Colonisation française (1890-1960) :**
+- **Résistance** : Révoltes contre la colonisation (1890-1898)
+- **Pacification** : Soumission forcée, administration coloniale
+- **Exploitation économique** : Travail forcé, plantations de coton et d'arachide
+- **Christianisation** : Tentatives d'évangélisation (minoritaires)
+- **Scolarisation** : Introduction de l'éducation française, alphabétisation
+
+**Commerce :**
+- **Commerce transsaharien** : Position stratégique sur le fleuve Niger, échanges avec le Maghreb
+- **Commerce de l'or** : Exploitation des mines d'or (Bambouk, Bouré)
+- **Commerce des esclaves** : Participation au commerce transatlantique (XVIIe-XIXe siècles)
+- **Commerce agricole** : Exportation de mil, sorgho, coton, arachide
+
+## Événements historiques majeurs ayant façonné le peuple :
+
+**Fondation de l'Empire de Ségou (1712) :**
+- Biton Coulibaly réorganise la milice des jeunes (ton) en armée professionnelle
+- Création d'un État centralisé, expansion territoriale
+- Fondation de Ségou comme capitale
+
+**Apogée de l'Empire (1766-1818) :**
+- Règne de Ngolo Diara (1766-1795), restauration de l'ordre, expansion
+- Règne de Mansong (1795-1808), continuation de l'expansion
+- Règne de Da Kaba (1808-1818), apogée territorial
+
+**Défaite face aux Peuls (1818) :**
+- Défaite majeure face à Shehu Ahmadu Lobbo de Macina
+- Perte de territoires, affaiblissement de l'Empire
+- Début du déclin
+
+**Conquête par El Hadj Omar Tall (1861) :**
+- Prise de Ségou par les forces toucouleur
+- Fin de l'Empire bambara indépendant
+- Conversions forcées à l'islam, imposition de la charia
+- Résistance bambara, révoltes
+
+**Résistance à la colonisation française (1890-1898) :**
+- Révoltes contre l'administration coloniale
+- Résistance armée, guérilla
+- Pacification forcée, soumission
+
+**Indépendance du Mali (1960) :**
+- Rôle central des Bambara dans la construction nationale
+- Modibo Keïta (premier président, d'origine bambara)
+- Promotion de la culture bambara comme culture nationale
+
+**Crises politiques contemporaines (1990-2025) :**
+- Révolte touarègue (1990-1996, 2012-2015)
+- Coup d'État (1991, 2012, 2020, 2021)
+- Conflits avec groupes jihadistes (2012-2025)
+- Menaces sur les pratiques traditionnelles (interdiction des festivals, attaques contre les villages)
+
+# 3. Organisation et structure interne
+
+## Système politique traditionnel :
+
+**Royaume de Ségou (1712-1861) :**
+- **Roi (Faama)** : Autorité suprême, choisi parmi les lignages royaux (Coulibaly, Diarra)
+- **Conseil royal** : Assemblée des notables, chefs de clans, griots
+- **Armée professionnelle** : Organisée à partir des milices de jeunes (ton), régiments spécialisés
+- **Administration territoriale** : Gouverneurs régionaux, chefs de villages
+- **Système fiscal** : Impôts, tributs, corvées
+
+**Organisation villageoise :**
+- **Chef de village (dugutigi)** : Autorité locale, choisi parmi les anciens
+- **Conseil des anciens** : Assemblée des chefs de lignages, décisions collectives
+- **Assemblée villageoise** : Réunions publiques, palabres, résolution des conflits
+- **Démocratie participative** : Importance du consensus, de la parole publique
+
+**Système des milices de jeunes (ton) :**
+- **Ton** : Groupes d'âge, milices de jeunes hommes
+- **Ton-tigi** : Chef élu de la milice
+- **Fonctions** : Travail collectif, défense, représentation des intérêts des jeunes
+- **Militarisation (1712)** : Transformation en armée professionnelle par Biton Coulibaly
+
+## Organisation clanique :
+
+**Système patrilinéaire :**
+- **Jamu (clan)** : Groupe de descendance patrilinéaire, partageant un ancêtre commun
+- **Patronyme** : Nom de famille transmis par le père, identifiant le clan
+- **Ancêtre fondateur** : Figure mythique ou historique, origine du clan
+- **Devise (ton)** : Slogan ou proverbe associé au clan, exprimant ses valeurs
+- **Tabous (tana)** : Interdits spécifiques au clan (animaux, aliments, comportements)
+
+**Principaux clans bambara :**
+- **Coulibaly** : Clan royal de Ségou, fondateurs de l'Empire
+- **Diarra** : Clan royal rival, successeurs de Ngolo Diara
+- **Traoré** : Clan important, nombreux griots
+- **Koné** : Clan important, nombreux forgerons
+- **Sangaré** : Clan important
+- **Dembélé** : Clan important
+- **Autres clans** : Nombreux autres clans avec leurs spécialisations
+
+**Spécialisations claniques :**
+- **Forgerons (numu)** : Travail du fer, métallurgie, sculpture
+- **Griots (jeli)** : Musique, histoire, généalogie, médiation
+- **Cordonniers (garanke)** : Travail du cuir
+- **Bouffons (nyamakala)** : Divertissement, satire sociale
+
+## Rôle des lignages :
+
+**Lignage patrilinéaire :**
+- **Badenya** : Lignage, groupe de parents par le père
+- **Chef de lignage** : Autorité sur les membres du lignage
+- **Propriété foncière** : La terre appartient au lignage, gérée collectivement
+- **Héritage** : Transmission des biens par la lignée paternelle
+- **Solidarité** : Entraide mutuelle, protection des membres
+
+**Fonctions des lignages :**
+- **Organisation sociale** : Base de l'organisation sociale bambara
+- **Résolution des conflits** : Arbitrage des disputes internes
+- **Culte des ancêtres** : Vénération des ancêtres du lignage
+- **Transmission des traditions** : Préservation de l'histoire et des coutumes
+
+## Autorité religieuse :
+
+**Sociétés initiatiques :**
+- **Komo** : Société la plus puissante, connaissance avancée, masque sacré
+- **Kore (Korè)** : Société finale, spiritualisation, divinisation, immortalité
+- **Nama** : Société féminine, union esprit-corps, dualité bien-mal
+- **Ntomo (N'domo)** : Société des jeunes non circoncis, discipline, silence
+- **Kono** : Société des forgerons, union pensée-corps, conscience
+- **Tyiwara (Chiwara)** : Société agricole, relation soleil-terre, fertilité
+
+**Prêtres traditionnels :**
+- **Komo-tigi** : Chef de la société Komo, autorité spirituelle suprême
+- **Kore-tigi** : Chef de la société Kore, maître spirituel
+- **Devins (soma)** : Spécialistes de la divination, consultation avant décisions
+- **Guérisseurs (soma-ba)** : Praticiens de la médecine traditionnelle, exorcisme
+- **Gardiens des sanctuaires** : Responsables des lieux de culte, bosquets sacrés
+
+**Griots (jeli) :**
+- **Rôle religieux** : Intermédiaires avec le monde spirituel, invocations
+- **Rôle social** : Médiateurs, conseillers, gardiens de la mémoire
+- **Rôle culturel** : Musiciens, conteurs, historiens
+
+# 4. Langues et sous-familles
+- Langue principale : Bambara (bamanankan)
+- Codes ISO : ISO 639-3 : bam
+- Famille : Niger-Congo – Mandé occidental
+- Nombre de locuteurs : ~4 000 000 locuteurs natifs, ~10 000 000+ locuteurs totaux (langue véhiculaire du Mali)
+- Dialectes :
+  * Bambara de Ségou (dialecte central, considéré comme standard)
+  * Bambara de Bamako (dialecte urbain, influence du français)
+  * Bambara de Koulikoro (dialecte occidental)
+  * Bambara de Dioïla (dialecte méridional)
+  * Variations dialectales mineures, intercompréhension mutuelle
+- Rôle véhiculaire :
+  * **Lingua franca du Mali** : Parlée par environ 80% de la population malienne comme langue première ou seconde
+  * **Langue nationale** : Statut de langue nationale au Mali (avec le peul, le songhaï, etc.)
+  * **Médias** : Utilisée dans les médias (radio, télévision, presse)
+  * **Éducation** : Enseignée dans les écoles primaires, utilisée comme langue d'instruction
+  * **Administration** : Utilisée dans l'administration locale
+  * **Commerce** : Langue du commerce et des échanges
+  * **Coexistence avec le français** : Langue officielle (français) et langues nationales (bambara, peul, songhaï)
+- Autres langues parlées : Français (officiel), Peul, Songhaï, Dogon, Tamasheq, autres langues du Mali
+- Écriture : Alphabet latin avec diacritiques, système de transcription standardisé, lecture gauche → droite
+
+# 5. Culture, rites et traditions
+
+## A. DIVINITÉS ET ESPRITS (Panthéon bambara)
+
+La spiritualité bambara traditionnelle est un système complexe structurant la compréhension du monde, de l'homme et de la nature. Bien que majoritairement islamisés depuis le XIXe siècle, la cosmologie traditionnelle continue d'influencer les pratiques culturelles contemporaines, créant un syncrétisme unique.
+
+### Divinités suprêmes
+
+**Maa Ngala (Dieu créateur suprême)**
+- Endonyme : Maa Ngala, Bemba, Ngala
+- Créateur de l'univers par la puissance de la parole (kuma)
+- Création de l'œuf "Fan" divisé en neuf segments, représentant les aspects fondamentaux de l'existence
+- Transcendant, distant, rarement invoqué directement
+- Attributs : omniscient, omnipotent, éternel, invisible
+- Pas de culte direct, mais vénération via les esprits et les ancêtres
+- Exonyme : "Dieu" (français), "Allah" (islam), "God" (anglais)
+
+**Bemba (Quaternité divine)**
+- Endonyme : Bemba
+- Composite de quatre entités distinctes :
+  * **Pemba** : Aspect mâle, associé au ciel et à l'air, représenté comme un grain tombé sur terre devenant l'acacia
+  * **Nyale** : Aspect femelle, symbolise le feu et le chaos, destruction et renouveau, forces primordiales de la création
+  * **Faro** : Aspect femelle, associée à l'eau, force stabilisatrice, équilibre, vie éternelle, organisation de la vie sur terre
+  * **Ndomadyiri** : Aspect mâle, associé à la terre, au feu et à la guérison, forgeron et guérisseur, enseigne les rites religieux
+
+### Forces spirituelles
+
+**Nyama (Force vitale)**
+- Endonyme : Nyama
+- Force vitale impersonnelle qui imprègne toutes les entités (animées et inanimées)
+- Énergie de l'action, source de pouvoir nécessaire derrière chaque mouvement et tâche
+- Ni intrinsèquement bienveillant ni malveillant, mais puissant en concentrations (sang, graines)
+- Nécessite une maîtrise rituelle pour éviter le malheur ou exploiter son pouvoir
+- Concept central de la spiritualité bambara
+
+**Esprits de la nature (Jinɛ)**
+- Endonyme : Jinɛ (pluriel : jinɛw)
+- Esprits habitant la nature (forêts, rivières, montagnes, rochers)
+- Ambivalents : peuvent aider ou nuire aux humains
+- Types d'esprits :
+  * **Esprits des arbres** : Habitent les grands arbres, protecteurs de la forêt
+  * **Esprits des animaux** : Protecteurs des espèces animales
+  * **Esprits des rivières** : Habitent les cours d'eau, dangereux pour les imprudents
+  * **Esprits des montagnes** : Gardiens des lieux élevés
+- Pratiques : Offrandes avant la chasse, la cueillette ou les voyages, respect des lieux sacrés
+- Tabous : Interdiction de couper certains arbres, de chasser certains animaux sacrés, de souiller les rivières
+
+**Esprits ancestraux (Badenya)**
+- Endonyme : Badenya (ancêtres du lignage)
+- Esprits des ancêtres défunts
+- Rôle : Protection, guidance, intercession auprès de Maa Ngala
+- Culte : Autels domestiques, offrandes régulières, libations
+- Manifestations : Rêves, possessions, apparitions
+- Réincarnation : Croyance en la réincarnation des ancêtres dans leurs descendants
+
+## B. COSMOLOGIE BAMBARA (Conception du monde)
+
+### Structure du monde
+
+**Trois/quatre niveaux cosmiques :**
+1. **Ciel / Monde divin (San)** : Domaine de Maa Ngala, dieux supérieurs, ordre cosmique
+2. **Terre / Monde des vivants (Dugu)** : Domaine des humains, animaux, plantes, espace de l'action
+3. **Monde des esprits / Ancêtres (Kun)** : Domaine des morts, ancêtres, esprits intermédiaires
+4. **Monde souterrain** : Parfois mentionné, lié aux mystères, forces chthoniennes
+
+### Concepts spirituels de la personne humaine
+
+**Dualité corps-esprit :**
+- **Fangama (corps physique)** : Enveloppe matérielle, temporaire, retourne à la terre
+- **Ni (âme/esprit)** : Essence spirituelle, éternelle, retourne à Maa Ngala
+- **Dya (ombre/double spirituel)** : Projection spirituelle de la personne
+- **Tere (force vitale)** : Énergie de vie, liée au nyama
+- **Wanzo (caractère)** : Personnalité individuelle, tempérament
+
+**Cycle de vie spirituel :**
+1. Pré-existence : L'esprit existe avant la naissance dans le monde des ancêtres
+2. Naissance : Incarnation, attribution du destin
+3. Vie terrestre : Accomplissement du destin, actions morales, accumulation de nyama
+4. Mort : Séparation du corps et de l'esprit
+5. Passage : Rites funéraires pour assurer le voyage vers le monde des ancêtres
+6. Ancestralité : Transformation en ancêtre vénérable (Badenya)
+7. Réincarnation : Retour possible dans la lignée familiale
+
+**Concept de personne (Mɔgɔ) :**
+- Mɔgɔ = personne, être humain
+- L'homme est un être social : "Mɔgɔ bɛ mɔgɔ la" (Une personne est une personne grâce aux autres)
+- Valeurs : **Badenya** (fraternité), **Bolo** (travail), **Jɔya** (respect), **Kɛlɛ** (sagesse)
+- Honneur familial : Le comportement individuel reflète sur toute la famille et le lignage
+
+### Conception de la nature
+
+**Sacralité de la nature :**
+- La nature est sacrée, demeure des esprits (jinɛ)
+- Interdiction de souiller ou de détruire la nature sans raison
+- Bosquets sacrés (Komo, Kore) : Lieux interdits, sanctuaires des esprits
+- Arbres sacrés : Certains arbres sont considérés comme demeures d'esprits
+
+**Animaux totémiques :**
+- **Antilope (Tyiwara)** : Animal sacré, symbole de fertilité et d'agriculture
+- **Hyène** : Associée à la société Komo, symbole de la force écrasante de la connaissance
+- **Éléphant** : Symbole de sagesse et de force
+- **Lion** : Symbole de courage et de royauté
+- **Serpent** : Associé aux esprits de l'eau, symbole de régénération
+
+**Plantes sacrées :**
+- **Kola (kɔrɔ)** : Noix sacrée, offrande rituelle, symbole d'hospitalité
+- **Millet (sanyɔ)** : Céréale sacrée, base de l'alimentation, offrande aux ancêtres
+- **Herbes médicinales** : Utilisées dans les rituels de guérison et de purification
+
+**Harmonie cosmique :**
+- Équilibre entre l'homme, la nature et les esprits
+- Respect des tabous : Éviter les actions qui perturbent l'ordre cosmique
+- Purification : Rituels de nettoyage après transgression
+
+## C. SOCIÉTÉS INITIATIQUES
+
+Les sociétés initiatiques bambara sont des institutions éducatives et spirituelles hiérarchisées, guidant les individus à travers les différentes étapes du développement personnel et communautaire. Elles constituent le cœur de la spiritualité et de l'organisation sociale bambara.
+
+### Ntomo (N'domo) - Société des jeunes non circoncis
+
+**Fonction :**
+- Première étape de l'initiation masculine
+- Enseignement des origines et du destin des êtres humains
+- Discipline et endurance
+- Préparation à la circoncision
+
+**Caractéristiques :**
+- Masques avec petite bouche ou bouche absente : Symbolise la vertu du silence, l'importance de garder les secrets
+- Rituels de masques : Performances symbolisant l'instruction morale
+- Préparation à l'âge adulte : Enseignement des valeurs communautaires
+
+### Komo - Société de la connaissance
+
+**Fonction :**
+- Acquisition de la connaissance et maîtrise de soi
+- Discipline morale et manipulation des forces spirituelles
+- Connaissance avancée, particulièrement parmi les castes de forgerons
+
+**Caractéristiques :**
+- Masque Komo : Masque sacré orné de matériaux (piquants de porc-épic, cornes d'antilope), symbolise la sagesse
+- Rituels : Danses, sacrifices, cérémonies impliquant des masques sacrés
+- Force écrasante de la connaissance : Le masque représente une hyène, symbole de la puissance du savoir
+- Contrôle du nyama : Maîtrise des forces spirituelles pour la divination, la guérison, la justice
+
+### Nama - Société féminine
+
+**Fonction :**
+- Enseignement de l'union de l'esprit et du corps
+- Dualité du bien et du mal
+- Focus sur le mariage et la féminité
+
+**Caractéristiques :**
+- Rituels de mariage symbolique : Cérémonies illustrant l'union des forces opposées
+- Enseignement de la dualité : Compréhension de l'équilibre entre forces opposées dans l'univers
+- Rôle des femmes : Préparation au mariage, responsabilités féminines
+
+### Kono - Société des forgerons
+
+**Fonction :**
+- Exploration de l'union de la pensée et du corps
+- Compréhension de soi intérieure
+- Nature de la conscience humaine
+- Spécialisation des forgerons (numu)
+
+**Caractéristiques :**
+- Maîtrise du feu : Contrôle du feu pour forger les outils, métaphore de la transformation spirituelle
+- Harnessing nyama : Utilisation du nyama pour la divination, la guérison, la justice
+- Conscience : Naissance de la conscience à travers l'union de la pensée et du corps
+
+### Tyiwara (Chiwara) - Société agricole
+
+**Fonction :**
+- Enseignement de l'agriculture et du travail des champs
+- Relation entre le soleil et la terre nourricière
+- Importance du travail acharné
+- Connexion entre les humains et la terre
+
+**Caractéristiques :**
+- Masque Tyiwara (Chiwara) : Masque d'antilope, représente l'esprit qui a introduit l'agriculture à l'humanité
+- Légende : Chiwara a utilisé ses cornes et un bâton pointu pour enseigner aux humains comment cultiver la terre
+- Danses rituelles : Performances lors des cérémonies de plantation et de récolte
+- Mouvements mimétiques : Danses imitant les sauts d'antilopes, symbolisant la fertilité et la connexion soleil-terre
+- Cérémonies saisonnières : Rituels liés aux cycles agricoles
+
+### Kore (Korè) - Société finale
+
+**Fonction :**
+- Connaissance de la spiritualisation et de la divinisation
+- Auto-connaissance avancée
+- Concept d'immortalité à travers la réincarnation continue dans la lignée du clan
+- Société la plus avancée et secrète
+
+**Caractéristiques :**
+- Cérémonies tous les sept ans : Rituels majeurs impliquant mort et renaissance symboliques
+- Mort et renaissance : Enseignement que la mort corporelle mène à l'union avec le divin
+- Immortalité : Compréhension de la continuité à travers la réincarnation dans la lignée familiale
+- Maîtrise spirituelle : Accomplissement final de l'initiation, sagesse suprême
+
+## D. RITES MAJEURS
+
+### Rites d'initiation : Bolokoli (Circoncision)
+
+**Circoncision masculine :**
+- **Bolokoli** : Rite de passage à l'âge adulte pour les garçons
+- **Âge** : Généralement entre 7 et 14 ans
+- **Processus** :
+  * **Festivals préparatoires** : Célébrations multiples culminant dans l'événement de circoncision
+  * **Deuxième jour** : Les initiés (soli) présentent des offrandes aux membres respectés de la communauté (to-n-déou)
+  * **Soli kili basi** : Les initiés chantent et sollicitent des cadeaux de chaque foyer de la communauté
+  * **Nuit précédant la circoncision (d'lo)** : Séparation des genres en groupes distincts
+  * **Préparation** : Les candidats sont peints (blanc, jaune, rouge) sur le front, drapés dans des couvertures
+  * **Garçons** : Rasage, onction d'huile
+  * **Circoncision** : Effectuée au centre du village par le "fa" du clan, signifiant la préparation au mariage et à la fertilité
+- **Signification** : Le prépuce symbolise l'aspect féminin de l'homme, la circoncision guide vers le rôle sociétal masculin
+
+**Circoncision féminine :**
+- **Excision** : Pratique traditionnelle (de plus en plus controversée et abandonnée)
+- **Signification** : Le clitoris représente l'aspect masculin de la femme, l'excision guide vers le rôle sociétal féminin
+- **Évolution** : Abandon progressif sous l'influence de l'éducation et des campagnes de santé
+
+### Rites funéraires
+
+**Cérémonies funéraires élaborées :**
+- **Veillée funèbre** : Veille du corps, chants, danses, récits de la vie du défunt
+- **Enterrement** : Inhumation dans le village, avec objets personnels
+- **Cérémonies post-funéraires** : Rites pour assurer le passage paisible vers le monde des ancêtres
+- **Masques funéraires** : Danses masquées représentant les esprits des morts
+- **Libations** : Versement de liquides sur le sol pour honorer les ancêtres
+- **Offrandes** : Nourriture, objets personnels offerts aux ancêtres
+
+### Rites agricoles
+
+**Cérémonies liées à l'agriculture :**
+- **Bénédiction des terres** : Invocation des esprits avant les semis
+- **Festivals de récolte** : Remerciements aux divinités et aux ancêtres
+- **Rites de fertilité** : Cérémonies pour assurer la prospérité des récoltes
+- **Danses Tyiwara** : Performances avec masques d'antilope lors des cérémonies agricoles
+- **Offrandes** : Sacrifices d'animaux, offrandes alimentaires aux esprits de la terre
+
+### Rites de chasse
+
+**Cérémonies de chasse :**
+- **Invocations** : Appels aux esprits de la forêt avant la chasse
+- **Offrandes** : Remerciements après une prise importante
+- **Respect des tabous** : Interdiction de chasser certains animaux sacrés
+- **Purification** : Rituels de nettoyage après la chasse
+
+### Rites de purification
+
+**Cérémonies de purification :**
+- **Bains rituels** : Purification avec des herbes sacrées et de l'eau de rivière
+- **Fumigation** : Purification par la fumée d'herbes sacrées
+- **Exorcisme** : Expulsion des esprits malveillants par les guérisseurs
+- **Purification communautaire** : Cérémonies pour nettoyer la communauté après transgression
+
+## E. SYMBOLES
+
+**Masque Tyiwara (Chiwara) :**
+- Masque d'antilope, symbole de fertilité et d'agriculture
+- Représente l'esprit qui a introduit l'agriculture à l'humanité
+- Utilisé lors des cérémonies agricoles et des danses rituelles
+
+**Masque Komo :**
+- Masque sacré orné de matériaux (piquants de porc-épic, cornes d'antilope)
+- Symbole de la sagesse et de la force écrasante de la connaissance
+- Utilisé lors des cérémonies de la société Komo
+
+**Bogolan (tissu de boue) :**
+- Tissu traditionnel malien, art formel
+- Teinture de coton tissé à la main avec de la boue fermentée et des teintures végétales
+- Chaque design porte des significations spécifiques, reflétant le statut social, les événements historiques ou les proverbes
+- Utilisé dans les vêtements, la décoration intérieure et les vêtements cérémoniels
+- Symbole d'identité culturelle et de patrimoine
+
+**Instruments de musique :**
+- **Balafon** : Xylophone en bois avec résonateurs en calebasse, instrument central de la musique bambara
+- **Ngoni** : Instrument à cordes, ancêtre du banjo moderne
+- **Kora** : Harpe-luth à 21 cordes, jouée exclusivement par les griots
+- **Djembé** : Tambour en forme de calice, utilisé dans les cérémonies et les danses
+
+**Tabouret royal :**
+- Héritage de la tradition mandingue
+- Symbole de pouvoir et de continuité
+- Utilisé lors des cérémonies royales et des initiations
+
+## F. ARTS ET MUSIQUE
+
+**Sculpture :**
+- **Masques** : Tradition riche de masques sculptés (Tyiwara, Komo, Ntomo, etc.)
+- **Statues** : Sculptures en bois représentant les ancêtres, les esprits
+- **Portes sculptées** : Portes de maisons et de greniers ornées de motifs symboliques
+- **Tabourets** : Tabourets sculptés, symboles de statut et d'autorité
+
+**Tissage :**
+- **Bogolan** : Tissu de boue, art formel unique au Mali
+- **Pagnes traditionnels** : Tissus colorés, motifs géométriques
+- **Vêtements cérémoniels** : Robes et tuniques pour les cérémonies
+
+**Musique :**
+- **Balafon** : Xylophone en bois, instrument central, accompagnement des danses et du récit
+- **Ngoni** : Instrument à cordes, joué par les griots et les musiciens
+- **Kora** : Harpe-luth à 21 cordes, jouée exclusivement par les griots (jeliw)
+- **Djembé** : Tambour en forme de calice, rythmes complexes
+- **Flûtes** : Flûtes traditionnelles, mélodies douces
+- **Cloches** : Instruments de percussion, rythmes d'accompagnement
+
+**Griots (Jeliw) :**
+- **Héritiers musicaux** : Musiciens et conteurs héréditaires, gardiens de l'histoire et de la généalogie
+- **Rôle** : Transmission de l'histoire, de la généalogie, des récits culturels à travers la musique et le récit
+- **Instruments** : Kora, balafon, ngoni
+- **Répertoire** : Compositions complexes (kumbengo = patterns cycliques, birimintingo = flourishes improvisationnels)
+- **Vocals** : Refrains composés (donkilo) et passages déclamatoires libres (sataro), souvent en call-and-response avec un chœur
+- **Fonctions** : Conseillers, médiateurs, éducateurs dans leurs communautés
+
+**Danses :**
+- **Danses masquées** : Performances avec masques (Tyiwara, Komo, etc.)
+- **Danses cérémonielles** : Danses lors des initiations, mariages, funérailles
+- **Danses de réjouissance** : Danses festives, célébrations communautaires
+- **Danses agricoles** : Danses lors des cérémonies de plantation et de récolte
+
+**Chants :**
+- **Chants de travail** : Chants accompagnant les activités agricoles et artisanales
+- **Chants de chasse** : Chants rituels avant et après la chasse
+- **Chants funéraires** : Chants lors des cérémonies funéraires
+- **Chants épiques** : Récits historiques chantés par les griots
+
+## G. SPIRITUALITÉS CONTEMPORAINES
+
+**Islam :**
+- **Majoritaire** : Environ 90% des Bambara se déclarent musulmans (2025)
+- **Syncrétisme** : Mélange d'islam et de pratiques traditionnelles
+- **Pratiques syncrétiques** :
+  * Prière aux ancêtres décédés pour guidance
+  * Croyance que les esprits ancestraux peuvent se manifester sous diverses formes
+  * Offrandes aux ancêtres (farine, eau) lors de cérémonies spéciales
+  * Médiation par le membre le plus âgé de la famille entre les vivants et les morts
+- **Islam en bambara** : Prédicateurs comme Chérif Haïdara délivrent prières et sermons en bambara
+- **Adaptation culturelle** : Apprentissage du Coran en bambara plutôt qu'en arabe
+- **Résistance historique** : Les Bambara ont résisté à la conversion complète à l'islam jusqu'au XIXe siècle
+- **Conversion forcée (1861)** : Conquête par El Hadj Omar Tall, conversions forcées, incitations liées au prestige commercial
+- **Orthodoxie superficielle** : Beaucoup de Bambara intègrent pratiques islamiques et traditions spirituelles indigènes
+
+**Christianisme :**
+- **Minoritaire** : Environ 5-10% des Bambara (catholicisme, protestantisme)
+- **Évangélisation** : Tentatives d'évangélisation depuis la colonisation (minoritaires)
+- **Syncrétisme** : Coexistence avec pratiques traditionnelles
+
+**Pratiques traditionnelles persistantes :**
+- **Culte des ancêtres** : Continuation malgré l'islamisation
+- **Sociétés initiatiques** : Maintien des sociétés secrètes (Komo, Kore, etc.)
+- **Masques et danses** : Continuation des cérémonies traditionnelles
+- **Divination** : Consultation des devins pour guidance
+- **Médecine traditionnelle** : Utilisation des guérisseurs
+
+**Défis contemporains :**
+- **Groupes jihadistes** : Macina Liberation Front (JNIM) intensifient les efforts pour éradiquer les pratiques traditionnelles considérées comme hérétiques
+- **Interdictions** : Interdiction des festivals traditionnels, de la musique, des visites de sanctuaires
+- **Attaques** : Attaques ciblées sur les villages bambara pour éliminer les coutumes perçues comme non-islamiques
+- **Résistance culturelle** : Beaucoup de Bambara continuent de pratiquer une forme d'islam qui incorpore des éléments de leurs croyances traditionnelles
+
+# 6. Rôle historique et interactions régionales
+
+## Royaumes / chefferies :
+
+**Royaume de Ségou (1712-1861) :**
+- **Fondation** : Biton Coulibaly (Mamari Coulibaly) réorganise la milice des jeunes (ton) en armée professionnelle (1712)
+- **Capitale** : Ségou, fortifiée avec techniques apprises des Songhaï
+- **Marine de guerre** : Développement d'une flotte de canoës de guerre pour patrouiller le fleuve Niger
+- **Expansion** : Extension du territoire, contrôle du Haut Niger
+- **Apogée (1766-1818)** : Règne de Ngolo Diara (1766-1795), restauration de l'ordre, expansion
+- **Successeurs** : Mansong (1795-1808), Da Kaba (1808-1818), continuation de l'expansion
+- **Déclin** : Défaite face à Shehu Ahmadu Lobbo de Macina (1818), affaiblissement
+- **Fin** : Conquête par El Hadj Omar Tall (1861), fin de l'Empire bambara indépendant
+
+**Royaume de Kaarta :**
+- **Formation** : Séparation des Bambara occidentaux
+- **Territoire** : Région de Kaarta (ouest du Mali)
+- **Relations** : Rivalités avec le royaume de Ségou
+
+**Chefferies locales :**
+- **Avant 1712** : Chefferies bambara autonomes, organisation décentralisée
+- **Après 1861** : Retour à l'organisation en chefferies locales sous domination toucouleur puis française
+
+## Relations avec peuples voisins :
+
+**Peuls (Fulani) :**
+- **Relations complexes** : Commerce, conflits religieux
+- **Résistance à l'islamisation** : Les Bambara ont résisté à l'islamisation peule jusqu'au XIXe siècle
+- **Jihad peul (XIXe siècle)** : Conquête par El Hadj Omar Tall (1861), conversions forcées
+- **Conflits contemporains** : Tensions sur l'accès aux terres et à l'eau, particulièrement en période de sécheresse
+- **Groupes d'auto-défense** : Formation de milices d'auto-défense (Dan Na Ambassagou) face aux groupes jihadistes peuls
+
+**Songhaï :**
+- **Contacts commerciaux** : Échanges le long du fleuve Niger
+- **Influences culturelles** : Techniques de fortification, architecture
+- **Relations généralement pacifiques** : Coexistence le long du Niger
+
+**Dogon :**
+- **Relations commerciales** : Échanges de produits agricoles et artisanaux
+- **Échanges culturels** : Influences artistiques mutuelles
+- **Conflits récents** : Tensions avec les Peuls, formation d'alliances défensives
+
+**Sénoufo :**
+- **Contacts commerciaux** : Échanges de produits agricoles
+- **Influences artistiques** : Échanges de techniques artistiques
+- **Relations généralement pacifiques** : Coexistence dans les zones de contact
+
+**Bobo :**
+- **Relations commerciales** : Échanges de produits artisanaux
+- **Échanges culturels** : Influences mutuelles
+- **Relations généralement pacifiques**
+
+**Malinké :**
+- **Relations fraternelles** : Peuples mandingues apparentés, langue et culture proches
+- **Coopération** : Alliances politiques et commerciales
+- **Identité commune** : Partage de l'héritage de l'Empire du Mali
+
+**Soninké :**
+- **Relations historiques** : Héritage commun de l'Empire du Ghana
+- **Contacts commerciaux** : Échanges transsahariens
+- **Influences culturelles** : Traditions mandé communes
+
+## Conflits / alliances :
+
+**Conflits internes :**
+- **Rivalités dynastiques** : Conflits entre les familles Coulibaly et Diarra pour le contrôle du royaume
+- **Révoltes régionales** : Résistance des chefferies locales à l'autorité centrale
+- **Guerres inter-villageoises** : Conflits fonciers, rivalités
+
+**Résistance à l'islamisation :**
+- **Jihad peul (XIXe siècle)** : Résistance armée face aux campagnes d'El Hadj Omar Tall
+- **Défaite (1861)** : Prise de Ségou, fin de la résistance organisée
+- **Conversions forcées** : Imposition de l'islam, charia
+- **Résistance culturelle** : Maintien des pratiques traditionnelles malgré l'islamisation
+
+**Résistance à la colonisation française (1890-1898) :**
+- **Révoltes** : Révoltes contre l'administration coloniale
+- **Résistance armée** : Guérilla, attaques contre les postes coloniaux
+- **Pacification forcée** : Soumission, administration coloniale
+- **Révoltes post-coloniales** : Continuation de la résistance sous diverses formes
+
+**Alliances :**
+- **Alliances avec autres Mandingues** : Coopération avec Malinké, Soninké face aux menaces communes
+- **Alliances défensives** : Formation d'alliances avec Dogon, Sénoufo face aux groupes jihadistes
+- **Alliances commerciales** : Réseaux commerciaux avec peuples voisins
+
+## Diaspora :
+
+**Diaspora urbaine :**
+- **Bamako** : Migration massive vers la capitale depuis les années 1960
+- **Autres villes maliennes** : Kayes, Sikasso, Mopti, Gao
+- **Urbanisation** : Transformation de l'identité bambara, adaptation aux milieux urbains
+
+**Diaspora transfrontalière :**
+- **Burkina Faso** : Petite communauté (~400 personnes), commerce, agriculture
+- **Côte d'Ivoire** : Petite communauté (~22 583 personnes, 1,3% de la population), commerce, agriculture
+- **Guinée** : Petite communauté, commerce
+- **Sénégal** : Petite communauté, commerce
+
+**Diaspora internationale :**
+- **France** : Migration importante depuis les années 1980, communauté active
+- **États-Unis** : Petite communauté, principalement dans les grandes villes
+- **Canada** : Petite communauté, principalement à Montréal
+- **Autres pays** : Présence dans d'autres pays européens et africains
+
+**Maintien de l'identité :**
+- **Associations culturelles** : Création d'associations pour préserver la culture bambara
+- **Festivals** : Organisation de festivals culturels dans la diaspora
+- **Langue** : Maintien de la langue bambara dans les communautés diasporiques
+- **Traditions** : Transmission des traditions aux générations suivantes
+
+# 7. Démographie globale
+- Population totale (tous pays) : ~7 787 000 (2025)
+- Répartition par pays :
+  * **Mali** : ~7 000 000+ (environ 28% de la population malienne de 25,2 millions, les Mandé représentent ~50% de la population, les Bambara étant le plus grand sous-groupe)
+  * **Burkina Faso** : ~400 (très petite communauté)
+  * **Côte d'Ivoire** : ~22 583 (environ 1,3% de la population ivoirienne de 32,7 millions)
+  * **Guinée** : ~quelques milliers (estimation)
+  * **Sénégal** : ~quelques milliers (estimation)
+  * **Diaspora internationale** : ~plusieurs dizaines de milliers (France, États-Unis, Canada, autres pays)
+- Zones principales (Mali) : Bamako (capitale), Ségou, Koulikoro, Dioïla, Sikasso, Niono, San, Markala, Kati, Kangaba, Bougouni, Koutiala
+- Année de référence : 2025
+- Source : Ethnologue (SIL International), Joshua Project, PeopleGroups.org, recensements maliens, estimations AFRIK
 
 # 8. Sources
-- Ethnologue (bam)
-- PeopleGroups / Joshua Project
+- Zahan, Dominique. *Sociétés d'initiation bambara: Le N'domo, le Korè* (1960)
+- Zahan, Dominique. *La dialectique du verbe chez les Bambara* (1963)
+- Zahan, Dominique. *The Bambara* (1974) - Iconography of Religions series
+- Dieterlen, Germaine. *Essai sur la religion bambara* (1951)
+- Dieterlen, Germaine & Cissé, Youssouf. *Les fondements de la société d'initiation du Komo* (1972)
+- Wikipedia (français) : Article "Bambaras" https://fr.wikipedia.org/wiki/Bambaras
+- Wikipedia (français) : Article "Cosmogonie bambara" https://fr.wikipedia.org/wiki/Cosmogonie_bambara
+- Wikipedia (anglais) : Article "Bambara people" https://en.wikipedia.org/wiki/Bambara_people
+- Wikipedia (anglais) : Article "Bemba (deity)" https://en.wikipedia.org/wiki/Bemba_%28deity%29
+- Wikipedia (anglais) : Article "Balafon" https://en.wikipedia.org/wiki/Balafon
+- Britannica : "Bambara states" https://www.britannica.com/place/Bambara-states
+- Britannica : "Chiwara" https://www.britannica.com/topic/Chiwara
+- Britannica : "Umar Tal" https://www.britannica.com/biography/Umar-Tal
+- Ethnologue (SIL International) – données linguistiques (code bam)
+- Joshua Project : "Bambara in Mali" https://joshuaproject.net/people_groups/10530/ML
+- PeopleGroups.org : "Bambara language" https://peoplegroups.org/language/bam/
+- 101 Last Tribes : "Bambara" https://101lasttribes.com/tribes/bambara.html
+- Encyclopedia.com : "Bambara religion" https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/bambara-religion
+- Bowers Museum : "Bamana Komo Society Mask" https://bowers.org/collections-blog/bamana-komo-society-mask
+- Grokipedia : "Bamana Empire" https://grokipedia.com/page/Bamana_Empire
+- Grokipedia : "Bambara people" https://grokipedia.com/page/Bambara_people
+- Bambara Noaam : "Nyama" https://www.bambara-noaam.org/works/
+- Music Connects : "Kora" https://music-connects.org/kora
+- The Kora Cafe : "Jaliya" https://thekoracafe.com/about/jaliya/
+- Melodigging : "Mande music" https://www.melodigging.com/genre/mande-music-20936
+- WebAfriqa : "Sudanic Agricultural Civilization - Nuclear Mande" https://www.webafriqa.net/library/anthropology/part-three-sudanic-agricultural-civilization-nuclear-mande/
+- PrayWay : "Bambara in Mali" https://prayway.com/unreached/peoplegroups2/1815.html
+- ECFR : "Dan Na Ambassagou" https://ecfr.eu/special/sahel_mapping/dan_na_ambassagou
+- Al Jazeera : "Ethnic groups in central Mali sign three peace agreements" https://www.aljazeera.com/news/2021/1/27/ethnic-groups-in-central-mali-sign-three-peace-agreements
+- Recherches web académiques (2025) – sources diverses sur cosmologie bambara, sociétés initiatiques, histoire, démographie
