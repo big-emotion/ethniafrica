@@ -3,6 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) :
+- Lien avec la famille linguistique : 
 - Nom français :
 - Nom anglais / auto-appellation académique :
 - Appellation(s) historique(s) :
@@ -31,7 +32,7 @@
 - Peuple 3 :
 
 # 3. Caractéristiques linguistiques
-- Typologie linguistique :   objectifs de la typologie linguistique sont décrire, comprendre, modéliser les systèmes linguistiques (unités et structures) et leur dynamique de changement.
+- Typologie linguistique : //objectifs de la typologie linguistique sont décrire, comprendre, modéliser les systèmes linguistiques (unités et structures) et leur dynamique de changement.
 - Particularités phonologiques :
 - Liens avec les familles voisines :
 - Innovations clés :
@@ -39,7 +40,7 @@
 # 4. Histoire et origines : //Définir le qui et le pourquoi de cette FLG ? 
 - Origine probable (théories archéologiques, linguistiques, génétiques) : //QUi 
 - Période d'émergence estimée : //Quand il date l'existence de la FLG + Quand est-ce qu'il ont classé 
-- Diffusion des langues (routes migratoires, expansion) : /Afficher l'ensemble des avis disponibles 
+- Diffusion des langues (routes migratoires, expansion) : //Afficher l'ensemble des avis disponibles 
 - Ruptures historiques (séparations, fusions) :
 - Zones de contact et métissages :
 - Événements historiques majeurs ayant influencé la famille :
