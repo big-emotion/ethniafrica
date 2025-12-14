@@ -6,9 +6,7 @@
 - Nom français : Austronésienne (présente en Afrique uniquement via Madagascar)
 - Nom anglais / auto-appellation académique : Austronesian / Malayo-Polynesian
 - Appellation(s) historique(s) : —
-- Origine du terme historique : Terme forgé par le linguiste autrichien Wilhelm Schmidt en 1899 (notamment dans ses travaux sur les langues des mers du Sud) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l’Asie du Sud-Est et de l’océan Indien.
-- Origine du terme historique : Terme forgé par les linguistes européens du XIXe siècle pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l'Asie du Sud-Est et de l'océan Indien. Le terme "Austronesian" a été proposé par Wilhelm Schmidt (1906) pour remplacer l'ancienne dénomination "Malayo-Polynesian" et inclure les langues de Formose (Taiwan).
-- Origine du terme historique : Terme forgé par le linguiste autrichien Wilhelm Schmidt en 1899 (notamment dans ses travaux sur les langues des mers du Sud) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l’Asie du Sud-Est et de l’océan Indien. 
+- Origine du terme historique : Terme forgé par le linguiste autrichien Wilhelm Schmidt (vers 1899-1906) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l'Asie du Sud-Est et de l'océan Indien, remplaçant l'ancienne dénomination "Malayo-Polynesian" pour inclure les langues de Formose (Taiwan).
 - Pourquoi le terme pose problème (si applicable) :  
   L'expression ne pose pas de problème direct, mais son utilisation en Afrique peut prêter à confusion car elle désigne une famille mondiale principalement asiatique.  
   En Afrique, seule Madagascar en relève : certains travaux coloniaux minimisaient l'africanité du peuple malgache en insistant uniquement sur l'origine austronésienne, invisibilisant les apports bantous et est-africains.
@@ -185,14 +183,6 @@
   - **Mayotte** : ~3 000 (communautés malgaches, source : INSEE 2025)
   - **Autres pays** : ~2 000 (Réunion, Maurice, autres pays africains et européens)
 
-# 7. Sources
-- Schmidt, W. (1899) – *Die sprachlichen Verhältnisse von Deutsch-Neuguinea* (Origine du terme "Austronesian")
-- Carte de dispersion : https://fr.wikipedia.org/wiki/Austron%C3%A9siens#/media/Fichier:Chronological_dispersal_of_Austronesian_people_across_the_Pacific_(per_Benton_et_al,_2012,_adapted_from_Bellwood,_2011).png
-- Adelaar, K. (2005) – *The Austronesian Languages of Asia and Madagascar*
-- Dahl, O. (1951) – *Southern Barito and Malagasy*
-- UNESCO – Atlas of Languages
-- SIL Ethnologue – Malagasy
-
 # 6. Sources
 - Adelaar, K. Alexander (2005) – *The Austronesian Languages of Asia and Madagascar*. Routledge.
 - Dahl, Otto Christian (1951) – *Malgache et Maanjan : une comparaison linguistique*. Egede-Instituttet.
@@ -204,4 +194,5 @@
 - SIL Ethnologue – Malagasy (mlg) – https://www.ethnologue.com/language/mlg
 - CIA World Factbook – Madagascar (2025) – https://www.cia.gov/the-world-factbook/countries/madagascar/
 - ONU/UNFPA – Projections démographiques Madagascar (2025)
-
+- Schmidt, W. (1899) – *Die sprachlichen Verhältnisse von Deutsch-Neuguinea*
+- Carte de dispersion : https://fr.wikipedia.org/wiki/Austron%C3%A9siens#/media/Fichier:Chronological_dispersal_of_Austronesian_people_across_the_Pacific_(per_Benton_et_al,_2012,_adapted_from_Bellwood,_2011).png
