@@ -6,98 +6,105 @@
 - Nom français : Berbère / Amazighe
 - Nom anglais / auto-appellation académique : Berber / Amazigh
 - Appellation(s) historique(s) :
-  « Libyque », « Libyco-berbère », « Barbares » (appellation grecque et romaine), « Berbère » (arabe médiéval al-Barbar), « Kabyle », « Touareg » (termes régionalisés).
+  « Libyque » (Antiquité), « Numide », « Maure » (Romains), « Barbar » (Arabe médiéval), « Kabyle/Chleuh/Touareg » (termes régionaux souvent généralisés).
 - Origine du terme historique :
-  - Le mot « Berbère » vient de l’arabe médiéval « al-Barbar », lui-même probablement issu du terme grec « barbaros » (« celui qui ne parle pas grec »).  
-  - Les Romains utilisaient « Libyens » pour désigner les populations autochtones d’Afrique du Nord.
+  - **Étymologie** : Vient du grec *barbaros* (celui qui balbutie, l'étranger) via le latin *barbarus*.
+  - **Introduction** : Repris par les conquérants arabes sous la forme *al-Barbar* (Ibn Khaldoun, XIVe siècle, *Histoire des Berbères*).
+  - **Cristallisation** : Formalisé par l'école algérianiste française (XIXe siècle) pour désigner les populations non-arabophones (ex: Hanoteau & Letourneux, 1872).
 - Pourquoi le terme pose problème :
-  - « Berbère » est un exonyme, historiquement chargé d’une vision extérieure perçue comme péjorative dans certains contextes.  
-  - Il a été utilisé pendant la colonisation française comme catégorie rigide opposée aux « Arabes ».  
-  - L’usage moderne privilégie **Amazigh** ou **Imazighen** (auto-appellation).
+  - **Sens péjoratif** : Renvoie à l'idée de "sauvage" ou "non-civilisé" (lien avec "barbare").
+  - **Construction coloniale** : Utilisé par la France pour créer le "Mythe Kabyle" (autochtones assimilables vs Arabes envahisseurs) afin de diviser la résistance anticoloniale.
+  - **Preuves** : Kateb Yacine (écrivain) a dénoncé cette nomination imposée. L'usage est contesté par le mouvement culturel amazigh depuis les années 1940 (PPA-MTLD) et l'Académie Berbère (1966).
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Amazigh (sing.), Imazighen (plur.), Tamazight (langue)
+  - **Termes** : **Amazigh** (sing.), **Imazighen** (plur.), **Tamazight** (langue).
+  - **Preuves** : Attesté dans l'Antiquité (tribus *Mazices*, *Maxyes* citées par Hérodote et sources latines).
+  - **Étymologie** : Racine *M-Z-Gh* signifiant "homme libre" ou "noble" dans l'imaginaire populaire (scientifiquement : ethnonymique pur).
 - Usage contemporain :
-  Ensemble de langues afro-asiatiques présentes dans tout le Maghreb et le Sahara.  
-  Fort mouvement de revitalisation culturelle et linguistique depuis les années 2000.
+  - Terme officiel dans les constitutions marocaine (2011) et algérienne (2016).
+  - Utilisé internationalement (Inalco, universités américaines) comme synonyme respectueux de "Berbère".
 - Aire / répartition géographique générale :
-  Maroc, Algérie, Tunisie, Libye, Sahara central (Touaregs), nord du Mali, Niger.
+  - De l'Oasis de Siwa (Égypte) aux Canaries (historique), et de la Méditerranée au fleuve Niger (Sahel).
 - Nombre de langues (estimation) :
-  ~30–40 variétés amazighes
+  - ~25-30 variantes principales (intercompréhension variable).
 - Nombre total de locuteurs (estimation) :
-  ~25 à 30 millions
+  - **30 à 40 millions** (Estimations 2024).
 
 ------------------------------------------
 
 ## MODÈLE STRUCTURÉ AFRIK
 
 # 1. Informations générales
-- Nom de la famille : Berbère / Amazighe
+- Nom de la famille : Amazighe (Berbère)
 - Branches internes / sous-groupes :
-  - Tamazight du Maroc central  
-  - Tarifit (Rif)  
-  - Tachelhit (Chleuh)  
-  - Kabyle  
-  - Chaoui  
-  - Touareg (Tamajeq / Tamasheq / Tamahak)  
-  - Zenaga (Mauritanie, quasi disparu)
+  - **Nord** : Atlas (Tachelhit, Tamazight), Zénète (Rifain, Chaoui, Mzab), Kabyle.
+  - **Ouest** : Zenaga (Mauritanie).
+  - **Sud** : Touareg (Tamahaq, Tamasheq, Tamajeq).
+  - **Est** : Siwi (Égypte), Ghadamsi, Nafusi (Libye).
 - Aire géographique :
-  Maghreb, Sahara central, Sahel nord
+  - Afrique du Nord (Tamazgha) et zone sahélo-saharienne.
 - Nombre de langues :
-  30–40
+  - ~30 variantes.
 - Nombre total de locuteurs :
-  ~25 millions
+  - ~35 millions.
 
 # 2. Peuples associés
-- Peuple 1 : Amazighs (Maroc, Algérie, Tunisie) (PPL_AMAZIGH)
-- Peuple 2 : Touaregs (Sahara central) (PPL_TUAREG)
-- Peuple 3 : Zenaga (Mauritanie — presque éteint) (PPL_ZENAGA)
+- Peuple 1 : Imazighen du Nord (Kabyles, Rifains, Chleuhs) (PPL_AMAZIGH)
+- Peuple 2 : Touaregs (Kel Tamasheq) (PPL_TUAREG)
+- Peuple 3 : Zenaga (Mauritanie) (PPL_ZENAGA)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Kabyles
-- Ethnie 2 : Chleuhs (Tachelhit)
-- Ethnie 3 : Touaregs Kel Air, Kel Ahaggar, Kel Adagh
-
-(+ renvoi vers les fichiers ethniques dédiés)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues afro-asiatiques à morphologie riche, verbes dérivationnels, système de genre (masculin/féminin), pluriels internes.
+  - **Type** : Langue flexionnelle (fusio-agglutinante) à racine consonantique.
+  - **Morphologie** : Système de racine et schème.
+    - *Exemple* : Racine **K-T-B** (écrire) -> *yura* (il a écrit), *yaru* (il écrit), *tira* (écriture).
+  - **Genre et Nombre** : Marquage circonfixe (autour du mot).
+    - *Exemple* : *A-rgaz* (homme) -> *I-rgaz-en* (hommes). *T-a-mgar-t* (femme) -> *T-i-mgar-in* (femmes).
 - Particularités phonologiques :
-  Emphatiques; présence de spirantes; distinctions vocaliques réduites; alternances consonantiques (mutation).
+  - **Système consonantique** : Richesse des consonnes, présence d'emphatiques (*ḍ, ṭ, ẓ, ṣ*) et de labio-vélarisées (*gw, kw*).
+  - **Système vocalique** : Réduit à 3 voyelles fondamentales (/a/, /i/, /u/) + un schwa neutre [ə].
+  - **Spirantisation** : Dans le Nord, adoucissement des occlusives (ex: /t/ devient /θ/ comme dans "thing" anglais).
 - Liens avec les familles voisines :
-  Proximité structurelle avec le sémitique et le couchitique; emprunts massifs à l’arabe.
+  - **Famille Afro-asiatique** : Cognats avec le sémitique, le couchitique, l'égyptien ancien et le tchadique.
+    - *Exemple* : *Ilès* (langue) vs Arabe *Lissan*. *Isèm* (nom) vs Arabe *Ism*.
+  - **Emprunts** : Latin (*afus* - main? non. *aɣyul* < *asinus*), Arabe (religieux : *tazaLLit* < *salat*).
 - Innovations clés :
-  - Écriture en Tifinagh (revitalisée)  
-  - Système dérivationnel extrêmement productif  
-  - Ordre VSO ou VOS fréquent
+  - **État d'annexion** : Modification de la voyelle initiale du nom selon la syntaxe.
+    - *Exemple* : *Aman* (l'eau, sujet) -> *Uman* (de l'eau, complément).
+  - **Écriture Tifinagh** : Alphabet géométrique autochtone, conservé par les Touaregs et réintroduit au Nord.
 
-# 5. Histoire et origines
+# 4. Histoire et origines
 - Origine probable :
-  Présence préhistorique en Afrique du Nord (capsien, néolithique nord-africain).
-- Diffusion des langues :
-  Occupation majoritaire du Maghreb avant romanisation, arabisation et colonisation.
-- Ruptures historiques :
-  - Disparition du libyque ancien  
-  - Arabisation progressive du Maghreb  
-  - Résilience linguistique en Kabylie, Rif, Atlas, Sahara
-- Zones de contact et métissages :
-  - Arabisation au nord  
-  - Contacts sahariens avec les Songhay et Hausa  
-  - Influence française (colonisation)
+  - **Classification** : Marcel Cohen (1947), Joseph Greenberg (1963) classent le berbère dans l'Afro-asiatique.
+  - **Théorie archéologique** : Gabriel Camps (1974) lie le proto-berbère au Néolithique de tradition capsienne (7000 av. JC).
+- Période d'émergence :
+  - **Divergence** : Séparation de l'Afro-asiatique commun vers 10 000 - 8 000 av. JC.
+  - **Attestation** : Noms libyques dans les textes égyptiens (Ancien Empire, vers 2300 av. JC).
+- Diffusion :
+  - **Théorie de la continuité** : Développement sur place au Maghreb depuis le Paléolithique (Ibéromaurusien) avec apports néolithiques orientaux.
+  - **Expansion** : Diffusion vers le Sahara (Touaregs) avec l'élevage pastoral (5000-2000 av. JC).
+- Zones de contact :
+  - **Méditerranée** : Échanges intenses avec Phéniciens, Romains, Vandales. Métissage linguistique partiel (substrat).
+  - **Sahel** : Zone de convergence avec les langues Songhay et Hausa (emprunts mutuels de vocabulaire pastoral).
+- Événements :
+  - **Antiquité** : Royaumes de Numidie et Maurétanie.
+  - **Moyen Âge** : Islamisation (VIIe s.) et arabisation linguistique progressive des plaines.
+  - **Moderne** : Résistance coloniale (Abd el-Krim, Fatma N'Soumer).
 
-# 6. Répartition géographique et démographie
+# 5. Répartition
 - Nombre total de locuteurs :
-  ~25 à 30 millions
+  - ~35 millions (Estimation).
 - Répartition par pays :
-  - Maroc (~40 % amazighophones selon régions)
-  - Algérie (~25 %)
-  - Libye, Tunisie (minorités)
-  - Mali, Niger (Touaregs)
-- Importance historique :
-  Peuples autochtones du Maghreb ; rôle dans les royaumes berbères, Almohades, Almoravides, Touaregs sahariens.
+  - **Maroc** : ~14-16 millions (40-50%). Premier pays amazighophone.
+  - **Algérie** : ~10-12 millions (25-30%). Kabylie, Aurès, Mzab.
+  - **Niger** : ~1-2 millions (Touaregs).
+  - **Mali** : ~800 000 (Touaregs).
+  - **Libye** : ~500 000 (10%).
+  - **Tunisie** : < 50 000 (1%).
+  - **Diaspora (France, Europe)** : ~2-3 millions.
 
-# 7. Sources
-- Encyclopaedia Berberica
-- UNESCO – Atlas des langues en danger
-- Glottolog – Berber branch
-- Chaker, S. – *Linguistique berbère*
+# 6. Sources
+- [Chaker] ([1995]) – *Textes en linguistique berbère*. [CNRS Éditions]
+- [Camps] ([1987]) – *Les Berbères : mémoire et identité*. [Errance]
+- [Basset] ([1952]) – *La langue berbère*. [Oxford University Press]
+- [Galand] ([2010]) – *Regards sur le berbère*. [Bouchène]
+- [UNESCO] ([2011]) – *Atlas des langues en danger dans le monde*. [UNESCO]
