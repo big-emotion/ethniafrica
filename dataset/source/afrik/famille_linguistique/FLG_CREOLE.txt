@@ -87,9 +87,8 @@
   
   **Exemples concrets (créole cap-verdien / Kriolu) :**
   - *N ka kume funchi* « Je mange du funchi » – structure SVO, *ka* marque l'aspect progressif
-  - *Kes fidju é bunitu* « Cet enfant est beau » – copule *é*, pas de flexion d'accord
-  - *Morabeza* « hospitalité » – création lexicale interne cap-verdienne
-  - *Badiu* « habitant de Santiago » – terme identitaire spécifique
+  - *Kes fidju é bunitu* « Cet enfant est beau » – copule *é* (du portugais *é* "est"), pas de flexion d'accord : la copule *é* reste invariable quels que soient le genre, le nombre ou la personne du sujet (contrairement au français "il est" / "elle est" / "ils sont" où le verbe varie). Cette absence de flexion est caractéristique des langues créoles isolantes.
+
   
   **Exemples concrets (Krio – Sierra Leone) :**
   - *A de go makit* « Je vais au marché » – *de* marque le présent progressif
@@ -97,13 +96,13 @@
   - *Kushɛ* « dormir » – emprunt du yoruba *kùṣẹ̀*
   
   **Exemples concrets (créole haïtien – comparaison) :**
-  - *Mwen renmen ou* « Je t'aime » – SVO, pas de flexion
-  - *Li te ale* « Il est allé » – *te* marque le passé
+  - *Mwen renmen ou* « Je t'aime » – structure SVO (Sujet *Mwen* "je" – Verbe *renmen* "aimer" – Objet *ou* "tu/toi"), pas de flexion : le verbe *renmen* reste invariable, contrairement au français où "j'aime" varie selon la personne (j'aime / tu aimes / il aime). Les pronoms personnels *Mwen* et *ou* sont également invariables.
+  - *Li te ale* « Il est allé » – *te* marque le passé : système TAM (Temps-Aspect-Modalité) caractéristique des créoles où des particules invariables (*te*) sont placées avant le verbe pour indiquer le temps, au lieu de conjuguer le verbe lui-même. Le verbe *ale* "aller" reste invariable, seule la particule *te* indique le passé.
   - *Mwen ap manje* « Je mange » – *ap* marque le présent progressif
   
   **Exemples concrets (créole mauricien) :**
   - *Mo pe manze diri* « Je mange du riz » – *pe* marque le présent progressif
-  - *Li ti al lekol* « Il est allé à l'école » – *ti* marque le passé
+  - *Li ti al lekol* « Il est allé à l'école » – *ti* marque le passé : système TAM (Temps-Aspect-Modalité) caractéristique des créoles où des particules invariables (*te*) sont placées avant le verbe pour indiquer le temps, au lieu de conjuguer le verbe lui-même. Le verbe *ale* "aller" reste invariable, seule la particule *te* indique le passé.
   
   **Structures grammaticales :** 
   - Marqueurs Temps-Aspect-Modalité (TAM) placés avant le verbe
@@ -114,19 +113,19 @@
 - Particularités phonologiques :
   **Détails précis :**
   - **Réduction consonantique finale :** français *porte* → créole haïtien *pòt* / cap-verdien *port*
-  - **Nasalisation vocalique marquée :** créole guadeloupéen *bon* [bɔ̃] avec nasalisation forte
-  - **Absence de flexion morphologique héritée :** pas de conjugaison à l'européenne
-  - **Tons distinctifs (certains créoles ouest-africains) :** Pidgin camerounais conserve des traits tonals des langues bantoues
-  - **Système vocalique simplifié :** 5-7 voyelles en moyenne (vs. 11-16 dans les langues sources)
+  - **Nasalisation vocalique marquée :** créole guadeloupéen *bon* [bɔ̃] avec nasalisation forte – les créoles français ont hérité et développé la nasalisation vocalique du français (vowels prononcées avec le voile du palais abaissé, donnant un son "nasal"). En créole guadeloupéen, cette nasalisation est souvent plus prononcée qu'en français standard, comme dans *bon* [bɔ̃] où le "o" est fortement nasalisé.
+  - **Absence de flexion morphologique héritée :** pas de conjugaison à l'européenne – contrairement aux langues européennes qui ont des systèmes de conjugaison complexes (français : je mange / tu manges / il mange / nous mangeons, etc.), les créoles utilisent des verbes invariables avec des particules TAM (Temps-Aspect-Modalité) placées avant le verbe pour exprimer le temps et l'aspect, plutôt que de modifier la forme du verbe lui-même par des flexions.
+  - **Tons distinctifs (certains créoles ouest-africains) :** Certains créoles ouest-africains, notamment ceux en contact avec des langues tonales (bantoues, mandé, atlantiques), conservent des traits tonals hérités de leurs substrats africains, contrairement à la plupart des créoles qui ont perdu la tonalité des langues sources européennes. Exemple : le Krio (Sierra Leone) a hérité des tons du yoruba et d'autres langues ouest-africaines, où le ton peut changer le sens d'un mot (par exemple, *wàtà* "eau" avec un ton bas et *wátá* avec un ton différent aurait un sens différent).
+  - **Système vocalique simplifié :** 5-7 voyelles en moyenne (vs. 11-16 dans les langues sources) – le français standard a environ 11-16 voyelles orales et nasales selon les dialectes, tandis que le créole haïtien utilise seulement 7 voyelles de base [i, e, ɛ, a, ɔ, o, u] avec nasalisation optionnelle, simplifiant considérablement le système vocalique européen.
   - **Sons spécifiques :** 
     - Créole haïtien : voyelles nasales [ɛ̃], [ɔ̃], [ã]
-    - Krio : consonne labiovélaire [kp], [gb] (influence africaine)
+    - Krio (Sierra Leone) : consonne labiovélaire [kp], [gb] (influence africaine)
   
 - Liens avec les familles voisines :
   **Exemples concrets d'emprunts :**
   - **Mandé (Afrique de l'Ouest) :**
-    - Krio *bɛnɛ* « arachide » ← mandingue *bɛnɛ*
-    - Krio *kɔkɔ* « grand-parent » ← mandingue *kɔrɔ*
+    - Krio (Sierra Leone) *bɛnɛ* « arachide » ← mandingue *bɛnɛ*
+    - Krio (Sierra Leone) *kɔkɔ* « grand-parent » ← mandingue *kɔrɔ*
   
   - **Atlantique :**
     - Créole bissau-guinéen *djuntu* « ensemble » ← wolof *jënd*
@@ -143,7 +142,7 @@
   
   - **Européennes :**
     - Cap-verdien *kasa* « maison » ← portugais *casa*
-    - Krio *buk* « livre » ← anglais *book*
+    - Krio (Sierra Leone) *buk* « livre » ← anglais *book*
     - Créole mauricien *liv* « livre » ← français *livre*
   
 - Innovations clés :
@@ -151,16 +150,16 @@
   - **Création lexicale interne :** 
     - Cap-verdien : *morabeza* « hospitalité légendaire cap-verdienne » (mot unique, intraduisible)
     - Cap-verdien : *sodade* « nostalgie profonde » (chanté par Cesária Évora)
-    - Krio : *kushɛbɔdi* « paresseux » (littéralement « corps de sommeil »)
+    - Krio (Sierra Leone) : *kushɛbɔdi* « paresseux » (littéralement « corps de sommeil »)
   
   - **Système TAM très développé :** 
     - Créole haïtien : *te* (passé), *ap* (progressif), *pral* (futur), *ta* (conditionnel)
-    - Krio : *bin* (passé), *de* (progressif), *go* (futur)
+    - Krio (Sierra Leone) : *bin* (passé), *de* (progressif), *go* (futur)
     - Mauricien : *ti* (passé), *pe* (progressif), *pu* (futur)
   
   - **Redoublement expressif :**
     - Créole haïtien : *vit vit* « très vite »
-    - Krio : *smɔl smɔl* « petit à petit »
+    - Krio (Sierra Leone) : *smɔl smɔl* « petit à petit »
     - Mauricien : *vit vit* « rapidement »
   
   - **Morphosyntaxe du contact (base européenne + substrat africain) :**
