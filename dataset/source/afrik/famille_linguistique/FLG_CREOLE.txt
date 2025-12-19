@@ -5,29 +5,26 @@
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_CREOLE
 - Nom français : Créole (familles créoles d'Afrique)
 - Nom anglais / auto-appellation académique : Creole (African Creoles)
-- Appellation(s) historique(s) :
-  « Langues de contact »,  
+- Appellation(s) historique(s) : 
   « Pidgins et créoles »,  
   anciens termes coloniaux : « langues de nègres », « langues d'esclaves », « nigger Portuguese », « petit-nègre », « sabir » (péjoratifs, à contextualiser uniquement).
 - Origine du terme historique :
-  Le terme "créole" provient de l'espagnol *criollo* et du portugais *crioulo*, eux-mêmes dérivés du latin *creare* signifiant « élever » ou « nourrir ». Attesté en français dès 1649, il devient courant à partir de 1670.
-  Auteurs : Le père Jean-Baptiste Labat (1663-1738) – *Nouveau voyage aux isles de l'Amérique* (1722) utilise « créole » pour désigner les Blancs nés aux Antilles, excluant les populations noires.
-  Les créoles d'Afrique sont nés dans des contextes :
+  Le terme "créole" provient de l'espagnol *criollo* et du portugais *crioulo*, eux-mêmes dérivés du latin *creare* signifiant « élever » ou « nourrir ». 
+  **Application aux langues créoles d'Afrique :** En Afrique, le terme "créole" est utilisé principalement pour désigner des **langues nées du contact** entre langues européennes (portugais, français, anglais) et langues africaines dans des contextes de commerce, de comptoirs coloniaux et de traite transatlantique. Les créoles africains les plus anciens sont les **créoles à base portugaise**, attestés dès le **XVIIe siècle** dans les comptoirs portugais d'Afrique de l'Ouest (Cap-Vert, Guinée-Bissau). Le terme *Kriolu* / *Kriol* (du portugais *crioulo*) est l'auto-appellation des locuteurs cap-verdiens et bissau-guinéens depuis cette époque.
+  **Contexte historique africain :** Les familles linguistiques créoles d'Afrique sont nées dans des contextes :
   - d'esclavage transatlantique (XVIe-XIXe siècle),  
   - de domination coloniale portugaise, française et britannique,  
   - de contacts forcés entre langues africaines (bantoues, mandé, atlantiques) et langues européennes (portugais, français, anglais).
 - Pourquoi le terme pose problème :
-  **Auteurs coloniaux problématiques :**
-  - Le père Jean-Baptiste Labat (1722) utilisait « créole » pour distinguer racialement les Blancs nés aux colonies des populations noires.
-  - Charles Gayarré et Alcée Fortier (descendants d'esclavagistes louisianais) ont restreint la créolité aux personnes d'ascendance exclusivement européenne, excluant les populations noires et métisses.
-  - Termes racistes : « nigger Portuguese », « petit-nègre », « sabir » reflètent une vision coloniale de hiérarchie linguistique.
-  
-  **Auteurs locaux défendant l'africanité :**
-  - Ama Mazama (1997) – *Langue et identité en Guadeloupe : une perspective afrocentrique* – critique la terminologie coloniale et défend les racines africaines des créoles.
-  - Jean-Luc Bonniol (2007) – *Au prisme de la créolisation. Tentative d'épuisement d'un concept* – analyse les dynamiques de pouvoir et d'identité dans les sociétés postcoloniales.
-  
-  **Études génétiques modernes :**
-  - Les recherches génétiques confirment la diversité des origines des populations créoles, incluant des ascendances africaines significatives et un métissage complexe, remettant en question les classifications simplistes coloniales.
+  **Termes coloniaux péjoratifs appliqués aux créoles africains :**
+  - Les langues créoles africaines ont longtemps été dévalorisées par les autorités coloniales, exclues de l'éducation formelle et considérées comme des "baragouins" ou "jargons", niant leur statut de langues à part entière avec leurs propres structures grammaticales.
+  - L'usage du terme "créole" lui-même, issu d'un contexte colonial (criollo/crioulo désignant initialement les personnes nées dans les colonies), peut être perçu comme portant l'héritage de classifications raciales coloniales.
+  - Termes racistes historiques : « nigger Portuguese » (appliqué au pidgin/créole à base anglaise), « petit-nègre » (créoles français), « sabir » (créoles méditerranéens) reflètent une vision coloniale de hiérarchie linguistique, considérant les créoles comme des langues "dégénérées" ou "corrompues".
+
+  **Reconnaissance contemporaine et défense de l'africanité :**
+  - Plusieurs créoles africains sont aujourd'hui langues officielles (Cap-Vert, Seychelles) ou co-officielles (Maurice), témoignant de leur légitimité linguistique et de leur réappropriation par les locuteurs.
+  - Les linguistes africains et internationaux reconnaissent les créoles africains comme des langues complètes, avec leurs propres structures grammaticales héritées à la fois des langues africaines (substrat) et des langues européennes (superstrat).
+  - Les créoles africains portent en eux des traces importantes des langues africaines (bantoues, mandé, atlantiques, etc.), confirmant leur profonde africanité linguistique.
   
   → Afrik utilise **Créole** comme un terme strictement linguistique, tout en reconnaissant son histoire coloniale.
 - Auto-appellation (locuteurs / linguistes contemporains) :
@@ -375,7 +372,11 @@
   Les créoles africains sont la trace linguistique directe des grands mouvements humains de la traite transatlantique, du commerce atlantique, de la colonisation européenne et des sociétés afro-européennes plurielles. Ils représentent des langues de résistance et d'émancipation, devenues langues nationales et officielles dans plusieurs États (Cap-Vert, Seychelles, Maurice, Sierra Leone). Leur reconnaissance contemporaine témoigne de la décolonisation linguistique et de la réappropriation des identités créoles.
 
 # 7. Sources
+- Telusma, Henri-Claude (2017) – *Thèse doctorale, Université de Strasbourg* – Origine et évolution du terme "créole"
+- Université Laval (Axl.cefan) – *Aménagement linguistique dans le monde* – Créoles africains et usage historique du terme
+- Trésor de la langue française – Étymologie et évolution sémantique du terme "créole"
+- Sorbonne Université – *Les langues créoles* – Histoire sociolinguistique des créoles d'Afrique
 - Holm, J. – *Pidgins and Creoles*  
 - Michaelis et al. – *Atlas of Pidgin and Creole Language Structures (APiCS)*  
 - SIL Ethnologue – Creole languages  
-- UNESCO – langues de contact d’Afrique et de l’océan Indien
+- UNESCO – langues de contact d'Afrique et de l'océan Indien
