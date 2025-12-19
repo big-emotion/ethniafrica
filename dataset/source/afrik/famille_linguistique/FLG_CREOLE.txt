@@ -15,6 +15,7 @@
   - d'esclavage transatlantique (XVIe-XIXe siècle),  
   - de domination coloniale portugaise, française et britannique,  
   - de contacts forcés entre langues africaines (bantoues, mandé, atlantiques) et langues européennes (portugais, français, anglais).
+
 - Pourquoi le terme pose problème :
   **Termes coloniaux péjoratifs appliqués aux créoles africains :**
   - Les langues créoles africaines ont longtemps été dévalorisées par les autorités coloniales, exclues de l'éducation formelle et considérées comme des "baragouins" ou "jargons", niant leur statut de langues à part entière avec leurs propres structures grammaticales.
@@ -27,16 +28,18 @@
   - Les créoles africains portent en eux des traces importantes des langues africaines (bantoues, mandé, atlantiques, etc.), confirmant leur profonde africanité linguistique.
   
   → Afrik utilise **Créole** comme un terme strictement linguistique, tout en reconnaissant son histoire coloniale.
-- Auto-appellation (locuteurs / linguistes contemporains) :
-  **Termes endonymes attestés :**
-  - *Kriolu* / *Kriol* (Cap-Vert, Guinée-Bissau) – du portugais *crioulo*. Attesté depuis le XVIIe siècle dans les comptoirs portugais d'Afrique de l'Ouest.
-  - *Krio* (Sierra Leone) – de l'anglais *Creole*. Langue des Krio, descendants d'esclaves libérés installés à Freetown (1787).
-  - *Pidgin English* (Nigeria, Cameroun) – terme local pour désigner les créoles à base anglaise.
-  - *Kreyòl Seselwa* (Seychelles) – créole seychellois. Langue officielle depuis 1981.
-  - *Kreol Morisien* (Maurice) – créole mauricien. Langue nationale depuis 2011.
-  - *Kréyol* (Réunion) – créole réunionnais. Usage contemporain attesté.
   
-  **Usage contemporain :** Ces termes sont officiellement reconnus dans les constitutions (Seychelles, Maurice, Cap-Vert), l'enseignement scolaire et les médias.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  **Termes auto-appellations contemporaines :**
+  Les créoles africains utilisent majoritairement des termes empruntés aux langues coloniales mais réappropriés par les locuteurs. Ces auto-appellations témoignent à la fois de l'héritage colonial et de la réappropriation identitaire :
+  - *Kriolu* / *Kriol* (Cap-Vert, Guinée-Bissau) – terme réapproprié (emprunt au portugais *crioulo*), attesté depuis le XVIIe siècle dans les comptoirs portugais d'Afrique de l'Ouest. Terme officiel et langue maternelle de la quasi-totalité des Cap-Verdiens.
+  - *Krio* (Sierra Leone) – terme réapproprié (emprunt à l'anglais *Creole*). Langue des Krio, descendants d'esclaves libérés installés à Freetown (1787).
+  - *Naijá* / *Pidgin English* (Nigeria, Cameroun) – *Naijá* est l'endonyme (auto-appellation du pidgin nigérian), tandis que *Pidgin English* est un exonyme (terme anglais donné de l'extérieur, encore couramment utilisé).
+  - *Kreyòl Seselwa* (Seychelles) – *Kreyòl* terme réapproprié (emprunt au français "créole"), *Seselwa* endonyme désignant "seychellois". Langue officielle depuis 1981.
+  - *Kreol Morisien* (Maurice) – *Kreol* terme réapproprié (emprunt au français "créole"), *Morisien* endonyme désignant "mauricien". Langue nationale depuis 2011.
+  - *Kréyol* (Réunion) – terme réapproprié (emprunt au français "créole"). Usage contemporain attesté.
+  
+  **Usage contemporain :** Ces termes, bien qu'empruntés aux langues coloniales, sont aujourd'hui réappropriés et officiellement reconnus dans les constitutions (Seychelles, Maurice, Cap-Vert), l'enseignement scolaire et les médias comme désignant les langues créoles africaines.
 - Usage contemporain :
   Les créoles d'Afrique sont des langues de contact afro-européennes, devenues langues maternelles et nationales dans plusieurs pays. Plusieurs créoles sont langues officielles (Cap-Vert, Seychelles) ou co-officielles (Maurice).
 - Aire / répartition géographique générale :
