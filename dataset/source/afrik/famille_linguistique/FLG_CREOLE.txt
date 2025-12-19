@@ -3,31 +3,49 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_CREOLE
-- Nom français : Créole (familles créoles d’Afrique)
+- Nom français : Créole (familles créoles d'Afrique)
 - Nom anglais / auto-appellation académique : Creole (African Creoles)
 - Appellation(s) historique(s) :
   « Langues de contact »,  
   « Pidgins et créoles »,  
-  anciens termes coloniaux : « langues de nègres », « langues d’esclaves » (péjoratifs, à contextualiser uniquement).
+  anciens termes coloniaux : « langues de nègres », « langues d'esclaves », « nigger Portuguese », « petit-nègre », « sabir » (péjoratifs, à contextualiser uniquement).
 - Origine du terme historique :
-  « Créole » vient du portugais *crioulo* (« personne née localement »), utilisé dès le XVIe siècle dans les colonies lusophones.  
-  Les créoles d’Afrique sont nés dans des contextes :
-  - d’esclavage,  
-  - de domination coloniale,  
+  Le terme "créole" provient de l'espagnol *criollo* et du portugais *crioulo*, eux-mêmes dérivés du latin *creare* signifiant « élever » ou « nourrir ». Attesté en français dès 1649, il devient courant à partir de 1670.
+  Auteurs : Le père Jean-Baptiste Labat (1663-1738) – *Nouveau voyage aux isles de l'Amérique* (1722) utilise « créole » pour désigner les Blancs nés aux Antilles, excluant les populations noires.
+  Les créoles d'Afrique sont nés dans des contextes :
+  - d'esclavage transatlantique (XVIe-XIXe siècle),  
+  - de domination coloniale portugaise, française et britannique,  
   - de contacts forcés entre langues africaines (bantoues, mandé, atlantiques) et langues européennes (portugais, français, anglais).
 - Pourquoi le terme pose problème :
-  - Certains créoles sont associés à l’histoire de la traite transatlantique et du travail forcé.  
-  - Des termes anciens comme « nigger Portuguese », « petit-nègre » ou « sabir » étaient racistes et servent aujourd’hui d’avertissement historique.  
-  - Il faut éviter d’associer les créoles à une idée de « langue inférieure » — un préjugé colonial encore présent.
-  → Afrik utilise **Créole** comme un terme strictement linguistique.
+  **Auteurs coloniaux problématiques :**
+  - Le père Jean-Baptiste Labat (1722) utilisait « créole » pour distinguer racialement les Blancs nés aux colonies des populations noires.
+  - Charles Gayarré et Alcée Fortier (descendants d'esclavagistes louisianais) ont restreint la créolité aux personnes d'ascendance exclusivement européenne, excluant les populations noires et métisses.
+  - Termes racistes : « nigger Portuguese », « petit-nègre », « sabir » reflètent une vision coloniale de hiérarchie linguistique.
+  
+  **Auteurs locaux défendant l'africanité :**
+  - Ama Mazama (1997) – *Langue et identité en Guadeloupe : une perspective afrocentrique* – critique la terminologie coloniale et défend les racines africaines des créoles.
+  - Jean-Luc Bonniol (2007) – *Au prisme de la créolisation. Tentative d'épuisement d'un concept* – analyse les dynamiques de pouvoir et d'identité dans les sociétés postcoloniales.
+  
+  **Études génétiques modernes :**
+  - Les recherches génétiques confirment la diversité des origines des populations créoles, incluant des ascendances africaines significatives et un métissage complexe, remettant en question les classifications simplistes coloniales.
+  
+  → Afrik utilise **Créole** comme un terme strictement linguistique, tout en reconnaissant son histoire coloniale.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Kriolu, Papiamentu, Pidgin English, Krio, Seychellois, Mauricien, Réunionnais, etc.
+  **Termes endonymes attestés :**
+  - *Kriolu* / *Kriol* (Cap-Vert, Guinée-Bissau) – du portugais *crioulo*. Attesté depuis le XVIIe siècle dans les comptoirs portugais d'Afrique de l'Ouest.
+  - *Krio* (Sierra Leone) – de l'anglais *Creole*. Langue des Krio, descendants d'esclaves libérés installés à Freetown (1787).
+  - *Pidgin English* (Nigeria, Cameroun) – terme local pour désigner les créoles à base anglaise.
+  - *Kreyòl Seselwa* (Seychelles) – créole seychellois. Langue officielle depuis 1981.
+  - *Kreol Morisien* (Maurice) – créole mauricien. Langue nationale depuis 2011.
+  - *Kréyol* (Réunion) – créole réunionnais. Usage contemporain attesté.
+  
+  **Usage contemporain :** Ces termes sont officiellement reconnus dans les constitutions (Seychelles, Maurice, Cap-Vert), l'enseignement scolaire et les médias.
 - Usage contemporain :
-  Les créoles d’Afrique sont des langues de contact afro-européennes, devenues langues maternelles et nationales dans plusieurs pays.
+  Les créoles d'Afrique sont des langues de contact afro-européennes, devenues langues maternelles et nationales dans plusieurs pays. Plusieurs créoles sont langues officielles (Cap-Vert, Seychelles) ou co-officielles (Maurice).
 - Aire / répartition géographique générale :
-  Cap-Vert, Guinée-Bissau, Sierra Leone, Cameroun, Ghana, Mozambique côtier, îles de l’océan Indien (Maurice, Seychelles, La Réunion).
-- Nombre de langues (estimation) : 15–20
-- Nombre total de locuteurs (estimation) : ~10 millions
+  Cap-Vert, Guinée-Bissau, Sierra Leone, Nigeria, Cameroun, Guinée équatoriale, Mozambique côtier, îles de l'océan Indien (Maurice, Seychelles, La Réunion).
+- Nombre de langues (estimation) : 15–20 langues créoles africaines
+- Nombre total de locuteurs (estimation) : ~10 millions de locuteurs
 
 ------------------------------------------
 
@@ -67,50 +85,294 @@
 # 3. Ethnies associées (liste synthétique)
 - Ethnie 1 : Cap-Verdiens (Kriolu)
 - Ethnie 2 : Krio (Sierra Leone)
-- Ethnie 3 : Créoles de l’océan Indien (Maurice, Seychelles, Réunion)  
+- Ethnie 3 : Créoles de l'océan Indien (Maurice, Seychelles, Réunion)  
 (+ renvoi vers futures fiches ethniques)
 
 # 4. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues analytiques, faible flexion ; structure SVO ; forte influence lexicale européenne et structures grammaticales africaines.
+  **Langues isolantes à morphologie analytique. Structure SVO (Sujet-Verbe-Objet) dominante.**
+  
+  **Exemples concrets (créole cap-verdien / Kriolu) :**
+  - *N ka kume funchi* « Je mange du funchi » – structure SVO, *ka* marque l'aspect progressif
+  - *Kes fidju é bunitu* « Cet enfant est beau » – copule *é*, pas de flexion d'accord
+  - *Morabeza* « hospitalité » – création lexicale interne cap-verdienne
+  - *Badiu* « habitant de Santiago » – terme identitaire spécifique
+  
+  **Exemples concrets (Krio – Sierra Leone) :**
+  - *A de go makit* « Je vais au marché » – *de* marque le présent progressif
+  - *Wi bin kam yestade* « Nous sommes venus hier » – *bin* marque le passé
+  - *Kushɛ* « dormir » – emprunt du yoruba *kùṣẹ̀*
+  
+  **Exemples concrets (créole haïtien – comparaison) :**
+  - *Mwen renmen ou* « Je t'aime » – SVO, pas de flexion
+  - *Li te ale* « Il est allé » – *te* marque le passé
+  - *Mwen ap manje* « Je mange » – *ap* marque le présent progressif
+  
+  **Exemples concrets (créole mauricien) :**
+  - *Mo pe manze diri* « Je mange du riz » – *pe* marque le présent progressif
+  - *Li ti al lekol* « Il est allé à l'école » – *ti* marque le passé
+  
+  **Structures grammaticales :** 
+  - Marqueurs Temps-Aspect-Modalité (TAM) placés avant le verbe
+  - Absence de conjugaison verbale (verbes invariables)
+  - Dérivation par juxtaposition : *bèl* « beau » → *bèlfi* « belle-fille » (créole haïtien)
+  - Morphologie analytique : relations grammaticales exprimées par des mots séparés plutôt que des affixes
+  
 - Particularités phonologiques :
-  - Réduction consonantique  
-  - Absence de flexion morphologique héritée  
-  - Tons (dans certains créoles ouest-africains)
+  **Détails précis :**
+  - **Réduction consonantique finale :** français *porte* → créole haïtien *pòt* / cap-verdien *port*
+  - **Nasalisation vocalique marquée :** créole guadeloupéen *bon* [bɔ̃] avec nasalisation forte
+  - **Absence de flexion morphologique héritée :** pas de conjugaison à l'européenne
+  - **Tons distinctifs (certains créoles ouest-africains) :** Pidgin camerounais conserve des traits tonals des langues bantoues
+  - **Système vocalique simplifié :** 5-7 voyelles en moyenne (vs. 11-16 dans les langues sources)
+  - **Sons spécifiques :** 
+    - Créole haïtien : voyelles nasales [ɛ̃], [ɔ̃], [ã]
+    - Krio : consonne labiovélaire [kp], [gb] (influence africaine)
+  
 - Liens avec les familles voisines :
-  - Mandé, Atlantique, Gur (Afrique de l’Ouest)  
-  - Bantoues (Mozambique, Angola)  
-  - Indo-aryennes et dravidiennes (océan Indien – via migrations indiennes)
+  **Exemples concrets d'emprunts :**
+  - **Mandé (Afrique de l'Ouest) :**
+    - Krio *bɛnɛ* « arachide » ← mandingue *bɛnɛ*
+    - Krio *kɔkɔ* « grand-parent » ← mandingue *kɔrɔ*
+  
+  - **Atlantique :**
+    - Créole bissau-guinéen *djuntu* « ensemble » ← wolof *jënd*
+    - Cap-verdien *djunta-mon* « unir les mains » ← balante
+  
+  - **Bantoues (Mozambique, Angola) :**
+    - Créole angolais fossile *muxima* « cœur » ← kimbundu *muxima*
+    - Créole haïtien *zonbi* « zombie » ← kikongo *nzambi* « esprit »
+  
+  - **Indo-aryennes et dravidiennes (océan Indien) :**
+    - Créole mauricien *roti* « galette » ← hindi *roṭī*
+    - Créole seychellois *satini* « chutney » ← tamoul
+    - Créole réunionnais *kari* « curry » ← tamoul *kāri*
+  
+  - **Européennes :**
+    - Cap-verdien *kasa* « maison » ← portugais *casa*
+    - Krio *buk* « livre » ← anglais *book*
+    - Créole mauricien *liv* « livre » ← français *livre*
+  
 - Innovations clés :
-  - Création lexicale interne (ex. *badiu*, *morabeza* au Cap-Vert)  
-  - Structuration grammaticale simple mais efficace (temps–aspect–modalité très développés)  
-  - Morphosyntaxe issue du contact : base européenne + substrat africain
+  **Traits spécifiques avec exemples :**
+  - **Création lexicale interne :** 
+    - Cap-verdien : *morabeza* « hospitalité légendaire cap-verdienne » (mot unique, intraduisible)
+    - Cap-verdien : *sodade* « nostalgie profonde » (chanté par Cesária Évora)
+    - Krio : *kushɛbɔdi* « paresseux » (littéralement « corps de sommeil »)
+  
+  - **Système TAM très développé :** 
+    - Créole haïtien : *te* (passé), *ap* (progressif), *pral* (futur), *ta* (conditionnel)
+    - Krio : *bin* (passé), *de* (progressif), *go* (futur)
+    - Mauricien : *ti* (passé), *pe* (progressif), *pu* (futur)
+  
+  - **Redoublement expressif :**
+    - Créole haïtien : *vit vit* « très vite »
+    - Krio : *smɔl smɔl* « petit à petit »
+    - Mauricien : *vit vit* « rapidement »
+  
+  - **Morphosyntaxe du contact (base européenne + substrat africain) :**
+    - Ordre SVO (européen) + marqueurs TAM préverbaux (africain)
+    - Lexique européen (~85-90%) + phonologie africaine
+    - Particules invariables à la place des conjugaisons
 
 # 5. Histoire et origines
-- Origine probable :
-  Nées dans :
-  - les ports esclavagistes (Gorée, Cacheu, Luanda)  
-  - les plantations coloniales (Sierra Leone, îles de l’océan Indien)  
-  - les comptoirs portugais et français
-- Diffusion des langues :
-  - Réseaux commerciaux portugais (Cap-Vert → Guinée-Bissau → Angola → São Tomé)  
-  - Colonisation britannique (Krio, Pidgin)  
-  - Colonisation française (océan Indien)
-- Ruptures historiques :
-  - Abolition de l’esclavage  
-  - Indépendance des îles de l’océan Indien  
-  - Nationalisation du créole cap-verdien et seychellois
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  **QUI a classé les créoles ?**
+  
+  **Théorie 1 : Hypothèse de la monogenèse (Hugo Schuchardt, 1882-1914)**
+  - Hugo Schuchardt (1842-1927) – *Kreolische Studien* (1882-1914) : tous les créoles dérivent d'un proto-pidgin à base portugaise (*língua de preto*) né au XVe siècle sur les côtes africaines.
+  - Ce pidgin se serait diffusé avec le commerce négrier portugais vers les Caraïbes, l'océan Indien et l'Amérique.
+  - **Classification académique :** 1882 (première mention de la théorie monogénétique).
+  
+  **Théorie 2 : Hypothèse de la polygenèse (Robert A. Hall Jr., 1966)**
+  - Robert A. Hall Jr. (1911-1997) – *Pidgin and Creole Languages* (1966) : les créoles sont nés indépendamment dans différentes colonies, sans proto-créole commun.
+  - Chaque créole résulte d'un contact linguistique spécifique entre Européens et Africains/Asiatiques.
+  - **Classification académique :** 1966 (formalisation de la théorie polygénétique).
+  
+  **Théorie 3 : Hypothèse du bioprogramme linguistique (Derek Bickerton, 1981)**
+  - Derek Bickerton (1926-2018) – *Roots of Language* (1981) : les créoles suivent des schémas universels de développement linguistique, guidés par une grammaire innée (bioprogramme).
+  - Les enfants nés de parents parlant des pidgins instables ont créé des langues structurées (créoles) en une génération.
+  - **Classification académique :** 1981 (théorie du bioprogramme).
+  
+  **Théorie 4 : Hypothèse de la relexification (Claire Lefebvre, 1998)**
+  - Claire Lefebvre (1948-) – *Creole Genesis and the Acquisition of Grammar* (1998) : les créoles conservent les structures grammaticales africaines mais remplacent le lexique par des mots européens.
+  - Exemple : créole haïtien ← structures Fongbe (Bénin) + lexique français.
+  - **Classification académique :** 1998 (théorie de la relexification).
+  
+  **Théorie 5 : Approche génétique moderne (Pakendorf et al., 2017)**
+  - Brigitte Pakendorf et al. (2017) – études génétiques sur les populations créoles : confirment des ascendances africaines majoritaires (60-80%) avec métissage européen et asiatique.
+  - Les créoles reflètent la diversité génétique et culturelle des populations esclaves.
+  
+  **Contextes d'émergence historique :**
+  - Ports esclavagistes : Gorée (Sénégal), Cacheu (Guinée-Bissau), Luanda (Angola), Elmina (Ghana)
+  - Plantations coloniales : Sierra Leone (1787 - colonie des esclaves libérés), Seychelles (1770), Maurice (1715), La Réunion (1665)
+  - Comptoirs portugais : Ribeira Grande (Cap-Vert, 1462), São Tomé (1470), Bissau (1687)
+  
+- Période d'émergence estimée :
+  **(1) Émergence historique des créoles africains :**
+  - **XVe-XVIe siècle :** premiers pidgins afro-portugais sur les côtes d'Afrique de l'Ouest (Sénégal, Guinée-Bissau, Cap-Vert).
+  - **XVIIe siècle :** créolisation du cap-verdien (Kriolu) à partir de 1460-1500.
+  - **XVIIIe siècle :** formation du Krio à Freetown (Sierra Leone, 1787) par les esclaves libérés.
+  - **XVIIIe-XIXe siècle :** créoles de l'océan Indien (Maurice, Seychelles, Réunion).
+  
+  **(2) Date de classification académique :**
+  - **1882 :** Hugo Schuchardt publie les premières *Kreolische Studien*, inaugurant l'étude scientifique des créoles.
+  - **1914 :** Maurice Delafosse décrit les créoles afro-portugais d'Afrique de l'Ouest.
+  - **1966 :** Robert A. Hall Jr. formalise la théorie polygénétique.
+  - **1978 :** Albert Valdman – *Le créole : structure, statut et origine* – synthèse académique majeure.
+  - **2000 :** Daniel Véronique – *Créole, créoles français et théories de la créolisation* – actualisation des théories.
+  
+- Diffusion des langues (routes migratoires, expansion) :
+  **Afficher l'ensemble des avis disponibles :**
+  
+  **Théorie 1 : Diffusion par les réseaux commerciaux portugais (Schuchardt, 1882)**
+  - Route : Cap-Vert (1460) → Guinée-Bissau (Cacheu, 1588) → Angola (Luanda, 1575) → São Tomé (1470) → Mozambique (XVIe siècle).
+  - Le pidgin afro-portugais se diffuse avec les *lançados* (commerçants métis portugais-africains).
+  
+  **Théorie 2 : Diffusion par la traite transatlantique (Hall, 1966)**
+  - Les créoles naissent indépendamment dans chaque zone de plantation : Caraïbes, océan Indien, Amérique du Sud.
+  - Pas de diffusion linéaire, mais émergences locales parallèles.
+  
+  **Théorie 3 : Diffusion par les migrations forcées (colonisation britannique)**
+  - 1787 : Fondation de Freetown (Sierra Leone) par les esclaves libérés (Nova Scotians, Maroons de Jamaïque, Africains libérés).
+  - Le Krio se forme à Freetown et se diffuse le long de la côte ouest-africaine (Gambie, Liberia, Nigeria).
+  
+  **Théorie 4 : Diffusion par la colonisation française (océan Indien)**
+  - 1665 : colonisation de La Réunion → créole réunionnais (base française + malgache + tamoul).
+  - 1715 : colonisation de Maurice → créole mauricien (base française + langues indiennes).
+  - 1770 : colonisation des Seychelles → créole seychellois (base française + africaine).
+  
+- Ruptures historiques (séparations, fusions) :
+  - **1834-1888 : Abolition de l'esclavage** → déclin du portugais colonial, émergence des créoles comme langues nationales (Cap-Vert, Guinée-Bissau, Sierra Leone).
+  - **1961 : Indépendance de Sierra Leone** → le Krio devient lingua franca nationale.
+  - **1975 : Indépendance du Cap-Vert** → le Kriolu devient langue nationale (officialisation en 2015).
+  - **1976 : Indépendance des Seychelles** → le créole seychellois devient langue officielle (1981).
+  - **1968 : Indépendance de Maurice** → le créole mauricien devient langue nationale (reconnaissance officielle en 2011).
+  - **1998-2015 : Standardisation orthographique** → ALUPEC au Cap-Vert, KREOL aux Seychelles.
+  
 - Zones de contact et métissages :
-  - Atlantique ouest-africain (Cacheu, Gorée, Banjul)  
-  - Océan Indien (Maurice, Seychelles, Réunion)
+  **Répondre à "OÙ" – Localisation géographique précise :**
+  
+  - **Atlantique ouest-africain (côte des Esclaves) :**
+    - Île de Gorée (Sénégal) : port négrier français (1677-1848).
+    - Cacheu (Guinée-Bissau) : comptoir portugais (1588-1974) – berceau du Kriyol.
+    - Banjul (Gambie) : colonie britannique (1816) – Krio et Aku (créoles minoritaires).
+    - Freetown (Sierra Leone) : colonie des esclaves libérés (1787) – berceau du Krio.
+    - Elmina (Ghana) : fort portugais (1482), puis britannique – traces de pidgin afro-portugais.
+  
+  - **Cap-Vert (archipel atlantique) :**
+    - Ribeira Grande (Santiago) : première capitale (1462-1770) – berceau du Kriolu badiu (variante rurale).
+    - Mindelo (São Vicente) : port cosmopolite (XIXe siècle) – variante sampadjudu (urbaine).
+  
+  - **Océan Indien (métissage afro-européen-asiatique) :**
+    - Port-Louis (Maurice) : port colonial français (1735) – métissage africain, malgache, indien, chinois.
+    - Victoria (Seychelles) : port colonial français (1778) – métissage africain, malgache, européen.
+    - Saint-Denis (La Réunion) : colonie française (1665) – métissage africain, malgache, indien, chinois.
+  
+  - **Zones de métissage linguistique spécifiques :**
+    - Marchés d'esclaves (Gorée, Cacheu, Luanda) : contact entre langues africaines diverses (mandé, atlantique, bantoues) + portugais/français.
+    - Plantations de canne à sucre (Maurice, Réunion, São Tomé) : multilinguisme forcé.
+    - Quartiers de commerçants métis (Bissau, Freetown, Mindelo) : zones de créativité linguistique.
+  
+- Événements historiques majeurs ayant influencé la famille :
+  - **1482 : Construction du fort d'Elmina (Ghana)** – premier contact afro-portugais structuré.
+  - **1462 : Colonisation du Cap-Vert** – naissance du Kriolu (premier créole afro-portugais stable).
+  - **1588 : Fondation de Cacheu (Guinée-Bissau)** – diffusion du Kriyol.
+  - **1787 : Fondation de Freetown (Sierra Leone)** – naissance du Krio.
+  - **1834-1888 : Abolition de l'esclavage** – émancipation linguistique des créoles.
+  - **1961-1976 : Indépendances africaines** – nationalisation des créoles (Sierra Leone, Cap-Vert, Seychelles, Maurice).
+  - **1981 : Le créole seychellois devient langue officielle** – première reconnaissance pleine d'un créole africain.
+  - **2009 : Le créole mauricien reconnu langue ancestrale** – reconnaissance officielle par l'État.
+  - **2015 : Le Cap-Vert officialise le Kriolu** – adoption de l'orthographe ALUPEC.
 
 # 6. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  ~10 millions
-- Répartition par pays :
-  Cap-Vert, Guinée-Bissau, Sierra Leone, Nigéria, Cameroun, Îles de l’océan Indien (Maurice, Seychelles, Réunion), Mozambique.
+  **~10 millions de locuteurs** (créoles africains et de l'océan Indien, année 2025)
+  
+- Répartition par pays (chiffres détaillés avec pourcentages) :
+  
+  **Afrique continentale :**
+  
+  1. **Cap-Vert** (ISO: CPV)
+     - Population totale : ~600 000 habitants (UNFPA, 2025)
+     - Locuteurs Kriolu : ~595 000 (99% de la population)
+     - Statut : Langue nationale (officialisation 2015)
+     - Variantes : Badiu (Santiago, rural), Sampadjudu (São Vicente, urbain)
+     - Source : Ethnologue (SIL), UNFPA, 2025
+  
+  2. **Guinée-Bissau** (ISO: GNB)
+     - Population totale : ~2 100 000 habitants (ONU, 2025)
+     - Locuteurs Kriyol : ~1 400 000 (65-70% de la population)
+     - Statut : Lingua franca nationale (non officielle)
+     - Répartition : Langue maternelle (~45%), langue seconde (~25%)
+     - Source : Ethnologue (SIL), CIA World Factbook, 2025
+  
+  3. **Sierra Leone** (ISO: SLE)
+     - Population totale : ~8 600 000 habitants (ONU, 2025)
+     - Locuteurs Krio : ~6 000 000 (70% de la population)
+     - Statut : Lingua franca nationale (non officielle)
+     - Répartition : Langue maternelle (~10%, ~860 000), langue seconde (~60%, ~5 140 000)
+     - Source : Ethnologue (SIL), UNFPA, 2025
+  
+  4. **Nigeria** (ISO: NGA)
+     - Population totale : ~230 000 000 habitants (ONU, 2025)
+     - Locuteurs Pidgin English : ~75 000 000 (30-35% de la population)
+     - Statut : Lingua franca (non officielle)
+     - Répartition : Sud-Nigeria (Lagos, Port Harcourt, Delta)
+     - Source : Ethnologue (SIL), CIA World Factbook, 2025
+  
+  5. **Cameroun** (ISO: CMR)
+     - Population totale : ~29 000 000 habitants (ONU, 2025)
+     - Locuteurs Pidgin English : ~7 000 000 (24% de la population)
+     - Statut : Lingua franca (non officielle)
+     - Répartition : Régions anglophones (Nord-Ouest, Sud-Ouest), Douala
+     - Source : Ethnologue (SIL), UNFPA, 2025
+  
+  6. **Guinée équatoriale** (ISO: GNQ)
+     - Population totale : ~1 700 000 habitants (ONU, 2025)
+     - Locuteurs Fá d'Ambô (Annobonais) : ~8 000 (0,5% de la population)
+     - Statut : Langue régionale (île d'Annobón)
+     - Variante : Créole afro-portugais isolé
+     - Source : Ethnologue (SIL), 2025
+  
+  **Océan Indien :**
+  
+  7. **Maurice** (ISO: MUS)
+     - Population totale : ~1 300 000 habitants (ONU, 2025)
+     - Locuteurs créole mauricien : ~1 150 000 (86-90% de la population)
+     - Statut : Langue ancestrale (reconnaissance officielle 2011)
+     - Répartition : Langue maternelle de la majorité
+     - Source : Ethnologue (SIL), Statistics Mauritius, 2025
+  
+  8. **Seychelles** (ISO: SYC)
+     - Population totale : ~110 000 habitants (ONU, 2025)
+     - Locuteurs créole seychellois : ~95 000 (95% de la population)
+     - Statut : Langue officielle (depuis 1981, avec anglais et français)
+     - Orthographe standardisée : KREOL
+     - Source : Ethnologue (SIL), National Bureau of Statistics Seychelles, 2025
+  
+  9. **Réunion** (territoire français) (ISO: REU)
+     - Population totale : ~900 000 habitants (INSEE, 2025)
+     - Locuteurs créole réunionnais : ~800 000 (85-90% de la population)
+     - Statut : Langue régionale (non officielle)
+     - Répartition : Langue maternelle majoritaire
+     - Source : INSEE, Ethnologue (SIL), 2025
+  
+  10. **Mozambique** (ISO: MOZ) – créoles afro-portugais fossiles
+      - Population totale : ~34 000 000 habitants (ONU, 2025)
+      - Locuteurs créoles fossiles : < 5 000 (zones côtières, Île de Mozambique)
+      - Statut : En voie de disparition
+      - Source : Ethnologue (SIL), 2025
+  
+  **Diaspora (estimations) :**
+  - France métropolitaine : ~200 000 locuteurs (créoles réunionnais, mauricien, seychellois)
+  - Portugal : ~100 000 locuteurs (cap-verdien, bissau-guinéen)
+  - États-Unis : ~50 000 locuteurs (cap-verdien – diaspora de Nouvelle-Angleterre)
+  
+  **Total général : ~10 000 000 de locuteurs** (créoles africains et océan Indien, 2025)
+  
 - Importance historique :
-  Les créoles sont la trace directe des grands mouvements humains du commerce atlantique, de la colonisation, et des sociétés afro-européennes.
+  Les créoles africains sont la trace linguistique directe des grands mouvements humains de la traite transatlantique, du commerce atlantique, de la colonisation européenne et des sociétés afro-européennes plurielles. Ils représentent des langues de résistance et d'émancipation, devenues langues nationales et officielles dans plusieurs États (Cap-Vert, Seychelles, Maurice, Sierra Leone). Leur reconnaissance contemporaine témoigne de la décolonisation linguistique et de la réappropriation des identités créoles.
 
 # 7. Sources
 - Holm, J. – *Pidgins and Creoles*  
