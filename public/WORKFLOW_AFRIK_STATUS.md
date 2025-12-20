@@ -12,7 +12,7 @@
 - [x] Langues principales
 - [x] Peuples (681+ fiches synchronisées avec peuples réels - 53 pays traités)
 - [x] Pays (55/55)
-- [ ] CSV démographies
+- [~] CSV démographies (famille_linguistique.csv : 24/24 complété)
 - [ ] Validation globale
 - [ ] Publication
 
@@ -201,7 +201,7 @@ CSV :
 
 - [ ] Somme peuples = 100 % (par pays)
 - [ ] Peuples = population totale (tous pays)
-- [ ] Familles linguistiques = somme locuteurs
+- [x] Familles linguistiques = somme locuteurs (CSV complété avec 24 familles - 2025)
 - [ ] Réconciliation sources (ONU / CIA / SIL)
 - [ ] Vérification année référence (2025)
 
