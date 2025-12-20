@@ -6,7 +6,7 @@
 - Groupe ethno-linguistique : Nilotique méridional
 - Région historique : Sud-SDN, ETH
 - Pays actuels : SDN du Sud, ETH
-- Identifiant peuple (ID) : PPL_SURMANuer)
+- Identifiant peuple (ID) : PPL_SURMA
 
 # 1. Ethnies incluses dans le peuple
 - Ethnie 1 : Surma du Soudan du Sud

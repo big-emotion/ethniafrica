@@ -5,7 +5,7 @@
 - Famille linguistique : Niger-Congo – Mandé (occidental)
 - Région historique : MLI, SEN, GMB
 - Pays actuels : SEN, GMB, MLI, GIN, Côte d’Ivoire, SLE
-- Identifiant : PPL_MANDINKA
+- Identifiant peuple (ID) : PPL_MANDINGUE
 
 # 1. Ethnies incluses
 - Mandinka de Gambie
