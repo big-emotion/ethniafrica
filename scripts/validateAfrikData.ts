@@ -370,6 +370,61 @@ function validatePeuplePays(): ValidationResult[] {
   const paysCSV = loadCSV(path.join(PUBLIC_ROOT, "pays_demographie.csv"));
   const paysIds = new Set(paysCSV.map((row) => row.id_pays).filter(Boolean));
 
+  // Acronymes d'organisations et autres codes à exclure (faux positifs)
+  const excludedCodes = new Set([
+    // Organisations internationales
+    "ISO", // ISO 639-3
+    "CIA", // CIA World Factbook
+    "SIL", // SIL Ethnologue
+    "ONU", // Organisation des Nations Unies
+    "UNFPA", // Fonds des Nations Unies pour la population (mais c'est 5 lettres)
+    "UNHCR", // Haut Commissariat des Nations Unies (mais c'est 5 lettres)
+    "IDP", // Internally Displaced Persons
+    "CSV", // Comma-Separated Values (format de fichier)
+
+    // Codes pays obsolètes ou non-ISO
+    "RCA", // République Centrafricaine (code obsolète, le code ISO est CAF)
+    "RDC", // République Démocratique du Congo (code obsolète, le code ISO est COD)
+    "DRC", // Democratic Republic of Congo (code obsolète, le code ISO est COD)
+    "CAR", // Central African Republic (code obsolète, le code ISO est CAF)
+
+    // Territoires français (pas des pays indépendants)
+    "MYT", // Mayotte
+    "REU", // La Réunion
+    "TOM", // Territoires d'Outre-Mer (terme historique)
+
+    // Pays non-africains
+    "USA", // États-Unis
+    "UK", // Royaume-Uni (mais c'est 2 lettres)
+    "EU", // Union Européenne (mais c'est 2 lettres)
+    "OMN", // Oman
+
+    // Abréviations politiques/organisationnelles (Algérie)
+    "FLN", // Front de Libération Nationale
+    "FFS", // Front des Forces Socialistes
+    "ALN", // Armée de Libération Nationale
+    "MAK", // Mouvement pour l'Autonomie de la Kabylie
+    "PUF", // Parti (abréviation)
+    "MCB", // Mouvement (abréviation)
+    "HCA", // Haut Commissariat (abréviation)
+    "BNF", // (abréviation)
+    "ONS", // Office National des Statistiques (Algérie)
+    "ADN", // (abréviation)
+    "III", // (abréviation)
+
+    // Autres abréviations
+    "AOF", // Afrique-Occidentale Française (terme historique)
+    "UPC", // Union des Populations du Cameroun / abréviations diverses
+    "FCT", // Federal Capital Territory (Nigeria, pas un pays)
+    "CSA", // (abréviation)
+    "LRA", // Lord's Resistance Army (groupe armé, pas un pays)
+
+    // Préfixes AFRIK
+    "FLG", // Famille Linguistique (préfixe)
+    "PPL", // Peuple (préfixe)
+    "ID", // Identifiant (mais c'est 2 lettres)
+  ]);
+
   // Vérifier dans les fichiers peuples
   const peuplesDirs = fs
     .readdirSync(path.join(AFRIK_ROOT, "peuples"), { withFileTypes: true })
@@ -384,12 +439,84 @@ function validatePeuplePays(): ValidationResult[] {
       const filePath = path.join(AFRIK_ROOT, "peuples", dir.name, file);
       const content = fs.readFileSync(filePath, "utf-8");
 
-      // Extraire les codes pays mentionnés
-      const paysMatches = content.matchAll(/\b([A-Z]{3})\b/g);
+      // Extraire les codes pays mentionnés avec un contexte plus précis
+      // Chercher dans des sections spécifiques : "Pays actuels", "Identifiant pays", "Répartition par pays", etc.
       const paysMentionnes = new Set<string>();
-      for (const match of paysMatches) {
+
+      // 1. Chercher dans la section "Identifiant pays"
+      const identifiantPaysMatch = content.match(
+        /Identifiant pays.*?:\s*([A-Z]{3})/i
+      );
+      if (identifiantPaysMatch) {
+        paysMentionnes.add(identifiantPaysMatch[1]);
+      }
+
+      // 2. Chercher dans "Pays actuels" ou "Répartition par pays"
+      const paysActuelsSection = content.match(
+        /(?:Pays actuels|Répartition par pays|Répartition géographique)[^#]*/i
+      );
+      if (paysActuelsSection) {
+        const codesInSection =
+          paysActuelsSection[0].matchAll(/\b([A-Z]{3})\b/g);
+        for (const match of codesInSection) {
+          const code = match[1];
+          if (!excludedCodes.has(code) && code.length === 3) {
+            paysMentionnes.add(code);
+          }
+        }
+      }
+
+      // 3. Chercher dans les listes de pays (format " - Pays : CODE" ou "Pays : CODE")
+      const paysListMatches = content.matchAll(
+        /(?:^|\n)\s*[-•]\s*(?:[^:]*:)?\s*([A-Z]{3})\b/gm
+      );
+      for (const match of paysListMatches) {
         const code = match[1];
-        if (code.length === 3 && code === code.toUpperCase()) {
+        if (!excludedCodes.has(code) && code.length === 3) {
+          // Vérifier que ce n'est pas dans un contexte d'organisation
+          const context = match[0].toLowerCase();
+          if (
+            !context.includes("iso") &&
+            !context.includes("cia") &&
+            !context.includes("sil") &&
+            !context.includes("onu") &&
+            !context.includes("factbook") &&
+            !context.includes("ethnologue")
+          ) {
+            paysMentionnes.add(code);
+          }
+        }
+      }
+
+      // 4. Chercher les codes pays isolés (hors contexte d'organisation)
+      // Format: "CODE" ou "CODE," ou "CODE)" ou "CODE." suivi d'un espace ou fin de ligne
+      const isolatedCodes = content.matchAll(/\b([A-Z]{3})\b(?=[\s,.)\n]|$)/g);
+      for (const match of isolatedCodes) {
+        const code = match[1];
+        const matchIndex = match.index || 0;
+        const beforeContext = content
+          .substring(Math.max(0, matchIndex - 20), matchIndex)
+          .toLowerCase();
+        const afterContext = content
+          .substring(matchIndex + 3, Math.min(content.length, matchIndex + 23))
+          .toLowerCase();
+
+        // Exclure si c'est dans un contexte d'organisation
+        if (
+          excludedCodes.has(code) ||
+          beforeContext.includes("iso 639") ||
+          beforeContext.includes("cia world") ||
+          beforeContext.includes("sil ethnologue") ||
+          beforeContext.includes("onu") ||
+          afterContext.includes("factbook") ||
+          afterContext.includes("ethnologue") ||
+          afterContext.includes("639-3")
+        ) {
+          continue;
+        }
+
+        // Ne garder que les codes qui ressemblent à des codes pays (pas dans des phrases)
+        if (code.length === 3 && !excludedCodes.has(code)) {
           paysMentionnes.add(code);
         }
       }
