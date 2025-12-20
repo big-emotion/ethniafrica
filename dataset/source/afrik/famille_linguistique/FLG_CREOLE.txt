@@ -210,6 +210,7 @@
   **(2) Date de classification académique :**
   - **1882 :** Hugo Schuchardt publie les premières *Kreolische Studien*, inaugurant l'étude scientifique des créoles.
   - **1914 :** Maurice Delafosse décrit les créoles afro-portugais d'Afrique de l'Ouest.
+  - **1949 :** Lorenzo Dow Turner (1890-1972) – *Africanisms in the Gullah Dialect* – première démonstration scientifique systématique des liens linguistiques entre les créoles américains (Gullah de Caroline du Sud) et les langues africaines, notamment de Sierra Leone. Ses enregistrements de 1933 (dont un chant funéraire en langue mende avec Amelia Dawley) ont permis aux chercheurs ultérieurs de retracer des liens généalogiques directs entre les Gullah et des villages de Sierra Leone, confirmant la continuité linguistique et culturelle transatlantique. Le documentaire *The Language You Cry In* (1998, Alvaro Toepke & Angel Serrano) raconte cette histoire : comment cette chanson transmise sur plusieurs générations a permis de retrouver le village d'origine mende en Sierra Leone, démontrant la préservation de la mémoire linguistique et culturelle africaine dans la diaspora.
   - **1966 :** Robert A. Hall Jr. formalise la théorie polygénétique.
   - **1978 :** Albert Valdman – *Le créole : structure, statut et origine* – synthèse académique majeure.
   - **2000 :** Daniel Véronique – *Créole, créoles français et théories de la créolisation* – actualisation des théories.
@@ -368,6 +369,8 @@
 
 # 6. Sources
 - Telusma, Henri-Claude (2017) – *Thèse doctorale, Université de Strasbourg* – Origine et évolution du terme "créole"
+- Turner, Lorenzo Dow (1949) – *Africanisms in the Gullah Dialect* – Démonstration des liens linguistiques entre créoles américains et langues africaines (Sierra Leone)
+- Toepke, Alvaro & Serrano, Angel (1998) – *The Language You Cry In* (documentaire) – Retrace l'histoire d'une chanson Gullah enregistrée par Turner en 1933 et son utilisation pour retrouver les origines sierra-léonaises
 - Université Laval (Axl.cefan) – *Aménagement linguistique dans le monde* – Créoles africains et usage historique du terme
 - Trésor de la langue française – Étymologie et évolution sémantique du terme "créole"
 - Sorbonne Université – *Les langues créoles* – Histoire sociolinguistique des créoles d'Afrique
