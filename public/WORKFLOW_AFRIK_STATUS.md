@@ -12,7 +12,7 @@
 - [x] Langues principales
 - [x] Peuples (681+ fiches synchronisées avec peuples réels - 53 pays traités)
 - [x] Pays (55/55)
-- [ ] CSV démographies
+- [x] CSV démographies (619 peuples, 54 pays)
 - [ ] Validation globale
 - [ ] Publication
 
@@ -131,7 +131,7 @@ CSV :
 
 CSV :
 
-- [ ] peuple_demographie_globale.csv rempli (302 entrées sur 592 peuples)
+- [x] peuple_demographie_globale.csv rempli (619 entrées)
 
 ---
 
@@ -193,7 +193,7 @@ CSV :
 
 CSV :
 
-- [ ] pays_demographie.csv rempli
+- [x] pays_demographie.csv rempli (54 pays)
 
 ---
 

@@ -1,0 +1,180 @@
+# Nom du pays
+- Nom officiel actuel : République du Congo (République du Congo)
+- Étymologie du nom : Le nom "Congo" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. "Congo" est la forme portugaise de "Kongo". Le fleuve Congo a été nommé d'après ce royaume. Le pays est aussi appelé "Congo-Brazzaville" pour le distinguer de la République démocratique du Congo (Congo-Kinshasa).
+- Personne / peuple / administration à l'origine du nom : Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme "Congo" au XVe siècle. Le nom "Congo-Brazzaville" a été utilisé pour distinguer ce pays de la République démocratique du Congo (Congo-Kinshasa) après l'indépendance des deux pays en 1960.
+- Identifiant pays (ISO 3166-1 alpha-3) : COG
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire actuel de la République du Congo était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.
+- Moyen Âge : Développement des royaumes et chefferies bantoues (Royaume Kongo, chefferies Teke) sans nom unifié pour l'ensemble du territoire.
+- Époque précoloniale : Mosaïque de royaumes et chefferies indépendants : Royaume Kongo (partie ouest), royaume Tio (Teke), chefferies Mbochi, et autres peuples bantous. Les Portugais utilisaient le terme "Congo" pour désigner la région du royaume Kongo.
+- Colonisation : 1880-1960 : Colonie française du Congo (partie de l'Afrique-Équatoriale française, AEF). Les Français ont créé la colonie du Congo français en 1880. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960. Brazzaville était la capitale de l'AEF.
+- Période contemporaine : 1960 : Indépendance du Congo (15 août 1960), proclamation de la République du Congo. Le nom "République du Congo" est officialisé. Le pays est aussi appelé "Congo-Brazzaville" pour le distinguer de la République démocratique du Congo (Congo-Kinshasa).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume Kongo] :
+  - Période : XIVe - XIXe siècles
+  - Peuples dominants : Kongo (Bakongo)
+  - Centres politiques : Mbanza Kongo (capitale historique), région du Pool
+  - Rôle historique : Royaume puissant qui a établi des relations avec les Portugais dès le XVe siècle. Influence majeure sur la région ouest du Congo-Brazzaville.
+
+- [Royaume Tio (Teke)] :
+  - Période : Précolonial - XIXe siècle
+  - Peuples dominants : Teke (Bateke)
+  - Centres politiques : Région de la Cuvette, Plateaux
+  - Rôle historique : Royaume Tio puissant, organisation politique structurée, commerce avec les Européens. Résistance à la colonisation française.
+
+- [Chefferies Mbochi] :
+  - Période : Précolonial - présent
+  - Peuples dominants : Mbochi
+  - Centres politiques : Cuvette, Likouala
+  - Rôle historique : Chefferies Mbochi, organisation lignagère, traditions forestières.
+
+- [Colonie française du Congo] :
+  - Période : 1880 - 1960
+  - Peuples dominants : Tous les peuples congolais sous domination française
+  - Centres politiques : Brazzaville (capitale coloniale et capitale de l'AEF)
+  - Rôle historique : Colonie française, intégration dans l'AEF. Exploitation économique (caoutchouc, bois, puis pétrole), développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste au XXe siècle.
+
+- [République du Congo] :
+  - Période : 1960 - présent
+  - Peuples dominants : Tous les peuples congolais
+  - Centres politiques : Brazzaville (capitale)
+  - Rôle historique : Indépendance en 1960. Histoire politique mouvementée : période socialiste (1969-1991), transition démocratique (1991), guerres civiles (1993-1999, 2016-2017), développement économique basé sur le pétrole.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Kongo (Brazzaville)
+  - Auto-appellation (endonyme) : Bakongo
+  - Exonymes / appellations historiques : Kongo (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KONGO_BRAZZA
+  - Région principale : Pool, région de Brazzaville
+  - Langues parlées : Kikongo, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone H)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kongo" est neutre et accepté. L'auto-appellation "Bakongo" (pluriel de Mukongo) est préférée.
+
+- Peuple 2 :
+  - Nom : Teke
+  - Auto-appellation (endonyme) : Bateke
+  - Exonymes / appellations historiques : Teke (terme utilisé par les Européens), Tio (nom du royaume historique)
+  - Identifiant peuple (PPL_) : PPL_TEKKE
+  - Région principale : Plateaux, Cuvette
+  - Langues parlées : Teke (teg, teo, tbz), français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone B)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Teke" est neutre et accepté. L'auto-appellation "Bateke" est préférée.
+
+- Peuple 3 :
+  - Nom : Mbochi
+  - Auto-appellation (endonyme) : Mbochi
+  - Exonymes / appellations historiques : Mbochi (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MBOCHI
+  - Région principale : Cuvette, Likouala
+  - Langues parlées : Mbochi (mdx), français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone C)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Mbochi" est neutre et accepté.
+
+- Peuple 4 :
+  - Nom : Sangha
+  - Auto-appellation (endonyme) : Sangha
+  - Exonymes / appellations historiques : Sangha (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_SANGO
+  - Région principale : Sangha, Likouala
+  - Langues parlées : Sangha, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Sangha" est neutre et accepté.
+
+- Peuple 5 :
+  - Nom : Vili
+  - Auto-appellation (endonyme) : Bavili
+  - Exonymes / appellations historiques : Vili (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_VILI
+  - Région principale : Kouilou, Pointe-Noire
+  - Langues parlées : Vili, français, lingala
+  - Famille linguistique : FLG_NIGERCONGO (Bantou, Zone H)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Vili" est neutre et accepté. L'auto-appellation "Bavili" est préférée.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Français - langue officielle
+  - Lingala (lin) - langue véhiculaire nationale
+  - Kikongo (kon) - langue régionale (Pool, Brazzaville)
+  - Teke (teg, teo, tbz) - langue régionale (Plateaux, Cuvette)
+  - Mbochi (mdx) - langue régionale (Cuvette, Likouala)
+- Traditions culturelles : Musique congolaise (soukous, rumba), danse traditionnelle, poésie orale, artisanat (poterie, tissage, sculpture), masques traditionnels, tambours royaux
+- Religions dominantes : Christianisme (catholique majoritaire, protestant, kimbanguiste), croyances traditionnelles (syncrétisme), islam (minorité)
+- Modes de vie : Vie principalement urbaine (Brazzaville, Pointe-Noire), agriculture (manioc, bananes, arachides), pêche (fleuve Congo, océan Atlantique), commerce, industrie pétrolière
+- Organisation sociale : Système de chefferies traditionnelles (historique), structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens
+- Relations régionales : Relations historiques avec les peuples de la RDC, du Gabon, de la RCA, de l'Angola. Diaspora importante en France, en RDC, au Gabon, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par les peuples bantous (Kongo, Teke, Mbochi). Développement de royaumes et chefferies indépendants.
+- Moyen Âge : Développement du royaume Kongo (XIVe-XIXe siècles) et du royaume Tio (Teke). Expansion territoriale et unification culturelle partielle.
+- Époque précoloniale : Apogée du royaume Kongo et du royaume Tio. Commerce avec les Portugais et autres Européens. Résistance à la colonisation.
+- Colonisation : 1880 : Création de la colonie française du Congo. 1910 : Intégration dans l'Afrique-Équatoriale française (AEF) avec Brazzaville comme capitale. Exploitation économique (caoutchouc, bois). Résistance des peuples autochtones.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Indépendance en 1960 (15 août) sous la présidence de Fulbert Youlou.
+- Période post-indépendance : Première République (1960-1969) : régime de Fulbert Youlou. République populaire du Congo (1969-1991) : période socialiste sous Marien Ngouabi puis Denis Sassou-Nguesso. Transition démocratique (1991) : multipartisme. Guerres civiles (1993-1999, 2016-2017) : conflits politiques et ethniques. République du Congo depuis 1991 : développement économique basé sur le pétrole, défis de démocratisation et de réconciliation.
+
+# 7. Sources
+- CIA World Factbook – Republic of the Congo
+- SIL Ethnologue – Languages of the Republic of the Congo
+- Recensements nationaux congolais (RGPH-5, 2023)
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples congolais
+- Études historiques sur le royaume Kongo et le royaume Tio
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Kongo (Brazzaville)
+- Identifiant peuple (PPL_) : PPL_KONGO_BRAZZA
+- Population : ~2 000 000 - 2 500 000 (estimation, ~35-40% de la population)
+- Pourcentage dans le pays : ~35-40%
+- Pourcentage en Afrique : ~0.15%
+- Région : Pool, région de Brazzaville
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : kon (Kikongo)
+
+### Peuple : Teke
+- Identifiant peuple (PPL_) : PPL_TEKKE
+- Population : ~350 000 - 450 000 (estimation, ~6-7% de la population)
+- Pourcentage dans le pays : ~6-7%
+- Pourcentage en Afrique : ~0.03%
+- Région : Plateaux, Cuvette
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : teg (Teke)
+
+### Peuple : Mbochi
+- Identifiant peuple (PPL_) : PPL_MBOCHI
+- Population : ~250 000 - 300 000 (estimation, ~4-5% de la population)
+- Pourcentage dans le pays : ~4-5%
+- Pourcentage en Afrique : ~0.02%
+- Région : Cuvette, Likouala
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : mdx (Mbochi)
+
+### Peuple : Sangha
+- Identifiant peuple (PPL_) : PPL_SANGO
+- Population : ~150 000 - 200 000 (estimation, ~2-3% de la population)
+- Pourcentage dans le pays : ~2-3%
+- Pourcentage en Afrique : ~0.01%
+- Région : Sangha, Likouala
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : sng (Sangha)
+
+### Peuple : Vili
+- Identifiant peuple (PPL_) : PPL_VILI
+- Population : ~100 000 - 150 000 (estimation, ~1.5-2% de la population)
+- Pourcentage dans le pays : ~1.5-2%
+- Pourcentage en Afrique : ~0.01%
+- Région : Kouilou, Pointe-Noire
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : vif (Vili)
+
+### Peuple : Autres peuples bantous
+- Identifiant peuple (PPL_) : Divers
+- Population : ~1 500 000 - 2 000 000 (estimation, ~25-30% de la population)
+- Pourcentage dans le pays : ~25-30%
+- Pourcentage en Afrique : ~0.12%
+- Région : Toutes les régions
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : lin (Lingala), français
+
