@@ -232,6 +232,15 @@ Avant de générer un fichier, vérifier :
 
 Répondre en français pour toutes les interactions concernant le projet AFRIK.
 
+## JIRA - SPRINT EN COURS
+
+Lorsque l'utilisateur demande de créer un ticket Jira ou parle du "sprint en cours" :
+- **Projet Jira** : ETNI (pas ETNIO)
+- **Board ID** : 67
+- **URL du tableau** : https://big-emotion.atlassian.net/jira/software/projects/ETNI/boards/67
+- **Sprint actif** : Sprint 3 (ID: 101)
+- Toujours créer les tickets dans le projet ETNI et les ajouter au sprint actif
+
 ## NOTES IMPORTANTES
 
 - L'agent utilise ChatGPT 5.1
