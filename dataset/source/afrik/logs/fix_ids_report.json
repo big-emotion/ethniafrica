@@ -1,0 +1,162 @@
+[
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_FULA, PPL_FULANI.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_SERERE.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_BETI, PPL_BETI_FANG, PPL_FANG, PPL_BULU, PPL_EWONDO.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_DUALA, PPL_BASSA_CAM, autres.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_KISII (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_LUHYA (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_MIJIKENDA (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_SOTHO, PPL_SOTHO_SUD, PPL_SESOTHO_NATL.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_TWA (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BENOUECONGO/PPL_ADJA, PPL_EWE.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BENOUECONGO/PPL_YORUBA, PPL_ANAGO.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BERBERE/PPL_AMAZIGH_MACRO (groupe minoritaire en Tunisie).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_GUR/PPL_SENUFO, PPL_LOBI.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_KHOE/PPL_SAN, PPL_KHOIKHOI.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_KROU/PPL_BETE, PPL_WE.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_KXA/PPL_SAN, PPL_KXA_MACRO, PPL_TUU_MACRO, PPL_HOA, PPL_KXOE.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_MANDE/PPL_BASSA.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_MANDE/PPL_MANDINGUE.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_MANDE/PPL_MANDINKA, PPL_MALINKE.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_MANDE/PPL_MANDINKA, PPL_MANDINGUE.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_DAGOMBA (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GUAN (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NILOSAHARIENNE/PPL_SONGHAI (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NILOTIQUE/PPL_KALENJIN (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NILOTIQUE/PPL_LUO (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NILOTIQUE/PPL_SURMANuer).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_SEMITIQUE/PPL_TIGRE (à vérifier si fichier existe).txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_TCHADIQUE/PPL_HAUSA, PPL_FULA.txt",
+    "action": "content_fixed"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_KISII.txt",
+    "action": "renamed",
+    "oldName": "PPL_KISII (à vérifier si fichier existe).txt",
+    "newName": "PPL_KISII.txt"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_LUHYA.txt",
+    "action": "renamed",
+    "oldName": "PPL_LUHYA (à vérifier si fichier existe).txt",
+    "newName": "PPL_LUHYA.txt"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_MIJIKENDA.txt",
+    "action": "renamed",
+    "oldName": "PPL_MIJIKENDA (à vérifier si fichier existe).txt",
+    "newName": "PPL_MIJIKENDA.txt"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_BANTU/PPL_TWA.txt",
+    "action": "renamed",
+    "oldName": "PPL_TWA (à vérifier si fichier existe).txt",
+    "newName": "PPL_TWA.txt"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GUAN.txt",
+    "action": "renamed",
+    "oldName": "PPL_GUAN (à vérifier si fichier existe).txt",
+    "newName": "PPL_GUAN.txt"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NILOSAHARIENNE/PPL_SONGHAI.txt",
+    "action": "renamed",
+    "oldName": "PPL_SONGHAI (à vérifier si fichier existe).txt",
+    "newName": "PPL_SONGHAI.txt"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NILOTIQUE/PPL_KALENJIN.txt",
+    "action": "renamed",
+    "oldName": "PPL_KALENJIN (à vérifier si fichier existe).txt",
+    "newName": "PPL_KALENJIN.txt"
+  },
+  {
+    "file": "/Users/jnk/Documents/Dev/ethniafrica/dataset/source/afrik/peuples/FLG_NILOTIQUE/PPL_LUO.txt",
+    "action": "renamed",
+    "oldName": "PPL_LUO (à vérifier si fichier existe).txt",
+    "newName": "PPL_LUO.txt"
+  }
+]

@@ -3,7 +3,7 @@
 - Auto-appellation : Bassa
 - Famille linguistique : Niger-Congo – Mandé
 - Région historique : Côte libérienne (centre et sud)
-- Identifiant : PPL_BASSA_LIBERIA
+- Identifiant peuple (ID) : PPL_BASSA
 
 # 1. Ethnies incluses
 - Bassa de Buchanan

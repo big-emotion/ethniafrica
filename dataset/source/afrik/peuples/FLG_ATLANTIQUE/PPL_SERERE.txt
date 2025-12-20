@@ -5,7 +5,7 @@
   - Sapi (ancienne désignation médiévale non péjorative ; mentionnée dans l’art afro-portugais)
 - Famille linguistique : Niger-Congo – Atlantique (élément sénégambien/forestier)
 - Région historique : SLE, GIN forestière
-- Identifiant peuple : PPL_SAPEY
+- Identifiant peuple : PPL_SERERE
 
 # 1. Ethnies incluses
 - Sapey de Sierra Leone
