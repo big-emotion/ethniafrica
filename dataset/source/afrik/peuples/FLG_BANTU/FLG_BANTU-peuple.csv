@@ -16,9 +16,10 @@ PPL_HOBA,Hoba,FLG_BANTU,Bantou,"RDC (Ituri)","Groupe forestier."
 PPL_SANGO,Sango,FLG_BANTU,Bantou,"RCA (Bangui), Congo","Peuple lié à la langue véhiculaire sango."
 
 # =======================================================
-# 2. PEUPLES BANTOUS DE L’AFRIQUE DE L’OUEST BANTOUSÉE (Cameroun - Guinée équatoriale)
+# 2. PEUPLES BANTOUS DE L'AFRIQUE DE L'OUEST BANTOUSÉE (Cameroun - Guinée équatoriale)
 # =======================================================
 
+PPL_SAWA,Sawa,FLG_BANTU,Bantou,"Cameroun (Littoral, Sud, Sud-Ouest), Guinée Équatoriale","Macro-peuple côtier ('Peuples de l'eau') regroupant Douala, Bassa, Bakoko, Bakweri, Batanga, Malimba et 30+ ethnies ; culture maritime ; Ngondo (UNESCO 2024)."
 PPL_FANG,Fang,FLG_BANTU,Bantou,"Gabon, Guinée Équatoriale, Cameroun","Macro-peuple forestier."
 PPL_BETI,Béti,FLG_BANTU,Bantou,"Cameroun","Inclut Ewondo, Bulu."
 PPL_EWONDO,Ewondo,FLG_BANTU,Bantou,"Cameroun (Centre)","Sous-ensemble Béti reconnu comme peuple."
