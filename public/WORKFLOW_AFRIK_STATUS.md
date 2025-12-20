@@ -12,8 +12,8 @@
 - [x] Langues principales
 - [x] Peuples (681+ fiches synchronisées avec peuples réels - 53 pays traités)
 - [x] Pays (55/55)
-- [ ] CSV démographies
-- [ ] Validation globale
+- [x] CSV démographies (619 peuples, 54 pays)
+- [🔄] Validation globale (en cours - script créé)
 - [ ] Publication
 
 **Terminé :** Synchronisation peuples réels vs documentés (53 pays traités dans l'ordre croissant, du moins au plus nombreux)
@@ -131,7 +131,7 @@ CSV :
 
 CSV :
 
-- [ ] peuple_demographie_globale.csv rempli (302 entrées sur 592 peuples)
+- [x] peuple_demographie_globale.csv rempli (619 entrées)
 
 ---
 
@@ -193,7 +193,7 @@ CSV :
 
 CSV :
 
-- [ ] pays_demographie.csv rempli
+- [x] pays_demographie.csv rempli (54 pays)
 
 ---
 
@@ -207,14 +207,24 @@ CSV :
 
 ---
 
-# 6. ÉTAPE 6 — VALIDATION
+# 6. ÉTAPE 6 — VALIDATION (EN COURS)
 
-- [ ] IDs cohérents
-- [ ] Langue → famille linguistique OK
-- [ ] Peuple → pays OK
-- [ ] Termes coloniaux contextualisés
-- [ ] Sections TXT complètes
-- [ ] Origines et appellations (exonymes/endonymes) enrichies
+- [x] IDs cohérents (✅ Toutes les erreurs critiques corrigées - 85 → 0 erreurs, seulement avertissements pour IDs absents du CSV)
+- [x] Langue → famille linguistique OK
+- [🔄] Peuple → pays OK (1918 avertissements - codes pays mentionnés mais absents du CSV)
+- [x] Termes coloniaux contextualisés
+- [🔄] Sections TXT complètes (1008 fichiers avec sections incomplètes)
+- [🔄] Origines et appellations (exonymes/endonymes) enrichies (128 fichiers à enrichir)
+
+**Corrections effectuées :**
+
+- ✅ 36 fichiers corrigés (IDs dans le contenu + renommages)
+- ✅ Fichiers avec notes dans le nom nettoyés
+- ✅ Fichier PPL_SWahili.txt supprimé (doublon)
+- ✅ Fichier PPL_SURMANuer).txt renommé en PPL_SURMA.txt
+
+**Script de validation créé :** `scripts/validateAfrikData.ts`
+**Rapport détaillé :** `dataset/source/afrik/logs/validation_report.json`
 
 ---
 
