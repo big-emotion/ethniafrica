@@ -1,53 +1,504 @@
 # Nom du peuple
 - Nom principal du peuple : Kabyle
-- Auto-appellation : Leqbayel / Iqbayliyen
+- Auto-appellation (endonyme) : Iqvayliyen / Leqbayel (en kabyle : ⵉⵇⴱⴰⵢⵍⵉⵢⴻⵏ)
 - Exonymes / appellations historiques :
-  - « Kabyle » (exonyme arabe devenu courant ; non péjoratif mais issu d’une classification extérieure)
-  - « Berbère » (terme colonial, considéré problématique ; auto-appellation correcte : Amazigh / Imazighen)
-- Famille linguistique principale : Afro-asiatique – Berbère (Amazigh)
-- Groupe ethno-linguistique : Berbère du Nord (branche zenatienne)
-- Région historique : Kabylie (nord de l’DZA, massif de l’Atlas tellien)
-- Pays actuels : DZA (principal), diaspora mondiale
+  - « Kabyle » (du français, dérivé de l'arabe « qabā'il » قبائل signifiant « tribus »)
+  - « Zwawa » ou « Zouaoua » (appellation historique désignant les habitants du Djurdjura)
+  - « Berbère » (terme générique pour l'ensemble des peuples amazighs)
+- Origine des termes (exonymes) :
+  - Le terme « Kabyle » provient de l'arabe « qabā'il » (pluriel de qabīla, tribu) utilisé par l'administration ottomane puis coloniale française pour désigner les populations berbérophones organisées en confédérations tribales du massif montagneux nord-algérien.
+  - « Berbère » vient du latin « barbarus » (barbare), terme employé par les Romains pour désigner les populations non romanisées d'Afrique du Nord.
+  - « Zwawa » / « Zouaoua » désigne historiquement les tribus kabyles du Djurdjura, nom repris par l'armée française pour ses régiments de zouaves.
+- Pourquoi certains termes posent problème (si applicable) :
+  - « Berbère » est considéré problématique car il dérive de « barbare », connotation péjorative d'origine gréco-romaine. Les Kabyles préfèrent l'auto-appellation « Amazigh » (pluriel : Imazighen), signifiant « homme libre » ou « noble ».
+  - « Kabyle », bien que largement accepté aujourd'hui, est une appellation externe (arabe) imposée par les pouvoirs ottomans et coloniaux, réduisant une identité complexe à une organisation tribale.
+  - Le mythe colonial du « Kabyle évolué » opposé à « l'Arabe arriéré » (politique coloniale française du 19e-20e siècle) a instrumentalisé l'identité kabyle dans une stratégie de division.
+- Usage contemporain des appellations :
+  - « Kabyle » reste l'appellation courante et acceptée, utilisée par les Kabyles eux-mêmes.
+  - L'auto-appellation « Iqvayliyen » est privilégiée dans les contextes identitaires et culturels.
+  - Le terme « Amazigh » est revendiqué dans le cadre du mouvement culturel berbère (MCB) depuis les années 1980.
+  - En 2016, l'Algérie reconnaît « tamazight » (berbère) comme langue nationale et officielle dans sa Constitution.
+- Famille linguistique principale : Afro-asiatique / Berbère (branche Nord)
+- Groupe ethno-linguistique : Berbère septentrional (kabyle)
+- Région historique : Kabylie (Tamurt n Leqvayel) — massifs montagneux du Djurdjura et de Babor (Atlas tellien)
+- Pays actuels : Algérie (DZA) principalement, France (diaspora majeure), Canada, Belgique
 - Identifiant peuple (ID) : PPL_KABYLE
 
 # 1. Ethnies incluses dans le peuple
-- Kabyles de la Grande Kabylie
-- Kabyles de la Petite Kabylie
-- Kabyles du Djurdjura
+- At Yenni (Aït Jenni) : confédération de la Grande Kabylie, région de Tizi Ouzou
+- At Iraten (Aït Iraten) : confédération puissante de la Grande Kabylie, bassin de la Soummam
+- At Mangellat (Aït Menguellet) : confédération de la vallée de la Soummam
+- At Aissi (Aït Aïssi) : confédération de la Grande Kabylie
+- At Sedqa (Aït Sedka) : confédération du versant sud du Djurdjura
+- At Betrun (Aït Betroune) : Grande Kabylie, région d'Akbou
+- At Djennad (Aït Djennad) : confédération de Petite Kabylie
+- Igawawen (Jijel) : confédération de Petite Kabylie, littoral de Jijel
+- At Zmenzer (Aït Zmenzer) : Petite Kabylie
+- Zwawa (Zouaoua) : habitants historiques du massif du Djurdjura
+- At Abbas (Aït Abbas) : confédération de Petite Kabylie, région de Collo
+
+Note : Les Kabyles sont organisés en confédérations tribales (archs) portant le préfixe « At » (ou « Aït »), signifiant « les gens de » ou « fils de », suivi du nom d'un ancêtre éponyme ou d'un lieu.
 
 # 2. Origines, migrations et formation du peuple
-- Présence amazighe antique dans le massif kabyle.
-- Consolidation d’une identité régionale forte dès l’Antiquité et le Moyen Âge.
-- Résistance historique aux dominations extérieures (romaine, ottomane, française).
+
+## Origines anciennes (théories archéologiques, linguistiques, génétiques) :
+- Les Kabyles appartiennent à la famille berbère (amazighe), présente en Afrique du Nord depuis au moins 10 000 ans (période néolithique).
+- Théorie archéologique : Les populations proto-berbères descendent des cultures capsienne (9000-4500 av. J.-C.) et néolithique de tradition capsienne (5000-2000 av. J.-C.) d'Afrique du Nord.
+- Théorie linguistique : La langue kabyle appartient à la branche Nord du berbère, famille afro-asiatique, dont l'origine remonterait au paléolithique supérieur ou au néolithique nord-africain (Salem Chaker, Gabriel Camps).
+- Théorie génétique : Les études d'ADN (haplogroupe E-M81) confirment une origine autochtone nord-africaine des Berbères, avec une continuité de peuplement depuis le Néolithique. Les Kabyles présentent également des apports phéniciens, romains, vandales, byzantins et arabes limités.
+- Les Kabyles sont issus de populations berbères locales du massif montagneux qui ont préservé leur langue et culture face aux différentes dominations (romaine, vandale, byzantine, arabe, ottomane, française).
+
+## Période de formation estimée :
+- Formation progressive d'une identité kabyle distincte entre l'Antiquité tardive (Ve-VIIe siècles) et le Moyen Âge (VIIIe-XVe siècles).
+- Consolidation de l'identité kabyle à partir de la conquête arabe (7e-8e siècles) et de l'islamisation progressive, avec maintien de la langue berbère et de structures sociales spécifiques.
+- L'organisation en confédérations tribales autonomes (archs) se développe surtout entre le Xe et le XVIIIe siècle, période de résistance aux pouvoirs centraux (Fatimides, Hammadides, Ottomans).
+
+## Routes migratoires principales :
+- Pas de migration majeure : les Kabyles sont un peuple sédentaire montagnard, établi dans le massif du Djurdjura et de l'Atlas tellien depuis l'Antiquité.
+- Mouvements de transhumance saisonniers entre montagnes et plaines côtières (Mitidja, plaine de la Soummam).
+- Émigration économique vers les villes algériennes (Alger, Béjaïa, Sétif) à partir du 19e siècle.
+- Émigration massive vers la France métropolitaine (Marseille, Paris, Lyon) à partir de 1905, intensifiée après la Seconde Guerre mondiale (1945-1962) et l'indépendance (1962).
+
+## Zones d'établissement historiques :
+- Massif du Djurdjura (Grande Kabylie) : Tizi Ouzou, Béjaïa, Bouira
+- Massif de Babor et chaîne des Babor (Petite Kabylie) : Jijel, Sétif, Béjaïa
+- Vallée de la Soummam : bassin fertile reliant Grande et Petite Kabylie
+- Littoral méditerranéen : Béjaïa (Bgayet), Jijel (Igelgel), Dellys
+- Piémonts et plaines : Tizi Ouzou, Akbou, bordure de la Mitidja
+
+## Unifications / divisions :
+- Période antique : les tribus kabyles (Maures, Numides orientaux) résistent à Rome, notamment sous Jugurtha (IIe siècle av. J.-C.) et Tacfarinas (Ier siècle ap. J.-C.).
+- VIIe-VIIIe siècles : résistance berbère face à la conquête arabe (révoltes kharijites berbères, 740-760).
+- Période ottomane (1515-1830) : la Kabylie reste largement autonome, les Ottomans ne contrôlent que quelques postes côtiers.
+- Conquête française (1857) : pacification violente de la Kabylie, fin de l'autonomie des confédérations.
+- Période coloniale (1857-1962) : unification administrative forcée, mais maintien des structures tribales.
+- Indépendance (1962) : les Kabyles s'intègrent à l'État algérien, revendications identitaires et linguistiques (printemps berbère 1980, printemps noir 2001).
+
+## Influences externes (peuples voisins, colonisation, commerce) :
+- Influences phéniciennes et carthaginoises (comptoirs côtiers, IXe-IIe siècles av. J.-C.)
+- Romanisation partielle (Ier-Ve siècles ap. J.-C.), christianisation
+- Islamisation progressive (VIIe-XIIe siècles), arabisation linguistique limitée
+- Influence andalouse (réfugiés après la Reconquista, XVe-XVIIe siècles)
+- Période ottomane (XVIe-XIXe siècles) : relations commerciales, tribut, mais faible contrôle politique
+- Colonisation française (1857-1962) : bouleversements économiques, sociaux et culturels profonds
+- Influence française contemporaine via la diaspora
+
+## Événements historiques majeurs ayant façonné le peuple :
+- 740-760 : Révolte kharijite berbère contre le califat omeyyade
+- 1857 : Conquête de la Kabylie par la France, bataille d'Icheriden
+- 1871 : Insurrection d'El Mokrani et du cheikh El Haddad (Grande Révolte kabyle), répression sanglante
+- 1954-1962 : Guerre d'indépendance algérienne, participation massive des Kabyles au FLN
+- 1963 : Crise berbériste du FFS (Front des Forces Socialistes) de Hocine Aït Ahmed
+- 1980 : Printemps berbère (revendications linguistiques et culturelles)
+- 2001 : Printemps noir (révolte en Kabylie suite à la mort de jeunes manifestants)
+- 2016 : Reconnaissance constitutionnelle de tamazight comme langue nationale et officielle en Algérie
+- 2019 : Hirak (mouvement de contestation populaire en Algérie, forte participation kabyle)
 
 # 3. Organisation et structure interne
-- Organisation par villages (thaddart) et assemblées (tajmaât).
-- Structures familiales lignagères.
-- Fort attachement aux systèmes d’autogestion communautaire.
+
+## Système politique traditionnel :
+- Organisation décentralisée en confédérations tribales (archs), regroupant plusieurs villages (tuddar, sing. taddart).
+- Chaque village est gouverné par une assemblée villageoise appelée tajmat (ou djemaâ), réunissant les hommes adultes.
+- La tajmat prend les décisions collectives (gestion des terres, résolution des conflits, organisation des travaux collectifs).
+- Système démocratique participatif : absence de pouvoir héréditaire centralisé, primauté de la délibération collective.
+- Les amin (administrateurs élus) ou imuqqranen (notables) président les assemblées mais sans pouvoir absolu.
+- Le système de la kanun (ou qanun) : code coutumier régissant la vie sociale, transmis oralement puis codifié par écrit à partir du 19e siècle.
+
+## Organisation clanique :
+- Structure patrilinéaire : appartenance clanique transmise par le père.
+- Plusieurs lignages (iderma, sing. aderma) composent un clan (takharouvt).
+- Plusieurs clans forment une fraction tribale (ferqa), plusieurs fractions forment une tribu (arch).
+- Le thakhamt (maison, foyer) est l'unité de base, dirigé par le chef de famille (akham).
+- Solidarité clanique forte : vengeance collective (thiwizi), entraide économique, mariages préférentiels endogames.
+
+## Systèmes de classes d'âge (si applicable) :
+- Pas de système formel de classes d'âge, mais distinction entre catégories sociales selon l'âge :
+  - Enfants (arraw, sing. aqcic pour garçon, taqcict pour fille) : jusqu'à la puberté.
+  - Jeunes (ilemziyen, sing. alem) : adolescents et jeunes adultes célibataires, organisés en groupes de solidarité.
+  - Adultes (imεemmren) : chefs de famille participant aux assemblées.
+  - Anciens (imusnawen, imεemmren) : détenteurs de la sagesse, conseillers respectés.
+- Les jeunes hommes célibataires formaient des groupes (thajmaât n yilemziyen) chargés de travaux collectifs et de surveillance.
+
+## Rôle des lignages :
+- Le lignage (aderma) assure la protection, la solidarité économique et l'honneur familial (nnif).
+- Gestion collective des terres agricoles et des ressources (forêts, sources).
+- Médiation dans les conflits internes par les conseils de lignage.
+- Organisation des mariages et alliances inter-lignages.
+- Mémoire généalogique transmise oralement pour légitimer les droits fonciers et le statut social.
+
+## Autorité religieuse :
+- Les marabouts (imrabden, sing. amrabadh) : saints locaux, descendants de lignées religieuses, médiateurs spirituels et sociaux.
+- Confréries soufies : Rahmaniyya et Qadriyya, influence importante en Kabylie.
+- Les tolba (sing. taleb) : lettrés religieux enseignant le Coran dans les écoles coraniques (zawiya, mosquées).
+- Les zaouïas : centres religieux et éducatifs dirigés par des familles maraboutiques.
+- Syncrétisme entre islam et croyances traditionnelles berbères (culte des saints, pèlerinages aux tombeaux, croyance aux djinns).
+- Rôle des imams dans la conduite de la prière et l'enseignement religieux.
 
 # 4. Langues et sous-familles
-- Langue principale : Kabyle (tamaziɣt taqbaylit)
-- Code ISO : kab
-- Branche : Berbère nord (Zenati)
+- Langue principale : Kabyle (taqbaylit / ⵜⴰⵇⴱⴰⵢⵍⵉⵜ en tifinagh)
+- Codes ISO : kab (ISO 639-3)
+- Dialectes : 
+  - Kabyle de Grande Kabylie (Tizi Ouzou, Béjaïa ouest)
+  - Kabyle de Petite Kabylie (Jijel, Béjaïa est, Sétif)
+  - Kabyle de Collo (variante orientale, Skikda)
+  - Distinctions lexicales et phonétiques entre dialectes, mais intercompréhension mutuelle élevée
+- Rôle véhiculaire : 
+  - Le kabyle est la langue maternelle et principale de communication en Kabylie.
+  - L'arabe algérien (darija) est utilisé comme langue véhiculaire avec les arabophones.
+  - Le français est largement pratiqué (héritage colonial, enseignement, administration, diaspora).
+  - Le kabyle est enseigné à l'université (INALCO Paris, Université Mouloud Mammeri Tizi Ouzou, Université de Béjaïa).
+  - Standardisation en cours via l'Académie berbère et le HCA (Haut-Commissariat à l'Amazighité en Algérie).
+  - Écriture : tifinagh (alphabet berbère ancien réintroduit), alphabet latin (le plus utilisé), alphabet arabe (historique).
+  - Nombre de locuteurs : environ 6 à 8 millions en Algérie, 1 à 2 millions en diaspora (France, Canada, Belgique).
 
 # 5. Culture, rites et traditions
-- Musique kabyle (chaâbi kabyle, poésie).
-- Arts : bijoux, poterie, tissage.
-- Fêtes amazighes : Yennayer, Thafsut.
-- Tradition orale importante (contes, proverbes).
+
+## A. DIVINITÉS ET ESPRITS
+
+### Divinité suprême :
+- Endonyme (nom local) : Rebbi / Yakuc (Dieu en kabyle)
+- Exonyme (nom externe) : Allah (arabe)
+- Attributs et rôle : Dieu unique, créateur, tout-puissant (conception islamique adoptée après l'islamisation). Les croyances pré-islamiques concernant une divinité suprême berbère sont peu documentées.
+- Mode de vénération : Prière islamique (salat), invocations (duâa), pèlerinage à La Mecque (hajj), jeûne du Ramadan (Ramadan).
+
+### Divinités intermédiaires :
+- Pas de divinités intermédiaires dans l'islam, mais culte des saints (awliya, imrabden) :
+  - Sidi Ahmed ou Moussa (saint vénéré en Grande Kabylie)
+  - Lalla Fatma N'Soumer (héroïne de la résistance, vénérée comme sainte)
+  - Sidi Mansour (saint protecteur, région de Béjaïa)
+- Domaine d'action : Intercession, protection, guérison, bénédictions (baraka)
+
+### Esprits de la nature :
+- Esprits de la forêt : Djinns habitant les forêts sacrées (thighilt), apparitions nocturnes, protecteurs des lieux sacrés
+- Esprits de l'eau (rivières, sources, lagunes) : Lalla Thamurt (esprit de la terre et des sources), protectrice des récoltes et de la fertilité. Superstitions autour des sources sacrées (interdiction de polluer).
+- Esprits de la terre : Larbâa n leǧnun (les sept djinns) : esprits invisibles pouvant causer maladies et malheurs. Croyance en des esprits gardiens de lieux (grottes, ruines).
+- Autres esprits : Thislith (ogresse mythique des contes), esprits malveillants nocturnes.
+
+### Figures culturelles et héros :
+- Tricksters (personnages rusés) : Jha (ou Joha), personnage rusé et farceur des contes populaires kabyles.
+- Héros culturels : 
+  - Lalla Fatma N'Soumer (1830-1863) : résistante kabyle contre la colonisation française
+  - Cheikh El Mokrani (1815-1871) : chef de la grande insurrection kabyle de 1871
+  - Lounès Matoub (1956-1998) : chanteur kabyle, icône de la revendication identitaire
+- Figures mythologiques : Anzar (dieu de la pluie dans la mythologie berbère ancienne, survivance dans les rites agraires).
+
+### Ancêtres (culte des ancêtres) :
+- Rôle des ancêtres : Les ancêtres (lejdud) sont respectés et invoqués pour leur bénédiction et protection. Ils veillent sur les vivants depuis l'au-delà.
+- Pratiques cultuelles : Visite des tombes (ziara), prières pour les défunts, offrandes alimentaires lors des fêtes religieuses (Aïd, Achoura).
+- Statues et objets sacrés : Pas de statues (interdit par l'islam), mais objets hérités des ancêtres (bijoux, manuscrits, armes) conservés avec respect.
+
+## B. COSMOLOGIE (Conception du monde)
+
+### Structure du monde :
+- Monde supérieur (ciel, divinités) : Lǧenna (paradis), demeure de Dieu, des anges (lmalaykat) et des âmes des justes. Firmament créé par Dieu.
+- Monde intermédiaire (esprits) : Monde invisible habité par les djinns (leǧnun), anges et démons (icciṭan). Ils peuvent interférer avec le monde terrestre.
+- Monde terrestre (vivants) : Ddunit (le monde d'ici-bas), lieu d'épreuve avant l'au-delà. Terres, montagnes, forêts, rivières peuplées d'humains, animaux et esprits.
+- Monde souterrain / des morts : Lqaber (tombeau), lieu de transition avant le Jugement dernier (yum lqiyama). Le barzakh (entre-monde) sépare vivants et morts.
+
+### Concepts spirituels de la personne humaine :
+- Âme / force vitale : Rruh (l'âme), souffle divin insufflé par Dieu à la naissance, retourne à Dieu après la mort.
+- Esprit / personnalité : Lεeqel (la raison, l'intelligence), faculté qui distingue l'humain et guide ses actions.
+- Corps physique : Lǧesed (le corps), enveloppe matérielle temporaire, vouée à la décomposition.
+- Héritage spirituel paternel : Lignée patronymique (aderma), transmission du nom, de l'honneur (nnif) et du statut social.
+- Héritage maternel (sang, clan) : Lien au clan maternel (exγam), importance de la mère dans la transmission des valeurs et de la langue.
+
+### Cycle vie-mort-renaissance :
+- Conception de la mort : Lmut (la mort) est le passage obligé vers l'au-delà (laxi ra), épreuve finale précédant le Jugement dernier. La mort est acceptée comme volonté divine (lmektub).
+- Monde des ancêtres : Les défunts rejoignent le barzakh (entre-monde), puis seront jugés selon leurs actes. Les âmes pieuses accèdent au paradis (lǧenna).
+- Réincarnation / renaissance : Pas de croyance en la réincarnation dans l'islam kabyle. Croyance en la résurrection des corps au Jour du Jugement (yum lqiyama).
+
+### Temps et espace sacrés :
+- Jours sacrés : Vendredi (lǧemεa), jour de prière collective, Ramadan (mois de jeûne), Aïd el-Fitr, Aïd el-Adha, Achoura.
+- Lieux sacrés (bois sacrés, sources, montagnes) : 
+  - Bois sacrés (thizgi n lmurabeṭ) : forêts protégées abritant tombeaux de saints
+  - Sources sacrées (tala) : fontaines miraculeuses, lieux de pèlerinage
+  - Tombeaux de saints (iqubur n iεezzaben) : lieux de ziara (visite pieuse)
+  - Sommets montagneux : Djurdjura, Lalla Khadidja (point culminant)
+- Saisons rituelles : Printemps (Yennayer, nouvel an berbère le 12-13 janvier), automne (fêtes des récoltes), été (moissons, fêtes agraires).
+
+## C. CONCEPTION DE LA PERSONNE ET DE LA NATURE
+
+### Dualité corps-esprit :
+- Corps physique : Enveloppe matérielle (lǧesed), temporaire, vouée à la dégradation.
+- Essence spirituelle : Rruh (âme), part divine, immortelle, retournant à Dieu.
+- Double spirituel : Croyance populaire en un double invisible (lqarin), djinn accompagnant chaque personne, pouvant influencer ses actions.
+
+### Cycle de vie spirituel :
+- Pré-existence : Selon l'islam, les âmes existaient avant la création dans le monde des esprits (εalam larwah).
+- Naissance et incarnation : Rruh (âme) insufflée dans le fœtus au 120e jour de grossesse. Cérémonie du septième jour (ssabε) avec sacrifice et imposition du nom.
+- Vie terrestre : Période d'épreuve et de responsabilité morale. Respect des préceptes religieux et des valeurs communautaires.
+- Mort et passage : Lmut (mort), séparation de l'âme et du corps. Rites funéraires pour accompagner l'âme vers l'au-delà.
+- Ancestralité : Les défunts pieux deviennent ancêtres bienveillants (lejdud), intercédant pour les vivants.
+- Réincarnation : Pas de réincarnation dans l'islam. Attente de la résurrection (laεada) au Jour du Jugement.
+
+### Concept de personne :
+- Définition de la personne : Être humain libre (azegzaw), doté de raison (lεeqel), responsable moralement, membre d'une communauté.
+- Valeurs morales : Nnif (honneur), lehya (pudeur, dignité), laman (confiance, honnêteté), tiregwa (fraternité, solidarité), thiwizi (entraide collective).
+- Honneur familial : Nnif n taddart (honneur de la maison), réputation collective du lignage, défendue par tous les membres. Atteinte à l'honneur (ḥcuma) doit être réparée.
+
+### Sacralité de la nature :
+- Conception de la forêt : Forêt (thighilt) perçue comme lieu habité par les esprits (djinns). Respect et interdictions (ne pas couper certains arbres, ne pas uriner, ne pas parler fort).
+- Bois sacrés : Thizgi n lmurabeṭ (forêts protégées abritant tombeaux de saints), interdiction d'y couper du bois ou d'y chasser. Lieux de pèlerinage et de prière.
+- Arbres sacrés : Olivier (tazemmurt), figuier (tazart), chêne (taččuṭ), arbres centenaires vénérés comme protecteurs, rubans et tissus accrochés pour vœux.
+
+### Animaux totémiques :
+- Lion (izem) : Symbole de courage, force, royauté. Présent dans les prénoms (Izem, Massinissa) et contes.
+- Serpent (aḍeddu) : Ambivalent, protecteur ou dangereux. Certaines familles maraboutiques le considèrent comme gardien.
+- Colombe (thamtut) : Symbole de paix, pureté, messagère céleste.
+
+### Plantes sacrées :
+- Olivier (tazemmurt) : Arbre béni, symbole de paix et prospérité. Huile d'olive utilisée pour lampes et rituels.
+- Figuier (tazart) : Arbre protecteur, fruits offerts aux invités, présence fréquente près des tombeaux.
+- Laurier-rose (ilili) : Plante protectrice contre le mauvais œil, brûlée lors de rituels de purification.
+
+### Harmonie cosmique :
+- Équilibre homme-nature-esprits : Respect de la nature garantit la bienveillance des esprits et la baraka (bénédiction divine). Transgression des interdits attire le malheur.
+- Respect des tabous : Interdictions alimentaires (porc, alcool en islam), comportementales (ne pas pénétrer dans bois sacrés la nuit), linguistiques (ne pas prononcer certains noms d'esprits).
+- Rituels de purification : Bain rituel (lγusal), fumigation au benjoin ou rue (fiǧel), sacrifices expiatoires (asfel), récitation de versets coraniques pour chasser le mal.
+
+## D. RITES ET PRATIQUES SPIRITUELLES
+
+### Rites d'initiation :
+- Initiation masculine : Circoncision (laεadda, tahara), rituel de passage vers l'âge adulte, généralement entre 5 et 10 ans. Fête familiale, dons, repas collectif.
+- Initiation féminine : Pas de rite formel comparable, mais puberté marquée par port du foulard et participation aux tâches féminines. Mariage comme rite de passage majeur.
+- Initiation aux sociétés secrètes : Pas de sociétés secrètes formelles, mais confréries soufies (Rahmaniyya, Qadriyya) avec initiations spirituelles (wird, dhikr).
+- Initiation aux masques : Tradition de masques et costumes lors de fêtes (Yennayer, mariages), mais sans initiation formelle. Personnages masqués (Aïssaoua) dans certains rituels.
+
+### Rites funéraires :
+- Veillée funèbre : Après le décès, lavage rituel du corps (lγusal) par membres du même sexe, enveloppement dans linceul blanc (lkfen). Veillée toute la nuit (tazeggwadt), récitation du Coran.
+- Enterrement : Inhumation rapide (dans les 24h) dans cimetière (lmaqbara), tête orientée vers La Mecque. Prière funéraire (ṣalat lǧenaza) à la mosquée ou au cimetière. Cortège funèbre (ljnaza) accompagne le défunt.
+- Cérémonies post-funéraires : Condoléances (taεzit) pendant trois jours. Repas collectifs offerts aux visiteurs. Commémoration au 3e, 7e et 40e jour, puis anniversaire annuel.
+- Masques funéraires : Pas de masques funéraires dans la tradition islamique kabyle.
+
+### Rites agricoles :
+- Bénédiction des terres : Avant les semailles, prières et invocations pour demander la baraka. Visite aux tombeaux de saints pour solliciter protection des récoltes.
+- Festivals des récoltes : Fête de la moisson (asawen), repas collectifs, chants et danses, offrandes de prémices aux pauvres et mosquées.
+- Offrandes aux esprits de la terre : Sacrifice d'animal (mouton, coq) lors de Yennayer, sang versé sur la terre pour la fertiliser, repas partagé avec les voisins.
+
+### Rites de purification :
+- Bains rituels : Lγusal (ablution majeure) après souillure (menstrues, rapports sexuels, accouchement). Sources thermales (hammams naturels) réputées purificatrices.
+- Fumigation : Brûler du benjoin (ljawi), rue (fiǧel), ou encens pour purifier maison, protéger contre mauvais œil (tiṭ).
+- Exorcisme : Ruqya (exorcisme coranique) par taleb ou imam pour chasser djinns possesseurs. Sacrifices expiatoires (asfel).
+
+### Divination :
+- Méthodes divinatoires : 
+  - Observation des signes (rêves, vol d'oiseaux, comportement animal)
+  - Géomancie (ḍreb rrmel), traçage de figures dans le sable interprétées par devins
+  - Lecture de grains d'orge ou café
+- Consultation des devins : Femmes âgées (tislitin), marabouts (imrabden), taleb (lettrés religieux) consultés pour résoudre problèmes, retrouver objets perdus, guérir maladies.
+- Interprétation des signes : Rêves (tirga) interprétés comme messages divins ou prémonitions. Cauchemars attribués aux djinns.
+
+### Sacrifices et offrandes :
+- Sacrifices d'animaux : 
+  - Aïd el-Adha (lεid lkbir) : sacrifice du mouton en commémoration d'Abraham
+  - Asfel : sacrifice expiatoire (poulet, mouton) pour guérison, protection
+  - Timechret : sacrifice lors construction maison, inauguration, événement important
+- Offrandes alimentaires : Ssedeqa (aumône alimentaire), distribution aux pauvres lors funérailles, naissances, vœux exaucés.
+- Libations : Pas de libations (alcool interdit), mais verse d'eau ou lait sur tombes lors visites pieuses.
+
+### Autres rites majeurs :
+- Yennayer (nouvel an berbère, 12-13 janvier) : Repas copieux (couscous aux sept légumes), rituels agraires, renouveau, souhaits de prospérité.
+- Mariage (lεurs) : Cérémonie complexe sur plusieurs jours (fiançailles, henné, cortège nuptial, consommation, fêtes).
+- Rite de la pluie (Anzar) : En cas de sécheresse, procession avec poupée (taγenja) symbolisant Anzar, dieu de la pluie, chants et aspersions d'eau, survivance pré-islamique.
+
+## E. SYMBOLES, ARTS ET CULTURE MATÉRIELLE
+
+### Symboles :
+- Croix berbère (taqsist / azduž) : Symbole identitaire amazigh, motif géométrique représentant homme libre, quatre directions cardinales, unité.
+- Lettre Yaz (ⵣ) : Symbole du mouvement berbériste, signifie « homme libre » en tifinagh.
+- Olivier : Symbole de paix, enracinement, prospérité, résistance.
+
+### Arts et musique :
+- Sculpture : Poterie traditionnelle féminine (ikufan, plats, jarres décorées), peu de sculpture figurative (islam).
+- Masques : Masques de fêtes (Yennayer, carnavals villageois), personnages comiques ou effrayants (Aïssaoua).
+- Tissage : Tapis et couvertures (aḥenbel, thilħawin), tissés par femmes, motifs géométriques colorés, laine locale.
+- Instruments de musique :
+  - Bendir (tambourin), derbouka (percussion)
+  - Gasba (flûte en roseau)
+  - Mandole kabyle (luth à long manche)
+  - Guitare moderne (depuis 20e siècle)
+- Danses : Danse collective en cercle (ahellil, aḥidus), danses de mariage (lεalwat), danse du foulard (tbal).
+- Chants : 
+  - Isefra (poésie chantée), tradition des troubadours (imusnawen)
+  - Ahellil (chants polyphoniques collectifs)
+  - Chanson kabyle moderne (musique engagée, identitaire)
+- Artistes renommés :
+  - Lounès Matoub (1956-1998), chanteur engagé
+  - Idir (1949-2020), « A Vava Inouva », icône internationale
+  - Ait Menguellet (né 1950), poète chanteur
+  - Slimane Azem (1918-1983), pionnier de la chanson kabyle
+  - Taos Amrouche (1913-1976), première chanteuse kabyle enregistrée
+  - Djur Djura (groupe féminin, années 1980)
+  - Takfarinas (chanteur contemporain)
+
+### Gastronomie :
+- Plats emblématiques :
+  - Couscous (seksu) : plat national, semoule vapeur accompagnée de légumes, viande ou poisson
+  - Couscous berbère (mesfouf) : couscous sucré aux raisins secs et beurre
+  - Aghrum (pain kabyle) : galettes de semoule cuites au four traditionnel (akanun)
+  - Berkukes : gros couscous aux légumes d'hiver
+  - Chorba (soupe) : servie lors du Ramadan
+- Savoir-faire culinaires : 
+  - Huile d'olive artisanale (zzit uzemmur)
+  - Figues sèches (tazart teqqurt)
+  - Fromage de chèvre (aghuglu)
+  - Galettes de semoule (tiremcit)
+- Patrimoine gastronomique : Cuisine méditerranéenne, montagnarde, base de céréales (semoule, orge), légumes, huile d'olive, peu de viande (réservée aux fêtes).
+- Aliments rituels : 
+  - Couscous aux sept légumes (Yennayer)
+  - Mouton sacrificiel (Aïd el-Adha)
+  - Dates et lait (rupture du jeûne Ramadan)
+  - Seffa (couscous sucré) lors naissances et fêtes
+
+## F. SPIRITUALITÉS CONTEMPORAINES
+
+### Christianisme :
+- Pourcentage de la population : Très minoritaire (moins de 1% de la population kabyle). Principalement protestantisme évangélique.
+- Dénominations (catholicisme, protestantisme, évangélisme) : 
+  - Protestantisme évangélique : Églises pentecôtistes, assemblées évangéliques, croissance depuis années 2000.
+  - Catholicisme : Présence historique (missionnaires français), aujourd'hui quasi inexistant en Kabylie.
+- Syncrétisme chrétien-traditionnel : Peu de syncrétisme, conversions individuelles coupant souvent avec traditions. Controverses et tensions avec majorité musulmane.
+
+### Islam :
+- Pourcentage de la population : Majoritaire (environ 98-99% de la population kabyle).
+- Pratiques spécifiques : 
+  - Islam sunnite malékite (école juridique dominante)
+  - Forte influence du soufisme (confréries Rahmaniyya, Qadriyya)
+  - Culte des saints (maraboutisme, ziara)
+  - Célébrations populaires (mawlid, Achoura)
+  - Pratique variable : certains Kabyles très pieux, d'autres plus laïcs (influence française, modernité)
+- Syncrétisme islamique-traditionnel : 
+  - Croyances pré-islamiques intégrées (djinns, esprits de la nature, saints protecteurs)
+  - Rites agraires (Anzar, fêtes des récoltes) coexistent avec islam
+  - Yennayer (nouvel an berbère) célébré malgré non-reconnaissance islamique officielle
+
+### Religions traditionnelles :
+- Persistance des pratiques : 
+  - Survivances de croyances pré-islamiques (culte des sources, arbres sacrés, rite de la pluie Anzar)
+  - Magie populaire (protection contre mauvais œil, amulettes, talismans)
+  - Croyances en esprits de la nature (djinns, larbâa n leǧnun)
+- Gardiens des traditions : Femmes âgées (tislitin), conteus traditionnels (imusnaw), marabouts (imrabden).
+
+### Syncrétisme religieux :
+- Coexistence des pratiques : Islam officiel + croyances populaires berbères + influences soufies = religiosité kabyle composite.
+- Adaptations contemporaines : Revendication d'un « islam kabyle » tolérant, ouvert, distinct du wahhabisme. Débat sur laïcité et identité berbère.
+
+### Résistance culturelle :
+- Transmission aux jeunes générations : 
+  - Enseignement du kabyle à l'école (depuis 1995 en Algérie, optionnel)
+  - Écoles associatives de langue kabyle
+  - Festivals culturels (festival de Yennayer, festivals de musique kabyle)
+  - Littérature kabyle moderne (romans, poésie)
+- Revitalisation culturelle : 
+  - Mouvement Culturel Berbère (MCB), actif depuis 1980
+  - Revendications linguistiques et culturelles (amazighité)
+  - Reconnaissance constitutionnelle de tamazight (2016)
+  - Développement de médias en kabyle (chaînes TV, radios, presse, internet)
+  - Diaspora active dans préservation et diffusion de la culture kabyle
 
 # 6. Rôle historique et interactions régionales
-- Participation majeure aux résistances anti-coloniales (Abdelkader, Mokrani).
-- Centres de réformes culturelles amazighes (mouvement identitaire).
-- Rôle politique dans l’histoire moderne algérienne.
+
+## Royaumes / chefferies :
+- Période numide (IIIe-Ier siècle av. J.-C.) : Tribus kabyles (Maures orientaux) intégrées au royaume numide sous Massinissa et Jugurtha.
+- Période romaine (Ier-Ve siècle ap. J.-C.) : Pas de royaume centralisé kabyle, mais résistances locales (Tacfarinas, Firmus).
+- Royaume hammadide (1007-1152) : Dynastie berbère ayant contrôlé une partie de l'actuelle Kabylie depuis la Qal'a des Beni Hammad.
+- Période ottomane (1515-1830) : Kabylie largement autonome, refus de payer tribut aux Turcs. Confédérations tribales indépendantes (At Iraten, At Yenni).
+- Royaume de Koukou (XVIe-XVIIe siècles) : Principauté berbère kabyle dans la région de Tizi Ouzou, résistance face aux Ottomans.
+- 19e siècle : Confédérations tribales dirigées par assemblées villageoises (tajmat), sans pouvoir monarchique centralisé.
+
+## Relations avec peuples voisins :
+- Relations avec Arabes : 
+  - VIIe-VIIIe siècles : résistance berbère face à la conquête arabe, révoltes kharijites (740-760).
+  - Arabisation linguistique très limitée en Kabylie, maintien du kabyle.
+  - Relations commerciales et matrimoniales avec populations arabophones voisines (Mitidja, Alger, Sétif).
+  - Tensions historiques (politiques coloniales françaises instrumentalisant « mythe kabyle »).
+  - Cohabitation pacifique majoritaire, mariages mixtes, bilinguisme.
+- Relations avec Turcs ottomans (XVIe-XIXe siècles) : 
+  - Kabylie jamais totalement soumise aux Ottomans.
+  - Expéditions militaires ottomanes repoussées (1520, 1609, 1758).
+  - Autonomie politique et fiscale préservée.
+- Relations avec Français (XIXe-XXe siècles) : 
+  - Résistance acharnée à la conquête française (1857, bataille d'Icheriden).
+  - Insurrection de 1871 (El Mokrani, cheikh El Haddad), répression violente.
+  - Colonisation intensive, dépossession foncière, émigration forcée.
+  - Participation massive à la guerre d'indépendance (1954-1962).
+- Relations avec peuples berbères voisins (Chaouis, Mozabites, Touaregs, Rifains) : 
+  - Conscience d'appartenance commune amazighe.
+  - Solidarité pan-berbère (Congrès Mondial Amazigh).
+  - Échanges culturels et linguistiques.
+
+## Conflits / alliances :
+- 740-760 : Révolte kharijite berbère contre califat omeyyade (alliance berbères du Maghreb).
+- 1857 : Bataille d'Icheriden, défaite kabyle face à l'armée française (maréchal Randon).
+- 1871 : Grande Révolte kabyle (El Mokrani, cheikh El Haddad), répression sanglante, déportations, séquestres de terres.
+- 1954-1962 : Guerre d'indépendance algérienne, participation massive des Kabyles au FLN et à l'ALN. Wilaya III (Kabylie) zone de combat intense.
+- 1963 : Crise berbériste, opposition du FFS (Front des Forces Socialistes, Hocine Aït Ahmed) au régime d'Ahmed Ben Bella.
+- 1980 : Printemps berbère, répression des revendications linguistiques et culturelles.
+- 2001 : Printemps noir, répression violente de manifestations en Kabylie (126 morts), naissance du Mouvement des Aarchs.
+
+## Diaspora :
+- France : 
+  - Principale destination migratoire (dès 1905, intensification après 1945).
+  - Estimation : 1 à 2 millions de Kabyles en France (Paris, Lyon, Marseille, Lille).
+  - Communauté organisée (associations culturelles, mosquées, écoles de langue).
+  - Rôle majeur dans préservation et diffusion de la culture kabyle.
+- Canada : 
+  - Émigration depuis années 1960, principalement Québec (Montréal).
+  - Estimation : 50 000 à 100 000 Kabyles au Canada.
+  - Intégration forte, maintien de la langue et culture.
+- Belgique : 
+  - Communauté kabyle significative (Bruxelles, Anvers).
+  - Estimation : 50 000 à 80 000.
+- Autres pays : Suisse, Allemagne, Royaume-Uni, États-Unis, Espagne.
+- Rôle de la diaspora : 
+  - Soutien financier aux familles (envois de fonds).
+  - Militantisme culturel et politique (MCB, MAK).
+  - Diffusion de la musique, littérature, langue kabyles.
+  - Lobbying pour reconnaissance des droits amazighs.
 
 # 7. Démographie globale
-- Population totale : 10 000 000
-- Répartition : Algérie (principal), diaspora
+- Population totale (tous pays) : 10 000 000 (estimation)
+- Répartition par pays :
+  - Algérie : 7 000 000 à 8 000 000 (15-20% de la population algérienne)
+    * Wilaya de Tizi Ouzou : 1 300 000
+    * Wilaya de Béjaïa : 1 000 000
+    * Wilaya de Bouira : 750 000
+    * Wilaya de Jijel : 650 000 (Petite Kabylie)
+    * Wilaya de Sétif (partie kabyle) : 300 000
+    * Alger et autres villes : 3 000 000 (migration interne)
+  - France : 1 500 000 à 2 000 000 (diaspora)
+  - Canada : 80 000 à 100 000
+  - Belgique : 60 000 à 80 000
+  - Autres pays : 100 000 à 150 000
 - Année de référence : 2025
-- Source : peuple_demographie_globale.csv
+- Source : Estimations basées sur Ethnologue (SIL International, 2024), CIA World Factbook, ONS Algérie (projections 2025), UNFPA Algérie, travaux de Salem Chaker (INALCO), peuple_demographie_globale.csv
+
+Note : Les chiffres exacts sont difficiles à obtenir car l'Algérie ne distingue pas officiellement les groupes ethnolinguistiques dans ses recensements. Les estimations reposent sur le nombre de locuteurs du kabyle.
 
 # 8. Sources
-- CNRS Berbères
-- Ethnologue (kab)
-- travaux de Salem Chaker
+- Chaker, Salem. *Berbères aujourd'hui*. Paris : L'Harmattan, 1995.
+- Chaker, Salem. *Linguistique berbère : Études de syntaxe et de diachronie*. Paris : Peeters Publishers, 1995.
+- Camps, Gabriel. *Les Berbères : Mémoire et identité*. Paris : Éditions Errance, 1987.
+- Camps, Gabriel. *Encyclopédie berbère*. Aix-en-Provence : Édisud / CNRS, 1984-2010. https://journals.openedition.org/encyclopedieberbere/
+- Lacoste-Dujardin, Camille. *Opération « Oiseau bleu » : Des Kabyles, des ethnologues et la guerre d'Algérie*. Paris : La Découverte, 1997.
+- Lacoste-Dujardin, Camille. *Mythes et croyances kabyles*. Paris : Éditions La Découverte, 2005.
+- Bourdieu, Pierre. *Sociologie de l'Algérie*. Paris : PUF, 1958 (rééditions).
+- Hanoteau, Adolphe & Letourneux, Aristide. *La Kabylie et les coutumes kabyles* (3 volumes). Paris, 1872-1873. BNF Gallica / Archive.org.
+- Dallet, Jean-Marie. *Dictionnaire kabyle-français*. Paris : SELAF, 1982.
+- Haddadou, Mohand Akli. *Les Berbères célèbres*. Alger : ENAG Éditions, 2003.
+- Meynier, Gilbert. *L'Algérie révélée : la guerre de 1914-1918 et le premier quart du XXe siècle*. Genève : Droz, 1981.
+- Ageron, Charles-Robert. *Les Algériens musulmans et la France (1871-1919)*. Paris : PUF, 1968.
+- Harbi, Mohamed. *Le FLN, mirage et réalité*. Paris : Jeune Afrique, 1980.
+- Stora, Benjamin. *La gangrène et l'oubli : la mémoire de la guerre d'Algérie*. Paris : La Découverte, 1991.
+- Ethnologue (SIL International). "Kabyle [kab]". https://www.ethnologue.com/language/kab (consulté en 2024).
+- Glottolog. "Kabyle [kaby1243]". https://glottolog.org/resource/languoid/id/kaby1243
+- UNESCO. *Atlas of the World's Languages in Danger*. "Kabyle". https://en.unesco.org/
+- CIA World Factbook. "Algeria". https://www.cia.gov/the-world-factbook/countries/algeria/
+- Office National des Statistiques (ONS), Algérie. Recensement général de la population et de l'habitat (RGPH 2008), projections 2025. https://www.ons.dz/
+- UNFPA Algérie. Données démographiques 2025. https://algeria.unfpa.org/
+- Brett, Michael & Fentress, Elizabeth. *The Berbers: The Peoples of Africa*. Oxford : Wiley-Blackwell, 1997.
+- Gellner, Ernest. *Saints of the Atlas*. Londres : Weidenfeld & Nicolson, 1969.
+- Mahfoufi, Mehenna. *Chants kabyles de la guerre d'indépendance : Algérie 1954-1962*. Paris : Séguier, 2002.
+- Yacine, Tassadit. *Aït Menguellet chante*. Paris : La Découverte / Awal, 1989.
+- Sayad, Abdelmalek. *La double absence : des illusions de l'émigré aux souffrances de l'immigré*. Paris : Seuil, 1999.
+

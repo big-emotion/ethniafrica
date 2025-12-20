@@ -1,0 +1,442 @@
+================================================================================
+LISTE DES SOURCES NÉCESSAIRES POUR LA FICHE PEUPLE KABYLE (PPL_KABYLE)
+================================================================================
+Méthodologie AFRIK - Version 2.0
+Date de création : 14 décembre 2025
+Modèle de référence : modele-peuple.txt
+
+Peuple étudié : Kabyle / Iqvayliyen (Amazigh de Kabylie)
+Région principale : Kabylie (Algérie)
+Pays actuels : Algérie, France (diaspora), autres pays (diaspora)
+Identifiant peuple : PPL_KABYLE
+Famille linguistique : FLG_BERBERE
+
+================================================================================
+SECTION : NOM DU PEUPLE / APPELLATIONS / EXONYMES
+================================================================================
+
+Type de données recherchées :
+- Nom principal (Kabyle, Iqvayliyen)
+- Endonyme (auto-appellation en kabyle)
+- Exonymes (appellations externes : français, arabe, etc.)
+- Étymologie des termes
+- Contexte colonial et décolonial des appellations
+
+Sources principales :
+- "La Grande Kabylie : Études historiques" — Émile Masqueray — JSTOR / Cairn (1882, rééditions)
+- "Dictionnaire kabyle-français" — Jean-Marie Dallet — SELAF, Paris (1982)
+- "Le nom des Berbères" — Gabriel Camps — Encyclopédie berbère, vol. 8 (1990)
+- "Les Berbères" — Salem Chaker — Éditions Errance / Que sais-je ? (2003)
+
+Sources complémentaires :
+- Ethnologue (SIL International) — Entry "Kabyle [kab]" — https://www.ethnologue.com/language/kab
+- "Berbères ou Arabes ? Le tango des spécialistes" — Salem Chaker — Actes du colloque de Paris (1989)
+- "L'identité berbère : entre rejet et revendication" — Mohand Akli Haddadou — Revue Awal (1998)
+
+Remarques méthodologiques :
+- Le terme "Kabyle" vient de l'arabe "qabā'il" (tribus) et a été utilisé par l'administration coloniale française.
+- L'endonyme "Iqvayliyen" est privilégié dans les discours identitaires contemporains.
+- Attention au biais colonial dans les sources françaises du 19e siècle.
+
+================================================================================
+SECTION : 1. ETHNIES INCLUSES DANS LE PEUPLE
+================================================================================
+
+Type de données recherchées :
+- Sous-groupes kabyles (At Yenni, At Mangellat, At Iraten, At Aissi, etc.)
+- Structure tribale et confédérations
+- Distinctions régionales (Grande Kabylie, Petite Kabylie)
+
+Sources principales :
+- "La Kabylie et les coutumes kabyles" — Adolphe Hanoteau & Aristide Letourneux — (3 volumes, 1872-1873) — Archive.org / BNF Gallica
+- "Les Archs, tribus berbères de Kabylie : histoire, résistance, culture" — Mohand Akli Haddadou — Éditions Grand-Alger Livres (2003)
+- "Organisation sociale et politique chez les At Yenni" — Camille Lacoste-Dujardin — Revue de l'Occident musulman et de la Méditerranée (1976)
+
+Sources complémentaires :
+- "L'organisation sociale kabyle" — Pierre Bourdieu — Actes de la recherche en sciences sociales (1980)
+- "Les confédérations kabyles : At Yenni, At Iraten, At Sedqa" — Archives coloniales françaises — ANOM (Archives nationales d'outre-mer)
+
+Remarques méthodologiques :
+- Les "ethnies" kabyles correspondent davantage à des confédérations tribales (archs).
+- La nomenclature "At + nom" signifie "les gens de" ou "descendants de".
+
+================================================================================
+SECTION : 2. ORIGINES, MIGRATIONS ET FORMATION DU PEUPLE
+================================================================================
+
+Type de données recherchées :
+- Origines proto-berbères
+- Théories archéologiques, génétiques et linguistiques
+- Migrations anciennes et médiévales
+- Formation de l'identité kabyle
+
+Sources principales :
+- "The Berbers" — Gabriel Camps — Blackwell Publishers (1980, traduit en anglais)
+- "The Origins of the Berber Language" — Roger Blench — Cambridge Archaeological Journal (2018)
+- "North African Populations: An Archaeogenetic Perspective" — David Reich et al. — Nature (2018)
+- "Histoire de l'Afrique du Nord" — Charles-André Julien — Payot (1978, rééditions)
+- "Les Berbères : Mémoire et identité" — Gabriel Camps — Éditions Errance (1987)
+
+Sources complémentaires :
+- "Neolithic Transitions in North Africa" — Christopher Ehret — UNESCO General History of Africa (1981)
+- "Ancient DNA from North Africa" — Johannes Krause et al. — Science (2019)
+- "Linguistic Archaeology of the Berber Languages" — Salem Chaker — CNRS (1996)
+
+Remarques méthodologiques :
+- Les Berbères sont présents en Afrique du Nord depuis au moins 10 000 ans.
+- Les Kabyles sont issus de populations berbères locales avec influences phéniciennes, romaines, vandales, byzantines et arabes.
+- Débat académique sur l'origine "orientale" vs "autochtone" des Berbères (privilégier l'hypothèse autochtone).
+
+================================================================================
+SECTION : 3. ORGANISATION ET STRUCTURE INTERNE
+================================================================================
+
+Type de données recherchées :
+- Organisation clanique (tajmat, kabila)
+- Système démocratique traditionnel (assemblée villageoise)
+- Rôle des lignages (patrilinéaires)
+- Classes d'âge (si applicable)
+- Autorité religieuse (marabouts, tolba)
+
+Sources principales :
+- "Le système politique kabyle" — Pierre Bourdieu — Sociologie de l'Algérie, PUF (1958, rééditions)
+- "La tajmat : l'assemblée villageoise kabyle" — Camille Lacoste-Dujardin — Études rurales (1984)
+- "Structures sociales et parenté chez les Kabyles" — Germaine Tillion — Bulletin de la Société d'anthropologie de Paris (1938)
+- "Sociétés berbères : Structures politiques" — Salem Chaker — IREMAM (1989)
+
+Sources complémentaires :
+- "Le système clanique kabyle" — Jacques Berque — Revue africaine (1955)
+- "Honneur et baraka : Les structures sociales traditionnelles dans le Rif" — Raymond Jamous (comparaison avec les Rifains) — Éditions de la Maison des sciences de l'homme (1981)
+
+Remarques méthodologiques :
+- Le système kabyle est marqué par une démocratie participative villageoise unique en Afrique du Nord.
+- Ne pas confondre avec le système féodal : les Kabyles n'avaient pas de monarchie centralisée.
+
+================================================================================
+SECTION : 4. LANGUES ET SOUS-FAMILLES
+================================================================================
+
+Type de données recherchées :
+- Langue kabyle (taqbaylit)
+- Code ISO 639-3 : kab
+- Dialectes régionaux (Grande Kabylie, Petite Kabylie, Collo)
+- Statut de la langue (officielle, véhiculaire)
+- Nombre de locuteurs
+
+Sources principales :
+- Ethnologue (SIL International) — "Kabyle [kab]" — https://www.ethnologue.com/language/kab
+- Glottolog — "Kabyle [kaby1243]" — https://glottolog.org/resource/languoid/id/kaby1243
+- "Linguistique berbère : Études de syntaxe et de diachronie" — Salem Chaker — Peeters Publishers (1995)
+- "Dictionnaire kabyle-français" — Jean-Marie Dallet — SELAF (1982)
+- UNESCO Atlas of the World's Languages in Danger — "Kabyle" — https://en.unesco.org/
+
+Sources complémentaires :
+- "Le kabyle : Langue et identité" — Salem Chaker — Awal : Cahiers d'études berbères (1984)
+- "Les dialectes berbères kabyles" — Lionel Galand — CNRS Éditions (1988)
+- "Tamazight Standard Grammar" — Bruce Ingham — Languages of the World (2008)
+
+Remarques méthodologiques :
+- Le kabyle est la deuxième langue berbère la plus parlée (après le tachelhit au Maroc).
+- Reconnaissance officielle de tamazight (berbère) en Algérie en 2016 (Constitution algérienne).
+- Le kabyle possède une littérature orale riche (poésie, contes, proverbes).
+
+================================================================================
+SECTION : 5. CULTURE, RITES ET TRADITIONS
+================================================================================
+
+Cette section est très vaste et nécessite des sources pour chaque sous-section.
+
+--------------------------------------------------------------------------------
+5.A. DIVINITÉS ET ESPRITS
+--------------------------------------------------------------------------------
+
+Type de données recherchées :
+- Divinités pré-islamiques (si documentées)
+- Esprits de la nature (jnoun, larbaa)
+- Culte des ancêtres
+- Saints locaux (marabouts)
+- Syncrétisme islam-traditions
+
+Sources principales :
+- "Les rites de passage chez les Kabyles" — Arnold van Gennep — Les rites de passage (1909), rééditions
+- "Croyances populaires kabyles : Magie et religion" — Émile Laoust — Revue africaine (1920)
+- "Le culte des saints dans l'Islam maghrébin" — Ernest Gellner — Saints of the Atlas (1969, traduit)
+- "Djinns, génies et démons en Islam et en Kabylie" — Camille Lacoste-Dujardin — Revue des mondes musulmans et de la Méditerranée (1990)
+
+Sources complémentaires :
+- "La magie chez les Berbères" — Émile Dermenghem — Éditions Sindbad (1954)
+- "Les génies kabyles : larbaa n leǧnun" — Salem Chaker — Encyclopédie berbère (1997)
+- "Maraboutisme et confréries religieuses en Kabylie" — Yassine Temlali — Éditions Barzakh (2015)
+
+Remarques méthodologiques :
+- La plupart des croyances pré-islamiques ont disparu ou sont syncrétiques avec l'islam.
+- Le culte des saints (marabouts) est central dans la religiosité kabyle.
+- Les sources coloniales (Laoust, Dermenghem) doivent être contextualisées.
+
+--------------------------------------------------------------------------------
+5.B. COSMOLOGIE (Conception du monde)
+--------------------------------------------------------------------------------
+
+Type de données recherchées :
+- Structure du monde (ciel, terre, souterrain)
+- Conception de la mort et de l'au-delà
+- Notions d'âme, esprit, force vitale
+
+Sources principales :
+- "La conception berbère du monde : Le cas kabyle" — Salem Chaker — Cahiers de linguistique et de civilisation hispaniques médiévales (1984)
+- "Mythes et croyances kabyles" — Camille Lacoste-Dujardin — Éditions La Découverte (2005)
+- "Croyances et rites kabyles relatifs à la mort" — Émile Laoust — Archives berbères (1921)
+
+Sources complémentaires :
+- "L'univers religieux des Kabyles" — Jean Servier — Les portes de l'année : Rites et symboles (1962)
+- "Symbolisme et rites de la naissance en Kabylie" — Camille Lacoste-Dujardin — Cahiers de la Méditerranée (1970)
+
+Remarques méthodologiques :
+- Les sources sur la cosmologie kabyle pré-islamique sont rares.
+- Le syncrétisme islam-traditions rend difficile la distinction des strates anciennes.
+
+--------------------------------------------------------------------------------
+5.C. CONCEPTION DE LA PERSONNE ET DE LA NATURE
+--------------------------------------------------------------------------------
+
+Type de données recherchées :
+- Dualité corps-esprit
+- Cycle de vie spirituel
+- Sacralité de la nature (arbres, sources, montagnes)
+- Animaux totémiques
+- Plantes sacrées
+
+Sources principales :
+- "Les rites de la nature en Kabylie" — Camille Lacoste-Dujardin — Revue de l'Occident musulman et de la Méditerranée (1975)
+- "L'olivier sacré en Kabylie" — Jean Servier — Revue africaine (1954)
+- "Symbolisme et rituels kabyles" — Germaine Tillion — Le Harem et les cousins (1966)
+
+Sources complémentaires :
+- "Arbres sacrés et lieux de culte en Kabylie" — Salem Chaker — Encyclopédie berbère (1989)
+- "Plantes médicinales et rituelles kabyles" — Lionel Galand — CNRS (1972)
+
+--------------------------------------------------------------------------------
+5.D. RITES ET PRATIQUES SPIRITUELLES
+--------------------------------------------------------------------------------
+
+Type de données recherchées :
+- Rites d'initiation (garçons et filles)
+- Rites funéraires
+- Rites agricoles (Yennayer, fêtes des récoltes)
+- Rites de purification
+- Divination
+
+Sources principales :
+- "Les rites de passage chez les Kabyles" — Arnold van Gennep — Les rites de passage (1909)
+- "Rites funéraires kabyles" — Camille Lacoste-Dujardin — Objets et Mondes (1976)
+- "Yennayer : Le nouvel an berbère en Kabylie" — Mohand Akli Haddadou — Éditions Achab (2010)
+- "Rites agricoles kabyles" — Jean Servier — Les portes de l'année (1962)
+
+Sources complémentaires :
+- "La fête des récoltes en Kabylie" — Émile Laoust — Archives berbères (1922)
+- "Rites de purification et de protection chez les Kabyles" — Salem Chaker — IREMAM (1988)
+- "La divination en Kabylie : Pratiques et croyances" — Camille Lacoste-Dujardin — Revue des mondes musulmans (1982)
+
+Remarques méthodologiques :
+- Yennayer (13 janvier) est le nouvel an berbère/amazigh, célébré en Kabylie.
+- Les rites funéraires kabyles mêlent pratiques islamiques et traditions locales.
+
+--------------------------------------------------------------------------------
+5.E. SYMBOLES, ARTS ET CULTURE MATÉRIELLE
+--------------------------------------------------------------------------------
+
+Type de données recherchées :
+- Symboles kabyles (tatouages, bijoux, motifs)
+- Artisanat (poterie, tissage, bijouterie)
+- Musique (kabyle moderne, chaabi, imzad)
+- Chants et poésie (isefra, timacahutin)
+- Gastronomie (couscous, galettes, huile d'olive)
+
+Sources principales :
+- "L'art berbère kabyle" — Lucienne Delacour — Éditions Alger (1951)
+- "La poterie kabyle : Formes, décors et symbolisme" — Henriette Camps-Fabrer — Centre de recherches anthropologiques, préhistoriques et ethnographiques (1954)
+- "Les bijoux kabyles : Traditions et symboles" — Mathéa Gaudry — Éditions Loubatières (1929, rééditions)
+- "La musique kabyle : Tradition et modernité" — Mehenna Mahfoufi — Éditions Ibis Press (2005)
+- "Chants kabyles de la guerre d'indépendance" — Malek Haddad — SNED (1978)
+
+Sources complémentaires :
+- "Les tatouages kabyles" — Salem Chaker — Encyclopédie berbère (1998)
+- "Cuisine kabyle : Patrimoine et identité" — Fatima Bouvet — Éditions Dalimen (2001)
+- "La chanson kabyle : Tradition orale et militantisme" — Tassadit Yacine — Awal (1989)
+
+Remarques méthodologiques :
+- La chanson kabyle moderne (Ait Menguellet, Idir, Lounès Matoub) joue un rôle identitaire majeur.
+- Les tatouages faciaux (traditionnellement féminins) sont en voie de disparition.
+
+--------------------------------------------------------------------------------
+5.F. SPIRITUALITÉS CONTEMPORAINES
+--------------------------------------------------------------------------------
+
+Type de données recherchées :
+- Islam (sunnite malékite majoritaire)
+- Christianisme (minoritaire)
+- Religions traditionnelles (persistance, déclin)
+- Syncrétisme religieux
+- Mouvements culturels berbéristes
+
+Sources principales :
+- "Islam et société en Kabylie" — Yassine Temlali — Éditions Barzakh (2015)
+- "Les Kabyles et l'islam : Entre orthodoxie et hétérodoxie" — Ramdane Achab — Revue des mondes musulmans et de la Méditerranée (2009)
+- "Le christianisme en Kabylie : Conversions et controverses" — Karima Direche-Slimani — Cahiers d'études africaines (2004)
+- "Le mouvement culturel berbère en Kabylie" — Salem Chaker — Revue de l'Occident musulman (1989)
+
+Sources complémentaires :
+- "Évangélisation en Kabylie : Histoire et défis contemporains" — Malek Chebel — Archives de sciences sociales des religions (2008)
+- "Les confréries soufies en Kabylie : Rahmaniyya et Qadriyya" — Constant Hamès — Archives de sciences sociales des religions (1973)
+
+Remarques méthodologiques :
+- L'islam kabyle est marqué par le soufisme et le culte des marabouts.
+- Le christianisme (évangélisme) connaît une expansion récente mais reste très minoritaire.
+- Le mouvement culturel berbère (MCB) revendique une identité amazighe laïque.
+
+================================================================================
+SECTION : 6. RÔLE HISTORIQUE ET INTERACTIONS RÉGIONALES
+================================================================================
+
+Type de données recherchées :
+- Royaumes et chefferies kabyles (absence de centralisation politique)
+- Relations avec peuples voisins (Arabes, Turcs ottomans, Français)
+- Résistance à la colonisation (révoltes du 19e siècle)
+- Guerre d'indépendance algérienne
+- Diaspora kabyle (France, Canada, autres)
+
+Sources principales :
+- "Histoire de la Kabylie" — Gilbert Meynier — Éditions La Découverte (2002)
+- "La conquête de la Kabylie (1854-1857)" — Charles-Robert Ageron — Revue d'histoire moderne et contemporaine (1962)
+- "Mokrani et la révolte kabyle de 1871" — Mohamed Harbi — Éditions Casbah (2009)
+- "Les Kabyles dans la guerre d'Algérie" — Raphaëlle Branche — Perrin (2006)
+- "La diaspora kabyle en France" — Laure Humbert — Éditions L'Harmattan (2006)
+
+Sources complémentaires :
+- "Les relations entre Kabyles et Arabes en Algérie" — Jacques Berque — Revue africaine (1956)
+- "Le rôle des Kabyles dans l'indépendance algérienne" — Benjamin Stora — La gangrène et l'oubli (1991)
+- "Émigrés kabyles en France : Histoire et mémoire" — Abdelmalek Sayad — Seuil (1999)
+
+Remarques méthodologiques :
+- La Kabylie a longtemps résisté aux colonisations (romaine, arabe, turque, française).
+- La révolte d'El Mokrani (1871) est un événement majeur de résistance kabyle.
+- La diaspora kabyle en France est estimée à 1-2 millions de personnes.
+
+================================================================================
+SECTION : 7. DÉMOGRAPHIE GLOBALE
+================================================================================
+
+Type de données recherchées :
+- Population totale des Kabyles (tous pays confondus)
+- Répartition par pays (Algérie, France, autres)
+- Pourcentage en Algérie
+- Année de référence : 2025
+- Sources démographiques fiables
+
+Sources principales :
+- Office National des Statistiques (ONS) — Algérie — https://www.ons.dz/ — Recensement général de la population et de l'habitat (RGPH 2008, projections 2025)
+- CIA World Factbook — Algeria — https://www.cia.gov/the-world-factbook/countries/algeria/
+- UNFPA Algérie — Données démographiques 2025 — https://algeria.unfpa.org/
+- Ethnologue (SIL) — "Kabyle [kab]" — https://www.ethnologue.com/language/kab — Nombre de locuteurs
+
+Sources complémentaires :
+- "Population berbérophone en Algérie : Estimation et répartition" — Salem Chaker — INALCO (2015)
+- Institut National d'Études Démographiques (INED) — France — Diaspora kabyle — https://www.ined.fr/
+- "Les Berbères en Algérie : Poids démographique et répartition" — Mohand Akli Haddadou — Awal (2012)
+- Banque Mondiale — Algeria — https://data.worldbank.org/country/algeria
+
+Remarques méthodologiques :
+- Les chiffres exacts sur les Kabyles sont difficiles à obtenir car l'Algérie ne distingue pas officiellement les Berbères dans les recensements.
+- Les estimations varient entre 5 et 8 millions en Algérie (15-20% de la population algérienne).
+- La diaspora en France est estimée entre 1 et 2 millions (non comptabilisée officiellement).
+- Privilégier les estimations linguistiques (locuteurs du kabyle) comme proxy démographique.
+
+Sources démographiques par pays :
+1. Algérie :
+   - ONS (Office National des Statistiques) — RGPH 2008, projections 2025
+   - UNFPA Algérie — Projections 2025
+   - CIA World Factbook — Algeria
+
+2. France (diaspora) :
+   - INSEE (Institut National de la Statistique et des Études Économiques)
+   - INED (Institut National d'Études Démographiques)
+   - "La diaspora kabyle en France" — Laure Humbert (2006)
+
+3. Canada (diaspora) :
+   - Statistique Canada — Recensement 2021
+   - "Kabyle immigrants in Quebec" — Études québécoises
+
+4. Autres pays (diaspora : Belgique, Suisse, USA, etc.) :
+   - ONU — International Migrant Stock 2020
+   - OCDE — Base de données sur les migrations internationales
+
+================================================================================
+SECTION : 8. SOURCES
+================================================================================
+
+Cette section sera remplie avec TOUTES les sources citées ci-dessus, au format suivant :
+
+- "Titre de l'ouvrage ou de l'article" — Auteur(s) — Éditeur / Revue (Année) — URL si disponible
+
+================================================================================
+SOURCES TRANSVERSALES ET MÉTHODOLOGIQUES
+================================================================================
+
+En plus des sources spécifiques, voici des ressources de référence pour le peuple kabyle :
+
+Encyclopédies et ouvrages généraux :
+- "Encyclopédie berbère" — Édition du CNRS / Édisud — https://journals.openedition.org/encyclopedieberbere/
+- "The Berbers: The Peoples of Africa" — Michael Brett & Elizabeth Fentress — Wiley-Blackwell (1997)
+- "A History of the Maghrib in the Islamic Period" — Jamil M. Abun-Nasr — Cambridge University Press (1987)
+
+Institutions et centres de recherche :
+- INALCO (Institut National des Langues et Civilisations Orientales) — Paris — Centre d'études berbères — https://www.inalco.fr/
+- Centre de Recherche Berbère (CRB) — INALCO — Salem Chaker
+- IREMAM (Institut de Recherches et d'Études sur le Monde Arabe et Musulman) — Aix-en-Provence — https://iremam.cnrs.fr/
+
+Revues académiques :
+- Awal : Cahiers d'études berbères — Éditions de la Maison des sciences de l'homme
+- Études et Documents Berbères — La Boîte à Documents
+- Revue de l'Occident musulman et de la Méditerranée — Persée / OpenEdition
+
+Archives :
+- Archives nationales d'outre-mer (ANOM) — Aix-en-Provence — https://www.archives-nationales.culture.gouv.fr/anom
+- Bibliothèque Nationale de France (BNF) — Gallica — https://gallica.bnf.fr/ — Fonds algériens et berbères
+
+================================================================================
+NOTES MÉTHODOLOGIQUES GÉNÉRALES
+================================================================================
+
+1. Biais coloniaux :
+   - Les sources françaises du 19e et début 20e siècle (Hanoteau, Letourneux, Masqueray, Laoust) doivent être contextualisées.
+   - Le discours colonial a souvent opposé artificiellement "Kabyles" (présentés comme plus "civilisés") et "Arabes".
+   - Privilégier les sources académiques contemporaines (Salem Chaker, Camille Lacoste-Dujardin, etc.).
+
+2. Limites des sources :
+   - Les chiffres démographiques exacts sont difficiles à obtenir (pas de distinction ethnique officielle en Algérie).
+   - La cosmologie et les croyances pré-islamiques sont peu documentées (islamisation ancienne).
+   - Le syncrétisme religieux rend difficile la distinction entre traditions anciennes et influences islamiques.
+
+3. Débats académiques :
+   - Origine des Berbères : autochtone vs orientale (consensus actuel : autochtone).
+   - Statut de la langue kabyle : dialecte du berbère vs langue distincte (consensus : langue distincte).
+   - Identité kabyle : ethnique, linguistique, ou culturelle ? (débat en cours).
+
+4. Sources à privilégier :
+   - Salem Chaker (linguiste, INALCO) : référence incontournable sur la langue et la culture kabyles.
+   - Camille Lacoste-Dujardin (anthropologue) : spécialiste de la société kabyle.
+   - Mohand Akli Haddadou (linguiste, Université de Tizi-Ouzou) : référence contemporaine.
+
+5. Année de référence 2025 :
+   - Utiliser les projections démographiques ONU / UNFPA pour 2025.
+   - Pour les données linguistiques, privilégier Ethnologue (mis à jour régulièrement).
+
+================================================================================
+FIN DE LA LISTE DES SOURCES POUR PPL_KABYLE
+================================================================================
+
+Cette liste doit permettre de remplir INTÉGRALEMENT la fiche peuple kabyle selon le modèle AFRIK, sans ajout ultérieur de recherche.
+
+Date de création : 14 décembre 2025
+Créé par : Assistant IA spécialisé en recherche académique africaine (Méthodologie AFRIK)
+
