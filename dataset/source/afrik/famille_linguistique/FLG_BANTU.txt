@@ -8,19 +8,38 @@
 - Appellation(s) historique(s) :
   « Langues bantoues » ; « Bantou » (souvent détourné en « race bantoue » dans les systèmes coloniaux du XIXᵉ siècle).
 - Origine du terme historique :
-  Le terme « bantou » vient de la racine proto-Bantu *ba-ntu* (« les gens »).  
-  Les linguistes l’ont adopté scientifiquement au début du XXᵉ siècle pour désigner un sous-groupe du Niger-Congo.  
-  Mais les administrateurs coloniaux l’ont transformé en catégorie raciale (« race bantoue »).
-- Pourquoi le terme pose problème :
-  - À l’époque coloniale, « Bantou » fut utilisé pour créer des hiérarchies raciales : la « race bantoue » opposée à la « race nilotique » ou « khoïsan ».  
-  - Il a été utilisé pour justifier des politiques ségrégationnistes (Afrique du Sud, Namibie, Afrique orientale).  
-  → Aujourd’hui, **“bantou” est strictement linguistique**, pas racial.
+  Le terme « bantou » a été créé par le philologue et linguiste allemand **Wilhelm Heinrich Immanuel Bleek** (1827-1875) en **1862** dans son ouvrage *A Comparative Grammar of South African Languages* (Cape Town : Saul Solomon, 1862). Bleek a observé que de nombreuses langues africaines partageaient des éléments syntaxiques suggérant une origine commune. Il a choisi le terme « Bantu » car ce mot signifie « gens » ou « personnes » dans plusieurs de ces langues, dérivé de la racine proto-Bantu *ba-ntu* où *ba-* est le préfixe de classe nominale pour le pluriel et *-ntu* signifie « personne » ou « être humain ». Le terme a été popularisé par **Carl Meinhof** dans *Grundzüge einer vergleichenden Grammatik der Bantusprachen* (1906) et par **Harry Hamilton Johnston** dans *A Comparative Study of the Bantu and Semi-Bantu Languages* (1919).
+- Pourquoi le terme pose problème (si applicable) :
+  **Auteurs coloniaux problématiques :**
+  - **Carl Meinhof** (1857-1944) : Linguiste allemand dont les travaux, bien que pionniers, reflétaient des perspectives coloniales et eurocentriques. Il a contribué à établir une hiérarchie linguistique qui servait les intérêts coloniaux.
+  - **Harry Hamilton Johnston** (1858-1927) : Administrateur colonial britannique et linguiste qui a utilisé le terme « bantou » dans un contexte de classification raciale, contribuant à la création de catégories hiérarchiques entre populations africaines.
+  - **Placide Tempels** (1906-1977) : Missionnaire belge qui, dans *La philosophie bantoue* (1945), a présenté une vision occidentale et paternaliste des cultures africaines, essentialisant les peuples sous le terme « bantou ».
+  - En Afrique du Sud, le gouvernement de l'apartheid a utilisé le terme « Bantu » pour désigner les populations noires, créant des catégories légales discriminatoires (« Bantu Education Act » de 1953).
+  
+  **Auteurs locaux qui ont défendu l'africanité :**
+  - Des intellectuels africains ont critiqué cette terminologie, arguant qu'elle ne reflète pas adéquatement la diversité et la richesse des langues africaines. Ils ont souligné l'importance de reconnaître les dénominations endogènes et les classifications locales.
+  - Le concept d'**Ubuntu** (formé du préfixe *ubu-* « substantif abstrait » et du radical *-ntu* « être humain ») a été mis en avant par des penseurs africains pour défendre l'humanité et la solidarité inhérentes aux cultures africaines, remettant en question les classifications imposées par les colonisateurs.
+  
+  **Études génétiques modernes :**
+  - Des études génétiques contemporaines (ex. : Berniell-Lee et al., 2009) ont montré que les populations parlant ces langues sont génétiquement diverses, remettant en question l'homogénéité supposée par le terme « bantou ». Ces études révèlent la complexité des migrations et des interactions entre les peuples africains, invalidant les catégorisations simplistes de l'époque coloniale.
+  - Les analyses génétiques modernes montrent que les populations dites « bantoues » présentent une diversité génétique importante, avec des contributions variées de différentes populations africaines, remettant en question le concept de « race bantoue ».
+  
+  → Aujourd'hui, **« bantou » est strictement linguistique**, pas racial. Le terme est utilisé uniquement pour désigner une famille linguistique au sein du Niger-Congo, sans aucune connotation raciale ou ethnique.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Bantu languages / Langues bantoues
-- Usage contemporain :
-  Regroupe plus de 500 langues parlées par environ 350 millions de personnes en Afrique centrale, orientale et australe.
+  Les locuteurs des langues dites « bantoues » utilisent des termes endonymes spécifiques à chaque langue pour se désigner :
+  - **Swahili** : *watu* (« personnes »), *Waswahili* (« les Swahilis »), langue appelée *Kiswahili* (où *Ki-* est le préfixe de classe nominale pour les langues)
+  - **Zoulou** : *abantu* (« personnes »), *AmaZulu* (« les Zoulous »), langue appelée *isiZulu*
+  - **Lingala** : *bato* (« personnes »), langue appelée *Lingála*
+  - **Kinyarwanda/Kirundi** : *abantu* (« personnes »), langue appelée *Ikinyarwanda* ou *Ikirundi*
+  - **Kikongo** : *bantu* ou *wantu* (« personnes »), *Bakongo* (« les Kongo »), langue appelée *Kikongo*
+  - **Shona** : langue appelée *chiShona*
+  - **Ganda** : langue appelée *Luganda*
+  
+  Ces termes partagent une racine commune *-ntu* signifiant « être humain », illustrant une auto-appellation centrée sur l'humanité et l'identité propre. Ces endonymes sont attestés historiquement et en usage contemporain, reflétant l'identité propre de chaque communauté linguistique. Il n'existe pas de terme endogène unique englobant toutes les langues bantoues, car elles ne constituent pas un groupe ethnique homogène.
+- Usage contemporain (définition moderne de la famille) :
+  Regroupe plus de 500 langues parlées par environ 350 millions de personnes en Afrique centrale, orientale et australe. Classification strictement linguistique au sein de la famille Niger-Congo (branche Bénoué-Congo), sans aucune connotation raciale ou ethnique.
 - Aire / répartition géographique générale :
-  Cameroun, Gabon, Congo, RDC, Angola, Tanzanie, Kenya, Ouganda, Mozambique, Zambie, Malawi, Zimbabwe, Afrique du Sud, Namibie.
+  Cameroun, Gabon, Congo, RDC, Angola, Tanzanie, Kenya, Ouganda, Mozambique, Zambie, Malawi, Zimbabwe, Afrique du Sud, Namibie, Botswana, Lesotho, Eswatini, Rwanda, Burundi, Comores, Madagascar (partiellement), République centrafricaine, Guinée équatoriale, São Tomé-et-Príncipe.
 - Nombre de langues (estimation) : ~500
 - Nombre total de locuteurs (estimation) : ~350 millions
 
@@ -30,71 +49,299 @@
 
 # 1. Informations générales
 - Nom de la famille : Bantou
+- Liens entre familles linguistiques :
+  - **Famille parente directe** : Bénoué-Congo (FLG_BENOUECONGO)
+  - **Famille parente supérieure** : Niger-Congo (FLG_NIGERCONGO)
+  - **Relation** : Bantou est un sous-groupe de Bénoué-Congo, qui est lui-même un sous-groupe de Niger-Congo
 - Branches internes / sous-groupes :
   Classification Guthrie (zones A à S) regroupant :
-  - Zone A : Cameroun, Gabon (Duala, Bassa…)
-  - Zone B : Nord Congo (Kongo…)
-  - Zone C : RDC (Mongo, Tetela…)
-  - Zone D : Est RDC
-  - Zone E/F/G : Kenya, Tanzanie (Swahili, Gikuyu…)
-  - Zone H : Rwanda, Burundi (Kinyarwanda, Kirundi)
-  - Zone K : Angola (Kimbundu, Umbundu)
-  - Zone L : RDC (Luba-Katanga, Luba-Kasai)
-  - Zone S : Afrique australe (Zulu, Xhosa, Ndebele)
+  - Zone A : Cameroun, Gabon (Duala, Bassa, Fang, Beti…)
+  - Zone B : Nord Congo, Gabon (Kongo, Teke…)
+  - Zone C : RDC centrale (Mongo, Tetela, Luba-Kasai…)
+  - Zone D : Est RDC (Lega, Nyanga…)
+  - Zone E/F/G : Kenya, Tanzanie (Swahili, Gikuyu, Kamba, Chaga…)
+  - Zone H : Rwanda, Burundi, RDC (Kinyarwanda, Kirundi, Shi…)
+  - Zone K : Angola, RDC (Kimbundu, Umbundu, Chokwe…)
+  - Zone L : RDC, Zambie (Luba-Katanga, Kaonde…)
+  - Zone M : Tanzanie (Nyakyusa, Safwa…)
+  - Zone N : Malawi, Mozambique, Tanzanie (Chewa, Yao, Makonde…)
+  - Zone P : Tanzanie, Mozambique (Makhuwa, Lomwe…)
+  - Zone R : Angola, Namibie (Herero, Kwanyama…)
+  - Zone S : Afrique australe (Zulu, Xhosa, Ndebele, Swati, Tswana, Sotho, Venda, Tsonga, Shona…)
 - Aire géographique :
-  Afrique centrale, orientale et australe
+  Afrique centrale, orientale et australe, de la région des Grassfields (Cameroun-Nigeria) jusqu'au Cap de Bonne-Espérance (Afrique du Sud), et de la côte atlantique à la côte indienne.
 - Nombre de langues :
-  ~500
+  ~500 langues (selon SIL Ethnologue, 2025)
 - Nombre total de locuteurs :
-  ~350 millions
+  ~350 millions (estimation ONU/UNFPA, 2025)
 
 # 2. Peuples associés
 - Peuple 1 : Kongo (PPL_KONGO)
 - Peuple 2 : Luba (PPL_LUBA)
 - Peuple 3 : Zoulou (PPL_ZULU)
-- (autres : Shona (PPL_SHONA), Tswana (PPL_TSWANA), Ganda (PPL_GANDA), Xhosa (PPL_XHOSA), Fang (PPL_FANG), Kikuyu (PPL_KIKUYU)…)
+- (autres : Shona (PPL_SHONA), Tswana (PPL_TSWANA), Ganda (PPL_GANDA), Xhosa (PPL_XHOSA), Fang (PPL_FANG), Kikuyu (PPL_KIKUYU), Swahili (PPL_SWAHILI), Chewa (PPL_CHEWA), Herero (PPL_HERERO), Ovambo (PPL_OVAMBO), Sotho (PPL_SOTHO), Venda (PPL_VENDA), Tsonga (PPL_TSONGA), Makonde (PPL_MAKONDE), Yao (PPL_YAO), Chaga (PPL_CHAGA), Kamba (PPL_KAMBA), Tutsi (PPL_TUTSI), Hutu (PPL_HUTU), Teke (PPL_TEKE), Beti (PPL_BETI), Duala (PPL_DUALA), Bassa (PPL_BASSA)…)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Kongo
-- Ethnie 2 : Luba
-- Ethnie 3 : Zoulou
-(+ renvoi vers futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  - Langues agglutinantes  
-  - Riches systèmes de classes nominales (préfixes)  
-  - Accord nominal étendu dans toute la phrase  
-  - Ordre SVO fréquent
+  Les langues bantoues sont **agglutinantes** et utilisent un système de **classes nominales préfixales**. Exemples concrets :
+  
+  **Classes nominales :**
+  - **Swahili** : *mtu* (« personne », classe 1) → pluriel *watu* (« personnes », classe 2) ; *kitabu* (« livre », classe 7) → pluriel *vitabu* (« livres », classe 8) ; *nyumba* (« maison », classe 9) → pluriel *nyumba* (même forme, classe 10)
+  - **Zoulou** : *umuntu* (« personne », classe 1) → pluriel *abantu* (« personnes », classe 2) ; *isihlahla* (« arbre », classe 7) → pluriel *izihlahla* (« arbres », classe 8) ; *indoda* (« homme », classe 9) → pluriel *amadoda* (« hommes », classe 6)
+  
+  **Structures grammaticales et accord :**
+  - **Swahili** : *mtu mzuri* (« une bonne personne ») où *mzuri* s'accorde avec la classe 1 (*m-*) ; *watu wazuri* (« de bonnes personnes ») où *wazuri* s'accorde avec la classe 2 (*wa-*)
+  - **Zoulou** : *abafana abakhulu bayadlala* (« les grands garçons jouent ») où tous les éléments s'accordent en classe 2 (*aba-*) : *aba-fana* (« garçons »), *aba-khulu* (« grands »), *ba-yadlala* (« ils jouent »)
+  
+  **Morphologie verbale :**
+  - **Swahili** : *ninaandika* (« j'écris ») = *ni-* (1ère personne singulier) + *-na-* (présent) + *-andika* (radical « écrire ») ; *tuliandika* (« nous avons écrit ») = *tu-* (1ère personne pluriel) + *-li-* (passé) + *-andika*
+  - **Zoulou** : *ngiyahamba* (« je pars ») = *ngi-* (1ère personne singulier) + *-ya-* (présent continu) + *-hamba* (radical « partir ») ; *ngibone* (« j'ai vu ») = *ngi-* + *-bone* (radical « voir » au passé, marqué par le suffixe *-ile*)
+  
+  **Dérivation et extensions verbales :**
+  - **Swahili** : *andika* (« écrire ») → *andikisha* (« faire écrire », causatif) → *andikana* (« s'écrire mutuellement », réciproque) → *andikiwa* (« être écrit », passif)
+  - **Zoulou** : *thanda* (« aimer ») → *thandwa* (« être aimé », passif) → *thandana* (« s'aimer mutuellement », réciproque) → *thandisa* (« faire aimer », causatif)
+  
+  **Ordre des mots :**
+  - Ordre **SVO** (Sujet-Verbe-Objet) fréquent : *mtu anaandika kitabu* (« la personne écrit un livre », swahili)
+  - Ordre **SOV** dans certaines constructions : *umuntu uyabona inja* (« la personne voit le chien », zoulou, ordre SVO également)
+  
+  **Morphologie nominale :**
+  - **Swahili** : *kijana* (« jeune homme », classe 7) → *kijana mzuri* (« jeune homme beau ») où le préfixe *ki-* peut être utilisé pour former des adjectifs
+  - **Zoulou** : *umfana* (« garçon », classe 1) → *umfana omuhle* (« garçon beau ») où l'adjectif *omuhle* s'accorde avec la classe 1 (*umu-*) ; *abafana* (« garçons », classe 2) → *abafana abakhulu* (« grands garçons ») où l'adjectif *abakhulu* s'accorde avec la classe 2 (*aba-*), illustrant l'utilisation de 15 classes nominales avec des préfixes spécifiques influençant l'accord grammatical dans toute la phrase
 - Particularités phonologiques :
-  - Systèmes tonals (2 ou 3 tons)  
-  - Consonnes prénasalisées fréquentes  
-  - Harmonies vocaliques dans certaines langues
+  **Systèmes tonals :**
+  - **Kikongo** : *kala* avec ton haut signifie « rester », tandis qu'avec ton bas signifie « longtemps » ou « être assis »
+  - **Kikuyu** : *kùgùrù* (tons bas) signifie « jambe », tandis que *kúgúrú* (tons hauts) signifie « acheter »
+  - **Swahili** : *pata* avec ton haut signifie « obtenir », tandis que *pata* avec ton bas signifie « maladie »
+  - **Zoulou** : *íyàngà* (tons hauts-bas) signifie « docteur », tandis que *íyāngá* (tons hauts-hauts) signifie « lune »
+  
+  **Consonnes prénasalisées :**
+  - Présentes dans de nombreuses langues bantoues : *mb*, *nd*, *ng*, *nj*, etc.
+  - Exemple swahili : *mbwa* (« chien »), *ndizi* (« banane »), *ng'ombe* (« vache »)
+  
+  **Clics (empruntés aux langues khoïsan) :**
+  - **Xhosa** : *cwaka* (« silencieux ») commence par un clic dental
+  - **Zoulou** : *iqanda* (« œuf ») commence par un clic palatal, *iqhude* (« coq ») contient un clic palatal , illustration de l'incorporation de clics dans certains mots, résultat de contacts historiques avec les langues khoïsan
+  
+  **Sons implosifs :**
+  - Présents dans certaines langues bantoues, notamment en zone A (Cameroun, Gabon)
+  - **Fang** (Cameroun, Gabon) : sons implosifs /ɓ/ et /ɗ/ dans des mots comme *ɓa* (« venir ») et *ɗi* (« manger »), où l'air est aspiré vers l'intérieur lors de l'articulation
+  - **Duala** (Cameroun) : consonnes implosives /ɓ/ et /ɗ/ dans des mots comme *ɓɔlɔ* (« enfant ») avec /ɓ/ implosif bilabial et *ɗi* (« manger ») avec /ɗ/ implosif alvéolaire, où l'air est aspiré vers l'intérieur lors de l'articulation
+  - **Beti** (Cameroun) : sons implosifs /ɓ/, /ɗ/, /ʄ/ dans des mots comme *ɓa* (« venir ») avec /ɓ/ implosif bilabial, *ɗi* (« manger ») avec /ɗ/ implosif alvéolaire, et *ʄa* (« donner ») avec /ʄ/ implosif palatal, caractéristiques phonologiques de la zone A
+  
+  **Harmonies vocaliques :**
+  - Présentes dans certaines langues bantoues, notamment en zone A et B
+  - **Fang** (Cameroun, Gabon) : harmonie basée sur l'avancement de la langue, où les voyelles antérieures (*i*, *e*) et postérieures (*u*, *o*) ne se mélangent pas dans un même mot. Exemple : *bɛdɛ* (« maison ») avec voyelles antérieures harmonisées, *bɔkɔ* (« chien ») avec voyelles postérieures harmonisées
+  - **Duala** (Cameroun) : système d'harmonie vocalique où les préfixes verbaux s'adaptent aux voyelles de la racine. Exemple : *a-* (préfixe 3e personne) devient *e-* devant une racine avec voyelle antérieure comme dans *ebɛta* (« il/elle vient »)
+  - **Beti** (Cameroun) : harmonie vocalique régissant l'accord entre les préfixes et les racines, où les voyelles hautes (*i*, *u*) et basses (*e*, *o*) s'harmonisent dans les morphèmes dérivationnels
 - Liens avec les familles voisines :
-  - Contacts majeurs avec les langues nilotiques (Ouganda, Kenya, Tanzanie)  
-  - Interactions avec les langues khoïsan (Afrique australe → clics empruntés en xhosa, zoulou)
+  **Emprunts lexicaux concrets :**
+  
+  **Emprunts aux langues arabes (via swahili) :**
+  - *kitabu* (« livre », swahili) ← arabe *kitāb*
+  - *safari* (« voyage », swahili) ← arabe *safar*
+  - *saa* (« heure », swahili) ← arabe *sāʿa*
+  - *dini* (« religion », swahili) ← arabe *dīn*
+  
+  **Emprunts aux langues khoïsan (Afrique australe) :**
+  - Incorporation de **clics** dans le xhosa et le zoulou : sons [ǀ], [ǃ], [ǁ] empruntés aux langues khoïsan voisines
+  - Les clics sont des sons produits en créant une dépression dans la bouche puis en relâchant brusquement l'air. Les symboles [ǀ], [ǃ], [ǁ] représentent trois types de clics dans l'alphabet phonétique international :
+    - **[ǀ]** = clic dental : son produit avec la langue contre les dents (similaire au son "tsk tsk" d'exaspération)
+    - **[ǃ]** = clic alvéolaire : son produit avec la langue contre le palais, derrière les dents (son plus fort, comme un bouchon qui saute)
+    - **[ǁ]** = clic latéral : son produit sur les côtés de la langue (similaire au son pour appeler un cheval)
+  - Exemple xhosa : *cwaka* (« silencieux ») avec clic dental [ǀ]
+  - **Pour écouter ces sons :** Des exemples audio sont disponibles sur Wikipedia (version anglaise) qui propose des modules audio pour la prononciation des mots en xhosa et zoulou, sur SIL Ethnologue (https://www.ethnologue.com/) qui fournit des informations sur les langues bantoues avec parfois des enregistrements, et sur Glottolog (https://glottolog.org/) qui est une base de données linguistique de référence. On peut également écouter des chansons traditionnelles xhosa comme "Qongqothwane" (The Click Song) par Miriam Makeba sur YouTube, qui illustre l'utilisation des clics dans la langue.
+  
+  **Emprunts aux langues nilotiques (Afrique de l'Est) :**
+  - Contacts historiques dans la région des Grands Lacs (Ouganda, Kenya, Tanzanie) ont conduit à des échanges lexicaux
+  - Certains termes de parenté et de culture matérielle partagés
+  
+  **Emprunts aux langues européennes (période coloniale et post-coloniale) :**
+  - **Swahili** : *kompyuta* (« ordinateur »), *televisheni* (« télévision »), *redio* (« radio »)
+  - **Zoulou** : *imoto* (« voiture », de l'anglais « motor »)
+  
+  **Influences sur d'autres langues :**
+  - Certaines langues européennes ont emprunté des mots aux langues bantoues : *banjo* (possiblement dérivé du kimbundu *mbanza*)
 - Innovations clés :
-  - Système de classes nominales extrêmement développé  
-  - Morphologie verbale très riche (extensions verbales)  
-  - Structuration morphosyntaxique régulière à travers 12+ zones géographiques
+  **Système de classes nominales extrêmement développé :**
+  - Les langues bantoues possèdent généralement **10 à 20 classes nominales**, chacune avec des préfixes spécifiques pour le singulier et le pluriel
+  - Exemple zoulou : 15 classes nominales, système parmi les plus complexes d'Afrique
+  - Les classes déterminent l'accord dans toute la phrase (nom, adjectif, verbe, pronom)
+  - Exemple concret en zoulou : *Abafana abakhulu bayadlala* (« Les grands garçons jouent »)
+    - *aba-fana* (« garçons », classe 2, préfixe *aba-*)
+    - *aba-khulu* (« grands », adjectif s'accordant avec la classe 2, préfixe *aba-*)
+    - *ba-yadlala* (« ils jouent », verbe s'accordant avec la classe 2, préfixe *ba-*)
+    - Tous les éléments de la phrase (nom, adjectif, verbe) portent le préfixe de la classe 2 (*aba-* ou *ba-*), illustrant l'accord grammatical complet déterminé par la classe nominale
+  
+  **Morphologie verbale très riche (extensions verbales) :**
+  - **Extensions causatives** : *andika* (« écrire ») → *andikisha* (« faire écrire »)
+  - **Extensions passives** : *andika* → *andikiwa* (« être écrit »)
+  - **Extensions réciproques** : *andika* → *andikana* (« s'écrire mutuellement »)
+  - **Extensions applicatives** : ajoutent un bénéficiaire ou un objet indirect
+  - **Extensions intensives/répétitives** : indiquent l'intensité ou la répétition de l'action
+  
+  **Structuration morphosyntaxique régulière :**
+  - Cohérence remarquable à travers les 15 zones géographiques (A à S) de la classification Guthrie. 
+  Les correspondances de sons entre langues bantoues suivent des règles prévisibles. 
+  Par exemple, le proto-bantou *m-* (préfixe de classe 1) se retrouve régulièrement comme *m-* en swahili, *um-* en zoulou, *mo-* en lingala, montrant une évolution phonétique régulière.
+  
+  **2. Structures grammaticales partagées :**
+  - Toutes les langues bantoues utilisent un système de classes nominales avec des préfixes, même si le nombre de classes varie (10 à 20). La structure fondamentale (préfixe + racine) est identique à travers toutes les zones.
+  - Les extensions verbales (causatif, passif, réciproque) fonctionnent de manière similaire dans toutes les langues bantoues, avec des suffixes dérivatifs comparables.
+  
+  **3. Correspondances lexicales :**
+  - Des mots de base se retrouvent dans la plupart des langues bantoues avec des correspondances phonétiques régulières :
+    - « Eau » : swahili *maji*, kikuyu *maji*, chichewa *madzi*, kikongo *maza* → proto-bantou reconstruit *màjí* ou *màdí*
+    - « Enfant » : swahili *mtoto*, zoulou *umntwana*, kikongo *mwana*, lingala *mwana* → proto-bantou reconstruit *mʊ̀àná*
+    - « Dent » : hunde *a-li-no*, kikongo *e-di-nkondo*, gogo *i-li-no*, nkore *e-ri-ino*, zoulou *i-li-tshe* → proto-bantou reconstruit avec préfixe *CV-* et racine *-nò* ou *-nòndò*
+  
+  **Comment la reconstruction est possible :**
+ - Reconstruction du proto-bantou possible grâce à cette régularité
+  La reconstruction du proto-bantou utilise la **méthode comparative** développée par les linguistes historiques :
+  
+  1. **Identification de cognats** : Les linguistes identifient des mots apparentés (cognats) dans différentes langues bantoues, comme *maji/madzi/maza* pour « eau ».
+  
+  2. **Établissement de correspondances phonétiques** : En comparant les sons, on établit des correspondances régulières. Par exemple, le *j* du swahili correspond souvent au *z* du chichewa et au *z* du kikongo, suggérant un son proto-bantou *j* ou *z*.
+  
+  3. **Reconstruction des formes ancestrales** : En appliquant les lois phonétiques établies, on reconstruit la forme proto-bantoue probable. Si plusieurs langues montrent *m-* comme préfixe de classe 1, on reconstruit *m-* pour le proto-bantou.
+  
+  4. **Vérification par la morphologie** : Les structures grammaticales (classes nominales, extensions verbales) sont comparées pour confirmer les reconstructions phonologiques.
+  
+  **Exemple concret de reconstruction :**
+  
+  **Reconstruction du préfixe de classe 1 (personnes au singulier) :**
+  - Swahili : *m-tu* (« personne ») → préfixe *m-*
+  - Zoulou : *um-ntu* (« personne ») → préfixe *um-*
+  - Lingala : *mo-to* (« personne ») → préfixe *mo-*
+  - Kikongo : *mu-ntu* (« personne ») → préfixe *mu-*
+  - Kinyarwanda : *um-untu* (« personne ») → préfixe *um-*
+  
+  **Analyse :** Toutes ces langues montrent un préfixe commençant par *m-* suivi d'une voyelle (*-u-* ou *-o-*). La correspondance régulière permet de reconstruire le proto-bantou *mʊ̀-* ou *mò-* pour le préfixe de classe 1, avec une voyelle qui a évolué différemment selon les zones (conservation de *u* en zoulou/kinyarwanda, changement en *o* en lingala).
+  Cette régularité à travers 15 zones géographiques (A à S) sur des milliers de kilomètres et plusieurs millénaires d'évolution prouve l'origine commune et permet la reconstruction systématique du proto-bantou.
+  
+  **Innovations phonologiques :**
+  - Développement de systèmes tonals complexes (2 à 3 tons dans la plupart des langues)
+  - Évolution des consonnes prénasalisées
+  - Adaptation et intégration de clics dans certaines langues australe (innovation par contact)
 
-# 5. Histoire et origines
-- Origine probable :
-  Région Cameroun–Gabon (forêt équatoriale), entre 3000 et 4000 ans.
-- Diffusion des langues :
-  **Expansion bantoue** :  
-  - Phase 1 : Sud Cameroun → sud Nigeria  
-  - Phase 2 : Forêts du Congo → Afrique centrale  
-  - Phase 3 : Afrique orientale (Lac Victoria)  
-  - Phase 4 : Afrique australe (Zambie → Afrique du Sud)
-- Ruptures historiques :
-  - Interactions avec les populations pygmées et khoïsan  
-  - Empires Luba, Lunda, Kongo  
-  - Colonisation belge, portugaise, britannique
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  **Théorie linguistique :**
+  - **Wilhelm Bleek** (1862) : Premier à classifier les langues bantoues dans *A Comparative Grammar of South African Languages*, observant des similitudes grammaticales suggérant une origine commune.
+  - **Malcolm Guthrie** (1948) : Dans *The Classification of the Bantu Languages*, a proposé que le proto-bantou s'est développé dans la **région des Grassfields** (frontière Cameroun-Nigeria), il y a environ 3000 à 5000 ans. Guthrie a divisé les langues bantoues en zones géographiques (A à S).
+  - **Joseph Greenberg** (1963) : Dans *The Languages of Africa*, a classé les langues bantoues dans la famille Niger-Congo (branche Bénoué-Congo), confirmant l'origine ouest-africaine.
+  - **Derek Nurse & Gérard Philippson** (2003) : Dans *The Bantu Languages*, ont affiné la classification et proposé une origine dans la région **Cameroun-Gabon** (forêt équatoriale).
+  - **Cheikh Anta Diop** (1923-1986) : Historien, anthropologue et linguiste sénégalais. Dans *Nations nègres et culture* (1954), a défendu l'idée d'une continuité culturelle et linguistique entre les peuples africains, remettant en question les classifications coloniales. Diop a proposé des liens entre l'égyptien ancien et les langues africaines modernes, y compris les langues bantoues, suggérant une origine commune plus ancienne et une unité culturelle africaine plus profonde que celle proposée par les classifications occidentales. Il a critiqué l'utilisation du terme « bantou » comme catégorie raciale et a insisté sur la nécessité de reconnaître les auto-appellations et les classifications endogènes des peuples africains. Diop a participé au colloque de l'UNESCO au Caire en 1974, où il a présenté des arguments linguistiques et anthropologiques en faveur de l'origine africaine de l'Égypte ancienne et de ses liens avec les civilisations subsahariennes.
+  - **Théophile Obenga** (né en 1936) : Linguiste, historien et égyptologue congolais, collaborateur de Cheikh Anta Diop. Dans *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes* (1993), a proposé une classification alternative des langues africaines en trois familles principales : berbère, khoïsan et **négro-égyptienne** (regroupant l'égyptien ancien, le copte et les langues négro-africaines modernes, incluant les langues bantoues). Obenga a critiqué les classifications linguistiques coloniales et a défendu l'idée d'une parenté linguistique entre l'égyptien ancien et les langues bantoues, suggérant une origine commune plus ancienne que celle proposée par les linguistes occidentaux. Il a dirigé le **Centre International des Civilisations Bantu (CICIBA)** à Libreville (Gabon), institution dédiée à l'étude et à la valorisation des civilisations bantoues. Obenga a également participé au colloque de l'UNESCO au Caire en 1974, où il a présenté des communications sur la parenté linguistique entre l'égyptien ancien et les langues africaines contemporaines, incluant les langues bantoues. Ses travaux insistent sur la nécessité de décoloniser la linguistique africaine et de reconnaître les perspectives endogènes.
+  - **Joseph Ki-Zerbo** (1922-2006) : Historien burkinabé, auteur de *Histoire de l'Afrique noire* (1972). A critiqué les classifications linguistiques coloniales et a insisté sur l'importance de reconnaître la diversité et la richesse des langues africaines, y compris les langues bantoues, sans les réduire à des catégories imposées de l'extérieur.
+  - **Amadou Hampâté Bâ** (1901-1991) : Écrivain et ethnologue malien, a défendu la préservation des traditions orales africaines et a critiqué les approches coloniales de classification des langues et cultures africaines. A insisté sur l'importance de reconnaître les savoirs endogènes et les auto-appellations des peuples africains.
+  
+  **Théorie archéologique :**
+  - **Jan Vansina** (1990) : Dans *Paths in the Rainforests*, a proposé que l'expansion bantoue est liée à la diffusion de l'agriculture et de la métallurgie du fer, facilitant la migration depuis l'Afrique centrale vers l'est et le sud.
+  - **Christopher Ehret** (1998) : Dans *An African Classical Age*, a suggéré que l'expansion bantoue a commencé vers **3000-2500 avant notre ère** depuis la région du Cameroun, accompagnée de l'adoption de l'agriculture.
+  - **Roger Blench** (2006) : Dans *Archaeology, Language, and the African Past*, a combiné données archéologiques et linguistiques, confirmant l'origine camerounaise et datant l'expansion entre 3000 et 1000 avant notre ère.
+  - **Cheikh Anta Diop** (1923-1986) : Dans *Nations nègres et culture* (1954) et *Antériorité des civilisations nègres* (1967), a proposé une perspective archéologique alternative sur l'expansion bantoue. Diop a défendu l'idée d'une continuité archéologique et culturelle entre l'Égypte ancienne et les civilisations subsahariennes, y compris les civilisations bantoues. Il a suggéré que les techniques agricoles, la métallurgie et les structures sociales observées dans les civilisations bantoues pourraient avoir des origines plus anciennes, remontant à l'Égypte pharaonique ou à des civilisations africaines antérieures. Diop a critiqué les datations archéologiques occidentales qu'il considérait comme trop récentes, proposant une chronologie plus ancienne pour les civilisations africaines. Il a également mis en avant l'importance des vestiges archéologiques africains souvent négligés par l'archéologie coloniale.
+  - **Théophile Obenga** (né en 1936) : Dans *L'Afrique dans l'Antiquité — Égypte pharaonique/Afrique noire* (1973) et dans ses travaux au **Centre International des Civilisations Bantu (CICIBA)**, a développé une perspective archéologique panafricaine sur les civilisations bantoues. Obenga a proposé que les vestiges archéologiques des civilisations bantoues (royaumes du Kongo, empires Luba-Lunda, etc.) témoignent d'une continuité avec des civilisations africaines plus anciennes. Il a critiqué l'approche archéologique occidentale qui tend à isoler les civilisations bantoues de leur contexte africain plus large. Obenga a également mis en avant l'importance des traditions orales et des sources endogènes pour compléter les données archéologiques, arguant que l'archéologie coloniale a souvent ignoré ou dévalorisé ces sources. Ses travaux au CICIBA ont contribué à promouvoir une archéologie décoloniale des civilisations bantoues.
+  
+  **Théorie génétique :**
+  - **Berniell-Lee et al.** (2009) : Dans « Genetic and Demographic Implications of the Bantu Expansion: Insights from Human Paternal Lineages », ont montré des liens génétiques entre les populations de la région des Grassfields (Cameroun-Nigeria) et les populations bantoues actuelles, confirmant l'origine proposée par les linguistes.
+  - **Henn et al.** (2011) : Études génétiques montrant que les populations dites « bantoues » présentent une diversité génétique importante, avec des contributions variées de différentes populations africaines, remettant en question l'homogénéité supposée.
+  - Les analyses génétiques modernes révèlent la complexité des migrations et des interactions entre les peuples africains, invalidant les catégorisations simplistes de l'époque coloniale.
+  - **Cheikh Anta Diop** (1923-1986) : Dans *Nations nègres et culture* (1954) et dans ses travaux d'anthropologie physique, Diop a proposé une perspective génétique alternative sur les populations bantoues. Il a défendu l'idée d'une unité génétique africaine plus large, remettant en question les catégorisations raciales coloniales qui opposaient les « Bantous » aux autres populations africaines. Diop a critiqué les études génétiques coloniales qui cherchaient à établir des hiérarchies raciales et a insisté sur la diversité génétique au sein des populations dites « bantoues », tout en soulignant leur appartenance à un continuum génétique africain. Il a également proposé que les populations bantoues partagent des marqueurs génétiques avec d'autres populations africaines, suggérant des migrations et des interactions plus complexes que celles proposées par les modèles occidentaux. Diop a utilisé des analyses anthropologiques (pigmentation, morphologie crânienne) pour défendre l'unité biologique des populations africaines, y compris les populations bantoues.
+  - **Théophile Obenga** (né en 1936) : Dans ses travaux au CICIBA et dans *Les Bantu : Langues, peuples, civilisations* (2001), Obenga a développé une perspective génétique panafricaine sur les populations bantoues. Il a critiqué les études génétiques qui isolent les populations bantoues du reste du continent africain et a défendu l'idée d'un continuum génétique africain. Obenga a proposé que les populations bantoues partagent des ancêtres communs avec d'autres populations africaines, remontant à des périodes plus anciennes que celles proposées par les modèles occidentaux. Il a également mis en avant l'importance de reconnaître la diversité génétique au sein des populations bantoues tout en soulignant leur unité culturelle et linguistique. Ses travaux insistent sur la nécessité de décoloniser les études génétiques africaines et de reconnaître les perspectives endogènes sur l'histoire génétique des populations.
+
+  **Points de convergence et divergences avec les théories occidentales :**
+  Les linguistes africains comme Diop et Obenga partagent avec les linguistes occidentaux l'idée d'une origine commune des langues bantoues, mais divergent sur plusieurs points :
+  - **Origine plus ancienne** : Diop et Obenga proposent des liens avec l'égyptien ancien, suggérant une origine commune plus ancienne et une continuité culturelle africaine plus profonde que les théories occidentales qui situent l'origine du proto-bantou il y a 3000-5000 ans.
+  - **Classification alternative** : Obenga propose une famille « négro-égyptienne » regroupant l'égyptien ancien et les langues négro-africaines modernes (incluant les bantoues), en opposition à la classification Niger-Congo de Greenberg.  
+  - **Critique des classifications coloniales** : Les linguistes africains critiquent l'utilisation du terme « bantou » comme catégorie raciale et insistent sur la nécessité de reconnaître les auto-appellations et les perspectives endogènes. 
+  - **Unité culturelle africaine** : Diop et Obenga mettent l'accent sur l'unité culturelle et linguistique du continent africain, remettant en question les fragmentations imposées par les classifications coloniales.  
+
+  **Consensus actuel :**
+  - Origine probable : **Région des Grassfields** (frontière Cameroun-Nigeria) ou **forêt équatoriale Cameroun-Gabon**
+  - Période : **3000 à 5000 ans avant notre ère** (émergence du proto-bantou)
+  - Expansion majeure : **1000 avant notre ère à 500 de notre ère**
+
+- Période d'émergence estimée :
+  **Émergence historique de la famille linguistique :**
+  - **3000 à 5000 ans avant notre ère** : Émergence du proto-bantou dans la région Cameroun-Gabon (forêt équatoriale) ou région des Grassfields (Cameroun-Nigeria)
+  - **2500 à 1000 avant notre ère** : Première phase d'expansion vers le sud (Congo) et l'est (Grands Lacs)
+  - **1000 avant notre ère à 500 de notre ère** : Expansion majeure vers l'Afrique orientale et australe
+  
+  **Date de classification académique :**
+  - **1862** : Classification initiée par **Wilhelm Bleek** dans *A Comparative Grammar of South African Languages*
+  - **1906** : **Carl Meinhof** publie *Grundzüge einer vergleichenden Grammatik der Bantusprachen*, établissant la grammaire comparée bantoue
+  - **1919** : **Harry Hamilton Johnston** publie *A Comparative Study of the Bantu and Semi-Bantu Languages*
+  - **1948** : **Malcolm Guthrie** publie *The Classification of the Bantu Languages*, établissant la classification géographique en zones A à S
+  - **1963** : **Joseph Greenberg** classe les langues bantoues dans la famille Niger-Congo dans *The Languages of Africa*
+
+- Diffusion des langues (routes migratoires, expansion) :
+
+  **Théorie 1 : Expansion rapide (modèle « Early Split »)**
+  - Proposée par **Malcolm Guthrie** (1948) et **Christopher Ehret** (1998)
+  - Suggère une migration rapide des locuteurs proto-bantous depuis le Cameroun vers l'est et le sud
+  - Expansion facilitée par l'adoption de l'agriculture et de la métallurgie du fer
+  - Routes : Cameroun → Congo → Grands Lacs → Afrique orientale → Afrique australe
+  
+  **Théorie 2 : Expansion progressive (modèle « Late Split »)**
+  - Proposée par **Jan Vansina** (1990) et **Roger Blench** (2006)
+  - Suggère une diffusion plus lente et graduelle, avec des interactions multiples avec les populations autochtones
+  - Accent mis sur les contacts et métissages avec les populations pygmées, khoïsan et nilotiques
+  - Expansion accompagnée d'adaptations locales et de créolisation
+  
+  **Théorie 3 : Modèle hybride (expansion en vagues)**
+  - Combinaison des deux approches
+  - **Vague 1** (3000-2000 av. J.-C.) : Expansion vers le bassin du Congo
+  - **Vague 2** (2000-1000 av. J.-C.) : Expansion vers les Grands Lacs
+  - **Vague 3** (1000 av. J.-C. - 500 apr. J.-C.) : Expansion vers l'Afrique orientale et australe
+  
+  **Perspectives critiques africaines sur les modèles d'expansion :**
+  - **Importance des sources endogènes** : **Théophile Obenga**, dans ses travaux au CICIBA, a insisté sur l'importance des traditions orales et des sources endogènes pour comprendre l'expansion bantoue, critiquant les modèles qui s'appuient uniquement sur des données archéologiques et linguistiques externes. Cette approche pourrait révéler des routes migratoires et des chronologies différentes de celles proposées par les modèles occidentaux.
+  **Note** : Contrairement aux théories occidentales qui proposent des modèles spécifiques de routes migratoires (occidentale, centrale, orientale, australe), les scientifiques africains se concentrent davantage sur la critique des modèles existants et sur la défense d'une perspective unifiée de l'histoire africaine, sans proposer de modèles alternatifs détaillés de routes migratoires.
+  
+  **Routes migratoires identifiées :**
+  - **Route occidentale** : Cameroun → Gabon → Congo → Angola
+  - **Route centrale** : Cameroun → RDC (bassin du Congo) → Zambie
+  - **Route orientale** : Cameroun → RDC (Grands Lacs) → Ouganda → Kenya → Tanzanie → Mozambique
+  - **Route australe** : Zambie → Zimbabwe → Afrique du Sud → Namibie → Botswana
+
+- Ruptures historiques (séparations, fusions) :
+  **Fusions (unifications politiques et linguistiques) :**
+  - **Royaume du Kongo** (XIVe-XIXe siècle) : Unification politique et linguistique dans la région Kongo, fusion de différents groupes bantous sous une autorité centrale, standardisation du kikongo comme langue de l'administration et du commerce
+  - **Empire Luba** (XVIe-XIXe siècle) : Expansion linguistique et culturelle en RDC, unification de plusieurs groupes bantous de la zone L, diffusion du luba-katanga comme langue véhiculaire
+  - **Empire Lunda** (XVIIe-XIXe siècle) : Fusion politique et linguistique en RDC, Angola et Zambie, influence sur les langues de la zone L, création d'une zone d'influence linguistique lunda
+  - **Royaume du Buganda** (XIVe-XXe siècle) : Expansion et unification politique en Ouganda, expansion du luganda comme langue dominante, fusion de différents groupes bantous de la région des Grands Lacs
+  
+  **Séparations (fragmentations politiques et linguistiques) :**
+  - **Colonisation européenne** (XVe-XXe siècle) : Rupture majeure dans l'évolution naturelle des langues bantoues
+    - **Colonisation belge** (RDC, Rwanda, Burundi) : Imposition du français, fragmentation linguistique par la création de frontières coloniales, séparation artificielle des communautés linguistiques
+    - **Colonisation portugaise** (Angola, Mozambique) : Imposition du portugais, fragmentation des langues bantoues locales, séparation des locuteurs par les frontières coloniales
+    - **Colonisation britannique** (Kenya, Ouganda, Tanzanie, Afrique du Sud, Zimbabwe) : Imposition de l'anglais, développement du swahili comme lingua franca mais aussi fragmentation des langues locales, création de frontières séparant les communautés linguistiques
+    - **Colonisation française** (Cameroun, Gabon, Congo) : Imposition du français, fragmentation linguistique, séparation des groupes bantous par les frontières coloniales
+  - **Apartheid en Afrique du Sud** (1948-1994) : Rupture majeure dans l'évolution des langues bantoues, utilisation du terme « Bantu » pour catégoriser et discriminer les populations noires, création de « bantoustans » qui ont fragmenté les communautés linguistiques, séparation forcée des locuteurs bantous selon des critères raciaux
+  - **Découpage colonial de l'Afrique** (Conférence de Berlin, 1884-1885) : Rupture majeure ayant fragmenté les communautés linguistiques bantoues par la création de frontières artificielles, séparant des groupes linguistiques unis et créant des divisions durables
+
 - Zones de contact et métissages :
-  - Bassin du Congo  
-  - Grands Lacs  
-  - Afrique australe (contacts bantou–khoïsan)
+  **OÙ : Localisation géographique précise des zones de contact :**
+  
+  **Bassin du Congo :**
+  - **Interactions avec les populations pygmées** : Contacts et métissages dans le bassin du Congo (RDC, République du Congo, Gabon, Cameroun), conduisant à des échanges linguistiques et culturels. Les populations bantoues et pygmées ont développé des relations symbiotiques, avec des emprunts lexicaux dans les deux sens, notamment dans les domaines de la forêt, de la chasse et des plantes médicinales. Zones spécifiques : forêt équatoriale du bassin du Congo, régions de Kisangani, Mbandaka, Brazzaville, Libreville.
+  
+  **Région des Grands Lacs :**
+  - **Interactions avec les populations nilotiques** : Dans la région des Grands Lacs (Ouganda, Kenya, Tanzanie, RDC, Rwanda, Burundi), contacts et échanges avec les populations nilotiques. Métissages linguistiques et culturels, emprunts lexicaux réciproques, notamment dans les domaines de l'élevage, de la parenté et de l'organisation sociale. Zones spécifiques : rives du lac Victoria, lac Tanganyika, lac Kivu, région du Nil blanc en Ouganda.
+  
+  **Afrique australe :**
+  - **Interactions avec les populations khoïsan** : En Afrique australe (Afrique du Sud, Namibie, Botswana, Zimbabwe), contacts avec les populations khoïsan, conduisant à l'emprunt de clics dans certaines langues bantoues (xhosa, zoulou, ndebele). Métissages linguistiques et culturels, échanges dans les domaines de la chasse, de la cueillette et des croyances. Zones spécifiques : région du Cap, KwaZulu-Natal, Namibie centrale et méridionale.
+  
+  **Côte est-africaine (Océan Indien) :**
+  - **Mombasa** (Kenya) : Métissage linguistique entre langues bantoues et arabe, émergence du swahili comme langue de commerce
+  - **Zanzibar** (Tanzanie) : Centre de métissage linguistique et culturel, développement du swahili avec emprunts arabes massifs
+  - **Lamu** (Kenya) : Ancien centre commercial, contacts bantou-arabe
+  - **Kilwa** (Tanzanie) : Ancien sultanat, métissage bantou-arabe
+  
+  **Routes commerciales :**
+  - **Route de l'ivoire** : Contacts le long des routes commerciales est-africaines, métissages linguistiques entre langues bantoues et langues de commerce
+  - **Route des esclaves** : Métissages linguistiques le long des routes de traite (côte est, bassin du Congo), créolisation et développement de langues véhiculaires
 
 # 6. Répartition géographique et démographie
 - Nombre total de locuteurs :
@@ -106,7 +353,50 @@
   Langues majeures : Swahili, Lingala, Kinyarwanda, Kirundi, Zulu, Xhosa, Shona, Tswana, Luba, Kikongo…
 
 # 7. Sources
-- Nurse & Philippson – *The Bantu Languages*
-- Vansina, J. – *Paths in the Rainforests*
-- SIL Ethnologue – Bantu languages
-- UNESCO – African languages atlas
+
+**Sources linguistiques (classification et grammaire) :**
+- Bleek, W. H. I. (1862) – *A Comparative Grammar of South African Languages*. Cape Town : Saul Solomon.
+- Meinhof, C. (1906) – *Grundzüge einer vergleichenden Grammatik der Bantusprachen*. Berlin : Reimer.
+- Johnston, H. H. (1919) – *A Comparative Study of the Bantu and Semi-Bantu Languages*. London : Oxford University Press.
+- Guthrie, M. (1948) – *The Classification of the Bantu Languages*. London : International African Institute, Oxford University Press.
+- Greenberg, J. H. (1963) – *The Languages of Africa*. Bloomington : Indiana University.
+- Nurse, D. & Philippson, G. (2003) – *The Bantu Languages*. London : Routledge.
+
+**Sources historiques et archéologiques :**
+- Vansina, J. (1990) – *Paths in the Rainforests : Toward a History of Political Tradition in Equatorial Africa*. Madison : University of Wisconsin Press.
+- Ehret, C. (1998) – *An African Classical Age : East and Southern Africa in World History, 1000 B.C. to A.D. 400*. Charlottesville : University Press of Virginia.
+- Blench, R. (2006) – *Archaeology, Language, and the African Past*. Lanham : AltaMira Press.
+
+**Sources génétiques :**
+- Berniell-Lee, G. et al. (2009) – "Genetic and Demographic Implications of the Bantu Expansion: Insights from Human Paternal Lineages", in *Molecular Biology and Evolution*, vol. 26, n°7, pp. 1581-1589.
+- Henn, B. M. et al. (2011) – "Hunter-gatherer genomic diversity suggests a southern African origin for modern humans", in *Proceedings of the National Academy of Sciences*, vol. 108, n°13, pp. 5154-5162.
+
+**Sources panafricaines (linguistiques, historiques, archéologiques, génétiques) :**
+- Diop, C. A. (1954) – *Nations nègres et culture*. Paris : Présence africaine.
+- Diop, C. A. (1967) – *Antériorité des civilisations nègres : mythe ou vérité historique ?*. Paris : Présence africaine.
+- Obenga, T. (1973) – *L'Afrique dans l'Antiquité — Égypte pharaonique/Afrique noire*. Paris : Présence africaine.
+- Obenga, T. (1993) – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*. Paris : L'Harmattan.
+- Obenga, T. (2001) – *Les Bantu : Langues, peuples, civilisations*. Paris : Présence africaine.
+- Ki-Zerbo, J. (1972) – *Histoire de l'Afrique noire*. Paris : Hatier.
+- Hampâté Bâ, A. (1991) – *Amkoullel, l'enfant peul*. Arles : Actes Sud.
+
+**Sources philosophiques et anthropologiques (critiques coloniales) :**
+- Tempels, P. (1945) – *La philosophie bantoue*. Paris : Présence africaine.
+
+**Sources démographiques et statistiques :**
+- ONU (2025) – *World Population Prospects 2025*. New York : United Nations.
+- UNFPA (2025) – *État de la population mondiale 2025*. New York : UNFPA.
+- CIA (2025) – *The World Factbook 2025*. Washington : Central Intelligence Agency.
+- SIL Ethnologue (2025) – "Bantu languages". https://www.ethnologue.com/subgroups/bantu
+
+**Sources institutionnelles :**
+- UNESCO (2025) – *Atlas des langues en danger dans le monde*. Paris : UNESCO.
+- Centre International des Civilisations Bantu (CICIBA) – Libreville, Gabon.
+- Colloque UNESCO au Caire (1974) – *Le peuplement de l'Égypte ancienne et le déchiffrement de l'écriture méroïtique*.
+
+**Ressources en ligne pour l'écoute des sons :**
+- Wikipedia (version anglaise) – Modules audio pour la prononciation des mots en xhosa et zoulou (ex. : https://en.wikipedia.org/wiki/Xhosa_language, https://en.wikipedia.org/wiki/Zulu_language)
+- SIL Ethnologue – Informations sur les langues bantoues avec parfois des enregistrements audio (https://www.ethnologue.com/)
+- Glottolog – Base de données linguistique de référence (https://glottolog.org/)
+- Joshua Project – Ressources audio pour les langues (https://www.joshuaproject.net/)
+- YouTube – "Qongqothwane" (The Click Song) par Miriam Makeba
