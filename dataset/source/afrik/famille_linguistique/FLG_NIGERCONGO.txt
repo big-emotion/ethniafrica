@@ -81,15 +81,31 @@
   
   Contacts importants avec les langues tchadiques (Haoussa), nilo-sahariennes (Songhay, Kanuri).
 - Innovations clés :
-  **L'innovation Bantu** : l'expansion bantoue (vers c. 3000-2000 BP) a répandu des innovations morphologiques comme la réduction ou fusion des classes nominales, l'agglutination de suffixes verbaux d'extensions, et des traits phonétiques nouveaux relatifs à l'intonation. Expansion bantoue (~1000 av. J.C. à 500 apr. J.C.) : traits spécifiques comme la réduction des classes nominales, la perte de certaines formes archaïques, changement tonals.
+  **Innovations développées dans les langues bantoues** : Les langues bantoues (branche de Benue-Congo, identifiées par le terme "Bantou" dérivé de *ba-ntu* "les gens") ont développé des traits morphologiques spécifiques lors de leur expansion (vers c. 3000-2000 BP, ~1000 av. J.C. à 500 apr. J.C.). Note : "Bantou" n'est pas une innovation linguistique mais un terme désignant ce sous-groupe ; les innovations sont les traits linguistiques développés par ces langues.
+  
+  **Extensions verbales élaborées** : Développement d'un système complexe de suffixes verbaux modifiant la valence et l'aspect. Exemples concrets :
+  - Swahili : *penda* "aimer" → *pendana* "s'aimer mutuellement" (réciproque *-an-*), *pendeza* "faire plaisir" (causatif *-ez-*), *pendwa* "être aimé" (passif *-w-*)
+  - Tshiluba : *-ish-* (causatif), *-il-* (applicatif "pour/avec"), *-ibu-* (passif), *-an-* (réciproque)
+  - Zulu : *thanda* "aimer" → *thandana* "s'aimer" (réciproque), *thandisa* "faire aimer" (causatif)
+  Ces extensions verbales sont plus développées dans les langues bantoues que dans d'autres branches Niger-Congo.
+  
+  **Réduction du système vocalique** : Proto-Bantu reconstruit avec 7 voyelles (*i, ɪ, e, a, o, ʊ, u*), mais de nombreuses langues bantoues ont réduit à 5 voyelles (/i, e, a, o, u/). Exemple : Shona, certaines langues du Kikongo Language Cluster. Fusion de *ɪ/*i et *ʊ/*u dans plusieurs langues bantoues modernes.
+  
+  **Spirantisation consonantique** : Mutation de consonnes devant voyelles fermées, devenue phonologiquement distinctive après réduction vocalique. Exemple : Proto-Bantu /*b/ → /v/ devant *i/*u dans certaines langues bantoues.
+  
+  **Conservation et extension des classes nominales** : Bien que le système de classes nominales soit hérité de Proto-Niger-Congo, les langues bantoues conservent et développent souvent 12 à 15 classes avec concordance étendue. Exemple Swahili : *m-toto m-zuri a-me-fika* "l'enfant (cl.1) beau (cl.1) est arrivé (cl.1)" vs *wa-toto wa-zuri wa-me-fika* "les enfants (cl.2) beaux (cl.2) sont arrivés (cl.2)".
+  
+  **Systèmes tonals complexes** : Développement de tons mélodiques grammaticaux utilisés pour distinguer temps verbaux et sens. Exemple Luganda : trois tons (haut, bas, tombant) avec utilisation grammaticale du ton pour marquer les temps.
+  
+  Ces innovations se sont répandues avec l'expansion des langues bantoues vers l'Afrique centrale, orientale et australe.
   
   **Perte ou transformation des classes nominales** : certaines langues ou branches ont perdu ou réduit le système des classes nominales (ex : langues Mande, Ijoid, Dogon) — innovation de perte. Développement de systèmes de classes nominales très réduits ou vestigiaux dans certains sous-groupes (par exemple dans certains Mande, Dogon) où le système est absent ou modifié. Cela est considéré comme innovation (perte ou transformation). Dans certaines langues Volta-Congo, perte ou réduction majeure des classes nominales ou changement du système tonal.
   
-  **Systèmes élaborés de classes nominales** conservés dans Atlantic-Congo.
+  **Systèmes élaborés de classes nominales** conservés dans Atlantic-Congo : maintien et développement du système de classes nominales hérité du proto-Niger-Congo dans les branches Atlantic-Congo (Bantu, Volta-Niger, Kwa, etc.). Exemples concrets : Swahili (Bantu) : m-tu "personne" (cl. 1, préfixe m-) vs wa-tu "personnes" (cl. 2, wa-) ; ki-tabu "livre" (cl. 7, ki-) vs vi-tabu "livres" (cl. 8, vi-). Concordance : wa-tu wa-le wa-me-fika "ces personnes sont arrivées" (déterminant wa-le et verbe wa-me-fika s'accordent avec la classe 2). Limba (Atlantic, Sierra Leone) : système de classes nominales avec affixes de classe, marques de pluriel/singulier, et concordance dans le groupe nominal (adjectifs, déterminants s'accordent avec la classe du nom). Yoruba (Volta-Niger) : système de classes nominales avec préfixes et concordance, bien que moins développé que dans les langues bantoues.
   
-  **Morphologie verbale dérivationnelle** avec extensions verbales développées dans Bantu (suffixes de causatif, applicatif, etc.).
+  **Morphologie verbale dérivationnelle** : développement d'extensions verbales élaborées, particulièrement dans les langues bantoues (suffixes de causatif, applicatif, réciproque, etc.), mais aussi présentes dans d'autres branches Niger-Congo. Exemples concrets : Swahili (Bantu) : penda "aimer" → pendana "s'aimer réciproquement" (réciproque -an-), pendea "aimer pour" (applicatif -ea), pendesha "faire aimer / causer à aimer" (causatif -esha). Limba (Atlantic, dialecte Thɔnkɔ, Sierra Leone) : le verbe peut prendre jusqu'à onze suffixes dérivationnels (extensions), dont causatif, applicatif, instrumental, réciproque/passif, etc. Proto-Niger-Congo / Proto-Atlantic-Congo : reconstruction de suffixes applicatif (-de), causatif (-ci, -ti), réciproque (-na), attestés dans plusieurs branches. Langues Bantoïdes : extensions de valence (causatif, applicatif, réciproque) et extensions aspectuelles (itératif, fréquentatif, distributif) selon la langue.
   
-  **Expression grammaticale par tons** : utilisation des tons pour marquer des distinctions grammaticales.
+  **Expression grammaticale par tons** : utilisation des tons pour marquer des distinctions grammaticales, trait hérité et développé différemment selon les branches. Exemples concrets : Yoruba (Kwa, Volta-Niger) : trois tons (haut, moyen, bas) utilisés à la fois lexicalement et grammaticalement. Exemple : ó bẹ́ "il avance" (ton haut) vs ó bẹ̀ "il demande pardon" (ton bas) — distinction lexicale et grammaticale par le ton. Igbo (Volta-Niger) : système tonal avec tons haut et bas distinguant lexique et grammaire. Exemple : ána (ton haut) vs àna (ton bas) — distinction lexicale ou grammaticale selon le contexte. Dagaare (Gur) : deux tons (haut / bas) plus downstep (réduction tonale) — tonalité servant à distinguer lexique (mots différents selon ton) et grammatical (ton changeant selon forme verbale ou morphologie). Tumbuka (Bantu) : deux tons de base (haut H et bas L) avec phénomènes de propagation tonale (tone spreading), affaiblissement de ton et tons flottants — usage à la fois lexical et introduit par la morphologie grammaticale. Dan (Mande) : selon le dialecte, jusqu'à 9 à 11 tons registres ou contours tonaux. Langues Mande (Bambara, Maninka, Temne) : systèmes à deux tons (haut / bas) avec usage grammatical du ton pour marquer temps, aspect, ou distinctions syntaxiques.
 
 # 4. Histoire et origines :
 - Origine probable (théories archéologiques, linguistiques, génétiques) :
@@ -184,3 +200,9 @@
 - Ethnologue (SIL International, 2025) – *Niger–Congo*. Fiches linguistiques pour chaque langue, nombre de langues, locuteurs, répartition pays.
 - UNESCO – *Atlas des langues africaines*.
 - Williamson, Kay & Blench, Roger – *Niger-Congo Overview*.
+- Nurse, Derek & Philippson, Gérard (2003) – *The Bantu Languages*. Routledge.
+- Meeussen, A.E. (1967) – *"Bantu Grammatical Reconstructions"*. *Africana Linguistica* 3: 79-121.
+- Schadeberg, Thilo C. (2003) – *"Historical Linguistics"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.
+- Bastin, Yvonne, Coupez, André & Mann, Michael (1999) – *Continuity and Divergence in the Bantu Languages: Perspectives from a Lexicostatistic Study*. Tervuren: Musée royal de l'Afrique centrale.
+- Hyman, Larry M. (2003) – *"Segmental Phonology"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.
+- Maho, Jouni Filip (2003) – *"A Classification of the Bantu Languages: An Update of Guthrie's Referential System"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.
