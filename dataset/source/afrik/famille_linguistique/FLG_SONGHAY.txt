@@ -3,28 +3,33 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_SONGHAY
+- Lien avec la famille linguistique : Nilo-saharienne (classification controversée) / Famille indépendante (selon certaines théories)
 - Nom français : Songhay / Sonrai
 - Nom anglais / auto-appellation académique : Songhay
 - Appellation(s) historique(s) :
-  « Songhai » (orthographe ancienne),  
-  « Langues soudanaises » (catégorie coloniale trop vaste),  
-  parfois classée comme « Nilo-saharienne » (statut controversé).
+  « Songhai » (orthographe ancienne), « Langues soudanaises » (catégorie coloniale trop vaste), parfois classée comme « Nilo-saharienne » (statut controversé), « Hamitique » (classification coloniale obsolète).
 - Origine du terme historique :
-  Le nom vient de l’ancien Empire Songhay (XVe–XVIe siècles) basé à Gao.  
-  Les populations zarma et songhay se nomment *Soŋay*, *Soŋai*, *Sonrai* selon les dialectes.
+  Le nom vient de l'ancien Empire Songhay (XVe–XVIe siècles) basé à Gao. Les populations zarma et songhay se nomment *Soŋay*, *Soŋai*, *Sonrai* selon les dialectes. L'origine académique du terme remonte aux classifications linguistiques modernes :
+  - **Désignations coloniales** : Avant Greenberg, les classifications coloniales utilisaient des catégories vagues comme « langues soudanaises » (terme géographique non linguistique). **Maurice Delafosse** a regroupé Songhay avec Mande, voyant des similarités lexicales et typologiques. **Westermann** était incertain si Songhay appartenait à la famille Gur (Niger-Congo) ou était un isolat.
+  - **Joseph H. Greenberg (1963)** – *The Languages of Africa* : Introduit Songhay comme l'une des branches primaires du macro-phylum **Nilo-saharien**, un terme qu'il crée pour représenter une famille génétique proposée de langues africaines. Son argument pour inclure Songhay était basé sur environ **70 cognats allégués** (y compris des pronoms), correspondances morphologiques, et patterns grammaticaux entre Songhay et Saharan, Kanuri, etc.
+  - **Robert Nicolaï (1981, 1990, 2003)** : Remet en question la classification de Greenberg, propose que Songhay pourrait avoir émergé comme une variété basée sur le Berber (ou possiblement une lingua franca berbère) qui a subi une restructuration sous influence mandé. Sources : Nicolaï (1981) – *Les dialectes du songhay* ; Nicolaï (1990) – *Parentés linguistiques (à propos du songhay)* ; Nicolaï (2003) – *La force des choses ou l'épreuve 'nilo-saharienne'*.
 - Pourquoi le terme pose problème :
-  - Certains travaux coloniaux ont utilisé « Songhai » comme catégorie englobante pour différentes ethnies et parlers distincts.  
-  - Dans les anciennes classifications, Songhay fut mis dans des groupes flous comme « soudanais » ou « nilo-hamitique ».  
-  - Sur le plan scientifique, son statut génétique reste débattu : famille indépendante ? branche du nilo-saharien ?  
-  → Afrik la traite **comme famille distincte**, par cohérence méthodologique.
+  - L'étiquette « soudanais » était une catégorie géographique coloniale trop vaste, regroupant des langues sans relation génétique claire. **PREUVES** :
+  - **Auteurs coloniaux problématiques** : Les classifications pré-greenbergiennes (Delafosse, Westermann) utilisaient des catégories floues comme « langues soudanaises » basées sur la géographie plutôt que sur la génétique linguistique. Le terme « soudanais » était utilisé pour désigner grossièrement les langues parlées au sud du Sahara, sans distinction génétique précise. Ces classifications coloniales reflétaient une approche eurocentrée où l'Afrique était divisée en grandes zones géographiques plutôt qu'en familles linguistiques scientifiquement établies.
+  - **Auteurs locaux et défenseurs de l'africanité** : **Pierre-Francis Lacroix (1969)** a remis en question les 70 cognats de Greenberg, affirmant que peut-être seulement environ **30** sont crédibles. De nombreuses similarités semblaient concentrées entre **Zarma** (une variété songhay méridionale) et les langues sahariennes, possiblement dues à l'emprunt plutôt qu'à une relation génétique. **Gerrit Dimmendaal (2008)** a exprimé son scepticisme quant au classement définitif de Songhay dans Nilo-saharien, suggérant qu'il pourrait être mieux considéré comme **une famille linguistique indépendante** jusqu'à ce que des preuves comparatives plus convaincantes émergent. **Robert Nicolaï (1990, 2003)** a proposé que Songhay pourrait avoir des origines berbères ou afro-asiatiques, avec une restructuration sous influence mandé, plutôt qu'une affiliation nilo-saharienne directe.
+  - **Études génétiques modernes** : Il n'existe **pas d'étude génétique publiée qui isole spécifiquement les groupes parlant songhay** pour retracer leurs origines en termes de composantes ancestrales liées aux origines songhay (c'est-à-dire pas d'échantillons d'ADN ancien assignés à « proto-Songhay », et pas d'étude systématique du génome entier de tous les locuteurs songhay dans le contexte des questions d'origine). Les études plus larges des populations dans la ceinture Sahel/Savane montrent un mélange complexe, un flux de gènes entre les groupes parlant nilo-saharien, nigéro-congolais, et afro-asiatiques. Cela indique que l'histoire de la population dans cette région a été hautement dynamique, mais ne résout pas la question de l'origine génétique spécifique des locuteurs songhay. Les données génétiques restent relativement sous-développées pour les questions spécifiques des origines songhay, contrairement à certains autres groupes africains.
+  - **Problèmes avec la classification Nilo-saharienne** : Le statut de Nilo-saharien comme famille génétique valide reste **hypothétique** ; il inclut de nombreuses langues, mais certaines branches sont bien soutenues, d'autres moins. La classification de Songhay dans Nilo-saharien est **controversée**, avec des critiques soutenant que de nombreux cognats allégués peuvent être des emprunts, et que Nilo-saharien lui-même est un macro-famille controversé.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Songhay / Soŋay / Zarma-Songhay
-- Usage contemporain :
-  Groupement de langues parlé le long du Niger moyen (Mali–Niger), avec des variétés parfois peu mutuellement intelligibles.
+  Songhay / Soŋay / Zarma-Songhay. **PREUVES** :
+  - **Termes endonymes avec étymologies** : Les populations zarma et songhay se nomment *Soŋay*, *Soŋai*, *Sonrai* selon les dialectes. Le terme « Songhay » vient de l'ancien Empire Songhay (XVe–XVIe siècles) basé à Gao, du nom du peuple qui a établi cet empire. Le terme « Zarma » (ou « Djerma ») est utilisé par les locuteurs de cette variété songhay méridionale au Niger. « Dendi » est utilisé par les locuteurs de cette variété dans la région de Dendi (Bénin, Niger). Il n'existe pas de terme endonyme unique regroupant toutes les langues songhay, car elles sont souvent désignées par leurs noms régionaux spécifiques (Zarma, Dendi, Koyraboro Senni, Koyra Chiini, etc.).
+  - **Attestations historiques** : Le terme apparaît dans les sources historiques médiévales arabes mentionnant l'Empire Songhay (XVe–XVIe siècles), notamment à Gao et Tombouctou. Joseph Greenberg (1963) est le premier à utiliser systématiquement le terme « Songhay » comme branche primaire de Nilo-saharien dans *The Languages of Africa*.
+  - **Usage contemporain** : Le terme est maintenant largement accepté en linguistique (SIL Ethnologue, Glottolog, UNESCO) pour désigner cette famille linguistique, bien que son affiliation génétique (Nilo-saharien vs famille indépendante) reste débattue.
+- Usage contemporain (définition moderne de la famille) :
+  Groupement de langues parlé le long du Niger moyen (Mali–Niger), avec des variétés parfois peu mutuellement intelligibles. Classification controversée : incluse dans le macro-phylum **Nilo-saharien** par Greenberg (1963), Bender, Ehret, et Blench, mais traitée comme **famille indépendante** ou **isolat** par Dimmendaal (2008) et d'autres jusqu'à ce que des preuves comparatives plus convaincantes émergent. Divise en deux branches majeures : **Songhay méridional** (le long du fleuve Niger ; inclut Zarma, Dendi, Koyraboro Senni, Koyra Chiini) et **Songhay septentrional** (dispersé dans le Sahara ; inclut Tasawaq, Tadaksahak, Korandje, Tagdal/Tabarog, fortement influencé par le Berber).
 - Aire / répartition géographique générale :
-  Mali, Niger, Burkina Faso, Bénin
+  Mali, Niger, Burkina Faso, Bénin, nord du Nigeria. Zone géographique : Vallée moyenne du Niger (Mali–Niger), s'étendant vers l'est jusqu'au Bénin et vers le nord dans le Sahara central.
 - Nombre de langues (estimation) : 10–15
-- Nombre total de locuteurs (estimation) : ~3 à 4 millions
+- Nombre total de locuteurs (estimation) : ~2.5–3.5 millions (estimation 2025)
 
 ------------------------------------------
 
@@ -33,68 +38,124 @@
 # 1. Informations générales
 - Nom de la famille : Songhay
 - Branches internes / sous-groupes :
-  - Occidental : Zarma (Niger), Songhay de Gao (Mali)
-  - Oriental : Koyraboro Senni, Koyra Chiini
-  - Subgroupes isolés : Tasawaq (Agadez), Dendi (Bénin)
+  - Songhay méridional (Southern Songhay) : Zarma (Djerma) au Niger, Dendi au Bénin/Nigeria, Koyraboro Senni (Gao, Mali), Koyra Chiini (Tombouctou, Mali), Humburi Senni (Hombori, Mali), Koyra-Boro Senni (Mali), Kurtey, Wogo, etc.
+  - Songhay septentrional (Northern Songhay) : Tasawaq (Agadez, Niger), Tadaksahak (Mali/Algérie), Korandje (Algérie), Tagdal/Tabarog (Mali/Niger), fortement influencé par le Berber avec même des influences morphologiques
 - Aire géographique :
-  Vallée moyenne du Niger (Mali–Niger)
+  Vallée moyenne du Niger (Mali–Niger), s'étendant vers l'est jusqu'au Bénin et le nord du Nigeria, et vers le nord dans le Sahara central (Algérie méridionale, nord du Mali).
 - Nombre de langues :
-  ~10–15
+  ~10–15 langues vivantes
 - Nombre total de locuteurs :
-  ~3 à 4 millions
+  ~2.5–3.5 millions (estimation 2025)
 
 # 2. Peuples associés
 - Peuple 1 : Songhay / Sonrai (PPL_SONGHAY)
 - Peuple 2 : Zarma (Djerma) (PPL_ZARMA)
 - Peuple 3 : Dendi (PPL_DENDI)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Songhay de Gao  
-- Ethnie 2 : Zarma du Niger  
-- Ethnie 3 : Dendi du Bénin  
-(+ renvoi aux futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues majoritairement SOV, peu de flexion, usage de particules grammaticales.
+  Langues majoritairement SOV (Sujet-Objet-Verb), peu de flexion, usage de particules grammaticales pour exprimer TAM (Temps-Aspect-Mode). **EXEMPLES CONCRETS** :
+  - **Ordre des mots SOV** : Ordre prédominant dans la plupart des langues songhay (Zarma, Dendi), avec exceptions comme Koyra Chiini qui utilise SVO et est non-tonale. Exemple Zarma : *Yàroo hàmmay fùlàa tònnoo* "L'enfant a donné la farine au chef" (enfant-sujet-farine-objet-donné-chef-objet indirect).
+  - **Structures grammaticales avec particules** : Système analytique où TAM, négation, et modalité sont souvent gérés par des particules séparées ou des auxiliaires plutôt que par des affixes. Exemple Zarma : *Aà má nà fu* "Il/elle ne mange pas" où *má* marque la négation et *nà* est une particule aspectuelle. Le radical verbal reste largement invariable.
+  - **Dérivation verbale** : Suffixe dérivationnel présent dans toute la famille : *-ndi* pour causatif/passif sans agent. Peut être empilé dans certaines langues : en Songhay du Sud-Est (Koyraboro Senni) on peut voir *ɲa-ndi-ndi* signifiant "fait pour être mangé" ou similaire. Exemple Zarma : *fù* "manger" → *fù-ndi* "faire manger" (causatif).
+  - **Morphologie nominale** : Système de clitiques enclitiques pour exprimer le nombre et la définitude/démonstrativité. En Zarma : système à trois termes (singulier indéfini, singulier défini, pluriel). Exemples : *wàr* "chat" (singulier indéfini) → *wàrǎ* "le chat" (singulier défini) → *wàryáŋ* "les chats" (pluriel). Pas de genre grammatical ; possession exprimée via juxtaposition ou avec pronoms possessifs ; adjectifs, démonstratifs, nombres suivent le nom.
+  - **Système pronominal** : Pronoms personnels avec distinction personne/nombre, utilisés comme sujets et objets. Exemples Zarma : *ay* "je", *ni* "tu", *a* "il/elle", *iri* "nous", *ari* "vous", *i* "ils/elles".
+  - **Sériation verbale / chaînage de verbes** : Multiples verbes utilisés ensemble sans conjonction pour exprimer séquences ou causation, commun dans la famille. Exemple Zarma : *Aà wà fù gánkoy* "Il/elle va manger des arachides" (Il/elle-va-manger-arachides).
 - Particularités phonologiques :
-  - Tons lexicaux dans plusieurs variétés  
-  - Consonnes implosives  
-  - Voyelles ATR +/- (dans certaines variétés)
+  Systèmes phonologiques variant selon les variétés, avec certaines conservant le ton et d'autres l'ayant perdu. **DÉTAILS PRÉCIS** :
+  - **Voyelles** : En Zarma : cinq voyelles orales /a, e, i, o, u/ plus contreparties nasales, faisant dix. Longueur vocalique phonologiquement distincte. Il y a aussi semi-voyelles (glides) /w/, /j/ qui se combinent avec les voyelles dans diverses positions. En Dendi : inventaire vocalique riche incluant /ɛ/ /ɔ/, voyelles centrales ; système d'orthographe utilise diacritiques de ton.
+  - **Consonnes** : Inventaire consonantique du Zarma inclut occlusives voisées et sourdes aux positions labiale, dentale/alvéolaire, palatale, et vélaire ; nasales /m, n, ɲ, ŋ/ ; affriquée palatale /c/ (≈ [tʃ]) et occlusive palatale /ɟ/ ; fricatives incluant /f, s, z, h/ ; approximantes /w, j/ ; et trilles/battements /r, ɾ/. Certaines consonnes peuvent être longues. Consonnes implosives présentes dans plusieurs variétés. En Dendi : ensemble riche de consonnes incluant occlusives labio-vélaires /gb/, /kp/, etc.
+  - **Ton** : Le Zarma est tonal, ayant quatre tons : haut, bas, tombant, montant. Certains dialectes montrent des contours plus complexes. Le Dendi est également décrit comme ayant quatre tons. Cependant, certaines variétés (notablement Koyra Chiini) ont perdu ou réduit le ton, le remplaçant par l'accentuation. Le ton joue des rôles lexicaux et grammaticaux en Zarma et Dendi.
+  - **Harmonie vocalique ATR** : Voyelles ATR +/- (dans certaines variétés) pour la distinction avancée/retirée de la racine de la langue.
+  - **Structure syllabique** : Généralement simple ; prédominance CV(C), peu ou pas de groupes consonantiques dans la plupart des variétés.
 - Liens avec les familles voisines :
-  - Influences fortes des langues mandé (Bambara, Malinké)  
-  - Contacts prolongés avec les langues tchadiques (Hausa)  
-  - Emprunts au berbère dans les régions sahariennes
+  Influences fortes des langues mandé (Bambara, Malinké), contacts prolongés avec les langues tchadiques (Hausa), emprunts au berbère dans les régions sahariennes. **EXEMPLES CONCRETS D'EMPRUNTS** :
+  - **Avec les langues mandé** : Influences fortes des langues mandé (Bambara, Malinké) en raison de la proximité géographique et des zones d'échange culturel. Exemples d'emprunts : vocabulaire partagé dans les domaines de base, traits morphologiques comme le suffixe causatif *-endi* qui ressemble aux formations mandé. **Maurice Delafosse** a regroupé Songhay avec Mande, voyant des similarités lexicales et typologiques. Les influences mandé sont particulièrement visibles dans les variétés songhay méridionales.
+  - **Avec les langues tchadiques (Hausa)** : Contacts prolongés avec les langues tchadiques (Hausa) à travers le commerce transsaharien et les interactions culturelles. Emprunts de vocabulaire commercial, administratif, et religieux. Exemples : termes commerciaux haoussa dans le lexique songhay.
+  - **Avec les langues berbères** : Emprunts au berbère dans les régions sahariennes, particulièrement forts dans les variétés songhay septentrionales (Tasawaq, Tadaksahak, Korandje, Tagdal/Tabarog) qui montrent même des influences morphologiques du Berber. **Robert Nicolaï (1990, 2003)** a proposé que Songhay pourrait avoir émergé comme une variété basée sur le Berber (ou possiblement une lingua franca berbère) qui a subi une restructuration sous influence mandé. Les variétés songhay septentrionales sont décrites comme « mixtes » en raison de l'influence berbère lourde dans la morphologie et le lexique.
+  - **Avec les langues nigéro-congolaises voisines** : Interactions avec les langues nigéro-congolaises voisines (Bariba, etc.) dans les zones de contact, notamment pour le Dendi au Bénin qui est fortement influencé par le Bariba.
 - Innovations clés :
-  - Marqueurs verbaux postverbaux  
-  - Système prononciatif particulier dans le Zarma (différences Zarma/Gao)
+  - **Marqueurs verbaux postverbaux** : Système de particules et clitiques suivant le verbe pour exprimer TAM, modalité, et négation, plutôt que des affixes préverbaux.
+  - **Système analytique avec particules TAM** : Focus sur l'usage de particules préverbales ou auxiliaires pour exprimer l'aspect, le temps, et le mode, avec le radical verbal principalement invariable.
+  - **Suffixe dérivationnel *-ndi*** : Suffixe causatif/passif sans agent présent dans toute la famille, pouvant être empilé dans certaines langues.
+  - **Système tonal contrastif** : Quatre tons (haut, bas, montant, tombant) dans les variétés qui les conservent (Zarma, Dendi), jouant des rôles lexicaux et grammaticaux.
 
-# 5. Histoire et origines
-- Origine probable :
-  Région du Niger moyen (entre Gao et Niamey).  
-  Théories alternatives : un ancien substrat dans la boucle du Niger, avec influences mandé.
-- Diffusion des langues :
-  - Rôle central dans l’Empire Songhay (Gao, Tombouctou)  
-  - Diffusion jusqu’au Dendi (Bénin)
-- Ruptures historiques :
-  - Défaite de Tondibi (1591) → éclatement de l’empire  
-  - Colonisation française → réorganisation territoriale  
-  - Urbanisation à Niamey → montée du Zarma comme langue dominante
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  Plusieurs théories coexistent concernant l'origine géographique et génétique des langues songhay. **QUI A CLASSÉ ? CITATIONS COMPLÈTES** :
+  - **Théorie 1 – Hypothèse Nilo-saharienne (Greenberg, Bender, Ehret, Blench)** : **Joseph H. Greenberg (1963)** – *The Languages of Africa* : Inclut Songhay dans la famille **Nilo-saharienne**, basé principalement sur des comparaisons lexicales (environ 70 cognats allégués, y compris des pronoms personnels) entre Songhay et Saharan, Kanuri, etc. **Lionel Bender (1996)** : Considère Songhay comme une « sous-famille indépendante » au sein de Nilo-saharien. **Christopher Ehret (1989, 2001)** : Songhay est imbriqué avec *Maban* dans un clade « Sahelien occidental » de Nilo-saharien. **Roger Blench** : Accepte la classification Nilo-saharienne mais souligne que Songhay est l'une des branches plus divergentes, montrant une forte influence de contact (surtout dans les variétés septentrionales du Berber, et historiquement du Mande). Blench tend à regrouper Songhay avec les langues sahariennes au sein de Nilo-saharien. Arguments : Correspondances lexicales greenbergiennes ; traits morphologiques partagés avec Saharan ; traits typologiques (ex. morphologie singulatif/pluratif). Sources : Greenberg (1963) – *The Languages of Africa* ; Bender (1996) – *The Nilo-Saharan Languages: A Comparative Essay* ; Ehret (1989, 2001) – diverses publications ; Blench – travaux sur Nilo-saharien.
+  - **Théorie 2 – Hypothèse Mandé (Delafosse, Westermann, Creissels, Nicolaï)** : **Maurice Delafosse** : Regroupe Songhay avec Mande, voyant essentiellement des similarités lexicales et typologiques. **Westermann** : Avant les classifications à grande échelle ultérieures, il était incertain si Songhay appartenait à la famille Gur (Niger-Congo) ou était un isolat. **Denis Creissels, Mukarovsky** : Notent des similarités lexicales et morphologiques entre Songhay et les langues mandé. **Robert Nicolaï (1990, 2003)** : Propose que Songhay pourrait avoir des liens plus profonds avec les langues **Mande** (une branche de Niger-Congo), à travers un vocabulaire de base partagé, traits morphologiques (causatifs etc.). Nicolaï propose même que Songhay pourrait être un **créole basé sur le Berber**, fortement restructuré sous influence mandé. Arguments : Vocabulaire partagé, traits morphologiques comme le suffixe causatif *-endi* ; proximité géographique et zones d'échange culturel. Sources : Delafosse – travaux sur les classifications coloniales ; Nicolaï (1990) – *Parentés linguistiques (à propos du songhay)* ; Nicolaï (2003) – *La force des choses ou l'épreuve 'nilo-saharienne'*.
+  - **Théorie 3 – Hypothèse Afro-asiatique / Berber (Nicolaï)** : **Robert Nicolaï (1990, 2003)** : Propose que Songhay pourrait avoir émergé comme une variété basée sur le **Berber** (ou possiblement une lingua franca berbère) qui a ensuite subi une restructuration sous influence mandé. Il argumente que de nombreux mots en Songhay apparaissent provenir du Berber ou plus largement de l'Afro-asiatique, incluant le « vocabulaire central », et que songhay pourrait avoir été re-lexifié au fil du temps. Cependant, Nicolaï indique explicitement que cela ne signifie **pas** que Songhay est généalogiquement au sein de l'Afro-asiatique. Arguments : Présence de nombreux mots afro-asiatiques dans le vocabulaire de base ; traits typologiques qui ressemblent au Berber ainsi qu'à l'influence mandé dans les couches grammaticales ou lexicales. Sources : Nicolaï (1990) – *Parentés linguistiques (à propos du songhay)* ; Nicolaï (2003) – *La force des choses ou l'épreuve 'nilo-saharienne'*.
+  - **Théorie 4 – Famille indépendante / Isolat (Dimmendaal, Heath)** : **Gerrit Dimmendaal (2008)** : Exprime son scepticisme quant au classement définitif de Songhay dans Nilo-saharien, suggérant qu'il pourrait être mieux considéré comme **une famille linguistique indépendante** ou **un isolat** (ou au moins d'affiliation incertaine) jusqu'à ce que des preuves plus fortes soient disponibles. **Jeffrey Heath** : Travail descriptif extensif sur multiples langues songhay (ex. Koyra Senni, Koyra Chiini, Koroboro Senni etc.), mais aucune proposition majeure publiée par lui plaçant Songhay de manière décisive dans une famille, ou endossant une hypothèse créole. Son travail tend à se concentrer sur la classification interne, la variation dialectale, les effets de contact, la morphologie et la syntaxe, plutôt que sur son origine généalogique profonde. Arguments : Preuves pour l'inclusion dans Nilo-saharien restent peu convaincantes ; couches de contact brouillent les signaux. Sources : Dimmendaal (2008) – *Language Ecology and Linguistic Diversity on the African Continent* ; Heath (1998, 1999, 2005) – grammaires descriptives de Koyra Chiini, Koyraboro Senni, Tondi Songway Kiini.
+  - **ÉVIDENCES ARCHÉOLOGIQUES** : **Kukiya (ou Kukyia), Mali** : Site archéologique sur le fleuve Niger près de ce qui est aujourd'hui la région de Gao. Kukiya est associé dans les sources médiévales avec l'État/capitale songhay précoce avant Gao, et a été daté de manière tentative au 2ᵉ millénaire BCE. Cela suggère un établissement précoce de la vallée du Niger par des populations ancestrales aux élites ou communautés songhay ultérieures. Cependant, le site est incomplètement excavé, et aucune preuve linguistique définitive n'y est préservée. Routes commerciales et échange culturel : La région du Niger moyen fait partie du commerce transsaharien depuis longtemps, reliant l'Afrique du Nord (et les populations parlant afro-asiatique) avec les populations d'Afrique subsaharienne (y compris les locuteurs nigéro-congolais). Ces contacts durables fournissent des voies plausibles pour l'emprunt de vocabulaire, traits structurels, et parole multilingue. Cela soutient les théories linguistiques soulignant de lourdes couches de contact.
+  - **ÉVIDENCES GÉNÉTIQUES** : Il n'existe **pas d'étude génétique publiée qui isole spécifiquement les groupes parlant songhay** pour retracer leurs origines en termes de composantes ancestrales liées aux origines songhay (c'est-à-dire pas d'échantillons d'ADN ancien assignés à « proto-Songhay », et pas d'étude systématique du génome entier de tous les locuteurs songhay dans le contexte des questions d'origine). Les études plus larges des populations dans la ceinture Sahel/Savane montrent un mélange complexe, un flux de gènes entre les groupes parlant nilo-saharien, nigéro-congolais, et afro-asiatiques. Cela indique que l'histoire de la population dans cette région a été hautement dynamique. Le séquençage génomique des Africains indigènes démontre une structure profonde corrélant fortement avec la géographie et la subsistance, mais les groupes songhay n'apparaissent pas encore dans les ensembles de données génomiques publiés de manière à isoler leurs composantes anciennes plus profondes pour l'inférence d'origine. Ainsi, les preuves génétiques restent relativement sous-développées pour les questions spécifiques des origines songhay, contrairement à certains autres groupes africains.
+  - **ÉVIDENCES LINGUISTIQUES** : **Pierre-Francis Lacroix (1969)** : A remis en question les 70 cognats de Greenberg, affirmant que peut-être seulement environ **30** sont crédibles. De nombreuses similarités semblaient concentrées entre **Zarma** (une variété songhay méridionale) et les langues sahariennes, possiblement dues à l'emprunt plutôt qu'à une relation génétique. Les similitudes (vocabulaire partagé) entre Songhay et les branches Mandé soutiennent la vue d'un nœud Mandé-Songhay proche. Ehret argumente que Songhay partage plus notablement avec Maban (au sein de Nilo-saharien), soulignant un sous-groupe Songhay-Maban dans certaines de ses reconstructions.
+  - **CONCLUSION PLURALISTE** : La vérité peut incorporer des parties de plusieurs théories. Le modèle **Nilo-saharien** (Greenberg, Bender, Ehret, Blench) semble être l'hypothèse de travail prédominante parmi de nombreux spécialistes, mais reste controversé. Les influences **Mandé** sont clairement importantes, particulièrement dans les variétés méridionales. Les influences **Berber** sont fortes dans les variétés septentrionales. Le modèle **Famille indépendante / Isolat** (Dimmendaal) peut être approprié jusqu'à ce que des preuves comparatives plus convaincantes émergent.
+- Période d'émergence estimée :
+  **DEUX TEMPORALITÉS** :
+  - **(1) Émergence historique de la FLG** : Données archéologiques de Kukiya suggèrent un établissement précoce de la vallée du Niger par des populations ancestrales aux communautés songhay ultérieures au 2ᵉ millénaire BCE. L'Empire Songhay historique a émergé au **XVᵉ siècle** avec Gao comme capitale, s'étendant pour dominer une grande partie de la vallée du Niger moyen. Divergence estimée pour les branches internes de Songhay : séparations majeures entre Songhay méridional et Songhay septentrional ont probablement eu lieu durant le premier millénaire CE, avec les variétés septentrionales se développant dans le Sahara sous influence berbère. L'Empire Songhay a atteint son apogée au **XVe–XVIe siècles**.
+  - **(2) Date de classification académique** : Avant Greenberg : classifications coloniales incertaines (Delafosse avec Mande, Westermann incertain). **1963** : Greenberg place Songhay comme branche primaire de Nilo-saharien dans *The Languages of Africa*. **1969** : Lacroix remet en question la classification greenbergienne. **1981-2003** : Nicolaï propose des alternatives (Mandé, Berber). **2008** : Dimmendaal suggère traitement comme famille indépendante.
+- Diffusion des langues (routes migratoires, expansion) :
+  **TOUTES LES THÉORIES DISPONIBLES AVEC AUTEURS** :
+  - **Rôle central dans l'Empire Songhay** : Expansion des langues songhay avec l'Empire Songhay (Gao, Tombouctou) aux **XVe–XVIe siècles**, servant de langue des élites et du commerce transsaharien. Diffusion le long du fleuve Niger et des routes commerciales transsahariennes.
+  - **Diffusion vers le Dendi (Bénin)** : Extension vers l'est jusqu'à la région de Dendi (Bénin, nord du Nigeria), où le Dendi est maintenant parlé, probablement via les routes commerciales et les migrations.
+  - **Diffusion vers le nord dans le Sahara** : Les variétés songhay septentrionales (Tasawaq, Tadaksahak, Korandje, Tagdal/Tabarog) se sont développées dans le Sahara central, fortement influencées par le Berber, probablement via les routes commerciales transsahariennes et les migrations de pasteurs nomades.
+- Ruptures historiques (séparations, fusions) :
+  - **Divergences internes de Songhay** : Séparation entre Songhay méridional (le long du fleuve Niger) et Songhay septentrional (Sahara), estimée durant le premier millénaire CE. Division reflétée dans les différences phonologiques, morphologiques, et lexicales entre les branches, avec influence berbère forte dans les variétés septentrionales.
+  - **Défaite de Tondibi (1591)** : Éclatement de l'empire après la défaite face au Maroc, menant à la fragmentation politique et potentiellement linguistique.
+  - **Colonisation française** : Réorganisation territoriale créant des divisions administratives affectant les communautés linguistiques, introduction du français comme langue officielle, mais les langues songhay conservant leur usage local.
+  - **Urbanisation à Niamey** : Montée du Zarma comme langue dominante au Niger moderne, particulièrement dans la capitale Niamey et la région occidentale du Niger.
 - Zones de contact et métissages :
-  - Mali (Gao, Tombouctou)  
-  - Niger (Niamey, Tillabéri)  
-  - Bénin (Dendi)
+  **RÉPONDRE À "OÙ" – LOCALISER GÉOGRAPHIQUEMENT** :
+  - **Mali (Gao, Tombouctou)** : Villes historiques de l'Empire Songhay sur le fleuve Niger, où Koyraboro Senni (Gao) et Koyra Chiini (Tombouctou) sont parlés. Zones de contact avec les langues mandé (Bambara, Malinké), les langues berbères (via commerce transsaharien), et d'autres langues locales. Métissage linguistique dans le vocabulaire commercial et administratif.
+  - **Niger (Niamey, Tillabéri)** : Région où le Zarma domine, particulièrement dans la capitale Niamey et la région occidentale (Tillabéri). Zones de contact avec le Hausa (chadique), les langues mandé, et le français (colonial/post-colonial). Métissage linguistique avec emprunts haoussa dans le vocabulaire commercial et administratif.
+  - **Bénin (Dendi)** : Région de Dendi au Bénin où le Dendi est parlé. Zones de contact avec le Bariba (nigéro-congolais) et d'autres langues locales. Le Dendi est fortement influencé par le Bariba, montrant des emprunts lexicaux et des influences phonologiques.
+  - **Sahara central (Algérie méridionale, nord du Mali)** : Zones où les variétés songhay septentrionales sont parlées (Tasawaq en Algérie/Agadez, Tadaksahak au Mali/Algérie, Korandje en Algérie). Zones de métissage linguistique intense avec le Berber, avec même des influences morphologiques du Berber dans ces variétés.
+  - **Burkina Faso** : Populations plus petites de locuteurs songhay, avec zones de contact avec les langues mandé et d'autres langues locales.
+- Événements historiques majeurs ayant influencé la famille :
+  **CHRONOLOGIE AVEC DATES PRÉCISES** :
+  - **2ᵉ millénaire BCE** : Établissement précoce à Kukiya (région de Gao), suggéré par les données archéologiques.
+  - **Premier millénaire CE** : Probable divergence entre Songhay méridional et Songhay septentrional.
+  - **XIᵉ siècle** : Gao devient capitale de l'Empire Songhay.
+  - **XVᵉ siècle** : Apogée de l'Empire Songhay sous Sonni Ali (1464-1492) et Askia Mohammed (1493-1528), expansion le long du fleuve Niger et des routes commerciales transsahariennes.
+  - **XVe–XVIe siècles** : Période d'expansion maximale de l'Empire Songhay, servant de langue des élites et du commerce transsaharien.
+  - **1591** : Défaite de Tondibi face au Maroc, éclatement de l'empire, fragmentation politique et potentiellement linguistique.
+  - **Fin XIXᵉ–début XXᵉ siècle** : Colonisation française (Mali, Niger, Burkina Faso, Bénin), divisions administratives créant des frontières affectant les communautés linguistiques, introduction du français comme langue officielle.
+  - **1963** : Classification de Greenberg plaçant Songhay dans Nilo-saharien dans *The Languages of Africa*.
+  - **1969** : Critique de Lacroix remettant en question la classification greenbergienne.
+  - **1981-2003** : Travaux de Nicolaï proposant des alternatives (Mandé, Berber) aux origines songhay.
+  - **Années 1990-2000** : Urbanisation croissante à Niamey, montée du Zarma comme langue dominante au Niger moderne.
+  - **2008** : Dimmendaal suggère traitement de Songhay comme famille indépendante.
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  ~3 à 4 millions
+  ~2.5–3.5 millions (estimation 2025), incluant :
+  - Zarma au Niger : ~2.3–2.4 millions de locuteurs L1
+  - Dendi au Bénin/Nigeria : ~270,000–440,000 locuteurs L1
+  - Koyraboro Senni au Mali : ~430,000 locuteurs L1
+  - Autres variétés songhay : populations plus petites (Koyra Chiini, Humburi Senni, Tasawaq, Tadaksahak, etc.)
 - Répartition par pays :
-  Niger, Mali, Burkina Faso, Bénin
-- Importance historique :
-  Langue des élites de l’Empire Songhay ; rôle majeur dans le commerce transsaharien.
+  **CHIFFRES DÉTAILLÉS PAR PAYS AVEC POURCENTAGES. SOURCES PRÉCISES (ONU, UNFPA, CIA, SIL, ANNÉE 2025)** :
+  - **Niger** : Zarma (Songhai-Zarma) ~2.3–2.4 millions de locuteurs L1 (estimations basées sur les données des années 1990-2000, représentant environ **21% de la population** du Niger sur ~27 millions d'habitants en 2025). Inclut Zarma propre plus dialectes (Songhai, Kurtey, Wogo, et le dialecte Dendi méridional) au Niger. Le Zarma est la langue dominante dans la région occidentale du Niger, particulièrement à Niamey et Tillabéri. **Source** : SIL Ethnologue (2025), Harrison, Harrison & Rueck (1997), djerma.nl.
+  - **Mali** : Koyraboro Senni ~430,000 locuteurs L1 dans la région de Gao. Koyra Chiini ~locuteurs dans la région de Tombouctou. Autres variétés songhay avec populations plus petites. Zarma/Songhai-Zarma propre a seulement quelques centaines de locuteurs au Mali selon les décomptes passés. **Source** : SIL Ethnologue (2025), Wikipedia.
+  - **Bénin** : Dendi ~270,000 locuteurs L1 (selon Digital Bible Society). Parlé dans la région de Dendi au Bénin, fortement influencé par le Bariba (nigéro-congolais). **Source** : SIL Ethnologue (2025), Digital Bible Society, Omniglot.
+  - **Nigeria** : Dendi parlé dans la région frontalière avec le Bénin et le Niger (région de Gaya). Chiffres précis moins disponibles publiquement. **Source** : SIL Ethnologue (2025), Omniglot (estimation totale Dendi ~440,000 incluant Bénin + Niger + Nigeria).
+  - **Burkina Faso** : Zarma parlé dans une mesure mineure. Les données SIL/Ethnologue de 1987 rapportaient **environ 600 locuteurs** au Burkina Faso. Données plus récentes pour le Burkina Faso parlant Zarma sont rares. **Source** : SIL Ethnologue (1987, 2025).
+  - **Algérie** : Variétés songhay septentrionales (Korandje) parlées dans le sud de l'Algérie, populations plus petites. **Source** : SIL Ethnologue (2025).
 
-# 7. Sources
-- Nicolaï, R. – *Les dialectes songhay*
-- SIL Ethnologue – Songhay languages
-- Glottolog – Songhay
-- UNESCO – Atlas des langues
+# 6. Sources
+- [Greenberg, J.H.] ([1963]) – *The Languages of Africa*. [Bloomington : Indiana University Press]
+- [Nicolaï, R.] ([1981]) – *Les dialectes du songhay: contribution à l'étude des changements linguistiques*. [Paris : SELAF]
+- [Nicolaï, R.] ([1990]) – *Parentés linguistiques (à propos du songhay)*. [Paris : Éditions du CNRS]
+- [Nicolaï, R.] ([2003]) – *La force des choses ou l'épreuve 'nilo-saharienne': questions sur les reconstructions archéologiques et l'évolution des langues*. [Köln : Rüdiger Köppe Verlag]
+- [Bender, L.] ([1996]) – *The Nilo-Saharan Languages: A Comparative Essay*. [München : Lincom Europa]
+- [Heath, J.] ([1998]) – *A Grammar of Koyra Chiini: the Songhay of Timbuktu*. Mouton Grammar Library. [Berlin : Mouton de Gruyter]
+- [Heath, J.] ([1999]) – *A Grammar of Koyraboro (Koroboro) Senni: The Songhay of Gao, Mali*. [Köln : Rüdiger Köppe Verlag]
+- [Heath, J.] ([2005]) – *Tondi Songway Kiini (Songhay, Mali): reference grammar and TSK–English–French dictionary*. [Stanford : CSLI Publications]
+- [Lacroix, P.-F.] ([1969]) – *L'ensemble songhay-jerma: problèmes et thèmes de travail*. Actes du 8ᵉ Congrès de la SLAO.
+- [Lacroix, P.-F.] ([1980]) – *Emghedeshie, 'Songhay language of Agades': à travers les documents de Barth*. Itinérances, Vol. 1. [Société des Africanistes]
+- [Dimmendaal, G.] ([2008]) – *Language Ecology and Linguistic Diversity on the African Continent*. [In : Language and Linguistics Compass]
+- [SIL Ethnologue] ([2025]) – *Languages of Niger / Mali / Benin / Burkina Faso / Nigeria*. [https://www.ethnologue.com/]
+- [Glottolog] ([2025]) – *Songhay Overview*. [https://glottolog.org/resource/languoid/id/song1297]
+- [UNESCO] ([2025]) – *Atlas des langues en danger dans le monde*. [https://www.unesco.org/]
+- [Wikipedia] ([2025]) – *Songhay languages / Zarma language / Dendi language*. [https://en.wikipedia.org/wiki/Songhay_languages]
