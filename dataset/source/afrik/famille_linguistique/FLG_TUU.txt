@@ -3,26 +3,35 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_TUU
+- Lien avec la famille linguistique : 
 - Nom français : Tuu
-- Nom anglais / auto-appellation académique : Tuu
+- Nom anglais / auto-appellation académique : Tuu (Taa-ǃKwi)
 - Appellation(s) historique(s) :
-  Anciennement « Southern Khoisan » dans les classifications coloniales ;  
-  associée aux termes offensants « Bushmen » ou « Hottentot » dans certains documents anciens.
+  Anciennement « Southern Khoisan » dans les classifications coloniales (années 1950, Greenberg) ;
+  Anciennement « ǃUi-Taa » ou « Kwi » dans certaines classifications ;
+  Associée aux termes « Bushmen » ou « Hottentot » dans certains documents coloniaux (XIXe-XXe siècle).
 - Origine du terme historique :
-  Le nom « Tuu » est basé sur une reconstruction linguistique moderne proposée par Güldemann & Elderkin pour désigner la famille incluant Taa (ǃXóõ) et ǀXam.
+  - Le terme « Tuu » a été introduit par Tom Güldemann (2005-2006) dans ses travaux sur les langues du Sud de l'Afrique, notamment dans « Tuu as a language family » (2005) et « The San languages of southern Namibia » (2006). Le nom vient d'un mot commun aux deux branches de la famille signifiant « personne ».
+  - Le terme « Southern Khoisan » a été proposé par Joseph Greenberg dans les années 1950 dans son ouvrage *The Languages of Africa* (1963), regroupant diverses langues à clics sous ce nom générique sans démonstration généalogique solide.
+  - Le terme « Khoisan » lui-même a été forgé en 1928 par le biologiste allemand Leonhard Schulze, combinant *Khoi* (populations pasteurisantes du groupe Khoe) et *San* (chasseurs-cueilleurs), dans une logique extérieure aux peuples concernés.
+  - Les termes « Bushmen » et « Hottentot » proviennent de la terminologie coloniale européenne (hollandais/anglais) du XVIIe-XIXe siècle, utilisés de manière péjorative pour désigner les populations autochtones du Cap.
 - Pourquoi le terme pose problème :
-  - L’ancienne étiquette « Southern Khoisan » est une construction coloniale approximative qui ne reflète pas la généalogie réelle.  
-  - Les peuples Tuu ont subi une forte marginalisation, des massacres et des déplacements forcés.  
-  - Les termes « Bushmen » et « Hottentot » étaient racistes et stigmatisants.
-  → Afrik utilise **Tuu** comme terme strictement linguistique moderne.
+  - « Southern Khoisan » est une construction coloniale approximative qui ne reflète pas la généalogie linguistique réelle. Les études linguistiques récentes (Güldemann 2005-2010, Honken 2013) rejettent l'idée que toutes les langues « à clic » forment une famille unique. Elles préfèrent parler de contact (sprachbund) plutôt que de parenté démontrée.
+  - Les peuples Tuu ont subi une forte marginalisation, des massacres et des déplacements forcés pendant la colonisation européenne (XIXe-XXe siècle), particulièrement en Afrique du Sud où la langue ǀXam a disparu.
+  - Les termes « Bushmen » et « Hottentot » étaient racistes et stigmatisants, associés à une idéologie coloniale de déshumanisation (cf. travaux de Skotnes 1996, Penn 2005 sur la représentation coloniale des peuples San).
+  - Les études génétiques modernes (Pickrell et al. 2012, Schlebusch et al. 2017) montrent que les populations qui parlent les langues associées à « Khoisan » sont parmi les plus anciennes lignées humaines, divergentes des autres groupes africains depuis 100 000-260 000 ans, mais aussi fortement affectées par des flux de gènes récents (avec des langues bantoues, par exemple depuis ~1 200 ans).
+  → Afrik utilise **Tuu** comme terme strictement linguistique moderne basé sur la reconstruction scientifique.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Taa / ǃXóõ (pour les locuteurs vivants) ; ǀXam (langue éteinte)
-- Usage contemporain :
-  Petite famille linguistique caractérisée par des systèmes phonologiques parmi les plus complexes au monde.
+  - Pour la branche **Taa** : *Taa* est utilisé par les locuteurs eux-mêmes. Il est aussi appelé *ǃXóõ* (variante dialectale endonyme). Le terme *Taa* signifie « personne » dans la langue elle-même.
+  - Pour la branche **ǃKwi** : *Nǁng* (aussi orthographié *Nǀuu*) est l'auto-appellation des derniers locuteurs survivants (1 locuteur en 2025 selon Ethnologue). Le terme *ǀXam* était l'auto-appellation historique des locuteurs d'Afrique du Sud avant l'extinction de la langue au début du XXe siècle.
+  - Attestations historiques : Le mot *tuu* est reconstructible au proto-Tuu et signifie « personne » dans les deux branches, ce qui justifie l'utilisation du terme par Güldemann (2005).
+  - Usage contemporain : Les communautés parlant Taa/ǃXóõ au Botswana et en Namibie utilisent leur propre endonyme *Taa* ou *ǃXóõ* selon les variétés dialectales. Les chercheurs contemporains (Güldemann, Traill, Sands) utilisent le terme « Tuu » comme désignation strictement linguistique.
+- Usage contemporain (définition moderne de la famille) :
+  Petite famille linguistique indépendante composée de deux branches (Taa et ǃKwi) caractérisée par des systèmes phonologiques parmi les plus complexes au monde. Classée comme famille primaire par Glottolog (tuuu1241). Reconnue comme distincte des familles Kxʼa et Khoe malgré un contact historique prolongé.
 - Aire / répartition géographique générale :
-  Botswana, Afrique du Sud.
-- Nombre de langues (estimation) : 2 (dont 1 éteinte)
-- Nombre total de locuteurs (estimation) : ~2 000–3 000 (Taa/ǃXóõ)
+  Botswana (Désert du Kalahari, districts de Ghanzi et Kgalagadi), Namibie (régions Omaheke et Hardap, zones frontalières avec Botswana), Afrique du Sud (historiquement, avant l'extinction des langues ǃKwi).
+- Nombre de langues (estimation) : 2 branches principales (Taa et ǃKwi), avec plusieurs variétés dialectales éteintes ou moribondes. Taa/ǃXóõ est la seule langue vivante avec ~2 500 locuteurs (Ethnologue 2025). Nǁng (ǃKwi) est moribonde avec 1 locuteur (2025).
+- Nombre total de locuteurs (estimation) : ~2 500–3 000 (majoritairement Taa/ǃXóõ au Botswana et Namibie). Source : SIL Ethnologue 2025, Glottolog 2024.
 
 ------------------------------------------
 
@@ -31,63 +40,162 @@
 # 1. Informations générales
 - Nom de la famille : Tuu
 - Branches internes / sous-groupes :
-  - Taa / ǃXóõ (Botswana, Namibie – très faible nombre de locuteurs)
-  - ǀXam (Afrique du Sud – éteinte)
+  - **Taa** (ou ǃXóõ) : branche nord, Botswana et Namibie (2 500 locuteurs environ, variétés West !Xoon, East !Xoon, Lower Nossob éteinte)
+  - **ǃKwi** (ou ǃUi) : branche sud, Afrique du Sud et Botswana (quasi-éteinte, Nǁng avec 1 locuteur, ǀXam éteinte au début XXe siècle, autres variétés éteintes : ǁXegwi, Seroa, ǁŨǁʼe, Boshof ǃUi, ǂUngkue)
 - Aire géographique :
-  Botswana (Désert du Kalahari), Afrique du Sud (anciennement)
+  Botswana (Désert du Kalahari, districts de Ghanzi et Kgalagadi, le long de la rivière Nossob), Namibie (régions frontalières Omaheke et Hardap, zones Est-Namibie), Afrique du Sud (historiquement, provinces du Cap et du Transvaal avant extinction des langues ǃKwi).
 - Nombre de langues :
-  2 (1 vivante, 1 éteinte)
+  2 branches principales (Taa et ǃKwi), avec Taa/ǃXóõ comme seule langue vivante (~2 500 locuteurs) et Nǁng comme langue moribonde (1 locuteur). De nombreuses variétés sont éteintes : ǀXam, Lower Nossob, ǁXegwi, Seroa, ǂUngkue, etc.
 - Nombre total de locuteurs :
-  ~2 000–3 000
+  ~2 500–3 000 locuteurs (source : SIL Ethnologue 2025, Glottolog 2024). Près de 100% des locuteurs sont des locuteurs de Taa/ǃXóõ au Botswana et Namibie.
 
 # 2. Peuples associés
-- Peuple 1 : ǃXóõ (Taa) (PPL_XOO)
-- Peuple 2 : ǀXam (ancien peuple d'Afrique du Sud) (PPL_XAM)
-- Peuple 3 : Sous-groupes du Kalahari méridional (PPL_SAN)
+- Peuple 1 : ǃXóõ (Taa) (PPL_XOO) – Botswana, Namibie
+- Peuple 2 : ǀXam (ancien peuple d'Afrique du Sud, éteint) (PPL_XAM)
+- Peuple 3 : Nǁng (communauté du Cap, Afrique du Sud, 1 locuteur survivant)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : ǃXóõ (Botswana)  
-- Ethnie 2 : ǀXam (Éteinte)  
-- Ethnie 3 : Communautés Taa du Kalahari  
-(+ renvoi vers futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues tonales, structures morphologiques relativement simples, ordre SOV fréquent.
+  Langues tonales avec 2-3 tons contrastifs (ton haut, bas, moyen dans certaines variétés). Structures morphologiques agglutinantes, avec dérivation par affixes. Ordre syntaxique SOV (Sujet-Objet-Verbe) fréquent, mais variations selon les constructions.
+  
+  Exemples concrets de structures grammaticales :
+  - En Taa/ǃXóõ : les mots courants commencent par un clic dans environ 82% des listes de vocabulaire de base (Traill 1994, Güldemann 2005).
+  - Formation de pluriels : utilisation de préfixes ou modifications tonales selon les variétés (exemple : *tuu* « personne » → pluriel marqué par ton ou affixe selon contexte).
+  - Marqueurs aspectuels : suffixes verbaux pour exprimer l'aspect (perfectif/imperfectif) et le mode.
+  - Pronoms personnels : système de pronoms avec distinctions de personne (1re, 2e, 3e) et nombre (singulier/pluriel), avec variations dialectales.
+  
+  Morphologie et dérivation :
+  - Dérivation nominale : formation de noms par préfixes ou modifications internes (exemple : *!hai* « gemsbok » en proto-Tuu, reconstructible dans les deux branches).
+  - Dérivation verbale : affixes pour exprimer causatif, applicatif, réfléchi (documentation limitée pour ǃKwi à cause de l'extinction).
+  
+  Exemples de mots/phrases (Taa/ǃXóõ) :
+  - *tuu* [tuː] « personne » (mot reconstruit au proto-Tuu)
+  - *!hai* [ǃhai] « gemsbok » (antilope, mot proto-Tuu)
+  - *gǁúu* [ɡǁúu] « poitrine » (emprunt au Khoe)
+  - *gǃann* [ɡǃann] « menton » (emprunt au Khoe, attesté en Nǁng)
+  
 - Particularités phonologiques :
-  - **Systèmes de clics les plus complexes au monde** (jusqu’à 80 distinctions !)  
-  - Consonnes glottalisées, éjectives, aspirées  
-  - Voyelles avec modalités phonationnelles variées
+  - **Systèmes de clics les plus complexes au monde** : Taa/ǃXóõ possède jusqu'à ~100-140 phonèmes consonnes selon les variétés, incluant environ 80 distinctions de clics (Traill 1994, 2007). Les clics sont articulés à quatre points principaux : dental (ǀ), alvéolaire (ǃ), palatal (ǂ), latéral alvéolaire (ǁ), et bilabial (ʘ) dans certaines variétés de Tuu et ǂʼAmkoe voisine.
+  - **Clics bilabiaux** : Les langues Tuu, avec ǂʼAmkoe voisine, sont les seules langues au monde à avoir des clics bilabiaux (ʘ) comme phonèmes distinctifs (sauf le jargon rituel Damin d'Australie).
+  - **Phonation** : Distinctions de phonation (voisée, sourde, glottalisée, éjective, aspirée) s'appliquent aux clics. Par exemple, un clic dental peut être sourd (ǀ), voisé (ǀ̬), nasalisé (ᵑǀ), ou glottalisé (ǀʔ).
+  - **Voyelles** : Inventaire vocalique riche avec modalités phonationnelles variées (voyelles voisées, murmurées, serrées). Distinctions de timbre et de durée (courtes/longues).
+  - **Tonalité** : Systèmes tonals avec 2-3 tons contrastifs dans la plupart des variétés. Les tons peuvent être utilisés pour marquer des distinctions lexicales et grammaticales.
+  
 - Liens avec les familles voisines :
-  Contacts réduits avec Kx’a et Khoe ; influence mineure des langues bantoues du sud.
+  Contacts historiques prolongés avec les familles Kxʼa (Ju/ǃHoan) et Khoe (Khoekhoe, Gǀui), créant un sprachbund (aire linguistique) dans le Kalahari. Emprunts lexicaux documentés :
+  - De Khoe vers Tuu : *gǁúu* « poitrine » en ǃXóõ provenant de Khoe *gǁuu* (Güldemann & Loughnane 2012).
+  - De Khoe vers Tuu : *gǃann* « menton » en Nǁng provenant de Khoe *ǃann* (Güldemann 2005).
+  - Substrat Tuu dans Khoekhoe : Güldemann (2006) suggère que Khoekhoe possède un substrat Tuu (ǃKwi), indiquant une influence Tuu sur Khoe plutôt que l'inverse dans certaines zones.
+  - Substrat pré-Tuu/pré-Khoe : Une racine pour « poux » partagée par Khoe et Tuu (*ǁxóni* ~ *kx'uni* ~ *kx'uri*) suggère un substrat commun antérieur aux deux familles (Güldemann & Loughnane 2012).
+  - Influence bantoue récente : Contacts avec langues bantoues (Tswana au Botswana, Herero en Namibie) depuis ~1 200 ans, avec emprunts lexicaux limités mais influençant la situation de contact linguistique.
+  
 - Innovations clés :
-  - Inventaires consonantiques extrêmement diversifiés  
-  - Distinctions fines dans les clics (mode, lieu, phonation)  
-  - Grand nombre de phonèmes (ǃXóõ ≈ 140)
+  - **Phonologique** : Développement dans Taa de l'un des inventaires consonantiques les plus complexes au monde (jusqu'à ~140 phonèmes), avec extension de l'inventaire vocalique avec de nombreux timbres et modalités phonationnelles. Innovation des clics bilabiaux (ʘ) comme phonèmes distinctifs, partagée avec ǂʼAmkoe voisine dans le sprachbund du Kalahari.
+  - **Grammaticale** : Innovations partagées dans la branche ǃKwi (établies par Güldemann 2019) regroupant les langues ǃKwi plus périphériques avec innovations lexicales et morphologiques communes.
+  - **Lexicale** : Reconstruction proto-Tuu de termes environnementaux spécifiques au Kalahari (exemple : *!hai* « gemsbok »), indiquant une longue histoire dans cette région.
 
-# 5. Histoire et origines
-- Origine probable :
-  Populations très anciennes du Kalahari méridional ; lignées culturelles pré-agricoles.
-- Diffusion des langues :
-  Pas d’expansion récente ; régression due aux déplacements et assimilations forcées.
-- Ruptures historiques :
-  - Extermination ou déplacements des peuples ǀXam au XIXe siècle  
-  - Colonisation et répression en Afrique du Sud  
-  - Marginalisation socio-économique persistante
+# 4. Histoire et origines :
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  
+  **Théorie linguistique** : Tom Güldemann (2005-2006) a classé Tuu comme famille linguistique indépendante, rejetant la classification « Khoisan » de Greenberg (années 1950). Güldemann démontre que Tuu forme une famille distincte avec deux branches (Taa et ǃKwi) partageant un ancêtre commun (proto-Tuu) mais sans relation génétique démontrée avec Kxʼa ou Khoe malgré des siècles de contact.
+  
+  **Théorie archéologique** : Les populations Tuu sont associées aux traditions archéologiques de chasseurs-cueilleurs du Kalahari méridional datant de plusieurs millénaires. Des sites archéologiques dans le Désert du Kalahari (Botswana) montrent une occupation humaine continue depuis au moins 20 000-30 000 ans (Deacon & Deacon 1999, Robbins et al. 2005). La reconstruction proto-Tuu du mot *!hai* « gemsbok » (antilope du Kalahari) suggère que les locuteurs proto-Tuu habitaient cette région (Güldemann 2005).
+  
+  **Théorie génétique** : Les études génétiques (Pickrell et al. 2012, Schlebusch et al. 2017) montrent que les populations parlant des langues « Khoisan » (incluant Tuu) appartiennent aux plus anciennes lignées humaines. La divergence génétique entre branches nord-ouest et sud-est du Kalahari est estimée à moins de 30 000 ans, mais la séparation des lignées Tuu des autres groupes africains remonte à 100 000-260 000 ans. Les flux de gènes avec les populations bantoues sont relativement récents (~1 200 ans), suggérant que les Tuu ont longtemps été génétiquement isolés avant les contacts récents.
+  
+  **Théorie de la diffusion préhistorique** : Les proto-Tuu étaient probablement des chasseurs-cueilleurs dispersés dans le Kalahari méridional (Botswana, Namibie, Afrique du Sud) avant l'arrivée des pasteurs Khoe (~2 000 ans) et des agriculteurs bantous (~1 200 ans). L'absence d'expansion récente suggère que les Tuu n'ont pas connu de phase d'expansion démographique comparable à celle des familles bantoues ou nilotiques.
+  
+- Période d'émergence estimée :
+  **(1) Émergence historique de la FLG** : Le proto-Tuu était probablement parlé dans la région du Kalahari (Botswana/Namibie) il y a plusieurs millénaires, peut-être 5 000-10 000 ans avant le présent, bien que les reconstructions linguistiques ne permettent pas de datation précise. La reconstruction du mot *!hai* « gemsbok » et d'autres termes environnementaux suggère une longue histoire dans le Kalahari. La séparation entre les branches Taa (nord) et ǃKwi (sud) est estimée à plusieurs millénaires, probablement avant l'expansion des pasteurs Khoe il y a ~2 000 ans.
+  
+  **(2) Date de classification académique** : 
+  - Années 1950 : Joseph Greenberg propose « Khoisan » comme famille linguistique incluant « Southern Khoisan » (futur Tuu) dans *The Languages of Africa* (1963).
+  - Années 2000-2010 : Tom Güldemann (2005-2006, 2019) affine la classification, démontrant que Tuu forme une famille indépendante distincte de Kxʼa et Khoe. Güldemann introduit le terme « Tuu » dans « Tuu as a language family » (2005).
+  - 2019 : Güldemann présente « Toward a subclassification of the ǃUi branch of Tuu » (Berlin), établissant la classification moderne de la branche ǃKwi.
+  
+- Diffusion des langues (routes migratoires, expansion) :
+  
+  **Théorie 1 (statique)** : Les proto-Tuu étaient autochtones au Kalahari méridional, sans expansion majeure. Les langues Tuu n'ont pas connu de phase d'expansion comparable aux familles bantoues ou nilotiques. Au contraire, elles ont régressé géographiquement et démographiquement depuis le XIXe siècle à cause des déplacements forcés et de l'assimilation (Güldemann 2005).
+  
+  **Théorie 2 (migration préhistorique)** : Certains archéologues suggèrent que les ancêtres des Tuu ont migré vers le Kalahari depuis des zones plus septentrionales il y a 20 000-30 000 ans, mais cette théorie manque de preuves linguistiques directes (Deacon & Deacon 1999).
+  
+  **Théorie 3 (contact et métissage)** : Les études génétiques (Pickrell et al. 2012) montrent des flux de gènes entre populations Tuu et Khoe il y a ~2 000 ans (arrivée des pasteurs) et avec bantous il y a ~1 200 ans, suggérant que les contacts linguistiques reflètent des migrations et métissages plutôt qu'une expansion Tuu (contraire à la théorie 1).
+  
+  **Récession récente** : Depuis le XIXe siècle, les langues Tuu ont régressé à cause de :
+  - L'extermination ou déplacement des peuples ǀXam en Afrique du Sud (guerres coloniales, politique d'extermination)
+  - La colonisation européenne et répression en Afrique du Sud et Botswana
+  - La marginalisation socio-économique persistante au XXe-XXIe siècle
+  
+- Ruptures historiques (séparations, fusions) :
+  - **Séparation Taa / ǃKwi** : La divergence entre les branches Taa (nord, Botswana/Namibie) et ǃKwi (sud, Afrique du Sud) s'est produite il y a plusieurs millénaires, probablement avant l'expansion des pasteurs Khoe il y a ~2 000 ans. Les deux branches sont généalogiquement liées mais suffisamment divergentes pour être considérées comme des branches distinctes.
+  - **Extinction des langues ǃKwi** : La plupart des langues ǃKwi se sont éteintes au XIXe-XXe siècle :
+    - ǀXam : éteinte au début du XXe siècle (derniers locuteurs documentés par Dorothea Bleek et Lucy Lloyd au XIXe siècle)
+    - ǁXegwi, Seroa, ǁŨǁʼe, Boshof ǃUi, ǂUngkue : éteintes sans documentation complète
+    - Nǁng : moribonde avec 1 locuteur survivant en 2025 (Ethnologue)
+  - **Extinction de variétés Taa** : Lower Nossob (ǀʼAuni et ǀHaasi) est éteinte, documentée partiellement par Dorothea Bleek et Ernst Westphal.
+  
 - Zones de contact et métissages :
-  - Kalahari sud (avec les Bantous Nguni au contact historique : Zulu, Xhosa)  
-  - Regions australes du Botswana
+  - **Kalahari méridional (Botswana)** : Zones de contact historique entre Taa et langues Khoe (Gǀui, Naro) dans les districts de Ghanzi et Kgalagadi. Contact aussi avec Tswana (bantoue) depuis ~1 200 ans. Localisation précise : le long de la rivière Nossob, zones autour de Werda, Dutlwe, Tsetseng, Okwa.
+  - **Frontière Botswana-Namibie** : Contact entre variétés Taa (West !Xoon, East !Xoon) et langues Khoe (Khoekhoe) dans les régions Omaheke (Namibie) et Hardap (Namibie), zones frontalières avec le district Kgalagadi (Botswana).
+  - **Afrique du Sud (historique, avant extinction)** : Zones de contact entre ǃKwi (ǀXam, Nǁng) et langues bantoues (Zulu, Xhosa) dans les provinces du Cap et du Transvaal. Contact avec Khoekhoe (Khoe) dans la région du Cap. Les langues ǃKwi ont influencé Khoekhoe comme substrat (Güldemann 2006).
+  - **Sprachbund du Kalahari** : Formation d'une aire linguistique (sprachbund) entre Tuu, Kxʼa (Ju/ǃHoan) et Khoe, caractérisée par des traits phonologiques communs (clics complexes, tonalité) sans relation génétique démontrée. Cette zone de métissage linguistique s'étend du sud du Kalahari (Botswana) jusqu'au Cap (Afrique du Sud) et à l'ouest de la Namibie.
+  
+- Événements historiques majeurs ayant influencé la famille :
+  - **~30 000 ans avant le présent** : Séparation génétique entre populations nord-ouest et sud-est du Kalahari selon études génétiques (Pickrell et al. 2012), correspondant peut-être à la divergence linguistique entre Taa et ǃKwi.
+  - **~2 000 ans avant le présent** : Arrivée des pasteurs Khoe dans le Kalahari, créant des zones de contact linguistique avec Tuu et introduisant des emprunts lexicaux (exemple : *gǁúu* « poitrine »).
+  - **~1 200 ans avant le présent** : Début d'admixture génétique avec peuples parlant langues bantoues selon études génétiques (Pickrell et al. 2012), correspondant à l'expansion bantoue vers le sud.
+  - **XVIIe-XIXe siècle** : Colonisation européenne au Cap (Afrique du Sud), répression des peuples autochtones, introduction des termes péjoratifs « Bushmen » et « Hottentot ».
+  - **XIXe siècle** : Extermination ou déplacements forcés des peuples ǀXam en Afrique du Sud pendant les guerres coloniales (guerres de frontière, politique d'extermination). Documentation linguistique de ǀXam par Wilhelm Bleek, Lucy Lloyd et Dorothea Bleek (collections Bleek-Lloyd, 1870-1880).
+  - **Années 1950** : Classification de Greenberg proposant « Khoisan » comme famille incluant « Southern Khoisan » (futur Tuu).
+  - **Années 2000-2010** : Classification moderne de Güldemann établissant Tuu comme famille indépendante, rejetant le terme « Khoisan » comme catégorie génétique.
+  - **2025** : Situation actuelle : Taa/ǃXóõ avec ~2 500 locuteurs au Botswana/Namibie (langue vivante mais menacée), Nǁng avec 1 locuteur survivant (langue moribonde).
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  ~2 000–3 000
+  ~2 500–3 000 locuteurs (source : SIL Ethnologue 2025, Glottolog 2024). Près de 100% des locuteurs sont des locuteurs de Taa/ǃXóõ au Botswana et Namibie. Nǁng (ǃKwi) compte 1 locuteur survivant en Afrique du Sud (2025).
+  
 - Répartition par pays :
-  Botswana (Kalahari), Namibie (faiblement), Afrique du Sud (historique)
-- Importance historique :
-  Systèmes linguistiques uniques dans le monde ; importance culturelle majeure dans l’histoire profonde de l’humanité.
+  
+  **Botswana** :
+  - Locuteurs Taa/ǃXóõ : ~2 000–2 500 locuteurs (SIL Ethnologue 2025)
+  - Localisation : Districts de Ghanzi et Kgalagadi, Désert du Kalahari, le long de la rivière Nossob, zones autour de Werda, Dutlwe, Tsetseng, Okwa
+  - Pourcentage de la population nationale : < 0,1% (population nationale Botswana ~2,6 millions en 2025 selon ONU)
+  - Autres variétés : Lower Nossob éteinte (documentée historiquement par Dorothea Bleek et Westphal)
+  - Source : SIL Ethnologue 2025, Glottolog 2024, Güldemann (2005-2019)
+  
+  **Namibie** :
+  - Locuteurs Taa/ǃXóõ : ~500–1 000 locuteurs (estimation, partie de la population totale Taa combinée Botswana-Namibie ~3 000 selon certaines sources)
+  - Localisation : Régions frontalières Omaheke et Hardap (Est-Namibie), zones frontalières avec le district Kgalagadi (Botswana)
+  - Pourcentage de la population nationale : < 0,1% (population nationale Namibie ~2,5 millions en 2025 selon ONU)
+  - Source : SIL Ethnologue 2025, Glottolog 2024, Güldemann (2005-2006), études DoBeS sur Taa
+  
+  **Afrique du Sud** :
+  - Locuteurs Nǁng (ǃKwi) : 1 locuteur survivant (2025, Ethnologue)
+  - Localisation : Province du Cap (région historique)
+  - Pourcentage de la population nationale : < 0,0001% (population nationale Afrique du Sud ~60 millions en 2025 selon ONU)
+  - Langues éteintes : ǀXam (éteinte début XXe siècle), ǁXegwi, Seroa, ǁŨǁʼe, Boshof ǃUi, ǂUngkue (toutes éteintes)
+  - Importance historique : La langue ǀXam a fourni la devise nationale sud-africaine *ǃke eː ǀxarra ǁke* (« Peuples divers unis »), documentée par les collections Bleek-Lloyd
+  - Source : SIL Ethnologue 2025, collections Bleek-Lloyd (1870-1880), Güldemann (2005-2019)
 
-# 7. Sources
-- Güldemann & Elderkin – travaux fondateurs sur Tuu  
-- Sands, B. – *Khoisan phonology*  
-- SIL Ethnologue – Taa/ǃXóõ  
-- UNESCO – Atlas des langues en danger du Kalahari
+
+# 6. Sources
+- Güldemann, Tom (2005) – *Tuu as a language family*. Studies in Tuu (Southern Khoisan). ResearchGate.
+- Güldemann, Tom (2006) – *The San languages of southern Namibia: Linguistic appraisal with special reference to J. G. Krönlein's Nǀuusaa data*. Anthropological Linguistics, 48(4), 369–395.
+- Güldemann, Tom (2006) – *Structural Isoglosses between Khoekhoe and Tuu: The Cape as a Linguistic Area*. In Y. Matras, A. McMahon & N. Vincent (eds.), Linguistic Areas, London: Palgrave Macmillan UK, pp. 99–134. DOI: 10.1057/9780230287617_5.
+- Güldemann, Tom (2019) – *Toward a subclassification of the ǃUi branch of Tuu*. Paper presented at Afrikalinguistisches Forschungskolloquium at Humboldt Universität zu Berlin, 8 January 2019.
+- Güldemann, Tom & Loughnane, Robynne (2012) – *The problem of linguistic inheritance and contact in the Kalahari Basin: the case of body parts*. Language Dynamics and Change, 2(1), 1–43.
+- Traill, Anthony (1994) – *A !Xóõ Dictionary*. Quellen zur Khoisan-Forschung, 9. Köln: Rüdiger Köppe Verlag.
+- Traill, Anthony (2007) – *Taa (ǃXóõ) phonology*. In Rainer Vossen (ed.), The Khoesan Languages, London: Routledge, pp. 268–291.
+- Greenberg, Joseph H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press.
+- Pickrell, Joseph K. et al. (2012) – *The Genetic Prehistory of Southern Africa*. Nature Communications, 3, article 1143. DOI: 10.1038/ncomms2140.
+- Schlebusch, Carina M. et al. (2017) – *Southern African ancient genomes estimate modern human divergence to 350,000 to 260,000 years ago*. Science, 358(6363), 652–655. DOI: 10.1126/science.aao6266.
+- Bleek, Wilhelm H. I. & Lloyd, Lucy C. (1911) – *Specimens of Bushman Folklore*. London: George Allen & Company.
+- Bleek, Dorothea F. (1956) – *A Bushman Dictionary*. New Haven: American Oriental Society.
+- Westphal, Ernst O. J. (1971) – *The Click Languages of Southern and Eastern Africa*. In T. A. Sebeok (ed.), Current Trends in Linguistics, Vol. 7: Linguistics in Sub-Saharan Africa, The Hague: Mouton, pp. 367–420.
+- Story, Robert (1999) – *Kʼuǀha꞉si Manuscript*. In Anthony Traill (ed.), Khoisan Forum Working Paper, 13. Köln: University of Köln, pp. 18–34.
+- Skotnes, Pippa (1996) – *Miscast: Negotiating the Presence of the Bushmen*. Cape Town: University of Cape Town Press.
+- Penn, Nigel (2005) – *The Forgotten Frontier: Colonist and Khoisan on the Cape's Northern Frontier in the 18th Century*. Athens: Ohio University Press.
+- Deacon, Hilary J. & Deacon, Janette (1999) – *Human Beginnings in South Africa: Uncovering the Secrets of the Stone Age*. Cape Town: David Philip Publishers.
+- Robbins, Lawrence H. et al. (2005) – *The Advent of Herding in Southern Africa: Early AMS Dates on Domestic Livestock from the Kalahari Desert*. Current Anthropology, 46(4), 671–677.
+- SIL Ethnologue (2025) – *Taa Language*. Ethnologue: Languages of the World. URL: https://www.ethnologue.com/language/nmn
+- Glottolog (2024) – *Tuu languages*. Glottolog 5.0. URL: https://glottolog.org/resource/languoid/id/tuuu1241
