@@ -3,25 +3,35 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_NILOSAHARIENNE
+- Lien avec la famille linguistique : 
 - Nom français : Nilo-saharienne
 - Nom anglais / auto-appellation académique : Nilo-Saharan
 - Appellation(s) historique(s) :
-  « Langues nilotiques et soudanaises », « Nilotic-Sudanic » (anciens regroupements),  
-  « Soudanais oriental » (désuet).
+  « Langues nilotiques et soudanaises », « Nilotic-Sudanic » (anciens regroupements), « Chari-Nile », « Macro-Sudanic » (avant 1963), « Soudanais oriental » (désuet).
 - Origine du terme historique :
-  Le terme « Nilo-Saharan » a été proposé par Joseph Greenberg (1963) pour regrouper diverses langues d’Afrique orientale, centrale et sahélienne qui n’appartenaient ni à l’afro-asiatique ni au niger-congo.  
-  C’est **une construction comparative moderne**, et non un terme ancien.
+  Le terme « Nilo-Saharan » a été créé par **Joseph H. Greenberg** en **1963**, dans son ouvrage *The Languages of Africa* (Indiana University Press / Mouton). Greenberg avait repris et élargi des classifications antérieures de linguistes européens (Diedrich Westermann, Heinrich Lepsius, Heinrich Barth, Carl Meinhof), en combinant les anciens groupes "Sudanic" et divers ensembles non-affiliés exclus de Niger-Congo, Afro-asiatique et Khoisan. C'est **une construction comparative moderne**, et non un terme ancien ou endogène. Avant Greenberg, Westermann (début XXe siècle) utilisait "Sudanic" et "Chari-Nile" était proposé dans les années 1950.
 - Pourquoi le terme pose problème :
-  - La famille nilo-saharienne n’est **pas prouvée** de manière solide — elle regroupe des langues parfois très éloignées.  
-  - Certains sous-groupes pourraient être des familles indépendantes.  
-  - La classification a longtemps été utilisée dans des contextes coloniaux pour opposer des « groupes nilotiques » (perçus comme guerriers) à d’autres groupes sahéliens.  
-  → **La charge problématique est surtout scientifique (classification instable), et secondairement coloniale (caricatures ethniques).**
+  **Preuves coloniales :** Le terme s'inscrit dans une tradition de classification linguistique européenne du XIXe-XXe siècle (missions, explorateurs, chercheurs coloniaux) dont les catégories reflètent des perspectives extérieures, universalisantes et parfois hiérarchisées. Les concepts de "Niloto-Soudan", "Sudanic", "Chari-Nile" proviennent de travaux de Westermann, Lepsius, Meinhof, qui utilisaient des critères historiques et géographiques centrés sur les Européens, parfois sans preuves internes rigoureuses pour tous les sous-groupes. Carl Meinhof utilisait notamment des concepts comme "Hamitic component" pour justifier des hiérarchies raciales linguistiques.
+  
+  **Auteurs locaux défendant l'africanité :** Certains linguistes africains remettent en question l'unité génétique complète du phylum Nilo-Saharien, soulignant des branches mal attestées ou divergentes. Théophile Obenga critique notamment la méthode de "comparaison de masse" de Greenberg et l'absence de preuves systématiques. Les communautés nilotiques revendiquent leurs langues endogènes et les études anthropologiques locales remettent en cause les imputations imposées par la classification coloniale.
+  
+  **Études génétiques modernes :** Des analyses récentes montrent que les populations parlant des langues supposées Nilo-Sahariennes présentent une forte variation génétique et une certaine isolation entre groupes. L'étude de Dobon et al. (2015) dans *Scientific Reports* identifie un composant génétique commun chez des groupes parlant des langues dites Nilo-Sahariennes au Soudan et au Soudan du Sud, mais aussi des niveaux d'admixture importants, montrant que la frontière linguistique ne coïncide pas toujours avec la structure génétique. L'étude de Mulindwa et al. (2020) sur les Lugbara (Nord-Ouest de l'Ouganda) documente une biodiversité génétique importante avec signatures adaptatives mais pas de mélange complet avec Afro-asiatique/Niger-Congo.
+  
+  **Critiques linguistiques modernes :** Plusieurs linguistes contestent aujourd'hui la cohérence génétique de la famille Nilo-Saharien. Glottolog (2019) ne reconnaît pas l'unité de plusieurs branches, notamment Kadu, Koman, Kunama. Gerrit Dimmendaal, Roger Blench, Tom Güldemann et d'autres linguistes modernes jugent les preuves pour l'unité de la famille encore insuffisantes, en particulier pour des groupes comme Kadu ou Songhai. Certains qualifient Nilo-Saharien comme un "wastebasket" (poubelle) de Greenberg sans preuves comparatives robustes pour toutes ses branches.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Nilo-Saharan languages / Langues nilo-sahariennes
-- Usage contemporain :
-  Macro-famille proposée regroupant les langues nilotiques (Maasai, Luo, Dinka), sahariennes (Kanuri, Tebu), soudaniques centrales (Lendu, Lugbara), et Songhay.
+  Il n'existe **aucune appellation unifiée (endonyme)** couvrant l'ensemble des langues classées dans Nilo-Saharien attestée historiquement parmi les locuteurs eux-mêmes. Les locuteurs parlent des noms pour leur langue ou leur groupe linguistique spécifique (Nilotic, Saharan, Nubian, etc.), mais pas d'un terme global "Nilo-Saharien" comme catégorisation interne.
+  
+  **Preuves d'auto-appellations spécifiques :** 
+  - Les locuteurs nilotiques s'appellent eux-mêmes "Nilotes" (Nilotic tribes), terme endogène adopté au moins depuis la période coloniale tardive. Par exemple, les Dinka s'appellent *Thuɔŋjäŋ* (en langue Dinka), les Nuer *Naath* (en langue Nuer), les Maasai *Maa* (en langue Maa/Maasai).
+  - Pour les langues Sahariennes, les locuteurs utilisent le nom de leurs propres langues : par exemple **Kanuri** pour les locuteurs de Kanuri (endonyme *Kanùrí*), **Zaghawa** pour les Zaghawa (endonyme *Beria*), **Teda** pour les Teda.
+  - Pour les langues Nubiennes : les locuteurs de Dongolawi appellent leur langue *Andaandi* ("langue de notre foyer") plutôt que le terme arabe "Dongolawi".
+  - Pour les langues Koman : Afitti est également connu comme *Dinik* ou *Ditti* selon les villages, ce qui constitue un endonyme local.
+  
+  Aucun terme indigène attesté historiquement ne regroupe l'ensemble des branches du Nilo-Saharan comme un groupe générique. L'idée même d'unification est d'abord académique et externe. Le terme reste donc exogène, utilisé principalement par les linguistes occidentaux et les institutions académiques.
+- Usage contemporain (définition moderne de la famille) :
+  Macro-famille proposée (phylogénétique) regroupant les langues nilotiques (Maasai, Luo, Dinka, Nuer), sahariennes (Kanuri, Teda, Daza, Zaghawa), soudaniques centrales (Lendu, Lugbara, Mangbetu, Moru), Songhay (Zarma, Songhay de Gao), Koman (sud Éthiopie), Kunama/Barya, Surmic (Me'en, Suri), et d'autres branches. Utilisée dans les classifications linguistiques académiques (SIL Ethnologue, Glottolog avec réserves) bien que son unité génétique soit controversée.
 - Aire / répartition géographique générale :
-  Est sahélien, hauts plateaux du Nil, Sahara central, zones du Tchad et de l’Ouganda.
+  Est sahélien, hauts plateaux du Nil (Soudan, Soudan du Sud, Éthiopie), Sahara central (Niger, Tchad), régions du Tchad et de l'Ouganda, Kenya, Tanzanie. Distribution discontinue allant du Sahel central (Mali, Niger) à l'Est de l'Afrique (Tanzanie, Kenya), zones méditerranéennes-sud (Soudan, Soudan du Sud, Éthiopie, Érythrée), et zones centrales africaines (RDC).
 - Nombre de langues (estimation) : ~120–210
 - Nombre total de locuteurs (estimation) : 50 à 70 millions
 
@@ -32,76 +42,174 @@
 # 1. Informations générales
 - Nom de la famille : Nilo-saharienne
 - Branches internes / sous-groupes :
-  (selon classification Greenberg / Dimmendaal)  
-  - Nilotiques (Maasai, Dinka, Luo…)  
-  - Sahariennes (Kanuri, Teda, Daza)  
-  - Songhay (Zarma, Songhay de Gao)  
-  - Soudaniques centrales (Lendu, Lugbara, Mangbetu, Moru)  
-  - Koman (sud Éthiopie)  
-  - Kunama / Barya  
-  - Surmic (Me’en, Suri)  
-  - Teso-Turkana (certaines classifications)
+  (selon classification Greenberg / Dimmendaal / Bender)  
+  - **Nilotiques** : Maasai, Dinka, Luo (Dholuo), Nuer, Acholi, Kalenjin, Teso, Turkana, Bari, Lotuko
+  - **Sahariennes** : Kanuri, Teda, Daza, Zaghawa, Berti
+  - **Songhay** : Zarma, Songhay de Gao, Dendi
+  - **Soudaniques centrales** : Lendu, Lugbara, Mangbetu, Moru, Lendu, Bongo-Bagirmi
+  - **Koman** : Gumuz, Komo, Uduk, Gwama (sud Éthiopie, Soudan)
+  - **Kunama / Barya** : Kunama, Barya (Érythrée, Éthiopie)
+  - **Surmic** : Me'en, Suri, Murle, Kwegu (Éthiopie, Soudan du Sud)
+  - **Maban** : Maba, Massalit, Runga (Tchad, Soudan)
+  - **Taman** : Tama, Sungor, Mararit (Tchad, Soudan)
+  - **Kadu** : Kanga, Tulishi (Soudan - Nuba Hills) - inclusion controversée
+  - **Nyimang** : Nyimang, Afitti (Soudan - Nuba Hills)
+  - **Teso-Turkana** : Teso, Karamojong, Toposa, Turkana (certaines classifications les rattachent aux Nilotiques)
 - Aire géographique :
-  Est sahélien, Nil supérieur, Sahara central, Afrique centrale orientale
+  Est sahélien, Nil supérieur (Soudan, Soudan du Sud), Sahara central (Niger, Tchad, Nigéria), Afrique centrale orientale (RDC, Ouganda, Kenya, Tanzanie), Corne de l'Afrique (Éthiopie, Érythrée). Distribution discontinue couvrant environ 17 pays africains.
 - Nombre de langues :
-  120–210
+  120–210 (estimation variable selon l'inclusion ou non de branches controversées comme Kadu, Songhay)
 - Nombre total de locuteurs :
-  50–70 millions
+  50–70 millions (estimations Ethnologue / SIL, années 2020-2025)
 
 # 2. Peuples associés
 - Peuple 1 : Dinka (PPL_DINKA)
 - Peuple 2 : Maasai (PPL_MAASAI)
 - Peuple 3 : Kanuri (PPL_KANURI)
+- Peuple 4 : Luo (PPL_LUO)
+- Peuple 5 : Nuer (PPL_NUER)
+- Peuple 6 : Lugbara (PPL_LUGBARA)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Dinka  
-- Ethnie 2 : Maasai  
-- Ethnie 3 : Kanuri  
-(+ renvoi vers futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Grande variabilité : langues tonales, flexionnelles ou analytiques selon les branches.  
+  **Ordre des mots :** Grande variabilité selon les branches. Les langues orientales (Nilotic, Surmic, certains Kuliak et Kadu) tendent vers l'ordre Sujet-Verbe-Objet (SVO) ou auxiliaire-verbe-objet. Par exemple, le Dholuo (Nilotic, Kenya) utilise l'ordre SVO : *achiemo* "je mange", *wachiemo* "nous mangeons". Les langues occidentales/nordiques (ex. Nubien, Saharien, Maban, Kunama) montrent souvent un ordre verbe-final (SOV). Par exemple, le Kanuri (Saharien, Tchad/Niger) utilise principalement l'ordre SOV.
+  
+  **Morphologie nominale :** Système singulatif-collectif-pluriel dans plusieurs branches. Exemple en **Bari** (Nilotic, Sud-Soudan) : *rima'* « sang » (forme de base), *rima-tat* « une goutte de sang » (singulatif), *nyɔmɔt* « graines » (pluriel), *nyɔmɔt-ti* « graine » (singulatif), *nyɔmɔt-an* « beaucoup de sortes de graines » (collectif). Le Kipsigis (Nilotic, Kenya) présente un système tripartite singulatif-collectif-pluriel similaire.
+  
+  **Morphologie verbale :** Distinction aspectuelle forte entre formes perfectives vs imperfectives dans diverses branches (Saharan, Taman, Nyimang, Surmic). Marquage du sujet, personne, aspect. Préfixes personnels verbaux : 1ère personne singulier souvent préfixe *a-*, 2ème personne *i-* ou similaire dans plusieurs branches. Dérivation verbale : causatif, voix passive, négation souvent comme affixes ou préfixes/suffixes verbaux. Exemple en Dholuo : verbe *chiemo* "manger" : *achiemo* "je mange", *ochiemo* "il/elle mange", *wachiemo* "nous mangeons".
+  
+  **Marqueurs de cas :** Certaines langues Nilotic orientales possèdent des distinctions de genre inhérentes (masculin/féminin) sur certains noms. En général, distinction de genre rare dans la famille.
 - Particularités phonologiques :
-  - Tons lexicaux dans la plupart des groupes  
-  - Consonnes implosives ou éjectives dans certaines branches  
-  - Voyelles ATR +/- (advanced tongue root)
+  **Tons :** La plupart des langues sont **tonales**, avec deux à quatre tons selon les langues, utilisés pour distinctions lexicales et grammaticales. Par exemple, **Lugbara** (Central Sudanic, Ouganda) peut distinguer jusqu'à **quatre niveaux tonals**. Le Dinka (West Nilotic) utilise un système tonal complexe avec voix soufflée vs voix stricte.
+  
+  **Harmonie vocalique ATR :** Très présente dans Nilotic, Surmic, Central Sudanic : les voyelles sont divisées en sets ATR+ (advanced tongue root) / ATR- (retracted tongue root), avec restrictions sur co-occurrence dans le mot. Par exemple, le Dinka utilise ce contraste avec voix laryngée ou soufflée (breathy vs creaky) vocalique.
+  
+  **Consonnes rares :** Distinctions rares comme consonnes implosives, éjectives, stops labio-vélaires (/kp, gb/), distinction voix soufflée / voix dure ou crépitée dans certaines langues Nilotic (ex. Dinka). Par exemple, certaines langues Komuz (comme Koma, Éthiopie occidentale) possèdent des consonnes éjectives, implosives et des contrastes vocaliques complexes. Le Dinka développe aussi distinction entre voix ou qualité vocale (voix chuchotée, breathy, creaky) pour les voyelles, ainsi qu'une longueur tripartite (voyelle courte-moyenne-longue).
+  
+  **Qualité de voix et longueur :** Le Dinka présente des distinctions complexes incluant voix soufflée vs voix stricte, trois longueurs de voyelles dans certains contextes, combinées avec les tons.
 - Liens avec les familles voisines :
-  Contacts nombreux avec :
-  - Afro-asiatique (Soudan, Tchad)  
-  - Niger-Congo (Ouganda, RDC, Nigéria)  
-  - Khoïsan (échanges anciens dans le Sahara)
+  **Influence Afro-asiatique :** Contacts linguistiques avec langues Afro-asiatiques (Cushitiques, Arabes) dans le nord-Est (Éthiopie, Soudan). Certaines formes grammaticales TAM (Temps-Aspect-Mode) chez les langues Saharan et Nubian semblent avoir été influencées syntaxiquement par des langues Cushitiques. Certains vocabulaires Saharan montrent influence de langues berbères ou arabes dans le lexique de prêt (religieux, technique) - par exemple, Kanuri a emprunté des termes arabes modernes pour concepts modernes, mais pas toujours pour vocabulaire fondamental.
+  
+  **Influence Niger-Congo :** Contact prolongé avec langues Niger-Congo et Afro-Asiatiques entraîne partage de traits phonologiques ou morphosyntaxiques. Les bandes frontalières entre langues Nilotic et Bantu montrent échanges lexicaux dans le vocabulaire du cheptel, de la culture pastorale. Certaines langues contactées ont influencé les langues Centrales Sudaniques dans la structure consonantique et l'harmonie vocalique. Par exemple, harmonie vocalique ATR partagée avec langues Niger-Congo, ou tonalité acquise par contact dans certaines zones.
+  
+  **Influence Khoisan :** Échanges anciens dans le Sahara suggérés pour certaines zones, bien que moins documentés.
+  
+  **Emprunts lexicaux précis :** Songhay a acquis de nombreux emprunts lexicaux du Mande (Niger-Congo), dû à contact prolongé entre locuteurs Songhay et Mande, notamment dans l'argot ou vocabulaire culturel localement non fondamental.
 - Innovations clés :
-  - Flexions verbales irrégulières dans les nilotiques  
-  - Suggestions de liens anciens entre Songhay et d’autres branches (débat encore ouvert)
+  **Système de nombre tripartite :** Le développement du système singulatif-collectif-pluriel dans les langues Nilotic est considéré comme une innovation propre à la famille, plutôt que simple conservation. Proto-Nilo-Saharan selon Blench (2010) aurait développé ce système singulier simple, pluriel avec suffixe, collectifs pour des groupes non dénombrables ou classes collectives.
+  
+  **Transformations morphologiques spéciales :** Dans les langues Nilotic occidentales (Dinka, etc.), affixes anciens remplacés ou transformés en traits suprasegmentaux (ton, voix). Innovation dans les systèmes TAM (Temps-Aspect-Mode), notamment dans Saharan : élaboration récente de systèmes tense/aspect.
+  
+  **Innovations phonétiques :** Dans certaines langues Kuliak ou Kadu, innovations phonétiques / réduction ou perte de tonalité, simplification des systèmes consonantiques comparé aux hypothétiques protoformes. Dans certaines langues Nilotic orientales, un développement de voyelles longues, voix soufflée vs voix dure / crépitée, comme dans Dinka.
+  
+  **Trait novateur proposé :** Bender (2000) identifie un isoglosse *kutuk* « bouche » et *(ko)TVS-(Vg)* pour « trois », partagé entre plusieurs langues comme Nilotic, Surmic, Taman, suggérant une innovation partagée dans Eastern Sudanic.
 
-# 5. Histoire et origines
-- Origine probable :
-  Hypothèse centrale : régions du Nil supérieur et de l’Éthiopie occidentale.  
-  Hypothèse alternative : Sahara central humide (Holocène).
-- Diffusion des langues :
-  - Migrations pastorales nilotiques  
-  - Expansion saharienne kanembu/kanuri  
-  - Diffusion songhay le long du fleuve Niger
-- Ruptures historiques :
-  - Désertification du Sahara  
-  - Guerres et déplacements forcés au Soudan, au Tchad et en Ouganda  
-  - Pressions arabophones au nord et bantoues au sud
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  **Théorie linguistique dominante :** **Joseph H. Greenberg (1963)** - *The Languages of Africa* (Indiana University Press / Mouton) : proposition de la famille Nilo-Saharienne comme entité génétique unifiée, basée sur comparaison lexicale, morphologique, typologique. Greenberg avait combiné les anciens groupes "Sudanic" et divers ensembles non-affiliés.
+  
+  **Révisions linguistiques :** **Lionel Bender (1989-2000)** : révisions internes, repositionnement de branches (Kadu, Komuz, continuité ou divergences selon branches). Classification interne raffinée avec Chari-Nile, Core Nilo-Saharan, etc. **Christopher Ehret (2001)** propose classification avec deux branches principales, exclut certains groupes comme Kadu dans certains modèles. **Gerrit J. Dimmendaal, Roger Blench, Tom Güldemann** : analyses critiques modernes qui acceptent quelques branches mais rejettent ou considèrent comme incertaines l'unité de tout le groupe. Blench (2010) propose le système singulatif-collectif-pluriel comme innovation proto-Nilo-Saharan.
+  
+  **Théorie archéologique / paléoclimatique :** Approches génétiques et paléoclimatiques suggèrent l'expansion initiale possible en période humide du Sahara ("Green Sahara", African Humid Period) autour du 8e-6e millénaire avant notre ère, avec interaction des populations aquatiques, suivie d'aridification, fragmentation, migrations. Certaines branches (ex. Eastern Sudanic) estimées avoir une origine remontant au 5e millénaire avant J.-C. ou avant, dans le Néolithique ancien, basé sur reconstructions et estimations paléolinguistiques.
+  
+  **Théorie génétique :** Études génétiques modernes (Dobon et al. 2015, Mulindwa et al. 2020) montrent une structure complexe, avec des composantes partagées entre locuteurs de langues supposées Nilo-Sahariennes et d'autres groupes linguistiques, suggérant des emprunts, des contacts et des migrations, non une ascendance purement génétique uniformisée. Les frontières linguistiques ne coïncident pas toujours avec la structure génétique.
+  
+  **Théorie alternative / critique :** Pour certains linguistes (Glottolog, Starostin 2015-2016), Nilo-Saharien est un "wastebasket" (poubelle) de Greenberg sans preuves comparatives robustes pour toutes ses branches. Certains acceptent seulement des sous-ensembles du phylum, ou qualifient certaines branches comme "non-déterminées" ou isolées.
+- Période d'émergence estimée :
+  **(1) Émergence historique du groupe linguistique (protolangage) :** Propositions situent le *Proto-Nilo-Saharien* entre 8000 à 12000 ans avant le présent (Holocène), souvent lié au climat humide du Sahara (African Humid Period, ~8000-5500 av. J.-C.), mais pas de datation précise universellement acceptée. Certaines branches (ex. Eastern Sudanic) estimées remonter au 5e millénaire avant J.-C. ou avant, dans le Néolithique ancien. Estimations basées sur reconstructions paléolinguistiques et données archéologiques.
+  
+  **(2) Date de classification académique :** Le terme "Nilo-Saharan" tel que reconnu aujourd'hui date de **Greenberg (1963)** dans *The Languages of Africa*. Avant cela, études comparatives mentionnées dès fin XIXe / début XXe siècle : Heinrich Barth (1853) pour la branche Saharan, Heinrich Lepsius (1880) pour Nilotic, Diedrich Westermann (décennies 1910-1930) posant les groupes Sudanic. Greenberg avait publié des articles en 1949-1954 sur classification africaine, propositions de Macro-Sudanic, Chari-Nile, avant l'extension à Nilo-Saharan en 1963.
+- Diffusion des langues (routes migratoires, expansion) :
+  **Théorie 1 - Expansion liée au climat et cours d'eau :** Expansion liée aux bassins du Nil et du Chari pendant période humide du Sahara (6e-8e millénaire BCE), voie de peuplement suivant cours d'eau. Blench (2010) voit la distribution comme reflet des voies d'eau du Sahara vert il y a ~12000 ans. Diffusion depuis zone hypothétique autour du Soudan (région entre Nil et Chari), vers l'ouest (Songhay, Saharan vers Tchad, Niger, Nigéria), vers l'est (Éthiopie, Kenya, Tanzanie via branches Nilotic), vers le centre (République centrafricaine, Congo via Central Sudanic).
+  
+  **Théorie 2 - Diversification tardive avec contacts :** Alternative selon laquelle certaines branches (ex. Songhay, Kadu) sont très divergentes ou même non incluses ; la diffusion se serait faite par migrations plus dispersées, pas par unité homogène. Classification plutôt tardive, avec plusieurs vagues de contact, migrations et influences, sans qu'il y ait eu nécessairement un proto-groupe homogène. Usage de la linguistique comparée et de la génétique pour montrer qu'il y a eu des échanges lexicaux, des shifts linguistiques, hétérogénéité, pas une simple "famille" linéaire.
+  
+  **Théorie 3 - Migrations pastorales :** Expansion liée aux pratiques pastorales et à la domestication du bétail. Les groupes Nilotic associent leur expansion aux pratiques pastorales, se déplaçant vers l'est et le sud au fur et à mesure que le Sahara s'assèche. Migrations pastorales nilotiques au cours du IIIe-IIe millénaire BCE. Par exemple, peuple Kalenjin origine dans le bassin du Moyen Nil.
+  
+  **Théorie 4 - Contacts et fragmentations :** Classification comme "macrophylum" incluant contacts/diffusion lexicale avec Niger-Congo (Blench). Certains linguistes remettent en question l'unité génétique et considèrent certaines branches comme liées plutôt par contact que par ascendance commune.
+- Ruptures historiques (séparations, fusions) :
+  **Aridification du Sahara (~4200-4000 BCE) :** Fragmentation géographique due à aridification, isolement des branches linguistiques. Désertification du Sahara provoquant séparation des groupes et développement indépendant des branches.
+  
+  **Guerres et déplacements forcés :** Conflits et déplacements forcés au Soudan, au Tchad et en Ouganda (XIXe-XXe siècles, période coloniale et post-coloniale) ayant provoqué migrations et mélanges linguistiques.
+  
+  **Pressions linguistiques :** Pressions arabophones au nord (expansion de l'arabe au Soudan, au Tchad) et bantoues au sud (expansion des langues Bantu en Afrique orientale et centrale) ayant influencé les populations Nilo-Sahariennes.
+  
+  **Séparations internes :** Différenciation des branches Eastern Sudanic, Central Sudanic, Saharan, etc. au cours du temps, avec perte de compréhensibilité mutuelle.
 - Zones de contact et métissages :
-  - Nil supérieur  
-  - Région tchado-saharienne  
-  - Ituri (RDC – Mangbetu, Lendu)
+  **Zone sahélienne centrale :** Région entre le fleuve Niger, le lac Tchad, le Dar-Fur, etc., zones de contact entre langues Saharan (Kanuri, Zaghawa) et langues Niger-Congo (Mande, Adamawa-Ubangi). Zone frontalière Niger-Nigeria autour du lac Tchad pour les Saharan, Kanuri.
+  
+  **Corridor du Nil et régions adjacentes :** Vallée du Nil, régions du haut Soudan (Nubie), Soudan, Soudan du Sud, Tchad pour Nilotic, Nubian, Central Sudanic. Nil supérieur comme zone de métissage linguistique.
+  
+  **Corne de l'Afrique :** Zones frontalières entre Nilotic et Afro-asiatiques (Éthiopie, Soudan oriental) favorisant emprunts phonologiques et lexicaux. Région de Darfur, des Monts Nuba (Nuba Hills), zones frontalières Éthiopie-Soudan, etc. Nuba Hills (Soudan) pour les langues Kadu, Temein, Nyimang, etc., avec contacts entre groupes divers.
+  
+  **Afrique centrale orientale :** Ituri (RDC – Mangbetu, Lendu) comme zone de contact entre Central Sudanic et langues Niger-Congo (Bantu). Ouganda, Kenya, Tanzanie : zones de contact entre Nilotic et Bantu.
+  
+  **Routes spécifiques :** Fleuves Nil et Chari, lacs et corridors de la ceinture soudanaise, anciens cours d'eau sahariens durant les périodes humides qui servaient de corridors culturels et linguistiques.
+- Événements historiques majeurs ayant influencé la famille :
+  **~11000-5500 av. J.-C. :** Période humide du Sahara (African Humid Period), permettant migrations et expansion - contexte de diffusion initiale.
+  
+  **~6000-4000 av. J.-C. :** Communautés pastorales le long d'anciennes voies fluviales comme le Wadi Howar, pastoralisme précoce (proto-Nilotic) en réponse à l'aridité croissante.
+  
+  **~4200-4000 av. J.-C. :** Événement de 4.2 ka (aridification du Sahara) provoquant fragmentation géographique et isolement des groupes linguistiques.
+  
+  **Vers 5000-4000 av. J.-C. :** Possibles séparations des branches Eastern Sudanic selon reconstructions paléolinguistiques.
+  
+  **XIXe siècle :** Explorateurs, missionnaires, linguistes européens collectent données sur langues distinctes (Nilotic, Saharan, etc.). Heinrich Barth (1853) étudie les langues Saharan, Heinrich Lepsius (1880) classe les langues Nilotic.
+  
+  **Début XXe siècle :** Travaux de Westermann (décennies 1910-1930) posant les groupes Sudanic. Diedrich Westermann et Carl Meinhof développent classifications avec présupposés raciaux problématiques.
+  
+  **1949-1954 :** Articles de Greenberg sur classification africaine, propositions de Macro-Sudanic, Chari-Nile avant extension à Nilo-Saharan.
+  
+  **1963 :** Greenberg publie *The Languages of Africa*, pose officiellement "Nilo-Saharan" comme proposition de famille génétique.
+  
+  **Années 1980-2000 :** Révisions de Lionel Bender, Christopher Ehret, affinant la classification interne.
+  
+  **2015 :** Étude génétique de Dobon et al. dans *Scientific Reports* identifie composant propre aux locuteurs Nilo-Sahariens au Soudan / Sud-Soudan.
+  
+  **2020 :** Étude de Mulindwa et al. sur les Lugbara (Nord-Ouest de l'Ouganda) documente biodiversité génétique et signatures adaptatives.
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  50–70 millions
+  50–70 millions (estimations Ethnologue / SIL, années 2020-2025), répartis dans environ 17 pays en Afrique centrale, orientale et septentrionale.
 - Répartition par pays :
-  Soudan du Sud, Soudan, Éthiopie, Ouganda, Kenya, Tchad, Niger, Nigéria, RDC
-- Importance historique :
-  Langues des anciens royaumes du Nil supérieur ; lien crucial entre Afrique saharienne, sahélienne et orientale.
+  **Soudan du Sud :** ~10-15 millions de locuteurs Nilo-Sahariens (principalement Nilotic : Dinka ~4-5 millions, Nuer ~2 millions, Bari, Lotuko, etc.), représentant environ **35-50%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL, Dobon et al. 2015 (*Scientific Reports*).
+  
+  **Soudan :** ~8-12 millions de locuteurs (Nilotic, Nubian, Saharan, Central Sudanic, etc.), représentant environ **18-25%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL, CIA World Factbook.
+  
+  **Tchad :** ~7-8 millions de locuteurs (principalement Saharan : Kanuri ~4 millions, Zaghawa, etc., et Central Sudanic), représentant environ **40-45%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL, Britannica.
+  
+  **Ouganda :** ~3-4 millions de locuteurs (Nilotic : Luo/Acholi ~1.5 millions, Central Sudanic : Lugbara ~1.7 millions, etc.), représentant environ **7-9%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  
+  **Kenya :** ~5-7 millions de locuteurs (Nilotic : Dholuo ~4.4 millions, Kalenjin, Maasai ~1-2 millions, etc.), représentant environ **10-15%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL, CIA World Factbook.
+  
+  **Tanzanie :** ~1-2 millions de locuteurs (Nilotic : Maasai, etc.), représentant environ **2-3%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  
+  **Niger :** ~4-5 millions de locuteurs (Saharan : Kanuri ~4 millions, Songhay ~0.5 million), représentant environ **15-20%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  
+  **Nigéria :** ~1-2 millions de locuteurs (Saharan : Kanuri, etc.), représentant environ **<1%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  
+  **Éthiopie :** ~3-5 millions de locuteurs (Koman : Gumuz ~250 000, Komo, Uduk ; Surmic : Me'en, Suri, Murle ; Nilotic : minorités), représentant environ **3-5%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  
+  **Érythrée :** ~200 000-500 000 locuteurs (Kunama, Barya, Nubian), représentant environ **5-10%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  
+  **RDC :** ~500 000-1 million de locuteurs (Central Sudanic : Mangbetu, Lendu, Moru, etc.), représentant environ **<1%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  
+  **République centrafricaine :** ~500 000-1 million de locuteurs (Central Sudanic : Bongo-Bagirmi, etc.), représentant environ **10-15%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  
+  **Autres pays :** Mali (Songhay), Cameroun (Saharan), etc. avec populations plus modestes.
+  
+  *Note : Les estimations et pourcentages sont basés sur les données disponibles (Ethnologue/SIL, CIA World Factbook, études démographiques) pour les années 2020-2025. Les chiffres peuvent varier selon les sources et les années de recensement.*
 
-# 7. Sources
-- Dimmendaal, G. – *Historical Linguistics of the Nilo-Saharan*
-- Greenberg, J. – *The Languages of Africa*
-- SIL Ethnologue – Nilo-Saharan
-- UNESCO – Atlas des langues en danger
+# 6. Sources
+- Greenberg, Joseph H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press / La Haye: Mouton.
+- Dimmendaal, Gerrit J.; Ahland, Colleen; Jakobi, Angelika; Kutsch-Lojenga, Constance (2019) – "Linguistic features and typologies in languages commonly referred to as 'Nilo-Saharan'", dans *The Cambridge Handbook of African Linguistics*, éd. Ekkehard Wolff. Cambridge: Cambridge University Press.
+- Bender, M. Lionel (1989, 1991, 2000) – Révisions et classifications internes de la famille Nilo-Saharienne. Dans *The Nilo-Saharan Languages: A Comparative Essay*. Munich: Lincom Europa.
+- Dobon, B.; Hassan, H.; Laayouni, H.; Comas, D.; et al. (2015) – "The genetics of East African populations: a Nilo-Saharan component in the African genetic landscape". *Scientific Reports*, 5:9996. Nature Publishing Group.
+- Mulindwa, J.; et al. (2020) – "High Levels of Genetic Diversity within Nilo-Saharan Populations: Implications for Human Adaptation". *The American Journal of Human Genetics*, 107(3), pp. 473-486.
+- Blench, Roger (2010) – Travaux sur le protolangage Nilo-Saharien et la typologie, notamment le système singulatif-collectif-pluratif. Dans *The Nilo-Saharan Languages*. Cambridge: Cambridge University Press (références indirectes via Britannica / articles de typologie).
+- Ehret, Christopher (2001) – *A Historical-Comparative Reconstruction of Nilo-Saharan*. Cologne: Rüdiger Köppe Verlag.
+- Britannica Editors (2020-2025) – "Nilo-Saharan languages", "Linguistic characteristics", "The diffusion of Nilo-Saharan languages". Encyclopaedia Britannica. Disponible en ligne.
+- SIL Ethnologue (2020-2025) – *Ethnologue: Languages of the World*. SIL International. Données sur nombre de locuteurs et distribution géographique.
+- Güldemann, Tom (2018) – "Historical linguistics and genealogical language classification in Africa", dans *The Languages and Linguistics of Africa*, éd. Tom Güldemann. Berlin: De Gruyter Mouton.
+- UNESCO (2020-2025) – *Atlas des langues en danger dans le monde*. UNESCO Publishing.
+- CIA World Factbook (2020-2025) – Données démographiques par pays. Central Intelligence Agency.
