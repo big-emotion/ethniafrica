@@ -3,23 +3,25 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_NIGERCONGO
+- Lien avec la famille linguistique : 
 - Nom français : Niger-Congo
 - Nom anglais / auto-appellation académique : Niger–Congo
 - Appellation(s) historique(s) :
-  « Congo-Kordofanien » ; « Niger-Kordofanien » (Greenberg, 20ᵉ siècle)
+  « Congo-Kordofanien » (Greenberg, 1963) ; « Niger-Kordofanien » ; « Western Sudanic » (Westermann, 1911-1935)
 - Origine du terme historique :
-  Le terme « Niger-Congo » a été introduit par Joseph Greenberg pour regrouper un très large ensemble de langues partageant des caractéristiques phonologiques et grammaticales, principalement les classes nominales.
-  « Congo-Kordofanien » était une tentative antérieure d’intégrer les langues Kordofaniennes.
-- Pourquoi le terme pose problème :
-  Ces appellations anciennes reposaient sur une vision partiellement géographique et parfois racialiste de l’Afrique subsaharienne.  
-  Plusieurs linguistes coloniaux utilisaient le terme « nègre » ou « nigrid » pour désigner ces langues de manière essentialiste.  
-  Aujourd’hui, **Niger-Congo** est l’appellation scientifique neutre et reconnue.
+  Le terme « Niger-Congo » a été créé par **Joseph H. Greenberg** (1915-2001), linguiste américain, dans ses articles « Studies in African Linguistic Classification » publiés entre **1949 et 1954** dans le *Southwestern Journal of Anthropology*. Il a été formalisé dans son ouvrage majeur *The Languages of Africa* publié en **1963** (rééditions 1966, 1970) par Indiana University Press / Mouton & Co. Greenberg proposa de combiner les langues dites « Western Sudanic » (identifiées par Diedrich Westermann, 1875-1956, dans ses travaux de 1911-1935) avec les langues bantoues pour former une famille génétique qu'il nomma *Niger-Congo*, en référence aux bassins des fleuves Niger et Congo. Le terme « Congo-Kordofanien » était une tentative antérieure d'intégrer les langues Kordofaniennes comme branche coordonnée, plus tard remplacée par *Niger-Congo*.
+- Pourquoi le terme pose problème (si applicable) :
+  **Problèmes coloniaux / racialistes** : Le nom « Niger-Congo » reflète une vision externalisée, géographique, souvent utilisée dans les classifications de colons et d'Européens sans tenir compte des perspectives des locuteurs eux-mêmes. Greenberg, comme ses prédécesseurs (Westermann, Meinhof), travaillait à partir de matériaux collectés par des missionnaires, explorateurs et linguistes européens, parfois en biais colonial. Le concept est parfois critiqué comme un artefact colonial / typologique : certaines classifications reposaient sur des critères non génétiques (formes morphologiques imposées, critères géographiques ou raciaux) plutôt que des preuves de parenté. Par exemple, Greenberg lui-même a combiné des typologies morphologiques (comme les systèmes de classes nominales) avec des données lexicales et phonologiques pour construire le groupe, utilisant une méthode dite de "mass comparison" (comparaison de masse) partiellement critiquée pour son manque de rigueur dans les correspondances phonétiques précises. Avant Greenberg, des classifications comme « Sudanic Occidental » ou « Western Sudanic » (Westermann, début XXᵉ siècle) s'inscrivent dans le contexte de la linguistique coloniale, où l'on regroupe linguistiquement des peuples selon des critères parfois mêlés à des présupposés raciaux. Plusieurs linguistes coloniaux utilisaient le terme « nègre » ou « nigrid » pour désigner ces langues de manière essentialiste.
+  
+  **Critiques modernes par des auteurs locaux / africanistes** : Certains linguistes africains contestent l'unité génétique de tous les sous-groupes inclus (par exemple, le statut des langues Kordofaniennes ou de Dogon, Mande, Ijoid) estimant que les preuves comparatives ne sont pas toujours suffisantes. Des linguistes contemporains soulignent que plusieurs groupes classés comme Niger-Congo (Kordofanien, Mande, Ijoid, Dogon) manquent de preuves solides d'appartenance, ou pourraient être des phylums séparés. La littérature (par exemple dans *Oxford Handbook* sous Good 2020) souligne que la validité généalogique de *Niger-Congo* (c'est-à-dire l'unité génétique de tous ses prétendus sous-groupes) n'est **pas totalement prouvée**. Glottolog et certains linguistes modernes (Dimmendaal et al. 2008, Good 2020) remettent en cause l'inclusion de certaines branches comme Mande, Kordofanien, Dogon, arguant qu'elles pourraient ne pas appartenir au noyau Atlantic-Congo.
+  
+  **Études génétiques modernes** : Une étude genome-wide (Busby et al. 2016) montre que les locuteurs de langues *Niger-Congo* partagent une certaine affinité d'ancêtres avec des groupes d'Afrique de l'Ouest et centrale, mais aussi que l'aire linguistique ne coïncide pas toujours avec la structure génétique : il existe des homonymies, admixtures et discordances géographiques. Variation chromosomique Y montre que les locuteurs du Niger-Congo partagent des haplogroupes (notamment E1b1a) qui suggèrent une expansion démographique depuis l'ouest de l'Afrique il y a environ 10 000 ans. Une étude récente sur 48 groupes d'Afrique sub-saharienne montre que les locuteurs du Niger-Congo forment un cline génétique coïncidant largement avec les frontières linguistiques, ce qui soutient le lien entre langue et gènes pour ce groupe. Sarah Tishkoff et al. (2009) indiquent que les populations de l'Afrique de l'Ouest associées aux langues Niger-Kordofanian partagent des composantes génétiques. Études génétiques modernes montrent des migrations, flux de populations et brassages en Afrique subsaharienne (ex. expansion Bantu) : cela renforce l'idée que les langues partagent souvent des traits par contact autant que par ascendance. Par exemple, Rebecca Grollemund et al. (2016) sur la "genetic unity" du Niger-Congo discutent ce qui est reconstruit vs ce qui reste hypothétique.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Niger–Congo languages / Langues nigéro-congolaises
-- Usage contemporain :
-  Plus grande famille linguistique d’Afrique (et l’une des plus grandes du monde), comprenant les langues atlantiques, mandé, gur, krou, bénoué-congo, et les langues bantoues.
+  À ce jour, aucun terme endonyme unique n'est attesté pour toute la famille *Niger-Congo*. Chaque groupe la désigne par son nom local. Aucun endonyme collectif (entre locuteurs de tous les sous-groupes) ne semble exister dans la littérature ; les langues sont identifiées selon leurs propres désignations géographiques ou ethniques. Pour les sous-groupes, des endonymes existent : par exemple, **Mandingue** (Mande) se désigne souvent *Manden* dans les langues mandées ; **Bantu** est un terme utilisé par les locuteurs bantous eux-mêmes, dérivé du mot *bàntʊ́* ("personnes") dans beaucoup de langues bantoues, attestation ancienne et usage contemporain massif. L'étymologie des endonymes varie : *Yorùbá*, *Igbo* sont attestés historiquement et utilisés par les locuteurs eux-mêmes. L'étymologie de *Congo* vient du nom du fleuve Congo et du royaume Kongo ; *Niger* se réfère au fleuve Niger. Ces toponymes sont autochtones à la géographie ou linguistique ouest-africaine, mais le couplage *Niger-Congo* est académique. Usage académique contemporain : *Niger–Congo languages* / *Langues nigéro-congolaises*.
+- Usage contemporain (définition moderne de la famille) :
+  Plus grande famille linguistique d'Afrique (et l'une des plus grandes du monde), comprenant les langues atlantiques, mandé, gur, krou, bénoué-congo, et les langues bantoues. Aujourd'hui, **Niger-Congo** est l'appellation scientifique neutre et reconnue dans la communauté linguistique internationale, bien que certains aspects de sa classification interne restent débattus.
 - Aire / répartition géographique générale :
-  Afrique de l’Ouest, Afrique centrale, Afrique orientale, Afrique australe.
+  Afrique de l'Ouest, Afrique centrale, Afrique orientale, Afrique australe. Présence majeure au Nigeria, Ghana, Côte d'Ivoire, Bénin, Togo, Cameroun, République démocratique du Congo, Angola, et dans toute l'Afrique australe.
 - Nombre de langues (estimation) : ~1500
 - Nombre total de locuteurs (estimation) : ~600 millions
 
@@ -30,65 +32,155 @@
 # 1. Informations générales
 - Nom de la famille : Niger-Congo
 - Branches internes / sous-groupes :
-  - Atlantique
-  - Mandé
-  - Gur
-  - Krou
+  - Atlantique (Atlantic)
+  - Mandé (Mande)
+  - Gur (Voltaic)
+  - Krou (Kru)
   - Volta-Congo
   - Benue–Congo (incluant Bantou)
   - Adamawa (selon certaines classifications)
+  - Ijoid (statut débattu)
+  - Dogon (statut débattu)
+  - Kordofanien (statut débattu, parfois exclu)
 - Aire géographique :
-  Afrique subsaharienne (Ouest, Centre, Est et Sud)
+  Afrique subsaharienne (Ouest, Centre, Est et Sud) : du Sénégal à l'Afrique du Sud, de la côte atlantique à l'Océan Indien.
 - Nombre de langues :
-  ~1500
+  ~1500 langues selon Ethnologue (SIL International, 2025)
 - Nombre total de locuteurs :
-  ~600 millions
+  ~600 millions de locuteurs natifs / premiers locuteurs en 2025
 
 # 2. Peuples associés
 - Peuple 1 : Yoruba (PPL_YORUBA)
 - Peuple 2 : Igbo (PPL_IGBO)
 - Peuple 3 : Akan (PPL_AKAN)
+- Peuple 4 : Bantou (divers peuples bantous)
+- Peuple 5 : Mandingue (PPL_MANDINGUE)
+- Peuple 6 : Fula (PPL_FULANI)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Yoruba
-- Ethnie 2 : Igbo
-- Ethnie 3 : Ashanti (Akan)
-(+ renvoi vers futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues principalement tonales, souvent agglutinantes ; présence fréquente de classes nominales.
+  **Ordre des mots** : courant SVO (Sujet-Verbe-Objet) dans de nombreuses langues Niger-Congo. Exemple en swahili (Bantu) : *"mtu ana-enda"* « l'homme il est en train d'aller » (Sujet-Verbe-Objet).
+  
+  **Système de classes nominales** : caractéristique centrale des langues *Atlantic-Congo*. Chaque nom appartient à une classe, marqué par un préfixe (souvent (C)V-), avec accords (adjectifs, déterminants, verbes) selon la classe. Exemple concret : en swahili (Bantu), la classe 1 (humain singulier) *mtu* « personne », classe 2 pluriel *watu*, classe 6 *ma-* pour les liquides ou masses ‒ *maji* « eau ». Exemple de concordance : *m-tu wa-le a-me-fika* « cette personne est arrivée » vs *wa-tu wa-le wa-me-fika* « ces personnes sont arrivées » (classes humain singulier/pluriel). En zulu (bantu), *umuntu omuhle uyahamba* « personne (classe 1) belle (classe 1) marche (accord verbe) ».
+  
+  **Morphologie verbale : dérivation / extensions verbales** : verbes avec suffixes d'augmentation de valence, aspect, médiatif etc. (souvent dans Benue-Congo / Bantu). Reconstruction propose pour le Proto-Atlantic-Congo ou Proto-Bantu des suffixes causatif (*-ci, -ti*), applicatif (*-de*), réciproque (*-na*) etc. Exemple en swahili : *penda* « aimer », *pendana* « s'aimer les uns les autres », *pendeza* « faire plaisir » (causatif). Utilisation d'extensions verbales (suffixes) pour modifier valence ou aspect, par exemple dans certains Bantu, les suffixes *-ishi*, *-iza*, etc. (faire rendre causatif, faire rendre passif, etc.).
+  
+  **Morphologie nominale** : préfixes de classes nominales qui affectent déterminants, adjectifs, verbes. Préfixes de classes nominales en Proto-Atlantic-Congo (assumé parfois pour Proto-Niger-Congo) : classes 1 (humain singulier), 2 (humain pluriel), etc. Exemples reconstruits : *gu-*, *mu-*, *ba-* pour humains, et autres pour liquides, masses, etc.
+  
+  **Langues principalement tonales, souvent agglutinantes** ; présence fréquente de classes nominales.
 - Particularités phonologiques :
+  **Tonalité** : la plupart des langues Niger-Congo sont tonales, avec généralement deux ou trois tons contrastifs (haut, bas, parfois moyen), parfois plus (4-5 niveaux). Exemple : Yoruba a *ọ̀ṣù* « mois », *ọ́ṣù* etc. Changement de tonalité grammatical ou lexical. En Igbo, *ána* (ton haut) vs *àna* (ton bas) distinguent lexicaux ou grammaticaux. Phénomènes tels que *downstep* (après une consonne dépressante, ton élevé abaissé), tons flottants (lorsque des syllabes disparaissent, le ton flotte et influence les voisins).
+  
+  **Harmonie vocalique** : systèmes avec advance/retracte tongue root (ATR), souvent deux séries de voyelles [+ATR] vs [–ATR]. Exemple : langues Kwa ou Gur montrent ce contraste vocalique dans les voyelles. Contrainte sur les voyelles ATR (Advanced Tongue Root), divisant voyelles en deux séries ex : séries i-e-ə-o-u vs i-ɛ-a-ɔ-u. Harmonies vocaliques basées sur le trait *ATR* (Advanced/retracted tongue root) : langues comme certaines Kwa, Gur, etc. utilisent cette distinction.
+  
+  **Consonnes spéciales** : sons labi-vélaire comme /kp/ et /gb/ fréquents (par exemple dans les langues atlantico-congolaises) ; consonnes implosives dans certaines langues du Mande ou Atlantic ; nasales prénasalisées /mb, nd, ŋg/ etc. Exemple spécifique : en Dagaare, pré-nasalisées, nasales syllabiques, etc. Consonnes labio-vélaires : /kp/, /gb/ dans West Africa (p. ex. Fon, Yoruba parfois, langues Atlantic). Pré-nasalisés comme /mb/, /nd/.
+  
   Tons (souvent 2 ou 3 niveaux), harmonies vocaliques, consonnes prénasalisées.
 - Liens avec les familles voisines :
+  **Emprunts lexicaux** : influence entre groupes Niger-Congo et Afroasiatique, Nilo-Saharan : emprunts lexicaux dans les régions de contact. Par exemple, certains mots arabes adoptés dans des langues ouest-africaines Niger-Congo à travers le commerce et l'Islam (ex. *kitâb* « livre » en haoussa, qui est Afroasiatique mais emprunts aux langues de commerce), mais spécifiquement dans Niger-Congo plusieurs langues ont emprunté de l'arabe ou du berbère dans le lexique religieux ou commercial. Emprunts entre langues bantoues et langues autochtones de l'Afrique australe, par exemple mots koloniaux, noms de faune/flore, échanges de vocabulaire religieux/trading. Ex : *kachiri* en langue bantu vs terme en langue khoisan proche ou adaptation phonétique. Influence des langues Mande ou Sud-Sahariennes dans langues criollo-isolées côte ouest, prêt lexical dans domaines : agriculture, échange, art. Emprunts lexicaux entre branches : par exemple, mots liés aux cultures agricoles ou aux plantes souvent partagés ou diffusés à travers branches Niger-Congo. ("palm-", etc.) : Blench liste des quasi-reconstructions (*-bal-*, *-kundi-*, etc.) qui apparaissent dans plusieurs branches. Influence des langues nilo-sahariennes en zones de contact, ce qui a affecté certaines structures phonologiques ou vocabulaire.
+  
   Contacts importants avec les langues tchadiques (Haoussa), nilo-sahariennes (Songhay, Kanuri).
 - Innovations clés :
-  - Systèmes élaborés de classes nominales  
-  - Morphologie verbale dérivationnelle  
-  - Expression grammaticale par tons
+  **L'innovation Bantu** : l'expansion bantoue (vers c. 3000-2000 BP) a répandu des innovations morphologiques comme la réduction ou fusion des classes nominales, l'agglutination de suffixes verbaux d'extensions, et des traits phonétiques nouveaux relatifs à l'intonation. Expansion bantoue (~1000 av. J.C. à 500 apr. J.C.) : traits spécifiques comme la réduction des classes nominales, la perte de certaines formes archaïques, changement tonals.
+  
+  **Perte ou transformation des classes nominales** : certaines langues ou branches ont perdu ou réduit le système des classes nominales (ex : langues Mande, Ijoid, Dogon) — innovation de perte. Développement de systèmes de classes nominales très réduits ou vestigiaux dans certains sous-groupes (par exemple dans certains Mande, Dogon) où le système est absent ou modifié. Cela est considéré comme innovation (perte ou transformation). Dans certaines langues Volta-Congo, perte ou réduction majeure des classes nominales ou changement du système tonal.
+  
+  **Systèmes élaborés de classes nominales** conservés dans Atlantic-Congo.
+  
+  **Morphologie verbale dérivationnelle** avec extensions verbales développées dans Bantu (suffixes de causatif, applicatif, etc.).
+  
+  **Expression grammaticale par tons** : utilisation des tons pour marquer des distinctions grammaticales.
 
-# 5. Histoire et origines
-- Origine probable :
-  Région de la forêt guinéo-congolaise ou zones de la moyenne Volta.
-- Diffusion des langues :
-  Migrations agricoles anciennes vers l’Afrique australe (via les Bantous), expansions ouest-africaines mandé, diffusion des langues gurs au Sahel.
-- Ruptures historiques :
-  - Expansion bantoue vers l’Afrique centrale et australe  
-  - Développement des royaumes Yoruba, Akan, Bini, etc.  
-  - Contacts prolongés entre civilsations mandé et sahéliennes
+# 4. Histoire et origines :
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  **Théorie linguistique** : Le concept de *Niger–Congo* en tant que famille génétique est principalement lié à **Joseph H. Greenberg (1949-1963)** – *The Languages of Africa* (1963). Avant lui, **Diedrich Westermann (1875-1956)** avait posé des bases dans ses travaux de 1911-1935, notamment *Charakter und Einteilung der Sudansprachen* (1935), proposant des divisions linguistiques "Sudanic occidental", etc. Greenberg inclut aussi (à l'origine) le groupe Kordofanien comme branche coordonnée.
+  
+  **Théorie archéologique / Paléoclimatique** : **Roger Blench** (2006, 2016) propose que le Proto-Niger-Congo remonte à environ **11 000-10 000 ans avant le présent**, dans une partie du "Sahara vert" (Sahel / sud du Sahara) à la suite de la désertification du Sahara. Les études du « Green Sahara » (Sahel / sud-Sahara) pendant l'Holocène humide, il y a ~12 000-5 000 ans, fournissent un contexte pour la dispersion des locuteurs avec agriculture, pastoralisme, etc. Proto-Niger-Congo se répand suite à la désertification du Sahara et à des migrations agricoles/technologiques.
+  
+  **Théorie génétique** : Études Y-chromosome, haplogroupe E1b1a, partage d'haplotypes entre groupes Est et Ouest Niger-Congo, expansion il y a ~10 000 ans. Variation chromosomique Y montre que les locuteurs du Niger-Congo partagent des haplogroupes (notamment E1b1a) qui suggèrent une expansion démographique depuis l'ouest de l'Afrique il y a environ 10 000 ans. Une étude récente sur 48 groupes d'Afrique sub-saharienne montre que les locuteurs du Niger-Congo forment un cline génétique coïncidant largement avec les frontières linguistiques. Sarah Tishkoff et al. (2009) indiquent que les populations de l'Afrique de l'Ouest associées aux langues Niger-Kordofanian partagent des composantes génétiques. Busby et al. (2016) montrent que les locuteurs de langues *Niger-Congo* partagent une certaine affinité d'ancêtres avec des groupes d'Afrique de l'Ouest et centrale.
+  
+  **Théorie alternative / remise en question** : Certains linguistes contestent l'unité génétique de tous les sous-groupes inclus. Glottolog ; Dimmendaal et al. (2008), Good (2020) : études linguistiques montrent que les preuves de ressemblances lexicales ou morphologiques entre certains groupes sont faibles ou discutées. Certaines branches comme Mande, Kordofanien, Dogon pourraient ne pas appartenir au noyau Atlantic-Congo ; remise en cause de l'unité forte de tout le phylum.
+  
+  Région de la forêt guinéo-congolaise ou zones de la moyenne Volta (théories plus anciennes).
+- Période d'émergence estimée :
+  (1) **Émergence historique de la famille linguistique** : Proto-Niger-Congo estimé vers **11 000-10 000 ans avant le présent** (≈ 9 000-8 000 avant J-C) selon Blench. Le phylum issu d'une proto-langue qui pourrait dater d'environ 11 000–10 000 ans BP (avant présent), selon Blench. Origine probable du Proto-Niger-Congo dans le Sahel / sud Sahara humide selon Blench et autres.
+  
+  (2) **Date de classification académique** : Terme adopté par Greenberg autour de **1949-1954** (articles « Studies in African Linguistic Classification »), ouvrage majeur *The Languages of Africa* en **1963** (rééditions 1966, 1970). Travail de Greenberg formalisant le terme *Niger–Congo* dans les années 1950 (articles 1949-54), ouvrage consolidé en 1963/1966.
+- Diffusion des langues (routes migratoires, expansion) :
+  **Théorie 1 : Expansion progressive depuis l'ouest de l'Afrique** : Expansion progressive depuis l'ouest de l'Afrique (zone Sahel / Sahara soudanien), vers l'est et le sud, avec la diffusion de l'agriculture et des techniques. (Blench, Hyman et al.) Expansion post-Sahara vert liée à l'agriculture : Proto-Niger-Congo se répand suite à la désertification du Sahara et à des migrations agricoles/technologiques.
+  
+  **Théorie 2 : Expansion bantoue** : Expansion démographique d'origine Cam-Rophe (Cameroun/Nigeria) vers l'Est et le Sud entre 3000-2000 BP, portant les traits linguistiques Bantu. Expansion bantoue (~1000 av. J.C. à 500 apr. J.C.) : la diffusion sud-est après une origine en Afrique de l'Ouest / Centre, entraînant l'écrasement ou l'assimilation de langues préexistantes. Migrations agricoles anciennes vers l'Afrique australe (via les Bantous).
+  
+  **Théorie 3 : Thèse de Greenberg / Westermann** : Classification linguistique par comparaison lexicale / morphologique, propos de subdivisions comme Benue-Congo, Atlantic, Gur etc.
+  
+  **Théorie 4 : Théorie plus critique / minimaliste** : Certains linguistes contestent l'unité ou l'inclusion de certains groupes (par exemple Kordofanien, Mande, Dogon, Ijoid). Ces groupes pourraient avoir divergé tôt ou ne pas appartenir au phylum strict selon les preuves comparatives linguistiques. Certaines branches comme Mande, Kordofanien, Dogon pourraient ne pas appartenir au noyau Atlantic-Congo ; remise en cause de l'unité forte de tout le phylum.
+  
+  Expansions ouest-africaines mandé, diffusion des langues gurs au Sahel.
+- Ruptures historiques (séparations, fusions) :
+  - Expansion bantoue vers l'Afrique centrale et australe (vers 3000-2000 BP)
+  - Divergence des branches principales (Atlantic, Mande, Gur, Kwa, Benue-Congo) à partir du Proto-Niger-Congo
+  - Développement des royaumes Yoruba, Akan, Bini, etc.
+  - Contacts prolongés entre civilisations mandé et sahéliennes
+  - Perte ou réduction des classes nominales dans certaines branches (Mande, Ijoid, Dogon)
 - Zones de contact et métissages :
-  Afrique centrale (croisement bantou–pygmées), Sahel ouest-africain, delta du Niger.
+  **Ouest africain** : bassin du Niger, cours du fleuve Niger et fleuve Bénoué (Nigeria) pour le groupe Benue-Congo. Ghana, Nigéria, Côte d'Ivoire — contacts entre groupes Volta-Niger (Yoruba, Igbo), Kwa, Gur. Zones frontalières Nilo-Sahariennes / Niger-Congo : par ex. Nord-Nigeria, Tchad-Cameroun, où des traits linguistiques se diffusent. Sahel ouest-africain, delta du Niger.
+  
+  **Centre-Afrique** : zones forestières, contact avec langues Nilo-Saharan (ex. aux frontières entre Soudan du Sud / RDC etc.). Région du bassin du Congo : contact entre Bantu, Ubangian, Adamawa. Forêts du Congo, régions bantoues, migrations vers le sud et vers l'est. Afrique centrale (croisement bantou–pygmées), zones de métissage linguistique : contact des langues Bantoues avec les langues autochtones de la forêt tropicale en Afrique centrale, ou avec les langues nilotiques en Afrique de l'Est. Routes de contact avec populations chasseurs-cueilleurs (Pygmées, chasseurs-cueilleurs forestiers) dans le Bassin du Congo.
+  
+  **Sud-Afrique** : expansion bantoue en Afrique de l'Est et australe, mélange avec populations khoisan, etc. Zones de métissage linguistique : contact des langues Bantoues avec les langues autochtones de la forêt tropicale en Afrique centrale, ou avec les langues nilotiques en Afrique de l'Est.
+  
+  **Côtes ouest-africaines** : pour les langues Atlantic, Kwa. Zones d'échanges (commerce, esclavage, migrations interethniques).
+- Événements historiques majeurs ayant influencé la famille :
+  | Date approximative | Événement |
+  |--------------------|-----------|
+  | ~11 000-10 000 ans BP | Origine probable du Proto-Niger-Congo dans le Sahel / sud Sahara humide selon Blench et autres. Divergence estimée de Proto-Niger-Congo dans la zone Sahara vert / Afrique de l'Ouest. |
+  | ~5 000-3 500 ans BP | Dessèchement du Sahara → migrations vers le sud / ouest. |
+  | Vers 3 000-2 000 ans BP (1000 av. J.C. – Ier millénaire av. J.C.) | Expansion bantoue majeure, diffusion vers sud et est. Début de l'expansion bantoue depuis la région de l'actuel Cameroun vers le sud et l'est. |
+  | 1911-1935 | Westermann pose les bases du "Western Sudanic" qui évoluera vers la classification de Greenberg. Diedrich Westermann propose des divisions linguistiques Sudanic occidental, etc. |
+  | 1949-1954 | Greenberg publie les articles « Studies in African Linguistic Classification » où il propose la famille Niger-Congo. Publications de Greenberg sur la classification incluant Niger-Congo. |
+  | 1963 (réédition 1966-70) | Publication de *The Languages of Africa* de Greenberg, classification consolidée et largement adoptée. Greenberg publie la version consolidée avec Niger-Congo formalisé. |
+  | 2006-2016 | Contributions de Blench sur l'origine paléoenvironnementale (dates avancées pour Proto-Niger-Congo). |
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  ~600 millions
+  ~600 millions de locuteurs natifs / premiers locuteurs en 2025 selon Britannica, Ethnologue (SIL International). Environ 85 % de la population africaine (soit ~600 millions de personnes) parlent une langue Niger-Congo. Sous-famille Bantu : environ **350 millions** de locuteurs pour elle seule (≈ moitié de la population totale du phylum) dans les données disponibles.
 - Répartition par pays :
-  Nigéria, Ghana, Côte d’Ivoire, Bénin, Togo, Cameroun, RDC, Angola, Afrique australe…
-- Importance historique :
-  Langues majeures du commerce ouest-africain, de l’expansion bantoue et des civilisations nigérianes (Yoruba, Igbo) et akan.
+  **Nigeria** : ~150-200 millions de locuteurs (langues comme Yoruba ~22 millions, Igbo, Fula, etc. - Volta-Niger, Benue-Congo). Entre 60-80 % de la population selon région. Majoritaire (> 50 %) – Yoruba, Igbo, etc.
+  
+  **République démocratique du Congo** : ~80-100 millions de locuteurs (Bantu très majoritaires : Lingala, Swahili, Tshiluba, Kikongo). Plusieurs dizaines de millions (Bantu très majoritaires). + de 40-50 % de la population. Très majoritaire (Bantu : Lingala, Swahili, Tshiluba, Kikongo) – la plupart de la population. ~90 % de la population.
+  
+  **Ghana** : plusieurs millions selon chaque langue (Akan, Ewe, etc.). Part importante (20-50 %) selon le pays.
+  
+  **Côte d'Ivoire** : pratiquement toute la population autochtone (≈70 langues Niger-Congo) – langues Kwa, Kru, etc. Plusieurs millions selon chaque langue. Part importante (20-50 %) selon le pays.
+  
+  **Bénin, Togo** : plusieurs millions selon chaque langue (Fon, Ewe, etc.). Part importante (20-50 %) selon le pays.
+  
+  **Cameroun** : langues bantoues et autres branches Niger-Congo, plusieurs millions de locuteurs.
+  
+  **Angola** : langues bantoues nombreuses, millions de locuteurs.
+  
+  **Tanzanie, Ouganda, Mozambique, Kenya, etc.** (zones bantu en Afrique de l'Est et sud) : nombre élevé, souvent majoritaire dans leurs zones linguistiques. Nombreuses langues bantoues, millions de locuteurs.
+  
+  **Niger** : environ 8-10 % : ex. Fulfulde, Gourmanchéma parmi les langues nationales Niger-Congo.
+  
+  **Afrique australe** (Afrique du Sud, Zimbabwe, etc.) : langues bantoues, millions de locuteurs.
+  
+  Sources précises : *Ethnologue* (SIL International, 2025), *UNESCO*, *CIA World Factbook*, *UNFPA* pour estimations pays par pays (2025). Britannica estime que **environ 85 % de la population africaine** (soit ~600 millions de personnes) parlent une langue Niger-Congo. Les données exactes 2025 par pays peuvent varier ; Ethnologue ou SIL publient les fiches linguistiques pour chaque langue.
 
-# 7. Sources
-- Greenberg, J. – *The Languages of Africa*
-- Williamson & Blench – *Niger-Congo Overview*
-- SIL Ethnologue – Niger–Congo
-- UNESCO – Atlas des langues africaines
+# 6. Sources
+- Greenberg, Joseph H. (1949) – *"Studies in African Linguistic Classification: I. Introduction, Niger-Congo Family"*. *Southwestern Journal of Anthropology*.
+- Greenberg, Joseph H. (1963 [éd. 2, 1966, 1970]) – *The Languages of Africa*. Bloomington: Indiana University Press / Mouton & Co.
+- Westermann, Diedrich (1935) – *Charakter und Einteilung der Sudansprachen*. Berlin.
+- Blench, Roger (2006, 2016) – *Reconstructions of Proto-Niger–Congo and hypotheses on its Urheimat*. Travaux présentés notamment en congrès de linguistique, Blench est en train de composer un dictionnaire étymologique Niger-Congo.
+- Blench, Roger (2006, 2016) – *"Supposing we have been completely wrong about the shape of early Niger-Congo roots?"*, communication aux congrès "Towards Proto-Niger-Congo: Comparison and Reconstruction", Paris.
+- Good, Jeff (2020) – *"Niger-Congo, with a Special Focus on Benue-Congo"*, dans *The Oxford Handbook of African Languages*. Oxford University Press.
+- Hyman, Larry M.; Rolle, Nicholas R.; Sande, Hannah L.; Clem, Emily C.; Jenks, Peter; Lionnet, Florian A. J.; Merrill, John; Baier, Nico (2019) – *"Niger-Congo linguistic features and typology"*, dans *The Cambridge Handbook of African Linguistics*. Cambridge University Press.
+- Heine, Bernd & Nurse, Derek (2000) – *African Languages: An Introduction*. Cambridge University Press.
+- Busby, George B., et al. (2016) – *"Admixture into and within sub-Saharan Africa"*. *eLife* vol.5:e15266.
+- Tishkoff, Sarah A., et al. (2009) – *"The Genetic Structure and History of Africans and African Americans"*. *Science*.
+- Grollemund, Rebecca, et al. (2016) – *"Genetic unity" of Niger-Congo*. Études sur ce qui est reconstruit vs ce qui reste hypothétique.
+- Dimmendaal, Gerrit J., et al. (2008) – Travaux sur la remise en question de l'unité de certaines branches Niger-Congo.
+- Britannica Editors – *"Niger-Congo languages"*. Encyclopædia Britannica.
+- Ethnologue (SIL International, 2025) – *Niger–Congo*. Fiches linguistiques pour chaque langue, nombre de langues, locuteurs, répartition pays.
+- UNESCO – *Atlas des langues africaines*.
+- Williamson, Kay & Blench, Roger – *Niger-Congo Overview*.
