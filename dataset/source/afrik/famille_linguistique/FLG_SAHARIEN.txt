@@ -8,20 +8,27 @@
 - Appellation(s) historique(s) :
   « Langues sahariennes », parfois incluses dans de larges catégories « soudanaises » ou « nilo-hamitiques » (désuètes).
 - Origine du terme historique :
-  « Saharien » est un terme géographique référant aux populations vivant dans le Sahara central et oriental.  
-  Les linguistes ont identifié un noyau cohérent autour des langues Kanuri–Kanembu et Teda–Daza.
+  Le terme « Saharien » (anglais : "Saharan") a été proposé par Joseph H. Greenberg dans son ouvrage *The Languages of Africa* (1963, Chicago : University of Chicago Press). Greenberg a classé ce groupe comme branche du phylum Nilo-Saharien qu'il proposait. Avant Greenberg, des explorateurs comme Heinrich Barth (1853) avaient décrit les langues Kanuri et Teda-Daza autour du lac Tchad, mais sans classification formelle en tant que famille unifiée.
 - Pourquoi le terme pose problème :
-  - Le terme est géographique et a parfois été utilisé de manière imprécise.  
-  - Dans certains travaux coloniaux, le peuple saharien (notamment toubou) a été assigné à des catégories raciales et pseudo-historiques, notamment via l’opposition « hamite » vs « nègre ».  
-  - Toutefois, aujourd’hui **« Saharan »** reste un terme scientifique neutre et clairement défini.
+  - Le terme « Saharien » est une dénomination géographique imposée par les linguistes occidentaux, sans correspondre à une auto-identification historique ou culturelle des communautés concernées.
+  - Joseph Greenberg, héritier d'une tradition de classification linguistique eurocentrée, utilise la méthode de la « mass comparison » critiquée par des linguistes contemporains (Martin Haspelmath, Lyle Campbell) pour manque de rigueur quantitative dans les correspondances phonétiques.
+  - Des auteurs coloniaux ont utilisé des classifications raciales (notamment l'opposition « hamite » vs « nègre ») pour catégoriser les peuples sahariens (notamment les Toubous), créant des hiérarchies pseudo-historiques.
+  - Des linguistes africains comme Théophile Obenga (suivant Cheikh Anta Diop) critiquent les grandes classifications de Greenberg, défendant que de nombreux idiomes africains partagent un patrimoine commun sous-jacent (lexique commun, morphologie) qui n'est pas bien rendu par les grandes familles telles que Nilo-Saharien.
+  - Les études génétiques modernes (ex. "African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations", 2019) montrent que les lignées linguistiques se corrèlent davantage avec l'histoire génétique locale qu'avec une « origine saharienne » monolithique, soulignant plutôt la complexité et l'hybridité des populations.
+  - La cohérence interne du groupe Saharien est largement reconnue (Cyffer 2020), mais l'appartenance au phylum Nilo-Saharien reste controversée, certains linguistes estimant qu'il y a davantage de traits dus au contact linguistique qu'à une ascendance commune claire.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Saharan languages / Langues sahariennes
+  Les langues sahariennes n'ont pas d'auto-appellation unifiée. Chaque langue possède son propre endonyme :
+  - Kanuri : les locuteurs se nomment *Kanuri* ou *Yerwa* (attesté historiquement dans le royaume de Borno). Le terme *Kanembu* désigne une variante parlée dans la région du lac Tchad. Étymologie : ces termes dérivent de l'ethnonyme de l'ethnie Kanuri, attesté historiquement avant la classification occidentale (chroniques du Bornou au XVIIIᵉ-XIXᵉ siècle).
+  - Zaghawa : les locuteurs s'appellent *Beria* (ou *Beria Zaghawa*) dans certaines communautés orientales du Tchad et du Soudan. Ce terme est attesté dans les travaux linguistiques récents (Wikipedia 2025).
+  - Teda-Daza : les locuteurs toubous utilisent *Tedaga* pour Teda et *Dazaga* pour Daza (attestations dans les travaux linguistiques contemporains).
+  - Usage historique : *Tarjumo* ("Old Kanembu") a été utilisé historiquement comme langue liturgique dans la région du lac Tchad (Wikipedia 2025).
+  - Usage contemporain : Les communautés utilisent leurs endonymes spécifiques (Kanuri, Beria, Tedaga, Dazaga). Le terme « Saharien » n'est pas utilisé par les communautés comme auto-nom, mais uniquement comme terme académique occidental.
 - Usage contemporain :
-  Petit groupe au sein du nilo-saharien, incluant les langues kanuri, kanembu, et toubou (teda/daza).
+  Petit groupe linguistique au sein du nilo-saharien, incluant les langues kanuri, kanembu, zaghawa, teda, et daza. La cohérence interne du groupe est largement acceptée par les linguistes contemporains (Cyffer 2020), mais son appartenance au phylum Nilo-Saharien reste sujette à débat.
 - Aire / répartition géographique générale :
-  Niger, Tchad, Libye, nord Nigéria
+  Niger, Tchad, Libye, nord Nigéria, Soudan, Cameroun
 - Nombre de langues (estimation) : 10–15
-- Nombre total de locuteurs (estimation) : ~5 à 8 millions (principalement kanuri)
+- Nombre total de locuteurs (estimation) : ~10 à 12 millions (principalement kanuri)
 
 ------------------------------------------
 
@@ -30,67 +37,132 @@
 # 1. Informations générales
 - Nom de la famille : Saharien
 - Branches internes / sous-groupes :
-  - Kanuri / Kanembu (lac Tchad)
-  - Toubou (Teda, Daza)
-  - Langues sahariennes mineures
+  - Kanuri / Kanembu (lac Tchad) : groupe occidental, incluant Yerwa Kanuri, Manga Kanuri, Tumari Kanuri, Bilma Kanuri
+  - Toubou (Teda, Daza) : groupe oriental, parlé dans le Tibesti
+  - Zaghawa (Beria) : groupe oriental, parlé au Tchad et au Soudan
+  - Langues sahariennes mineures : variétés dialectales et communautés dispersées
 - Aire géographique :
-  Sahara central et oriental
+  Sahara central et oriental, bassin du lac Tchad, Tibesti (Tchad/Libye), nord-est du Tchad, est du Soudan, nord-est du Nigéria, sud-est du Niger, extrême nord du Cameroun
 - Nombre de langues :
-  10–15
+  10–15 langues et variétés dialectales
 - Nombre total de locuteurs :
-  5–8 millions
+  10–12 millions (estimations 2025, principalement Kanuri avec ~9,5 millions)
 
 # 2. Peuples associés
 - Peuple 1 : Kanuri (PPL_KANURI)
-- Peuple 2 : Teda (PPL_TEDA)
-- Peuple 3 : Daza (PPL_DAZA)
+- Peuple 2 : Zaghawa (PPL_ZAGHAWA)
+- Peuple 3 : Teda (PPL_TEDA)
+- Peuple 4 : Daza (PPL_DAZA)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Kanuri  
-- Ethnie 2 : Teda (Toubou du nord)  
-- Ethnie 3 : Daza (Toubou du sud)  
-(+ renvoi aux futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues plutôt analytiques, SVO, utilisation de particules grammaticales.
+  Les langues sahariennes sont généralement classées comme langues **SOV** (sujet-objet-verbe) ou montrent une forte tendance au verbe final dans certaines variantes. Exemples concrets :
+  - Kanuri : *nji fǝrǝ-ga* (« je bois l'eau ») = sujet + objet + verbe (SOV). Le pronom *nji* (je) précède l'objet *fǝrǝ* (eau) avec marqueur accusatif *-ga*, suivi du verbe à la forme non-marquée.
+  - Système TAM (Temps-Aspect-Mode) développé : distinction entre aspect perfectif vs. imperfectif. Exemple Kanuri : *yá* (« boire », forme de base) peut prendre des marqueurs aspectuels postverbaux pour exprimer le perfectif ou l'imperfectif.
+  - Dérivation : le proto-Saharien reconstruit montre des racines comme *sa-* « boire » (proto-Saharien) > Kanuri *yá*, Kanembu *ya*, Zaghawa *sa* (Cyffer 2020). Autre exemple : proto-Saharien *am* « personne » > Kanuri *âm*, Zaghawa *ɔ̄ɔ̄*, Daza *amo*.
+- Morphologie et dérivation :
+  - Dérivation nominale : distinction singulier/pluriel via suffixes ou modifications tonales. Exemple Zaghawa : le pluriel de nombreux noms se forme en changeant le ton de la voyelle finale d'un ton bas à un ton haut. Certains noms utilisent des suffixes collectifs-singulatifs.
+  - Morphologie verbale : affixes pour TAM, négation, voix (causatif, passif), souvent par suffixes ou modifications internes. Exemple Kanuri : le préfixe *a-* marque la première personne dans certaines formes verbales.
+  - Pronoms personnels : cohérence génétique visible dans les pronoms. Proto-Saharien *am* « personne/nous » retrouvé en Kanuri *âm*, Daza *amo*, montrant des correspondances phonétiques régulières.
 - Particularités phonologiques :
-  - Tons (dans Kanuri)  
-  - Systèmes vocaliques réduits  
-  - Consonnes fricatives labiovélaires dans certains dialectes
+  - Inventaire vocalique : systèmes relativement simples (5 à 7 voyelles orales) avec distinction de longueur. Dans les langues orientales comme Zaghawa : système de neuf voyelles avec harmonie ATR (Advanced Tongue Root) où deux ensembles de voyelles (+ATR et -ATR) coexistent ; la voyelle /a/ peut fonctionner dans les deux ensembles. Kanuri montre également des distinctions ATR mais moins marquées que dans certaines langues nilotiques.
+  - Tonalité : la plupart des langues sahariennes sont tonales avec 2 à 4 niveaux tonals (haut, bas, tombant, montant) servant à distinguer le lexical et le grammatical. Exemples :
+    * Kanuri : trois tons (haut, bas, tombant) utilisés pour distinguer des mots lexicalement différents et pour marquer certaines fonctions grammaticales.
+    * Zaghawa : au moins trois niveaux de ton (haut, moyen, bas) plus des tons montants/descendants pour certaines fonctions grammaticales. Le changement tonal contribue au marquage du perfectif dans certains verbes.
+  - Consonnes : inventaires consonantiques variés selon les langues. Présence de stops simples, nasales, fricatives. Certaines langues comme Kanuri présentent des arrêts prénasalisés. Dans Teda-Daza, influence des emprunts arabes avec adoption de sons pharyngaux ou uvulaires pour certains mots (ex. /ʕ-/).
 - Liens avec les familles voisines :
-  Contacts étroits avec :
-  - langues tchadiques (haoussa, bade, ngas)  
-  - langues songhay (Niger)  
-  - langues berbères (Touaregs au Sahara)
+  - Emprunts lexicaux à l'arabe : importante présence d'arabismes dans les lexiques sahariens, surtout dans Teda-Daza et Zaghawa, liés à l'islamisation et au commerce transsaharien. Exemples : mots religieux et culturels adoptés avec adaptation phonologique (pharyngaux/uvulaires). Influence particulièrement visible dans le vocabulaire religieux, commercial et administratif.
+  - Contacts avec langues tchadiques (haoussa, bade, ngas) : échanges lexicaux dans la terminologie pastorale, commerce, nom de bétail. Zones de contact dans le bassin du lac Tchad, notamment autour de Maiduguri (Nigéria) et Diffa (Niger).
+  - Contacts avec langues songhay : emprunts et influences structurelles au Niger, particulièrement dans les zones de contact autour d'Agadez.
+  - Contacts avec langues berbères : influences mutuelles dans les zones désertiques, notamment avec les Touaregs au Sahara central. Contacts historiques documentés dans les routes commerciales transsahariennes.
+  - Contacts avec langues afro-asiatiques : influences phonologiques et lexicales dans les zones de métissage linguistique, particulièrement au Tchad et au Soudan.
 - Innovations clés :
-  - Marqueurs de temps/aspect postverbaux  
-  - Réduction phonologique dans Kanuri  
-  - Emprunts multiples aux langues voisines (arabe, haoussa)
+  - Système TAM (Temps-Aspect-Mode) particulièrement élaboré dans Saharien comparé à certains autres groupes de Nilo-Saharien : développement de marques verbales, modes ou aspects nouveaux ou réanalysés après séparation des langues. Exemple : reconstruction du proto-Saharien montre des formes comme *kai* « bouche », *masin* « foie », *kut* « grand » qui diffèrent dans les branches Kanuri / Teda-Daza / Beria (Zaghawa) tout en montrant des correspondances régulières (Cyffer 2020).
+  - Changements tonals comme moyen grammatical : utilisation du ton pour marquer le pluriel ou l'aspect (ex. Zaghawa). Innovation spécifique par rapport à d'autres groupes linguistiques voisins.
+  - Trait d'innovation : perte ou réduction de l'harmonie ATR dans certaines branches (ex. Kanuri), ou modifications phonétiques comme métathèse dans certaines formes verbales dans les langues orientales.
+  - Conservation de certaines racines lexicales du proto-Saharien visibles dans Kanuri et Beria (Zaghawa) contre perte ou changement rapide dans d'autres langues sahariennes occidentales.
 
-# 5. Histoire et origines
+# 4. Histoire et origines
 - Origine probable :
-  Bassin du lac Tchad, zones saharo-sahéliennes.
+  Théories linguistiques :
+  1. Classification de Greenberg (1963) : Joseph H. Greenberg classe les langues sahariennes comme branche du phylum Nilo-Saharien dans *The Languages of Africa* (Chicago : University of Chicago Press, 1963). Cette classification reste la plus influente mais a été critiquée pour sa méthode de « mass comparison ».
+  2. Théorie de Cyffer (2020) : Norbert Cyffer, dans « Saharan » (Oxford Handbook of African Languages, 2020), affermit la cohérence génétique interne du groupe saharien tout en reconnaissant les débats sur son appartenance au phylum Nilo-Saharien.
+  3. Théorie de Blench : Roger Blench suggère que Saharien forme un groupe avec Songhay (branche « Songhay-Saharan ») au sein de Nilo-Saharien, proposant une relation plus étroite entre ces deux groupes.
+  4. Théories alternatives : certains linguistes contestent l'unité du phylum Nilo-Saharien ou le rattachement de certaines langues, suggérant que les similarités résultent en partie de contact plutôt que d'une origine génétique unique.
+  
+  Théories archéologiques :
+  - Origine estimée autour du bassin du lac Tchad ou dans le couloir Tchad-Dongola. Les reconstructions linguistiques suggèrent que le proto-Saharien a été parlé plusieurs milliers d'années avant aujourd'hui, possiblement au Néolithique (5ᵉ-4ᵉ millénaire av. J.-C.), correspondant aux périodes humides du Sahara (Holocène moyen).
+  - Expansion liée aux changements climatiques : migrations lors des périodes humides du Sahara (environ 10 000-5 000 av. J.-C.), mais sans consensus archéologique précis.
+  
+  Études génétiques :
+  - Les études génétiques modernes (ex. "African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations", 2019) montrent que les populations sahariennes présentent des composantes spécifiques alignées avec les Nilo-Sahariens, mais aussi des mélanges dus aux contacts, soulignant la complexité et l'hybridité plutôt qu'une séparation nette.
+  - Les lignées linguistiques se corrèlent davantage avec l'histoire génétique locale qu'avec une « origine saharienne » monolithique.
+- Période d'émergence estimée :
+  1. Émergence historique de la famille Saharienne : les reconstructions linguistiques suggèrent que le proto-Saharien a été parlé plusieurs milliers d'années avant aujourd'hui, possiblement au Néolithique (5ᵉ-4ᵉ millénaire av. J.-C.), correspondant aux périodes humides du Sahara (Holocène moyen, environ 10 000-5 000 av. J.-C.). La séparation des langues sahariennes entre elles remonte probablement à plusieurs millénaires, avec diversification autour du bassin du lac Tchad.
+  2. Date de classification académique : le terme « Saharan languages » a été stabilisé et formalisé par Joseph H. Greenberg dans *The Languages of Africa* (1963). Avant cette classification, des explorateurs et linguistes avaient décrit les langues individuellement : Heinrich Barth (1853) mentionne les langues autour du lac Tchad, des descriptions isolées de Kanuri, Zaghawa, Teda-Daza au XIXᵉ et début XXᵉ siècle. Diedrich Hermann Westermann (1910-1950) définit des groupes « sudaniques » qui préfigureront le Saharien. Les travaux récents de Norbert Cyffer (2020) dans l'Oxford Handbook of African Languages constituent une mise à jour importante de la reconstruction proto-Saharienne.
 - Diffusion des langues :
-  Expansion des Kanem-Bornou (empire médiéval), influence majeure autour du lac Tchad.
+  Théories multiples disponibles :
+  
+  Théorie 1 (expansion depuis le lac Tchad) : Expansion à partir du bassin du lac Tchad vers le nord (Teda-Daza dans le Tibesti, Libye) et vers l'ouest (Kanuri dans le Nigéria, Niger). Diffusion liée aux périodes humides du Sahara et aux routes commerciales historiques.
+  
+  Théorie 2 (interactions multiples) : Contacts prolongés et multiples entre langues sahariennes et langues afro-asiatiques (chadiques, berbères, arabes), migrations historiques (commerce, échanges pastoraux), influençant la diffusion et la diversité. Expansion liée aux anciens réseaux culturels sahariens lors des périodes humides, avec contact avec langues afro-asiatiques dans les oasis.
+  
+  Théorie 3 (origine hybride, moins acceptée) : Certaines langues classées dans Saharien pourraient être hybrides ou avoir des substrats préexistants non Nilo-Sahariens, remettant en question une origine unique. Les similarités résulteraient en partie de contact plutôt que d'une ascendance génétique commune.
+  
+  Routes migratoires documentées :
+  - Expansion vers le nord : Teda-Daza dans le Tibesti (Tchad/Libye), zones désertiques centrales
+  - Expansion vers l'ouest : Kanuri dans le nord-est du Nigéria, sud-est du Niger, zones autour de Maiduguri, Diffa, Agadez
+  - Expansion vers l'est : Zaghawa dans l'est du Tchad, ouest du Soudan
 - Ruptures historiques :
-  - Déclin de l’empire Kanem-Bornou  
-  - Colonisation (Nigéria britannique, Tchad français)  
-  - Désertification du Sahara
+  - Déclin de l'empire Kanem-Bornou (XIXᵉ siècle) : changement dans la distribution linguistique du Kanuri, mais maintien de son statut comme langue véhiculaire régionale
+  - Colonisation : division du territoire entre Nigéria britannique et Tchad français, influençant les politiques linguistiques et l'enseignement
+  - Désertification progressive du Sahara : isolement et spécialisation des communautés pastorales (notamment Teda-Daza dans le Tibesti)
+  - Périodes de dessiccation du Sahara (fin de l'Holocène moyen, vers 5000-4000 av. J.-C.) : contraignant les migrations et contribuant à l'isolement linguistique relatif de certaines communautés
 - Zones de contact et métissages :
-  - Oasis du Tibesti (Teda/Daza)  
-  - Région du lac Tchad (Kanuri, Kanembu)
+  Localisation géographique précise :
+  - Bassin du lac Tchad (Tchad, Nigéria, Niger, Cameroun) : zone principale pour Kanuri et Kanembu. Villes/régions spécifiques : Maiduguri (Nigéria), Diffa (Niger), zones autour du lac Tchad pour Kanembu. Métissage linguistique avec langues tchadiques (haoussa, bade, ngas), langues songhay, et langues afro-asiatiques.
+  - Tibesti (Tchad/Libye) : zone pour Teda-Daza (Toubous). Métissage avec langues berbères (Touaregs) et arabes dans les zones désertiques. Oasis et routes commerciales transsahariennes.
+  - Nord-est du Tchad, ouest du Soudan : zone pour Zaghawa (Beria). Villes/régions : zones frontalières entre Tchad et Soudan. Métissage avec langues arabes, langues nilotiques, et autres langues afro-asiatiques.
+  - Routes commerciales transsahariennes : anciennes pistes caravanières entre le lac Tchad et le Darfour, routes vers le nord (Libye, Égypte), contacts pastoraux dans les zones désertiques.
+  - Zones frontalières : contacts avec langues tchadiques au Tchad et Nigéria, langues songhay au Niger, zones arabophones au Soudan, langues berbères dans les zones désertiques.
+- Événements historiques majeurs ayant influencé la famille :
+  - Vers 5ᵉ-4ᵉ millénaire av. J.-C. : période humide du Sahara, expansion probable des populations proto-Sahariennes (estimation archéologique)
+  - Vers milieu du 7ᵉ siècle CE : établissement de l'empire Kanem-Bornou, usage accru de Kanuri autour du lac Tchad comme langue de pouvoir et de commerce
+  - XIXᵉ-début XXᵉ siècle : premières descriptions linguistiques systématiques par Heinrich Barth (1853), Lepsius, Westermann, etc.
+  - 1963 : Joseph Greenberg formalise le terme et la classification de Saharien dans *The Languages of Africa*
+  - 2020 : Norbert Cyffer publie reconstruction proto-Saharienne dans l'Oxford Handbook of African Languages, affermissant la cohérence interne du groupe
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  5–8 millions
+  10–12 millions de locuteurs natifs (estimations 2025, SIL Ethnologue, Wikipedia)
 - Répartition par pays :
-  Nigéria nord, Niger, Tchad, Libye
+  - **Nigéria** : ~4 à 5 millions de locuteurs de Kanuri (principalement Yerwa Kanuri) dans les États du Nord-Est (Borno, Yobe, Adamawa). Proportion : ~2-5 % de la population nationale. Zones principales : Maiduguri, zones autour du lac Tchad. Source : Ethnologue 2025, Wikipedia "Saharan languages" 2025.
+  
+  - **Niger** : ~400 000 à 500 000 locuteurs de Kanuri (variétés : Manga Kanuri ~280 000, Bilma Kanuri ~20 000, Tumari Kanuri, Yerwa Kanuri). Proportion : faible au niveau national (< 3 %), mais localement significative dans les régions Diffa, Zinder, Agadez. Source : Ethnologue "Languages of Niger" 2025, Wikipedia "Languages of Niger" 2025.
+  
+  - **Tchad** : ~1 à 2 millions de locuteurs de langues sahariennes, incluant Kanuri, Zaghawa (~350 000), Teda (~60 000), Daza (~700 000). Proportion : ~10-15 % de la population nationale, localement dominante dans certaines régions du nord et de l'est. Zones principales : bassin du lac Tchad (Kanuri), nord-est (Zaghawa), Tibesti (Teda-Daza). Source : Ethnologue 2025, Wikipedia "Saharan languages" 2025.
+  
+  - **Soudan** : plusieurs dizaines de milliers de locuteurs de Zaghawa (Beria) dans l'est du pays. Proportion : faible au niveau national (< 1 %), concentration dans les zones frontalières avec le Tchad. Source : Wikipedia "Saharan languages" 2025.
+  
+  - **Libye** : petits groupes de locuteurs Teda-Daza (Toubous) dans le sud-est, dispersés. Proportion : très faible au niveau national. Source : Wikipedia "Saharan languages" 2025.
+  
+  - **Cameroun** : communautés Kanuri minoritaires dans l'extrême nord, zones frontalières avec le Nigéria et le Tchad. Proportion : très faible au niveau national (< 1 %). Source : Wikipedia "Saharan languages" 2025.
+  
+  Note : Les chiffres précis pour 2025 selon ONU/UNFPA/CIA ne sont pas tous disponibles dans les sources ouvertes. Les estimations proviennent principalement d'Ethnologue (SIL) et de Wikipedia, qui s'appuient sur des recensements nationaux et des études linguistiques.
 - Importance historique :
-  Langues des royaumes saharo-sahéliens (Kanem-Bornou), acteurs majeurs des routes transsahariennes.
+  Langues des royaumes saharo-sahéliens (Kanem-Bornou, IXᵉ-XIXᵉ siècle), acteurs majeurs des routes commerciales transsahariennes. Le Kanuri a servi de langue véhiculaire régionale dans le bassin du lac Tchad pendant plusieurs siècles.
 
-# 7. Sources
-- Dimmendaal – *Nilo-Saharan Linguistics*  
-- SIL Ethnologue – Kanuri, Teda-Daza  
-- Glottolog – Saharan branch  
-- UNESCO – Atlas des langues africaines
+# 6. Sources
+- Cyffer, Norbert (2020) – *Saharan*. In : Rainer Vossen & Gerrit J. Dimmendaal (eds.), *The Oxford Handbook of African Languages*, Oxford University Press, pp. 383-391. https://academic.oup.com/edited-volume/38608/chapter-abstract/334726085
+- Greenberg, Joseph H. (1963) – *The Languages of Africa*. Chicago : University of Chicago Press.
+- Blench, Roger (2006-2023) – Travaux sur la classification Nilo-Saharienne, incluant le groupe Saharien et la proposition de branche « Songhay-Saharan ».
+- Dimmendaal, Gerrit J. – *Nilo-Saharan Linguistics*. Études sur les langues nilo-sahariennes.
+- Blažek, Václav (2007) – *On application of glottochronology for Saharan Languages*. In : *Viva Africa 2007*. Application de la glottochronologie aux langues sahariennes.
+- SIL Ethnologue (2025) – *Kanuri language*, *Teda-Daza languages*, *Zaghawa language*. https://www.ethnologue.com
+- Glottolog (2025) – *Saharan branch*. Classification et ressources linguistiques.
+- UNESCO – *Atlas des langues africaines*. Cartographie des langues africaines.
+- Wikipedia (2025) – *Saharan languages*, *Kanuri language*, *Zaghawa language*, *Languages of Niger*. Articles encyclopédiques mis à jour.
+- The Editors of Encyclopaedia Britannica (2025) – "Saharan languages". *Britannica*. https://www.britannica.com/topic/Saharan-languages
+- Études génétiques :
+  - Fan, Shaohua et al. (2019) – "African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations". *Genome Biology*, 20:82. https://link.springer.com/article/10.1186/s13059-019-1679-2
+  - Études génétiques sur les populations Nilo-Sahariennes et leurs corrélations avec les classifications linguistiques.
