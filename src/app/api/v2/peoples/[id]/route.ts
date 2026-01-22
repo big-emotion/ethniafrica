@@ -1,6 +1,61 @@
 /**
  * API v2 - Single People endpoint
  * GET /api/v2/peoples/[id]
+ *
+ * @swagger
+ * /api/v2/peoples/{id}:
+ *   get:
+ *     summary: Détails d'un peuple
+ *     description: Retourne les détails complets d'un peuple par son identifiant PPL_*
+ *     tags: [API v2 - Peoples]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *           pattern: '^PPL_[A-Z_]+$'
+ *         description: Identifiant du peuple (format PPL_*)
+ *         example: "PPL_SHONA"
+ *     responses:
+ *       200:
+ *         description: Détails du peuple
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   $ref: '#/components/schemas/PeopleV2'
+ *             example:
+ *               data:
+ *                 id: "PPL_SHONA"
+ *                 nameMain: "Shona"
+ *                 languageFamilyId: "FLG_BANTU"
+ *                 currentCountries: ["ZWE", "MOZ"]
+ *                 content: {}
+ *       400:
+ *         description: Format d'identifiant invalide
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "Invalid people ID format"
+ *       404:
+ *         description: Peuple non trouvé
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "People not found"
+ *       500:
+ *         description: Erreur serveur
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
  */
 
 import { NextRequest } from "next/server";

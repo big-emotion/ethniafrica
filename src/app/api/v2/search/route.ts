@@ -1,6 +1,64 @@
 /**
  * API v2 - Search endpoint
  * GET /api/v2/search?query=...&type=...&languageFamilyId=...&countryId=...
+ *
+ * @swagger
+ * /api/v2/search:
+ *   get:
+ *     summary: Recherche multi-entités
+ *     description: Recherche dans les pays, peuples, langues et familles linguistiques avec filtres optionnels
+ *     tags: [API v2 - Search]
+ *     parameters:
+ *       - in: query
+ *         name: query
+ *         schema:
+ *           type: string
+ *         description: Terme de recherche
+ *         example: "Bantu"
+ *       - in: query
+ *         name: type
+ *         schema:
+ *           type: string
+ *           enum: [country, people, language, languageFamily]
+ *         description: Filtrer par type d'entité
+ *         example: "people"
+ *       - in: query
+ *         name: languageFamilyId
+ *         schema:
+ *           type: string
+ *         description: Filtrer par famille linguistique (format FLG_*)
+ *         example: "FLG_BANTU"
+ *       - in: query
+ *         name: countryId
+ *         schema:
+ *           type: string
+ *         description: Filtrer par pays (code ISO 3166-1 alpha-3)
+ *         example: "ZWE"
+ *     responses:
+ *       200:
+ *         description: Résultats de recherche
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/SearchResult'
+ *             example:
+ *               data:
+ *                 - type: "people"
+ *                   id: "PPL_SHONA"
+ *                   name: "Shona"
+ *                   snippet: "Peuple bantou du Zimbabwe..."
+ *                   relevance: 0.95
+ *       500:
+ *         description: Erreur serveur
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
  */
 
 import { NextRequest } from "next/server";

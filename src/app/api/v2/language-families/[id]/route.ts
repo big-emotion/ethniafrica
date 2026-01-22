@@ -1,6 +1,60 @@
 /**
  * API v2 - Single Language Family endpoint
  * GET /api/v2/language-families/[id]
+ *
+ * @swagger
+ * /api/v2/language-families/{id}:
+ *   get:
+ *     summary: Détails d'une famille linguistique
+ *     description: Retourne les détails complets d'une famille linguistique par son identifiant FLG_*
+ *     tags: [API v2 - Language Families]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *           pattern: '^FLG_[A-Z_]+$'
+ *         description: Identifiant de la famille linguistique (format FLG_*)
+ *         example: "FLG_BANTU"
+ *     responses:
+ *       200:
+ *         description: Détails de la famille linguistique
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   $ref: '#/components/schemas/LanguageFamilyV2'
+ *             example:
+ *               data:
+ *                 id: "FLG_BANTU"
+ *                 nameFr: "Bantou"
+ *                 nameEn: "Bantu"
+ *                 content: {}
+ *       400:
+ *         description: Format d'identifiant invalide
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "Invalid language family ID format"
+ *       404:
+ *         description: Famille linguistique non trouvée
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *             example:
+ *               error: "Language family not found"
+ *       500:
+ *         description: Erreur serveur
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
  */
 
 import { NextRequest } from "next/server";
