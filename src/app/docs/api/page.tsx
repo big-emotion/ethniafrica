@@ -1,58 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Code, Download, Info } from "lucide-react";
+import { BookOpen, Code, Search, Info } from "lucide-react";
 import Link from "next/link";
 
-// Import dynamique de SwaggerUI pour éviter les problèmes SSR
-const SwaggerUI = dynamic(
-  () => import("swagger-ui-react").then((mod) => mod.default),
-  { ssr: false }
-);
-
 export default function ApiDocsPage() {
-  const [spec, setSpec] = useState<Record<string, unknown> | null>(null);
-  const [baseUrl, setBaseUrl] = useState<string>("");
-
-  useEffect(() => {
-    // Déterminer l'URL de base
-    const url =
-      typeof window !== "undefined"
-        ? `${window.location.protocol}//${window.location.host}`
-        : "";
-    setBaseUrl(url);
-
-    // Charger la spécification OpenAPI
-    fetch("/api/docs")
-      .then((res) => res.json())
-      .then((data) => setSpec(data))
-      .catch((err) => console.error("Failed to load API spec:", err));
-  }, []);
-
-  if (!spec) {
-    return (
-      <div className="min-h-screen gradient-earth">
-        <div className="container mx-auto px-4 py-10">
-          <div className="max-w-5xl mx-auto">
-            <h1 className="text-3xl font-display font-bold mb-4">
-              API Documentation
-            </h1>
-            <p className="text-muted-foreground">
-              Loading API documentation...
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen gradient-earth">
       <div className="container mx-auto px-4 py-10">
-        <div className="max-w-6xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-6">
           {/* Header */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -64,110 +21,143 @@ export default function ApiDocsPage() {
                   API Documentation
                 </h1>
                 <p className="text-muted-foreground mt-1">
-                  Documentation interactive de l'API publique Ethniafrique Atlas
+                  Choisissez la version de l'API à consulter
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <Card className="p-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <Info className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">Accès rapide</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-                <Link href="/api/stats" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Code className="h-4 w-4 mr-2" />
-                    Statistiques
-                  </Button>
-                </Link>
-                <Link href="/api/regions" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Code className="h-4 w-4 mr-2" />
-                    Régions
-                  </Button>
-                </Link>
-                <Link href="/api/countries" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Code className="h-4 w-4 mr-2" />
-                    Pays
-                  </Button>
-                </Link>
-                <Link href="/api/ethnicities" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Code className="h-4 w-4 mr-2" />
-                    Ethnies
-                  </Button>
-                </Link>
-              </div>
-              <div className="pt-2 border-t">
-                <Link href="/api/download?format=csv" target="_blank">
-                  <Button variant="outline" className="w-full justify-start">
-                    <Download className="h-4 w-4 mr-2" />
-                    Télécharger les données (CSV/Excel)
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </Card>
-
           {/* Introduction */}
           <Card className="p-6 bg-muted/50">
             <div className="space-y-3">
-              <h2 className="text-lg font-semibold">À propos de l'API</h2>
+              <h2 className="text-lg font-semibold">Versions disponibles</h2>
               <p className="text-sm text-muted-foreground">
-                Cette API REST publique permet d'accéder aux données
-                démographiques et ethniques de l'Afrique. Toutes les réponses
-                sont au format JSON et l'API est accessible sans
-                authentification.
+                L'API Ethniafrique Atlas est disponible en deux versions. La v1
+                est l'API historique, tandis que la v2 est basée sur la
+                méthodologie AFRIK avec des identifiants stables et un format de
+                réponse standardisé.
               </p>
-              <div className="flex flex-wrap gap-2 pt-2">
+            </div>
+          </Card>
+
+          {/* API v1 Card */}
+          <Card className="p-6 hover:shadow-lg transition-shadow">
+            <div className="space-y-4">
+              <div className="flex items-start justify-between">
+                <div className="space-y-2">
+                  <h2 className="text-2xl font-semibold">API v1</h2>
+                  <p className="text-sm text-muted-foreground">
+                    API publique pour accéder aux données démographiques et
+                    ethniques de l'Afrique. Accès aux régions, pays, ethnies et
+                    statistiques.
+                  </p>
+                </div>
+                <span className="px-3 py-1 text-xs rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                  v1.0.0
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2">
                 <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  REST API
+                  Régions
                 </span>
                 <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  JSON
+                  Pays
                 </span>
                 <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  OpenAPI 3.0
+                  Ethnies
                 </span>
                 <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
-                  CORS activé
+                  Statistiques
                 </span>
+              </div>
+              <div className="flex gap-3 pt-2">
+                <Link href="/docs/api/v1" className="flex-1">
+                  <Button className="w-full">Consulter la documentation</Button>
+                </Link>
+                <Link href="/api/docs/v1" target="_blank">
+                  <Button variant="outline">
+                    <Code className="h-4 w-4 mr-2" />
+                    JSON
+                  </Button>
+                </Link>
               </div>
             </div>
           </Card>
 
-          {/* Swagger UI */}
-          <Card className="p-6">
-            <div className="swagger-ui-wrapper">
-              {/* @ts-expect-error - SwaggerUI types are not fully compatible */}
-              <SwaggerUI spec={spec} />
+          {/* API v2 Card */}
+          <Card className="p-6 hover:shadow-lg transition-shadow border-primary/20">
+            <div className="space-y-4">
+              <div className="flex items-start justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <h2 className="text-2xl font-semibold">API v2 - AFRIK</h2>
+                    <span className="px-2 py-1 text-xs rounded-md bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                      Nouveau
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    API basée sur la méthodologie AFRIK avec identifiants
+                    stables (FLG_*, PPL_*, codes ISO), pagination et contenu
+                    évolutif. Accès aux pays, peuples, familles linguistiques et
+                    recherche multi-entités.
+                  </p>
+                </div>
+                <span className="px-3 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                  v2.0.0
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+                  Recherche
+                </span>
+                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+                  Pays
+                </span>
+                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+                  Peuples
+                </span>
+                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+                  Familles linguistiques
+                </span>
+                <span className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary">
+                  Pagination
+                </span>
+              </div>
+              <div className="flex gap-3 pt-2">
+                <Link href="/docs/api/v2" className="flex-1">
+                  <Button className="w-full">Consulter la documentation</Button>
+                </Link>
+                <Link href="/api/docs/v2" target="_blank">
+                  <Button variant="outline">
+                    <Code className="h-4 w-4 mr-2" />
+                    JSON
+                  </Button>
+                </Link>
+              </div>
             </div>
           </Card>
 
-          {/* Footer Info */}
-          <div className="text-center text-sm text-muted-foreground space-y-2">
-            <p>
-              Base URL de l'API :{" "}
-              <code className="px-2 py-1 rounded bg-muted text-foreground">
-                {baseUrl || "Chargement..."}
-              </code>
-            </p>
-            <p>
-              Pour plus d'informations, consultez la{" "}
-              <Link
-                href="/fr/contribute"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                page Contribuer
-              </Link>
-              .
-            </p>
-          </div>
+          {/* Quick Info */}
+          <Card className="p-6">
+            <div className="flex items-start gap-3">
+              <Info className="h-5 w-5 text-primary mt-0.5" />
+              <div className="space-y-2">
+                <h3 className="font-semibold">Quelle version choisir ?</h3>
+                <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                  <li>
+                    <strong>API v1</strong> : Pour les applications existantes
+                    ou si vous avez besoin d'accéder aux régions et aux
+                    statistiques globales.
+                  </li>
+                  <li>
+                    <strong>API v2</strong> : Pour les nouvelles applications,
+                    si vous avez besoin d'identifiants stables, de pagination ou
+                    d'accès aux données AFRIK (peuples, familles linguistiques).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </div>

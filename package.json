@@ -7,7 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "unit-tests": "vitest run --dir src/lib",
+    "integration-tests": "vitest run --dir src/app/api",
+    "api-tests": "vitest run --dir src/app/api/v2",
+    "all-tests": "vitest run"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

@@ -411,10 +411,21 @@ Les sous-groupes :
 
 ### 9. Documentation interactive
 
-- Swagger UI : `http://localhost:3000/docs/api`
-- Spécification JSON : `http://localhost:3000/api/docs` (même endpoint)
+#### 9.1 API v1
 
-> Les annotations Swagger sont maintenues dans les fichiers Route Handlers (`src/app/api/**/route.ts`). La génération de la spec est centralisée dans `src/lib/api/openapi.ts`.
+- **Swagger UI v1** : `http://localhost:3000/docs/api/v1`
+- **Spécification JSON v1** : `http://localhost:3000/api/docs/v1`
+
+#### 9.2 API v2 (AFRIK)
+
+- **Swagger UI v2** : `http://localhost:3000/docs/api/v2`
+- **Spécification JSON v2** : `http://localhost:3000/api/docs/v2`
+
+#### 9.3 Page d'index
+
+- **Page de sélection** : `http://localhost:3000/docs/api` (choix entre v1 et v2)
+
+> Les annotations Swagger sont maintenues dans les fichiers Route Handlers (`src/app/api/**/route.ts`). La génération des specs est centralisée dans `src/lib/api/openapiV1.ts` (v1) et `src/lib/api/openapiV2.ts` (v2).
 
 ### 10. Contributions (API publique)
 
@@ -577,3 +588,519 @@ Les sous-groupes :
 - `Access-Control-Allow-Headers` : `Content-Type, Authorization`
 - `Access-Control-Allow-Credentials` : `true` (pour les cookies de session admin)
 - Réponse `OPTIONS` : statut `204` avec les mêmes en-têtes
+
+---
+
+## 13. API v2 - AFRIK
+
+L'API v2 est une refonte basée sur les données AFRIK (méthodologie AFRIK). Elle utilise des identifiants stables et un format de réponse standardisé avec pagination.
+
+### 13.1 Introduction
+
+**Différences avec l'API v1** :
+
+- Identifiants stables et immutables (FLG*\*, PPL*\*, codes ISO 3166-1 alpha-3)
+- Format de réponse standardisé avec pagination
+- Contenu évolutif stocké en JSONB (pas de migration de schéma nécessaire)
+- Architecture basée sur les données AFRIK
+
+**Identifiants** :
+
+- **Pays** : Code ISO 3166-1 alpha-3 (ex: `ZWE`, `CMR`, `COM`)
+- **Peuples** : Format `PPL_*` (ex: `PPL_SHONA`, `PPL_COMORIEN`)
+- **Familles linguistiques** : Format `FLG_*` (ex: `FLG_BANTU`, `FLG_MANDE`)
+
+**Format de réponse standardisé** :
+
+```json
+{
+  "data": [...],
+  "meta": {
+    "total": 100,
+    "page": 1,
+    "perPage": 20,
+    "totalPages": 5
+  }
+}
+```
+
+**Cache** : Toutes les réponses sont mises en cache pendant 24h (`Cache-Control: public, max-age=86400`)
+
+---
+
+### 13.2 Recherche
+
+`GET /api/v2/search`
+
+- **Description** : Recherche multi-entités dans les pays, peuples, langues et familles linguistiques
+- **Paramètres de requête** (tous optionnels) :
+  - `query` (string) : Terme de recherche
+  - `type` (string) : Filtrer par type (`country`, `people`, `language`, `languageFamily`)
+  - `languageFamilyId` (string) : Filtrer par famille linguistique (format `FLG_*`)
+  - `countryId` (string) : Filtrer par pays (code ISO 3166-1 alpha-3)
+- **Réponse 200**
+  ```json
+  {
+    "data": [
+      {
+        "type": "people",
+        "id": "PPL_SHONA",
+        "name": "Shona",
+        "snippet": "Peuple bantou du Zimbabwe...",
+        "relevance": 0.95
+      }
+    ]
+  }
+  ```
+- **Erreurs**
+  - `500` : `{"error": "Internal server error"}`
+
+**Exemple** :
+
+```bash
+curl "http://localhost:3000/api/v2/search?query=Bantu&type=people"
+curl "http://localhost:3000/api/v2/search?query=Zimbabwe&type=country"
+curl "http://localhost:3000/api/v2/search?languageFamilyId=FLG_BANTU&countryId=ZWE"
+```
+
+---
+
+### 13.3 Pays
+
+#### 13.3.1 Liste des pays
+
+`GET /api/v2/countries`
+
+- **Description** : Liste paginée de tous les pays d'Afrique
+- **Paramètres de requête** :
+  - `page` (integer, défaut: 1) : Numéro de page
+  - `perPage` (integer, défaut: 20, max: 100) : Nombre d'éléments par page
+- **Réponse 200**
+  ```json
+  {
+    "data": [
+      {
+        "id": "ZWE",
+        "nameFr": "Zimbabwe",
+        "nameOfficial": "Republic of Zimbabwe",
+        "etymology": "Nom dérivé de...",
+        "content": {
+          "historicalNames": {...},
+          "kingdoms": [...],
+          "majorPeoples": [...],
+          "culture": {...},
+          "sources": [...]
+        }
+      }
+    ],
+    "meta": {
+      "total": 55,
+      "page": 1,
+      "perPage": 20,
+      "totalPages": 3
+    }
+  }
+  ```
+- **Erreurs**
+  - `500` : `{"error": "Internal server error"}`
+
+**Exemple** :
+
+```bash
+curl "http://localhost:3000/api/v2/countries?page=1&perPage=20"
+```
+
+#### 13.3.2 Détails d'un pays
+
+`GET /api/v2/countries/{iso}`
+
+- **Description** : Détails complets d'un pays par son code ISO
+- **Paramètres path** :
+  - `iso` : Code ISO 3166-1 alpha-3 (3 lettres majuscules, ex: `ZWE`, `CMR`)
+- **Réponse 200**
+  ```json
+  {
+    "data": {
+      "id": "ZWE",
+      "nameFr": "Zimbabwe",
+      "nameOfficial": "Republic of Zimbabwe",
+      "etymology": "Nom dérivé de...",
+      "content": {
+        "historicalNames": {
+          "antiquity": "...",
+          "middleAges": "...",
+          "precolonial": "...",
+          "colonization": "...",
+          "contemporary": "..."
+        },
+        "kingdoms": [
+          {
+            "name": "Royaume du Zimbabwe",
+            "period": "XIe-XVe siècle",
+            "dominantPeoples": ["Shona"],
+            "politicalCenters": ["Grand Zimbabwe"]
+          }
+        ],
+        "majorPeoples": [...],
+        "culture": {...},
+        "historicalFacts": {...},
+        "sources": [...]
+      }
+    }
+  }
+  ```
+- **Erreurs**
+  - `400` : `{"error": "Invalid country ISO code format"}` (format invalide)
+  - `404` : `{"error": "Country not found"}` (pays non trouvé)
+  - `500` : `{"error": "Internal server error"}`
+
+**Exemple** :
+
+```bash
+curl "http://localhost:3000/api/v2/countries/ZWE"
+curl "http://localhost:3000/api/v2/countries/CMR"
+```
+
+---
+
+### 13.4 Peuples
+
+#### 13.4.1 Liste des peuples
+
+`GET /api/v2/peoples`
+
+- **Description** : Liste paginée de tous les peuples d'Afrique
+- **Paramètres de requête** :
+  - `page` (integer, défaut: 1) : Numéro de page
+  - `perPage` (integer, défaut: 20, max: 100) : Nombre d'éléments par page
+- **Réponse 200**
+  ```json
+  {
+    "data": [
+      {
+        "id": "PPL_SHONA",
+        "nameMain": "Shona",
+        "languageFamilyId": "FLG_BANTU",
+        "currentCountries": ["ZWE", "MOZ"],
+        "content": {
+          "appellations": {...},
+          "origins": {...},
+          "organization": {...},
+          "languages": {...},
+          "culture": {...},
+          "historicalRole": {...},
+          "demography": {...},
+          "sources": [...]
+        }
+      }
+    ],
+    "meta": {
+      "total": 592,
+      "page": 1,
+      "perPage": 20,
+      "totalPages": 30
+    }
+  }
+  ```
+- **Erreurs**
+  - `500` : `{"error": "Internal server error"}`
+
+**Exemple** :
+
+```bash
+curl "http://localhost:3000/api/v2/peoples?page=1&perPage=20"
+```
+
+#### 13.4.2 Détails d'un peuple
+
+`GET /api/v2/peoples/{id}`
+
+- **Description** : Détails complets d'un peuple par son identifiant
+- **Paramètres path** :
+  - `id` : Identifiant du peuple (format `PPL_*`, ex: `PPL_SHONA`, `PPL_COMORIEN`)
+- **Réponse 200**
+  ```json
+  {
+    "data": {
+      "id": "PPL_SHONA",
+      "nameMain": "Shona",
+      "languageFamilyId": "FLG_BANTU",
+      "currentCountries": ["ZWE", "MOZ"],
+      "content": {
+        "appellations": {
+          "selfAppellation": "Shona",
+          "exonyms": ["Mashona"],
+          "historicalNames": [...],
+          "appellationRemarks": "..."
+        },
+        "origins": {
+          "formation": "...",
+          "migrations": [...],
+          "historicalContext": "..."
+        },
+        "organization": {...},
+        "languages": {
+          "primary": "sna",
+          "languages": [
+            {
+              "id": "sna",
+              "name": "Shona",
+              "isPrimary": true
+            }
+          ]
+        },
+        "culture": {...},
+        "historicalRole": {...},
+        "demography": {
+          "totalPopulation": 15000000,
+          "distribution": [...]
+        },
+        "sources": [...]
+      }
+    }
+  }
+  ```
+- **Erreurs**
+  - `400` : `{"error": "Invalid people ID format"}` (format invalide, doit être `PPL_*`)
+  - `404` : `{"error": "People not found"}` (peuple non trouvé)
+  - `500` : `{"error": "Internal server error"}`
+
+**Exemple** :
+
+```bash
+curl "http://localhost:3000/api/v2/peoples/PPL_SHONA"
+curl "http://localhost:3000/api/v2/peoples/PPL_COMORIEN"
+```
+
+---
+
+### 13.5 Familles linguistiques
+
+#### 13.5.1 Liste des familles linguistiques
+
+`GET /api/v2/language-families`
+
+- **Description** : Liste paginée de toutes les familles linguistiques d'Afrique
+- **Paramètres de requête** :
+  - `page` (integer, défaut: 1) : Numéro de page
+  - `perPage` (integer, défaut: 20, max: 100) : Nombre d'éléments par page
+- **Réponse 200**
+  ```json
+  {
+    "data": [
+      {
+        "id": "FLG_BANTU",
+        "nameFr": "Bantou",
+        "nameEn": "Bantu",
+        "content": {
+          "geographicDistribution": "...",
+          "subfamilies": [...],
+          "languages": [...],
+          "historicalContext": "...",
+          "sources": [...]
+        }
+      }
+    ],
+    "meta": {
+      "total": 24,
+      "page": 1,
+      "perPage": 20,
+      "totalPages": 2
+    }
+  }
+  ```
+- **Erreurs**
+  - `500` : `{"error": "Internal server error"}`
+
+**Exemple** :
+
+```bash
+curl "http://localhost:3000/api/v2/language-families?page=1&perPage=20"
+```
+
+#### 13.5.2 Détails d'une famille linguistique
+
+`GET /api/v2/language-families/{id}`
+
+- **Description** : Détails complets d'une famille linguistique par son identifiant
+- **Paramètres path** :
+  - `id` : Identifiant de la famille linguistique (format `FLG_*`, ex: `FLG_BANTU`, `FLG_MANDE`)
+- **Réponse 200**
+  ```json
+  {
+    "data": {
+      "id": "FLG_BANTU",
+      "nameFr": "Bantou",
+      "nameEn": "Bantu",
+      "content": {
+        "geographicDistribution": "Afrique centrale, orientale et australe",
+        "subfamilies": [
+          {
+            "name": "Bantou central",
+            "languages": [...]
+          }
+        ],
+        "languages": [
+          {
+            "id": "sna",
+            "name": "Shona",
+            "speakers": 15000000
+          }
+        ],
+        "historicalContext": "...",
+        "sources": [...]
+      }
+    }
+  }
+  ```
+- **Erreurs**
+  - `400` : `{"error": "Invalid language family ID format"}` (format invalide, doit être `FLG_*`)
+  - `404` : `{"error": "Language family not found"}` (famille linguistique non trouvée)
+  - `500` : `{"error": "Internal server error"}`
+
+**Exemple** :
+
+```bash
+curl "http://localhost:3000/api/v2/language-families/FLG_BANTU"
+curl "http://localhost:3000/api/v2/language-families/FLG_MANDE"
+```
+
+---
+
+### 13.6 Format des réponses
+
+#### Structure standardisée
+
+Toutes les réponses suivent le format `ApiResponse<T>` :
+
+**Liste paginée** :
+
+```json
+{
+  "data": [...],
+  "meta": {
+    "total": 100,
+    "page": 1,
+    "perPage": 20,
+    "totalPages": 5
+  }
+}
+```
+
+**Détail unique** :
+
+```json
+{
+  "data": {...}
+}
+```
+
+**Erreur** :
+
+```json
+{
+  "error": "Message d'erreur"
+}
+```
+
+#### Codes HTTP
+
+- `200` : Succès
+- `400` : Requête invalide (format d'identifiant incorrect)
+- `404` : Ressource non trouvée
+- `500` : Erreur serveur
+
+#### Cache-Control
+
+Toutes les réponses incluent l'en-tête :
+
+```
+Cache-Control: public, max-age=86400, s-maxage=86400
+```
+
+Le cache est valide pendant 24 heures.
+
+---
+
+### 13.7 Exemples d'utilisation
+
+#### Recherche simple
+
+```bash
+# Rechercher "Bantu" dans tous les types
+curl "http://localhost:3000/api/v2/search?query=Bantu"
+
+# Rechercher uniquement dans les peuples
+curl "http://localhost:3000/api/v2/search?query=Shona&type=people"
+
+# Rechercher avec filtres
+curl "http://localhost:3000/api/v2/search?query=Zimbabwe&type=country&languageFamilyId=FLG_BANTU"
+```
+
+#### Navigation paginée
+
+```bash
+# Première page (20 éléments)
+curl "http://localhost:3000/api/v2/peoples?page=1&perPage=20"
+
+# Deuxième page
+curl "http://localhost:3000/api/v2/peoples?page=2&perPage=20"
+
+# Plus d'éléments par page (max 100)
+curl "http://localhost:3000/api/v2/peoples?page=1&perPage=100"
+```
+
+#### Accès aux détails
+
+```bash
+# Détails d'un pays
+curl "http://localhost:3000/api/v2/countries/ZWE"
+
+# Détails d'un peuple
+curl "http://localhost:3000/api/v2/peoples/PPL_SHONA"
+
+# Détails d'une famille linguistique
+curl "http://localhost:3000/api/v2/language-families/FLG_BANTU"
+```
+
+#### Cas d'usage courants
+
+**1. Lister tous les peuples d'une famille linguistique** :
+
+```bash
+# Étape 1 : Obtenir les détails de la famille linguistique
+curl "http://localhost:3000/api/v2/language-families/FLG_BANTU"
+
+# Étape 2 : Filtrer les peuples par famille linguistique
+curl "http://localhost:3000/api/v2/search?type=people&languageFamilyId=FLG_BANTU"
+```
+
+**2. Trouver tous les peuples d'un pays** :
+
+```bash
+curl "http://localhost:3000/api/v2/search?type=people&countryId=ZWE"
+```
+
+**3. Recherche multi-critères** :
+
+```bash
+curl "http://localhost:3000/api/v2/search?query=Shona&type=people&languageFamilyId=FLG_BANTU&countryId=ZWE"
+```
+
+---
+
+### 13.8 Documentation interactive
+
+L'API v2 est documentée dans l'interface Swagger UI dédiée :
+
+- **Swagger UI v2** : `http://localhost:3000/docs/api/v2`
+- **Spécification OpenAPI JSON v2** : `http://localhost:3000/api/docs/v2`
+
+Les routes v2 apparaissent dans les sections :
+
+- `API v2 - Search`
+- `API v2 - Countries`
+- `API v2 - Peoples`
+- `API v2 - Language Families`
+
+> Note : L'API v2 a sa propre documentation séparée de l'API v1. Consultez la section 9 pour plus d'informations sur l'accès aux documentations.
