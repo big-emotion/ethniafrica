@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Language } from "@/types/ethnicity";
 import { getTranslation } from "@/lib/translations";
-import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
+import { getLocalizedRoute, getPageFromRoute, PageType } from "@/lib/routing";
 import {
   Sheet,
   SheetContent,
@@ -34,14 +34,46 @@ export const MobileMenu = ({
   const t = getTranslation(language);
   const pathname = usePathname();
 
-  const regionsRoute = getLocalizedRoute(language, "regions");
+  // AFRIK v2 routes
+  const familiesRoute = getLocalizedRoute(language, "families");
+  const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
-  const ethnicitiesRoute = getLocalizedRoute(language, "ethnicities");
 
   const currentPage = getPageFromRoute(pathname);
-  const isActive = (pageType: "regions" | "countries" | "ethnicities") => {
+  const isActive = (pageType: PageType) => {
     return currentPage === pageType;
   };
+
+  const getNavLabels = () => {
+    switch (language) {
+      case "en":
+        return {
+          families: "Language Families",
+          peoples: "Peoples",
+          countries: "Countries",
+        };
+      case "es":
+        return {
+          families: "Familias lingüísticas",
+          peoples: "Pueblos",
+          countries: "Países",
+        };
+      case "pt":
+        return {
+          families: "Famílias linguísticas",
+          peoples: "Povos",
+          countries: "Países",
+        };
+      default:
+        return {
+          families: "Familles linguistiques",
+          peoples: "Peuples",
+          countries: "Pays",
+        };
+    }
+  };
+
+  const navLabels = getNavLabels();
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -70,12 +102,20 @@ export const MobileMenu = ({
                       : "Início"}
               </Button>
             </Link>
-            <Link href={regionsRoute} onClick={() => onOpenChange(false)}>
+            <Link href={familiesRoute} onClick={() => onOpenChange(false)}>
               <Button
-                variant={isActive("regions") ? "default" : "ghost"}
+                variant={isActive("families") ? "default" : "ghost"}
                 className="w-full justify-start"
               >
-                {t.regions}
+                {navLabels.families}
+              </Button>
+            </Link>
+            <Link href={peoplesRoute} onClick={() => onOpenChange(false)}>
+              <Button
+                variant={isActive("peoples") ? "default" : "ghost"}
+                className="w-full justify-start"
+              >
+                {navLabels.peoples}
               </Button>
             </Link>
             <Link href={countriesRoute} onClick={() => onOpenChange(false)}>
@@ -83,15 +123,7 @@ export const MobileMenu = ({
                 variant={isActive("countries") ? "default" : "ghost"}
                 className="w-full justify-start"
               >
-                {t.byCountry}
-              </Button>
-            </Link>
-            <Link href={ethnicitiesRoute} onClick={() => onOpenChange(false)}>
-              <Button
-                variant={isActive("ethnicities") ? "default" : "ghost"}
-                className="w-full justify-start"
-              >
-                {t.byEthnicity}
+                {navLabels.countries}
               </Button>
             </Link>
           </div>
