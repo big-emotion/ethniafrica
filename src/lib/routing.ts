@@ -1,6 +1,11 @@
 import { Language } from "@/types/ethnicity";
 
-export type PageType = "regions" | "countries" | "ethnicities";
+export type PageType =
+  | "regions"
+  | "countries"
+  | "ethnicities"
+  | "families"
+  | "peoples";
 
 // Mapping des slugs par langue
 const SLUGS: Record<Language, Record<PageType, string>> = {
@@ -8,21 +13,29 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     regions: "regions",
     countries: "countries",
     ethnicities: "ethnicities",
+    families: "families",
+    peoples: "peoples",
   },
   fr: {
     regions: "regions",
     countries: "pays",
     ethnicities: "ethnies",
+    families: "familles",
+    peoples: "peuples",
   },
   es: {
     regions: "regiones",
     countries: "paises",
     ethnicities: "etnias",
+    families: "familias",
+    peoples: "pueblos",
   },
   pt: {
     regions: "regioes",
     countries: "paises",
     ethnicities: "etnias",
+    families: "familias",
+    peoples: "povos",
   },
 };
 
@@ -37,6 +50,13 @@ const SLUG_TO_PAGE: Record<string, PageType> = {
   ethnicities: "ethnicities",
   ethnies: "ethnicities",
   etnias: "ethnicities",
+  families: "families",
+  familles: "families",
+  familias: "families",
+  peoples: "peoples",
+  peuples: "peoples",
+  pueblos: "peoples",
+  povos: "peoples",
 };
 
 export const getLocalizedRoute = (
@@ -51,7 +71,7 @@ export const getPageFromRoute = (pathname: string): PageType | null => {
   // Format: /{lang}/{slug}
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length < 2) return null;
-  
+
   const slug = parts[1];
   return SLUG_TO_PAGE[slug] || null;
 };
@@ -60,12 +80,12 @@ export const getLanguageFromRoute = (pathname: string): Language | null => {
   // Format: /{lang}/{slug}
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length < 1) return null;
-  
+
   const lang = parts[0];
   if (["en", "fr", "es", "pt"].includes(lang)) {
     return lang as Language;
   }
-  
+
   // Fallback pour les anciennes routes (sans préfixe de langue)
   if (
     pathname.startsWith("/regiones") ||
