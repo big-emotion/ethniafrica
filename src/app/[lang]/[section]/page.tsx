@@ -14,6 +14,7 @@ import { EtniasPageContent } from "@/components/pages/EtniasPageContent";
 import { RegioesPageContent } from "@/components/pages/RegioesPageContent";
 import { FamillesPageContent } from "@/components/pages/FamillesPageContent";
 import { PeuplesPageContent } from "@/components/pages/PeuplesPageContent";
+import { PaysPageContentV2 } from "@/components/pages/PaysPageContentV2";
 
 function PageContent() {
   const params = useParams();
@@ -47,14 +48,15 @@ function PageContent() {
   if (section === "regioes" && language === "pt") {
     return <RegioesPageContent />;
   }
+  // AFRIK v2 routes - Countries (use v2 version with afrikLoader)
   if (section === "countries" && language === "en") {
-    return <CountriesPageContent />;
+    return <PaysPageContentV2 />;
   }
   if (section === "pays" && language === "fr") {
-    return <PaysPageContent />;
+    return <PaysPageContentV2 />;
   }
   if (section === "paises" && (language === "es" || language === "pt")) {
-    return language === "es" ? <PaisesPageContent /> : <PaisesPageContent />;
+    return <PaysPageContentV2 />;
   }
   if (section === "ethnicities" && language === "en") {
     return <EthnicitiesPageContent />;
