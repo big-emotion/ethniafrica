@@ -6,7 +6,8 @@ import { getTranslation } from "@/lib/translations";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { MobileNavBar } from "@/components/MobileNavBar";
 import { DesktopNavBar } from "@/components/DesktopNavBar";
-import { SearchModal } from "@/components/SearchModal";
+import { SearchModalV2 } from "@/components/SearchModalV2";
+import type { SearchEntityType } from "@/types/afrik-frontend";
 import { useIsMobile } from "@/hooks/use-mobile";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -23,11 +24,9 @@ interface PageLayoutProps {
   sectionName?: string;
   hideHeader?: boolean;
   onSearchResult?: (result: {
-    type: "ethnicity" | "country";
+    type: SearchEntityType;
+    id: string;
     name: string;
-    key: string;
-    region?: string;
-    regionName?: string;
   }) => void;
 }
 
@@ -49,22 +48,32 @@ export const PageLayout = ({
   const displayTitle = sectionName || title || t.title;
 
   const handleSearchResult = (result: {
-    type: "ethnicity" | "country";
+    type: SearchEntityType;
+    id: string;
     name: string;
-    key: string;
-    region?: string;
-    regionName?: string;
   }) => {
     if (onSearchResult) {
       onSearchResult(result);
     } else {
-      // Default behavior: redirect to appropriate page using normalized keys
-      if (result.type === "country") {
-        const route = getLocalizedRoute(language, "countries");
-        router.push(`${route}/${result.key}`);
-      } else if (result.type === "ethnicity") {
-        const route = getLocalizedRoute(language, "ethnicities");
-        router.push(`${route}/${result.key}`);
+      // Default behavior: redirect to appropriate page using v2 routes
+      switch (result.type) {
+        case "languageFamily":
+          router.push(
+            `${getLocalizedRoute(language, "families")}?family=${result.id}`
+          );
+          break;
+        case "people":
+          router.push(
+            `${getLocalizedRoute(language, "peoples")}?people=${result.id}`
+          );
+          break;
+        case "country":
+          router.push(
+            `${getLocalizedRoute(language, "countries")}?country=${result.id}`
+          );
+          break;
+        default:
+          console.warn("Unknown search result type:", result.type);
       }
     }
     setIsSearchOpen(false);
@@ -91,7 +100,7 @@ export const PageLayout = ({
 
       {/* Modal de recherche mobile */}
       {isMobile && (
-        <SearchModal
+        <SearchModalV2
           open={isSearchOpen}
           onClose={() => setIsSearchOpen(false)}
           language={language}
