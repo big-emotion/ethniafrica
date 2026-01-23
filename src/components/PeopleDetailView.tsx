@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import type { PeopleDetail, CountryDistribution } from "@/types/afrik-frontend";
 import { getPeople } from "@/lib/afrikLoader";
+import { DemographicsChart } from "@/components/DemographicsChart";
 
 interface PeopleDetailViewProps {
   peopleId: string;
@@ -29,6 +30,37 @@ interface PeopleDetailViewProps {
   onCountryClick?: (countryId: string) => void;
   onFamilyClick?: (familyId: string) => void;
 }
+
+// Helper functions outside component to avoid dependency issues
+const getNotFoundText = (language: Language): string => {
+  switch (language) {
+    case "en":
+      return "People not found";
+    case "fr":
+      return "Peuple non trouvé";
+    case "es":
+      return "Pueblo no encontrado";
+    case "pt":
+      return "Povo não encontrado";
+    default:
+      return "Peuple non trouvé";
+  }
+};
+
+const getErrorText = (language: Language): string => {
+  switch (language) {
+    case "en":
+      return "Failed to load people";
+    case "fr":
+      return "Échec du chargement du peuple";
+    case "es":
+      return "Error al cargar el pueblo";
+    case "pt":
+      return "Falha ao carregar o povo";
+    default:
+      return "Échec du chargement du peuple";
+  }
+};
 
 export const PeopleDetailView = ({
   peopleId,
@@ -52,13 +84,13 @@ export const PeopleDetailView = ({
           if (data) {
             setPeople(data);
           } else {
-            setError(getNotFoundText());
+            setError(getNotFoundText(language));
           }
         }
       } catch (err) {
         if (!cancelled) {
           console.error("Error fetching people:", err);
-          setError(getErrorText());
+          setError(getErrorText(language));
         }
       } finally {
         if (!cancelled) {
@@ -73,36 +105,6 @@ export const PeopleDetailView = ({
       cancelled = true;
     };
   }, [peopleId, language]);
-
-  const getNotFoundText = (): string => {
-    switch (language) {
-      case "en":
-        return "People not found";
-      case "fr":
-        return "Peuple non trouvé";
-      case "es":
-        return "Pueblo no encontrado";
-      case "pt":
-        return "Povo não encontrado";
-      default:
-        return "Peuple non trouvé";
-    }
-  };
-
-  const getErrorText = (): string => {
-    switch (language) {
-      case "en":
-        return "Failed to load people";
-      case "fr":
-        return "Échec du chargement du peuple";
-      case "es":
-        return "Error al cargar el pueblo";
-      case "pt":
-        return "Falha ao carregar o povo";
-      default:
-        return "Échec du chargement du peuple";
-    }
-  };
 
   const formatNumber = (num: number): string => {
     return new Intl.NumberFormat(
@@ -188,7 +190,7 @@ export const PeopleDetailView = ({
       <div className="flex flex-col items-center justify-center min-h-[300px] gap-3 p-6">
         <AlertTriangle className="h-10 w-10 text-destructive" />
         <p className="text-destructive text-sm font-medium">
-          {error || getNotFoundText()}
+          {error || getNotFoundText(language)}
         </p>
       </div>
     );
@@ -1132,6 +1134,32 @@ export const PeopleDetailView = ({
                         </p>
                       </div>
                     )}
+                    {/* Demographics Chart */}
+                    {people.demography.distributionByCountry &&
+                      people.demography.distributionByCountry.length > 1 && (
+                        <div className="mt-6">
+                          <DemographicsChart
+                            type="peopleDistribution"
+                            data={people.demography.distributionByCountry.map(
+                              (dist: CountryDistribution) => ({
+                                name: dist.country,
+                                value: dist.population || 0,
+                                percentage: dist.percentage,
+                                id: dist.country,
+                              })
+                            )}
+                            title={
+                              language === "en"
+                                ? `${people.nameMain} Distribution Across Countries`
+                                : language === "fr"
+                                  ? `Distribution de ${people.nameMain} par pays`
+                                  : language === "es"
+                                    ? `Distribución de ${people.nameMain} por país`
+                                    : `Distribuição de ${people.nameMain} por país`
+                            }
+                          />
+                        </div>
+                      )}
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
