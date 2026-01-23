@@ -13,6 +13,7 @@ import { getTranslation } from "@/lib/translations";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { DefaultMessage } from "@/components/DefaultMessage";
+import type { CountrySummary } from "@/types/afrik-frontend";
 
 export function PaysPageContent() {
   const { language, setLanguage } = useLanguage();
@@ -47,7 +48,11 @@ export function PaysPageContent() {
     }
   }, [searchParams]);
 
-  const handleCountrySelect = (countryKey: string, regionKey?: string) => {
+  const handleCountrySelect = (
+    country: CountrySummary | string,
+    regionKey?: string
+  ) => {
+    const countryKey = typeof country === "string" ? country : country.id;
     setSelectedCountry(countryKey);
     setSelectedRegion(null);
     setSelectedEthnicity(null);
@@ -123,8 +128,8 @@ export function PaysPageContent() {
           ) : (
             <CountryView
               language={language}
-              onCountrySelect={(country, regionKey) => {
-                handleCountrySelect(country, regionKey);
+              onCountrySelect={(country) => {
+                handleCountrySelect(country);
               }}
               hideSearchAndAlphabet={false}
             />
@@ -194,7 +199,8 @@ export function PaysPageContent() {
             <Card className="shadow-soft">
               <CountryView
                 language={language}
-                onCountrySelect={handleCountrySelect}
+                onCountrySelect={(country) => handleCountrySelect(country)}
+                selectedCountryId={selectedCountry}
               />
             </Card>
           </div>

@@ -9,38 +9,40 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Search,
+  Users,
   ChevronLeft,
   ChevronRight,
-  MapPin,
   Loader2,
-  Users,
+  MapPin,
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
-import type { CountrySummary } from "@/types/afrik-frontend";
-import { getAllCountries } from "@/lib/afrikLoader";
+import type { PeopleSummary, LanguageFamilyId } from "@/types/afrik-frontend";
+import { getAllPeoples } from "@/lib/afrikLoader";
 
-interface CountryViewProps {
+interface PeopleViewProps {
   language: Language;
-  onCountrySelect: (country: CountrySummary) => void;
+  onPeopleSelect: (people: PeopleSummary) => void;
   hideSearchAndAlphabet?: boolean;
-  selectedCountryId?: string | null;
+  selectedPeopleId?: string | null;
+  languageFamilyId?: LanguageFamilyId;
 }
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-export const CountryView = ({
+export const PeopleView = ({
   language,
-  onCountrySelect,
+  onPeopleSelect,
   hideSearchAndAlphabet = false,
-  selectedCountryId = null,
-}: CountryViewProps) => {
+  selectedPeopleId = null,
+  languageFamilyId,
+}: PeopleViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
   const [search, setSearch] = useState<string>("");
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [countries, setCountries] = useState<CountrySummary[]>([]);
+  const [peoples, setPeoples] = useState<PeopleSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -52,27 +54,27 @@ export const CountryView = ({
     setLoading(true);
     setError(null);
 
-    const loadCountries = async () => {
+    const loadPeoples = async () => {
       // Minimum loading time for UX
       const minLoadingTime = Promise.all([
         new Promise((resolve) => setTimeout(resolve, 300)),
         (async () => {
           try {
-            const data = await getAllCountries();
+            const data = await getAllPeoples();
             if (!cancelled) {
-              setCountries(data);
+              setPeoples(data);
             }
           } catch (err) {
             if (!cancelled) {
-              console.error("Error fetching countries:", err);
+              console.error("Error fetching peoples:", err);
               setError(
                 language === "en"
-                  ? "Failed to load countries"
+                  ? "Failed to load peoples"
                   : language === "fr"
-                    ? "Échec du chargement des pays"
+                    ? "Échec du chargement des peuples"
                     : language === "es"
-                      ? "Error al cargar países"
-                      : "Falha ao carregar países"
+                      ? "Error al cargar pueblos"
+                      : "Falha ao carregar povos"
               );
             }
           }
@@ -85,55 +87,65 @@ export const CountryView = ({
       }
     };
 
-    loadCountries();
+    loadPeoples();
 
     return () => {
       cancelled = true;
     };
   }, [language]);
 
-  const filteredCountries = useMemo(() => {
+  const filteredPeoples = useMemo(() => {
     const normalizedSearch = normalizeString(search);
-    return countries.filter((country) => {
+    return peoples.filter((people) => {
+      // Filter by language family if provided
+      if (languageFamilyId && people.languageFamilyId !== languageFamilyId) {
+        return false;
+      }
+
       const matchesSearch =
-        normalizeString(country.nameFr).includes(normalizedSearch) ||
-        normalizeString(country.id).includes(normalizedSearch) ||
-        (country.nameOfficial &&
-          normalizeString(country.nameOfficial).includes(normalizedSearch));
+        normalizeString(people.nameMain).includes(normalizedSearch) ||
+        normalizeString(people.id).includes(normalizedSearch) ||
+        (people.selfAppellation &&
+          normalizeString(people.selfAppellation).includes(normalizedSearch));
 
       if (selectedLetter) {
-        const normalizedFirstLetter = getNormalizedFirstLetter(country.nameFr);
+        const normalizedFirstLetter = getNormalizedFirstLetter(people.nameMain);
         return matchesSearch && normalizedFirstLetter === selectedLetter;
       }
 
       return matchesSearch;
     });
-  }, [countries, search, selectedLetter]);
+  }, [peoples, search, selectedLetter, languageFamilyId]);
 
-  const paginatedCountries = useMemo(() => {
+  const paginatedPeoples = useMemo(() => {
     if (isMobile) {
-      return filteredCountries.slice(0, maxItemsMobile);
+      return filteredPeoples.slice(0, maxItemsMobile);
     }
     const start = (currentPage - 1) * itemsPerPage;
-    return filteredCountries.slice(start, start + itemsPerPage);
-  }, [filteredCountries, currentPage, isMobile, maxItemsMobile]);
+    return filteredPeoples.slice(start, start + itemsPerPage);
+  }, [filteredPeoples, currentPage, isMobile, maxItemsMobile]);
 
-  const totalPages = Math.ceil(filteredCountries.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredPeoples.length / itemsPerPage);
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedLetter, search]);
+  }, [selectedLetter, search, languageFamilyId]);
 
   const availableLetters = useMemo(() => {
     const letters = new Set<string>();
-    countries.forEach((country) => {
-      const normalizedFirstLetter = getNormalizedFirstLetter(country.nameFr);
+    // Use filtered list (by language family) for available letters
+    const listToCheck = languageFamilyId
+      ? peoples.filter((p) => p.languageFamilyId === languageFamilyId)
+      : peoples;
+
+    listToCheck.forEach((people) => {
+      const normalizedFirstLetter = getNormalizedFirstLetter(people.nameMain);
       if (/[A-Z]/.test(normalizedFirstLetter)) {
         letters.add(normalizedFirstLetter);
       }
     });
     return Array.from(letters).sort();
-  }, [countries]);
+  }, [peoples, languageFamilyId]);
 
   const formatNumber = (num: number): string => {
     return new Intl.NumberFormat(
@@ -150,45 +162,60 @@ export const CountryView = ({
   const getLoadingText = (): string => {
     switch (language) {
       case "en":
-        return "Loading countries...";
+        return "Loading peoples...";
       case "fr":
-        return "Chargement des pays...";
+        return "Chargement des peuples...";
       case "es":
-        return "Cargando países...";
+        return "Cargando pueblos...";
       case "pt":
-        return "Carregando países...";
+        return "Carregando povos...";
       default:
-        return "Chargement des pays...";
+        return "Chargement des peuples...";
     }
   };
 
   const getNoResultsText = (): string => {
     switch (language) {
       case "en":
-        return "No countries found";
+        return "No peoples found";
       case "fr":
-        return "Aucun pays trouvé";
+        return "Aucun peuple trouvé";
       case "es":
-        return "No se encontraron países";
+        return "No se encontraron pueblos";
       case "pt":
-        return "Nenhum país encontrado";
+        return "Nenhum povo encontrado";
       default:
-        return "Aucun pays trouvé";
+        return "Aucun peuple trouvé";
     }
   };
 
-  const getMajorPeoplesLabel = (): string => {
+  const getCountriesLabel = (count: number): string => {
     switch (language) {
       case "en":
-        return "major peoples";
+        return count === 1 ? "country" : "countries";
       case "fr":
-        return "peuples majeurs";
+        return count === 1 ? "pays" : "pays";
       case "es":
-        return "pueblos principales";
+        return count === 1 ? "país" : "países";
       case "pt":
-        return "povos principais";
+        return count === 1 ? "país" : "países";
       default:
-        return "peuples majeurs";
+        return "pays";
+    }
+  };
+
+  const getPopulationLabel = (): string => {
+    switch (language) {
+      case "en":
+        return "population";
+      case "fr":
+        return "population";
+      case "es":
+        return "población";
+      case "pt":
+        return "população";
+      default:
+        return "population";
     }
   };
 
@@ -211,36 +238,43 @@ export const CountryView = ({
     );
   }
 
-  const renderCountryCard = (country: CountrySummary) => (
+  const renderPeopleCard = (people: PeopleSummary) => (
     <Card
-      key={country.id}
+      key={people.id}
       className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
         hideSearchAndAlphabet ? "mx-0" : ""
-      } ${selectedCountryId === country.id ? "border-2 border-primary" : ""}`}
-      onClick={() => onCountrySelect(country)}
+      } ${selectedPeopleId === people.id ? "border-2 border-primary" : ""}`}
+      onClick={() => onPeopleSelect(people)}
     >
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
-            <MapPin className="h-5 w-5 text-primary" />
+            <Users className="h-5 w-5 text-primary" />
             <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
-              {country.nameFr}
+              {people.nameMain}
             </h3>
-            <span className="text-xs text-muted-foreground">
-              ({country.id})
-            </span>
           </div>
-          <div className="space-y-1 text-sm text-muted-foreground">
-            {country.population !== undefined && (
-              <div>Population: {formatNumber(country.population)}</div>
+          {people.selfAppellation &&
+            people.selfAppellation !== people.nameMain && (
+              <p className="text-xs text-muted-foreground italic mb-2">
+                {people.selfAppellation}
+              </p>
             )}
-            {country.majorPeoplesCount !== undefined &&
-              country.majorPeoplesCount > 0 && (
-                <div className="flex items-center gap-1">
-                  <Users className="h-3 w-3" />
-                  {country.majorPeoplesCount} {getMajorPeoplesLabel()}
-                </div>
-              )}
+          <div className="space-y-1 text-sm text-muted-foreground">
+            {people.languageFamilyName && (
+              <div className="text-xs">{people.languageFamilyName}</div>
+            )}
+            {people.totalPopulation !== undefined && (
+              <div>
+                {formatNumber(people.totalPopulation)} {getPopulationLabel()}
+              </div>
+            )}
+            {people.countryCount !== undefined && people.countryCount > 0 && (
+              <div className="flex items-center gap-1">
+                <MapPin className="h-3 w-3" />
+                {people.countryCount} {getCountriesLabel(people.countryCount)}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -302,19 +336,19 @@ export const CountryView = ({
         </>
       )}
 
-      {/* Countries list */}
+      {/* Peoples list */}
       {isMobile ? (
         <div
           className={`space-y-2 ${
             hideSearchAndAlphabet ? "px-0" : "px-4"
           } pb-4`}
         >
-          {paginatedCountries.length === 0 ? (
+          {paginatedPeoples.length === 0 ? (
             <div className="flex items-center justify-center h-64">
               <p className="text-muted-foreground">{getNoResultsText()}</p>
             </div>
           ) : (
-            paginatedCountries.map(renderCountryCard)
+            paginatedPeoples.map(renderPeopleCard)
           )}
         </div>
       ) : (
@@ -328,12 +362,12 @@ export const CountryView = ({
               hideSearchAndAlphabet ? "px-0" : "px-4"
             } pb-4`}
           >
-            {paginatedCountries.length === 0 ? (
+            {paginatedPeoples.length === 0 ? (
               <div className="flex items-center justify-center h-64">
                 <p className="text-muted-foreground">{getNoResultsText()}</p>
               </div>
             ) : (
-              paginatedCountries.map(renderCountryCard)
+              paginatedPeoples.map(renderPeopleCard)
             )}
           </div>
         </ScrollArea>

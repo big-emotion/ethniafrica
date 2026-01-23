@@ -9,38 +9,37 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Search,
+  Languages,
   ChevronLeft,
   ChevronRight,
-  MapPin,
   Loader2,
-  Users,
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
-import type { CountrySummary } from "@/types/afrik-frontend";
-import { getAllCountries } from "@/lib/afrikLoader";
+import type { LanguageFamilySummary } from "@/types/afrik-frontend";
+import { getAllLanguageFamilies } from "@/lib/afrikLoader";
 
-interface CountryViewProps {
+interface LanguageFamilyViewProps {
   language: Language;
-  onCountrySelect: (country: CountrySummary) => void;
+  onFamilySelect: (family: LanguageFamilySummary) => void;
   hideSearchAndAlphabet?: boolean;
-  selectedCountryId?: string | null;
+  selectedFamilyId?: string | null;
 }
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-export const CountryView = ({
+export const LanguageFamilyView = ({
   language,
-  onCountrySelect,
+  onFamilySelect,
   hideSearchAndAlphabet = false,
-  selectedCountryId = null,
-}: CountryViewProps) => {
+  selectedFamilyId = null,
+}: LanguageFamilyViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
   const [search, setSearch] = useState<string>("");
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [countries, setCountries] = useState<CountrySummary[]>([]);
+  const [families, setFamilies] = useState<LanguageFamilySummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -52,27 +51,27 @@ export const CountryView = ({
     setLoading(true);
     setError(null);
 
-    const loadCountries = async () => {
+    const loadFamilies = async () => {
       // Minimum loading time for UX
       const minLoadingTime = Promise.all([
         new Promise((resolve) => setTimeout(resolve, 300)),
         (async () => {
           try {
-            const data = await getAllCountries();
+            const data = await getAllLanguageFamilies();
             if (!cancelled) {
-              setCountries(data);
+              setFamilies(data);
             }
           } catch (err) {
             if (!cancelled) {
-              console.error("Error fetching countries:", err);
+              console.error("Error fetching language families:", err);
               setError(
                 language === "en"
-                  ? "Failed to load countries"
+                  ? "Failed to load language families"
                   : language === "fr"
-                    ? "Échec du chargement des pays"
+                    ? "Échec du chargement des familles linguistiques"
                     : language === "es"
-                      ? "Error al cargar países"
-                      : "Falha ao carregar países"
+                      ? "Error al cargar familias lingüísticas"
+                      : "Falha ao carregar famílias linguísticas"
               );
             }
           }
@@ -85,40 +84,46 @@ export const CountryView = ({
       }
     };
 
-    loadCountries();
+    loadFamilies();
 
     return () => {
       cancelled = true;
     };
   }, [language]);
 
-  const filteredCountries = useMemo(() => {
+  const getFamilyDisplayName = (family: LanguageFamilySummary): string => {
+    if (language === "en" && family.nameEn) {
+      return family.nameEn;
+    }
+    return family.nameFr;
+  };
+
+  const filteredFamilies = useMemo(() => {
     const normalizedSearch = normalizeString(search);
-    return countries.filter((country) => {
+    return families.filter((family) => {
+      const familyName = getFamilyDisplayName(family);
       const matchesSearch =
-        normalizeString(country.nameFr).includes(normalizedSearch) ||
-        normalizeString(country.id).includes(normalizedSearch) ||
-        (country.nameOfficial &&
-          normalizeString(country.nameOfficial).includes(normalizedSearch));
+        normalizeString(familyName).includes(normalizedSearch) ||
+        normalizeString(family.id).includes(normalizedSearch);
 
       if (selectedLetter) {
-        const normalizedFirstLetter = getNormalizedFirstLetter(country.nameFr);
+        const normalizedFirstLetter = getNormalizedFirstLetter(familyName);
         return matchesSearch && normalizedFirstLetter === selectedLetter;
       }
 
       return matchesSearch;
     });
-  }, [countries, search, selectedLetter]);
+  }, [families, search, selectedLetter, language]);
 
-  const paginatedCountries = useMemo(() => {
+  const paginatedFamilies = useMemo(() => {
     if (isMobile) {
-      return filteredCountries.slice(0, maxItemsMobile);
+      return filteredFamilies.slice(0, maxItemsMobile);
     }
     const start = (currentPage - 1) * itemsPerPage;
-    return filteredCountries.slice(start, start + itemsPerPage);
-  }, [filteredCountries, currentPage, isMobile, maxItemsMobile]);
+    return filteredFamilies.slice(start, start + itemsPerPage);
+  }, [filteredFamilies, currentPage, isMobile, maxItemsMobile]);
 
-  const totalPages = Math.ceil(filteredCountries.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredFamilies.length / itemsPerPage);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -126,14 +131,15 @@ export const CountryView = ({
 
   const availableLetters = useMemo(() => {
     const letters = new Set<string>();
-    countries.forEach((country) => {
-      const normalizedFirstLetter = getNormalizedFirstLetter(country.nameFr);
+    families.forEach((family) => {
+      const familyName = getFamilyDisplayName(family);
+      const normalizedFirstLetter = getNormalizedFirstLetter(familyName);
       if (/[A-Z]/.test(normalizedFirstLetter)) {
         letters.add(normalizedFirstLetter);
       }
     });
     return Array.from(letters).sort();
-  }, [countries]);
+  }, [families, language]);
 
   const formatNumber = (num: number): string => {
     return new Intl.NumberFormat(
@@ -150,45 +156,60 @@ export const CountryView = ({
   const getLoadingText = (): string => {
     switch (language) {
       case "en":
-        return "Loading countries...";
+        return "Loading language families...";
       case "fr":
-        return "Chargement des pays...";
+        return "Chargement des familles linguistiques...";
       case "es":
-        return "Cargando países...";
+        return "Cargando familias lingüísticas...";
       case "pt":
-        return "Carregando países...";
+        return "Carregando famílias linguísticas...";
       default:
-        return "Chargement des pays...";
+        return "Chargement des familles linguistiques...";
     }
   };
 
   const getNoResultsText = (): string => {
     switch (language) {
       case "en":
-        return "No countries found";
+        return "No language families found";
       case "fr":
-        return "Aucun pays trouvé";
+        return "Aucune famille linguistique trouvée";
       case "es":
-        return "No se encontraron países";
+        return "No se encontraron familias lingüísticas";
       case "pt":
-        return "Nenhum país encontrado";
+        return "Nenhuma família linguística encontrada";
       default:
-        return "Aucun pays trouvé";
+        return "Aucune famille linguistique trouvée";
     }
   };
 
-  const getMajorPeoplesLabel = (): string => {
+  const getPeoplesLabel = (): string => {
     switch (language) {
       case "en":
-        return "major peoples";
+        return "peoples";
       case "fr":
-        return "peuples majeurs";
+        return "peuples";
       case "es":
-        return "pueblos principales";
+        return "pueblos";
       case "pt":
-        return "povos principais";
+        return "povos";
       default:
-        return "peuples majeurs";
+        return "peuples";
+    }
+  };
+
+  const getSpeakersLabel = (): string => {
+    switch (language) {
+      case "en":
+        return "speakers";
+      case "fr":
+        return "locuteurs";
+      case "es":
+        return "hablantes";
+      case "pt":
+        return "falantes";
+      default:
+        return "locuteurs";
     }
   };
 
@@ -211,36 +232,34 @@ export const CountryView = ({
     );
   }
 
-  const renderCountryCard = (country: CountrySummary) => (
+  const renderFamilyCard = (family: LanguageFamilySummary) => (
     <Card
-      key={country.id}
+      key={family.id}
       className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
         hideSearchAndAlphabet ? "mx-0" : ""
-      } ${selectedCountryId === country.id ? "border-2 border-primary" : ""}`}
-      onClick={() => onCountrySelect(country)}
+      } ${selectedFamilyId === family.id ? "border-2 border-primary" : ""}`}
+      onClick={() => onFamilySelect(family)}
     >
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
-            <MapPin className="h-5 w-5 text-primary" />
+            <Languages className="h-5 w-5 text-primary" />
             <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
-              {country.nameFr}
+              {getFamilyDisplayName(family)}
             </h3>
-            <span className="text-xs text-muted-foreground">
-              ({country.id})
-            </span>
           </div>
           <div className="space-y-1 text-sm text-muted-foreground">
-            {country.population !== undefined && (
-              <div>Population: {formatNumber(country.population)}</div>
+            {family.peopleCount !== undefined && (
+              <div>
+                {family.peopleCount} {getPeoplesLabel()}
+              </div>
             )}
-            {country.majorPeoplesCount !== undefined &&
-              country.majorPeoplesCount > 0 && (
-                <div className="flex items-center gap-1">
-                  <Users className="h-3 w-3" />
-                  {country.majorPeoplesCount} {getMajorPeoplesLabel()}
-                </div>
-              )}
+            {family.totalSpeakers !== undefined && (
+              <div>
+                {formatNumber(family.totalSpeakers)} {getSpeakersLabel()}
+              </div>
+            )}
+            {family.geographicArea && <div>{family.geographicArea}</div>}
           </div>
         </div>
       </div>
@@ -302,19 +321,19 @@ export const CountryView = ({
         </>
       )}
 
-      {/* Countries list */}
+      {/* Families list */}
       {isMobile ? (
         <div
           className={`space-y-2 ${
             hideSearchAndAlphabet ? "px-0" : "px-4"
           } pb-4`}
         >
-          {paginatedCountries.length === 0 ? (
+          {paginatedFamilies.length === 0 ? (
             <div className="flex items-center justify-center h-64">
               <p className="text-muted-foreground">{getNoResultsText()}</p>
             </div>
           ) : (
-            paginatedCountries.map(renderCountryCard)
+            paginatedFamilies.map(renderFamilyCard)
           )}
         </div>
       ) : (
@@ -328,12 +347,12 @@ export const CountryView = ({
               hideSearchAndAlphabet ? "px-0" : "px-4"
             } pb-4`}
           >
-            {paginatedCountries.length === 0 ? (
+            {paginatedFamilies.length === 0 ? (
               <div className="flex items-center justify-center h-64">
                 <p className="text-muted-foreground">{getNoResultsText()}</p>
               </div>
             ) : (
-              paginatedCountries.map(renderCountryCard)
+              paginatedFamilies.map(renderFamilyCard)
             )}
           </div>
         </ScrollArea>
