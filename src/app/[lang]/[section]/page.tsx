@@ -1,20 +1,40 @@
 "use client";
 
-import { Suspense } from "react";
-import { useParams } from "next/navigation";
-import { getPageFromRoute, getLanguageFromRoute } from "@/lib/routing";
-import { RegionsPageContent } from "@/components/pages/RegionsPageContent";
-import { CountriesPageContent } from "@/components/pages/CountriesPageContent";
-import { EthnicitiesPageContent } from "@/components/pages/EthnicitiesPageContent";
-import { PaysPageContent } from "@/components/pages/PaysPageContent";
-import { EthniesPageContent } from "@/components/pages/EthniesPageContent";
-import { RegionesPageContent } from "@/components/pages/RegionesPageContent";
-import { PaisesPageContent } from "@/components/pages/PaisesPageContent";
-import { EtniasPageContent } from "@/components/pages/EtniasPageContent";
-import { RegioesPageContent } from "@/components/pages/RegioesPageContent";
+import { Suspense, useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
+import {
+  getPageFromRoute,
+  getLanguageFromRoute,
+  getLocalizedRoute,
+} from "@/lib/routing";
 import { FamillesPageContent } from "@/components/pages/FamillesPageContent";
 import { PeuplesPageContent } from "@/components/pages/PeuplesPageContent";
 import { PaysPageContentV2 } from "@/components/pages/PaysPageContentV2";
+import { Language } from "@/types/ethnicity";
+
+// Redirect component for legacy routes
+function LegacyRedirect({
+  to,
+  language,
+}: {
+  to: "families" | "peoples" | "countries";
+  language: Language;
+}) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const newRoute = getLocalizedRoute(language, to);
+    router.replace(newRoute);
+  }, [language, to, router]);
+
+  return (
+    <div className="min-h-screen gradient-earth flex items-center justify-center">
+      <div className="text-center space-y-4">
+        <p className="text-muted-foreground">Redirecting...</p>
+      </div>
+    </div>
+  );
+}
 
 function PageContent() {
   const params = useParams();
@@ -35,37 +55,28 @@ function PageContent() {
     );
   }
 
-  // Render the appropriate component based on the section
-  if (section === "regions" && language === "en") {
-    return <RegionsPageContent />;
+  // Legacy routes - redirect to v2 equivalents
+  // Regions -> Families (language families is the new primary categorization)
+  if (
+    section === "regions" ||
+    section === "regiones" ||
+    section === "regioes"
+  ) {
+    return <LegacyRedirect to="families" language={language} />;
   }
-  if (section === "regions" && language === "fr") {
-    return <RegionsPageContent />;
+
+  // Ethnicities -> Peoples (peoples is the new terminology)
+  if (
+    section === "ethnicities" ||
+    section === "ethnies" ||
+    section === "etnias"
+  ) {
+    return <LegacyRedirect to="peoples" language={language} />;
   }
-  if (section === "regiones" && language === "es") {
-    return <RegionesPageContent />;
-  }
-  if (section === "regioes" && language === "pt") {
-    return <RegioesPageContent />;
-  }
-  // AFRIK v2 routes - Countries (use v2 version with afrikLoader)
-  if (section === "countries" && language === "en") {
+
+  // AFRIK v2 routes - Countries
+  if (section === "countries" || section === "pays" || section === "paises") {
     return <PaysPageContentV2 />;
-  }
-  if (section === "pays" && language === "fr") {
-    return <PaysPageContentV2 />;
-  }
-  if (section === "paises" && (language === "es" || language === "pt")) {
-    return <PaysPageContentV2 />;
-  }
-  if (section === "ethnicities" && language === "en") {
-    return <EthnicitiesPageContent />;
-  }
-  if (section === "ethnies" && language === "fr") {
-    return <EthniesPageContent />;
-  }
-  if (section === "etnias" && (language === "es" || language === "pt")) {
-    return language === "es" ? <EtniasPageContent /> : <EtniasPageContent />;
   }
 
   // AFRIK v2 routes - Language Families
