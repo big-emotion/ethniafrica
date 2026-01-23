@@ -10,6 +10,7 @@ import {
 import { FamillesPageContent } from "@/components/pages/FamillesPageContent";
 import { PeuplesPageContent } from "@/components/pages/PeuplesPageContent";
 import { PaysPageContentV2 } from "@/components/pages/PaysPageContentV2";
+import { SearchPageContent } from "@/components/pages/SearchPageContent";
 import { Language } from "@/types/ethnicity";
 
 // Redirect component for legacy routes
@@ -96,6 +97,16 @@ function PageContent() {
     section === "povos"
   ) {
     return <PeuplesPageContent />;
+  }
+
+  // AFRIK v2 routes - Search
+  if (
+    section === "search" ||
+    section === "recherche" ||
+    section === "buscar" ||
+    section === "pesquisa"
+  ) {
+    return <SearchPageContent />;
   }
 
   return (

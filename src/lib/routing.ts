@@ -5,7 +5,8 @@ export type PageType =
   | "countries"
   | "ethnicities"
   | "families"
-  | "peoples";
+  | "peoples"
+  | "search";
 
 // Mapping des slugs par langue
 const SLUGS: Record<Language, Record<PageType, string>> = {
@@ -15,6 +16,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     ethnicities: "ethnicities",
     families: "families",
     peoples: "peoples",
+    search: "search",
   },
   fr: {
     regions: "regions",
@@ -22,6 +24,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     ethnicities: "ethnies",
     families: "familles",
     peoples: "peuples",
+    search: "recherche",
   },
   es: {
     regions: "regiones",
@@ -29,6 +32,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     ethnicities: "etnias",
     families: "familias",
     peoples: "pueblos",
+    search: "buscar",
   },
   pt: {
     regions: "regioes",
@@ -36,6 +40,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     ethnicities: "etnias",
     families: "familias",
     peoples: "povos",
+    search: "pesquisa",
   },
 };
 
@@ -57,6 +62,10 @@ const SLUG_TO_PAGE: Record<string, PageType> = {
   peuples: "peoples",
   pueblos: "peoples",
   povos: "peoples",
+  search: "search",
+  recherche: "search",
+  buscar: "search",
+  pesquisa: "search",
 };
 
 export const getLocalizedRoute = (
