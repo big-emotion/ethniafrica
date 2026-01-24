@@ -2,12 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { Language } from "@/types/ethnicity";
-import {
-  getTranslation,
-  getCountryName,
-  getRegionName,
-} from "@/lib/translations";
-import { getCountryKey } from "@/lib/entityKeys";
+import { getTranslation } from "@/lib/translations";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
@@ -18,15 +13,18 @@ import {
   ChevronRight,
   MapPin,
   Loader2,
+  Users,
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
+import type { CountrySummary } from "@/types/afrik-frontend";
+import { getAllCountries } from "@/lib/afrikLoader";
 
 interface CountryViewProps {
   language: Language;
-  onCountrySelect: (countryKey: string, regionKey: string) => void;
+  onCountrySelect: (country: CountrySummary) => void;
   hideSearchAndAlphabet?: boolean;
-  selectedCountryKey?: string | null;
+  selectedCountryId?: string | null;
 }
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -35,118 +33,85 @@ export const CountryView = ({
   language,
   onCountrySelect,
   hideSearchAndAlphabet = false,
-  selectedCountryKey = null,
+  selectedCountryId = null,
 }: CountryViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
   const [search, setSearch] = useState<string>("");
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [countries, setCountries] = useState<
-    Array<{
-      name: string;
-      key: string;
-      region: string;
-      regionName: string;
-      data: {
-        population: number;
-        ethnicityCount: number;
-      };
-    }>
-  >([]);
+  const [countries, setCountries] = useState<CountrySummary[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const itemsPerPage = 10;
   const maxItemsMobile = 10;
 
   useEffect(() => {
-    const controller = new AbortController();
+    let cancelled = false;
     setLoading(true);
+    setError(null);
 
     const loadCountries = async () => {
-      // Check cache first
-      const { getCachedData, setCachedData, CACHE_KEYS } = await import(
-        "@/lib/cache/clientCache"
-      );
-      const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-
-      const cachedData = getCachedData<
-        Array<{
-          name: string;
-          key: string;
-          region: string;
-          regionName: string;
-          data: {
-            population: number;
-            ethnicityCount: number;
-          };
-        }>
-      >(CACHE_KEYS.COUNTRIES, CACHE_TTL);
-
-      if (cachedData) {
-        setCountries(cachedData);
-        setLoading(false);
-        return;
-      }
-
-      // Délai minimum pour garantir la visibilité du loader
+      // Minimum loading time for UX
       const minLoadingTime = Promise.all([
-        new Promise((resolve) => setTimeout(resolve, 300)), // 300ms minimum
+        new Promise((resolve) => setTimeout(resolve, 300)),
         (async () => {
           try {
-            const response = await fetch("/api/countries", {
-              signal: controller.signal,
-            });
-
-            if (!response.ok) {
-              throw new Error("Failed to load countries");
+            const data = await getAllCountries();
+            if (!cancelled) {
+              setCountries(data);
             }
-
-            const payload = await response.json();
-            setCountries(payload.countries);
-            // Cache the data
-            setCachedData(CACHE_KEYS.COUNTRIES, payload.countries, CACHE_TTL);
-          } catch (error) {
-            if (error instanceof DOMException && error.name === "AbortError") {
-              return;
+          } catch (err) {
+            if (!cancelled) {
+              console.error("Error fetching countries:", err);
+              setError(
+                language === "en"
+                  ? "Failed to load countries"
+                  : language === "fr"
+                    ? "Échec du chargement des pays"
+                    : language === "es"
+                      ? "Error al cargar países"
+                      : "Falha ao carregar países"
+              );
             }
-            console.error("Error fetching countries:", error);
           }
         })(),
       ]);
 
       await minLoadingTime;
-      setLoading(false);
+      if (!cancelled) {
+        setLoading(false);
+      }
     };
 
     loadCountries();
 
     return () => {
-      controller.abort();
+      cancelled = true;
     };
   }, [language]);
 
   const filteredCountries = useMemo(() => {
     const normalizedSearch = normalizeString(search);
     return countries.filter((country) => {
-      const countryName = getCountryName(country.key, language);
-      const regionName = getRegionName(country.region, language);
       const matchesSearch =
-        normalizeString(countryName).includes(normalizedSearch) ||
-        normalizeString(regionName).includes(normalizedSearch);
+        normalizeString(country.nameFr).includes(normalizedSearch) ||
+        normalizeString(country.id).includes(normalizedSearch) ||
+        (country.nameOfficial &&
+          normalizeString(country.nameOfficial).includes(normalizedSearch));
 
       if (selectedLetter) {
-        const normalizedFirstLetter = getNormalizedFirstLetter(countryName);
+        const normalizedFirstLetter = getNormalizedFirstLetter(country.nameFr);
         return matchesSearch && normalizedFirstLetter === selectedLetter;
       }
 
       return matchesSearch;
     });
-  }, [countries, search, selectedLetter, language]);
+  }, [countries, search, selectedLetter]);
 
   const paginatedCountries = useMemo(() => {
     if (isMobile) {
-      // En mobile, limiter à 10 cartes maximum
       return filteredCountries.slice(0, maxItemsMobile);
     }
     const start = (currentPage - 1) * itemsPerPage;
@@ -162,14 +127,13 @@ export const CountryView = ({
   const availableLetters = useMemo(() => {
     const letters = new Set<string>();
     countries.forEach((country) => {
-      const countryName = getCountryName(country.key, language);
-      const normalizedFirstLetter = getNormalizedFirstLetter(countryName);
+      const normalizedFirstLetter = getNormalizedFirstLetter(country.nameFr);
       if (/[A-Z]/.test(normalizedFirstLetter)) {
         letters.add(normalizedFirstLetter);
       }
     });
     return Array.from(letters).sort();
-  }, [countries, language]);
+  }, [countries]);
 
   const formatNumber = (num: number): string => {
     return new Intl.NumberFormat(
@@ -180,8 +144,108 @@ export const CountryView = ({
           : language === "es"
             ? "es-ES"
             : "pt-PT"
-    ).format(num);
+    ).format(Math.round(num));
   };
+
+  const getLoadingText = (): string => {
+    switch (language) {
+      case "en":
+        return "Loading countries...";
+      case "fr":
+        return "Chargement des pays...";
+      case "es":
+        return "Cargando países...";
+      case "pt":
+        return "Carregando países...";
+      default:
+        return "Chargement des pays...";
+    }
+  };
+
+  const getNoResultsText = (): string => {
+    switch (language) {
+      case "en":
+        return "No countries found";
+      case "fr":
+        return "Aucun pays trouvé";
+      case "es":
+        return "No se encontraron países";
+      case "pt":
+        return "Nenhum país encontrado";
+      default:
+        return "Aucun pays trouvé";
+    }
+  };
+
+  const getMajorPeoplesLabel = (): string => {
+    switch (language) {
+      case "en":
+        return "major peoples";
+      case "fr":
+        return "peuples majeurs";
+      case "es":
+        return "pueblos principales";
+      case "pt":
+        return "povos principais";
+      default:
+        return "peuples majeurs";
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
+        <Loader2 className="h-10 w-10 animate-spin text-primary" />
+        <p className="text-muted-foreground text-sm font-medium">
+          {getLoadingText()}
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
+        <p className="text-destructive text-sm font-medium">{error}</p>
+      </div>
+    );
+  }
+
+  const renderCountryCard = (country: CountrySummary) => (
+    <Card
+      key={country.id}
+      className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
+        hideSearchAndAlphabet ? "mx-0" : ""
+      } ${selectedCountryId === country.id ? "border-2 border-primary" : ""}`}
+      onClick={() => onCountrySelect(country)}
+    >
+      <div className="flex items-start justify-between">
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-2">
+            <MapPin className="h-5 w-5 text-primary" />
+            <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
+              {country.nameFr}
+            </h3>
+            <span className="text-xs text-muted-foreground">
+              ({country.id})
+            </span>
+          </div>
+          <div className="space-y-1 text-sm text-muted-foreground">
+            {country.population !== undefined && (
+              <div>Population: {formatNumber(country.population)}</div>
+            )}
+            {country.majorPeoplesCount !== undefined &&
+              country.majorPeoplesCount > 0 && (
+                <div className="flex items-center gap-1">
+                  <Users className="h-3 w-3" />
+                  {country.majorPeoplesCount} {getMajorPeoplesLabel()}
+                </div>
+              )}
+          </div>
+        </div>
+      </div>
+    </Card>
+  );
 
   return (
     <div
@@ -189,7 +253,7 @@ export const CountryView = ({
         hideSearchAndAlphabet ? "h-full flex flex-col" : ""
       }`}
     >
-      {/* Navigation alphabétique */}
+      {/* Alphabetical navigation */}
       {!hideSearchAndAlphabet && (
         <>
           <div className="px-4 pt-4">
@@ -200,7 +264,7 @@ export const CountryView = ({
                 className="h-8 w-8 p-0 text-xs"
                 onClick={() => setSelectedLetter(null)}
               >
-                Tous
+                {language === "en" ? "All" : "Tous"}
               </Button>
               {ALPHABET.map((letter) => (
                 <Button
@@ -224,7 +288,7 @@ export const CountryView = ({
             </div>
           </div>
 
-          {/* Barre de recherche */}
+          {/* Search bar */}
           <div className="relative px-4">
             <Search className="absolute left-7 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -238,66 +302,19 @@ export const CountryView = ({
         </>
       )}
 
-      {/* Liste des pays */}
+      {/* Countries list */}
       {isMobile ? (
-        // En mobile, pas de ScrollArea, juste une div simple
         <div
           className={`space-y-2 ${
             hideSearchAndAlphabet ? "px-0" : "px-4"
           } pb-4`}
         >
-          {loading ? (
-            <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
-              <Loader2 className="h-10 w-10 animate-spin text-primary" />
-              <p className="text-muted-foreground text-sm font-medium">
-                {language === "en"
-                  ? "Loading countries..."
-                  : language === "fr"
-                    ? "Chargement des pays..."
-                    : language === "es"
-                      ? "Cargando países..."
-                      : "Carregando países..."}
-              </p>
-            </div>
-          ) : paginatedCountries.length === 0 ? (
+          {paginatedCountries.length === 0 ? (
             <div className="flex items-center justify-center h-64">
-              <p className="text-muted-foreground">No countries found</p>
+              <p className="text-muted-foreground">{getNoResultsText()}</p>
             </div>
           ) : (
-            paginatedCountries.map((country) => {
-              const countryName = getCountryName(country.key, language);
-              return (
-                <Card
-                  key={country.key}
-                  className={`p-4 hover:shadow-md cursor-pointer transition-all group mx-0 ${
-                    selectedCountryKey === country.key
-                      ? "border-2 border-primary"
-                      : ""
-                  }`}
-                  onClick={() => onCountrySelect(country.key, country.region)}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="h-5 w-5 text-primary" />
-                        <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
-                          {countryName}
-                        </h3>
-                      </div>
-                      <div className="space-y-1 text-sm text-muted-foreground">
-                        <div>
-                          Population: {formatNumber(country.data.population)}
-                        </div>
-                        <div>
-                          {country.data.ethnicityCount}{" "}
-                          {t.ethnicGroups.toLowerCase()}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })
+            paginatedCountries.map(renderCountryCard)
           )}
         </div>
       ) : (
@@ -311,66 +328,18 @@ export const CountryView = ({
               hideSearchAndAlphabet ? "px-0" : "px-4"
             } pb-4`}
           >
-            {loading ? (
-              <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
-                <Loader2 className="h-10 w-10 animate-spin text-primary" />
-                <p className="text-muted-foreground text-sm font-medium">
-                  {language === "en"
-                    ? "Loading countries..."
-                    : language === "fr"
-                      ? "Chargement des pays..."
-                      : language === "es"
-                        ? "Cargando países..."
-                        : "Carregando países..."}
-                </p>
-              </div>
-            ) : paginatedCountries.length === 0 ? (
+            {paginatedCountries.length === 0 ? (
               <div className="flex items-center justify-center h-64">
-                <p className="text-muted-foreground">No countries found</p>
+                <p className="text-muted-foreground">{getNoResultsText()}</p>
               </div>
             ) : (
-              paginatedCountries.map((country) => {
-                const countryName = getCountryName(country.key, language);
-                return (
-                  <Card
-                    key={country.key}
-                    className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
-                      hideSearchAndAlphabet ? "mx-0" : ""
-                    } ${
-                      selectedCountryKey === country.key
-                        ? "bg-accent border-2 border-primary"
-                        : ""
-                    }`}
-                    onClick={() => onCountrySelect(country.key, country.region)}
-                  >
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <MapPin className="h-5 w-5 text-primary" />
-                          <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
-                            {countryName}
-                          </h3>
-                        </div>
-                        <div className="space-y-1 text-sm text-muted-foreground">
-                          <div>
-                            Population: {formatNumber(country.data.population)}
-                          </div>
-                          <div>
-                            {country.data.ethnicityCount}{" "}
-                            {t.ethnicGroups.toLowerCase()}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                );
-              })
+              paginatedCountries.map(renderCountryCard)
             )}
           </div>
         </ScrollArea>
       )}
 
-      {/* Pagination - seulement en desktop */}
+      {/* Pagination - desktop only */}
       {!isMobile && totalPages > 1 && (
         <div
           className={`flex items-center justify-center gap-2 ${

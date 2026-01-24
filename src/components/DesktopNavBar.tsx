@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Language } from "@/types/ethnicity";
 import { getTranslation } from "@/lib/translations";
-import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
+import { getLocalizedRoute, getPageFromRoute, PageType } from "@/lib/routing";
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "./LanguageSelector";
 import Image from "next/image";
@@ -21,9 +21,10 @@ export const DesktopNavBar = ({
   const t = getTranslation(language);
   const pathname = usePathname();
 
-  const regionsRoute = getLocalizedRoute(language, "regions");
+  // AFRIK v2 routes
+  const familiesRoute = getLocalizedRoute(language, "families");
+  const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
-  const ethnicitiesRoute = getLocalizedRoute(language, "ethnicities");
 
   const currentPage = getPageFromRoute(pathname);
   const isHome = pathname === `/${language}` || pathname === "/";
@@ -34,14 +35,7 @@ export const DesktopNavBar = ({
     pathname === `/${language}/report-error` || pathname === "/report-error";
 
   const isActive = (
-    pageType:
-      | "regions"
-      | "countries"
-      | "ethnicities"
-      | "home"
-      | "about"
-      | "contribute"
-      | "report-error"
+    pageType: PageType | "home" | "about" | "contribute" | "report-error"
   ) => {
     if (pageType === "home") return isHome;
     if (pageType === "about") return isAbout;
@@ -49,6 +43,37 @@ export const DesktopNavBar = ({
     if (pageType === "report-error") return isReportError;
     return currentPage === pageType;
   };
+
+  const getNavLabels = () => {
+    switch (language) {
+      case "en":
+        return {
+          families: "Language Families",
+          peoples: "Peoples",
+          countries: "Countries",
+        };
+      case "es":
+        return {
+          families: "Familias lingüísticas",
+          peoples: "Pueblos",
+          countries: "Países",
+        };
+      case "pt":
+        return {
+          families: "Famílias linguísticas",
+          peoples: "Povos",
+          countries: "Países",
+        };
+      default:
+        return {
+          families: "Familles linguistiques",
+          peoples: "Peuples",
+          countries: "Pays",
+        };
+    }
+  };
+
+  const navLabels = getNavLabels();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card border-b shadow-sm hidden lg:block">
@@ -78,12 +103,20 @@ export const DesktopNavBar = ({
                       : "Início"}
               </Button>
             </Link>
-            <Link href={regionsRoute}>
+            <Link href={familiesRoute}>
               <Button
-                variant={isActive("regions") ? "default" : "ghost"}
+                variant={isActive("families") ? "default" : "ghost"}
                 size="sm"
               >
-                {t.regions}
+                {navLabels.families}
+              </Button>
+            </Link>
+            <Link href={peoplesRoute}>
+              <Button
+                variant={isActive("peoples") ? "default" : "ghost"}
+                size="sm"
+              >
+                {navLabels.peoples}
               </Button>
             </Link>
             <Link href={countriesRoute}>
@@ -91,15 +124,7 @@ export const DesktopNavBar = ({
                 variant={isActive("countries") ? "default" : "ghost"}
                 size="sm"
               >
-                {t.byCountry}
-              </Button>
-            </Link>
-            <Link href={ethnicitiesRoute}>
-              <Button
-                variant={isActive("ethnicities") ? "default" : "ghost"}
-                size="sm"
-              >
-                {t.byEthnicity}
+                {navLabels.countries}
               </Button>
             </Link>
           </div>

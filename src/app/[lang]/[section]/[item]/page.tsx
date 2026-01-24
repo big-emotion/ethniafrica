@@ -1,59 +1,38 @@
-import { notFound } from "next/navigation";
-import { Language, EthnicityWithSubgroups } from "@/types/ethnicity";
+import { redirect, notFound } from "next/navigation";
+import { Language } from "@/types/ethnicity";
 import { getLocalizedRoute } from "@/lib/routing";
-import { DetailPageClient } from "@/components/pages/DetailPageClient";
-import {
-  getCountryDetailsByKey,
-  getRegion,
-  getEthnicityGlobalDetailsByKey,
-} from "@/lib/api/datasetLoader.server";
-import {
-  getCountryWithDescription,
-  getCountryAncientNames,
-  getTopEthnicitiesForCountry,
-} from "@/lib/supabase/queries/countries";
-import {
-  getEthnicityWithDescription,
-  getTopLanguagesForEthnicity,
-  getEthnicityLanguages,
-  getEthnicitySubgroups,
-  getEthnicityParent,
-  getEthnicitySources,
-} from "@/lib/supabase/queries/ethnicities";
-import { getCountryKey, getEthnicityKey } from "@/lib/entityKeys";
 
-type SectionType = "country" | "region" | "ethnicity";
+type SectionType = "country" | "region" | "ethnicity" | "family" | "people";
 
 const LANGUAGE_SEGMENTS: Record<Language, Record<SectionType, string>> = {
   en: {
     country: "countries",
     region: "regions",
     ethnicity: "ethnicities",
+    family: "families",
+    people: "peoples",
   },
   fr: {
     country: "pays",
     region: "regions",
     ethnicity: "ethnies",
+    family: "familles",
+    people: "peuples",
   },
   es: {
     country: "paises",
     region: "regiones",
     ethnicity: "etnias",
+    family: "familias",
+    people: "pueblos",
   },
   pt: {
     country: "paises",
     region: "regioes",
     ethnicity: "etnias",
+    family: "familias",
+    people: "povos",
   },
-};
-
-const SECTION_TO_PAGE: Record<
-  SectionType,
-  "countries" | "regions" | "ethnicities"
-> = {
-  country: "countries",
-  region: "regions",
-  ethnicity: "ethnicities",
 };
 
 function resolveSection(lang: Language, section: string): SectionType | null {
@@ -64,100 +43,8 @@ function resolveSection(lang: Language, section: string): SectionType | null {
   return match ?? null;
 }
 
-interface CountryDetailPayload {
-  name: string;
-  population: number;
-  percentageInRegion: number;
-  percentageInAfrica: number;
-  region: string;
-  ethnicities: EthnicityWithSubgroups[];
-  description?: string;
-  ancientNames?: Array<{ period: string; names: string[] }>; // Max 3 entrées pour le résumé
-  allAncientNames?: Array<{ period: string; names: string[] }>; // Toutes les entrées pour la section détaillée
-  ethnicGroupsSummary?: string; // Section 4
-  notes?: string; // Section 6
-  topEthnicities?: Array<{
-    name: string;
-    languages: string[];
-  }>;
-}
-
-interface RegionDetailPayload {
-  name: string;
-  totalPopulation: number;
-  countries: Record<
-    string,
-    {
-      population: number;
-      percentageInRegion: number;
-      percentageInAfrica: number;
-      ethnicityCount: number;
-    }
-  >;
-  ethnicities: Record<
-    string,
-    {
-      totalPopulationInRegion: number;
-      percentageInRegion: number;
-      percentageInAfrica: number;
-    }
-  >;
-}
-
-interface EthnicityDetailPayload {
-  name: string;
-  totalPopulation: number;
-  percentageInAfrica: number;
-  countries: Array<{
-    country: string;
-    region: string;
-    population: number;
-    percentageInCountry: number;
-    percentageInRegion: number;
-    percentageInAfrica: number;
-  }>;
-  regions?: Array<{
-    name: string;
-    totalPopulation: number;
-    ethnicityPopulation: number;
-    percentageInRegion: number;
-  }>;
-  description?: string;
-  ancientName?: string[]; // Max 3 pour le résumé
-  allAncientNames?: string[]; // Tous pour la section détaillée
-  topLanguages?: string[];
-  allLanguages?: Array<{ name: string; isPrimary: boolean }>;
-  sources?: string[];
-  societyType?: string;
-  religion?: string;
-  linguisticFamily?: string;
-  historicalStatus?: string;
-  regionalPresence?: string;
-  subgroups?: Array<{
-    id: string;
-    slug: string;
-    name_fr: string;
-    total_population?: number;
-    percentage_in_africa?: number;
-  }>;
-  isSubgroup?: boolean;
-}
-
-type DetailData =
-  | {
-      type: "country";
-      payload: CountryDetailPayload;
-    }
-  | {
-      type: "region";
-      payload: RegionDetailPayload;
-    }
-  | {
-      type: "ethnicity";
-      payload: EthnicityDetailPayload;
-    };
-
-export default async function LocalizedDetailPage({
+// This page handles legacy slug-based URLs and redirects to the new v2 query-param based routes
+export default async function LegacyDetailRedirect({
   params,
 }: {
   params: Promise<{ lang: string; section: string; item: string }>;
@@ -175,125 +62,25 @@ export default async function LocalizedDetailPage({
     notFound();
   }
 
-  let detailData: DetailData;
   const decodedItem = decodeURIComponent(item);
 
-  switch (sectionType) {
-    case "country": {
-      // decodedItem est maintenant une clé normalisée (ex: "afriqueDuSud")
-      const countryDetails = await getCountryDetailsByKey(decodedItem);
-      if (!countryDetails) {
-        notFound();
-      }
-
-      // Charger les données enrichies
-      const countrySlug = getCountryKey(countryDetails.name) || decodedItem;
-      const enrichedCountry = await getCountryWithDescription(countrySlug);
-      const ancientNames = enrichedCountry
-        ? await getCountryAncientNames(countrySlug)
-        : [];
-      const topEthnicities = await getTopEthnicitiesForCountry(countrySlug, 5);
-
-      const payload: CountryDetailPayload = {
-        ...countryDetails,
-        description: enrichedCountry?.description,
-        ancientNames: ancientNames.slice(0, 3), // Max 3 pour le résumé
-        allAncientNames: ancientNames, // Tous pour la section détaillée
-        ethnicGroupsSummary: countryDetails.ethnicGroupsSummary,
-        notes: countryDetails.notes,
-        topEthnicities: topEthnicities,
-      };
-      detailData = { type: "country", payload };
-      break;
-    }
-    case "region": {
-      // decodedItem est une clé de région (ex: "afrique_australe")
-      const region = await getRegion(decodedItem);
-      if (!region) {
-        notFound();
-      }
-
-      const payload: RegionDetailPayload = {
-        name: region.name,
-        totalPopulation: region.totalPopulation,
-        countries: region.countries,
-        ethnicities: region.ethnicities,
-      };
-      detailData = { type: "region", payload };
-      break;
-    }
-    case "ethnicity": {
-      // decodedItem est maintenant une clé normalisée (ex: "adjaApparentes")
-      const ethnicityDetails =
-        await getEthnicityGlobalDetailsByKey(decodedItem);
-      if (!ethnicityDetails) {
-        notFound();
-      }
-
-      // Charger les données enrichies
-      const ethnicitySlug =
-        getEthnicityKey(ethnicityDetails.name) || decodedItem;
-      const enrichedEthnicity =
-        await getEthnicityWithDescription(ethnicitySlug);
-      const parent = await getEthnicityParent(ethnicitySlug);
-      const isSubgroup = !!parent;
-      const subgroups = isSubgroup
-        ? []
-        : await getEthnicitySubgroups(ethnicitySlug);
-      const topLanguages = isSubgroup
-        ? []
-        : await getTopLanguagesForEthnicity(ethnicitySlug, 5);
-      const allLanguages = isSubgroup
-        ? []
-        : await getEthnicityLanguages(ethnicitySlug);
-      const sources = await getEthnicitySources(ethnicitySlug);
-
-      // Parser les anciens noms
-      const allAncientNames = enrichedEthnicity?.ancient_name
-        ? enrichedEthnicity.ancient_name
-            .split(",")
-            .map((n) => n.trim())
-            .filter((n) => n.length > 0)
-        : [];
-      const ancientName = allAncientNames.slice(0, 3); // Max 3 pour le résumé
-
-      const payload: EthnicityDetailPayload = {
-        name: ethnicityDetails.name,
-        totalPopulation: ethnicityDetails.totalPopulation,
-        percentageInAfrica: ethnicityDetails.percentageInAfrica,
-        countries: ethnicityDetails.countries,
-        regions: ethnicityDetails.regions,
-        description: enrichedEthnicity?.description,
-        ancientName: ancientName, // Max 3 pour le résumé
-        allAncientNames: allAncientNames, // Tous pour la section détaillée
-        topLanguages: topLanguages,
-        allLanguages: allLanguages,
-        sources: sources,
-        societyType: enrichedEthnicity?.society_type,
-        religion: enrichedEthnicity?.religion,
-        linguisticFamily: enrichedEthnicity?.linguistic_family,
-        historicalStatus: enrichedEthnicity?.historical_status,
-        regionalPresence: enrichedEthnicity?.regional_presence,
-        subgroups: subgroups,
-        isSubgroup: isSubgroup,
-      };
-      detailData = { type: "ethnicity", payload };
-      break;
-    }
-    default:
-      notFound();
+  // Redirect to the appropriate v2 route with query params
+  if (sectionType === "country") {
+    const route = getLocalizedRoute(language, "countries");
+    redirect(`${route}?country=${encodeURIComponent(decodedItem)}`);
   }
 
-  const listHref = getLocalizedRoute(language, SECTION_TO_PAGE[sectionType]);
+  if (sectionType === "region" || sectionType === "family") {
+    // Regions are now replaced by language families
+    const route = getLocalizedRoute(language, "families");
+    redirect(`${route}?family=${encodeURIComponent(decodedItem)}`);
+  }
 
-  return (
-    <DetailPageClient
-      lang={language}
-      sectionType={sectionType}
-      sectionSlug={section}
-      item={item}
-      listHref={listHref}
-      data={detailData}
-    />
-  );
+  if (sectionType === "ethnicity" || sectionType === "people") {
+    // Ethnicities are now called peoples
+    const route = getLocalizedRoute(language, "peoples");
+    redirect(`${route}?people=${encodeURIComponent(decodedItem)}`);
+  }
+
+  notFound();
 }

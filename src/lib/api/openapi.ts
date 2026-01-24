@@ -4,10 +4,10 @@ const options: swaggerJsdoc.Options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Ethniafrique Atlas API",
-      version: "1.0.0",
+      title: "Ethniafrique Atlas API v2 - AFRIK",
+      version: "2.0.0",
       description:
-        "API publique pour accéder aux données démographiques et ethniques de l'Afrique. Cette API fournit des informations sur les régions, pays, ethnies et statistiques démographiques du continent africain.",
+        "API publique AFRIK pour accéder aux données sur les peuples, familles linguistiques et pays d'Afrique. Cette API utilise la méthodologie AFRIK avec des identifiants stables et un format de réponse standardisé.",
       contact: {
         name: "Ethniafrique Atlas",
         url: "https://github.com/big-emotion/ethniafrica",
@@ -27,86 +27,176 @@ const options: swaggerJsdoc.Options = {
     ],
     tags: [
       {
-        name: "Statistics",
-        description: "Statistiques globales",
-      },
-      {
-        name: "Regions",
-        description: "Opérations sur les régions",
+        name: "Search",
+        description: "Recherche multi-entités",
       },
       {
         name: "Countries",
         description: "Opérations sur les pays",
       },
       {
-        name: "Ethnicities",
-        description: "Opérations sur les ethnies",
+        name: "Peoples",
+        description: "Opérations sur les peuples",
+      },
+      {
+        name: "Language Families",
+        description: "Opérations sur les familles linguistiques",
       },
     ],
     components: {
       schemas: {
-        RegionData: {
+        Error: {
           type: "object",
           properties: {
-            name: {
-              type: "string",
-              example: "Afrique du Nord",
-            },
-            totalPopulation: {
-              type: "number",
-              example: 274113455,
-            },
-            countries: {
+            error: {
               type: "object",
-              additionalProperties: {
-                type: "object",
-                properties: {
-                  name: {
-                    type: "string",
-                  },
-                  population: {
-                    type: "number",
-                  },
-                  percentageInRegion: {
-                    type: "number",
-                  },
-                  percentageInAfrica: {
-                    type: "number",
-                  },
-                  ethnicityCount: {
-                    type: "number",
-                  },
+              properties: {
+                code: {
+                  type: "string",
+                  example: "NOT_FOUND",
                 },
-              },
-            },
-            ethnicities: {
-              type: "object",
-              additionalProperties: {
-                type: "object",
-                properties: {
-                  name: {
-                    type: "string",
-                  },
-                  totalPopulationInRegion: {
-                    type: "number",
-                  },
-                  percentageInRegion: {
-                    type: "number",
-                  },
-                  percentageInAfrica: {
-                    type: "number",
-                  },
+                message: {
+                  type: "string",
+                  example: "Resource not found",
                 },
               },
             },
           },
         },
-        Error: {
+        PaginationMeta: {
           type: "object",
           properties: {
-            error: {
+            total: {
+              type: "number",
+              example: 100,
+            },
+            page: {
+              type: "number",
+              example: 1,
+            },
+            perPage: {
+              type: "number",
+              example: 20,
+            },
+            totalPages: {
+              type: "number",
+              example: 5,
+            },
+          },
+        },
+        ApiResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "object",
+              description: "Données de la réponse",
+            },
+            meta: {
+              $ref: "#/components/schemas/PaginationMeta",
+            },
+          },
+        },
+        SearchResult: {
+          type: "object",
+          properties: {
+            type: {
               type: "string",
-              example: "Resource not found",
+              enum: ["country", "people", "language", "languageFamily"],
+              example: "people",
+            },
+            id: {
+              type: "string",
+              example: "PPL_SHONA",
+            },
+            name: {
+              type: "string",
+              example: "Shona",
+            },
+            snippet: {
+              type: "string",
+              example: "Extrait du contenu...",
+            },
+            relevance: {
+              type: "number",
+              example: 0.95,
+            },
+          },
+        },
+        Country: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string",
+              description: "Code ISO 3166-1 alpha-3",
+              example: "ZWE",
+            },
+            nameFr: {
+              type: "string",
+              example: "Zimbabwe",
+            },
+            nameOfficial: {
+              type: "string",
+              example: "Republic of Zimbabwe",
+            },
+            etymology: {
+              type: "string",
+            },
+            content: {
+              type: "object",
+              description: "Contenu évolutif en JSONB",
+            },
+          },
+        },
+        People: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string",
+              description: "Identifiant PPL_*",
+              example: "PPL_SHONA",
+            },
+            nameMain: {
+              type: "string",
+              example: "Shona",
+            },
+            languageFamilyId: {
+              type: "string",
+              description: "Identifiant FLG_*",
+              example: "FLG_BANTU",
+            },
+            currentCountries: {
+              type: "array",
+              items: {
+                type: "string",
+              },
+              example: ["ZWE", "MOZ"],
+            },
+            content: {
+              type: "object",
+              description:
+                "Contenu évolutif en JSONB avec les 8 sections AFRIK",
+            },
+          },
+        },
+        LanguageFamily: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string",
+              description: "Identifiant FLG_*",
+              example: "FLG_BANTU",
+            },
+            nameFr: {
+              type: "string",
+              example: "Bantou",
+            },
+            nameEn: {
+              type: "string",
+              example: "Bantu",
+            },
+            content: {
+              type: "object",
+              description: "Contenu évolutif en JSONB",
             },
           },
         },
@@ -114,7 +204,7 @@ const options: swaggerJsdoc.Options = {
     },
   },
   apis: [
-    "./src/app/api/**/*.ts", // Chemin vers les fichiers avec les annotations Swagger
+    "./src/app/api/v2/**/*.ts", // Only v2 API routes
   ],
 };
 
