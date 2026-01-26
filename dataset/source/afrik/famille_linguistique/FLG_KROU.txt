@@ -3,25 +3,49 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_KROU
+- Lien avec la famille linguistique : 
 - Nom français : Krou
 - Nom anglais / auto-appellation académique : Kru
-- Appellation(s) historique(s) :
-  « Krou » ; « langues krou » ; parfois associées aux ethnonymes « Kru/ Kroo » utilisés dans les archives coloniales maritimes.
+- Appellation(s) historique(s) : 
+  « Krou » ; « Kru » ; « Kroo » ; « Crua » ; « Croa » ; « Crouw » ; « Croo » ; « Crew » ; « Krew » (attestations variées dans les archives coloniales maritimes XVIIᵉ–XIXᵉ siècles) ; parfois associées aux ethnonymes utilisés pour désigner les populations côtières maritimes.
 - Origine du terme historique :
-  Le terme « Krou » dérive des populations côtières connues sous le nom de *Kru* ou *Kroo*, identifiées par les navigateurs européens (XVIIᵉ–XIXᵉ siècles) comme marins et intermédiaires commerciaux.  
-  Les linguistes ont ensuite étendu le terme pour désigner un ensemble beaucoup plus large de langues.
-- Pourquoi le terme pose problème :
-  - « Kru » a historiquement été un terme colonial vague appliqué aux travailleurs côtiers, souvent sans distinction ethnolinguistique.  
-  - Les Européens l’ont utilisé comme catégorie professionnelle, effaçant la diversité des groupes (Bété, Dida, Wè, Grebo…).  
-  → Le terme moderne « Krou » est linguistiquement valide, mais son héritage colonial doit être expliqué.
+  Le terme apparaît pour la première fois en 1588 sous la forme « Crua » dans le récit de voyage de James Welsh, publié par Richard Hakluyt dans ses *Principal Navigations, Voyages, Traffiques and Discoveries of the English Nation* (1589). Ce terme faisait référence au point géographique côtier correspondant à l'actuel Settra-Kru au Liberia. La graphie « Krou » est une corruption de l'une des nombreuses appellations données à travers les âges aux ressortissants du peuple krao. Le terme a été systématisé par des chercheurs comme Pieter Jan-L. Vandenhoute (1948) dans son étude sur les masques krou, puis par Bohumil Holas après ses enquêtes au Liberia en 1948. Les linguistes ont ensuite étendu le terme pour désigner un ensemble beaucoup plus large de langues parlées en Côte d'Ivoire et au Liberia.
+- Pourquoi le terme pose problème (si applicable) :
+  Le terme « Kru/Krou » pose plusieurs problèmes décoloniaux :
+  
+  **Auteurs coloniaux problématiques :**
+  - Le terme a été imposé par les navigateurs et administrateurs coloniaux européens (XVIIᵉ–XIXᵉ siècles) sans consultation des populations locales, reflétant une vision extérieure et simplificatrice.
+  - Les colonisateurs l'ont utilisé comme catégorie professionnelle (marins, intermédiaires commerciaux), effaçant la diversité ethnolinguistique des groupes (Bété, Dida, Wè, Grebo, Godié, etc.).
+  - Cette classification colonialiste a regroupé des peuples aux identités culturelles et linguistiques distinctes sous une même appellation générique, occultant leurs spécificités.
+  
+  **Auteurs locaux défendant l'africanité :**
+  - Frédéric Bruly Bouabré (artiste et intellectuel bété, né en 1923) a œuvré pour la reconnaissance et la valorisation des identités culturelles propres aux peuples concernés, notamment à travers son syllabaire bété créé en 1958 et ses œuvres artistiques célébrant la culture bété.
+  - Des chercheurs contemporains comme Lynell Marchese ont souligné la complexité et la diversité interne des langues krou, remettant en question les classifications simplistes héritées de l'époque coloniale.
+  
+  **Études génétiques modernes :**
+  - Les études génétiques contemporaines ont montré la diversité génétique importante au sein des populations dites « Krou », confirmant que ces groupes ne constituent pas une unité génétique homogène et remettant en question les classifications coloniales simplifiées basées sur des critères externes.
+  
+  → Le terme moderne « Krou » est linguistiquement valide (classifié par Greenberg 1963 dans le Niger-Congo), mais son héritage colonial doit être expliqué et les auto-appellations des peuples concernés doivent être privilégiées.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Kru languages / Langues krou
-- Usage contemporain :
-  Le krou est une grande sous-famille du Niger-Congo regroupant des langues de Côte d’Ivoire et du Libéria, dont le bété, le dida, le wê, le grebo, etc.
+  Les peuples concernés utilisent des endonymes (auto-appellations) spécifiques, attestés historiquement et dans l'usage contemporain :
+  
+  - **Bété** : Auto-appellation « Magwé » (attestée historiquement, étymologie : désignation originelle du peuple bété avant l'appropriation coloniale du terme « Bété »). L'artiste Frédéric Bruly Bouabré a contribué à la valorisation de cette identité.
+  
+  - **Wé / Guéré / Krahn** : Auto-appellation « Wegnons » ou « Wé », signifiant « l'homme qui pardonne » ou « l'homme au cœur noble » (attesté dans les traditions orales et l'usage contemporain).
+  
+  - **Godié** : Auto-appellation « Gwè-djié », signifiant « chimpanzé panthère » (surnom donné par leurs voisins Neyo pour décrire leur tempérament guerrier, devenu auto-appellation).
+  
+  - **Dida** : Utilisation du terme « Dida » comme auto-appellation.
+  
+  - **Grebo** : Utilisation du terme « Grebo » comme auto-appellation dans les traditions orales.
+  
+  Ces endonymes reflètent des identités culturelles et historiques propres, souvent méconnues ou ignorées par les classifications coloniales. L'usage contemporain de ces termes endonymes est courant et reflète la diversité culturelle de la région.
+- Usage contemporain (définition moderne de la famille) :
+  Le krou est une grande sous-famille du Niger-Congo regroupant environ 30–40 langues parlées en Côte d'Ivoire et au Liberia, dont le bété, le dida, le wê/guéré, le grebo, le bassa, le godié, le néyo, etc. Cette classification linguistique moderne, établie au XXᵉ siècle par des linguistes comme Joseph Greenberg (1963) et Lynell Marchese (1983–1984), est valide sur le plan scientifique mais doit être distinguée des classifications coloniales ethnonymiques.
 - Aire / répartition géographique générale :
-  Côte d’Ivoire, Liberia, zones forestières côtières
-- Nombre de langues (estimation) : ~30–40
-- Nombre total de locuteurs (estimation) : ~3 millions
+  Côte d'Ivoire (régions ouest et sud-ouest : Gagnoa, Daloa, San-Pédro, Tabou, zones forestières), Liberia (est et sud-est du pays, zones côtières), avec une présence minoritaire en Sierra Leone (environ 10 000 locuteurs à Freetown). Zone géographique s'étendant sur environ 120 000 km² le long du littoral atlantique.
+- Nombre de langues (estimation) : ~30–40 langues
+- Nombre total de locuteurs (estimation) : ~3 millions (données 2025)
 
 ------------------------------------------
 
@@ -30,61 +54,255 @@
 # 1. Informations générales
 - Nom de la famille : Krou
 - Branches internes / sous-groupes :
-  - Krou oriental : Bété, Dida  
-  - Krou occidental : Grebo, Wè/Krahn  
-  - Sous-groupes supplémentaires : Godié, Néyo, Bassa (selon classifications)
+  - **Krou oriental** : Bété, Dida, Godié, Néyo, Bakwé
+  - **Krou occidental** : Grebo, Wè/Krahn/Guéré, Wobé, Niaboua
+  - **Sous-groupes supplémentaires** : Bassa (classifications variables), Kroumen (groupe maritime historique)
+  Classification interne proposée par Lynell Marchese (1983–1984) dans l'*Atlas linguistique kru*.
 - Aire géographique :
-  Côte d’Ivoire, Libéria
+  Côte d'Ivoire (centre-sud, sud-ouest, ouest), Liberia (est, sud-est, zones côtières), Sierra Leone (minorité à Freetown). Zone forestière guinéo-congolaise le long du littoral atlantique, s'étendant sur environ 120 000 km².
 - Nombre de langues :
-  30–40
+  30–40 langues (estimations variables selon les classifications)
 - Nombre total de locuteurs :
-  ~3 millions
+  ~3 millions (estimation 2025)
 
 # 2. Peuples associés
 - Peuple 1 : Bété (PPL_BETE)
 - Peuple 2 : Dida (PPL_DIDA)
 - Peuple 3 : Grebo (PPL_GREBO)
+- Peuple 4 : Wé / Guéré / Krahn (PPL_WE)
+- Peuple 5 : Godié
+- Peuple 6 : Bassa
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Bété  
-- Ethnie 2 : Dida  
-- Ethnie 3 : Wè / Guéré / Krahn  
-(+ renvoi vers fiches ethniques dédiées)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues tonales, à morphologie relativement analytique ; SVO majoritaire.
+  Langues tonales à morphologie relativement analytique. Ordre des mots SVO (Sujet-Verbe-Objet) majoritaire, mais certaines langues présentent des structures SOV. Typologie variable selon les sous-groupes. Systèmes de dérivation morphologique complexes avec préfixes et suffixes pour indiquer les relations grammaticales (temps, aspect, modalité, classes nominales).
+  
+  **Exemples concrets :**
+  - **Bété (Daloa)** : Ordre SVO. Le verbe « accoucher » se dit *gwálɪ̀* (ton bas).
+  - **Dida (Lozoua)** : Ordre SVO. Le verbe « accoucher » se dit *vālɪ̀* (ton bas), variation morphologique illustrant la diversité interne.
+  - **Bassa** : Utilisation de préfixes pour les classes nominales, par exemple préfixe *ba-* pour les noms humains pluriels.
+  - **Wobé** : Ordre SOV dans certaines constructions, illustrant la variation typologique au sein de la famille.
+  
+  La morphologie verbale est riche, avec des affixes indiquant le temps, l'aspect et la modalité. Flexion minimale mais importance des tons dans la grammaire pour distinguer les significations lexicales et grammaticales.
 - Particularités phonologiques :
-  - Consonnes prénasalisées  
-  - Systèmes vocaliques complexes  
-  - Harmonie vocalique dans certaines langues
+  **Systèmes toniques complexes :**
+  - Les langues krou possèdent des systèmes tonaux à plusieurs niveaux (tons très hauts, hauts, bas, très bas), souvent comparés aux langues omotiques d'Éthiopie pour leur complexité.
+  - **Wobé** : Système à 4 tons indiqués par des signes diacritiques : guillemet devant („) pour ton très haut (exemple : *„w* « crabe »), apostrophe devant (') pour ton haut (exemple : *'w* « chapeau »), signe moins devant (-) pour ton bas (exemple : *-w* « baluchon »), signe moins après (-) pour ton très bas (exemple : *w-* « riz »).
+  - **Guéré** : Opposition entre voyelles orales et nasales, entre voyelles mi-fermées et mi-ouvertes. Le mot pour « abeille » varie : *lʊ* en Aïzi, *nōgó* en Dida (Lozoua), *láī* en Bété (Daloa), *dʊ̄* en Wobé, illustrant la diversité phonologique.
+  
+  **Consonnes distinctives :**
+  - Consonnes labiovélaires fréquentes : [kp], [gb] (exemple en Godié : *kʷɛɛ̄* « aiguille »).
+  - Consonnes prénasalisées présentes dans plusieurs langues.
+  - Structure syllabique riche : CVC, CV, parfois CCV.
+  
+  **Voyelles :**
+  - Systèmes vocaliques complexes avec oppositions orales/nasales et distinctions de hauteur vocalique (mi-fermées/mi-ouvertes).
+  - Harmonie vocalique dans certaines langues (particulièrement en Guéré/Wobé).
 - Liens avec les familles voisines :
-  Contacts intenses avec les langues mandé (au nord) et les langues kwa (au sud-est de la Côte d’Ivoire).
+  Contacts historiques intenses avec les langues mandé (au nord) et les langues kwa (au sud-est de la Côte d'Ivoire). Ces contacts ont conduit à des emprunts lexicaux significatifs.
+  
+  **Emprunts aux langues mandé :**
+  - Le mot pour « marché » en bété : *sɔ̀* (emprunté au mandingue).
+  - Le mot pour « accoucher » : *gbà* en wé, similaire au *gbà* en mandingue, illustrant un possible emprunt ou héritage commun.
+  
+  **Influence sur les créoles :**
+  - Le créole libérien (appelé « kreyol » ou « kru english pidgin ») résulte de la rencontre entre l'anglais créole des Afro-Américains et les langues krou autochtones, témoignant de l'influence structurale des langues krou sur ce créole.
+  
+  **Zones de contact :**
+  - Régions frontalières entre la Côte d'Ivoire et le Liberia le long du fleuve Cavally.
+  - Zones de métissage linguistique autour des routes commerciales historiques, notamment dans les régions de Tabou, San Pedro, Grand Bassa (Liberia).
 - Innovations clés :
-  - Flexion minimale  
-  - Importance des tons dans la grammaire  
-  - Structure syllabique riche (CVC, CV, parfois CCV)
+  **Systèmes toniques complexes :**
+  - Les langues krou sont réputées pour leurs systèmes tonaux particulièrement élaborés, souvent comparés à ceux des langues omotiques d'Éthiopie, représentant une innovation distinctive dans le contexte des langues nigéro-congolaises d'Afrique de l'Ouest.
+  
+  **Systèmes d'écriture propres :**
+  - **Alphabet bassa** (appelé « vah ») : Système d'écriture développé spécifiquement pour la langue bassa au Liberia, forme modifiée de l'alphabet latin adaptée aux particularités phonologiques du bassa.
+  - **Syllabaire bété** : Créé par Frédéric Bruly Bouabré en 1958, système d'écriture original composé de plusieurs centaines de signes représentant des syllabes, témoignant de l'innovation graphique au sein de la famille krou.
+  
+  **Morphologie verbale :**
+  - Systèmes de dérivation morphologique complexes avec affixes indiquant temps, aspect, modalité, illustrant une innovation dans la structuration grammaticale.
+  
+  **Structure syllabique :**
+  - Richesse de la structure syllabique (CVC, CV, parfois CCV) représentant une particularité distinctive par rapport à d'autres langues nigéro-congolaises de la région.
 
-# 5. Histoire et origines
-- Origine probable :
-  Forêts guinéo-congolaises de Côte d’Ivoire et du Libéria.
-- Diffusion des langues :
-  Migration progressive des groupes krou à travers les forêts ivoiriennes ; interactions historiques avec les mandé du nord.
-- Ruptures historiques :
-  - Colonisation française (Côte d’Ivoire) et américaine/libérienne (Libéria)  
-  - Déplacements massifs pendant les guerres civiles libériennes et ivoiriennes
+# 4. Histoire et origines :
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  **Classifications linguistiques :**
+  - **Joseph Greenberg (1963)** : Dans *The Languages of Africa*, classifie les langues krou comme une branche du groupe Niger-Congo, établissant la classification moderne de la famille.
+  - **Lynell Marchese (1983–1984)** : Publie l'*Atlas linguistique kru* (Agence de coopération culturelle et technique, Université d'Abidjan), proposant une classification interne détaillée des langues krou et établissant les sous-groupes oriental/occidental.
+  - **Victor Godé (2008)** : Étude *Le dadjriwalé, langue kru de la Côte d'Ivoire* (L'Harmattan), apportant des précisions sur les langues krou orientales.
+  
+  **Théories sur l'origine :**
+  
+  **Théorie 1 (Linguistique - Migration depuis le nord) :**
+  - Suggère une migration depuis l'actuelle Guinée vers les zones forestières de la Côte d'Ivoire et du Liberia entre le XIIIᵉ et le XVIIᵉ siècle.
+  - Motivée par la fuite des raids des petits royaumes mandingues pratiquant la traite négrière.
+  - Base : similitudes lexicales et structures grammaticales suggérant une origine commune septentrionale.
+  
+  **Théorie 2 (Tradition orale - Origine désertique) :**
+  - Certaines traditions orales, notamment chez les Grebos, affirment que leurs ancêtres étaient originaires de régions désertiques (possiblement le Sahel).
+  - Cette théorie orale contraste avec l'hypothèse linguistique de migration depuis les forêts guinéennes.
+  
+  **Théorie 3 (Origine endogène) :**
+  - Propose une origine locale avec une expansion progressive depuis un foyer situé dans les forêts guinéo-congolaises actuelles.
+  - Base : continuité archéologique dans la région et absence de traces migratoires massives.
+  
+  **Études archéologiques :**
+  - Données archéologiques suggèrent une occupation continue des zones forestières de Côte d'Ivoire et du Liberia depuis plusieurs millénaires, mais les périodes précises d'émergence des groupes krou restent à préciser par l'archéologie.
+  
+  **Études génétiques :**
+  - Les études génétiques modernes montrent une diversité génétique importante au sein des populations krou, suggérant des origines complexes et multiples plutôt qu'une migration unique homogène.
+- Période d'émergence estimée :
+  **Émergence historique de la famille linguistique :**
+  - Période d'installation dans les régions actuelles estimée entre le **XIIIᵉ et le XVIIᵉ siècle** selon les traditions orales et les reconstructions linguistiques.
+  - Les peuples krou se seraient installés dans leurs régions actuelles de Côte d'Ivoire et du Liberia pendant cette période, probablement en provenance de l'actuelle Guinée (selon la théorie migratoire).
+  
+  **Date de classification académique :**
+  - **XXᵉ siècle** : Classification académique formelle des langues krou comme sous-groupe du Niger-Congo.
+  - **1963** : Joseph Greenberg inclut les langues krou dans sa classification du Niger-Congo dans *The Languages of Africa*.
+  - **1983–1984** : Lynell Marchese publie l'*Atlas linguistique kru*, établissant la classification interne moderne et les sous-groupes oriental/occidental.
+  - **1948** : Pieter Jan-L. Vandenhoute et Bohumil Holas contribuent aux premières études systématiques sur les masques et cultures krou, préparant le terrain pour les classifications linguistiques ultérieures.
+- Diffusion des langues (routes migratoires, expansion) :
+  **Théorie 1 (Migration nord-sud) :**
+  - Migration depuis l'actuelle Guinée vers le sud, à travers les forêts guinéo-congolaises, aboutissant à l'installation dans les régions actuelles de Côte d'Ivoire et du Liberia.
+  - Route migratoire principalement forestière, adaptée à un mode de vie agro-forester.
+  - Période : XIIIᵉ–XVIIᵉ siècle.
+  - Motivations : fuite des raids esclavagistes des royaumes mandingues.
+  
+  **Théorie 2 (Expansion côtière) :**
+  - Diffusion le long du littoral atlantique, s'étendant sur environ 120 000 km² entre la Côte d'Ivoire et le Liberia.
+  - Adaptation aux environnements forestiers et côtiers, avec spécialisation maritime pour certains groupes (Kroumen).
+  - Cette théorie explique la distribution actuelle le long du littoral.
+  
+  **Théorie 3 (Expansion interne progressive) :**
+  - Expansion depuis un foyer originel situé dans les forêts actuelles, avec diffusion interne progressive plutôt que migration externe.
+  - Basée sur la continuité archéologique et l'absence de ruptures culturelles majeures.
+  
+  **Interactions et métissages :**
+  - Interactions historiques avec les Mandé du nord, conduisant à des emprunts lexicaux et des adaptations culturelles.
+  - Contacts avec les populations kwa au sud-est de la Côte d'Ivoire.
+  - Formation de zones de transition linguistique le long des frontières interethniques.
+- Ruptures historiques (séparations, fusions) :
+  **Colonisation européenne :**
+  - **Colonisation française (Côte d'Ivoire)** : À partir du XIXᵉ siècle, avec impact sur les structures sociales et linguistiques traditionnelles.
+  - **Colonisation américaine/libérienne (Liberia)** : Fondation du Liberia (1822) et interactions avec les populations krou autochtones, conduisant à des métissages linguistiques (créole libérien).
+  
+  **Déplacements de population :**
+  - Déplacements massifs pendant les **guerres civiles libériennes** (1989–2003) affectant les populations krou du Liberia.
+  - Déplacements pendant les **crises ivoiriennes** (2002–2011) affectant les populations krou de Côte d'Ivoire.
+  
+  **Séparations linguistiques :**
+  - Évolution divergente des sous-groupes krou oriental et occidental, conduisant à la diversification linguistique actuelle.
+  - Séparation géographique entre populations krou de Côte d'Ivoire et du Liberia, renforcée par les frontières coloniales puis nationales.
 - Zones de contact et métissages :
-  - Région ivoirienne de Gagnoa, Daloa, San-Pédro  
-  - Littoral libérien  
-  - Zones frontalières avec les mandé méridionaux
+  **Zones de contact géographiques précises :**
+  
+  **Côte d'Ivoire :**
+  - **Région de Gagnoa** : Zone de contact entre Bété et Dida, métissage linguistique et culturel.
+  - **Région de Daloa** : Centre important des populations krou, interactions avec les Mandé méridionaux.
+  - **Région de San-Pédro** : Zone côtière, contact avec les populations kwa et créoles.
+  - **Région de Tabou** : Frontière avec le Liberia, zone de transition linguistique.
+  - **Pays Wé** : Région limitée au nord par la ligne **Toulepleu-Parc du mont Peko** et au sud par la lisière nord du **parc national de Taï**, zone de continuité linguistique et culturelle transfrontalière.
+  
+  **Liberia :**
+  - **Grand Bassa** : Zone côtière, métissage avec créole libérien et populations anglophones.
+  - **Régions frontalières avec la Côte d'Ivoire** : Le long du **fleuve Cavally**, zones de transition linguistique entre populations krou ivoiriennes et libériennes.
+  - **Freetown (Sierra Leone)** : Communauté d'environ 10 000 locuteurs krou, métissage avec créole krio et autres langues.
+  
+  **Routes commerciales historiques :**
+  - Routes commerciales transforestières reliant la Côte d'Ivoire et le Liberia, favorisant les échanges linguistiques et culturels.
+  - Comptoirs côtiers européens (XVIIᵉ–XIXᵉ siècles) : Zones de contact avec langues européennes et créoles, notamment pour les Kroumen (marins).
+  
+  **Métissages linguistiques :**
+  - **Créole libérien** : Mélange d'anglais créole afro-américain et de langues krou, résultant des contacts dans les zones côtières libériennes.
+  - **Emprunts aux langues mandé** : Présents dans le lexique krou, témoignant des contacts historiques avec les populations mandingues du nord.
+- Événements historiques majeurs ayant influencé la famille :
+  **XIIIᵉ–XVIIᵉ siècle :**
+  - Migration estimée des peuples krou depuis l'actuelle Guinée vers les régions actuelles de Côte d'Ivoire et du Liberia.
+  - Motivations : fuite des raids esclavagistes des petits royaumes mandingues pratiquant la traite négrière.
+  
+  **XVIIᵉ–XIXᵉ siècles :**
+  - Interactions avec les navigateurs européens le long du littoral atlantique.
+  - Émergence des **Kroumen** : groupes krou spécialisés dans le travail maritime et l'intermédiation commerciale avec les Européens.
+  - Les peuples krou ont été relativement épargnés par la traite transatlantique des esclaves en raison de leur situation géographique forestière, mais certains groupes (Kroumen) ont interagi avec les comptoirs européens en tant que marins ou commerçants.
+  
+  **XIXᵉ siècle :**
+  - **Colonisation française de la Côte d'Ivoire** : Impact sur les structures sociales et linguistiques traditionnelles.
+  - **Fondation du Liberia (1822)** : Interactions avec les populations krou autochtones, métissages linguistiques.
+  - **Recrutement des Kroumen par les Européens** : Interactions culturelles significatives liées au travail maritime.
+  
+  **XXᵉ siècle :**
+  - **Classification linguistique académique** : Greenberg (1963), Marchese (1983–1984) établissent la classification moderne des langues krou.
+  - **1958** : Frédéric Bruly Bouabré crée le syllabaire bété, innovation graphique majeure.
+  - **Indépendances** : Côte d'Ivoire (1960), Liberia (déjà indépendant depuis 1847).
+  
+  **Fin XXᵉ–début XXIᵉ siècle :**
+  - **Guerre civile libérienne (1989–2003)** : Déplacements massifs de population, impact sur les structures linguistiques et culturelles.
+  - **Crises ivoiriennes (2002–2011)** : Déplacements de population, tensions intercommunautaires affectant les populations krou.
+  
+  **Résistances anti-coloniales :**
+  - Les langues krou ont joué un rôle clé dans les résistances anti-coloniales ivoiriennes et dans la construction des identités nationales postcoloniales.
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  ~3 millions
-- Répartition par pays :
-  Côte d’Ivoire (Bété, Dida, Wè), Libéria (Grebo, Kru)
-- Importance historique :
-  Les langues krou ont joué un rôle clé dans les résistances anti-coloniales, les circulations maritimes et la construction des identités ivoiriennes.
+  ~3 000 000 locuteurs (estimation 2025, sources : ONU, UNFPA, CIA World Factbook, SIL Ethnologue)
 
-# 7. Sources
-- Williamson & Blench –
+- Répartition par pays :
+  **Côte d'Ivoire :**
+  - Population totale parlant une langue krou : environ **1 500 000–2 000 000 locuteurs** (estimation 2025)
+  - Pourcentage de la population nationale : environ **5–7%** de la population totale ivoirienne (estimée à ~28 000 000 habitants en 2025)
+  - Langues principales :
+    - **Bété** : ~1 000 000 locuteurs (concentrés dans quelque 800 villages dans le triangle Daloa-Soubre-Gagnoa)
+    - **Dida** : ~195 000 locuteurs (centre-sud de la Côte d'Ivoire)
+    - **Guéré/Wé** : ~360 000 locuteurs (ouest de la Côte d'Ivoire, pays Wé)
+    - **Godié** : ~30 000 locuteurs
+    - **Néyo** : ~15 000 locuteurs
+    - Autres langues krou : ~100 000 locuteurs (Bakwé, Niaboua, etc.)
+  - Sources : CIA World Factbook 2025, SIL Ethnologue, recensements nationaux ivoiriens, Minority Rights Group International
+  
+  **Liberia :**
+  - Population totale parlant une langue krou : environ **1 000 000–1 500 000 locuteurs** (estimation 2025)
+  - Pourcentage de la population nationale : environ **20–30%** de la population totale libérienne (estimée à ~5 000 000 habitants en 2025)
+  - Langues principales :
+    - **Bassa** : ~350 000 locuteurs (2015, estimation actualisée à ~400 000 en 2025)
+    - **Grebo** : ~387 000 locuteurs
+    - **Krahn** : ~250 000 locuteurs (estimation)
+    - **Kru** (langue spécifique) : ~180 000 locuteurs
+    - Autres langues krou : ~300 000 locuteurs (Klao, Jabo, etc.)
+  - Sources : CIA World Factbook 2025, SIL Ethnologue, Atlasocio.com, recensements libériens
+  
+  **Sierra Leone :**
+  - Population totale parlant une langue krou : environ **10 000 locuteurs** (principalement à Freetown)
+  - Pourcentage de la population nationale : <0,5% de la population totale sierra-léonaise
+  - Langue principale : **Bassa** (~5 000 locuteurs en 2006, actualisé à ~10 000 en 2025)
+  - Source : SIL Ethnologue, recensements sierra-léonais
+  
+  **Total général :**
+  - **~3 000 000 locuteurs** au total dans les trois pays (estimation 2025)
+  - Sources : ONU, UNFPA, CIA World Factbook 2025, SIL Ethnologue, Atlasocio.com, recensements nationaux
+
+# 6. Sources
+- Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press.
+- Marchese, Lynell (1984) – *Atlas linguistique kru*. Agence de coopération culturelle et technique, Université d'Abidjan.
+- Godé, Victor (2008) – *Le dadjriwalé, langue kru de la Côte d'Ivoire*. L'Harmattan.
+- Schwartz, Alfred (1980) – « Quelques repères dans l'histoire des Kroumen ». *Outre-Mers. Revue d'histoire*, tome 67, n°246-247, pp. 151-155. Persée : https://www.persee.fr/doc/outre_0300-9513_1980_num_67_246_2242
+- Vandenhoute, Pieter Jan-L. (1948) – *Masques krou*. Anthropologie et arts africains.
+- Duitsman, John (1986) – *Phonologie du wê/guéré*. In *Langues et cultures africaines*.
+- Hakluyt, Richard (1589) – *Principal Navigations, Voyages, Traffiques and Discoveries of the English Nation*. Londres.
+- Holas, Bohumil (1948) – Enquêtes ethnographiques au Liberia (influences sur la classification krou).
+- CIA World Factbook (2025) – *Côte d'Ivoire, Liberia, Sierra Leone*. https://www.cia.gov/the-world-factbook/
+- SIL Ethnologue (2025) – *Kru languages*. https://www.ethnologue.com/
+- ONU / UNFPA (2025) – Données démographiques Côte d'Ivoire, Liberia, Sierra Leone.
+- Atlasocio.com (2021) – *Classement des langues krou par nombre de locuteurs*. https://atlasocio.com/classements/langues/familles/classement-langues-krou-par-nombre-locuteurs-total-monde.php
+- Minority Rights Group International (s.d.) – *Krou in Côte d'Ivoire*. https://minorityrights.org/communities/krou/
+- La Dépêche d'Abidjan (2021) – « Hommage à Frédéric Bruly Bouabré – Le Peuple bété, Histoires et Cultures ». https://ladepechedabidjan.info/2021/11/20/hommage-a-frederic-bruly-bouabre-le-peuple-bete-histoires-et-cultures/
+- Wikipedia (2025) – *Langues krou*. https://fr.wikipedia.org/wiki/Langues_krou
+- Wikipedia (2025) – *Krou (peuple)*. https://fr.wikipedia.org/wiki/Krou_(peuple)
+- Wikipedia (2025) – *Bassa (langue krou)*. https://fr.wikipedia.org/wiki/Bassa_(langue_krou)
+- Wikipedia (2025) – *Guéré (langue)*. https://fr.wikipedia.org/wiki/Gu%C3%A9r%C3%A9_(langue)
+- Wikipedia (2025) – *Wobé (langue)*. https://fr.wikipedia.org/wiki/Wob%C3%A9_(langue)
+- Wikipedia (2025) – *Wés*. https://fr.wikipedia.org/wiki/W%C3%A9s
+- Wikipedia (2025) – *Godié (Peuple)*. https://fr.wikipedia.org/wiki/Godi%C3%A9_(Peuple)
+- Encyclopaedia Universalis (s.d.) – *Krou*. https://www.universalis.fr/dictionnaire/krou/
+- Ivoire 225 (2025) – « Les Peuples de Côte d'Ivoire : Diversité, Culture et Cohésion Nationale ». https://ivoire225.com/2025/08/06/les-peuples-de-cote-divoire-diversite-culture-et-cohesion-nationale/
+- « Les masques « Krou » de Côte-d'Ivoire ». *Anthropologie et arts africains* (2025). https://journals.openedition.org/aaa/767
