@@ -6,20 +6,36 @@
 - Nom français : Khoe
 - Nom anglais / auto-appellation académique : Khoe / Khoeid
 - Appellation(s) historique(s) :
-  « Hottentot » (terme aujourd’hui clairement raciste et offensant),
-  « Khoikhoi », « Nama-Hottentot » dans les sources coloniales.
+  « Hottentot » (terme créé par colons néerlandais vers 1650-1670, dérivant de syllabes sans sens « hot en tot » imitant le bégaiement pour moquer la phonologie à clics ; utilisé dans législations discriminatoires comme le « Hottentot Proclamation » de 1809 restreignant les droits ; associé à l'exhibition déshumanisante de Sarah Baartman dite « Vénus Hottentote » en Europe au début du XIXe siècle ; systématiquement rejeté par les populations Khoekhoe qui utilisent leurs propres appellations ; terme aujourd'hui clairement considéré comme raciste et offensant),
+  « Khoikhoi » (auto-appellation authentique signifiant « vrais gens », attestée dès les journaux de Van Riebeeck milieu 1600s, mais souvent mal transcrite ou simplifiée dans les sources coloniales qui ne respectaient pas la phonologie à clics : variantes *Cochoqua*, *Khoe-Khoi*, *Khoi-Khoi*),
+  « Nama-Hottentot » (combinaison hybride coloniale associant l'endonyme « Nama » au terme péjoratif « Hottentot », illustrant comment l'administration et les sources coloniales ont imposé le terme colonial même lorsqu'utilisant les auto-appellations, créant une confusion entre identité endonyme et désignation exonyme dégradante).
 - Origine du terme historique :
-  - « Khoekhoe » signifie approximativement « les vrais gens » dans la langue.  
-  - Les colons néerlandais ont utilisé « Hottentot » en imitant de manière moqueuse la phonologie à clics.  
-  - Les linguistes ont plus tard retenu « Khoe » comme nom de famille.
+  - **Création coloniale** : Le terme « Hottentot » a été créé par les colons néerlandais de la Compagnie néerlandaise des Indes orientales (VOC) vers **1650-1670** lors de l'établissement de la station de ravitaillement du Cap. La première attestation en anglais date de **1677** (Merriam-Webster).
+  - **Auteurs coloniaux** : Jan van Riebeeck (journal, milieu des années 1650) mentionne fréquemment les « Khoikhoi » (parfois transcrit *Cochoqua*, *Khoe-Khoi*, *Khoi-Khoi*) dans ses journaux de la VOC.
+  - **Étymologie proposée** : Le terme « Hottentot » dériverait du néerlandais « *hot en tot* » (« chaud et total »), syllabes sans sens imitant le bégaiement, moquant la phonologie à clics des langues Khoekhoe. Alternative : emprunt aux chants et danses Khoekhoe/San (M. D. W. Jeffreys, *African Affairs*, 1947).
+  - **Auto-appellation authentique** : « Khoekhoe » / « Khoikhoi » provient de la langue elle-même : *khoe* = « personne, être humain » ; réduplication + suffixe pluriel -*n* donne *khoe-khoi(n)* / *khôe-khôen*, signifiant « gens-gens (pluriel) », idiomatiquement « vrais gens », « gens authentiques », « hommes parmi les hommes ». Attesté dès les journaux de Van Riebeeck (milieu 1600s). Les linguistes ont retenu « Khoe » comme nom de famille linguistique (classification moderne de Güldemann, Sands).
 - Pourquoi le terme pose problème :
-  - « Hottentot » est un terme péjoratif, tournant en ridicule la langue et la culture, utilisé dans un cadre raciste et déshumanisant.  
-  - Il a servi à justifier la domination coloniale, les spoliations et violences contre les Nama et autres groupes.  
-  → Afrik **rejette “Hottentot”**, ne le conserve que dans l’explication historique, et utilise **Khoe / Khoekhoe / Nama**.
+  - **Auteurs coloniaux problématiques** : 
+    * François-Xavier Fauvelle-Aymar (2002) – *L'Invention du Hottentot : histoire du regard occidental sur les Khoisan (XVe-XIXe siècle)* : démontre comment « le Hottentot » a été inventé comme stéréotype colonial occidental en retraçant les récits de voyageurs (XVe-XIXe siècle) transformant les observations en projections morales et religieuses plutôt qu'empiriques ; en analysant la construction d'une figure dualiste (« bon sauvage » / « monstre primitif ») justifiant la mission civilisatrice ; en documentant comment naturalistes, anatomistes et anthropologues ont utilisé mesures, dessins et dissections pour classer et hiérarchiser racialement (cas de Sarah Baartman) ; en montrant comment l'invention du terme « Hottentot » réifie un « autre » homogène, occultant les réalités et différences internes des peuples Khoisan pour justifier dépossession de terres et discriminations.
+    * Linda Evi Merians (2001) – *Envisioning the Worst: Representations of "Hottentots" in Early-modern England* : analyse comment les écrivains anglais représentaient le terme et les peuples de manière déshumanisante en examinant textes de voyage, géographie et littérature (XVIe-XVIIIe siècles) employant motifs récurrents de bestialité et primitivisme (cannibalisme, proximité animale) ; en documentant traitement du corps comme marque de différence radicale (formes corporelles « exotiques », nudité, organes génitaux) servant à illustrer infériorité morale ; en identifiant langage de dégénérescence (« barbares », « inférieurs », « insensés ») et projection des fantasmes européens (ordre vs chaos, nature vs culture) ; en montrant évolution vers classification « scientifique » systématique légitimant supériorité européenne et théorisation naissante de race.
+    * Le « Hottentot Proclamation » (Code Hottentot) de 1809 restreignait les mouvements des populations Khoekhoe dans la colonie du Cap, révoqué en 1828.
+  - **Auteurs locaux défenseurs de l'africanité** : Le terme a servi à justifier la domination coloniale, les spoliations et violences. Les populations Khoekhoe ont toujours utilisé leurs propres appellations (Khoekhoe, Nama, Damara) pour revendiquer leur identité et leur dignité humaine face au terme raciste.
+  - **Études génétiques modernes confirmant l'africanité** :
+    * Jakobsson et al. (2024) – *Homo sapiens-specific evolution unveiled by ancient southern African genomes* : 28 individus anciens d'Afrique australe (10 200-150 cal BP) montrent que 25 sur 28 portent l'haplogroupe mitochondrial L0d, lignées maternelles parmi les plus anciennement divergentes d'*Homo sapiens*, confirmant l'africanité profonde et l'antériorité des populations Khoe-San.
+    * Barbieri et al. (2021-2022) : divergence de l'haplogroupe L0d estimée à ~172 kya (95% CI: 149-199 kya), montrant que les ancêtres des Khoe-San ont divergé très tôt des autres populations africaines, bien avant de nombreuses autres lignées.
+    * Lipson et al. (2022) : huit individus anciens du Malawi et de la Zambie portent des haplogroupes associés aux populations de chasseurs-cueilleurs d'Afrique australe (L0d), montrant une distribution passée plus large des lignées Khoe-San.
+  - « Hottentot » est un terme péjoratif, tournant en ridicule la langue et la culture, utilisé dans un cadre raciste et déshumanisant. Il a servi à justifier la domination coloniale, les spoliations et violences contre les Nama et autres groupes.  
+  → Afrik **rejette "Hottentot"**, ne le conserve que dans l'explication historique, et utilise **Khoe / Khoekhoe / Nama**.
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Khoekhoegowab (langue nama) ; Khoe languages / Langues khoe
+  - **Endonymes avec étymologies** :
+    * « Khoekhoe » / « Khoekhoegowab » (langue nama) : *khoe* « personne » + réduplication + *-n* (pluriel) = « vrais gens ». Attestation historique : journaux de Jan van Riebeeck (milieu 1600s, VOC).
+    * « Nama » : terme d'autodésignation utilisé par les locuteurs du khoekhoegowab.
+    * « ǂNūkhoe » : auto-appellation des Damara en khoekhoegowab.
+  - **Usage contemporain académique** : Khoe languages / Langues khoe (Tom Güldemann, Bonny Sands, classification moderne).
+  - **Attestations historiques** : Transcriptions de noms de clans Khoekhoe dans les documents coloniaux (Goringhaiqua, Hessequa, Cochoqua) reflètent la phonologie Khoekhoe avec clics, attestant l'usage endonyme.
+  - **Usage contemporain des locuteurs** : Les locuteurs utilisent Khoekhoegowab, Nama, Damara, Khwe selon leur groupe, rejetant unanimement « Hottentot ».
 - Usage contemporain :
-  Famille linguistique distincte, regroupant le khoekhoe (nama/damara) et plusieurs langues du Kalahari (Khoekhoe, Khwe, Naro…).
+  Famille linguistique distincte (classification de Güldemann, Sands), regroupant le khoekhoe (nama/damara) et plusieurs langues du Kalahari (Khoekhoe, Khwe, Naro…). Branche de la famille Khoe-Kwadi (incluant le kwadi éteint de l'Angola).
 - Aire / répartition géographique générale :
   Namibie, Botswana, Afrique du Sud, Angola.
 - Nombre de langues (estimation) : ~10–15
@@ -46,49 +62,104 @@
 - Peuple 2 : Damara (PPL_DAMARA)
 - Peuple 3 : Khwe (PPL_KHWE)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Nama  
-- Ethnie 2 : Damara  
-- Ethnie 3 : Naro / Khwe  
-(+ renvoi vers futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues agglutinantes, SOV ou relativement flexibles, avec un système pronominal riche.
+  Langues agglutinantes, ordre des mots de base **SOV (Sujet-Objet-Verbe)**, avec un système pronominal riche. Exemples en Khoekhoegowab (Nama) : 
+  * Structure SOV : *ǀKharib ǃnâ da ge ǁGûn tsî ǀGaen tsîn* « Dans cette région, nous trouvons springbuck et oryx » (ǁGûn = springbuck, ǀGaen = oryx).
+  * Modificateurs avant têtes : adjectifs et possessifs précèdent les noms.
+  * Racines lexicales majoritairement bimoriques (CVCV, CVV, parfois CVNC) : *gao* /kȁó/ « régner » (ton bas-montant), *kao* /kàő/ « être abasourdi » (ton haut-montant).
+  * Particules grammaticales courtes (CV ou CN), suffixes de petite taille.
 - Particularités phonologiques :
-  - Inventaires riches de clics (4–5 types de clics, combinés avec des modificateurs)  
-  - Distinction de longueur vocalique  
-  - Tons ou accent contrastif selon les langues
+  - **Inventaires riches de clics** : Le Khoekhoegowab (Nama) possède **4 lieux d'articulation des clics** (dental ǀ, latéral ǁ, alvéolaire ǃ, palatal ǂ), chacun avec **5 articulations secondaires** (sourde non-aspirée, aspirée, nasale, nasale sourde, glottalisée/nasale accompagnée), soit environ **20 phonèmes de clics distincts**. Exemples : ǀg (dental + sourd non-aspiré), ǀkh (dental + aspiré), ǁKhoreǁhare « Bienvenue ».
+  - **Consonnes non-clics** : ~11 consonnes incluant occlusives (p, t, k), nasales (m, n), fricatives (s, x, h). Les occlusives /p,t/ se réalisent comme approximantes [β,ɾ] entre voyelles.
+  - **Système vocalique** : 5 qualités de base (/i, e, a, o, u/) avec voyelles nasales correspondantes. Distinction longue/courte : *hû* /hũ̀ṹ/ « sept » (voyelle nasale longue). Diphtongues fréquentes. /u/ fortement arrondi ; /a/ présente allophonie significative, notamment avant /i/ ou /u/.
+  - **Ton** : Le Khoekhoegowab possède **3 tons** (haut, moyen, bas), possiblement 4 dans certaines analyses. Les tons se combinent en « mélodies tonales » sur racines multi-moriques. Effets de sandhi tonal dans certains environnements syntaxiques. Exemples : *gao* /kȁó/ (ton bas-montant) « régner » vs *kao* /kàő/ (ton haut-montant) « être abasourdi ».
+  - **Phonotactique** : Racines lexicales majoritairement bimoriques, parfois trimoriques. Structures comme CVCV(C), CVV(C), ou CVN(C). Consonne initiale requise ; consonne médiane dans racines trimoriques restreinte à /w, r, m, n/ ; consonne finale (si présente) souvent limitée à p, s, ts.
 - Liens avec les familles voisines :
-  - Contacts forts avec les langues bantoues d’Afrique australe (afrikaans, oshiwambo, tswana, zoulou…)  
-  - Prêts lexicaux dans les deux sens (ex. emprunts de Khoe vers zoulou/xhosa via clics).
+  - **Contacts avec langues bantoues** : Contacts forts avec les langues bantoues d'Afrique australe (afrikaans, oshiwambo, tswana, zoulou, xhosa). Emprunts lexicaux dans les deux sens.
+  - **Emprunts de clics aux langues Khoe** : Les langues bantoues xhosa et zoulou ont emprunté des phonèmes de clics aux langues Khoe. Exemples de mots avec clics en zoulou/xhosa d'origine Khoe : *ǃuqalo* (zoulou « début »), *ǁa* (xhosa « oui »).
+  - **Emprunts lexicaux** : Études linguistiques montrent que les locuteurs Khoe-Kwadi ont emprunté du vocabulaire (termes liés au pastoralisme comme « mouton » et « traire ») à leurs voisins Kx'a et Tuu, suggérant contacts précoces entre petits groupes de chasseurs-cueilleurs (Cambridge Core, 2024).
+  - **Contact moderne** : Pression linguistique de l'afrikaans (créole colonial à base néerlandaise), de l'anglais et des langues bantoues dominantes (oshiwambo, tswana).
 - Innovations clés :
-  - Complexité extrême des inventaires consonantiques  
-  - Systèmes pronominaux et de marquage de personne très développés
+  - **Complexité extrême des inventaires consonantiques** : Système de clics parmi les plus complexes au monde (20+ phonèmes de clics en Khoekhoegowab).
+  - **Systèmes pronominaux développés** : Marqueurs de personne-genre-nombre (PGN) très développés. Enclitiques pronominaux indiquant personne, genre et nombre attachés aux syntagmes nominaux.
+  - **Classes nominales/genre** : Le Khoekhoegowab possède **3 genres grammaticaux** : masculin (gu-class), féminin (di-class), neutre ou commun (n-class). Exemples : féminin/di (chèvre) : *piris* (singulier), *pirira* (duel), *piridi* (pluriel) ; masculin/gu (chien) : *arib* (sg), *arikha* (duel), *arigu* (pl) ; neutre/commun (gens) : *khoe-i*, *khoera*, *khoen*.
+  - **Nombre grammatical** : Distinction singulier, duel, pluriel (exemples ci-dessus).
+  - **Morphologie verbale** : Verbes portent suffixes ou clitiques marquant temps (présent par défaut, passé récent ou lointain, futur), aspect (imperfectif, perfectif, ponctuel), et valence (passif, réfléchi, réciproque).
 
-# 5. Histoire et origines
-- Origine probable :
-  Sud-ouest africain (Namibie actuelle), ancien milieu pastoral et semi-nomade.
-- Diffusion des langues :
-  Déplacements successifs des Nama et autres groupes Khoe à travers la Namibie, le Botswana et le Cap.
-- Ruptures historiques :
-  - Colonisation allemande (Namibie) et génocide des Herero et Nama (1904–1908)  
-  - Colonisation sud-africaine, apartheid, déplacement des populations  
-  - Pression linguistique de l’afrikaans, de l’anglais et des langues bantoues
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  - **Théorie linguistique** : Classification moderne (Tom Güldemann, Bonny Sands) place la famille Khoe dans le groupe Khoe-Kwadi, distinct des familles Kx'a et Tuu. Güldemann (années 2000s) a reconstruit Khoe-Kwadi (Khoe vivantes + kwadi éteint de l'Angola), soutenant pronominaux et correspondances grammaticales. Sands (1998) – *Eastern and Southern African Khoisan: Evaluating Claims of Distant Linguistic Relationships* : critique de Greenberg (1955/1963) qui proposait un « Khoisan » unifié ; Sands rejette l'unité génétique démontrable, traite « Khoisan » comme terme typologique et aréal.
+  - **Théorie archéologique** : Pastoralisme (élevage) apparaît en Afrique australe vers **~2000 ans BP**. Les données archéologiques indiquent que les premiers pasteurs (proto-pastoralistes) précèdent l'expansion agricole bantoue à grande échelle (PubMed, 2021). Les cultures du Late Stone Age (LSA), après ~75 000 ans BP, s'associent aux ancêtres des San.
+  - **Théorie génétique** : 
+    * Jakobsson et al. (2024) : les populations Khoe-San portent parmi les lignées les plus anciennement divergentes d'*Homo sapiens*. Haplogroupe mitochondrial L0d présent chez 25/28 individus anciens (10 200-150 cal BP).
+    * Barbieri et al. (2021-2022) : divergence de L0d à ~172 kya (IC 95% : 149-199 kya).
+    * Pickrell et al. (2012) : mélange génétique commence ~1200 ans BP avec non-Khoisan.
+    * Évidence de **migration biaisée vers les mâles depuis l'Afrique de l'Est** vers ~2000 ans BP, introduisant pastoralisme en Afrique australe. Les groupes Khoe pastoraux (comme Nama) montrent proportions plus élevées de mélange est-africain, incluant lignées Y-chromosomales et allèles de persistance de la lactase associés à l'Afrique de l'Est.
+  - **Consensus actuel** : Origine probable sud-ouest africain (Namibie actuelle), avec introduction du pastoralisme depuis l'Afrique de l'Est vers ~2000 ans BP via migration limitée (diffusion culturelle plus que remplacement massif de population). Milieu pastoral et semi-nomade pré-existant aux contacts bantous et coloniaux.
+- Période d'émergence estimée :
+  - **Émergence historique de la FLG** : Divergence génétique profonde des ancêtres Khoe-San d'autres lignées africaines à ~172 kya (haplogroupe L0d). Introduction du pastoralisme et diffusion linguistique Khoe-Kwadi vers **~2000 ans BP**. Expansion/distribution des populations San (LSA) couvrant une grande partie de l'Afrique australe et orientale après ~75 000 ans BP.
+  - **Date de classification académique** : 
+    * Joseph Greenberg (1955/1963) – *The Languages of Africa* : propose « Khoisan » comme une des quatre grandes familles linguistiques africaines, groupant toutes les langues non-bantoues utilisant des clics d'Afrique australe et orientale sous Khoisan. Méthode de comparaison massive, souvent critiquée plus tard.
+    * Bonny Sands (1998) : critique majeure de l'hypothèse unificatrice de Greenberg, rejet de Khoisan comme famille génétique démontrable.
+    * Tom Güldemann (années 2000s) : reclassification rigoureuse basée sur méthodologie historico-comparative, établit trois familles séparées : Kx'a, Tuu, Khoe-Kwadi.
+- Diffusion des langues (routes migratoires, expansion) :
+  - **Théorie 1 – Migration démique biaisée vers les mâles** (Jakobsson et al., 2024 ; Lipson et al., 2022) : Migration limitée depuis l'Afrique de l'Est vers ~2000 ans BP, introduisant pastoralisme. Degré de flux génétique limité dans de nombreux cas ; plutôt qu'un remplacement massif de population, les populations de chasseurs-cueilleurs existantes ont adopté pratiques d'élevage, souvent via petits groupes migrants.
+  - **Théorie 2 – Diffusion culturelle avec adoption linguistique** (Pickrell et al., 2012) : Le package pastoraliste (incluant pratiques culturelles et certains mouvements de population) est probablement venu d'Afrique de l'Est, mais l'adoption locale a joué un rôle majeur dans la diffusion.
+  - **Théorie 3 – Routes de diffusion** : Pasteurs Khoe-Kwadi se sont probablement déplacés en Afrique australe via routes **nord-sud**, possiblement côtières ou via Namibie, apportant nouvelles pratiques. Ensuite, l'élevage s'est répandu, parfois via adoption locale plutôt que remplacement direct.
+  - **Évidence linguistique** : Études montrent que locuteurs Khoe-Kwadi ont emprunté vocabulaire (termes liés à l'élevage) à leurs voisins Kx'a et Tuu, suggérant contacts précoces entre petits groupes de chasseurs-éleveurs.
+  - **Déplacements historiques** : Déplacements successifs des Nama et autres groupes Khoe à travers la Namibie, le Botswana et le Cap (Afrique du Sud) au cours des derniers millénaires.
+- Ruptures historiques (séparations, fusions) :
+  - **Colonisation allemande (Namibie)** : Génocide des Herero et Nama (**1904-1908**), exactions et déplacements forcés.
+  - **Colonisation sud-africaine** : Régime d'apartheid (1948-1990s), déplacement des populations, ségrégation raciale.
+  - **Pression linguistique** : Domination de l'afrikaans (créole colonial), de l'anglais et des langues bantoues dominantes (oshiwambo, tswana), menant à déclin et perte linguistique.
+  - **Disruption récente** : Perte de langue, mélange génétique, extinction de nombreuses petites communautés de langues Khoisan (consensus académique, années 2020s).
 - Zones de contact et métissages :
-  - Désert du Namib et du Kalahari  
-  - Zones frontalières Namibie/Botswana/Afrique du Sud
+  - **OÙ** : Localisation géographique précise :
+    * Désert du Namib (côte atlantique, Namibie) : zones côtières où groupes Khoekhoe ont été en contact avec colons européens (Cap, stations VOC).
+    * Désert du Kalahari (Botswana, Namibie orientale, Afrique du Sud) : zone de contact entre groupes Khoe du Kalahari (Naro, Khwe) et populations bantoues.
+    * Zones frontalières Namibie/Botswana/Afrique du Sud : régions de mélange linguistique et génétique, notamment dans le district de Ghanzi (Botswana) et le Northern Cape (Afrique du Sud).
+    * Routes côtières Namibie/Angola : contacts entre groupes Haiǁom/ǂĀkhoe et autres variétés Khoekhoe.
+  - **Zones de métissage linguistique spécifiques** : Frontières entre zones pastorales Khoe et zones agricoles bantoues ; zones urbaines (Windhoek, Cape Town) où multilinguisme et mélange culturel se produisent.
+- Événements historiques majeurs ayant influencé la famille :
+  - **~172 000 ans BP** : Divergence génétique profonde des lignées Khoe-San (haplogroupe L0d).
+  - **~75 000 ans BP** : Expansion/distribution des populations San (LSA) couvrant une grande partie de l'Afrique australe.
+  - **~2000 ans BP** : Arrivée de pasteurs est-africains (migration biaisée vers les mâles), introduction de l'élevage, diffusion linguistique Khoe-Kwadi.
+  - **~1000-2000 ans BP** : Expansion bantoue introduit agriculture et éléments génétiques ouest-africains ; mélange croissant avec locuteurs bantous.
+  - **Milieu 1600s** : Établissement VOC au Cap (Jan van Riebeeck), premiers contacts européens documentés avec groupes Khoekhoe.
+  - **1809** : « Hottentot Proclamation » (Code Hottentot) restreint mouvements Khoekhoe au Cap, révoqué en 1828.
+  - **1904-1908** : Génocide des Herero et Nama par colonisateurs allemands en Namibie.
+  - **1948-1990s** : Régime d'apartheid en Afrique du Sud, déplacements et ségrégation.
+  - **1990** : Indépendance de la Namibie, reconnaissance officielle du Khoekhoegowab comme langue nationale.
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  ~250 000–350 000
+  ~250 000–300 000 locuteurs actifs de Khoekhoegowab (Nama/Damara) en Afrique australe (estimations 2024-2025). Estimation globale incluant toutes langues Khoe : ~250 000–350 000.
 - Répartition par pays :
-  Namibie (majorité : Nama/Damara), Botswana (Naro, Khwe), Afrique du Sud, Angola.
+  - **Namibie** : ~230 000–280 000 locuteurs de Khoekhoegowab (Nama/Damara), soit **~11,3% des foyers** selon recensement 2023 (Grokipedia, Namibie Population and Housing Census 2023). Population ethnique Damara : **170 112 individus** (5,6% de la population totale de 3 022 401). Sources : Ethnologue (27e édition, 2024), DBS (Database of Southern African Languages, 2024), recensement Namibie 2023.
+  - **Botswana** : ~200 à quelques milliers de locuteurs Khoekhoe (district de Ghanzi : ~200 en 2003 selon Omniglot). Khwe (Kxoe/Ani) : **~7 800–8 000 locuteurs** selon ASJP (Automated Similarity Judgment Program) et enquêtes linguistiques récentes. Sources : ASJP CLLD, Endangered Languages Project.
+  - **Afrique du Sud** : ~2 000–3 000 locuteurs actifs/fluents de Khoekhoegowab, principalement dans le Northern Cape Province (estimations 2013-2024). Sources : Omniglot, Endangered Languages Project.
+  - **Angola** : Nombre très faible, quelques centaines possibles, particulièrement parmi groupes ou dialectes près frontière Namibie (Haiǁom/ǂĀkhoe s'étendent en Angola). Données concrètes récentes non disponibles. Sources : Wikipédia, références linguistiques.
 - Importance historique :
-  Langues des peuples pastoraux historiques du sud-ouest africain ; mémoire linguistique d’une Afrique pré-bantoue et pré-coloniale.
+  Langues des peuples pastoraux historiques du sud-ouest africain ; mémoire linguistique d'une Afrique pré-bantoue et pré-coloniale. Les populations Khoe-San représentent parmi les lignées génétiques les plus anciennement divergentes d'*Homo sapiens*, témoignant de l'histoire profonde de l'Afrique australe.
 
-# 7. Sources
-- Sands, B. – travaux sur les langues Khoe  
-- Pakendorf et al. – *Classification of Khoe languages*  
-- SIL Ethnologue – Khoekhoe, Naro, Khwe  
-- UNESCO – langues en danger (Afrique australe)
+# 6. Sources
+- Fauvelle-Aymar, François-Xavier (2002) – *L'Invention du Hottentot : histoire du regard occidental sur les Khoisan (XVe-XIXe siècle)*. Publications de la Sorbonne.
+- Merians, Linda Evi (2001) – *Envisioning the Worst: Representations of "Hottentots" in Early-modern England*. University of Delaware Press.
+- Jeffreys, M. D. W. (1947) – « The Origin of the Name Hottentot ». *African Affairs*, vol. 46, n° 184, p. 163-165. Oxford University Press.
+- Van Riebeeck, Jan (milieu 1650s) – Journaux de la Compagnie néerlandaise des Indes orientales (VOC), station du Cap. Archives VOC.
+- Greenberg, Joseph H. (1955/1963) – *The Languages of Africa*. Indiana University / Mouton.
+- Sands, Bonny Eva (1998) – *Eastern and Southern African Khoisan: Evaluating Claims of Distant Linguistic Relationships*. Research School of Pacific and Asian Studies, Australian National University.
+- Güldemann, Tom (années 2000s) – Travaux sur classification des langues à clics, reconstruction Khoe-Kwadi, rejet de « Khoisan » comme famille génétique. Multiple publications.
+- Jakobsson, Mattias et al. (2024) – *Homo sapiens-specific evolution unveiled by ancient southern African genomes*. *Nature*. DOI: 10.1038/s41586-025-09811-4.
+- Lipson, Mark, Sawchuk, E. A., Thompson, J. C. et al. (2022) – *Ancient DNA and deep population structure in sub-Saharan African foragers*. *Nature*. DOI: 10.1038/s41586-022-04430-9.
+- Barbieri, Chiara, Schlebusch, Carina et al. (2021-2022) – *Revised timeline and distribution of the earliest diverged human maternal lineages in southern Africa*. *Human Molecular Genetics*. DOI: 10.1093/hmg/ddac158.
+- Pickrell, Joseph K. et al. (2012) – *The genetic prehistory of southern Africa*. *Nature Communications*. arXiv:1207.5552.
+- Ethnologue (27e édition, 2024) – *Khoekhoegowab* (ISO 639-3: naq), *Khwe*, *Naro*. SIL International. https://www.ethnologue.com/
+- SIL Ethnologue – Khoekhoe, Naro, Khwe. SIL International.
+- Database of Southern African Languages (DBS, 2024) – *Khoekhoegowab*. https://dbs.org/en/research/languages/naq/
+- ASJP (Automated Similarity Judgment Program) – *Khwe* (Kxoe/Ani). https://asjp.clld.org/languages/KHWE
+- Endangered Languages Project – *Khoekhoegowab*, *Language Vitality Among the Nama of Tshabong*. https://www.endangeredlanguages.com/
+- Grokipedia / Namibie Population and Housing Census (2023) – *Demographics of Namibia*. https://grokipedia.com/page/Demographics_of_Namibia
+- UNESCO – Langues en danger (Afrique australe). UNESCO Atlas of the World's Languages in Danger.
+- Pakendorf, Brigitte et al. – Travaux sur classification des langues Khoe et génétique des populations.
