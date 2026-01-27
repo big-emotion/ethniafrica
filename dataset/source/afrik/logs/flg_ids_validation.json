@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "totalErrors": 11,
+    "totalPPLIds": 823,
+    "totalFLGIds": 24
+  },
+  "errors": [
+    {
+      "flgFile": "FLG_BERBERE.txt",
+      "lineNumber": 89,
+      "id": "PPL_ZENAGA",
+      "type": "PPL",
+      "message": "ID PPL PPL_ZENAGA n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_COUCHITIQUE.txt",
+      "lineNumber": 68,
+      "id": "PPL_SIDAMO",
+      "type": "PPL",
+      "message": "ID PPL PPL_SIDAMO n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_CREOLE.txt",
+      "lineNumber": 79,
+      "id": "PPL_CAP_VERDIEN",
+      "type": "PPL",
+      "message": "ID PPL PPL_CAP_VERDIEN n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_KHOE.txt",
+      "lineNumber": 63,
+      "id": "PPL_KHWE",
+      "type": "PPL",
+      "message": "ID PPL PPL_KHWE n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_KHOISAN.txt",
+      "lineNumber": 64,
+      "id": "PPL_KHWE",
+      "type": "PPL",
+      "message": "ID PPL PPL_KHWE n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_KHOISAN.txt",
+      "lineNumber": 65,
+      "id": "PPL_NARO",
+      "type": "PPL",
+      "message": "ID PPL PPL_NARO n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_KXA.txt",
+      "lineNumber": 72,
+      "id": "PPL_HOAN",
+      "type": "PPL",
+      "message": "ID PPL PPL_HOAN n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_OMOTIQUE.txt",
+      "lineNumber": 47,
+      "id": "PPL_WOLAYTTA",
+      "type": "PPL",
+      "message": "ID PPL PPL_WOLAYTTA n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_OMOTIQUE.txt",
+      "lineNumber": 51,
+      "id": "PPL_HAMAR",
+      "type": "PPL",
+      "message": "ID PPL PPL_HAMAR n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_SOUDANIQUECENTRAL.txt",
+      "lineNumber": 77,
+      "id": "PPL_LENDU",
+      "type": "PPL",
+      "message": "ID PPL PPL_LENDU n'existe pas dans les fichiers peuples"
+    },
+    {
+      "flgFile": "FLG_TCHADIQUE.txt",
+      "lineNumber": 56,
+      "id": "PPL_MASSA",
+      "type": "PPL",
+      "message": "ID PPL PPL_MASSA n'existe pas dans les fichiers peuples"
+    }
+  ]
+}

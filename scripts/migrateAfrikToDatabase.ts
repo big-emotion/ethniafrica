@@ -7,7 +7,8 @@
 
 // Load environment variables
 import { config } from "dotenv";
-import { resolve } from "path";
+import { resolve, join } from "path";
+import { writeFileSync, mkdirSync } from "fs";
 config({ path: resolve(process.cwd(), ".env.local") });
 
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -105,6 +106,12 @@ export async function migrateAfrikToDatabase(
       );
     }
 
+    // Load valid language family IDs from database for validation
+    const { data: existingFamilies } = await supabase
+      .from("afrik_language_families")
+      .select("id");
+    const validFamilyIds = new Set(existingFamilies?.map((f) => f.id) || []);
+
     // Step 2: Migrate Peoples
     console.log("👥 Loading peoples...");
     const peoples = await loadAllPeoples();
@@ -113,6 +120,14 @@ export async function migrateAfrikToDatabase(
 
     if (!dryRun) {
       for (const people of peoples) {
+        // Validate language family exists before insertion
+        if (!validFamilyIds.has(people.languageFamilyId)) {
+          report.peoples.errors.push(
+            `${people.id}: Language family ${people.languageFamilyId} does not exist in database`
+          );
+          continue; // Skip this people
+        }
+
         try {
           const { error } = await supabase.from("afrik_peoples").upsert(
             {
@@ -188,9 +203,16 @@ export async function migrateAfrikToDatabase(
       );
     }
 
+    // Load valid country IDs from database for validation
+    const { data: existingCountries } = await supabase
+      .from("afrik_countries")
+      .select("id");
+    const validCountryIds = new Set(existingCountries?.map((c) => c.id) || []);
+
     // Step 4: Migrate Relations (People ↔ Country)
     console.log("🔗 Loading relations...");
     let relationCount = 0;
+    let filteredRelations = 0;
 
     if (!dryRun) {
       for (const people of peoples) {
@@ -198,6 +220,14 @@ export async function migrateAfrikToDatabase(
           for (const countryId of people.currentCountries) {
             if (countryId) {
               relationCount++;
+
+              // Validate country code exists before insertion
+              if (!validCountryIds.has(countryId)) {
+                // Skip invalid country codes silently (already filtered by parser)
+                filteredRelations++;
+                continue;
+              }
+
               try {
                 const { error } = await supabase
                   .from("afrik_people_countries")
@@ -228,6 +258,11 @@ export async function migrateAfrikToDatabase(
         }
       }
       report.relations.total = relationCount;
+      if (filteredRelations > 0) {
+        console.log(
+          `   ⚠️  Filtered ${filteredRelations} invalid country codes`
+        );
+      }
       console.log(
         `   ✅ Inserted ${report.relations.inserted}/${report.relations.total} relations`
       );
@@ -262,19 +297,177 @@ export async function migrateAfrikToDatabase(
       report.relations.errors.length > 0
     ) {
       console.log("\n⚠️  Errors encountered:");
+
+      // Afficher les détails des erreurs (max 20 par catégorie)
+      const MAX_DISPLAY = 20;
+
+      // Helper function to categorize errors
+      const categorizeErrors = (errors: string[]) => {
+        const validationErrors: string[] = [];
+        const dbErrors: string[] = [];
+
+        errors.forEach((err) => {
+          if (
+            err.includes("does not exist in database") ||
+            err.includes("violates foreign key constraint")
+          ) {
+            validationErrors.push(err);
+          } else {
+            dbErrors.push(err);
+          }
+        });
+
+        return { validationErrors, dbErrors };
+      };
+
       if (report.languageFamilies.errors.length > 0) {
+        const { validationErrors, dbErrors } = categorizeErrors(
+          report.languageFamilies.errors
+        );
         console.log(
           `   Language Families: ${report.languageFamilies.errors.length} errors`
         );
+        if (validationErrors.length > 0) {
+          console.log(`      Validation errors: ${validationErrors.length}`);
+          validationErrors.slice(0, MAX_DISPLAY).forEach((err) => {
+            console.log(`         - ${err}`);
+          });
+        }
+        if (dbErrors.length > 0) {
+          console.log(`      Database errors: ${dbErrors.length}`);
+          dbErrors.slice(0, MAX_DISPLAY).forEach((err) => {
+            console.log(`         - ${err}`);
+          });
+        }
+        if (report.languageFamilies.errors.length > MAX_DISPLAY) {
+          console.log(
+            `      ... and ${report.languageFamilies.errors.length - MAX_DISPLAY} more`
+          );
+        }
       }
+
       if (report.peoples.errors.length > 0) {
+        const { validationErrors, dbErrors } = categorizeErrors(
+          report.peoples.errors
+        );
         console.log(`   Peoples: ${report.peoples.errors.length} errors`);
+        if (validationErrors.length > 0) {
+          console.log(`      Validation errors: ${validationErrors.length}`);
+          validationErrors.slice(0, MAX_DISPLAY).forEach((err) => {
+            console.log(`         - ${err}`);
+          });
+        }
+        if (dbErrors.length > 0) {
+          console.log(`      Database errors: ${dbErrors.length}`);
+          dbErrors.slice(0, MAX_DISPLAY).forEach((err) => {
+            console.log(`         - ${err}`);
+          });
+        }
+        if (report.peoples.errors.length > MAX_DISPLAY) {
+          console.log(
+            `      ... and ${report.peoples.errors.length - MAX_DISPLAY} more`
+          );
+        }
       }
+
       if (report.countries.errors.length > 0) {
+        const { validationErrors, dbErrors } = categorizeErrors(
+          report.countries.errors
+        );
         console.log(`   Countries: ${report.countries.errors.length} errors`);
+        if (validationErrors.length > 0) {
+          console.log(`      Validation errors: ${validationErrors.length}`);
+          validationErrors.slice(0, MAX_DISPLAY).forEach((err) => {
+            console.log(`         - ${err}`);
+          });
+        }
+        if (dbErrors.length > 0) {
+          console.log(`      Database errors: ${dbErrors.length}`);
+          dbErrors.slice(0, MAX_DISPLAY).forEach((err) => {
+            console.log(`         - ${err}`);
+          });
+        }
+        if (report.countries.errors.length > MAX_DISPLAY) {
+          console.log(
+            `      ... and ${report.countries.errors.length - MAX_DISPLAY} more`
+          );
+        }
       }
+
       if (report.relations.errors.length > 0) {
+        const { validationErrors, dbErrors } = categorizeErrors(
+          report.relations.errors
+        );
         console.log(`   Relations: ${report.relations.errors.length} errors`);
+        if (validationErrors.length > 0) {
+          console.log(`      Validation errors: ${validationErrors.length}`);
+          validationErrors.slice(0, MAX_DISPLAY).forEach((err) => {
+            console.log(`         - ${err}`);
+          });
+        }
+        if (dbErrors.length > 0) {
+          console.log(`      Database errors: ${dbErrors.length}`);
+          dbErrors.slice(0, MAX_DISPLAY).forEach((err) => {
+            console.log(`         - ${err}`);
+          });
+        }
+        if (report.relations.errors.length > MAX_DISPLAY) {
+          console.log(
+            `      ... and ${report.relations.errors.length - MAX_DISPLAY} more`
+          );
+        }
+      }
+
+      // Sauvegarder toutes les erreurs dans un fichier JSON
+      const logsDir = join(process.cwd(), "dataset", "source", "afrik", "logs");
+      mkdirSync(logsDir, { recursive: true });
+      const errorFile = join(
+        logsDir,
+        `migration_errors_${new Date().toISOString().split("T")[0]}.json`
+      );
+      writeFileSync(errorFile, JSON.stringify(report, null, 2), "utf-8");
+      console.log(
+        `\n📄 Toutes les erreurs ont été sauvegardées dans: ${errorFile}`
+      );
+
+      // Invalider le cache après la migration
+      if (!dryRun) {
+        try {
+          const siteUrl =
+            process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+          const revalidateSecret = process.env.REVALIDATE_SECRET;
+
+          if (revalidateSecret) {
+            const tags = [
+              "afrik-language-families",
+              "afrik-peoples",
+              "afrik-countries",
+            ];
+            const response = await fetch(`${siteUrl}/api/admin/revalidate`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${revalidateSecret}`,
+              },
+              body: JSON.stringify({ tags }),
+            });
+
+            if (response.ok) {
+              console.log("✅ Cache invalidated successfully");
+            } else {
+              console.warn("⚠️  Cache invalidation failed (non-blocking)");
+            }
+          } else {
+            console.warn(
+              "⚠️  REVALIDATE_SECRET not set, skipping cache invalidation"
+            );
+          }
+        } catch (error) {
+          console.warn(
+            "⚠️  Cache invalidation error (non-blocking):",
+            error instanceof Error ? error.message : error
+          );
+        }
       }
     }
 

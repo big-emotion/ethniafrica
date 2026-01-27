@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_MANDE
-- Lien avec la famille linguistique : 
+- Lien avec la famille linguistique : Niger-Congo (FLG_NIGERCONGO)
 - Nom français : Mandé
 - Nom anglais / auto-appellation académique : Mande
 - Appellation(s) historique(s) :

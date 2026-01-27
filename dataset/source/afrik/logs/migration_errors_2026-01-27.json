@@ -1,0 +1,36 @@
+{
+  "languageFamilies": {
+    "total": 24,
+    "inserted": 24,
+    "errors": []
+  },
+  "peoples": {
+    "total": 836,
+    "inserted": 830,
+    "errors": [
+      "PPL_YUNGUR: Language family FLG_ADAMAWA_UBANGI does not exist in database",
+      "PPL_ATTIE: Language family FLG_KWA does not exist in database",
+      "PPL_HADZA: Language family FLG_ISOLAT does not exist in database",
+      "PPL_SANDAWE: Language family FLG_ISOLAT does not exist in database",
+      "PPL_NUBIENS: Language family FLG_NILOSAHARIEN does not exist in database",
+      "PPL_AMERICO_LIBERIANS: Language family FLG_UNKNOWN does not exist in database"
+    ]
+  },
+  "countries": {
+    "total": 54,
+    "inserted": 54,
+    "errors": []
+  },
+  "relations": {
+    "total": 1219,
+    "inserted": 1209,
+    "errors": [
+      "PPL_YUNGUR ↔ NGA: insert or update on table \"afrik_people_countries\" violates foreign key constraint \"afrik_people_countries_people_id_fkey\"",
+      "PPL_ATTIE ↔ CIV: insert or update on table \"afrik_people_countries\" violates foreign key constraint \"afrik_people_countries_people_id_fkey\"",
+      "PPL_HADZA ↔ TZA: insert or update on table \"afrik_people_countries\" violates foreign key constraint \"afrik_people_countries_people_id_fkey\"",
+      "PPL_SANDAWE ↔ TZA: insert or update on table \"afrik_people_countries\" violates foreign key constraint \"afrik_people_countries_people_id_fkey\"",
+      "PPL_NUBIENS ↔ SDN: insert or update on table \"afrik_people_countries\" violates foreign key constraint \"afrik_people_countries_people_id_fkey\"",
+      "PPL_AMERICO_LIBERIANS ↔ LBR: insert or update on table \"afrik_people_countries\" violates foreign key constraint \"afrik_people_countries_people_id_fkey\""
+    ]
+  }
+}

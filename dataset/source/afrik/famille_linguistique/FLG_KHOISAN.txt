@@ -59,7 +59,7 @@
 # 2. Peuples associés
 - Peuple 1 : Nama (Khoekhoe) (PPL_NAMA)
 - Peuple 2 : Ju|'hoansi (PPL_JUHOANSI)
-- Peuple 3 : ǃXóõ (PPL_XOO)
+- Peuple 3 : ǃXóõ (PPL_TAA)
 - Peuple 4 : Damara (PPL_DAMARA)
 - Peuple 5 : Khwe (PPL_KHWE)
 - Peuple 6 : Naro (PPL_NARO)
@@ -116,7 +116,7 @@
   
   **Adaptations à l'environnement :** Certaines langues San ont développé des systèmes de communication adaptés à la chasse, avec des signaux sonores et des codes linguistiques spécifiques.
 
-# 4. Histoire et origines : //Définir le qui et le pourquoi de cette FLG ?
+# 4. Histoire et origines
 - Origine probable (théories archéologiques, linguistiques, génétiques) : //QUI
   **Théorie linguistique 1 - Joseph Greenberg (1963) :** Joseph H. Greenberg (*The Languages of Africa*, 1963) a proposé de regrouper les langues à clics d'Afrique australe en une seule famille « Khoisan », qu'il considérait comme l'une des quatre grandes familles linguistiques d'Afrique (aux côtés d'Afro-asiatique, Niger-Congo, et Nilo-saharien). Cette classification était basée sur des critères typologiques (présence de clics) plutôt que sur des preuves de parenté génétique.
   

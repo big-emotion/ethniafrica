@@ -340,6 +340,62 @@ export function parseSections(content: string): Record<string, unknown> {
 }
 
 /**
+ * List of excluded country codes (sources, obsolete codes, abbreviations)
+ * Based on validateAfrikData.ts exclusion list
+ */
+function getExcludedCountryCodes(): Set<string> {
+  return new Set([
+    // Organisations internationales
+    "ISO", // ISO 639-3
+    "CIA", // CIA World Factbook
+    "SIL", // SIL Ethnologue
+    "ONU", // Organisation des Nations Unies
+    "IDP", // Internally Displaced Persons
+    "CSV", // Comma-Separated Values (format de fichier)
+    // Codes obsolètes ou non-ISO
+    "RCA", // République Centrafricaine (code obsolète, le code ISO est CAF)
+    "RDC", // République Démocratique du Congo (code obsolète, le code ISO est COD)
+    "DRC", // Democratic Republic of Congo (code obsolète, le code ISO est COD)
+    "CAR", // Central African Republic (code obsolète, le code ISO est CAF)
+    // Territoires français (pas des pays indépendants)
+    "MYT", // Mayotte
+    "REU", // La Réunion
+    "TOM", // Territoires d'Outre-Mer (terme historique)
+    // Pays non-africains
+    "USA", // États-Unis
+    "OMN", // Oman
+    // Abréviations politiques/organisationnelles (Algérie)
+    "FLN", // Front de Libération Nationale
+    "FFS", // Front des Forces Socialistes
+    "ALN", // Armée de Libération Nationale
+    "MAK", // Mouvement pour l'Autonomie de la Kabylie
+    "PUF", // Parti (abréviation)
+    "MCB", // Mouvement (abréviation)
+    "HCA", // Haut Commissariat (abréviation)
+    "BNF", // (abréviation)
+    "ONS", // Office National des Statistiques (Algérie)
+    "ADN", // (abréviation)
+    "III", // (abréviation)
+    // Autres abréviations
+    "AOF", // Afrique-Occidentale Française (terme historique)
+    "UPC", // Union des Populations du Cameroun / abréviations diverses
+    "FCT", // Federal Capital Territory (Nigeria, pas un pays)
+    "CSA", // (abréviation)
+    "LRA", // Lord's Resistance Army (groupe armé, pas un pays)
+    // Préfixes AFRIK
+    "FLG", // Famille Linguistique (préfixe)
+    "PPL", // Peuple (préfixe)
+    // Siècles (déjà filtrés mais pour être exhaustif)
+    "XIe",
+    "XVe",
+    "XVIe",
+    "XVIIe",
+    "XIXe",
+    "XXe",
+  ]);
+}
+
+/**
  * Extract relations from content
  * Supports: countries (ISO codes), peoples (PPL_), language families (FLG_), languages (ISO 639-3)
  */
@@ -357,21 +413,12 @@ export function extractRelations(
       // Extract ISO 3166-1 alpha-3 codes
       const pattern = /\b([A-Z]{3})\b/g;
       const matches = Array.from(content.matchAll(pattern));
+      const excludedCodes = getExcludedCountryCodes();
       const codes = matches
         .map((m) => m[1])
         .filter((code) => {
-          // Filter out common false positives
-          return ![
-            "PPL",
-            "FLG",
-            "ISO",
-            "XIe",
-            "XVe",
-            "XVIe",
-            "XVIIe",
-            "XIXe",
-            "XXe",
-          ].includes(code);
+          // Filter out excluded codes
+          return !excludedCodes.has(code);
         });
       return [...new Set(codes)]; // Deduplicate
     }

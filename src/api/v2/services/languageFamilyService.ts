@@ -2,7 +2,6 @@
  * Language Family Service - Business logic for language families
  */
 
-import { unstable_cache } from "next/cache";
 import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
@@ -10,12 +9,39 @@ import {
 import type { LanguageFamily } from "@/types/afrik";
 import type { PaginatedResult } from "./countryService";
 
-// Cache with 24h revalidation
-const getCachedAllLanguageFamilies = unstable_cache(
-  async () => getAllAfrikLanguageFamilies(),
-  ["afrik-language-families-all"],
-  { revalidate: 86400 }
-);
+/**
+ * Get cached all language families using fetch with tags
+ * This allows targeted cache invalidation via revalidateTag()
+ */
+async function getCachedAllLanguageFamilies(): Promise<LanguageFamily[]> {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  try {
+    const response = await fetch(
+      `${baseUrl}/api/v2/internal/language-families`,
+      {
+        next: {
+          revalidate: 3600, // 1 hour
+          tags: ["afrik-language-families"],
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch language families: ${response.statusText}`
+      );
+    }
+
+    return response.json();
+  } catch (error) {
+    // Fallback to direct query if fetch fails (e.g., in development without server running)
+    console.warn(
+      "Fetch failed, falling back to direct query:",
+      error instanceof Error ? error.message : error
+    );
+    return getAllAfrikLanguageFamilies();
+  }
+}
 
 /**
  * Get paginated list of language families
@@ -32,14 +58,10 @@ export async function getLanguageFamilies(
 
 /**
  * Get a single language family by FLG_ ID
+ * Note: Individual items use direct query for now (less critical than lists)
  */
 export async function getLanguageFamilyById(
   id: string
 ): Promise<LanguageFamily | null> {
-  const cachedGetLanguageFamily = unstable_cache(
-    async () => getAfrikLanguageFamilyById(id),
-    [`afrik-language-family-${id}`],
-    { revalidate: 86400 }
-  );
-  return await cachedGetLanguageFamily();
+  return await getAfrikLanguageFamilyById(id);
 }

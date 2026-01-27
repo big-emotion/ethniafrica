@@ -50,9 +50,9 @@
   ~2 500–3 000 locuteurs (source : SIL Ethnologue 2025, Glottolog 2024). Près de 100% des locuteurs sont des locuteurs de Taa/ǃXóõ au Botswana et Namibie.
 
 # 2. Peuples associés
-- Peuple 1 : ǃXóõ (Taa) (PPL_XOO) – Botswana, Namibie
+- Peuple 1 : ǃXóõ (Taa) (PPL_TAA) – Botswana, Namibie
 - Peuple 2 : ǀXam (ancien peuple d'Afrique du Sud, éteint) (PPL_XAM)
-- Peuple 3 : Nǁng (communauté du Cap, Afrique du Sud, 1 locuteur survivant)
+- Peuple 3 : Nǁng (communauté du Cap, Afrique du Sud, 1 locuteur survivant) (PPL_NUU)
 
 # 3. Caractéristiques linguistiques
 - Typologie linguistique :
@@ -94,7 +94,7 @@
   - **Grammaticale** : Innovations partagées dans la branche ǃKwi (établies par Güldemann 2019) regroupant les langues ǃKwi plus périphériques avec innovations lexicales et morphologiques communes.
   - **Lexicale** : Reconstruction proto-Tuu de termes environnementaux spécifiques au Kalahari (exemple : *!hai* « gemsbok »), indiquant une longue histoire dans cette région.
 
-# 4. Histoire et origines :
+# 4. Histoire et origines
 - Origine probable (théories archéologiques, linguistiques, génétiques) :
   
   **Théorie linguistique** : Tom Güldemann (2005-2006) a classé Tuu comme famille linguistique indépendante, rejetant la classification « Khoisan » de Greenberg (années 1950). Güldemann démontre que Tuu forme une famille distincte avec deux branches (Taa et ǃKwi) partageant un ancêtre commun (proto-Tuu) mais sans relation génétique démontrée avec Kxʼa ou Khoe malgré des siècles de contact.

@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_KROU
-- Lien avec la famille linguistique : 
+- Lien avec la famille linguistique : Niger-Congo (FLG_NIGERCONGO)
 - Nom français : Krou
 - Nom anglais / auto-appellation académique : Kru
 - Appellation(s) historique(s) : 
@@ -70,8 +70,7 @@
 - Peuple 2 : Dida (PPL_DIDA)
 - Peuple 3 : Grebo (PPL_GREBO)
 - Peuple 4 : Wé / Guéré / Krahn (PPL_WE)
-- Peuple 5 : Godié
-- Peuple 6 : Bassa
+- Peuple 5 : Godié (PPL_GODIE)
 
 # 3. Caractéristiques linguistiques
 - Typologie linguistique :
@@ -125,7 +124,7 @@
   **Structure syllabique :**
   - Richesse de la structure syllabique (CVC, CV, parfois CCV) représentant une particularité distinctive par rapport à d'autres langues nigéro-congolaises de la région.
 
-# 4. Histoire et origines :
+# 4. Histoire et origines
 - Origine probable (théories archéologiques, linguistiques, génétiques) :
   **Classifications linguistiques :**
   - **Joseph Greenberg (1963)** : Dans *The Languages of Africa*, classifie les langues krou comme une branche du groupe Niger-Congo, établissant la classification moderne de la famille.

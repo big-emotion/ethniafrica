@@ -11,15 +11,14 @@ vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
   getAfrikPeoplesByLanguageFamily: vi.fn(),
 }));
 
-vi.mock("next/cache", () => ({
-  unstable_cache: vi.fn((fn) => fn),
-}));
-
 import {
   getAllAfrikPeoples,
   getAfrikPeopleById,
   getAfrikPeoplesByLanguageFamily,
 } from "@/lib/supabase/queries/afrik/peoples";
+
+// Mock global fetch
+global.fetch = vi.fn();
 
 /**
  * TDD Phase: RED
@@ -28,6 +27,8 @@ import {
 describe("People Service", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    // Reset fetch mock
+    (global.fetch as any).mockClear();
   });
 
   describe("getPeoples", () => {
@@ -40,7 +41,11 @@ describe("People Service", () => {
         content: {},
       }));
 
-      (getAllAfrikPeoples as any).mockResolvedValue(mockPeoples);
+      // Mock fetch response for internal route
+      (global.fetch as any).mockResolvedValueOnce({
+        ok: true,
+        json: async () => mockPeoples,
+      });
 
       const result = await getPeoples(1, 5);
 
@@ -48,6 +53,17 @@ describe("People Service", () => {
       expect(Array.isArray(result.data)).toBe(true);
       expect(result.data.length).toBe(5);
       expect(result.total).toBe(10);
+
+      // Verify fetch was called with correct URL and tags
+      expect(global.fetch).toHaveBeenCalledWith(
+        expect.stringContaining("/api/v2/internal/peoples"),
+        expect.objectContaining({
+          next: expect.objectContaining({
+            tags: ["afrik-peoples"],
+            revalidate: 3600,
+          }),
+        })
+      );
     });
 
     it("should handle pagination correctly", async () => {
@@ -59,13 +75,38 @@ describe("People Service", () => {
         content: {},
       }));
 
-      (getAllAfrikPeoples as any).mockResolvedValue(mockPeoples);
+      // Mock fetch response for internal route
+      (global.fetch as any).mockResolvedValue({
+        ok: true,
+        json: async () => mockPeoples,
+      });
 
       const page1 = await getPeoples(1, 2);
       const page2 = await getPeoples(2, 2);
 
       expect(page1.data.length).toBe(2);
       expect(page2.data.length).toBe(2);
+    });
+
+    it("should fallback to direct query if fetch fails", async () => {
+      const mockPeoples = Array.from({ length: 10 }, (_, i) => ({
+        id: `PPL_${i}`,
+        nameMain: `People ${i}`,
+        languageFamilyId: "FLG_BANTU",
+        currentCountries: [],
+        content: {},
+      }));
+
+      // Mock fetch to fail
+      (global.fetch as any).mockRejectedValueOnce(new Error("Network error"));
+      (getAllAfrikPeoples as any).mockResolvedValue(mockPeoples);
+
+      const result = await getPeoples(1, 5);
+
+      expect(result.data.length).toBe(5);
+      expect(result.total).toBe(10);
+      // Verify fallback was used
+      expect(getAllAfrikPeoples).toHaveBeenCalled();
     });
   });
 

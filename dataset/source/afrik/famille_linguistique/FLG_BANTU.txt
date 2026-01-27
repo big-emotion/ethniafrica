@@ -343,16 +343,13 @@
   - **Route de l'ivoire** : Contacts le long des routes commerciales est-africaines, métissages linguistiques entre langues bantoues et langues de commerce
   - **Route des esclaves** : Métissages linguistiques le long des routes de traite (côte est, bassin du Congo), créolisation et développement de langues véhiculaires
 
-# 6. Répartition géographique et démographie
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
   ~350 millions
 - Répartition par pays :
   Cameroun, Gabon, Congo, RDC, Angola, Tanzanie, Kenya, Ouganda, Mozambique, Malawi, Zambie, Zimbabwe, Afrique du Sud, Namibie
-- Importance historique :
-  La plus vaste migration de l’histoire africaine (expansion bantoue).  
-  Langues majeures : Swahili, Lingala, Kinyarwanda, Kirundi, Zulu, Xhosa, Shona, Tswana, Luba, Kikongo…
 
-# 7. Sources
+# 6. Sources
 
 **Sources linguistiques (classification et grammaire) :**
 - Bleek, W. H. I. (1862) – *A Comparative Grammar of South African Languages*. Cape Town : Saul Solomon.

@@ -3,6 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_BENOUECONGO
+- Lien avec la famille linguistique : Niger-Congo (FLG_NIGERCONGO)
 - Nom français : Bénoué-Congo
 - Nom anglais / auto-appellation académique : Benue–Congo
 - Appellation(s) historique(s) :
@@ -124,7 +125,7 @@
 - Peuple 6 : Swahili (PPL_SWAHILI) - Tanzanie, Kenya, Ouganda, RDC
 - Peuple 7 : Lingala (PPL_LINGALA) - RDC, Congo-Brazzaville
 - Peuple 8 : Kikongo (PPL_KIKONGO) - RDC, Angola, Congo-Brazzaville
-- Peuple 9 : Zoulou (PPL_ZOULOU) - Afrique du Sud
+- Peuple 9 : Zoulou (PPL_ZULU) - Afrique du Sud
 - Peuple 10 : Xhosa (PPL_XHOSA) - Afrique du Sud
 
 # 3. Caractéristiques linguistiques

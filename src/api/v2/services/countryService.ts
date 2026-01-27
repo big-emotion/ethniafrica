@@ -2,7 +2,6 @@
  * Country Service - Business logic for countries
  */
 
-import { unstable_cache } from "next/cache";
 import {
   getAllAfrikCountries,
   getAfrikCountryById,
@@ -14,12 +13,34 @@ export interface PaginatedResult<T> {
   total: number;
 }
 
-// Cache with 24h revalidation
-const getCachedAllCountries = unstable_cache(
-  async () => getAllAfrikCountries(),
-  ["afrik-countries-all"],
-  { revalidate: 86400 }
-);
+/**
+ * Get cached all countries using fetch with tags
+ * This allows targeted cache invalidation via revalidateTag()
+ */
+async function getCachedAllCountries(): Promise<Country[]> {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  try {
+    const response = await fetch(`${baseUrl}/api/v2/internal/countries`, {
+      next: {
+        revalidate: 3600, // 1 hour
+        tags: ["afrik-countries"],
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch countries: ${response.statusText}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    // Fallback to direct query if fetch fails (e.g., in development without server running)
+    console.warn(
+      "Fetch failed, falling back to direct query:",
+      error instanceof Error ? error.message : error
+    );
+    return getAllAfrikCountries();
+  }
+}
 
 /**
  * Get paginated list of countries
@@ -39,12 +60,8 @@ export async function getCountries(
 
 /**
  * Get a single country by ISO code
+ * Note: Individual items use direct query for now (less critical than lists)
  */
 export async function getCountryById(id: string): Promise<Country | null> {
-  const cachedGetCountry = unstable_cache(
-    async () => getAfrikCountryById(id),
-    [`afrik-country-${id}`],
-    { revalidate: 86400 }
-  );
-  return await cachedGetCountry();
+  return await getAfrikCountryById(id);
 }
