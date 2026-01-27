@@ -3,27 +3,56 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_SOUDANIQUECENTRAL
+- Lien avec la famille linguistique : Nilo-saharien (classification Greenberg, contestée par certains linguistes)
 - Nom français : Soudanique central
 - Nom anglais / auto-appellation académique : Central Sudanic
 - Appellation(s) historique(s) :
-  « Langues soudaniques » ; « Eastern Sudanic » (ancienne classification large et imprécise).
+  « Langues soudaniques » ; « Eastern Sudanic » (ancienne classification large et imprécise de Westermann, années 1920-1930) ; « Niloto-Sudanic » (terminologie de Diedrich Westermann, début XXe siècle).
 - Origine du terme historique :
-  Le terme « soudanique » fut utilisé par les linguistes coloniaux européens pour désigner un vaste ensemble de langues parlées dans la région dite du « Soudan » (zone sahélienne allant du Sénégal à l’Éthiopie), sans distinction précise.
-  Plus tard, la classification a été affinée en groupes : *Western Sudanic*, *Central Sudanic*, *Eastern Sudanic*.  
-  **Seule la catégorie “Central Sudanic” est aujourd’hui linguistiquement cohérente.**
+  Le terme « Central Sudanic » (Soudanique central) a été introduit par Joseph H. Greenberg dans *The Languages of Africa* (1963, Indiana University Press / Mouton), pour désigner une branche du phylum proposé Nilo-Saharan. Greenberg classe Central Sudanic au sein du groupe « Chari-Nile » de sa classification.
+  Prédécesseurs : Diedrich Westermann (début XXe siècle) incluait certaines langues aujourd'hui Central Sudanic dans son concept « Niloto-Sudanic ». Carl Meinhof utilisait le terme « Sudanic » comme un fourre-tout géographique colonial plutôt que sur des bases linguistiques internes rigoureuses.
 - Pourquoi le terme pose problème :
-  - « Soudanique » est un terme flou, géographique et colonial, regroupant au départ des langues très différentes.  
-  - L’amalgame entre groupes du « Soudan » (au sens colonial) a contribué à effacer des identités linguistiques distinctes.  
-  - Certains travaux ont utilisé des stéréotypes raciaux autour du « type soudanais ».  
-  → Afrik utilise la version **rigoureuse et scientifiquement définie : Central Sudanic**.
+  Auteurs coloniaux problématiques :
+  - Carl Meinhof (début XXe siècle) utilisait « Sudanic » comme terme géographique colonial, sans fondement linguistique rigoureux.
+  - Les classifications de Greenberg (1955-1963) s'inscrivent dans un contexte post-colonial mais reposent sur la méthode « mass-comparison » (comparaison de masse), critiquée par des linguistes contemporains pour son manque de rigueur dans certaines classifications, notamment le phylum Nilo-Saharan dont dépend Central Sudanic.
+  - Les priorités coloniales de cartographie linguistique ont influencé les cadres de classification, souvent sans consultation des communautés locales.
+  
+  Auteurs locaux / défense de l'africanité :
+  - Certains linguistes africains et contemporains critiquent l'hypothèse du phylum Nilo-Saharien (dont Central Sudanic dépend) comme peu fondée ou trop similaire aux constructions extérieures imposées.
+  - Pascal Boyeldieu (2020) note dans *The Oxford Handbook of African Languages* que l'unité génétique du Central Sudanic reste « à confirmer » par la méthode comparative stricte.
+  - George Starostin (2016) remet en question certaines subdivisions, notamment la division Est/Ouest, estimant que la branche ouest (Bongo-Bagirmi) est moins bien fondée que la branche est (Moru-Madi, Lendu).
+  
+  Études génétiques modernes :
+  - Les analyses génétiques récentes montrent une grande diversité parmi les populations d'Afrique centrale, incluant les locuteurs de langues Central Sudanic, mais ne confirment pas nécessairement l'unicité génétique correspondant strictement à la famille linguistique.
+  - Fan et al. (2019) dans *Genome Biology* montrent des clines de similarité selon la langue et la géographie, mais pas toujours un « cluster linguistique » Central Sudanic clairement délimité.
+  - Des études sur les populations d'Afrique de l'Est et du Soudan montrent un composant génétique distinct lié aux groupes parlants du Nilo-Saharan, incluant les locuteurs de langues Central Sudanic, ce qui corrobore une certaine cohésion linguistique, mais aussi des mélanges importants avec des populations voisines.
+  
+  → Le terme « soudanique » évoque le « Soudan » colonial, un espace géographique et administratif fortement marqué par la colonisation, non par les locuteurs eux-mêmes. L'amalgame entre groupes du « Soudan » (au sens colonial) a contribué à effacer des identités linguistiques distinctes.
+  
+  → Afrik utilise la version **scientifiquement définie : Central Sudanic**, tout en reconnaissant les débats académiques sur son unité et son placement dans Nilo-Saharan.
+
 - Auto-appellation (locuteurs / linguistes contemporains) :
-  Central Sudanic languages / Langues soudaniques centrales
-- Usage contemporain :
-  Regroupe des langues parlées en RDC, Ouganda, Soudan du Sud, Tchad, et nord de la République centrafricaine.
+  Aucun terme endogène unique connu pour désigner l'ensemble du groupe Central Sudanic.
+  Chaque langue a son propre endonyme :
+  - *Madi ti* (« langue de Madi / bouche de Madi ») pour le peuple Madi
+  - *Avokaya* / *Avukaya* pour le peuple Avokaya
+  - *Yulu* pour le peuple Yulu
+  - *Lugbara* pour le peuple Lugbara
+  - *Mangbetu* pour le peuple Mangbetu
+  
+  Étymologies / attestations historiques : Aucune source crédible ne documente un nom commun utilisé historiquement ou contemporain pour désigner tous les locuteurs de ce groupe comme une entité unifiée. Les sources locales ou coloniales attestent les langues individuelles (Bagirmi, Sara, Moru, Lendu, etc.) sous leurs formes proches, mais pas sous une appellation « Central Sudanic » locale.
+  
+  Usage académique contemporain : « Central Sudanic languages » / « Langues soudaniques centrales » (terme linguistique académique, non endonyme).
+
+- Usage contemporain (définition moderne de la famille) :
+  Regroupe des langues parlées en RDC (nord-est), Ouganda, Soudan du Sud, Tchad (sud), et République centrafricaine (centre et sud). La famille inclut cinq sous-groupes principaux : Bongo-Bagirmi, Moru-Madi, Lendu, Mangbetu-Asoa, et Kresh. Classification linguistique moderne contestée quant à l'unité génétique du groupe.
+
 - Aire / répartition géographique générale :
-  Région du Haut-Nil, Nord-est de la RDC, Ouganda, Soudan du Sud.
-- Nombre de langues (estimation) : ~40–60
-- Nombre total de locuteurs (estimation) : environ 5 à 10 millions
+  Bassin du Chari, région du Haut-Nil (Bahr el Ghazal), Nord-est de la RDC (Ituri, Haut-Uele), Ouganda (nord-ouest), Soudan du Sud (Western Equatoria, Bahr el Ghazal), Tchad (sud), République centrafricaine (centre, sud, nord-ouest).
+
+- Nombre de langues (estimation) : ~40–60 langues selon les classifications (Ethnologue, Glottolog)
+
+- Nombre total de locuteurs (estimation) : environ 5 à 10 millions (estimations variables selon sources)
 
 ------------------------------------------
 
@@ -49,53 +78,261 @@
 - Peuple 2 : Lugbara (PPL_LUGBARA)
 - Peuple 3 : Mangbetu (PPL_MANGBETU)
 
-# 3. Ethnies associées (liste synthétique)
-- Ethnie 1 : Lendu  
-- Ethnie 2 : Lugbara  
-- Ethnie 3 : Mangbetu  
-(+ renvoi aux futures fiches ethniques)
-
-# 4. Caractéristiques linguistiques
+# 3. Caractéristiques linguistiques
 - Typologie linguistique :
-  Langues majoritairement tonales ; structure SVO ; morphologie agglutinante légère.
+  Ordre des mots : Plusieurs langues Central Sudanic ont ordre Sujet-Verbe-Objet (SVO). Exemples :
+  - *Sinyar* (branche Bongo-Bagirmi, parlé au Tchad/Soudan) : structure SVO typique.
+  - *Lugbara* (branche Moru-Madi) : *ŋa-ku-lɔ* "je-mange-pain" (structure SVO).
+  - Certaines langues ou dialectes peuvent avoir ordre VSO ou SOV selon l'influence ou la structure verbale.
+  
+  Morphologie : agglutinante ou modérément flexionnelle. Exemples :
+  - Dans *Yulu* (parlé au Soudan du Sud) : les verbes comportent des marques de sujet, parfois des suffixes de verbal pluriel ou des dépendances verbales.
+  - Dans *Sungor* (Tama-Sungor, branche est) : formation du pluriel avec suffixes de classe, ex. *gera* "skin" (singulier en -a) → *geriŋ* "skins" (pluriel en -iŋ) ; *tárī* "love" → *tárā* (pluriel).
+  - Dans *Mbay* (branche Bongo-Bagirmi) : pluriels marqués par préfixes, ex. *ƃa-na* "child" → *Ma-na* "children" ; *Do-sɛ* "man" → *Ro-sɛ* "men".
+  - Dans *Keliko* (branche Moru-Madi, RDC) : pluriel marqué par un préfixe ou modification vocalique/tonale du radical.
+  
+  Dérivation : Certaines langues montrent dérivation par affixes. Exemples :
+  - Dans Central Sudanic, on observe préfixes pronominaux dans plusieurs sous-groupes (cf. Boyeldieu 2020).
+  - Dans *Yulu* : verbes composés (compound verbs) combinant deux à quatre verbes pour créer un processus verbal unique, une structure moins répandue dans d'autres branches.
+  
+  Classification nominale : Dans plusieurs langues, usage de classes nominales ou suffixes de classe pour le pluriel. Exemple *Sungor* : au moins six moyens différents de former le pluriel selon la classe nominale ou l'origine du mot (non emprunt, emprunt, irrégulier).
+
 - Particularités phonologiques :
-  - Systèmes tonals complexes  
-  - Voyelles ATR +/-  
-  - Consonnes implosives ou éjectives dans certains sous-groupes
+  Systèmes tonals : La plupart des langues ont 2 à 4 niveaux tonals. Exemples :
+  - *Sinyar* : deux tons et tons bas abaissés (downstep).
+  - *Ma'di* (Moru-Madi) : 4 tons : haut, moyen, bas, tombant.
+  - *Yulu* : 4 tons : haut, moyen, bas, et extra-bas.
+  - Les tons affectent les classes de verbes et les inflexions grammaticales.
+  
+  Harmonie vocalique ATR (Advanced Tongue Root / Retracted Tongue Root) :
+  - Présente dans plusieurs langues Central Sudanic, comme *Morokodo* / *Ma'di* (Moru-Madi), avec contraste entre voyelles [+ATR] et [-ATR].
+  - L'harmonie vocalique ATR est un trait areal partagé avec certaines langues Nilotiques et Niger-Congo voisines.
+  
+  Consonnes particulières :
+  - Consonnes labio-vélaires (/kp/, /gb/) : présentes dans plusieurs langues comme *Bongo*, *Mangbetu*, *Kresh*.
+  - Consonnes implosives (/ɓ/, /ɗ/) : présentes dans certaines langues comme *Jur Modo*, *Bongo*.
+  - Dans *Sinyar* : pronoms personnels incluent 1SG *màalé*, 2SG *ìllé*, 3SG *nàalé*.
+  - Reconstruction proto-Central Sudanic inclut ces traits consonantiques.
+  
+  Autres traits :
+  - Voyelles de qualité altérée selon le ton et la longueur dans certaines langues (ex. *Yulu*).
+  - Inventaire consonantique riche comprenant stops, fricatives, etc.
+
 - Liens avec les familles voisines :
-  Contacts multiples avec :
-  - Nilotique (Maasai, Dinka, Acholi)  
-  - Bantou (Kongo, Luba, Lingala) dans la zone RDC  
-  - Adamawa et Ubangi dans la zone centrafricaine
+  Emprunts lexicaux :
+  - Emprunts de l'arabe dans *Sungor* : *miselem* "musulman" → pluriel *muselmīn* (suffixe -īn typique arabe).
+  - En *Sinyar* : certains lexèmes sont clairement empruntés aux langues Bongo-Bagirmi voisines (ex. *mbàár* "breast", *ɓìsì* "dog"), tandis que d'autres lexèmes ne trouvent pas de cognats dans Bongo-Bagirmi (ex. *sìmír* "abeille/miel", *kìttì* "noir").
+  - Influence notable de langues voisines Nilotiques ou langues de l'Afrique Centrale (Adamawa-Ubangi) dans le vocabulaire agricole, pastoral, et religieux (mots pour "bétail", "sorgho", "divination").
+  
+  Contact linguistique et convergences typologiques :
+  - Contacts multiples avec langues Nilotiques (Maasai, Dinka, Acholi, Luo) à l'est : partage de traits comme l'harmonie vocalique ATR, systèmes tonals.
+  - Contacts avec langues Bantoues (Kongo, Luba, Lingala) dans la zone RDC : emprunts lexicaux, convergence phonologique dans certaines régions de contact.
+  - Contacts avec Adamawa et Ubangi (Niger-Congo) dans la zone centrafricaine : partage de traits typologiques comme l'harmonie vocalique ou certaines classes nominales.
+  - Traits areals : ton, harmonie, syntaxe partagés par contact prolongé avec langues voisines.
+
 - Innovations clés :
-  - Développement de systèmes tonals grammaticaux  
-  - Structures verbales à séries  
-  - Influence areale dans la région du Haut-Nil
+  Innovations phonétiques :
+  - Changements réguliers dans des correspondances consonantiques entre les sous-groupes (étudiées par Lionel Bender, 1992).
+  - Exemple : correspondance proto-kp → /kp/ dans Sara-Bongo-Bagirmi, mais /kw/ dans Moru-Madi (cf. reconstructions).
+  - Perte ou nasalisation de certaines consonnes intervocaliques dans certaines langues de la branche est.
+  
+  Innovations morphologiques/dérivation :
+  - Formation de verbes composés en *Yulu* : clusters verbaux de deux à quatre verbes créant de nouvelles nuances sémantiques, une structure moins répandue dans d'autres branches. Exemple typique : séquences de verbes où chaque verbe ajoute une nuance temporelle, aspectuelle ou directionnelle au processus verbal global (structure documentée dans les travaux sur Yulu, mais exemples précis de phrases nécessitent consultation de grammaires spécialisées).
+  - Certaines langues du groupe Sara-Bongo-Bagirmi développent des traits pluriels ou de dérivation peu communs. Exemple en *Mbay* : pluriels marqués par préfixes qui modifient le radical de manière discontinue (ex. *ƃa-na* "child" → *Ma-na* "children" où le préfixe *Ma-* remplace *ƃa-* tout en conservant la structure radicale *-na*, et *Do-sɛ* "man" → *Ro-sɛ* "men" où *Ro-* remplace *Do-*). Cette alternance de préfixes selon la classe nominale représente une structure de pluriel discontinu, où le marqueur de pluriel n'est pas un simple suffixe mais modifie la consonne initiale du radical selon des patterns de dérivation spécifiques. Autres exemples de traits peu communs : numéraux avec morphologie étendue (ex. en Sinyar : *kàllà* "un", *róò* "deux", *mùʈʈà* "trois" montrant des contrastes toniques et des consonnes géminées distinctives).
+  - Boyeldieu (2020) identifie cinq sous-groupes cohérents ayant des correspondances consonantiques régulières et des cognats lexicaux partagés qui ne se trouvent pas dans le reste, ce qui constitue une innovation interne.
+  
+  Innovations typologiques :
+  - Développement de systèmes tonals grammaticaux (tons affectent les inflexions grammaticales).
+  - Structures verbales à séries dans certaines langues.
+  - Influence areale dans la région du Haut-Nil (convergence avec langues Nilotiques et autres familles voisines).
 
-# 5. Histoire et origines
-- Origine probable :
-  Zones du Haut-Nil et nord-centre de la RDC, dispersées par vagues migratoires anciennes.
-- Diffusion des langues :
-  Expansion vers le sud (RDC) et l’ouest (Centrafrique) par mobilité agricole et pastorale.
-- Ruptures historiques :
-  - Guerres au Soudan du Sud  
-  - Conflits intercommunautaires en Ituri (RDC)  
-  - Colonisation belge et britannique reconfigurant les territoires
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  
+  Théorie linguistique 1 (Greenberg, 1963 / Bender, 1992) :
+  - Joseph H. Greenberg (1963) dans *The Languages of Africa* (Indiana University Press / Mouton) est le premier à codifier *Central Sudanic* comme branche du phylum Nilo-Saharan.
+  - Greenberg classe Central Sudanic au sein du groupe « Chari-Nile » de sa classification.
+  - Lionel M. Bender (1992) dans "Central Sudanic segmental and lexical reconstruction" (*Afrikanistische Arbeitspapiere* 29:5-61) propose une classification interne détaillée : division en branches « Peripheral » et « Central » avec subdivisions telles que Moru-Madi, Sara-Bongo-Bagirmi, Lendu-Ngiti, Mangbetu-Asoa, Kresh, etc.
+  
+  Théorie linguistique 2 (Starostin, 2016 / Boyeldieu, 2020) :
+  - George Starostin (2016) dans "The Nilo-Saharan hypothesis tested through lexicostatistics: current state of affairs" remet en question certaines subdivisions, notamment la division Est/Ouest, estimant que la branche ouest (Bongo-Bagirmi) est moins bien fondée que la branche est (Moru-Madi, Lendu).
+  - Pascal Boyeldieu (2020) dans "Central Sudanic" (*The Oxford Handbook of African Languages*, Oxford University Press) fait l'état des lieux des sous-groupes consistants mais note que certaines langues restent « indéterminées » et que l'union des branches n'est pas encore confirmée par méthode comparative stricte. Il note que l'unité génétique reste « provisoire » ou « à confirmer ».
+  
+  Théorie linguistique 3 (Westermann, début XXe siècle) :
+  - Diedrich Westermann (début XXe siècle) incluait certaines langues aujourd'hui Central Sudanic dans son concept « Niloto-Sudanic ».
+  - Carl Meinhof utilisait le terme « Sudanic » comme un fourre-tout géographique colonial plutôt que sur des bases linguistiques internes rigoureuses.
+  
+  Théorie archéologique :
+  - Peu de travaux archéologiques précisément reliés à la diffusion du proto-Central Sudanic.
+  - Estimation linguistique/archéologique place l'homeland probable (Urheimat) dans la région du Bahr el Ghazal (Soudan du Sud actuel) pendant l'Holocène moyen ou tardif.
+  - Autres régions proposées : zones du Haut-Nil, forêts de l'Ituri (nord-est RDC), zones entre la République centrafricaine et le sud-Tchad constituent de possibles foyers anciens de langues de ce groupe.
+  
+  Théorie génétique :
+  - Les analyses génétiques récentes montrent une grande diversité parmi les populations d'Afrique centrale, incluant les locuteurs de langues Central Sudanic.
+  - Fan et al. (2019) dans *Genome Biology* montrent des clines de similarité selon la langue et la géographie, mais pas toujours un « cluster linguistique » Central Sudanic clairement délimité.
+  - Des études sur les populations d'Afrique de l'Est et du Soudan montrent un composant génétique distinct lié aux groupes parlants du Nilo-Saharan, incluant les locuteurs de langues Central Sudanic, ce qui corrobore une certaine cohésion linguistique, mais aussi des mélanges importants avec des populations voisines.
+
+- Période d'émergence estimée :
+  
+  (1) Émergence historique de la famille linguistique :
+  - Le proto-Central Sudanic aurait divergé il y a plusieurs milliers d'années.
+  - Estimation très approximative : autour de 3000-4000 avant notre ère (selon des reconstructions par lexicostatistique et comparaison phonologique).
+  - D'autres estimations linguistiques suggèrent une divergence il y a 3000-5000 ans BP pour certaines branches.
+  - Ces estimations s'inscrivent dans les grands mouvements de population au centre de l'Afrique, mais il n'y a pas de date consensuelle acceptée par tous les linguistes.
+  - À noter : ces datations restent très hypothétiques et nécessitent confirmation par corrélation linguistique/archéogénétique future.
+  
+  (2) Date de classification académique :
+  - Années 1920-1930 : Diedrich Westermann propose inclusion de certains groupes dans son concept « Niloto-Sudanic ».
+  - 1954 : Greenberg publie sa classification « Chari-Nile ».
+  - 1963 : Greenberg formalise le terme *Central Sudanic* dans *The Languages of Africa* (1963, Indiana University Press / Mouton), comme partie de Nilo-Saharan.
+  - 1992 : Lionel Bender publie une classification interne importante, distinguant branches périphériques et centrales.
+  - 2016 : George Starostin publie des travaux critiques remettant en question certaines inclusions et la validité de l'unité ouest.
+  - 2020 : Pascal Boyeldieu, dans *The Oxford Handbook of African Languages*, actualise les subdivisions, insiste sur les « langues indéterminées » et la nécessité d'une méthode comparative stricte.
+
+- Diffusion des langues (routes migratoires, expansion) :
+  
+  Théorie 1 : Diffusion depuis le Bahr el Ghazal (homeland proposé) :
+  - Diffusion à partir du centre-nord de l'Afrique (zone de Bahr el Ghazal, Soudan du Sud actuel).
+  - Propagation vers le sud-est (vers le nord-est de la RDC, région de l'Ituri).
+  - Expansion vers le nord (vers le Tchad, la République centrafricaine) et l'est (vers l'Ouganda).
+  - Expansion par mobilité agricole et pastorale.
+  
+  Théorie 2 : Diversification locale multiple :
+  - Diversification locale liée à des processus de bifurcation linguistique et remaniement par contact.
+  - Plusieurs sous-groupes se seraient différenciés dès l'antiquité, avec contacts intensifs avec langues Nilotiques et Niger-Congo.
+  - Traits partagés résultant davantage de contact areal que d'héritage génétique commun.
+  - Influence forte et emprunts avec langues voisines (Niger-Congo, Afro-asiatique) imposant des traits typologiques partagés sans lien génétique strict.
+  
+  Théorie 3 : Diversification depuis le bassin du Chari :
+  - Homeland proposé dans le bassin de la rivière Chari ou zones entre République centrafricaine et sud-Tchad.
+  - Expansion vers l'est depuis le bassin de la rivière Chari ou vers le sud-est dans ce qui est aujourd'hui l'Ouganda, RDC, Soudan du Sud.
+
+- Ruptures historiques (séparations, fusions) :
+  - Diversification ancienne des branches (Lendu, Moru-Madi, Bongo-Bagirmi, Mangbetu, Kresh) par séparation géographique et différenciation linguistique progressive.
+  - XIXe siècle : premières études coloniales qui recensent langues du groupe (missionnaires, administrateurs coloniaux).
+  - Colonisation belge (Congo belge) et britannique (Soudan anglo-égyptien, Ouganda) reconfigurant les territoires et les frontières linguistiques.
+  - Guerres au Soudan du Sud (1955-1972, 1983-2005, indépendance 2011) : déplacements de populations, ruptures dans la transmission linguistique.
+  - Conflits intercommunautaires en Ituri (RDC, années 1990-2000) : oppositions Lendu/Hema, Ngiti, déplacements massifs.
+  - Guerre civile en République centrafricaine : impact sur les communautés parlant langues Central Sudanic.
+
 - Zones de contact et métissages :
-  - Ituri (Lendu, Ngiti, Hema)  
-  - Nord de la RDC (Mangbetu)  
-  - Ouganda (Madi, Lugbara)
+  
+  Géographiquement :
+  - Bassin du Chari, régions frontalières entre République centrafricaine, Tchad, Soudan du Sud, Ouganda, et nord-est de la République démocratique du Congo.
+  - Zones autour du lac Albert (frontière RDC/Ouganda).
+  - Les régions du Bahr al Ghazal (Soudan du Sud) : zones de contact avec langues Nilotiques.
+  
+  Villes / régions précises :
+  - Ituri (RDC) : zones de contact Lendu, Ngiti, Hema, avec langues Bantoues et Nilotiques.
+  - Nord de la RDC (Haut-Uele) : zones Mangbetu, avec contacts Bantous et Nilotiques.
+  - Ouganda (nord-ouest) : zones Madi, Lugbara, à la frontière Ouganda-Soudan du Sud (Moyo, Magwi).
+  - Soudan du Sud (Western Equatoria) : Avokaya autour de Maridi (Sud-Soudan) et Faradje (RDC).
+  - Tchad (sud) : langues Sara-Bagirmi, zones frontalières avec République centrafricaine, contacts avec langues Adamawa-Ubangi.
+  - République centrafricaine (centre, sud) : zones Sara, contacts avec langues Adamawa-Ubangi et Oubangui.
+  
+  Zones de métissage linguistique :
+  - Emprunts à l'arabe dans les langues frontalières du nord-est Tchad/Soudan (ex. *Sungor* : emprunts nombreux à l'arabe dans domaines religieux et social).
+  - Traits typologiques partagés (harmonie, tons) provenant de contacts prolongés avec langues Nilotiques (ex. langues Luo-nilotiques en Ouganda/Soudan du Sud).
+  - Contacts avec langues Adamawa-Ubangi (République centrafricaine, Congo RDC) : partage de traits comme l'harmonie vocalique ou certaines classes nominales.
+  - Routes historiques : voies de commerce inter-ethniques autour du Nil, via Tchad, échanges linguistiques avec langues Nilotiques, langues soudanaises.
 
-# 6. Répartition géographique et démographie
+- Événements historiques majeurs ayant influencé la famille :
+  
+  Chronologie :
+  - ≈ 3000-4000 av. J.-C. (estimation linguistique, très hypothétique) : divergence du proto-Central Sudanic (estimation linguistique/archéologique).
+  - XIXe siècle : premières études coloniales qui recensent langues du groupe (missionnaires, administrateurs coloniaux belges et britanniques).
+  - 1912 : Diedrich Westermann propose inclusion de certains groupes dans son concept « Niloto-Sudanic ».
+  - 1954 : Greenberg publie sa classification « Chari-Nile ».
+  - 1963 : Greenberg formalise le terme *Central Sudanic* dans *The Languages of Africa*, comme partie de Nilo-Saharan.
+  - 1992 : Lionel Bender propose une classification interne détaillée, distinguant branches périphériques et centrales.
+  - 2010-2016 : travaux critiques (Starostin, Boyeldieu) qui remettent en question certaines inclusions et la validité de l'unité ouest.
+  - 2020 : Pascal Boyeldieu actualise les subdivisions dans *The Oxford Handbook of African Languages*.
+  
+  Événements historiques impactant les locuteurs :
+  - Colonisation belge (Congo belge) : administration coloniale, missions, scolarisation, reconfiguration territoriale.
+  - Colonisation britannique (Soudan anglo-égyptien, Ouganda) : frontières coloniales, administration.
+  - Indépendances africaines (1960s) : redéfinition des frontières, politiques linguistiques nationales.
+  - Guerres civiles et conflits régionaux : impact sur transmission linguistique, déplacements de populations.
+
+# 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  5 à 10 millions
-- Répartition par pays :
-  RDC, Soudan du Sud, Ouganda, RCA, Tchad
-- Importance historique :
-  Langues anciennes du Haut-Nil ; grands royaumes mangbetu ; rôle majeur dans les dynamiques interethniques de l’Afrique centrale.
+  Environ 5 à 10 millions de locuteurs pour toutes les langues Central Sudanic réunies (estimations variables selon sources Ethnologue, SIL, recensements nationaux). Estimation récente disponible suggère environ 15 millions selon certaines sources (Wikipedia, Central Sudanic languages).
 
-# 7. Sources
-- Dimmendaal – *Nilo-Saharan Linguistics*  
-- SIL Ethnologue – Central Sudanic  
-- Glottolog – Central Sudanic branch  
-- UNESCO – Atlas des langues africaines
+- Répartition par pays :
+  
+  Tchad :
+  - Langues Central Sudanic : langues Sara-Bongo-Bagirmi (Sara, Ngambay, Bagirmi, etc.)
+  - Nombre de locuteurs : plusieurs millions (exemple : population Sara estimée ~ 6 millions selon certaines sources, soit ~30,5 % de la population tchadienne selon Wikipedia "Sara people")
+  - Pourcentage de la population nationale : environ 10-20 % selon région (sud du Tchad) ; jusqu'à 30-35 % si on inclut tous les locuteurs Sara-Bagirmi dans certaines provinces
+  - Sources : SIL, Ethnologue, Wikipedia "Sara people", recensements nationaux tchadiens (années 2020-2025 approximatives)
+  
+  République centrafricaine (RCA) :
+  - Langues Central Sudanic : Sara, autres langues Bongo-Bagirmi, Mangbetu dans certaines régions
+  - Nombre de locuteurs : centaines de milliers à plus d'un million selon les langues (exemple : Sara peuple aussi dans le nord-ouest RCA)
+  - Pourcentage de la population nationale : environ 5-25 % selon les provinces (sud et centre de la RCA) ; variable selon régions
+  - Sources : Britannica, Ethnologue, estimations récentes (2020-2025 approximatives)
+  
+  Soudan du Sud :
+  - Langues Central Sudanic : langues Moru-Madi (Moru, Madi, Lugbara, etc.), Yulu, Kresh, Aja, Avokaya, Bongo, etc.
+  - Nombre de locuteurs : 
+    * Madi : ~400 000 locuteurs au total (Soudan du Sud + Ouganda) selon Wikipedia "Ma'di language"
+    * Morokodo : ~50 000 locuteurs (mais natifs moins nombreux)
+    * Yulu : entre 7 000 et 13 000 locuteurs
+    * Kresh : parlé dans Raja County, Soudan du Sud (pas de chiffre exact disponible)
+    * Aja : très petit nombre (~200 selon vieux rapport)
+  - Pourcentage de la population nationale : quelques pourcents à double chiffre dans certaines régions (Western Equatoria, Bahr el Ghazal) ; faible à l'échelle nationale
+  - Sources : Wikipedia "Morokodo language", "Yulu language", "Kresh language", Village Assessment Survey (IOM South Sudan, 2013), estimations récentes (2020-2025 approximatives)
+  
+  Ouganda :
+  - Langues Central Sudanic : Lugbara, Madi (Moru-Madi)
+  - Nombre de locuteurs : 
+    * Lugbara : ~1,6 million de locuteurs selon Wikipedia "Moru–Madi languages"
+    * Madi : ~0,8-1 million de locuteurs selon certaines estimations
+  - Pourcentage de la population nationale : environ 3,8 % + 1,2 % = ~5 % de la population nationale (régions nord-ouest de l'Ouganda) ; peut-être 5-10 % localement dans certaines régions
+  - Sources : Wikipedia "Moru–Madi languages", Ethnologue, estimations récentes (2020-2025 approximatives)
+  
+  République démocratique du Congo (RDC) :
+  - Langues Central Sudanic : Mangbetu, Lendu, Avokaya, Logo, Keliko, etc. (nord-est de la RDC, provinces Ituri, Haut-Uele)
+  - Nombre de locuteurs : 
+    * Mangbetu : plusieurs centaines de milliers à plus d'1 million
+    * Keliko : ~42 500 locuteurs selon Wikipedia "Keliko language"
+    * Lendu : plusieurs centaines de milliers
+    * Chiffres variés selon recensements, souvent plus de plusieurs centaines de milliers pour chaque langue importante
+  - Pourcentage de la population nationale : modestes dans la proportion nationale (petit pourcentage à l'échelle du pays, sauf dans zones locales comme l'Ituri où certaines langues sont majoritaires localement)
+  - Sources : Wikipedia "Keliko language", Ethnologue, recensements nationaux (années 2020-2025 approximatives)
+  
+  Note importante : Les chiffres exacts de pourcentage national pour 2025 n'ont pas pu être vérifiés pour toutes les langues. Les données sont fragmentaires par langue et nécessitent recoupement avec données UNESCO / Ethnologue / SIL pour chaque langue du groupe. Les sources incluent Ethnologue (dernières éditions), SIL International, Wikipedia, Britannica, CIA Factbook, recensements nationaux, enquêtes nationales, mais certaines estimations proviennent de recensements de 2010-2020 et nécessitent mise à jour.
+
+- Importance historique :
+  Langues anciennes du Haut-Nil (Bahr el Ghazal) ; grands royaumes mangbetu en RDC ; rôle majeur dans les dynamiques interethniques de l'Afrique centrale. Diversité linguistique importante dans une région de contact entre plusieurs grandes familles linguistiques (Nilo-Saharan, Niger-Congo).
+
+# 6. Sources
+- Bender, Lionel M. (1992) – "Central Sudanic segmental and lexical reconstruction." *Afrikanistische Arbeitspapiere*, 29:5-61.
+
+- Blackings, Mairi (2011) – *A Grammar of Ma'di*. Walter de Gruyter.
+
+- Boyeldieu, Pascal (2020) – "Central Sudanic", dans *The Oxford Handbook of African Languages*, éd. M. Hafri, P. Boyeldieu, etc. Oxford University Press. URL: https://academic.oup.com/edited-volume/38608/chapter/334726296
+
+- Fan, Shaohua et al. (2019) – "African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations." *Genome Biology*, 20:82. URL: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1679-2
+
+- Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press / Mouton & Co., The Hague. (2e éd., 1966)
+
+- Starostin, George (2016) – "The Nilo-Saharan hypothesis tested through lexicostatistics: current state of affairs." *Journal of Language Relationship*. URL: https://justapedia.org/wiki/Central_Sudanic_languages
+
+- Wikipedia contributors (dernières mises à jour 2024-2025) – "Central Sudanic languages", "Sara people", "Ma'di language", "Morokodo language", "Yulu language", "Kresh language", "Keliko language", "Moru–Madi languages", "Avokaya language", "Sinyar language", "Sungor language", "The Languages of Africa". Wikimedia Foundation. URL: https://en.wikipedia.org/wiki/Central_Sudanic_languages
+
+- Ethnologue (dernières éditions) – "Central Sudanic languages". SIL International.
+
+- Glottolog (dernières éditions) – "Central Sudanic branch". Max Planck Institute for the Science of Human History.
+
+- UNESCO – *Atlas des langues africaines*. UNESCO Publishing.
+
+- Britannica – "Central Sudanic languages", "Nilo-Saharan languages / Linguistic characteristics". Encyclopaedia Britannica.
+
+- Santandrea, Stefano (1976) – Travaux sur Yulu et groupe Kresh.
+
+- Dimmendaal, Gerrit J. – *Nilo-Saharan Linguistics*. (Référence générale)
+
+- Village Assessment Survey (2013) – IOM South Sudan. Survey sur populations déplacées, incluant données linguistiques.
+
+- Recensements nationaux : Tchad, République centrafricaine, République démocratique du Congo, Ouganda, Soudan du Sud (années 2010-2025 approximatives, selon disponibilité).
