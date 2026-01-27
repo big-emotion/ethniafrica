@@ -12,6 +12,10 @@ export const DATA_VERSION_KEYS = {
   COUNTRIES: "data:version:countries",
   ETHNICITIES: "data:version:ethnicities",
   POPULATION: "data:version:population",
+  // AFRIK API v2
+  AFRIK_LANGUAGE_FAMILIES: "data:version:afrik-language-families",
+  AFRIK_PEOPLES: "data:version:afrik-peoples",
+  AFRIK_COUNTRIES: "data:version:afrik-countries",
 } as const;
 
 // Version actuelle des données (incrémentée lors des migrations)
@@ -22,6 +26,10 @@ const dataVersions: Record<string, number> = {
   [DATA_VERSION_KEYS.COUNTRIES]: 1,
   [DATA_VERSION_KEYS.ETHNICITIES]: 1,
   [DATA_VERSION_KEYS.POPULATION]: 1,
+  // AFRIK API v2
+  [DATA_VERSION_KEYS.AFRIK_LANGUAGE_FAMILIES]: 1,
+  [DATA_VERSION_KEYS.AFRIK_PEOPLES]: 1,
+  [DATA_VERSION_KEYS.AFRIK_COUNTRIES]: 1,
 };
 
 /**

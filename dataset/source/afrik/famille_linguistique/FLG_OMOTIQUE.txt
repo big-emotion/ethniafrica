@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_OMOTIQUE
-- Lien avec la famille linguistique : 
+- Lien avec la famille linguistique : Afro-asiatique (FLG_AFROASIATIQUE)
 - Nom français : Omotique
 - Nom anglais / auto-appellation académique : Omotic
 - Appellation(s) historique(s) :

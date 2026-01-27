@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_SEMITIQUE
-- Lien avec la famille linguistique : 
+- Lien avec la famille linguistique : Afro-asiatique (FLG_AFROASIATIQUE)
 - Nom français : Sémitique
 - Nom anglais / auto-appellation académique : Semitic
 - Appellation(s) historique(s) : Chamito-sémitique ; Sémito-chamitique ; Chamito-sémitique
@@ -43,10 +43,10 @@
   >460 millions (estimation 2025), dont ~411 millions de locuteurs natifs de l'arabe, ~35 millions pour l'amharique, ~7-8 millions pour le tigrinya, ~7-8 millions pour l'hébreu moderne
 
 # 2. Peuples associés
-- Peuple 1 : Arabes (PPL_ARABES)
+- Peuple 1 : Arabes (PPL_ARABES_AFRIQUE)
 - Peuple 2 : Amhara (PPL_AMHARA)
 - Peuple 3 : Tigréens / Tigrinya (PPL_TIGRE)
-- Peuple 4 : Habesha (terme collectif pour peuples éthiopiens et érythréens de langues sémitiques)
+- Peuple 4 : Habesha (terme collectif pour peuples éthiopiens et érythréens de langues sémitiques) (PPL_HABESHA)
 
 # 3. Caractéristiques linguistiques
 - Typologie linguistique :

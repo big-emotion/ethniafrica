@@ -324,14 +324,19 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000  # ou votre URL de staging/production
 
 ### Processus d'invalidation
 
-Lors d'une migration :
+Lors d'une migration AFRIK :
 
-1. Le script de migration appelle `/api/admin/revalidate` avec les tags appropriés
-2. L'endpoint invalide le cache serveur Next.js via `revalidateTag()`
+1. Le script de migration appelle automatiquement `/api/admin/revalidate` avec les tags AFRIK appropriés
+2. L'endpoint invalide le cache serveur Next.js via `revalidateTag()` pour chaque tag :
+   - `afrik-language-families` : Invalide le cache des familles linguistiques
+   - `afrik-peoples` : Invalide le cache des peuples
+   - `afrik-countries` : Invalide le cache des pays
 3. L'endpoint incrémente automatiquement les versions des données correspondantes
 4. Les prochaines requêtes API incluront la nouvelle version dans la réponse
 5. Le client compare la version du cache avec celle du serveur
 6. Si les versions diffèrent, le cache est automatiquement vidé et les nouvelles données sont chargées
+
+**Note** : Le système utilise `fetch` avec tags de revalidation Next.js au lieu de `unstable_cache`, ce qui permet une invalidation ciblée et automatique après chaque migration.
 
 ### Invalidation manuelle
 
@@ -340,10 +345,17 @@ Si l'invalidation automatique ne fonctionne pas, vous pouvez invalider le cache 
 1. **Via l'API** (si le serveur est en cours d'exécution) :
 
    ```bash
+   # Pour les données legacy (API v1)
    curl -X POST http://localhost:3000/api/admin/revalidate \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer YOUR_REVALIDATE_SECRET" \
      -d '{"tags": ["regions", "countries", "ethnicities", "population", "africa"]}'
+
+   # Pour les données AFRIK (API v2)
+   curl -X POST http://localhost:3000/api/admin/revalidate \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer YOUR_REVALIDATE_SECRET" \
+     -d '{"tags": ["afrik-language-families", "afrik-peoples", "afrik-countries"]}'
    ```
 
 2. **En redémarrant le serveur** : Le cache serveur est automatiquement vidé au redémarrage (mais les versions restent en mémoire)

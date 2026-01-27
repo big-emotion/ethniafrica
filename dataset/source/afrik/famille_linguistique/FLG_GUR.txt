@@ -3,6 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_GUR
+- Lien avec la famille linguistique : Niger-Congo (FLG_NIGERCONGO)
 - Nom français : Gur
 - Nom anglais / auto-appellation académique : Gur / Voltaic (terme ancien)
 - Appellation(s) historique(s) :

@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_NILOTIQUE
-- Lien avec la famille linguistique : Sous-branche de la famille Nilo-Saharienne (Eastern Sudanic)
+- Lien avec la famille linguistique : Sous-branche de la famille Nilo-Saharienne (FLG_NILOSAHARIENNE) (Eastern Sudanic)
 - Nom français : Nilotique
 - Nom anglais / auto-appellation académique : Nilotic
 - Appellation(s) historique(s) :

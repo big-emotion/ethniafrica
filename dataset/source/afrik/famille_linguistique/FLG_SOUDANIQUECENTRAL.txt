@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_SOUDANIQUECENTRAL
-- Lien avec la famille linguistique : Nilo-saharien (classification Greenberg, contestée par certains linguistes)
+- Lien avec la famille linguistique : Nilo-saharien (FLG_NILOSAHARIENNE) (classification Greenberg, contestée par certains linguistes)
 - Nom français : Soudanique central
 - Nom anglais / auto-appellation académique : Central Sudanic
 - Appellation(s) historique(s) :

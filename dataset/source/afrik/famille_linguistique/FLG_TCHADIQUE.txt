@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_TCHADIQUE
-- Lien avec la famille linguistique : Afro-asiatique (Afroasiatic)
+- Lien avec la famille linguistique : Afro-asiatique (FLG_AFROASIATIQUE)
 - Nom français : Tchadique
 - Nom anglais / auto-appellation académique : Chadic
 - Appellation(s) historique(s) :

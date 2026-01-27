@@ -53,7 +53,7 @@
 - Peuple 1 : Yoruba (PPL_YORUBA)
 - Peuple 2 : Igbo (PPL_IGBO)
 - Peuple 3 : Akan (PPL_AKAN)
-- Peuple 4 : Bantou (divers peuples bantous)
+- Peuple 4 : Bantou (divers peuples bantous) (PPL_BANTU)
 - Peuple 5 : Mandingue (PPL_MANDINGUE)
 - Peuple 6 : Fula (PPL_FULANI)
 
@@ -107,7 +107,7 @@
   
   **Expression grammaticale par tons** : utilisation des tons pour marquer des distinctions grammaticales, trait hérité et développé différemment selon les branches. Exemples concrets : Yoruba (Kwa, Volta-Niger) : trois tons (haut, moyen, bas) utilisés à la fois lexicalement et grammaticalement. Exemple : ó bẹ́ "il avance" (ton haut) vs ó bẹ̀ "il demande pardon" (ton bas) — distinction lexicale et grammaticale par le ton. Igbo (Volta-Niger) : système tonal avec tons haut et bas distinguant lexique et grammaire. Exemple : ána (ton haut) vs àna (ton bas) — distinction lexicale ou grammaticale selon le contexte. Dagaare (Gur) : deux tons (haut / bas) plus downstep (réduction tonale) — tonalité servant à distinguer lexique (mots différents selon ton) et grammatical (ton changeant selon forme verbale ou morphologie). Tumbuka (Bantu) : deux tons de base (haut H et bas L) avec phénomènes de propagation tonale (tone spreading), affaiblissement de ton et tons flottants — usage à la fois lexical et introduit par la morphologie grammaticale. Dan (Mande) : selon le dialecte, jusqu'à 9 à 11 tons registres ou contours tonaux. Langues Mande (Bambara, Maninka, Temne) : systèmes à deux tons (haut / bas) avec usage grammatical du ton pour marquer temps, aspect, ou distinctions syntaxiques.
 
-# 4. Histoire et origines :
+# 4. Histoire et origines
 - Origine probable (théories archéologiques, linguistiques, génétiques) :
   **Théorie linguistique** : Le concept de *Niger–Congo* en tant que famille génétique est principalement lié à **Joseph H. Greenberg (1949-1963)** – *The Languages of Africa* (1963). Avant lui, **Diedrich Westermann (1875-1956)** avait posé des bases dans ses travaux de 1911-1935, notamment *Charakter und Einteilung der Sudansprachen* (1935), proposant des divisions linguistiques "Sudanic occidental", etc. Greenberg inclut aussi (à l'origine) le groupe Kordofanien comme branche coordonnée.
   

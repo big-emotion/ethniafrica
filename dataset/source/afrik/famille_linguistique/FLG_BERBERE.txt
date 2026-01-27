@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_BERBERE
-- **Lien avec les familles linguistiques ** : **Afro-asiatique** (branche berbère/amazighe, aux côtés des branches sémitique, égyptienne, couchitique, tchadique et omotique)
+- **Lien avec les familles linguistiques ** : **Afro-asiatique (FLG_AFROASIATIQUE)** (branche berbère/amazighe, aux côtés des branches sémitique, égyptienne, couchitique, tchadique et omotique)
 - Nom français : Berbère / Amazighe
 - Nom anglais / auto-appellation académique : Berber / Amazigh
 - Appellation(s) historique(s) :
@@ -84,7 +84,7 @@
   - ~35 millions.
 
 # 2. Peuples associés
-- Peuple 1 : Imazighen du Nord (Kabyles, Rifains, Chleuhs) (PPL_AMAZIGH)
+- Peuple 1 : Imazighen du Nord (Kabyles, Rifains, Chleuhs) (PPL_AMAZIGH_MACRO)
 - Peuple 2 : Touaregs (Kel Tamasheq) (PPL_TUAREG)
 - Peuple 3 : Zenaga (Mauritanie) (PPL_ZENAGA)
 

@@ -3,6 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_COUCHITIQUE
+- Lien avec la famille linguistique : Afro-asiatique (FLG_AFROASIATIQUE)
 - Nom français : Couchitique
 - Nom anglais / auto-appellation académique : Cushitic
 - Appellation(s) historique(s) :

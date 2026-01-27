@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_SONGHAY
-- Lien avec la famille linguistique : Nilo-saharienne (classification controversée) / Famille indépendante (selon certaines théories)
+- Lien avec la famille linguistique : Nilo-saharienne (FLG_NILOSAHARIENNE) (classification controversée) / Famille indépendante (selon certaines théories)
 - Nom français : Songhay / Sonrai
 - Nom anglais / auto-appellation académique : Songhay
 - Appellation(s) historique(s) :
@@ -48,7 +48,7 @@
   ~2.5–3.5 millions (estimation 2025)
 
 # 2. Peuples associés
-- Peuple 1 : Songhay / Sonrai (PPL_SONGHAY)
+- Peuple 1 : Songhay / Sonrai (PPL_SONGHAI)
 - Peuple 2 : Zarma (Djerma) (PPL_ZARMA)
 - Peuple 3 : Dendi (PPL_DENDI)
 
