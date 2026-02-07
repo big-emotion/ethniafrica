@@ -23,7 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { PageLayout } from "@/components/PageLayout";
+import { PageLayout } from "@/components/layout/PageLayout";
 import { useLanguage } from "@/hooks/use-language";
 import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
@@ -33,7 +33,7 @@ import type {
   SearchEntityType,
   LanguageFamilySummary,
 } from "@/types/afrik-frontend";
-import { Language } from "@/types/ethnicity";
+import { Language } from "@/types/shared";
 
 const ITEMS_PER_PAGE = 20;
 

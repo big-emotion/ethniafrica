@@ -11,7 +11,7 @@ import { FamillesPageContent } from "@/components/pages/FamillesPageContent";
 import { PeuplesPageContent } from "@/components/pages/PeuplesPageContent";
 import { PaysPageContentV2 } from "@/components/pages/PaysPageContentV2";
 import { SearchPageContent } from "@/components/pages/SearchPageContent";
-import { Language } from "@/types/ethnicity";
+import { Language } from "@/types/shared";
 
 // Redirect component for legacy routes
 function LegacyRedirect({

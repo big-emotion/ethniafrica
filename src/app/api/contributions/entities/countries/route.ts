@@ -1,42 +1,18 @@
-import { NextRequest } from "next/server";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
-import { getAllCountries as getAllCountriesFromSupabase } from "@/lib/supabase/queries/countries";
-import { getAllCountries } from "@/lib/api/datasetLoader.server";
+import { getAllAfrikCountries } from "@/lib/supabase/queries/afrik/countries";
 
-/**
- * GET /api/contributions/entities/countries
- * Retourne la liste des pays avec id, slug, name_fr, region_id pour les listes déroulantes
- */
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    const USE_SUPABASE = process.env.USE_SUPABASE === "true";
-
-    if (USE_SUPABASE) {
-      const countries = await getAllCountriesFromSupabase();
-      const result = countries.map((country) => ({
-        id: country.id,
-        slug: country.slug,
-        name_fr: country.name_fr,
-        region_id: country.region_id,
-      }));
-      return jsonWithCors({ countries: result });
-    } else {
-      // Fallback sur les fichiers statiques
-      const countries = await getAllCountries();
-      const result = countries.map((country) => ({
-        id: country.key, // Utiliser la clé comme id temporaire
-        slug: country.key,
-        name_fr: country.name,
-        region_id: country.region, // Utiliser la clé de région comme region_id temporaire
-      }));
-      return jsonWithCors({ countries: result });
-    }
+    const countries = await getAllAfrikCountries();
+    return jsonWithCors({
+      countries: countries.map((c) => ({
+        id: c.id,
+        name_fr: c.nameFr,
+      })),
+    });
   } catch (error) {
-    console.error("Error fetching countries for contributions:", error);
-    return jsonWithCors(
-      { error: "Failed to fetch countries" },
-      { status: 500 }
-    );
+    console.error("Error loading countries:", error);
+    return jsonWithCors({ error: "Failed to load countries" }, { status: 500 });
   }
 }
 

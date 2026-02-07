@@ -2,9 +2,9 @@
 
 import { useParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
-import { PageLayout } from "@/components/PageLayout";
+import { PageLayout } from "@/components/layout/PageLayout";
 import { useEffect } from "react";
-import { Language } from "@/types/ethnicity";
+import { Language } from "@/types/shared";
 import Script from "next/script";
 
 export default function ReportErrorPage() {
@@ -74,14 +74,14 @@ export default function ReportErrorPage() {
         ),
         text3: (
           <>
-            Chaque retour nous permet d'améliorer la qualité et la fiabilité de
-            l'atlas, au bénéfice de toute la communauté.
+            Chaque retour nous permet d&apos;améliorer la qualité et la
+            fiabilité de l&apos;atlas, au bénéfice de toute la communauté.
           </>
         ),
         text4: (
           <>
-            Merci pour votre aide dans la construction d'une base de données
-            plus juste et plus fidèle.
+            Merci pour votre aide dans la construction d&apos;une base de
+            données plus juste et plus fidèle.
           </>
         ),
       },

@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Code, Info, AlertTriangle } from "lucide-react";
+import { BookOpen, Code, Info } from "lucide-react";
 import Link from "next/link";
 
 export default function ApiDocsPage() {
@@ -21,7 +21,7 @@ export default function ApiDocsPage() {
                   API Documentation
                 </h1>
                 <p className="text-muted-foreground mt-1">
-                  Documentation de l'API AFRIK - Ethniafrique Atlas
+                  Documentation de l&apos;API AFRIK - Ethniafrique Atlas
                 </p>
               </div>
             </div>
@@ -32,9 +32,9 @@ export default function ApiDocsPage() {
             <div className="space-y-3">
               <h2 className="text-lg font-semibold">API AFRIK v2</h2>
               <p className="text-sm text-muted-foreground">
-                L'API Ethniafrique Atlas est basée sur la méthodologie AFRIK
-                avec des identifiants stables (FLG_*, PPL_*, codes ISO) et un
-                format de réponse standardisé avec pagination.
+                L&apos;API Ethniafrique Atlas est basée sur la méthodologie
+                AFRIK avec des identifiants stables (FLG_*, PPL_*, codes ISO) et
+                un format de réponse standardisé avec pagination.
               </p>
             </div>
           </Card>
@@ -88,41 +88,6 @@ export default function ApiDocsPage() {
                     JSON
                   </Button>
                 </Link>
-              </div>
-            </div>
-          </Card>
-
-          {/* API v1 Deprecated Notice */}
-          <Card className="p-6 bg-amber-50/50 dark:bg-amber-950/20 border-amber-200/50">
-            <div className="flex items-start gap-3">
-              <AlertTriangle className="h-5 w-5 text-amber-600 mt-0.5" />
-              <div className="space-y-2">
-                <h3 className="font-semibold text-amber-800 dark:text-amber-200">
-                  API v1 (Dépréciée)
-                </h3>
-                <p className="text-sm text-amber-700 dark:text-amber-300">
-                  L'API v1 est dépréciée et n'est plus disponible. Veuillez
-                  migrer vers l'API v2 pour accéder aux données des régions,
-                  pays et ethnies via les nouveaux endpoints.
-                </p>
-                <ul className="text-sm text-amber-700 dark:text-amber-300 space-y-1 list-disc list-inside">
-                  <li>
-                    <strong>/api/regions</strong> → Utilisez{" "}
-                    <code>/api/v2/language-families</code>
-                  </li>
-                  <li>
-                    <strong>/api/ethnicities</strong> → Utilisez{" "}
-                    <code>/api/v2/peoples</code>
-                  </li>
-                  <li>
-                    <strong>/api/countries</strong> → Utilisez{" "}
-                    <code>/api/v2/countries</code>
-                  </li>
-                  <li>
-                    <strong>/api/stats</strong> → Agrégez depuis les endpoints
-                    v2
-                  </li>
-                </ul>
               </div>
             </div>
           </Card>

@@ -2,7 +2,7 @@
  * AFRIK Data Loader - API v2
  *
  * Fonctions de fetch vers l'API v2 avec gestion d'erreur et cache client.
- * Remplace datasetLoader.ts pour les données AFRIK.
+ * Client-side data loader for AFRIK data.
  */
 
 import type {

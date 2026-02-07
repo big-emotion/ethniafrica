@@ -1,5 +1,5 @@
 import { redirect, notFound } from "next/navigation";
-import { Language } from "@/types/ethnicity";
+import { Language } from "@/types/shared";
 import { getLocalizedRoute } from "@/lib/routing";
 
 type SectionType = "country" | "region" | "ethnicity" | "family" | "people";

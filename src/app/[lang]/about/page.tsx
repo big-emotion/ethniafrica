@@ -2,9 +2,9 @@
 
 import { useParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
-import { PageLayout } from "@/components/PageLayout";
+import { PageLayout } from "@/components/layout/PageLayout";
 import { useEffect } from "react";
-import { Language } from "@/types/ethnicity";
+import { Language } from "@/types/shared";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -568,11 +568,11 @@ export default function AboutPage() {
         title: "À propos du projet",
         text1: (
           <>
-            Le <strong>Dictionnaire des Ethnies d'Afrique</strong> est un projet
-            personnel dont l'objectif est de{" "}
+            Le <strong>Dictionnaire des Ethnies d&apos;Afrique</strong> est un
+            projet personnel dont l&apos;objectif est de{" "}
             <strong>
               rendre accessibles et claires les informations sur les peuples
-              d'Afrique
+              d&apos;Afrique
             </strong>
             .
           </>
@@ -580,7 +580,7 @@ export default function AboutPage() {
         text2: (
           <>
             Avant les nations et les États, il y avait des ethnies, des peuples
-            et des royaumes. L'histoire et les frontières les ont parfois
+            et des royaumes. L&apos;histoire et les frontières les ont parfois
             effacés, mais ces peuples existent toujours et continuent de
             transmettre leurs langues, leurs cultures et leurs traditions.
           </>
@@ -591,7 +591,7 @@ export default function AboutPage() {
           <>
             Le travail est long, car il est{" "}
             <strong>
-              difficile de trouver des données fiables sur l'Afrique
+              difficile de trouver des données fiables sur l&apos;Afrique
             </strong>
             , mais le but est de centraliser ce savoir et de le rendre simple à
             consulter.

@@ -4,14 +4,12 @@
 import { z } from "zod";
 
 export const contributionTypeSchema = z.enum([
-  "new_region",
+  "new_people",
+  "update_people",
   "new_country",
-  "new_ethnicity",
-  "update_region",
   "update_country",
-  "update_ethnicity",
-  "new_presence",
-  "update_presence",
+  "new_language_family",
+  "update_language_family",
 ]);
 
 export const contributionSchema = z.object({
