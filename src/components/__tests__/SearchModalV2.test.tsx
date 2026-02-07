@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, act } from "@testing-library/react";
-import { SearchModalV2 } from "../SearchModalV2";
+import { SearchModalV2 } from "../search/SearchModalV2";
 import * as afrikLoader from "@/lib/afrikLoader";
 import type { SearchResult } from "@/types/afrik-frontend";
 

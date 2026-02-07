@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
-import { PageLayout } from "@/components/PageLayout";
-import { PeopleView } from "@/components/PeopleView";
-import { PeopleDetailView } from "@/components/PeopleDetailView";
+import { PageLayout } from "@/components/layout/PageLayout";
+import { PeopleView } from "@/components/views/PeopleView";
+import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getTranslation } from "@/lib/translations";
@@ -65,6 +65,7 @@ export function PeuplesPageContent() {
   useEffect(() => {
     const expected = getLocalizedRoute(language, "peoples");
     if (pathname !== expected) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedPeople(null);
       router.replace(expected);
     }
@@ -73,6 +74,7 @@ export function PeuplesPageContent() {
   useEffect(() => {
     const peopleParam = searchParams.get("people");
     if (peopleParam) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedPeople(peopleParam);
     }
   }, [searchParams]);

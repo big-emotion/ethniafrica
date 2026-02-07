@@ -2,8 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Language } from "@/types/ethnicity";
-import { getLanguageFromRoute, getLocalizedRoute, getPageFromRoute, getSlugFromRoute } from "@/lib/routing";
+import { Language } from "@/types/shared";
+import {
+  getLanguageFromRoute,
+  getLocalizedRoute,
+  getPageFromRoute,
+  getSlugFromRoute,
+} from "@/lib/routing";
 
 const LANGUAGE_STORAGE_KEY = "ethniafrique-language";
 
@@ -35,6 +40,7 @@ export const useLanguage = () => {
     // Try to get language from route and update if different
     const routeLang = getLanguageFromRoute(pathname);
     if (routeLang && routeLang !== language) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLanguageState(routeLang);
     }
   }, [pathname, language]);
@@ -52,14 +58,21 @@ export const useLanguage = () => {
     // Update route if we're on a localized page
     const currentPage = pathname;
     const pageType = getPageFromRoute(currentPage);
-    
+
     if (pageType) {
       // Preserve query params if any
       const searchParams = new URLSearchParams(window.location.search);
       const queryString = searchParams.toString();
-      const newRoute = getLocalizedRoute(lang, pageType) + (queryString ? `?${queryString}` : "");
+      const newRoute =
+        getLocalizedRoute(lang, pageType) +
+        (queryString ? `?${queryString}` : "");
       router.push(newRoute);
-    } else if (currentPage === "/" || currentPage === "" || currentPage === `/${language}` || currentPage.match(/^\/(en|fr|es|pt)$/)) {
+    } else if (
+      currentPage === "/" ||
+      currentPage === "" ||
+      currentPage === `/${language}` ||
+      currentPage.match(/^\/(en|fr|es|pt)$/)
+    ) {
       // If on homepage, redirect to /{lang}
       router.push(`/${lang}`);
     } else if (currentPage.startsWith("/about")) {

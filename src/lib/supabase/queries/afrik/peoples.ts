@@ -3,7 +3,49 @@
  */
 
 import { createServerClient } from "../../server";
+import { logger } from "@/lib/api/logger";
 import type { People } from "@/types/afrik";
+
+/**
+ * Build a map of people_id -> country_ids[] from a batch query
+ */
+async function getCountryRelationsMap(
+  supabase: ReturnType<typeof createServerClient>,
+  peopleIds: string[]
+): Promise<Map<string, string[]>> {
+  if (peopleIds.length === 0) return new Map();
+
+  const { data: allRelations } = await supabase
+    .from("afrik_people_countries")
+    .select("people_id, country_id")
+    .in("people_id", peopleIds);
+
+  const map = new Map<string, string[]>();
+  for (const rel of allRelations || []) {
+    const existing = map.get(rel.people_id) || [];
+    existing.push(rel.country_id);
+    map.set(rel.people_id, existing);
+  }
+  return map;
+}
+
+/**
+ * Map raw DB rows to People objects using a pre-fetched relations map
+ */
+function mapRowsToPeoples(
+  rows: Array<Record<string, unknown>>,
+  relationsMap: Map<string, string[]>
+): People[] {
+  return rows.map((row) => ({
+    id: row.id as string,
+    nameMain: row.name_main as string,
+    languageFamilyId: row.language_family_id as string,
+    currentCountries: relationsMap.get(row.id as string) || [],
+    content: (row.content as Record<string, unknown>) || {},
+    createdAt: row.created_at ? new Date(row.created_at as string) : undefined,
+    updatedAt: row.updated_at ? new Date(row.updated_at as string) : undefined,
+  }));
+}
 
 /**
  * Get all AFRIK peoples with optional pagination
@@ -23,30 +65,14 @@ export async function getAllAfrikPeoples(
   const { data, error } = await query;
 
   if (error) {
-    console.error("Error fetching AFRIK peoples:", error);
+    logger.error("Error fetching AFRIK peoples", error);
     throw error;
   }
 
-  // Get relations for currentCountries
-  const peoples: People[] = [];
-  for (const row of data || []) {
-    const { data: relations } = await supabase
-      .from("afrik_people_countries")
-      .select("country_id")
-      .eq("people_id", row.id);
+  const peopleIds = (data || []).map((row) => row.id);
+  const relationsMap = await getCountryRelationsMap(supabase, peopleIds);
 
-    peoples.push({
-      id: row.id,
-      nameMain: row.name_main,
-      languageFamilyId: row.language_family_id,
-      currentCountries: (relations || []).map((r) => r.country_id),
-      content: row.content || {},
-      createdAt: row.created_at ? new Date(row.created_at) : undefined,
-      updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,
-    });
-  }
-
-  return peoples;
+  return mapRowsToPeoples(data || [], relationsMap);
 }
 
 /**
@@ -64,27 +90,15 @@ export async function getAfrikPeopleById(id: string): Promise<People | null> {
     if (error.code === "PGRST116") {
       return null;
     }
-    console.error(`Error fetching AFRIK people ${id}:`, error);
+    logger.error(`Error fetching AFRIK people ${id}`, error);
     throw error;
   }
 
   if (!data) return null;
 
-  // Get relations for currentCountries
-  const { data: relations } = await supabase
-    .from("afrik_people_countries")
-    .select("country_id")
-    .eq("people_id", id);
+  const relationsMap = await getCountryRelationsMap(supabase, [id]);
 
-  return {
-    id: data.id,
-    nameMain: data.name_main,
-    languageFamilyId: data.language_family_id,
-    currentCountries: (relations || []).map((r) => r.country_id),
-    content: data.content || {},
-    createdAt: data.created_at ? new Date(data.created_at) : undefined,
-    updatedAt: data.updated_at ? new Date(data.updated_at) : undefined,
-  };
+  return mapRowsToPeoples([data], relationsMap)[0];
 }
 
 /**
@@ -101,33 +115,14 @@ export async function getAfrikPeoplesByLanguageFamily(
     .order("name_main");
 
   if (error) {
-    console.error(
-      `Error fetching AFRIK peoples for family ${familyId}:`,
-      error
-    );
+    logger.error(`Error fetching AFRIK peoples for family ${familyId}`, error);
     throw error;
   }
 
-  // Get relations for currentCountries
-  const peoples: People[] = [];
-  for (const row of data || []) {
-    const { data: relations } = await supabase
-      .from("afrik_people_countries")
-      .select("country_id")
-      .eq("people_id", row.id);
+  const peopleIds = (data || []).map((row) => row.id);
+  const relationsMap = await getCountryRelationsMap(supabase, peopleIds);
 
-    peoples.push({
-      id: row.id,
-      nameMain: row.name_main,
-      languageFamilyId: row.language_family_id,
-      currentCountries: (relations || []).map((r) => r.country_id),
-      content: row.content || {},
-      createdAt: row.created_at ? new Date(row.created_at) : undefined,
-      updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,
-    });
-  }
-
-  return peoples;
+  return mapRowsToPeoples(data || [], relationsMap);
 }
 
 /**
@@ -143,8 +138,8 @@ export async function getAfrikPeoplesByCountry(
     .eq("country_id", countryId);
 
   if (relationsError) {
-    console.error(
-      `Error fetching relations for country ${countryId}:`,
+    logger.error(
+      `Error fetching relations for country ${countryId}`,
       relationsError
     );
     throw relationsError;
@@ -162,33 +157,16 @@ export async function getAfrikPeoplesByCountry(
     .order("name_main");
 
   if (error) {
-    console.error(
-      `Error fetching AFRIK peoples for country ${countryId}:`,
+    logger.error(
+      `Error fetching AFRIK peoples for country ${countryId}`,
       error
     );
     throw error;
   }
 
-  // Get all relations for currentCountries
-  const peoples: People[] = [];
-  for (const row of data || []) {
-    const { data: peopleRelations } = await supabase
-      .from("afrik_people_countries")
-      .select("country_id")
-      .eq("people_id", row.id);
+  const relationsMap = await getCountryRelationsMap(supabase, peopleIds);
 
-    peoples.push({
-      id: row.id,
-      nameMain: row.name_main,
-      languageFamilyId: row.language_family_id,
-      currentCountries: (peopleRelations || []).map((r) => r.country_id),
-      content: row.content || {},
-      createdAt: row.created_at ? new Date(row.created_at) : undefined,
-      updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,
-    });
-  }
-
-  return peoples;
+  return mapRowsToPeoples(data || [], relationsMap);
 }
 
 /**
@@ -205,28 +183,12 @@ export async function searchAfrikPeoples(query: string): Promise<People[]> {
     .order("name_main");
 
   if (error) {
-    console.error("Error searching AFRIK peoples:", error);
+    logger.error("Error searching AFRIK peoples", error);
     throw error;
   }
 
-  // Get relations for currentCountries
-  const peoples: People[] = [];
-  for (const row of data || []) {
-    const { data: relations } = await supabase
-      .from("afrik_people_countries")
-      .select("country_id")
-      .eq("people_id", row.id);
+  const peopleIds = (data || []).map((row) => row.id);
+  const relationsMap = await getCountryRelationsMap(supabase, peopleIds);
 
-    peoples.push({
-      id: row.id,
-      nameMain: row.name_main,
-      languageFamilyId: row.language_family_id,
-      currentCountries: (relations || []).map((r) => r.country_id),
-      content: row.content || {},
-      createdAt: row.created_at ? new Date(row.created_at) : undefined,
-      updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,
-    });
-  }
-
-  return peoples;
+  return mapRowsToPeoples(data || [], relationsMap);
 }

@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
-import { PageLayout } from "@/components/PageLayout";
-import { LanguageFamilyView } from "@/components/LanguageFamilyView";
-import { LanguageFamilyDetailView } from "@/components/LanguageFamilyDetailView";
+import { PageLayout } from "@/components/layout/PageLayout";
+import { LanguageFamilyView } from "@/components/views/LanguageFamilyView";
+import { LanguageFamilyDetailView } from "@/components/detail/LanguageFamilyDetailView";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getTranslation } from "@/lib/translations";
@@ -65,6 +65,7 @@ export function FamillesPageContent() {
   useEffect(() => {
     const expected = getLocalizedRoute(language, "families");
     if (pathname !== expected) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedFamily(null);
       router.replace(expected);
     }
@@ -73,6 +74,7 @@ export function FamillesPageContent() {
   useEffect(() => {
     const familyParam = searchParams.get("family");
     if (familyParam) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedFamily(familyParam);
     }
   }, [searchParams]);

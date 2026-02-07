@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { LanguageFamilyView } from "../LanguageFamilyView";
+import { LanguageFamilyView } from "../views/LanguageFamilyView";
 import * as afrikLoader from "@/lib/afrikLoader";
 import type { LanguageFamilySummary } from "@/types/afrik-frontend";
 

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { PeopleView } from "../PeopleView";
+import { PeopleView } from "../views/PeopleView";
 import * as afrikLoader from "@/lib/afrikLoader";
 import type { PeopleSummary } from "@/types/afrik-frontend";
 

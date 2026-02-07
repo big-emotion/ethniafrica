@@ -22,7 +22,7 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
  *             properties:
  *               type:
  *                 type: string
- *                 enum: [new_region, new_country, new_ethnicity, update_region, update_country, update_ethnicity, new_presence, update_presence]
+ *                 enum: [new_people, update_people, new_country, update_country, new_language_family, update_language_family]
  *               proposed_payload:
  *                 type: object
  *                 description: Données proposées (structure flexible selon le type)
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { honeypot, ...contributionData } = validationResult.data;
+    const { honeypot: _honeypot, ...contributionData } = validationResult.data;
 
     // Insert contribution into Supabase
     const supabase = createServerClient();

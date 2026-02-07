@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
-import { PageLayout } from "@/components/PageLayout";
-import { CountryView } from "@/components/CountryView";
-import { CountryDetailViewV2 } from "@/components/CountryDetailViewV2";
+import { PageLayout } from "@/components/layout/PageLayout";
+import { CountryView } from "@/components/views/CountryView";
+import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getTranslation } from "@/lib/translations";
@@ -63,6 +63,7 @@ export function PaysPageContentV2() {
   useEffect(() => {
     const expected = getLocalizedRoute(language, "countries");
     if (pathname !== expected) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedCountry(null);
       router.replace(expected);
     }
@@ -71,6 +72,7 @@ export function PaysPageContentV2() {
   useEffect(() => {
     const countryParam = searchParams.get("country");
     if (countryParam) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSelectedCountry(countryParam);
     }
   }, [searchParams]);

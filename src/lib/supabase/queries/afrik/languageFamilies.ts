@@ -3,6 +3,7 @@
  */
 
 import { createServerClient } from "../../server";
+import { logger } from "@/lib/api/logger";
 import type { LanguageFamily } from "@/types/afrik";
 
 /**
@@ -26,7 +27,7 @@ export async function getAllAfrikLanguageFamilies(
   const { data, error } = await query;
 
   if (error) {
-    console.error("Error fetching AFRIK language families:", error);
+    logger.error("Error fetching AFRIK language families", error);
     throw error;
   }
 
@@ -57,7 +58,7 @@ export async function getAfrikLanguageFamilyById(
     if (error.code === "PGRST116") {
       return null;
     }
-    console.error(`Error fetching AFRIK language family ${id}:`, error);
+    logger.error(`Error fetching AFRIK language family ${id}`, error);
     throw error;
   }
 
@@ -91,7 +92,7 @@ export async function searchAfrikLanguageFamilies(
     .order("name_fr");
 
   if (error) {
-    console.error("Error searching AFRIK language families:", error);
+    logger.error("Error searching AFRIK language families", error);
     throw error;
   }
 

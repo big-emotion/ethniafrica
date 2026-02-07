@@ -77,3 +77,9 @@ dataset/**/*.DS_Store
 # Ignorer les dossiers générés
 dataset/matched/
 dataset/parsed/
+
+# Archives supprimées
+dataset/source/archive/
+
+# Logs générés (migration, validation)
+dataset/source/afrik/logs/

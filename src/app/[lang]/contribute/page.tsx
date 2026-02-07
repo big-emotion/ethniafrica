@@ -2,9 +2,9 @@
 
 import { useParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
-import { PageLayout } from "@/components/PageLayout";
+import { PageLayout } from "@/components/layout/PageLayout";
 import { useEffect } from "react";
-import { Language } from "@/types/ethnicity";
+import { Language } from "@/types/shared";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Script from "next/script";
@@ -15,7 +15,6 @@ import {
   Code,
   MessageSquare,
 } from "lucide-react";
-import { Card } from "@/components/ui/card";
 import { ContributionForm } from "@/components/ContributionForm";
 
 export default function ContributePage() {
@@ -37,18 +36,18 @@ export default function ContributePage() {
         title: "Contribution and participation",
         text1: (
           <>
-            For now, the site is powered by <strong>CSV files</strong> that
-            contain data on countries, regions, and ethnic groups. I keep
-            searching and structuring this information over time.
+            The site is powered by a <strong>structured database</strong>{" "}
+            containing data on African peoples, linguistic families, and
+            countries, organized using the AFRIK methodology.
           </>
         ),
         text2: (
           <>
             I am{" "}
             <strong>open to all kinds of proposals and contributions</strong>,
-            whether it's sharing CSV data, sources, corrections, or improvement
-            ideas. If you'd like to help, feel free to contact me or contribute
-            directly through the{" "}
+            whether it&apos;s sharing sources, corrections, or improvement
+            ideas. If you&apos;d like to help, feel free to contact me or
+            contribute directly through the{" "}
             <a
               href="https://github.com/big-emotion/ethniafrique-atlas"
               target="_blank"
@@ -63,7 +62,7 @@ export default function ContributePage() {
       },
       apiDocs: {
         title: "API Documentation",
-        text: "Access the complete API documentation to understand how to retrieve data programmatically. The API provides endpoints for regions, countries, and ethnicities with detailed demographic information.",
+        text: "Access the complete API documentation to understand how to retrieve data programmatically. The API provides endpoints for peoples, linguistic families, and countries.",
         button: "View API Documentation",
       },
       download: {
@@ -89,20 +88,20 @@ export default function ContributePage() {
         title: "Contribution et participation",
         text1: (
           <>
-            Pour le moment, le site est alimenté à partir de{" "}
-            <strong>fichiers CSV</strong> regroupant les données sur les pays,
-            les régions et les ethnies. Je continue à rechercher ces données et
-            à les structurer au fur et à mesure.
+            Le site est alimenté par une{" "}
+            <strong>base de données structurée</strong> regroupant les données
+            sur les peuples africains, les familles linguistiques et les pays,
+            organisées selon la méthodologie AFRIK.
           </>
         ),
         text2: (
           <>
             Je suis{" "}
             <strong>ouvert à toutes les propositions ou contributions</strong>,
-            qu'il s'agisse de partager des fichiers CSV, des sources, des
-            corrections, ou simplement des idées d'amélioration. Si vous
-            souhaitez aider, n'hésitez pas à me contacter ou à proposer
-            directement sur le{" "}
+            qu&apos;il s&apos;agisse de partager des sources, des corrections,
+            ou simplement des idées d&apos;amélioration. Si vous souhaitez
+            aider, n&apos;hésitez pas à me contacter ou à proposer directement
+            sur le{" "}
             <a
               href="https://github.com/big-emotion/ethniafrique-atlas"
               target="_blank"
@@ -117,7 +116,7 @@ export default function ContributePage() {
       },
       apiDocs: {
         title: "Documentation API",
-        text: "Consultez la documentation complète de l'API pour comprendre comment récupérer les données de manière programmatique. L'API fournit des endpoints pour les régions, pays et ethnies avec des informations démographiques détaillées.",
+        text: "Consultez la documentation complète de l'API pour comprendre comment récupérer les données de manière programmatique. L'API fournit des endpoints pour les peuples, familles linguistiques et pays.",
         button: "Voir la documentation API",
       },
       download: {
@@ -143,18 +142,18 @@ export default function ContributePage() {
         title: "Contribución y participación",
         text1: (
           <>
-            Por ahora, el sitio se alimenta de <strong>archivos CSV</strong> que
-            contienen datos sobre países, regiones y grupos étnicos. Sigo
-            buscando y estructurando esta información poco a poco.
+            El sitio se alimenta de una{" "}
+            <strong>base de datos estructurada</strong> con datos sobre los
+            pueblos africanos, las familias lingüísticas y los países,
+            organizados según la metodología AFRIK.
           </>
         ),
         text2: (
           <>
             Estoy{" "}
             <strong>abierto a todo tipo de propuestas y contribuciones</strong>,
-            ya sea compartir archivos CSV, fuentes, correcciones o ideas para
-            mejorar. Si quieres ayudar, puedes contactarme o contribuir
-            directamente en el{" "}
+            ya sea compartir fuentes, correcciones o ideas para mejorar. Si
+            quieres ayudar, puedes contactarme o contribuir directamente en el{" "}
             <a
               href="https://github.com/big-emotion/ethniafrique-atlas"
               target="_blank"
@@ -169,7 +168,7 @@ export default function ContributePage() {
       },
       apiDocs: {
         title: "Documentación API",
-        text: "Accede a la documentación completa de la API para entender cómo recuperar los datos de forma programática. La API proporciona endpoints para regiones, países y etnias con información demográfica detallada.",
+        text: "Accede a la documentación completa de la API para entender cómo recuperar los datos de forma programática. La API proporciona endpoints para pueblos, familias lingüísticas y países.",
         button: "Ver documentación API",
       },
       download: {
@@ -195,18 +194,18 @@ export default function ContributePage() {
         title: "Contribuição e participação",
         text1: (
           <>
-            Por enquanto, o site é alimentado por <strong>arquivos CSV</strong>{" "}
-            com dados sobre países, regiões e grupos étnicos. Continuo
-            pesquisando e estruturando essas informações com o tempo.
+            O site é alimentado por um{" "}
+            <strong>banco de dados estruturado</strong> com dados sobre os povos
+            africanos, as famílias linguísticas e os países, organizados segundo
+            a metodologia AFRIK.
           </>
         ),
         text2: (
           <>
             Estou{" "}
             <strong>aberto a qualquer tipo de proposta ou contribuição</strong>,
-            seja compartilhando arquivos CSV, fontes, correções ou ideias de
-            melhoria. Se quiser ajudar, entre em contato comigo ou contribua
-            diretamente no{" "}
+            seja compartilhando fontes, correções ou ideias de melhoria. Se
+            quiser ajudar, entre em contato comigo ou contribua diretamente no{" "}
             <a
               href="https://github.com/big-emotion/ethniafrique-atlas"
               target="_blank"
@@ -221,7 +220,7 @@ export default function ContributePage() {
       },
       apiDocs: {
         title: "Documentação API",
-        text: "Acesse a documentação completa da API para entender como recuperar os dados de forma programática. A API fornece endpoints para regiões, países e etnias com informações demográficas detalhadas.",
+        text: "Acesse a documentação completa da API para entender como recuperar os dados de forma programática. A API fornece endpoints para povos, famílias linguísticas e países.",
         button: "Ver documentação API",
       },
       download: {

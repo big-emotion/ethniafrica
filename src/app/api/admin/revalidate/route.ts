@@ -13,11 +13,6 @@ import {
  * Body: { tags: string[] } - Liste des tags à invalider
  *
  * Tags disponibles:
- * - "regions" - Invalide le cache des régions
- * - "countries" - Invalide le cache des pays
- * - "ethnicities" - Invalide le cache des ethnies
- * - "population" - Invalide le cache de la population
- * - "africa" - Invalide le cache global de l'Afrique
  * - "afrik-language-families" - Invalide le cache des familles linguistiques AFRIK
  * - "afrik-peoples" - Invalide le cache des peuples AFRIK
  * - "afrik-countries" - Invalide le cache des pays AFRIK
@@ -45,12 +40,6 @@ export async function POST(request: NextRequest) {
     // Invalider chaque tag et incrémenter les versions correspondantes
     const invalidatedTags: string[] = [];
     const versionMap: Record<string, string> = {
-      regions: DATA_VERSION_KEYS.REGIONS,
-      countries: DATA_VERSION_KEYS.COUNTRIES,
-      ethnicities: DATA_VERSION_KEYS.ETHNICITIES,
-      population: DATA_VERSION_KEYS.POPULATION,
-      africa: DATA_VERSION_KEYS.POPULATION, // Africa version = population version
-      // AFRIK API v2 tags
       "afrik-language-families": DATA_VERSION_KEYS.AFRIK_LANGUAGE_FAMILIES,
       "afrik-peoples": DATA_VERSION_KEYS.AFRIK_PEOPLES,
       "afrik-countries": DATA_VERSION_KEYS.AFRIK_COUNTRIES,
