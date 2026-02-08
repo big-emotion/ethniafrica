@@ -16,12 +16,16 @@ import {
   Globe,
   AlertTriangle,
   ExternalLink,
+  ArrowRight,
 } from "lucide-react";
 import type {
   LanguageFamilyDetail,
   PeopleReference,
 } from "@/types/afrik-frontend";
 import { getLanguageFamily } from "@/lib/afrikLoader";
+import { getLocalizedRoute } from "@/lib/routing";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface LanguageFamilyDetailViewProps {
   familyId: string;
@@ -211,6 +215,22 @@ export const LanguageFamilyDetailView = ({
                 {language === "en" ? "languages" : "langues"}
               </Badge>
             )}
+            {family.associatedPeoples &&
+              family.associatedPeoples.length > 0 && (
+                <Badge variant="secondary" className="gap-1">
+                  <Users className="h-3 w-3" />
+                  {family.associatedPeoples.length}{" "}
+                  {language === "en"
+                    ? family.associatedPeoples.length > 1
+                      ? "peoples"
+                      : "people"
+                    : language === "es"
+                      ? "pueblos"
+                      : language === "pt"
+                        ? "povos"
+                        : "peuples"}
+                </Badge>
+              )}
             {family.generalInfo?.geographicArea && (
               <Badge variant="outline" className="gap-1">
                 <MapPin className="h-3 w-3" />
@@ -345,43 +365,70 @@ export const LanguageFamilyDetailView = ({
                 <CardTitle className="flex items-center gap-2">
                   <Users className="h-5 w-5" />
                   {language === "en"
-                    ? "Associated Peoples"
-                    : "Peuples associés"}
+                    ? "Associated Peoples (Examples)"
+                    : language === "es"
+                      ? "Pueblos asociados (Ejemplos)"
+                      : language === "pt"
+                        ? "Povos associados (Exemplos)"
+                        : "Peuples associés (Exemples)"}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 {family.associatedPeoples &&
                 family.associatedPeoples.length > 0 ? (
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    {family.associatedPeoples.map(
-                      (people: PeopleReference, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="secondary"
-                          className={`justify-start ${
-                            people.peopleId && onPeopleClick
-                              ? "cursor-pointer hover:bg-primary hover:text-primary-foreground"
-                              : ""
-                          }`}
-                          onClick={() => {
-                            if (people.peopleId && onPeopleClick) {
-                              onPeopleClick(people.peopleId);
-                            }
-                          }}
-                        >
-                          {people.name}
-                          {people.peopleId && onPeopleClick && (
-                            <ExternalLink className="h-3 w-3 ml-1" />
-                          )}
-                        </Badge>
-                      )
-                    )}
-                  </div>
+                  <>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                      {family.associatedPeoples.map(
+                        (people: PeopleReference, idx) => (
+                          <Badge
+                            key={idx}
+                            variant="secondary"
+                            className={`justify-start ${
+                              people.peopleId && onPeopleClick
+                                ? "cursor-pointer hover:bg-primary hover:text-primary-foreground"
+                                : ""
+                            }`}
+                            onClick={() => {
+                              if (people.peopleId && onPeopleClick) {
+                                onPeopleClick(people.peopleId);
+                              }
+                            }}
+                          >
+                            {people.name}
+                            {people.peopleId && onPeopleClick && (
+                              <ExternalLink className="h-3 w-3 ml-1" />
+                            )}
+                          </Badge>
+                        )
+                      )}
+                    </div>
+                    <div className="pt-2 border-t">
+                      <Link
+                        href={`${getLocalizedRoute(language, "peoples")}?languageFamily=${family.id}`}
+                        passHref
+                      >
+                        <Button variant="default" className="w-full gap-2">
+                          {language === "en"
+                            ? "See all peoples of this family"
+                            : language === "es"
+                              ? "Ver todos los pueblos de esta familia"
+                              : language === "pt"
+                                ? "Ver todos os povos desta família"
+                                : "Voir tous les peuples de cette famille"}
+                          <ArrowRight className="h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
                     {language === "en"
                       ? "No associated peoples listed"
-                      : "Aucun peuple associé répertorié"}
+                      : language === "es"
+                        ? "Ningún pueblo asociado listado"
+                        : language === "pt"
+                          ? "Nenhum povo associado listado"
+                          : "Aucun peuple associé répertorié"}
                   </p>
                 )}
               </CardContent>

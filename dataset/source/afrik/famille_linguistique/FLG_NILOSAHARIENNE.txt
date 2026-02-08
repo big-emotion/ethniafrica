@@ -31,8 +31,8 @@
 - Usage contemporain (définition moderne de la famille) :
   Macro-famille proposée (phylogénétique) regroupant les langues nilotiques (Maasai, Luo, Dinka, Nuer), sahariennes (Kanuri, Teda, Daza, Zaghawa), soudaniques centrales (Lendu, Lugbara, Mangbetu, Moru), Songhay (Zarma, Songhay de Gao), Koman (sud Éthiopie), Kunama/Barya, Surmic (Me'en, Suri), et d'autres branches. Utilisée dans les classifications linguistiques académiques (SIL Ethnologue, Glottolog avec réserves) bien que son unité génétique soit controversée.
 - Aire / répartition géographique générale :
-  Est sahélien, hauts plateaux du Nil (Soudan, Soudan du Sud, Éthiopie), Sahara central (Niger, Tchad), régions du Tchad et de l'Ouganda, Kenya, Tanzanie. Distribution discontinue allant du Sahel central (Mali, Niger) à l'Est de l'Afrique (Tanzanie, Kenya), zones méditerranéennes-sud (Soudan, Soudan du Sud, Éthiopie, Érythrée), et zones centrales africaines (RDC).
-- Nombre de langues (estimation) : ~120–210
+  Est sahélien, hauts plateaux du Nil (Soudan, Soudan du Sud, Éthiopie), Sahara central (Niger, Tchad), régions du Tchad et de l'Ouganda, Kenya, Tanzanie, distribution discontinue allant du Sahel central (Mali, Niger) à l'Est de l'Afrique (Tanzanie, Kenya), zones méditerranéennes-sud (Soudan, Soudan du Sud, Éthiopie, Érythrée) et zones centrales africaines (RDC)
+- Nombre de langues (estimation) : environ 120-210
 - Nombre total de locuteurs (estimation) : 50 à 70 millions
 
 ------------------------------------------
@@ -172,29 +172,29 @@
 - Nombre total de locuteurs :
   50–70 millions (estimations Ethnologue / SIL, années 2020-2025), répartis dans environ 17 pays en Afrique centrale, orientale et septentrionale.
 - Répartition par pays :
-  **Soudan du Sud :** ~10-15 millions de locuteurs Nilo-Sahariens (principalement Nilotic : Dinka ~4-5 millions, Nuer ~2 millions, Bari, Lotuko, etc.), représentant environ **35-50%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL, Dobon et al. 2015 (*Scientific Reports*).
-  
-  **Soudan :** ~8-12 millions de locuteurs (Nilotic, Nubian, Saharan, Central Sudanic, etc.), représentant environ **18-25%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL, CIA World Factbook.
-  
-  **Tchad :** ~7-8 millions de locuteurs (principalement Saharan : Kanuri ~4 millions, Zaghawa, etc., et Central Sudanic), représentant environ **40-45%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL, Britannica.
-  
-  **Ouganda :** ~3-4 millions de locuteurs (Nilotic : Luo/Acholi ~1.5 millions, Central Sudanic : Lugbara ~1.7 millions, etc.), représentant environ **7-9%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
-  
-  **Kenya :** ~5-7 millions de locuteurs (Nilotic : Dholuo ~4.4 millions, Kalenjin, Maasai ~1-2 millions, etc.), représentant environ **10-15%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL, CIA World Factbook.
-  
-  **Tanzanie :** ~1-2 millions de locuteurs (Nilotic : Maasai, etc.), représentant environ **2-3%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
-  
-  **Niger :** ~4-5 millions de locuteurs (Saharan : Kanuri ~4 millions, Songhay ~0.5 million), représentant environ **15-20%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
-  
-  **Nigéria :** ~1-2 millions de locuteurs (Saharan : Kanuri, etc.), représentant environ **<1%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
-  
-  **Éthiopie :** ~3-5 millions de locuteurs (Koman : Gumuz ~250 000, Komo, Uduk ; Surmic : Me'en, Suri, Murle ; Nilotic : minorités), représentant environ **3-5%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
-  
-  **Érythrée :** ~200 000-500 000 locuteurs (Kunama, Barya, Nubian), représentant environ **5-10%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
-  
-  **RDC :** ~500 000-1 million de locuteurs (Central Sudanic : Mangbetu, Lendu, Moru, etc.), représentant environ **<1%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
-  
-  **République centrafricaine :** ~500 000-1 million de locuteurs (Central Sudanic : Bongo-Bagirmi, etc.), représentant environ **10-15%** de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+  **Soudan du Sud :** environ 10-15 millions de locuteurs Nilo-Sahariens (principalement Nilotic : Dinka environ 4-5 millions, Nuer environ 2 millions, Bari, Lotuko, etc.), représentant environ 35-50% de la population nationale (estimation 2025). Sources : Ethnologue/SIL, Dobon et al. 2015.
+
+  **Soudan :** environ 8-12 millions de locuteurs (Nilotic, Nubian, Saharan, Central Sudanic, etc.), représentant environ 18-25% de la population nationale (estimation 2025). Sources : Ethnologue/SIL, CIA World Factbook.
+
+  **Tchad :** environ 7-8 millions de locuteurs (principalement Saharan : Kanuri environ 4 millions, Zaghawa, etc., et Central Sudanic), représentant environ 40-45% de la population nationale (estimation 2025). Sources : Ethnologue/SIL, Britannica.
+
+  **Ouganda :** environ 3-4 millions de locuteurs (Nilotic : Luo/Acholi environ 1.5 millions, Central Sudanic : Lugbara environ 1.7 millions, etc.), représentant environ 7-9% de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+
+  **Kenya :** environ 5-7 millions de locuteurs (Nilotic : Dholuo environ 4.4 millions, Kalenjin, Maasai environ 1-2 millions, etc.), représentant environ 10-15% de la population nationale (estimation 2025). Sources : Ethnologue/SIL, CIA World Factbook.
+
+  **Tanzanie :** environ 1-2 millions de locuteurs (Nilotic : Maasai, etc.), représentant environ 2-3% de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+
+  **Niger :** environ 4-5 millions de locuteurs (Saharan : Kanuri environ 4 millions, Songhay environ 0.5 million), représentant environ 15-20% de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+
+  **Nigéria :** environ 1-2 millions de locuteurs (Saharan : Kanuri, etc.), représentant environ moins de 1% de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+
+  **Éthiopie :** environ 3-5 millions de locuteurs (Koman : Gumuz environ 250 000, Komo, Uduk ; Surmic : Me'en, Suri, Murle ; Nilotic : minorités), représentant environ 3-5% de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+
+  **Érythrée :** environ 200 000-500 000 locuteurs (Kunama, Barya, Nubian), représentant environ 5-10% de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+
+  **RDC :** environ 500 000-1 million de locuteurs (Central Sudanic : Mangbetu, Lendu, Moru, etc.), représentant environ moins de 1% de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
+
+  **République centrafricaine :** environ 500 000-1 million de locuteurs (Central Sudanic : Bongo-Bagirmi, etc.), représentant environ 10-15% de la population nationale (estimation 2025). Sources : Ethnologue/SIL.
   
   **Autres pays :** Mali (Songhay), Cameroun (Saharan), etc. avec populations plus modestes.
   

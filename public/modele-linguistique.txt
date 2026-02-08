@@ -1,9 +1,98 @@
 # Famille linguistique
 
+---
+
+## DIRECTIVES DE RÉDACTION (À RESPECTER STRICTEMENT)
+
+Ces directives garantissent un parsing fiable et une cohérence entre toutes les fiches.
+
+### 1. Formatage du texte
+- ❌ **PAS de symboles** : ~, >, <, ±, *, etc.
+- ❌ **PAS de markdown** : **gras**, *italique*, `code`, etc.
+- ✅ **Texte brut uniquement**
+- ✅ **Utiliser des mots** : "environ", "plus de", "moins de"
+
+### 2. Approximations numériques (locuteurs, langues)
+**Format standardisé** :
+- "environ X millions" | "plus de X millions" | "moins de X millions"
+- "environ X" | "plus de X" | "moins de X"
+
+**Exemples corrects** :
+- "environ 500 millions"
+- "plus de 30 millions"
+- "moins de 10 000"
+- "environ 375 langues"
+
+**Exemples incorrects** :
+- "~500 millions" ❌ (symbole tilde)
+- ">30 millions" ❌ (symbole supérieur)
+- "<10 000" ❌ (symbole inférieur)
+- "±500" ❌ (symbole plus-moins)
+
+### 3. Aires géographiques (Header + Section 1)
+**Format** : Liste séparée par virgules, SANS tirets initiaux
+
+**Exemple correct** :
+```
+Aire géographique : Afrique du Nord, Corne de l'Afrique, Sahel et Sahara, Extensions sahéliennes
+```
+
+**Exemples incorrects** :
+```
+Aire géographique :
+  - Afrique du Nord
+  - Corne de l'Afrique
+  - Sahel et Sahara
+```
+❌ (tirets, format liste)
+
+```
+Aire géographique : - Afrique du Nord - Corne de l'Afrique
+```
+❌ (tirets parasites)
+
+### 4. Peuples associés (Section 2)
+**Format strict** : Lister 5 à 10 EXEMPLES représentatifs (pas exhaustif)
+- Format : "- Peuple X : Nom (PPL_ID)"
+- ❌ **PAS de raccourci "(autres : ...)"**
+
+**Exemples corrects** :
+```
+# 2. Peuples associés
+- Peuple 1 : Kongo (PPL_KONGO)
+- Peuple 2 : Luba (PPL_LUBA)
+- Peuple 3 : Zoulou (PPL_ZULU)
+- Peuple 4 : Shona (PPL_SHONA)
+- Peuple 5 : Tswana (PPL_TSWANA)
+```
+
+**Exemple incorrect** :
+```
+# 2. Peuples associés
+- Peuple 1 : Kongo (PPL_KONGO)
+- Peuple 2 : Luba (PPL_LUBA)
+- (autres : Shona, Tswana, Ganda...)
+```
+❌ (pattern "autres" interdit)
+
+### 5. Longueur cible
+- **Header décolonial** : 15-20 lignes
+- **Chaque section** : 15-30 lignes
+- **Total cible** : 100-150 lignes maximum
+- ⚠️ **Éviter les fiches > 200 lignes** (trop verbeuses)
+
+### 6. Caractéristiques linguistiques (Section 3)
+- Descriptions factuelles avec exemples concrets
+- Pas de listes à puces excessives avec tirets
+- Privilégier les phrases complètes
+- Pas de formatage markdown
+
+---
+
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) :
-- Lien avec la famille linguistique : 
+- Lien avec la famille linguistique :
 - Nom français :
 - Nom anglais / auto-appellation académique :
 - Appellation(s) historique(s) :
@@ -26,29 +115,30 @@
 - Nombre de langues :
 - Nombre total de locuteurs :
 
-# 2. Peuples associés
-- Peuple 1 :
-- Peuple 2 :
-- Peuple 3 :
+# 2. Peuples associés (exemples représentatifs, 5-10 peuples)
+- Peuple 1 : Nom (PPL_ID)
+- Peuple 2 : Nom (PPL_ID)
+- Peuple 3 : Nom (PPL_ID)
+- Peuple 4 : Nom (PPL_ID)
+- Peuple 5 : Nom (PPL_ID)
 
 # 3. Caractéristiques linguistiques
-- Typologie linguistique :   objectifs de la typologie linguistique sont décrire, comprendre, modéliser les systèmes linguistiques (unités et structures) et leur dynamique de changement.
-- Particularités phonologiques :
-- Liens avec les familles voisines :
-- Innovations clés :
+- Typologie linguistique : Décrire les caractéristiques typologiques (ordre des mots, morphologie, etc.)
+- Particularités phonologiques : Systèmes tonals, consonnes spécifiques, voyelles, etc.
+- Liens avec les familles voisines : Emprunts lexicaux, influences mutuelles, contacts historiques
+- Innovations clés : Traits linguistiques distinctifs de cette famille
 
-# 4. Histoire et origines : //Définir le qui et le pourquoi de cette FLG ? 
-- Origine probable (théories archéologiques, linguistiques, génétiques) : //QUi 
-- Période d'émergence estimée : //Quand il date l'existence de la FLG + Quand est-ce qu'il ont classé 
-- Diffusion des langues (routes migratoires, expansion) : /Afficher l'ensemble des avis disponibles
-- Ruptures historiques (séparations, fusions) :
-- Zones de contact et métissages :
-- Événements historiques majeurs ayant influencé la famille :
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) : Présenter les différentes théories sur l'origine
+- Période d'émergence estimée : Datation de l'émergence de la famille et de sa classification académique
+- Diffusion des langues (routes migratoires, expansion) : Routes et phases d'expansion
+- Ruptures historiques (séparations, fusions) : Événements majeurs ayant fragmenté ou unifié la famille
+- Zones de contact et métissages : Régions de brassage linguistique et culturel
+- Événements historiques majeurs ayant influencé la famille : Colonisation, empires, migrations
 
 # 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
 - Répartition par pays :
-
 
 # 6. Sources
 - [Titre] – [Auteur/URL]

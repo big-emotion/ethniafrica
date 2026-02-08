@@ -37,7 +37,7 @@
 - Usage contemporain (définition moderne de la famille) : Famille mondiale comptant ~1 257 langues, couvrant le Pacifique et l'Asie du Sud-Est, et représentée en Afrique uniquement par le malgache et ses variantes régionales. Classification moderne basée sur la reconstruction comparative et la linguistique historique.
 - Aire / répartition géographique générale : Madagascar (Afrique), Asie du Sud-Est, Polynésie, Micronésie, Mélanésie, Formose (Taiwan).
 - Nombre de langues (estimation) : En Afrique : 1 (malgache). Monde : ~1257 (SIL Ethnologue, 2025).
-- Nombre total de locuteurs (estimation) : ~27 millions en Afrique (Madagascar, 2025), >300 millions dans le monde.
+- Nombre total de locuteurs (estimation) : environ 27 millions en Afrique (Madagascar, 2025), plus de 300 millions dans le monde.
 
 ------------------------------------------
 
@@ -49,8 +49,8 @@
   - Malayo-Polynésien occidental (branche principale en Afrique)
     - Malgache (dialectes : Merina, Betsimisaraka, Betsileo, Sakalava, Antandroy, Antanosy, Tsimihety, Antemoro, etc.)
 - Aire géographique : Madagascar (Afrique). Famille mondiale présente également en Asie du Sud-Est, Océanie, et Formose.
-- Nombre de langues : 1 (en Afrique) / ~1257 (monde)
-- Nombre total de locuteurs : ~27 millions (en Afrique, Madagascar, 2025) / >300 millions (monde)
+- Nombre de langues : 1 (en Afrique), environ 1257 (monde)
+- Nombre total de locuteurs : environ 27 millions (en Afrique, Madagascar, 2025), plus de 300 millions (monde)
 
 # 2. Peuples associés
 - Peuple 1 : Malgaches (Merina) (PPL_MERINA)
@@ -175,13 +175,13 @@
   - **2000s** : Mondialisation, influence croissante de l'anglais et du français
 
 # 5. Répartition géographique et démographie
-- Nombre total de locuteurs : ~27 millions (Madagascar, 2025, source : ONU/UNFPA)
+- Nombre total de locuteurs : environ 27 millions (Madagascar, 2025, source : ONU/UNFPA)
 - Répartition par pays :  
-  - **Madagascar** : ~26,5 millions (98% de la population totale, source : CIA World Factbook 2025)
-  - **France** : ~200 000 (diaspora malgache, source : INSEE 2025)
-  - **Comores** : ~5 000 (communautés malgaches, source : estimations locales)
-  - **Mayotte** : ~3 000 (communautés malgaches, source : INSEE 2025)
-  - **Autres pays** : ~2 000 (Réunion, Maurice, autres pays africains et européens)
+  - **Madagascar** : environ 26,5 millions (98% de la population totale, source : CIA World Factbook 2025)
+  - **France** : environ 200 000 (diaspora malgache, source : INSEE 2025)
+  - **Comores** : environ 5 000 (communautés malgaches, source : estimations locales)
+  - **Mayotte** : environ 3 000 (communautés malgaches, source : INSEE 2025)
+  - **Autres pays** : environ 2 000 (Réunion, Maurice, autres pays africains et européens)
 
 # 6. Sources
 - Adelaar, K. Alexander (2005) – *The Austronesian Languages of Asia and Madagascar*. Routledge.

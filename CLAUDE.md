@@ -162,6 +162,22 @@ ADMIN_PASSWORD=your_secure_password
 - shadcn/ui components for UI consistency
 - lint-staged with Husky: ESLint + Prettier on commit
 
+### Development Principles
+
+**TDD (Test-Driven Development)**
+
+- Write tests BEFORE writing code
+- Red → Green → Refactor cycle
+- All new code must have tests
+- Run tests before committing: `npm run test`
+
+**KISS (Keep It Simple, Stupid)**
+
+- Prefer simple solutions over complex ones
+- Avoid over-engineering
+- One function = one responsibility
+- Clear, self-documenting code
+
 ### Git
 
 - **Never add `Co-Authored-By` trailers** to commits, PRs, or MRs

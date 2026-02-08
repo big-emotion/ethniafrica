@@ -3,7 +3,7 @@
 ## HEADER DÉCOLONIAL (obligatoire)
 
 - Identifiant famille linguistique (FLG_xxxxx) : FLG_NIGERCONGO
-- Lien avec la famille linguistique : 
+- Lien avec la famille linguistique : Aucune famille parente (phylum de niveau supérieur)
 - Nom français : Niger-Congo
 - Nom anglais / auto-appellation académique : Niger–Congo
 - Appellation(s) historique(s) :
