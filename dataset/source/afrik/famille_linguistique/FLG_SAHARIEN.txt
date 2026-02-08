@@ -44,9 +44,9 @@
 - Aire géographique :
   Sahara central et oriental, bassin du lac Tchad, Tibesti (Tchad/Libye), nord-est du Tchad, est du Soudan, nord-est du Nigéria, sud-est du Niger, extrême nord du Cameroun
 - Nombre de langues :
-  10–15 langues et variétés dialectales
+  10-15 langues et variétés dialectales
 - Nombre total de locuteurs :
-  10–12 millions (estimations 2025, principalement Kanuri avec ~9,5 millions)
+  10-12 millions (estimations 2025, principalement Kanuri avec environ 9,5 millions)
 
 # 2. Peuples associés
 - Peuple 1 : Kanuri (PPL_KANURI)
@@ -134,7 +134,7 @@
 
 # 5. Répartition géographique et démographie
 - Nombre total de locuteurs :
-  10–12 millions de locuteurs natifs (estimations 2025, SIL Ethnologue, Wikipedia)
+  10-12 millions de locuteurs natifs (estimations 2025, SIL Ethnologue, Wikipedia)
 - Répartition par pays :
   - **Nigéria** : ~4 à 5 millions de locuteurs de Kanuri (principalement Yerwa Kanuri) dans les États du Nord-Est (Borno, Yobe, Adamawa). Proportion : ~2-5 % de la population nationale. Zones principales : Maiduguri, zones autour du lac Tchad. Source : Ethnologue 2025, Wikipedia "Saharan languages" 2025.
   

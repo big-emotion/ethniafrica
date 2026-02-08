@@ -13,7 +13,7 @@
   Le terme est purement géographique, créé par les linguistes (Koelle, puis Westermann et Greenberg) pour désigner les langues "non-mandé" de la côte ouest-africaine (Sénégal à Libéria).
 - Pourquoi le terme pose problème :
   L'appellation est critiquée car elle est purement géographique et ne garantit pas une unité génétique cohérente. Historiquement, le terme "West Atlantic" a souvent servi de catégorie résiduelle pour classer les langues de la côte ouest-africaine qui ne correspondaient pas aux familles Mandé ou Kwa, créant des confusions avec d'autres groupes côtiers comme les langues Krou (Kru) ou les langues lagunaires. De plus, la diversité interne est telle que certains linguistes (comme Dalby) ont remis en question l'existence de cette famille comme une unité génétique valide, la considérant parfois davantage comme une aire de convergence linguistique.
-  **→ Aujourd'hui, le terme est conservé par convention scientifique pour désigner ce regroupement géographique spécifique.**
+  vers Aujourd'hui, le terme est conservé par convention scientifique pour désigner ce regroupement géographique spécifique.
 - Auto-appellation (locuteurs / linguistes contemporains) :
   Langues atlantiques (branche du Niger-Congo ou du Négro-égyptien selon l'école).
 - Usage contemporain :
@@ -58,7 +58,7 @@
 - Liens avec les familles voisines :
   Forte interaction avec le Mandé (emprunts lexicaux) mais structure grammaticale distincte.
 - Innovations clés :
-  - **Le système de classes nominales** : Selon certains égyptologues, ce n'est pas une simple "invention" locale mais un trait fondamental hérité du Négro-égyptien, structurant la pensée par catégories (humains, fluides, végétaux, abstraits) via des affixes de concordance rigoureux.
+  - Le système de classes nominales : Selon certains égyptologues, ce n'est pas une simple "invention" locale mais un trait fondamental hérité du Négro-égyptien, structurant la pensée par catégories (humains, fluides, végétaux, abstraits) via des affixes de concordance rigoureux.
   - Alternance consonantique (grammaticale) : Modification de la première consonne du mot pour marquer le pluriel ou la classe (ex: en Peul, pullo "Peul" singulier / fulbe "Peuls" pluriel).
   - Extension verbale : Richesse des dérivations verbales (causatif, réversif, passif) typique du phylum.
 
