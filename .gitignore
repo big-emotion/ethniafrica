@@ -40,6 +40,10 @@ build
 *.tsbuildinfo
 *.tsbuildinfo.*
 
+# Claude Code
+.claude/
+.entire/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
