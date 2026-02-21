@@ -15,7 +15,9 @@
     "unit-tests": "vitest run --dir src/lib",
     "integration-tests": "vitest run --dir src/app/api",
     "api-tests": "vitest run --dir src/app/api/v2",
-    "all-tests": "vitest run"
+    "all-tests": "vitest run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -87,7 +89,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@storybook/addon-a11y": "^8.6.17",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/react": "^8.6.17",
+    "@storybook/react-vite": "^8.6.17",
     "@tailwindcss/typography": "^0.5.16",
+    "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
     "@types/marked": "^5.0.2",
@@ -95,6 +104,7 @@
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "@types/xlsx": "^0.0.35",
+    "@vitejs/plugin-react": "^5.1.4",
     "@vitest/ui": "^4.0.16",
     "autoprefixer": "^10.4.21",
     "dotenv": "^17.2.3",
@@ -110,10 +120,12 @@
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "puppeteer": "^24.33.0",
+    "storybook": "^8.6.17",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.20.6",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.18.2",
+    "vite": "^7.3.1",
     "vitest": "^4.0.16"
   }
 }

@@ -6,6 +6,12 @@
 All colors MUST be HSL.
 */
 
+/* Font fallback for Storybook — next/font not available outside Next.js runtime */
+:root {
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+}
+
 @layer base {
   :root {
     --background: 35 35% 97%;

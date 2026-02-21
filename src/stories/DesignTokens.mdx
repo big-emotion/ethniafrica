@@ -1,0 +1,136 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+
+<Meta title="EthniAfrica / Design Tokens" />
+
+# Design Tokens
+
+Tous les tokens du design system EthniAfrica. Les couleurs sont définies en HSL dans `src/index.css`.
+
+## Couleurs Africaines
+
+Palette personnalisée inspirée des terres et cultures africaines.
+
+<ColorPalette>
+  <ColorItem
+    title="Terracotta"
+    subtitle="--terracotta / Couleur principale"
+    colors={{
+      "Light: hsl(18 70% 52%)": "hsl(18, 70%, 52%)",
+      "Light variant: hsl(18 65% 65%)": "hsl(18, 65%, 65%)",
+      "Dark: hsl(18 70% 55%)": "hsl(18, 70%, 55%)",
+    }}
+  />
+  <ColorItem
+    title="Gold"
+    subtitle="--gold / Accent"
+    colors={{
+      "Light: hsl(42 88% 58%)": "hsl(42, 88%, 58%)",
+      "Dark: hsl(42 85% 60%)": "hsl(42, 85%, 60%)",
+    }}
+  />
+  <ColorItem
+    title="Earth"
+    subtitle="--earth / Tons sombres"
+    colors={{
+      "Light: hsl(25 35% 28%)": "hsl(25, 35%, 28%)",
+      "Light variant: hsl(25 25% 45%)": "hsl(25, 25%, 45%)",
+      "Dark: hsl(35 25% 75%)": "hsl(35, 25%, 75%)",
+    }}
+  />
+  <ColorItem
+    title="Ochre"
+    subtitle="--ochre / Variante chaleureuse"
+    colors={{
+      "Light: hsl(32 75% 55%)": "hsl(32, 75%, 55%)",
+      "Dark: hsl(32 75% 58%)": "hsl(32, 75%, 58%)",
+    }}
+  />
+  <ColorItem
+    title="Sand"
+    subtitle="--sand / Backgrounds doux"
+    colors={{
+      "Light: hsl(35 40% 85%)": "hsl(35, 40%, 85%)",
+      "Dark: hsl(35 15% 28%)": "hsl(35, 15%, 28%)",
+    }}
+  />
+</ColorPalette>
+
+## Couleurs Système (shadcn/ui)
+
+<ColorPalette>
+  <ColorItem
+    title="Background"
+    subtitle="--background"
+    colors={{
+      "Light: hsl(35 35% 97%)": "hsl(35, 35%, 97%)",
+      "Dark: hsl(25 20% 12%)": "hsl(25, 20%, 12%)",
+    }}
+  />
+  <ColorItem
+    title="Primary"
+    subtitle="--primary (Terracotta)"
+    colors={{
+      "Light: hsl(18 70% 52%)": "hsl(18, 70%, 52%)",
+      "Dark: hsl(18 70% 55%)": "hsl(18, 70%, 55%)",
+    }}
+  />
+  <ColorItem
+    title="Secondary"
+    subtitle="--secondary"
+    colors={{
+      "Light: hsl(35 60% 88%)": "hsl(35, 60%, 88%)",
+      "Dark: hsl(25 15% 22%)": "hsl(25, 15%, 22%)",
+    }}
+  />
+  <ColorItem
+    title="Muted"
+    subtitle="--muted"
+    colors={{
+      "Light: hsl(35 30% 92%)": "hsl(35, 30%, 92%)",
+      "Dark: hsl(25 15% 22%)": "hsl(25, 15%, 22%)",
+    }}
+  />
+  <ColorItem
+    title="Destructive"
+    subtitle="--destructive"
+    colors={{
+      "Light: hsl(0 84.2% 60.2%)": "hsl(0, 84.2%, 60.2%)",
+      "Dark: hsl(0 62.8% 50%)": "hsl(0, 62.8%, 50%)",
+    }}
+  />
+  <ColorItem
+    title="Accent"
+    subtitle="--accent (Gold)"
+    colors={{
+      "Light: hsl(42 88% 58%)": "hsl(42, 88%, 58%)",
+      "Dark: hsl(42 85% 60%)": "hsl(42, 85%, 60%)",
+    }}
+  />
+</ColorPalette>
+
+## Gradients
+
+| Token | Valeur |
+|-------|--------|
+| `--gradient-warm` | `linear-gradient(135deg, hsl(18 70% 52%), hsl(42 88% 58%))` |
+| `--gradient-earth` | `linear-gradient(180deg, hsl(35 35% 97%), hsl(35 40% 92%))` |
+
+## Shadows
+
+| Token | Valeur |
+|-------|--------|
+| `--shadow-warm` | `0 10px 40px -10px hsl(18 70% 52% / 0.2)` |
+| `--shadow-soft` | `0 4px 20px -5px hsl(25 25% 15% / 0.08)` |
+
+## Border Radius
+
+| Token | Valeur |
+|-------|--------|
+| `--radius` | `0.75rem` |
+
+## Typographie
+
+| Famille | Variable CSS | Usage |
+|---------|-------------|-------|
+| Inter | `--font-inter` | Corps de texte, UI |
+| Playfair Display | `--font-playfair` | Titres, headings |
