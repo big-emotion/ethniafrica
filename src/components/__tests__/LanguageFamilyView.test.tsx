@@ -73,39 +73,4 @@ describe("LanguageFamilyView", () => {
 
     expect(afrikLoader.getAllLanguageFamilies).toHaveBeenCalledTimes(1);
   });
-
-  it("should display English loading text when language is English", () => {
-    vi.mocked(afrikLoader.getAllLanguageFamilies).mockImplementation(
-      () => new Promise(() => {})
-    );
-
-    render(
-      <LanguageFamilyView language="en" onFamilySelect={mockOnFamilySelect} />
-    );
-
-    expect(
-      screen.getByText("Loading language families...")
-    ).toBeInTheDocument();
-  });
-
-  it("should receive the language prop correctly", () => {
-    vi.mocked(afrikLoader.getAllLanguageFamilies).mockImplementation(
-      () => new Promise(() => {})
-    );
-
-    const { rerender } = render(
-      <LanguageFamilyView language="fr" onFamilySelect={mockOnFamilySelect} />
-    );
-
-    expect(
-      screen.getByText("Chargement des familles linguistiques...")
-    ).toBeInTheDocument();
-
-    rerender(
-      <LanguageFamilyView language="en" onFamilySelect={mockOnFamilySelect} />
-    );
-
-    // The component re-renders with the new language
-    expect(afrikLoader.getAllLanguageFamilies).toHaveBeenCalled();
-  });
 });

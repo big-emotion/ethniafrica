@@ -75,7 +75,7 @@ export const SearchModalV2 = ({
   }, [searchQuery, activeTab]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+    return new Intl.NumberFormat("fr-FR").format(
       Math.round(num)
     );
   };
@@ -91,14 +91,6 @@ export const SearchModalV2 = ({
   };
 
   const getTabLabels = () => {
-    if (language === "en") {
-      return {
-        all: "All",
-        families: "Families",
-        peoples: "Peoples",
-        countries: "Countries",
-      };
-    }
     return {
       all: "Tout",
       families: "Familles",
@@ -108,20 +100,6 @@ export const SearchModalV2 = ({
   };
 
   const getResultTypeLabel = (type: SearchEntityType) => {
-    if (language === "en") {
-      switch (type) {
-        case "languageFamily":
-          return "Language Family";
-        case "people":
-          return "People";
-        case "country":
-          return "Country";
-        case "language":
-          return "Language";
-        default:
-          return type;
-      }
-    }
     switch (type) {
       case "languageFamily":
         return "Famille linguistique";
@@ -153,26 +131,20 @@ export const SearchModalV2 = ({
 
   const tabLabels = getTabLabels();
 
-  const dialogTitle = language === "en" ? "Search" : "Recherche";
+  const dialogTitle = "Recherche";
 
   const getPlaceholder = () => {
-    return language === "en"
-      ? "Search for a family, people, or country..."
-      : "Rechercher une famille, un peuple ou un pays...";
+    return "Rechercher une famille, un peuple ou un pays...";
   };
 
   const getNoResultsText = () => {
     if (!searchQuery.trim()) {
-      return language === "en"
-        ? "Start typing to search..."
-        : "Commencez à taper pour rechercher...";
+      return "Commencez à taper pour rechercher...";
     }
     if (searchQuery.length < 2) {
-      return language === "en"
-        ? "Type at least 2 characters..."
-        : "Tapez au moins 2 caractères...";
+      return "Tapez au moins 2 caractères...";
     }
-    return language === "en" ? "No results found" : "Aucun résultat trouvé";
+    return "Aucun résultat trouvé";
   };
 
   return (

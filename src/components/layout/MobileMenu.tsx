@@ -12,7 +12,6 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { LanguageSelector } from "@/components/LanguageSelector";
 import { Separator } from "@/components/ui/separator";
 import { Search } from "lucide-react";
 
@@ -28,7 +27,7 @@ export const MobileMenu = ({
   open,
   onOpenChange,
   language,
-  onLanguageChange,
+  onLanguageChange: _onLanguageChange,
   onSearchClick,
 }: MobileMenuProps) => {
   const t = getTranslation(language);
@@ -43,23 +42,6 @@ export const MobileMenu = ({
   const isActive = (pageType: PageType) => {
     return currentPage === pageType;
   };
-
-  const getNavLabels = () => {
-    if (language === "en") {
-      return {
-        families: "Language Families",
-        peoples: "Peoples",
-        countries: "Countries",
-      };
-    }
-    return {
-      families: "Familles linguistiques",
-      peoples: "Peuples",
-      countries: "Pays",
-    };
-  };
-
-  const navLabels = getNavLabels();
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -79,7 +61,7 @@ export const MobileMenu = ({
                 }
                 className="w-full justify-start"
               >
-                {language === "en" ? "Home" : "Accueil"}
+                Accueil
               </Button>
             </Link>
             <Link href={familiesRoute} onClick={() => onOpenChange(false)}>
@@ -87,7 +69,7 @@ export const MobileMenu = ({
                 variant={isActive("families") ? "default" : "ghost"}
                 className="w-full justify-start"
               >
-                {navLabels.families}
+                Familles linguistiques
               </Button>
             </Link>
             <Link href={peoplesRoute} onClick={() => onOpenChange(false)}>
@@ -95,7 +77,7 @@ export const MobileMenu = ({
                 variant={isActive("peoples") ? "default" : "ghost"}
                 className="w-full justify-start"
               >
-                {navLabels.peoples}
+                Peuples
               </Button>
             </Link>
             <Link href={countriesRoute} onClick={() => onOpenChange(false)}>
@@ -103,7 +85,7 @@ export const MobileMenu = ({
                 variant={isActive("countries") ? "default" : "ghost"}
                 className="w-full justify-start"
               >
-                {navLabels.countries}
+                Pays
               </Button>
             </Link>
           </div>
@@ -121,7 +103,7 @@ export const MobileMenu = ({
               }}
             >
               <Search className="h-4 w-4 mr-2" />
-              {language === "en" ? "Search" : "Rechercher"}
+              Rechercher
             </Button>
           )}
 
@@ -143,7 +125,7 @@ export const MobileMenu = ({
               window.location.href = `/${language}/contribute`;
             }}
           >
-            {language === "en" ? "Contribute" : "Contribuer"}
+            Contribuer
           </Button>
 
           {/* Report Error link */}
@@ -155,22 +137,8 @@ export const MobileMenu = ({
               window.location.href = `/${language}/report-error`;
             }}
           >
-            {language === "en" ? "Report Error" : "Signaler une erreur"}
+            Signaler une erreur
           </Button>
-
-          <Separator />
-
-          {/* Language selector */}
-          <div className="px-2">
-            <LanguageSelector
-              currentLang={language}
-              onLanguageChange={(lang) => {
-                onLanguageChange(lang);
-                // Close menu after language change
-                setTimeout(() => onOpenChange(false), 100);
-              }}
-            />
-          </div>
         </div>
       </SheetContent>
     </Sheet>

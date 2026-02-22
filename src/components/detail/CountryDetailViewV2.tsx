@@ -70,13 +70,11 @@ export const CountryDetailViewV2 = ({
   }, [countryId, language]);
 
   const getNotFoundText = (): string => {
-    return language === "en" ? "Country not found" : "Pays non trouvé";
+    return "Pays non trouvé";
   };
 
   const getErrorText = (): string => {
-    return language === "en"
-      ? "Failed to load country"
-      : "Échec du chargement du pays";
+    return "Échec du chargement du pays";
   };
 
   if (loading) {
@@ -108,7 +106,7 @@ export const CountryDetailViewV2 = ({
   const data = transformCountryData(country);
 
   const getBackLabel = () => {
-    return language === "en" ? "Back" : "Retour";
+    return "Retour";
   };
 
   return (

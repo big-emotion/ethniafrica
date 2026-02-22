@@ -4,12 +4,6 @@ export type PageType = "countries" | "families" | "peoples" | "search";
 
 // Mapping des slugs par langue
 const SLUGS: Record<Language, Record<PageType, string>> = {
-  en: {
-    countries: "countries",
-    families: "families",
-    peoples: "peoples",
-    search: "search",
-  },
   fr: {
     countries: "pays",
     families: "familles",
@@ -20,13 +14,9 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
 
 // Mapping inverse : slug -> pageType
 const SLUG_TO_PAGE: Record<string, PageType> = {
-  countries: "countries",
   pays: "countries",
-  families: "families",
   familles: "families",
-  peoples: "peoples",
   peuples: "peoples",
-  search: "search",
   recherche: "search",
 };
 
@@ -53,7 +43,7 @@ export const getLanguageFromRoute = (pathname: string): Language | null => {
   if (parts.length < 1) return null;
 
   const lang = parts[0];
-  if (["en", "fr"].includes(lang)) {
+  if (["fr"].includes(lang)) {
     return lang as Language;
   }
 

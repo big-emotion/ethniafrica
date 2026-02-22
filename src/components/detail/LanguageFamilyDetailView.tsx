@@ -77,34 +77,20 @@ export const LanguageFamilyDetailView = ({
   }, [familyId, language]);
 
   const getNotFoundText = (): string => {
-    return language === "en"
-      ? "Language family not found"
-      : "Famille linguistique non trouvée";
+    return "Famille linguistique non trouvée";
   };
 
   const getErrorText = (): string => {
-    return language === "en"
-      ? "Failed to load language family"
-      : "Échec du chargement de la famille linguistique";
+    return "Échec du chargement de la famille linguistique";
   };
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+    return new Intl.NumberFormat("fr-FR").format(
       Math.round(num)
     );
   };
 
   const getTabLabels = () => {
-    if (language === "en") {
-      return {
-        general: "General",
-        peoples: "Peoples",
-        linguistics: "Linguistics",
-        history: "History",
-        distribution: "Distribution",
-        sources: "Sources",
-      };
-    }
     return {
       general: "Général",
       peoples: "Peuples",
@@ -141,8 +127,7 @@ export const LanguageFamilyDetailView = ({
   }
 
   const tabLabels = getTabLabels();
-  const displayName =
-    language === "en" && family.nameEn ? family.nameEn : family.nameFr;
+  const displayName = family.nameFr;
 
   return (
     <ScrollArea className="h-full">
@@ -161,14 +146,14 @@ export const LanguageFamilyDetailView = ({
               <Badge variant="secondary" className="gap-1">
                 <Users className="h-3 w-3" />
                 {formatNumber(family.generalInfo.totalSpeakers)}{" "}
-                {language === "en" ? "speakers" : "locuteurs"}
+                {"locuteurs"}
               </Badge>
             )}
             {family.generalInfo?.numberOfLanguages && (
               <Badge variant="secondary" className="gap-1">
                 <Languages className="h-3 w-3" />
                 {family.generalInfo.numberOfLanguages}{" "}
-                {language === "en" ? "languages" : "langues"}
+                {"langues"}
               </Badge>
             )}
             {family.associatedPeoples &&
@@ -176,11 +161,7 @@ export const LanguageFamilyDetailView = ({
                 <Badge variant="secondary" className="gap-1">
                   <Users className="h-3 w-3" />
                   {family.associatedPeoples.length}{" "}
-                  {language === "en"
-                    ? family.associatedPeoples.length > 1
-                      ? "peoples"
-                      : "people"
-                    : "peuples"}
+                  {"peuples"}
                 </Badge>
               )}
             {family.generalInfo?.geographicArea && (
@@ -198,16 +179,14 @@ export const LanguageFamilyDetailView = ({
             <CardHeader className="pb-2">
               <CardTitle className="text-sm flex items-center gap-2 text-amber-700 dark:text-amber-400">
                 <AlertTriangle className="h-4 w-4" />
-                {language === "en" ? "Decolonial Note" : "Note décoloniale"}
+                {"Note décoloniale"}
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm space-y-2">
               {family.decolonialHeader.whyProblematic && (
                 <p>
                   <strong>
-                    {language === "en"
-                      ? "Why problematic:"
-                      : "Pourquoi problématique :"}
+                    {"Pourquoi problématique :"}
                   </strong>{" "}
                   {family.decolonialHeader.whyProblematic}
                 </p>
@@ -215,9 +194,7 @@ export const LanguageFamilyDetailView = ({
               {family.decolonialHeader.selfAppellation && (
                 <p>
                   <strong>
-                    {language === "en"
-                      ? "Self-appellation:"
-                      : "Auto-appellation :"}
+                    {"Auto-appellation :"}
                   </strong>{" "}
                   {family.decolonialHeader.selfAppellation}
                 </p>
@@ -225,9 +202,7 @@ export const LanguageFamilyDetailView = ({
               {family.decolonialHeader.contemporaryUsage && (
                 <p>
                   <strong>
-                    {language === "en"
-                      ? "Contemporary usage:"
-                      : "Usage contemporain :"}
+                    {"Usage contemporain :"}
                   </strong>{" "}
                   {family.decolonialHeader.contemporaryUsage}
                 </p>
@@ -257,18 +232,14 @@ export const LanguageFamilyDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Globe className="h-5 w-5" />
-                  {language === "en"
-                    ? "General Information"
-                    : "Informations générales"}
+                  {"Informations générales"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {family.generalInfo?.geographicArea && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Geographic Area"
-                        : "Zone géographique"}
+                      {"Zone géographique"}
                     </h4>
                     <p>{family.generalInfo.geographicArea}</p>
                   </div>
@@ -277,7 +248,7 @@ export const LanguageFamilyDetailView = ({
                   family.generalInfo.branches.length > 0 && (
                     <div>
                       <h4 className="font-medium text-sm text-muted-foreground">
-                        {language === "en" ? "Branches" : "Branches"}
+                        {"Branches"}
                       </h4>
                       <div className="flex flex-wrap gap-2 mt-1">
                         {family.generalInfo.branches.map((branch, idx) => (
@@ -291,9 +262,7 @@ export const LanguageFamilyDetailView = ({
                 {family.generalInfo?.numberOfLanguages && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Number of Languages"
-                        : "Nombre de langues"}
+                      {"Nombre de langues"}
                     </h4>
                     <p>{family.generalInfo.numberOfLanguages}</p>
                   </div>
@@ -301,7 +270,7 @@ export const LanguageFamilyDetailView = ({
                 {family.generalInfo?.totalSpeakers && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en" ? "Total Speakers" : "Total locuteurs"}
+                      {"Total locuteurs"}
                     </h4>
                     <p>{formatNumber(family.generalInfo.totalSpeakers)}</p>
                   </div>
@@ -316,9 +285,7 @@ export const LanguageFamilyDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Users className="h-5 w-5" />
-                  {language === "en"
-                    ? "Associated Peoples (Examples)"
-                    : "Peuples associés (Exemples)"}
+                  {"Peuples associés (Exemples)"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -356,9 +323,7 @@ export const LanguageFamilyDetailView = ({
                         passHref
                       >
                         <Button variant="default" className="w-full gap-2">
-                          {language === "en"
-                            ? "See all peoples of this family"
-                            : "Voir tous les peuples de cette famille"}
+                          {"Voir tous les peuples de cette famille"}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </Link>
@@ -366,9 +331,7 @@ export const LanguageFamilyDetailView = ({
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No associated peoples listed"
-                      : "Aucun peuple associé répertorié"}
+                    {"Aucun peuple associé répertorié"}
                   </p>
                 )}
               </CardContent>
@@ -381,16 +344,14 @@ export const LanguageFamilyDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5" />
-                  {language === "en"
-                    ? "Linguistic Characteristics"
-                    : "Caractéristiques linguistiques"}
+                  {"Caractéristiques linguistiques"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {family.linguisticCharacteristics?.typology && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en" ? "Typology" : "Typologie"}
+                      {"Typologie"}
                     </h4>
                     <p>{family.linguisticCharacteristics.typology}</p>
                   </div>
@@ -398,9 +359,7 @@ export const LanguageFamilyDetailView = ({
                 {family.linguisticCharacteristics?.phonologicalFeatures && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Phonological Features"
-                        : "Caractéristiques phonologiques"}
+                      {"Caractéristiques phonologiques"}
                     </h4>
                     <p>
                       {family.linguisticCharacteristics.phonologicalFeatures}
@@ -410,9 +369,7 @@ export const LanguageFamilyDetailView = ({
                 {family.linguisticCharacteristics?.relationsWithNeighbors && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Relations with Neighbors"
-                        : "Relations avec les voisins"}
+                      {"Relations avec les voisins"}
                     </h4>
                     <p>
                       {family.linguisticCharacteristics.relationsWithNeighbors}
@@ -422,18 +379,14 @@ export const LanguageFamilyDetailView = ({
                 {family.linguisticCharacteristics?.keyInnovations && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Key Innovations"
-                        : "Innovations clés"}
+                      {"Innovations clés"}
                     </h4>
                     <p>{family.linguisticCharacteristics.keyInnovations}</p>
                   </div>
                 )}
                 {!family.linguisticCharacteristics && (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No linguistic characteristics available"
-                      : "Aucune caractéristique linguistique disponible"}
+                    {"Aucune caractéristique linguistique disponible"}
                   </p>
                 )}
               </CardContent>
@@ -446,18 +399,14 @@ export const LanguageFamilyDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <History className="h-5 w-5" />
-                  {language === "en"
-                    ? "History & Origins"
-                    : "Histoire et origines"}
+                  {"Histoire et origines"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {family.historyAndOrigins?.probableOrigin && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Probable Origin"
-                        : "Origine probable"}
+                      {"Origine probable"}
                     </h4>
                     <p>{family.historyAndOrigins.probableOrigin}</p>
                   </div>
@@ -465,9 +414,7 @@ export const LanguageFamilyDetailView = ({
                 {family.historyAndOrigins?.emergencePeriod && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Emergence Period"
-                        : "Période d'émergence"}
+                      {"Période d'émergence"}
                     </h4>
                     <p>{family.historyAndOrigins.emergencePeriod}</p>
                   </div>
@@ -475,7 +422,7 @@ export const LanguageFamilyDetailView = ({
                 {family.historyAndOrigins?.diffusion && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en" ? "Diffusion" : "Diffusion"}
+                      {"Diffusion"}
                     </h4>
                     <p>{family.historyAndOrigins.diffusion}</p>
                   </div>
@@ -483,9 +430,7 @@ export const LanguageFamilyDetailView = ({
                 {family.historyAndOrigins?.historicalBreaks && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Historical Breaks"
-                        : "Ruptures historiques"}
+                      {"Ruptures historiques"}
                     </h4>
                     <p>{family.historyAndOrigins.historicalBreaks}</p>
                   </div>
@@ -493,7 +438,7 @@ export const LanguageFamilyDetailView = ({
                 {family.historyAndOrigins?.contactZones && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en" ? "Contact Zones" : "Zones de contact"}
+                      {"Zones de contact"}
                     </h4>
                     <p>{family.historyAndOrigins.contactZones}</p>
                   </div>
@@ -501,18 +446,14 @@ export const LanguageFamilyDetailView = ({
                 {family.historyAndOrigins?.majorEvents && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en"
-                        ? "Major Events"
-                        : "Événements majeurs"}
+                      {"Événements majeurs"}
                     </h4>
                     <p>{family.historyAndOrigins.majorEvents}</p>
                   </div>
                 )}
                 {!family.historyAndOrigins && (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No historical information available"
-                      : "Aucune information historique disponible"}
+                    {"Aucune information historique disponible"}
                   </p>
                 )}
               </CardContent>
@@ -525,16 +466,14 @@ export const LanguageFamilyDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MapPin className="h-5 w-5" />
-                  {language === "en"
-                    ? "Geographic Distribution"
-                    : "Distribution géographique"}
+                  {"Distribution géographique"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {family.distribution?.totalSpeakers && (
                   <div>
                     <h4 className="font-medium text-sm text-muted-foreground">
-                      {language === "en" ? "Total Speakers" : "Total locuteurs"}
+                      {"Total locuteurs"}
                     </h4>
                     <p className="text-2xl font-bold">
                       {formatNumber(family.distribution.totalSpeakers)}
@@ -546,7 +485,7 @@ export const LanguageFamilyDetailView = ({
                     .length > 0 && (
                     <div>
                       <h4 className="font-medium text-sm text-muted-foreground mb-2">
-                        {language === "en" ? "By Country" : "Par pays"}
+                        {"Par pays"}
                       </h4>
                       <div className="space-y-2">
                         {Object.entries(
@@ -567,9 +506,7 @@ export const LanguageFamilyDetailView = ({
                   )}
                 {!family.distribution && (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No distribution data available"
-                      : "Aucune donnée de distribution disponible"}
+                    {"Aucune donnée de distribution disponible"}
                   </p>
                 )}
               </CardContent>
@@ -582,7 +519,7 @@ export const LanguageFamilyDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5" />
-                  {language === "en" ? "Sources" : "Sources"}
+                  {"Sources"}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -596,9 +533,7 @@ export const LanguageFamilyDetailView = ({
                   </ul>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No sources listed"
-                      : "Aucune source répertoriée"}
+                    {"Aucune source répertoriée"}
                   </p>
                 )}
               </CardContent>

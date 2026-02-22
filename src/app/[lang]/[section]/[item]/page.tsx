@@ -5,13 +5,6 @@ import { getLocalizedRoute } from "@/lib/routing";
 type SectionType = "country" | "region" | "ethnicity" | "family" | "people";
 
 const LANGUAGE_SEGMENTS: Record<Language, Record<SectionType, string>> = {
-  en: {
-    country: "countries",
-    region: "regions",
-    ethnicity: "ethnicities",
-    family: "families",
-    people: "peoples",
-  },
   fr: {
     country: "pays",
     region: "regions",
@@ -37,7 +30,7 @@ export default async function LegacyDetailRedirect({
 }) {
   const { lang, section, item } = await params;
 
-  if (!["en", "fr"].includes(lang)) {
+  if (!["fr"].includes(lang)) {
     notFound();
   }
 

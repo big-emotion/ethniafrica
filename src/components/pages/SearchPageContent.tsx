@@ -131,28 +131,20 @@ export const SearchPageContent = () => {
 
   // Format number
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+    return new Intl.NumberFormat("fr-FR").format(
       Math.round(num)
     );
   };
 
   // Get labels
   const getTypeLabel = (type: SearchEntityType) => {
-    const labels: Record<Language, Record<SearchEntityType, string>> = {
-      en: {
-        languageFamily: "Language Family",
-        people: "People",
-        country: "Country",
-        language: "Language",
-      },
-      fr: {
-        languageFamily: "Famille linguistique",
-        people: "Peuple",
-        country: "Pays",
-        language: "Langue",
-      },
+    const labels: Record<SearchEntityType, string> = {
+      languageFamily: "Famille linguistique",
+      people: "Peuple",
+      country: "Pays",
+      language: "Langue",
     };
-    return labels[language][type] || type;
+    return labels[type] || type;
   };
 
   const getTypeIcon = (type: SearchEntityType) => {
@@ -170,10 +162,10 @@ export const SearchPageContent = () => {
 
   const getFilterLabels = () => {
     return {
-      all: language === "en" ? "All" : "Tout",
-      families: language === "en" ? "Families" : "Familles",
-      peoples: language === "en" ? "Peoples" : "Peuples",
-      countries: language === "en" ? "Countries" : "Pays",
+      all: "Tout",
+      families: "Familles",
+      peoples: "Peuples",
+      countries: "Pays",
     };
   };
 
@@ -211,34 +203,30 @@ export const SearchPageContent = () => {
   const hasActiveFilters =
     query || selectedType !== "all" || selectedFamily !== "";
 
-  const pageTitle = language === "en" ? "Search" : "Recherche";
+  const pageTitle = "Recherche";
 
   const pageSubtitle =
-    language === "en"
-      ? "Search for language families, peoples, and countries"
-      : "Rechercher des familles linguistiques, peuples et pays";
+    "Rechercher des familles linguistiques, peuples et pays";
 
   const placeholderText =
-    language === "en" ? "Type to search..." : "Tapez pour rechercher...";
+    "Tapez pour rechercher...";
 
   const filterByFamilyText =
-    language === "en" ? "Filter by family" : "Filtrer par famille";
+    "Filtrer par famille";
 
   const allFamiliesText =
-    language === "en" ? "All families" : "Toutes les familles";
+    "Toutes les familles";
 
   const clearFiltersText =
-    language === "en" ? "Clear filters" : "Effacer les filtres";
+    "Effacer les filtres";
 
-  const resultsText = language === "en" ? "results" : "résultats";
+  const resultsText = "résultats";
 
   const noResultsText =
-    language === "en" ? "No results found" : "Aucun résultat trouvé";
+    "Aucun résultat trouvé";
 
   const startSearchText =
-    language === "en"
-      ? "Start typing to search..."
-      : "Commencez à taper pour rechercher...";
+    "Commencez à taper pour rechercher...";
 
   return (
     <PageLayout

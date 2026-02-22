@@ -66,9 +66,7 @@ export const LanguageFamilyView = ({
             if (!cancelled) {
               console.error("Error fetching language families:", err);
               setError(
-                language === "en"
-                  ? "Failed to load language families"
-                  : "Échec du chargement des familles linguistiques"
+                "Échec du chargement des familles linguistiques"
               );
             }
           }
@@ -89,9 +87,6 @@ export const LanguageFamilyView = ({
   }, [language]);
 
   const getFamilyDisplayName = (family: LanguageFamilySummary): string => {
-    if (language === "en" && family.nameEn) {
-      return family.nameEn;
-    }
     return family.nameFr;
   };
 
@@ -141,29 +136,25 @@ export const LanguageFamilyView = ({
   }, [families, language]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+    return new Intl.NumberFormat("fr-FR").format(
       Math.round(num)
     );
   };
 
   const getLoadingText = (): string => {
-    return language === "en"
-      ? "Loading language families..."
-      : "Chargement des familles linguistiques...";
+    return "Chargement des familles linguistiques...";
   };
 
   const getNoResultsText = (): string => {
-    return language === "en"
-      ? "No language families found"
-      : "Aucune famille linguistique trouvée";
+    return "Aucune famille linguistique trouvée";
   };
 
   const getPeoplesLabel = (): string => {
-    return language === "en" ? "peoples" : "peuples";
+    return "peuples";
   };
 
   const getSpeakersLabel = (): string => {
-    return language === "en" ? "speakers" : "locuteurs";
+    return "locuteurs";
   };
 
   if (loading) {
@@ -236,7 +227,7 @@ export const LanguageFamilyView = ({
                 className="h-8 w-8 p-0 text-xs"
                 onClick={() => setSelectedLetter(null)}
               >
-                {language === "en" ? "All" : "Tous"}
+                {"Tous"}
               </Button>
               {ALPHABET.map((letter) => (
                 <Button

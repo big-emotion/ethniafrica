@@ -1,39 +1,6 @@
 import { Language } from "@/types/shared";
 
 export const translations = {
-  en: {
-    title: "Atlas of African Peoples",
-    subtitle:
-      "Encyclopedia of peoples, languages, and linguistic families across 55 African countries",
-    byCountry: "By Country",
-    byPeople: "By People",
-    byFamily: "By Language Family",
-    statistics: "Statistics",
-    searchPlaceholder: "Search families, peoples, or countries...",
-    population: "Population",
-    percentage: "Percentage",
-    country: "Country",
-    countries: "Countries",
-    people: "People",
-    peoples: "Peoples",
-    languageFamily: "Language Family",
-    languageFamilies: "Language Families",
-    subgroup: "Sub-group",
-    totalPopulation: "Total Population 2025",
-    inCountry: "In Country",
-    inAfrica: "In Africa",
-    showingResults: "Showing",
-    of: "of",
-    results: "results",
-    noResults: "No results found",
-    sortBy: "Sort by",
-    filterBy: "Filter by",
-    all: "All",
-    viewDetails: "View Details",
-    close: "Close",
-    whyThisSite: "Why this site?",
-    madeWithEmotion: "Made with emotion for Africa",
-  },
   fr: {
     title: "Atlas des Peuples d'Afrique",
     subtitle:

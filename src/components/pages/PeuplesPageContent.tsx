@@ -15,22 +15,13 @@ import { ArrowLeft, Users } from "lucide-react";
 import type { PeopleSummary } from "@/types/afrik-frontend";
 
 function DefaultMessage({ language }: { language: string }) {
-  const t = getTranslation(language as "en" | "fr");
+  const t = getTranslation(language as "fr");
 
-  const messages = {
-    en: {
-      title: "Select a people",
-      description:
-        "Choose a people from the list on the right to see detailed information about their culture, history, and traditions.",
-    },
-    fr: {
-      title: "Sélectionnez un peuple",
-      description:
-        "Choisissez un peuple dans la liste à droite pour voir des informations détaillées sur leur culture, histoire et traditions.",
-    },
+  const msg = {
+    title: "Sélectionnez un peuple",
+    description:
+      "Choisissez un peuple dans la liste à droite pour voir des informations détaillées sur leur culture, histoire et traditions.",
   };
-
-  const msg = messages[language as keyof typeof messages] || messages.fr;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[400px] gap-4 p-6 text-center">
@@ -92,11 +83,11 @@ export function PeuplesPageContent() {
   };
 
   const getSectionName = () => {
-    return language === "en" ? "Peoples" : "Peuples";
+    return "Peuples";
   };
 
   const getBackText = () => {
-    return language === "en" ? "Back" : "Retour";
+    return "Retour";
   };
 
   return (

@@ -67,9 +67,7 @@ export const CountryView = ({
             if (!cancelled) {
               console.error("Error fetching countries:", err);
               setError(
-                language === "en"
-                  ? "Failed to load countries"
-                  : "Échec du chargement des pays"
+                "Échec du chargement des pays"
               );
             }
           }
@@ -134,23 +132,21 @@ export const CountryView = ({
   }, [countries]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+    return new Intl.NumberFormat("fr-FR").format(
       Math.round(num)
     );
   };
 
   const getLoadingText = (): string => {
-    return language === "en"
-      ? "Loading countries..."
-      : "Chargement des pays...";
+    return "Chargement des pays...";
   };
 
   const getNoResultsText = (): string => {
-    return language === "en" ? "No countries found" : "Aucun pays trouvé";
+    return "Aucun pays trouvé";
   };
 
   const getMajorPeoplesLabel = (): string => {
-    return language === "en" ? "major peoples" : "peuples majeurs";
+    return "peuples majeurs";
   };
 
   if (loading) {
@@ -225,7 +221,7 @@ export const CountryView = ({
                 className="h-8 w-8 p-0 text-xs"
                 onClick={() => setSelectedLetter(null)}
               >
-                {language === "en" ? "All" : "Tous"}
+                {"Tous"}
               </Button>
               {ALPHABET.map((letter) => (
                 <Button

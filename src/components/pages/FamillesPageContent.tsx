@@ -15,22 +15,13 @@ import { ArrowLeft, Languages } from "lucide-react";
 import type { LanguageFamilySummary } from "@/types/afrik-frontend";
 
 function DefaultMessage({ language }: { language: string }) {
-  const t = getTranslation(language as "en" | "fr");
+  const t = getTranslation(language as "fr");
 
-  const messages = {
-    en: {
-      title: "Select a language family",
-      description:
-        "Choose a language family from the list on the right to see detailed information about it.",
-    },
-    fr: {
-      title: "Sélectionnez une famille linguistique",
-      description:
-        "Choisissez une famille linguistique dans la liste à droite pour voir ses informations détaillées.",
-    },
+  const msg = {
+    title: "Sélectionnez une famille linguistique",
+    description:
+      "Choisissez une famille linguistique dans la liste à droite pour voir ses informations détaillées.",
   };
-
-  const msg = messages[language as keyof typeof messages] || messages.fr;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[400px] gap-4 p-6 text-center">
@@ -87,11 +78,11 @@ export function FamillesPageContent() {
   };
 
   const getSectionName = () => {
-    return language === "en" ? "Language Families" : "Familles linguistiques";
+    return "Familles linguistiques";
   };
 
   const getBackText = () => {
-    return language === "en" ? "Back" : "Retour";
+    return "Retour";
   };
 
   return (

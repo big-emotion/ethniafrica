@@ -24,64 +24,12 @@ export default function ContributePage() {
 
   // Sync language from URL param
   useEffect(() => {
-    if (lang && ["en", "fr"].includes(lang) && lang !== language) {
+    if (lang && ["fr"].includes(lang) && lang !== language) {
       setLanguage(lang as Language);
     }
   }, [lang, language, setLanguage]);
 
   const content = {
-    en: {
-      title: "Contribute",
-      intro: {
-        title: "Contribution and participation",
-        text1: (
-          <>
-            The site is powered by a <strong>structured database</strong>{" "}
-            containing data on African peoples, linguistic families, and
-            countries, organized using the AFRIK methodology.
-          </>
-        ),
-        text2: (
-          <>
-            I am{" "}
-            <strong>open to all kinds of proposals and contributions</strong>,
-            whether it&apos;s sharing sources, corrections, or improvement
-            ideas. If you&apos;d like to help, feel free to contact me or
-            contribute directly through the{" "}
-            <a
-              href="https://github.com/big-emotion/ethniafrique-atlas"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4"
-            >
-              GitHub repository
-            </a>
-            .
-          </>
-        ),
-      },
-      apiDocs: {
-        title: "API Documentation",
-        text: "Access the complete API documentation to understand how to retrieve data programmatically. The API provides endpoints for peoples, linguistic families, and countries.",
-        button: "View API Documentation",
-      },
-      download: {
-        title: "Download Data",
-        text: "Download all the data in CSV or Excel format for your own use, analysis, or contributions.",
-        csvButton: "Download CSV (ZIP)",
-        excelButton: "Download Excel",
-      },
-      contact: {
-        title: "Contact",
-        text: "Would you like to contact me or propose a contribution? Use the form below.",
-      },
-      github: {
-        title: "Contribute via GitHub",
-        text: "The project is open source and hosted on GitHub. You can contribute by submitting issues, pull requests, or by improving the codebase.",
-        button: "Contribute on GitHub",
-      },
-      footer: "Made with emotion for Africa",
-    },
     fr: {
       title: "Contribuer",
       intro: {

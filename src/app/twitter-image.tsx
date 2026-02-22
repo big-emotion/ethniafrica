@@ -36,8 +36,7 @@ function Footer() {
 }
 
 export default async function TwitterImage() {
-  // Use English translations as default for OG images
-  const t = getTranslation("en");
+  const t = getTranslation("fr");
 
   // Load africa.png from the local filesystem to avoid build-time fetches.
   let africaSrc: string | undefined = undefined;

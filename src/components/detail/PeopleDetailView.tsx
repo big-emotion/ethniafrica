@@ -33,13 +33,11 @@ interface PeopleDetailViewProps {
 
 // Helper functions outside component to avoid dependency issues
 const getNotFoundText = (language: Language): string => {
-  return language === "en" ? "People not found" : "Peuple non trouvé";
+  return "Peuple non trouvé";
 };
 
 const getErrorText = (language: Language): string => {
-  return language === "en"
-    ? "Failed to load people"
-    : "Échec du chargement du peuple";
+  return "Échec du chargement du peuple";
 };
 
 export const PeopleDetailView = ({
@@ -87,25 +85,12 @@ export const PeopleDetailView = ({
   }, [peopleId, language]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+    return new Intl.NumberFormat("fr-FR").format(
       Math.round(num)
     );
   };
 
   const getTabLabels = () => {
-    if (language === "en") {
-      return {
-        appellations: "Names",
-        ethnicities: "Ethnicities",
-        origins: "Origins",
-        organization: "Organization",
-        languages: "Languages",
-        culture: "Culture",
-        history: "History",
-        demography: "Demography",
-        sources: "Sources",
-      };
-    }
     return {
       appellations: "Appellations",
       ethnicities: "Ethnies",
@@ -190,7 +175,7 @@ export const PeopleDetailView = ({
               <Badge variant="outline" className="gap-1">
                 <MapPin className="h-3 w-3" />
                 {people.currentCountries.length}{" "}
-                {language === "en" ? "countries" : "pays"}
+                {"pays"}
               </Badge>
             )}
           </div>
@@ -234,9 +219,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5" />
-                  {language === "en"
-                    ? "Names & Appellations"
-                    : "Noms et appellations"}
+                  {"Noms et appellations"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -244,7 +227,7 @@ export const PeopleDetailView = ({
                   <>
                     <div>
                       <h4 className="font-medium text-sm text-muted-foreground">
-                        {language === "en" ? "Main Name" : "Nom principal"}
+                        {"Nom principal"}
                       </h4>
                       <p className="font-semibold">
                         {people.appellations.mainName}
@@ -252,9 +235,7 @@ export const PeopleDetailView = ({
                     </div>
                     <div>
                       <h4 className="font-medium text-sm text-muted-foreground">
-                        {language === "en"
-                          ? "Self-appellation (Endonym)"
-                          : "Auto-appellation (Endonyme)"}
+                        {"Auto-appellation (Endonyme)"}
                       </h4>
                       <p className="italic">
                         {people.appellations.selfAppellation}
@@ -264,9 +245,7 @@ export const PeopleDetailView = ({
                       people.appellations.exonyms.length > 0 && (
                         <div>
                           <h4 className="font-medium text-sm text-muted-foreground">
-                            {language === "en"
-                              ? "Exonyms (Historical names)"
-                              : "Exonymes (Noms historiques)"}
+                            {"Exonymes (Noms historiques)"}
                           </h4>
                           <div className="flex flex-wrap gap-2 mt-1">
                             {people.appellations.exonyms.map((name, idx) => (
@@ -280,9 +259,7 @@ export const PeopleDetailView = ({
                     {people.appellations.originOfExonyms && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Origin of Exonyms"
-                            : "Origine des exonymes"}
+                          {"Origine des exonymes"}
                         </h4>
                         <p>{people.appellations.originOfExonyms}</p>
                       </div>
@@ -292,9 +269,7 @@ export const PeopleDetailView = ({
                         <CardContent className="pt-4">
                           <h4 className="font-medium text-sm text-amber-700 dark:text-amber-400 flex items-center gap-2">
                             <AlertTriangle className="h-4 w-4" />
-                            {language === "en"
-                              ? "Why some terms are problematic"
-                              : "Pourquoi certains termes sont problématiques"}
+                            {"Pourquoi certains termes sont problématiques"}
                           </h4>
                           <p className="text-sm mt-2">
                             {people.appellations.whyProblematic}
@@ -305,9 +280,7 @@ export const PeopleDetailView = ({
                     {people.appellations.contemporaryUsage && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Contemporary Usage"
-                            : "Usage contemporain"}
+                          {"Usage contemporain"}
                         </h4>
                         <p>{people.appellations.contemporaryUsage}</p>
                       </div>
@@ -315,9 +288,7 @@ export const PeopleDetailView = ({
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No appellation data available"
-                      : "Aucune donnée d'appellation disponible"}
+                    {"Aucune donnée d'appellation disponible"}
                   </p>
                 )}
               </CardContent>
@@ -330,9 +301,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Users className="h-5 w-5" />
-                  {language === "en"
-                    ? "Included Ethnicities"
-                    : "Ethnies incluses"}
+                  {"Ethnies incluses"}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -346,9 +315,7 @@ export const PeopleDetailView = ({
                   </div>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No ethnicities listed"
-                      : "Aucune ethnie répertoriée"}
+                    {"Aucune ethnie répertoriée"}
                   </p>
                 )}
               </CardContent>
@@ -361,9 +328,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Globe className="h-5 w-5" />
-                  {language === "en"
-                    ? "Origins, Migrations & Formation"
-                    : "Origines, migrations et formation"}
+                  {"Origines, migrations et formation"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -372,9 +337,7 @@ export const PeopleDetailView = ({
                     {people.origins.ancientOrigins && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Ancient Origins"
-                            : "Origines anciennes"}
+                          {"Origines anciennes"}
                         </h4>
                         <p>{people.origins.ancientOrigins}</p>
                       </div>
@@ -382,9 +345,7 @@ export const PeopleDetailView = ({
                     {people.origins.formationPeriod && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Formation Period"
-                            : "Période de formation"}
+                          {"Période de formation"}
                         </h4>
                         <p>{people.origins.formationPeriod}</p>
                       </div>
@@ -393,9 +354,7 @@ export const PeopleDetailView = ({
                       people.origins.migrationRoutes.length > 0 && (
                         <div>
                           <h4 className="font-medium text-sm text-muted-foreground">
-                            {language === "en"
-                              ? "Migration Routes"
-                              : "Routes de migration"}
+                            {"Routes de migration"}
                           </h4>
                           <ul className="list-disc list-inside">
                             {people.origins.migrationRoutes.map(
@@ -410,9 +369,7 @@ export const PeopleDetailView = ({
                       people.origins.historicalSettlementZones.length > 0 && (
                         <div>
                           <h4 className="font-medium text-sm text-muted-foreground">
-                            {language === "en"
-                              ? "Historical Settlement Zones"
-                              : "Zones d'implantation historiques"}
+                            {"Zones d'implantation historiques"}
                           </h4>
                           <ul className="list-disc list-inside">
                             {people.origins.historicalSettlementZones.map(
@@ -426,9 +383,7 @@ export const PeopleDetailView = ({
                     {people.origins.unificationsOrDivisions && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Unifications/Divisions"
-                            : "Unifications/Divisions"}
+                          {"Unifications/Divisions"}
                         </h4>
                         <p>{people.origins.unificationsOrDivisions}</p>
                       </div>
@@ -436,9 +391,7 @@ export const PeopleDetailView = ({
                     {people.origins.externalInfluences && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "External Influences"
-                            : "Influences extérieures"}
+                          {"Influences extérieures"}
                         </h4>
                         <p>{people.origins.externalInfluences}</p>
                       </div>
@@ -446,9 +399,7 @@ export const PeopleDetailView = ({
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No origin data available"
-                      : "Aucune donnée d'origine disponible"}
+                    {"Aucune donnée d'origine disponible"}
                   </p>
                 )}
               </CardContent>
@@ -461,9 +412,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Landmark className="h-5 w-5" />
-                  {language === "en"
-                    ? "Organization & Structure"
-                    : "Organisation et structure"}
+                  {"Organisation et structure"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -472,9 +421,7 @@ export const PeopleDetailView = ({
                     {people.organization.traditionalPoliticalSystem && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Traditional Political System"
-                            : "Système politique traditionnel"}
+                          {"Système politique traditionnel"}
                         </h4>
                         <p>{people.organization.traditionalPoliticalSystem}</p>
                       </div>
@@ -482,9 +429,7 @@ export const PeopleDetailView = ({
                     {people.organization.clanOrganization && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Clan Organization"
-                            : "Organisation clanique"}
+                          {"Organisation clanique"}
                         </h4>
                         <p>{people.organization.clanOrganization}</p>
                       </div>
@@ -492,9 +437,7 @@ export const PeopleDetailView = ({
                     {people.organization.ageClassSystems && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Age Class Systems"
-                            : "Systèmes de classes d'âge"}
+                          {"Systèmes de classes d'âge"}
                         </h4>
                         <p>{people.organization.ageClassSystems}</p>
                       </div>
@@ -502,9 +445,7 @@ export const PeopleDetailView = ({
                     {people.organization.roleOfLineages && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Role of Lineages"
-                            : "Rôle des lignages"}
+                          {"Rôle des lignages"}
                         </h4>
                         <p>{people.organization.roleOfLineages}</p>
                       </div>
@@ -512,9 +453,7 @@ export const PeopleDetailView = ({
                     {people.organization.religiousAuthority && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Religious Authority"
-                            : "Autorité religieuse"}
+                          {"Autorité religieuse"}
                         </h4>
                         <p>{people.organization.religiousAuthority}</p>
                       </div>
@@ -522,9 +461,7 @@ export const PeopleDetailView = ({
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No organization data available"
-                      : "Aucune donnée d'organisation disponible"}
+                    {"Aucune donnée d'organisation disponible"}
                   </p>
                 )}
               </CardContent>
@@ -537,9 +474,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Languages className="h-5 w-5" />
-                  {language === "en"
-                    ? "Languages & Dialects"
-                    : "Langues et dialectes"}
+                  {"Langues et dialectes"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -548,9 +483,7 @@ export const PeopleDetailView = ({
                     {people.languages.mainLanguage && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Main Language"
-                            : "Langue principale"}
+                          {"Langue principale"}
                         </h4>
                         <p className="font-semibold">
                           {people.languages.mainLanguage}
@@ -561,7 +494,7 @@ export const PeopleDetailView = ({
                       people.languages.isoCodes.length > 0 && (
                         <div>
                           <h4 className="font-medium text-sm text-muted-foreground">
-                            {language === "en" ? "ISO Codes" : "Codes ISO"}
+                            {"Codes ISO"}
                           </h4>
                           <div className="flex flex-wrap gap-2 mt-1">
                             {people.languages.isoCodes.map((code, idx) => (
@@ -576,7 +509,7 @@ export const PeopleDetailView = ({
                       people.languages.dialects.length > 0 && (
                         <div>
                           <h4 className="font-medium text-sm text-muted-foreground">
-                            {language === "en" ? "Dialects" : "Dialectes"}
+                            {"Dialectes"}
                           </h4>
                           <div className="flex flex-wrap gap-2 mt-1">
                             {people.languages.dialects.map((dialect, idx) => (
@@ -590,9 +523,7 @@ export const PeopleDetailView = ({
                     {people.languages.vehicularRole && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Vehicular Role"
-                            : "Rôle véhiculaire"}
+                          {"Rôle véhiculaire"}
                         </h4>
                         <p>{people.languages.vehicularRole}</p>
                       </div>
@@ -600,9 +531,7 @@ export const PeopleDetailView = ({
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No language data available"
-                      : "Aucune donnée linguistique disponible"}
+                    {"Aucune donnée linguistique disponible"}
                   </p>
                 )}
               </CardContent>
@@ -615,9 +544,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Heart className="h-5 w-5" />
-                  {language === "en"
-                    ? "Culture, Rites & Traditions"
-                    : "Culture, rites et traditions"}
+                  {"Culture, rites et traditions"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -628,16 +555,12 @@ export const PeopleDetailView = ({
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
                           A.{" "}
-                          {language === "en"
-                            ? "Divinities & Spirits"
-                            : "Divinités et esprits"}
+                          {"Divinités et esprits"}
                         </h4>
                         {people.culture.divinitiesAndSpirits.supremeDeity && (
                           <div className="ml-4">
                             <span className="font-medium">
-                              {language === "en"
-                                ? "Supreme Deity:"
-                                : "Divinité suprême :"}
+                              {"Divinité suprême :"}
                             </span>{" "}
                             {people.culture.divinitiesAndSpirits.supremeDeity
                               .name ||
@@ -649,7 +572,7 @@ export const PeopleDetailView = ({
                         {people.culture.divinitiesAndSpirits.ancestors && (
                           <div className="ml-4">
                             <span className="font-medium">
-                              {language === "en" ? "Ancestors:" : "Ancêtres :"}
+                              {"Ancêtres :"}
                             </span>{" "}
                             {people.culture.divinitiesAndSpirits.ancestors
                               .roleOfAncestors || "—"}
@@ -662,22 +585,18 @@ export const PeopleDetailView = ({
                     {people.culture.cosmology && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          B. {language === "en" ? "Cosmology" : "Cosmologie"}
+                          B. {"Cosmologie"}
                         </h4>
                         {people.culture.cosmology.worldStructure && (
                           <div className="ml-4 space-y-1">
                             <span className="font-medium">
-                              {language === "en"
-                                ? "World Structure:"
-                                : "Structure du monde :"}
+                              {"Structure du monde :"}
                             </span>
                             {people.culture.cosmology.worldStructure
                               .upperWorld && (
                               <p className="text-sm">
                                 •{" "}
-                                {language === "en"
-                                  ? "Upper World:"
-                                  : "Monde supérieur :"}{" "}
+                                {"Monde supérieur :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .upperWorld
@@ -688,9 +607,7 @@ export const PeopleDetailView = ({
                               .terrestrialWorld && (
                               <p className="text-sm">
                                 •{" "}
-                                {language === "en"
-                                  ? "Terrestrial World:"
-                                  : "Monde terrestre :"}{" "}
+                                {"Monde terrestre :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .terrestrialWorld
@@ -701,9 +618,7 @@ export const PeopleDetailView = ({
                               .underworld && (
                               <p className="text-sm">
                                 •{" "}
-                                {language === "en"
-                                  ? "Underworld:"
-                                  : "Monde souterrain :"}{" "}
+                                {"Monde souterrain :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .underworld
@@ -720,18 +635,14 @@ export const PeopleDetailView = ({
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
                           C.{" "}
-                          {language === "en"
-                            ? "Person & Nature"
-                            : "Personne et nature"}
+                          {"Personne et nature"}
                         </h4>
                         {people.culture.personAndNature.totemicAnimals &&
                           people.culture.personAndNature.totemicAnimals.length >
                             0 && (
                             <div className="ml-4 flex flex-wrap gap-1">
                               <span className="font-medium">
-                                {language === "en"
-                                  ? "Totemic Animals:"
-                                  : "Animaux totémiques :"}
+                                {"Animaux totémiques :"}
                               </span>
                               {people.culture.personAndNature.totemicAnimals.map(
                                 (animal, idx) => (
@@ -751,9 +662,7 @@ export const PeopleDetailView = ({
                             0 && (
                             <div className="ml-4 flex flex-wrap gap-1">
                               <span className="font-medium">
-                                {language === "en"
-                                  ? "Sacred Plants:"
-                                  : "Plantes sacrées :"}
+                                {"Plantes sacrées :"}
                               </span>
                               {people.culture.personAndNature.sacredPlants.map(
                                 (plant, idx) => (
@@ -776,16 +685,12 @@ export const PeopleDetailView = ({
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
                           D.{" "}
-                          {language === "en"
-                            ? "Rites & Practices"
-                            : "Rites et pratiques"}
+                          {"Rites et pratiques"}
                         </h4>
                         {people.culture.ritesAndPractices.initiationRites && (
                           <div className="ml-4">
                             <span className="font-medium">
-                              {language === "en"
-                                ? "Initiation:"
-                                : "Initiation :"}
+                              {"Initiation :"}
                             </span>{" "}
                             {people.culture.ritesAndPractices.initiationRites
                               .maleInitiation ||
@@ -797,7 +702,7 @@ export const PeopleDetailView = ({
                         {people.culture.ritesAndPractices.funeraryRites && (
                           <div className="ml-4">
                             <span className="font-medium">
-                              {language === "en" ? "Funerary:" : "Funéraires :"}
+                              {"Funéraires :"}
                             </span>{" "}
                             {people.culture.ritesAndPractices.funeraryRites
                               .burial || "—"}
@@ -811,9 +716,7 @@ export const PeopleDetailView = ({
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
                           E.{" "}
-                          {language === "en"
-                            ? "Arts & Material Culture"
-                            : "Arts et culture matérielle"}
+                          {"Arts et culture matérielle"}
                         </h4>
                         {people.culture.symbolsAndArts.artsAndMusic && (
                           <div className="ml-4 space-y-1">
@@ -821,9 +724,7 @@ export const PeopleDetailView = ({
                               .musicalInstruments && (
                               <p className="text-sm">
                                 •{" "}
-                                {language === "en"
-                                  ? "Instruments:"
-                                  : "Instruments :"}{" "}
+                                {"Instruments :"}{" "}
                                 {
                                   people.culture.symbolsAndArts.artsAndMusic
                                     .musicalInstruments
@@ -833,7 +734,7 @@ export const PeopleDetailView = ({
                             {people.culture.symbolsAndArts.artsAndMusic
                               .dances && (
                               <p className="text-sm">
-                                • {language === "en" ? "Dances:" : "Danses :"}{" "}
+                                • {"Danses :"}{" "}
                                 {
                                   people.culture.symbolsAndArts.artsAndMusic
                                     .dances
@@ -843,7 +744,7 @@ export const PeopleDetailView = ({
                             {people.culture.symbolsAndArts.artsAndMusic
                               .masks && (
                               <p className="text-sm">
-                                • {language === "en" ? "Masks:" : "Masques :"}{" "}
+                                • {"Masques :"}{" "}
                                 {
                                   people.culture.symbolsAndArts.artsAndMusic
                                     .masks
@@ -856,7 +757,7 @@ export const PeopleDetailView = ({
                           people.culture.symbolsAndArts.symbols.length > 0 && (
                             <div className="ml-4 flex flex-wrap gap-1">
                               <span className="font-medium">
-                                {language === "en" ? "Symbols:" : "Symboles :"}
+                                {"Symboles :"}
                               </span>
                               {people.culture.symbolsAndArts.symbols.map(
                                 (symbol, idx) => (
@@ -879,17 +780,13 @@ export const PeopleDetailView = ({
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
                           F.{" "}
-                          {language === "en"
-                            ? "Contemporary Spirituality"
-                            : "Spiritualités contemporaines"}
+                          {"Spiritualités contemporaines"}
                         </h4>
                         {people.culture.contemporarySpirituality
                           .christianity && (
                           <div className="ml-4">
                             <span className="font-medium">
-                              {language === "en"
-                                ? "Christianity:"
-                                : "Christianisme :"}
+                              {"Christianisme :"}
                             </span>{" "}
                             {people.culture.contemporarySpirituality
                               .christianity.denominations ||
@@ -910,9 +807,7 @@ export const PeopleDetailView = ({
                           .traditionalReligions && (
                           <div className="ml-4">
                             <span className="font-medium">
-                              {language === "en"
-                                ? "Traditional:"
-                                : "Traditionnelles :"}
+                              {"Traditionnelles :"}
                             </span>{" "}
                             {people.culture.contemporarySpirituality
                               .traditionalReligions.persistenceOfPractices ||
@@ -924,9 +819,7 @@ export const PeopleDetailView = ({
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No culture data available"
-                      : "Aucune donnée culturelle disponible"}
+                    {"Aucune donnée culturelle disponible"}
                   </p>
                 )}
               </CardContent>
@@ -939,9 +832,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <History className="h-5 w-5" />
-                  {language === "en"
-                    ? "Historical Role & Regional Interactions"
-                    : "Rôle historique et interactions régionales"}
+                  {"Rôle historique et interactions régionales"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -950,9 +841,7 @@ export const PeopleDetailView = ({
                     {people.historicalRole.kingdomsOrChiefdoms && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Kingdoms/Chiefdoms"
-                            : "Royaumes/Chefferies"}
+                          {"Royaumes/Chefferies"}
                         </h4>
                         <p>{people.historicalRole.kingdomsOrChiefdoms}</p>
                       </div>
@@ -960,9 +849,7 @@ export const PeopleDetailView = ({
                     {people.historicalRole.relationsWithNeighbors && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Relations with Neighbors"
-                            : "Relations avec les voisins"}
+                          {"Relations avec les voisins"}
                         </h4>
                         <p>{people.historicalRole.relationsWithNeighbors}</p>
                       </div>
@@ -970,9 +857,7 @@ export const PeopleDetailView = ({
                     {people.historicalRole.conflictsOrAlliances && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Conflicts/Alliances"
-                            : "Conflits/Alliances"}
+                          {"Conflits/Alliances"}
                         </h4>
                         <p>{people.historicalRole.conflictsOrAlliances}</p>
                       </div>
@@ -980,7 +865,7 @@ export const PeopleDetailView = ({
                     {people.historicalRole.diaspora && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en" ? "Diaspora" : "Diaspora"}
+                          {"Diaspora"}
                         </h4>
                         <p>{people.historicalRole.diaspora}</p>
                       </div>
@@ -988,9 +873,7 @@ export const PeopleDetailView = ({
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No historical data available"
-                      : "Aucune donnée historique disponible"}
+                    {"Aucune donnée historique disponible"}
                   </p>
                 )}
               </CardContent>
@@ -1003,9 +886,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Calendar className="h-5 w-5" />
-                  {language === "en"
-                    ? "Global Demography"
-                    : "Démographie globale"}
+                  {"Démographie globale"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -1014,9 +895,7 @@ export const PeopleDetailView = ({
                     {people.demography.totalPopulation && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Total Population"
-                            : "Population totale"}
+                          {"Population totale"}
                         </h4>
                         <p className="text-2xl font-bold">
                           {formatNumber(people.demography.totalPopulation)}
@@ -1026,9 +905,7 @@ export const PeopleDetailView = ({
                     {people.demography.referenceYear && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en"
-                            ? "Reference Year"
-                            : "Année de référence"}
+                          {"Année de référence"}
                         </h4>
                         <p>{people.demography.referenceYear}</p>
                       </div>
@@ -1037,9 +914,7 @@ export const PeopleDetailView = ({
                       people.demography.distributionByCountry.length > 0 && (
                         <div>
                           <h4 className="font-medium text-sm text-muted-foreground mb-2">
-                            {language === "en"
-                              ? "Distribution by Country"
-                              : "Distribution par pays"}
+                            {"Distribution par pays"}
                           </h4>
                           <div className="space-y-2">
                             {people.demography.distributionByCountry.map(
@@ -1075,7 +950,7 @@ export const PeopleDetailView = ({
                     {people.demography.source && (
                       <div>
                         <h4 className="font-medium text-sm text-muted-foreground">
-                          {language === "en" ? "Source" : "Source"}
+                          {"Source"}
                         </h4>
                         <p className="text-sm text-muted-foreground">
                           {people.demography.source}
@@ -1096,20 +971,14 @@ export const PeopleDetailView = ({
                                 id: dist.country,
                               })
                             )}
-                            title={
-                              language === "en"
-                                ? `${people.nameMain} Distribution Across Countries`
-                                : `Distribution de ${people.nameMain} par pays`
-                            }
+                            title={`Distribution de ${people.nameMain} par pays`}
                           />
                         </div>
                       )}
                   </>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No demographic data available"
-                      : "Aucune donnée démographique disponible"}
+                    {"Aucune donnée démographique disponible"}
                   </p>
                 )}
               </CardContent>
@@ -1122,7 +991,7 @@ export const PeopleDetailView = ({
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5" />
-                  {language === "en" ? "Sources" : "Sources"}
+                  {"Sources"}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -1136,9 +1005,7 @@ export const PeopleDetailView = ({
                   </ul>
                 ) : (
                   <p className="text-muted-foreground text-sm">
-                    {language === "en"
-                      ? "No sources listed"
-                      : "Aucune source répertoriée"}
+                    {"Aucune source répertoriée"}
                   </p>
                 )}
               </CardContent>

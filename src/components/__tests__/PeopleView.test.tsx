@@ -72,33 +72,6 @@ describe("PeopleView", () => {
     expect(afrikLoader.getAllPeoples).toHaveBeenCalledTimes(1);
   });
 
-  it("should display English loading text when language is English", () => {
-    vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
-      () => new Promise(() => {})
-    );
-
-    render(<PeopleView language="en" onPeopleSelect={mockOnPeopleSelect} />);
-
-    expect(screen.getByText("Loading peoples...")).toBeInTheDocument();
-  });
-
-  it("should receive the language prop correctly", () => {
-    vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
-      () => new Promise(() => {})
-    );
-
-    const { rerender } = render(
-      <PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />
-    );
-
-    expect(screen.getByText("Chargement des peuples...")).toBeInTheDocument();
-
-    rerender(<PeopleView language="en" onPeopleSelect={mockOnPeopleSelect} />);
-
-    // The component re-renders with the new language
-    expect(afrikLoader.getAllPeoples).toHaveBeenCalled();
-  });
-
   it("should receive languageFamilyId prop correctly", () => {
     vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
       () => new Promise(() => {})

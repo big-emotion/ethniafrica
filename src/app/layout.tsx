@@ -33,18 +33,24 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "African Ethnicities Dictionary | Dictionnaire des Ethnies d'Afrique",
+  metadataBase: new URL(
+    (() => {
+      const url = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+      return url.startsWith("http") ? url : `http://${url}`;
+    })()
+  ),
+  title: "Atlas des Peuples d'Afrique | Dictionnaire des Ethnies d'Afrique",
   description:
-    "Comprehensive multilingual encyclopedia of African ethnic groups across all 55 countries. Explore demographics, cultures, and languages.",
-  authors: [{ name: "African Ethnicities Dictionary" }],
+    "Encyclopédie des peuples, langues et familles linguistiques dans les 55 pays africains. Explorez la diversité culturelle et linguistique du continent.",
+  authors: [{ name: "Atlas des Peuples d'Afrique" }],
   icons: {
     icon: "/favicon.ico",
     apple: "/favicon.ico",
   },
   openGraph: {
-    title: "African Ethnicities Dictionary",
+    title: "Atlas des Peuples d'Afrique",
     description:
-      "Comprehensive multilingual encyclopedia of African ethnic groups",
+      "Encyclopédie des peuples, langues et familles linguistiques d'Afrique",
     type: "website",
     images: ["/opengraph-image"],
   },
@@ -62,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="fr"
       className={`${inter.variable} ${playfairDisplay.variable} ${fraunces.variable} ${nunitoSans.variable}`}
       suppressHydrationWarning
     >

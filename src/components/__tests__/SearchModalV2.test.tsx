@@ -53,22 +53,6 @@ describe("SearchModalV2", () => {
     ).toBeInTheDocument();
   });
 
-  it("should render English title when language is English", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="en"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
-
-    expect(screen.getByText("Search")).toBeInTheDocument();
-    expect(
-      screen.getByPlaceholderText(/Search for a family/i)
-    ).toBeInTheDocument();
-  });
-
   it("should display tab filters", () => {
     render(
       <SearchModalV2
@@ -85,22 +69,6 @@ describe("SearchModalV2", () => {
     expect(screen.getByRole("tab", { name: "Pays" })).toBeInTheDocument();
   });
 
-  it("should display English tab labels when language is English", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="en"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
-
-    expect(screen.getByText("All")).toBeInTheDocument();
-    expect(screen.getByText("Families")).toBeInTheDocument();
-    expect(screen.getByText("Peoples")).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: "Countries" })).toBeInTheDocument();
-  });
-
   it("should show instruction text when search query is empty", () => {
     render(
       <SearchModalV2
@@ -114,19 +82,6 @@ describe("SearchModalV2", () => {
     expect(
       screen.getByText("Commencez à taper pour rechercher...")
     ).toBeInTheDocument();
-  });
-
-  it("should show instruction text in English", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="en"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
-
-    expect(screen.getByText("Start typing to search...")).toBeInTheDocument();
   });
 
   it("should update search input value when typing", async () => {

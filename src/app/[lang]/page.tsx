@@ -13,34 +13,18 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { MapPin, Users, Search, Languages } from "lucide-react";
 import { SearchModalV2 } from "@/components/search/SearchModalV2";
 import { useParams } from "next/navigation";
-import { Language } from "@/types/shared";
 import { getStats } from "@/lib/afrikLoader";
 import type { GlobalStats, SearchEntityType } from "@/types/afrik-frontend";
 
 export default function Home() {
   const params = useParams();
-  const lang = params?.lang as string;
   const { language, setLanguage } = useLanguage();
   const router = useRouter();
   const isMobile = useIsMobile();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [stats, setStats] = useState<GlobalStats | null>(null);
 
-  // Use lang from URL directly, fallback to language from hook
-  const currentLanguage =
-    lang && ["en", "fr"].includes(lang) ? (lang as Language) : language;
-  const t = getTranslation(currentLanguage);
-
-  // Sync language from URL param to hook
-  useEffect(() => {
-    if (lang && ["en", "fr"].includes(lang)) {
-      const urlLang = lang as Language;
-      if (urlLang !== language) {
-        // Update the hook's language state without triggering navigation
-        setLanguage(urlLang);
-      }
-    }
-  }, [lang, language, setLanguage]);
+  const t = getTranslation(language);
 
   // Load statistics from AFRIK v2 API
   useEffect(() => {
@@ -79,13 +63,13 @@ export default function Home() {
   };
 
   // AFRIK v2 routes
-  const familiesRoute = getLocalizedRoute(currentLanguage, "families");
-  const peoplesRoute = getLocalizedRoute(currentLanguage, "peoples");
-  const countriesRoute = getLocalizedRoute(currentLanguage, "countries");
+  const familiesRoute = getLocalizedRoute(language, "families");
+  const peoplesRoute = getLocalizedRoute(language, "peoples");
+  const countriesRoute = getLocalizedRoute(language, "countries");
 
   return (
     <PageLayout
-      language={currentLanguage}
+      language={language}
       onLanguageChange={setLanguage}
       title={t.title}
       subtitle={t.subtitle}
@@ -95,14 +79,10 @@ export default function Home() {
         {/* Section texte introductive */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-bold">
-            {currentLanguage === "en"
-              ? "Discover the Rich Diversity of African Ethnic Groups"
-              : "Découvrez la Richesse de la Diversité des Groupes Ethniques Africains"}
+            Découvrez la Richesse de la Diversité des Groupes Ethniques Africains
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            {currentLanguage === "en"
-              ? "This comprehensive encyclopedia documents the ethnic diversity across all 55 African countries. Our data provides detailed demographic information, helping to understand the rich cultural mosaic that makes up the African continent. Explore regions, countries, and ethnic groups to discover population distributions, cultural connections, and linguistic diversity."
-              : "Cette encyclopédie complète documente la diversité ethnique dans les 55 pays africains. Nos données fournissent des informations démographiques détaillées, permettant de comprendre la riche mosaïque culturelle qui compose le continent africain. Explorez les régions, pays et groupes ethniques pour découvrir les distributions démographiques, les connexions culturelles et la diversité linguistique."}
+            Cette encyclopédie complète documente la diversité ethnique dans les 55 pays africains. Nos données fournissent des informations démographiques détaillées, permettant de comprendre la riche mosaïque culturelle qui compose le continent africain. Explorez les régions, pays et groupes ethniques pour découvrir les distributions démographiques, les connexions culturelles et la diversité linguistique.
           </p>
         </div>
 
@@ -121,7 +101,7 @@ export default function Home() {
           <SearchModalV2
             open={isSearchOpen}
             onClose={() => setIsSearchOpen(false)}
-            language={currentLanguage}
+            language={language}
             onResultSelect={handleSearchResult}
           />
         </div>
@@ -138,15 +118,13 @@ export default function Home() {
                   </div>
                   <div className="flex-1 w-full">
                     <h3 className="text-sm font-medium text-muted-foreground mb-2">
-                      {currentLanguage === "en"
-                        ? "Language Families"
-                        : "Familles linguistiques"}
+                      Familles linguistiques
                     </h3>
                     <p className="text-2xl md:text-3xl font-display font-bold">
                       {stats.totalLanguageFamilies}
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
-                      {currentLanguage === "en" ? "documented" : "documentées"}
+                      documentées
                     </p>
                   </div>
                 </div>
@@ -160,15 +138,13 @@ export default function Home() {
                   </div>
                   <div className="flex-1 w-full">
                     <h3 className="text-sm font-medium text-muted-foreground mb-2">
-                      {currentLanguage === "en"
-                        ? "African Peoples"
-                        : "Peuples africains"}
+                      Peuples africains
                     </h3>
                     <p className="text-2xl md:text-3xl font-display font-bold">
                       {stats.totalPeoples}
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
-                      {currentLanguage === "en" ? "recorded" : "recensés"}
+                      recensés
                     </p>
                   </div>
                 </div>
@@ -182,15 +158,13 @@ export default function Home() {
                   </div>
                   <div className="flex-1 w-full">
                     <h3 className="text-sm font-medium text-muted-foreground mb-2">
-                      {currentLanguage === "en"
-                        ? "African Countries"
-                        : "Pays africains"}
+                      Pays africains
                     </h3>
                     <p className="text-2xl md:text-3xl font-display font-bold">
                       {stats.totalCountries}
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
-                      {currentLanguage === "en" ? "covered" : "couverts"}
+                      couverts
                     </p>
                   </div>
                 </div>
@@ -211,20 +185,14 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  {currentLanguage === "en"
-                    ? "Language Families"
-                    : "Familles linguistiques"}
+                  Familles linguistiques
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {currentLanguage === "en"
-                    ? "Explore linguistic diversity"
-                    : "Explorer la diversité linguistique"}
+                  Explorer la diversité linguistique
                 </p>
               </div>
               <Button className="w-full" variant="default">
-                {currentLanguage === "en"
-                  ? "View Families"
-                  : "Voir les familles"}
+                Voir les familles
               </Button>
             </div>
           </Card>
@@ -239,18 +207,14 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  {currentLanguage === "en"
-                    ? "African Peoples"
-                    : "Peuples africains"}
+                  Peuples africains
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {currentLanguage === "en"
-                    ? "Discover cultures & traditions"
-                    : "Découvrir cultures & traditions"}
+                  Découvrir cultures &amp; traditions
                 </p>
               </div>
               <Button className="w-full" variant="default">
-                {currentLanguage === "en" ? "View Peoples" : "Voir les peuples"}
+                Voir les peuples
               </Button>
             </div>
           </Card>
@@ -264,17 +228,13 @@ export default function Home() {
                 <MapPin className="h-8 w-8 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  {currentLanguage === "en" ? "Countries" : "Pays"}
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">Pays</h3>
                 <p className="text-sm text-muted-foreground">
-                  {currentLanguage === "en"
-                    ? "Browse by country"
-                    : "Parcourir par pays"}
+                  Parcourir par pays
                 </p>
               </div>
               <Button className="w-full" variant="default">
-                {currentLanguage === "en" ? "View Countries" : "Voir les pays"}
+                Voir les pays
               </Button>
             </div>
           </Card>

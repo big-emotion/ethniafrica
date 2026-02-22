@@ -6,7 +6,6 @@ import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute, getPageFromRoute, PageType } from "@/lib/routing";
 import { Button } from "@/components/ui/button";
-import { LanguageSelector } from "@/components/LanguageSelector";
 import Image from "next/image";
 
 interface DesktopNavBarProps {
@@ -16,7 +15,7 @@ interface DesktopNavBarProps {
 
 export const DesktopNavBar = ({
   language,
-  onLanguageChange,
+  onLanguageChange: _onLanguageChange,
 }: DesktopNavBarProps) => {
   const t = getTranslation(language);
   const pathname = usePathname();
@@ -44,23 +43,6 @@ export const DesktopNavBar = ({
     return currentPage === pageType;
   };
 
-  const getNavLabels = () => {
-    if (language === "en") {
-      return {
-        families: "Language Families",
-        peoples: "Peoples",
-        countries: "Countries",
-      };
-    }
-    return {
-      families: "Familles linguistiques",
-      peoples: "Peuples",
-      countries: "Pays",
-    };
-  };
-
-  const navLabels = getNavLabels();
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card border-b shadow-sm hidden lg:block">
       <div className="container mx-auto px-4">
@@ -80,7 +62,7 @@ export const DesktopNavBar = ({
                   height={20}
                   className="object-contain"
                 />
-                {language === "en" ? "Home" : "Accueil"}
+                Accueil
               </Button>
             </Link>
             <Link href={familiesRoute}>
@@ -88,7 +70,7 @@ export const DesktopNavBar = ({
                 variant={isActive("families") ? "default" : "ghost"}
                 size="sm"
               >
-                {navLabels.families}
+                Familles linguistiques
               </Button>
             </Link>
             <Link href={peoplesRoute}>
@@ -96,7 +78,7 @@ export const DesktopNavBar = ({
                 variant={isActive("peoples") ? "default" : "ghost"}
                 size="sm"
               >
-                {navLabels.peoples}
+                Peuples
               </Button>
             </Link>
             <Link href={countriesRoute}>
@@ -104,12 +86,12 @@ export const DesktopNavBar = ({
                 variant={isActive("countries") ? "default" : "ghost"}
                 size="sm"
               >
-                {navLabels.countries}
+                Pays
               </Button>
             </Link>
           </div>
 
-          {/* Right side: About, Contribute, Report Error, Language selector */}
+          {/* Right side: About, Contribute, Report Error */}
           <div className="flex items-center gap-2">
             <Link href={`/${language}/about`}>
               <Button
@@ -126,7 +108,7 @@ export const DesktopNavBar = ({
                 window.location.href = `/${language}/contribute`;
               }}
             >
-              {language === "en" ? "Contribute" : "Contribuer"}
+              Contribuer
             </Button>
             <Button
               variant={isActive("report-error") ? "default" : "ghost"}
@@ -135,12 +117,8 @@ export const DesktopNavBar = ({
                 window.location.href = `/${language}/report-error`;
               }}
             >
-              {language === "en" ? "Report Error" : "Signaler une erreur"}
+              Signaler une erreur
             </Button>
-            <LanguageSelector
-              currentLang={language}
-              onLanguageChange={onLanguageChange}
-            />
           </div>
         </div>
       </div>

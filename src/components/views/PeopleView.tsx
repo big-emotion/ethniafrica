@@ -69,9 +69,7 @@ export const PeopleView = ({
             if (!cancelled) {
               console.error("Error fetching peoples:", err);
               setError(
-                language === "en"
-                  ? "Failed to load peoples"
-                  : "Échec du chargement des peuples"
+                "Échec du chargement des peuples"
               );
             }
           }
@@ -146,23 +144,21 @@ export const PeopleView = ({
   }, [peoples, languageFamilyId]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+    return new Intl.NumberFormat("fr-FR").format(
       Math.round(num)
     );
   };
 
   const getLoadingText = (): string => {
-    return language === "en"
-      ? "Loading peoples..."
-      : "Chargement des peuples...";
+    return "Chargement des peuples...";
   };
 
   const getNoResultsText = (): string => {
-    return language === "en" ? "No peoples found" : "Aucun peuple trouvé";
+    return "Aucun peuple trouvé";
   };
 
   const getCountriesLabel = (count: number): string => {
-    return language === "en" ? (count === 1 ? "country" : "countries") : "pays";
+    return "pays";
   };
 
   const getPopulationLabel = (): string => {
@@ -248,7 +244,7 @@ export const PeopleView = ({
                 className="h-8 w-8 p-0 text-xs"
                 onClick={() => setSelectedLetter(null)}
               >
-                {language === "en" ? "All" : "Tous"}
+                {"Tous"}
               </Button>
               {ALPHABET.map((letter) => (
                 <Button
