@@ -11,18 +11,9 @@ import {
   getAfrikCountryById,
 } from "@/lib/supabase/queries/afrik/countries";
 
-// Mock global fetch
-global.fetch = vi.fn();
-
-/**
- * TDD Phase: RED
- * Test: Country Service - business logic for countries
- */
 describe("Country Service", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // Reset fetch mock
-    (global.fetch as any).mockClear();
   });
 
   describe("getCountries", () => {
@@ -33,11 +24,7 @@ describe("Country Service", () => {
         content: {},
       }));
 
-      // Mock fetch response for internal route
-      (global.fetch as any).mockResolvedValueOnce({
-        ok: true,
-        json: async () => mockCountries,
-      });
+      vi.mocked(getAllAfrikCountries).mockResolvedValue(mockCountries);
 
       const result = await getCountries(1, 5);
 
@@ -45,17 +32,7 @@ describe("Country Service", () => {
       expect(Array.isArray(result.data)).toBe(true);
       expect(result.data.length).toBe(5);
       expect(result.total).toBe(10);
-
-      // Verify fetch was called with correct URL and tags
-      expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining("/api/v2/internal/countries"),
-        expect.objectContaining({
-          next: expect.objectContaining({
-            tags: ["afrik-countries"],
-            revalidate: 3600,
-          }),
-        })
-      );
+      expect(getAllAfrikCountries).toHaveBeenCalled();
     });
 
     it("should handle pagination correctly", async () => {
@@ -65,13 +42,10 @@ describe("Country Service", () => {
         content: {},
       }));
 
-      // Mock fetch response for internal route
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockCountries,
-      });
+      vi.mocked(getAllAfrikCountries).mockResolvedValue(mockCountries);
 
       const page1 = await getCountries(1, 2);
+      vi.mocked(getAllAfrikCountries).mockResolvedValue(mockCountries);
       const page2 = await getCountries(2, 2);
 
       expect(page1.data.length).toBe(2);
@@ -86,34 +60,11 @@ describe("Country Service", () => {
         content: {},
       }));
 
-      // Mock fetch response for internal route
-      (global.fetch as any).mockResolvedValueOnce({
-        ok: true,
-        json: async () => mockCountries,
-      });
+      vi.mocked(getAllAfrikCountries).mockResolvedValue(mockCountries);
 
       const result = await getCountries(1, 1000);
 
       expect(result.data.length).toBe(result.total);
-    });
-
-    it("should fallback to direct query if fetch fails", async () => {
-      const mockCountries = Array.from({ length: 10 }, (_, i) => ({
-        id: `COU${i}`,
-        nameFr: `Country ${i}`,
-        content: {},
-      }));
-
-      // Mock fetch to fail
-      (global.fetch as any).mockRejectedValueOnce(new Error("Network error"));
-      (getAllAfrikCountries as any).mockResolvedValue(mockCountries);
-
-      const result = await getCountries(1, 5);
-
-      expect(result.data.length).toBe(5);
-      expect(result.total).toBe(10);
-      // Verify fallback was used
-      expect(getAllAfrikCountries).toHaveBeenCalled();
     });
   });
 
@@ -125,7 +76,7 @@ describe("Country Service", () => {
         content: {},
       };
 
-      (getAfrikCountryById as any).mockResolvedValue(mockCountry);
+      vi.mocked(getAfrikCountryById).mockResolvedValue(mockCountry);
 
       const country = await getCountryById("ZWE");
 
@@ -135,7 +86,7 @@ describe("Country Service", () => {
     });
 
     it("should return null for non-existent country", async () => {
-      (getAfrikCountryById as any).mockResolvedValue(null);
+      vi.mocked(getAfrikCountryById).mockResolvedValue(null);
 
       const country = await getCountryById("XXX");
 

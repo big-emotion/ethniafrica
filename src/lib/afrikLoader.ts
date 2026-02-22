@@ -17,25 +17,17 @@ import type {
   PaginationMeta,
   PaginatedResponse,
   GlobalStats,
-  PaginationOptions,
   PeopleFilterOptions,
   ApiError,
 } from "@/types/afrik-frontend";
 
-import {
-  getCachedData,
-  setCachedData,
-  CACHE_KEYS,
-} from "@/lib/cache/clientCache";
+import { CACHE_KEYS } from "@/lib/cache/clientCache";
 
 // ==========================================
 // CONSTANTS
 // ==========================================
 
 const API_BASE = "/api/v2";
-
-// Cache TTL: 24 heures
-const CACHE_TTL = 24 * 60 * 60 * 1000;
 
 // Default pagination
 const DEFAULT_PAGE = 1;
@@ -90,17 +82,6 @@ export async function getLanguageFamilies(
   page: number = DEFAULT_PAGE,
   perPage: number = DEFAULT_PER_PAGE
 ): Promise<PaginatedResponse<LanguageFamilySummary>> {
-  const cacheKey = `${CACHE_KEYS.LANGUAGE_FAMILIES}:${page}:${perPage}`;
-
-  // Check cache first
-  const cached = getCachedData<PaginatedResponse<LanguageFamilySummary>>(
-    cacheKey,
-    CACHE_TTL
-  );
-  if (cached) {
-    return cached;
-  }
-
   try {
     const response = await fetch(
       `${API_BASE}/language-families?page=${page}&perPage=${perPage}`
@@ -132,15 +113,10 @@ export async function getLanguageFamilies(
       }
     );
 
-    const paginatedResponse: PaginatedResponse<LanguageFamilySummary> = {
+    return {
       data,
       meta: transformMeta(result.meta, page, perPage),
     };
-
-    // Cache the result
-    setCachedData(cacheKey, paginatedResponse, CACHE_TTL);
-
-    return paginatedResponse;
   } catch (error) {
     console.error("[getLanguageFamilies] Exception:", error);
     return { data: [], meta: createEmptyMeta(page, perPage) };
@@ -153,14 +129,6 @@ export async function getLanguageFamilies(
 export async function getLanguageFamily(
   id: string
 ): Promise<LanguageFamilyDetail | null> {
-  const cacheKey = `${CACHE_KEYS.LANGUAGE_FAMILIES}:detail:${id}`;
-
-  // Check cache first
-  const cached = getCachedData<LanguageFamilyDetail>(cacheKey, CACHE_TTL);
-  if (cached) {
-    return cached;
-  }
-
   try {
     const response = await fetch(
       `${API_BASE}/language-families/${encodeURIComponent(id)}`
@@ -202,9 +170,6 @@ export async function getLanguageFamily(
       sources: apiData.content?.sources,
     };
 
-    // Cache the result
-    setCachedData(cacheKey, detail, CACHE_TTL);
-
     return detail;
   } catch (error) {
     console.error(`[getLanguageFamily] Exception for ${id}:`, error);
@@ -228,19 +193,6 @@ export async function getPeoples(
     languageFamilyId,
     countryId,
   } = options;
-
-  // Build cache key with filters
-  const filterKey = [languageFamilyId, countryId].filter(Boolean).join(":");
-  const cacheKey = `${CACHE_KEYS.PEOPLES}:${page}:${perPage}:${filterKey}`;
-
-  // Check cache first
-  const cached = getCachedData<PaginatedResponse<PeopleSummary>>(
-    cacheKey,
-    CACHE_TTL
-  );
-  if (cached) {
-    return cached;
-  }
 
   try {
     // Build query params
@@ -295,15 +247,10 @@ export async function getPeoples(
       );
     }
 
-    const paginatedResponse: PaginatedResponse<PeopleSummary> = {
+    return {
       data: filteredData,
       meta: transformMeta(result.meta, page, perPage),
     };
-
-    // Cache the result
-    setCachedData(cacheKey, paginatedResponse, CACHE_TTL);
-
-    return paginatedResponse;
   } catch (error) {
     console.error("[getPeoples] Exception:", error);
     return { data: [], meta: createEmptyMeta(page, perPage) };
@@ -314,14 +261,6 @@ export async function getPeoples(
  * Récupère les détails d'un peuple (avec les 8 sections AFRIK)
  */
 export async function getPeople(id: string): Promise<PeopleDetail | null> {
-  const cacheKey = `${CACHE_KEYS.PEOPLES}:detail:${id}`;
-
-  // Check cache first
-  const cached = getCachedData<PeopleDetail>(cacheKey, CACHE_TTL);
-  if (cached) {
-    return cached;
-  }
-
   try {
     const response = await fetch(
       `${API_BASE}/peoples/${encodeURIComponent(id)}`
@@ -364,9 +303,6 @@ export async function getPeople(id: string): Promise<PeopleDetail | null> {
       sources: apiData.content?.sources,
     };
 
-    // Cache the result
-    setCachedData(cacheKey, detail, CACHE_TTL);
-
     return detail;
   } catch (error) {
     console.error(`[getPeople] Exception for ${id}:`, error);
@@ -385,17 +321,6 @@ export async function getCountries(
   page: number = DEFAULT_PAGE,
   perPage: number = DEFAULT_PER_PAGE
 ): Promise<PaginatedResponse<CountrySummary>> {
-  const cacheKey = `${CACHE_KEYS.COUNTRIES_V2}:${page}:${perPage}`;
-
-  // Check cache first
-  const cached = getCachedData<PaginatedResponse<CountrySummary>>(
-    cacheKey,
-    CACHE_TTL
-  );
-  if (cached) {
-    return cached;
-  }
-
   try {
     const response = await fetch(
       `${API_BASE}/countries?page=${page}&perPage=${perPage}`
@@ -424,15 +349,10 @@ export async function getCountries(
       }
     );
 
-    const paginatedResponse: PaginatedResponse<CountrySummary> = {
+    return {
       data,
       meta: transformMeta(result.meta, page, perPage),
     };
-
-    // Cache the result
-    setCachedData(cacheKey, paginatedResponse, CACHE_TTL);
-
-    return paginatedResponse;
   } catch (error) {
     console.error("[getCountries] Exception:", error);
     return { data: [], meta: createEmptyMeta(page, perPage) };
@@ -443,14 +363,6 @@ export async function getCountries(
  * Récupère les détails d'un pays
  */
 export async function getCountry(iso: string): Promise<CountryDetail | null> {
-  const cacheKey = `${CACHE_KEYS.COUNTRIES_V2}:detail:${iso}`;
-
-  // Check cache first
-  const cached = getCachedData<CountryDetail>(cacheKey, CACHE_TTL);
-  if (cached) {
-    return cached;
-  }
-
   try {
     const response = await fetch(
       `${API_BASE}/countries/${encodeURIComponent(iso)}`
@@ -490,9 +402,6 @@ export async function getCountry(iso: string): Promise<CountryDetail | null> {
       sources: apiData.content?.sources,
       demographics: apiData.content?.demographics,
     };
-
-    // Cache the result
-    setCachedData(cacheKey, detail, CACHE_TTL);
 
     return detail;
   } catch (error) {
@@ -570,14 +479,6 @@ export async function search(
  * Agrège les totaux depuis les différents endpoints
  */
 export async function getStats(): Promise<GlobalStats> {
-  const cacheKey = CACHE_KEYS.STATS_V2;
-
-  // Check cache first
-  const cached = getCachedData<GlobalStats>(cacheKey, CACHE_TTL);
-  if (cached) {
-    return cached;
-  }
-
   try {
     // Fetch counts from each endpoint in parallel
     const [familiesRes, peoplesRes, countriesRes] = await Promise.all([
@@ -611,18 +512,13 @@ export async function getStats(): Promise<GlobalStats> {
     // This could be fetched from a dedicated stats endpoint in the future
     totalPopulation = 1_400_000_000;
 
-    const stats: GlobalStats = {
+    return {
       totalLanguageFamilies,
       totalPeoples,
       totalCountries,
       totalPopulation,
       lastUpdated: new Date().toISOString(),
     };
-
-    // Cache the result
-    setCachedData(cacheKey, stats, CACHE_TTL);
-
-    return stats;
   } catch (error) {
     console.error("[getStats] Exception:", error);
     return {

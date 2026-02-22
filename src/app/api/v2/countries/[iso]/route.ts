@@ -91,12 +91,6 @@ export async function GET(
     }
 
     const response = jsonWithCors({ data: country });
-    if (response instanceof Response) {
-      response.headers.set(
-        "Cache-Control",
-        "public, max-age=86400, s-maxage=86400"
-      );
-    }
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/countries/[iso] completed", {

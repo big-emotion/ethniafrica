@@ -14,18 +14,9 @@ import {
   getAfrikLanguageFamilyById,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
 
-// Mock global fetch
-global.fetch = vi.fn();
-
-/**
- * TDD Phase: RED
- * Test: Language Family Service - business logic for language families
- */
 describe("Language Family Service", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // Reset fetch mock
-    (global.fetch as any).mockClear();
   });
 
   describe("getLanguageFamilies", () => {
@@ -36,11 +27,7 @@ describe("Language Family Service", () => {
         content: {},
       }));
 
-      // Mock fetch response for internal route
-      (global.fetch as any).mockResolvedValueOnce({
-        ok: true,
-        json: async () => mockFamilies,
-      });
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
 
       const result = await getLanguageFamilies(1, 5);
 
@@ -48,17 +35,7 @@ describe("Language Family Service", () => {
       expect(Array.isArray(result.data)).toBe(true);
       expect(result.data.length).toBe(5);
       expect(result.total).toBe(10);
-
-      // Verify fetch was called with correct URL and tags
-      expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining("/api/v2/internal/language-families"),
-        expect.objectContaining({
-          next: expect.objectContaining({
-            tags: ["afrik-language-families"],
-            revalidate: 3600,
-          }),
-        })
-      );
+      expect(getAllAfrikLanguageFamilies).toHaveBeenCalled();
     });
 
     it("should handle pagination correctly", async () => {
@@ -68,36 +45,13 @@ describe("Language Family Service", () => {
         content: {},
       }));
 
-      // Mock fetch response for internal route
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: async () => mockFamilies,
-      });
-
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
       const page1 = await getLanguageFamilies(1, 2);
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
       const page2 = await getLanguageFamilies(2, 2);
 
       expect(page1.data.length).toBe(2);
       expect(page2.data.length).toBe(2);
-    });
-
-    it("should fallback to direct query if fetch fails", async () => {
-      const mockFamilies = Array.from({ length: 10 }, (_, i) => ({
-        id: `FLG_${i}`,
-        nameFr: `Family ${i}`,
-        content: {},
-      }));
-
-      // Mock fetch to fail
-      (global.fetch as any).mockRejectedValueOnce(new Error("Network error"));
-      (getAllAfrikLanguageFamilies as any).mockResolvedValue(mockFamilies);
-
-      const result = await getLanguageFamilies(1, 5);
-
-      expect(result.data.length).toBe(5);
-      expect(result.total).toBe(10);
-      // Verify fallback was used
-      expect(getAllAfrikLanguageFamilies).toHaveBeenCalled();
     });
   });
 
@@ -110,7 +64,7 @@ describe("Language Family Service", () => {
         content: {},
       };
 
-      (getAfrikLanguageFamilyById as any).mockResolvedValue(mockFamily);
+      vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(mockFamily);
 
       const family = await getLanguageFamilyById("FLG_BANTU");
 
@@ -120,7 +74,7 @@ describe("Language Family Service", () => {
     });
 
     it("should return null for non-existent language family", async () => {
-      (getAfrikLanguageFamilyById as any).mockResolvedValue(null);
+      vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(null);
 
       const family = await getLanguageFamilyById("FLG_NONEXISTENT");
 
