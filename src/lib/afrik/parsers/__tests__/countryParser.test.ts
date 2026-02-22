@@ -36,6 +36,166 @@ describe("Country Parser", () => {
 `;
   });
 
+  describe("nameFr cleanup", () => {
+    it("should strip duplicate parenthetical from nameFr", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Burkina Faso (Burkina Faso)
+- Identifiant pays (ISO 3166-1 alpha-3) : BFA
+`;
+      const result = parseCountryFile(content);
+      expect(result.data?.nameFr).toBe("Burkina Faso");
+    });
+
+    it("should keep different parenthetical in nameFr", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : République du Zimbabwe (Republic of Zimbabwe)
+- Identifiant pays (ISO 3166-1 alpha-3) : ZWE
+`;
+      const result = parseCountryFile(content);
+      expect(result.data?.nameFr).toBe(
+        "République du Zimbabwe (Republic of Zimbabwe)"
+      );
+    });
+  });
+
+  describe("historicalNames camelCase mapping", () => {
+    it("should map French keys to camelCase", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Pays Test
+- Identifiant pays (ISO 3166-1 alpha-3) : TST
+
+# 1. Appellations historiques et origines du nom
+- Moyen Âge : Royaumes anciens
+- Colonisation : Colonie française
+- Période contemporaine : Indépendance 1960
+`;
+      const result = parseCountryFile(content);
+      const hn = result.data?.content.historicalNames as
+        | Record<string, string>
+        | undefined;
+      expect(hn).toBeDefined();
+      expect(hn?.middleAges).toBe("Royaumes anciens");
+      expect(hn?.colonization).toBe("Colonie française");
+      expect(hn?.contemporary).toBe("Indépendance 1960");
+    });
+  });
+
+  describe("culture camelCase mapping", () => {
+    it("should map French keys to camelCase", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Pays Test
+- Identifiant pays (ISO 3166-1 alpha-3) : TST
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Religions dominantes : Islam, christianisme
+- Modes de vie : Agriculture, élevage
+- Organisation sociale : Royaumes, chefferies
+`;
+      const result = parseCountryFile(content);
+      const culture = result.data?.content.culture as
+        | Record<string, unknown>
+        | undefined;
+      expect(culture).toBeDefined();
+      expect(culture?.dominantReligions).toBe("Islam, christianisme");
+      expect(culture?.lifestyles).toBe("Agriculture, élevage");
+      expect(culture?.socialOrganization).toBe("Royaumes, chefferies");
+    });
+
+    it("should parse mainLanguages string into array", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Pays Test
+- Identifiant pays (ISO 3166-1 alpha-3) : TST
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), Mooré (mos), Dioula (dyu)
+`;
+      const result = parseCountryFile(content);
+      const culture = result.data?.content.culture as
+        | Record<string, unknown>
+        | undefined;
+      const langs = culture?.mainLanguages as
+        | Array<{ name: string; isoCode?: string; isPrimary?: boolean }>
+        | undefined;
+      expect(langs).toBeDefined();
+      expect(Array.isArray(langs)).toBe(true);
+      expect(langs?.length).toBeGreaterThanOrEqual(3);
+      expect(langs?.[0].name).toBe("Français");
+      expect(langs?.[0].isoCode).toBe("fra");
+      expect(langs?.[0].isPrimary).toBe(true);
+      expect(langs?.[1].name).toBe("Mooré");
+      expect(langs?.[1].isoCode).toBe("mos");
+    });
+  });
+
+  describe("demographics parsing", () => {
+    it("should parse ### Peuple : blocks into peoples array", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Burkina Faso (Burkina Faso)
+- Identifiant pays (ISO 3166-1 alpha-3) : BFA
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Mossi
+- Identifiant peuple (PPL_) : PPL_MOSSI
+- Population : 11 500 000
+- Pourcentage dans le pays : 50%
+- Région : Plateau central
+
+### Peuple : Peul / Fulani
+- Identifiant peuple (PPL_) : PPL_FULA
+- Population : 2 300 000
+- Pourcentage dans le pays : 10%
+
+**Total population : 23 000 000**
+`;
+      const result = parseCountryFile(content);
+      const demo = result.data?.content.demographics as
+        | {
+            peoples?: Array<{
+              name: string;
+              population?: number;
+              percentageInCountry?: number;
+            }>;
+          }
+        | undefined;
+      expect(demo).toBeDefined();
+      expect(Array.isArray(demo?.peoples)).toBe(true);
+      expect(demo?.peoples?.length).toBeGreaterThanOrEqual(2);
+      const mossi = demo?.peoples?.[0];
+      expect(mossi?.name).toBe("Mossi");
+      expect(mossi?.population).toBe(11500000);
+      expect(mossi?.percentageInCountry).toBe(50);
+    });
+  });
+
+  describe("major peoples appellationRemarks", () => {
+    it("should extract appellationRemarks from major peoples", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Burkina Faso (Burkina Faso)
+- Identifiant pays (ISO 3166-1 alpha-3) : BFA
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Peul / Fulani
+  - Auto-appellation (endonyme) : Fulɓe (pluriel)
+  - Identifiant peuple (PPL_) : PPL_FULA
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Fellata" peut avoir une connotation péjorative
+`;
+      const result = parseCountryFile(content);
+      const peoples = result.data?.content.majorPeoples as
+        | Array<{ appellationRemarks?: string }>
+        | undefined;
+      expect(peoples).toBeDefined();
+      expect(peoples?.[0]?.appellationRemarks).toContain("Fellata");
+    });
+  });
+
   describe("parseCountryFile", () => {
     it("should parse country file and extract ID", () => {
       const result = parseCountryFile(sampleCountryContent);

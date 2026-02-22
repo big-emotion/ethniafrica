@@ -278,6 +278,11 @@ function parsePeoplesSection(content: string): PeopleEntry[] {
     const familyMatch = peopleContent.match(/FLG_[A-Z_]+/);
     if (familyMatch) people.languageFamily = familyMatch[0];
 
+    const remarksMatch = peopleContent.match(
+      /Remarque sur les appellations[^:]*:\s*([^\n]+)/
+    );
+    if (remarksMatch) people.appellationRemarks = remarksMatch[1].trim();
+
     // For simple format like "- Peuple 1 : Name (PPL_ID)"
     if (!people.name) {
       const simpleMatch = peopleContent.match(

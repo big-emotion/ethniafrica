@@ -81,7 +81,7 @@ export const CountryDetailViewV2 = ({
 
   if (loading) {
     return (
-      <div className="max-w-[430px] md:max-w-[720px] xl:max-w-[800px] mx-auto">
+      <div className="w-full">
         <div className="mx-3 md:mx-4 xl:mx-5 mt-3 rounded-[20px] overflow-hidden">
           <Skeleton className="h-[280px] w-full" />
         </div>
@@ -113,7 +113,7 @@ export const CountryDetailViewV2 = ({
 
   return (
     <div
-      className="max-w-[430px] md:max-w-[720px] xl:max-w-[800px] mx-auto pb-3 md:pb-4 xl:pb-5"
+      className="w-full pb-3 md:pb-4 xl:pb-5"
       style={{
         fontFamily: "var(--country-font-body)",
         color: "var(--country-text)",

@@ -1,0 +1,121 @@
+/* ============================================================
+   ETHNAFRICA — Design Tokens
+   Variante C "Carte vivante"
+   v1.0 — Février 2026
+   ============================================================ */
+
+:root {
+
+  /* === COULEURS — Fond === */
+  --bg:             #FBF7F2;   /* Fond principal (crème chaud) */
+  --bg-warm:        #F5EDE0;   /* Fond secondaire (sable) */
+  --card:           #FFFFFF;   /* Fond carte */
+  --border:         #E8DFD3;   /* Bordure par défaut */
+
+  /* === COULEURS — Texte === */
+  --text:           #2C2018;   /* Texte principal (brun foncé) */
+  --text-soft:      #7A6B5D;   /* Texte secondaire (brun moyen) */
+
+  /* === COULEURS — Sémantiques (ères historiques) === */
+
+  /* Or / Sahel — Royaumes, précolonial, tradition */
+  --gold:           #B8860B;
+  --gold-bg:        #FDF5E1;
+
+  /* Vert profond — Souveraineté, indépendance, officiel */
+  --green:          #2B6B42;
+  --green-bg:       #E8F5ED;
+
+  /* Terracotta — Accent chaud, données, peuple */
+  --terracotta:     #C2532A;
+  --terracotta-bg:  #FCEEE8;
+
+  /* Terre — Neutre chaud, culture, sources */
+  --earth:          #8B6B47;
+  --earth-bg:       #F3EBE0;
+
+  /* Rouge colonial — Colonisation, termes péjoratifs */
+  --colonial:       #9B3030;
+  --colonial-bg:    #FCE8E8;
+
+  /* === COULEURS — Barre démographique (10 slots + autres) === */
+  --demo-1:         #D4A843;   /* Peuple dominant */
+  --demo-2:         #5B8DB8;
+  --demo-3:         #6BAF8D;
+  --demo-4:         #B87D5B;
+  --demo-5:         #C2532A;
+  --demo-6:         #8B6B47;
+  --demo-7:         #7A6B5D;
+  --demo-8:         #9B8B7D;
+  --demo-9:         #A89B8D;
+  --demo-10:        #5B6B7B;
+  --demo-other:     #D5CCC0;   /* "Autres" / non documenté */
+
+  /* === COULEURS — Hero (dégradé vert) === */
+  --hero-start:     #2B6B42;
+  --hero-mid:       #1B4D2E;
+  --hero-end:       #142E1E;
+  --hero-highlight:  #F5C842;  /* Accent jaune dans meaning */
+
+  /* === TYPOGRAPHIE === */
+  --font-display:   'Fraunces', Georgia, serif;
+  --font-body:      'Nunito Sans', system-ui, sans-serif;
+
+  /* Échelle typo (mobile-first) */
+  --text-hero:      34px;      /* Nom du pays dans hero */
+  --text-h1:        24px;      /* Total population, titre section */
+  --text-h2:        18px;      /* Sous-titres (royaumes, peuples) */
+  --text-h3:        16px;      /* Noms dans origin, kingdom-card */
+  --text-body:      14px;      /* Texte courant, étymologie def */
+  --text-small:     12px;      /* Notes, descriptions secondaires */
+  --text-caption:   11px;      /* Endonymes, meta */
+  --text-micro:     10px;      /* Labels, tags, footnotes */
+  --text-nano:      9px;       /* Ère dans timeline, hypothesis-tag */
+
+  /* Poids */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-heavy:    800;
+  --weight-black:    900;
+
+  /* === SPACING === */
+  --space-xs:       4px;
+  --space-sm:       6px;
+  --space-md:       8px;
+  --space-base:     10px;
+  --space-lg:       12px;
+  --space-xl:       14px;
+  --space-2xl:      16px;
+  --space-3xl:      18px;
+  --space-4xl:      20px;
+  --space-5xl:      24px;
+
+  /* === RAYONS === */
+  --radius-sm:      4px;       /* Tags, badges */
+  --radius-md:      6px;       /* Icônes label, bar segments */
+  --radius-base:    12px;      /* Pills, sub-cards */
+  --radius-lg:      14px;      /* Kingdom cards, meaning */
+  --radius-xl:      16px;      /* Cards principales */
+  --radius-2xl:     20px;      /* Hero, badges */
+  --radius-full:    9999px;    /* Dots, avatars, lang bubbles */
+
+  /* === LAYOUT === */
+  --max-width:      430px;     /* Largeur mobile max */
+  --page-padding:   12px;      /* Padding latéral page */
+  --card-padding:   18px;      /* Padding interne carte */
+
+  /* === TIMELINE — Ligne verticale === */
+  --tl-line-width:  2px;
+  --tl-dot-size:    10px;
+  --tl-indent:      28px;      /* padding-left du conteneur */
+
+  /* === DEMO BAR === */
+  --bar-height:     12px;
+  --bar-gap:        2px;
+
+  /* === ANIMATION === */
+  --ease-default:   ease;
+  --duration-fade:  0.4s;
+}

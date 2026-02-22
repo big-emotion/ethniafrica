@@ -92,12 +92,17 @@ export function PaysPageContentV2() {
       {isMobile ? (
         <div>
           {selectedCountry ? (
-            <CountryDetailViewV2
-              countryId={selectedCountry}
-              language={language}
-              onPeopleClick={handlePeopleClick}
-              onBack={handleBack}
-            />
+            <div
+              className="min-h-screen"
+              style={{ background: "var(--country-bg)" }}
+            >
+              <CountryDetailViewV2
+                countryId={selectedCountry}
+                language={language}
+                onPeopleClick={handlePeopleClick}
+                onBack={handleBack}
+              />
+            </div>
           ) : (
             <CountryView
               language={language}
@@ -109,7 +114,10 @@ export function PaysPageContentV2() {
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
           {/* Detail view - Left (70%) */}
-          <div className="lg:col-span-7">
+          <div
+            className="lg:col-span-7 rounded-xl overflow-hidden"
+            style={{ background: "var(--country-bg)" }}
+          >
             {selectedCountry ? (
               <CountryDetailViewV2
                 countryId={selectedCountry}

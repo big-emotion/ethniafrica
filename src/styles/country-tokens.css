@@ -1,0 +1,144 @@
+/* ============================================================
+   ETHNAFRICA — Country Page Design Tokens
+   Variante C "Carte vivante"
+   v1.0
+   ============================================================ */
+
+:root {
+  /* === COULEURS — Fond === */
+  --country-bg: #FBF7F2;
+  --country-bg-warm: #F5EDE0;
+  --country-card: #FFFFFF;
+  --country-border: #E8DFD3;
+
+  /* === COULEURS — Texte === */
+  --country-text: #2C2018;
+  --country-text-soft: #7A6B5D;
+
+  /* === COULEURS — Sémantiques === */
+  --country-gold: #B8860B;
+  --country-gold-bg: #FDF5E1;
+  --country-green: #2B6B42;
+  --country-green-bg: #E8F5ED;
+  --country-terracotta: #C2532A;
+  --country-terracotta-bg: #FCEEE8;
+  --country-earth: #8B6B47;
+  --country-earth-bg: #F3EBE0;
+  --country-colonial: #9B3030;
+  --country-colonial-bg: #FCE8E8;
+
+  /* === COULEURS — Barre démographique === */
+  --country-demo-1: #D4A843;
+  --country-demo-2: #5B8DB8;
+  --country-demo-3: #6BAF8D;
+  --country-demo-4: #B87D5B;
+  --country-demo-5: #C2532A;
+  --country-demo-6: #8B6B47;
+  --country-demo-7: #7A6B5D;
+  --country-demo-8: #9B8B7D;
+  --country-demo-9: #A89B8D;
+  --country-demo-10: #5B6B7B;
+  --country-demo-other: #D5CCC0;
+
+  /* === COULEURS — Hero === */
+  --country-hero-start: #2B6B42;
+  --country-hero-mid: #1B4D2E;
+  --country-hero-end: #142E1E;
+  --country-hero-highlight: #F5C842;
+
+  /* === TYPOGRAPHIE === */
+  --country-font-display: var(--font-fraunces), 'Fraunces', Georgia, serif;
+  --country-font-body: var(--font-nunito-sans), 'Nunito Sans', system-ui, sans-serif;
+
+  /* Échelle typo (mobile-first) */
+  --country-text-hero: 34px;
+  --country-text-h1: 24px;
+  --country-text-h2: 18px;
+  --country-text-h3: 16px;
+  --country-text-body: 14px;
+  --country-text-small: 12px;
+  --country-text-caption: 11px;
+  --country-text-micro: 10px;
+  --country-text-nano: 9px;
+
+  /* Poids */
+  --country-weight-regular: 400;
+  --country-weight-medium: 500;
+  --country-weight-semibold: 600;
+  --country-weight-bold: 700;
+  --country-weight-heavy: 800;
+  --country-weight-black: 900;
+
+  /* === SPACING === */
+  --country-space-xs: 4px;
+  --country-space-sm: 6px;
+  --country-space-md: 8px;
+  --country-space-base: 10px;
+  --country-space-lg: 12px;
+  --country-space-xl: 14px;
+  --country-space-2xl: 16px;
+  --country-space-3xl: 18px;
+  --country-space-4xl: 20px;
+  --country-space-5xl: 24px;
+
+  /* === RAYONS === */
+  --country-radius-sm: 4px;
+  --country-radius-md: 6px;
+  --country-radius-base: 12px;
+  --country-radius-lg: 14px;
+  --country-radius-xl: 16px;
+  --country-radius-2xl: 20px;
+  --country-radius-full: 9999px;
+
+  /* === LAYOUT === */
+  --country-max-width: 430px;
+  --country-page-padding: 12px;
+  --country-card-padding: 18px;
+
+  /* === TIMELINE === */
+  --country-tl-line-width: 2px;
+  --country-tl-dot-size: 10px;
+  --country-tl-indent: 28px;
+
+  /* === DEMO BAR === */
+  --country-bar-height: 12px;
+  --country-bar-gap: 2px;
+
+  /* === ANIMATION === */
+  --country-ease-default: ease;
+  --country-duration-fade: 0.4s;
+}
+
+/* ── Etymology variants ── */
+.etym-split { display: flex; gap: 0; border-radius: var(--country-radius-base); overflow: hidden; border: 1px solid var(--country-border); }
+.etym-half { flex: 1; padding: 16px; text-align: center; }
+.etym-word { font-family: var(--country-font-display); font-size: 28px; font-weight: 900; margin-bottom: 2px; }
+.etym-lang { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; opacity: 0.6; }
+.etym-def { font-size: 14px; font-weight: 600; }
+.etym-single { padding: 20px; border-radius: var(--country-radius-base); border: 1px solid var(--country-border); background: var(--country-gold-bg); text-align: center; }
+.etym-uncertain { padding: 16px; border-radius: var(--country-radius-base); border: 1px dashed var(--country-border); text-align: center; }
+.etym-note { font-size: 12px; color: var(--country-text-soft); margin-top: 8px; line-height: 1.4; font-style: italic; }
+.etym-hypothesis { margin-top: 10px; font-size: 11px; color: var(--country-text-soft); line-height: 1.5; font-style: italic; }
+.etym-hypothesis-tag { display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: var(--country-radius-sm, 6px); background: var(--country-earth-bg); color: var(--country-earth); font-style: normal; margin-bottom: 4px; }
+
+@media (min-width: 768px) {
+  .etym-half { padding: 20px; }
+  .etym-word { font-size: 32px; }
+  .etym-def { font-size: 15px; }
+}
+
+@media (min-width: 1280px) {
+  .etym-half { padding: 24px; }
+  .etym-word { font-size: 36px; }
+  .etym-def { font-size: 16px; }
+}
+
+/* ── Animations ── */
+@keyframes countryFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.country-fade-in {
+  animation: countryFadeIn 0.4s ease both;
+  opacity: 0;
+}

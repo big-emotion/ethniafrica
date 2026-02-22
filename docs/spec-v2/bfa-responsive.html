@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burkina Faso — EthnAfrica</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700;9..144,900&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     DESIGN TOKENS
+     ============================================================ */
+  :root {
+    --bg: #FBF7F2;
+    --bg-warm: #F5EDE0;
+    --card: #FFFFFF;
+    --text: #2C2018;
+    --text-soft: #7A6B5D;
+    --terracotta: #C2532A;
+    --terracotta-bg: #FCEEE8;
+    --gold: #B8860B;
+    --gold-bg: #FDF5E1;
+    --green: #2B6B42;
+    --green-bg: #E8F5ED;
+    --earth: #8B6B47;
+    --earth-bg: #F3EBE0;
+    --colonial: #9B3030;
+    --colonial-bg: #FCE8E8;
+    --border: #E8DFD3;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Nunito Sans', system-ui, sans-serif;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-base: 12px;
+    --radius-lg: 14px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+    --radius-full: 9999px;
+    --hero-highlight: #F5C842;
+    --demo-1: #D4A843;
+    --demo-2: #5B8DB8;
+    --demo-3: #6BAF8D;
+    --demo-4: #B87D5B;
+    --demo-5: #C2532A;
+    --demo-6: #8B6B47;
+    --demo-7: #7A6B5D;
+    --demo-8: #9B8B7D;
+    --demo-9: #A89B8D;
+    --demo-10: #5B6B7B;
+    --demo-other: #D5CCC0;
+  }
+
+  /* ============================================================
+     RESET & BASE (mobile-first)
+     ============================================================ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Page wrapper — controls max-width at each breakpoint */
+  .page {
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  /* ============================================================
+     1. HERO CARD
+     ============================================================ */
+  .hero {
+    margin: 12px;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    background: linear-gradient(165deg, #2B6B42 0%, #1B4D2E 50%, #142E1E 100%);
+    color: white;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(184,134,11,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -30px; left: -20px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(194,83,42,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner { position: relative; z-index: 1; padding: 24px 20px; }
+  .hero-top-row {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 20px;
+  }
+  .hero-back {
+    display: flex; align-items: center; gap: 4px;
+    color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none;
+  }
+  .hero-badges { display: flex; gap: 6px; }
+  .hero-badge {
+    padding: 4px 10px; border-radius: var(--radius-2xl);
+    font-size: 11px; font-weight: 700;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+  }
+  .hero-flag-name {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 8px;
+  }
+  .hero-flag-big {
+    font-size: 48px; line-height: 1;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  }
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: 34px; font-weight: 900;
+    line-height: 1; letter-spacing: -0.02em;
+  }
+  .hero-name-official {
+    font-size: 12px; font-weight: 400; opacity: 0.5; margin-top: 2px;
+  }
+  .hero-meaning {
+    margin-top: 16px; padding: 16px 18px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  .hero-meaning-quote {
+    font-family: var(--font-display);
+    font-size: 24px; font-weight: 700;
+    line-height: 1.3; margin-bottom: 6px;
+  }
+  .hero-meaning-quote .highlight {
+    color: var(--hero-highlight); font-weight: 900;
+  }
+  .hero-meaning-langs {
+    font-size: 11px; opacity: 0.6; font-weight: 500;
+  }
+
+  /* ============================================================
+     CARD (base container)
+     ============================================================ */
+  .content { padding: 0 12px 12px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 18px; margin-bottom: 10px;
+    position: relative; overflow: hidden;
+  }
+  .card-label {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--text-soft); margin-bottom: 14px;
+  }
+  .card-label-icon {
+    width: 20px; height: 20px; border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+  }
+
+  /* ============================================================
+     2. ETYMOLOGY — Variant A: Split bilingue
+     ============================================================ */
+  .etym-split {
+    display: flex; gap: 0; margin-bottom: 16px;
+    border-radius: var(--radius-base); overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .etym-half { flex: 1; padding: 16px; text-align: center; }
+  .etym-half:first-child {
+    background: var(--gold-bg);
+    border-right: 1px solid var(--border);
+  }
+  .etym-half:last-child { background: var(--green-bg); }
+  .etym-word {
+    font-family: var(--font-display);
+    font-size: 28px; font-weight: 900; margin-bottom: 2px;
+  }
+  .etym-half:first-child .etym-word { color: var(--gold); }
+  .etym-half:last-child .etym-word { color: var(--green); }
+  .etym-lang {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 4px; opacity: 0.6;
+  }
+  .etym-def { font-size: 14px; font-weight: 600; }
+
+  /* ============================================================
+     3. ORIGIN BANNER
+     ============================================================ */
+  .origin-banner {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px;
+    background: var(--terracotta-bg);
+    border: 1px solid rgba(194,83,42,0.15);
+    border-radius: var(--radius-base);
+  }
+  .origin-avatar {
+    width: 42px; height: 42px; min-width: 42px;
+    border-radius: 50%; background: var(--terracotta);
+    color: white; display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 800; font-family: var(--font-display);
+  }
+  .origin-name {
+    font-family: var(--font-display);
+    font-size: 16px; font-weight: 700; color: var(--terracotta);
+  }
+  .origin-date {
+    font-size: 12px; color: var(--text-soft);
+    font-weight: 600; margin-bottom: 4px;
+  }
+  .origin-desc {
+    font-size: 12px; color: var(--text-soft); line-height: 1.45;
+  }
+  .origin-old-name {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 6px; padding: 3px 10px;
+    font-size: 11px; font-weight: 700;
+    background: var(--colonial-bg); color: var(--colonial);
+    border-radius: var(--radius-md); text-decoration: line-through;
+    border: 1px solid rgba(155,48,48,0.15);
+  }
+
+  /* ============================================================
+     4. TIMELINE VERTICAL
+     ============================================================ */
+  .timeline-v { position: relative; padding-left: 28px; }
+  .timeline-v::before {
+    content: '';
+    position: absolute; left: 8px; top: 4px; bottom: 4px;
+    width: 2px; border-radius: 1px;
+    background: linear-gradient(
+      to bottom,
+      var(--gold) 0%, var(--gold) 40%,
+      var(--colonial) 40%, var(--colonial) 70%,
+      var(--green) 70%, var(--green) 100%
+    );
+  }
+  .tl-item { position: relative; padding: 0 0 16px 0; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute; left: -24px; top: 5px;
+    width: 10px; height: 10px; border-radius: 50%;
+    border: 2px solid var(--border); background: var(--card); z-index: 1;
+  }
+  .tl-item[data-type="kingdom"]::before {
+    border-color: var(--gold); background: var(--gold-bg);
+  }
+  .tl-item[data-type="colonial"]::before {
+    border-color: var(--colonial); background: var(--colonial-bg);
+  }
+  .tl-item[data-type="sovereign"]::before {
+    border-color: var(--green); background: var(--green);
+    box-shadow: 0 0 0 3px rgba(43,107,66,0.15);
+  }
+  .tl-item-era {
+    font-size: 9px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 1px;
+  }
+  .tl-item[data-type="kingdom"] .tl-item-era { color: var(--gold); }
+  .tl-item[data-type="colonial"] .tl-item-era { color: var(--colonial); }
+  .tl-item[data-type="sovereign"] .tl-item-era { color: var(--green); }
+  .tl-item-name {
+    font-family: var(--font-display);
+    font-size: 16px; font-weight: 700;
+    line-height: 1.25; margin-bottom: 2px;
+  }
+  .tl-item[data-type="colonial"] .tl-item-name {
+    text-decoration: line-through;
+    text-decoration-color: var(--colonial);
+  }
+  .tl-item-note {
+    font-size: 11px; color: var(--text-soft); line-height: 1.4;
+  }
+
+  /* ============================================================
+     5. PEOPLES SECTION
+     ============================================================ */
+  .demo-header {
+    display: flex; justify-content: space-between;
+    align-items: baseline; margin-bottom: 16px;
+  }
+  .demo-header h3 {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 700;
+  }
+  .demo-total {
+    font-family: var(--font-display);
+    font-size: 24px; font-weight: 900; color: var(--terracotta);
+  }
+  .demo-total-label {
+    font-size: 11px; color: var(--text-soft); font-weight: 500;
+  }
+  .visual-bar {
+    display: flex; height: 12px; border-radius: var(--radius-md);
+    overflow: hidden; margin-bottom: 14px; gap: 2px;
+  }
+  .visual-seg { border-radius: 2px; }
+  .person-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .person-row:last-child { border-bottom: none; }
+  .person-dot {
+    width: 10px; height: 10px; border-radius: 3px; min-width: 10px;
+  }
+  .person-info { flex: 1; min-width: 0; }
+  .person-names {
+    display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
+  }
+  .person-exo { font-size: 14px; font-weight: 700; }
+  .person-endo {
+    font-size: 11px; color: var(--text-soft); font-style: italic;
+  }
+  .person-meta {
+    font-size: 10px; color: var(--text-soft); margin-top: 1px;
+  }
+  .person-stats { text-align: right; min-width: 50px; }
+  .person-pct {
+    font-family: var(--font-display);
+    font-size: 18px; font-weight: 900;
+  }
+  .person-pop { font-size: 10px; color: var(--text-soft); }
+
+  /* ============================================================
+     6. KINGDOMS — Scroll (≥3)
+     ============================================================ */
+  .kingdoms-scroll {
+    display: flex; gap: 10px; overflow-x: auto;
+    margin: 0 -18px; padding: 0 18px 8px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .kingdoms-scroll::-webkit-scrollbar { display: none; }
+  .kingdom-card {
+    min-width: 200px; max-width: 220px;
+    padding: 16px; border-radius: var(--radius-lg);
+    background: var(--gold-bg);
+    border: 1px solid rgba(184,134,11,0.2);
+    flex-shrink: 0;
+  }
+  .kingdom-card-period {
+    font-size: 10px; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .kingdom-card-name {
+    font-family: var(--font-display);
+    font-size: 17px; font-weight: 700; margin-bottom: 4px;
+  }
+  .kingdom-card-people {
+    font-size: 11px; color: var(--text-soft); margin-bottom: 8px;
+  }
+  .kingdom-card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .kingdom-card-tag {
+    font-size: 10px; padding: 2px 7px; border-radius: var(--radius-sm);
+    background: rgba(184,134,11,0.12); color: var(--gold); font-weight: 600;
+  }
+
+  /* ============================================================
+     7. LANGUAGES CLOUD
+     ============================================================ */
+  .lang-cloud {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  }
+  .lang-bubble {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 8px 14px; border-radius: var(--radius-full);
+    font-size: 13px; font-weight: 600;
+    border: 1.5px solid var(--border); background: var(--card);
+  }
+  .lang-bubble-official {
+    background: var(--green-bg); border-color: var(--green);
+    color: var(--green);
+  }
+  .lang-bubble-code {
+    font-size: 9px; font-weight: 700; padding: 1px 5px;
+    border-radius: var(--radius-sm); background: var(--bg-warm);
+    color: var(--text-soft); font-family: monospace;
+  }
+  .lang-bubble-big { font-size: 15px; padding: 10px 18px; }
+  .lang-bubble-small { font-size: 12px; padding: 6px 12px; opacity: 0.8; }
+
+  /* ============================================================
+     8. CULTURE GRID
+     ============================================================ */
+  .culture-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .culture-item {
+    padding: 12px; border-radius: var(--radius-base); text-align: center;
+  }
+  .culture-item-icon { font-size: 24px; margin-bottom: 4px; }
+  .culture-item-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  .culture-item-values {
+    font-size: 12px; color: var(--text-soft); line-height: 1.4;
+  }
+  .ci-religion { background: var(--earth-bg); }
+  .ci-religion .culture-item-label { color: var(--earth); }
+  .ci-economy { background: var(--green-bg); }
+  .ci-economy .culture-item-label { color: var(--green); }
+  .ci-social { background: var(--gold-bg); }
+  .ci-social .culture-item-label { color: var(--gold); }
+  .ci-relations { background: var(--terracotta-bg); }
+  .ci-relations .culture-item-label { color: var(--terracotta); }
+
+  /* ============================================================
+     9. FOOTER
+     ============================================================ */
+  .footer-card {
+    background: var(--bg-warm); border-radius: var(--radius-xl);
+    padding: 16px 18px; margin: 0 12px 20px;
+    font-size: 10px; color: var(--text-soft); line-height: 1.6;
+  }
+  .footer-card-title {
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.12em; margin-bottom: 6px; color: var(--earth);
+  }
+
+  /* ============================================================
+     ANIMATIONS
+     ============================================================ */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .card { animation: fadeIn 0.4s ease both; }
+  .card:nth-child(2) { animation-delay: 0.05s; }
+  .card:nth-child(3) { animation-delay: 0.1s; }
+  .card:nth-child(4) { animation-delay: 0.15s; }
+  .card:nth-child(5) { animation-delay: 0.2s; }
+  .card:nth-child(6) { animation-delay: 0.25s; }
+
+  /* Responsive indicator (dev only — remove in prod) */
+  .breakpoint-indicator {
+    position: fixed; bottom: 12px; left: 12px;
+    background: var(--text); color: white;
+    font-size: 10px; font-weight: 700;
+    padding: 4px 10px; border-radius: var(--radius-2xl);
+    z-index: 100; font-family: monospace;
+  }
+  .breakpoint-indicator::after { content: '📱 MOBILE · 390px'; }
+
+  /* ============================================================
+     TABLET — 768px+
+     ============================================================ */
+  @media (min-width: 768px) {
+    .page {
+      max-width: 720px;
+      padding: 8px;
+    }
+
+    .breakpoint-indicator::after { content: '📋 TABLET · 768px'; }
+
+    /* Hero — plus spacieux */
+    .hero { margin: 16px; border-radius: 24px; }
+    .hero-inner { padding: 32px 28px; }
+    .hero-name { font-size: 42px; }
+    .hero-flag-big { font-size: 56px; }
+    .hero-meaning-quote { font-size: 28px; }
+
+    /* Content spacing */
+    .content { padding: 0 16px 16px; }
+    .card { padding: 24px; margin-bottom: 14px; border-radius: 20px; }
+
+    /* Etymology + Origin — side-by-side */
+    .etym-origin-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+    .etym-split { margin-bottom: 0; }
+    .etym-word { font-size: 32px; }
+
+    /* Timeline — more breathing room */
+    .tl-item { padding-bottom: 20px; }
+    .tl-item-name { font-size: 18px; }
+    .tl-item-note { font-size: 12px; }
+
+    /* Demographics — bigger bar, bigger numbers */
+    .visual-bar { height: 16px; margin-bottom: 18px; }
+    .demo-total { font-size: 28px; }
+    .person-pct { font-size: 20px; }
+    .person-exo { font-size: 15px; }
+    .person-row { padding: 12px 0; }
+
+    /* Kingdoms — no scroll, grid */
+    .kingdoms-scroll {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: visible;
+      margin: 0; padding: 0;
+    }
+    .kingdom-card {
+      min-width: unset; max-width: unset;
+    }
+
+    /* Languages — bigger */
+    .lang-bubble { padding: 10px 16px; font-size: 14px; }
+    .lang-bubble-big { font-size: 16px; padding: 12px 20px; }
+
+    /* Culture — breathe */
+    .culture-grid { gap: 12px; }
+    .culture-item { padding: 16px; }
+    .culture-item-values { font-size: 13px; }
+
+    /* Footer */
+    .footer-card { margin: 0 16px 24px; padding: 20px 24px; }
+  }
+
+  /* ============================================================
+     DESKTOP — 1200px+
+     Editorial centered layout (Medium-style)
+     ============================================================ */
+  @media (min-width: 1200px) {
+    .page {
+      max-width: 800px;
+      padding: 16px;
+    }
+
+    .breakpoint-indicator::after { content: '🖥️ DESKTOP · 1200px'; }
+
+    /* Hero — grand, cinematic */
+    .hero { margin: 20px; border-radius: 28px; }
+    .hero-inner { padding: 40px 36px; }
+    .hero-name { font-size: 50px; }
+    .hero-flag-big { font-size: 64px; }
+    .hero-flag-name { gap: 20px; }
+    .hero-meaning { padding: 20px 24px; }
+    .hero-meaning-quote { font-size: 30px; }
+    .hero-meaning-langs { font-size: 12px; }
+    .hero-badge { font-size: 12px; padding: 5px 12px; }
+
+    /* Content */
+    .content { padding: 0 20px 20px; }
+    .card { padding: 28px; margin-bottom: 16px; border-radius: 22px; }
+    .card-label { font-size: 11px; margin-bottom: 18px; }
+
+    /* Etymology — larger text */
+    .etym-word { font-size: 36px; }
+    .etym-half { padding: 20px; }
+    .etym-def { font-size: 15px; }
+    .etym-lang { font-size: 11px; }
+
+    /* Origin banner */
+    .origin-banner { padding: 18px; }
+    .origin-avatar { width: 48px; height: 48px; min-width: 48px; font-size: 22px; }
+    .origin-name { font-size: 17px; }
+    .origin-desc { font-size: 13px; }
+
+    /* Timeline — generous */
+    .timeline-v { padding-left: 34px; }
+    .tl-item { padding-bottom: 24px; }
+    .tl-item::before { left: -30px; width: 12px; height: 12px; }
+    .tl-item-era { font-size: 10px; }
+    .tl-item-name { font-size: 20px; }
+    .tl-item-note { font-size: 13px; }
+
+    /* Demographics */
+    .visual-bar { height: 18px; border-radius: 9px; }
+    .demo-total { font-size: 32px; }
+    .demo-header h3 { font-size: 20px; }
+    .person-pct { font-size: 22px; }
+    .person-exo { font-size: 16px; }
+    .person-endo { font-size: 12px; }
+    .person-meta { font-size: 11px; }
+    .person-row { padding: 14px 0; gap: 14px; }
+    .person-dot { width: 12px; height: 12px; border-radius: 4px; }
+
+    /* Kingdoms — more generous cards */
+    .kingdom-card { padding: 20px; border-radius: 16px; }
+    .kingdom-card-name { font-size: 19px; }
+    .kingdom-card-people { font-size: 12px; }
+
+    /* Languages */
+    .lang-cloud { gap: 10px; }
+    .lang-bubble { padding: 10px 18px; font-size: 14px; }
+    .lang-bubble-big { font-size: 17px; padding: 12px 22px; }
+    .lang-bubble-code { font-size: 10px; }
+
+    /* Culture */
+    .culture-grid { gap: 14px; }
+    .culture-item { padding: 18px; border-radius: 14px; }
+    .culture-item-icon { font-size: 28px; }
+    .culture-item-label { font-size: 11px; }
+    .culture-item-values { font-size: 14px; }
+
+    /* Footer */
+    .footer-card {
+      margin: 0 20px 32px;
+      padding: 22px 28px;
+      font-size: 11px;
+      border-radius: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="breakpoint-indicator"></div>
+
+<div class="page">
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-top-row">
+      <a class="hero-back" href="#">← Afrique de l'Ouest</a>
+      <div class="hero-badges">
+        <span class="hero-badge">BFA</span>
+        <span class="hero-badge">1984</span>
+      </div>
+    </div>
+    <div class="hero-flag-name">
+      <span class="hero-flag-big">🇧🇫</span>
+      <div>
+        <h1 class="hero-name">Burkina Faso</h1>
+        <div class="hero-name-official">Nom officiel</div>
+      </div>
+    </div>
+    <div class="hero-meaning">
+      <div class="hero-meaning-quote">
+        « Pays des hommes<br><span class="highlight">intègres</span> »
+      </div>
+      <div class="hero-meaning-langs">Mooré (Mossi) + Dioula (Mandé)</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+
+<!-- ========== ÉTYMOLOGIE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--gold-bg); color:var(--gold);">✦</span>
+    Étymologie du nom
+  </div>
+  <div class="etym-origin-row">
+    <div class="etym-split">
+      <div class="etym-half">
+        <div class="etym-word">Burkina</div>
+        <div class="etym-lang">Mooré (Mossi)</div>
+        <div class="etym-def">« Intègres »</div>
+      </div>
+      <div class="etym-half">
+        <div class="etym-word">Faso</div>
+        <div class="etym-lang">Dioula (Mandé)</div>
+        <div class="etym-def">« Pays »</div>
+      </div>
+    </div>
+    <div class="origin-banner">
+      <div class="origin-avatar">TS</div>
+      <div>
+        <div class="origin-name">Thomas Sankara</div>
+        <div class="origin-date">4 août 1984 · Révolution burkinabè</div>
+        <div class="origin-desc">Fusion de 2 langues nationales pour symboliser l'unité et la diversité du pays.</div>
+        <span class="origin-old-name">✕ Haute-Volta</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TIMELINE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--earth-bg); color:var(--earth);">↳</span>
+    Noms à travers l'histoire
+  </div>
+  <div class="timeline-v">
+    <div class="tl-item" data-type="kingdom">
+      <div class="tl-item-era">XIe — XIXe s.</div>
+      <div class="tl-item-name">Royaumes Mossi</div>
+      <div class="tl-item-note">Wogodogo · Yatenga · Tenkodogo</div>
+    </div>
+    <div class="tl-item" data-type="colonial">
+      <div class="tl-item-era">1919 — 1960</div>
+      <div class="tl-item-name">Haute-Volta</div>
+      <div class="tl-item-note">Nom colonial français · AOF · Fleuve Volta</div>
+    </div>
+    <div class="tl-item" data-type="colonial">
+      <div class="tl-item-era">1932</div>
+      <div class="tl-item-name">Dissoute</div>
+      <div class="tl-item-note">Répartie entre 3 colonies</div>
+    </div>
+    <div class="tl-item" data-type="sovereign">
+      <div class="tl-item-era">1984 — Aujourd'hui</div>
+      <div class="tl-item-name">Burkina Faso ✦</div>
+      <div class="tl-item-note">Sankara · Mooré + Dioula · Souverain</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DÉMOGRAPHIE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--terracotta-bg); color:var(--terracotta);">◉</span>
+    Peuples & Démographie
+  </div>
+  <div class="demo-header">
+    <div>
+      <div class="demo-total">23M</div>
+      <div class="demo-total-label">habitants · 2025</div>
+    </div>
+    <h3>10+ peuples</h3>
+  </div>
+  <div class="visual-bar">
+    <div class="visual-seg" style="flex:50; background:var(--demo-1);"></div>
+    <div class="visual-seg" style="flex:10; background:var(--demo-2);"></div>
+    <div class="visual-seg" style="flex:7; background:var(--demo-3);"></div>
+    <div class="visual-seg" style="flex:5; background:var(--demo-4);"></div>
+    <div class="visual-seg" style="flex:4; background:var(--demo-5);"></div>
+    <div class="visual-seg" style="flex:4; background:var(--demo-6);"></div>
+    <div class="visual-seg" style="flex:3; background:var(--demo-7);"></div>
+    <div class="visual-seg" style="flex:3; background:var(--demo-8);"></div>
+    <div class="visual-seg" style="flex:3; background:var(--demo-9);"></div>
+    <div class="visual-seg" style="flex:1; background:var(--demo-10);"></div>
+    <div class="visual-seg" style="flex:10; background:var(--demo-other);"></div>
+  </div>
+  <div class="people-list">
+    <div class="person-row">
+      <div class="person-dot" style="background:var(--demo-1);"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Mossi</span>
+          <span class="person-endo">Moaga · Moose</span>
+        </div>
+        <div class="person-meta">Mooré · Plateau central · Niger-Congo Gur</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">50%</div>
+        <div class="person-pop">11,5M</div>
+      </div>
+    </div>
+    <div class="person-row">
+      <div class="person-dot" style="background:var(--demo-2);"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Peul / Fulani</span>
+          <span class="person-endo">Fulɓe · Pullo</span>
+        </div>
+        <div class="person-meta">Fulfulde · Nord, Sahel · Niger-Congo Atlantique</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">10%</div>
+        <div class="person-pop">2,3M</div>
+      </div>
+    </div>
+    <div class="person-row">
+      <div class="person-dot" style="background:var(--demo-3);"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Gourmantché</span>
+        </div>
+        <div class="person-meta">Gourmantché · Est · Niger-Congo Gur</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">7%</div>
+        <div class="person-pop">1,6M</div>
+      </div>
+    </div>
+    <div class="person-row">
+      <div class="person-dot" style="background:var(--demo-4);"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Lobi / Birifor</span>
+        </div>
+        <div class="person-meta">Lobi, Birifor · Sud-ouest · Niger-Congo Gur</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">5%</div>
+        <div class="person-pop">1,15M</div>
+      </div>
+    </div>
+    <div class="person-row">
+      <div class="person-dot" style="background:var(--demo-5);"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Bobo</span>
+        </div>
+        <div class="person-meta">Bobo · Ouest · Niger-Congo Gur</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">4%</div>
+        <div class="person-pop">920K</div>
+      </div>
+    </div>
+    <div class="person-row">
+      <div class="person-dot" style="background:var(--demo-6);"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Dagara</span>
+        </div>
+        <div class="person-meta">Dagara · Sud-ouest · Niger-Congo Gur</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">4%</div>
+        <div class="person-pop">920K</div>
+      </div>
+    </div>
+    <div class="person-row">
+      <div class="person-dot" style="background:var(--demo-7);"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Bissa · Gourounsi · Senoufo</span>
+        </div>
+        <div class="person-meta">3 peuples · 690K chacun</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">3%</div>
+        <div class="person-pop">×3</div>
+      </div>
+    </div>
+    <div class="person-row">
+      <div class="person-dot" style="background:var(--demo-10);"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Touareg</span>
+          <span class="person-endo">Kel Tamasheq · Imuhagh</span>
+        </div>
+        <div class="person-meta">Tamasheq · Nord · Afro-asiatique Berbère</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">1%</div>
+        <div class="person-pop">230K</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ROYAUMES ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--gold-bg); color:var(--gold);">♛</span>
+    Royaumes & Civilisations
+  </div>
+  <div class="kingdoms-scroll">
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">XIe — XIXe siècle</div>
+      <div class="kingdom-card-name">Royaumes Mossi</div>
+      <div class="kingdom-card-people">Mossi (Moose) · Naaba</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Ouagadougou</span>
+        <span class="kingdom-card-tag">Yatenga</span>
+        <span class="kingdom-card-tag">Yennenga</span>
+      </div>
+    </div>
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">Précolonial</div>
+      <div class="kingdom-card-name">Fada N'Gourma</div>
+      <div class="kingdom-card-people">Gourmantché</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Est Burkina</span>
+        <span class="kingdom-card-tag">Résistance</span>
+      </div>
+    </div>
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">Précolonial — Présent</div>
+      <div class="kingdom-card-name">Chefferies Gur</div>
+      <div class="kingdom-card-people">Bobo · Dagara · Lobi</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Agriculture</span>
+        <span class="kingdom-card-tag">Artisanat</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LANGUES ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--green-bg); color:var(--green);">🗣</span>
+    Langues · 12 répertoriées
+  </div>
+  <div class="lang-cloud">
+    <div class="lang-bubble lang-bubble-official lang-bubble-big">🏛 Français <span class="lang-bubble-code">fra</span></div>
+    <div class="lang-bubble lang-bubble-big">Mooré <span class="lang-bubble-code">mos</span></div>
+    <div class="lang-bubble">Fulfulde <span class="lang-bubble-code">ful</span></div>
+    <div class="lang-bubble">Gourmantché <span class="lang-bubble-code">gux</span></div>
+    <div class="lang-bubble lang-bubble-small">Bobo <span class="lang-bubble-code">bwq</span></div>
+    <div class="lang-bubble lang-bubble-small">Lobi <span class="lang-bubble-code">lob</span></div>
+    <div class="lang-bubble lang-bubble-small">Bissa <span class="lang-bubble-code">bib</span></div>
+    <div class="lang-bubble lang-bubble-small">Dagara <span class="lang-bubble-code">dga</span></div>
+    <div class="lang-bubble lang-bubble-small">Senoufo <span class="lang-bubble-code">syc</span></div>
+    <div class="lang-bubble lang-bubble-small">Tamasheq <span class="lang-bubble-code">taq</span></div>
+  </div>
+</div>
+
+<!-- ========== CULTURE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--earth-bg); color:var(--earth);">◈</span>
+    Culture & Société
+  </div>
+  <div class="culture-grid">
+    <div class="culture-item ci-religion">
+      <div class="culture-item-icon">☪️</div>
+      <div class="culture-item-label">Religions</div>
+      <div class="culture-item-values">Islam · Christianisme · Religions traditionnelles</div>
+    </div>
+    <div class="culture-item ci-economy">
+      <div class="culture-item-icon">🌾</div>
+      <div class="culture-item-label">Économie</div>
+      <div class="culture-item-values">Agriculture · Élevage · Or · Coton</div>
+    </div>
+    <div class="culture-item ci-social">
+      <div class="culture-item-icon">👑</div>
+      <div class="culture-item-label">Organisation</div>
+      <div class="culture-item-values">Royaumes · Chefferies · Lignages patrilinéaires</div>
+    </div>
+    <div class="culture-item ci-relations">
+      <div class="culture-item-icon">🌍</div>
+      <div class="culture-item-label">Relations</div>
+      <div class="culture-item-values">Mali · Côte d'Ivoire · Ghana · Niger · CEDEAO</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<!-- ========== FOOTER ========== -->
+<div class="footer-card">
+  <div class="footer-card-title">Sources & Références</div>
+  SIL Ethnologue · CIA World Factbook · ONU/UNFPA 2025 · Michel Izard, « Le Yatenga précolonial » · Archives royales du Moogho Naaba · Recensements burkinabés
+</div>
+
+</div><!-- /page -->
+
+</body>
+</html>

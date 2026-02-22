@@ -61,10 +61,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${playfairDisplay.variable} ${fraunces.variable} ${nunitoSans.variable} font-sans antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfairDisplay.variable} ${fraunces.variable} ${nunitoSans.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans antialiased">
         <TypeformPreload />
         <Providers>{children}</Providers>
       </body>

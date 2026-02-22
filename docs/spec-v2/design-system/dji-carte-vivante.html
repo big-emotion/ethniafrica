@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Djibouti — Variante C : Carte vivante</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700;9..144,900&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF7F2;
+    --bg-warm: #F5EDE0;
+    --card: #FFFFFF;
+    --text: #2C2018;
+    --text-soft: #7A6B5D;
+    --terracotta: #C2532A;
+    --terracotta-bg: #FCEEE8;
+    --gold: #B8860B;
+    --gold-bg: #FDF5E1;
+    --green-deep: #2B6B42;
+    --green-bg: #E8F5ED;
+    --earth: #8B6B47;
+    --earth-bg: #F3EBE0;
+    --slate: #4A5568;
+    --colonial-red: #9B3030;
+    --colonial-bg: #FCE8E8;
+    --border: #E8DFD3;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Nunito Sans', system-ui, sans-serif;
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    max-width: 430px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* === HERO === */
+  .hero {
+    margin: 12px; border-radius: 20px; overflow: hidden;
+    background: linear-gradient(165deg, #2B6B42 0%, #1B4D2E 50%, #142E1E 100%);
+    color: white; position: relative;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(184,134,11,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: -30px; left: -20px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(194,83,42,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner { position: relative; z-index: 1; padding: 24px 20px; }
+  .hero-top-row {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+  }
+  .hero-back {
+    display: flex; align-items: center; gap: 4px;
+    color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none;
+  }
+  .hero-badges { display: flex; gap: 6px; }
+  .hero-badge {
+    padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 700;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+  }
+  .hero-flag-name { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .hero-flag-big { font-size: 48px; line-height: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+  .hero-name {
+    font-family: var(--font-display); font-size: 34px; font-weight: 900;
+    line-height: 1; letter-spacing: -0.02em;
+  }
+  .hero-name-official { font-size: 12px; font-weight: 400; opacity: 0.5; margin-top: 2px; }
+  .hero-meaning {
+    margin-top: 16px; padding: 16px 18px;
+    background: rgba(255,255,255,0.08); backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; text-align: center;
+  }
+  .hero-meaning-quote {
+    font-family: var(--font-display); font-size: 22px; font-weight: 700;
+    line-height: 1.3; margin-bottom: 6px;
+  }
+  .hero-meaning-quote .highlight { color: #F5C842; font-weight: 900; }
+  .hero-meaning-langs { font-size: 11px; opacity: 0.6; font-weight: 500; }
+  /* Uncertain etymology marker */
+  .hero-meaning-uncertain {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 6px; padding: 3px 10px; border-radius: 20px;
+    font-size: 10px; font-weight: 600;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* === CARDS === */
+  .content { padding: 0 12px 12px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; margin-bottom: 10px;
+    position: relative; overflow: hidden;
+  }
+  .card-label {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--text-soft); margin-bottom: 14px;
+  }
+  .card-label-icon {
+    width: 20px; height: 20px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center; font-size: 11px;
+  }
+
+  /* === ÉTYMOLOGIE — uncertain origin === */
+  .etym-uncertain {
+    padding: 16px; border-radius: 12px;
+    border: 1px dashed var(--border); background: var(--bg-warm);
+    text-align: center; margin-bottom: 16px;
+  }
+  .etym-word {
+    font-family: var(--font-display); font-size: 28px; font-weight: 900;
+    margin-bottom: 4px;
+  }
+  .etym-uncertain .etym-word { color: var(--earth); }
+  .etym-lang {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 6px; opacity: 0.6;
+  }
+  .etym-def { font-size: 14px; font-weight: 600; }
+  .etym-hypothesis {
+    margin-top: 10px; font-size: 11px; color: var(--text-soft);
+    line-height: 1.5; font-style: italic;
+  }
+  .etym-hypothesis-tag {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 9px; font-weight: 700; padding: 2px 8px;
+    border-radius: 4px; background: var(--earth-bg);
+    color: var(--earth); font-style: normal;
+    margin-bottom: 4px;
+  }
+
+  .origin-banner {
+    display: flex; gap: 12px; align-items: flex-start; padding: 14px;
+    background: var(--colonial-bg); border: 1px solid rgba(155,48,48,0.15); border-radius: 12px;
+  }
+  .origin-avatar {
+    width: 42px; height: 42px; min-width: 42px; border-radius: 50%;
+    background: var(--colonial-red); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800; font-family: var(--font-display);
+  }
+  .origin-name {
+    font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--colonial-red);
+  }
+  .origin-date { font-size: 12px; color: var(--text-soft); font-weight: 600; margin-bottom: 4px; }
+  .origin-desc { font-size: 12px; color: var(--text-soft); line-height: 1.45; }
+  .origin-old-name {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 6px; padding: 3px 10px; font-size: 11px; font-weight: 700;
+    background: var(--colonial-bg); color: var(--colonial-red);
+    border-radius: 6px; text-decoration: line-through;
+    border: 1px solid rgba(155,48,48,0.15);
+  }
+
+  /* === TIMELINE VERTICAL === */
+  .timeline-v {
+    position: relative; padding-left: 28px;
+  }
+  .timeline-v::before {
+    content: '';
+    position: absolute; left: 8px; top: 4px; bottom: 4px;
+    width: 2px; border-radius: 1px;
+    background: linear-gradient(
+      to bottom,
+      var(--gold) 0%, var(--gold) 25%,
+      var(--colonial) 25%, var(--colonial) 75%,
+      var(--green-deep) 75%, var(--green-deep) 100%
+    );
+  }
+  .tl-item { position: relative; padding: 0 0 16px 0; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute; left: -24px; top: 5px;
+    width: 10px; height: 10px; border-radius: 50%;
+    border: 2px solid var(--border); background: var(--card); z-index: 1;
+  }
+  .tl-item[data-type="kingdom"]::before { border-color: var(--gold); background: var(--gold-bg); }
+  .tl-item[data-type="colonial"]::before { border-color: var(--colonial); background: var(--colonial-bg); }
+  .tl-item[data-type="sovereign"]::before {
+    border-color: var(--green-deep); background: var(--green-deep);
+    box-shadow: 0 0 0 3px rgba(43,107,66,0.15);
+  }
+  .tl-item-era {
+    font-size: 9px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1px;
+  }
+  .tl-item[data-type="kingdom"] .tl-item-era { color: var(--gold); }
+  .tl-item[data-type="colonial"] .tl-item-era { color: var(--colonial); }
+  .tl-item[data-type="sovereign"] .tl-item-era { color: var(--green-deep); }
+  .tl-item-name {
+    font-family: var(--font-display);
+    font-size: 16px; font-weight: 700; line-height: 1.25; margin-bottom: 2px;
+  }
+  .tl-item[data-type="colonial"] .tl-item-name {
+    text-decoration: line-through; text-decoration-color: var(--colonial);
+  }
+  .tl-item-note { font-size: 11px; color: var(--text-soft); line-height: 1.4; }
+
+  /* === DEMOGRAPHY === */
+  .demo-header {
+    display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px;
+  }
+  .demo-header h3 { font-family: var(--font-display); font-size: 18px; font-weight: 700; }
+  .demo-total {
+    font-family: var(--font-display); font-size: 24px; font-weight: 900; color: var(--terracotta);
+  }
+  .demo-total-label { font-size: 11px; color: var(--text-soft); font-weight: 500; }
+  .visual-bar {
+    display: flex; height: 12px; border-radius: 6px;
+    overflow: hidden; margin-bottom: 14px; gap: 2px;
+  }
+  .visual-seg { border-radius: 2px; }
+  .person-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .person-row:last-child { border-bottom: none; }
+  .person-dot { width: 10px; height: 10px; border-radius: 3px; min-width: 10px; }
+  .person-info { flex: 1; min-width: 0; }
+  .person-names { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .person-exo { font-size: 14px; font-weight: 700; }
+  .person-endo { font-size: 11px; color: var(--text-soft); font-style: italic; }
+  .person-meta { font-size: 10px; color: var(--text-soft); margin-top: 1px; }
+  .person-stats { text-align: right; min-width: 50px; }
+  .person-pct { font-family: var(--font-display); font-size: 18px; font-weight: 900; }
+  .person-pop { font-size: 10px; color: var(--text-soft); }
+  /* Warning for pejorative terms */
+  .warn-colonial {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 9px; font-weight: 700; color: var(--colonial-red);
+    background: var(--colonial-bg); padding: 1px 6px; border-radius: 4px;
+    text-decoration: line-through;
+  }
+
+  /* === KINGDOMS === */
+  /* Horizontal scroll (3+ cards) */
+  .kingdoms-scroll {
+    display: flex; gap: 10px; overflow-x: auto; margin: 0 -18px;
+    padding: 0 18px 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .kingdoms-scroll::-webkit-scrollbar { display: none; }
+  /* Vertical stack (< 3 cards) */
+  .kingdoms-stack {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .kingdoms-stack .kingdom-card {
+    min-width: unset; max-width: unset; width: 100%;
+  }
+  .kingdom-card {
+    min-width: 200px; max-width: 220px; padding: 16px; border-radius: 14px;
+    background: var(--gold-bg); border: 1px solid rgba(184,134,11,0.2); flex-shrink: 0;
+  }
+  .kingdom-card-period {
+    font-size: 10px; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  .kingdom-card-name {
+    font-family: var(--font-display); font-size: 17px; font-weight: 700; margin-bottom: 4px;
+  }
+  .kingdom-card-people { font-size: 11px; color: var(--text-soft); margin-bottom: 8px; }
+  .kingdom-card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .kingdom-card-tag {
+    font-size: 10px; padding: 2px 7px; border-radius: 4px;
+    background: rgba(184,134,11,0.12); color: var(--gold); font-weight: 600;
+  }
+
+  /* === LANGUES === */
+  .lang-cloud {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  }
+  .lang-bubble {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 8px 14px; border-radius: 24px; font-size: 13px; font-weight: 600;
+    border: 1.5px solid var(--border); background: var(--card); transition: transform 0.2s;
+  }
+  .lang-bubble:active { transform: scale(0.96); }
+  .lang-bubble-official {
+    background: var(--green-bg); border-color: var(--green-deep); color: var(--green-deep);
+  }
+  .lang-bubble-code {
+    font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 4px;
+    background: var(--bg-warm); color: var(--text-soft); font-family: monospace;
+  }
+  .lang-bubble-big { font-size: 15px; padding: 10px 18px; }
+
+  /* === CULTURE GRID === */
+  .culture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .culture-item { padding: 12px; border-radius: 12px; text-align: center; }
+  .culture-item-icon { font-size: 24px; margin-bottom: 4px; }
+  .culture-item-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  .culture-item-values { font-size: 12px; color: var(--text-soft); line-height: 1.4; }
+  .ci-religion { background: var(--earth-bg); }
+  .ci-religion .culture-item-label { color: var(--earth); }
+  .ci-economy { background: var(--green-bg); }
+  .ci-economy .culture-item-label { color: var(--green-deep); }
+  .ci-social { background: var(--gold-bg); }
+  .ci-social .culture-item-label { color: var(--gold); }
+  .ci-relations { background: var(--terracotta-bg); }
+  .ci-relations .culture-item-label { color: var(--terracotta); }
+
+  .footer-card {
+    background: var(--bg-warm); border-radius: var(--radius);
+    padding: 16px 18px; margin: 0 12px 20px;
+    font-size: 10px; color: var(--text-soft); line-height: 1.6;
+  }
+  .footer-card-title {
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.12em; margin-bottom: 6px; color: var(--earth);
+  }
+
+  .variant-label {
+    position: fixed; top: 12px; right: 12px;
+    background: var(--green-deep); color: white;
+    font-size: 10px; font-weight: 700;
+    padding: 4px 10px; border-radius: 20px;
+    z-index: 100; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .card { animation: fadeIn 0.4s ease both; }
+  .card:nth-child(2) { animation-delay: 0.05s; }
+  .card:nth-child(3) { animation-delay: 0.1s; }
+</style>
+</head>
+<body>
+
+<div class="variant-label">Stress-test · DJI · Pauvre</div>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-top-row">
+      <a class="hero-back" href="#">← Corne de l'Afrique</a>
+      <div class="hero-badges">
+        <span class="hero-badge">DJI</span>
+        <span class="hero-badge">1977</span>
+      </div>
+    </div>
+    <div class="hero-flag-name">
+      <span class="hero-flag-big">🇩🇯</span>
+      <div class="hero-name-stack">
+        <h1 class="hero-name">Djibouti</h1>
+        <div class="hero-name-official">République de Djibouti</div>
+      </div>
+    </div>
+    <div class="hero-meaning">
+      <div class="hero-meaning-quote">
+        « <span class="highlight">Gabouti</span> » ?
+      </div>
+      <div class="hero-meaning-langs">Origine incertaine · Possiblement Afar</div>
+      <div class="hero-meaning-uncertain">⚠ Étymologie débattue</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+
+<!-- ========== ÉTYMOLOGIE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--earth-bg); color:var(--earth);">?</span>
+    Étymologie du nom · Origine incertaine
+  </div>
+
+  <div class="etym-uncertain">
+    <div class="etym-word">Djibouti</div>
+    <div class="etym-lang">Origine débattue</div>
+    <div class="etym-def">Nom de la ville fondée en 1888</div>
+    <div class="etym-hypothesis">
+      <span class="etym-hypothesis-tag">Hypothèse 1</span><br>
+      De l'afar « gabouti » — panier en fibres de palmier<br><br>
+      <span class="etym-hypothesis-tag">Hypothèse 2</span><br>
+      D'une légende locale, origine orale non documentée
+    </div>
+  </div>
+
+  <div class="origin-banner">
+    <div class="origin-avatar">🇫🇷</div>
+    <div class="origin-text">
+      <div class="origin-name">Administration française</div>
+      <div class="origin-date">1888 · Fondation de Djibouti-ville</div>
+      <div class="origin-desc">Le nom de la ville est repris pour le pays à l'indépendance en 1977, remplaçant les appellations coloniales successives.</div>
+      <span class="origin-old-name">✕ Côte française des Somalis</span>
+      <span class="origin-old-name">✕ Terr. des Afars et des Issas</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TIMELINE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--earth-bg); color:var(--earth);">↳</span>
+    Noms à travers l'histoire
+  </div>
+  <div class="timeline-v">
+    <div class="tl-item" data-type="kingdom">
+      <div class="tl-item-era">Précolonial</div>
+      <div class="tl-item-name">Sultanat d'Adal</div>
+      <div class="tl-item-note">Afar · Aussa · Pastoralisme</div>
+    </div>
+    <div class="tl-item" data-type="colonial">
+      <div class="tl-item-era">1896 — 1967</div>
+      <div class="tl-item-name">Côte fr. des Somalis</div>
+      <div class="tl-item-note">Colonie · Port stratégique</div>
+    </div>
+    <div class="tl-item" data-type="colonial">
+      <div class="tl-item-era">1967 — 1977</div>
+      <div class="tl-item-name">Terr. Afars & Issas</div>
+      <div class="tl-item-note">Renommage · Mouvement indép.</div>
+    </div>
+    <div class="tl-item" data-type="sovereign">
+      <div class="tl-item-era">1977 — Aujourd'hui</div>
+      <div class="tl-item-name">Rép. de Djibouti ✦</div>
+      <div class="tl-item-note">27 juin 1977 · Souverain</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DÉMOGRAPHIE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--terracotta-bg); color:var(--terracotta);">◉</span>
+    Peuples & Démographie
+  </div>
+
+  <div class="demo-header">
+    <div>
+      <div class="demo-total">1,09M</div>
+      <div class="demo-total-label">habitants · 2025</div>
+    </div>
+    <h3>2 peuples majeurs</h3>
+  </div>
+
+  <div class="visual-bar">
+    <div class="visual-seg" style="flex:60; background:#D4A843;"></div>
+    <div class="visual-seg" style="flex:35; background:#5B8DB8;"></div>
+    <div class="visual-seg" style="flex:3; background:#6BAF8D;"></div>
+    <div class="visual-seg" style="flex:2; background:#D5CCC0;"></div>
+  </div>
+
+  <div class="people-list">
+    <div class="person-row">
+      <div class="person-dot" style="background:#D4A843;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Somali</span>
+          <span class="person-endo">Soomaali</span>
+        </div>
+        <div class="person-meta">Somali · Sud · Afro-asiatique Couchitique</div>
+        <div class="person-meta">Clans : Issa · Gadabursi · Isaaq</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">60%</div>
+        <div class="person-pop">650K</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#5B8DB8;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Afar</span>
+          <span class="person-endo">Qafár</span>
+        </div>
+        <div class="person-meta">Afar · Nord & Centre · Afro-asiatique Couchitique</div>
+        <div class="person-meta"><span class="warn-colonial">Danakil</span> terme péjoratif à éviter</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">35%</div>
+        <div class="person-pop">380K</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#6BAF8D;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Arabes</span>
+        </div>
+        <div class="person-meta">Arabe yéménite · Zones urbaines · Sémitique</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">3%</div>
+        <div class="person-pop">35K</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#D5CCC0;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Autres</span>
+        </div>
+        <div class="person-meta">Migrants · Éthiopie, Somalie, Comores</div>
+        <div class="person-meta" style="font-style:italic; opacity:0.7;">📋 Données en cours de documentation</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">2%</div>
+        <div class="person-pop">25K</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ROYAUMES ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--gold-bg); color:var(--gold);">♛</span>
+    Sultanats & Chefferies
+  </div>
+  <div class="kingdoms-stack">
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">Précolonial — XIXe s.</div>
+      <div class="kingdom-card-name">Sultanat d'Adal</div>
+      <div class="kingdom-card-people">Afar · Qafár</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Aussa</span>
+        <span class="kingdom-card-tag">Pastoralisme</span>
+        <span class="kingdom-card-tag">Commerce</span>
+      </div>
+    </div>
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">Depuis plusieurs siècles</div>
+      <div class="kingdom-card-name">Chefferies Somali</div>
+      <div class="kingdom-card-people">Issa · Gadabursi · Isaaq</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Clans</span>
+        <span class="kingdom-card-tag">Nomadisme</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LANGUES ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--green-bg); color:var(--green-deep);">🗣</span>
+    Langues · 4 répertoriées
+  </div>
+  <div class="lang-cloud">
+    <div class="lang-bubble lang-bubble-official lang-bubble-big">🏛 Français <span class="lang-bubble-code">fra</span></div>
+    <div class="lang-bubble lang-bubble-official lang-bubble-big">🏛 Arabe <span class="lang-bubble-code">arb</span></div>
+    <div class="lang-bubble lang-bubble-big">Somali <span class="lang-bubble-code">som</span></div>
+    <div class="lang-bubble lang-bubble-big">Afar <span class="lang-bubble-code">aar</span></div>
+  </div>
+</div>
+
+<!-- ========== CULTURE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--earth-bg); color:var(--earth);">◈</span>
+    Culture & Société
+  </div>
+  <div class="culture-grid">
+    <div class="culture-item ci-religion">
+      <div class="culture-item-icon">☪️</div>
+      <div class="culture-item-label">Religion</div>
+      <div class="culture-item-values">Islam sunnite (majorité) · École chaféite</div>
+    </div>
+    <div class="culture-item ci-economy">
+      <div class="culture-item-icon">🚢</div>
+      <div class="culture-item-label">Économie</div>
+      <div class="culture-item-values">Port stratégique · Transit · Bases militaires · Élevage</div>
+    </div>
+    <div class="culture-item ci-social">
+      <div class="culture-item-icon">🏕️</div>
+      <div class="culture-item-label">Organisation</div>
+      <div class="culture-item-values">Clans patrilinéaires · Sultanats · Shir (assemblée) · Ugaas</div>
+    </div>
+    <div class="culture-item ci-relations">
+      <div class="culture-item-icon">🌍</div>
+      <div class="culture-item-label">Relations</div>
+      <div class="culture-item-values">Éthiopie · Érythrée · Somalie · IGAD</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<div class="footer-card">
+  <div class="footer-card-title">Sources & Références</div>
+  SIL Ethnologue · CIA World Factbook · ONU/UNFPA 2025 · Recensements djiboutiens · Études historiques sur le sultanat d'Adal
+</div>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+# Nom du pays
+- Nom officiel actuel : République togolaise (Republic of Togo)
+- Étymologie du nom : Le nom "Togo" vient de "Togoville" (anciennement "Togodo"), un village situé sur les rives du lac Togo. Le terme "Togo" signifie "au-delà de la rivière" ou "au-delà de l'eau" en langue ewe. Le nom "Togo" a été officialisé par les colonisateurs allemands à la fin du XIXe siècle lors de la création de la colonie du Togoland.
+- Personne / peuple / administration à l'origine du nom : Le nom "Togo" vient de "Togoville" (anciennement "Togodo"), nommé par les peuples locaux (Ewe). Le nom "Togo" a été officialisé par les colonisateurs allemands à la fin du XIXe siècle lors de la création de la colonie du Togoland.
+- Identifiant pays (ISO 3166-1 alpha-3) : TGO
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Contacts avec les civilisations voisines. La région était connue sous le nom de "Côte des Esclaves" par les Européens.
+- Moyen Âge : Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de "Côte des Esclaves" par les Européens.
+- Époque précoloniale : Présence de peuples Gbe (Ewe, Fon, Adja) et autres groupes dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de "Côte des Esclaves" par les Européens, mais les populations locales avaient leurs propres appellations.
+- Colonisation : 1884-1914 : Protectorat allemand du Togoland. 1914-1960 : Mandat puis tutelle française du Togo. Développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates), mouvements nationalistes (XXe siècle). Le nom "Togo" est officialisé par les colonisateurs allemands.
+- Période contemporaine : 1960 : Indépendance (27 avril 1960), proclamation de la République togolaise. Le nom "Togo" est officiel.
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Royaume de Notsé] :
+  - Période : XVe siècle - XVIIIe siècle
+  - Peuples dominants : Ewe
+  - Centres politiques : Notsé
+  - Rôle historique : Royaume ewe puissant, centre de migration des Ewe, développement de la civilisation ewe, résistance aux colonisateurs.
+
+- [Chefferies Ewe] :
+  - Période : Depuis plusieurs siècles
+  - Peuples dominants : Ewe
+  - Centres politiques : Chefferies locales
+  - Rôle historique : Organisation politique traditionnelle des Ewe, chefferies territoriales, résistance aux colonisateurs.
+
+- [Protectorat allemand du Togoland] :
+  - Période : 1884 - 1914
+  - Peuples dominants : Allemands, Ewe, autres groupes
+  - Centres politiques : Lomé (capitale coloniale)
+  - Rôle historique : Colonisation allemande, développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates), mouvements nationalistes (XXe siècle).
+
+- [Mandat puis tutelle française du Togo] :
+  - Période : 1914 - 1960
+  - Peuples dominants : Français, Ewe, autres groupes
+  - Centres politiques : Lomé (capitale coloniale)
+  - Rôle historique : Colonisation française, développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates), mouvements nationalistes (XXe siècle).
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Ewe
+  - Auto-appellation (endonyme) : Eʋe / Eʋegbe
+  - Exonymes / appellations historiques : "Ewe" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_EWE
+  - Région principale : Sud du Togo
+  - Langues parlées : Ewe (ewe, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Eʋe" / "Eʋegbe" sont les auto-appellations. Le terme "Ewe" est utilisé par les Européens. Pas de terme péjoratif connu. Groupe Gbe majoritaire, migration depuis Notsé (Togo) selon tradition orale.
+
+- Peuple 2 :
+  - Nom : Kabye
+  - Auto-appellation (endonyme) : Kabye
+  - Exonymes / appellations historiques : "Kabye" (terme utilisé par les Européens), "Kabiyè" (variante)
+  - Identifiant peuple (PPL_) : PPL_KABYE
+  - Région principale : Nord du Togo
+  - Langues parlées : Kabye (kbp, ISO 639-3), français
+  - Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Kabye" est l'auto-appellation. Pas de terme péjoratif connu. Groupe bénoué-congo, originaire du nord du Togo.
+
+- Peuple 3 :
+  - Nom : Mina
+  - Auto-appellation (endonyme) : Mina
+  - Exonymes / appellations historiques : "Mina" (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_MINA
+  - Région principale : Sud du Togo (zones côtières)
+  - Langues parlées : Mina (gej, ISO 639-3), français, ewe
+  - Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_NIGERCONGO)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : "Mina" est l'auto-appellation. Pas de terme péjoratif connu. Groupe Gbe, originaire des zones côtières du Togo.
+
+- Peuple 4 :
+  - Nom : Autres groupes
+  - Auto-appellation (endonyme) : Variées selon les groupes
+  - Exonymes / appellations historiques : Variées selon les groupes
+  - Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+  - Région principale : Toutes les régions du Togo
+  - Langues parlées : Langues diverses, français
+  - Famille linguistique : Diverses
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) : Français (langue officielle, fra), ewe (langue nationale, ewe), kabye (kbp), mina (gej)
+- Traditions culturelles : Traditions Gbe (Ewe, Mina) : musique Agbadza, rituels vodun, tissage kente (variante ewe), musiques traditionnelles, danse traditionnelle, poésie orale, artisanat (poterie, tissage). Traditions bénoué-congo (Kabye) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture togolaise est riche et préservée, avec une forte tradition orale (poésie).
+- Religions dominantes : Christianisme (majoritaire, environ 50%, principalement catholicisme et protestantisme), religions traditionnelles africaines (syncrétisme fréquent, environ 30%, vodun), islam (minorité, environ 20%)
+- Modes de vie : Agriculture (café, cacao, coton, maïs, sorgho, millet, cultures vivrières), élevage (bovins, caprins, ovins), pêche (océan Atlantique, importante source de protéines), exploitation minière (phosphates, or), commerce et activités urbaines (zones urbaines, Lomé). Urbanisation importante. Économie basée sur l'agriculture (café, cacao, coton), l'exploitation minière (phosphates, or), et les services. Le Togo est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.
+- Organisation sociale : Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (chefferies, clans). Structures étatiques modernes (république, mais instabilité politique et conflits récents). Système politique démocratique, mais instabilité politique et conflits récents (régime autoritaire, coups d'État).
+- Relations régionales : Relations avec l'Afrique de l'Ouest (CEDEAO, Union africaine), relations avec l'Europe (Union européenne, France, Allemagne), relations avec les États-Unis. Le Togo est membre de la CEDEAO et de l'Union africaine.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Contacts avec les civilisations voisines. La région était connue sous le nom de "Côte des Esclaves" par les Européens.
+- Moyen Âge : Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de "Côte des Esclaves" par les Européens.
+- Époque précoloniale : Présence de peuples Gbe (Ewe, Fon, Adja) et autres groupes dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de "Côte des Esclaves" par les Européens, mais les populations locales avaient leurs propres appellations.
+- Colonisation : 1884-1914 : Protectorat allemand du Togoland, développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates). 1914-1960 : Mandat puis tutelle française du Togo, développement de l'économie de plantation, exploitation minière, mouvements nationalistes (XXe siècle).
+- Lutte pour l'indépendance : 1950s-1960 : Mouvements nationalistes, CUT (Comité de l'unité togolaise), indépendance (27 avril 1960), proclamation de la République togolaise. Sylvanus Olympio devient premier président.
+- Période post-indépendance : République togolaise (1960), présidence de Sylvanus Olympio (1960-1963, assassinat), coup d'État (1963), présidence de Nicolas Grunitzky (1963-1967), coup d'État (1967), présidence de Gnassingbé Eyadéma (1967-2005, régime autoritaire, parti unique jusqu'en 1991), transition démocratique (1991), élections multipartites, présidence de Faure Gnassingbé (depuis 2005, fils de Gnassingbé Eyadéma). Stabilité politique fragile, démocratie multipartite, développement économique (agriculture, exploitation minière). Le Togo est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.
+
+# 7. Sources
+- ONU – World Population Prospects 2025
+- CIA World Factbook – Togo
+- SIL Ethnologue – Languages of Togo
+- Recensements togolais
+- Études anthropologiques sur les peuples du Togo
+- Études historiques sur la colonisation allemande et française
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Ewe
+- Identifiant peuple (PPL_) : PPL_EWE
+- Population : 3 500 000
+- Pourcentage dans le pays : 42,0%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Togo
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : ewe
+
+### Peuple : Kabye
+- Identifiant peuple (PPL_) : PPL_KABYE
+- Population : 1 200 000
+- Pourcentage dans le pays : 14,4%
+- Pourcentage en Afrique : N/A
+- Région : Nord du Togo
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : kbp
+
+### Peuple : Mina
+- Identifiant peuple (PPL_) : PPL_MINA
+- Population : 800 000
+- Pourcentage dans le pays : 9,6%
+- Pourcentage en Afrique : N/A
+- Région : Sud du Togo (zones côtières)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_NIGERCONGO)
+- Code ISO 639-3 (langue principale) : gej
+
+### Peuple : Autres groupes
+- Identifiant peuple (PPL_) : PPL_AUTRES_GROUPES
+- Population : 2 800 000
+- Pourcentage dans le pays : 34,0%
+- Pourcentage en Afrique : N/A
+- Région : Toutes les régions du Togo
+- Famille linguistique : Diverses
+- Code ISO 639-3 (langue principale) : N/A
+
+**Total population Togo 2025 : 8 300 000 (estimations ONU/UNFPA)**
+

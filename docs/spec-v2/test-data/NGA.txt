@@ -1,0 +1,278 @@
+# Nom du pays
+- Nom officiel actuel : République fédérale du Nigeria (Federal Republic of Nigeria)
+- Étymologie du nom : Le nom "Nigeria" a été créé en 1914 par Flora Shaw (épouse de Lord Lugard, gouverneur général de la colonie) en combinant "Niger" (fleuve Niger) avec le suffixe "-ia" (pays). Le nom fait référence au fleuve Niger qui traverse le pays.
+- Personne / peuple / administration à l'origine du nom : Le nom a été créé par Flora Shaw en 1914 lors de l'"Amalgamation" (unification) des protectorats du Nord et du Sud par les Britanniques. C'est un nom colonial qui ne reflète pas les appellations précoloniales.
+- Identifiant pays (ISO 3166-1 alpha-3) : NGA
+
+# 1. Appellations historiques et origines du nom
+- Antiquité : Le territoire était peuplé de nombreux royaumes et entités politiques indépendantes sans nom unifié : sultanats haoussa, empire Kanem-Bornou, royaume d'Oyo, Ile-Ife, chefferies igbo, royaumes ijaw, royaume du Bénin.
+- Moyen Âge : Développement des sultanats haoussa (Kano, Katsina, Zaria), empire Kanem-Bornou, royaume d'Oyo, civilisation yoruba d'Ife, royaumes igbo décentralisés, royaume du Bénin.
+- Époque précoloniale : Mosaïque de royaumes puissants : califat de Sokoto, royaume d'Oyo, royaume du Bénin, cités-États haoussa, chefferies igbo. Commerce transsaharien et commerce côtier (or, esclaves, ivoire).
+- Colonisation : XVe-XVIe siècles : premiers contacts portugais sur les côtes (Lagos, Bénin, Calabar). XIXe siècle : expansion britannique, création des protectorats Nord et Sud. 1914 : "Amalgamation" - unification Nord/Sud sous le nom de "Nigeria" (choisi par Flora Shaw).
+- Période contemporaine : 1960 : Fédération du Nigeria (indépendance). 1963 : République fédérale du Nigeria (nom actuel).
+
+# 2. Civilisations, royaumes et entités politiques historiques
+- [Sultanats haoussa] :
+  - Période : Premier millénaire - XIXe siècle
+  - Peuples dominants : Hausa
+  - Centres politiques : Kano, Katsina, Zaria (Zazzau)
+  - Rôle historique : Cités-États haoussa puissantes, centres commerciaux et intellectuels. Islamisation ancienne par les routes transsahariennes.
+
+- [Califat de Sokoto] :
+  - Période : 1804 - 1903
+  - Peuples dominants : Hausa, Fulani
+  - Centres politiques : Sokoto (capitale), Kano, Katsina
+  - Rôle historique : Califat islamique puissant fondé par Usman dan Fodio. Unification politique et religieuse du nord du Nigeria. Résistance à la colonisation britannique.
+
+- [Royaume d'Oyo] :
+  - Période : XIVe - XIXe siècles
+  - Peuples dominants : Yoruba
+  - Centres politiques : Oyo (capitale), Ile-Ife
+  - Rôle historique : Royaume yoruba puissant, expansion territoriale, commerce transsaharien. Influence culturelle majeure.
+
+- [Royaume du Bénin] :
+  - Période : XIIIe - XIXe siècles
+  - Peuples dominants : Edo (Bini)
+  - Centres politiques : Bénin City (capitale)
+  - Rôle historique : Royaume réputé pour ses bronzes et son art. Commerce avec les Européens. Résistance à la colonisation.
+
+- [Empire Kanem-Bornou] :
+  - Période : VIIIe - XIXe siècles
+  - Peuples dominants : Kanuri
+  - Centres politiques : Kanem, Bornou
+  - Rôle historique : Empire puissant du Sahel, commerce transsaharien, centre intellectuel.
+
+- [Nigeria colonial] :
+  - Période : 1914 - 1960
+  - Peuples dominants : Tous les peuples nigérians sous administration coloniale britannique
+  - Centres politiques : Lagos (capitale coloniale)
+  - Rôle historique : Unification administrative par les Britanniques. Résistance nigériane et mouvements nationalistes.
+
+- [République fédérale du Nigeria] :
+  - Période : 1960 - présent
+  - Peuples dominants : Tous les peuples nigérians
+  - Centres politiques : Abuja (capitale depuis 1991), Lagos (ancienne capitale)
+  - Rôle historique : Indépendance en 1960. Guerre du Biafra (1967-1970). Histoire politique mouvementée avec alternance démocratique et régimes militaires. Développement économique et défis de gouvernance.
+
+# 3. Peuples majeurs
+- Peuple 1 :
+  - Nom : Hausa-Fulani
+  - Auto-appellation (endonyme) : Hausawa (Hausa), Fulɓe (Peul)
+  - Exonymes / appellations historiques : Hausa (terme utilisé par les Européens), "Haoussa" (transcription coloniale française), Peul/Fulani
+  - Identifiant peuple (PPL_) : PPL_HAUSA, PPL_FULA
+  - Région principale : Nord
+  - Langues parlées : Hausa, Pulaar, anglais
+  - Famille linguistique : FLG_TCHADIQUE (Hausa), FLG_ATLANTIQUE (Peul)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les termes "Hausa" et "Peul/Fulani" sont neutres et acceptés. L'auto-appellation "Hausawa" (pluriel de Bahaushe) est préférée pour les Hausa.
+
+- Peuple 2 :
+  - Nom : Yoruba
+  - Auto-appellation (endonyme) : Yorùbá (Yorùbá ènìyàn)
+  - Exonymes / appellations historiques : "Nago" (terme colonial réducteur, éviter), "Aku" (diaspora, Sierra Leone)
+  - Identifiant peuple (PPL_) : PPL_YORUBA
+  - Région principale : Sud-Ouest
+  - Langues parlées : Yoruba, anglais
+  - Famille linguistique : FLG_BENOUECONGO
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Nago" est colonial et réducteur. L'auto-appellation "Yorùbá" est préférée.
+
+- Peuple 3 :
+  - Nom : Igbo
+  - Auto-appellation (endonyme) : Ǹdị́ Ìgbò
+  - Exonymes / appellations historiques : "Ibo" (terme colonial réducteur, éviter)
+  - Identifiant peuple (PPL_) : PPL_IGBO
+  - Région principale : Sud-Est
+  - Langues parlées : Igbo, anglais
+  - Famille linguistique : FLG_BENOUECONGO
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Ibo" est colonial et réducteur. L'auto-appellation "Ǹdị́ Ìgbò" est préférée.
+
+- Peuple 4 :
+  - Nom : Ijaw
+  - Auto-appellation (endonyme) : Izon / Ijo
+  - Exonymes / appellations historiques : Ijaw (terme utilisé par les Européens), Ijo (variante)
+  - Identifiant peuple (PPL_) : PPL_IJAW
+  - Région principale : Delta du Niger
+  - Langues parlées : Ijaw, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Ijoid)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les termes "Ijaw" et "Ijo" sont neutres et acceptés. L'auto-appellation "Izon" est préférée.
+
+- Peuple 5 :
+  - Nom : Kanuri
+  - Auto-appellation (endonyme) : Kanuri
+  - Exonymes / appellations historiques : Kanuri (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_KANURI
+  - Région principale : Nord-Est (Borno)
+  - Langues parlées : Kanuri, haoussa, anglais
+  - Famille linguistique : FLG_SAHARIENNE
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Kanuri" est neutre et accepté.
+
+- Peuple 6 :
+  - Nom : Tiv
+  - Auto-appellation (endonyme) : Tiv
+  - Exonymes / appellations historiques : Tiv (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_TIV
+  - Région principale : Centre-Est (Benue)
+  - Langues parlées : Tiv, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Bantou)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Tiv" est neutre et accepté.
+
+- Peuple 7 :
+  - Nom : Ibibio-Efik
+  - Auto-appellation (endonyme) : Ibibio, Efik
+  - Exonymes / appellations historiques : Ibibio, Efik, parfois regroupés sous le terme "Calabar" (terme géographique)
+  - Identifiant peuple (PPL_) : PPL_IBIBIO
+  - Région principale : Sud-Est (Cross River, Akwa Ibom)
+  - Langues parlées : Ibibio, Efik, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Cross River)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les termes "Ibibio" et "Efik" sont neutres et acceptés.
+
+- Peuple 8 :
+  - Nom : Edo / Bini
+  - Auto-appellation (endonyme) : Edo, Bini
+  - Exonymes / appellations historiques : Edo, Bini (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_EDO
+  - Région principale : Sud (Edo State)
+  - Langues parlées : Edo, anglais
+  - Famille linguistique : FLG_BENOUECONGO
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les termes "Edo" et "Bini" sont neutres et acceptés.
+
+- Peuple 9 :
+  - Nom : Nupe
+  - Auto-appellation (endonyme) : Nupe
+  - Exonymes / appellations historiques : Nupe (terme utilisé par les Européens)
+  - Identifiant peuple (PPL_) : PPL_NUPE
+  - Région principale : Centre (Niger State)
+  - Langues parlées : Nupe, haoussa, anglais
+  - Famille linguistique : FLG_NIGERCONGO (Nupoïde)
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Le terme "Nupe" est neutre et accepté.
+
+- Peuple 10 :
+  - Nom : Gbagyi / Gwari
+  - Auto-appellation (endonyme) : Gbagyi
+  - Exonymes / appellations historiques : Gbagyi, Gwari (variante)
+  - Identifiant peuple (PPL_) : PPL_GBAGYI
+  - Région principale : Centre (FCT Abuja, Niger State, Kaduna)
+  - Langues parlées : Gbagyi, haoussa, anglais
+  - Famille linguistique : FLG_BENOUECONGO
+  - Remarque sur les appellations (termes péjoratifs / auto-appellation) : Les termes "Gbagyi" et "Gwari" sont neutres et acceptés. L'auto-appellation "Gbagyi" est préférée.
+
+# 5. Culture, modes de vie, langues, spiritualités, organisation traditionnelle
+- Langues principales (avec ISO 639-3) :
+  - Hausa (hau) - langue véhiculaire du nord
+  - Yoruba (yor) - langue véhiculaire du sud-ouest
+  - Igbo (ibo) - langue véhiculaire du sud-est
+  - Anglais - langue officielle
+  - Plus de 500 langues locales
+- Traditions culturelles : Art yoruba (sculptures, masques), bronzes du Bénin, musique traditionnelle (juju, afrobeat), danse traditionnelle, poésie orale (griot), artisanat (tissage, poterie, vannerie), architecture traditionnelle
+- Religions dominantes : Islam (nord, majoritaire), christianisme (sud, majoritaire), croyances traditionnelles (syncrétisme)
+- Modes de vie : Vie principalement rurale, agriculture (cacao, arachides, manioc, igname, riz), élevage (bovins, caprins), pêche (côtes et fleuves), exploitation pétrolière (delta du Niger), commerce, urbanisation croissante
+- Organisation sociale : Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, importance des ancêtres, système de confréries religieuses
+- Relations régionales : Relations historiques avec les peuples du Cameroun, du Niger, du Tchad, du Bénin. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux.
+
+# 6. Faits historiques majeurs
+- Périodes anciennes : Peuplement du territoire par de nombreux groupes ethniques. Développement de civilisations sophistiquées (Ife, Bénin, haoussa).
+- Moyen Âge : Apogée des sultanats haoussa, empire Kanem-Bornou, royaume d'Oyo, royaume du Bénin. Commerce transsaharien et commerce côtier. Islamisation du nord.
+- Époque précoloniale : Califat de Sokoto (1804-1903) : unification islamique du nord. Royaumes yoruba et igbo. Commerce avec les Européens (or, esclaves, ivoire).
+- Colonisation : XVe-XVIe siècles : premiers contacts portugais. XIXe siècle : expansion britannique. 1914 : "Amalgamation" - unification administrative. Résistance nigériane.
+- Lutte pour l'indépendance : Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1960. Première République (1960-1966).
+- Période post-indépendance : Guerre du Biafra (1967-1970) : sécession igbo, conflit meurtrier. Régimes militaires (1966-1979, 1983-1999). Transition démocratique depuis 1999. Développement économique (pétrole), défis de gouvernance et de sécurité.
+
+# 7. Sources
+- CIA World Factbook – Nigeria
+- SIL Ethnologue – Languages of Nigeria
+- Recensements nationaux nigérians
+- ONU – Données démographiques 2025
+- UNFPA – Projections démographiques 2025
+- Études anthropologiques sur les peuples nigérians
+- Études historiques sur les royaumes précoloniaux
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Hausa-Fulani
+- Identifiant peuple (PPL_) : PPL_HAUSA, PPL_FULA
+- Population : ~69 000 000
+- Pourcentage dans le pays : ~30%
+- Pourcentage en Afrique : ~4.8%
+- Région : Nord
+- Famille linguistique : FLG_TCHADIQUE (Hausa), FLG_ATLANTIQUE (Peul)
+- Code ISO 639-3 (langue principale) : hau (Hausa), fuc (Pulaar)
+
+### Peuple : Yoruba
+- Identifiant peuple (PPL_) : PPL_YORUBA
+- Population : ~34 500 000
+- Pourcentage dans le pays : ~15%
+- Pourcentage en Afrique : ~2.4%
+- Région : Sud-Ouest
+- Famille linguistique : FLG_BENOUECONGO
+- Code ISO 639-3 (langue principale) : yor (Yoruba)
+
+### Peuple : Igbo
+- Identifiant peuple (PPL_) : PPL_IGBO
+- Population : ~34 500 000
+- Pourcentage dans le pays : ~15%
+- Pourcentage en Afrique : ~2.4%
+- Région : Sud-Est
+- Famille linguistique : FLG_BENOUECONGO
+- Code ISO 639-3 (langue principale) : ibo (Igbo)
+
+### Peuple : Ijaw
+- Identifiant peuple (PPL_) : PPL_IJAW
+- Population : ~9 200 000
+- Pourcentage dans le pays : ~4%
+- Pourcentage en Afrique : ~0.64%
+- Région : Delta du Niger
+- Famille linguistique : FLG_NIGERCONGO (Ijoid)
+- Code ISO 639-3 (langue principale) : ijo (Ijaw)
+
+### Peuple : Kanuri
+- Identifiant peuple (PPL_) : PPL_KANURI
+- Population : ~9 200 000
+- Pourcentage dans le pays : ~4%
+- Pourcentage en Afrique : ~0.64%
+- Région : Nord-Est (Borno)
+- Famille linguistique : FLG_SAHARIENNE
+- Code ISO 639-3 (langue principale) : knc (Kanuri)
+
+### Peuple : Tiv
+- Identifiant peuple (PPL_) : PPL_TIV
+- Population : ~5 750 000
+- Pourcentage dans le pays : ~2.5%
+- Pourcentage en Afrique : ~0.4%
+- Région : Centre-Est (Benue)
+- Famille linguistique : FLG_NIGERCONGO (Bantou)
+- Code ISO 639-3 (langue principale) : tiv (Tiv)
+
+### Peuple : Ibibio-Efik
+- Identifiant peuple (PPL_) : PPL_IBIBIO
+- Population : ~8 050 000
+- Pourcentage dans le pays : ~3.5%
+- Pourcentage en Afrique : ~0.56%
+- Région : Sud-Est (Cross River, Akwa Ibom)
+- Famille linguistique : FLG_NIGERCONGO (Cross River)
+- Code ISO 639-3 (langue principale) : ibb (Ibibio), efi (Efik)
+
+### Peuple : Edo / Bini
+- Identifiant peuple (PPL_) : PPL_EDO
+- Population : ~4 600 000
+- Pourcentage dans le pays : ~2%
+- Pourcentage en Afrique : ~0.32%
+- Région : Sud (Edo State)
+- Famille linguistique : FLG_BENOUECONGO
+- Code ISO 639-3 (langue principale) : bin (Edo)
+
+### Peuple : Nupe
+- Identifiant peuple (PPL_) : PPL_NUPE
+- Population : ~3 450 000
+- Pourcentage dans le pays : ~1.5%
+- Pourcentage en Afrique : ~0.24%
+- Région : Centre (Niger State)
+- Famille linguistique : FLG_NIGERCONGO (Nupoïde)
+- Code ISO 639-3 (langue principale) : nup (Nupe)
+
+### Peuple : Gbagyi / Gwari
+- Identifiant peuple (PPL_) : PPL_GBAGYI
+- Population : ~3 450 000
+- Pourcentage dans le pays : ~1.5%
+- Pourcentage en Afrique : ~0.24%
+- Région : Centre (FCT Abuja, Niger State, Kaduna)
+- Famille linguistique : FLG_BENOUECONGO
+- Code ISO 639-3 (langue principale) : gby (Gbagyi)
+

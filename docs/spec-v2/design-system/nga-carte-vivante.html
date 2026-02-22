@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nigeria — Variante C : Carte vivante</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700;9..144,900&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF7F2;
+    --bg-warm: #F5EDE0;
+    --card: #FFFFFF;
+    --text: #2C2018;
+    --text-soft: #7A6B5D;
+    --terracotta: #C2532A;
+    --terracotta-bg: #FCEEE8;
+    --gold: #B8860B;
+    --gold-bg: #FDF5E1;
+    --green-deep: #2B6B42;
+    --green-bg: #E8F5ED;
+    --earth: #8B6B47;
+    --earth-bg: #F3EBE0;
+    --slate: #4A5568;
+    --colonial-red: #9B3030;
+    --colonial-bg: #FCE8E8;
+    --border: #E8DFD3;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Nunito Sans', system-ui, sans-serif;
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    max-width: 430px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* === HERO === */
+  .hero {
+    margin: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(165deg, #2B6B42 0%, #1B4D2E 50%, #142E1E 100%);
+    color: white;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(184,134,11,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: -20px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(194,83,42,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner { position: relative; z-index: 1; padding: 24px 20px; }
+  .hero-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .hero-back {
+    display: flex; align-items: center; gap: 4px;
+    color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none;
+  }
+  .hero-badges { display: flex; gap: 6px; }
+  .hero-badge {
+    padding: 4px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 700;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+  }
+  .hero-flag-name { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .hero-flag-big {
+    font-size: 48px; line-height: 1;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  }
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: 34px; font-weight: 900;
+    line-height: 1; letter-spacing: -0.02em;
+  }
+  .hero-name-official { font-size: 12px; font-weight: 400; opacity: 0.5; margin-top: 2px; }
+  .hero-meaning {
+    margin-top: 16px; padding: 16px 18px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    text-align: center;
+  }
+  .hero-meaning-quote {
+    font-family: var(--font-display);
+    font-size: 22px; font-weight: 700; line-height: 1.3; margin-bottom: 6px;
+  }
+  .hero-meaning-quote .highlight { color: #F5C842; font-weight: 900; }
+  .hero-meaning-langs { font-size: 11px; opacity: 0.6; font-weight: 500; }
+
+  /* === CARDS === */
+  .content { padding: 0 12px 12px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px; margin-bottom: 10px;
+    position: relative; overflow: hidden;
+  }
+  .card-label {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--text-soft); margin-bottom: 14px;
+  }
+  .card-label-icon {
+    width: 20px; height: 20px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+  }
+
+  /* === ÉTYMOLOGIE === */
+  .etym-colonial {
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--colonial-bg);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .etym-word {
+    font-family: var(--font-display);
+    font-size: 28px; font-weight: 900; margin-bottom: 2px;
+  }
+  .etym-split {
+    display: flex; gap: 0; margin-bottom: 16px;
+    border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+  }
+  .etym-half { flex: 1; padding: 16px; text-align: center; }
+  .etym-half:first-child {
+    background: var(--earth-bg);
+    border-right: 1px solid var(--border);
+  }
+  .etym-half:last-child { background: var(--colonial-bg); }
+  .etym-half:first-child .etym-word { color: var(--earth); }
+  .etym-half:last-child .etym-word { color: var(--colonial-red); }
+  .etym-lang {
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 4px; opacity: 0.6;
+  }
+  .etym-def { font-size: 14px; font-weight: 600; }
+
+  /* Origin banner */
+  .origin-banner {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px;
+    background: var(--colonial-bg);
+    border: 1px solid rgba(155,48,48,0.15);
+    border-radius: 12px;
+  }
+  .origin-avatar {
+    width: 42px; height: 42px; min-width: 42px;
+    border-radius: 50%;
+    background: var(--colonial-red); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 800;
+    font-family: var(--font-display);
+  }
+  .origin-name {
+    font-family: var(--font-display);
+    font-size: 16px; font-weight: 700; color: var(--colonial-red);
+  }
+  .origin-date { font-size: 12px; color: var(--text-soft); font-weight: 600; margin-bottom: 4px; }
+  .origin-desc { font-size: 12px; color: var(--text-soft); line-height: 1.45; }
+  .origin-old-name {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 6px; padding: 3px 10px;
+    font-size: 11px; font-weight: 700;
+    background: var(--colonial-bg); color: var(--colonial-red);
+    border-radius: 6px; border: 1px solid rgba(155,48,48,0.2);
+  }
+  .origin-old-name.colonial-strike { text-decoration: line-through; }
+
+  /* === TIMELINE VERTICAL === */
+  .timeline-v {
+    position: relative; padding-left: 28px;
+  }
+  .timeline-v::before {
+    content: '';
+    position: absolute; left: 8px; top: 4px; bottom: 4px;
+    width: 2px; border-radius: 1px;
+    background: linear-gradient(
+      to bottom,
+      var(--gold) 0%, var(--gold) 60%,
+      var(--colonial-red) 60%, var(--colonial-red) 85%,
+      var(--green-deep) 85%, var(--green-deep) 100%
+    );
+  }
+  .tl-item { position: relative; padding: 0 0 16px 0; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute; left: -24px; top: 5px;
+    width: 10px; height: 10px; border-radius: 50%;
+    border: 2px solid var(--border); background: var(--card); z-index: 1;
+  }
+  .tl-item[data-type="kingdom"]::before { border-color: var(--gold); background: var(--gold-bg); }
+  .tl-item[data-type="colonial"]::before { border-color: var(--colonial-red); background: var(--colonial-bg); }
+  .tl-item[data-type="sovereign"]::before {
+    border-color: var(--green-deep); background: var(--green-deep);
+    box-shadow: 0 0 0 3px rgba(43,107,66,0.15);
+  }
+  .tl-item-era {
+    font-size: 9px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1px;
+  }
+  .tl-item[data-type="kingdom"] .tl-item-era { color: var(--gold); }
+  .tl-item[data-type="colonial"] .tl-item-era { color: var(--colonial-red); }
+  .tl-item[data-type="sovereign"] .tl-item-era { color: var(--green-deep); }
+  .tl-item-name {
+    font-family: var(--font-display);
+    font-size: 16px; font-weight: 700; line-height: 1.25; margin-bottom: 2px;
+  }
+  .tl-item[data-type="colonial"] .tl-item-name {
+    text-decoration: line-through; text-decoration-color: var(--colonial-red);
+  }
+  .tl-item-note { font-size: 11px; color: var(--text-soft); line-height: 1.4; }
+
+  /* === DEMOGRAPHY === */
+  .demo-header {
+    display: flex; justify-content: space-between;
+    align-items: baseline; margin-bottom: 16px;
+  }
+  .demo-header h3 { font-family: var(--font-display); font-size: 18px; font-weight: 700; }
+  .demo-total {
+    font-family: var(--font-display);
+    font-size: 24px; font-weight: 900; color: var(--terracotta);
+  }
+  .demo-total-label { font-size: 11px; color: var(--text-soft); font-weight: 500; }
+  .visual-bar {
+    display: flex; height: 12px; border-radius: 6px;
+    overflow: hidden; margin-bottom: 14px; gap: 2px;
+  }
+  .visual-seg { border-radius: 2px; }
+  .people-list {}
+  .person-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+  }
+  .person-row:last-child { border-bottom: none; }
+  .person-dot { width: 10px; height: 10px; border-radius: 3px; min-width: 10px; }
+  .person-info { flex: 1; min-width: 0; }
+  .person-names { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .person-exo { font-size: 14px; font-weight: 700; }
+  .person-endo { font-size: 11px; color: var(--text-soft); font-style: italic; }
+  .person-meta { font-size: 10px; color: var(--text-soft); margin-top: 1px; }
+  .person-stats { text-align: right; min-width: 50px; }
+  .person-pct { font-family: var(--font-display); font-size: 18px; font-weight: 900; }
+  .person-pop { font-size: 10px; color: var(--text-soft); }
+
+  /* Warning tag for colonial terms */
+  .warn-colonial {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 9px; font-weight: 700; color: var(--colonial-red);
+    background: var(--colonial-bg); padding: 1px 6px; border-radius: 4px;
+    text-decoration: line-through;
+  }
+
+  /* === KINGDOMS SCROLL === */
+  .kingdoms-scroll {
+    display: flex; gap: 10px; overflow-x: auto;
+    margin: 0 -18px; padding: 0 18px 8px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .kingdoms-scroll::-webkit-scrollbar { display: none; }
+  .kingdom-card {
+    min-width: 200px; max-width: 220px;
+    padding: 16px; border-radius: 14px;
+    background: var(--gold-bg); border: 1px solid rgba(184,134,11,0.2);
+    flex-shrink: 0;
+  }
+  .kingdom-card-period {
+    font-size: 10px; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  .kingdom-card-name {
+    font-family: var(--font-display);
+    font-size: 17px; font-weight: 700; margin-bottom: 4px;
+  }
+  .kingdom-card-people { font-size: 11px; color: var(--text-soft); margin-bottom: 8px; }
+  .kingdom-card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .kingdom-card-tag {
+    font-size: 10px; padding: 2px 7px; border-radius: 4px;
+    background: rgba(184,134,11,0.12); color: var(--gold); font-weight: 600;
+  }
+
+  /* === LANGUES === */
+  .lang-cloud {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  }
+  .lang-bubble {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 8px 14px; border-radius: 24px;
+    font-size: 13px; font-weight: 600;
+    border: 1.5px solid var(--border); background: var(--card);
+    transition: transform 0.2s;
+  }
+  .lang-bubble:active { transform: scale(0.96); }
+  .lang-bubble-official {
+    background: var(--green-bg); border-color: var(--green-deep); color: var(--green-deep);
+  }
+  .lang-bubble-code {
+    font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 4px;
+    background: var(--bg-warm); color: var(--text-soft); font-family: monospace;
+  }
+  .lang-bubble-big { font-size: 15px; padding: 10px 18px; }
+  .lang-bubble-small { font-size: 12px; padding: 6px 12px; opacity: 0.8; }
+  .lang-extra {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 8px 16px; border-radius: 24px;
+    font-size: 13px; font-weight: 700;
+    background: var(--earth-bg); border: 1.5px dashed var(--earth);
+    color: var(--earth);
+  }
+
+  /* === CULTURE GRID === */
+  .culture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .culture-item { padding: 12px; border-radius: 12px; text-align: center; }
+  .culture-item-icon { font-size: 24px; margin-bottom: 4px; }
+  .culture-item-label {
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  .culture-item-values { font-size: 12px; color: var(--text-soft); line-height: 1.4; }
+  .ci-religion { background: var(--earth-bg); }
+  .ci-religion .culture-item-label { color: var(--earth); }
+  .ci-economy { background: var(--green-bg); }
+  .ci-economy .culture-item-label { color: var(--green-deep); }
+  .ci-social { background: var(--gold-bg); }
+  .ci-social .culture-item-label { color: var(--gold); }
+  .ci-relations { background: var(--terracotta-bg); }
+  .ci-relations .culture-item-label { color: var(--terracotta); }
+
+  /* === FOOTER === */
+  .footer-card {
+    background: var(--bg-warm); border-radius: var(--radius);
+    padding: 16px 18px; margin: 0 12px 20px;
+    font-size: 10px; color: var(--text-soft); line-height: 1.6;
+  }
+  .footer-card-title {
+    font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: 6px; color: var(--earth);
+  }
+
+  .variant-label {
+    position: fixed; top: 12px; right: 12px;
+    background: var(--terracotta); color: white;
+    font-size: 10px; font-weight: 700;
+    padding: 4px 10px; border-radius: 20px;
+    z-index: 100; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .card { animation: fadeIn 0.4s ease both; }
+  .card:nth-child(2) { animation-delay: 0.05s; }
+  .card:nth-child(3) { animation-delay: 0.1s; }
+</style>
+</head>
+<body>
+
+<div class="variant-label">Stress-test · NGA · Riche</div>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-top-row">
+      <a class="hero-back" href="#">← Afrique de l'Ouest</a>
+      <div class="hero-badges">
+        <span class="hero-badge">NGA</span>
+        <span class="hero-badge">1963</span>
+      </div>
+    </div>
+    <div class="hero-flag-name">
+      <span class="hero-flag-big">🇳🇬</span>
+      <div class="hero-name-stack">
+        <h1 class="hero-name">Nigeria</h1>
+        <div class="hero-name-official">Federal Republic of Nigeria</div>
+      </div>
+    </div>
+    <div class="hero-meaning">
+      <div class="hero-meaning-quote">
+        « Pays du fleuve <span class="highlight">Niger</span> »
+      </div>
+      <div class="hero-meaning-langs">Niger (fleuve) + -ia (suffixe latin) · Nom colonial (1914)</div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+
+<!-- ========== ÉTYMOLOGIE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--colonial-bg); color:var(--colonial-red);">⚠</span>
+    Étymologie du nom · Origine coloniale
+  </div>
+
+  <div class="etym-split">
+    <div class="etym-half">
+      <div class="etym-word">Niger</div>
+      <div class="etym-lang">Fleuve</div>
+      <div class="etym-def">Fleuve traversant le pays</div>
+    </div>
+    <div class="etym-half">
+      <div class="etym-word">-ia</div>
+      <div class="etym-lang">Suffixe latin</div>
+      <div class="etym-def">« Pays de… »</div>
+    </div>
+  </div>
+
+  <div class="origin-banner">
+    <div class="origin-avatar">FS</div>
+    <div class="origin-text">
+      <div class="origin-name">Flora Shaw</div>
+      <div class="origin-date">1914 · « Amalgamation » britannique</div>
+      <div class="origin-desc">Nom créé par une journaliste britannique, épouse de Lord Lugard. Unification administrative des protectorats Nord et Sud.</div>
+      <span class="origin-old-name colonial-strike">✕ Protectorats Nord & Sud</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TIMELINE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--earth-bg); color:var(--earth);">↳</span>
+    Noms à travers l'histoire
+  </div>
+  <div class="timeline-v">
+    <div class="tl-item" data-type="kingdom">
+      <div class="tl-item-era">VIIIe — XIXe s.</div>
+      <div class="tl-item-name">Kanem-Bornou</div>
+      <div class="tl-item-note">Empire sahélien · Kanuri · Commerce transsaharien</div>
+    </div>
+    <div class="tl-item" data-type="kingdom">
+      <div class="tl-item-era">Ier mill. — XIXe s.</div>
+      <div class="tl-item-name">Cités-États Haoussa</div>
+      <div class="tl-item-note">Kano · Katsina · Zaria</div>
+    </div>
+    <div class="tl-item" data-type="kingdom">
+      <div class="tl-item-era">1804 — 1903</div>
+      <div class="tl-item-name">Califat de Sokoto</div>
+      <div class="tl-item-note">Dan Fodio · Hausa-Fulani · Islam</div>
+    </div>
+    <div class="tl-item" data-type="kingdom">
+      <div class="tl-item-era">XIVe — XIXe s.</div>
+      <div class="tl-item-name">Royaume d'Oyo</div>
+      <div class="tl-item-note">Yoruba · Ile-Ife · Culture</div>
+    </div>
+    <div class="tl-item" data-type="kingdom">
+      <div class="tl-item-era">XIIIe — XIXe s.</div>
+      <div class="tl-item-name">Royaume du Bénin</div>
+      <div class="tl-item-note">Edo · Bronzes · Bénin City</div>
+    </div>
+    <div class="tl-item" data-type="colonial">
+      <div class="tl-item-era">1914 — 1960</div>
+      <div class="tl-item-name">Nigeria colonial</div>
+      <div class="tl-item-note">Britannique · Flora Shaw · Lagos</div>
+    </div>
+    <div class="tl-item" data-type="sovereign">
+      <div class="tl-item-era">1960 — Aujourd'hui</div>
+      <div class="tl-item-name">Rép. féd. du Nigeria ✦</div>
+      <div class="tl-item-note">Abuja · 36 États · Fédérale</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DÉMOGRAPHIE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--terracotta-bg); color:var(--terracotta);">◉</span>
+    Peuples & Démographie
+  </div>
+
+  <div class="demo-header">
+    <div>
+      <div class="demo-total">230M</div>
+      <div class="demo-total-label">habitants · 2025</div>
+    </div>
+    <h3>250+ peuples</h3>
+  </div>
+
+  <!-- Visual bar: 10 documented peoples + "others" -->
+  <div class="visual-bar">
+    <div class="visual-seg" style="flex:30; background:#D4A843;"></div>
+    <div class="visual-seg" style="flex:15; background:#5B8DB8;"></div>
+    <div class="visual-seg" style="flex:15; background:#6BAF8D;"></div>
+    <div class="visual-seg" style="flex:4; background:#B87D5B;"></div>
+    <div class="visual-seg" style="flex:4; background:#C2532A;"></div>
+    <div class="visual-seg" style="flex:3.5; background:#8B6B47;"></div>
+    <div class="visual-seg" style="flex:2.5; background:#7A6B5D;"></div>
+    <div class="visual-seg" style="flex:2; background:#9B8B7D;"></div>
+    <div class="visual-seg" style="flex:1.5; background:#A89B8D;"></div>
+    <div class="visual-seg" style="flex:1.5; background:#5B6B7B;"></div>
+    <div class="visual-seg" style="flex:21; background:#D5CCC0;"></div>
+  </div>
+
+  <div class="people-list">
+    <div class="person-row">
+      <div class="person-dot" style="background:#D4A843;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Hausa-Fulani</span>
+          <span class="person-endo">Hausawa · Fulɓe</span>
+        </div>
+        <div class="person-meta">Hausa · Nord · Tchadique + Atlantique</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">30%</div>
+        <div class="person-pop">69M</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#5B8DB8;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Yoruba</span>
+          <span class="person-endo">Yorùbá ènìyàn</span>
+        </div>
+        <div class="person-meta">Yoruba · Sud-Ouest · Bénoué-Congo</div>
+        <div class="person-meta"><span class="warn-colonial">Nago</span> terme colonial à éviter</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">15%</div>
+        <div class="person-pop">34,5M</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#6BAF8D;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Igbo</span>
+          <span class="person-endo">Ǹdị́ Ìgbò</span>
+        </div>
+        <div class="person-meta">Igbo · Sud-Est · Bénoué-Congo</div>
+        <div class="person-meta"><span class="warn-colonial">Ibo</span> terme colonial à éviter</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">15%</div>
+        <div class="person-pop">34,5M</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#B87D5B;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Ijaw</span>
+          <span class="person-endo">Izon</span>
+        </div>
+        <div class="person-meta">Ijaw · Delta du Niger · Ijoid</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">4%</div>
+        <div class="person-pop">9,2M</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#C2532A;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Kanuri</span>
+        </div>
+        <div class="person-meta">Kanuri · Nord-Est (Borno) · Saharienne</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">4%</div>
+        <div class="person-pop">9,2M</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#8B6B47;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Ibibio-Efik</span>
+        </div>
+        <div class="person-meta">Ibibio, Efik · Sud-Est · Cross River</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">3,5%</div>
+        <div class="person-pop">8M</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#7A6B5D;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Tiv</span>
+        </div>
+        <div class="person-meta">Tiv · Centre-Est (Benue) · Bantou</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">2,5%</div>
+        <div class="person-pop">5,75M</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#9B8B7D;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Edo / Bini</span>
+        </div>
+        <div class="person-meta">Edo · Sud (Edo State) · Bénoué-Congo</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">2%</div>
+        <div class="person-pop">4,6M</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#A89B8D;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">Nupe · Gbagyi</span>
+        </div>
+        <div class="person-meta">2 peuples · Centre · 3,45M chacun</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">1,5%</div>
+        <div class="person-pop">×2</div>
+      </div>
+    </div>
+
+    <div class="person-row">
+      <div class="person-dot" style="background:#D5CCC0;"></div>
+      <div class="person-info">
+        <div class="person-names">
+          <span class="person-exo">240+ autres peuples</span>
+        </div>
+        <div class="person-meta">Diversité ethnolinguistique majeure</div>
+        <div class="person-meta" style="font-style:italic; opacity:0.7;">📋 Données en cours de documentation</div>
+      </div>
+      <div class="person-stats">
+        <div class="person-pct">21%</div>
+        <div class="person-pop">~48M</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ROYAUMES ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--gold-bg); color:var(--gold);">♛</span>
+    Royaumes & Civilisations
+  </div>
+  <div class="kingdoms-scroll">
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">VIIIe — XIXe siècle</div>
+      <div class="kingdom-card-name">Kanem-Bornou</div>
+      <div class="kingdom-card-people">Kanuri</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Empire</span>
+        <span class="kingdom-card-tag">Sahel</span>
+        <span class="kingdom-card-tag">Transsaharien</span>
+      </div>
+    </div>
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">Ier mill. — XIXe s.</div>
+      <div class="kingdom-card-name">Cités-États Haoussa</div>
+      <div class="kingdom-card-people">Hausa</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Kano</span>
+        <span class="kingdom-card-tag">Katsina</span>
+        <span class="kingdom-card-tag">Zaria</span>
+      </div>
+    </div>
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">1804 — 1903</div>
+      <div class="kingdom-card-name">Califat de Sokoto</div>
+      <div class="kingdom-card-people">Hausa-Fulani · Dan Fodio</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Califat</span>
+        <span class="kingdom-card-tag">Islam</span>
+        <span class="kingdom-card-tag">Sokoto</span>
+      </div>
+    </div>
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">XIVe — XIXe siècle</div>
+      <div class="kingdom-card-name">Royaume d'Oyo</div>
+      <div class="kingdom-card-people">Yoruba</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Oyo</span>
+        <span class="kingdom-card-tag">Ile-Ife</span>
+        <span class="kingdom-card-tag">Art</span>
+      </div>
+    </div>
+    <div class="kingdom-card">
+      <div class="kingdom-card-period">XIIIe — XIXe siècle</div>
+      <div class="kingdom-card-name">Royaume du Bénin</div>
+      <div class="kingdom-card-people">Edo (Bini)</div>
+      <div class="kingdom-card-tags">
+        <span class="kingdom-card-tag">Bronzes</span>
+        <span class="kingdom-card-tag">Bénin City</span>
+        <span class="kingdom-card-tag">Art</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LANGUES ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--green-bg); color:var(--green-deep);">🗣</span>
+    Langues · 500+ répertoriées
+  </div>
+  <div class="lang-cloud">
+    <div class="lang-bubble lang-bubble-official lang-bubble-big">🏛 Anglais <span class="lang-bubble-code">eng</span></div>
+    <div class="lang-bubble lang-bubble-big">Hausa <span class="lang-bubble-code">hau</span></div>
+    <div class="lang-bubble lang-bubble-big">Yoruba <span class="lang-bubble-code">yor</span></div>
+    <div class="lang-bubble lang-bubble-big">Igbo <span class="lang-bubble-code">ibo</span></div>
+    <div class="lang-bubble">Ijaw <span class="lang-bubble-code">ijo</span></div>
+    <div class="lang-bubble">Kanuri <span class="lang-bubble-code">knc</span></div>
+    <div class="lang-bubble lang-bubble-small">Tiv <span class="lang-bubble-code">tiv</span></div>
+    <div class="lang-bubble lang-bubble-small">Ibibio <span class="lang-bubble-code">ibb</span></div>
+    <div class="lang-bubble lang-bubble-small">Edo <span class="lang-bubble-code">bin</span></div>
+    <div class="lang-bubble lang-bubble-small">Nupe <span class="lang-bubble-code">nup</span></div>
+    <div class="lang-bubble lang-bubble-small">Efik <span class="lang-bubble-code">efi</span></div>
+    <div class="lang-bubble lang-bubble-small">Gbagyi <span class="lang-bubble-code">gby</span></div>
+    <div class="lang-extra">+ 490 autres langues</div>
+  </div>
+</div>
+
+<!-- ========== CULTURE ========== -->
+<div class="card">
+  <div class="card-label">
+    <span class="card-label-icon" style="background:var(--earth-bg); color:var(--earth);">◈</span>
+    Culture & Société
+  </div>
+  <div class="culture-grid">
+    <div class="culture-item ci-religion">
+      <div class="culture-item-icon">☪️</div>
+      <div class="culture-item-label">Religions</div>
+      <div class="culture-item-values">Islam (nord) · Christianisme (sud) · Croyances traditionnelles</div>
+    </div>
+    <div class="culture-item ci-economy">
+      <div class="culture-item-icon">🛢️</div>
+      <div class="culture-item-label">Économie</div>
+      <div class="culture-item-values">Pétrole · Agriculture · Cacao · Igname · Commerce</div>
+    </div>
+    <div class="culture-item ci-social">
+      <div class="culture-item-icon">👑</div>
+      <div class="culture-item-label">Organisation</div>
+      <div class="culture-item-values">Chefferies · Clans · Sultanats · Confréries · 36 États</div>
+    </div>
+    <div class="culture-item ci-relations">
+      <div class="culture-item-icon">🌍</div>
+      <div class="culture-item-label">Relations</div>
+      <div class="culture-item-values">Cameroun · Niger · Tchad · Bénin · CEDEAO · Diaspora UK/US</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<!-- ========== FOOTER ========== -->
+<div class="footer-card">
+  <div class="footer-card-title">Sources & Références</div>
+  CIA World Factbook · SIL Ethnologue · ONU/UNFPA 2025 · Recensements nigérians · Études anthropologiques et historiques sur les royaumes précoloniaux
+</div>
+
+</body>
+</html>
