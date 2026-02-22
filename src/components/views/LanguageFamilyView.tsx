@@ -68,11 +68,7 @@ export const LanguageFamilyView = ({
               setError(
                 language === "en"
                   ? "Failed to load language families"
-                  : language === "fr"
-                    ? "Échec du chargement des familles linguistiques"
-                    : language === "es"
-                      ? "Error al cargar familias lingüísticas"
-                      : "Falha ao carregar famílias linguísticas"
+                  : "Échec du chargement des familles linguistiques"
               );
             }
           }
@@ -145,75 +141,29 @@ export const LanguageFamilyView = ({
   }, [families, language]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(
-      language === "en"
-        ? "en-US"
-        : language === "fr"
-          ? "fr-FR"
-          : language === "es"
-            ? "es-ES"
-            : "pt-PT"
-    ).format(Math.round(num));
+    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+      Math.round(num)
+    );
   };
 
   const getLoadingText = (): string => {
-    switch (language) {
-      case "en":
-        return "Loading language families...";
-      case "fr":
-        return "Chargement des familles linguistiques...";
-      case "es":
-        return "Cargando familias lingüísticas...";
-      case "pt":
-        return "Carregando famílias linguísticas...";
-      default:
-        return "Chargement des familles linguistiques...";
-    }
+    return language === "en"
+      ? "Loading language families..."
+      : "Chargement des familles linguistiques...";
   };
 
   const getNoResultsText = (): string => {
-    switch (language) {
-      case "en":
-        return "No language families found";
-      case "fr":
-        return "Aucune famille linguistique trouvée";
-      case "es":
-        return "No se encontraron familias lingüísticas";
-      case "pt":
-        return "Nenhuma família linguística encontrada";
-      default:
-        return "Aucune famille linguistique trouvée";
-    }
+    return language === "en"
+      ? "No language families found"
+      : "Aucune famille linguistique trouvée";
   };
 
   const getPeoplesLabel = (): string => {
-    switch (language) {
-      case "en":
-        return "peoples";
-      case "fr":
-        return "peuples";
-      case "es":
-        return "pueblos";
-      case "pt":
-        return "povos";
-      default:
-        return "peuples";
-    }
+    return language === "en" ? "peoples" : "peuples";
   };
 
   const getSpeakersLabel = (): string => {
-    switch (language) {
-      case "en":
-        return "speakers";
-      case "fr":
-        return "locuteurs";
-      case "es":
-        return "hablantes";
-      case "pt":
-        return "falantes";
-      default:
-        return "locuteurs";
-    }
+    return language === "en" ? "speakers" : "locuteurs";
   };
 
   if (loading) {

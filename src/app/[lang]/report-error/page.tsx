@@ -14,7 +14,7 @@ export default function ReportErrorPage() {
 
   // Sync language from URL param
   useEffect(() => {
-    if (lang && ["en", "fr", "es", "pt"].includes(lang) && lang !== language) {
+    if (lang && ["en", "fr"].includes(lang) && lang !== language) {
       setLanguage(lang as Language);
     }
   }, [lang, language, setLanguage]);
@@ -86,74 +86,6 @@ export default function ReportErrorPage() {
         ),
       },
       footer: "Fait avec émotion pour l'Afrique",
-    },
-    es: {
-      title: "Reportar un error",
-      intro: {
-        title: "Contribuya a la exactitud de los datos",
-        text1: (
-          <>
-            La información presentada en este sitio proviene de diversas
-            fuentes, públicas o colaborativas. Aunque hacemos todo lo posible
-            por verificar y consolidar estos datos, algunos pueden estar
-            incompletos, ser aproximados o contener errores.
-          </>
-        ),
-        text2: (
-          <>
-            Su contribución es valiosa: si nota información incorrecta, faltante
-            o dudosa, puede informárnosla mediante el formulario que aparece a
-            continuación.
-          </>
-        ),
-        text3: (
-          <>
-            Cada aporte nos ayuda a mejorar la calidad y la fiabilidad del
-            atlas, en beneficio de toda la comunidad.
-          </>
-        ),
-        text4: (
-          <>
-            Gracias por su ayuda en la construcción de una base de datos más
-            precisa y fiel.
-          </>
-        ),
-      },
-      footer: "Hecho con emoción para África",
-    },
-    pt: {
-      title: "Reportar um erro",
-      intro: {
-        title: "Contribua para a precisão dos dados",
-        text1: (
-          <>
-            As informações apresentadas neste site vêm de várias fontes,
-            públicas ou colaborativas. Embora façamos o possível para verificar
-            e consolidar esses dados, alguns podem estar incompletos, imprecisos
-            ou conter erros.
-          </>
-        ),
-        text2: (
-          <>
-            A sua contribuição é valiosa: se você identificar alguma informação
-            incorreta, ausente ou duvidosa, pode relatá-la através do formulário
-            abaixo.
-          </>
-        ),
-        text3: (
-          <>
-            Cada retorno nos ajuda a melhorar a qualidade e a confiabilidade do
-            atlas, em benefício de toda a comunidade.
-          </>
-        ),
-        text4: (
-          <>
-            Obrigado por ajudar a construir uma base de dados mais precisa e
-            confiável.
-          </>
-        ),
-      },
-      footer: "Feito com emoção para a África",
     },
   };
 

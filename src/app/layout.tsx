@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import {
+  Inter,
+  Playfair_Display,
+  Fraunces,
+  Nunito_Sans,
+} from "next/font/google";
 import "@/index.css";
 import { Providers } from "./providers";
 import { TypeformPreload } from "@/components/TypeformPreload";
@@ -13,6 +18,18 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["600", "700"],
   variable: "--font-playfair",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["300", "500", "700", "900"],
+  variable: "--font-fraunces",
+});
+
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-nunito-sans",
 });
 
 export const metadata: Metadata = {
@@ -46,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${playfairDisplay.variable} font-sans antialiased`}
+        className={`${inter.variable} ${playfairDisplay.variable} ${fraunces.variable} ${nunitoSans.variable} font-sans antialiased`}
       >
         <TypeformPreload />
         <Providers>{children}</Providers>

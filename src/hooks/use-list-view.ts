@@ -94,15 +94,9 @@ export function useListView<T>({
   }, [items, getDisplayName]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(
-      language === "en"
-        ? "en-US"
-        : language === "fr"
-          ? "fr-FR"
-          : language === "es"
-            ? "es-ES"
-            : "pt-PT"
-    ).format(Math.round(num));
+    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+      Math.round(num)
+    );
   };
 
   return {

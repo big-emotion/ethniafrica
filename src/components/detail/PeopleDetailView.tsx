@@ -33,33 +33,13 @@ interface PeopleDetailViewProps {
 
 // Helper functions outside component to avoid dependency issues
 const getNotFoundText = (language: Language): string => {
-  switch (language) {
-    case "en":
-      return "People not found";
-    case "fr":
-      return "Peuple non trouvé";
-    case "es":
-      return "Pueblo no encontrado";
-    case "pt":
-      return "Povo não encontrado";
-    default:
-      return "Peuple non trouvé";
-  }
+  return language === "en" ? "People not found" : "Peuple non trouvé";
 };
 
 const getErrorText = (language: Language): string => {
-  switch (language) {
-    case "en":
-      return "Failed to load people";
-    case "fr":
-      return "Échec du chargement du peuple";
-    case "es":
-      return "Error al cargar el pueblo";
-    case "pt":
-      return "Falha ao carregar o povo";
-    default:
-      return "Échec du chargement du peuple";
-  }
+  return language === "en"
+    ? "Failed to load people"
+    : "Échec du chargement du peuple";
 };
 
 export const PeopleDetailView = ({
@@ -107,68 +87,36 @@ export const PeopleDetailView = ({
   }, [peopleId, language]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(
-      language === "en"
-        ? "en-US"
-        : language === "fr"
-          ? "fr-FR"
-          : language === "es"
-            ? "es-ES"
-            : "pt-PT"
-    ).format(Math.round(num));
+    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+      Math.round(num)
+    );
   };
 
   const getTabLabels = () => {
-    switch (language) {
-      case "en":
-        return {
-          appellations: "Names",
-          ethnicities: "Ethnicities",
-          origins: "Origins",
-          organization: "Organization",
-          languages: "Languages",
-          culture: "Culture",
-          history: "History",
-          demography: "Demography",
-          sources: "Sources",
-        };
-      case "es":
-        return {
-          appellations: "Nombres",
-          ethnicities: "Etnias",
-          origins: "Orígenes",
-          organization: "Organización",
-          languages: "Idiomas",
-          culture: "Cultura",
-          history: "Historia",
-          demography: "Demografía",
-          sources: "Fuentes",
-        };
-      case "pt":
-        return {
-          appellations: "Nomes",
-          ethnicities: "Etnias",
-          origins: "Origens",
-          organization: "Organização",
-          languages: "Línguas",
-          culture: "Cultura",
-          history: "História",
-          demography: "Demografia",
-          sources: "Fontes",
-        };
-      default:
-        return {
-          appellations: "Appellations",
-          ethnicities: "Ethnies",
-          origins: "Origines",
-          organization: "Organisation",
-          languages: "Langues",
-          culture: "Culture",
-          history: "Histoire",
-          demography: "Démographie",
-          sources: "Sources",
-        };
+    if (language === "en") {
+      return {
+        appellations: "Names",
+        ethnicities: "Ethnicities",
+        origins: "Origins",
+        organization: "Organization",
+        languages: "Languages",
+        culture: "Culture",
+        history: "History",
+        demography: "Demography",
+        sources: "Sources",
+      };
     }
+    return {
+      appellations: "Appellations",
+      ethnicities: "Ethnies",
+      origins: "Origines",
+      organization: "Organisation",
+      languages: "Langues",
+      culture: "Culture",
+      history: "Histoire",
+      demography: "Démographie",
+      sources: "Sources",
+    };
   };
 
   if (loading) {
@@ -1151,11 +1099,7 @@ export const PeopleDetailView = ({
                             title={
                               language === "en"
                                 ? `${people.nameMain} Distribution Across Countries`
-                                : language === "fr"
-                                  ? `Distribution de ${people.nameMain} par pays`
-                                  : language === "es"
-                                    ? `Distribución de ${people.nameMain} por país`
-                                    : `Distribuição de ${people.nameMain} por país`
+                                : `Distribution de ${people.nameMain} par pays`
                             }
                           />
                         </div>

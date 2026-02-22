@@ -10,8 +10,7 @@ import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getTranslation } from "@/lib/translations";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import type { CountrySummary } from "@/types/afrik-frontend";
 
 function DefaultMessage({ language }: { language: string }) {
@@ -25,16 +24,6 @@ function DefaultMessage({ language }: { language: string }) {
       title: "Sélectionnez un pays",
       description:
         "Choisissez un pays dans la liste à droite pour voir des informations détaillées sur ses peuples, son histoire et sa culture.",
-    },
-    es: {
-      title: "Seleccione un país",
-      description:
-        "Elija un país de la lista a la derecha para ver información detallada sobre sus pueblos, historia y cultura.",
-    },
-    pt: {
-      title: "Selecione um país",
-      description:
-        "Escolha um país da lista à direita para ver informações detalhadas sobre seus povos, história e cultura.",
     },
   };
 
@@ -94,21 +83,6 @@ export function PaysPageContentV2() {
     router.replace(pathname);
   };
 
-  const getBackText = () => {
-    switch (language) {
-      case "en":
-        return "Back";
-      case "fr":
-        return "Retour";
-      case "es":
-        return "Volver";
-      case "pt":
-        return "Voltar";
-      default:
-        return "Retour";
-    }
-  };
-
   return (
     <PageLayout
       language={language}
@@ -118,19 +92,12 @@ export function PaysPageContentV2() {
       {isMobile ? (
         <div>
           {selectedCountry ? (
-            <div className="space-y-4">
-              <Button variant="ghost" onClick={handleBack} className="mb-2">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                {getBackText()}
-              </Button>
-              <Card className="shadow-soft w-full">
-                <CountryDetailViewV2
-                  countryId={selectedCountry}
-                  language={language}
-                  onPeopleClick={handlePeopleClick}
-                />
-              </Card>
-            </div>
+            <CountryDetailViewV2
+              countryId={selectedCountry}
+              language={language}
+              onPeopleClick={handlePeopleClick}
+              onBack={handleBack}
+            />
           ) : (
             <CountryView
               language={language}
@@ -143,25 +110,16 @@ export function PaysPageContentV2() {
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
           {/* Detail view - Left (70%) */}
           <div className="lg:col-span-7">
-            <Card className="shadow-soft h-full">
-              {selectedCountry ? (
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 border-b">
-                    <Button variant="ghost" onClick={handleBack}>
-                      <ArrowLeft className="h-4 w-4 mr-2" />
-                      {getBackText()}
-                    </Button>
-                  </div>
-                  <CountryDetailViewV2
-                    countryId={selectedCountry}
-                    language={language}
-                    onPeopleClick={handlePeopleClick}
-                  />
-                </div>
-              ) : (
-                <DefaultMessage language={language} />
-              )}
-            </Card>
+            {selectedCountry ? (
+              <CountryDetailViewV2
+                countryId={selectedCountry}
+                language={language}
+                onPeopleClick={handlePeopleClick}
+                onBack={handleBack}
+              />
+            ) : (
+              <DefaultMessage language={language} />
+            )}
           </div>
 
           {/* List - Right (30%) */}

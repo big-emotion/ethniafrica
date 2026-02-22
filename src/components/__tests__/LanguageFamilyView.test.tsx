@@ -88,34 +88,6 @@ describe("LanguageFamilyView", () => {
     ).toBeInTheDocument();
   });
 
-  it("should display Spanish loading text when language is Spanish", () => {
-    vi.mocked(afrikLoader.getAllLanguageFamilies).mockImplementation(
-      () => new Promise(() => {})
-    );
-
-    render(
-      <LanguageFamilyView language="es" onFamilySelect={mockOnFamilySelect} />
-    );
-
-    expect(
-      screen.getByText("Cargando familias lingüísticas...")
-    ).toBeInTheDocument();
-  });
-
-  it("should display Portuguese loading text when language is Portuguese", () => {
-    vi.mocked(afrikLoader.getAllLanguageFamilies).mockImplementation(
-      () => new Promise(() => {})
-    );
-
-    render(
-      <LanguageFamilyView language="pt" onFamilySelect={mockOnFamilySelect} />
-    );
-
-    expect(
-      screen.getByText("Carregando famílias linguísticas...")
-    ).toBeInTheDocument();
-  });
-
   it("should receive the language prop correctly", () => {
     vi.mocked(afrikLoader.getAllLanguageFamilies).mockImplementation(
       () => new Promise(() => {})

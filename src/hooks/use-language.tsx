@@ -27,7 +27,7 @@ export const useLanguage = () => {
       const stored = localStorage.getItem(
         LANGUAGE_STORAGE_KEY
       ) as Language | null;
-      if (stored && ["en", "fr", "es", "pt"].includes(stored)) {
+      if (stored && ["en", "fr"].includes(stored)) {
         return stored;
       }
     }
@@ -71,7 +71,7 @@ export const useLanguage = () => {
       currentPage === "/" ||
       currentPage === "" ||
       currentPage === `/${language}` ||
-      currentPage.match(/^\/(en|fr|es|pt)$/)
+      currentPage.match(/^\/(en|fr)$/)
     ) {
       // If on homepage, redirect to /{lang}
       router.push(`/${lang}`);

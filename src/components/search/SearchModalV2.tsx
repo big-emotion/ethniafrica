@@ -75,15 +75,9 @@ export const SearchModalV2 = ({
   }, [searchQuery, activeTab]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(
-      language === "en"
-        ? "en-US"
-        : language === "fr"
-          ? "fr-FR"
-          : language === "es"
-            ? "es-ES"
-            : "pt-PT"
-    ).format(Math.round(num));
+    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+      Math.round(num)
+    );
   };
 
   const handleResultClick = (result: SearchResult) => {
@@ -97,92 +91,48 @@ export const SearchModalV2 = ({
   };
 
   const getTabLabels = () => {
-    switch (language) {
-      case "en":
-        return {
-          all: "All",
-          families: "Families",
-          peoples: "Peoples",
-          countries: "Countries",
-        };
-      case "es":
-        return {
-          all: "Todo",
-          families: "Familias",
-          peoples: "Pueblos",
-          countries: "Países",
-        };
-      case "pt":
-        return {
-          all: "Tudo",
-          families: "Famílias",
-          peoples: "Povos",
-          countries: "Países",
-        };
-      default:
-        return {
-          all: "Tout",
-          families: "Familles",
-          peoples: "Peuples",
-          countries: "Pays",
-        };
+    if (language === "en") {
+      return {
+        all: "All",
+        families: "Families",
+        peoples: "Peoples",
+        countries: "Countries",
+      };
     }
+    return {
+      all: "Tout",
+      families: "Familles",
+      peoples: "Peuples",
+      countries: "Pays",
+    };
   };
 
   const getResultTypeLabel = (type: SearchEntityType) => {
-    switch (language) {
-      case "en":
-        switch (type) {
-          case "languageFamily":
-            return "Language Family";
-          case "people":
-            return "People";
-          case "country":
-            return "Country";
-          case "language":
-            return "Language";
-          default:
-            return type;
-        }
-      case "es":
-        switch (type) {
-          case "languageFamily":
-            return "Familia lingüística";
-          case "people":
-            return "Pueblo";
-          case "country":
-            return "País";
-          case "language":
-            return "Idioma";
-          default:
-            return type;
-        }
-      case "pt":
-        switch (type) {
-          case "languageFamily":
-            return "Família linguística";
-          case "people":
-            return "Povo";
-          case "country":
-            return "País";
-          case "language":
-            return "Língua";
-          default:
-            return type;
-        }
+    if (language === "en") {
+      switch (type) {
+        case "languageFamily":
+          return "Language Family";
+        case "people":
+          return "People";
+        case "country":
+          return "Country";
+        case "language":
+          return "Language";
+        default:
+          return type;
+      }
+    }
+    switch (type) {
+      case "languageFamily":
+        return "Famille linguistique";
+      case "people":
+        return "Peuple";
+      case "country":
+        return "Pays";
+      case "language":
+        return "Langue";
       default:
-        switch (type) {
-          case "languageFamily":
-            return "Famille linguistique";
-          case "people":
-            return "Peuple";
-          case "country":
-            return "Pays";
-          case "language":
-            return "Langue";
-          default:
-            return type;
-        }
+        return type;
     }
   };
 
@@ -203,63 +153,26 @@ export const SearchModalV2 = ({
 
   const tabLabels = getTabLabels();
 
-  const dialogTitle =
-    language === "en"
-      ? "Search"
-      : language === "fr"
-        ? "Recherche"
-        : language === "es"
-          ? "Búsqueda"
-          : "Pesquisa";
+  const dialogTitle = language === "en" ? "Search" : "Recherche";
 
   const getPlaceholder = () => {
-    switch (language) {
-      case "en":
-        return "Search for a family, people, or country...";
-      case "es":
-        return "Buscar una familia, pueblo o país...";
-      case "pt":
-        return "Pesquisar uma família, povo ou país...";
-      default:
-        return "Rechercher une famille, un peuple ou un pays...";
-    }
+    return language === "en"
+      ? "Search for a family, people, or country..."
+      : "Rechercher une famille, un peuple ou un pays...";
   };
 
   const getNoResultsText = () => {
     if (!searchQuery.trim()) {
-      switch (language) {
-        case "en":
-          return "Start typing to search...";
-        case "es":
-          return "Comience a escribir para buscar...";
-        case "pt":
-          return "Comece a digitar para pesquisar...";
-        default:
-          return "Commencez à taper pour rechercher...";
-      }
+      return language === "en"
+        ? "Start typing to search..."
+        : "Commencez à taper pour rechercher...";
     }
     if (searchQuery.length < 2) {
-      switch (language) {
-        case "en":
-          return "Type at least 2 characters...";
-        case "es":
-          return "Escriba al menos 2 caracteres...";
-        case "pt":
-          return "Digite pelo menos 2 caracteres...";
-        default:
-          return "Tapez au moins 2 caractères...";
-      }
+      return language === "en"
+        ? "Type at least 2 characters..."
+        : "Tapez au moins 2 caractères...";
     }
-    switch (language) {
-      case "en":
-        return "No results found";
-      case "es":
-        return "No se encontraron resultados";
-      case "pt":
-        return "Nenhum resultado encontrado";
-      default:
-        return "Aucun résultat trouvé";
-    }
+    return language === "en" ? "No results found" : "Aucun résultat trouvé";
   };
 
   return (

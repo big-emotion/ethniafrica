@@ -82,26 +82,6 @@ describe("PeopleView", () => {
     expect(screen.getByText("Loading peoples...")).toBeInTheDocument();
   });
 
-  it("should display Spanish loading text when language is Spanish", () => {
-    vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
-      () => new Promise(() => {})
-    );
-
-    render(<PeopleView language="es" onPeopleSelect={mockOnPeopleSelect} />);
-
-    expect(screen.getByText("Cargando pueblos...")).toBeInTheDocument();
-  });
-
-  it("should display Portuguese loading text when language is Portuguese", () => {
-    vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
-      () => new Promise(() => {})
-    );
-
-    render(<PeopleView language="pt" onPeopleSelect={mockOnPeopleSelect} />);
-
-    expect(screen.getByText("Carregando povos...")).toBeInTheDocument();
-  });
-
   it("should receive the language prop correctly", () => {
     vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
       () => new Promise(() => {})

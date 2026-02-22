@@ -18,7 +18,7 @@ import { ContributionFormFields } from "./ContributionFormFields";
 import { Language } from "@/types/shared";
 
 interface ContributionFormProps {
-  language: "en" | "fr" | "es" | "pt";
+  language: Language;
 }
 
 export function ContributionForm({
@@ -27,7 +27,7 @@ export function ContributionForm({
   const params = useParams();
   const urlLang = params?.lang as string;
   const detectedLanguage: Language =
-    urlLang && ["en", "fr", "es", "pt"].includes(urlLang)
+    urlLang && ["en", "fr"].includes(urlLang)
       ? (urlLang as Language)
       : propLanguage;
   const [type, setType] = useState<string>("");
@@ -94,58 +94,6 @@ export function ContributionForm({
       newLanguageFamily: "Nouvelle famille linguistique",
       updateLanguageFamily: "Modifier une famille linguistique",
       requiredFields: "Veuillez remplir tous les champs obligatoires",
-    },
-    es: {
-      title: "Enviar una contribución",
-      type: "Tipo de contribución",
-      inputMode: "Modo de entrada",
-      jsonMode: "JSON",
-      formMode: "Formulario",
-      payload: "Datos (JSON)",
-      payloadPlaceholder:
-        '{"name_main": "...", "language_family_id": "FLG_...", ...}',
-      name: "Tu nombre (opcional)",
-      email: "Tu email (opcional)",
-      notes: "Notas (opcional)",
-      submit: "Enviar contribución",
-      submitting: "Enviando...",
-      success: "¡Contribución enviada con éxito!",
-      error: "Error al enviar la contribución",
-      invalidJson: "Formato JSON inválido",
-      selectType: "Seleccionar tipo",
-      newPeople: "Nuevo pueblo",
-      updatePeople: "Actualizar pueblo",
-      newCountry: "Nuevo país",
-      updateCountry: "Actualizar país",
-      newLanguageFamily: "Nueva familia lingüística",
-      updateLanguageFamily: "Actualizar familia lingüística",
-      requiredFields: "Por favor complete todos los campos obligatorios",
-    },
-    pt: {
-      title: "Enviar uma contribuição",
-      type: "Tipo de contribuição",
-      inputMode: "Modo de entrada",
-      jsonMode: "JSON",
-      formMode: "Formulário",
-      payload: "Dados (JSON)",
-      payloadPlaceholder:
-        '{"name_main": "...", "language_family_id": "FLG_...", ...}',
-      name: "Seu nome (opcional)",
-      email: "Seu email (opcional)",
-      notes: "Notas (opcional)",
-      submit: "Enviar contribuição",
-      submitting: "Enviando...",
-      success: "Contribuição enviada com sucesso!",
-      error: "Erro ao enviar contribuição",
-      invalidJson: "Formato JSON inválido",
-      selectType: "Selecionar tipo",
-      newPeople: "Novo povo",
-      updatePeople: "Atualizar povo",
-      newCountry: "Novo país",
-      updateCountry: "Atualizar país",
-      newLanguageFamily: "Nova família linguística",
-      updateLanguageFamily: "Atualizar família linguística",
-      requiredFields: "Por favor preencha todos os campos obrigatórios",
     },
   }[detectedLanguage];
 

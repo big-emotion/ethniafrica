@@ -45,32 +45,18 @@ export const MobileMenu = ({
   };
 
   const getNavLabels = () => {
-    switch (language) {
-      case "en":
-        return {
-          families: "Language Families",
-          peoples: "Peoples",
-          countries: "Countries",
-        };
-      case "es":
-        return {
-          families: "Familias lingüísticas",
-          peoples: "Pueblos",
-          countries: "Países",
-        };
-      case "pt":
-        return {
-          families: "Famílias linguísticas",
-          peoples: "Povos",
-          countries: "Países",
-        };
-      default:
-        return {
-          families: "Familles linguistiques",
-          peoples: "Peuples",
-          countries: "Pays",
-        };
+    if (language === "en") {
+      return {
+        families: "Language Families",
+        peoples: "Peoples",
+        countries: "Countries",
+      };
     }
+    return {
+      families: "Familles linguistiques",
+      peoples: "Peuples",
+      countries: "Pays",
+    };
   };
 
   const navLabels = getNavLabels();
@@ -93,13 +79,7 @@ export const MobileMenu = ({
                 }
                 className="w-full justify-start"
               >
-                {language === "en"
-                  ? "Home"
-                  : language === "fr"
-                    ? "Accueil"
-                    : language === "es"
-                      ? "Inicio"
-                      : "Início"}
+                {language === "en" ? "Home" : "Accueil"}
               </Button>
             </Link>
             <Link href={familiesRoute} onClick={() => onOpenChange(false)}>
@@ -141,13 +121,7 @@ export const MobileMenu = ({
               }}
             >
               <Search className="h-4 w-4 mr-2" />
-              {language === "en"
-                ? "Search"
-                : language === "fr"
-                  ? "Rechercher"
-                  : language === "es"
-                    ? "Buscar"
-                    : "Pesquisar"}
+              {language === "en" ? "Search" : "Rechercher"}
             </Button>
           )}
 
@@ -169,13 +143,7 @@ export const MobileMenu = ({
               window.location.href = `/${language}/contribute`;
             }}
           >
-            {language === "en"
-              ? "Contribute"
-              : language === "fr"
-                ? "Contribuer"
-                : language === "es"
-                  ? "Contribuir"
-                  : "Contribuir"}
+            {language === "en" ? "Contribute" : "Contribuer"}
           </Button>
 
           {/* Report Error link */}
@@ -187,13 +155,7 @@ export const MobileMenu = ({
               window.location.href = `/${language}/report-error`;
             }}
           >
-            {language === "en"
-              ? "Report Error"
-              : language === "fr"
-                ? "Signaler une erreur"
-                : language === "es"
-                  ? "Reportar error"
-                  : "Reportar erro"}
+            {language === "en" ? "Report Error" : "Signaler une erreur"}
           </Button>
 
           <Separator />

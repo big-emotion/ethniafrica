@@ -76,36 +76,22 @@ function PageContent() {
   }
 
   // AFRIK v2 routes - Countries
-  if (section === "countries" || section === "pays" || section === "paises") {
+  if (section === "countries" || section === "pays") {
     return <PaysPageContentV2 />;
   }
 
   // AFRIK v2 routes - Language Families
-  if (
-    section === "families" ||
-    section === "familles" ||
-    section === "familias"
-  ) {
+  if (section === "families" || section === "familles") {
     return <FamillesPageContent />;
   }
 
   // AFRIK v2 routes - Peoples
-  if (
-    section === "peoples" ||
-    section === "peuples" ||
-    section === "pueblos" ||
-    section === "povos"
-  ) {
+  if (section === "peoples" || section === "peuples") {
     return <PeuplesPageContent />;
   }
 
   // AFRIK v2 routes - Search
-  if (
-    section === "search" ||
-    section === "recherche" ||
-    section === "buscar" ||
-    section === "pesquisa"
-  ) {
+  if (section === "search" || section === "recherche") {
     return <SearchPageContent />;
   }
 

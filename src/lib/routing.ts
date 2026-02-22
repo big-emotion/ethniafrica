@@ -16,36 +16,18 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     peoples: "peuples",
     search: "recherche",
   },
-  es: {
-    countries: "paises",
-    families: "familias",
-    peoples: "pueblos",
-    search: "buscar",
-  },
-  pt: {
-    countries: "paises",
-    families: "familias",
-    peoples: "povos",
-    search: "pesquisa",
-  },
 };
 
 // Mapping inverse : slug -> pageType
 const SLUG_TO_PAGE: Record<string, PageType> = {
   countries: "countries",
   pays: "countries",
-  paises: "countries",
   families: "families",
   familles: "families",
-  familias: "families",
   peoples: "peoples",
   peuples: "peoples",
-  pueblos: "peoples",
-  povos: "peoples",
   search: "search",
   recherche: "search",
-  buscar: "search",
-  pesquisa: "search",
 };
 
 export const getLocalizedRoute = (
@@ -71,7 +53,7 @@ export const getLanguageFromRoute = (pathname: string): Language | null => {
   if (parts.length < 1) return null;
 
   const lang = parts[0];
-  if (["en", "fr", "es", "pt"].includes(lang)) {
+  if (["en", "fr"].includes(lang)) {
     return lang as Language;
   }
 

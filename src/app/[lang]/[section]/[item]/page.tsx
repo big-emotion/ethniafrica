@@ -19,20 +19,6 @@ const LANGUAGE_SEGMENTS: Record<Language, Record<SectionType, string>> = {
     family: "familles",
     people: "peuples",
   },
-  es: {
-    country: "paises",
-    region: "regiones",
-    ethnicity: "etnias",
-    family: "familias",
-    people: "pueblos",
-  },
-  pt: {
-    country: "paises",
-    region: "regioes",
-    ethnicity: "etnias",
-    family: "familias",
-    people: "povos",
-  },
 };
 
 function resolveSection(lang: Language, section: string): SectionType | null {
@@ -51,7 +37,7 @@ export default async function LegacyDetailRedirect({
 }) {
   const { lang, section, item } = await params;
 
-  if (!["en", "fr", "es", "pt"].includes(lang)) {
+  if (!["en", "fr"].includes(lang)) {
     notFound();
   }
 

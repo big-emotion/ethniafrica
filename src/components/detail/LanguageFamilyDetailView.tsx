@@ -77,86 +77,42 @@ export const LanguageFamilyDetailView = ({
   }, [familyId, language]);
 
   const getNotFoundText = (): string => {
-    switch (language) {
-      case "en":
-        return "Language family not found";
-      case "fr":
-        return "Famille linguistique non trouvée";
-      case "es":
-        return "Familia lingüística no encontrada";
-      case "pt":
-        return "Família linguística não encontrada";
-      default:
-        return "Famille linguistique non trouvée";
-    }
+    return language === "en"
+      ? "Language family not found"
+      : "Famille linguistique non trouvée";
   };
 
   const getErrorText = (): string => {
-    switch (language) {
-      case "en":
-        return "Failed to load language family";
-      case "fr":
-        return "Échec du chargement de la famille linguistique";
-      case "es":
-        return "Error al cargar la familia lingüística";
-      case "pt":
-        return "Falha ao carregar a família linguística";
-      default:
-        return "Échec du chargement de la famille linguistique";
-    }
+    return language === "en"
+      ? "Failed to load language family"
+      : "Échec du chargement de la famille linguistique";
   };
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(
-      language === "en"
-        ? "en-US"
-        : language === "fr"
-          ? "fr-FR"
-          : language === "es"
-            ? "es-ES"
-            : "pt-PT"
-    ).format(Math.round(num));
+    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+      Math.round(num)
+    );
   };
 
   const getTabLabels = () => {
-    switch (language) {
-      case "en":
-        return {
-          general: "General",
-          peoples: "Peoples",
-          linguistics: "Linguistics",
-          history: "History",
-          distribution: "Distribution",
-          sources: "Sources",
-        };
-      case "es":
-        return {
-          general: "General",
-          peoples: "Pueblos",
-          linguistics: "Lingüística",
-          history: "Historia",
-          distribution: "Distribución",
-          sources: "Fuentes",
-        };
-      case "pt":
-        return {
-          general: "Geral",
-          peoples: "Povos",
-          linguistics: "Linguística",
-          history: "História",
-          distribution: "Distribuição",
-          sources: "Fontes",
-        };
-      default:
-        return {
-          general: "Général",
-          peoples: "Peuples",
-          linguistics: "Linguistique",
-          history: "Histoire",
-          distribution: "Distribution",
-          sources: "Sources",
-        };
+    if (language === "en") {
+      return {
+        general: "General",
+        peoples: "Peoples",
+        linguistics: "Linguistics",
+        history: "History",
+        distribution: "Distribution",
+        sources: "Sources",
+      };
     }
+    return {
+      general: "Général",
+      peoples: "Peuples",
+      linguistics: "Linguistique",
+      history: "Histoire",
+      distribution: "Distribution",
+      sources: "Sources",
+    };
   };
 
   if (loading) {
@@ -224,11 +180,7 @@ export const LanguageFamilyDetailView = ({
                     ? family.associatedPeoples.length > 1
                       ? "peoples"
                       : "people"
-                    : language === "es"
-                      ? "pueblos"
-                      : language === "pt"
-                        ? "povos"
-                        : "peuples"}
+                    : "peuples"}
                 </Badge>
               )}
             {family.generalInfo?.geographicArea && (
@@ -366,11 +318,7 @@ export const LanguageFamilyDetailView = ({
                   <Users className="h-5 w-5" />
                   {language === "en"
                     ? "Associated Peoples (Examples)"
-                    : language === "es"
-                      ? "Pueblos asociados (Ejemplos)"
-                      : language === "pt"
-                        ? "Povos associados (Exemplos)"
-                        : "Peuples associés (Exemples)"}
+                    : "Peuples associés (Exemples)"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -410,11 +358,7 @@ export const LanguageFamilyDetailView = ({
                         <Button variant="default" className="w-full gap-2">
                           {language === "en"
                             ? "See all peoples of this family"
-                            : language === "es"
-                              ? "Ver todos los pueblos de esta familia"
-                              : language === "pt"
-                                ? "Ver todos os povos desta família"
-                                : "Voir tous les peuples de cette famille"}
+                            : "Voir tous les peuples de cette famille"}
                           <ArrowRight className="h-4 w-4" />
                         </Button>
                       </Link>
@@ -424,11 +368,7 @@ export const LanguageFamilyDetailView = ({
                   <p className="text-muted-foreground text-sm">
                     {language === "en"
                       ? "No associated peoples listed"
-                      : language === "es"
-                        ? "Ningún pueblo asociado listado"
-                        : language === "pt"
-                          ? "Nenhum povo associado listado"
-                          : "Aucun peuple associé répertorié"}
+                      : "Aucun peuple associé répertorié"}
                   </p>
                 )}
               </CardContent>

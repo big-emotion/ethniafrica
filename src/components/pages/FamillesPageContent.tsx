@@ -15,7 +15,7 @@ import { ArrowLeft, Languages } from "lucide-react";
 import type { LanguageFamilySummary } from "@/types/afrik-frontend";
 
 function DefaultMessage({ language }: { language: string }) {
-  const t = getTranslation(language as "en" | "fr" | "es" | "pt");
+  const t = getTranslation(language as "en" | "fr");
 
   const messages = {
     en: {
@@ -27,16 +27,6 @@ function DefaultMessage({ language }: { language: string }) {
       title: "Sélectionnez une famille linguistique",
       description:
         "Choisissez une famille linguistique dans la liste à droite pour voir ses informations détaillées.",
-    },
-    es: {
-      title: "Seleccione una familia lingüística",
-      description:
-        "Elija una familia lingüística de la lista a la derecha para ver información detallada.",
-    },
-    pt: {
-      title: "Selecione uma família linguística",
-      description:
-        "Escolha uma família linguística da lista à direita para ver informações detalhadas.",
     },
   };
 
@@ -97,33 +87,11 @@ export function FamillesPageContent() {
   };
 
   const getSectionName = () => {
-    switch (language) {
-      case "en":
-        return "Language Families";
-      case "fr":
-        return "Familles linguistiques";
-      case "es":
-        return "Familias lingüísticas";
-      case "pt":
-        return "Famílias linguísticas";
-      default:
-        return "Familles linguistiques";
-    }
+    return language === "en" ? "Language Families" : "Familles linguistiques";
   };
 
   const getBackText = () => {
-    switch (language) {
-      case "en":
-        return "Back";
-      case "fr":
-        return "Retour";
-      case "es":
-        return "Volver";
-      case "pt":
-        return "Voltar";
-      default:
-        return "Retour";
-    }
+    return language === "en" ? "Back" : "Retour";
   };
 
   return (

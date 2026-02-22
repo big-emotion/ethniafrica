@@ -28,14 +28,12 @@ export default function Home() {
 
   // Use lang from URL directly, fallback to language from hook
   const currentLanguage =
-    lang && ["en", "fr", "es", "pt"].includes(lang)
-      ? (lang as Language)
-      : language;
+    lang && ["en", "fr"].includes(lang) ? (lang as Language) : language;
   const t = getTranslation(currentLanguage);
 
   // Sync language from URL param to hook
   useEffect(() => {
-    if (lang && ["en", "fr", "es", "pt"].includes(lang)) {
+    if (lang && ["en", "fr"].includes(lang)) {
       const urlLang = lang as Language;
       if (urlLang !== language) {
         // Update the hook's language state without triggering navigation
@@ -99,20 +97,12 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-display font-bold">
             {currentLanguage === "en"
               ? "Discover the Rich Diversity of African Ethnic Groups"
-              : currentLanguage === "fr"
-                ? "Découvrez la Richesse de la Diversité des Groupes Ethniques Africains"
-                : currentLanguage === "es"
-                  ? "Descubre la Rica Diversidad de los Grupos Étnicos Africanos"
-                  : "Descubra a Rica Diversidade dos Grupos Étnicos Africanos"}
+              : "Découvrez la Richesse de la Diversité des Groupes Ethniques Africains"}
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             {currentLanguage === "en"
               ? "This comprehensive encyclopedia documents the ethnic diversity across all 55 African countries. Our data provides detailed demographic information, helping to understand the rich cultural mosaic that makes up the African continent. Explore regions, countries, and ethnic groups to discover population distributions, cultural connections, and linguistic diversity."
-              : currentLanguage === "fr"
-                ? "Cette encyclopédie complète documente la diversité ethnique dans les 55 pays africains. Nos données fournissent des informations démographiques détaillées, permettant de comprendre la riche mosaïque culturelle qui compose le continent africain. Explorez les régions, pays et groupes ethniques pour découvrir les distributions démographiques, les connexions culturelles et la diversité linguistique."
-                : currentLanguage === "es"
-                  ? "Esta enciclopedia integral documenta la diversidad étnica en los 55 países africanos. Nuestros datos proporcionan información demográfica detallada, ayudando a comprender el rico mosaico cultural que conforma el continente africano. Explora regiones, países y grupos étnicos para descubrir distribuciones poblacionales, conexiones culturales y diversidad lingüística."
-                  : "Esta enciclopédia abrangente documenta a diversidade étnica em todos os 55 países africanos. Nossos dados fornecem informações demográficas detalhadas, ajudando a compreender o rico mosaico cultural que compõe o continente africano. Explore regiões, países e grupos étnicos para descobrir distribuições populacionais, conexões culturais e diversidade linguística."}
+              : "Cette encyclopédie complète documente la diversité ethnique dans les 55 pays africains. Nos données fournissent des informations démographiques détaillées, permettant de comprendre la riche mosaïque culturelle qui compose le continent africain. Explorez les régions, pays et groupes ethniques pour découvrir les distributions démographiques, les connexions culturelles et la diversité linguistique."}
           </p>
         </div>
 
@@ -150,23 +140,13 @@ export default function Home() {
                     <h3 className="text-sm font-medium text-muted-foreground mb-2">
                       {currentLanguage === "en"
                         ? "Language Families"
-                        : currentLanguage === "fr"
-                          ? "Familles linguistiques"
-                          : currentLanguage === "es"
-                            ? "Familias lingüísticas"
-                            : "Famílias linguísticas"}
+                        : "Familles linguistiques"}
                     </h3>
                     <p className="text-2xl md:text-3xl font-display font-bold">
                       {stats.totalLanguageFamilies}
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
-                      {currentLanguage === "en"
-                        ? "documented"
-                        : currentLanguage === "fr"
-                          ? "documentées"
-                          : currentLanguage === "es"
-                            ? "documentadas"
-                            : "documentadas"}
+                      {currentLanguage === "en" ? "documented" : "documentées"}
                     </p>
                   </div>
                 </div>
@@ -182,23 +162,13 @@ export default function Home() {
                     <h3 className="text-sm font-medium text-muted-foreground mb-2">
                       {currentLanguage === "en"
                         ? "African Peoples"
-                        : currentLanguage === "fr"
-                          ? "Peuples africains"
-                          : currentLanguage === "es"
-                            ? "Pueblos africanos"
-                            : "Povos africanos"}
+                        : "Peuples africains"}
                     </h3>
                     <p className="text-2xl md:text-3xl font-display font-bold">
                       {stats.totalPeoples}
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
-                      {currentLanguage === "en"
-                        ? "recorded"
-                        : currentLanguage === "fr"
-                          ? "recensés"
-                          : currentLanguage === "es"
-                            ? "registrados"
-                            : "registrados"}
+                      {currentLanguage === "en" ? "recorded" : "recensés"}
                     </p>
                   </div>
                 </div>
@@ -214,23 +184,13 @@ export default function Home() {
                     <h3 className="text-sm font-medium text-muted-foreground mb-2">
                       {currentLanguage === "en"
                         ? "African Countries"
-                        : currentLanguage === "fr"
-                          ? "Pays africains"
-                          : currentLanguage === "es"
-                            ? "Países africanos"
-                            : "Países africanos"}
+                        : "Pays africains"}
                     </h3>
                     <p className="text-2xl md:text-3xl font-display font-bold">
                       {stats.totalCountries}
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
-                      {currentLanguage === "en"
-                        ? "covered"
-                        : currentLanguage === "fr"
-                          ? "couverts"
-                          : currentLanguage === "es"
-                            ? "cubiertos"
-                            : "cobertos"}
+                      {currentLanguage === "en" ? "covered" : "couverts"}
                     </p>
                   </div>
                 </div>
@@ -253,30 +213,18 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-2">
                   {currentLanguage === "en"
                     ? "Language Families"
-                    : currentLanguage === "fr"
-                      ? "Familles linguistiques"
-                      : currentLanguage === "es"
-                        ? "Familias lingüísticas"
-                        : "Famílias linguísticas"}
+                    : "Familles linguistiques"}
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   {currentLanguage === "en"
                     ? "Explore linguistic diversity"
-                    : currentLanguage === "fr"
-                      ? "Explorer la diversité linguistique"
-                      : currentLanguage === "es"
-                        ? "Explorar diversidad lingüística"
-                        : "Explorar diversidade linguística"}
+                    : "Explorer la diversité linguistique"}
                 </p>
               </div>
               <Button className="w-full" variant="default">
                 {currentLanguage === "en"
                   ? "View Families"
-                  : currentLanguage === "fr"
-                    ? "Voir les familles"
-                    : currentLanguage === "es"
-                      ? "Ver familias"
-                      : "Ver famílias"}
+                  : "Voir les familles"}
               </Button>
             </div>
           </Card>
@@ -293,30 +241,16 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-2">
                   {currentLanguage === "en"
                     ? "African Peoples"
-                    : currentLanguage === "fr"
-                      ? "Peuples africains"
-                      : currentLanguage === "es"
-                        ? "Pueblos africanos"
-                        : "Povos africanos"}
+                    : "Peuples africains"}
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   {currentLanguage === "en"
                     ? "Discover cultures & traditions"
-                    : currentLanguage === "fr"
-                      ? "Découvrir cultures & traditions"
-                      : currentLanguage === "es"
-                        ? "Descubrir culturas & tradiciones"
-                        : "Descobrir culturas & tradições"}
+                    : "Découvrir cultures & traditions"}
                 </p>
               </div>
               <Button className="w-full" variant="default">
-                {currentLanguage === "en"
-                  ? "View Peoples"
-                  : currentLanguage === "fr"
-                    ? "Voir les peuples"
-                    : currentLanguage === "es"
-                      ? "Ver pueblos"
-                      : "Ver povos"}
+                {currentLanguage === "en" ? "View Peoples" : "Voir les peuples"}
               </Button>
             </div>
           </Card>
@@ -331,32 +265,16 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  {currentLanguage === "en"
-                    ? "Countries"
-                    : currentLanguage === "fr"
-                      ? "Pays"
-                      : currentLanguage === "es"
-                        ? "Países"
-                        : "Países"}
+                  {currentLanguage === "en" ? "Countries" : "Pays"}
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   {currentLanguage === "en"
                     ? "Browse by country"
-                    : currentLanguage === "fr"
-                      ? "Parcourir par pays"
-                      : currentLanguage === "es"
-                        ? "Navegar por país"
-                        : "Navegar por país"}
+                    : "Parcourir par pays"}
                 </p>
               </div>
               <Button className="w-full" variant="default">
-                {currentLanguage === "en"
-                  ? "View Countries"
-                  : currentLanguage === "fr"
-                    ? "Voir les pays"
-                    : currentLanguage === "es"
-                      ? "Ver países"
-                      : "Ver países"}
+                {currentLanguage === "en" ? "View Countries" : "Voir les pays"}
               </Button>
             </div>
           </Card>

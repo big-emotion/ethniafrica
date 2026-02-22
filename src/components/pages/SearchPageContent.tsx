@@ -131,15 +131,9 @@ export const SearchPageContent = () => {
 
   // Format number
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(
-      language === "en"
-        ? "en-US"
-        : language === "fr"
-          ? "fr-FR"
-          : language === "es"
-            ? "es-ES"
-            : "pt-PT"
-    ).format(Math.round(num));
+    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+      Math.round(num)
+    );
   };
 
   // Get labels
@@ -156,18 +150,6 @@ export const SearchPageContent = () => {
         people: "Peuple",
         country: "Pays",
         language: "Langue",
-      },
-      es: {
-        languageFamily: "Familia lingüística",
-        people: "Pueblo",
-        country: "País",
-        language: "Idioma",
-      },
-      pt: {
-        languageFamily: "Família linguística",
-        people: "Povo",
-        country: "País",
-        language: "Língua",
       },
     };
     return labels[language][type] || type;
@@ -188,38 +170,10 @@ export const SearchPageContent = () => {
 
   const getFilterLabels = () => {
     return {
-      all:
-        language === "en"
-          ? "All"
-          : language === "fr"
-            ? "Tout"
-            : language === "es"
-              ? "Todo"
-              : "Tudo",
-      families:
-        language === "en"
-          ? "Families"
-          : language === "fr"
-            ? "Familles"
-            : language === "es"
-              ? "Familias"
-              : "Famílias",
-      peoples:
-        language === "en"
-          ? "Peoples"
-          : language === "fr"
-            ? "Peuples"
-            : language === "es"
-              ? "Pueblos"
-              : "Povos",
-      countries:
-        language === "en"
-          ? "Countries"
-          : language === "fr"
-            ? "Pays"
-            : language === "es"
-              ? "Países"
-              : "Países",
+      all: language === "en" ? "All" : "Tout",
+      families: language === "en" ? "Families" : "Familles",
+      peoples: language === "en" ? "Peoples" : "Peuples",
+      countries: language === "en" ? "Countries" : "Pays",
     };
   };
 
@@ -257,86 +211,34 @@ export const SearchPageContent = () => {
   const hasActiveFilters =
     query || selectedType !== "all" || selectedFamily !== "";
 
-  const pageTitle =
-    language === "en"
-      ? "Search"
-      : language === "fr"
-        ? "Recherche"
-        : language === "es"
-          ? "Búsqueda"
-          : "Pesquisa";
+  const pageTitle = language === "en" ? "Search" : "Recherche";
 
   const pageSubtitle =
     language === "en"
       ? "Search for language families, peoples, and countries"
-      : language === "fr"
-        ? "Rechercher des familles linguistiques, peuples et pays"
-        : language === "es"
-          ? "Buscar familias lingüísticas, pueblos y países"
-          : "Pesquisar famílias linguísticas, povos e países";
+      : "Rechercher des familles linguistiques, peuples et pays";
 
   const placeholderText =
-    language === "en"
-      ? "Type to search..."
-      : language === "fr"
-        ? "Tapez pour rechercher..."
-        : language === "es"
-          ? "Escriba para buscar..."
-          : "Digite para pesquisar...";
+    language === "en" ? "Type to search..." : "Tapez pour rechercher...";
 
   const filterByFamilyText =
-    language === "en"
-      ? "Filter by family"
-      : language === "fr"
-        ? "Filtrer par famille"
-        : language === "es"
-          ? "Filtrar por familia"
-          : "Filtrar por família";
+    language === "en" ? "Filter by family" : "Filtrer par famille";
 
   const allFamiliesText =
-    language === "en"
-      ? "All families"
-      : language === "fr"
-        ? "Toutes les familles"
-        : language === "es"
-          ? "Todas las familias"
-          : "Todas as famílias";
+    language === "en" ? "All families" : "Toutes les familles";
 
   const clearFiltersText =
-    language === "en"
-      ? "Clear filters"
-      : language === "fr"
-        ? "Effacer les filtres"
-        : language === "es"
-          ? "Limpiar filtros"
-          : "Limpar filtros";
+    language === "en" ? "Clear filters" : "Effacer les filtres";
 
-  const resultsText =
-    language === "en"
-      ? "results"
-      : language === "fr"
-        ? "résultats"
-        : language === "es"
-          ? "resultados"
-          : "resultados";
+  const resultsText = language === "en" ? "results" : "résultats";
 
   const noResultsText =
-    language === "en"
-      ? "No results found"
-      : language === "fr"
-        ? "Aucun résultat trouvé"
-        : language === "es"
-          ? "No se encontraron resultados"
-          : "Nenhum resultado encontrado";
+    language === "en" ? "No results found" : "Aucun résultat trouvé";
 
   const startSearchText =
     language === "en"
       ? "Start typing to search..."
-      : language === "fr"
-        ? "Commencez à taper pour rechercher..."
-        : language === "es"
-          ? "Comience a escribir para buscar..."
-          : "Comece a digitar para pesquisar...";
+      : "Commencez à taper pour rechercher...";
 
   return (
     <PageLayout

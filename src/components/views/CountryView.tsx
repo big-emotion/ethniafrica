@@ -69,11 +69,7 @@ export const CountryView = ({
               setError(
                 language === "en"
                   ? "Failed to load countries"
-                  : language === "fr"
-                    ? "Échec du chargement des pays"
-                    : language === "es"
-                      ? "Error al cargar países"
-                      : "Falha ao carregar países"
+                  : "Échec du chargement des pays"
               );
             }
           }
@@ -138,60 +134,23 @@ export const CountryView = ({
   }, [countries]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(
-      language === "en"
-        ? "en-US"
-        : language === "fr"
-          ? "fr-FR"
-          : language === "es"
-            ? "es-ES"
-            : "pt-PT"
-    ).format(Math.round(num));
+    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+      Math.round(num)
+    );
   };
 
   const getLoadingText = (): string => {
-    switch (language) {
-      case "en":
-        return "Loading countries...";
-      case "fr":
-        return "Chargement des pays...";
-      case "es":
-        return "Cargando países...";
-      case "pt":
-        return "Carregando países...";
-      default:
-        return "Chargement des pays...";
-    }
+    return language === "en"
+      ? "Loading countries..."
+      : "Chargement des pays...";
   };
 
   const getNoResultsText = (): string => {
-    switch (language) {
-      case "en":
-        return "No countries found";
-      case "fr":
-        return "Aucun pays trouvé";
-      case "es":
-        return "No se encontraron países";
-      case "pt":
-        return "Nenhum país encontrado";
-      default:
-        return "Aucun pays trouvé";
-    }
+    return language === "en" ? "No countries found" : "Aucun pays trouvé";
   };
 
   const getMajorPeoplesLabel = (): string => {
-    switch (language) {
-      case "en":
-        return "major peoples";
-      case "fr":
-        return "peuples majeurs";
-      case "es":
-        return "pueblos principales";
-      case "pt":
-        return "povos principais";
-      default:
-        return "peuples majeurs";
-    }
+    return language === "en" ? "major peoples" : "peuples majeurs";
   };
 
   if (loading) {

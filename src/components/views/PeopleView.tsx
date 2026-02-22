@@ -71,11 +71,7 @@ export const PeopleView = ({
               setError(
                 language === "en"
                   ? "Failed to load peoples"
-                  : language === "fr"
-                    ? "Échec du chargement des peuples"
-                    : language === "es"
-                      ? "Error al cargar pueblos"
-                      : "Falha ao carregar povos"
+                  : "Échec du chargement des peuples"
               );
             }
           }
@@ -150,75 +146,27 @@ export const PeopleView = ({
   }, [peoples, languageFamilyId]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat(
-      language === "en"
-        ? "en-US"
-        : language === "fr"
-          ? "fr-FR"
-          : language === "es"
-            ? "es-ES"
-            : "pt-PT"
-    ).format(Math.round(num));
+    return new Intl.NumberFormat(language === "en" ? "en-US" : "fr-FR").format(
+      Math.round(num)
+    );
   };
 
   const getLoadingText = (): string => {
-    switch (language) {
-      case "en":
-        return "Loading peoples...";
-      case "fr":
-        return "Chargement des peuples...";
-      case "es":
-        return "Cargando pueblos...";
-      case "pt":
-        return "Carregando povos...";
-      default:
-        return "Chargement des peuples...";
-    }
+    return language === "en"
+      ? "Loading peoples..."
+      : "Chargement des peuples...";
   };
 
   const getNoResultsText = (): string => {
-    switch (language) {
-      case "en":
-        return "No peoples found";
-      case "fr":
-        return "Aucun peuple trouvé";
-      case "es":
-        return "No se encontraron pueblos";
-      case "pt":
-        return "Nenhum povo encontrado";
-      default:
-        return "Aucun peuple trouvé";
-    }
+    return language === "en" ? "No peoples found" : "Aucun peuple trouvé";
   };
 
   const getCountriesLabel = (count: number): string => {
-    switch (language) {
-      case "en":
-        return count === 1 ? "country" : "countries";
-      case "fr":
-        return count === 1 ? "pays" : "pays";
-      case "es":
-        return count === 1 ? "país" : "países";
-      case "pt":
-        return count === 1 ? "país" : "países";
-      default:
-        return "pays";
-    }
+    return language === "en" ? (count === 1 ? "country" : "countries") : "pays";
   };
 
   const getPopulationLabel = (): string => {
-    switch (language) {
-      case "en":
-        return "population";
-      case "fr":
-        return "population";
-      case "es":
-        return "población";
-      case "pt":
-        return "população";
-      default:
-        return "population";
-    }
+    return "population";
   };
 
   if (loading) {

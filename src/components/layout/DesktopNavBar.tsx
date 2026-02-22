@@ -45,32 +45,18 @@ export const DesktopNavBar = ({
   };
 
   const getNavLabels = () => {
-    switch (language) {
-      case "en":
-        return {
-          families: "Language Families",
-          peoples: "Peoples",
-          countries: "Countries",
-        };
-      case "es":
-        return {
-          families: "Familias lingüísticas",
-          peoples: "Pueblos",
-          countries: "Países",
-        };
-      case "pt":
-        return {
-          families: "Famílias linguísticas",
-          peoples: "Povos",
-          countries: "Países",
-        };
-      default:
-        return {
-          families: "Familles linguistiques",
-          peoples: "Peuples",
-          countries: "Pays",
-        };
+    if (language === "en") {
+      return {
+        families: "Language Families",
+        peoples: "Peoples",
+        countries: "Countries",
+      };
     }
+    return {
+      families: "Familles linguistiques",
+      peoples: "Peuples",
+      countries: "Pays",
+    };
   };
 
   const navLabels = getNavLabels();
@@ -94,13 +80,7 @@ export const DesktopNavBar = ({
                   height={20}
                   className="object-contain"
                 />
-                {language === "en"
-                  ? "Home"
-                  : language === "fr"
-                    ? "Accueil"
-                    : language === "es"
-                      ? "Inicio"
-                      : "Início"}
+                {language === "en" ? "Home" : "Accueil"}
               </Button>
             </Link>
             <Link href={familiesRoute}>
@@ -146,13 +126,7 @@ export const DesktopNavBar = ({
                 window.location.href = `/${language}/contribute`;
               }}
             >
-              {language === "en"
-                ? "Contribute"
-                : language === "fr"
-                  ? "Contribuer"
-                  : language === "es"
-                    ? "Contribuir"
-                    : "Contribuir"}
+              {language === "en" ? "Contribute" : "Contribuer"}
             </Button>
             <Button
               variant={isActive("report-error") ? "default" : "ghost"}
@@ -161,13 +135,7 @@ export const DesktopNavBar = ({
                 window.location.href = `/${language}/report-error`;
               }}
             >
-              {language === "en"
-                ? "Report Error"
-                : language === "fr"
-                  ? "Signaler une erreur"
-                  : language === "es"
-                    ? "Reportar error"
-                    : "Reportar erro"}
+              {language === "en" ? "Report Error" : "Signaler une erreur"}
             </Button>
             <LanguageSelector
               currentLang={language}

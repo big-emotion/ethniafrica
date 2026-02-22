@@ -21,8 +21,6 @@ interface LanguageSelectorProps {
 const languages = [
   { code: "en" as Language, name: "English", flag: "🇬🇧" },
   { code: "fr" as Language, name: "Français", flag: "🇫🇷" },
-  { code: "es" as Language, name: "Español", flag: "🇪🇸" },
-  { code: "pt" as Language, name: "Português", flag: "🇵🇹" },
 ];
 
 export const LanguageSelector = ({
@@ -50,7 +48,7 @@ export const LanguageSelector = ({
     } else if (
       pathname === "/" ||
       pathname === "" ||
-      pathname.match(/^\/(en|fr|es|pt)$/)
+      pathname.match(/^\/(en|fr)$/)
     ) {
       // If on homepage
       return `/${lang}${querySuffix}`;

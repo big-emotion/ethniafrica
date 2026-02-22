@@ -69,32 +69,6 @@ describe("SearchModalV2", () => {
     ).toBeInTheDocument();
   });
 
-  it("should render Spanish title when language is Spanish", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="es"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
-
-    expect(screen.getByText("Búsqueda")).toBeInTheDocument();
-  });
-
-  it("should render Portuguese title when language is Portuguese", () => {
-    render(
-      <SearchModalV2
-        open={true}
-        onClose={mockOnClose}
-        language="pt"
-        onResultSelect={mockOnResultSelect}
-      />
-    );
-
-    expect(screen.getByText("Pesquisa")).toBeInTheDocument();
-  });
-
   it("should display tab filters", () => {
     render(
       <SearchModalV2

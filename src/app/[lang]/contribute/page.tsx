@@ -24,7 +24,7 @@ export default function ContributePage() {
 
   // Sync language from URL param
   useEffect(() => {
-    if (lang && ["en", "fr", "es", "pt"].includes(lang) && lang !== language) {
+    if (lang && ["en", "fr"].includes(lang) && lang !== language) {
       setLanguage(lang as Language);
     }
   }, [lang, language, setLanguage]);
@@ -135,110 +135,6 @@ export default function ContributePage() {
         button: "Participer sur GitHub",
       },
       footer: "Fait avec émotion pour l'Afrique",
-    },
-    es: {
-      title: "Contribuir",
-      intro: {
-        title: "Contribución y participación",
-        text1: (
-          <>
-            El sitio se alimenta de una{" "}
-            <strong>base de datos estructurada</strong> con datos sobre los
-            pueblos africanos, las familias lingüísticas y los países,
-            organizados según la metodología AFRIK.
-          </>
-        ),
-        text2: (
-          <>
-            Estoy{" "}
-            <strong>abierto a todo tipo de propuestas y contribuciones</strong>,
-            ya sea compartir fuentes, correcciones o ideas para mejorar. Si
-            quieres ayudar, puedes contactarme o contribuir directamente en el{" "}
-            <a
-              href="https://github.com/big-emotion/ethniafrique-atlas"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4"
-            >
-              repositorio de GitHub
-            </a>
-            .
-          </>
-        ),
-      },
-      apiDocs: {
-        title: "Documentación API",
-        text: "Accede a la documentación completa de la API para entender cómo recuperar los datos de forma programática. La API proporciona endpoints para pueblos, familias lingüísticas y países.",
-        button: "Ver documentación API",
-      },
-      download: {
-        title: "Descargar datos",
-        text: "Descarga todos los datos en formato CSV o Excel para tu propio uso, análisis o contribuciones.",
-        csvButton: "Descargar CSV (ZIP)",
-        excelButton: "Descargar Excel",
-      },
-      contact: {
-        title: "Contacto",
-        text: "¿Deseas contactarme o proponer una contribución? Utiliza el formulario a continuación.",
-      },
-      github: {
-        title: "Contribuir vía GitHub",
-        text: "El proyecto es de código abierto y está alojado en GitHub. Puedes contribuir enviando issues, pull requests o mejorando el código fuente.",
-        button: "Contribuir en GitHub",
-      },
-      footer: "Hecho con emoción para África",
-    },
-    pt: {
-      title: "Contribuir",
-      intro: {
-        title: "Contribuição e participação",
-        text1: (
-          <>
-            O site é alimentado por um{" "}
-            <strong>banco de dados estruturado</strong> com dados sobre os povos
-            africanos, as famílias linguísticas e os países, organizados segundo
-            a metodologia AFRIK.
-          </>
-        ),
-        text2: (
-          <>
-            Estou{" "}
-            <strong>aberto a qualquer tipo de proposta ou contribuição</strong>,
-            seja compartilhando fontes, correções ou ideias de melhoria. Se
-            quiser ajudar, entre em contato comigo ou contribua diretamente no{" "}
-            <a
-              href="https://github.com/big-emotion/ethniafrique-atlas"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4"
-            >
-              repositório GitHub
-            </a>
-            .
-          </>
-        ),
-      },
-      apiDocs: {
-        title: "Documentação API",
-        text: "Acesse a documentação completa da API para entender como recuperar os dados de forma programática. A API fornece endpoints para povos, famílias linguísticas e países.",
-        button: "Ver documentação API",
-      },
-      download: {
-        title: "Baixar dados",
-        text: "Baixe todos os dados em formato CSV ou Excel para seu próprio uso, análise ou contribuições.",
-        csvButton: "Baixar CSV (ZIP)",
-        excelButton: "Baixar Excel",
-      },
-      contact: {
-        title: "Contato",
-        text: "Deseja entrar em contato comigo ou propor uma contribuição? Use o formulário abaixo.",
-      },
-      github: {
-        title: "Contribuir via GitHub",
-        text: "O projeto é open source e está hospedado no GitHub. Você pode contribuir enviando issues, pull requests ou melhorando o código fonte.",
-        button: "Contribuir no GitHub",
-      },
-      footer: "Feito com emoção para a África",
     },
   };
 

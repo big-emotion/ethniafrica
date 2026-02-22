@@ -15,7 +15,7 @@ import { ArrowLeft, Users } from "lucide-react";
 import type { PeopleSummary } from "@/types/afrik-frontend";
 
 function DefaultMessage({ language }: { language: string }) {
-  const t = getTranslation(language as "en" | "fr" | "es" | "pt");
+  const t = getTranslation(language as "en" | "fr");
 
   const messages = {
     en: {
@@ -27,16 +27,6 @@ function DefaultMessage({ language }: { language: string }) {
       title: "Sélectionnez un peuple",
       description:
         "Choisissez un peuple dans la liste à droite pour voir des informations détaillées sur leur culture, histoire et traditions.",
-    },
-    es: {
-      title: "Seleccione un pueblo",
-      description:
-        "Elija un pueblo de la lista a la derecha para ver información detallada sobre su cultura, historia y tradiciones.",
-    },
-    pt: {
-      title: "Selecione um povo",
-      description:
-        "Escolha um povo da lista à direita para ver informações detalhadas sobre sua cultura, história e tradições.",
     },
   };
 
@@ -102,33 +92,11 @@ export function PeuplesPageContent() {
   };
 
   const getSectionName = () => {
-    switch (language) {
-      case "en":
-        return "Peoples";
-      case "fr":
-        return "Peuples";
-      case "es":
-        return "Pueblos";
-      case "pt":
-        return "Povos";
-      default:
-        return "Peuples";
-    }
+    return language === "en" ? "Peoples" : "Peuples";
   };
 
   const getBackText = () => {
-    switch (language) {
-      case "en":
-        return "Back";
-      case "fr":
-        return "Retour";
-      case "es":
-        return "Volver";
-      case "pt":
-        return "Voltar";
-      default:
-        return "Retour";
-    }
+    return language === "en" ? "Back" : "Retour";
   };
 
   return (
