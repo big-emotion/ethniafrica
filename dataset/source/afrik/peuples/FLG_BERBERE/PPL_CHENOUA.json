@@ -1,0 +1,35 @@
+{
+  "id": "PPL_CHENOUA",
+  "nameMain": "Chenoua",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["DZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Chenoua",
+      "selfAppellation": "Ic̱enwa / Ach-chinwa (variantes locales)",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbère nord-algérien (Zenati)",
+      "historicalRegion": "Mont Chenoua (Tipasa – Algérie)",
+      "currentCountries": ["DZA"]
+    },
+    "ethnicities": [
+      "Communautés berbérophones de Tipasa",
+      "Groupes des environs de Cherchell"
+    ],
+    "origins": {},
+    "organization": {},
+    "languages": {},
+    "culture": {
+      "source_0": "Traditions agricoles méditerranéennes.",
+      "source_1": "Cérémonies liées aux saisons (Yennayer).",
+      "Artisanat local": "poterie, tissage."
+    },
+    "historicalRole": {},
+    "demography": {},
+    "sources": [
+      "Ethnologue (cbv)",
+      "CNRS Berbère",
+      "Études linguistiques algériennes"
+    ]
+  }
+}

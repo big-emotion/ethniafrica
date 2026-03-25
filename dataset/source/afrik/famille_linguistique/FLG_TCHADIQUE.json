@@ -1,0 +1,74 @@
+{
+  "id": "FLG_TCHADIQUE",
+  "nameFr": "Tchadique",
+  "nameEn": "Chadic",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " L'étiquette « hamite » associait à tort des peuples africains à une origine non-africaine prétendument « civilisatrice ». Le regroupement « hamitique » servait une hiérarchie raciale artificielle. **PREUVES** :",
+      "selfAppellation": "Chadic",
+      "contemporaryUsage": "Le terme est maintenant universellement accepté en linguistique (SIL Ethnologue, Glottolog, UNESCO) et préféré à « hamitique » pour des raisons scientifiques et décoloniales.",
+      "historicalAppellations": "Chadic",
+      "originOfHistoricalTerm": " Le terme « tchadique » (Chadic) provient géographiquement du bassin du lac Tchad, où se concentrent les principales langues du groupe. L'origine académique du terme remonte à la classification afro-asiatique moderne :"
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Bassin du lac Tchad (Sahel et savanes du centre-ouest de l'Afrique), s'étendant du Nigeria septentrional et du Niger méridional à travers le Tchad méridional et le Cameroun septentrional jusqu'au nord de la République centrafricaine.",
+      "numberOfLanguages": 150,
+      "totalSpeakers": 150000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Haoussa / Hausa",
+        "peopleId": "PPL_HAUSA"
+      },
+      {
+        "name": "Massa",
+        "peopleId": "PPL_MASSA"
+      },
+      {
+        "name": "Bura",
+        "peopleId": "PPL_BURA"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues tonales avec structures verbales complexes et flexion nominale relativement simple. **EXEMPLES CONCRETS** :",
+      "phonologicalFeatures": " Systèmes phonologiques riches avec inventaires consonantiques complexes. **DÉTAILS PRÉCIS** :",
+      "relationsWithNeighbors": " Influence réciproque avec les langues nilo-sahariennes, les langues nigéro-congolaises voisines, et les autres branches afro-asiatiques. **EXEMPLES CONCRETS D'EMPRUNTS** :"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " Plusieurs théories coexistent concernant l'origine géographique et les routes migratoires des locuteurs proto-tchadiques. **QUI A CLASSÉ ? CITATIONS COMPLÈTES** :",
+      "emergencePeriod": " **DEUX TEMPORALITÉS** :",
+      "diffusion": " **TOUTES LES THÉORIES DISPONIBLES AVEC AUTEURS** :",
+      "contactZones": " **RÉPONDRE À \"OÙ\" – LOCALISER GÉOGRAPHIQUEMENT** :",
+      "majorEvents": " **CHRONOLOGIE AVEC DATES PRÉCISES** :"
+    },
+    "distribution": {
+      "totalSpeakers": 150000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "[Müller, F.] ([1876]) – *Grundriss der Sprachwissenschaft*. [Vienne]",
+      "[Meinhof, C.] ([1912]) – *Die Sprachen der Hamiten (\"The Languages of the Hamites\")*. [Hamburg]",
+      "[Greenberg, J.H.] ([1955]) – *Studies in African Linguistic Classification*. [New Haven : Compass Publishing Company]",
+      "[Greenberg, J.H.] ([1963]) – *The Languages of Africa*. [Bloomington : Indiana University Press]",
+      "[Cohen, M.] ([1924]) – *Le système verbal sémitique et l'expression du temps*. [Paris]",
+      "[Frajzyngier, Z. & Shay, E.] ([2010]) – *Tense and Aspect in Chadic – A Typological Overview*. Folia Orientalia, Vol. 47. [Cracovie]",
+      "[Frajzyngier, Z. & Shay, E.] ([2001]) – *A Grammar of Hdi*. Mouton Grammar Library. [Berlin : Mouton de Gruyter]",
+      "[Frajzyngier, Z. & Shay, E.] ([2012]) – *A Grammar of Wandala*. Mouton Grammar Library 47. [Berlin : De Gruyter]",
+      "[Frajzyngier, Z. & Shay, E.] ([2003]) – *Explaining Language Structure through Systems Interaction*. Typological Studies in Language 55. [Amsterdam : John Benjamins]",
+      "[Frajzyngier, Z. & Shay, E.] ([2024]) – *Locative Predications in Chadic Languages: Implications for Semantic Analysis*. [Oxford : Oxford University Press]",
+      "[Newman, P.] ([1980]) – *The Classification of Chadic within Afroasiatic*. [In : Bender, M.L. (ed.) – Nilo-Saharan Language Studies]",
+      "[Newman, P.] ([2022]) – *Comprehensive Bibliography of Chadic and Hausa Linguistics* (5ᵉ édition). [Bloomington : Indiana University]",
+      "[Ehret, C.] – *Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary*. [Berkeley : University of California Press]",
+      "[Blench, R.] ([2006]) – *Archaeology, Language, and the African Past*. [Lanham : Altamira Press]",
+      "[Blench, R. & al.] ([2009]) – *The Wadi Howar Diaspora and its role in the spread of East Sudanic languages from the fourth to the first millennia BCE*. BMC Evolutionary Biology, Vol. 9, Article 63. [https://bmcecolevol.biomedcentral.com/articles/10.1186/1471-2148-9-63]",
+      "[Cruciani, F. & al.] ([2010]) – *Human Y chromosome R1b1b2-V88 shows a parental trace within the Green Sahara*. European Journal of Human Genetics, Vol. 18. [Nature Publishing Group : https://www.nature.com/articles/ejhg201088]",
+      "[Tishkoff, S.A. & al.] ([2009]) – *The genetic structure and history of Africans and African Americans*. Science, Vol. 324. [Washington : AAAS]",
+      "[SIL Ethnologue] ([2025]) – *Languages of Nigeria / Niger / Chad / Cameroon*. [https://www.ethnologue.com/]",
+      "[Glottolog] ([2025]) – *Chadic Overview*. [https://glottolog.org/resource/languoid/id/chad1250]",
+      "[Britannica] ([2025]) – *Chadic Languages*. [https://www.britannica.com/topic/Chadic-languages]",
+      "[Wikipedia] ([2025]) – *Chadic languages / Hausa language*. [https://en.wikipedia.org/wiki/Chadic_languages]",
+      "[UNFPA] ([2025]) – *West & Central Africa Regional Profiles*. [https://wcaro.unfpa.org/en/overview]"
+    ]
+  }
+}

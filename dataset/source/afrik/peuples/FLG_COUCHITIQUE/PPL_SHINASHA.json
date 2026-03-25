@@ -1,0 +1,59 @@
+{
+  "id": "PPL_SHINASHA",
+  "nameMain": "Shinasha",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Shinasha",
+      "selfAppellation": "",
+      "exonyms": ["N/A"],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A (si applicable) :",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Ouest",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": ["Shinasha"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": ["Ouest"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "N/A",
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 0,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": ["Recherche web"]
+  }
+}

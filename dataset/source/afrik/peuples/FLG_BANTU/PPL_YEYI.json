@@ -1,0 +1,60 @@
+{
+  "id": "PPL_YEYI",
+  "nameMain": "Yeyi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["BWA"],
+  "content": {
+    "appellations": {
+      "mainName": "Yeyi",
+      "selfAppellation": "",
+      "exonyms": ["Yeyi (terme utilisé par les Européens)"],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Nord du Botswana (Okavango)",
+      "currentCountries": ["BWA"]
+    },
+    "ethnicities": ["Yeyi"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": ["Nord du Botswana (Okavango)"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Yeyi (yey)",
+      "isoCodes": ["yey"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 30,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

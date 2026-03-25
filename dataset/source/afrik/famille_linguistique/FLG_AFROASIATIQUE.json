@@ -1,0 +1,80 @@
+{
+  "id": "FLG_AFROASIATIQUE",
+  "nameFr": "Afro-asiatique",
+  "nameEn": "Afroasiatic",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " Le concept est une construction artificielle sans validité scientifique démontrée (aucune loi phonétique commune, aucune proto-langue reconstruite entre les 5 groupes). Il mélange critères raciaux, bibliques et linguistiques pour nier l'africanité de l'Égypte. Le terme « chamitique » est colonial et obsolète.",
+      "selfAppellation": "Afroasiatic",
+      "contemporaryUsage": " Bien que utilisé par convention académique, l'existence de cette famille en tant qu'unité génétique est contestée par les preuves modernes (notamment travaux d'Obenga) qui montrent plutôt une parenté directe entre l'Égyptien ancien et les langues négro-africaines (Niger-Congo, Nilo-saharien).",
+      "historicalAppellations": "Afroasiatic",
+      "originOfHistoricalTerm": " Le terme « chamito-sémitique » a été forgé au XIXe siècle par Friedrich Müller dans un but idéologique : séparer l'Égypte ancienne de l'Afrique noire et rattacher l'Afrique du Nord au Moyen-Orient. Il repose sur une classification biblique (Cham/Sem) et non scientifique."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Afrique du Nord, Corne de l'Afrique, Sahel et Sahara, Extensions sahéliennes (Afrique de l'Ouest, Centrale et de l'Est)",
+      "numberOfLanguages": 375,
+      "totalSpeakers": 500000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Arabes",
+        "peopleId": "PPL_ARABES_AFRIQUE"
+      },
+      {
+        "name": "Amazighs (Berbères)",
+        "peopleId": "PPL_AMAZIGH_MACRO"
+      },
+      {
+        "name": "Haoussa",
+        "peopleId": "PPL_HAUSA"
+      },
+      {
+        "name": "Somali",
+        "peopleId": "PPL_SOMALI"
+      },
+      {
+        "name": "Oromo",
+        "peopleId": "PPL_OROMO"
+      },
+      {
+        "name": "Kabyles",
+        "peopleId": "PPL_KABYLE"
+      },
+      {
+        "name": "Touaregs",
+        "peopleId": "PPL_TUAREG"
+      },
+      {
+        "name": "Amhara",
+        "peopleId": "PPL_AMHARA"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Incohérences majeures entre les groupes supposés. Le sémitique (racines trilitères, masculin/féminin obligatoire) diffère radicalement de l'égyptien ancien (absences de racines trilitères, absence de genre grammatical).",
+      "phonologicalFeatures": " Aucune innovation phonétique partagée entre les 5 groupes. Pas de lois de correspondance régulières validant l'unité de la famille \"afroasiatique\".",
+      "relationsWithNeighbors": " Les travaux de Théophile Obenga démontrent des correspondances régulières entre l'Égyptien ancien et le Phylum Négro-africain :",
+      "keyInnovations": " Aucune proto-langue \"afroasiatique\" n'a pu être reconstruite scientifiquement."
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " Le regroupement \"afroasiatique\" est considéré par l'école d'Obenga comme une zone de contact et d'emprunts historiques, non comme une parenté génétique. Le Berbère moderne comporte de nombreux emprunts (latins, arabes).",
+      "emergencePeriod": " Non spécifiée dans les sources disponibles.",
+      "diffusion": " Expansion hétérogène. Distinction nette entre l'ancrage africain de l'Égypte ancienne et les dynamiques ultérieures du Sémitique et du Berbère.",
+      "historicalBreaks": " - Séparation idéologique artificielle de l'Égypte du reste du continent au XIXe siècle. - Divergences profondes structurelles entre le Sémitique et les langues africaines autochtones.",
+      "contactZones": " Vallée du Nil, Sahara, Corne de l'Afrique (zones de brassage intense expliquant les emprunts).",
+      "majorEvents": " Non spécifiés dans les sources disponibles."
+    },
+    "distribution": {
+      "totalSpeakers": 500000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Friedrich Müller (inventeur du terme \"chamito-sémitique\" et de la classification originelle)",
+      "Théophile Obenga – *L'origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*",
+      "Théophile Obenga – *La Philosophie africaine de la période pharaonique*",
+      "Cheikh Anta Diop – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*",
+      "Hetzron (2003) – *The Semitic Languages* (pour la classification classique)",
+      "Glottolog – Afroasiatic overview"
+    ]
+  }
+}

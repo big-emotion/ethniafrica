@@ -21,14 +21,14 @@ import {
 } from "../gapAnalyzer";
 import type { CrossLayerGap } from "../types";
 
-// Paths to real data files
+// Paths to real data files (JSON format)
 const DATASET_ROOT = path.resolve(__dirname, "../../../dataset/source/afrik");
-const PEOPLE_FILE = path.join(DATASET_ROOT, "peuples/FLG_BANTU/PPL_ZULU.txt");
+const PEOPLE_FILE = path.join(DATASET_ROOT, "peuples/FLG_BANTU/PPL_ZULU.json");
 const FAMILY_FILE = path.join(
   DATASET_ROOT,
-  "famille_linguistique/FLG_BANTU.txt"
+  "famille_linguistique/FLG_BANTU.json"
 );
-const COUNTRY_FILE = path.join(DATASET_ROOT, "pays/BFA.txt");
+const COUNTRY_FILE = path.join(DATASET_ROOT, "pays/BFA.json");
 
 // Read real files once for all tests
 const peopleContent = fs.readFileSync(PEOPLE_FILE, "utf-8");
@@ -37,33 +37,20 @@ const countryContent = fs.readFileSync(COUNTRY_FILE, "utf-8");
 
 describe("Gap Analyzer", () => {
   describe("analyzePeopleCultureGap", () => {
-    it("should detect that culture subsections A-F are flattened by parseSection", () => {
+    it("should return null for JSON files (culture structure is preserved in JSON)", () => {
+      // With JSON source format, culture is already structured — gap resolved
       const gap = analyzePeopleCultureGap(peopleContent);
-
-      // The PPL_ZULU file has a culture section (Section 5) with nested items
-      // but parseSection() flattens them into key-value pairs
-      expect(gap).not.toBeNull();
-      expect(gap!.layer).toBe("source-parser");
-      expect(gap!.entityType).toBe("people");
-      expect(gap!.field).toBe("culture");
-      expect(gap!.severity).toBe("high");
-    });
-
-    it("should return a clear, actionable description", () => {
-      const gap = analyzePeopleCultureGap(peopleContent);
-      expect(gap).not.toBeNull();
-      expect(gap!.description).toBeTruthy();
-      expect(gap!.description.length).toBeGreaterThan(20);
-      // Description should mention the flattening issue
-      expect(gap!.description).toMatch(/flat|nested|subsection|structure/i);
+      expect(gap).toBeNull();
     });
 
     it("should return null for content without a culture section", () => {
-      const minimalContent = `# Nom du peuple
-- Nom principal du peuple : Test
-- Identifiant peuple (ID) : PPL_TEST
-- Famille linguistique principale : Test (FLG_TEST)
-- Pays actuels : TST`;
+      const minimalContent = JSON.stringify({
+        id: "PPL_TEST",
+        nameMain: "Test",
+        languageFamilyId: "FLG_TEST",
+        currentCountries: [],
+        content: {},
+      });
 
       const gap = analyzePeopleCultureGap(minimalContent);
       expect(gap).toBeNull();
@@ -71,51 +58,19 @@ describe("Gap Analyzer", () => {
   });
 
   describe("analyzeFamilyDecolonialGap", () => {
-    it("should detect missing decolonial header fields in parsed output", () => {
+    it("should return null for JSON files (all decolonial fields preserved in JSON)", () => {
+      // With JSON source format, all 6 decolonial fields are present — gap resolved
       const gap = analyzeFamilyDecolonialGap(familyContent);
-
-      expect(gap).not.toBeNull();
-      expect(gap!.layer).toBe("source-parser");
-      expect(gap!.entityType).toBe("languageFamily");
-      expect(gap!.field).toBe("decolonialHeader");
-      expect(gap!.severity).toBe("medium");
+      expect(gap).toBeNull();
     });
 
-    it("should identify which fields are missing from parser output", () => {
-      const gap = analyzeFamilyDecolonialGap(familyContent);
-      expect(gap).not.toBeNull();
-      // The FLG_BANTU file has all 6 decolonial fields but parser only extracts 3
-      // Missing: Appellation(s) historique(s), Origine du terme historique,
-      //          Lien avec la famille linguistique
-      expect(gap!.description).toMatch(
-        /Appellation|Origine du terme|Lien avec la famille/i
-      );
-    });
-
-    it("should return null if all decolonial fields are extracted", () => {
-      // Minimal content with only the 3 fields the parser handles
-      const minimalContent = `# Famille linguistique
-
-## HEADER DÉCOLONIAL (obligatoire)
-
-- Identifiant famille linguistique (FLG_xxxxx) : FLG_TEST
-- Nom français : Test
-- Pourquoi le terme pose problème (si applicable) : Some issue
-- Auto-appellation (locuteurs / linguistes contemporains) : Self name
-- Usage contemporain (définition moderne de la famille) : Modern use
-
-------------------------------------------
-
-## MODÈLE STRUCTURÉ AFRIK
-
-# 1. Informations générales
-- Nom de la famille : Test
-- Aire géographique : Africa
-- Nombre de langues : 10
-- Nombre total de locuteurs : environ 1 millions`;
-
+    it("should return null for minimal JSON content", () => {
+      const minimalContent = JSON.stringify({
+        id: "FLG_TEST",
+        nameFr: "Test",
+        content: { decolonialHeader: null },
+      });
       const gap = analyzeFamilyDecolonialGap(minimalContent);
-      // Should be null since no extra fields exist in source that parser misses
       expect(gap).toBeNull();
     });
   });
@@ -140,26 +95,18 @@ describe("Gap Analyzer", () => {
   });
 
   describe("analyzeCountryDemographicsGap", () => {
-    it("should detect percentageInAfrica field in source but not parsed", () => {
+    it("should return null for JSON files (percentageInAfrica field in JSON if present)", () => {
+      // With JSON format, this specific TXT field pattern no longer exists — gap resolved
       const gap = analyzeCountryDemographicsGap(countryContent);
-
-      // BFA.txt contains "Pourcentage en Afrique" lines
-      expect(gap).not.toBeNull();
-      expect(gap!.layer).toBe("source-parser");
-      expect(gap!.entityType).toBe("country");
-      expect(gap!.field).toBe("percentageInAfrica");
-      expect(gap!.severity).toBe("low");
+      expect(gap).toBeNull();
     });
 
     it("should return null for content without percentageInAfrica", () => {
-      const contentWithout = `# Nom du pays
-- Nom officiel actuel : Test
-- Identifiant pays (ISO 3166-1 alpha-3) : TST
-
-# DONNÉES DÉMOGRAPHIQUES
-### Peuple : TestPeople
-- Population : 1000
-- Pourcentage dans le pays : 100%`;
+      const contentWithout = JSON.stringify({
+        id: "TST",
+        nameFr: "Test",
+        content: { demographics: null },
+      });
 
       const gap = analyzeCountryDemographicsGap(contentWithout);
       expect(gap).toBeNull();
@@ -201,28 +148,18 @@ describe("Gap Analyzer", () => {
   });
 
   describe("analyzePeopleDemographyGap", () => {
-    it("should detect missing country-level breakdown in parsed output", () => {
+    it("should return null for JSON files (distribution data in JSON if present)", () => {
+      // With JSON format, Répartition par pays text pattern no longer exists — gap resolved
       const gap = analyzePeopleDemographyGap(peopleContent);
-
-      // PPL_ZULU.txt has "Répartition par pays" in Section 7
-      expect(gap).not.toBeNull();
-      expect(gap!.layer).toBe("source-parser");
-      expect(gap!.entityType).toBe("people");
-      expect(gap!.field).toBe("demography.distributionByCountry");
-      expect(gap!.severity).toBe("medium");
+      expect(gap).toBeNull();
     });
 
     it("should return null for content without distribution data", () => {
-      const minimalContent = `# Nom du peuple
-- Nom principal du peuple : Test
-- Identifiant peuple (ID) : PPL_TEST
-- Famille linguistique principale : Test (FLG_TEST)
-- Pays actuels : TST
-
-# 7. Démographie globale
-- Population totale (tous pays) : 100 000
-- Année de référence : 2025
-- Source : Test`;
+      const minimalContent = JSON.stringify({
+        id: "PPL_TEST",
+        nameMain: "Test",
+        content: { demography: { totalPopulation: 100000 } },
+      });
 
       const gap = analyzePeopleDemographyGap(minimalContent);
       expect(gap).toBeNull();
@@ -237,29 +174,27 @@ describe("Gap Analyzer", () => {
       expect(gaps.length).toBeGreaterThan(0);
     });
 
-    it("should include gaps from all three layers", async () => {
+    it("should include gaps from parser-component and component-source layers", async () => {
       const gaps = await analyzeAllGaps();
 
       const layers = new Set(gaps.map((g) => g.layer));
-      expect(layers.has("source-parser")).toBe(true);
+      // source-parser gaps are resolved by JSON migration
       expect(layers.has("parser-component")).toBe(true);
       expect(layers.has("component-source")).toBe(true);
     });
 
-    it("should include gaps of all severity levels", async () => {
+    it("should include gaps of multiple severity levels", async () => {
       const gaps = await analyzeAllGaps();
 
       const severities = new Set(gaps.map((g) => g.severity));
       expect(severities.has("high")).toBe(true);
       expect(severities.has("medium")).toBe(true);
-      expect(severities.has("low")).toBe(true);
     });
 
-    it("should return at least 5 gaps (the known structural issues)", async () => {
+    it("should return at least 3 gaps (the known remaining structural issues)", async () => {
       const gaps = await analyzeAllGaps();
-      // We know of at least: culture flat, decolonial missing, historicalFacts,
-      // etymology regex, distribution type mismatch, plus dynamic ones
-      expect(gaps.length).toBeGreaterThanOrEqual(5);
+      // Remaining: historicalFacts not displayed, etymology fragility, distribution type mismatch
+      expect(gaps.length).toBeGreaterThanOrEqual(3);
     });
 
     it("should have valid structure for every gap", async () => {

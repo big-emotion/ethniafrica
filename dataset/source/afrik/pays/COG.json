@@ -1,0 +1,147 @@
+{
+  "id": "COG",
+  "nameFr": "République du Congo",
+  "nameOfficial": "République du Congo (République du Congo)",
+  "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. Le pays est aussi appelé \"Congo-Brazzaville\" pour le distinguer de la République démocratique du Congo (Congo-Kinshasa).",
+  "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Congo-Brazzaville\" a été utilisé pour distinguer ce pays de la République démocratique du Congo (Congo-Kinshasa) après l'indépendance des deux pays en 1960.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la République du Congo était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Développement des royaumes et chefferies bantoues (Royaume Kongo, chefferies Teke) sans nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et chefferies indépendants : Royaume Kongo (partie ouest), royaume Tio (Teke), chefferies Mbochi, et autres peuples bantous. Les Portugais utilisaient le terme \"Congo\" pour désigner la région du royaume Kongo.",
+      "colonization": "1880-1960 : Colonie française du Congo (partie de l'Afrique-Équatoriale française, AEF). Les Français ont créé la colonie du Congo français en 1880. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960. Brazzaville était la capitale de l'AEF.",
+      "contemporary": "1960 : Indépendance du Congo (15 août 1960), proclamation de la République du Congo. Le nom \"République du Congo\" est officialisé. Le pays est aussi appelé \"Congo-Brazzaville\" pour le distinguer de la République démocratique du Congo (Congo-Kinshasa)."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume Kongo",
+        "period": "XIVe - XIXe siècles",
+        "dominantPeoples": ["Kongo (Bakongo)"],
+        "politicalCenters": [
+          "Mbanza Kongo (capitale historique)",
+          "région du Pool"
+        ],
+        "historicalRole": "Royaume puissant qui a établi des relations avec les Portugais dès le XVe siècle. Influence majeure sur la région ouest du Congo-Brazzaville."
+      },
+      {
+        "name": "Royaume Tio (Teke)",
+        "period": "Précolonial - XIXe siècle",
+        "dominantPeoples": ["Teke (Bateke)"],
+        "politicalCenters": ["Région de la Cuvette", "Plateaux"],
+        "historicalRole": "Royaume Tio puissant, organisation politique structurée, commerce avec les Européens. Résistance à la colonisation française."
+      },
+      {
+        "name": "Chefferies Mbochi",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Mbochi"],
+        "politicalCenters": ["Cuvette", "Likouala"],
+        "historicalRole": "Chefferies Mbochi, organisation lignagère, traditions forestières."
+      },
+      {
+        "name": "Colonie française du Congo",
+        "period": "1880 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples congolais sous domination française"
+        ],
+        "politicalCenters": [
+          "Brazzaville (capitale coloniale et capitale de l'AEF)"
+        ],
+        "historicalRole": "Colonie française, intégration dans l'AEF. Exploitation économique (caoutchouc, bois, puis pétrole), développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste au XXe siècle."
+      },
+      {
+        "name": "République du Congo",
+        "period": "1960 - présent",
+        "dominantPeoples": ["Tous les peuples congolais"],
+        "politicalCenters": ["Brazzaville (capitale)"],
+        "historicalRole": "Indépendance en 1960. Histoire politique mouvementée : période socialiste (1969-1991), transition démocratique (1991), guerres civiles (1993-1999, 2016-2017), développement économique basé sur le pétrole."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Kongo (Brazzaville)",
+        "selfAppellation": "Bakongo",
+        "exonyms": ["Kongo (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KONGO_BRAZZA",
+        "mainRegion": "Pool, région de Brazzaville",
+        "languages": ["Kikongo", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Kongo\" est neutre et accepté. L'auto-appellation \"Bakongo\" (pluriel de Mukongo) est préférée."
+      },
+      {
+        "name": "Teke",
+        "selfAppellation": "Bateke",
+        "exonyms": [
+          "Teke (terme utilisé par les Européens)",
+          "Tio (nom du royaume historique)"
+        ],
+        "peopleId": "PPL_TEKKE",
+        "mainRegion": "Plateaux, Cuvette",
+        "languages": ["Teke (teg", "teo", "tbz)", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Teke\" est neutre et accepté. L'auto-appellation \"Bateke\" est préférée."
+      },
+      {
+        "name": "Mbochi",
+        "selfAppellation": "Mbochi",
+        "exonyms": ["Mbochi (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MBOCHI",
+        "mainRegion": "Cuvette, Likouala",
+        "languages": ["Mbochi (mdx)", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Mbochi\" est neutre et accepté."
+      },
+      {
+        "name": "Sangha",
+        "selfAppellation": "Sangha",
+        "exonyms": ["Sangha (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SANGO",
+        "mainRegion": "Sangha, Likouala",
+        "languages": ["Sangha", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Sangha\" est neutre et accepté."
+      },
+      {
+        "name": "Vili",
+        "selfAppellation": "Bavili",
+        "exonyms": ["Vili (terme utilisé par les Européens)"],
+        "peopleId": "PPL_VILI",
+        "mainRegion": "Kouilou, Pointe-Noire",
+        "languages": ["Vili", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Vili\" est neutre et accepté. L'auto-appellation \"Bavili\" est préférée."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Musique congolaise (soukous, rumba), danse traditionnelle, poésie orale, artisanat (poterie, tissage, sculpture), masques traditionnels, tambours royaux",
+      "dominantReligions": "Christianisme (catholique majoritaire, protestant, kimbanguiste), croyances traditionnelles (syncrétisme), islam (minorité)",
+      "lifestyles": "Vie principalement urbaine (Brazzaville, Pointe-Noire), agriculture (manioc, bananes, arachides), pêche (fleuve Congo, océan Atlantique), commerce, industrie pétrolière",
+      "socialOrganization": "Système de chefferies traditionnelles (historique), structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens",
+      "regionalRelations": "Relations historiques avec les peuples de la RDC, du Gabon, de la RCA, de l'Angola. Diaspora importante en France, en RDC, au Gabon, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par les peuples bantous (Kongo, Teke, Mbochi). Développement de royaumes et chefferies indépendants.",
+      "middleAges": "Développement du royaume Kongo (XIVe-XIXe siècles) et du royaume Tio (Teke). Expansion territoriale et unification culturelle partielle.",
+      "precolonial": "Apogée du royaume Kongo et du royaume Tio. Commerce avec les Portugais et autres Européens. Résistance à la colonisation.",
+      "colonization": "1880 : Création de la colonie française du Congo. 1910 : Intégration dans l'Afrique-Équatoriale française (AEF) avec Brazzaville comme capitale. Exploitation économique (caoutchouc, bois). Résistance des peuples autochtones.",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Indépendance en 1960 (15 août) sous la présidence de Fulbert Youlou.",
+      "postIndependence": "Première République (1960-1969) : régime de Fulbert Youlou. République populaire du Congo (1969-1991) : période socialiste sous Marien Ngouabi puis Denis Sassou-Nguesso. Transition démocratique (1991) : multipartisme. Guerres civiles (1993-1999, 2016-2017) : conflits politiques et ethniques. République du Congo depuis 1991 : développement économique basé sur le pétrole, défis de démocratisation et de réconciliation."
+    },
+    "sources": [
+      "CIA World Factbook – Republic of the Congo",
+      "SIL Ethnologue – Languages of the Republic of the Congo",
+      "Recensements nationaux congolais (RGPH-5, 2023)",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples congolais",
+      "Études historiques sur le royaume Kongo et le royaume Tio"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Kongo (Brazzaville)",
+          "peopleId": "PPL_KONGO_BRA"
+        }
+      ]
+    }
+  }
+}

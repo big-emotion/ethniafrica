@@ -1,0 +1,32 @@
+{
+  "id": "PPL_OROMO",
+  "nameMain": "Oromo",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH", "KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Oromo",
+      "selfAppellation": "Oromoo",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitique oriental",
+      "historicalRegion": "Oromia (Éthiopie centrale, orientale et méridionale)",
+      "currentCountries": ["ETH", "KEN"]
+    },
+    "ethnicities": ["Borana", "Barentu", "Arsi", "Guji", "Raya Oromo"],
+    "origins": {},
+    "organization": {},
+    "languages": {},
+    "culture": {
+      "source_0": "Rites gadaa.",
+      "source_1": "Musiques tubaa, chants oromo.",
+      "Gastronomie": "marqaa, injera oromo."
+    },
+    "historicalRole": {},
+    "demography": {},
+    "sources": [
+      "Ethnologue (orm)",
+      "Ethiopian CSA",
+      "Oromo Studies Association"
+    ]
+  }
+}

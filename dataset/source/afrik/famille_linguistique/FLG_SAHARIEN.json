@@ -1,0 +1,66 @@
+{
+  "id": "FLG_SAHARIEN",
+  "nameFr": "Saharien",
+  "nameEn": "Saharan",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " - Le terme « Saharien » est une dénomination géographique imposée par les linguistes occidentaux, sans correspondre à une auto-identification historique ou culturelle des communautés concernées. - Joseph Greenberg, héritier d'une tradition de classification linguistique eurocentrée, utilise la méthode de la « mass comparison » critiquée par des linguistes contemporains (Martin Haspelmath, Lyle Campbell) pour manque de rigueur quantitative dans les correspondances phonétiques. - Des auteurs coloniaux ont utilisé des classifications raciales (notamment l'opposition « hamite » vs « nègre ») pour catégoriser les peuples sahariens (notamment les Toubous), créant des hiérarchies pseudo-historiques. - Des linguistes africains comme Théophile Obenga (suivant Cheikh Anta Diop) critiquent les grandes classifications de Greenberg, défendant que de nombreux idiomes africains partagent un patrimoine commun sous-jacent (lexique commun, morphologie) qui n'est pas bien rendu par les grandes familles telles que Nilo-Saharien. - Les études génétiques modernes (ex. \"African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations\", 2019) montrent que les lignées linguistiques se corrèlent davantage avec l'histoire génétique locale qu'avec une « origine saharienne » monolithique, soulignant plutôt la complexité et l'hybridité des populations. - La cohérence interne du groupe Saharien est largement reconnue (Cyffer 2020), mais l'appartenance au phylum Nilo-Saharien reste controversée, certains linguistes estimant qu'il y a davantage de traits dus au contact linguistique qu'à une ascendance commune claire.",
+      "selfAppellation": "Saharan",
+      "contemporaryUsage": "Les communautés utilisent leurs endonymes spécifiques (Kanuri, Beria, Tedaga, Dazaga). Le terme « Saharien » n'est pas utilisé par les communautés comme auto-nom, mais uniquement comme terme académique occidental.",
+      "historicalAppellations": "Saharan",
+      "originOfHistoricalTerm": " Le terme « Saharien » (anglais : \"Saharan\") a été proposé par Joseph H. Greenberg dans son ouvrage *The Languages of Africa* (1963, Chicago : University of Chicago Press). Greenberg a classé ce groupe comme branche du phylum Nilo-Saharien qu'il proposait. Avant Greenberg, des explorateurs comme Heinrich Barth (1853) avaient décrit les langues Kanuri et Teda-Daza autour du lac Tchad, mais sans classification formelle en tant que famille unifiée."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Sahara central et oriental, bassin du lac Tchad, Tibesti (Tchad/Libye), nord-est du Tchad, est du Soudan, nord-est du Nigéria, sud-est du Niger, extrême nord du Cameroun",
+      "numberOfLanguages": 10,
+      "totalSpeakers": 12000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Kanuri",
+        "peopleId": "PPL_KANURI"
+      },
+      {
+        "name": "Zaghawa",
+        "peopleId": "PPL_ZAGHAWA"
+      },
+      {
+        "name": "Teda",
+        "peopleId": "PPL_TEDA"
+      },
+      {
+        "name": "Daza",
+        "peopleId": "PPL_DAZA"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Les langues sahariennes sont généralement classées comme langues **SOV** (sujet-objet-verbe) ou montrent une forte tendance au verbe final dans certaines variantes. Exemples concrets :"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " Théories linguistiques : 1. Classification de Greenberg (1963) : Joseph H. Greenberg classe les langues sahariennes comme branche du phylum Nilo-Saharien dans *The Languages of Africa* (Chicago : University of Chicago Press, 1963). Cette classification reste la plus influente mais a été critiquée pour sa méthode de « mass comparison ». 2. Théorie de Cyffer (2020) : Norbert Cyffer, dans « Saharan » (Oxford Handbook of African Languages, 2020), affermit la cohérence génétique interne du groupe saharien tout en reconnaissant les débats sur son appartenance au phylum Nilo-Saharien. 3. Théorie de Blench : Roger Blench suggère que Saharien forme un groupe avec Songhay (branche « Songhay-Saharan ») au sein de Nilo-Saharien, proposant une relation plus étroite entre ces deux groupes. 4. Théories alternatives : certains linguistes contestent l'unité du phylum Nilo-Saharien ou le rattachement de certaines langues, suggérant que les similarités résultent en partie de contact plutôt que d'une origine génétique unique. Théories archéologiques : - Origine estimée autour du bassin du lac Tchad ou dans le couloir Tchad-Dongola. Les reconstructions linguistiques suggèrent que le proto-Saharien a été parlé plusieurs milliers d'années avant aujourd'hui, possiblement au Néolithique (5ᵉ-4ᵉ millénaire av. J.-C.), correspondant aux périodes humides du Sahara (Holocène moyen).",
+      "emergencePeriod": " 1. Émergence historique de la famille Saharienne : les reconstructions linguistiques suggèrent que le proto-Saharien a été parlé plusieurs milliers d'années avant aujourd'hui, possiblement au Néolithique (5ᵉ-4ᵉ millénaire av. J.-C.), correspondant aux périodes humides du Sahara (Holocène moyen, environ 10 000-5 000 av. J.-C.). La séparation des langues sahariennes entre elles remonte probablement à plusieurs millénaires, avec diversification autour du bassin du lac Tchad. 2. Date de classification académique : le terme « Saharan languages » a été stabilisé et formalisé par Joseph H. Greenberg dans *The Languages of Africa* (1963). Avant cette classification, des explorateurs et linguistes avaient décrit les langues individuellement : Heinrich Barth (1853) mentionne les langues autour du lac Tchad, des descriptions isolées de Kanuri, Zaghawa, Teda-Daza au XIXᵉ et début XXᵉ siècle. Diedrich Hermann Westermann (1910-1950) définit des groupes « sudaniques » qui préfigureront le Saharien. Les travaux récents de Norbert Cyffer (2020) dans l'Oxford Handbook of African Languages constituent une mise à jour importante de la reconstruction proto-Saharienne.",
+      "diffusion": " Théories multiples disponibles : Théorie 1 (expansion depuis le lac Tchad) : Expansion à partir du bassin du lac Tchad vers le nord (Teda-Daza dans le Tibesti, Libye) et vers l'ouest (Kanuri dans le Nigéria, Niger). Diffusion liée aux périodes humides du Sahara et aux routes commerciales historiques. Théorie 2 (interactions multiples) : Contacts prolongés et multiples entre langues sahariennes et langues afro-asiatiques (chadiques, berbères, arabes), migrations historiques (commerce, échanges pastoraux), influençant la diffusion et la diversité. Expansion liée aux anciens réseaux culturels sahariens lors des périodes humides, avec contact avec langues afro-asiatiques dans les oasis. Théorie 3 (origine hybride, moins acceptée) : Certaines langues classées dans Saharien pourraient être hybrides ou avoir des substrats préexistants non Nilo-Sahariens, remettant en question une origine unique. Les similarités résulteraient en partie de contact plutôt que d'une ascendance génétique commune. Routes migratoires documentées :",
+      "contactZones": " Localisation géographique précise :"
+    },
+    "distribution": {
+      "totalSpeakers": 12000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Cyffer, Norbert (2020) – *Saharan*. In : Rainer Vossen & Gerrit J. Dimmendaal (eds.), *The Oxford Handbook of African Languages*, Oxford University Press, pp. 383-391. https://academic.oup.com/edited-volume/38608/chapter-abstract/334726085",
+      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Chicago : University of Chicago Press.",
+      "Blench, Roger (2006-2023) – Travaux sur la classification Nilo-Saharienne, incluant le groupe Saharien et la proposition de branche « Songhay-Saharan ».",
+      "Dimmendaal, Gerrit J. – *Nilo-Saharan Linguistics*. Études sur les langues nilo-sahariennes.",
+      "Blažek, Václav (2007) – *On application of glottochronology for Saharan Languages*. In : *Viva Africa 2007*. Application de la glottochronologie aux langues sahariennes.",
+      "SIL Ethnologue (2025) – *Kanuri language*, *Teda-Daza languages*, *Zaghawa language*. https://www.ethnologue.com",
+      "Glottolog (2025) – *Saharan branch*. Classification et ressources linguistiques.",
+      "UNESCO – *Atlas des langues africaines*. Cartographie des langues africaines.",
+      "Wikipedia (2025) – *Saharan languages*, *Kanuri language*, *Zaghawa language*, *Languages of Niger*. Articles encyclopédiques mis à jour.",
+      "The Editors of Encyclopaedia Britannica (2025) – \"Saharan languages\". *Britannica*. https://www.britannica.com/topic/Saharan-languages",
+      "Études génétiques :",
+      "Fan, Shaohua et al. (2019) – \"African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations\". *Genome Biology*, 20:82. https://link.springer.com/article/10.1186/s13059-019-1679-2",
+      "Études génétiques sur les populations Nilo-Sahariennes et leurs corrélations avec les classifications linguistiques."
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "id": "DJI",
+  "nameFr": "République de Djibouti",
+  "nameOfficial": "République de Djibouti (République de Djibouti)",
+  "etymology": "Le nom \"Djibouti\" provient de la ville de Djibouti, fondée par les Français en 1888. L'origine du nom de la ville est incertaine, mais pourrait dériver du mot afar \"gabouti\" (panier en fibres de palmier) ou d'une légende locale. Le nom a été adopté pour le pays à l'indépendance en 1977.",
+  "nameOriginActor": "Le nom \"Djibouti\" a été donné par les Français lors de la fondation de la ville de Djibouti en 1888. Le nom a été officialisé pour le pays à l'indépendance en 1977, remplaçant \"Territoire français des Afars et des Issas\". Le nom reflète l'identité de la capitale et du pays.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de Djibouti était peuplé de peuples Afar et Somali sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires (Adal, Dankali, etc.).",
+      "middleAges": "Développement de sultanats et chefferies : sultanat d'Adal (Afar), chefferies Somali (Issa, Gadabursi, Isaaq). Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de sultanats et chefferies autonomes : sultanat d'Adal (Afar, aussi appelé Dankali), chefferies Somali (Issa, Gadabursi, Isaaq). Les Européens utilisaient les termes \"Côte française des Somalis\" ou \"Pays des Afars et des Issas\" pour désigner la région.",
+      "colonization": "1862-1885 : Traités français avec les sultans afar et les chefs somali. 1896 : Côte française des Somalis (colonie française). 1967 : Territoire français des Afars et des Issas (changement de nom). Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1977.",
+      "contemporary": "1977 : Indépendance de Djibouti (27 juin 1977), proclamation de la République de Djibouti. Le nom \"Djibouti\" remplace \"Territoire français des Afars et des Issas\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Sultanat d'Adal",
+        "period": "Précolonial - XIXe siècle",
+        "dominantPeoples": ["Afar"],
+        "politicalCenters": ["Aussa (capitale du sultanat)", "chefferies afar"],
+        "historicalRole": "Sultanat d'Adal (aussi appelé Dankali), État afar puissant dans la région. Pastoralisme nomade, commerce transsaharien. Relations avec les empires éthiopiens et les sultanats somali."
+      },
+      {
+        "name": "Chefferies Somali",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Somali (Issa", "Gadabursi", "Isaaq)"],
+        "politicalCenters": ["Chefferies traditionnelles somali"],
+        "historicalRole": "Chefferies Somali organisées en clans patrilinéaires (Issa, Gadabursi, Isaaq). Pastoralisme nomade, système clanique très structuré. Relations avec les sultanats somali voisins."
+      },
+      {
+        "name": "Côte française des Somalis",
+        "period": "1896 - 1967",
+        "dominantPeoples": [
+          "Tous les peuples djiboutiens sous domination française"
+        ],
+        "politicalCenters": ["Djibouti-ville (capitale coloniale)"],
+        "historicalRole": "Colonie française, développement de Djibouti-ville comme port stratégique. Exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones. Rôle stratégique du port de Djibouti."
+      },
+      {
+        "name": "Territoire français des Afars et des Issas",
+        "period": "1967 - 1977",
+        "dominantPeoples": [
+          "Tous les peuples djiboutiens sous domination française"
+        ],
+        "politicalCenters": ["Djibouti-ville (capitale administrative)"],
+        "historicalRole": "Territoire français, changement de nom pour refléter la composition ethnique (Afars et Issa). Développement du mouvement indépendantiste. Indépendance en 1977."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Somali",
+        "selfAppellation": "Soomaali",
+        "exonyms": [
+          "Somali (terme utilisé par les Européens)",
+          "\"Somalies\" (forme coloniale française",
+          "dépassée)",
+          "Issa",
+          "Gadabursi",
+          "Isaaq (noms des clans)"
+        ],
+        "peopleId": "PPL_SOMALI",
+        "mainRegion": "Sud de Djibouti (Issa majoritaires politiquement), Gadabursi, Isaaq",
+        "languages": ["Somali (som", "ISO 639-3)", "français", "arabe"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "\"Soomaali\" est l'auto-appellation. \"Somali\" est l'exonyme le plus courant. \"Somalies\" est une forme coloniale française dépassée. Les clans (Issa, Gadabursi, Isaaq) sont des sous-groupes somali. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Afar",
+        "selfAppellation": "Qafár",
+        "exonyms": [
+          "Afar (terme utilisé par les Européens)",
+          "\"Danakil\" (terme européen et arabe ancien",
+          "connotation péjorative",
+          "à éviter)",
+          "\"Dankali\" (terme historique)"
+        ],
+        "peopleId": "PPL_AFAR",
+        "mainRegion": "Nord et Centre de Djibouti",
+        "languages": ["Afar (aar", "ISO 639-3)", "français", "arabe"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "\"Qafár\" est l'auto-appellation. \"Afar\" est l'exonyme le plus courant et accepté. \"Danakil\" est un terme européen et arabe ancien qui peut avoir une connotation péjorative et doit être évité. \"Dankali\" est un terme historique utilisé pour désigner les Afar et peut être utilisé dans un contexte historique, mais \"Afar\" est préféré."
+      },
+      {
+        "name": "Arabes",
+        "selfAppellation": "Arabes",
+        "exonyms": ["Arabes (terme utilisé par les Européens)"],
+        "peopleId": "PPL_ARABES_AFRIQUE",
+        "mainRegion": "Zones urbaines, Djibouti-ville",
+        "languages": ["Arabe (arabe yéménite", "arb", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "Le terme \"Arabes\" est l'auto-appellation. Les Arabes de Djibouti sont principalement originaires du Yémen (Hadramout). Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes d'origine",
+        "exonyms": ["Migrants (terme descriptif)"],
+        "mainRegion": "Zones urbaines, Djibouti-ville",
+        "languages": ["Langues d'origine", "français", "arabe"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation selon son origine (Éthiopie, Somalie, Comores, etc.). Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "Arabe",
+          "isoCode": "arb",
+          "isPrimary": true
+        },
+        {
+          "name": "Somali"
+        },
+        {
+          "name": "Afar"
+        }
+      ],
+      "culturalTraditions": "Traditions couchitiques (Somali, Afar) : pastoralisme nomade, système clanique patrilinéaire, poésie orale (gabay chez les Somali, poésie guerrière chez les Afar). Traditions arabes (commerce, religion). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Architecture nomade (Afar). Élevage pastoral de chameaux et de bovins.",
+      "dominantReligions": "Islam (sunnite majoritaire, école chaféite), toutes les communautés sont musulmanes",
+      "lifestyles": "Pastoralisme nomade (Somali, Afar, élevage de chameaux et de bovins), commerce et activités urbaines (zones urbaines, Djibouti-ville). Urbanisation importante. Économie basée sur les services (port de Djibouti, services logistiques, bases militaires étrangères), le commerce de transit, et l'élevage pastoral.",
+      "socialOrganization": "Organisation en clans patrilinéaires (Somali, système clanique très structuré), sultanats (Afar, sultanat d'Aussa). Importance des lignages et des familles étendues. Rôle des chefs traditionnels (ugaas, suldaan chez les Somali, sultans chez les Afar). Assemblées traditionnelles (shir chez les Somali).",
+      "regionalRelations": "Relations historiques avec l'Éthiopie (commerce, peuples transfrontaliers), l'Érythrée (Afar, frontière), la Somalie (Somali, frontière). Intégration dans l'IGAD (Autorité intergouvernementale pour le développement). Relations commerciales et culturelles transfrontalières. Rôle stratégique du port de Djibouti pour l'Éthiopie (accès à la mer)."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples Afar et Somali, populations couchitiques anciennes de la Corne de l'Afrique. Développement du pastoralisme nomade.",
+      "middleAges": "Développement du sultanat d'Adal (Afar), chefferies Somali (Issa, Gadabursi, Isaaq). Développement de réseaux commerciaux régionaux et transsahariens. Relations avec les empires éthiopiens et les sultanats somali.",
+      "precolonial": "Consolidation du sultanat d'Adal (Afar), chefferies Somali organisées en clans. Pastoralisme nomade développé. Commerce transsaharien. Contacts avec les Européens (Français, Britanniques).",
+      "colonization": "1862-1885 : Traités français avec les sultans afar et les chefs somali. 1888 : Fondation de Djibouti-ville par les Français. 1896 : Création de la colonie de Côte française des Somalis. Période coloniale française (1896-1977), développement du port de Djibouti comme port stratégique. 1967 : Changement de nom pour \"Territoire français des Afars et des Issas\". Développement du mouvement indépendantiste au XXe siècle.",
+      "independenceStruggle": "1970s : Mouvement pour l'indépendance mené par les dirigeants djiboutiens. 1977 : Indépendance de Djibouti (27 juin 1977), proclamation de la République de Djibouti. Le nom \"Djibouti\" remplace \"Territoire français des Afars et des Issas\".",
+      "postIndependence": "1977-présent : République de Djibouti, présidence de Hassan Gouled Aptidon (1977-1999) puis d'Ismaïl Omar Guelleh (depuis 1999). Stabilité politique relative. Défis : pauvreté, dépendance aux services portuaires et aux bases militaires étrangères, tensions ethniques (Afar/Somali). Le port de Djibouti est stratégique pour l'Éthiopie (accès à la mer) et accueille des bases militaires étrangères (France, États-Unis, Chine, etc.)."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Djibouti",
+      "CIA World Factbook – Djibouti",
+      "ONU / UNFPA – Démographie Djibouti 2025",
+      "Recensements djiboutiens",
+      "Études anthropologiques sur les peuples de Djibouti",
+      "Études historiques sur le sultanat d'Adal"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Somali",
+          "population": 650000,
+          "percentageInCountry": 60,
+          "peopleId": "PPL_SOMALI",
+          "region": "Sud de Djibouti (Issa majoritaires politiquement), Gadabursi, Isaaq",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Afar",
+          "population": 380000,
+          "percentageInCountry": 35,
+          "peopleId": "PPL_AFAR",
+          "region": "Nord et Centre de Djibouti",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Arabes",
+          "population": 35000,
+          "percentageInCountry": 3,
+          "peopleId": "PPL_ARABES_AFRIQUE",
+          "region": ""
+        }
+      ]
+    }
+  }
+}

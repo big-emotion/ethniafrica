@@ -1,0 +1,32 @@
+{
+  "id": "PPL_TIGRAY",
+  "nameMain": "Tigrayans",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ETH", "ERI"],
+  "content": {
+    "appellations": {
+      "mainName": "Tigrayans",
+      "selfAppellation": "ትግራይ (Təgray)",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Sémitique du Nord",
+      "historicalRegion": "Hautes terres du Tigray (Éthiopie) et d’Érythrée",
+      "currentCountries": ["ETH", "ERI"]
+    },
+    "ethnicities": ["Akele Guzay", "Enderta"],
+    "origins": {},
+    "organization": {},
+    "languages": {
+      "mainLanguage": "Tigrinya"
+    },
+    "culture": {
+      "source_0": "Liturgie orthodoxe.",
+      "source_1": "Manuscrits, poésies religieuses.",
+      "source_2": "Architecture rupestre (Wukro, Abreha Atsbeha)."
+    },
+    "historicalRole": {},
+    "demography": {
+      "source": "peuple_demographie_globale.csv"
+    },
+    "sources": ["Encyclopaedia Aethiopica", "Ethiopian CSA", "Ethnologue (tir)"]
+  }
+}

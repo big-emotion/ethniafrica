@@ -1,0 +1,302 @@
+{
+  "id": "KEN",
+  "nameFr": "République du Kenya (Republic of Kenya)",
+  "nameOfficial": "République du Kenya (Republic of Kenya)",
+  "etymology": "Le nom \"Kenya\" vient du mont Kenya, appelé \"Kirinyaga\" (montagne de blancheur) par les Kikuyu. Les explorateurs européens du XIXe siècle ont utilisé \"Kenya\" d'après le mont Kenya. Le nom a été officialisé lors de la colonisation britannique.",
+  "nameOriginActor": "Le nom vient du mont Kenya, appelé \"Kirinyaga\" par les Kikuyu. Les explorateurs européens ont popularisé le terme \"Kenya\" au XIXe siècle. Le nom a été officialisé par les Britanniques lors de la colonisation.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de groupes bantous, nilotiques et couchitiques sans nom unifié. Les peuples autochtones (Kikuyu, Luo, Maasai, etc.) avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Développement de royaumes et chefferies indépendants. Commerce avec les Arabes et les Swahili sur la côte.",
+      "precolonial": "Mosaïque de peuples bantous (Kikuyu, Luhya, Kamba, Meru), nilotiques (Luo, Maasai, Samburu, Pokot, Turkana) et couchitiques (Somali, Borana). Commerce côtier swahili. Pas de nom unifié pour l'ensemble du territoire.",
+      "colonization": "1895 : Protectorat britannique de l'Afrique de l'Est. 1920 : Colonie du Kenya. Le nom \"Kenya\" est imposé par les colonisateurs britanniques.",
+      "contemporary": "Indépendance en 1963 sous le nom de \"République du Kenya\". Le nom officiel en anglais est \"Republic of Kenya\" et en swahili \"Jamhuri ya Kenya\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaumes swahili",
+        "period": "VIIIe - XIXe siècles",
+        "dominantPeoples": ["Swahili"],
+        "politicalCenters": ["Mombasa", "Lamu", "Malindi"],
+        "historicalRole": "Cités-États swahili sur la côte, commerce avec les Arabes, les Indiens et les Européens. Civilisation swahili ancienne."
+      },
+      {
+        "name": "Royaumes bantous",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Kikuyu", "Luhya", "Kamba", "Meru"],
+        "politicalCenters": ["Mont Kenya", "régions centrales et occidentales"],
+        "historicalRole": "Royaumes et chefferies bantous, organisation politique traditionnelle, agriculture."
+      },
+      {
+        "name": "Confédérations nilotiques",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Luo", "Maasai", "Samburu", "Pokot", "Turkana"],
+        "politicalCenters": ["Rift Valley", "Nyanza"],
+        "historicalRole": "Confédérations nilotiques, tradition pastorale, organisation par groupes d'âge."
+      },
+      {
+        "name": "Protectorat de l'Afrique de l'Est",
+        "period": "1895 - 1920",
+        "dominantPeoples": [
+          "Tous les peuples kenyans sous administration coloniale britannique"
+        ],
+        "politicalCenters": ["Mombasa", "Nairobi"],
+        "historicalRole": "Protectorat britannique, développement de Nairobi comme centre administratif."
+      },
+      {
+        "name": "Colonie du Kenya",
+        "period": "1920 - 1963",
+        "dominantPeoples": [
+          "Tous les peuples kenyans sous administration coloniale britannique"
+        ],
+        "politicalCenters": ["Nairobi (capitale coloniale)"],
+        "historicalRole": "Colonie britannique, résistance kenyane (Mau Mau), mouvements nationalistes."
+      },
+      {
+        "name": "République du Kenya",
+        "period": "1963 - présent",
+        "dominantPeoples": ["Tous les peuples kenyans"],
+        "politicalCenters": ["Nairobi (capitale)"],
+        "historicalRole": "Indépendance en 1963. Histoire politique avec alternance démocratique. Développement économique, hub est-africain."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Kikuyu",
+        "selfAppellation": "Gĩkũyũ",
+        "exonyms": ["Kikuyu (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KIKUYU",
+        "mainRegion": "Centre (Nyeri, Kiambu)",
+        "languages": ["Kikuyu", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Kikuyu\" est neutre et accepté. L'auto-appellation \"Gĩkũyũ\" est préférée."
+      },
+      {
+        "name": "Luhya",
+        "selfAppellation": "Luhya",
+        "exonyms": [
+          "Luhya (terme utilisé par les Européens)",
+          "parfois appelés \"Baluhya\" (pluriel)"
+        ],
+        "peopleId": "PPL_LUHYA",
+        "mainRegion": "Ouest",
+        "languages": ["Luhya", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Luhya\" est neutre et accepté."
+      },
+      {
+        "name": "Kalenjin",
+        "selfAppellation": "Kalenjin",
+        "exonyms": [
+          "Kalenjin (terme utilisé par les Européens)",
+          "groupe comprenant Nandi",
+          "Kipsigis",
+          "Pokot",
+          "Tugen",
+          "Marakwet"
+        ],
+        "peopleId": "PPL_KALENJIN",
+        "mainRegion": "Rift Valley",
+        "languages": ["Kalenjin", "swahili", "anglais"],
+        "languageFamily": "FLG_NILOTIQUE",
+        "appellationRemarks": "Le terme \"Kalenjin\" est neutre et accepté."
+      },
+      {
+        "name": "Luo",
+        "selfAppellation": "Luo",
+        "exonyms": ["Luo (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LUO",
+        "mainRegion": "Nyanza",
+        "languages": ["Luo", "swahili", "anglais"],
+        "languageFamily": "FLG_NILOTIQUE",
+        "appellationRemarks": "Le terme \"Luo\" est neutre et accepté."
+      },
+      {
+        "name": "Kamba",
+        "selfAppellation": "Kamba",
+        "exonyms": ["Kamba (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KAMBA",
+        "mainRegion": "Sud-Est",
+        "languages": ["Kamba", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Kamba\" est neutre et accepté."
+      },
+      {
+        "name": "Somali",
+        "selfAppellation": "Soomaali",
+        "exonyms": ["Somali (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SOMALI",
+        "mainRegion": "Nord-Est (Garissa, Wajir)",
+        "languages": ["Somali", "swahili", "anglais"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "Le terme \"Somali\" est neutre et accepté. L'auto-appellation \"Soomaali\" est préférée."
+      },
+      {
+        "name": "Kisii",
+        "selfAppellation": "Kisii",
+        "exonyms": ["Kisii (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KISII",
+        "mainRegion": "Sud-Ouest",
+        "languages": ["Kisii", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Kisii\" est neutre et accepté."
+      },
+      {
+        "name": "Meru",
+        "selfAppellation": "Meru",
+        "exonyms": ["Meru (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MERU",
+        "mainRegion": "Mont Kenya",
+        "languages": ["Meru", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Meru\" est neutre et accepté."
+      },
+      {
+        "name": "Mijikenda",
+        "selfAppellation": "Mijikenda",
+        "exonyms": [
+          "Mijikenda (terme signifiant \"neuf peuples\" en swahili)",
+          "groupe comprenant Giriama",
+          "Digo",
+          "Chonyi"
+        ],
+        "peopleId": "PPL_MIJIKENDA",
+        "mainRegion": "Côte",
+        "languages": ["Mijikenda", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Mijikenda\" est neutre et accepté."
+      },
+      {
+        "name": "Maasai",
+        "selfAppellation": "Maasai",
+        "exonyms": [
+          "Maasai (terme utilisé par les Européens)",
+          "Masai (variante)"
+        ],
+        "peopleId": "PPL_MAASAI",
+        "mainRegion": "Rift Valley",
+        "languages": ["Maasai", "swahili", "anglais"],
+        "languageFamily": "FLG_NILOTIQUE",
+        "appellationRemarks": "Le terme \"Maasai\" est neutre et accepté."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Musique traditionnelle (benga, taarab), danse traditionnelle, poésie orale, artisanat (vannerie, poterie, bijoux maasai), architecture traditionnelle, élevage pastoral (Maasai, Samburu, Turkana)",
+      "dominantReligions": "Christianisme (protestant majoritaire, catholique), islam (minorité, surtout sur la côte), croyances traditionnelles (syncrétisme)",
+      "lifestyles": "Vie principalement rurale, agriculture (thé, café, maïs, haricots), élevage (bovins, caprins, dromadaires), pêche (lacs), tourisme, commerce, urbanisation croissante",
+      "socialOrganization": "Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, groupes d'âge (Maasai, Samburu), importance des ancêtres",
+      "regionalRelations": "Relations historiques avec les peuples de Tanzanie, d'Ouganda, d'Éthiopie, de Somalie, du Soudan du Sud. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par des groupes bantous, nilotiques et couchitiques. Développement de royaumes et chefferies indépendants.",
+      "middleAges": "Développement des cités-États swahili sur la côte (VIIIe-XIXe siècles). Commerce avec les Arabes, les Indiens et les Européens. Civilisation swahili ancienne.",
+      "precolonial": "Mosaïque de peuples bantous, nilotiques et couchitiques. Commerce côtier swahili. Pas d'unification politique.",
+      "colonization": "1895 : Protectorat britannique de l'Afrique de l'Est. 1920 : Colonie du Kenya. Développement de Nairobi comme centre administratif. Résistance kenyane (Mau Mau, 1952-1960).",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Révolte des Mau Mau (1952-1960). Indépendance obtenue en 1963. Jomo Kenyatta devient premier président.",
+      "postIndependence": "Première République (1963-1978) : présidence de Jomo Kenyatta, stabilité politique. Deuxième République (1978-2002) : présidence de Daniel arap Moi. Troisième République depuis 2002 : alternance démocratique, développement économique, hub est-africain."
+    },
+    "sources": [
+      "CIA World Factbook – Kenya",
+      "SIL Ethnologue – Languages of Kenya",
+      "Recensements nationaux kenyans",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples kenyans",
+      "Études historiques sur la colonisation et l'indépendance"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Kikuyu",
+          "population": 9300000,
+          "percentageInCountry": 17,
+          "percentageInAfrica": 0.65,
+          "peopleId": "PPL_KIKUYU",
+          "region": "Centre (Nyeri, Kiambu)",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Luhya",
+          "population": 7700000,
+          "percentageInCountry": 14,
+          "percentageInAfrica": 0.54,
+          "peopleId": "PPL_LUHYA",
+          "region": "Ouest",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Kalenjin",
+          "population": 7200000,
+          "percentageInCountry": 13,
+          "percentageInAfrica": 0.5,
+          "peopleId": "PPL_KALENJIN",
+          "region": "Rift Valley",
+          "languageFamily": "FLG_NILOTIQUE"
+        },
+        {
+          "name": "Luo",
+          "population": 5600000,
+          "percentageInCountry": 10,
+          "percentageInAfrica": 0.39,
+          "peopleId": "PPL_LUO",
+          "region": "Nyanza",
+          "languageFamily": "FLG_NILOTIQUE"
+        },
+        {
+          "name": "Kamba",
+          "population": 5600000,
+          "percentageInCountry": 10,
+          "percentageInAfrica": 0.39,
+          "peopleId": "PPL_KAMBA",
+          "region": "Sud-Est",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Somali",
+          "population": 3300000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.23,
+          "peopleId": "PPL_SOMALI",
+          "region": "Nord-Est (Garissa, Wajir)",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Kisii",
+          "population": 3300000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.23,
+          "peopleId": "PPL_KISII",
+          "region": "Sud-Ouest",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Meru",
+          "population": 2200000,
+          "percentageInCountry": 4,
+          "percentageInAfrica": 0.15,
+          "peopleId": "PPL_MERU",
+          "region": "Mont Kenya",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Mijikenda",
+          "population": 2700000,
+          "percentageInCountry": 5,
+          "percentageInAfrica": 0.19,
+          "peopleId": "PPL_MIJIKENDA",
+          "region": "Côte",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Maasai",
+          "population": 1100000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.08,
+          "peopleId": "PPL_MAASAI",
+          "region": "Rift Valley",
+          "languageFamily": "FLG_NILOTIQUE"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "PPL_HAUSA",
+  "nameMain": "Hausa",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA", "NER", "CMR", "GHA", "TCD", "SDN"],
+  "content": {
+    "appellations": {
+      "mainName": "Hausa",
+      "selfAppellation": "Hausawa",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique occidental",
+      "historicalRegion": "Sahel central (Kano, Katsina, Zaria)",
+      "currentCountries": ["NGA", "NER", "CMR", "GHA", "TCD", "SDN"]
+    },
+    "ethnicities": ["Kano", "Katsina", "Zaria (Zazzau)"],
+    "origins": {},
+    "organization": {},
+    "languages": {
+      "mainLanguage": "Hausa"
+    },
+    "culture": {
+      "source_0": "Musique griotique (mawaka).",
+      "source_1": "Architecture en banco.",
+      "source_2": "Marchés urbains historiques (Kano Kurmi).",
+      "source_3": "Poésie et littérature en ajami (hausa en écriture arabe)."
+    },
+    "historicalRole": {},
+    "demography": {},
+    "sources": ["Ethnologue (hau)", "Sokoto Studies", "UNFPA Sahara"]
+  }
+}

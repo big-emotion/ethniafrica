@@ -1,0 +1,330 @@
+{
+  "id": "CIV",
+  "nameFr": "République de Côte d'Ivoire",
+  "nameOfficial": "République de Côte d'Ivoire (République de Côte d'Ivoire)",
+  "etymology": "Le nom \"Côte d'Ivoire\" provient du français et fait référence au commerce de l'ivoire qui se pratiquait le long de la côte atlantique depuis le XVe siècle. Les navigateurs portugais utilisaient le terme \"Costa do Marfim\" (Côte d'Ivoire en portugais) pour désigner cette région riche en éléphants et en ivoire. Le nom a été officialisé par les Français lors de la création de la colonie en 1893.",
+  "nameOriginActor": "Le nom \"Côte d'Ivoire\" a été donné par les navigateurs européens (portugais, puis français) à partir du XVe siècle en référence au commerce de l'ivoire pratiqué le long de la côte. Les Français ont officialisé ce nom lors de la création de la colonie de Côte d'Ivoire en 1893. Le nom n'est pas traduit dans les langues étrangères (contrairement à d'autres pays) pour préserver l'identité nationale.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la Côte d'Ivoire était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaumes Akan, chefferies Krou, etc.).",
+      "middleAges": "Développement de royaumes Akan (Baoulé, Agni, Abron) migrés depuis le Ghana, peuples Krou forestiers (Bété, Wé, Dida), populations Mandé du Nord (héritage de l'empire du Mali), peuples voltaiques (Sénoufo, Lobi, Koulango). Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaumes Akan (Baoulé, Agni, Abron), peuples Krou (Bété, Wé, Dida), Mandé du Nord (Malinké, Dioula), Mandé du Sud (Dan, Gouro, Wan), peuples voltaiques (Sénoufo, Lobi, Koulango). Les Européens utilisaient le terme \"Côte d'Ivoire\" ou \"Costa do Marfim\" pour désigner la région côtière riche en commerce d'ivoire.",
+      "colonization": "1893-1960 : Colonie de Côte d'Ivoire (partie de l'Afrique-Occidentale française, AOF). Les Français ont créé la colonie de Côte d'Ivoire en 1893. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960.",
+      "contemporary": "1960 : Indépendance de la Côte d'Ivoire (7 août 1960), proclamation de la République de Côte d'Ivoire. Le nom \"Côte d'Ivoire\" est officiel et n'est pas traduit dans les langues étrangères pour préserver l'identité nationale."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaumes Akan",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Baoulé", "Agni", "Abron", "Attié"],
+        "politicalCenters": [
+          "Chefferies traditionnelles akan",
+          "royaumes locaux"
+        ],
+        "historicalRole": "Royaumes Akan migrés depuis le Ghana, système politique traditionnel akan (matrilinéaire), traditions culturelles akan. Les Baoulé forment l'un des groupes les plus influents du pays. Résistance à la colonisation française."
+      },
+      {
+        "name": "Peuples Krou",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Bété", "Wé", "Dida"],
+        "politicalCenters": ["Chefferies traditionnelles krou"],
+        "historicalRole": "Peuples Krou forestiers, traditions artistiques réputées (masques, sculptures), structures lignagères, chefferies locales. Résistance à la colonisation française."
+      },
+      {
+        "name": "Peuples Mandé du Nord",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Malinké", "Dioula", "Bambara"],
+        "politicalCenters": ["Chefferies traditionnelles mandé"],
+        "historicalRole": "Peuples Mandé du Nord liés historiquement à l'empire du Mali, tradition islamique, commerce transsaharien. Rôle majeur dans le commerce et l'islamisation de la région."
+      },
+      {
+        "name": "Peuples Mandé du Sud",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Dan (Yacouba)", "Gouro", "Wan"],
+        "politicalCenters": ["Chefferies traditionnelles mandé"],
+        "historicalRole": "Peuples Mandé du Sud, traditions forestières, masques et sculptures. Relations avec les peuples Krou voisins."
+      },
+      {
+        "name": "Peuples Voltaïques / Gur",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Sénoufo", "Lobi", "Koulango"],
+        "politicalCenters": ["Chefferies traditionnelles gur"],
+        "historicalRole": "Peuples voltaiques/gur, traditions agricoles, cérémonies d'initiation (Poro chez les Sénoufo). Résistance à la colonisation française."
+      },
+      {
+        "name": "Colonie de Côte d'Ivoire",
+        "period": "1893 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples ivoiriens sous domination française"
+        ],
+        "politicalCenters": [
+          "Abidjan (capitale coloniale puis économique)",
+          "Yamoussoukro (capitale politique depuis 1983)"
+        ],
+        "historicalRole": "Colonie française, intégration dans l'AOF. Exploitation économique (cacao, café, bois), développement de l'administration coloniale, résistance des peuples autochtones, développement du mouvement indépendantiste au XXe siècle."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Akan",
+        "selfAppellation": "Akan, Baoulé, Agni, Abron, Attié",
+        "exonyms": [
+          "Akan (terme utilisé par les Européens)",
+          "Baoulé",
+          "Agni",
+          "Abron",
+          "Attié"
+        ],
+        "peopleId": "PPL_AKAN",
+        "mainRegion": "Centre, Est et Sud de la Côte d'Ivoire",
+        "languages": [
+          "Baoulé",
+          "Agni",
+          "Abron",
+          "Attié (dialectes akan",
+          "aka",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Akan\" est un terme générique. \"Baoulé\", \"Agni\", \"Abron\", \"Attié\" sont les auto-appellations respectives des sous-groupes. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Voltaïques / Gur",
+        "selfAppellation": "Sénufo, Lobi, Koulango",
+        "exonyms": [
+          "Sénufo",
+          "Lobi",
+          "Koulango (termes utilisés par les Européens)"
+        ],
+        "peopleId": "PPL_SENUFO",
+        "mainRegion": "Nord de la Côte d'Ivoire",
+        "languages": [
+          "Sénufo (sen",
+          "sef",
+          "seq",
+          "ISO 639-3)",
+          "Lobi (lob",
+          "ISO 639-3)",
+          "Koulango",
+          "français"
+        ],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "\"Sénufo\", \"Lobi\", \"Koulango\" sont les auto-appellations respectives. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Mandé du Nord",
+        "selfAppellation": "Maninka / Mandinka, Dioula",
+        "exonyms": [
+          "Malinké (terme français)",
+          "Mandinka (terme anglophone)",
+          "Dioula (terme utilisé pour les commerçants mandé)",
+          "\"Mandingo\" (terme historique",
+          "parfois péjoratif)"
+        ],
+        "peopleId": "PPL_MALINKE",
+        "mainRegion": "Nord de la Côte d'Ivoire",
+        "languages": [
+          "Malinké / Mandinka (mlq",
+          "ISO 639-3)",
+          "Dioula (diu",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Maninka\" ou \"Mandinka\" est l'auto-appellation. \"Malinké\" est l'exonyme français accepté. \"Mandingo\" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité. \"Dioula\" est un terme utilisé pour désigner les commerçants mandé et est accepté."
+      },
+      {
+        "name": "Mandé du Sud",
+        "selfAppellation": "Dan, Yacouba, Gouro, Wan",
+        "exonyms": [
+          "Dan",
+          "Yacouba (terme alternatif pour Dan)",
+          "Gouro",
+          "Wan (termes utilisés par les Européens)"
+        ],
+        "peopleId": "PPL_MANDE_DU_SUD",
+        "mainRegion": "Ouest de la Côte d'Ivoire",
+        "languages": [
+          "Dan (dnj",
+          "ISO 639-3)",
+          "Gouro (goa",
+          "ISO 639-3)",
+          "Wan (wan",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Dan\" est l'auto-appellation, \"Yacouba\" est une variante exonyme acceptée. \"Gouro\" et \"Wan\" sont les auto-appellations. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Krou",
+        "selfAppellation": "Bété, Wé, Dida",
+        "exonyms": [
+          "Bété",
+          "Wé",
+          "Guéré (terme utilisé pour Wé)",
+          "Dida (termes utilisés par les Européens)"
+        ],
+        "peopleId": "PPL_BETE",
+        "mainRegion": "Centre-Ouest et Ouest de la Côte d'Ivoire (forêts)",
+        "languages": [
+          "Bété (beb",
+          "btv",
+          "ISO 639-3)",
+          "Wé / Guéré (wec",
+          "ISO 639-3)",
+          "Dida (gud",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_KROU",
+        "appellationRemarks": "\"Bété\", \"Wé\" et \"Dida\" sont les auto-appellations. \"Guéré\" est un exonyme utilisé pour Wé et est accepté. Pas de terme péjoratif connu. Les peuples Krou possèdent une tradition artistique très réputée (masques, sculptures)."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_DIOLA",
+        "mainRegion": "Diverses régions de la Côte d'Ivoire",
+        "languages": ["Langues diverses", "français"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "Baoulé"
+        },
+        {
+          "name": "Agni"
+        },
+        {
+          "name": "Abron"
+        },
+        {
+          "name": "Attié",
+          "isoCode": "aka"
+        },
+        {
+          "name": "Sénufo",
+          "isoCode": "seq"
+        },
+        {
+          "name": "Malinké / Mandinka",
+          "isoCode": "mlq"
+        },
+        {
+          "name": "Dioula",
+          "isoCode": "diu"
+        },
+        {
+          "name": "Bété",
+          "isoCode": "btv"
+        },
+        {
+          "name": "Wé / Guéré",
+          "isoCode": "wec"
+        },
+        {
+          "name": "Dida",
+          "isoCode": "gud"
+        },
+        {
+          "name": "Dan",
+          "isoCode": "dnj"
+        },
+        {
+          "name": "Gouro",
+          "isoCode": "goa"
+        },
+        {
+          "name": "Wan",
+          "isoCode": "wan"
+        },
+        {
+          "name": "Lobi",
+          "isoCode": "lob"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de la Côte d'Ivoire. Traditions akan (Baoulé, Agni, Abron, système matrilinéaire, masques). Traditions krou (Bété, Wé, Dida, masques forestiers réputés, sculptures). Traditions mandé (Malinké, Dioula, Dan, Gouro, traditions islamiques et forestières). Traditions gur (Sénufo, Lobi, cérémonies d'initiation Poro, masques). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Art ivoirien réputé (masques, sculptures).",
+      "dominantReligions": "Christianisme (catholicisme majoritaire, protestantisme en croissance), islam (surtout dans le nord), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques)",
+      "lifestyles": "Agriculture (cacao, café, cultures vivrières, palmiers à huile), élevage (bovins), commerce et activités urbaines (zones urbaines, Abidjan, Yamoussoukro). Urbanisation croissante. Économie basée sur l'agriculture (cacao, café, palmiers à huile, coton), l'exploitation forestière, et les services. La Côte d'Ivoire est le premier producteur mondial de cacao.",
+      "socialOrganization": "Organisation en royaumes historiques (Akan, système matrilinéaire), chefferies traditionnelles (Krou, Mandé, Gur), structures claniques patrilinéaires et matrilinéaires selon les groupes. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation (Poro chez les Sénufo).",
+      "regionalRelations": "Relations historiques avec le Ghana (Akan, commerce), le Mali (Mandé, commerce transsaharien), le Burkina Faso (Sénufo, Lobi, commerce), le Liberia (Krou, frontière). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest) et l'UEMOA (Union économique et monétaire ouest-africaine). Relations commerciales et culturelles transfrontalières. Immigration importante de travailleurs agricoles (Burkina Faso, Mali)."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par diverses sociétés sans nom unifié. Développement de chefferies et royaumes locaux. Arrivée et expansion des peuples Akan depuis le Ghana.",
+      "middleAges": "Migrations des royaumes Akan depuis le Ghana (Baoulé, Agni, Abron). Développement des peuples Krou forestiers. Arrivée des peuples Mandé du Nord (héritage de l'empire du Mali). Développement de réseaux commerciaux régionaux et transsahariens. Commerce de l'ivoire le long de la côte.",
+      "precolonial": "Consolidation des royaumes Akan, peuples Krou forestiers, peuples Mandé (Nord et Sud), peuples voltaiques (Sénoufo, Lobi, Koulango). Commerce côtier avec les Européens (ivoire, esclaves). Résistance aux pressions extérieures. Développement des traditions artistiques (masques, sculptures).",
+      "colonization": "1893 : Création de la colonie de Côte d'Ivoire par les Français, intégration dans l'AOF. Période coloniale française (1893-1960), exploitation économique (cacao, café, bois), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, formation de partis politiques (PDCI-RDA, Parti démocratique de Côte d'Ivoire).",
+      "independenceStruggle": "1958 : Référendum sur l'autonomie, la Côte d'Ivoire vote \"oui\" à la Communauté française. 1960 : Indépendance de la Côte d'Ivoire (7 août 1960), proclamation de la République de Côte d'Ivoire. Présidence de Félix Houphouët-Boigny (1960-1993).",
+      "postIndependence": "1960-1993 : Présidence de Félix Houphouët-Boigny, période de stabilité politique et de développement économique (\"miracle ivoirien\"). 1993-2011 : Période d'instabilité politique, coups d'État, crises électorales, guerre civile (2002-2011). 2011-présent : Période de stabilisation et de reconstruction. Défis : réconciliation nationale, développement économique, gestion des migrations. La Côte d'Ivoire est le premier producteur mondial de cacao."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Côte d'Ivoire",
+      "CIA World Factbook – Côte d'Ivoire",
+      "ONU / UNFPA – Démographie Côte d'Ivoire 2025",
+      "Memel-Fotê, Harris – \"Le modèle politique ivoirien\"",
+      "Archives culturelles ivoiriennes",
+      "Recensements ivoiriens",
+      "Études anthropologiques sur les peuples de la Côte d'Ivoire"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Akan",
+          "population": 11340000,
+          "percentageInCountry": 42,
+          "peopleId": "PPL_AKAN",
+          "region": "Centre, Est et Sud de la Côte d'Ivoire",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Voltaïques / Gur",
+          "population": 4590000,
+          "percentageInCountry": 17,
+          "peopleId": "PPL_SENUFO",
+          "region": "Nord de la Côte d'Ivoire",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Mandé du Nord",
+          "population": 4320000,
+          "percentageInCountry": 16,
+          "peopleId": "PPL_MALINKE",
+          "region": "Nord de la Côte d'Ivoire",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Mandé du Sud",
+          "population": 2700000,
+          "percentageInCountry": 10,
+          "peopleId": "PPL_MANDE_DU_SUD",
+          "region": "Ouest de la Côte d'Ivoire",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Krou",
+          "population": 2970000,
+          "percentageInCountry": 11,
+          "peopleId": "PPL_BETE",
+          "region": "Centre-Ouest et Ouest de la Côte d'Ivoire (forêts)",
+          "languageFamily": "FLG_KROU"
+        },
+        {
+          "name": "Autres peuples",
+          "population": 1080000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_DIOLA",
+          "region": "Diverses régions de la Côte d'Ivoire"
+        }
+      ]
+    }
+  }
+}

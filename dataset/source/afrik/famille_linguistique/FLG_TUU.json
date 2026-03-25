@@ -1,0 +1,69 @@
+{
+  "id": "FLG_TUU",
+  "nameFr": "Tuu",
+  "nameEn": "Tuu (Taa-ǃKwi)",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " - « Southern Khoisan » est une construction coloniale approximative qui ne reflète pas la généalogie linguistique réelle. Les études linguistiques récentes (Güldemann 2005-2010, Honken 2013) rejettent l'idée que toutes les langues « à clic » forment une famille unique. Elles préfèrent parler de contact (sprachbund) plutôt que de parenté démontrée. - Les peuples Tuu ont subi une forte marginalisation, des massacres et des déplacements forcés pendant la colonisation européenne (XIXe-XXe siècle), particulièrement en Afrique du Sud où la langue ǀXam a disparu. - Les termes « Bushmen » et « Hottentot » étaient racistes et stigmatisants, associés à une idéologie coloniale de déshumanisation (cf. travaux de Skotnes 1996, Penn 2005 sur la représentation coloniale des peuples San). - Les études génétiques modernes (Pickrell et al. 2012, Schlebusch et al. 2017) montrent que les populations qui parlent les langues associées à « Khoisan » sont parmi les plus anciennes lignées humaines, divergentes des autres groupes africains depuis 100 000-260 000 ans, mais aussi fortement affectées par des flux de gènes récents (avec des langues bantoues, par exemple depuis ~1 200 ans). → Afrik utilise **Tuu** comme terme strictement linguistique moderne basé sur la reconstruction scientifique.",
+      "selfAppellation": "Tuu (Taa-ǃKwi)",
+      "contemporaryUsage": "Les communautés parlant Taa/ǃXóõ au Botswana et en Namibie utilisent leur propre endonyme *Taa* ou *ǃXóõ* selon les variétés dialectales. Les chercheurs contemporains (Güldemann, Traill, Sands) utilisent le terme « Tuu » comme désignation strictement linguistique.",
+      "historicalAppellations": "Tuu (Taa-ǃKwi)",
+      "originOfHistoricalTerm": " - Le terme « Tuu » a été introduit par Tom Güldemann (2005-2006) dans ses travaux sur les langues du Sud de l'Afrique, notamment dans « Tuu as a language family » (2005) et « The San languages of southern Namibia » (2006). Le nom vient d'un mot commun aux deux branches de la famille signifiant « personne ». - Le terme « Southern Khoisan » a été proposé par Joseph Greenberg dans les années 1950 dans son ouvrage *The Languages of Africa* (1963), regroupant diverses langues à clics sous ce nom générique sans démonstration généalogique solide. - Le terme « Khoisan » lui-même a été forgé en 1928 par le biologiste allemand Leonhard Schulze, combinant *Khoi* (populations pasteurisantes du groupe Khoe) et *San* (chasseurs-cueilleurs), dans une logique extérieure aux peuples concernés. - Les termes « Bushmen » et « Hottentot » proviennent de la terminologie coloniale européenne (hollandais/anglais) du XVIIe-XIXe siècle, utilisés de manière péjorative pour désigner les populations autochtones du Cap."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Botswana (Désert du Kalahari, districts de Ghanzi et Kgalagadi, le long de la rivière Nossob), Namibie (régions frontalières Omaheke et Hardap, zones Est-Namibie), Afrique du Sud (historiquement, provinces du Cap et du Transvaal avant extinction des langues ǃKwi).",
+      "numberOfLanguages": 2,
+      "totalSpeakers": null
+    },
+    "associatedPeoples": [
+      {
+        "name": "ǃXóõ (Taa) (PPL_TAA) – Botswana, Namibie",
+        "peopleId": null
+      },
+      {
+        "name": "ǀXam (ancien peuple d'Afrique du Sud, éteint)",
+        "peopleId": "PPL_XAM"
+      },
+      {
+        "name": "Nǁng (communauté du Cap, Afrique du Sud, 1 locuteur survivant)",
+        "peopleId": "PPL_NUU"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues tonales avec 2-3 tons contrastifs (ton haut, bas, moyen dans certaines variétés). Structures morphologiques agglutinantes, avec dérivation par affixes. Ordre syntaxique SOV (Sujet-Objet-Verbe) fréquent, mais variations selon les constructions. Exemples concrets de structures grammaticales :",
+      "relationsWithNeighbors": " Contacts historiques prolongés avec les familles Kxʼa (Ju/ǃHoan) et Khoe (Khoekhoe, Gǀui), créant un sprachbund (aire linguistique) dans le Kalahari. Emprunts lexicaux documentés :"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " **Théorie linguistique** : Tom Güldemann (2005-2006) a classé Tuu comme famille linguistique indépendante, rejetant la classification « Khoisan » de Greenberg (années 1950). Güldemann démontre que Tuu forme une famille distincte avec deux branches (Taa et ǃKwi) partageant un ancêtre commun (proto-Tuu) mais sans relation génétique démontrée avec Kxʼa ou Khoe malgré des siècles de contact. **Théorie archéologique** : Les populations Tuu sont associées aux traditions archéologiques de chasseurs-cueilleurs du Kalahari méridional datant de plusieurs millénaires. Des sites archéologiques dans le Désert du Kalahari (Botswana) montrent une occupation humaine continue depuis au moins 20 000-30 000 ans (Deacon & Deacon 1999, Robbins et al. 2005). La reconstruction proto-Tuu du mot *!hai* « gemsbok » (antilope du Kalahari) suggère que les locuteurs proto-Tuu habitaient cette région (Güldemann 2005). **Théorie génétique** : Les études génétiques (Pickrell et al. 2012, Schlebusch et al. 2017) montrent que les populations parlant des langues « Khoisan » (incluant Tuu) appartiennent aux plus anciennes lignées humaines. La divergence génétique entre branches nord-ouest et sud-est du Kalahari est estimée à moins de 30 000 ans, mais la séparation des lignées Tuu des autres groupes africains remonte à 100 000-260 000 ans. Les flux de gènes avec les populations bantoues sont relativement récents (~1 200 ans), suggérant que les Tuu ont longtemps été génétiquement isolés avant les contacts récents. **Théorie de la diffusion préhistorique** : Les proto-Tuu étaient probablement des chasseurs-cueilleurs dispersés dans le Kalahari méridional (Botswana, Namibie, Afrique du Sud) avant l'arrivée des pasteurs Khoe (~2 000 ans) et des agriculteurs bantous (~1 200 ans). L'absence d'expansion récente suggère que les Tuu n'ont pas connu de phase d'expansion démographique comparable à celle des familles bantoues ou nilotiques.",
+      "emergencePeriod": " **(1) Émergence historique de la FLG** : Le proto-Tuu était probablement parlé dans la région du Kalahari (Botswana/Namibie) il y a plusieurs millénaires, peut-être 5 000-10 000 ans avant le présent, bien que les reconstructions linguistiques ne permettent pas de datation précise. La reconstruction du mot *!hai* « gemsbok » et d'autres termes environnementaux suggère une longue histoire dans le Kalahari. La séparation entre les branches Taa (nord) et ǃKwi (sud) est estimée à plusieurs millénaires, probablement avant l'expansion des pasteurs Khoe il y a ~2 000 ans. **(2) Date de classification académique** :",
+      "diffusion": " **Théorie 1 (statique)** : Les proto-Tuu étaient autochtones au Kalahari méridional, sans expansion majeure. Les langues Tuu n'ont pas connu de phase d'expansion comparable aux familles bantoues ou nilotiques. Au contraire, elles ont régressé géographiquement et démographiquement depuis le XIXe siècle à cause des déplacements forcés et de l'assimilation (Güldemann 2005). **Théorie 2 (migration préhistorique)** : Certains archéologues suggèrent que les ancêtres des Tuu ont migré vers le Kalahari depuis des zones plus septentrionales il y a 20 000-30 000 ans, mais cette théorie manque de preuves linguistiques directes (Deacon & Deacon 1999). **Théorie 3 (contact et métissage)** : Les études génétiques (Pickrell et al. 2012) montrent des flux de gènes entre populations Tuu et Khoe il y a ~2 000 ans (arrivée des pasteurs) et avec bantous il y a ~1 200 ans, suggérant que les contacts linguistiques reflètent des migrations et métissages plutôt qu'une expansion Tuu (contraire à la théorie 1). **Récession récente** : Depuis le XIXe siècle, les langues Tuu ont régressé à cause de : - L'extermination ou déplacement des peuples ǀXam en Afrique du Sud (guerres coloniales, politique d'extermination) - La colonisation européenne et répression en Afrique du Sud et Botswana - La marginalisation socio-économique persistante au XXe-XXIe siècle"
+    },
+    "distribution": {
+      "totalSpeakers": null,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Güldemann, Tom (2005) – *Tuu as a language family*. Studies in Tuu (Southern Khoisan). ResearchGate.",
+      "Güldemann, Tom (2006) – *The San languages of southern Namibia: Linguistic appraisal with special reference to J. G. Krönlein's Nǀuusaa data*. Anthropological Linguistics, 48(4), 369–395.",
+      "Güldemann, Tom (2006) – *Structural Isoglosses between Khoekhoe and Tuu: The Cape as a Linguistic Area*. In Y. Matras, A. McMahon & N. Vincent (eds.), Linguistic Areas, London: Palgrave Macmillan UK, pp. 99–134. DOI: 10.1057/9780230287617_5.",
+      "Güldemann, Tom (2019) – *Toward a subclassification of the ǃUi branch of Tuu*. Paper presented at Afrikalinguistisches Forschungskolloquium at Humboldt Universität zu Berlin, 8 January 2019.",
+      "Güldemann, Tom & Loughnane, Robynne (2012) – *The problem of linguistic inheritance and contact in the Kalahari Basin: the case of body parts*. Language Dynamics and Change, 2(1), 1–43.",
+      "Traill, Anthony (1994) – *A !Xóõ Dictionary*. Quellen zur Khoisan-Forschung, 9. Köln: Rüdiger Köppe Verlag.",
+      "Traill, Anthony (2007) – *Taa (ǃXóõ) phonology*. In Rainer Vossen (ed.), The Khoesan Languages, London: Routledge, pp. 268–291.",
+      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press.",
+      "Pickrell, Joseph K. et al. (2012) – *The Genetic Prehistory of Southern Africa*. Nature Communications, 3, article 1143. DOI: 10.1038/ncomms2140.",
+      "Schlebusch, Carina M. et al. (2017) – *Southern African ancient genomes estimate modern human divergence to 350,000 to 260,000 years ago*. Science, 358(6363), 652–655. DOI: 10.1126/science.aao6266.",
+      "Bleek, Wilhelm H. I. & Lloyd, Lucy C. (1911) – *Specimens of Bushman Folklore*. London: George Allen & Company.",
+      "Bleek, Dorothea F. (1956) – *A Bushman Dictionary*. New Haven: American Oriental Society.",
+      "Westphal, Ernst O. J. (1971) – *The Click Languages of Southern and Eastern Africa*. In T. A. Sebeok (ed.), Current Trends in Linguistics, Vol. 7: Linguistics in Sub-Saharan Africa, The Hague: Mouton, pp. 367–420.",
+      "Story, Robert (1999) – *Kʼuǀha꞉si Manuscript*. In Anthony Traill (ed.), Khoisan Forum Working Paper, 13. Köln: University of Köln, pp. 18–34.",
+      "Skotnes, Pippa (1996) – *Miscast: Negotiating the Presence of the Bushmen*. Cape Town: University of Cape Town Press.",
+      "Penn, Nigel (2005) – *The Forgotten Frontier: Colonist and Khoisan on the Cape's Northern Frontier in the 18th Century*. Athens: Ohio University Press.",
+      "Deacon, Hilary J. & Deacon, Janette (1999) – *Human Beginnings in South Africa: Uncovering the Secrets of the Stone Age*. Cape Town: David Philip Publishers.",
+      "Robbins, Lawrence H. et al. (2005) – *The Advent of Herding in Southern Africa: Early AMS Dates on Domestic Livestock from the Kalahari Desert*. Current Anthropology, 46(4), 671–677.",
+      "SIL Ethnologue (2025) – *Taa Language*. Ethnologue: Languages of the World. URL: https://www.ethnologue.com/language/nmn",
+      "Glottolog (2024) – *Tuu languages*. Glottolog 5.0. URL: https://glottolog.org/resource/languoid/id/tuuu1241"
+    ]
+  }
+}

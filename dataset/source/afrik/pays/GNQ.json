@@ -1,0 +1,218 @@
+{
+  "id": "GNQ",
+  "nameFr": "République de Guinée équatoriale (República de Guinea Ecuatorial)",
+  "nameOfficial": "République de Guinée équatoriale (República de Guinea Ecuatorial)",
+  "etymology": "Le nom \"Guinée équatoriale\" provient de \"Guinée\" (du portugais \"Guiné\", terme utilisé pour désigner la côte ouest-africaine) et \"équatoriale\" (en référence à la position du pays près de l'équateur). Le nom espagnol \"Guinea Ecuatorial\" a été officialisé lors de la colonisation espagnole.",
+  "nameOriginActor": "Le nom \"Guinée équatoriale\" a été donné par les Espagnols lors de la colonisation. Le terme \"Guinée\" vient des navigateurs portugais, et \"équatoriale\" fait référence à la position géographique du pays près de l'équateur. Le nom a été officialisé à l'indépendance en 1968.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la Guinée équatoriale était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Migrations bantoues vers la région. Développement de chefferies et royaumes locaux dans les forêts équatoriales. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de chefferies et royaumes autonomes : chefferies Fang, peuples Bubi (île de Bioko), peuples Ndowe (littoral), peuples Annobon (île d'Annobón). Les Portugais utilisaient le terme \"Guiné\" pour désigner la région côtière.",
+      "colonization": "1778-1968 : Colonie espagnole de Guinée équatoriale (Guinea Española, puis Guinea Ecuatorial). Les Espagnols ont pris possession du territoire en 1778 (traité avec le Portugal). Le territoire était administré comme une colonie espagnole jusqu'à l'indépendance en 1968.",
+      "contemporary": "1968 : Indépendance de la Guinée équatoriale (12 octobre 1968), proclamation de la République de Guinée équatoriale. Le nom officiel est \"República de Guinea Ecuatorial\" (République de Guinée équatoriale)."
+    },
+    "kingdoms": [
+      {
+        "name": "Chefferies Fang",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Fang"],
+        "politicalCenters": [
+          "Chefferies lignagères traditionnelles (Río Muni",
+          "continent)"
+        ],
+        "historicalRole": "Chefferies Fang puissantes, système lignager, traditions forestières, masques fang (notamment ngil), boîtes à reliques (byeri). Migration nord-sud depuis le Cameroun septentrional. Rôle politique majeur dans la Guinée équatoriale contemporaine."
+      },
+      {
+        "name": "Royaume Bubi",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Bubi"],
+        "politicalCenters": ["Île de Bioko (Fernando Póo)"],
+        "historicalRole": "Royaume Bubi sur l'île de Bioko, système monarchique traditionnel, traditions insulaires. Résistance à la colonisation espagnole. Organisation sociale unique."
+      },
+      {
+        "name": "Peuples Ndowe",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Ndowe"],
+        "politicalCenters": ["Chefferies traditionnelles (littoral)"],
+        "historicalRole": "Peuples Ndowe du littoral, traditions côtières, commerce côtier. Contacts avec les Européens."
+      },
+      {
+        "name": "Peuples Annobon",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Annobon"],
+        "politicalCenters": ["Île d'Annobón"],
+        "historicalRole": "Peuples Annobon de l'île d'Annobón, traditions insulaires, société créole (métissage afro-portugais). Contacts avec les Portugais et les Espagnols."
+      },
+      {
+        "name": "Colonie espagnole de Guinée équatoriale",
+        "period": "1778 - 1968",
+        "dominantPeoples": [
+          "Tous les peuples équato-guinéens sous domination espagnole"
+        ],
+        "politicalCenters": [
+          "Malabo (capitale coloniale",
+          "île de Bioko)",
+          "Bata (capitale continentale)"
+        ],
+        "historicalRole": "Colonie espagnole, exploitation économique (cacao, café, bois), développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Bubi). Développement du mouvement indépendantiste au XXe siècle."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Fang",
+        "selfAppellation": "Fan / Pangwe",
+        "exonyms": [
+          "Fang (terme utilisé par les Européens)",
+          "\"Pahouins\" (ancienne étiquette coloniale",
+          "terme problématique)"
+        ],
+        "peopleId": "PPL_FANG",
+        "mainRegion": "Río Muni (continent, forêts équatoriales)",
+        "languages": ["Fang (fan", "ISO 639-3)", "espagnol", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Fan\" ou \"Pangwe\" est l'auto-appellation. \"Fang\" est l'exonyme le plus courant. \"Pahouins\" est une ancienne étiquette coloniale qui peut avoir une connotation péjorative et doit être évitée. Rôle politique important en Guinée équatoriale contemporaine."
+      },
+      {
+        "name": "Bubi",
+        "selfAppellation": "Bubi",
+        "exonyms": ["Bubi (terme utilisé par les Européens)"],
+        "peopleId": "PPL_BUBI",
+        "mainRegion": "Île de Bioko (Fernando Póo)",
+        "languages": ["Bubi (buw", "ISO 639-3)", "espagnol"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Bubi\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple autochtone de l'île de Bioko, royaume traditionnel."
+      },
+      {
+        "name": "Ndowe",
+        "selfAppellation": "Ndowe",
+        "exonyms": [
+          "Ndowe (terme utilisé par les Européens)",
+          "\"Playeros\" (terme espagnol",
+          "littéralement \"plage\"",
+          "parfois utilisé)"
+        ],
+        "peopleId": "PPL_NDOWE",
+        "mainRegion": "Littoral (Río Muni)",
+        "languages": ["Ndowe (ndo", "ISO 639-3)", "espagnol"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Ndowe\" est l'auto-appellation. \"Playeros\" est un terme espagnol descriptif (littéralement \"plage\") parfois utilisé mais moins préféré. Pas de terme péjoratif connu. Peuples du littoral."
+      },
+      {
+        "name": "Annobon",
+        "selfAppellation": "Annobon",
+        "exonyms": ["Annobon (terme utilisé par les Européens)"],
+        "peopleId": "PPL_ANNOBON",
+        "mainRegion": "Île d'Annobón",
+        "languages": ["Annobon (fab", "ISO 639-3)", "espagnol", "créole"],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "\"Annobon\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple insulaire, société créole (métissage afro-portugais)."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions de la Guinée équatoriale",
+        "languages": ["Langues diverses", "espagnol", "français"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Espagnol",
+          "isoCode": "spa",
+          "isPrimary": true
+        },
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "Fang"
+        },
+        {
+          "name": "Bubi",
+          "isoCode": "buw"
+        },
+        {
+          "name": "Ndowe",
+          "isoCode": "ndo"
+        },
+        {
+          "name": "Annobon",
+          "isoCode": "fab"
+        },
+        {
+          "name": "Portugais",
+          "isoCode": "por",
+          "isPrimary": true
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de la Guinée équatoriale. Traditions bantoues forestières (Fang, masques fang, boîtes à reliques byeri, traditions d'initiation). Traditions insulaires (Bubi, royaume traditionnel, traditions uniques de l'île de Bioko). Traditions côtières (Ndowe, commerce côtier). Traditions créoles (Annobon, métissage afro-portugais). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.",
+      "dominantReligions": "Christianisme (catholicisme majoritaire, 90%+), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, byeri)",
+      "lifestyles": "Agriculture (cacao, café, cultures vivrières), exploitation forestière (bois précieux), pêche (côtière), exploitation pétrolière (première source de revenus depuis les années 1990), commerce et activités urbaines (zones urbaines, Malabo, Bata). Urbanisation modérée. Économie basée sur l'exploitation pétrolière (première source de revenus), l'exploitation forestière, et l'agriculture. La Guinée équatoriale est l'un des pays les plus riches d'Afrique subsaharienne grâce au pétrole.",
+      "socialOrganization": "Organisation en chefferies lignagères traditionnelles (Fang, système lignager, clanisme fort), royaume traditionnel (Bubi, système monarchique), chefferies traditionnelles (Ndowe), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte.",
+      "regionalRelations": "Relations historiques avec le Cameroun (Fang, commerce, frontière), le Gabon (Fang, commerce, frontière), le Nigeria (commerce, frontière maritime). Intégration dans la CEMAC (Communauté économique et monétaire de l'Afrique centrale). Relations commerciales et culturelles transfrontalières. Relations avec l'Espagne (colonisation, diaspora)."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales dans les forêts équatoriales et sur les îles.",
+      "middleAges": "Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.",
+      "precolonial": "Consolidation des chefferies Fang (Río Muni), royaume Bubi (île de Bioko), peuples Ndowe (littoral), peuples Annobon (île d'Annobón). Migration des Fang depuis le Cameroun septentrional. Développement des traditions artistiques (masques, sculptures). Commerce régional. Contacts avec les Européens (Portugais, puis Espagnols).",
+      "colonization": "1778 : Prise de possession espagnole du territoire (traité avec le Portugal). Période coloniale espagnole (1778-1968), exploitation économique (cacao, café, bois), développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Bubi). XXe siècle : Développement du mouvement indépendantiste.",
+      "independenceStruggle": "1950s-1968 : Mouvement pour l'indépendance mené par les dirigeants équato-guinéens. 1968 : Indépendance de la Guinée équatoriale (12 octobre 1968), proclamation de la République de Guinée équatoriale. Francisco Macías Nguema devient premier président.",
+      "postIndependence": "1968-1979 : Présidence de Francisco Macías Nguema, régime dictatorial et répressif. 1979-présent : Coup d'État, présidence de Teodoro Obiang Nguema Mbasogo (depuis 1979), régime autoritaire. Découverte et exploitation du pétrole (années 1990). Défis : inégalités sociales, corruption, dépendance au pétrole, droits de l'homme. La Guinée équatoriale est l'un des pays les plus riches d'Afrique subsaharienne grâce au pétrole, mais avec de fortes inégalités."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Equatorial Guinea",
+      "CIA World Factbook – Equatorial Guinea",
+      "ONU / UNFPA – Démographie Guinée équatoriale 2025",
+      "Recensements équato-guinéens",
+      "Études anthropologiques sur les peuples de la Guinée équatoriale",
+      "Études sur l'art équato-guinéen (masques, sculptures)"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Fang",
+          "population": 1200000,
+          "percentageInCountry": 80,
+          "peopleId": "PPL_FANG",
+          "region": "Río Muni (continent, forêts équatoriales)",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Bubi",
+          "population": 90000,
+          "percentageInCountry": 6,
+          "peopleId": "PPL_BUBI",
+          "region": "Île de Bioko (Fernando Póo)",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Ndowe",
+          "population": 60000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_NDOWE",
+          "region": "Littoral (Río Muni)",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Annobon",
+          "population": 15000,
+          "percentageInCountry": 1,
+          "peopleId": "PPL_ANNOBON",
+          "region": "Île d'Annobón",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Autres peuples",
+          "population": 135000,
+          "percentageInCountry": 9,
+          "region": "Diverses régions de la Guinée équatoriale"
+        }
+      ]
+    }
+  }
+}

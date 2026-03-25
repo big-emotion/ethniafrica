@@ -1,0 +1,169 @@
+{
+  "id": "TUN",
+  "nameFr": "République tunisienne (Al-Jumhūriyyah at-Tūnisiyyah)",
+  "nameOfficial": "République tunisienne (Al-Jumhūriyyah at-Tūnisiyyah)",
+  "etymology": "Le nom \"Tunisie\" vient de \"Tunis\", la capitale. Le nom \"Tunis\" vient probablement de \"Tynes\" (ancien nom berbère) ou de \"Tunès\" (nom punique). Le nom arabe \"Tūnis\" (تونس) est utilisé depuis le Moyen Âge.",
+  "nameOriginActor": "Le nom \"Tunisie\" vient de \"Tunis\", fondée par les Berbères puis développée par les Arabes. Le nom a été officialisé lors de la colonisation française.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Ifriqiya (nom berbère), Africa (nom romain, origine du nom du continent), Carthage (ancienne capitale punique). Le territoire était peuplé de Berbères et de Phéniciens.",
+      "middleAges": "Ifriqiya (nom arabe), Tunis (capitale). Dynasties arabes et berbères (Aghlabides, Fatimides, Zirides, Hafsides).",
+      "precolonial": "Régence de Tunis (1574-1881), État ottoman semi-autonome dirigé par des beys. Le territoire était appelé \"Ifriqiya\" ou \"Tunis\".",
+      "colonization": "1881-1956 : Protectorat français de Tunisie. Le nom \"Tunisie\" est officialisé par l'administration coloniale française.",
+      "contemporary": "1956 : Indépendance, république tunisienne. Le nom officiel en arabe est \"Al-Jumhūriyyah at-Tūnisiyyah\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Carthage",
+        "period": "814 av. J.-C. - 146 av. J.-C.",
+        "dominantPeoples": ["Phéniciens", "Berbères"],
+        "politicalCenters": ["Carthage"],
+        "historicalRole": "Empire carthaginois puissant, rivalité avec Rome, guerres puniques, destruction de Carthage (146 av. J.-C.)."
+      },
+      {
+        "name": "Afrique romaine",
+        "period": "146 av. J.-C. - 439 apr. J.-C.",
+        "dominantPeoples": ["Romains", "Berbères"],
+        "politicalCenters": ["Carthage (reconstruite)"],
+        "historicalRole": "Province romaine prospère, christianisation, développement urbain et commercial."
+      },
+      {
+        "name": "Royaume vandale",
+        "period": "439-534",
+        "dominantPeoples": ["Vandales", "Berbères"],
+        "politicalCenters": ["Carthage"],
+        "historicalRole": "Royaume vandale en Afrique du Nord, résistance berbère."
+      },
+      {
+        "name": "Califat omeyyade et abbasside",
+        "period": "647-909",
+        "dominantPeoples": ["Arabes", "Berbères"],
+        "politicalCenters": ["Kairouan"],
+        "historicalRole": "Conquête arabe, islamisation, fondation de Kairouan, développement de l'Ifriqiya."
+      },
+      {
+        "name": "Dynastie aghlabide",
+        "period": "800-909",
+        "dominantPeoples": ["Arabes", "Berbères"],
+        "politicalCenters": ["Kairouan"],
+        "historicalRole": "Dynastie arabe indépendante, développement économique et culturel, conquête de la Sicile."
+      },
+      {
+        "name": "Dynastie fatimide",
+        "period": "909-1171",
+        "dominantPeoples": ["Berbères", "Arabes"],
+        "politicalCenters": ["Mahdia", "puis Le Caire"],
+        "historicalRole": "Dynastie chiite ismaélienne, expansion vers l'Égypte, développement culturel."
+      },
+      {
+        "name": "Dynastie hafside",
+        "period": "1229-1574",
+        "dominantPeoples": ["Berbères", "Arabes"],
+        "politicalCenters": ["Tunis"],
+        "historicalRole": "Dynastie berbère indépendante, développement de Tunis, résistance aux puissances européennes."
+      },
+      {
+        "name": "Régence de Tunis",
+        "period": "1574-1881",
+        "dominantPeoples": ["Turcs ottomans", "Arabes", "Berbères"],
+        "politicalCenters": ["Tunis"],
+        "historicalRole": "État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes."
+      },
+      {
+        "name": "Protectorat français",
+        "period": "1881-1956",
+        "dominantPeoples": [
+          "Tous les peuples tunisiens sous domination coloniale"
+        ],
+        "politicalCenters": ["Tunis"],
+        "historicalRole": "Colonisation française, résistance tunisienne, mouvements nationalistes."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Arabes de Tunisie",
+        "selfAppellation": "Al-'Arab (العرب), Tūnisiyyūn (تونسيون)",
+        "exonyms": ["Arabes", "Arabophones", "Tunisiens"],
+        "peopleId": "PPL_ARABES_AFRIQUE",
+        "mainRegion": "Toutes les régions de Tunisie, majoritaires dans les plaines et les villes",
+        "languages": ["Arabe tunisien (darija)", "arabe standard"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "Les Arabes de Tunisie sont majoritairement arabisés (métissés avec les Berbères). Le terme \"Tunisien\" est également utilisé."
+      },
+      {
+        "name": "Berbères de Tunisie",
+        "selfAppellation": "Imazighen (ⵉⵎⴰⵣⵉⵖⵏ)",
+        "exonyms": [
+          "« Berbère » (terme colonial",
+          "considéré problématique ; auto-appellation correcte : Amazigh / Imazighen)"
+        ],
+        "peopleId": "PPL_AMAZIGH_MACRO",
+        "mainRegion": "Sud de la Tunisie (régions de Matmata, Douiret, Chenini), île de Djerba",
+        "languages": [
+          "Tamazight tunisien (berbère tunisien",
+          "en déclin)",
+          "arabe tunisien"
+        ],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Le terme \"Berbère\" est considéré comme problématique car il vient du grec \"barbaros\" (étranger) et a été utilisé par les colonisateurs. L'auto-appellation correcte est \"Amazigh\" (pluriel : Imazighen). Les Berbères de Tunisie sont une minorité (environ 1-2% de la population)."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Arabe tunisien",
+          "isoCode": "aeb"
+        },
+        {
+          "name": "arabe standard",
+          "isoCode": "ara"
+        },
+        {
+          "name": "tamazight tunisien"
+        },
+        {
+          "name": "français",
+          "isoCode": "fra"
+        }
+      ],
+      "culturalTraditions": "Musique malouf, mezoued, poésie arabe, artisanat (poterie, tissage, bijoux), architecture traditionnelle (maisons troglodytes du Sud), fêtes religieuses et culturelles",
+      "dominantReligions": "Islam sunnite (école malékite majoritaire), soufisme important",
+      "lifestyles": "Urbanisation importante, agriculture (plaines côtières), pastoralisme (régions intérieures), industrie, tourisme, commerce",
+      "socialOrganization": "Structures familiales traditionnelles, organisation communautaire, structures étatiques modernes, république parlementaire",
+      "regionalRelations": "Relations avec le Maghreb (Union du Maghreb arabe), relations avec l'Europe (Union européenne), relations avec le monde arabe (Ligue arabe), rôle dans la paix au Moyen-Orient"
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence berbère depuis la préhistoire, fondation de Carthage par les Phéniciens (814 av. J.-C.), développement de l'empire carthaginois, guerres puniques avec Rome.",
+      "middleAges": "Conquête arabe (647), islamisation progressive, dynasties arabes et berbères (Aghlabides, Fatimides, Hafsides), développement du commerce et de la culture.",
+      "precolonial": "Régence de Tunis (1574-1881), État ottoman semi-autonome, développement économique et culturel, résistance aux puissances européennes.",
+      "colonization": "Protectorat français (1881-1956), résistance tunisienne, mouvements nationalistes (Parti du Destour, Néo-Destour).",
+      "independenceStruggle": "Mouvement nationaliste (Habib Bourguiba), indépendance (1956), développement de l'État moderne.",
+      "postIndependence": "République tunisienne (1956), modernisation de l'État, développement économique, révolution de 2011 (printemps arabe), transition démocratique."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Tunisia",
+      "Ethnologue – Languages of Tunisia",
+      "Minority Rights Group – Amazigh in Tunisia",
+      "Wikipedia – Tunisia, Berber people in Tunisia",
+      "Recensements tunisiens"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Arabes de Tunisie",
+          "population": 11760000,
+          "percentageInCountry": 98,
+          "percentageInAfrica": 6.5,
+          "peopleId": "PPL_ARABES_AFRIQUE",
+          "region": "Toutes les régions",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Berbères de Tunisie",
+          "peopleId": "PPL_AMA"
+        }
+      ]
+    }
+  }
+}

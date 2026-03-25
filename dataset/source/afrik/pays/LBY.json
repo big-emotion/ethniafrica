@@ -1,0 +1,209 @@
+{
+  "id": "LBY",
+  "nameFr": "État de Libye (Dawlat Lībiyā)",
+  "nameOfficial": "État de Libye (Dawlat Lībiyā)",
+  "etymology": "Le nom \"Libye\" vient du grec \"Libya\", qui désignait l'Afrique du Nord dans l'Antiquité. Le nom arabe \"Lībiyā\" (ليبيا) est utilisé depuis le XXe siècle. L'ancien nom était \"Tripolitaine\" (région de Tripoli) et \"Cyrénaïque\" (région de Benghazi).",
+  "nameOriginActor": "Le nom \"Libye\" a été officialisé lors de l'indépendance (1951). Le nom vient de l'Antiquité grecque.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Libya (grec), Libye (latin). Le territoire était peuplé de Berbères (Libyens), Grecs (Cyrénaïque), Phéniciens (Tripolitaine).",
+      "middleAges": "Ifriqiya (nom arabe pour la région), Barqa (Cyrénaïque), Tarabulus (Tripoli). Domination arabe puis ottomane.",
+      "precolonial": "Régences de Tripoli et de Benghazi (1551-1911), États ottomans semi-autonomes. Le territoire était divisé en Tripolitaine et Cyrénaïque.",
+      "colonization": "1911-1951 : Colonie italienne de Libye. Le nom \"Libye\" est officialisé par les Italiens.",
+      "contemporary": "1951 : Indépendance, royaume de Libye, puis république (1969), État de Libye (2011). Le nom officiel en arabe est \"Dawlat Lībiyā\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaumes berbères antiques",
+        "period": "Antiquité",
+        "dominantPeoples": ["Berbères (Libyens)"],
+        "politicalCenters": ["Divers centres tribaux"],
+        "historicalRole": "Royaumes berbères indépendants, résistance à Rome, développement du commerce transsaharien."
+      },
+      {
+        "name": "Cyrénaïque grecque",
+        "period": "631 av. J.-C. - 96 av. J.-C.",
+        "dominantPeoples": ["Grecs", "Berbères"],
+        "politicalCenters": ["Cyrène", "Apollonia"],
+        "historicalRole": "Colonie grecque prospère, développement de la culture grecque en Afrique du Nord."
+      },
+      {
+        "name": "Tripolitaine romaine",
+        "period": "146 av. J.-C. - 439 apr. J.-C.",
+        "dominantPeoples": ["Romains", "Berbères", "Phéniciens"],
+        "politicalCenters": ["Leptis Magna", "Sabratha", "Oea (Tripoli)"],
+        "historicalRole": "Province romaine prospère, développement urbain et commercial, art romain."
+      },
+      {
+        "name": "Califat omeyyade et abbasside",
+        "period": "643-909",
+        "dominantPeoples": ["Arabes", "Berbères"],
+        "politicalCenters": ["Barqa", "Tripoli"],
+        "historicalRole": "Conquête arabe, islamisation, développement du commerce transsaharien."
+      },
+      {
+        "name": "Régence de Tripoli",
+        "period": "1551-1911",
+        "dominantPeoples": ["Turcs ottomans", "Arabes", "Berbères"],
+        "politicalCenters": ["Tripoli"],
+        "historicalRole": "État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes."
+      },
+      {
+        "name": "Colonie italienne",
+        "period": "1911-1951",
+        "dominantPeoples": [
+          "Tous les peuples libyens sous domination coloniale"
+        ],
+        "politicalCenters": ["Tripoli", "Benghazi"],
+        "historicalRole": "Colonisation italienne, résistance libyenne (Omar al-Mukhtar), développement économique limité."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Arabes de Libye",
+        "selfAppellation": "Al-'Arab (العرب), Lībiyyūn (ليبيون)",
+        "exonyms": ["Arabes", "Arabophones", "Libyens"],
+        "peopleId": "PPL_ARABES_AFRIQUE",
+        "mainRegion": "Toutes les régions de Libye, majoritaires dans les plaines côtières et les villes",
+        "languages": ["Arabe libyen (darija)", "arabe standard"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "Les Arabes de Libye sont majoritairement arabisés (métissés avec les Berbères). Le terme \"Libyen\" est également utilisé."
+      },
+      {
+        "name": "Nafusi",
+        "selfAppellation": "Inafusen",
+        "exonyms": [
+          "« Nefoussa » (forme arabe)",
+          "« Berbère » (terme colonial",
+          "considéré problématique)"
+        ],
+        "peopleId": "PPL_NAFUSI",
+        "mainRegion": "Djebel Nafousa (montagnes de l'ouest)",
+        "languages": ["Nafusi (jbn)"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Le terme \"Berbère\" est considéré comme problématique. L'auto-appellation est \"Inafusen\". Les Nafusi sont ibadites (branche de l'islam)."
+      },
+      {
+        "name": "Touaregs",
+        "selfAppellation": "Kel Tamasheq / Imuhagh",
+        "exonyms": [
+          "Touaregs (exonyme français)",
+          "« Berbère » (terme colonial",
+          "considéré problématique)"
+        ],
+        "peopleId": "PPL_TUAREG",
+        "mainRegion": "Fezzan (sud-ouest), désert libyen",
+        "languages": ["Tamasheq (tmh)"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Le terme \"Touareg\" est un exonyme français. L'auto-appellation est \"Kel Tamasheq\" (ceux qui parlent tamasheq) ou \"Imuhagh\". Le terme \"Berbère\" est considéré comme problématique."
+      },
+      {
+        "name": "Toubou",
+        "selfAppellation": "Teda / Daza",
+        "exonyms": ["Toubou (exonyme français)", "Teda", "Daza"],
+        "peopleId": "PPL_TOUBOU",
+        "mainRegion": "Sud-est (région frontalière avec le Tchad)",
+        "languages": ["Teda (tud)", "Daza (dzg)"],
+        "languageFamily": "FLG_SAHARIEN",
+        "appellationRemarks": "Peuple saharien présent principalement au Tchad et au Niger, minorité en Libye."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Arabe libyen",
+          "isoCode": "ayl"
+        },
+        {
+          "name": "arabe standard",
+          "isoCode": "ara"
+        },
+        {
+          "name": "nafusi",
+          "isoCode": "jbn"
+        },
+        {
+          "name": "tamasheq",
+          "isoCode": "tmh"
+        },
+        {
+          "name": "teda",
+          "isoCode": "tud"
+        },
+        {
+          "name": "daza",
+          "isoCode": "dzg"
+        }
+      ],
+      "culturalTraditions": "Musique libyenne, poésie arabe et amazighe, artisanat (bijoux, poterie), architecture traditionnelle (maisons troglodytes), fêtes religieuses",
+      "dominantReligions": "Islam sunnite (école malékite majoritaire), ibadisme (Nafusi), soufisme important",
+      "lifestyles": "Urbanisation importante (Tripoli, Benghazi), agriculture (côtes), pastoralisme (intérieur), industrie pétrolière, commerce",
+      "socialOrganization": "Structures familiales traditionnelles, organisation tribale (importante en Libye), structures étatiques modernes (instables depuis 2011)",
+      "regionalRelations": "Relations avec le Maghreb (Union du Maghreb arabe), relations avec l'Afrique subsaharienne, relations avec l'Europe, rôle dans la Ligue arabe, instabilité politique depuis 2011"
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence berbère depuis la préhistoire, colonies grecques (Cyrénaïque), colonies phéniciennes (Tripolitaine), domination romaine, christianisation partielle.",
+      "middleAges": "Conquête arabe (643), islamisation progressive, développement du commerce transsaharien, domination ottomane (1551).",
+      "precolonial": "Régence de Tripoli (1551-1911), État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes.",
+      "colonization": "Colonie italienne (1911-1951), résistance libyenne (Omar al-Mukhtar, 1923-1931), développement économique limité.",
+      "independenceStruggle": "Résistance à l'occupation italienne, indépendance (1951), royaume de Libye.",
+      "postIndependence": "Royaume de Libye (1951-1969), coup d'État de Kadhafi (1969), république (1969-2011), révolution de 2011, guerre civile, instabilité politique."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Libya",
+      "Ethnologue – Languages of Libya",
+      "Minority Rights Group – Amazigh in Libya",
+      "CNRS – Berbères",
+      "Wikipedia – Libya, Berber people in Libya, Nafusi",
+      "Recensements libyens"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Arabes de Libye",
+          "population": 6300000,
+          "percentageInCountry": 90,
+          "percentageInAfrica": 3.5,
+          "peopleId": "PPL_ARABES_AFRIQUE",
+          "region": "Toutes les régions",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Nafusi",
+          "population": 225000,
+          "percentageInCountry": 3.2,
+          "percentageInAfrica": 0.1,
+          "peopleId": "PPL_NAFUSI",
+          "region": "Djebel Nafousa (ouest)",
+          "languageFamily": "FLG_BERBERE"
+        },
+        {
+          "name": "Touaregs",
+          "population": 200000,
+          "percentageInCountry": 2.9,
+          "percentageInAfrica": 0.1,
+          "peopleId": "PPL_TUAREG",
+          "region": "Fezzan (sud-ouest)",
+          "languageFamily": "FLG_BERBERE"
+        },
+        {
+          "name": "Toubou",
+          "population": 100000,
+          "percentageInCountry": 1.4,
+          "percentageInAfrica": 0.06,
+          "peopleId": "PPL_TOUBOU",
+          "region": "Sud-est (frontière avec le Tchad)",
+          "languageFamily": "FLG_SAHARIEN"
+        },
+        {
+          "name": "Autres groupes",
+          "population": 175000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.1,
+          "region": "Diverses régions"
+        }
+      ]
+    }
+  }
+}

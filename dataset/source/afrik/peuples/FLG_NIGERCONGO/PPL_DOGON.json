@@ -1,0 +1,88 @@
+{
+  "id": "PPL_DOGON",
+  "nameMain": "Dogon",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Dogon",
+      "selfAppellation": "Dogon",
+      "exonyms": ["Dogon (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Dogon (branche isolée du Niger-Congo)",
+      "historicalRegion": "Plateau de Bandiagara, MLI",
+      "currentCountries": ["MLI"]
+    },
+    "ethnicities": [
+      "Dogon de Bandiagara",
+      "Dogon de Sangha",
+      "Dogon de Sanga",
+      "Dogon de Kani-Kombolé",
+      "Dogon de Tintam",
+      "Dogon de Yougo",
+      "Dogon de Nombori",
+      "Dogon de Kani-Bonzon",
+      "Dogon de Tireli",
+      "Dogon de Banani",
+      "Dogon de Dourou",
+      "Dogon de Yendouma",
+      "Dogon de Bongo",
+      "Dogon de Kani-Kombole",
+      "Dogon de Kani-Kombolé",
+      "Dogon de Kani-Kombolé",
+      "Dogon de Kani-Kombolé",
+      "Dogon de Kani-Kombolé",
+      "Dogon de Kani-Kombolé",
+      "Dogon de Kani-Kombolé"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dogon sont originaires du plateau de Bandiagara au Mali. Leur présence dans la région remonte à plusieurs siècles. Peuple montagnard à forte tradition cosmologique. Ils font partie de la famille linguistique Niger-Congo (branche Dogon isolée).",
+      "unificationsOrDivisions": "Organisation en confédérations distinctes mais partageant une identité culturelle et linguistique commune. Formation de royaumes Dogon.",
+      "externalInfluences": "Contacts avec les peuples voisins (Peuls, Bambara), influence de l'islam et des traditions animistes."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaumes Dogon. Système de conseils d'anciens (Hogon) pour la gouvernance. Société très structurée.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Système de classes d'âge.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels (Hogon), des prêtres animistes, et des oulémas musulmans. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Dogon",
+      "vehicularRole": "Le dogon est parlé par la majorité des Dogon. Le français et le bambara sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Rituels cosmologiques complexes",
+      "source_1": "Cérémonies de masques (Sigui)",
+      "source_2": "Rites de passage (initiation, fêtes de naissance)",
+      "source_3": "Cérémonies liées à l'agriculture",
+      "source_4": "Funérailles traditionnelles",
+      "Symboles": "Masques traditionnels, architecture troglodyte, symboles cosmologiques",
+      "Arts et musique": "",
+      "source_5": "Masques et sculptures traditionnelles",
+      "source_6": "Musique traditionnelle",
+      "source_7": "Danse traditionnelle",
+      "source_8": "Architecture troglodyte",
+      "source_9": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Traditions animistes fortes, syncrétisme avec l'islam. Cosmologie complexe."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora dogon dans les grandes villes maliennes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1380000,
+      "referenceYear": 2025,
+      "source": "Anthropologie Dogon, INSTAT MLI, recensements nationaux"
+    },
+    "sources": [
+      "SIL Ethnologue – Dogon languages",
+      "Anthropologie Dogon (Marcel Griaule, Germaine Dieterlen)",
+      "INSTAT Mali",
+      "Recensements nationaux",
+      "Études sur les royaumes Dogon"
+    ]
+  }
+}

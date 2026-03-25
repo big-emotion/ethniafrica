@@ -1,0 +1,64 @@
+{
+  "id": "PPL_TEDA",
+  "nameMain": "Teda",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["TCD", "NER", "LBY"],
+  "content": {
+    "appellations": {
+      "mainName": "Teda",
+      "selfAppellation": "Teda",
+      "exonyms": ["Teda (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Saharien (Toubou)",
+      "historicalRegion": "TCD, NER, LBY",
+      "currentCountries": ["TCD", "NER", "LBY"]
+    },
+    "ethnicities": ["Teda du Tchad", "Teda du Niger", "Teda de Libye"],
+    "origins": {
+      "ancientOrigins": "Les Teda sont originaires du TCD, du Niger et de la LBY, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Toubou.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Toubou.",
+      "externalInfluences": "Contacts avec les peuples sahariens voisins, influence de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Teda (variété Toubou)",
+      "vehicularRole": "Le teda est parlé par la majorité des Teda. L'arabe et le français sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Pèlerinage à La Mecque (Hajj)",
+      "Symboles": "Symboles islamiques, symboles culturels teda.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture teda."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes, nigériennes et libyennes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora teda dans les grandes villes tchadiennes, nigériennes et libyennes, et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Teda language (tbv)",
+      "CIA World Factbook – Chad, NER, Libya",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples sahariens"
+    ]
+  }
+}

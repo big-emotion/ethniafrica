@@ -1,0 +1,61 @@
+{
+  "id": "FLG_KHOE",
+  "nameFr": "Khoe",
+  "nameEn": "Khoe / Khoeid",
+  "content": {
+    "decolonialHeader": {
+      "selfAppellation": "Khoe / Khoeid",
+      "contemporaryUsage": "Khoe languages / Langues khoe (Tom Güldemann, Bonny Sands, classification moderne).",
+      "historicalAppellations": "Khoe / Khoeid"
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Namibie, Botswana, Afrique du Sud, Angola",
+      "numberOfLanguages": 10,
+      "totalSpeakers": null
+    },
+    "associatedPeoples": [
+      {
+        "name": "Nama",
+        "peopleId": "PPL_NAMA"
+      },
+      {
+        "name": "Damara",
+        "peopleId": "PPL_DAMARA"
+      },
+      {
+        "name": "Khwe",
+        "peopleId": "PPL_KHWE"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues agglutinantes, ordre des mots de base **SOV (Sujet-Objet-Verbe)**, avec un système pronominal riche. Exemples en Khoekhoegowab (Nama) : * Structure SOV : *ǀKharib ǃnâ da ge ǁGûn tsî ǀGaen tsîn* « Dans cette région, nous trouvons springbuck et oryx » (ǁGûn = springbuck, ǀGaen = oryx). * Modificateurs avant têtes : adjectifs et possessifs précèdent les noms. * Racines lexicales majoritairement bimoriques (CVCV, CVV, parfois CVNC) : *gao* /kȁó/ « régner » (ton bas-montant), *kao* /kàő/ « être abasourdi » (ton haut-montant). * Particules grammaticales courtes (CV ou CN), suffixes de petite taille."
+    },
+    "historyAndOrigins": {},
+    "distribution": {
+      "totalSpeakers": null,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Fauvelle-Aymar, François-Xavier (2002) – *L'Invention du Hottentot : histoire du regard occidental sur les Khoisan (XVe-XIXe siècle)*. Publications de la Sorbonne.",
+      "Merians, Linda Evi (2001) – *Envisioning the Worst: Representations of \"Hottentots\" in Early-modern England*. University of Delaware Press.",
+      "Jeffreys, M. D. W. (1947) – « The Origin of the Name Hottentot ». *African Affairs*, vol. 46, n° 184, p. 163-165. Oxford University Press.",
+      "Van Riebeeck, Jan (milieu 1650s) – Journaux de la Compagnie néerlandaise des Indes orientales (VOC), station du Cap. Archives VOC.",
+      "Greenberg, Joseph H. (1955/1963) – *The Languages of Africa*. Indiana University / Mouton.",
+      "Sands, Bonny Eva (1998) – *Eastern and Southern African Khoisan: Evaluating Claims of Distant Linguistic Relationships*. Research School of Pacific and Asian Studies, Australian National University.",
+      "Güldemann, Tom (années 2000s) – Travaux sur classification des langues à clics, reconstruction Khoe-Kwadi, rejet de « Khoisan » comme famille génétique. Multiple publications.",
+      "Jakobsson, Mattias et al. (2024) – *Homo sapiens-specific evolution unveiled by ancient southern African genomes*. *Nature*. DOI: 10.1038/s41586-025-09811-4.",
+      "Lipson, Mark, Sawchuk, E. A., Thompson, J. C. et al. (2022) – *Ancient DNA and deep population structure in sub-Saharan African foragers*. *Nature*. DOI: 10.1038/s41586-022-04430-9.",
+      "Barbieri, Chiara, Schlebusch, Carina et al. (2021-2022) – *Revised timeline and distribution of the earliest diverged human maternal lineages in southern Africa*. *Human Molecular Genetics*. DOI: 10.1093/hmg/ddac158.",
+      "Pickrell, Joseph K. et al. (2012) – *The genetic prehistory of southern Africa*. *Nature Communications*. arXiv:1207.5552.",
+      "Ethnologue (27e édition, 2024) – *Khoekhoegowab* (ISO 639-3: naq), *Khwe*, *Naro*. SIL International. https://www.ethnologue.com/",
+      "SIL Ethnologue – Khoekhoe, Naro, Khwe. SIL International.",
+      "Database of Southern African Languages (DBS, 2024) – *Khoekhoegowab*. https://dbs.org/en/research/languages/naq/",
+      "ASJP (Automated Similarity Judgment Program) – *Khwe* (Kxoe/Ani). https://asjp.clld.org/languages/KHWE",
+      "Endangered Languages Project – *Khoekhoegowab*, *Language Vitality Among the Nama of Tshabong*. https://www.endangeredlanguages.com/",
+      "Grokipedia / Namibie Population and Housing Census (2023) – *Demographics of Namibia*. https://grokipedia.com/page/Demographics_of_Namibia",
+      "UNESCO – Langues en danger (Afrique australe). UNESCO Atlas of the World's Languages in Danger.",
+      "Pakendorf, Brigitte et al. – Travaux sur classification des langues Khoe et génétique des populations."
+    ]
+  }
+}

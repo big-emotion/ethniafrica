@@ -1,0 +1,209 @@
+{
+  "id": "TCD",
+  "nameFr": "République du Tchad (Republic of Chad, جمهورية تشاد)",
+  "nameOfficial": "République du Tchad (Republic of Chad, جمهورية تشاد)",
+  "etymology": "Le nom \"Tchad\" vient du lac Tchad, qui occupe une position centrale dans la région. Le terme \"Tchad\" (ou \"Chad\" en anglais) est dérivé du mot kanembu \"tsade\" ou \"sade\", signifiant \"grande étendue d'eau\" ou \"lac\". Le lac Tchad était un centre important pour les royaumes historiques de la région (Kanem-Bornou). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle.",
+  "nameOriginActor": "Le nom \"Tchad\" vient du lac Tchad, nommé par les peuples locaux (Kanembu). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle lors de la création de la colonie du Tchad.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Présence de peuples sahariens et soudaniques centraux dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de \"Kanem\" par les géographes arabes.",
+      "middleAges": "Présence de peuples sahariens (Kanembu, Toubou) et soudaniques centraux (Sara) dans la région. Développement du royaume du Kanem (VIIIe-XIVe siècles) et du royaume du Bornou (XIVe-XIXe siècles). La région était connue sous le nom de \"Kanem\" ou \"Bornou\" par les géographes arabes.",
+      "precolonial": "Présence de peuples sahariens (Kanembu, Toubou), soudaniques centraux (Sara), et arabes dans la région. Développement du royaume du Kanem-Bornou. La région était connue sous le nom de \"Kanem\" ou \"Bornou\" par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
+      "colonization": "1900-1960 : Colonie française du Tchad. Développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle). Le nom \"Tchad\" est officialisé par les colonisateurs français.",
+      "contemporary": "1960 : Indépendance (11 août 1960), proclamation de la République du Tchad. Le nom \"Tchad\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume du Kanem",
+        "period": "VIIIe siècle - XIVe siècle",
+        "dominantPeoples": ["Kanembu", "Kanuri"],
+        "politicalCenters": ["Njimi (capitale du Kanem)"],
+        "historicalRole": "Royaume saharien puissant, contrôle du commerce transsaharien, expansion de l'islam, développement de la civilisation kanembu."
+      },
+      {
+        "name": "Royaume du Bornou",
+        "period": "XIVe siècle - XIXe siècle",
+        "dominantPeoples": ["Kanembu", "Kanuri", "Arabes"],
+        "politicalCenters": ["Ngazargamu (capitale du Bornou)"],
+        "historicalRole": "Royaume saharien puissant, continuation du royaume du Kanem, contrôle du commerce transsaharien, expansion de l'islam, résistance aux colonisateurs."
+      },
+      {
+        "name": "Royaume du Kanem-Bornou",
+        "period": "VIIIe siècle - XIXe siècle",
+        "dominantPeoples": ["Kanembu", "Kanuri", "Arabes", "Toubou"],
+        "politicalCenters": ["Njimi (Kanem)", "Ngazargamu (Bornou)"],
+        "historicalRole": "Royaume saharien puissant, contrôle du commerce transsaharien, expansion de l'islam, développement de la civilisation kanembu, résistance aux colonisateurs."
+      },
+      {
+        "name": "Chefferies Sara",
+        "period": "Depuis plusieurs siècles",
+        "dominantPeoples": ["Sara"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Organisation politique traditionnelle des Sara, chefferies territoriales, résistance aux colonisateurs."
+      },
+      {
+        "name": "Colonie française du Tchad",
+        "period": "1900 - 1960",
+        "dominantPeoples": [
+          "Français",
+          "Sara",
+          "Kanembu",
+          "Toubou",
+          "Arabes",
+          "autres groupes"
+        ],
+        "politicalCenters": ["Fort-Lamy (N'Djamena", "capitale coloniale)"],
+        "historicalRole": "Colonisation française, développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Sara",
+        "selfAppellation": "Sara",
+        "exonyms": ["\"Sara\" (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SARA",
+        "mainRegion": "Sud du Tchad",
+        "languages": ["Sara (sre", "ISO 639-3)", "français", "arabe"],
+        "languageFamily": "FLG_SOUDANIQUECENTRAL",
+        "appellationRemarks": "\"Sara\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe soudanique central majoritaire, originaire du Tchad et de la RCA."
+      },
+      {
+        "name": "Arabes tchadiens",
+        "selfAppellation": "Al-'Arab (العرب)",
+        "exonyms": [
+          "\"Arabes\" (terme générique)",
+          "\"Arabophones\" (terme descriptif)",
+          "\"Baggara\" (terme historique pour certains groupes arabes nomades)"
+        ],
+        "peopleId": "PPL_ARABES_AFRIQUE",
+        "mainRegion": "Centre et est du Tchad, zones désertiques",
+        "languages": ["Arabe tchadien (arb", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "\"Al-'Arab\" (العرب) est l'auto-appellation. Le terme \"Baggara\" (éleveurs de bovins) est historique et descriptif. Groupe sémitique, descendants d'immigrants arabes arrivés à partir du VIIe siècle, métissages avec les populations locales."
+      },
+      {
+        "name": "Kanembu",
+        "selfAppellation": "Kanembu",
+        "exonyms": ["\"Kanembu\" (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KANEMBU",
+        "mainRegion": "Nord du Tchad (région du lac Tchad)",
+        "languages": ["Kanembu (kbl", "ISO 639-3)", "arabe", "français"],
+        "languageFamily": "FLG_SAHARIEN",
+        "appellationRemarks": "\"Kanembu\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe saharien, historiquement lié au royaume du Kanem-Bornou."
+      },
+      {
+        "name": "Toubou",
+        "selfAppellation": "Toubou",
+        "exonyms": [
+          "\"Toubou\" (terme utilisé par les Européens)",
+          "\"Teda\" (Toubou du Nord)",
+          "\"Daza\" (Toubou du Sud)"
+        ],
+        "peopleId": "PPL_TOUBOU",
+        "mainRegion": "Nord du Tchad (Sahara), zones désertiques",
+        "languages": ["Toubou (tbv", "dzg", "ISO 639-3)", "arabe", "français"],
+        "languageFamily": "FLG_SAHARIEN",
+        "appellationRemarks": "\"Toubou\" est l'auto-appellation. \"Teda\" et \"Daza\" sont les noms des sous-groupes. Pas de terme péjoratif connu. Groupe saharien, originaire du Tchad, du Niger et de la Libye, dans la région du Sahara central."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Toutes les régions du Tchad",
+        "languages": ["Langues diverses", "français", "arabe"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "arabe",
+          "isoCode": "arb",
+          "isPrimary": true
+        },
+        {
+          "name": "sara",
+          "isoCode": "sre"
+        },
+        {
+          "name": "kanembu",
+          "isoCode": "kbl"
+        },
+        {
+          "name": "toubou",
+          "isoCode": "dzg"
+        }
+      ],
+      "culturalTraditions": "Traditions soudaniques centrales (Sara) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat (poterie, tissage), agriculture. Traditions arabes (Arabes tchadiens) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat, élevage pastoral. Traditions sahariennes (Kanembu, Toubou) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat, élevage pastoral, commerce transsaharien. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture tchadienne est riche et préservée, avec une forte tradition orale (poésie).",
+      "dominantReligions": "Islam sunnite (majoritaire, environ 55%), christianisme (environ 40%, principalement catholicisme), religions traditionnelles africaines (syncrétisme fréquent, environ 5%)",
+      "lifestyles": "Agriculture (coton, arachides, sorgho, millet, cultures vivrières), élevage (bovins, caprins, ovins, chameaux, mode de vie nomade et semi-nomade), pêche (lac Tchad, importante source de protéines), exploitation minière (pétrole, or), commerce et activités urbaines (zones urbaines, N'Djamena). Urbanisation limitée. Économie basée sur l'agriculture (coton, arachides), l'élevage pastoral, et l'exploitation pétrolière (secteur majeur). Le Tchad est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole.",
+      "socialOrganization": "Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (tribus, clans, chefferies). Structures étatiques modernes (république, mais instabilité politique et conflits récents). Système politique démocratique, mais instabilité politique et conflits récents (guerre civile, rébellions, coups d'État).",
+      "regionalRelations": "Relations avec l'Afrique centrale (CEEAC, Union africaine), relations avec le Sahel (G5 Sahel), relations avec le Moyen-Orient (Ligue arabe), relations avec l'Europe (Union européenne, France), relations avec les États-Unis. Le Tchad est membre de la CEEAC, de l'Union africaine et de la Ligue arabe."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence de peuples sahariens et soudaniques centraux dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de \"Kanem\" par les géographes arabes.",
+      "middleAges": "Présence de peuples sahariens (Kanembu, Toubou) et soudaniques centraux (Sara) dans la région. Développement du royaume du Kanem (VIIIe-XIVe siècles) et du royaume du Bornou (XIVe-XIXe siècles). La région était connue sous le nom de \"Kanem\" ou \"Bornou\" par les géographes arabes.",
+      "precolonial": "Présence de peuples sahariens (Kanembu, Toubou), soudaniques centraux (Sara), et arabes dans la région. Développement du royaume du Kanem-Bornou. La région était connue sous le nom de \"Kanem\" ou \"Bornou\" par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
+      "colonization": "1900-1960 : Colonie française du Tchad, développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle).",
+      "independenceStruggle": "1950s-1960 : Mouvements nationalistes, PPT (Parti progressiste tchadien), indépendance (11 août 1960), proclamation de la République du Tchad. François Tombalbaye devient premier président.",
+      "postIndependence": "République du Tchad (1960), présidence de François Tombalbaye (1960-1975, régime autoritaire, parti unique), coup d'État (1975), guerre civile (1965-1979, 2005-2010), présidence d'Hissène Habré (1982-1990, régime autoritaire, crimes contre l'humanité), présidence d'Idriss Déby (1990-2021, régime autoritaire, rébellions), mort d'Idriss Déby (2021), transition militaire, présidence de Mahamat Idriss Déby (depuis 2021). Stabilité politique fragile, État en transition, conflits récents (guerre civile, rébellions, coups d'État), développement économique (agriculture, élevage, exploitation pétrolière). Le Tchad est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Chad",
+      "SIL Ethnologue – Languages of Chad",
+      "Recensements tchadiens",
+      "Études anthropologiques sur les peuples du Tchad",
+      "Études historiques sur la colonisation française"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Sara",
+          "population": 3000000,
+          "percentageInCountry": 18,
+          "peopleId": "PPL_SARA",
+          "region": "Sud du Tchad",
+          "languageFamily": "FLG_SOUDANIQUECENTRAL"
+        },
+        {
+          "name": "Arabes tchadiens",
+          "population": 2500000,
+          "percentageInCountry": 15,
+          "peopleId": "PPL_ARABES_AFRIQUE",
+          "region": "Centre et est du Tchad, zones désertiques",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Kanembu",
+          "population": 650000,
+          "percentageInCountry": 3.9,
+          "peopleId": "PPL_KANEMBU",
+          "region": "Nord du Tchad (région du lac Tchad)",
+          "languageFamily": "FLG_SAHARIEN"
+        },
+        {
+          "name": "Toubou",
+          "population": 400000,
+          "percentageInCountry": 2.4,
+          "peopleId": "PPL_TOUBOU",
+          "region": "Nord du Tchad (Sahara), zones désertiques",
+          "languageFamily": "FLG_SAHARIEN"
+        },
+        {
+          "name": "Autres groupes",
+          "population": 10450000,
+          "percentageInCountry": 60.7,
+          "peopleId": "PPL_AUTRES_GROUPES",
+          "region": "Toutes les régions du Tchad"
+        }
+      ]
+    }
+  }
+}

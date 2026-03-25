@@ -11,8 +11,7 @@
 import fs from "fs";
 import path from "path";
 import type { CrossLayerGap } from "./types";
-import { parsePeopleFile } from "@/lib/afrik/parsers/peopleParser";
-import { parseLanguageFamilyV2 } from "@/lib/afrik/parsers/languageFamilyParserV2";
+import type { People, LanguageFamily } from "@/types/afrik";
 
 // Dataset root path
 const DATASET_ROOT = path.resolve(__dirname, "../../dataset/source/afrik");
@@ -66,11 +65,14 @@ export function analyzePeopleCultureGap(
     /^[A-F]\.\s+/m.test(cultureText) || // A. Divinites format (without ###)
     /- [A-Za-zÀ-ÿ]+ :\s*\n\s+-/m.test(cultureText); // Nested bullet lists
 
-  // Parse the file and check if culture is flat key-value
-  const parsed = parsePeopleFile(sampleContent);
-  if (!parsed.success || !parsed.data) return null;
-
-  const culture = parsed.data.content?.culture;
+  // Parse the JSON file and check if culture is flat key-value
+  let parsed: People;
+  try {
+    parsed = JSON.parse(sampleContent) as People;
+  } catch {
+    return null;
+  }
+  const culture = parsed.content?.culture;
   if (!culture) return null;
 
   // The parser always flattens culture into Record<string, string> via parseSection()
@@ -257,11 +259,14 @@ export function analyzePeopleDemographyGap(
 
   if (!hasDistribution) return null;
 
-  // Verify the parser does not extract this field
-  const parsed = parsePeopleFile(sampleContent);
-  if (!parsed.success || !parsed.data) return null;
-
-  const demography = parsed.data.content?.demography;
+  // Verify the JSON demography field does not have distribution data
+  let parsed: People;
+  try {
+    parsed = JSON.parse(sampleContent) as People;
+  } catch {
+    return null;
+  }
+  const demography = parsed.content?.demography;
   if (!demography) return null;
 
   // Check if the parsed demography has distribution data
@@ -303,7 +308,7 @@ export async function analyzeAllGaps(): Promise<CrossLayerGap[]> {
   try {
     const peoplePath = path.join(
       DATASET_ROOT,
-      "peuples/FLG_BANTU/PPL_ZULU.txt"
+      "peuples/FLG_BANTU/PPL_ZULU.json"
     );
     peopleContent = fs.readFileSync(peoplePath, "utf-8");
   } catch {
@@ -313,7 +318,7 @@ export async function analyzeAllGaps(): Promise<CrossLayerGap[]> {
   try {
     const familyPath = path.join(
       DATASET_ROOT,
-      "famille_linguistique/FLG_BANTU.txt"
+      "famille_linguistique/FLG_BANTU.json"
     );
     familyContent = fs.readFileSync(familyPath, "utf-8");
   } catch {
@@ -321,7 +326,7 @@ export async function analyzeAllGaps(): Promise<CrossLayerGap[]> {
   }
 
   try {
-    const countryPath = path.join(DATASET_ROOT, "pays/BFA.txt");
+    const countryPath = path.join(DATASET_ROOT, "pays/BFA.json");
     countryContent = fs.readFileSync(countryPath, "utf-8");
   } catch {
     // File not available, skip dynamic country analysis

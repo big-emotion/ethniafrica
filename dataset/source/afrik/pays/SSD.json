@@ -1,0 +1,200 @@
+{
+  "id": "SSD",
+  "nameFr": "République du Soudan du Sud (Republic of South Sudan)",
+  "nameOfficial": "République du Soudan du Sud (Republic of South Sudan)",
+  "etymology": "Le nom \"Soudan du Sud\" provient de sa position géographique par rapport au Soudan, dont il s'est séparé en 2011. Le terme \"Soudan\" vient de l'arabe \"Bilād as-Sūdān\" (بلاد السودان), signifiant \"pays des Noirs\". Le nom \"Soudan du Sud\" a été officialisé lors de l'indépendance en 2011 pour distinguer le nouveau pays du Soudan (au nord).",
+  "nameOriginActor": "Le nom \"Soudan du Sud\" a été officialisé lors de l'indépendance en 2011 par le gouvernement sud-soudanais, suite au référendum d'autodétermination et à la sécession du Soudan.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Présence de peuples nilotiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de \"Nubie\" par les Égyptiens et les Grecs.",
+      "middleAges": "Présence de peuples nilotiques (Dinka, Nuer, Shilluk) dans la région. Développement de chefferies et de royaumes locaux. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
+      "precolonial": "Présence de peuples nilotiques (Dinka, Nuer, Shilluk) et soudaniques centraux (Zande) dans la région. Développement de chefferies et de royaumes locaux (royaume Shilluk, royaume Zande). La région était connue sous le nom de \"Soudan du Sud\" par les Européens, mais les populations locales avaient leurs propres appellations.",
+      "colonization": "1899-1956 : Partie du condominium anglo-égyptien (Soudan anglo-égyptien). Développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle). Le nom \"Soudan du Sud\" est utilisé par les colonisateurs pour distinguer la région méridionale du Soudan.",
+      "contemporary": "1956-2011 : Partie du Soudan indépendant. 2011 : Indépendance (9 juillet 2011), proclamation de la République du Soudan du Sud. Le nom \"Soudan du Sud\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume Shilluk",
+        "period": "XVe siècle - XIXe siècle",
+        "dominantPeoples": ["Shilluk"],
+        "politicalCenters": ["Fashoda (Kodok)"],
+        "historicalRole": "Royaume shilluk puissant, contrôle du commerce dans la région du Nil Blanc, résistance aux Arabes et aux colonisateurs."
+      },
+      {
+        "name": "Royaume Zande",
+        "period": "XVIIe siècle - XIXe siècle",
+        "dominantPeoples": ["Zande"],
+        "politicalCenters": ["Variés selon les périodes"],
+        "historicalRole": "Royaume zande puissant, contrôle du commerce dans la région, résistance aux colonisateurs."
+      },
+      {
+        "name": "Chefferies Dinka",
+        "period": "Depuis plusieurs siècles",
+        "dominantPeoples": ["Dinka"],
+        "politicalCenters": ["Chefferies territoriales (cieng)"],
+        "historicalRole": "Organisation politique traditionnelle des Dinka, chefferies territoriales, résistance aux colonisateurs."
+      },
+      {
+        "name": "Chefferies Nuer",
+        "period": "Depuis plusieurs siècles",
+        "dominantPeoples": ["Nuer"],
+        "politicalCenters": ["Groupes d'âge", "chefferies traditionnelles"],
+        "historicalRole": "Organisation politique traditionnelle des Nuer, groupes d'âge, résistance aux colonisateurs."
+      },
+      {
+        "name": "Condominium anglo-égyptien",
+        "period": "1899 - 1956",
+        "dominantPeoples": [
+          "Britanniques",
+          "Égyptiens",
+          "Dinka",
+          "Nuer",
+          "Shilluk",
+          "Zande",
+          "autres groupes"
+        ],
+        "politicalCenters": ["Djouba (capitale administrative)"],
+        "historicalRole": "Colonisation britannique et égyptienne, développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Dinka",
+        "selfAppellation": "Jieng (singulier) / Muonyjang (pluriel)",
+        "exonyms": [
+          "\"Dinka\" (terme utilisé par les Arabes et les colonisateurs)",
+          "\"Denka\" (variante)"
+        ],
+        "peopleId": "PPL_DINKA",
+        "mainRegion": "Région du Nil Blanc, marais du Sudd",
+        "languages": ["Dinka (din", "ISO 639-3)", "anglais", "arabe"],
+        "languageFamily": "FLG_NILOTIQUE",
+        "appellationRemarks": "\"Jieng\" / \"Muonyjang\" sont les auto-appellations. Le terme \"Dinka\" est utilisé par les Arabes et les colonisateurs. Pas de terme péjoratif connu. Groupe nilotique majoritaire, originaire de la région du Sudd (marais du Nil Blanc)."
+      },
+      {
+        "name": "Nuer",
+        "selfAppellation": "Naath",
+        "exonyms": ["\"Nuer\" (terme utilisé par les Européens)"],
+        "peopleId": "PPL_NUER",
+        "mainRegion": "Région du Nil Blanc, zones marécageuses (Sudd)",
+        "languages": ["Nuer (nus", "ISO 639-3)", "anglais", "arabe"],
+        "languageFamily": "FLG_NILOTIQUE",
+        "appellationRemarks": "\"Naath\" est l'auto-appellation. Le terme \"Nuer\" est utilisé par les Européens. Pas de terme péjoratif connu. Groupe nilotique, originaire du Soudan du Sud et de l'Éthiopie, dans la région du Nil supérieur."
+      },
+      {
+        "name": "Shilluk",
+        "selfAppellation": "Chollo",
+        "exonyms": ["\"Shilluk\" (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SHILLUK",
+        "mainRegion": "Région du Nil Blanc (Fashoda, Kodok)",
+        "languages": ["Shilluk (shk", "ISO 639-3)", "anglais", "arabe"],
+        "languageFamily": "FLG_NILOTIQUE",
+        "appellationRemarks": "\"Chollo\" est l'auto-appellation. Le terme \"Shilluk\" est utilisé par les Européens. Pas de terme péjoratif connu. Groupe nilotique, royaume Shilluk (XVe siècle - XIXe siècle)."
+      },
+      {
+        "name": "Zande",
+        "selfAppellation": "Azande",
+        "exonyms": [
+          "\"Zande\" (terme utilisé par les Européens)",
+          "\"Azande\""
+        ],
+        "peopleId": "PPL_ZANDE",
+        "mainRegion": "Sud-Ouest du Soudan du Sud",
+        "languages": ["Zande (zne", "ISO 639-3)", "anglais", "arabe"],
+        "languageFamily": "FLG_SOUDANIQUECENTRAL",
+        "appellationRemarks": "\"Azande\" est l'auto-appellation. Le terme \"Zande\" est utilisé par les Européens. Pas de terme péjoratif connu. Groupe soudanique central, royaume Zande (XVIIe siècle - XIXe siècle)."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Toutes les régions du Soudan du Sud",
+        "languages": ["Langues diverses", "anglais", "arabe"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "arabe",
+          "isoCode": "arb",
+          "isPrimary": true
+        },
+        {
+          "name": "dinka",
+          "isoCode": "din"
+        },
+        {
+          "name": "nuer",
+          "isoCode": "nus"
+        },
+        {
+          "name": "shilluk",
+          "isoCode": "shk"
+        },
+        {
+          "name": "zande",
+          "isoCode": "zne"
+        }
+      ],
+      "culturalTraditions": "Traditions nilotiques (Dinka, Nuer, Shilluk) : poésie orale, musiques traditionnelles, danse traditionnelle, artisanat (poterie, tissage), élevage pastoral de bovins, rituels liés au bétail, scarifications. Traditions soudaniques centrales (Zande) : musiques traditionnelles, danse traditionnelle, artisanat, royaume traditionnel. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture sud-soudanaise est riche et préservée, avec une forte tradition orale (poésie).",
+      "dominantReligions": "Christianisme (majoritaire, environ 60%, principalement catholicisme et anglicanisme), religions traditionnelles africaines (syncrétisme fréquent, environ 30%), islam (minorité, environ 10%)",
+      "lifestyles": "Élevage pastoral (bovins, mode de vie nomade et semi-nomade), agriculture (sorgho, millet, maïs, cultures vivrières), pêche (Nil Blanc, importante source de protéines), commerce et activités urbaines (zones urbaines, Djouba). Urbanisation limitée. Économie basée sur l'élevage pastoral (secteur majeur), l'agriculture (sorgho, millet), et l'exploitation pétrolière (secteur majeur). Le Soudan du Sud est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole.",
+      "socialOrganization": "Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (chefferies, groupes d'âge). Structures étatiques modernes (république, mais instabilité politique et conflits récents). Système politique démocratique, mais instabilité politique et conflits récents (guerre civile depuis 2013, État fragile).",
+      "regionalRelations": "Relations avec l'Afrique de l'Est (IGAD, Union africaine), relations avec le Soudan (relations complexes, conflits frontaliers), relations avec l'Europe (Union européenne), relations avec les États-Unis. Le Soudan du Sud est membre de l'IGAD et de l'Union africaine."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence de peuples nilotiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. La région était connue sous le nom de \"Nubie\" par les Égyptiens et les Grecs.",
+      "middleAges": "Présence de peuples nilotiques (Dinka, Nuer, Shilluk) dans la région. Développement de chefferies et de royaumes locaux. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
+      "precolonial": "Présence de peuples nilotiques (Dinka, Nuer, Shilluk) et soudaniques centraux (Zande) dans la région. Développement de chefferies et de royaumes locaux (royaume Shilluk, royaume Zande). La région était connue sous le nom de \"Soudan du Sud\" par les Européens, mais les populations locales avaient leurs propres appellations.",
+      "colonization": "1899-1956 : Partie du condominium anglo-égyptien (Soudan anglo-égyptien), développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle).",
+      "independenceStruggle": "1955-1972 : Première guerre civile soudanaise (rébellion Anyanya), accord d'Addis-Abeba (1972, autonomie régionale). 1983-2005 : Deuxième guerre civile soudanaise (rébellion SPLA/M), accord de paix global (2005, autonomie régionale, référendum d'autodétermination). 2011 : Référendum d'autodétermination (98,83% pour l'indépendance), indépendance (9 juillet 2011), proclamation de la République du Soudan du Sud. Salva Kiir Mayardit devient premier président.",
+      "postIndependence": "République du Soudan du Sud (2011), présidence de Salva Kiir Mayardit (depuis 2011), guerre civile (2013-2020, conflit entre forces gouvernementales et rebelles, violences ethniques, crimes de guerre), accord de paix (2020), transition politique, reconstruction post-conflit. Stabilité politique fragile, État en transition, conflits récents (guerre civile 2013-2020), développement économique (élevage, agriculture, exploitation pétrolière). Le Soudan du Sud est l'un des pays les plus pauvres d'Afrique, avec un IDH très faible et une économie dépendante du pétrole."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – South Sudan",
+      "SIL Ethnologue – Languages of South Sudan",
+      "Recensements sud-soudanais",
+      "Études anthropologiques sur les peuples du Soudan du Sud",
+      "Études historiques sur la colonisation britannique et égyptienne"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Dinka",
+          "population": 4500000,
+          "percentageInCountry": 40,
+          "peopleId": "PPL_DINKA",
+          "region": "Région du Nil Blanc, marais du Sudd",
+          "languageFamily": "FLG_NILOTIQUE"
+        },
+        {
+          "name": "Nuer",
+          "population": 1800000,
+          "percentageInCountry": 16,
+          "peopleId": "PPL_NUER",
+          "region": "Région du Nil Blanc, zones marécageuses (Sudd)",
+          "languageFamily": "FLG_NILOTIQUE"
+        },
+        {
+          "name": "Shilluk",
+          "population": 500000,
+          "percentageInCountry": 4.5,
+          "peopleId": "PPL_SHILLUK",
+          "region": "Région du Nil Blanc (Fashoda, Kodok)",
+          "languageFamily": "FLG_NILOTIQUE"
+        },
+        {
+          "name": "Autres peuples"
+        }
+      ]
+    }
+  }
+}

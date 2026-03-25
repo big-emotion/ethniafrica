@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "pays",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "XXX",
+  "nameFr": "<Nom officiel en français>",
+  "nameOfficial": "<Nom officiel complet>",
+  "etymology": "<Étymologie du nom du pays — origine, sens, histoire du terme>",
+  "nameOriginActor": "<Personne / peuple / administration à l'origine du nom>",
+  "content": {
+    "historicalNames": {
+      "antiquity": null,
+      "middleAges": null,
+      "precolonial": null,
+      "colonization": null,
+      "contemporary": null
+    },
+    "kingdoms": [
+      {
+        "name": "<Nom du royaume / empire>",
+        "period": "<Période — ex: XVIIe siècle - 1894>",
+        "dominantPeoples": ["<Peuple dominant>"],
+        "politicalCenters": ["<Capitale ou centre politique>"],
+        "historicalRole": "<Rôle historique du royaume>"
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "<Nom du peuple>",
+        "selfAppellation": "<Auto-appellation (endonyme)>",
+        "exonyms": ["<Exonyme 1>"],
+        "peopleId": "PPL_XXXXX",
+        "mainRegion": "<Région principale>",
+        "languages": ["<Langue (iso)>"],
+        "languageFamily": "FLG_XXXXX",
+        "appellationRemarks": null
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        { "name": "<Langue>", "isoCode": "xxx", "isPrimary": true }
+      ],
+      "culturalTraditions": null,
+      "dominantReligions": null,
+      "lifestyles": null,
+      "socialOrganization": null,
+      "regionalRelations": null
+    },
+    "historicalFacts": {
+      "ancientPeriods": null,
+      "middleAges": null,
+      "precolonial": null,
+      "colonization": null,
+      "independenceStruggle": null,
+      "postIndependence": null
+    },
+    "sources": ["<Titre – Auteur/URL>"],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "<Nom du peuple>",
+          "peopleId": "PPL_XXXXX",
+          "population": 0,
+          "percentageInCountry": 0,
+          "percentageInAfrica": null,
+          "region": null,
+          "languageFamily": "FLG_XXXXX",
+          "mainLanguageCode": "xxx"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "id": "TZA",
+  "nameFr": "République unie de Tanzanie (Jamhuri ya Muungano wa Tanzania)",
+  "nameOfficial": "République unie de Tanzanie (Jamhuri ya Muungano wa Tanzania)",
+  "etymology": "Le nom \"Tanzanie\" est une combinaison de \"Tanganyika\" et \"Zanzibar\", créé lors de l'unification en 1964. \"Tanganyika\" vient probablement du swahili \"tanga\" (voile) et \"nyika\" (plaine désertique), ou de \"tanga\" (voile) et \"hika\" (étendre). \"Zanzibar\" vient de l'arabe \"Zanj\" (noir) et \"barr\" (côte), signifiant \"côte des Noirs\".",
+  "nameOriginActor": "Le nom \"Tanzanie\" a été créé en 1964 lors de l'unification du Tanganyika et de Zanzibar. \"Tanganyika\" était le nom colonial allemand puis britannique. \"Zanzibar\" était le nom du sultanat puis protectorat.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de groupes bantous, nilotiques et couchitiques sans nom unifié. Les peuples autochtones (Sukuma, Chaga, Maasai, etc.) avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Développement des cités-États swahili sur la côte (Kilwa, Zanzibar, Pemba). Commerce avec les Arabes, les Indiens et les Perses.",
+      "precolonial": "Mosaïque de peuples bantous (Sukuma, Chaga, Nyamwezi, Haya), nilotiques (Maasai, Luo) et couchitiques. Cité-États swahili sur la côte. Sultanat de Zanzibar. Pas de nom unifié pour l'ensemble du territoire.",
+      "colonization": "1885-1918 : Afrique orientale allemande (Deutsch-Ostafrika), incluant le Tanganyika. 1919-1961 : Territoire sous mandat britannique (Tanganyika). 1890-1963 : Protectorat britannique de Zanzibar.",
+      "contemporary": "1961 : Indépendance du Tanganyika. 1963 : Indépendance de Zanzibar. 1964 : Unification sous le nom de \"République unie de Tanzanie\". Le nom officiel en swahili est \"Jamhuri ya Muungano wa Tanzania\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Cités-États swahili",
+        "period": "VIIIe - XIXe siècles",
+        "dominantPeoples": ["Swahili"],
+        "politicalCenters": ["Kilwa", "Zanzibar", "Pemba", "Mombasa"],
+        "historicalRole": "Cités-États swahili puissantes sur la côte, commerce avec les Arabes, les Indiens et les Européens. Civilisation swahili ancienne."
+      },
+      {
+        "name": "Sultanat de Zanzibar",
+        "period": "XIXe - XXe siècles",
+        "dominantPeoples": ["Swahili", "Arabes"],
+        "politicalCenters": ["Zanzibar (capitale)"],
+        "historicalRole": "Sultanat puissant, commerce d'esclaves et d'épices. Influence sur la côte est-africaine."
+      },
+      {
+        "name": "Royaumes bantous",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Sukuma", "Chaga", "Nyamwezi", "Haya"],
+        "politicalCenters": ["Régions centrales et occidentales"],
+        "historicalRole": "Royaumes et chefferies bantous, organisation politique traditionnelle, agriculture."
+      },
+      {
+        "name": "Afrique orientale allemande",
+        "period": "1885 - 1918",
+        "dominantPeoples": [
+          "Tous les peuples tanzaniens sous administration coloniale allemande"
+        ],
+        "politicalCenters": ["Dar es Salaam (capitale coloniale)"],
+        "historicalRole": "Colonie allemande, résistance tanzanienne (guerre Maji Maji, 1905-1907)."
+      },
+      {
+        "name": "Tanganyika",
+        "period": "1919 - 1961",
+        "dominantPeoples": [
+          "Tous les peuples tanzaniens sous mandat britannique"
+        ],
+        "politicalCenters": ["Dar es Salaam (capitale)"],
+        "historicalRole": "Mandat britannique puis tutelle de l'ONU. Mouvements nationalistes."
+      },
+      {
+        "name": "République unie de Tanzanie",
+        "period": "1964 - présent",
+        "dominantPeoples": ["Tous les peuples tanzaniens"],
+        "politicalCenters": [
+          "Dodoma (capitale depuis 1996)",
+          "Dar es Salaam (ancienne capitale)"
+        ],
+        "historicalRole": "Unification du Tanganyika et de Zanzibar en 1964. Histoire politique stable avec parti unique puis multipartisme. Développement économique, hub est-africain."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Sukuma",
+        "selfAppellation": "Sukuma",
+        "exonyms": ["Sukuma (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SUKUMA",
+        "mainRegion": "Nord-Ouest (région du lac Victoria)",
+        "languages": ["Sukuma", "swahili", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Sukuma\" est neutre et accepté."
+      },
+      {
+        "name": "Swahili (Tanzanie)",
+        "selfAppellation": "Swahili",
+        "exonyms": ["Swahili (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SWAHILI_TANZANIE",
+        "mainRegion": "Côte (Zanzibar, Pemba, Dar es Salaam)",
+        "languages": ["Swahili", "arabe", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Swahili\" est neutre et accepté."
+      },
+      {
+        "name": "Chaga",
+        "selfAppellation": "Chaga",
+        "exonyms": [
+          "Chaga (terme utilisé par les Européens)",
+          "Chagga (variante)"
+        ],
+        "peopleId": "PPL_CHAGA",
+        "mainRegion": "Nord (mont Kilimandjaro)",
+        "languages": ["Chaga", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Chaga\" est neutre et accepté."
+      },
+      {
+        "name": "Haya",
+        "selfAppellation": "Haya",
+        "exonyms": ["Haya (terme utilisé par les Européens)"],
+        "peopleId": "PPL_HAYA",
+        "mainRegion": "Nord-Ouest (région du lac Victoria)",
+        "languages": ["Haya", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Haya\" est neutre et accepté."
+      },
+      {
+        "name": "Nyamwezi",
+        "selfAppellation": "Nyamwezi",
+        "exonyms": [
+          "Nyamwezi (terme utilisé par les Européens",
+          "signifiant \"peuple de la lune\")"
+        ],
+        "peopleId": "PPL_NYAMWEZI",
+        "mainRegion": "Centre-Ouest",
+        "languages": ["Nyamwezi", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Nyamwezi\" est neutre et accepté."
+      },
+      {
+        "name": "Maasai",
+        "selfAppellation": "Maasai",
+        "exonyms": [
+          "Maasai (terme utilisé par les Européens)",
+          "Masai (variante)"
+        ],
+        "peopleId": "PPL_MAASAI",
+        "mainRegion": "Nord (région d'Arusha)",
+        "languages": ["Maasai", "swahili", "anglais"],
+        "languageFamily": "FLG_NILOTIQUE",
+        "appellationRemarks": "Le terme \"Maasai\" est neutre et accepté."
+      },
+      {
+        "name": "Hehe",
+        "selfAppellation": "Hehe",
+        "exonyms": ["Hehe (terme utilisé par les Européens)"],
+        "peopleId": "PPL_HEHE",
+        "mainRegion": "Centre-Sud (Iringa)",
+        "languages": ["Hehe", "swahili", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Hehe\" est neutre et accepté."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Musique traditionnelle (taarab, ngoma), danse traditionnelle, poésie orale, artisanat (vannerie, poterie, bijoux), architecture traditionnelle, élevage pastoral (Maasai)",
+      "dominantReligions": "Christianisme (catholique majoritaire, protestant), islam (minorité, surtout sur la côte et à Zanzibar), croyances traditionnelles (syncrétisme)",
+      "lifestyles": "Vie principalement rurale, agriculture (café, thé, coton, manioc, maïs), élevage (bovins, caprins), pêche (lacs et côtes), tourisme, commerce, urbanisation croissante",
+      "socialOrganization": "Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, groupes d'âge (Maasai), importance des ancêtres",
+      "regionalRelations": "Relations historiques avec les peuples du Kenya, de l'Ouganda, du Rwanda, du Burundi, de la RDC, du Mozambique. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par des groupes bantous, nilotiques et couchitiques. Développement de royaumes et chefferies indépendants.",
+      "middleAges": "Développement des cités-États swahili sur la côte (VIIIe-XIXe siècles). Commerce avec les Arabes, les Indiens et les Perses. Civilisation swahili ancienne.",
+      "precolonial": "Sultanat de Zanzibar (XIXe siècle) : commerce d'esclaves et d'épices. Royaumes bantous de l'intérieur. Pas d'unification politique.",
+      "colonization": "1885 : Afrique orientale allemande. Résistance tanzanienne (guerre Maji Maji, 1905-1907). 1919 : Mandat britannique (Tanganyika). 1890 : Protectorat britannique de Zanzibar.",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Indépendance du Tanganyika en 1961. Indépendance de Zanzibar en 1963. Julius Nyerere devient premier président.",
+      "postIndependence": "1964 : Unification du Tanganyika et de Zanzibar. Première République (1964-1992) : parti unique, socialisme africain (Ujamaa). Deuxième République depuis 1992 : multipartisme, développement économique, stabilité politique, hub est-africain."
+    },
+    "sources": [
+      "CIA World Factbook – Tanzania",
+      "SIL Ethnologue – Languages of Tanzania",
+      "Recensements nationaux tanzaniens",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples tanzaniens",
+      "Études historiques sur les cités-États swahili"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Sukuma",
+          "peopleId": "PPL_SUKUMA",
+          "region": "Nord-Ouest (région du lac Victoria)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Swahili (Tanzanie)",
+          "peopleId": "PPL_SWAHILI_TAN"
+        }
+      ]
+    }
+  }
+}

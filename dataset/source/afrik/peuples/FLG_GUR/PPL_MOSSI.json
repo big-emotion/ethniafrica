@@ -1,0 +1,23 @@
+{
+  "id": "PPL_MOSSI",
+  "nameMain": "",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Moaga (pluriel : Moose)",
+      "linguisticFamily": "FLG_GUR",
+      "historicalRegion": "Plateau mossi, BFA",
+      "currentCountries": ["BFA"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (mos)", "Archives royales du Moogho Naaba"]
+  }
+}

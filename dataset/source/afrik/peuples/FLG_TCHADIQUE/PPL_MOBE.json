@@ -1,0 +1,64 @@
+{
+  "id": "PPL_MOBE",
+  "nameMain": "Mobe",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Mobe",
+      "selfAppellation": "Mobe",
+      "exonyms": ["Mobe (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique",
+      "historicalRegion": "Cameroun",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": ["Mobe du Nord", "Mobe du Sud", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Mobe sont originaires du Cameroun. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples bantous, influence de l'islam et du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des oulémas, des pasteurs chrétiens, et des chefs religieux. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Mobe",
+      "vehicularRole": "Le mobe est parlé par la majorité des Mobe. Le français et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles islamiques et chrétiens, symboles culturels mobe.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora mobe dans les grandes villes camerounaises et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements camerounais, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Mobe language (mof)",
+      "CIA World Factbook – Cameroon",
+      "Recensements camerounais",
+      "Études anthropologiques sur les peuples tchadiques"
+    ]
+  }
+}

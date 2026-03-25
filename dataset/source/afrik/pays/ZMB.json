@@ -1,0 +1,182 @@
+{
+  "id": "ZMB",
+  "nameFr": "République de Zambie (Republic of Zambia)",
+  "nameOfficial": "République de Zambie (Republic of Zambia)",
+  "etymology": "Le nom \"Zambie\" vient du fleuve Zambèze (Zambezi), qui traverse le pays. Le nom a été adopté lors de l'indépendance en 1964, remplaçant \"Rhodésie du Nord\" (Northern Rhodesia).",
+  "nameOriginActor": "Le nom \"Zambie\" a été proposé par les nationalistes zambiens lors de l'indépendance. Le fleuve Zambèze tire son nom des peuples locaux (probablement d'origine bantoue).",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de groupes bantous et khoïsan. Pas d'entité politique unifiée.",
+      "middleAges": "Présence de royaumes bantous (royaume Lunda, royaume Bemba, royaume Barotseland). Migrations bantoues depuis le nord.",
+      "precolonial": "Royaumes et chefferies bantous (Barotseland, royaume Bemba, royaume Lunda). Le territoire était divisé entre plusieurs entités politiques.",
+      "colonization": "1890-1964 : Rhodésie du Nord (Northern Rhodesia), protectorat britannique puis colonie britannique. Le nom \"Rhodésie\" vient de Cecil Rhodes, colonisateur britannique.",
+      "contemporary": "1964 : Indépendance, République de Zambie. Le nom \"Zambie\" remplace \"Rhodésie du Nord\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume Barotseland",
+        "period": "XVIIIe siècle - 1964",
+        "dominantPeoples": ["Lozi"],
+        "politicalCenters": ["Lealui", "Mongu"],
+        "historicalRole": "Royaume puissant de l'ouest de la Zambie, protectorat britannique séparé, intégration à la Zambie en 1964."
+      },
+      {
+        "name": "Royaume Bemba",
+        "period": "XVIIIe siècle - XIXe siècle",
+        "dominantPeoples": ["Bemba"],
+        "politicalCenters": ["Kasama", "régions du nord"],
+        "historicalRole": "Royaume bemba structuré, dirigé par le Chitimukulu, expansion territoriale, résistance à la colonisation."
+      },
+      {
+        "name": "Empire Lunda",
+        "period": "XVIIe siècle - XIXe siècle",
+        "dominantPeoples": ["Lunda"],
+        "politicalCenters": [
+          "Régions du nord-ouest (extension depuis l'Angola et la RDC)"
+        ],
+        "historicalRole": "Empire lunda influent, commerce transsaharien, relations avec les Portugais."
+      },
+      {
+        "name": "Chefferies Tonga",
+        "period": "Précoloniale - coloniale",
+        "dominantPeoples": ["Tonga"],
+        "politicalCenters": ["Vallée du Zambèze", "Southern Province"],
+        "historicalRole": "Chefferies décentralisées, déplacements forcés lors de la construction du barrage de Kariba (années 1950)."
+      },
+      {
+        "name": "Rhodésie du Nord",
+        "period": "1890-1964",
+        "dominantPeoples": [
+          "Tous les peuples zambiens sous domination coloniale"
+        ],
+        "politicalCenters": [
+          "Livingstone (capitale initiale)",
+          "puis Lusaka (depuis 1935)"
+        ],
+        "historicalRole": "Colonisation britannique, exploitation minière (cuivre), mouvements nationalistes, indépendance (1964)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Bemba",
+        "selfAppellation": "Aɓemba",
+        "exonyms": ["BaBemba (forme bantoue)"],
+        "peopleId": "PPL_BEMBA",
+        "mainRegion": "Nord de la Zambie (Northern Province, Luapula Province, Copperbelt)",
+        "languages": ["Bemba (bem)"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Bemba\" est l'auto-appellation. Le peuple bemba a un royaume traditionnel dirigé par le Chitimukulu."
+      },
+      {
+        "name": "Tonga",
+        "selfAppellation": "Batonga (sg. Mutonga)",
+        "exonyms": ["Tonga (forme générique)", "BaTonga (pluriel bantou)"],
+        "peopleId": "PPL_TONGA_ZAMBIA",
+        "mainRegion": "Sud de la Zambie (Southern Province, vallée du Zambèze)",
+        "languages": ["Tonga (toi)"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Tonga\" est largement accepté. Les Tonga ont été déplacés lors de la construction du barrage de Kariba."
+      },
+      {
+        "name": "Lozi",
+        "selfAppellation": "Lozi",
+        "exonyms": [
+          "Lozi (terme utilisé par les Européens)",
+          "Barotse (terme historique)"
+        ],
+        "peopleId": "PPL_LOZI",
+        "mainRegion": "Ouest de la Zambie (Western Province, ancien Barotseland)",
+        "languages": ["Lozi (loz)"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Lozi\" est l'auto-appellation. Les Lozi ont un royaume traditionnel (Barotseland) avec le roi (Litunga)."
+      },
+      {
+        "name": "Chewa / Nyanja",
+        "selfAppellation": "Achewa",
+        "exonyms": ["Cewa", "Nyanja (terme utilisé au Malawi et en Zambie)"],
+        "peopleId": "PPL_CHEWA",
+        "mainRegion": "Est de la Zambie (Eastern Province, Central Province)",
+        "languages": ["Chewa / Nyanja (nya)"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Chewa\" est l'auto-appellation. \"Nyanja\" signifie \"lac\" et fait référence au lac Malawi. Les Chewa sont principalement au Malawi mais ont une présence importante en Zambie."
+      },
+      {
+        "name": "Lunda",
+        "selfAppellation": "Lunda",
+        "exonyms": ["Lunda (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LUNDA",
+        "mainRegion": "Nord-ouest de la Zambie (North-Western Province)",
+        "languages": ["Lunda (lun)"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Lunda\" est l'auto-appellation. Les Lunda font partie de l'ancien empire Lunda qui s'étendait sur l'Angola, la RDC et la Zambie."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Bemba",
+          "isoCode": "bem"
+        },
+        {
+          "name": "Tonga",
+          "isoCode": "toi"
+        },
+        {
+          "name": "Lozi",
+          "isoCode": "loz"
+        },
+        {
+          "name": "Chewa/Nyanja",
+          "isoCode": "nya"
+        },
+        {
+          "name": "Lunda",
+          "isoCode": "lun"
+        },
+        {
+          "name": "anglais",
+          "isoCode": "eng"
+        }
+      ],
+      "culturalTraditions": "Musique traditionnelle (tamtams, polyrythmes), danses traditionnelles, masques rituels (Gule Wamkulu chez les Chewa), artisanat (poterie, tissage, sculpture), cérémonies royales (Barotseland, royaume Bemba)",
+      "dominantReligions": "Christianisme (protestantisme majoritaire, catholicisme), croyances traditionnelles (syncrétisme)",
+      "lifestyles": "Agriculture (maïs, millet, sorgho), élevage, exploitation minière (cuivre), urbanisation croissante, commerce",
+      "socialOrganization": "Structures traditionnelles (royaumes, chefferies), systèmes matrilinéaires (Bemba, Chewa) et patrilinéaires (Lozi), structures étatiques modernes, république présidentielle",
+      "regionalRelations": "Relations avec les pays d'Afrique australe (SADC), échanges commerciaux, rôle dans la région des Grands Lacs"
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence humaine depuis la préhistoire, migrations bantoues depuis le nord, établissement de royaumes et chefferies.",
+      "middleAges": "Formation de royaumes bantous (Barotseland, royaume Bemba, empire Lunda), commerce transsaharien, contacts avec les Portugais.",
+      "precolonial": "Royaumes et chefferies bantous, expansion territoriale, résistance aux incursions extérieures.",
+      "colonization": "Protectorat britannique (1890), Rhodésie du Nord (1924), exploitation minière (cuivre), mouvements nationalistes (années 1950-1960).",
+      "independenceStruggle": "Mouvement nationaliste (United National Independence Party - UNIP, Kenneth Kaunda), indépendance (24 octobre 1964).",
+      "postIndependence": "République de Zambie (1964), socialisme zambien (1964-1991), multipartisme (1991), développement économique basé sur le cuivre, défis économiques et politiques."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Zambia",
+      "Ethnologue – Languages of Zambia",
+      "Zambia Statistics Agency",
+      "Wikipedia – Zambia, Bemba people, Lozi people, Tonga people",
+      "Études anthropologiques sur les peuples bantous de Zambie",
+      "Recensements zambiens"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Bemba",
+          "population": 4500000,
+          "percentageInCountry": 20.5,
+          "percentageInAfrica": 2.5,
+          "peopleId": "PPL_BEMBA",
+          "region": "Nord (Northern Province, Luapula, Copperbelt)",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Tonga",
+          "peopleId": "PPL_TONGA_"
+        }
+      ]
+    }
+  }
+}

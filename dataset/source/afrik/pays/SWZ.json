@@ -1,0 +1,110 @@
+{
+  "id": "SWZ",
+  "nameFr": "Royaume d'Eswatini (Kingdom of Eswatini, Umbuso weSwatini)",
+  "nameOfficial": "Royaume d'Eswatini (Kingdom of Eswatini, Umbuso weSwatini)",
+  "etymology": "Le nom \"Eswatini\" signifie \"pays des Swazi\" en langue swati. Il s'agit du nom traditionnel du royaume. Le nom \"Swaziland\" était le nom colonial britannique (combinaison de \"Swazi\" et \"land\"). Le pays a officiellement changé de nom de \"Swaziland\" à \"Eswatini\" en 2018 pour retrouver son appellation d'origine.",
+  "nameOriginActor": "Le nom \"Eswatini\" est le nom traditionnel du royaume swazi. Le nom \"Swaziland\" a été donné par les Britanniques lors de la colonisation. Le roi Mswati III a officiellement changé le nom du pays de \"Swaziland\" à \"Eswatini\" en 2018 pour restaurer le nom traditionnel.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel d'Eswatini était peuplé de peuples bantous sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Migrations bantoues vers la région. Développement de chefferies locales. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Formation du royaume swazi au XVIIIe siècle sous le roi Ngwane III. Le royaume était connu sous le nom traditionnel \"Eswatini\" (pays des Swazi). Expansion du royaume swazi, résistance aux Zoulous et aux Boers.",
+      "colonization": "1903-1968 : Protectorat britannique du Swaziland. Les Britanniques ont établi un protectorat sur le Swaziland en 1903. Le nom \"Swaziland\" (combinaison de \"Swazi\" et \"land\") a été officialisé par les Britanniques. Le territoire était administré comme un protectorat britannique jusqu'à l'indépendance en 1968.",
+      "contemporary": "1968 : Indépendance du Swaziland (6 septembre 1968), proclamation du royaume du Swaziland. 2018 : Changement de nom officiel de \"Swaziland\" à \"Eswatini\" (19 avril 2018), restauration du nom traditionnel par le roi Mswati III."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume swazi",
+        "period": "XVIIIe siècle - présent",
+        "dominantPeoples": ["Swazi"],
+        "politicalCenters": [
+          "Lobamba (capitale royale)",
+          "Mbabane (capitale administrative)"
+        ],
+        "historicalRole": "Royaume swazi traditionnel, système monarchique absolu, traditions culturelles swazi (Incwala, Umhlanga). Le royaume a résisté à la colonisation et a maintenu son indépendance relative sous protectorat britannique. Le roi Ngwane III est considéré comme le fondateur du royaume moderne."
+      },
+      {
+        "name": "Protectorat britannique du Swaziland",
+        "period": "1903 - 1968",
+        "dominantPeoples": [
+          "Tous les peuples swazi sous protectorat britannique"
+        ],
+        "politicalCenters": ["Mbabane (capitale administrative)"],
+        "historicalRole": "Protectorat britannique, développement de l'administration coloniale, préservation relative de l'autonomie du royaume swazi. Résistance aux pressions coloniales. Développement du mouvement indépendantiste au XXe siècle."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Swazi",
+        "selfAppellation": "Swazi",
+        "exonyms": [
+          "Swazi (terme utilisé par les Européens)",
+          "parfois appelés \"Swati\" (terme alternatif)"
+        ],
+        "peopleId": "PPL_SWAZI",
+        "mainRegion": "Toutes les régions d'Eswatini",
+        "languages": [
+          "Swati / Swazi (ssw",
+          "ISO 639-3)",
+          "anglais",
+          "afrikaans"
+        ],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Swazi\" est l'auto-appellation. \"Swati\" est un terme alternatif accepté. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes d'origine",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Zones urbaines, régions frontalières",
+        "languages": ["Langues d'origine", "swati", "anglais"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation selon son origine (Zoulou, Tsonga, autres peuples bantous, etc.). Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Swati / Swazi"
+        },
+        {
+          "name": "Anglais",
+          "isPrimary": true
+        },
+        {
+          "name": "Afrikaans",
+          "isoCode": "afr"
+        }
+      ],
+      "culturalTraditions": "Traditions culturelles swazi riches et préservées. Cérémonies royales traditionnelles (Incwala, cérémonie des premiers fruits), Umhlanga (cérémonie du roseau, danse des jeunes filles). Musique et danse traditionnelles swazi. Artisanat traditionnel (vannerie, poterie, tissage). Architecture traditionnelle (huttes rondes). Système monarchique absolu avec traditions ancestrales.",
+      "dominantReligions": "Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, croyances traditionnelles)",
+      "lifestyles": "Agriculture (maïs, sorgho, cultures vivrières), élevage (bovins, importance symbolique du bétail), commerce et activités urbaines (zones urbaines, Mbabane, Manzini). Urbanisation modérée. Économie basée sur l'agriculture, l'élevage, l'exploitation forestière, et les services. Dépendance économique importante de l'Afrique du Sud.",
+      "socialOrganization": "Organisation en royaume traditionnel (système monarchique absolu), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle central du roi (Ngwenyama, \"le lion\") et de la reine mère (Ndlovukati, \"l'éléphant\"). Système de conseils traditionnels (Ligogo). Traditions d'initiation et de passage à l'âge adulte.",
+      "regionalRelations": "Relations historiques avec l'Afrique du Sud (commerce, migrations, dépendance économique), le Mozambique (frontière, commerce). Intégration dans la SADC (Communauté de développement d'Afrique australe). Relations commerciales et culturelles transfrontalières. Dépendance économique importante de l'Afrique du Sud."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales.",
+      "middleAges": "Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.",
+      "precolonial": "XVIIIe siècle : Formation du royaume swazi sous le roi Ngwane III. Expansion du royaume swazi. Résistance aux Zoulous et aux Boers. Consolidation du royaume traditionnel. Développement des traditions culturelles swazi.",
+      "colonization": "1903 : Établissement du protectorat britannique du Swaziland. Période coloniale britannique (1903-1968), développement de l'administration coloniale, préservation relative de l'autonomie du royaume swazi. Résistance aux pressions coloniales. XXe siècle : Développement du mouvement indépendantiste.",
+      "independenceStruggle": "1960s : Mouvement pour l'indépendance mené par les dirigeants swazi. 1968 : Indépendance du Swaziland (6 septembre 1968), proclamation du royaume du Swaziland. Le roi Sobhuza II devient monarque absolu.",
+      "postIndependence": "1968-1982 : Règne du roi Sobhuza II, abolition de la constitution, établissement du système monarchique absolu. 1982-présent : Règne du roi Mswati III (depuis 1986). Défis : pauvreté, inégalités sociales, VIH/sida, dépendance économique de l'Afrique du Sud. 2018 : Changement de nom officiel de \"Swaziland\" à \"Eswatini\" (19 avril 2018), restauration du nom traditionnel. L'Eswatini est l'un des derniers royaumes absolus d'Afrique."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Eswatini",
+      "CIA World Factbook – Eswatini",
+      "ONU / UNFPA – Démographie Eswatini 2025",
+      "Rank among the Swazi\"",
+      "An Ethnographic Account of the Natives of the Swaziland Protectorate\"",
+      "Recensements eswatinis",
+      "Études anthropologiques sur les peuples swazi"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Swazi",
+          "peopleId": "PPL_SWA"
+        }
+      ]
+    }
+  }
+}

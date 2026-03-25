@@ -1,0 +1,88 @@
+{
+  "id": "FLG_COUCHITIQUE",
+  "nameFr": "Couchitique",
+  "nameEn": "Cushitic",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " - Le mot « couchitique » est hérité d'une grille de lecture biblique/coloniale qui attribuait des origines « extra-africaines » à certains peuples pour les distinguer des Africains « noirs » dans une logique raciale. Cette théorie a été utilisée pour justifier des hiérarchies raciales et des politiques coloniales.",
+      "selfAppellation": "Cushitic",
+      "contemporaryUsage": " Branche majeure de l'Afro-asiatique, extrêmement présente en Éthiopie, Somalie, Djibouti, Érythrée et nord du Kenya. Comprend l'oromo, le somali, l'afar, le sidamo, le saho, l'agaw, le rendille, etc. Classification purement linguistique, sans connotation raciale.",
+      "historicalAppellations": "Cushitic",
+      "originOfHistoricalTerm": " Le terme « Cushitic » a été créé par le linguiste autrichien Friedrich Müller (1834-1898) en 1876 dans son ouvrage *Grundriss der Sprachwissenschaft* (Vienne, 1876-1888). Müller a dérivé ce terme de « Koush/Cush », figure biblique mentionnée dans la Genèse (10:6-8) comme fils de Cham et petit-fils de Noé, considéré comme l'ancêtre éponyme des peuples de la région de Koush (Nubie, Éthiopie). Cette appellation a été adoptée par les linguistes européens du XIXᵉ siècle selon une vision pseudo-généalogique inspirée de la Bible, dans le cadre de la théorie « chamito-couchitique » qui classait les langues africaines selon des critères raciaux."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Corne de l'Afrique (Éthiopie, Somalie, Djibouti, Érythrée, nord du Kenya, est du Soudan)",
+      "numberOfLanguages": 40,
+      "totalSpeakers": 45000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Oromo",
+        "peopleId": "PPL_OROMO"
+      },
+      {
+        "name": "Somali",
+        "peopleId": "PPL_SOMALI"
+      },
+      {
+        "name": "Afar",
+        "peopleId": "PPL_AFAR"
+      },
+      {
+        "name": "Sidamo",
+        "peopleId": "PPL_SIDAMO"
+      },
+      {
+        "name": "Saho",
+        "peopleId": "PPL_SAHO"
+      },
+      {
+        "name": "Beja",
+        "peopleId": "PPL_BEJA"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues majoritairement agglutinantes avec ordre des mots Sujet-Objet-Verbe (SOV) dans la plupart des cas. Exemples concrets :",
+      "relationsWithNeighbors": " Contacts étroits et anciens avec les langues sémitiques éthiopiennes (amharique, tigrinya) et avec l'omotique. Exemples d'emprunts :"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " QUI a classé : La classification des langues couchitiques a été proposée par le linguiste autrichien Friedrich Müller (1834-1898) en 1876 dans *Grundriss der Sprachwissenschaft* (Vienne, 1876-1888). Joseph Greenberg (1915-2001) a intégré les langues couchitiques dans la famille afro-asiatique dans *The Languages of Africa* (1963, Indiana University Press). Christopher Ehret (né en 1941) a développé des classifications détaillées dans *The Civilizations of Africa* (2002, University Press of Virginia) et *History and the Testimony of Language* (2011, University of California Press). Théories linguistiques :",
+      "emergencePeriod": " (1) Émergence historique de la FLG : Les langues couchitiques se sont probablement séparées d'un proto-couchitique commun il y a 6000-7000 ans selon les reconstructions linguistiques (Ehret, 2002). Les premières attestations archéologiques de cultures associées aux locuteurs couchitiques remontent au Néolithique (5000-6000 ans avant notre ère) dans la Corne de l'Afrique. (2) Date de classification académique : Le terme « couchitique » a été créé par Friedrich Müller en 1876. La classification moderne dans la famille afro-asiatique date de Joseph Greenberg (1963). Les classifications détaillées ont été développées par Christopher Ehret (années 1970-2000) et d'autres linguistes contemporains.",
+      "diffusion": " Afficher l'ensemble des avis disponibles :",
+      "contactZones": " OÙ - Localisation géographique précise :",
+      "majorEvents": " Chronologie avec dates précises :"
+    },
+    "distribution": {
+      "totalSpeakers": 45000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Appleyard, D. (2006) – *A Comparative Dictionary of the Agaw Languages*. Köppe, Cologne.",
+      "Bender, M. L. (1975) – *Omotic: A New Afroasiatic Language Family*. Southern Illinois University Press.",
+      "Bideri, D. (2003) – *Une nouvelle identité des Batutsi du Rwanda et du Burundi ou la radicalisation de la théorie chamito-couchitique par l'Institut Havila*. Fondation Ntarama. URL : https://francegenocidetutsi.org/LaTheorieHamitoCouchitiqueParLinstitutHavila2003.html.fr",
+      "CIA World Factbook (2025) – *Ethiopia, Somalia, Djibouti, Eritrea, Kenya, Sudan*. Central Intelligence Agency. URL : https://www.cia.gov/the-world-factbook/",
+      "Cohen, D. (1988) – *Les langues chamito-sémitiques*. CNRS Éditions, Paris.",
+      "Ehret, C. (2002) – *The Civilizations of Africa: A History to 1800*. University Press of Virginia, Charlottesville.",
+      "Ehret, C. (2011) – *History and the Testimony of Language*. University of California Press, Berkeley.",
+      "Fattovich, R. (2010) – *The Development of Ancient States in the Northern Horn of Africa, c. 3000 BC–AD 1000: An Archaeological Outline*. Journal of World Prehistory, 23(3), 145-175.",
+      "Glottolog (2025) – *Cushitic branch*. Max Planck Institute for Evolutionary Anthropology. URL : https://glottolog.org/",
+      "Greenberg, J. H. (1963) – *The Languages of Africa*. Indiana University Press, Bloomington.",
+      "Hodgson, J. A., Mulligan, C. J., Al-Meeri, A., & Raaum, R. L. (2014) – *Early Back-to-Africa Migration into the Horn of Africa*. PLOS Genetics, 10(6), e1004393.",
+      "Lewis, I. M. (1969) – *Peoples of the Horn of Africa: Somali, Afar and Saho*. International African Institute, London.",
+      "Mamdani, M. (2001) – *When Victims Become Killers: Colonialism, Nativism, and the Genocide in Rwanda*. Princeton University Press, Princeton.",
+      "Meinhof, C. (1912) – *Die Sprachen der Hamiten*. Abhandlungen des Hamburgischen Kolonialinstituts, Band 9. L. Friederichsen & Co., Hamburg.",
+      "Newbury, C. (1988) – *The Cohesion of Oppression: Clientship and Ethnicity in Rwanda, 1860-1960*. Columbia University Press, New York.",
+      "Müller, F. (1876-1888) – *Grundriss der Sprachwissenschaft*. 3 volumes. Alfred Hölder, Vienne. (Volume 1, 1876 : classification des langues africaines selon des critères raciaux ; introduction du terme « Cushitic »)",
+      "ONU (2025) – *World Population Prospects 2025*. Département des affaires économiques et sociales, Nations Unies. URL : https://population.un.org/wpp/",
+      "Reinisch, L. (1900-1903) – *Die Somali-Sprache*. 3 volumes. Alfred Hölder, Vienne. (Développement de la théorie chamito-couchitique appliquée aux langues de la Corne de l'Afrique)",
+      "Pagani, L., Kivisild, T., Tarekegn, A., Ekong, R., Plaster, C., Gallego Romero, I., ... & Tyler-Smith, C. (2012) – *Ethiopian Genetic Diversity Reveals Linguistic Stratification and Complex Influences on the Ethiopian Gene Pool*. American Journal of Human Genetics, 91(1), 83-96.",
+      "Phillipson, D. W. (2012) – *Foundations of an African Civilisation: Aksum and the Northern Horn, 1000 BC–AD 1300*. James Currey, Woodbridge.",
+      "Pickrell, J. K., Patterson, N., Loh, P. R., Lipson, M., Berger, B., Stoneking, M., ... & Reich, D. (2014) – *Ancient West Eurasian Ancestry in Southern and Eastern Africa*. Proceedings of the National Academy of Sciences, 111(7), 2632-2637.",
+      "Rilly, C. (2010) – *Le méroïtique et sa famille linguistique*. Peeters, Louvain.",
+      "SIL Ethnologue (2025) – *Languages of the World: Cushitic languages*. SIL International. URL : https://www.ethnologue.com/",
+      "UNFPA (2025) – *State of World Population 2025*. Fonds des Nations Unies pour la population. URL : https://www.unfpa.org/",
+      "UNESCO (2025) – *Atlas of the World's Languages in Danger*. Organisation des Nations Unies pour l'éducation, la science et la culture. URL : https://www.unesco.org/"
+    ]
+  }
+}

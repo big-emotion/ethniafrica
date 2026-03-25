@@ -1,0 +1,300 @@
+{
+  "id": "CMR",
+  "nameFr": "République du Cameroun (Republic of Cameroon)",
+  "nameOfficial": "République du Cameroun (Republic of Cameroon)",
+  "etymology": "Le nom \"Cameroun\" dérive du portugais \"Rio dos Camarões\" (Rivière des crevettes), donné par les navigateurs portugais au XVe siècle en référence au fleuve Wouri, riche en crevettes. Le terme \"Camarões\" a été adapté en \"Cameroun\" par les Français et \"Cameroons\" par les Britanniques.",
+  "nameOriginActor": "Le nom \"Cameroun\" provient des navigateurs portugais qui ont exploré la côte camerounaise au XVe siècle. Le terme \"Rio dos Camarões\" (Rivière des crevettes) a été donné au fleuve Wouri et a ensuite été généralisé pour désigner l'ensemble du territoire. Les colonisateurs allemands, français et britanniques ont adapté ce nom.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel du Cameroun était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaume Bamoun, chefferies Bamiléké, etc.).",
+      "middleAges": "Développement de royaumes et chefferies : royaume Bamoun, chefferies Bamiléké, royaumes Beti-Fang-Bulu, sultanats Mandara et Kotoko, peuples Sawa. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaume Bamoun, chefferies Bamiléké (Grassfields), royaumes Beti-Fang-Bulu, sultanats Mandara et Kotoko, peuples Sawa (côtiers), peuples forestiers, pygmées Baka. Les Portugais utilisaient le terme \"Rio dos Camarões\" pour désigner la région du fleuve Wouri.",
+      "colonization": "1884-1916 : Kamerun (colonie allemande). Les Allemands ont établi la colonie du Kamerun en 1884. 1916-1960 : Cameroun français et Cameroons britanniques (mandats de la SDN puis de l'ONU après la Première Guerre mondiale). Le territoire était divisé entre la France (Cameroun français) et le Royaume-Uni (Cameroons britanniques).",
+      "contemporary": "1960 : République du Cameroun (indépendance du Cameroun français, 1er janvier 1960). 1961 : République fédérale du Cameroun (réunification avec le Cameroun britannique, 1er octobre 1961). 1972 : République unie du Cameroun (abolition du fédéralisme). 1984 : République du Cameroun (nom actuel)."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume Bamoun",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Bamoun"],
+        "politicalCenters": ["Foumban (capitale du royaume)"],
+        "historicalRole": "Royaume Bamoun puissant et structuré, système monarchique (sultan), résistance à la colonisation allemande et française. Traditions artistiques et culturelles riches (écriture bamoun, art royal). Autorité coutumière encore active aujourd'hui."
+      },
+      {
+        "name": "Chefferies Bamiléké",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Bamiléké"],
+        "politicalCenters": [
+          "Chefferies traditionnelles de l'Ouest (Grassfields)"
+        ],
+        "historicalRole": "Chefferies Bamiléké puissantes et structurées, système de chefferies traditionnelles, traditions agricoles et artisanales développées. Résistance à la colonisation. Rôle économique majeur dans le Cameroun contemporain."
+      },
+      {
+        "name": "Royaumes Beti-Fang-Bulu",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Beti", "Fang", "Bulu", "Ewondo"],
+        "politicalCenters": ["Chefferies traditionnelles du Centre-Sud"],
+        "historicalRole": "Royaumes et chefferies Beti-Fang-Bulu, traditions forestières, culte des ancêtres, masques et sculptures. Rôle politique majeur dans le Cameroun contemporain."
+      },
+      {
+        "name": "Sultanats Mandara et Kotoko",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Mandara", "Kotoko", "peuples du Nord"],
+        "politicalCenters": ["Maroua", "Garoua", "sultanats traditionnels"],
+        "historicalRole": "Sultanats Mandara et Kotoko, influence islamique, commerce transsaharien. Traditions politiques et religieuses islamiques."
+      },
+      {
+        "name": "Colonie du Kamerun",
+        "period": "1884 - 1916",
+        "dominantPeoples": [
+          "Tous les peuples camerounais sous domination allemande"
+        ],
+        "politicalCenters": ["Douala (capitale coloniale)"],
+        "historicalRole": "Colonie allemande, développement de l'infrastructure (chemins de fer, ports), exploitation économique, résistance des peuples autochtones. Défaite allemande en 1916, partition du territoire."
+      },
+      {
+        "name": "Cameroun français et Cameroons britanniques",
+        "period": "1916 - 1960/1961",
+        "dominantPeoples": [
+          "Tous les peuples camerounais sous mandats français et britannique"
+        ],
+        "politicalCenters": [
+          "Yaoundé (Cameroun français)",
+          "Buea (Cameroons britanniques)"
+        ],
+        "historicalRole": "Mandats de la SDN puis de l'ONU, administration française et britannique, développement du mouvement indépendantiste au XXe siècle. Indépendance du Cameroun français (1960) puis réunification avec le Cameroun britannique (1961)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Beti-Fang-Bulu",
+        "selfAppellation": "Beti, Fang, Bulu, Ewondo",
+        "exonyms": [
+          "\"Beti-Pahouin\" (catégorie coloniale englobante",
+          "terme problématique)",
+          "\"Pahouins\" (ancienne étiquette coloniale pour les Fang)"
+        ],
+        "peopleId": "PPL_BETI",
+        "mainRegion": "Centre-Sud du Cameroun (forêts équatoriales)",
+        "languages": [
+          "Ewondo (ewo",
+          "ISO 639-3)",
+          "Bulu (bum",
+          "ISO 639-3)",
+          "Fang (fan",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Beti\", \"Fang\", \"Bulu\" et \"Ewondo\" sont les auto-appellations respectives. \"Beti-Pahouin\" est une catégorie coloniale englobante qui regroupe artificiellement plusieurs peuples distincts et doit être évitée. \"Pahouins\" est une ancienne étiquette coloniale pour les Fang et doit être évitée."
+      },
+      {
+        "name": "Bamiléké",
+        "selfAppellation": "Bamiléké",
+        "exonyms": [
+          "Bamiléké (terme utilisé par les Européens et les colonisateurs)"
+        ],
+        "peopleId": "PPL_BAMILEKE",
+        "mainRegion": "Ouest du Cameroun (Grassfields)",
+        "languages": [
+          "Bamiléké (bax",
+          "ISO 639-3",
+          "code générique)",
+          "français",
+          "anglais"
+        ],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Bamiléké\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Peul / Fulani",
+        "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+        "exonyms": [
+          "Peul (terme français)",
+          "Fulani (terme haoussa)",
+          "Fula (terme anglophone)",
+          "\"Fellata\" (terme haoussa parfois péjoratif",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "Nord du Cameroun, Adamaoua (pasteurs nomades et sédentaires)",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" est l'auto-appellation. \"Peul\" et \"Fulani\" sont des exonymes acceptés. \"Fellata\" peut avoir une connotation péjorative dans certains contextes et doit être évité."
+      },
+      {
+        "name": "Kirdi",
+        "selfAppellation": "Variées selon les groupes (Mafa, Mofu, Kapsiki, etc.)",
+        "exonyms": [
+          "\"Kirdi\" (terme haoussa signifiant \"païen\"",
+          "utilisé pour désigner les peuples non islamisés du Nord)"
+        ],
+        "peopleId": "PPL_KIRDI",
+        "mainRegion": "Extrême-Nord du Cameroun (montagnes)",
+        "languages": ["Langues tchadiques (plusieurs langues)", "français"],
+        "languageFamily": "FLG_TCHADIQUE",
+        "appellationRemarks": "\"Kirdi\" est un terme haoussa signifiant \"païen\" utilisé pour désigner les peuples non islamisés du Nord. Ce terme peut avoir une connotation péjorative et doit être utilisé avec précaution. Chaque groupe a sa propre auto-appellation (Mafa, Mofu, Kapsiki, etc.)."
+      },
+      {
+        "name": "Sawa / Peuples côtiers",
+        "selfAppellation": "Sawa, Duala, Bassa, Bakoko, Bakweri",
+        "exonyms": [
+          "Sawa (terme générique pour les peuples côtiers)",
+          "Duala",
+          "Bassa",
+          "Bakoko",
+          "Bakweri"
+        ],
+        "peopleId": "PPL_DUALA",
+        "mainRegion": "Littoral du Cameroun (Douala, côte atlantique)",
+        "languages": [
+          "Duala (dua",
+          "ISO 639-3)",
+          "Bassa (bas",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Sawa\" est un terme générique pour les peuples côtiers. \"Duala\", \"Bassa\", \"Bakoko\", \"Bakweri\" sont les auto-appellations respectives. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Peuples forestiers du Sud et de l'Est",
+        "selfAppellation": "Maka, Kaka, Koonzime, etc.",
+        "exonyms": [
+          "Maka",
+          "Kaka",
+          "Koonzime (termes utilisés par les Européens)"
+        ],
+        "peopleId": "PPL_PEUPLES_FORESTIERS_DU_SUD_ET_DE_L_EST",
+        "mainRegion": "Sud et Est du Cameroun (forêts équatoriales)",
+        "languages": ["Langues bantoues (plusieurs langues)", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Pygmées / Autochtones",
+        "selfAppellation": "Baka, Bagyeli, Medzan",
+        "exonyms": [
+          "\"Pygmées\" (terme anthropologique",
+          "parfois considéré comme péjoratif)",
+          "\"Baka\"",
+          "\"Bagyeli\"",
+          "\"Medzan\""
+        ],
+        "peopleId": "PPL_PYGMEES_AUTOCHTONES",
+        "mainRegion": "Forêts du Sud et de l'Est du Cameroun",
+        "languages": [
+          "Langues bantoues (plusieurs langues)",
+          "langues oubanguiennes",
+          "français"
+        ],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Pygmées\" est un terme anthropologique qui peut être considéré comme péjoratif par certains groupes. \"Baka\", \"Bagyeli\" et \"Medzan\" sont les auto-appellations respectives. Il est préférable d'utiliser les auto-appellations spécifiques."
+      },
+      {
+        "name": "Hausa",
+        "selfAppellation": "Hausa",
+        "exonyms": ["Hausa (terme utilisé par les Européens)"],
+        "peopleId": "PPL_HAUSA",
+        "mainRegion": "Nord du Cameroun, zones urbaines",
+        "languages": ["Hausa (hau", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_TCHADIQUE",
+        "appellationRemarks": "Le terme \"Hausa\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_TIV",
+        "mainRegion": "Diverses régions du Cameroun",
+        "languages": ["Langues diverses", "français", "anglais"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "Ewondo",
+          "isoCode": "ewo"
+        },
+        {
+          "name": "Bulu",
+          "isoCode": "bum"
+        },
+        {
+          "name": "Fang",
+          "isoCode": "fan"
+        },
+        {
+          "name": "Bamiléké",
+          "isoCode": "bax"
+        },
+        {
+          "name": "Fulfulde",
+          "isoCode": "ful"
+        },
+        {
+          "name": "Duala",
+          "isoCode": "dua"
+        },
+        {
+          "name": "Bassa",
+          "isoCode": "bas"
+        },
+        {
+          "name": "Hausa",
+          "isoCode": "hau"
+        },
+        {
+          "name": "langues tchadiques"
+        },
+        {
+          "name": "langues bantoues"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique du Cameroun (plus de 280 ethnies). Traditions bantoues (Beti-Fang-Bulu, Bamiléké, Sawa). Traditions peules (pastoralisme, poésie). Traditions islamiques (Nord, sultanats). Traditions pygmées (chasse-cueillette, forêts). Art royal (royaume Bamoun, écriture bamoun). Masques et sculptures (Beti-Fang, Bamiléké). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.",
+      "dominantReligions": "Christianisme (catholicisme et protestantisme, surtout dans le sud), islam (surtout dans le nord), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques)",
+      "lifestyles": "Agriculture (Bamiléké, Beti-Fang, cultures vivrières, cacao, café), élevage (Peuls, bovins), chasse-cueillette (Pygmées), commerce et activités urbaines (zones urbaines, Douala, Yaoundé). Urbanisation croissante. Économie basée sur l'agriculture (cacao, café, coton, bananes), l'exploitation pétrolière, et les services.",
+      "socialOrganization": "Organisation en royaumes historiques (Bamoun, système monarchique), chefferies traditionnelles (Bamiléké, Grassfields), sultanats (Mandara, Kotoko), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Organisation égalitaire chez les Pygmées (chasseurs-cueilleurs).",
+      "regionalRelations": "Relations historiques avec le Nigeria (commerce, peuples transfrontaliers), le Tchad (commerce, peuples transfrontaliers), la RCA (commerce, peuples transfrontaliers), la Guinée équatoriale (Fang, commerce). Intégration dans la CEMAC (Communauté économique et monétaire de l'Afrique centrale) et la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Bilingualisme français-anglais unique en Afrique."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par diverses sociétés sans nom unifié. Développement de chefferies et royaumes locaux. Arrivée et expansion des peuples bantous dans le sud et de l'est.",
+      "middleAges": "Formation et développement du royaume Bamoun, chefferies Bamiléké (Grassfields), royaumes Beti-Fang-Bulu. Développement de réseaux commerciaux régionaux et transsahariens. Arrivée de l'islam dans le nord (sultanats Mandara et Kotoko).",
+      "precolonial": "Consolidation du royaume Bamoun, chefferies Bamiléké puissantes, royaumes Beti-Fang-Bulu. Développement des sultanats islamiques dans le nord. Peuples Sawa (côtiers) actifs dans le commerce côtier. Contacts avec les Européens (Portugais, puis Allemands, Français, Britanniques).",
+      "colonization": "1884 : Établissement de la colonie allemande du Kamerun. Période coloniale allemande (1884-1916), développement de l'infrastructure, exploitation économique, résistance des peuples autochtones. 1916 : Défaite allemande, partition du territoire entre la France et le Royaume-Uni. 1916-1960/1961 : Mandats français et britannique (SDN puis ONU). Développement du mouvement indépendantiste au XXe siècle.",
+      "independenceStruggle": "1960 : Indépendance du Cameroun français (1er janvier 1960), proclamation de la République du Cameroun. 1961 : Réunification avec le Cameroun britannique (1er octobre 1961), création de la République fédérale du Cameroun. 1972 : Abolition du fédéralisme, création de la République unie du Cameroun.",
+      "postIndependence": "1984 : Changement de nom pour \"République du Cameroun\" (nom actuel). Période de stabilité politique relative sous la présidence de Paul Biya (depuis 1982). Défis : pauvreté, inégalités sociales, tensions anglophones/francophones, corruption. Le Cameroun est un pays bilingue (français-anglais) unique en Afrique."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Cameroon",
+      "CIA World Factbook – Cameroon",
+      "ONU / UNFPA – Démographie Cameroun 2025",
+      "Politics and the Occult in Postcolonial Africa\"",
+      "Archives du royaume Bamoun (Foumban)",
+      "Recensements camerounais",
+      "Études anthropologiques sur les peuples du Cameroun"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Beti-Fang-Bulu",
+          "population": 6600000,
+          "percentageInCountry": 22,
+          "peopleId": "PPL_BETI",
+          "region": "Centre-Sud du Cameroun (forêts équatoriales)"
+        }
+      ]
+    }
+  }
+}

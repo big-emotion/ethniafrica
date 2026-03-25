@@ -1,0 +1,75 @@
+{
+  "id": "PPL_MANDE_MACRO",
+  "nameMain": "Peuples Mandé (macro-groupe)",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["MLI", "GIN", "SEN", "CIV", "BFA", "GMB", "SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Mandé (macro-groupe)",
+      "selfAppellation": "Variées selon les groupes (Maninka, Bambara, Dioula, etc.)",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mandé (macro-groupe)",
+      "historicalRegion": "Afrique de l'Ouest (MLI, GIN, SEN, CIV, BFA, etc.)",
+      "currentCountries": ["MLI", "GIN", "SEN", "CIV", "BFA", "GMB", "SLE"]
+    },
+    "ethnicities": [
+      "Malinké / Mandinka",
+      "Bambara",
+      "Dioula",
+      "Soninké",
+      "Kpelle",
+      "Lobi",
+      "Autres groupes mandé"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Mandé sont originaires de la région du Mandé (MLI, GIN), berceau de l'empire du Mali. Leur présence dans la région remonte à plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Diversité linguistique importante.",
+      "externalInfluences": "Influence profonde de l'islam, rôle majeur dans l'empire du Mali et les réseaux commerciaux transsahariens."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Tradition de l'empire du Mali.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Hiérarchie sociale traditionnelle (nobles, griots, artisans, esclaves).",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, le statut social et les alliances. Importance de la généalogie.",
+      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite (malékite) structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Langues mandé (Malinké, Bambara, Dioula, Soninké, Kpelle, etc.)",
+      "vehicularRole": "Les langues mandé sont parlées par les peuples Mandé. Le bambara et le dioula servent de langues véhiculaires dans certaines régions. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Pèlerinage à La Mecque (Hajj)",
+      "source_4": "Cérémonies de griots",
+      "Symboles": "Symboles de l'empire du MLI, symboles islamiques, symboles culturels mandé.",
+      "Arts et musique": "",
+      "source_5": "Musique traditionnelle (kora, balafon, djembé)",
+      "source_6": "Tradition des griots (jaliya)",
+      "source_7": "Danse traditionnelle",
+      "source_8": "Poésie orale (épopée de Soundiata)",
+      "source_9": "Artisanat (tissage, poterie, sculpture)",
+      "Spiritualités": "Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture mandé. Traditions pré-islamiques préservées dans certaines communautés."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora mandé importante dans les pays d'Afrique de l'Ouest, et dans les pays occidentaux (États-Unis, France). Diaspora historique aux Amériques (traite transatlantique)."
+    },
+    "demography": {
+      "totalPopulation": 35000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Mande languages",
+      "CIA World Factbook – Country profiles",
+      "Niane, Djibril Tamsir – *Soundjata ou l'épopée mandingue*",
+      "Levtzion, Nehemia – *Ancient Ghana and Mali*",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples mandé"
+    ]
+  }
+}

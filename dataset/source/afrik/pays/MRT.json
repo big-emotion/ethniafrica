@@ -1,0 +1,270 @@
+{
+  "id": "MRT",
+  "nameFr": "République Islamique de Mauritanie (Al-Jumhūriyyah al-Islāmiyyah al-Mūrītāniyyah)",
+  "nameOfficial": "République Islamique de Mauritanie (Al-Jumhūriyyah al-Islāmiyyah al-Mūrītāniyyah)",
+  "etymology": "Le nom \"Mauritanie\" vient du terme \"Mauretania\" utilisé par les Romains pour désigner la région de l'Afrique du Nord-Ouest. Le nom moderne \"Mauritanie\" a été adopté par les Français lors de la colonisation (1904-1960). Le terme \"Maures\" (Beidhane) désigne les populations arabophones nomades de la région. Les Européens utilisaient \"Pays des Maures\" pour désigner la région.",
+  "nameOriginActor": "Les Français ont adopté le nom \"Mauritanie\" lors de la création du protectorat (1904) puis de la colonie (1920). Le nom fait référence aux \"Maures\" (Beidhane), populations arabophones nomades de la région. Le terme \"Mauretania\" était utilisé par les Romains pour désigner une région différente (actuel Maroc et Algérie occidentale), sans continuité réelle avec la Mauritanie moderne.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la Mauritanie était peuplé de Berbères Sanhaja (Lemtouna, Massufa, Godala) et de populations négro-africaines (Halpulaar, Wolof, Soninké, Bambara). Pas de nom unifié pour l'ensemble du territoire.",
+      "middleAges": "VIIe-XIIe siècles : Empire Almoravide (fondé par les Sanhaja du Sahara). Termes locaux : \"Bilad Chinguetti\" (pays de Chinguetti), \"trilhad\" (pays des nomades). Développement des tribus Maures (Beidhane), nomades arabophones hassaniya, héritières des Sanhaja berbères.",
+      "precolonial": "Tribus Maures (Beidhane), populations négro-africaines (Halpulaar, Soninké, Wolof, Bambara) dans la vallée du fleuve Sénégal. Stratification sociale maure (Hassane, Zawiya, Znaga, Haratine). Les Européens utilisaient \"Pays des Maures\" (Mauretania dérivé de l'Antiquité, mais sans continuité réelle).",
+      "colonization": "1904 : Protectorat français. 1920 : Colonie de \"Mauritanie\" (AOF, Afrique-Occidentale française). Le nom \"Mauritanie\" est officialisé par les Français.",
+      "contemporary": "1960 : Indépendance, République Islamique de Mauritanie. Le nom \"Mauritanie\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Empire Almoravide",
+        "period": "VIIe siècle - XIIe siècle",
+        "dominantPeoples": ["Berbères Sanhaja (Lemtouna", "Massufa", "Godala)"],
+        "politicalCenters": ["Aoudaghost", "Marrakech (capitale de l'empire)"],
+        "historicalRole": "Empire berbère puissant fondé par les Sanhaja du Sahara, expansion vers le Maghreb et l'Andalousie, islamisation, développement du commerce transsaharien. L'empire Almoravide a joué un rôle majeur dans l'histoire de la région."
+      },
+      {
+        "name": "Tribus Maures (Beidhane)",
+        "period": "Moyen Âge - présent",
+        "dominantPeoples": ["Maures (Beidhane)", "arabophones hassaniya"],
+        "politicalCenters": ["Tribus nomades", "confédérations tribales"],
+        "historicalRole": "Tribus Maures nomades, société stratifiée (Hassane : nobles guerriers, Zawiya : lettrés religieux, Znaga : tributaires, Haratine : anciennement serviles). Héritiers des Sanhaja berbères, arabisation progressive. Organisation tribale et nomade."
+      },
+      {
+        "name": "Chefferies Halpulaar",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Halpulaar (Toucouleur et Peul)"],
+        "politicalCenters": [
+          "Chefferies traditionnelles (vallée du fleuve Sénégal)"
+        ],
+        "historicalRole": "Chefferies Halpulaar, agriculture et pastoralisme, islam, résistance à la colonisation française."
+      },
+      {
+        "name": "Chefferies Soninké",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Soninké"],
+        "politicalCenters": [
+          "Chefferies traditionnelles (vallée du fleuve Sénégal)"
+        ],
+        "historicalRole": "Chefferies Soninké, commerce et agriculture, héritiers de l'ancien empire du Ghana, islam."
+      },
+      {
+        "name": "Colonie française de Mauritanie",
+        "period": "1904 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples mauritaniens sous domination coloniale"
+        ],
+        "politicalCenters": [
+          "Saint-Louis (capitale coloniale",
+          "aujourd'hui au Sénégal)",
+          "Nouakchott (fondée en 1958)"
+        ],
+        "historicalRole": "Colonisation française, résistance des peuples autochtones, développement de l'administration coloniale, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Maures / Beidhane",
+        "selfAppellation": "Beidhane (بيضان, \"Blancs\"), Hassaniya (حسانية)",
+        "exonyms": [
+          "\"Maures\" (terme utilisé par les Européens)",
+          "\"Arabes mauritaniens\" (terme descriptif)"
+        ],
+        "peopleId": "PPL_ARABES_AFRIQUE",
+        "mainRegion": "Nord et centre de la Mauritanie",
+        "languages": [
+          "Hassaniya (arabe mauritanien",
+          "mry",
+          "ISO 639-3)",
+          "arabe standard"
+        ],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "\"Beidhane\" est l'auto-appellation (signifie \"Blancs\" en hassaniya). \"Maures\" est l'exonyme le plus courant. Les Maures sont arabophones hassaniya, héritiers des Sanhaja berbères. Société stratifiée : Hassane (nobles guerriers), Zawiya (lettrés religieux), Znaga (tributaires). Société nomade traditionnelle."
+      },
+      {
+        "name": "Haratine",
+        "selfAppellation": "Haratine (حراطين)",
+        "exonyms": [
+          "\"Haratine\" (terme local)",
+          "\"Esclaves\" (terme historique",
+          "problématique)",
+          "\"Affranchis\" (terme descriptif)"
+        ],
+        "peopleId": "PPL_HARATINE",
+        "mainRegion": "Toutes les régions de la Mauritanie",
+        "languages": ["Hassaniya (mry", "ISO 639-3)", "arabe standard"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "\"Haratine\" est l'auto-appellation. Les Haratine sont des populations arabo-berbères anciennement serviles. L'esclavage a été officiellement aboli en Mauritanie en 1981, mais des pratiques persistent. Le terme \"Esclaves\" est historique et problématique, il doit être contextualisé. Les Haratine parlent hassaniya et sont culturellement proches des Maures, mais forment un groupe social distinct avec une histoire de servitude."
+      },
+      {
+        "name": "Halpulaar",
+        "selfAppellation": "Halpulaar (Toucouleur et Peul)",
+        "exonyms": [
+          "\"Toucouleur\" (terme français)",
+          "\"Peul\" (terme français)",
+          "\"Fulani\" (terme anglais)",
+          "\"Pulaar\" (terme local)"
+        ],
+        "peopleId": "PPL_HALPULAAR",
+        "mainRegion": "Sud de la Mauritanie (vallée du fleuve Sénégal)",
+        "languages": ["Pulaar (fuc", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Halpulaar\" est l'auto-appellation (signifie \"ceux qui parlent pulaar\"). \"Toucouleur\" et \"Peul\" sont des exonymes français. \"Fulani\" est un exonyme anglais. Les Halpulaar regroupent les Toucouleur et les Peul, qui parlent la même langue (pulaar). Agriculture et pastoralisme, islam."
+      },
+      {
+        "name": "Soninké",
+        "selfAppellation": "Soninké",
+        "exonyms": [
+          "\"Soninké\" (terme utilisé par les Européens)",
+          "\"Sarakollé\" (terme français",
+          "moins utilisé)"
+        ],
+        "peopleId": "PPL_SONINKE",
+        "mainRegion": "Sud de la Mauritanie (vallée du fleuve Sénégal)",
+        "languages": ["Soninké (snk", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Soninké\" est l'auto-appellation. \"Sarakollé\" est un terme français moins utilisé. Les Soninké sont héritiers de l'ancien empire du Ghana. Commerce et agriculture, islam."
+      },
+      {
+        "name": "Wolof",
+        "selfAppellation": "Wolof",
+        "exonyms": ["\"Wolof\" (terme utilisé par les Européens)"],
+        "peopleId": "PPL_WOLOF",
+        "mainRegion": "Sud-ouest de la Mauritanie (côte, vallée du fleuve Sénégal)",
+        "languages": ["Wolof (wol", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Wolof\" est l'auto-appellation. Pas de terme péjoratif connu. Commerce côtier, islam."
+      },
+      {
+        "name": "Bambara",
+        "selfAppellation": "Bambara",
+        "exonyms": ["\"Bambara\" (terme utilisé par les Européens)"],
+        "peopleId": "PPL_BAMBARA",
+        "mainRegion": "Sud de la Mauritanie",
+        "languages": ["Bambara (bam", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Bambara\" est l'auto-appellation. Pas de terme péjoratif connu. Agriculture, islam."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Diverses régions de la Mauritanie",
+        "languages": ["Langues diverses", "français"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Arabe",
+          "isoCode": "ara",
+          "isPrimary": true
+        },
+        {
+          "name": "hassaniya"
+        },
+        {
+          "name": "pulaar"
+        },
+        {
+          "name": "soninké",
+          "isoCode": "snk"
+        },
+        {
+          "name": "wolof",
+          "isoCode": "wol"
+        },
+        {
+          "name": "bambara",
+          "isoCode": "bam"
+        },
+        {
+          "name": "français",
+          "isoCode": "fra"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de la Mauritanie. Traditions maures (Beidhane) : poésie hassaniya, musique maure, traditions nomades, architecture saharienne (tentes, ksour), artisanat (bijoux, tissage). Traditions halpulaar (Toucouleur et Peul) : poésie pulaar, traditions islamiques, agriculture et pastoralisme. Traditions soninké : commerce, agriculture, héritage de l'empire du Ghana. Traditions wolof : commerce côtier, culture wolof. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La poésie hassaniya est un élément majeur de la culture maure.",
+      "dominantReligions": "Islam (sunnite majoritaire, école malékite), toutes les communautés sont musulmanes",
+      "lifestyles": "Nomadisme traditionnel (Maures, Beidhane), sédentarisation croissante. Agriculture (vallée du fleuve Sénégal, Halpulaar, Soninké, Wolof, Bambara). Pastoralisme (Maures, Halpulaar). Commerce transsaharien (Maures). Pêche (côte atlantique). Urbanisation modérée (Nouakchott, Nouadhibou). Économie basée sur l'élevage (Maures), l'agriculture (vallée du fleuve Sénégal), la pêche, et l'exploitation minière (fer, or). La Mauritanie est un pays saharien avec une grande partie du territoire couverte par le désert.",
+      "socialOrganization": "Société maure stratifiée (Hassane : nobles guerriers, Zawiya : lettrés religieux, Znaga : tributaires, Haratine : anciennement serviles). Organisation tribale et nomade (Maures). Structures familiales traditionnelles (Halpulaar, Soninké, Wolof, Bambara). Structures étatiques modernes (république islamique). La stratification sociale maure (Hassane, Zawiya, Znaga, Haratine) est un élément important de l'organisation sociale traditionnelle.",
+      "regionalRelations": "Relations avec le Maghreb (Maroc, Algérie), relations avec l'Afrique de l'Ouest (Mali, Sénégal, Guinée), relations avec l'Afrique subsaharienne. Intégration dans l'Union du Maghreb arabe (UMA). Relations commerciales transsahariennes. La Mauritanie est un pays de transition entre l'Afrique du Nord et l'Afrique subsaharienne."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence berbère Sanhaja (Lemtouna, Massufa, Godala) et populations négro-africaines (Halpulaar, Wolof, Soninké, Bambara). Pas de structures politiques unifiées.",
+      "middleAges": "VIIe-XIIe siècles : Empire Almoravide (fondé par les Sanhaja du Sahara), expansion vers le Maghreb et l'Andalousie, islamisation. Développement des tribus Maures (Beidhane), nomades arabophones hassaniya, héritières des Sanhaja berbères. Arabisation progressive. Stratification sociale maure (Hassane, Zawiya, Znaga, Haratine).",
+      "precolonial": "Consolidation des tribus Maures (Beidhane), organisation tribale et nomade. Populations négro-africaines (Halpulaar, Soninké, Wolof, Bambara) dans la vallée du fleuve Sénégal. Commerce transsaharien. Développement des traditions culturelles.",
+      "colonization": "1904 : Protectorat français. 1920 : Colonie de \"Mauritanie\" (AOF). Résistance des peuples autochtones (notamment résistance des Maures). Développement de l'administration coloniale. XXe siècle : Développement du mouvement indépendantiste.",
+      "independenceStruggle": "1950s-1960 : Mouvement pour l'indépendance, Mokhtar Ould Daddah, indépendance (28 novembre 1960), proclamation de la République Islamique de Mauritanie.",
+      "postIndependence": "République Islamique de Mauritanie (1960), présidence de Mokhtar Ould Daddah (1960-1978), coups d'État (1978, 1984, 2005, 2008), abolition officielle de l'esclavage (1981, mais pratiques persistantes), conflit du Sahara occidental (1975-1979), tensions ethniques (1989-1991, expulsion de Négro-Mauritaniens), transition démocratique (depuis 2007), présidence de Mohamed Ould Abdel Aziz (2008-2019), Mohamed Ould Ghazouani (depuis 2019). Défis : esclavage (pratiques persistantes malgré l'abolition officielle), tensions ethniques, développement économique, sécurité (terrorisme)."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Mauritania",
+      "SIL Ethnologue – Languages of Mauritania",
+      "Minority Rights Group – Haratine in Mauritania",
+      "Anti-Slavery International – Slavery in Mauritania",
+      "Recensements mauritaniens",
+      "Études anthropologiques sur les peuples de Mauritanie",
+      "Études historiques sur l'empire Almoravide"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Maures / Beidhane",
+          "population": 1900000,
+          "percentageInCountry": 40,
+          "percentageInAfrica": 1.1,
+          "peopleId": "PPL_ARABES_AFRIQUE",
+          "region": "Nord et centre de la Mauritanie",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Haratine",
+          "population": 1425000,
+          "percentageInCountry": 30,
+          "peopleId": "PPL_HARATINE",
+          "region": "Toutes les régions de la Mauritanie",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Halpulaar",
+          "population": 570000,
+          "percentageInCountry": 12,
+          "peopleId": "PPL_HALPULAAR",
+          "region": "Sud de la Mauritanie (vallée du fleuve Sénégal)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Soninké",
+          "population": 475000,
+          "percentageInCountry": 10,
+          "peopleId": "PPL_SONINKE",
+          "region": "Sud de la Mauritanie (vallée du fleuve Sénégal)",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Wolof",
+          "population": 95000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_WOLOF",
+          "region": "Sud-ouest de la Mauritanie (côte, vallée du fleuve Sénégal)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Bambara",
+          "population": 95000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_BAMBARA",
+          "region": "Sud de la Mauritanie",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Autres groupes",
+          "population": 190000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_AUTRES_GROUPES",
+          "region": "Diverses régions de la Mauritanie"
+        }
+      ]
+    }
+  }
+}

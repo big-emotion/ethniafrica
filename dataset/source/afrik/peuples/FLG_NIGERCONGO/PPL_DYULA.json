@@ -1,0 +1,66 @@
+{
+  "id": "PPL_DYULA",
+  "nameMain": "Dyula",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CIV", "BFA", "MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Dyula",
+      "selfAppellation": "Jula / Dyula",
+      "exonyms": ["Dyula (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mandé occidental",
+      "historicalRegion": "CIV, BFA, MLI",
+      "currentCountries": ["CIV", "BFA", "MLI"]
+    },
+    "ethnicities": [
+      "Dyula commerçants",
+      "Dyula de Kong",
+      "Dyula du Worodougou"
+    ],
+    "origins": {
+      "ancientOrigins": "Marchands mandé islamisés dès le Moyen Âge. Diffusion le long des routes commerciales transsahariennes.",
+      "unificationsOrDivisions": "Organisation en groupes commerciaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Influence profonde de l'islam, rôle majeur dans les réseaux commerciaux transsahariens."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Structure marchande. Leadership religieux (imams dyula). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances commerciales.",
+      "religiousAuthority": "Autorité des imams dyula et des oulémas. L'islam sunnite structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Dyula",
+      "vehicularRole": "Le dyula est parlé par la majorité des Dyula. Il sert de langue véhiculaire dans certaines régions. Le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_2": "Cérémonies commerciales",
+      "Symboles": "Symboles commerciaux, symboles islamiques",
+      "Arts et musique": "",
+      "source_3": "Musiques mandingues",
+      "source_4": "Artisanat",
+      "source_5": "Littérature islamique",
+      "Spiritualités": "Islam ancien. Rôle central de l'islam dans la culture dyula."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora dyula dans les grandes villes d'Afrique de l'Ouest et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1900000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (dyu), Manding Historical Archives"
+    },
+    "sources": [
+      "SIL Ethnologue – Dyula language (dyu)",
+      "Manding Historical Archives",
+      "CIA World Factbook",
+      "Recensements nationaux"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "PPL_BERI",
+  "nameMain": "Beri",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["TCD", "SDN"],
+  "content": {
+    "appellations": {
+      "mainName": "Beri",
+      "selfAppellation": "Beri",
+      "exonyms": ["Beri (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Saharien",
+      "historicalRegion": "TCD, SDN",
+      "currentCountries": ["TCD", "SDN"]
+    },
+    "ethnicities": [
+      "Beri du Tchad",
+      "Beri du Soudan",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Beri sont originaires du Tchad et du SDN, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples sahariens voisins, influence de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Beri (variété saharienne)",
+      "vehicularRole": "Le beri est parlé par la majorité des Beri. L'arabe, le français et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Pèlerinage à La Mecque (Hajj)",
+      "Symboles": "Symboles islamiques, symboles culturels beri.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture beri."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes et soudanaises.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora beri dans les grandes villes tchadiennes et soudanaises, et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Beri language",
+      "CIA World Factbook – Chad, Sudan",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples sahariens"
+    ]
+  }
+}

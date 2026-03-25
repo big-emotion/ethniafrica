@@ -1,0 +1,64 @@
+{
+  "id": "PPL_KPANA",
+  "nameMain": "Kpana",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "Kpana",
+      "selfAppellation": "Kpana",
+      "exonyms": ["Kpana (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mandé",
+      "historicalRegion": "Sierra Leone",
+      "currentCountries": ["SLE"]
+    },
+    "ethnicities": ["Kpana du Nord", "Kpana du Sud", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Kpana sont originaires de la SLE, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples mandé voisins, influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et de l'islam."
+    },
+    "languages": {
+      "mainLanguage": "Kpana",
+      "vehicularRole": "Le kpana est parlé par la majorité des Kpana. L'anglais est utilisé dans l'éducation et l'administration."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies de réconciliation",
+      "Symboles": "Symboles culturels kpana, art traditionnel.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques sierra-léonaises.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora kpana dans les grandes villes sierra-léonaises et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 20000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements sierra-léonais, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Kpana language",
+      "CIA World Factbook – Sierra Leone",
+      "Recensements sierra-léonais",
+      "Études anthropologiques sur les peuples mandé"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "PPL_LANGI",
+  "nameMain": "Langi",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Langi",
+      "selfAppellation": "",
+      "exonyms": ["Lango"],
+      "originOfExonyms": "Le terme 'Lango' est parfois utilisé comme variante",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique occidental (Luo)",
+      "historicalRegion": "Nord de l'Ouganda",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": ["Langi"],
+    "origins": {
+      "ancientOrigins": "Les Langi sont originaires du nord de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).",
+      "formationPeriod": "N/A",
+      "migrationRoutes": [
+        "Migrations depuis les régions du Nil supérieur. Expansion vers le nord de l'Ouganda. Déplacements vers les zones urbaines."
+      ],
+      "historicalSettlementZones": ["Nord de l'Ouganda"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Structure clanique patrilinéaire.",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Lango (laj)",
+      "isoCodes": ["laj"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "Traditions pastorales. Organisation clanique. Cérémonies de mariage traditionnelles. Rites de passage. Cérémonies liées à l'élevage.",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 1,
+      "referenceYear": 2025,
+      "source": "Fiche pays UGA, estimations ONU"
+    },
+    "sources": [
+      "Fiche pays UGA",
+      "SIL Ethnologue – Lango language (laj)",
+      "CIA World Factbook – Uganda"
+    ]
+  }
+}

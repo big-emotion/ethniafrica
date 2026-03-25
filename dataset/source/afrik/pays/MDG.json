@@ -1,0 +1,161 @@
+{
+  "id": "MDG",
+  "nameFr": "République de Madagascar (Repoblikan'i Madagasikara)",
+  "nameOfficial": "République de Madagascar (Repoblikan'i Madagasikara)",
+  "etymology": "Le nom \"Madagascar\" vient probablement de \"Madageiscar\", mentionné par Marco Polo au XIIIe siècle, qui faisait référence à Mogadiscio en Somalie. Les Portugais ont ensuite appliqué ce nom à l'île qu'ils appelaient \"São Lourenço\". En malgache, le pays est appelé \"Madagasikara\".",
+  "nameOriginActor": "Le nom a été popularisé par les navigateurs européens (portugais, français) à partir du XVIe siècle. L'origine exacte est incertaine, mais pourrait provenir d'une confusion avec Mogadiscio.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "L'île était connue des navigateurs arabes et swahilis, mais n'avait pas de nom unique. Les Grecs anciens mentionnent des îles dans cette région.",
+      "middleAges": "Les navigateurs arabes et swahilis connaissaient l'île mais sans nom spécifique. Marco Polo mentionne \"Madageiscar\" au XIIIe siècle (référence probable à Mogadiscio).",
+      "precolonial": "Les Portugais appellent l'île \"São Lourenço\" (Saint-Laurent) au XVIe siècle. Les Européens utilisent progressivement \"Madagascar\" à partir du XVIIe siècle. Les peuples autochtones utilisent des noms régionaux (Imerina, Menabe, etc.).",
+      "colonization": "Les Français établissent la \"Colonie de Madagascar\" en 1896. Le nom \"Madagascar\" devient officiel. Les Malgaches continuent d'utiliser \"Madagasikara\" en malgache.",
+      "contemporary": "Après l'indépendance en 1960, le pays prend le nom de \"République malgache\" puis \"République de Madagascar\". Le nom officiel en français est \"République de Madagascar\" et en malgache \"Repoblikan'i Madagasikara\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume Merina",
+        "period": "XVIe siècle - 1896",
+        "dominantPeoples": ["Merina (Hova", "Andriana)"],
+        "politicalCenters": ["Antananarivo (capitale du royaume)"],
+        "historicalRole": "Le royaume Merina a unifié une grande partie de Madagascar au XIXe siècle sous les règnes de Radama I et Ranavalona I. Il a résisté à la colonisation française jusqu'en 1896."
+      },
+      {
+        "name": "Royaumes Sakalava",
+        "period": "XVIIe - XIXe siècles",
+        "dominantPeoples": ["Sakalava (Menabe", "Boina)"],
+        "politicalCenters": ["Morondava (Menabe)", "Mahajanga (Boina)"],
+        "historicalRole": "Les royaumes Sakalava étaient des puissances maritimes qui contrôlaient le commerce sur la côte ouest. Ils ont résisté à l'expansion merina."
+      },
+      {
+        "name": "Confédération Betsimisaraka",
+        "period": "XVIIIe siècle",
+        "dominantPeoples": ["Betsimisaraka"],
+        "politicalCenters": ["Toamasina (Tamatave)"],
+        "historicalRole": "Confédération formée au XVIIIe siècle par Ratsimilaho, unifiant les peuples de la côte est pour résister aux raids malgaches et européens."
+      },
+      {
+        "name": "Colonie française de Madagascar",
+        "period": "1896 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples malgaches sous administration coloniale française"
+        ],
+        "politicalCenters": ["Antananarivo (capitale coloniale)"],
+        "historicalRole": "Période de colonisation française qui a unifié administrativement toute l'île. Résistance malgache (révolte de 1947)."
+      },
+      {
+        "name": "République de Madagascar",
+        "period": "1960 - présent",
+        "dominantPeoples": ["Tous les peuples malgaches"],
+        "politicalCenters": ["Antananarivo (capitale)"],
+        "historicalRole": "État indépendant depuis 1960, avec une histoire politique mouvementée incluant plusieurs coups d'État et périodes de transition."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Merina",
+        "selfAppellation": "Merina",
+        "exonyms": [
+          "Hova (terme historique",
+          "parfois utilisé de manière péjorative)",
+          "Imerina"
+        ],
+        "peopleId": "PPL_MERINA",
+        "mainRegion": "Hautes terres centrales (Antananarivo, Analamanga)",
+        "languages": ["Malgache (dialecte merina)", "français"],
+        "languageFamily": "FLG_AUSTRONESIENNE",
+        "appellationRemarks": "Le terme \"Hova\" était historiquement utilisé pour désigner la classe moyenne merina, mais peut avoir des connotations péjoratives dans certains contextes. L'auto-appellation \"Merina\" est préférée."
+      },
+      {
+        "name": "Betsimisaraka",
+        "selfAppellation": "Betsimisaraka",
+        "exonyms": [
+          "Betsimisaraka (terme signifiant \"les nombreux inséparables\")"
+        ],
+        "peopleId": "PPL_BETSIMISARAKA",
+        "mainRegion": "Côte est (Atsinanana)",
+        "languages": ["Malgache (dialecte betsimisaraka)", "français"],
+        "languageFamily": "FLG_AUSTRONESIENNE",
+        "appellationRemarks": "Le terme \"Betsimisaraka\" est neutre et accepté."
+      },
+      {
+        "name": "Betsileo",
+        "selfAppellation": "Betsileo",
+        "exonyms": ["Betsileo (terme signifiant \"les nombreux invincibles\")"],
+        "peopleId": "PPL_BETSILEO",
+        "mainRegion": "Hautes terres du sud",
+        "languages": ["Malgache (dialecte betsileo)", "français"],
+        "languageFamily": "FLG_AUSTRONESIENNE",
+        "appellationRemarks": "Le terme \"Betsileo\" est neutre et accepté."
+      },
+      {
+        "name": "Sakalava",
+        "selfAppellation": "Sakalava",
+        "exonyms": ["Sakalava (terme signifiant \"ceux des longues vallées\")"],
+        "peopleId": "PPL_SAKALAVA",
+        "mainRegion": "Côte ouest et nord-ouest",
+        "languages": ["Malgache (dialecte sakalava)", "français"],
+        "languageFamily": "FLG_AUSTRONESIENNE",
+        "appellationRemarks": "Le terme \"Sakalava\" est neutre et accepté."
+      },
+      {
+        "name": "Antandroy",
+        "selfAppellation": "Antandroy",
+        "exonyms": ["Antandroy (terme signifiant \"ceux des épines\")"],
+        "peopleId": "PPL_ANTANDROY",
+        "mainRegion": "Sud (Androy)",
+        "languages": ["Malgache (dialecte antandroy)", "français"],
+        "languageFamily": "FLG_AUSTRONESIENNE",
+        "appellationRemarks": "Le terme \"Antandroy\" est neutre et accepté."
+      },
+      {
+        "name": "Tsimihety",
+        "selfAppellation": "Tsimihety",
+        "exonyms": [
+          "Tsimihety (terme signifiant \"ceux qui ne se coupent pas les cheveux\")"
+        ],
+        "peopleId": "PPL_TSIMIHETY",
+        "mainRegion": "Nord-Centre",
+        "languages": ["Malgache (dialecte tsimihety)", "français"],
+        "languageFamily": "FLG_AUSTRONESIENNE",
+        "appellationRemarks": "Le terme \"Tsimihety\" est neutre et accepté."
+      },
+      {
+        "name": "Antakarana",
+        "selfAppellation": "Antakarana",
+        "exonyms": ["Antakarana"],
+        "peopleId": "PPL_ANTAKARANA",
+        "mainRegion": "Nord",
+        "languages": ["Malgache (dialecte antakarana)", "français", "arabe"],
+        "languageFamily": "FLG_AUSTRONESIENNE",
+        "appellationRemarks": "Le terme \"Antakarana\" est neutre et accepté. Groupe austronésien islamisé."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Famadihana (retournement des morts), riziculture en terrasses (hautes terres), élevage de zébus (côtes et sud), architecture en pierre traditionnelle, musique traditionnelle (valiha, sodina), danse traditionnelle (hira gasy), poésie orale (hainteny), artisanat (tissage, vannerie)",
+      "dominantReligions": "Croyances traditionnelles (culte des ancêtres - razana), christianisme (catholique et protestant), islam (minorité, surtout dans le nord et sur les côtes), syncrétisme religieux très présent",
+      "lifestyles": "Vie principalement rurale, agriculture (riz, manioc, vanille, café), élevage (zébus), pêche (côtes), commerce",
+      "socialOrganization": "Système de fokonolona (communautés villageoises), structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des ancêtres (razana), système de castes chez les Merina (andriana, hova, andevo)",
+      "regionalRelations": "Relations historiques avec les peuples swahilis, interactions avec les peuples de l'océan Indien, diaspora importante en France, Réunion, Mayotte, et dans les pays occidentaux"
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement de l'île par des migrations austronésiennes (500-700 ap. J.-C.) depuis l'Asie du Sud-Est (probablement Bornéo) et migrations bantoues depuis l'Afrique de l'Est. Fusion des cultures austronésienne et bantoue créant une culture malgache unique.",
+      "middleAges": "Développement de royaumes et chefferies sur toute l'île. Contacts avec les navigateurs arabes et swahilis. Introduction de l'islam dans certaines régions côtières.",
+      "precolonial": "Apogée des royaumes Sakalava (XVIIe-XVIIIe siècles) sur la côte ouest. Formation de la confédération Betsimisaraka (XVIIIe siècle) sur la côte est. Expansion et unification du royaume Merina (XIXe siècle) sous Radama I et Ranavalona I. Tentatives de modernisation et résistance à l'influence européenne.",
+      "colonization": "Établissement du protectorat français en 1885, puis colonie en 1896. Résistance malgache à la colonisation. Révolte de 1947 violemment réprimée (tens of thousands de morts). Développement de plantations (vanille, café, girofle) et exploitation des ressources.",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1960. Première République malgache.",
+      "postIndependence": "Histoire politique mouvementée avec plusieurs coups d'État (1972, 2009). Périodes de transition et instabilité politique. Défis économiques et sociaux persistants. Crises politiques récurrentes affectant le développement."
+    },
+    "sources": [
+      "CIA World Factbook – Madagascar",
+      "SIL Ethnologue – Malagasy language (mlg)",
+      "Recensements nationaux malgaches",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples malgaches",
+      "Études historiques sur les royaumes malgaches",
+      "Encyclopédie de Madagascar"
+    ],
+    "demographics": null
+  }
+}

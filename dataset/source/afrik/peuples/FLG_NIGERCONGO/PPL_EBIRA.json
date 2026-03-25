@@ -1,0 +1,67 @@
+{
+  "id": "PPL_EBIRA",
+  "nameMain": "Ebira / Egbira",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ebira / Egbira",
+      "selfAppellation": "Ebira / Igbira",
+      "exonyms": ["Ebira (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bénoué-Congo",
+      "historicalRegion": "Nigeria (État de Kogi, centre)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Ebira Tao (Okene)",
+      "Ebira Koto (Kogi)",
+      "Ebira Etuno (Edo State)"
+    ],
+    "origins": {
+      "ancientOrigins": "Peuple du centre nigérian issu des migrations de la zone Niger-Benue. Parentés avec Idoma, Igala et Nupe.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Forte centralité culturelle autour d'Okene.",
+      "externalInfluences": "Contacts avec les peuples voisins (Idoma, Igala, Nupe), influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Lignages familiaux. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Ebira",
+      "vehicularRole": "L'ebira est parlé par la majorité des Ebira. L'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Masques Ekuechi (célèbres rituels masquerades)",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "Symboles": "Masques Ekuechi, symboles culturels ebira",
+      "Arts et musique": "",
+      "source_3": "Masques Ekuechi (célèbres rituels masquerades)",
+      "source_4": "Musiques percussives",
+      "source_5": "Artisanat du fer",
+      "source_6": "Danse traditionnelle",
+      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme et l'islam."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora ebira dans les grandes villes nigérianes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 2400000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (igb), Kogi State Cultural Archives"
+    },
+    "sources": [
+      "SIL Ethnologue – Ebira language (igb)",
+      "Kogi State Cultural Archives",
+      "CIA World Factbook – Nigeria",
+      "Recensements nationaux"
+    ]
+  }
+}

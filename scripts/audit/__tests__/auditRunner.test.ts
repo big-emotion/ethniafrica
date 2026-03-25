@@ -14,14 +14,14 @@ import {
 // Test data: read real AFRIK source files
 // -----------------------------------------------
 const ROOT = path.resolve(__dirname, "../../../");
-const COUNTRY_FILE = path.join(ROOT, "dataset/source/afrik/pays/BFA.txt");
+const COUNTRY_FILE = path.join(ROOT, "dataset/source/afrik/pays/BFA.json");
 const PEOPLE_FILE = path.join(
   ROOT,
-  "dataset/source/afrik/peuples/FLG_BANTU/PPL_ZULU.txt"
+  "dataset/source/afrik/peuples/FLG_BANTU/PPL_ZULU.json"
 );
 const FAMILY_FILE = path.join(
   ROOT,
-  "dataset/source/afrik/famille_linguistique/FLG_BANTU.txt"
+  "dataset/source/afrik/famille_linguistique/FLG_BANTU.json"
 );
 
 const countryContent = fs.readFileSync(COUNTRY_FILE, "utf-8");

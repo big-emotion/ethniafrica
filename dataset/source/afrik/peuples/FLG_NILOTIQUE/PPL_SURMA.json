@@ -1,0 +1,70 @@
+{
+  "id": "PPL_SURMA",
+  "nameMain": "Surma (Nuer)",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["SDN", "ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Surma (Nuer)",
+      "selfAppellation": "Surma",
+      "exonyms": [
+        "Surma (terme utilisé par les Européens), parfois confondu avec Nuer"
+      ],
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique méridional",
+      "historicalRegion": "Sud-SDN, ETH",
+      "currentCountries": ["SDN", "ETH"]
+    },
+    "ethnicities": [
+      "Surma du Soudan du Sud",
+      "Surma d'Éthiopie",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Surma sont originaires du Soudan du Sud et de l'Éthiopie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique méridional.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
+      "externalInfluences": "Contacts avec les peuples nilotiques voisins, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Surma",
+      "vehicularRole": "Le surma est parlé par la majorité des Surma. L'anglais, l'amharique et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (scarification, fêtes de naissance)",
+      "source_3": "Cérémonies liées à l'élevage",
+      "Symboles": "Symboles liés à l'élevage, symboles culturels surma (scarifications, bijoux, labrets), symboles chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (bijoux, armes)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora surma dans les grandes villes soudanaises et éthiopiennes, et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Surma language (suq)",
+      "CIA World Factbook – South Sudan, Ethiopia",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples nilotiques"
+    ]
+  }
+}

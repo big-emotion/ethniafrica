@@ -1,0 +1,254 @@
+{
+  "id": "NAM",
+  "nameFr": "République de Namibie (Republic of Namibia, Republiek van Namibië)",
+  "nameOfficial": "République de Namibie (Republic of Namibia, Republiek van Namibië)",
+  "etymology": "Le nom \"Namibie\" vient du désert du Namib, qui borde la côte atlantique du pays. \"Namib\" signifie \"vaste lieu\" ou \"endroit vide\" en langue nama. Le nom a été adopté lors de l'indépendance en 1990. Auparavant, le territoire était appelé \"Afrique du Sud-Ouest\" (South West Africa, Suidwes-Afrika) pendant la colonisation sud-africaine.",
+  "nameOriginActor": "Le nom \"Namibie\" vient du désert du Namib, nommé par les Nama. Le nom a été adopté lors de l'indépendance en 1990 pour remplacer \"Afrique du Sud-Ouest\" (nom colonial sud-africain). Le nom \"Namibie\" a été proposé par les nationalistes namibiens.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la Namibie était peuplé de peuples khoïsan (San, Nama) et de peuples bantous (Herero, Ovambo). Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Présence continue des peuples khoïsan et bantous. Migrations bantoues vers la région. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Développement des chefferies bantoues (Ovambo, Herero, Kavango) et des groupes khoïsan (Nama, San). Commerce régional. Les Européens utilisaient le terme \"Afrique du Sud-Ouest\" pour désigner la région.",
+      "colonization": "1884-1915 : Colonie allemande du Sud-Ouest africain (Deutsch-Südwestafrika). 1915-1990 : Mandat puis colonie sud-africaine (Afrique du Sud-Ouest, South West Africa, Suidwes-Afrika). Le nom \"Afrique du Sud-Ouest\" est utilisé par les Allemands puis par les Sud-Africains.",
+      "contemporary": "1990 : Indépendance (21 mars 1990), proclamation de la République de Namibie. Le nom \"Namibie\" est officialisé pour remplacer \"Afrique du Sud-Ouest\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Peuples khoïsan",
+        "period": "Préhistorique - présent",
+        "dominantPeoples": ["San", "Nama"],
+        "politicalCenters": ["Groupes nomades et semi-nomades"],
+        "historicalRole": "Peuples autochtones de la Namibie, chasseurs-cueilleurs (San), pasteurs (Nama), résistance à la colonisation."
+      },
+      {
+        "name": "Chefferies Ovambo",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Ovambo"],
+        "politicalCenters": ["Chefferies traditionnelles (nord de la Namibie)"],
+        "historicalRole": "Chefferies Ovambo, agriculture et élevage, résistance à la colonisation, rôle majeur dans la lutte pour l'indépendance (SWAPO)."
+      },
+      {
+        "name": "Chefferies Herero",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Herero"],
+        "politicalCenters": [
+          "Chefferies traditionnelles (centre de la Namibie)"
+        ],
+        "historicalRole": "Chefferies Herero, tradition pastorale forte, résistance à la colonisation allemande (guerre des Herero, 1904-1908, génocide)."
+      },
+      {
+        "name": "Chefferies Kavango",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Kavango"],
+        "politicalCenters": [
+          "Chefferies traditionnelles (nord-est de la Namibie)"
+        ],
+        "historicalRole": "Chefferies Kavango, agriculture et élevage, traditions culturelles."
+      },
+      {
+        "name": "Colonie allemande du Sud-Ouest africain",
+        "period": "1884 - 1915",
+        "dominantPeoples": [
+          "Tous les peuples namibiens sous domination coloniale allemande"
+        ],
+        "politicalCenters": ["Windhoek (capitale coloniale)"],
+        "historicalRole": "Colonisation allemande, guerre des Herero (1904-1908, génocide), résistance des peuples autochtones, développement de l'économie coloniale."
+      },
+      {
+        "name": "Colonie sud-africaine (Afrique du Sud-Ouest)",
+        "period": "1915 - 1990",
+        "dominantPeoples": [
+          "Tous les peuples namibiens sous domination coloniale sud-africaine"
+        ],
+        "politicalCenters": ["Windhoek (capitale coloniale)"],
+        "historicalRole": "Colonisation sud-africaine, apartheid, résistance namibienne (SWAPO), guerre d'indépendance (1966-1990), mouvements nationalistes."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Ovambo",
+        "selfAppellation": "Ovambo",
+        "exonyms": [
+          "Ovambo (terme utilisé par les Européens)",
+          "\"Ambo\" (variante)"
+        ],
+        "peopleId": "PPL_OVAMBO",
+        "mainRegion": "Nord de la Namibie",
+        "languages": ["Ovambo (kwn", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Ovambo\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe bantou majoritaire, rôle majeur dans la lutte pour l'indépendance (SWAPO)."
+      },
+      {
+        "name": "Kavango",
+        "selfAppellation": "Kavango",
+        "exonyms": ["Kavango (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KAVANGO",
+        "mainRegion": "Nord-est de la Namibie",
+        "languages": ["Kavango (kng", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Kavango\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Herero",
+        "selfAppellation": "Ovaherero",
+        "exonyms": ["Herero (terme utilisé par les Européens)"],
+        "peopleId": "PPL_HERERO",
+        "mainRegion": "Centre de la Namibie",
+        "languages": ["Herero (her", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Ovaherero\" est l'auto-appellation. \"Herero\" est l'exonyme le plus courant. Pas de terme péjoratif connu. Tradition pastorale forte, victimes du génocide allemand (1904-1908)."
+      },
+      {
+        "name": "Damara",
+        "selfAppellation": "Damara",
+        "exonyms": [
+          "Damara (terme utilisé par les Européens)",
+          "\"Bergdamara\" (terme historique",
+          "peut être problématique)"
+        ],
+        "peopleId": "PPL_DAMARA",
+        "mainRegion": "Centre de la Namibie",
+        "languages": ["Damara (naq", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_KHOE",
+        "appellationRemarks": "\"Damara\" est l'auto-appellation. \"Bergdamara\" est un terme historique qui peut être problématique dans certains contextes. Groupe khoïsan du centre de la Namibie."
+      },
+      {
+        "name": "Nama",
+        "selfAppellation": "Nama",
+        "exonyms": [
+          "\"Nama\" (auto-appellation)",
+          "\"Hottentot\" (terme colonial péjoratif",
+          "à éviter)",
+          "\"Khoikhoi\" (terme historique)"
+        ],
+        "peopleId": "PPL_NAMA",
+        "mainRegion": "Sud de la Namibie",
+        "languages": ["Nama (naq", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_KHOE",
+        "appellationRemarks": "\"Nama\" est l'auto-appellation. \"Hottentot\" est un terme colonial péjoratif qui doit être évité. \"Khoikhoi\" est un terme historique. Groupe khoïsan pasteur du sud de la Namibie."
+      },
+      {
+        "name": "Himba",
+        "selfAppellation": "Himba",
+        "exonyms": ["Himba (terme utilisé par les Européens)"],
+        "peopleId": "PPL_HIMBA",
+        "mainRegion": "Nord-ouest de la Namibie",
+        "languages": ["Himba (her", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Himba\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe herero semi-nomade, tradition pastorale, culture traditionnelle préservée."
+      },
+      {
+        "name": "San",
+        "selfAppellation": "San",
+        "exonyms": [
+          "\"San\" (auto-appellation)",
+          "\"Bushmen\" (terme colonial",
+          "peut être problématique)",
+          "\"Basarwa\" (terme utilisé au Botswana)"
+        ],
+        "peopleId": "PPL_SAN",
+        "mainRegion": "Est de la Namibie (désert du Kalahari)",
+        "languages": [
+          "Langues khoïsan (diverses",
+          "ISO 639-3 variées)",
+          "anglais"
+        ],
+        "languageFamily": "FLG_KHOE",
+        "appellationRemarks": "\"San\" est l'auto-appellation. \"Bushmen\" est un terme colonial qui peut être problématique dans certains contextes. \"Basarwa\" est un terme utilisé au Botswana. Chasseurs-cueilleurs, peuples autochtones de la Namibie."
+      },
+      {
+        "name": "Blancs namibiens",
+        "selfAppellation": "Variées selon les groupes (Afrikaners, Allemands namibiens)",
+        "exonyms": [
+          "\"Blancs\" (terme descriptif",
+          "peut être problématique)",
+          "\"Colons\" (terme historique)"
+        ],
+        "peopleId": "PPL_BLANCS_NAMIBIENS",
+        "mainRegion": "Toutes les régions de la Namibie, majoritairement urbains",
+        "languages": ["Afrikaans", "allemand", "anglais"],
+        "appellationRemarks": "Les Blancs namibiens sont descendants de colons allemands et afrikaners. Le terme \"Blanc\" peut être problématique et doit être utilisé avec précaution. Le terme \"Colon\" est historique et doit être contextualisé. Ils sont majoritairement chrétiens."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions de la Namibie",
+        "languages": ["Langues diverses", "anglais"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "ovambo",
+          "isoCode": "kwn"
+        },
+        {
+          "name": "kavango",
+          "isoCode": "kng"
+        },
+        {
+          "name": "herero",
+          "isoCode": "her"
+        },
+        {
+          "name": "damara",
+          "isoCode": "naq"
+        },
+        {
+          "name": "nama",
+          "isoCode": "naq"
+        },
+        {
+          "name": "langues khoïsan"
+        },
+        {
+          "name": "afrikaans",
+          "isoCode": "afr"
+        },
+        {
+          "name": "allemand",
+          "isoCode": "deu"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de la Namibie. Traditions bantoues (Ovambo, Herero, Kavango, Himba) : masques, sculptures, musiques traditionnelles, danses traditionnelles, traditions pastorales (Herero, Himba). Traditions khoïsan (Nama, San, Damara) : art rupestre (San), traditions de chasse-cueillette (San), traditions pastorales (Nama), poésie orale. Traditions européennes (Blancs namibiens) : influence culturelle allemande et afrikaner. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. L'art rupestre san est réputé internationalement.",
+      "dominantReligions": "Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels), toutes les communautés sont majoritairement chrétiennes",
+      "lifestyles": "Agriculture (Ovambo, Kavango, maïs, millet, cultures vivrières), pastoralisme (Herero, Himba, Nama, élevage de bovins), chasse-cueillette (San, désert du Kalahari), commerce et activités urbaines (zones urbaines, Windhoek, Swakopmund). Urbanisation modérée. Économie basée sur l'exploitation minière (diamants, uranium, zinc), l'agriculture, l'élevage, la pêche, et le tourisme. La Namibie est l'un des pays les plus développés d'Afrique, avec un IDH élevé.",
+      "socialOrganization": "Organisation en chefferies traditionnelles (Ovambo, Herero, Kavango), structures claniques patrilinéaires (majorité des groupes bantous) et patrilinéaires (groupes khoïsan). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système patrilinéaire (majorité des groupes).",
+      "regionalRelations": "Relations historiques avec l'Angola (commerce, migrations, peuples transfrontaliers, frontière), l'Afrique du Sud (commerce, migrations, frontière), le Botswana (commerce, frontière), la Zambie (commerce, frontière). Intégration dans la SADC (Communauté de développement d'Afrique australe). Relations commerciales et culturelles transfrontalières. La Namibie est un pays de transit pour le commerce régional."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence des peuples khoïsan (San, Nama) depuis la préhistoire. Migrations bantoues vers la région. Développement de chefferies locales.",
+      "middleAges": "Présence continue des peuples khoïsan et bantous. Migrations bantoues continues. Développement de structures politiques locales. Commerce régional.",
+      "precolonial": "Consolidation des chefferies bantoues (Ovambo, Herero, Kavango) et des groupes khoïsan (Nama, San). Commerce régional. Développement des traditions culturelles.",
+      "colonization": "1884-1915 : Colonie allemande du Sud-Ouest africain, guerre des Herero (1904-1908, génocide), résistance des peuples autochtones. 1915-1990 : Colonie sud-africaine (Afrique du Sud-Ouest), apartheid, résistance namibienne (SWAPO), guerre d'indépendance (1966-1990).",
+      "independenceStruggle": "1966-1990 : Guerre d'indépendance menée par la SWAPO (Organisation du peuple du Sud-Ouest africain), Sam Nujoma, résistance armée contre l'Afrique du Sud. 1988 : Accords de New York, retrait des troupes sud-africaines. 1990 : Indépendance (21 mars 1990), proclamation de la République de Namibie. Sam Nujoma devient premier président.",
+      "postIndependence": "République de Namibie (1990), présidence de Sam Nujoma (1990-2005), Hifikepunye Pohamba (2005-2015), Hage Geingob (2015-2024), Nangolo Mbumba (depuis 2024). Stabilité politique, démocratie multipartite, développement économique, réconciliation nationale. Défis : inégalités économiques, chômage, VIH/sida, développement rural. La Namibie est l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Namibia",
+      "SIL Ethnologue – Languages of Namibia",
+      "Recensements namibiens",
+      "Études anthropologiques sur les peuples de Namibie",
+      "Études historiques sur la colonisation allemande et sud-africaine, le génocide des Herero, la guerre d'indépendance"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Ovambo",
+          "population": 1300000,
+          "percentageInCountry": 50,
+          "peopleId": "PPL_OVAMBO",
+          "region": "Nord de la Namibie"
+        }
+      ]
+    }
+  }
+}

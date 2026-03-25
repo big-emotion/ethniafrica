@@ -7,12 +7,7 @@
 
 import fs from "fs";
 import path from "path";
-import { parseCountryFile } from "@/lib/afrik/parsers/countryParser";
-import { parsePeopleFile } from "@/lib/afrik/parsers/peopleParser";
-import {
-  parseLanguageFamilyV2,
-  type LanguageFamilyV2,
-} from "@/lib/afrik/parsers/languageFamilyParserV2";
+import type { Country, People, LanguageFamily } from "@/types/afrik";
 import type {
   FileAuditResult,
   AuditSummary,
@@ -121,16 +116,20 @@ export function auditCountryFile(
   filePath: string,
   content: string
 ): FileAuditResult {
-  const result = parseCountryFile(content);
-
-  if (!result.success || !result.data) {
+  let data: Country;
+  try {
+    data = JSON.parse(content) as Country;
+    if (!data.id) throw new Error("Missing required field: id");
+  } catch (error) {
     return {
       filePath,
       entityType: "country",
       entityId: extractIdFromPath(filePath, "country"),
       parseSuccess: false,
-      parseErrors: (result.errors || []).map((e) => e.message),
-      parseWarnings: (result.warnings || []).map((w) => w.message),
+      parseErrors: [
+        error instanceof Error ? error.message : "JSON parse error",
+      ],
+      parseWarnings: [],
       sections: {
         header: "missing",
         historicalNames: "missing",
@@ -146,7 +145,6 @@ export function auditCountryFile(
     };
   }
 
-  const data = result.data;
   const c = data.content;
 
   const sections: Record<string, SectionStatus> = {
@@ -169,7 +167,7 @@ export function auditCountryFile(
     entityId: data.id,
     parseSuccess: true,
     parseErrors: [],
-    parseWarnings: (result.warnings || []).map((w) => w.message),
+    parseWarnings: [],
     sections,
     completenessPercent,
     grade: computeGrade(completenessPercent),
@@ -189,16 +187,20 @@ export function auditPeopleFile(
   filePath: string,
   content: string
 ): FileAuditResult {
-  const result = parsePeopleFile(content, filePath);
-
-  if (!result.success || !result.data) {
+  let data: People;
+  try {
+    data = JSON.parse(content) as People;
+    if (!data.id) throw new Error("Missing required field: id");
+  } catch (error) {
     return {
       filePath,
       entityType: "people",
       entityId: extractIdFromPath(filePath, "people"),
       parseSuccess: false,
-      parseErrors: (result.errors || []).map((e) => e.message),
-      parseWarnings: (result.warnings || []).map((w) => w.message),
+      parseErrors: [
+        error instanceof Error ? error.message : "JSON parse error",
+      ],
+      parseWarnings: [],
       sections: {
         appellations: "missing",
         ethnicities: "missing",
@@ -215,7 +217,6 @@ export function auditPeopleFile(
     };
   }
 
-  const data = result.data;
   const c = data.content;
 
   const sections: Record<string, SectionStatus> = {
@@ -238,7 +239,7 @@ export function auditPeopleFile(
     entityId: data.id,
     parseSuccess: true,
     parseErrors: [],
-    parseWarnings: (result.warnings || []).map((w) => w.message),
+    parseWarnings: [],
     sections,
     completenessPercent,
     grade: computeGrade(completenessPercent),
@@ -253,16 +254,15 @@ export function auditPeopleFile(
  * Audit a language family file. Checks 7 sections:
  * decolonialHeader, generalInfo, peoples, linguisticCharacteristics,
  * historyAndOrigins, distribution, sources
- *
- * Note: parseLanguageFamilyV2 returns LanguageFamilyV2 directly (or throws).
  */
 export function auditFamilyFile(
   filePath: string,
   content: string
 ): FileAuditResult {
-  let data: LanguageFamilyV2;
+  let data: LanguageFamily;
   try {
-    data = parseLanguageFamilyV2(content);
+    data = JSON.parse(content) as LanguageFamily;
+    if (!data.id) throw new Error("Missing required field: id");
   } catch (error) {
     return {
       filePath,
@@ -270,7 +270,7 @@ export function auditFamilyFile(
       entityId: extractIdFromPath(filePath, "languageFamily"),
       parseSuccess: false,
       parseErrors: [
-        error instanceof Error ? error.message : "Unknown parse error",
+        error instanceof Error ? error.message : "JSON parse error",
       ],
       parseWarnings: [],
       sections: {
@@ -287,19 +287,22 @@ export function auditFamilyFile(
     };
   }
 
+  const c = data.content;
+  const g = c.generalInfo;
+
   const sections: Record<string, SectionStatus> = {
-    decolonialHeader: sectionStatus(data.decolonialHeader),
+    decolonialHeader: sectionStatus(c.decolonialHeader),
     generalInfo:
-      data.name && data.speakers !== null && data.geographicArea.length > 0
+      data.nameFr && g?.totalSpeakers != null && g?.geographicArea
         ? "filled"
-        : data.name
+        : data.nameFr
           ? "empty"
           : "missing",
-    peoples: data.peoples.length > 0 ? "filled" : "missing",
-    linguisticCharacteristics: sectionStatus(data.linguisticCharacteristics),
-    historyAndOrigins: sectionStatus(data.historyAndOrigins),
-    distribution: sectionStatus(data.distribution),
-    sources: data.sources.length > 0 ? "filled" : "missing",
+    peoples: (c.associatedPeoples?.length ?? 0) > 0 ? "filled" : "missing",
+    linguisticCharacteristics: sectionStatus(c.linguisticCharacteristics),
+    historyAndOrigins: sectionStatus(c.historyAndOrigins),
+    distribution: sectionStatus(c.distribution),
+    sources: (c.sources?.length ?? 0) > 0 ? "filled" : "missing",
   };
 
   const completenessPercent = computeCompleteness(sections);
@@ -307,7 +310,7 @@ export function auditFamilyFile(
   return {
     filePath,
     entityType: "languageFamily",
-    entityId: data.familyId,
+    entityId: data.id,
     parseSuccess: true,
     parseErrors: [],
     parseWarnings: [],
@@ -332,12 +335,12 @@ export async function runFullAudit(): Promise<{
 }> {
   const files: FileAuditResult[] = [];
 
-  // 1. Country files: dataset/source/afrik/pays/*.txt
+  // 1. Country files: dataset/source/afrik/pays/*.json
   const countryDir = path.join(DATASET_ROOT, "pays");
   if (fs.existsSync(countryDir)) {
     const countryFiles = fs
       .readdirSync(countryDir)
-      .filter((f) => f.endsWith(".txt"));
+      .filter((f) => f.endsWith(".json"));
     for (const file of countryFiles) {
       const filePath = path.join(countryDir, file);
       const content = fs.readFileSync(filePath, "utf-8");
@@ -345,20 +348,18 @@ export async function runFullAudit(): Promise<{
     }
   }
 
-  // 2. People files: dataset/source/afrik/peuples/FLG_*/PPL_*.txt
+  // 2. People files: dataset/source/afrik/peuples/*/PPL_*.json
   const peoplesDir = path.join(DATASET_ROOT, "peuples");
   if (fs.existsSync(peoplesDir)) {
-    const familyDirs = fs
+    const subDirs = fs
       .readdirSync(peoplesDir)
-      .filter((d) => d.startsWith("FLG_"));
-    for (const familyDir of familyDirs) {
-      const fullDir = path.join(peoplesDir, familyDir);
-      const stat = fs.statSync(fullDir);
-      if (!stat.isDirectory()) continue;
+      .filter((d) => fs.statSync(path.join(peoplesDir, d)).isDirectory());
+    for (const subDir of subDirs) {
+      const fullDir = path.join(peoplesDir, subDir);
 
       const peopleFiles = fs
         .readdirSync(fullDir)
-        .filter((f) => f.startsWith("PPL_") && f.endsWith(".txt"));
+        .filter((f) => f.startsWith("PPL_") && f.endsWith(".json"));
       for (const file of peopleFiles) {
         const filePath = path.join(fullDir, file);
         const content = fs.readFileSync(filePath, "utf-8");
@@ -367,12 +368,12 @@ export async function runFullAudit(): Promise<{
     }
   }
 
-  // 3. Language family files: dataset/source/afrik/famille_linguistique/FLG_*.txt
+  // 3. Language family files: dataset/source/afrik/famille_linguistique/FLG_*.json
   const familyDir = path.join(DATASET_ROOT, "famille_linguistique");
   if (fs.existsSync(familyDir)) {
     const familyFiles = fs
       .readdirSync(familyDir)
-      .filter((f) => f.startsWith("FLG_") && f.endsWith(".txt"));
+      .filter((f) => f.startsWith("FLG_") && f.endsWith(".json"));
     for (const file of familyFiles) {
       const filePath = path.join(familyDir, file);
       const content = fs.readFileSync(filePath, "utf-8");
@@ -546,7 +547,7 @@ function buildFailureAnalysis(files: FileAuditResult[]): FailureAnalysis {
  * Extract entity ID from file path as fallback when parsing fails.
  */
 function extractIdFromPath(filePath: string, entityType: EntityType): string {
-  const basename = path.basename(filePath, ".txt");
+  const basename = path.basename(filePath, ".json");
 
   switch (entityType) {
     case "country":

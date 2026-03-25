@@ -1,0 +1,23 @@
+{
+  "id": "PPL_NALU",
+  "nameMain": "",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Nalou / Nalu",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "historicalRegion": "Littoral Guinée–Guinée-Bissau",
+      "currentCountries": ["GIN"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (naj)", "West African Coastal Ethnography"]
+  }
+}

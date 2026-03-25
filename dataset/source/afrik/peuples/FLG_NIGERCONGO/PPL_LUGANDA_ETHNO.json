@@ -1,0 +1,64 @@
+{
+  "id": "PPL_LUGANDA_ETHNO",
+  "nameMain": "Luganda (Ethnique)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Luganda (Ethnique)",
+      "selfAppellation": "Baganda",
+      "exonyms": ["« Ganda » (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone J)",
+      "historicalRegion": "Ouganda",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": ["Ganda du Nord", "Ganda du Sud", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Ganda sont originaires de la région de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Ancien royaume du Buganda.",
+      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume du Buganda). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume du Buganda). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Luganda",
+      "vehicularRole": "Le luganda est parlé par la majorité des Ganda. L'anglais, le swahili et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels ganda, symboles islamiques et chrétiens",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora ganda dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Luganda language (lug)",
+      "CIA World Factbook – Uganda",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples bantous"
+    ]
+  }
+}

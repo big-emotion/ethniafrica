@@ -1,0 +1,23 @@
+{
+  "id": "PPL_KOULOUGO",
+  "nameMain": "",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Kulango / Koulango",
+      "linguisticFamily": "FLG_GUR",
+      "historicalRegion": "Côte d’Ivoire (Nord-Est)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (kzc)", "Côte d’Ivoire Nord-Est Ethnic Records"]
+  }
+}

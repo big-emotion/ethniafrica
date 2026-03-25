@@ -1,0 +1,70 @@
+{
+  "id": "FLG_ATLANTIQUE",
+  "nameFr": "Atlantique",
+  "nameEn": "Atlantic (anciennement West Atlantic)",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " L'appellation est critiquée car elle est purement géographique et ne garantit pas une unité génétique cohérente. Historiquement, le terme \"West Atlantic\" a souvent servi de catégorie résiduelle pour classer les langues de la côte ouest-africaine qui ne correspondaient pas aux familles Mandé ou Kwa, créant des confusions avec d'autres groupes côtiers comme les langues Krou (Kru) ou les langues lagunaires. De plus, la diversité interne est telle que certains linguistes (comme Dalby) ont remis en question l'existence de cette famille comme une unité génétique valide, la considérant parfois davantage comme une aire de convergence linguistique. vers Aujourd'hui, le terme est conservé par convention scientifique pour désigner ce regroupement géographique spécifique.",
+      "selfAppellation": "Atlantic (anciennement West Atlantic)",
+      "contemporaryUsage": " Regroupe les langues du Sénégal, Gambie, Guinée-Bissau et Guinée (Fula, Wolof, Serer, Diola, Temne, etc.).",
+      "historicalAppellations": "Atlantic (anciennement West Atlantic)",
+      "originOfHistoricalTerm": " Le terme est purement géographique, créé par les linguistes (Koelle, puis Westermann et Greenberg) pour désigner les langues \"non-mandé\" de la côte ouest-africaine (Sénégal à Libéria)."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Sénégal, Gambie, Guinée-Bissau, Guinée, Sierra Leone, Libéria.",
+      "numberOfLanguages": 45,
+      "totalSpeakers": 40000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Wolof",
+        "peopleId": "PPL_WOLOF"
+      },
+      {
+        "name": "Fulbe (Peuls)",
+        "peopleId": "PPL_FULA"
+      },
+      {
+        "name": "Serer",
+        "peopleId": "PPL_SERERE"
+      },
+      {
+        "name": "Diola / Joola",
+        "peopleId": "PPL_DIOLA"
+      },
+      {
+        "name": "Temne",
+        "peopleId": "PPL_TEMNE"
+      },
+      {
+        "name": "Kissi",
+        "peopleId": "PPL_KISSI"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues à classes nominales marquées (préfixes/suffixes/alternances), flexionnelles et agglutinantes.",
+      "phonologicalFeatures": " - Mutation consonantique initiale (alternance de consonnes selon la classe ou le contexte grammatical). - Richesse du système vocalique et consonantique (implosives, prénasalisées).",
+      "relationsWithNeighbors": " Forte interaction avec le Mandé (emprunts lexicaux) mais structure grammaticale distincte."
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " Sénégambie ou zone côtière guinéenne. Certains égyptologues situent ces langues dans la continuité des migrations post-pharaoniques vers l'Ouest.",
+      "emergencePeriod": " Non spécifiée dans les sources disponibles.",
+      "diffusion": " Expansion majeure via le pastoralisme peul (Fula) à travers tout le Sahel, et l'hégémonie politique wolof au Sénégal.",
+      "historicalBreaks": " - Commerce atlantique et colonisation (impact sur les zones côtières). - Islamisation ancienne (impact lexical arabe sur le Wolof et le Pulaar).",
+      "contactZones": " Rivières du Sud, Casamance, Fouta-Djalon (contact Peul-Mandingue).",
+      "majorEvents": " Non spécifiés dans les sources disponibles."
+    },
+    "distribution": {
+      "totalSpeakers": 40000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Obenga, T. – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*",
+      "Sapir, J. D. – *West Atlantic: An Inventory of the Languages*",
+      "Greenberg, J. – *The Languages of Africa* (Classification critique)",
+      "Diop, C. A. – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*",
+      "UNESCO – *Histoire générale de l'Afrique*"
+    ]
+  }
+}

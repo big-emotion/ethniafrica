@@ -1,0 +1,131 @@
+{
+  "id": "RWA",
+  "nameFr": "République du Rwanda (Repubulika y'u Rwanda)",
+  "nameOfficial": "République du Rwanda (Repubulika y'u Rwanda)",
+  "etymology": "Le nom \"Rwanda\" vient probablement du verbe \"kwanda\" signifiant \"s'étendre\" en kinyarwanda, ou de \"ruanda\" signifiant \"pays\" ou \"territoire\". Le nom fait référence au royaume précolonial du Rwanda.",
+  "nameOriginActor": "Le nom vient du royaume précolonial du Rwanda (Royaume du Rwanda), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de groupes bantous et nilotiques sans nom unifié. Les Twa (pygmées) sont considérés comme les premiers habitants.",
+      "middleAges": "Développement du royaume du Rwanda à partir du XVe siècle. Le royaume s'appelait \"Rwanda\" ou \"Imana y'u Rwanda\" (Rwanda de Dieu).",
+      "precolonial": "Royaume du Rwanda (XVe - XIXe siècles) avec une monarchie centralisée. Le nom \"Rwanda\" était utilisé pour désigner le royaume et son territoire.",
+      "colonization": "1885-1916 : Protectorat allemand de l'Afrique orientale allemande (Deutsch-Ostafrika), incluant le Rwanda. 1916-1962 : Ruanda-Urundi sous mandat belge (puis tutelle de l'ONU). Les Belges ont divisé administrativement le Rwanda et le Burundi mais conservé les noms.",
+      "contemporary": "Indépendance en 1962 sous le nom de \"République rwandaise\" puis \"République du Rwanda\". Le nom officiel en français est \"République du Rwanda\" et en kinyarwanda \"Repubulika y'u Rwanda\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume du Rwanda",
+        "period": "XVe siècle - 1961",
+        "dominantPeoples": [
+          "Tutsi (noblesse)",
+          "Hutu (majorité)",
+          "Twa (minorité)"
+        ],
+        "politicalCenters": ["Nyanza (capitale royale)", "Butare"],
+        "historicalRole": "Royaume centralisé avec une monarchie sacrée (mwami). Système de chefferies hiérarchisées. Expansion territoriale et unification culturelle. Distinctions sociales complexes entre Hutu, Tutsi et Twa, instrumentalisées par le colonialisme."
+      },
+      {
+        "name": "Ruanda-Urundi",
+        "period": "1916 - 1962",
+        "dominantPeoples": [
+          "Tous les peuples rwandais sous administration coloniale belge"
+        ],
+        "politicalCenters": ["Kigali (capitale administrative)"],
+        "historicalRole": "Mandat belge puis tutelle de l'ONU. Politique coloniale de division et d'instrumentalisation des distinctions Hutu/Tutsi. Introduction de cartes d'identité ethniques."
+      },
+      {
+        "name": "République du Rwanda",
+        "period": "1962 - présent",
+        "dominantPeoples": ["Tous les peuples rwandais"],
+        "politicalCenters": ["Kigali (capitale)"],
+        "historicalRole": "Indépendance en 1962. Première République (1962-1973) : tensions ethniques. Deuxième République (1973-1994) : régime Habyarimana. Génocide de 1994. Troisième République depuis 1994 : reconstruction, abolition des distinctions ethniques officielles."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Hutu (Rwandais)",
+        "selfAppellation": "Abahutu",
+        "exonyms": [
+          "Hutu (terme utilisé par les Européens). Note importante : Les distinctions Hutu/Tutsi/Twa sont des constructions sociales et politiques complexes",
+          "historiquement instrumentalisées par le colonialisme."
+        ],
+        "peopleId": "PPL_RWANDAIS_HUTU",
+        "mainRegion": "Tout le Rwanda (majorité)",
+        "languages": ["Kinyarwanda", "français", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Hutu\" a été instrumentalisé par le colonialisme belge qui a figé les distinctions sociales en catégories \"racialisées\". L'auto-appellation \"Abahutu\" est préférée. Ces distinctions doivent être contextualisées historiquement."
+      },
+      {
+        "name": "Tutsi (Rwandais)",
+        "selfAppellation": "Abatutsi",
+        "exonyms": [
+          "Tutsi",
+          "Watutsi (terme historique). Note importante : Les distinctions Hutu/Tutsi/Twa sont des constructions sociales et politiques complexes",
+          "historiquement instrumentalisées par le colonialisme."
+        ],
+        "peopleId": "PPL_RWANDAIS_TUTSI",
+        "mainRegion": "Tout le Rwanda",
+        "languages": ["Kinyarwanda", "français", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Tutsi\" a été instrumentalisé par le colonialisme belge. La \"thèse hamitique\" coloniale était une construction raciste. L'auto-appellation \"Abatutsi\" est préférée. Ces distinctions doivent être contextualisées historiquement."
+      },
+      {
+        "name": "Twa",
+        "selfAppellation": "Abatwa",
+        "exonyms": ["Twa", "Pygmées (terme parfois considéré comme péjoratif)"],
+        "peopleId": "PPL_TWA",
+        "mainRegion": "Forêts et zones rurales",
+        "languages": ["Kinyarwanda", "langues twa"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Pygmée\" peut être considéré comme péjoratif. L'auto-appellation \"Abatwa\" est préférée. Les Twa sont les premiers habitants du Rwanda."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Tambours royaux (ingoma), danse traditionnelle (intore), poésie orale, artisanat (vannerie, poterie), architecture traditionnelle, élevage bovin (importance symbolique et économique)",
+      "dominantReligions": "Christianisme (catholique majoritaire, protestant), croyances traditionnelles (syncrétisme), islam (minorité)",
+      "lifestyles": "Vie principalement rurale, agriculture (café, thé, bananes, haricots, sorgho), élevage (bovins, caprins), pêche (lacs), commerce",
+      "socialOrganization": "Système de chefferies traditionnelles (historique), structure clanique patrilinéaire (ubwoko), organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens (historique)",
+      "regionalRelations": "Relations historiques avec les peuples du Burundi, de la RDC, de l'Ouganda, de la Tanzanie. Diaspora importante en Belgique, en Ouganda, en RDC, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par les Twa (pygmées), puis migrations bantoues (Hutu) et nilotiques (Tutsi) depuis plusieurs siècles. Formation de structures sociales complexes.",
+      "middleAges": "Développement du royaume du Rwanda à partir du XVe siècle. Expansion territoriale et unification culturelle. Système monarchique centralisé avec distinctions sociales entre Hutu, Tutsi et Twa.",
+      "precolonial": "Apogée du royaume du Rwanda (XIXe siècle) avec expansion territoriale. Système de chefferies hiérarchisées. Distinctions sociales complexes mais perméables.",
+      "colonization": "1885 : Protectorat allemand. 1916 : Occupation belge. 1923 : Mandat belge (Ruanda-Urundi). Politique coloniale de division et d'instrumentalisation des distinctions Hutu/Tutsi. Introduction de cartes d'identité ethniques. \"Thèse hamitique\" coloniale raciste.",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. \"Révolution sociale\" de 1959-1962 : renversement de la monarchie, exode des Tutsi. Indépendance en 1962. Première République dominée par les Hutu.",
+      "postIndependence": "Première République (1962-1973) : tensions ethniques, exodes répétés des Tutsi. Deuxième République (1973-1994) : régime Habyarimana, politique d'exclusion. Génocide de 1994 : extermination de 800 000 à 1 million de Tutsi et Hutu modérés. Troisième République depuis 1994 : reconstruction, abolition des distinctions ethniques officielles, politique de réconciliation, développement économique remarquable."
+    },
+    "sources": [
+      "CIA World Factbook – Rwanda",
+      "SIL Ethnologue – Kinyarwanda language (kin)",
+      "Recensements nationaux rwandais",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les Grands Lacs",
+      "Études historiques sur le royaume du Rwanda",
+      "Commission nationale de lutte contre le génocide"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Hutu (Rwandais)",
+          "peopleId": "PPL_RWANDAIS_HUTU",
+          "region": "Tout le Rwanda",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Tutsi (Rwandais)",
+          "peopleId": "PPL_RWANDAIS_TUTSI",
+          "region": "Tout le Rwanda",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Twa",
+          "peopleId": "PPL_TWA",
+          "region": "Forêts et zones rurales",
+          "languageFamily": "FLG_NIGERCONGO"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "id": "CAF",
+  "nameFr": "République centrafricaine (République centrafricaine, Ködörösêse tî Bêafrîka)",
+  "nameOfficial": "République centrafricaine (République centrafricaine, Ködörösêse tî Bêafrîka)",
+  "etymology": "Le nom \"Centrafrique\" ou \"République centrafricaine\" vient de la position géographique du pays au centre de l'Afrique. Le nom a été adopté lors de l'indépendance en 1960. Auparavant, le territoire était appelé \"Oubangui-Chari\" pendant la colonisation française (1903-1960), du nom des deux fleuves principaux (Oubangui et Chari).",
+  "nameOriginActor": "Le nom \"République centrafricaine\" a été adopté lors de l'indépendance (1960) pour remplacer \"Oubangui-Chari\" (nom colonial français). Le nom fait référence à la position géographique du pays au centre de l'Afrique.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la RCA était peuplé de diverses sociétés (Banda, Gbaya, Ngbande, Sango, Manja, Aka). Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Migrations de peuples soudaniques centraux (Banda, Ngbande) et bantous (Gbaya, Sango, Manja). Développement de chefferies locales. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Consolidation des chefferies (Banda, Gbaya, Ngbande, Sango, Manja, Aka). Commerce régional. Les Européens utilisaient le terme \"Oubangui-Chari\" pour désigner la région.",
+      "colonization": "1903-1960 : Colonie française de l'Oubangui-Chari (Oubangui-Chari). Les Français ont établi une colonie sur le territoire, nommée d'après les deux fleuves principaux (Oubangui et Chari). Le nom \"Oubangui-Chari\" est officialisé par les Français.",
+      "contemporary": "1960 : Indépendance (13 août 1960), proclamation de la République centrafricaine. Le nom \"République centrafricaine\" est officialisé pour remplacer \"Oubangui-Chari\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Chefferies Banda",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Banda"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Chefferies Banda, organisation clanique, traditions culturelles."
+      },
+      {
+        "name": "Chefferies Gbaya",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Gbaya"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Chefferies Gbaya, organisation clanique, traditions culturelles, résistance à la colonisation française."
+      },
+      {
+        "name": "Chefferies Ngbande",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Ngbande"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Chefferies Ngbande, organisation clanique, traditions culturelles."
+      },
+      {
+        "name": "Chefferies Sango",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Sango"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Chefferies Sango, développement du sango comme langue véhiculaire."
+      },
+      {
+        "name": "Peuples Aka",
+        "period": "Préhistorique - présent",
+        "dominantPeoples": ["Aka (Pygmées)"],
+        "politicalCenters": ["Groupes nomades et semi-nomades"],
+        "historicalRole": "Peuples autochtones de la RCA, chasseurs-cueilleurs, traditions forestières, marginalisation historique."
+      },
+      {
+        "name": "Colonie française de l'Oubangui-Chari",
+        "period": "1903 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples centrafricains sous domination coloniale française"
+        ],
+        "politicalCenters": ["Bangui (capitale coloniale)"],
+        "historicalRole": "Colonisation française, résistance des peuples autochtones (notamment résistance des Gbaya), développement de l'administration coloniale, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Banda",
+        "selfAppellation": "Banda",
+        "exonyms": ["Banda (terme utilisé par les Européens)"],
+        "peopleId": "PPL_BANDA",
+        "mainRegion": "Centre et est de la RCA",
+        "languages": ["Banda (bpd", "ISO 639-3)", "sango", "français"],
+        "languageFamily": "FLG_SOUDANIQUECENTRAL",
+        "appellationRemarks": "\"Banda\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe soudanique central majoritaire."
+      },
+      {
+        "name": "Gbaya",
+        "selfAppellation": "Gbaya",
+        "exonyms": [
+          "Gbaya (terme utilisé par les Européens)",
+          "\"Gbaya-Manza-Ngbaka\" (groupe linguistique)"
+        ],
+        "peopleId": "PPL_GBAYA",
+        "mainRegion": "Ouest de la RCA",
+        "languages": ["Gbaya (gya", "ISO 639-3)", "sango", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Gbaya\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe oubanguien, résistance à la colonisation française."
+      },
+      {
+        "name": "Ngbande",
+        "selfAppellation": "Ngbande",
+        "exonyms": ["Ngbande (terme utilisé par les Européens)"],
+        "peopleId": "PPL_NGBANDE",
+        "mainRegion": "Sud-ouest de la RCA",
+        "languages": ["Ngbande (ngb", "ISO 639-3)", "sango", "français"],
+        "languageFamily": "FLG_SOUDANIQUECENTRAL",
+        "appellationRemarks": "\"Ngbande\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Sango",
+        "selfAppellation": "Sango",
+        "exonyms": ["Sango (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SANGO",
+        "mainRegion": "Toutes les régions de la RCA",
+        "languages": [
+          "Sango (sag",
+          "ISO 639-3",
+          "langue véhiculaire)",
+          "français"
+        ],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Sango\" est l'auto-appellation. Pas de terme péjoratif connu. Le sango est une langue véhiculaire importante en RCA, parlée par la majorité de la population."
+      },
+      {
+        "name": "Manja",
+        "selfAppellation": "Manja",
+        "exonyms": ["Manja (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MANJA",
+        "mainRegion": "Centre de la RCA",
+        "languages": ["Manja (mzv", "ISO 639-3)", "sango", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Manja\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Aka",
+        "selfAppellation": "Aka",
+        "exonyms": [
+          "\"Aka\" (auto-appellation)",
+          "\"Pygmées\" (terme colonial",
+          "peut être problématique)",
+          "\"Baaka\" (variante)"
+        ],
+        "peopleId": "PPL_AKA",
+        "mainRegion": "Sud-ouest de la RCA (forêts)",
+        "languages": ["Aka (akf", "ISO 639-3)", "sango", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Aka\" est l'auto-appellation. \"Pygmées\" est un terme colonial qui peut être problématique dans certains contextes. Chasseurs-cueilleurs, peuples autochtones de la RCA, marginalisation historique."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions de la RCA",
+        "languages": ["Langues diverses", "sango", "français"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "sango"
+        },
+        {
+          "name": "banda",
+          "isoCode": "bpd"
+        },
+        {
+          "name": "gbaya",
+          "isoCode": "gya"
+        },
+        {
+          "name": "ngbande",
+          "isoCode": "ngb"
+        },
+        {
+          "name": "manja",
+          "isoCode": "mzv"
+        },
+        {
+          "name": "aka",
+          "isoCode": "akf"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de la RCA. Traditions soudaniques centrales (Banda, Ngbande) : masques, sculptures, musiques traditionnelles, danses traditionnelles. Traditions oubanguiennes (Gbaya, Sango, Manja) : masques, sculptures, musiques traditionnelles, danses traditionnelles. Traditions aka (Pygmées) : chasse-cueillette, traditions forestières, musiques polyrythmiques, danses traditionnelles. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. L'art centrafricain est réputé (masques, sculptures).",
+      "dominantReligions": "Christianisme (catholicisme majoritaire, protestantisme, églises indépendantes africaines), islam (minorité, nord), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels)",
+      "lifestyles": "Agriculture (manioc, millet, sorgho, cultures vivrières), chasse-cueillette (Aka, forêts), élevage (bovins, caprins), commerce et activités urbaines (zones urbaines, Bangui). Urbanisation modérée. Économie basée sur l'agriculture, l'exploitation minière (diamants, or, uranium), et le commerce. La RCA est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants et des conflits récurrents.",
+      "socialOrganization": "Organisation en chefferies traditionnelles (Banda, Gbaya, Ngbande, Sango, Manja), structures claniques patrilinéaires (majorité des groupes). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système patrilinéaire (majorité des groupes). Groupes nomades et semi-nomades (Aka, chasseurs-cueilleurs).",
+      "regionalRelations": "Relations historiques avec le Tchad (commerce, migrations, peuples transfrontaliers, frontière), le Soudan (commerce, frontière), le Soudan du Sud (commerce, frontière), la RDC (commerce, frontière), le Congo (commerce, frontière), le Cameroun (commerce, frontière). Intégration dans la CEMAC (Communauté économique et monétaire de l'Afrique centrale). Relations commerciales et culturelles transfrontalières. La RCA est un pays de transit pour le commerce régional."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples soudaniques centraux (Banda, Ngbande) et bantous (Gbaya, Sango, Manja). Présence des peuples Aka (Pygmées) depuis la préhistoire. Développement de chefferies locales.",
+      "middleAges": "Migrations de peuples soudaniques centraux et bantous. Développement de structures politiques locales. Commerce régional.",
+      "precolonial": "Consolidation des chefferies (Banda, Gbaya, Ngbande, Sango, Manja). Commerce régional. Développement des traditions culturelles. Développement du sango comme langue véhiculaire.",
+      "colonization": "1903-1960 : Colonie française de l'Oubangui-Chari. Résistance des peuples autochtones (notamment résistance des Gbaya). Développement de l'administration coloniale. XXe siècle : Développement du mouvement indépendantiste.",
+      "independenceStruggle": "1950s-1960 : Mouvement pour l'indépendance, Barthélemy Boganda, indépendance (13 août 1960), proclamation de la République centrafricaine. David Dacko devient premier président.",
+      "postIndependence": "République centrafricaine (1960), présidence de David Dacko (1960-1966, 1979-1981), dictature de Jean-Bédel Bokassa (1966-1979, empire centrafricain, 1976-1979), coups d'État (1979, 1981, 2003, 2013), présidence d'André Kolingba (1981-1993), Ange-Félix Patassé (1993-2003), François Bozizé (2003-2013), Michel Djotodia (2013-2014), Catherine Samba-Panza (2014-2016), Faustin-Archange Touadéra (depuis 2016). Conflits récurrents (guerres civiles, 2012-2013, 2013-2014, 2014-présent), instabilité politique, violences intercommunautaires. Défis : pauvreté, développement économique, sécurité (conflits récurrents, groupes armés), VIH/sida. La RCA est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants et des conflits récurrents."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Central African Republic",
+      "SIL Ethnologue – Languages of Central African Republic",
+      "Recensements centrafricains",
+      "Études anthropologiques sur les peuples de la RCA",
+      "Études historiques sur la colonisation française"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Banda",
+          "population": 2000000,
+          "percentageInCountry": 28.6,
+          "peopleId": "PPL_BANDA",
+          "region": "Centre et est de la RCA",
+          "languageFamily": "FLG_SOUDANIQUECENTRAL"
+        },
+        {
+          "name": "Gbaya",
+          "population": 1500000,
+          "percentageInCountry": 21.4,
+          "peopleId": "PPL_GBAYA",
+          "region": "Ouest de la RCA",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Ngbande",
+          "population": 500000,
+          "percentageInCountry": 7.1,
+          "peopleId": "PPL_NGBANDE",
+          "region": "Sud-ouest de la RCA",
+          "languageFamily": "FLG_SOUDANIQUECENTRAL"
+        },
+        {
+          "name": "Sango",
+          "population": 1000000,
+          "percentageInCountry": 14.3,
+          "peopleId": "PPL_SANGO",
+          "region": "Toutes les régions de la RCA",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Manja",
+          "population": 300000,
+          "percentageInCountry": 4.3,
+          "peopleId": "PPL_MANJA",
+          "region": "Centre de la RCA",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Aka",
+          "population": 200000,
+          "percentageInCountry": 2.9,
+          "peopleId": "PPL_AKA",
+          "region": "Sud-ouest de la RCA (forêts)",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Autres peuples",
+          "population": 1500000,
+          "percentageInCountry": 21.4,
+          "region": "Diverses régions de la RCA"
+        }
+      ]
+    }
+  }
+}

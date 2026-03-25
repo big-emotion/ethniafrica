@@ -1,0 +1,91 @@
+{
+  "id": "FLG_NILOTIQUE",
+  "nameFr": "Nilotique",
+  "nameEn": "Nilotic",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " 1. **Héritage colonial racial** : Carl Meinhof (vers 1912) a introduit le concept de « Nilo-Hamitic » en mélangeant critères linguistiques et suppositions raciales, suggérant que certains groupes nilotiques (Maasai, Tutsi) seraient « supérieurs » car « proches des Hamites ». Cette théorie est aujourd'hui largement rejetée par la linguistique moderne comme fondée sur des préjugés raciaux coloniaux. 2. **Défense de l'africanité** : Bernd Heine et Derek Nurse (2000) dans *African Languages: An Introduction* (Cambridge University Press) affirment que les traits dits « hamitiques » dans les langues nilotiques orientales (genre grammatical, emprunts lexicaux) sont des phénomènes de contact linguistique, non des preuves d'une origine mixte. Plusieurs linguistes africains contemporains (Gerrit Dimmendaal, Lionel Bender) insistent sur l'autonomie des langues nilotiques sans référence à des hypothétiques « éléments hamitiques ». 3. **Études génétiques modernes** :",
+      "selfAppellation": "Nilotic",
+      "contemporaryUsage": " Les langues nilotiques constituent une sous-famille du groupe Eastern Sudanic dans le phylum Nilo-Saharien, divisée en trois branches : occidentale (Western Nilotic), orientale (Eastern Nilotic) et méridionale (Southern Nilotic). Classification moderne acceptée par la majorité des linguistes (Dimmendaal 1988, Greenberg 1963, Heine & Nurse 2000).",
+      "historicalAppellations": "Nilotic",
+      "originOfHistoricalTerm": " Le terme « Nilotic » dérive du latin *Niloticus*, issu du grec *Neilōtikós*, signifiant « relatif au Nil ». Usage linguistique : Karl Richard Lepsius (1880) a formalisé « Nilotic languages » comme branche dans sa *Nubische Grammatik mit einer Einleitung über die Völker und Sprachen Afrikas* (Berlin: Verlag von Wilhelm Hertz). Le terme « nilo-chamitique » a été introduit par Carl Meinhof (début XXᵉ siècle) dans le cadre de classifications raciales coloniales, affirmant que certaines langues nilotiques orientales et méridionales (Maasai, Turkana) seraient un mélange de traits nilotiques et « hamitiques/cushitiques ». Joseph Greenberg (1963) dans *The Languages of Africa* (Indiana University Press) a rejeté cette classification et a intégré les langues nilotiques dans le phylum Nilo-Saharien comme branche Eastern Sudanic."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Vallées du Nil supérieur (Bahr el-Ghazal, Nil Blanc), région du Sudd (marais du Soudan du Sud), Rift est-africain, bassin du lac Turkana, hauts plateaux du Kenya et de la Tanzanie",
+      "numberOfLanguages": 30,
+      "totalSpeakers": 30000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Dinka",
+        "peopleId": "PPL_DINKA"
+      },
+      {
+        "name": "Nuer",
+        "peopleId": "PPL_NUER"
+      },
+      {
+        "name": "Maasai",
+        "peopleId": "PPL_MAASAI"
+      },
+      {
+        "name": "Luo",
+        "peopleId": "PPL_LUO"
+      },
+      {
+        "name": "Kalenjin",
+        "peopleId": "PPL_KALENJIN"
+      },
+      {
+        "name": "Turkana",
+        "peopleId": "PPL_TURKANA"
+      },
+      {
+        "name": "Shilluk",
+        "peopleId": "PPL_SHILLUK"
+      },
+      {
+        "name": "Acholi",
+        "peopleId": "PPL_ACHOLI"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " **Ordre des mots** : Les langues nilotiques occidentales tendent vers SVO (Sujet-Verbe-Objet), tandis que les orientales et méridionales préfèrent VSO (Verbe-Sujet-Objet). Exemples concrets :",
+      "phonologicalFeatures": " **Système tonal** : Les langues nilotiques sont typiquement tonales avec 2 à 5 tons (niveaux et contours).",
+      "relationsWithNeighbors": " **Emprunts lexicaux** :",
+      "keyInnovations": " 1. **Système nombre singulatif-collectif-pluriel** : Innovation particulièrement développée en Bari où la forme de base peut être plurielle, le singulier étant marqué par un singulatif. Exemple : *nyɔmɔt* (pluriel de base) → *nyɔmɔt-ti* (singulier), *nyɔmɔt-an* (collectif) 2. **Genre grammatical sur noms** : Innovation dans langues nilotiques orientales (Maasai, Bari) avec préfixes de genre (masculin/féminin), absent dans occidentales et méridionales. 3. **Voix symétriques** : Développement dans Dinka de voix « symétriques » (Voice Actor, Patient, Circumstantial) permettant des constructions actives/passives flexibles. Structure rare dans langues voisines. 4. **Morphologie verbale aspectuelle** : Distinction perfectif/imperfectif très développée, présente de manière stable dans plusieurs branches (Western, Eastern, Southern Nilotic). 5. **Phonation complexe** : Distinctions de phonation (voix soufflée, voix tendue) en Dinka combinées avec longueur vocalique triple, trait distinctif rare."
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " **Classification linguistique** : - **Karl Richard Lepsius** (1880) dans *Nubische Grammatik mit einer Einleitung über die Völker und Sprachen Afrikas* (Berlin) a été le premier à classifier les langues nilotiques comme groupe distinct dans les langues Eastern Sudanic. - **Oswin Köhler** (milieu XXᵉ siècle) a proposé la division en trois branches (Western, Eastern, Southern Nilotic). - **Joseph Greenberg** (1963) dans *The Languages of Africa* (Indiana University Press) a formalisé le phylum Nilo-Saharien incluant Nilotic comme branche Eastern Sudanic.",
+      "emergencePeriod": " **1. Émergence historique de la FLG** : Divergence du proto-Nilotique estimée linguistiquement il y a environ **3000-4000 ans** (fin du IIIᵉ millénaire - début du IIᵉ millénaire av. J.-C.). Coïncide avec expansion de l'agropastoralisme dans zones nilotiques, reconstruction proto-Nilotic par Dimmendaal (1988). Archéologiquement, sites comme Kadero (~3000-2500 av. J.-C.) montrent culture pastorale associée aux ancêtres des Nilotes. **2. Date de classification académique** :",
+      "diffusion": " **Théorie 1 - Expansion pastorale du Sud-Soudan** : Migration depuis région d'Equatoria/Soudan du Sud (Bahr el-Ghazal, Nil Blanc) vers l'est et le sud (Kenya, Tanzanie) pour branches orientale et méridionale. Expansion liée au pastoralisme, déplacements de troupeaux. Routes le long des affluents du Nil Blanc, corridors du Rift Est vers lacs Victoria et Turkana. **Théorie 2 - Migration depuis vallée du Nil** : Origine dans Moyen Nil (Soudan actuel), présence ancienne dans vallée du Nil et Wadi Howar (4000-6000 av. J.-C.), puis diffusion vers zones actuelles causée par aridification et pression démographique. Migrations multiples, non linéaires, avec échanges génétiques et culturels. **Théorie 3 - Foyer primordial Haut-Nil avec expansion tardive** : Établissement initial dans Haut-Nil (Soudan du Sud, région Sudd), expansion tardive via réseaux fluviaux vers Grands Lacs (Ouganda, Kenya, Tanzanie). Agrégation avec populations locales bantoues ou africaines de la périphérie. **Théorie 4 - Expansion depuis Corne de l'Afrique** : Certains chercheurs (minoritaires) suggèrent une origine plus orientale dans Corne de l'Afrique avec migration vers ouest, mais cette théorie est largement rejetée au profit de modèles centrés sur vallée du Nil.",
+      "contactZones": " **Géographie précise** :",
+      "majorEvents": " **Chronologie** :"
+    },
+    "distribution": {
+      "totalSpeakers": 30000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Lepsius, Karl Richard (1880) – *Nubische Grammatik mit einer Einleitung über die Völker und Sprachen Afrikas*. Berlin: Verlag von Wilhelm Hertz.",
+      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press.",
+      "Dimmendaal, Gerrit J. (1988) – \"The lexical reconstruction of Proto-Nilotic: A first reconnaissance\". *Afrikanistische Arbeitspapiere* 16:5-67.",
+      "Heine, Bernd & Nurse, Derek (2000) – *African Languages: An Introduction*. Cambridge: Cambridge University Press.",
+      "Dobon, B., Hassan, H., Laayouni, H. et al. (2015) – \"The genetics of East African populations: a Nilo-Saharan component in the African genetic landscape\". *Scientific Reports* 5, Article number: 9996. DOI: 10.1038/srep09996.",
+      "Mulindwa, J., et al. (2020) – \"High levels of genetic diversity within Nilo-Saharan populations: implications for human adaptation\". *American Journal of Human Genetics* 107(3):473-486. DOI: 10.1016/j.ajhg.2020.06.008.",
+      "Tishkoff, Sarah A., Reed, F.A., Friedlaender, F.R., Ehret, C., et al. (2009) – \"The genetic structure and history of Africans and African Americans\". *Science* 324(5930):1035-1044. DOI: 10.1126/science.1172257.",
+      "Britannica Editors (2025) – \"Nilotic languages\". *Britannica.com*. https://www.britannica.com/topic/Nilotic-languages",
+      "Britannica Editors (2025) – \"Nilo-Saharan languages\". *Britannica.com*. https://www.britannica.com/topic/Nilo-Saharan-languages",
+      "Ethnologue (SIL International) (2025) – \"Nilotic languages\". *Ethnologue.com*. https://www.ethnologue.com/subgroups/nilotic",
+      "CIA World Factbook (2024) – Country profiles: South Sudan, Kenya, Uganda, Tanzania, Ethiopia, Sudan, Democratic Republic of the Congo. *CIA.gov*. https://www.cia.gov/the-world-factbook/",
+      "ONU / UNFPA (2024) – Démographie et statistiques par pays. *UN.org*, *UNFPA.org*",
+      "Kenya National Bureau of Statistics (2019) – *Kenya Population and Housing Census Volume IV: Distribution of Population by Socio-Economic Characteristics*. Nairobi: KNBS.",
+      "Uganda Bureau of Statistics (2024) – Population estimates and demographics. *UBOS.org*",
+      "Tanzania National Bureau of Statistics (2022) – *Population and Housing Census*. Dodoma: NBS.",
+      "Glottolog (2025) – \"Nilotic languages classification\". *Glottolog.org*. https://glottolog.org/resource/languoid/id/nilo1247",
+      "Dimmendaal, Gerrit J. (2011) – \"On stable and unstable features in Nilo-Saharan\". In *Diachrony and Typology of Tense-Aspect Systems* (éd. Vit Bubenik). John Benjamins.",
+      "Bender, M. Lionel (1996) – *The Nilo-Saharan Languages: A Comparative Essay*. Lincom Europa."
+    ]
+  }
+}

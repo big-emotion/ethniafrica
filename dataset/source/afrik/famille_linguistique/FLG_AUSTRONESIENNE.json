@@ -1,0 +1,72 @@
+{
+  "id": "FLG_AUSTRONESIENNE",
+  "nameFr": "Austronésienne (présente en Afrique uniquement via Madagascar)",
+  "nameEn": "Austronesian / Malayo-Polynesian",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " L'expression ne pose pas de problème direct, mais son utilisation en Afrique peut prêter à confusion car elle désigne une famille mondiale principalement asiatique. En Afrique, seule Madagascar en relève : certains travaux coloniaux minimisaient l'africanité du peuple malgache en insistant uniquement sur l'origine austronésienne, invisibilisant les apports bantous et est-africains. **Preuves des travaux coloniaux problématiques :**",
+      "selfAppellation": "Austronesian / Malayo-Polynesian",
+      "contemporaryUsage": "Les locuteurs utilisent principalement leur identité ethnique en premier lieu, puis le terme *Malagasy* pour l'identité nationale (Rasolofonirina, 2004).",
+      "historicalAppellations": "Austronesian / Malayo-Polynesian",
+      "originOfHistoricalTerm": "Terme forgé par le linguiste autrichien Wilhelm Schmidt (vers 1899-1906) pour désigner un ensemble cohérent de langues parlées dans les îles du Pacifique, de l'Asie du Sud-Est et de l'océan Indien, remplaçant l'ancienne dénomination \"Malayo-Polynesian\" pour inclure les langues de Formose (Taiwan)."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Madagascar (Afrique). Famille mondiale présente également en Asie du Sud-Est, Océanie, et Formose.",
+      "numberOfLanguages": 1,
+      "totalSpeakers": 27000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Malgaches (Merina)",
+        "peopleId": "PPL_MERINA"
+      },
+      {
+        "name": "Malgaches (Betsimisaraka)",
+        "peopleId": "PPL_BETSIMISARAKA"
+      },
+      {
+        "name": "Malgaches (Sakalava)",
+        "peopleId": "PPL_SAKALAVA"
+      },
+      {
+        "name": "Malgaches (Betsileo)",
+        "peopleId": "PPL_BETSILEO"
+      },
+      {
+        "name": "Malgaches (Antandroy)",
+        "peopleId": "PPL_ANTANDROY"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Le malgache est une langue agglutinante avec un ordre syntaxique SVO (Sujet-Verbe-Objet). Exemples concrets :",
+      "phonologicalFeatures": " - Peu de consonnes occlusives aspirées (contrairement aux langues indo-européennes)",
+      "keyInnovations": " Imagine que les verbes sont comme des Lego : cette langue adore ajouter des petits morceaux (comme *mi-* ou *maha-*) au début des mots pour changer leur sens ou dire qui fait l'action. C'est un système très astucieux pour créer plein de nouveaux mots à partir d'un seul ! Par exemple, prends le mot *gaga* (surpris). Si on ajoute le bloc *mi-*, ça devient *migaga* (s'étonner). Si on utilises le bloc *maha-*, ça devient *mahagaga* (c'est étonnant / magique). Hop, deux sens différents avec la même brique de base ! - Complexe dérivationnel verbal avec système de voix développé (active, passive, causative, réciproque)"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " **QUI a classé et proposé les théories :**",
+      "emergencePeriod": " **Deux temporalités distinctes :** 1. **Émergence historique de la famille** : Le proto-austronésien remonte à ~4000-5000 ans avant notre ère à Formose (Taiwan). La branche malayo-polynésienne s'est séparée vers ~3000-2500 av. J.-C. 2. **Date de classification académique** :",
+      "diffusion": " **Pluralité des perspectives et théories disponibles :** **Théorie 1 - Route directe depuis Bornéo (Dahl, Adelaar) :** - Migration directe depuis le sud de Bornéo (région Barito) vers Madagascar - Navigation via les courants de l'océan Indien - Arrivée unique ou en vagues successives entre 500-700 ap. J.-C. **Théorie 2 - Route via l'Asie du Sud-Est et l'océan Indien (Blench, archéologie) :** - Migration depuis Bornéo via Java, Sumatra, puis traversée de l'océan Indien - Arrêts possibles aux Comores ou sur la côte est-africaine - Contacts avec les réseaux commerciaux swahili-arabes **Théorie 3 - Migrations multiples (génétique, Pierron et al.) :** - Plusieurs vagues migratoires austronésiennes - Arrivée simultanée ou successive de populations bantoues - Mélange progressif sur plusieurs siècles (500-1000 ap. J.-C.) **Théorie 4 - Expansion via les routes commerciales (historique) :** - Utilisation des routes maritimes établies par les marchands arabes et indiens - Madagascar comme point de relais dans le commerce océan Indien - Influence des réseaux commerciaux sur la diffusion linguistique **Consensus actuel :** La théorie dominante combine l'origine barito (Dahl/Adelaar) avec des migrations multiples (génétique), mais les détails des routes exactes restent débattus.",
+      "historicalBreaks": " - Séparation nette entre malgache et reste de la famille austronésienne vers 500-700 ap. J.-C. (isolement géographique) - Fusion linguistique avec les langues bantoues (swahili, comorien) entre 800-1000 ap. J.-C., créant un substrat bantou dans le vocabulaire malgache",
+      "contactZones": " **Zones géographiques de contact de la FLG Austronésienne en Afrique :**"
+    },
+    "distribution": {
+      "totalSpeakers": 27000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Adelaar, K. Alexander (2005) – *The Austronesian Languages of Asia and Madagascar*. Routledge.",
+      "Dahl, Otto Christian (1951) – *Malgache et Maanjan : une comparaison linguistique*. Egede-Instituttet.",
+      "Blust, Robert (2013) – *The Austronesian Languages*. Asia-Pacific Linguistics.",
+      "Blench, Roger (2007) – \"New palaeozoogeographical evidence for the settlement of Madagascar\". *Azania: Archaeological Research in Africa*.",
+      "Hurles, Matthew E. et al. (2005) – \"The Dual Origin of the Malagasy in Island Southeast Asia and East Africa: Evidence from Maternal and Paternal Lineages\". *American Journal of Human Genetics*.",
+      "Pierron, Denis et al. (2017) – \"Genomic landscape of human diversity across Madagascar\". *Proceedings of the National Academy of Sciences*.",
+      "UNESCO – *Atlas of the World's Languages in Danger* (2010)",
+      "SIL Ethnologue – Malagasy (mlg) – https://www.ethnologue.com/language/mlg",
+      "CIA World Factbook – Madagascar (2025) – https://www.cia.gov/the-world-factbook/countries/madagascar/",
+      "ONU/UNFPA – Projections démographiques Madagascar (2025)",
+      "Schmidt, W. (1899) – *Die sprachlichen Verhältnisse von Deutsch-Neuguinea*",
+      "Carte de dispersion : https://fr.wikipedia.org/wiki/Austron%C3%A9siens#/media/Fichier:Chronological_dispersal_of_Austronesian_people_across_the_Pacific_(per_Benton_et_al,_2012,_adapted_from_Bellwood,_2011).png"
+    ]
+  }
+}

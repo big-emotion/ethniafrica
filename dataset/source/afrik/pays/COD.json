@@ -1,0 +1,350 @@
+{
+  "id": "COD",
+  "nameFr": "République démocratique du Congo (RDC)",
+  "nameOfficial": "République démocratique du Congo (RDC)",
+  "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. \"Démocratique\" a été ajouté en 1964 pour se distinguer de la République du Congo (Brazzaville).",
+  "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Zaïre\" (1971-1997) venait du fleuve Zaïre (nom portugais du fleuve Congo, dérivé du kikongo \"nzadi\" signifiant \"fleuve\").",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la RDC était peuplé de nombreuses entités politiques indépendantes sans nom unifié. Les royaumes précoloniaux (Luba, Lunda, Kongo, Mangbetu, Zande) dominaient différentes régions.",
+      "middleAges": "Développement des grands royaumes et empires (Royaume Kongo, Empire Luba, Empire Lunda) sans nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et chefferies indépendants : Empire Luba, Empire Lunda, Royaume Kongo, royaumes Mangbetu, sultanats Zande, chefferies Mongo, etc. Aucun nom unifié pour l'ensemble du territoire.",
+      "colonization": "1885-1908 : \"État indépendant du Congo\" (propriété privée du roi Léopold II de Belgique). 1908-1960 : \"Congo belge\" (colonie belge). Le nom \"Congo\" est imposé par les colonisateurs européens.",
+      "contemporary": "1960-1964 : \"République du Congo\" (Léopoldville, pour se distinguer de la République du Congo - Brazzaville). 1964-1971 : \"République démocratique du Congo\". 1971-1997 : \"Zaïre\" (sous Mobutu, nom du fleuve). Depuis 1997 : \"République démocratique du Congo\" (RDC)."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume Kongo",
+        "period": "XIVe - XIXe siècles",
+        "dominantPeoples": ["Kongo (Bakongo)"],
+        "politicalCenters": [
+          "Mbanza Kongo (capitale historique)",
+          "Kongo Central"
+        ],
+        "historicalRole": "Royaume puissant qui a établi des relations avec les Portugais dès le XVe siècle. Influence majeure sur la région ouest de la RDC."
+      },
+      {
+        "name": "Empire Luba",
+        "period": "XVIe - XIXe siècles",
+        "dominantPeoples": ["Luba (Baluba)"],
+        "politicalCenters": ["Kasaï", "Katanga (Haut-Lomami", "Lualaba)"],
+        "historicalRole": "Grand empire bantou du centre-sud avec une forte tradition politique et artistique. Influence majeure sur la région du Kasaï et du Katanga."
+      },
+      {
+        "name": "Empire Lunda",
+        "period": "XVIIe - XIXe siècles",
+        "dominantPeoples": ["Lunda", "Tshokwe"],
+        "politicalCenters": ["Katanga", "frontières angolaises"],
+        "historicalRole": "Empire transfrontalier puissant réputé pour son art et son organisation politique. Influence sur le sud-est de la RDC."
+      },
+      {
+        "name": "Chefferies Mongo",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Mongo (Nkundo", "Ntomba", "Ekonda)"],
+        "politicalCenters": ["Cuvette centrale (Équateur", "Tshuapa)"],
+        "historicalRole": "Un des plus grands groupes forestiers bantous, organisés en chefferies dans la cuvette équatoriale."
+      },
+      {
+        "name": "Royaumes Mangbetu",
+        "period": "XVIIIe - XIXe siècles",
+        "dominantPeoples": ["Mangbetu"],
+        "politicalCenters": ["Nord-est (Haut-Uele)"],
+        "historicalRole": "Royaumes réputés pour leur art et leur organisation politique dans le nord-est."
+      },
+      {
+        "name": "Sultanats Zande",
+        "period": "XVIIIe - XIXe siècles",
+        "dominantPeoples": ["Zande"],
+        "politicalCenters": ["Nord-est (Haut-Uele", "Bas-Uele)"],
+        "historicalRole": "Sultanats puissants dans le nord-est, organisés en entités politiques structurées."
+      },
+      {
+        "name": "État indépendant du Congo",
+        "period": "1885 - 1908",
+        "dominantPeoples": [
+          "Tous les peuples congolais sous domination de Léopold II"
+        ],
+        "politicalCenters": ["Boma (capitale coloniale)"],
+        "historicalRole": "Propriété privée du roi Léopold II, marquée par une exploitation extrême (caoutchouc, ivoire) et des atrocités massives."
+      },
+      {
+        "name": "Congo belge",
+        "period": "1908 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples congolais sous administration coloniale belge"
+        ],
+        "politicalCenters": ["Léopoldville (Kinshasa)"],
+        "historicalRole": "Colonie belge avec exploitation économique intensive. Résistance congolaise et mouvements nationalistes."
+      },
+      {
+        "name": "République démocratique du Congo",
+        "period": "1960 - présent",
+        "dominantPeoples": ["Tous les peuples congolais"],
+        "politicalCenters": ["Kinshasa (capitale)"],
+        "historicalRole": "Indépendance en 1960. Histoire politique mouvementée : crise du Katanga, régime Mobutu (Zaïre), guerres civiles, transition démocratique."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Luba",
+        "selfAppellation": "Baluba",
+        "exonyms": ["Luba (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LUBA",
+        "mainRegion": "Kasaï, Katanga (Haut-Lomami, Lualaba)",
+        "languages": ["Tshiluba", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Luba\" est neutre et accepté. L'auto-appellation \"Baluba\" (pluriel de Muluba) est préférée."
+      },
+      {
+        "name": "Kongo",
+        "selfAppellation": "Bakongo",
+        "exonyms": ["Kongo (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KONGO",
+        "mainRegion": "Kongo Central, Kinshasa ouest",
+        "languages": ["Kikongo", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Kongo\" est neutre et accepté. L'auto-appellation \"Bakongo\" (pluriel de Mukongo) est préférée."
+      },
+      {
+        "name": "Mongo",
+        "selfAppellation": "Mongo",
+        "exonyms": ["Mongo (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MONGO",
+        "mainRegion": "Cuvette centrale (Équateur, Tshuapa)",
+        "languages": ["Lomongo", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Mongo\" est neutre et accepté."
+      },
+      {
+        "name": "Tetela",
+        "selfAppellation": "Batetela",
+        "exonyms": ["Tetela (terme utilisé par les Européens)"],
+        "peopleId": "PPL_TETELA",
+        "mainRegion": "Sankuru",
+        "languages": ["Tetela", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Tetela\" est neutre et accepté. L'auto-appellation \"Batetela\" (pluriel de Mutetela) est préférée."
+      },
+      {
+        "name": "Lunda",
+        "selfAppellation": "Balunda",
+        "exonyms": ["Lunda (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LUNDA",
+        "mainRegion": "Katanga, frontières angolaises",
+        "languages": ["Lunda", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Lunda\" est neutre et accepté. L'auto-appellation \"Balunda\" (pluriel de Mulunda) est préférée."
+      },
+      {
+        "name": "Tshokwe",
+        "selfAppellation": "Tshokwe",
+        "exonyms": ["Tshokwe", "Chokwe (termes utilisés par les Européens)"],
+        "peopleId": "PPL_TSHOKWE",
+        "mainRegion": "Katanga, frontières angolaises",
+        "languages": ["Tshokwe", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Tshokwe\" est neutre et accepté. \"Chokwe\" est une variante orthographique."
+      },
+      {
+        "name": "Nande",
+        "selfAppellation": "Banande",
+        "exonyms": ["Nande (terme utilisé par les Européens)"],
+        "peopleId": "PPL_NANDE",
+        "mainRegion": "Nord-Kivu",
+        "languages": ["Kinande", "français", "swahili"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Nande\" est neutre et accepté. L'auto-appellation \"Banande\" (pluriel de Munande) est préférée."
+      },
+      {
+        "name": "Hunde",
+        "selfAppellation": "Bahunde",
+        "exonyms": ["Hunde (terme utilisé par les Européens)"],
+        "peopleId": "PPL_HUNDE",
+        "mainRegion": "Nord-Kivu",
+        "languages": ["Hunde", "français", "swahili"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Hunde\" est neutre et accepté. L'auto-appellation \"Bahunde\" (pluriel de Muhunde) est préférée."
+      },
+      {
+        "name": "Hutu (Rwandais)",
+        "selfAppellation": "Abahutu",
+        "exonyms": [
+          "Hutu (terme utilisé par les Européens)",
+          "parfois utilisé de manière péjorative dans certains contextes historiques"
+        ],
+        "peopleId": "PPL_RWANDAIS_HUTU",
+        "mainRegion": "Sud-Kivu, Nord-Kivu",
+        "languages": ["Kinyarwanda", "français", "swahili"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Hutu\" peut avoir des connotations négatives dans certains contextes historiques (génocide rwandais). L'auto-appellation \"Abahutu\" est préférée."
+      },
+      {
+        "name": "Tutsi (Rwandais)",
+        "selfAppellation": "Abatutsi",
+        "exonyms": [
+          "Tutsi (terme utilisé par les Européens)",
+          "parfois utilisé de manière péjorative dans certains contextes historiques"
+        ],
+        "peopleId": "PPL_RWANDAIS_TUTSI",
+        "mainRegion": "Sud-Kivu, Nord-Kivu",
+        "languages": ["Kinyarwanda", "français", "swahili"],
+        "languageFamily": "FLG_NILOTIQUE",
+        "appellationRemarks": "Le terme \"Tutsi\" peut avoir des connotations négatives dans certains contextes historiques (génocide rwandais). L'auto-appellation \"Abatutsi\" est préférée."
+      },
+      {
+        "name": "Bemba",
+        "selfAppellation": "Bemba",
+        "exonyms": ["Bemba (terme utilisé par les Européens)"],
+        "peopleId": "PPL_BEMBA",
+        "mainRegion": "Katanga sud",
+        "languages": ["Bemba", "français", "lingala"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Bemba\" est neutre et accepté."
+      },
+      {
+        "name": "Lingala (locuteurs)",
+        "selfAppellation": "Lingala",
+        "exonyms": ["Lingala (terme utilisé pour la langue véhiculaire)"],
+        "peopleId": "PPL_LINGALA",
+        "mainRegion": "Kinshasa, Équateur, Province orientale",
+        "languages": ["Lingala", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le lingala est une langue véhiculaire importante en RDC, parlée par de nombreux groupes ethniques."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Art luba (sculptures, masques), art lunda et tshokwe (sculptures en bois), musique traditionnelle (rumba congolaise), danse traditionnelle, artisanat (vannerie, poterie, tissage), architecture traditionnelle",
+      "dominantReligions": "Christianisme (catholique majoritaire, protestant), croyances traditionnelles (syncrétisme), islam (minorité, surtout dans l'est)",
+      "lifestyles": "Vie principalement rurale, agriculture (manioc, maïs, riz, arachides), élevage (bovins, caprins), pêche (fleuves et lacs), exploitation minière (cuivre, cobalt, diamants, or), commerce",
+      "socialOrganization": "Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens",
+      "regionalRelations": "Relations historiques avec les peuples d'Angola, de Zambie, du Congo, de la RCA, du Rwanda, du Burundi, de l'Ouganda. Diaspora importante en Belgique, France, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par des migrations bantoues depuis le premier millénaire. Développement de royaumes et empires puissants (Kongo, Luba, Lunda) avec des systèmes politiques sophistiqués.",
+      "middleAges": "Apogée des royaumes précoloniaux (XIVe-XIXe siècles). Royaume Kongo établit des relations avec les Portugais dès le XVe siècle. Empires Luba et Lunda dominent le centre et le sud-est.",
+      "precolonial": "Mosaïque de royaumes et chefferies indépendants. Royaumes Mangbetu et sultanats Zande dans le nord-est. Chefferies Mongo dans la cuvette équatoriale. Commerce transsaharien et commerce avec les côtes.",
+      "colonization": "1885 : Création de l'État indépendant du Congo (propriété privée de Léopold II). Exploitation extrême (caoutchouc, ivoire) avec atrocités massives. 1908 : Passage au Congo belge. Exploitation économique intensive (mines, plantations). Résistance congolaise.",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1960. Crise du Katanga (sécession 1960-1963). Instabilité politique et interventions étrangères.",
+      "postIndependence": "Régime Mobutu (1965-1997) : Zaïre, dictature, corruption. Première guerre du Congo (1996-1997) : chute de Mobutu. Deuxième guerre du Congo (1998-2003) : \"guerre mondiale africaine\". Transition démocratique difficile. Défis de reconstruction et de stabilisation."
+    },
+    "sources": [
+      "CIA World Factbook – Democratic Republic of the Congo",
+      "SIL Ethnologue – Languages of DRC",
+      "Recensements nationaux congolais",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples congolais",
+      "Études historiques sur les royaumes précoloniaux",
+      "Ethnologie du Congo"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Luba",
+          "population": 18360000,
+          "percentageInCountry": 18,
+          "percentageInAfrica": 1.28,
+          "peopleId": "PPL_LUBA",
+          "region": "Kasaï, Katanga (Haut-Lomami, Lualaba)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Kongo",
+          "population": 12240000,
+          "percentageInCountry": 12,
+          "percentageInAfrica": 0.86,
+          "peopleId": "PPL_KONGO",
+          "region": "Kongo Central, Kinshasa ouest",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Mongo",
+          "population": 17340000,
+          "percentageInCountry": 17,
+          "percentageInAfrica": 1.21,
+          "peopleId": "PPL_MONGO",
+          "region": "Cuvette centrale (Équateur, Tshuapa)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Tetela",
+          "population": 7140000,
+          "percentageInCountry": 7,
+          "percentageInAfrica": 0.5,
+          "peopleId": "PPL_TETELA",
+          "region": "Sankuru",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Lunda",
+          "population": 2040000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.14,
+          "peopleId": "PPL_LUNDA",
+          "region": "Katanga, frontières angolaises",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Tshokwe",
+          "population": 2040000,
+          "percentageInCountry": 2,
+          "percentageInAfrica": 0.14,
+          "peopleId": "PPL_TSHOKWE",
+          "region": "Katanga, frontières angolaises",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Nande",
+          "population": 2550000,
+          "percentageInCountry": 2.5,
+          "percentageInAfrica": 0.18,
+          "peopleId": "PPL_NANDE",
+          "region": "Nord-Kivu",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Hunde",
+          "population": 1530000,
+          "percentageInCountry": 1.5,
+          "percentageInAfrica": 0.11,
+          "peopleId": "PPL_HUNDE",
+          "region": "Nord-Kivu",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Hutu (Rwandais)",
+          "population": 1530000,
+          "percentageInCountry": 1.5,
+          "percentageInAfrica": 0.11,
+          "peopleId": "PPL_RWANDAIS_HUTU",
+          "region": "Sud-Kivu, Nord-Kivu",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Tutsi (Rwandais)",
+          "population": 1530000,
+          "percentageInCountry": 1.5,
+          "percentageInAfrica": 0.11,
+          "peopleId": "PPL_RWANDAIS_TUTSI",
+          "region": "Sud-Kivu, Nord-Kivu",
+          "languageFamily": "FLG_NILOTIQUE"
+        },
+        {
+          "name": "Bemba",
+          "population": 1020000,
+          "percentageInCountry": 1,
+          "percentageInAfrica": 0.07,
+          "peopleId": "PPL_BEMBA",
+          "region": "Katanga sud",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Lingala (locuteurs)",
+          "peopleId": "PPL_LINGALA",
+          "region": "Kinshasa, Équateur, Province orientale",
+          "languageFamily": "FLG_NIGERCONGO"
+        }
+      ]
+    }
+  }
+}

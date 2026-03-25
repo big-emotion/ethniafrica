@@ -1,0 +1,232 @@
+{
+  "id": "GMB",
+  "nameFr": "République de Gambie (Republic of The Gambia)",
+  "nameOfficial": "République de Gambie (Republic of The Gambia)",
+  "etymology": "Le nom \"Gambie\" provient du fleuve Gambie qui traverse le pays. Le nom du fleuve vient probablement du portugais \"Gambia\" ou du terme local \"Kambra\" / \"Kambaa\". Les Britanniques ont adopté ce nom pour leur colonie. Le nom officiel inclut l'article \"The\" (La Gambie) pour le distinguer de la Zambie.",
+  "nameOriginActor": "Le nom \"Gambie\" a été donné par les navigateurs portugais au XVe siècle en référence au fleuve Gambie. Les Britanniques ont officialisé ce nom lors de la colonisation. Le nom a été officialisé à l'indépendance en 1965.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la Gambie était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Développement de royaumes et chefferies : royaumes Mandinka, chefferies Wolof, peuples Fula. Pas de nom unifié pour l'ensemble du territoire. Le fleuve Gambie était une voie commerciale importante.",
+      "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaumes Mandinka (héritiers de l'empire du Mali), chefferies Wolof, peuples Fula (pasteurs), Jola, Serer. Les Portugais utilisaient le terme \"Gambia\" pour désigner la région du fleuve Gambie.",
+      "colonization": "1888-1965 : Colonie britannique de Gambie (Gambia Colony and Protectorate). Les Britanniques ont établi une colonie sur le fleuve Gambie en 1888. Le territoire était administré comme une colonie britannique jusqu'à l'indépendance en 1965.",
+      "contemporary": "1965 : Indépendance de la Gambie (18 février 1965), proclamation de la République de Gambie. 1970 : Proclamation de la République (24 avril 1970). Le nom officiel est \"Republic of The Gambia\" (République de Gambie)."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaumes Mandinka",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Mandinka"],
+        "politicalCenters": ["Chefferies traditionnelles mandinka"],
+        "historicalRole": "Royaumes Mandinka, héritiers de l'empire du Mali (XIIIe-XVIe siècle), système lignager, castes artisanales (numu, djeli), importance des griots. Rôle majeur dans la diffusion culturelle mandé. Traditions islamiques."
+      },
+      {
+        "name": "Chefferies Wolof",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Wolof"],
+        "politicalCenters": ["Chefferies traditionnelles wolof"],
+        "historicalRole": "Chefferies Wolof, traditions islamiques, commerce régional. Relations avec les royaumes wolof du Sénégal."
+      },
+      {
+        "name": "Peuples Fula",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Fula / Peul"],
+        "politicalCenters": ["Communautés pastorales"],
+        "historicalRole": "Peuples Fula pasteurs nomades et sédentaires, traditions islamiques, pastoralisme. Commerce et migrations."
+      },
+      {
+        "name": "Colonie britannique de Gambie",
+        "period": "1888 - 1965",
+        "dominantPeoples": [
+          "Tous les peuples gambiens sous domination britannique"
+        ],
+        "politicalCenters": [
+          "Bathurst (aujourd'hui Banjul",
+          "capitale coloniale)"
+        ],
+        "historicalRole": "Colonie britannique, développement de Bathurst comme port commercial, exploitation économique (arachides), développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste au XXe siècle."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Mandinka",
+        "selfAppellation": "Mandinka / Mandiŋka",
+        "exonyms": [
+          "Mandinka (terme utilisé par les Européens)",
+          "Mandingue (forme française)",
+          "\"Mandingo\" (terme historique",
+          "parfois péjoratif)"
+        ],
+        "peopleId": "PPL_MANDINKA",
+        "mainRegion": "Toutes les régions de la Gambie, majoritaires",
+        "languages": ["Mandinka (mnk", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Mandinka\" ou \"Mandiŋka\" est l'auto-appellation. \"Mandingue\" est l'exonyme français accepté. \"Mandingo\" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité."
+      },
+      {
+        "name": "Fula / Peul",
+        "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+        "exonyms": [
+          "Peul (terme français)",
+          "Fulani (terme haoussa)",
+          "Fula (terme anglophone)",
+          "\"Fellata\" (terme haoussa parfois péjoratif",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "Toutes les régions de la Gambie",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" est l'auto-appellation. \"Peul\" et \"Fulani\" sont des exonymes acceptés. \"Fellata\" peut avoir une connotation péjorative dans certains contextes et doit être évité."
+      },
+      {
+        "name": "Wolof",
+        "selfAppellation": "Wolof",
+        "exonyms": ["Wolof (terme utilisé par les Européens)"],
+        "peopleId": "PPL_WOLOF",
+        "mainRegion": "Zones urbaines, régions côtières",
+        "languages": ["Wolof (wol", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Wolof\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Jola",
+        "selfAppellation": "Jola / Diola",
+        "exonyms": ["Jola", "Diola (termes utilisés par les Européens)"],
+        "peopleId": "PPL_DIOLA",
+        "mainRegion": "Régions côtières et sud",
+        "languages": ["Jola (dyo", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Jola\" ou \"Diola\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Serahule / Soninke",
+        "selfAppellation": "Soninke",
+        "exonyms": [
+          "Serahule (terme utilisé en Gambie)",
+          "Soninke (terme utilisé au Mali",
+          "Sénégal)"
+        ],
+        "peopleId": "PPL_SERAHULE_SONINKE",
+        "mainRegion": "Diverses régions de la Gambie",
+        "languages": ["Soninke (snk", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Soninke\" est l'auto-appellation. \"Serahule\" est un terme utilisé en Gambie. Pas de terme péjoratif connu. Peuple mandé commerçant."
+      },
+      {
+        "name": "Serer",
+        "selfAppellation": "Serer",
+        "exonyms": ["Serer (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SERER",
+        "mainRegion": "Régions côtières (extension des groupes sérères du Sénégal)",
+        "languages": ["Serer (srr", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Serer\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Manjak / Bainuk",
+        "selfAppellation": "Manjak, Bainuk",
+        "exonyms": ["Manjak", "Bainuk (termes utilisés par les Européens)"],
+        "peopleId": "PPL_MANJAK_BAINUK",
+        "mainRegion": "Zones côtières et transfrontalières",
+        "languages": ["Manjak", "Bainuk", "anglais"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Manjak\" et \"Bainuk\" sont les auto-appellations respectives. Pas de terme péjoratif connu. Groupes côtiers et transfrontaliers."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions de la Gambie",
+        "languages": ["Langues diverses", "anglais"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "Mandinka"
+        },
+        {
+          "name": "Fulfulde",
+          "isoCode": "ful"
+        },
+        {
+          "name": "Wolof",
+          "isoCode": "wol"
+        },
+        {
+          "name": "Jola",
+          "isoCode": "dyo"
+        },
+        {
+          "name": "Soninke",
+          "isoCode": "snk"
+        },
+        {
+          "name": "Serer",
+          "isoCode": "srr"
+        },
+        {
+          "name": "Manjak"
+        },
+        {
+          "name": "Bainuk"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de la Gambie. Traditions mandé (Mandinka, griots, kora, musique mandingue, rites initiatiques kankurang). Traditions atlantiques (Wolof, Fula, Jola, Serer). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Traditions islamiques (majorité musulmane).",
+      "dominantReligions": "Islam sunnite (majoritaire, 90%+), christianisme (minorité), religions traditionnelles africaines (syncrétisme fréquent)",
+      "lifestyles": "Agriculture (arachides, mil, riz, cultures vivrières), élevage (Fula, bovins), pêche (côtière et fluviale), commerce et activités urbaines (zones urbaines, Banjul). Urbanisation modérée. Économie basée sur l'agriculture (arachides, principale exportation), la pêche, le tourisme, et les services. Dépendance économique importante du Sénégal.",
+      "socialOrganization": "Organisation en royaumes historiques (Mandinka, héritage de l'empire du Mali), chefferies traditionnelles (Wolof, Jola, Serer), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Système de castes (Mandinka, numu, djeli, griots). Traditions d'initiation et de passage à l'âge adulte.",
+      "regionalRelations": "Relations historiques avec le Sénégal (commerce, migrations, peuples transfrontaliers, frontière), le Mali (Mandinka, héritage de l'empire du Mali). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Dépendance économique importante du Sénégal. La Gambie est enclavée dans le Sénégal sauf pour sa côte atlantique."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples mandé et atlantiques. Développement de chefferies et royaumes locaux.",
+      "middleAges": "Expansion de l'empire du Mali (XIIIe-XVIe siècle), influence mandé sur la région. Développement des royaumes Mandinka. Arrivée de l'islam. Commerce transsaharien et côtier. Le fleuve Gambie était une voie commerciale importante.",
+      "precolonial": "Consolidation des royaumes Mandinka (héritiers de l'empire du Mali), chefferies Wolof, peuples Fula pasteurs. Commerce régional et transsaharien. Contacts avec les Européens (Portugais, puis Britanniques). Commerce des esclaves le long du fleuve Gambie.",
+      "colonization": "1888 : Établissement de la colonie britannique de Gambie. Période coloniale britannique (1888-1965), développement de Bathurst (Banjul) comme port commercial, exploitation économique (arachides), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste.",
+      "independenceStruggle": "1950s-1960s : Mouvement pour l'indépendance mené par les dirigeants gambiens. 1965 : Indépendance de la Gambie (18 février 1965), proclamation de la République de Gambie. Dawda Jawara devient premier ministre puis président.",
+      "postIndependence": "1965-1994 : Présidence de Dawda Jawara, période de stabilité politique et de démocratie. 1994 : Coup d'État militaire, présidence de Yahya Jammeh (1994-2017). 2017 : Transition démocratique, élection d'Adama Barrow. Défis : pauvreté, dépendance économique du Sénégal, développement économique. La Gambie est l'un des plus petits pays d'Afrique."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of The Gambia",
+      "CIA World Factbook – The Gambia",
+      "ONU / UNFPA – Démographie Gambie 2025",
+      "Recensements gambiens",
+      "Études anthropologiques sur les peuples de la Gambie",
+      "Études historiques sur l'empire du Mali et la Sénégambie"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Mandinka",
+          "population": 900000,
+          "percentageInCountry": 34,
+          "peopleId": "PPL_MANDINKA",
+          "region": "Toutes les régions de la Gambie, majoritaires (vallée du fleuve)",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Fula / Peul",
+          "population": 580000,
+          "percentageInCountry": 22,
+          "peopleId": "PPL_FULA",
+          "region": "Toutes les régions de la Gambie (zones pastorales)",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Wolof",
+          "population": 320000,
+          "percentageInCountry": 12,
+          "peopleId": "PPL_WOLOF",
+          "region": ""
+        }
+      ]
+    }
+  }
+}

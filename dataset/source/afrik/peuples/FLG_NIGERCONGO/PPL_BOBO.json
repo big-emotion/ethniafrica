@@ -1,0 +1,71 @@
+{
+  "id": "PPL_BOBO",
+  "nameMain": "Bobo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["BFA", "MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Bobo",
+      "selfAppellation": "Bobo",
+      "exonyms": ["Bobo (terme utilisé par les Européens), Bobo-Madare"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mandé",
+      "historicalRegion": "BFA, MLI",
+      "currentCountries": ["BFA", "MLI"]
+    },
+    "ethnicities": [
+      "Bobo de Bobo-Dioulasso",
+      "Bobo-Madare ruraux",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bobo sont originaires du Burkina Faso et du Mali. Population agricole ancienne du Haut-Bassin. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Mandé de la famille Niger-Congo.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples mandé voisins, influence de l'islam et du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Société lignagère. Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Bobo",
+      "vehicularRole": "Le bobo est parlé par la majorité des Bobo. Le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Rituels agricoles majeurs",
+      "source_1": "Masques sacrés",
+      "source_2": "Fêtes agraires",
+      "source_3": "Culte des esprits protecteurs",
+      "source_4": "Cérémonies de mariage traditionnelles",
+      "source_5": "Rites de passage (initiation, fêtes de naissance)",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels bobo, symboles islamiques et chrétiens.",
+      "Arts et musique": "",
+      "source_6": "Musique traditionnelle",
+      "source_7": "Danse traditionnelle",
+      "source_8": "Poésie orale",
+      "source_9": "Artisanat (poterie, tissage, masques)",
+      "Spiritualités": "Culte des esprits protecteurs. Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora bobo dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 650000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Bobo language (bwq)",
+      "CIA World Factbook – BFA, MLI",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples mandé",
+      "Burkina Faso Ethnographic Studies"
+    ]
+  }
+}

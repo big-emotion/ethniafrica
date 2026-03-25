@@ -1,0 +1,129 @@
+{
+  "id": "BDI",
+  "nameFr": "République du Burundi (Republika y'Uburundi)",
+  "nameOfficial": "République du Burundi (Republika y'Uburundi)",
+  "etymology": "Le nom \"Burundi\" vient probablement du kirundi \"Uburundi\" signifiant \"pays\" ou \"territoire\". Le nom fait référence au royaume précolonial du Burundi.",
+  "nameOriginActor": "Le nom vient du royaume précolonial du Burundi (Royaume du Burundi), qui unifiait les peuples des hautes terres. Les colonisateurs allemands puis belges ont conservé ce nom.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de groupes bantous et nilotiques sans nom unifié. Les Twa (pygmées) sont considérés comme les premiers habitants.",
+      "middleAges": "Développement du royaume du Burundi à partir du XVIe siècle. Le royaume s'appelait \"Burundi\" ou \"Uburundi\".",
+      "precolonial": "Royaume du Burundi (XVIe - XIXe siècles) avec une monarchie centralisée. Le nom \"Burundi\" était utilisé pour désigner le royaume et son territoire.",
+      "colonization": "1885-1916 : Protectorat allemand de l'Afrique orientale allemande (Deutsch-Ostafrika), incluant le Burundi. 1916-1962 : Ruanda-Urundi sous mandat belge (puis tutelle de l'ONU). Les Belges ont divisé administrativement le Rwanda et le Burundi mais conservé les noms.",
+      "contemporary": "Indépendance en 1962 sous le nom de \"Royaume du Burundi\" (monarchie), puis \"République du Burundi\" depuis 1966. Le nom officiel en français est \"République du Burundi\" et en kirundi \"Republika y'Uburundi\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume du Burundi",
+        "period": "XVIe siècle - 1966",
+        "dominantPeoples": [
+          "Tutsi (noblesse)",
+          "Hutu (majorité)",
+          "Twa (minorité)"
+        ],
+        "politicalCenters": ["Gitega (capitale royale)", "Muramvya"],
+        "historicalRole": "Royaume centralisé avec une monarchie sacrée (mwami). Système de chefferies hiérarchisées. Expansion territoriale et unification culturelle. Distinctions sociales complexes entre Hutu, Tutsi et Twa, instrumentalisées par le colonialisme."
+      },
+      {
+        "name": "Ruanda-Urundi",
+        "period": "1916 - 1962",
+        "dominantPeoples": [
+          "Tous les peuples burundais sous administration coloniale belge"
+        ],
+        "politicalCenters": ["Usumbura (Bujumbura", "capitale administrative)"],
+        "historicalRole": "Mandat belge puis tutelle de l'ONU. Politique coloniale de division et d'instrumentalisation des distinctions Hutu/Tutsi. Introduction de cartes d'identité ethniques."
+      },
+      {
+        "name": "République du Burundi",
+        "period": "1966 - présent",
+        "dominantPeoples": ["Tous les peuples burundais"],
+        "politicalCenters": ["Bujumbura (capitale)"],
+        "historicalRole": "Indépendance en 1962 (monarchie). Coup d'État de 1966 : abolition de la monarchie, proclamation de la République. Histoire politique mouvementée avec plusieurs coups d'État et périodes de violences ethniques (1972, 1993, 2015)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Hutu (Burundi)",
+        "selfAppellation": "Abahutu",
+        "exonyms": [
+          "Hutu (terme historique non péjoratif). \"Races du Burundi\" (catégorisation coloniale problématique). L'administration coloniale belge a figé les catégories Hutu/Tutsi en termes \"racialisés\"",
+          "ce qui a exacerbé les tensions sociales et politiques."
+        ],
+        "peopleId": "PPL_HUTU_BURUNDI",
+        "mainRegion": "Plateaux du Burundi (majorité)",
+        "languages": ["Kirundi", "français", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Hutu\" a été instrumentalisé par le colonialisme belge. L'auto-appellation \"Abahutu\" est préférée. Ces distinctions doivent être contextualisées historiquement."
+      },
+      {
+        "name": "Tutsi (Burundi)",
+        "selfAppellation": "Abatutsi",
+        "exonyms": [
+          "\"Hamites\" (terme colonial raciste",
+          "totalement rejeté). La thèse hamitique était une construction raciste européenne visant à opposer les peuples de la région et à légitimer des hiérarchies coloniales."
+        ],
+        "peopleId": "PPL_TUTSI_BURUNDI",
+        "mainRegion": "Plateaux du Burundi",
+        "languages": ["Kirundi", "français", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Hamites\" est totalement rejeté comme construction raciste coloniale. L'auto-appellation \"Abatutsi\" est préférée. Ces distinctions doivent être contextualisées historiquement."
+      },
+      {
+        "name": "Twa",
+        "selfAppellation": "Abatwa",
+        "exonyms": ["Twa", "Pygmées (terme parfois considéré comme péjoratif)"],
+        "peopleId": "PPL_TWA",
+        "mainRegion": "Forêts et zones rurales",
+        "languages": ["Kirundi", "langues twa"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Pygmée\" peut être considéré comme péjoratif. L'auto-appellation \"Abatwa\" est préférée. Les Twa sont les premiers habitants du Burundi."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Tambours royaux (ingoma), danse traditionnelle (intore), poésie orale, artisanat (vannerie, poterie), architecture traditionnelle, élevage bovin (importance symbolique et économique)",
+      "dominantReligions": "Christianisme (catholique majoritaire, protestant), croyances traditionnelles (syncrétisme), islam (minorité)",
+      "lifestyles": "Vie principalement rurale, agriculture (café, thé, bananes, haricots, sorgho), élevage (bovins, caprins), pêche (lac Tanganyika), commerce",
+      "socialOrganization": "Système de chefferies traditionnelles (historique), structure clanique patrilinéaire (ubwoko), organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens (historique)",
+      "regionalRelations": "Relations historiques avec les peuples du Rwanda, de la RDC, de la Tanzanie. Diaspora importante en Belgique, en RDC, en Tanzanie, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par les Twa (pygmées), puis migrations bantoues (Hutu) et nilotiques (Tutsi) depuis plusieurs siècles. Formation de structures sociales complexes.",
+      "middleAges": "Développement du royaume du Burundi à partir du XVIe siècle. Expansion territoriale et unification culturelle. Système monarchique centralisé avec distinctions sociales entre Hutu, Tutsi et Twa.",
+      "precolonial": "Apogée du royaume du Burundi (XIXe siècle) avec expansion territoriale. Système de chefferies hiérarchisées. Distinctions sociales complexes mais perméables.",
+      "colonization": "1885 : Protectorat allemand. 1916 : Occupation belge. 1923 : Mandat belge (Ruanda-Urundi). Politique coloniale de division et d'instrumentalisation des distinctions Hutu/Tutsi. Introduction de cartes d'identité ethniques. \"Thèse hamitique\" coloniale raciste.",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Indépendance en 1962 sous forme de monarchie constitutionnelle. Première République en 1966 après coup d'État.",
+      "postIndependence": "Première République (1966-1987) : régime Tutsi, tensions ethniques. Massacres de 1972 : extermination de dizaines de milliers de Hutu. Deuxième République (1987-1993) : transition démocratique. Assassinat du président Ndadaye (1993) : guerre civile. Troisième République depuis 2005 : processus de paix, défis de réconciliation et de développement."
+    },
+    "sources": [
+      "CIA World Factbook – Burundi",
+      "SIL Ethnologue – Kirundi language (run)",
+      "Recensements nationaux burundais",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les Grands Lacs",
+      "Études historiques sur le royaume du Burundi"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Hutu (Burundi)",
+          "peopleId": "PPL_HUTU_BURUNDI",
+          "region": "Plateaux du Burundi",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Tutsi (Burundi)",
+          "peopleId": "PPL_TUTSI_BURUNDI",
+          "region": "Plateaux du Burundi",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Twa",
+          "peopleId": "PPL_TWA",
+          "region": "Forêts et zones rurales",
+          "languageFamily": "FLG_BANTU"
+        }
+      ]
+    }
+  }
+}

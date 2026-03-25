@@ -1,0 +1,68 @@
+{
+  "id": "PPL_BAFUTA",
+  "nameMain": "Bafuta",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "Bafuta",
+      "selfAppellation": "Bafuta",
+      "exonyms": ["Bafuta (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou",
+      "historicalRegion": "Afrique centrale",
+      "currentCountries": []
+    },
+    "ethnicities": [
+      "Bafuta du Nord",
+      "Bafuta du Sud",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bafuta sont originaires de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou de la famille Niger-Congo.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Bafuta",
+      "vehicularRole": "Le bafuta est parlé par la majorité des Bafuta. Le français, le lingala et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels bafuta, symboles chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora bafuta dans les grandes villes congolaises et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements congolais, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Bafuta language",
+      "CIA World Factbook – DRC",
+      "Recensements congolais",
+      "Études anthropologiques sur les peuples bantous"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "PPL_KAKWA",
+  "nameMain": "Kakwa",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["UGA", "SDN", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kakwa",
+      "selfAppellation": "Kakwa",
+      "exonyms": ["Kakwa (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Soudanique central",
+      "historicalRegion": "UGA, SDN du Sud, COD",
+      "currentCountries": ["UGA", "SDN", "COD"]
+    },
+    "ethnicities": [
+      "Kakwa d'Ouganda",
+      "Kakwa du Soudan du Sud",
+      "Kakwa de RDC"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kakwa sont originaires de l'UGA, du Soudan du Sud et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples nilotiques et bantous, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Kakwa",
+      "vehicularRole": "Le kakwa est parlé par la majorité des Kakwa. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels kakwa, symboles chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora kakwa dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Kakwa language (keo)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples soudaniques centraux"
+    ]
+  }
+}

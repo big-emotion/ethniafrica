@@ -1,0 +1,24 @@
+{
+  "id": "PPL_SOMALI",
+  "nameMain": "",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["SOM", "DJI", "ETH", "KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Soomaali",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitique oriental",
+      "historicalRegion": "Somalie historique (SOM, DJI, Ogaden)",
+      "currentCountries": ["SOM", "DJI", "ETH", "KEN"]
+    },
+    "ethnicities": ["Darod", "Hawiye", "Dir", "Isaaq", "Rahanweyn"],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Somali Studies", "Ethnologue (som)"]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_XXXXX",
+  "nameMain": "<Nom principal du peuple>",
+  "languageFamilyId": "FLG_XXXXX",
+  "currentCountries": ["ISO1", "ISO2"],
+  "content": {
+    "appellations": {
+      "mainName": "<Nom principal du peuple>",
+      "selfAppellation": "<Auto-appellation obligatoire — endonyme dans la langue locale>",
+      "exonyms": ["<Exonyme 1 (si applicable)>"],
+      "originOfExonyms": null,
+      "whyProblematic": null,
+      "contemporaryUsage": null
+    },
+    "ethnicities": ["<Ethnie 1>", "<Ethnie 2>"],
+    "origins": {
+      "ancientOrigins": null,
+      "formationPeriod": null,
+      "migrationRoutes": [],
+      "historicalSettlementZones": ["<Zone d'établissement historique>"],
+      "unificationsOrDivisions": null,
+      "externalInfluences": null,
+      "majorHistoricalEvents": null
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": null
+    },
+    "languages": {
+      "mainLanguage": "<Nom de la langue (code_iso)>",
+      "isoCodes": ["xxx"],
+      "dialects": [],
+      "vehicularRole": null
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": null,
+      "spiritualities": null
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": null,
+      "conflictsOrAlliances": null,
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 0,
+      "referenceYear": 2025,
+      "source": "<Source démographique — ex: UNFPA 2025>",
+      "distributionByCountry": [
+        { "country": "ISO1", "population": 0, "percentage": 0 }
+      ]
+    },
+    "sources": ["<Titre – Auteur/URL>"]
+  }
+}

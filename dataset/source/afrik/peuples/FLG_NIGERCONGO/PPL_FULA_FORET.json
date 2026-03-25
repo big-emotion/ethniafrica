@@ -1,0 +1,67 @@
+{
+  "id": "PPL_FULA_FORET",
+  "nameMain": "Fula (Forêt)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GIN", "CIV", "CMR", "GAB"],
+  "content": {
+    "appellations": {
+      "mainName": "Fula (Forêt)",
+      "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique (branche sénégambienne)",
+      "historicalRegion": "Zones forestières d'Afrique de l'Ouest et centrale",
+      "currentCountries": ["GIN", "CIV", "CMR", "GAB"]
+    },
+    "ethnicities": [
+      "Fulɓe des zones forestières",
+      "Sous-groupes régionaux forestiers"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fula des zones forestières sont originaires de la bande sahélienne. Leur présence dans les zones forestières remonte aux migrations historiques.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Adaptation aux environnements forestiers.",
+      "externalInfluences": "Contacts avec les peuples forestiers, influence de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels (Ardo). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des oulémas (savants religieux) et des chefs religieux. L'islam sunnite structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Fulfulde / Pulaar / Pular",
+      "vehicularRole": "Le fulfulde/pulaar est parlé par la majorité des Fula des zones forestières. Le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_2": "Cérémonies pastorales liées au bétail",
+      "source_3": "Cérémonies adaptées aux environnements forestiers",
+      "Symboles": "Bétail (bovins) comme symbole de richesse et de statut. Poésie élogieuse (ɗiogal). Calligraphie arabe.",
+      "Arts et musique": "",
+      "source_4": "Poésie élogieuse traditionnelle (ɗiogal)",
+      "source_5": "Musique traditionnelle (tambours, flûtes)",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Artisanat lié au pastoralisme",
+      "source_8": "Littérature islamique en arabe et en fulfulde",
+      "Spiritualités": "Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture fula."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Migration vers les grandes villes et la diaspora."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook, UNFPA, recensements nationaux"
+    },
+    "sources": [
+      "SIL Ethnologue – Fulfulde language (ful)",
+      "CIA World Factbook – Country profiles",
+      "UNFPA – Population data",
+      "Recensements nationaux"
+    ]
+  }
+}

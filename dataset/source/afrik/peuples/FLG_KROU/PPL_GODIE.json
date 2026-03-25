@@ -1,0 +1,23 @@
+{
+  "id": "PPL_GODIE",
+  "nameMain": "",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Godié / Godye",
+      "linguisticFamily": "FLG_KROU",
+      "historicalRegion": "Sud-Ouest de la Côte d’Ivoire (Sassandra)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (god)", "Côte d’Ivoire Forest Belt Research"]
+  }
+}

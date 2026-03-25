@@ -1,0 +1,23 @@
+{
+  "id": "PPL_NYABWA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Nyabwa / Nyaboua",
+      "linguisticFamily": "FLG_KROU",
+      "historicalRegion": "Côte d’Ivoire (Ouest)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (nwb)", "Côte d’Ivoire Ouest Ethnographic Studies"]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "PPL_CREOLE_REUNION",
+  "nameMain": "Créole Réunionnais",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["REU"],
+  "content": {
+    "appellations": {
+      "mainName": "Créole Réunionnais",
+      "selfAppellation": "Kréol Rényoné",
+      "exonyms": [
+        "Créole réunionnais (terme utilisé pour les créoles de la Réunion)"
+      ],
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole afro-français",
+      "historicalRegion": "La Réunion",
+      "currentCountries": ["REU"]
+    },
+    "ethnicities": ["Créole de la Réunion", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Créoles réunionnais sont un peuple créole formé à partir du contact entre les populations africaines (notamment de Madagascar et d'Afrique de l'Est), malgaches, indiennes et les colons français à partir du XVIIe siècle. Leur présence dans la région remonte à plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune.",
+      "externalInfluences": "Contacts avec les populations africaines, malgaches et indiennes, influence du christianisme catholique et des croyances traditionnelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure basée sur les familles créoles. Organisation en familles étendues.",
+      "roleOfLineages": "Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.",
+      "religiousAuthority": "Autorité des prêtres catholiques et des chefs religieux. Influence du catholicisme et des croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Créole réunionnais (Kréol Rényoné)",
+      "vehicularRole": "Le créole réunionnais est parlé par la majorité des Créoles réunionnais. Le français est utilisé dans l'éducation et l'administration."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses catholiques",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels créoles",
+      "source_3": "Cérémonies de réconciliation",
+      "Symboles": "Symboles culturels créoles, symboles catholiques.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle créole (maloya, séga)",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat",
+      "Spiritualités": "Catholicisme majoritaire. Croyances traditionnelles préservées dans certaines communautés."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en communautés créoles. Intégration dans les structures politiques françaises (département d'outre-mer).",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora créole réunionnaise dans les grandes villes réunionnaises et en France métropolitaine."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements français, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Réunion Creole language (rcf)",
+      "CIA World Factbook – Réunion",
+      "Recensements français",
+      "Études anthropologiques sur les peuples créoles"
+    ]
+  }
+}

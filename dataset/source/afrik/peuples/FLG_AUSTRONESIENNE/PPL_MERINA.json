@@ -1,0 +1,71 @@
+{
+  "id": "PPL_MERINA",
+  "nameMain": "Merina",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Merina",
+      "selfAppellation": "Merina",
+      "exonyms": [
+        "Hova (terme historique, parfois utilisé de manière péjorative), Imerina"
+      ],
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynésien",
+      "historicalRegion": "Hautes terres centrales de Madagascar",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Merina des hautes terres",
+      "Sous-groupes régionaux",
+      "Communautés urbaines"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Merina sont originaires des hautes terres centrales de Madagascar. Leur présence remonte aux migrations austronésiennes vers Madagascar (500-700 ap. J.-C.) et à la fusion avec les populations bantoues.",
+      "unificationsOrDivisions": "Formation du royaume Merina (XVIe-XIXe siècles). Unification de Madagascar sous le règne de Radama I et Ranavalona I.",
+      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Royaume Merina avec système de castes (andriana, hova, andevo). Système de fokonolona (communautés villageoises).",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
+      "religiousAuthority": "Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Malgache (dialecte merina)",
+      "vehicularRole": "Le malgache merina est la base de la langue officielle malgache. Le français est également utilisé."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Famadihana (retournement des morts)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Cérémonies liées au riz",
+      "Symboles": "Symboles royaux merina, symboles liés au riz, symboles chrétiens et musulmans.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle (valiha, sodina)",
+      "source_5": "Danse traditionnelle (hira gasy)",
+      "source_6": "Poésie orale (hainteny)",
+      "source_7": "Artisanat (tissage, vannerie)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora merina dans les grandes villes malgaches et dans les pays occidentaux (France, Canada, États-Unis)."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Malagasy language (mlg)",
+      "CIA World Factbook – Madagascar",
+      "Recensements malgaches",
+      "Études anthropologiques sur les peuples malgaches",
+      "Études historiques sur le royaume Merina"
+    ]
+  }
+}

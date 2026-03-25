@@ -1,0 +1,250 @@
+{
+  "id": "DZA",
+  "nameFr": "République algérienne démocratique et populaire (Al-Jumhūriyyah al-Jazā'iriyyah ad-Dīmuqrāṭiyyah ash-Sha'biyyah)",
+  "nameOfficial": "République algérienne démocratique et populaire (Al-Jumhūriyyah al-Jazā'iriyyah ad-Dīmuqrāṭiyyah ash-Sha'biyyah)",
+  "etymology": "Le nom \"Algérie\" vient de \"Al-Djazair\" (الجزائر), qui signifie \"les îles\" en arabe, en référence aux îlots situés face à la baie d'Alger. Le nom a été donné par les Ottomans au XVIe siècle. Le terme français \"Algérie\" a été officialisé lors de la colonisation française (1830-1962).",
+  "nameOriginActor": "Les Ottomans ont nommé la région \"Al-Djazair\" au XVIe siècle. Le nom français \"Algérie\" a été officialisé par l'administration coloniale française en 1839.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire correspondait à la Numidie (royaumes numides), à la Maurétanie césarienne (région côtière), et à des territoires contrôlés par Carthage puis par Rome. Les peuples autochtones étaient les Numides (Berbères).",
+      "middleAges": "Région du Maghreb central, contrôlée par diverses dynasties berbères et arabes (Rustamides, Fatimides, Zirides, Hammadides, Almohades, Zianides). Nom arabe \"Al-Djazair\" apparaît au Moyen Âge.",
+      "precolonial": "Régence d'Alger (1516-1830), État ottoman semi-autonome dirigé par des deys. Le territoire était appelé \"Al-Djazair\" par les Ottomans et les populations locales.",
+      "colonization": "1830-1962 : Algérie française (colonie puis département français). Le nom \"Algérie\" est officialisé en 1839 par l'administration coloniale française.",
+      "contemporary": "1962 : Indépendance, République algérienne démocratique et populaire. Le nom officiel en arabe est \"Al-Jumhūriyyah al-Jazā'iriyyah ad-Dīmuqrāṭiyyah ash-Sha'biyyah\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaumes numides",
+        "period": "IIIe siècle av. J.-C. - Ier siècle apr. J.-C.",
+        "dominantPeoples": ["Numides (Berbères)"],
+        "politicalCenters": ["Cirta (Constantine)", "Hippo Regius (Annaba)"],
+        "historicalRole": "Royaumes numides puissants (Massinissa, Jugurtha), résistance à Rome, unification partielle de la Numidie."
+      },
+      {
+        "name": "Royaume de Massinissa",
+        "period": "202-148 av. J.-C.",
+        "dominantPeoples": ["Numides"],
+        "politicalCenters": ["Cirta"],
+        "historicalRole": "Unification de la Numidie, alliance avec Rome contre Carthage, développement de l'agriculture et du commerce."
+      },
+      {
+        "name": "Royaume de Jugurtha",
+        "period": "118-105 av. J.-C.",
+        "dominantPeoples": ["Numides"],
+        "politicalCenters": ["Cirta"],
+        "historicalRole": "Résistance à la domination romaine, guerre de Jugurtha (112-105 av. J.-C.)."
+      },
+      {
+        "name": "Maurétanie césarienne",
+        "period": "Ier siècle av. J.-C. - Ve siècle apr. J.-C.",
+        "dominantPeoples": ["Berbères", "Romains"],
+        "politicalCenters": ["Caesarea (Cherchell)", "Tipasa"],
+        "historicalRole": "Province romaine, romanisation partielle, développement urbain et commercial."
+      },
+      {
+        "name": "Dynastie rustamide",
+        "period": "776-909",
+        "dominantPeoples": ["Berbères ibadites"],
+        "politicalCenters": ["Tahert (Tiaret)"],
+        "historicalRole": "État berbère ibadite, centre intellectuel et commercial, résistance aux Fatimides."
+      },
+      {
+        "name": "Dynastie zianide",
+        "period": "1235-1556",
+        "dominantPeoples": ["Berbères zénètes"],
+        "politicalCenters": ["Tlemcen"],
+        "historicalRole": "Royaume berbère indépendant, résistance aux Mérinides et aux Hafsides, centre culturel et commercial."
+      },
+      {
+        "name": "Régence d'Alger",
+        "period": "1516-1830",
+        "dominantPeoples": ["Berbères", "Arabes", "Turcs ottomans"],
+        "politicalCenters": ["Alger"],
+        "historicalRole": "État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes."
+      },
+      {
+        "name": "Algérie française",
+        "period": "1830-1962",
+        "dominantPeoples": [
+          "Tous les peuples algériens sous domination coloniale"
+        ],
+        "politicalCenters": ["Alger (capitale coloniale)"],
+        "historicalRole": "Colonisation française, résistance algérienne, guerre d'indépendance (1954-1962)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Arabes d'Algérie",
+        "selfAppellation": "Al-'Arab (العرب)",
+        "exonyms": [
+          "Arabes",
+          "Arabophones",
+          "Maures (terme historique pour certains groupes sahariens)"
+        ],
+        "peopleId": "PPL_ARABES_AFRIQUE",
+        "mainRegion": "Toutes les régions d'Algérie, majoritaires dans les plaines et les villes",
+        "languages": ["Arabe algérien (darija)", "arabe standard"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "Le terme \"Arabe\" est l'auto-appellation. Les Arabes d'Algérie sont majoritairement arabisés (métissés avec les Berbères). Le terme \"Maure\" est historique et désigne certains groupes sahariens."
+      },
+      {
+        "name": "Kabyles",
+        "selfAppellation": "Leqbayel / Iqbayliyen",
+        "exonyms": [
+          "« Kabyle » (exonyme arabe devenu courant ; non péjoratif mais issu d'une classification extérieure)",
+          "« Berbère » (terme colonial",
+          "considéré problématique ; auto-appellation correcte : Amazigh / Imazighen)"
+        ],
+        "peopleId": "PPL_KABYLE",
+        "mainRegion": "Kabylie (nord de l'Algérie, massif de l'Atlas tellien)",
+        "languages": ["Kabyle (tamaziɣt taqbaylit)"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Le terme \"Berbère\" est considéré comme problématique car il vient du grec \"barbaros\" (étranger) et a été utilisé par les colonisateurs. L'auto-appellation correcte est \"Amazigh\" (pluriel : Imazighen). Le terme \"Kabyle\" est un exonyme arabe mais est largement accepté."
+      },
+      {
+        "name": "Chaouis",
+        "selfAppellation": "Ishawiyen / Icawiyen",
+        "exonyms": [
+          "« Chaouïa » (exonyme arabe utilisé depuis le Moyen Âge ; non péjoratif mais extérieur)"
+        ],
+        "peopleId": "PPL_CHAOUI",
+        "mainRegion": "Massif de l'Aurès (est de l'Algérie)",
+        "languages": ["Chaoui (tachawit)"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Le terme \"Chaoui\" est un exonyme arabe mais est largement accepté. L'auto-appellation est \"Ishawiyen\" ou \"Icawiyen\"."
+      },
+      {
+        "name": "Mozabites",
+        "selfAppellation": "Imazighen du Mzab",
+        "exonyms": [
+          "Mozabites (exonyme français)",
+          "« Berbère » (terme colonial",
+          "considéré problématique)"
+        ],
+        "peopleId": "PPL_MOZABITE",
+        "mainRegion": "Vallée du Mzab (Ghardaïa)",
+        "languages": ["Mozabite (tumzabt)"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Le terme \"Berbère\" est considéré comme problématique. L'auto-appellation est \"Imazighen du Mzab\". Les Mozabites sont ibadites (branche de l'islam)."
+      },
+      {
+        "name": "Chenoua",
+        "selfAppellation": "Ičenwa",
+        "exonyms": ["Chenoua (exonyme français)"],
+        "peopleId": "PPL_CHENOUA",
+        "mainRegion": "Mont Chenoua (région de Tipaza)",
+        "languages": ["Chenoua (tacenwit)"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Petit peuple amazigh de la côte algérienne. L'auto-appellation est \"Ičenwa\"."
+      },
+      {
+        "name": "Touaregs",
+        "selfAppellation": "Kel Tamasheq / Imuhagh",
+        "exonyms": [
+          "Touaregs (exonyme français)",
+          "« Berbère » (terme colonial",
+          "considéré problématique)"
+        ],
+        "peopleId": "PPL_TUAREG",
+        "mainRegion": "Sahara algérien (Ahaggar, Tassili n'Ajjer)",
+        "languages": ["Tamasheq (tamahaq)"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Le terme \"Touareg\" est un exonyme français. L'auto-appellation est \"Kel Tamasheq\" (ceux qui parlent tamasheq) ou \"Imuhagh\". Le terme \"Berbère\" est considéré comme problématique."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Arabe algérien",
+          "isoCode": "arq"
+        },
+        {
+          "name": "arabe standard",
+          "isoCode": "ara"
+        },
+        {
+          "name": "kabyle",
+          "isoCode": "kab"
+        },
+        {
+          "name": "chaoui",
+          "isoCode": "shy"
+        },
+        {
+          "name": "mozabite",
+          "isoCode": "mzb"
+        },
+        {
+          "name": "tamasheq",
+          "isoCode": "tmh"
+        },
+        {
+          "name": "français",
+          "isoCode": "fra"
+        }
+      ],
+      "culturalTraditions": "Musique chaâbi, raï, poésie arabe et amazighe, artisanat (bijoux, poterie, tissage), fêtes amazighes (Yennayer), architecture traditionnelle (ksour, maisons de Kabylie, villes du Mzab)",
+      "dominantReligions": "Islam sunnite (école malékite majoritaire), ibadisme (Mozabites), soufisme important",
+      "lifestyles": "Urbanisation croissante, agriculture (plaines), pastoralisme (montagnes, Sahara), commerce, industrie pétrolière et gazière",
+      "socialOrganization": "Structures familiales traditionnelles, systèmes d'autogestion communautaire (tajmaât en Kabylie), organisation tribale (Sahara), structures étatiques modernes",
+      "regionalRelations": "Relations avec le Maghreb (Maroc, Tunisie, Libye), échanges transsahariens, relations avec l'Europe, rôle dans l'Union africaine et la Ligue arabe"
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence humaine depuis la préhistoire (sites archéologiques, art rupestre du Tassili). Royaumes numides (Massinissa, Jugurtha), domination carthaginoise puis romaine, christianisation partielle.",
+      "middleAges": "Conquête arabe (VIIe-VIIIe siècles), islamisation progressive, dynasties berbères (Rustamides, Zirides, Hammadides, Zianides), résistance aux Fatimides et aux Almohades.",
+      "precolonial": "Régence d'Alger (1516-1830), État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes, commerce transsaharien.",
+      "colonization": "Conquête française (1830), résistance algérienne (Émir Abdelkader, révolte de Mokrani), colonisation de peuplement, développement de l'économie coloniale, mouvements nationalistes (XXe siècle).",
+      "independenceStruggle": "Guerre d'indépendance (1954-1962), Front de libération nationale (FLN), accords d'Évian (1962), indépendance (5 juillet 1962).",
+      "postIndependence": "République algérienne (1962), socialisme algérien, nationalisation des hydrocarbures, guerre civile (1991-2002), printemps arabe (2011), mouvement Hirak (2019), transition politique."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Algeria",
+      "Ethnologue – Languages of Algeria",
+      "Minority Rights Group – Amazigh in Algeria",
+      "CNRS – Berbères",
+      "Salem Chaker – travaux sur les Berbères",
+      "Encyclopaedia of Islam – Algeria",
+      "Joshua Project – Berber, Kabyle in Algeria",
+      "Joshua Project – Berber, Shawiya in Algeria",
+      "UNPO – Kabylia",
+      "Wikipedia – Algeria, Kabyle people, Chaoui people, Numidia",
+      "Recensements algériens"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Arabes d'Algérie",
+          "population": 31500000,
+          "percentageInCountry": 70,
+          "percentageInAfrica": 17.5,
+          "peopleId": "PPL_ARABES_AFRIQUE",
+          "region": "Toutes les régions",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Kabyles",
+          "population": 10000000,
+          "percentageInCountry": 22.2,
+          "percentageInAfrica": 5.6,
+          "peopleId": "PPL_KABYLE",
+          "region": "Kabylie (nord)",
+          "languageFamily": "FLG_BERBERE"
+        },
+        {
+          "name": "Chaouis",
+          "population": 2870000,
+          "percentageInCountry": 6.4,
+          "percentageInAfrica": 1.6,
+          "peopleId": "PPL_CHAOUI",
+          "region": "Massif de l'Aurès (est)",
+          "languageFamily": "FLG_BERBERE"
+        },
+        {
+          "name": "Mozabites",
+          "peopleId": "PPL_MO"
+        }
+      ]
+    }
+  }
+}

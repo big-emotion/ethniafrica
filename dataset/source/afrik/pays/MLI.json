@@ -1,0 +1,248 @@
+{
+  "id": "MLI",
+  "nameFr": "République du Mali",
+  "nameOfficial": "République du Mali",
+  "etymology": "Le nom \"Mali\" vient de l'empire du Mali (XIIIe-XVIe siècles), l'un des plus grands empires d'Afrique de l'Ouest. \"Mali\" signifie \"hippopotame\" en mandingue, ou \"lieu où vit le roi\" selon certaines interprétations. Le nom a été choisi lors de l'indépendance en référence à l'empire historique.",
+  "nameOriginActor": "Le nom vient de l'empire du Mali historique, fondé par Soundiata Keïta au XIIIe siècle. Le nom a été choisi lors de l'indépendance en 1960 pour honorer cet héritage historique.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de groupes proto-mandé, soninké, peuls, bozo sans nom unifié. Les empires régionaux (Ghana, Mali, Songhai) ont dominé la région.",
+      "middleAges": "IIIe-XIIIe siècles : Empire du Ghana (Wagadu), dominé par les Soninké. XIIIe-XVIe siècles : Empire du Mali (fondé par Soundiata Keïta), capitale Niani. XVe-XVIe siècles : Empire Songhai (Gao, Tombouctou, Djenné).",
+      "precolonial": "Empires du Ghana, du Mali et Songhai. Royaumes touaregs (Kel Adagh, Ifoghas, Tagelmoust). Royaumes bambara. Commerce transsaharien majeur.",
+      "colonization": "1892-1958 : Soudan français (AOF). Le territoire est appelé \"Soudan français\" par les colonisateurs français. 1959-1960 : Fédération du Mali (avec le Sénégal).",
+      "contemporary": "Indépendance en 1960 sous le nom de \"République du Mali\". Le nom \"Mali\" a été choisi en référence à l'empire historique du Mali."
+    },
+    "kingdoms": [
+      {
+        "name": "Empire du Ghana",
+        "period": "IIIe - XIIIe siècles",
+        "dominantPeoples": ["Soninké"],
+        "politicalCenters": ["Koumbi Saleh (capitale)"],
+        "historicalRole": "Premier grand empire d'Afrique de l'Ouest, réputé pour son commerce de l'or. Modèle politique et économique pour les empires suivants."
+      },
+      {
+        "name": "Empire du Mali",
+        "period": "XIIIe - XVIe siècles",
+        "dominantPeoples": ["Malinké", "Bambara"],
+        "politicalCenters": ["Niani (capitale)", "Kangaba"],
+        "historicalRole": "Un des plus grands empires d'Afrique de l'Ouest, fondé par Soundiata Keïta. Commerce transsaharien, diffusion de l'islam, centre culturel majeur (Tombouctou)."
+      },
+      {
+        "name": "Empire Songhai",
+        "period": "XVe - XVIe siècles",
+        "dominantPeoples": ["Songhai"],
+        "politicalCenters": ["Gao (capitale)", "Tombouctou", "Djenné"],
+        "historicalRole": "Empire puissant qui a succédé au Mali. Centre intellectuel et commercial majeur. Conquête marocaine en 1591."
+      },
+      {
+        "name": "Royaumes bambara",
+        "period": "XVIIe - XIXe siècles",
+        "dominantPeoples": ["Bambara"],
+        "politicalCenters": ["Ségou", "Kaarta"],
+        "historicalRole": "Royaumes bambara puissants qui ont résisté à l'expansion peule et touarègue."
+      },
+      {
+        "name": "Confédérations touarègues",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Touareg (Kel Tamasheq)"],
+        "politicalCenters": ["Ahaggar", "Azawagh", "Air", "Adagh"],
+        "historicalRole": "Confédérations nomades du Sahara, contrôle des routes transsahariennes."
+      },
+      {
+        "name": "Soudan français",
+        "period": "1892 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples maliens sous administration coloniale française"
+        ],
+        "politicalCenters": ["Bamako (capitale coloniale)"],
+        "historicalRole": "Colonie française intégrée à l'AOF. Résistance malienne et mouvements nationalistes."
+      },
+      {
+        "name": "République du Mali",
+        "period": "1960 - présent",
+        "dominantPeoples": ["Tous les peuples maliens"],
+        "politicalCenters": ["Bamako (capitale)"],
+        "historicalRole": "Indépendance en 1960. Histoire politique mouvementée avec plusieurs coups d'État. Conflits avec les Touaregs. Transition démocratique et défis de développement."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Bambara",
+        "selfAppellation": "Bamana",
+        "exonyms": ["Bambara (terme utilisé par les Européens)", "Bamana"],
+        "peopleId": "PPL_BAMBARA",
+        "mainRegion": "Centre (Bamako, Ségou)",
+        "languages": ["Bambara", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Bambara\" est neutre et accepté. L'auto-appellation \"Bamana\" est également utilisée."
+      },
+      {
+        "name": "Peul / Fulani",
+        "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+        "exonyms": [
+          "Peul (terme français)",
+          "Fulani (terme haoussa)",
+          "\"Fellata\" (terme haoussa",
+          "parfois péjoratif - éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "Macina, Mopti",
+        "languages": ["Pulaar", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "Le terme \"Fellata\" peut être péjoratif. L'auto-appellation \"Fulɓe\" est préférée. \"Peul\" et \"Fulani\" sont acceptés."
+      },
+      {
+        "name": "Dogon",
+        "selfAppellation": "Dogon",
+        "exonyms": ["Dogon (terme utilisé par les Européens)"],
+        "peopleId": "PPL_DOGON",
+        "mainRegion": "Plateau de Bandiagara",
+        "languages": ["Dogon", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Dogon\" est neutre et accepté."
+      },
+      {
+        "name": "Touareg",
+        "selfAppellation": "Kel Tamasheq / Imajaghan",
+        "exonyms": [
+          "Touareg (exonyme arabo-berbère",
+          "connotation historiquement ambiguë ; pas insultant mais marqué par les récits coloniaux)"
+        ],
+        "peopleId": "PPL_TUAREG",
+        "mainRegion": "Nord (Ahaggar, Azawagh, Air, Adagh)",
+        "languages": ["Tamasheq", "français", "arabe"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Le terme \"Touareg\" est un exonyme marqué par les récits coloniaux. L'auto-appellation \"Kel Tamasheq\" ou \"Imajaghan\" est préférée."
+      },
+      {
+        "name": "Soninké",
+        "selfAppellation": "Soninké",
+        "exonyms": [
+          "Soninké (terme utilisé par les Européens)",
+          "Sarakolé (terme alternatif)"
+        ],
+        "peopleId": "PPL_SONINKE",
+        "mainRegion": "Kayes",
+        "languages": ["Soninké", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Soninké\" est neutre et accepté. \"Sarakolé\" est une variante acceptée."
+      },
+      {
+        "name": "Songhai",
+        "selfAppellation": "Songhai",
+        "exonyms": ["Songhai (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SONGHAI",
+        "mainRegion": "Gao, Tombouctou, région du Moyen Niger",
+        "languages": ["Songhai", "français"],
+        "languageFamily": "FLG_NILOSAHARIENNE",
+        "appellationRemarks": "Le terme \"Songhai\" est neutre et accepté."
+      },
+      {
+        "name": "Malinké",
+        "selfAppellation": "Maninka / Mandinka",
+        "exonyms": [
+          "Malinké (terme français)",
+          "Mandinka (terme anglophone)",
+          "\"Mandingo\" (terme historique",
+          "parfois péjoratif - éviter)"
+        ],
+        "peopleId": "PPL_MALINKE",
+        "mainRegion": "Kangaba, Kita",
+        "languages": ["Malinké", "français"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "Le terme \"Mandingo\" peut être péjoratif. L'auto-appellation \"Maninka\" ou \"Mandinka\" est préférée. \"Malinké\" est accepté."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Musique traditionnelle (griot, kora), danse traditionnelle, poésie orale (épopée de Soundiata), artisanat (vannerie, poterie, tissage, cuir), architecture traditionnelle (mosquées de Djenné, Tombouctou), art rupestre dogon",
+      "dominantReligions": "Islam (sunnite majoritaire), croyances traditionnelles (syncrétisme), christianisme (minorité)",
+      "lifestyles": "Vie principalement rurale, agriculture (mil, sorgho, riz, coton), élevage (bovins, caprins, dromadaires), pêche (fleuve Niger), commerce transsaharien, nomadisme pastoral (Touaregs, Peuls)",
+      "socialOrganization": "Système de chefferies traditionnelles, structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des griots (gardiens de la tradition orale), confédérations touarègues (tawsit)",
+      "regionalRelations": "Relations historiques avec les peuples du Sénégal, de la Mauritanie, du Burkina Faso, du Niger, de la Guinée, de l'Algérie. Diaspora importante en France et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par des groupes proto-mandé, soninké, peuls, bozo. Développement des premiers royaumes et empires.",
+      "middleAges": "Empire du Ghana (IIIe-XIIIe siècles) : premier grand empire, commerce de l'or. Empire du Mali (XIIIe-XVIe siècles) : apogée sous Soundiata Keïta, centre culturel (Tombouctou). Empire Songhai (XVe-XVIe siècles) : succède au Mali, conquête marocaine en 1591.",
+      "precolonial": "Royaumes bambara (Ségou, Kaarta). Confédérations touarègues. Commerce transsaharien majeur. Résistance à l'expansion coloniale.",
+      "colonization": "1892 : Création du Soudan français. Résistance malienne (Samory Touré, etc.). Intégration à l'AOF. Développement de Bamako comme capitale administrative.",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. 1959-1960 : Fédération du Mali (avec le Sénégal). Indépendance en 1960. Modibo Keïta devient premier président.",
+      "postIndependence": "Première République (1960-1968) : présidence de Modibo Keïta, socialisme. Coup d'État de 1968 : régime militaire. Deuxième République (1992-2012) : transition démocratique. Coup d'État de 2012 : instabilité politique. Conflits avec les Touaregs. Transition démocratique en cours."
+    },
+    "sources": [
+      "CIA World Factbook – Mali",
+      "SIL Ethnologue – Languages of Mali",
+      "Recensements nationaux maliens",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples maliens",
+      "Études historiques sur les empires du Ghana, du Mali et Songhai"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Bambara",
+          "population": 7700000,
+          "percentageInCountry": 35,
+          "percentageInAfrica": 0.54,
+          "peopleId": "PPL_BAMBARA",
+          "region": "Centre (Bamako, Ségou)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Peul / Fulani",
+          "population": 3740000,
+          "percentageInCountry": 17,
+          "percentageInAfrica": 0.26,
+          "peopleId": "PPL_FULA",
+          "region": "Macina, Mopti",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Dogon",
+          "population": 1760000,
+          "percentageInCountry": 8,
+          "percentageInAfrica": 0.12,
+          "peopleId": "PPL_DOGON",
+          "region": "Plateau de Bandiagara",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Touareg",
+          "population": 1980000,
+          "percentageInCountry": 9,
+          "percentageInAfrica": 0.14,
+          "peopleId": "PPL_TUAREG",
+          "region": "Nord (Ahaggar, Azawagh, Air, Adagh)",
+          "languageFamily": "FLG_BERBERE"
+        },
+        {
+          "name": "Soninké",
+          "population": 1760000,
+          "percentageInCountry": 8,
+          "percentageInAfrica": 0.12,
+          "peopleId": "PPL_SONINKE",
+          "region": "Kayes",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Songhai",
+          "population": 1320000,
+          "percentageInCountry": 6,
+          "percentageInAfrica": 0.09,
+          "peopleId": "PPL_SONGHAI",
+          "region": "Gao, Tombouctou, région du Moyen Niger",
+          "languageFamily": "FLG_NILOSAHARIENNE"
+        },
+        {
+          "name": "Malinké",
+          "population": 1540000,
+          "percentageInCountry": 7,
+          "percentageInAfrica": 0.11,
+          "peopleId": "PPL_MALINKE",
+          "region": "Kangaba, Kita",
+          "languageFamily": "FLG_MANDE"
+        }
+      ]
+    }
+  }
+}

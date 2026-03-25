@@ -1,0 +1,39 @@
+{
+  "id": "PPL_MOFU",
+  "nameMain": "Mofu",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Mofu",
+      "selfAppellation": "Mofu / Mofu-Gudur (variante principale)",
+      "exonyms": [
+        "« Matakam » (ancien exonyme colonial impropre et péjoratif, utilisé par l’administration française ; rejeté aujourd’hui)"
+      ],
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "historicalRegion": "Montagnes du Mandara (Extrême-Nord Cameroun)",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": ["Mofu-Gudur", "Mofu-Duvangar", "Mofu-Meri", "Mofu-Mokyo"],
+    "origins": {},
+    "organization": {},
+    "languages": {
+      "mainLanguage": "Mofu-Gudur"
+    },
+    "culture": {
+      "source_0": "Agriculture en terrasse, élevage de chèvres.",
+      "source_1": "Rituels montagnards, cultes ancestraux.",
+      "source_2": "Fêtes liées aux saisons agricoles.",
+      "Artisanat": "poterie, vannerie, fabrication d’outils."
+    },
+    "historicalRole": {},
+    "demography": {
+      "source": "peuple_demographie_globale.csv"
+    },
+    "sources": [
+      "Ethnologue (mfg)",
+      "Études ethnographiques du massif Mandara",
+      "Archives Cameroun – Ministère de la Culture"
+    ]
+  }
+}

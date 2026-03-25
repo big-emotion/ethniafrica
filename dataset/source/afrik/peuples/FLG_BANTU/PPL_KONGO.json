@@ -1,0 +1,70 @@
+{
+  "id": "PPL_KONGO",
+  "nameMain": "Kongo",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["COD", "AGO", "COG", "GAB"],
+  "content": {
+    "appellations": {
+      "mainName": "Kongo",
+      "selfAppellation": "Bakongo",
+      "exonyms": ["Kongo (terme utilisé par les Européens), Bakongo"],
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou (Zone H)",
+      "historicalRegion": "COD, AGO, COG, GAB",
+      "currentCountries": ["COD", "AGO", "COG", "GAB"]
+    },
+    "ethnicities": [
+      "Kongo de RDC",
+      "Kongo d'Angola",
+      "Kongo du Congo",
+      "Kongo du Gabon"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kongo sont originaires de la COD, de l'AGO, du Congo et du Gabon. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H). Formation du royaume Kongo.",
+      "unificationsOrDivisions": "Formation du royaume Kongo. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Kongo). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Kikongo",
+      "vehicularRole": "Le kikongo est parlé par la majorité des Kongo. Le français, le portugais, le lingala et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies royales",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (initiation, fêtes de naissance)",
+      "source_3": "Cérémonies liées à l'agriculture",
+      "Symboles": "Symboles royaux kongo, symboles liés à l'agriculture, symboles culturels kongo, symboles chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage, sculpture)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora kongo dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 10000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Kikongo language (kon)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples bantous",
+      "Études historiques sur le royaume Kongo"
+    ]
+  }
+}

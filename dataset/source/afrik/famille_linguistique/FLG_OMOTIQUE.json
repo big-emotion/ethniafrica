@@ -1,0 +1,82 @@
+{
+  "id": "FLG_OMOTIQUE",
+  "nameFr": "Omotique",
+  "nameEn": "Omotic",
+  "content": {
+    "decolonialHeader": {
+      "selfAppellation": "Omotic",
+      "contemporaryUsage": " Ensemble de langues situées principalement au sud-ouest de l'Éthiopie, parlées par plusieurs dizaines de groupes agricoles dans la vallée de l'Omo et les régions environnantes. Reconnue comme une branche indépendante de la famille afro-asiatique depuis les travaux de Fleming (1969) et Bender (1975), bien que certains linguistes (notamment concernant les sous-groupes Mao et Aroid) remettent en question l'appartenance complète à l'afro-asiatique ou suggèrent des influences nilo-sahariennes.",
+      "historicalAppellations": "Omotic",
+      "originOfHistoricalTerm": " Le terme « Omotic » a été créé par le linguiste Harold C. Fleming en 1969 dans son œuvre « A Classification of the North Omotic Languages » présentée lors de la Première Conférence internationale sur les études éthiopiennes (Proceedings of the First International Conference on Ethiopian Studies). Le nom dérive du fleuve Omo en Éthiopie, région centrale de répartition de nombreuses langues concernées (vallée de l'Omo, sud-ouest de l'Éthiopie). La classification omotique comme branche distincte a été consolidée par M. Lionel Bender en 1971 puis en 1975 dans « Omotic: a new Afroasiatic language family » (University Museum, Southern Illinois University)."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Sud-ouest de l'Éthiopie (vallée de l'Omo, régions SNNPRS, zones Bench-Maji, Wolaytta, Gamo-Gofa, zones Mao à la frontière soudanaise). Enclaves dans les régions Oromia, Amhara, Benishangul-Gumuz. Présence limitée au Soudan (Blue Nile State) pour certaines langues Mao.",
+      "numberOfLanguages": 25,
+      "totalSpeakers": 8000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Wolaytta",
+        "peopleId": "PPL_WOLAYTTA"
+      },
+      {
+        "name": "Gamo",
+        "peopleId": "PPL_GAMO"
+      },
+      {
+        "name": "Ari",
+        "peopleId": "PPL_ARI"
+      },
+      {
+        "name": "Bench",
+        "peopleId": "PPL_BENCH"
+      },
+      {
+        "name": "Hamar",
+        "peopleId": "PPL_HAMAR"
+      },
+      {
+        "name": "Dizi",
+        "peopleId": "PPL_DIZI"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues tonales ou accentuelles, fortement suffixantes ; structure SOV (Sujet-Objet-Verbe) prédominante dans les langues Ometo, Bench, Dizi, etc. Morphologie mixte : certains traits agglutinants, d'autres plus fusionnels. Exemples concrets :",
+      "phonologicalFeatures": " Inventaire consonantique riche : généralement entre 20 et 30 phonèmes consonantiques. Présence de trois types de consonnes pour les plosives, fricatives, affriquées : voisées, non-voisées, éjectives. Implosives dans certaines langues du Sud Omotique (ex. /ɓ/, /ɗ/, /ɠ/). Rétroflexes dans certaines langues (ex. Sheko : /ɖ/). Consonnes glottalisées, emphatiques, traits de glottalité. Réduction phonémique comparée au reste de l'Afro-asiatique : mots plus courts, nombres de consonnes/voyelles réduits. Absence ou réduction des consonnes pharyngales (caractéristique parfois considérée comme innovation ou perte par rapport au modèle afro-asiatique classique), contrairement à la plupart des branches afro-asiatiques. Système vocalique : langues du Nord et Mao : 5 à 6 voyelles phonémiques de base ; langues du Sud : systèmes plus étendus, distinctions de longueur phonémique (voyelles longs vs courts). Distinctions de hauteur et longueur vocaliques dans certaines langues. Système tonal complexe : toutes les langues omotiques bien documentées sont tonales. Usage fréquent de tons pour distinguer le sens (ton haut / bas), notamment dans Bench (six tons) ; certaines langues utilisent un accent de hauteur plutôt qu'un système tonal complet (ex. Koyra). Dizi a trois tons phonémiques et des tons contours. Dans Aari et Ganza, système accent tonal où chaque mot porte exactement un ton haut. Le ton joue un rôle fonctionnel important, notamment pour distinguer des mots monosyllabiques.",
+      "relationsWithNeighbors": " Contacts anciens avec les langues couchitiques et sémitiques éthiopiennes. Emprunts lexicaux : certaines langues omotiques ont emprunté du lexique depuis les langues Cushitic ou Nilo-Saharan dans les domaines de contact religieux, agricole, pastoral, etc. Par exemple, partage avec Cushitic du vocabulaire lié à l'apiculture selon Blench (2006) : Omotic partage vocabulaire pour miel avec Cushitic mais pas pour bétail, suggérant une séparation très ancienne avant le développement du pastoralisme. Influence culturelle/linguistique réciproque avec les langues Nilotiques et Nilo-Sahariennes dans certaines zones de contact (phonologie, lexique), surtout pour Aroid / South Omotic : emprunts lexicaux, traits phonologiques de contact. Certaines langues Mao ont été fortement influencées par des langues Koman du Nilo-Saharien. Contact intense avec langues Nilo-Sahariennes chez Mao et Aroid, qui peuvent montrer substrat ou convergence. Zones de contact linguistique : Omotic entouré par Cushitic à l'est, nord et sud-est, et par Nilo-Saharan à l'ouest, ce qui favorise les échanges linguistiques (lexique, syntaxe). Contact le long des routes de migration Cushitic → Omotic, et aux frontières avec Nilo-Saharien (Sud, Sud-est) surtout pour Aroid.",
+      "keyInnovations": " - Flexion verbale complexe avec catégories temps/aspect, négation, formes dépendantes vs indépendantes."
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " Classification linguistique : Harold C. Fleming (1969) a proposé que ce que l'on appelait alors « West Cushitic » soit reclassé comme une branche indépendante de l'Afro-asiatique, sous le nom d'Omotic, dans son œuvre « A Classification of the North Omotic Languages » (Proceedings of the First International Conference on Ethiopian Studies). M. Lionel Bender (1971, 1975) a poursuivi ce travail dans « Omotic: a new Afroasiatic language family » (University Museum, Southern Illinois University), affirmant que les langues omotiques forment une branche indépendante du phylum afro-asiatique. Azeb Amha (2017) dans « The Omotic Language Family » (The Cambridge Handbook of Linguistic Typology, Cambridge University Press) présente Omotic comme une branche indépendante. Théories alternatives : Certains linguistes (ex. Zaborski, certains modernistes, Güldemann 2018) suggèrent de reclasser certaines langues Omotiques (Mao, Aroid) comme non-Afro-asiatiques ou de les exclure de la cohésion interne du groupe, ou proposent qu'elles soient fortement influencées ou même issues de langues Nilo-Sahariennes (théorie de Yigezu 2013). Certains linguistes remettent en question l'appartenance même de certaines langues omotiques à la famille afro-asiatique, suggérant que certaines pourraient être plus proches de langues nilo-sahariennes ou mixtes. Théorie génétique : Études génétiques récentes (Nature Communications, 2021) montrent que les groupes Omotiques sont génétiquement distincts bien que proches de locuteurs afro-asiatiques, avec des similarités qui reflètent à la fois l'histoire linguistique et les flux culturels/génétiques locaux. Les populations Aari présentent une continuité génétique ancienne avec l'hominidé de Mota (grotte de Mota, ~4500 ans BP) qui s'associe plus étroitement aux populations omotiques modernes qu'aux groupes eurasiatiques, fournissant des preuves d'une autochtonie ancienne.",
+      "emergencePeriod": " (1) Émergence historique de la famille Omotique : Les langues proto-Omotiques auraient divergé avant le développement du pastoralisme dans la corne de l'Afrique. Selon Blažek (2008) dans « Lexicostatistical Comparison of Omotic Languages » (John Benjamins Publishing Company), la séparation Nord/Sud Omotique pourrait remonter au début du 5e millénaire av. J.-C. (≈ 5000–4000 av. J.-C.). Certains indices linguistiques (vocabulaire du miel partagé avec Cushitic, mais pas de termes de bétail) suggèrent séparation très ancienne, probablement plusieurs millénaires avant notre ère. Les locuteurs omotiques sont autochtones du sud-ouest de l'Éthiopie, dans la vallée de l'Omo et ses environs, depuis plusieurs millénaires. Des preuves génétiques montrent des adaptations locales depuis longtemps. (2) Date de classification académique : Le terme « Omotic » a été introduit en 1969 par Fleming (dans Proceedings of the First International Conference on Ethiopian Studies). La classification a été consolidée par Bender en 1971 puis en 1975 dans « Omotic: a new Afroasiatic language family ». Les travaux comparatifs sérieux se multiplient depuis les années 1970-1980, avec Bender et d'autres. Adoption générale dans les années 1970–1980.",
+      "diffusion": " Théorie 1 (dominante) : Omotic comme branche autonome de l'Afroasiatique — vue majoritaire actuelle (Fleming 1969, Bender 1975, Amha 2017). Expansion depuis les zones du Sud-Ouest de l'Éthiopie, autour du fleuve Omo, vers les zones environnantes, densément peuplées, générations démographiques anciennes. Théorie 2 : Placement classique comme « West Cushitic » jusqu'aux années 1960 (Greenberg 1963, Moreno 1940), puis repositionnement comme branche indépendante de l'Afro-asiatique (Fleming, Bender). Théorie 3 : Hypothèse, pour certaines langues (Mao, Aroid), d'un lien plus fort avec langues non afro-asiatiques ou d'une classification incertaine, parfois associées au Nilo-Saharien ou isolées (Yigezu 2013, Güldemann 2018). Fragmentation ancienne en plusieurs îlots linguistiques, certaines langues maintenant isolées (e.g. Dizi entouré de langues Surmic), suggérant une distribution antérieure plus large. Théorie 4 : Séparation précoce de l'Omotic du reste de l'Afro-asiatique, avant l'expansion pastorale, d'où des différences dans le vocabulaire de l'élevage etc.",
+      "contactZones": " Région sud-ouest de l'Éthiopie : État des Nations, Nationalités et Peuples du Sud (SNNPRS), zones Omo River, Bench Maji, zones Gamo, Wolaytta, etc. Enclaves dans les régions Oromia, Amhara, Benishangul-Gumuz. Zones Mao autour de Begi (Mirab Welega), influence des langues Oromo et Koman. Régions sud où les langues Cushitic et Nilo-Sahariennes se rencontrent. Contact le long des routes de migration Cushitic → Omotic, et aux frontières avec Nilo-Saharien (Sud, Sud-est) surtout pour Aroid. Présence limitée au Soudan (États du Nil Bleu / Blue Nile State) pour certaines langues Mao (ex. Ganza, Bambassi). Routes historiques : contacts via routes de commerce est-ouest et nord-sud passant par le bassin de l'Omo, les haut-plateaux de Kaffa, etc. Forts échanges avec les peuples couchitiques. Influence oromo dans certaines zones. Contacts interethniques via marchés régionaux."
+    },
+    "distribution": {
+      "totalSpeakers": 8000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Fleming, Harold C. (1969) – « A Classification of the North Omotic Languages ». In: Proceedings of the First International Conference on Ethiopian Studies. Michigan State University Press.",
+      "Bender, M. Lionel (1971) – « Reconstructing Omotic phonology and classification ». Article fondateur.",
+      "Bender, M. Lionel (1975) – *Omotic: a new Afroasiatic language family*. University Museum, Southern Illinois University.",
+      "Bender, M. Lionel (2000) – *Comparative Morphology of the Omotic Languages*.",
+      "Amha, Azeb (2017) – « The Omotic Language Family ». In: Aikhenvald, Alexandra Y. & Dixon, R. M. W. (éds.), *The Cambridge Handbook of Linguistic Typology*, pp. 815-853. Cambridge University Press.",
+      "Blažek, Václav (2008) – *Lexicostatistical Comparison of Omotic Languages*. John Benjamins Publishing Company.",
+      "Blench, Roger (2006) – *Archaeology, Language, and the African Past*. AltaMira Press.",
+      "Rapold, Christoph (2006) – « Gender flip and person marking in Benchnon (North Omotic) ». *Glossa: a journal of general linguistics*. https://www.glossa-journal.org/article/10.5334/gjgl.1191/",
+      "Pagani, Luca et al. (2021) – « Evidence of the interplay of genetics and culture in Ethiopia ». *Nature Communications*. https://www.nature.com/articles/s41467-021-23712-w",
+      "Gallego Romero, Irene et al. (2015) – « Novel genomic signals of recent selection in an Ethiopian population » (Wolaita). *European Journal of Human Genetics*. https://www.nature.com/articles/ejhg2014233",
+      "Wolff, H. Ekkehard – « Omotic languages | Ethiopia, Classification & Characteristics ». *Britannica* (mis à jour 2025). https://www.britannica.com/topic/Omotic-languages",
+      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press.",
+      "Glottolog – Omotic branch. https://glottolog.org/resource/languoid/id/omot1239",
+      "SIL Ethnologue – Omotic languages. https://www.ethnologue.com/subgroups/omotic",
+      "UNESCO – Atlas des langues en danger.",
+      "Recensement éthiopien 2007 – Central Statistical Agency of Ethiopia.",
+      "Recensement éthiopien 2010 – Central Statistical Agency of Ethiopia.",
+      "ONU/UNFPA – Estimations démographiques Éthiopie 2025.",
+      "CIA World Factbook – Éthiopie 2025."
+    ]
+  }
+}

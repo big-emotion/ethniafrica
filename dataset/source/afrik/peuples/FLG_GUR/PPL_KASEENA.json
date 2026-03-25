@@ -1,0 +1,23 @@
+{
+  "id": "PPL_KASEENA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Kassena / Kasena",
+      "linguisticFamily": "FLG_GUR",
+      "historicalRegion": "Burkina Faso (Tiébélé), GHA (Upper East)",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (xsm)", "Tiébélé Cultural Documentation"]
+  }
+}
