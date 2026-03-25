@@ -1,5 +1,5 @@
 # INSTRUCTIONS DU PROJET AFRIK
-# VERSION 2.0 — Document opérationnel pour IA et développeurs
+# VERSION 3.0 — Document opérationnel pour IA et développeurs
 
 
 ========================================================
@@ -125,8 +125,15 @@ Les CSV DOIVENT utiliser les mêmes identifiants.
 
 L’IA doit :
 
-1. Utiliser les chiffres ONU / UNFPA pour les populations nationales (année 2025).  
-2. Utiliser les % des peuples par pays des sources fiables (CIA, SIL, UNESCO, recherches anthropologiques).  
+1. Utiliser les chiffres ONU (WPP) / UNFPA pour les populations nationales (année 2025).  
+2. Utiliser les % des peuples par pays des sources fiables :  
+   - SIL Ethnologue, Glottolog, UNESCO  
+   - Banque Mondiale Open Data (remplacement CIA Factbook)  
+   - Bureaux nationaux de recensement  
+   - Recherches anthropologiques (Vansina, Ehret, Hiernaux, CODESRIA, AJOL)  
+   ⚠️ NE PLUS utiliser CIA World Factbook (hors service depuis le 4 févr. 2026).  
+      Le snapshot Mozilla JSON (CC0, janv. 2026) peut être utilisé comme référence  
+      historique ponctuelle, jamais comme source vivante.  
 3. La somme des peuples d'un pays = EXACTEMENT 100 %.  
 4. Remplir les CSV correspondants :
 
@@ -252,5 +259,5 @@ CSV :
 
 
 ========================================================
-FIN DU DOCUMENT — INSTRUCTIONS_AFRIK.txt (VERSION 2.0)
+FIN DU DOCUMENT — INSTRUCTIONS_AFRIK.txt (VERSION 3.0)
 ========================================================
