@@ -3,7 +3,7 @@
 - Auto-appellation : Imazighen n Arrif
 - Appellations historiques :
   - « Berbères du Rif » (ancien terme européen)
-- Famille linguistique : Afro-asiatique – Berbère (Amazigh)
+- Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
 - Région historique : Rif (Nord du Maroc)
 - ID peuple : PPL_RIFAIN
 

@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Ga
 - Auto-appellation : Gã / Ga
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Ga-Dangme)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Ga-Dangme) (FLG_BENOUECONGO)
 - Région historique : Ghana (Grande Accra)
 - Identifiant peuple : PPL_GA
 

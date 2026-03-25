@@ -2,7 +2,7 @@
 - Nom principal : Sénoufo
 - Auto-appellation : Senufo / Syénfo
 - Appellations historiques : Sénoufo (forme française), Syenfo
-- Famille linguistique : Niger-Congo – Gur (élément Gur dans le cadre AFRIK)
+- Famille linguistique : Niger-Congo – Gur (élément Gur dans le cadre AFRIK) (FLG_GUR)
 - Région historique : Côte d’Ivoire, MLI, BFA
 - Identifiant peuple : PPL_SENUFO
 

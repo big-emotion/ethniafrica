@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Kuteb
 - Auto-appellation : Kuteb / Kutep
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Jukunöide)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Jukunöide) (FLG_BENOUECONGO)
 - Région historique : Nigeria (Taraba State)
 - Identifiant peuple : PPL_KUTAEB
 

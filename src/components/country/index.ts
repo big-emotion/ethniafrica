@@ -6,4 +6,5 @@ export { PeoplesSection } from "./PeoplesSection";
 export { KingdomsSection } from "./KingdomsSection";
 export { LanguagesSection } from "./LanguagesSection";
 export { CultureGrid } from "./CultureGrid";
+export { HistoricalFactsSection } from "./HistoricalFactsSection";
 export { SourcesFooter } from "./SourcesFooter";

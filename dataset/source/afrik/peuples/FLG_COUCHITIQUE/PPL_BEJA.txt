@@ -2,7 +2,7 @@
 - Nom principal : Beja
 - Auto-appellation : Bidhaawyeet / Hadendoa
 - Exonymes historiques : « Bedja » (forme européenne), « Blemmyes » (Antiquité)
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe : Couchitique septentrional
 - Région historique : SDN, ERI, EGY
 - ID : PPL_BEJA

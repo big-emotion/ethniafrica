@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Talom / Talomsi
 - Auto-appellation : Talomsi
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région historique : Burkina Faso
 - Identifiant peuple : PPL_TAAL
 

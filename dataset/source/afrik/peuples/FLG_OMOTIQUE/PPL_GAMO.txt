@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Gamo
 - Auto-appellation : Gamo
-- Famille linguistique : Afro-asiatique – Omotique
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe : Omotique nord
 - Région : Gamo Zone (Éthiopie)
 - ID peuple : PPL_GAMO

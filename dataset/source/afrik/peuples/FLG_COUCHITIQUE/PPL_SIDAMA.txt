@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Sidama
 - Auto-appellation : Sidaama
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe : Couchitique oriental
 - Région historique : Sidama (Éthiopie sud)
 - Pays actuels : ETH

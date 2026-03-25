@@ -3,7 +3,7 @@
 - Auto-appellation : Banyun / Bañun
 - Appellations historiques :
   - « Banhun » (orthographes coloniales)
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : Casamance, GMB
 - Identifiant : PPL_BAINOUK
 

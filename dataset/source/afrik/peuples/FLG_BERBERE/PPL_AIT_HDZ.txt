@@ -2,7 +2,7 @@
 - Nom principal : Aït Yafelman / Aït Ouirra (groupe confédéré)
 - Auto-appellation : Ayt Yeflman, Ayt Wrirra
 - Appellations historiques : groupements masmouda / sanhaja selon zones
-- Famille linguistique : Afro-asiatique – Berbère (Amazigh)
+- Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
 - Région : Moyen Atlas et Haut Atlas (Maroc)
 - ID : PPL_AIT_HDZ
 

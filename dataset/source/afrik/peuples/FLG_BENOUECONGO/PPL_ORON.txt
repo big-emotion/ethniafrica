@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Oron
 - Auto-appellation : Oron / Oro
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Cross-River / Ibibioïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Cross-River / Ibibioïde) (FLG_BENOUECONGO)
 - Région historique : Nigeria (Akwa Ibom State)
 - Identifiant peuple : PPL_ORON
 

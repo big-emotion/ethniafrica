@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Adja
 - Auto-appellation : Adja / Adyá
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_BENOUECONGO)
 - Région historique : TGO, BEN
 - Identifiant peuple : PPL_ADJA
 

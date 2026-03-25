@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Bwa / Bwaba
 - Auto-appellation : Bwa
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région : Burkina Faso (Boucle du Mouhoun)
 - Identifiant : PPL_BWABA
 

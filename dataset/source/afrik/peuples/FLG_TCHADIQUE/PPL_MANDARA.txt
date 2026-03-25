@@ -2,7 +2,7 @@
 - Nom principal : Mandara
 - Auto-appellation : Wandala
 - Appellations historiques : « Mandara » (terme arabe et colonial)
-- Famille linguistique : Afro-asiatique – Tchadique
+- Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
 - Région historique : Montagnes du Mandara (Cameroun / Nigeria)
 - Pays actuels : CMR, NGA
 - Identifiant peuple : PPL_MANDARA

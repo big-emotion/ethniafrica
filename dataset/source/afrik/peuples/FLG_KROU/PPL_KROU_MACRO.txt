@@ -4,7 +4,7 @@
 - Appellations historiques :
   - « Kru » (forme large)
   - « Krou » (français)
-- Famille linguistique : Niger-Congo – Krou
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
 - Région : Côte d’Ivoire, LBR
 - Identifiant : PPL_KROU_MACRO
 

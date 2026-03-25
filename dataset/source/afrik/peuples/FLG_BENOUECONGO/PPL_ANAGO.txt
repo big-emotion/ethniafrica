@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Anago
 - Auto-appellation : Anagó / Nago
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Yorubaïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Yorubaïde) (FLG_BENOUECONGO)
 - Région historique : Bénin (Porto-Novo), TGO
 - Identifiant peuple : PPL_ANAGO
 

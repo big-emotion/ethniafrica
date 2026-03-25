@@ -2,7 +2,7 @@
 - Nom principal : Harari
 - Auto-appellation : ሐረሪ / Harari ; parfois Adare
 - Appellations historiques : « Adare » (ancien exonyme local, non péjoratif)
-- Famille linguistique : Afro-asiatique – Sémitique éthiopien
+- Famille linguistique : Afro-asiatique – Sémitique éthiopien (FLG_SEMITIQUE)
 - Groupe ethno-linguistique : Sémitique du Sud
 - Région historique : Ville historique de Harar
 - Pays actuels : ETH

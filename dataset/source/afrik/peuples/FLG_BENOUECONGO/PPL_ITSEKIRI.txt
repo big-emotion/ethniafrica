@@ -3,7 +3,7 @@
 - Auto-appellation : Itsekiri / Isekiri
 - Appellations historiques : 
   - « Itsekhiri » (ancienne orthographe)
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Yorubaïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Yorubaïde) (FLG_BENOUECONGO)
 - Région historique : Nigeria (État du Delta, Warri)
 - Identifiant peuple : PPL_ITSEKIRI
 

@@ -2,7 +2,7 @@
 - Nom principal : Soninké
 - Auto-appellation : Soninke / Sooninke
 - Exonymes historiques : Sarakolé (terme utilisé mais perçu comme extérieur ; non péjoratif mais moins préféré)
-- Famille linguistique : Niger-Congo – Mandé
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
 - Région historique : MRT, MLI, SEN
 - Identifiant : PPL_SONINKE
 

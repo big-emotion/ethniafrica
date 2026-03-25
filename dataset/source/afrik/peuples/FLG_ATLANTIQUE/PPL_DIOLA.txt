@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Diola / Jola
 - Auto-appellation : Joola / Ajamat
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : Casamance (Sénégal), GMB, GIN-Bissau
 - Identifiant : PPL_DIOLA
 

@@ -127,6 +127,7 @@ function parseSectionContent(
   // Default: parse as key-value pairs
   let currentKey = "";
   let currentValue = "";
+  let sourceCounter = 0;
 
   for (const line of lines) {
     const trimmedLine = line.trim();
@@ -136,7 +137,7 @@ function parseSectionContent(
       continue;
     }
 
-    // Check if this is a key-value line (starts with -)
+    // Check if this is a key-value line (starts with - and has colon)
     if (trimmedLine.startsWith("-") && trimmedLine.includes(":")) {
       // Save previous key-value if exists
       if (currentKey) {
@@ -147,6 +148,18 @@ function parseSectionContent(
       const colonIndex = trimmedLine.indexOf(":");
       currentKey = trimmedLine.slice(1, colonIndex).trim();
       currentValue = trimmedLine.slice(colonIndex + 1).trim();
+    } else if (trimmedLine.startsWith("-")) {
+      // Standalone line (no colon) — treat as source entry
+      if (currentKey) {
+        result[currentKey] = currentValue.trim();
+        currentKey = "";
+        currentValue = "";
+      }
+      const entryValue = trimmedLine.slice(1).trim();
+      if (entryValue) {
+        result[`source_${sourceCounter}`] = entryValue;
+        sourceCounter++;
+      }
     } else if (currentKey) {
       // Continuation of previous value (multiline)
       currentValue += " " + trimmedLine;
@@ -411,7 +424,8 @@ export function extractRelations(
     | "peoples"
     | "languageFamily"
     | "languages"
-    | "majorPeoples"
+    | "majorPeoples",
+  filePath?: string
 ): string[] | string {
   switch (type) {
     case "countries": {
@@ -444,7 +458,15 @@ export function extractRelations(
       // Extract FLG_ identifier (single value)
       const pattern = /FLG_[A-Z_]+/;
       const match = content.match(pattern);
-      return match ? match[0] : "";
+      if (match) return match[0];
+
+      // Fallback: infer FLG_ from parent directory in filePath
+      if (filePath) {
+        const pathMatch = filePath.match(/FLG_[A-Z_]+/);
+        if (pathMatch) return pathMatch[0];
+      }
+
+      return "";
     }
 
     case "languages": {

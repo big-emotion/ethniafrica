@@ -16,6 +16,7 @@ import {
   transformLanguages,
   transformCulture,
   transformSources,
+  transformHistoricalFacts,
   transformCountryData,
 } from "../countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
@@ -350,6 +351,48 @@ describe("transformEtymology", () => {
   it("returns undefined for empty etymology", () => {
     expect(transformEtymology(undefined)).toBeUndefined();
   });
+
+  it("returns rawText fallback when no structured pattern matches", () => {
+    const raw =
+      "The country name derives from an ancient geographical term with no clear linguistic origin.";
+    const result = transformEtymology(raw);
+    expect(result).toBeDefined();
+    expect(result!.variant).toBe("single");
+    expect(result!.rawText).toBe(raw);
+    expect(result!.words).toHaveLength(1);
+  });
+
+  it("handles curly/smart quotes in split pattern", () => {
+    const text =
+      "\u201CBurkina\u201D vient du moor\u00E9 et signifie \u201Cint\u00E8gres\u201D, \u201CFaso\u201D vient du dioula et signifie \u201Cpays\u201D";
+    const result = transformEtymology(text);
+    expect(result).toBeDefined();
+    expect(result!.variant).toBe("split");
+    expect(result!.words).toHaveLength(2);
+    expect(result!.words[0].word).toBe("Burkina");
+    expect(result!.words[1].word).toBe("Faso");
+  });
+
+  it("handles guillemets in single pattern", () => {
+    const text =
+      "\u00ABZimbabwe\u00BB vient du shona et signifie \u00ABmaisons de pierre\u00BB";
+    const result = transformEtymology(text);
+    expect(result).toBeDefined();
+    expect(result!.words[0].word).toBe("Zimbabwe");
+  });
+
+  it("never returns undefined when etymology text exists", () => {
+    const oddTexts = [
+      "An unknown origin for this name.",
+      "Le nom provient de sources multiples non identifiées.",
+      "Combination of local words meaning river and mountain.",
+    ];
+    for (const text of oddTexts) {
+      const result = transformEtymology(text);
+      expect(result).toBeDefined();
+      expect(result!.rawText).toBe(text);
+    }
+  });
 });
 
 describe("transformOrigin", () => {
@@ -570,6 +613,46 @@ describe("transformSources", () => {
   });
 });
 
+describe("transformHistoricalFacts", () => {
+  it("transforms all historical periods", () => {
+    const result = transformHistoricalFacts({
+      ancientPeriods:
+        "Grandes migrations bantoues (2000 av. J.-C. - 500 apr. J.-C.)",
+      middleAges: "Développement des royaumes médiévaux",
+      precolonial: "Expansion des empires précoloniaux",
+      colonization: "Colonisation européenne à partir du XIXe siècle",
+      independenceStruggle: "Mouvements nationalistes des années 1950-1960",
+      postIndependence: "Construction nationale et développement",
+    });
+
+    expect(result).toBeDefined();
+    expect(result!.periods).toHaveLength(6);
+    expect(result!.periods[0].label).toBe("Périodes anciennes");
+    expect(result!.periods[0].content).toContain("migrations bantoues");
+    expect(result!.periods[5].label).toBe("Période post-indépendance");
+  });
+
+  it("skips empty periods", () => {
+    const result = transformHistoricalFacts({
+      colonization: "Colonisation française 1880-1960",
+      postIndependence: "Indépendance en 1960",
+    });
+
+    expect(result).toBeDefined();
+    expect(result!.periods).toHaveLength(2);
+    expect(result!.periods[0].label).toBe("Colonisation");
+    expect(result!.periods[1].label).toBe("Période post-indépendance");
+  });
+
+  it("returns undefined when no historical facts", () => {
+    expect(transformHistoricalFacts(undefined)).toBeUndefined();
+  });
+
+  it("returns undefined when all fields are empty", () => {
+    expect(transformHistoricalFacts({})).toBeUndefined();
+  });
+});
+
 describe("transformCountryData", () => {
   it("produces complete page data for BFA", () => {
     const result = transformCountryData(bfaCountry);
@@ -582,5 +665,18 @@ describe("transformCountryData", () => {
     expect(result.languages.bubbles.length).toBeGreaterThan(0);
     expect(result.culture.items).toHaveLength(4);
     expect(result.sources).toBeTruthy();
+  });
+
+  it("includes historicalFacts when present on country", () => {
+    const countryWithFacts: CountryDetail = {
+      ...bfaCountry,
+      historicalFacts: {
+        colonization: "Colonisation française 1896-1960",
+        postIndependence: "Indépendance le 5 août 1960",
+      },
+    };
+    const result = transformCountryData(countryWithFacts);
+    expect(result.historicalFacts).toBeDefined();
+    expect(result.historicalFacts!.periods).toHaveLength(2);
   });
 });

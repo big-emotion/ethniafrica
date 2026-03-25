@@ -2,7 +2,7 @@
 - Nom principal : Bilen
 - Auto-appellation : Bilen / Bogos
 - Exonymes historiques : « Bogos » (terme utilisé par les colonisateurs italiens ; aujourd’hui perçu comme extérieur)
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe : Couchitique central
 - Région historique : Érythrée (Keren et Sahel)
 - Pays actuels : ERI

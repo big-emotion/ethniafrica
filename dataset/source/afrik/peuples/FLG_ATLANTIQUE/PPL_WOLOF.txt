@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Wolof
 - Auto-appellation : Wolof
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : Sénégal (Cayor, Baol), GMB, MRT
 - Identifiant : PPL_WOLOF
 

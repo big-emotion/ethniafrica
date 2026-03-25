@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Dagomba / Dagbamba
 - Auto-appellation : Dagbamba
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région : Ghana (Nord)
 - Identifiant : PPL_DAGOMBA
 

@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Yalunka
 - Auto-appellation : Yalunka / Jalunga
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : Guinée (Fouta-Djallon), SLE
 - Identifiant : PPL_YALUNKA
 

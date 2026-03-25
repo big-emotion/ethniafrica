@@ -5,7 +5,7 @@
 - Pourquoi l’exonyme est problématique :
   - association erronée à un autre groupe
   - classification coloniale qui nie l’identité propre des Qemant
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe : Couchitique central
 - Région historique : Nord-Ouest Éthiopie (Gondar)
 - Pays actuels : ETH

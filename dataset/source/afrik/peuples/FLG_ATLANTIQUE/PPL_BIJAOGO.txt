@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Bijogo
 - Auto-appellation : Bidyogo / Bijagó
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : Archipel des Bijagos (Guinée-Bissau)
 - Identifiant : PPL_BIJAOGO
 

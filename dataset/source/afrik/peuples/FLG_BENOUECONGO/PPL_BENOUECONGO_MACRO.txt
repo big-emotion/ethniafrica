@@ -7,7 +7,7 @@
 - Pourquoi ces termes posent problème :
   - regroupements trop larges ou non scientifiquement cohérents
   - héritages de classifications coloniales
-- Famille linguistique : Niger-Congo – Bénoué-Congo
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
 - Région : NGA, BEN, TGO, GHA, CMR
 - Identifiant peuple : PPL_BENOUECONGO_MACRO
 

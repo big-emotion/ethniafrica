@@ -3,7 +3,7 @@
 - Auto-appellation : Wè
 - Exonymes historiques :
   - Guéré (terme ivoirien français, accepté mais extérieur)
-- Famille linguistique : Niger-Congo – Krou
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
 - Région historique : Ouest ivoirien (Duékoué, Guiglo), LBR
 - Identifiant : PPL_GUERE
 

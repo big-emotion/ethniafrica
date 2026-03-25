@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal du peuple : Basketo
 - Auto-appellation : Basketo / Basketto
-- Famille linguistique : Afro-asiatique – Omotique
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe : Omotique nord
 - Région : Basketo Zone (Éthiopie)
 - ID peuple : PPL_BASKETO

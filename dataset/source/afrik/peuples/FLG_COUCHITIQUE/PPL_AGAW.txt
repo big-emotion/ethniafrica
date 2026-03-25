@@ -2,7 +2,7 @@
 - Nom principal : Agaw
 - Auto-appellation : Agäw / Agew
 - Appellations historiques : parfois « Agew », forme ancienne non péjorative
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe : Couchitique central
 - Région historique : Amhara, Tigray, Lasta (Éthiopie)
 - ID : PPL_AGAW

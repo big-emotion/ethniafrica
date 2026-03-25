@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Koorete
 - Auto-appellation : Koorete / Koreta
-- Famille linguistique : Afro-asiatique – Omotique
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe : Omotique sud
 - Région historique : Région du Sud (South Ethiopia)
 - Pays actuels : ETH

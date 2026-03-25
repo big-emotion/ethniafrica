@@ -2,7 +2,7 @@
 - Nom principal : Kafa
 - Auto-appellation : Kafficho / Kaafi
 - Exonymes historiques : « Kaffa » (forme européenne ancienne) ; pas péjoratif mais extérieur
-- Famille linguistique : Afro-asiatique – Omotique
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe : Omotique sud
 - Région historique : Kaffa Zone (Éthiopie), hauteurs du sud-ouest
 - Pays actuels : ETH

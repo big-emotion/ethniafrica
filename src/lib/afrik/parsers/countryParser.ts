@@ -196,6 +196,14 @@ function parseDemographicsContent(content: string): DemographicsSection {
       if (!isNaN(pct)) entry.percentageInCountry = pct;
     }
 
+    const pctAfricaMatch = blockContent.match(
+      /Pourcentage en Afrique\s*:\s*(\d+(?:[.,]\d+)?)%/
+    );
+    if (pctAfricaMatch) {
+      const pctAfrica = parseFloat(pctAfricaMatch[1].replace(",", "."));
+      if (!isNaN(pctAfrica)) entry.percentageInAfrica = pctAfrica;
+    }
+
     const idMatch = blockContent.match(/PPL_[A-Z_]+/);
     if (idMatch) entry.peopleId = idMatch[0] as PeopleId;
 

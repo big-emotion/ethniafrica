@@ -129,4 +129,81 @@ describe("AFRIK Parser - Section Parsing", () => {
       expect(() => parseSections(content)).not.toThrow();
     });
   });
+
+  // Fix 2 + Fix 3: Sources parsing without colon
+  describe("parseSectionContent - source lines without colon", () => {
+    it("should parse source lines using en-dash without colon", () => {
+      const content = `
+# 7. Sources
+- CIA World Factbook – Zimbabwe
+- ONU – World Population Prospects 2025
+`;
+
+      const result = parseSection(content, "7. Sources");
+      expect(result).toBeDefined();
+      const values = Object.values(result!);
+      expect(values).toContain("CIA World Factbook – Zimbabwe");
+      expect(values).toContain("ONU – World Population Prospects 2025");
+    });
+
+    it("should parse source lines with plain text (no colon, no dash)", () => {
+      const content = `
+# 8. Sources
+- SIL Ethnologue
+- Glottolog
+`;
+
+      const result = parseSection(content, "8. Sources");
+      expect(result).toBeDefined();
+      const values = Object.values(result!);
+      expect(values).toContain("SIL Ethnologue");
+      expect(values).toContain("Glottolog");
+    });
+
+    it("should mix key-value lines and standalone source lines", () => {
+      const content = `
+# 7. Sources
+- Auteur : UNESCO
+- CIA World Factbook – Zimbabwe
+- Source principale : ONU
+`;
+
+      const result = parseSection(content, "7. Sources");
+      expect(result).toBeDefined();
+      expect(result!["Auteur"]).toBe("UNESCO");
+      expect(result!["Source principale"]).toBe("ONU");
+      // The standalone line should also be present
+      const values = Object.values(result!);
+      expect(values).toContain("CIA World Factbook – Zimbabwe");
+    });
+
+    it("should auto-increment source keys for multiple standalone lines", () => {
+      const content = `
+# 7. Sources
+- Source A
+- Source B
+- Source C
+`;
+
+      const result = parseSection(content, "7. Sources");
+      expect(result).toBeDefined();
+      // Should have 3 entries with auto-incremented keys
+      expect(result!["source_0"]).toBe("Source A");
+      expect(result!["source_1"]).toBe("Source B");
+      expect(result!["source_2"]).toBe("Source C");
+    });
+
+    it("should preserve backward compatibility for key-value lines", () => {
+      const content = `
+# Description
+- Nom : Zimbabwe
+- Capitale : Harare
+`;
+
+      const result = parseSection(content, "Description");
+      expect(result).toBeDefined();
+      expect(result!["Nom"]).toBe("Zimbabwe");
+      expect(result!["Capitale"]).toBe("Harare");
+    });
+  });
 });

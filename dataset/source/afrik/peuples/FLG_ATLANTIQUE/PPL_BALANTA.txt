@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Balanta
 - Auto-appellation : Balanta
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : Guinée-Bissau (littoral et intérieur)
 - Pays actuels : GIN-Bissau, GMB
 - Identifiant peuple : PPL_BALANTA

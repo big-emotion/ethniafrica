@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Limba
 - Auto-appellation : Limba
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : Sierra Leone (Nord)
 - Pays actuels : SLE
 - Identifiant : PPL_LIMBA

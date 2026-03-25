@@ -2,7 +2,7 @@
 - Nom principal : Mossi
 - Auto-appellation : Moaga (pluriel : Moose)
 - Appellations historiques : Mossé (forme ancienne)
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région historique : Plateau mossi, BFA
 - Identifiant : PPL_MOSSI
 

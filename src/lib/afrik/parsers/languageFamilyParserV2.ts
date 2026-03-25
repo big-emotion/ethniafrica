@@ -29,6 +29,8 @@ export interface LanguageFamilyV2 {
     whyProblematic?: string;
     selfAppellation?: string;
     contemporaryUsage?: string;
+    historicalAppellations?: string;
+    originOfHistoricalTerm?: string;
   };
 
   // Section 3: Linguistic characteristics
@@ -52,7 +54,7 @@ export interface LanguageFamilyV2 {
   // Section 5: Distribution (optional, rarely filled)
   distribution?: {
     totalSpeakers?: number;
-    distributionByCountry?: string; // Raw format from .txt
+    distributionByCountry?: Record<string, number>;
   };
 }
 
@@ -189,11 +191,15 @@ function parseDecolonialHeader(headerContent: string): {
   whyProblematic?: string;
   selfAppellation?: string;
   contemporaryUsage?: string;
+  historicalAppellations?: string;
+  originOfHistoricalTerm?: string;
 } {
   const result: {
     whyProblematic?: string;
     selfAppellation?: string;
     contemporaryUsage?: string;
+    historicalAppellations?: string;
+    originOfHistoricalTerm?: string;
   } = {};
 
   const why = extractHeaderField(
@@ -207,6 +213,12 @@ function parseDecolonialHeader(headerContent: string): {
 
   const usage = extractHeaderField(headerContent, "Usage contemporain");
   if (usage) result.contemporaryUsage = usage;
+
+  const historical = extractHeaderField(headerContent, "Appellation");
+  if (historical) result.historicalAppellations = historical;
+
+  const originTerm = extractHeaderField(headerContent, "Origine du terme");
+  if (originTerm) result.originOfHistoricalTerm = originTerm;
 
   return result;
 }
@@ -444,6 +456,57 @@ function extractSectionField(
 }
 
 /**
+ * Parse distributionByCountry from raw text to Record<string, number>
+ * Extracts ISO 3166-1 alpha-3 codes paired with percentages.
+ * Supports formats:
+ *   - "CMR (30%), NGA (25%)"
+ *   - "CMR : 30%, NGA : 25%"
+ *   - "CMR (30.5%), NGA (25,3%)"
+ * Returns empty record if no structured data can be extracted.
+ * @param text - Raw distributionByCountry text from .txt file
+ * @returns Record mapping country identifiers to percentages
+ */
+export function parseDistributionByCountry(
+  text: string | null
+): Record<string, number> {
+  if (!text || !text.trim()) {
+    return {};
+  }
+
+  const result: Record<string, number> = {};
+
+  // Match ISO alpha-3 codes with percentages in parentheses: CMR (30%), NGA (25.5%)
+  const parenPattern = /([A-Z]{3})\s*\(\s*(\d+(?:[.,]\d+)?)\s*%\s*\)/g;
+  let match;
+
+  while ((match = parenPattern.exec(text)) !== null) {
+    const code = match[1];
+    const pct = parseFloat(match[2].replace(",", "."));
+    if (!isNaN(pct)) {
+      result[code] = pct;
+    }
+  }
+
+  // If parentheses format found results, return them
+  if (Object.keys(result).length > 0) {
+    return result;
+  }
+
+  // Try colon-separated format: CMR : 30%, NGA : 25%
+  const colonPattern = /([A-Z]{3})\s*:\s*(\d+(?:[.,]\d+)?)\s*%/g;
+
+  while ((match = colonPattern.exec(text)) !== null) {
+    const code = match[1];
+    const pct = parseFloat(match[2].replace(",", "."));
+    if (!isNaN(pct)) {
+      result[code] = pct;
+    }
+  }
+
+  return result;
+}
+
+/**
  * Parse complete language family file (harmonized format)
  * @param content - Full file content
  * @returns Parsed language family data
@@ -539,9 +602,8 @@ export function parseLanguageFamilyV2(content: string): LanguageFamilyV2 {
   const distribution = section5
     ? {
         totalSpeakers: speakers, // Reuse the total already parsed
-        distributionByCountry: extractSectionField(
-          section5,
-          "Répartition par pays"
+        distributionByCountry: parseDistributionByCountry(
+          extractSectionField(section5, "Répartition par pays")
         ),
       }
     : undefined;

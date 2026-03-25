@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Frafra / Gurensi
 - Auto-appellation : Farefare
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région : Ghana (Upper East)
 - Identifiant : PPL_FRAFRA
 

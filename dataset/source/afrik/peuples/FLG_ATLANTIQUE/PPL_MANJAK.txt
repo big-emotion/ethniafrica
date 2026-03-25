@@ -2,7 +2,7 @@
 - Nom principal : Manjak
 - Auto-appellation : Manjaku / Manjak
 - Exonymes historiques : Manjack / Manejak (formes coloniales)
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : GNB, SEN
 - Identifiant : PPL_MANJAK
 

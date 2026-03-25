@@ -3,7 +3,7 @@
 - Auto-appellation : Krumen / Kroomen
 - Appellations historiques :
   - « Kroomen » (terme colonial anglais, non péjoratif ; utilisé pour les marins Kru)
-- Famille linguistique : Niger-Congo – Krou
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
 - Région historique : Côte d’Ivoire (littoral sud-ouest), LBR
 - Identifiant peuple : PPL_KROUMEN
 

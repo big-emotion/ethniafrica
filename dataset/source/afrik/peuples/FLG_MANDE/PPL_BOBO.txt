@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Bobo / Bobo-Madare
 - Auto-appellation : Bobo
-- Famille linguistique : Niger-Congo – Mandé
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
 - Région historique : BFA, MLI
 - Identifiant : PPL_BOBO
 

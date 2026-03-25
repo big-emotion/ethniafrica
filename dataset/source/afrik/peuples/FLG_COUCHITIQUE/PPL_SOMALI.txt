@@ -3,7 +3,7 @@
 - Auto-appellation : Soomaali
 - Exonymes historiques :
   - « Somalies » (forme coloniale française)
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe ethno-linguistique : Couchitique oriental
 - Région historique : Somalie historique (SOM, DJI, Ogaden)
 - Pays actuels : SOM, Somaliland, DJI, ETH, KEN

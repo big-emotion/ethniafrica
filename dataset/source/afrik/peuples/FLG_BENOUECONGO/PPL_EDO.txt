@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Edo / Bini
 - Auto-appellation : Edo
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Edoïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Edoïde) (FLG_BENOUECONGO)
 - Région historique : Nigeria (Edo State)
 - Identifiant peuple : PPL_EDO
 

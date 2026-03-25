@@ -4,7 +4,7 @@
 - Appellations historiques :
   - Fon (français) → accepté
   - Dahoméens (lié à l'ancien royaume)
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_BENOUECONGO)
 - Région : Bénin (Sud), TGO
 - Identifiant peuple : PPL_FON
 

@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Jahanka
 - Auto-appellation : Jahanka
-- Famille linguistique : Niger-Congo – Mandé
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
 - Région : MLI, GIN
 - Identifiant : PPL_JAHANKA
 

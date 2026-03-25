@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Afemai / Etsako
 - Auto-appellation : Afenmai
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Edoïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Edoïde) (FLG_BENOUECONGO)
 - Région historique : Nigeria (Edo State – Nord)
 - Identifiant peuple : PPL_AFEMAI
 

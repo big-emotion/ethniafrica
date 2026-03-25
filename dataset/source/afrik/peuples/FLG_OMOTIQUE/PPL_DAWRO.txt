@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Dawro
 - Auto-appellation : Dawuro
-- Famille linguistique : Afro-asiatique – Omotique
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe : Omotique nord
 - Région historique : Dawro Zone (Éthiopie)
 - ID : PPL_DAWRO

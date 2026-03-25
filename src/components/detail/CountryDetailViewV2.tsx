@@ -14,6 +14,7 @@ import {
   HistoryTimeline,
   PeoplesSection,
   KingdomsSection,
+  HistoricalFactsSection,
   LanguagesSection,
   CultureGrid,
   SourcesFooter,
@@ -243,6 +244,35 @@ export const CountryDetailViewV2 = ({
               {data.kingdoms.title}
             </div>
             <KingdomsSection data={data.kingdoms} />
+          </section>
+        )}
+
+        {/* 5b. Historical Facts */}
+        {data.historicalFacts && data.historicalFacts.periods.length > 0 && (
+          <section
+            className="country-fade-in rounded-[var(--country-radius-xl)] md:rounded-[20px] xl:rounded-[22px] p-[18px] md:p-6 xl:p-7 relative overflow-hidden"
+            style={{
+              background: "var(--country-card)",
+              border: "1px solid var(--country-border)",
+              animationDelay: "175ms",
+            }}
+          >
+            <div
+              className="flex items-center gap-[6px] text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.14em] mb-[14px] md:mb-[18px]"
+              style={{ color: "var(--country-text-soft)" }}
+            >
+              <span
+                className="w-5 h-5 rounded-[var(--country-radius-md)] flex items-center justify-center text-[11px]"
+                style={{
+                  background: "var(--country-earth-bg)",
+                  color: "var(--country-earth)",
+                }}
+              >
+                {"📜"}
+              </span>
+              Faits historiques majeurs
+            </div>
+            <HistoricalFactsSection data={data.historicalFacts} />
           </section>
         )}
 

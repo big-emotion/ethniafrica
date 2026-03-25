@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Dangme
 - Auto-appellation : Dangme / Adaŋme
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Gã-Dangme)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gã-Dangme) (FLG_BENOUECONGO)
 - Région historique : Ghana (Greater Accra Region, Dangme East)
 - Identifiant peuple : PPL_DANGME
 

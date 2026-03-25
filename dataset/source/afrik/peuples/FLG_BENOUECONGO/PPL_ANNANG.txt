@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Annang
 - Auto-appellation : Annang
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Cross-River / Ibibioïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Cross-River / Ibibioïde) (FLG_BENOUECONGO)
 - Région : Nigeria (Akwa Ibom)
 - Identifiant : PPL_ANNANG
 

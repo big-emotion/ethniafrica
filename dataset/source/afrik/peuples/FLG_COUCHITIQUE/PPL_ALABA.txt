@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Alaba
 - Auto-appellation : Halaba
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Région historique : Halaba Zone (Éthiopie Sud)
 - Pays actuels : ETH
 - ID : PPL_ALABA

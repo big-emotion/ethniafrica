@@ -2,7 +2,7 @@
 - Nom principal du peuple : Aït Atta
 - Auto-appellation : Ayt Ɛtta
 - Appellations historiques : Aït Atta (forme amazighe) ; aucune connotation péjorative connue
-- Famille linguistique : Afro-asiatique – Berbère (Amazigh)
+- Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
 - Groupe : Chleuhs / Zenata méridional selon les sources
 - Région historique : Sud-est du Maroc (Saghro, Drâa, Tafilalet)
 - Pays actuels : MAR

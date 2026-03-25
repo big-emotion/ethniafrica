@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Wiyã / Weeya
 - Auto-appellation : Wiyã / Weeya
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région historique : Ghana
 - Identifiant : PPL_WIYANA
 

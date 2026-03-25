@@ -5,7 +5,7 @@
 - Pourquoi « Wolamo » pose problème :
   - exonyme utilisé par des administrations extérieures
   - associé à une stratification ancienne désavantageuse
-- Famille linguistique : Afro-asiatique – Omotique
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe : Omotique nord
 - Région : Wolayta Zone (Éthiopie)
 - ID peuple : PPL_WOLAYTA

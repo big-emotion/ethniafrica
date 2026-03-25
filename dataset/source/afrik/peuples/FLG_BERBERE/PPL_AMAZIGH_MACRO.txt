@@ -3,7 +3,7 @@
 - Auto-appellation : Imazighen (pluriel)
 - Appellations historiques :
   - « Berbères » (terme colonial, problématique ; imposé par les sources grecques et européennes)
-- Famille linguistique : Afro-asiatique – Berbère
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
 - Région historique : Tout le Maghreb et Sahara
 - ID : PPL_AMAZIGH_MACRO
 

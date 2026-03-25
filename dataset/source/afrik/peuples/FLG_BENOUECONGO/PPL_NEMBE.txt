@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Nembe
 - Auto-appellation : Nembe
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde) (FLG_BENOUECONGO)
 - Région : Nigeria (Bayelsa State)
 - Identifiant peuple : PPL_NEMBE
 

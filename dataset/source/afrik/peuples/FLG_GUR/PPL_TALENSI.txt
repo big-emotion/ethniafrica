@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Talensi
 - Auto-appellation : Talensi
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région historique : Ghana (Tongo Hills)
 - Identifiant : PPL_TALENSI
 

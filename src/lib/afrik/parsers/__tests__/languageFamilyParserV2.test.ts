@@ -4,6 +4,7 @@ import {
   parseGeographicArea,
   parsePeoples,
   parseLanguageFamilyV2,
+  parseDistributionByCountry,
 } from "../languageFamilyParserV2";
 
 describe("languageFamilyParserV2", () => {
@@ -373,7 +374,83 @@ describe("languageFamilyParserV2", () => {
       );
     });
 
-    it("should parse distribution section when present", () => {
+    it("should parse all 5 decolonial header fields including historicalAppellations and originOfHistoricalTerm", () => {
+      const content = `# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_TEST
+- Nom français : Test
+- Appellation(s) historique(s) : « Langues bantoues » ; « Bantou »
+- Origine du terme historique : Créé par Bleek en 1862
+- Pourquoi le terme pose problème (si applicable) : Terme colonial
+- Auto-appellation (locuteurs / linguistes contemporains) : Nom endogène
+- Usage contemporain (définition moderne de la famille) : Usage académique
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Test
+- Aire géographique : Afrique
+- Nombre total de locuteurs : environ 1 million
+
+# 2. Peuples associés
+- Peuple 1 : Test (PPL_TEST)
+`;
+
+      const result = parseLanguageFamilyV2(content);
+
+      expect(result.decolonialHeader).toBeDefined();
+      expect(result.decolonialHeader.whyProblematic).toBe("Terme colonial");
+      expect(result.decolonialHeader.selfAppellation).toBe("Nom endogène");
+      expect(result.decolonialHeader.contemporaryUsage).toBe(
+        "Usage académique"
+      );
+      expect(result.decolonialHeader.historicalAppellations).toBe(
+        "« Langues bantoues » ; « Bantou »"
+      );
+      expect(result.decolonialHeader.originOfHistoricalTerm).toBe(
+        "Créé par Bleek en 1862"
+      );
+    });
+
+    it("should parse multi-line historicalAppellations and originOfHistoricalTerm", () => {
+      const content = `# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_TEST
+- Nom français : Test
+- Appellation(s) historique(s) :
+  « Langues bantoues » ; « Bantou » (souvent détourné en « race bantoue »).
+- Origine du terme historique :
+  Le terme « bantou » a été créé par Bleek en 1862.
+  Il a été popularisé par Meinhof en 1906.
+- Pourquoi le terme pose problème (si applicable) : Terme colonial
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Test
+- Aire géographique : Afrique
+- Nombre total de locuteurs : environ 1 million
+
+# 2. Peuples associés
+- Peuple 1 : Test (PPL_TEST)
+`;
+
+      const result = parseLanguageFamilyV2(content);
+
+      expect(result.decolonialHeader.historicalAppellations).toContain(
+        "« Langues bantoues »"
+      );
+      expect(result.decolonialHeader.originOfHistoricalTerm).toContain(
+        "Bleek en 1862"
+      );
+      expect(result.decolonialHeader.originOfHistoricalTerm).toContain(
+        "Meinhof en 1906"
+      );
+    });
+
+    it("should parse distribution section with parsed distributionByCountry", () => {
       const content = `# Famille linguistique
 
 ## HEADER DÉCOLONIAL (obligatoire)
@@ -400,9 +477,41 @@ describe("languageFamilyParserV2", () => {
 
       expect(result.distribution).toBeDefined();
       expect(result.distribution?.totalSpeakers).toBe(350000000);
-      expect(result.distribution?.distributionByCountry).toBe(
-        "RDC, Tanzanie, Kenya, Afrique du Sud"
-      );
+      // Unstructured list without percentages -> empty record
+      expect(result.distribution?.distributionByCountry).toEqual({});
+    });
+
+    it("should parse distribution section with ISO codes and percentages", () => {
+      const content = `# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_TEST
+- Nom français : Test
+- Nombre total de locuteurs (estimation) : environ 10 millions
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Test
+- Aire géographique : Afrique
+- Nombre total de locuteurs : environ 10 millions
+
+# 2. Peuples associés
+- Peuple 1 : Test (PPL_TEST)
+
+# 5. Répartition géographique et démographie
+- Nombre total de locuteurs : environ 10 millions
+- Répartition par pays : CMR (30%), NGA (25%), TCD (15%)
+`;
+
+      const result = parseLanguageFamilyV2(content);
+
+      expect(result.distribution).toBeDefined();
+      expect(result.distribution?.distributionByCountry).toEqual({
+        CMR: 30,
+        NGA: 25,
+        TCD: 15,
+      });
     });
 
     it("should parse nameEn and numberOfLanguages from header", () => {
@@ -429,6 +538,49 @@ describe("languageFamilyParserV2", () => {
 
       expect(result.nameEn).toBe("Test Family");
       expect(result.numberOfLanguages).toBe(500);
+    });
+  });
+
+  describe("parseDistributionByCountry", () => {
+    it("should parse ISO codes with percentages in parentheses", () => {
+      const result = parseDistributionByCountry(
+        "CMR (30%), NGA (25%), TCD (15%)"
+      );
+      expect(result).toEqual({ CMR: 30, NGA: 25, TCD: 15 });
+    });
+
+    it("should parse ISO codes with colon-separated percentages", () => {
+      const result = parseDistributionByCountry(
+        "CMR : 30%, NGA : 25%, TCD : 15%"
+      );
+      expect(result).toEqual({ CMR: 30, NGA: 25, TCD: 15 });
+    });
+
+    it("should parse decimal percentages", () => {
+      const result = parseDistributionByCountry("CMR (30.5%), NGA (25,3%)");
+      expect(result).toEqual({ CMR: 30.5, NGA: 25.3 });
+    });
+
+    it("should return empty record for plain country names without percentages", () => {
+      const result = parseDistributionByCountry(
+        "RDC, Tanzanie, Kenya, Afrique du Sud"
+      );
+      expect(result).toEqual({});
+    });
+
+    it("should return empty record for null input", () => {
+      const result = parseDistributionByCountry(null);
+      expect(result).toEqual({});
+    });
+
+    it("should return empty record for empty string", () => {
+      const result = parseDistributionByCountry("");
+      expect(result).toEqual({});
+    });
+
+    it("should return empty record for whitespace-only input", () => {
+      const result = parseDistributionByCountry("   ");
+      expect(result).toEqual({});
     });
   });
 });

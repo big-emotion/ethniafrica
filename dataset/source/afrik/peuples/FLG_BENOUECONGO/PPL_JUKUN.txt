@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Jukun
 - Auto-appellation : Jukun / Juku
-- Famille linguistique : Niger-Congo – Bénoué-Congo
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
 - Région historique : Nigeria (Taraba State), CMR
 - Identifiant peuple : PPL_JUKUN
 

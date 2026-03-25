@@ -91,5 +91,60 @@ describe("AFRIK Parser - Relation Extraction", () => {
       expect(result).toEqual(["ZWE", "MOZ"]);
       expect(result.length).toBe(2);
     });
+
+    // Fix 1: FLG_ fallback from filePath when not found in content
+    describe("languageFamily fallback from filePath", () => {
+      it("should infer FLG_ from filePath when content has no FLG_ reference", () => {
+        const content = `
+- Famille linguistique : Niger-Congo – Atlantique
+`;
+        const filePath =
+          "dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.txt";
+
+        const result = extractRelations(content, "languageFamily", filePath);
+        expect(result).toBe("FLG_ATLANTIQUE");
+      });
+
+      it("should prefer FLG_ in content over filePath fallback", () => {
+        const content = `
+- Famille linguistique : Niger-Congo – Bantou (FLG_BANTU)
+`;
+        const filePath =
+          "dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.txt";
+
+        const result = extractRelations(content, "languageFamily", filePath);
+        expect(result).toBe("FLG_BANTU");
+      });
+
+      it("should return empty string when no FLG_ in content and no filePath", () => {
+        const content = `
+- Famille linguistique : Niger-Congo – Atlantique
+`;
+
+        const result = extractRelations(content, "languageFamily");
+        expect(result).toBe("");
+      });
+
+      it("should handle filePath with nested FLG_ directory", () => {
+        const content = `
+- Famille linguistique : Nilo-Saharien
+`;
+        const filePath =
+          "/absolute/path/dataset/source/afrik/peuples/FLG_NILO_SAHARIEN/PPL_DINKA.txt";
+
+        const result = extractRelations(content, "languageFamily", filePath);
+        expect(result).toBe("FLG_NILO_SAHARIEN");
+      });
+
+      it("should return empty string if filePath has no FLG_ segment", () => {
+        const content = `
+- Famille linguistique : Unknown
+`;
+        const filePath = "dataset/source/afrik/peuples/UNKNOWN/PPL_TEST.txt";
+
+        const result = extractRelations(content, "languageFamily", filePath);
+        expect(result).toBe("");
+      });
+    });
   });
 });

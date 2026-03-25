@@ -2,7 +2,7 @@
 - Nom principal : Hadiya
 - Auto-appellation : Hadiyya
 - Exonymes historiques : Hadiyo (formes anciennes)
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe : Couchitique oriental
 - Région historique : Région Hadiya (Éthiopie)
 - Pays actuels : ETH

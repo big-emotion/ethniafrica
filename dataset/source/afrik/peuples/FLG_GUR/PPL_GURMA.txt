@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Gurma / Gourma
 - Auto-appellation : Gulimanceba / Gourmantché
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région historique : BFA, NER, BEN, TGO
 - Identifiant peuple : PPL_GURMA
 

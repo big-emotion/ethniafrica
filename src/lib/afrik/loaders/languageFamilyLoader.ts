@@ -41,15 +41,19 @@ function convertV2ToLanguageFamily(v2: LanguageFamilyV2): LanguageFamily {
     })),
     sources: v2.sources,
 
-    // Structured fields already in the right format
-    decolonialHeader: v2.decolonialHeader,
+    // Map decolonial header, converting historicalAppellations string to array
+    decolonialHeader: {
+      ...v2.decolonialHeader,
+      historicalAppellations: v2.decolonialHeader.historicalAppellations
+        ? [v2.decolonialHeader.historicalAppellations]
+        : undefined,
+    },
     linguisticCharacteristics: v2.linguisticCharacteristics,
     historyAndOrigins: v2.historyAndOrigins,
-    // Distribution: only include totalSpeakers (distributionByCountry is raw string in .txt)
     distribution: v2.distribution
       ? {
           totalSpeakers: v2.distribution.totalSpeakers,
-          // Don't include distributionByCountry as it's a raw string, not Record<string, number>
+          distributionByCountry: v2.distribution.distributionByCountry,
         }
       : undefined,
   };

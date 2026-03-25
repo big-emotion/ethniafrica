@@ -2,7 +2,7 @@
 - Nom principal : Musgum
 - Auto-appellation : Músgum / Mulwi
 - Appellations historiques : Musgou (forme coloniale française)
-- Famille linguistique : Afro-asiatique – Tchadique
+- Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
 - Région historique : Bassin du Logone (Cameroun–Tchad)
 - Identifiant peuple : PPL_MUSGU
 

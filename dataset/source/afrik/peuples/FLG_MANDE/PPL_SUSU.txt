@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Susu / Soussou
 - Auto-appellation : Sosoxui / Susu
-- Famille linguistique : Niger-Congo – Mandé
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
 - Région historique : Guinée côtière, SLE
 - Identifiant : PPL_SUSU
 

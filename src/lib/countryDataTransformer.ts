@@ -11,6 +11,7 @@ import type {
   MajorPeopleEntry,
   CultureSection,
   HistoricalNamesSection,
+  HistoricalFactsSection,
   DemographicsSection,
 } from "@/types/afrik";
 
@@ -130,6 +131,13 @@ export interface CultureGridData {
   items: CultureGridItem[];
 }
 
+export interface HistoricalFactsData {
+  periods: Array<{
+    label: string;
+    content: string;
+  }>;
+}
+
 export interface CountryPageData {
   hero: HeroData;
   etymology?: EtymologyData;
@@ -137,6 +145,7 @@ export interface CountryPageData {
   timeline: TimelineData;
   peoples: PeoplesData;
   kingdoms: KingdomsData;
+  historicalFacts?: HistoricalFactsData;
   languages: LanguagesData;
   culture: CultureGridData;
   sources: string;
@@ -438,8 +447,13 @@ export function transformEtymology(
 
   // Check for split bilingue: 2+ patterns like '"Word" vient du LANGUAGE'
   // Also capture optional family in parentheses: "du mooré (Mossi)"
-  const splitPattern =
-    /["«](\w+)["»]\s+vient\s+du\s+([\wÀ-ÿ]+)(?:\s*\((?:langue\s+)?([\wÀ-ÿ]+)\))?\s+et\s+signifie\s+["«]([^"»]+)["»]/gi;
+  // Supports straight quotes, curly quotes, and guillemets
+  const Q = '["«\u201C]'; // opening quote
+  const QC = '["»\u201D]'; // closing quote
+  const splitPattern = new RegExp(
+    `${Q}(\\w+)${QC}\\s+vient\\s+du\\s+([\\wÀ-ÿ]+)(?:\\s*\\((?:langue\\s+)?([\\wÀ-ÿ]+)\\))?\\s+et\\s+signifie\\s+${Q}([^"»\u201D]+)${QC}`,
+    "gi"
+  );
   const words: EtymologyWord[] = [];
   let match;
 
@@ -456,9 +470,9 @@ export function transformEtymology(
     return { variant: "split", words };
   }
 
-  // Single word pattern
+  // Single word pattern (supports straight, curly, guillemets)
   const singlePattern =
-    /["«](\w+)["»]\s+(?:vient|est\s+d[ée]riv|signifie|est\s+un\s+mot)/i;
+    /["«\u201C](\w+)["»\u201D]\s+(?:vient|est\s+d[ée]riv|signifie|est\s+un\s+mot)/i;
   const singleMatch = etymology.match(singlePattern);
 
   if (singleMatch || words.length === 1) {
@@ -467,10 +481,12 @@ export function transformEtymology(
       return { variant: "single", words: [word] };
     }
 
-    // Try alternative extraction for single
-    const nameMatch = etymology.match(/["«](\w+)["»]/);
+    // Try alternative extraction for single (supports curly quotes + guillemets)
+    const nameMatch = etymology.match(/["«\u201C](\w+)["»\u201D]/);
     const langMatch = etymology.match(/(?:du|en)\s+([\wÀ-ÿ]+)/);
-    const defMatch = etymology.match(/signifie\s+["«]([^"»]+)["»]/i);
+    const defMatch = etymology.match(
+      /signifie\s+["«\u201C]([^"»\u201D]+)["»\u201D]/i
+    );
 
     return {
       variant: "single",
@@ -485,10 +501,12 @@ export function transformEtymology(
     };
   }
 
-  // Fallback: try the full pattern from BFA format
+  // Fallback: try the full pattern from BFA format (supports all quote styles)
   // "Burkina" vient du mooré (Mossi) et signifie "intègres"... "Faso" vient du dioula
-  const fullPattern =
-    /"(\w+)"\s+vient\s+du\s+(\w+)(?:\s*\((?:langue\s+)?(\w+)\))?\s+et\s+signifie\s+"([^"]+)"/gi;
+  const fullPattern = new RegExp(
+    `${Q}(\\w+)${QC}\\s+vient\\s+du\\s+(\\w+)(?:\\s*\\((?:langue\\s+)?(\\w+)\\))?\\s+et\\s+signifie\\s+${Q}([^"»\u201D]+)${QC}`,
+    "gi"
+  );
   while ((match = fullPattern.exec(etymology)) !== null) {
     const rawDef = match[4].split(/\s+ou\s+/)[0].trim();
     words.push({
@@ -505,7 +523,12 @@ export function transformEtymology(
     return { variant: "single", words };
   }
 
-  return undefined;
+  // Fallback: return raw text as single block when no structured pattern matches
+  return {
+    variant: "single",
+    words: [{ word: "", lang: "", definition: "" }],
+    rawText: etymology,
+  };
 }
 
 export function transformOrigin(
@@ -968,6 +991,32 @@ export function transformSources(sources?: string[]): string {
   return sources.map((s) => s.replace(/^-\s*/, "").trim()).join(" · ");
 }
 
+export function transformHistoricalFacts(
+  historicalFacts?: HistoricalFactsSection
+): HistoricalFactsData | undefined {
+  if (!historicalFacts) return undefined;
+
+  const periods: Array<{ label: string; content: string }> = [];
+
+  const mapping: Array<[keyof HistoricalFactsSection, string]> = [
+    ["ancientPeriods", "Périodes anciennes"],
+    ["middleAges", "Moyen Âge"],
+    ["precolonial", "Époque précoloniale"],
+    ["colonization", "Colonisation"],
+    ["independenceStruggle", "Lutte pour l'indépendance"],
+    ["postIndependence", "Période post-indépendance"],
+  ];
+
+  for (const [key, label] of mapping) {
+    const value = historicalFacts[key];
+    if (value) {
+      periods.push({ label, content: value });
+    }
+  }
+
+  return periods.length > 0 ? { periods } : undefined;
+}
+
 // ==========================================
 // MAIN TRANSFORM
 // ==========================================
@@ -984,6 +1033,7 @@ export function transformCountryData(country: CountryDetail): CountryPageData {
     timeline: transformTimeline(country.historicalNames),
     peoples: transformPeoples(country.demographics, country.majorPeoples),
     kingdoms: transformKingdoms(country.kingdoms),
+    historicalFacts: transformHistoricalFacts(country.historicalFacts),
     languages: transformLanguages(country.culture),
     culture: transformCulture(country.culture),
     sources: transformSources(country.sources),

@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Kono
 - Auto-appellation : Kono
-- Famille linguistique : Niger-Congo – Mandé
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
 - Région historique : Sierra Leone (Est)
 - Pays actuels : SLE (principal)
 - Identifiant : PPL_KONO

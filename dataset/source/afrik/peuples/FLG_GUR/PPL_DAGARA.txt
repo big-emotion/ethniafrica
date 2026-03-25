@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Dagara / Dagaaba
 - Auto-appellation : Dagara / Dagao
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région : BFA, GHA
 - Identifiant : PPL_DAGARA
 

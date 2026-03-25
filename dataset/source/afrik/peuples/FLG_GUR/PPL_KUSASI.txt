@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Kusasi
 - Auto-appellation : Kusaal / Kusasi
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région : Ghana (Bawku), BFA
 - Identifiant : PPL_KUSASI
 

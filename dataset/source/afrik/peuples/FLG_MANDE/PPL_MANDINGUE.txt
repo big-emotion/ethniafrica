@@ -2,7 +2,7 @@
 - Nom principal : Mandinka / Mandingue occidental
 - Auto-appellation : Mandinka / Mandiŋka
 - Exonymes historiques : Mandingue (forme française)
-- Famille linguistique : Niger-Congo – Mandé (occidental)
+- Famille linguistique : Niger-Congo – Mandé (occidental) (FLG_MANDE)
 - Région historique : MLI, SEN, GMB
 - Pays actuels : SEN, GMB, MLI, GIN, Côte d’Ivoire, SLE
 - Identifiant peuple (ID) : PPL_MANDINGUE

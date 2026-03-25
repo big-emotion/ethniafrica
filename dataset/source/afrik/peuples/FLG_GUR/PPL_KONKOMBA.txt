@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Konkomba
 - Auto-appellation : Bikpakpaam
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région historique : Ghana (Nord-Est), TGO
 - Identifiant peuple : PPL_KONKOMBA
 

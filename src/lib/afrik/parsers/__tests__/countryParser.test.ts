@@ -196,6 +196,67 @@ describe("Country Parser", () => {
     });
   });
 
+  describe("percentageInAfrica extraction", () => {
+    it("should extract percentageInAfrica from demographic block", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Burkina Faso (Burkina Faso)
+- Identifiant pays (ISO 3166-1 alpha-3) : BFA
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : Mossi
+- Identifiant peuple (PPL_) : PPL_MOSSI
+- Population : 11 500 000
+- Pourcentage dans le pays : 50%
+- Pourcentage en Afrique : 0.5%
+- Région : Plateau central
+`;
+      const result = parseCountryFile(content);
+      const demo = result.data?.content.demographics as
+        | { peoples?: Array<{ name: string; percentageInAfrica?: number }> }
+        | undefined;
+      expect(demo?.peoples?.[0]?.percentageInAfrica).toBe(0.5);
+    });
+
+    it("should ignore N/A percentageInAfrica", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Test
+- Identifiant pays (ISO 3166-1 alpha-3) : TST
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : TestPeople
+- Population : 1 000 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : N/A
+`;
+      const result = parseCountryFile(content);
+      const demo = result.data?.content.demographics as
+        | { peoples?: Array<{ name: string; percentageInAfrica?: number }> }
+        | undefined;
+      expect(demo?.peoples?.[0]?.percentageInAfrica).toBeUndefined();
+    });
+
+    it("should parse percentageInAfrica with comma decimal", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Test
+- Identifiant pays (ISO 3166-1 alpha-3) : TST
+
+# DONNÉES DÉMOGRAPHIQUES
+### Peuple : TestPeople
+- Population : 1 000 000
+- Pourcentage dans le pays : 10%
+- Pourcentage en Afrique : 2,5%
+`;
+      const result = parseCountryFile(content);
+      const demo = result.data?.content.demographics as
+        | { peoples?: Array<{ name: string; percentageInAfrica?: number }> }
+        | undefined;
+      expect(demo?.peoples?.[0]?.percentageInAfrica).toBe(2.5);
+    });
+  });
+
   describe("parseCountryFile", () => {
     it("should parse country file and extract ID", () => {
       const result = parseCountryFile(sampleCountryContent);
@@ -304,6 +365,42 @@ describe("Country Parser", () => {
       expect(result.data?.content).toHaveProperty(
         "8. Nouvelle Section Économique"
       );
+    });
+
+    // Fix 2 + Fix 3: Sources with en-dash should be parsed
+    it("should parse sources section with en-dash lines (no colon)", () => {
+      const result = parseCountryFile(sampleCountryContent);
+
+      expect(result.success).toBe(true);
+      const sources = result.data?.content.sources;
+      expect(sources).toBeDefined();
+      expect(sources!.length).toBeGreaterThanOrEqual(2);
+      expect(sources).toContain("ONU – World Population Prospects 2025");
+      expect(sources).toContain("CIA World Factbook – Zimbabwe");
+    });
+
+    it("should parse mixed sources (key-value and standalone)", () => {
+      const content = `
+# Nom du pays
+- Nom officiel actuel : Test
+- Identifiant pays (ISO 3166-1 alpha-3) : TST
+
+# 7. Sources
+- Auteur principal : UNESCO
+- CIA World Factbook – Test Country
+- ONU – World Population Prospects 2025
+`;
+
+      const result = parseCountryFile(content);
+
+      expect(result.success).toBe(true);
+      const sources = result.data?.content.sources;
+      expect(sources).toBeDefined();
+      // Should contain all 3 entries
+      expect(sources!.length).toBeGreaterThanOrEqual(3);
+      expect(sources).toContain("UNESCO");
+      expect(sources).toContain("CIA World Factbook – Test Country");
+      expect(sources).toContain("ONU – World Population Prospects 2025");
     });
   });
 });

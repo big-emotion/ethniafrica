@@ -2,7 +2,7 @@
 - Nom principal : Argobba
 - Auto-appellation : Argobba
 - Appellations historiques : parfois assimilé à « Habesha » (terme englobant, non spécifique)
-- Famille linguistique : Afro-asiatique – Sémitique éthiopien
+- Famille linguistique : Afro-asiatique – Sémitique éthiopien (FLG_SEMITIQUE)
 - Région historique : Shewa, Afar, Amhara (vallées semi-arides)
 - Pays actuels : ETH
 - ID peuple : PPL_ARGOBBA

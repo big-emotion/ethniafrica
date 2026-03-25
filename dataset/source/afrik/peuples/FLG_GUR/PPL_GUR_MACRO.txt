@@ -5,7 +5,7 @@
 - Pourquoi « Voltaïque » pose problème :
   - terme administratif colonial utilisé pour regrouper des populations très diverses
   - non pertinent scientifiquement comme catégorie ethnolinguistique
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région : BFA, GHA, TGO, BEN, Côte d’Ivoire
 - Identifiant : PPL_GUR_MACRO
 

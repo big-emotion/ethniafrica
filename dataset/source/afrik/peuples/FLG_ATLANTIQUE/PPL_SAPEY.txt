@@ -3,7 +3,7 @@
 - Auto-appellation : Sape / Sapey
 - Appellations historiques :
   - Sapi (ancienne désignation médiévale non péjorative ; mentionnée dans l’art afro-portugais)
-- Famille linguistique : Niger-Congo – Atlantique (élément sénégambien/forestier)
+- Famille linguistique : Niger-Congo – Atlantique (élément sénégambien/forestier) (FLG_ATLANTIQUE)
 - Région historique : SLE, GIN forestière
 - Identifiant peuple : PPL_SAPEY
 

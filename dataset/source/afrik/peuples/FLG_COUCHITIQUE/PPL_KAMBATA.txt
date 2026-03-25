@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Kambata
 - Auto-appellation : Kambata
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe : Couchitique oriental
 - Région historique : Kembata-Tembaro (Éthiopie)
 - Pays actuels : ETH

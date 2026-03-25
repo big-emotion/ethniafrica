@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Gbagyi / Gwari
 - Auto-appellation : Gbagyi
-- Famille linguistique : Niger-Congo – Bénoué-Congo
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
 - Région historique : Nigeria (FCT Abuja, NER State, Kaduna)
 - Identifiant peuple : PPL_GBAGYI
 

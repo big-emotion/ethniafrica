@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Kalabari
 - Auto-appellation : Kalabari
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde) (FLG_BENOUECONGO)
 - Région historique : Nigeria (Rivers State)
 - Identifiant peuple : PPL_KALAIBARI
 

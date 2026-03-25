@@ -5,7 +5,7 @@
 - Pourquoi « Danakil » pose problème :
   - utilisé par les explorateurs européens pour désigner les Afar comme groupe marginal
   - usage considéré offensant par les communautés afar
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Région : Afar (Éthiopie), DJI, ERI
 - ID peuple : PPL_AFAR
 

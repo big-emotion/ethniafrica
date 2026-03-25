@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Papel
 - Auto-appellation : Pepel / Papei
-- Famille linguistique : Niger-Congo – Atlantique
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
 - Région historique : Guinée-Bissau (littoral)
 - Identifiant : PPL_PAPEL
 

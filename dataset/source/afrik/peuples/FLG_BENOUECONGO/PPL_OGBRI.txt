@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Ogbia / Ogbré
 - Auto-appellation : Ogbia
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde) (FLG_BENOUECONGO)
 - Région historique : Nigeria (Bayelsa State)
 - Identifiant peuple : PPL_OGBRI
 

@@ -2,7 +2,7 @@
 - Nom principal : Mozabites
 - Auto-appellation : Imuhagh n Mzab / At Mzab
 - Appellations historiques : « Mozabite » (terme français non péjoratif) ; Amazigh est l’auto-appellation correcte
-- Famille linguistique : Afro-asiatique – Berbère (Amazigh)
+- Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
 - Région historique : Vallée du Mzab (Ghardaïa – Algérie)
 - ID peuple : PPL_MOZABITE
 

@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Esan / Ishan
 - Auto-appellation : Esan
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Edoïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Edoïde) (FLG_BENOUECONGO)
 - Région : Nigeria (Edo State – Centre-Est)
 - Identifiant peuple : PPL_ESAN
 

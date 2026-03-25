@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Alago
 - Auto-appellation : Alago
-- Famille linguistique : Niger-Congo – Bénoué-Congo
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
 - Région historique : Nigeria (Nasarawa State)
 - Identifiant peuple : PPL_ALAGO
 

@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Ijaw / Ijo
 - Auto-appellation : Ịjọ / Ijaw
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde) (FLG_BENOUECONGO)
 - Région : Nigeria (Delta, Bayelsa, Rivers)
 - Identifiant : PPL_IJAW
 

@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Ekpeye
 - Auto-appellation : Ekpeye
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Igboïde)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Igboïde) (FLG_BENOUECONGO)
 - Région historique : Nigeria (Rivers State)
 - Identifiant peuple : PPL_EKPEYE
 

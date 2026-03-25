@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Igala
 - Auto-appellation : Igala
-- Famille linguistique : Niger-Congo – Bénoué-Congo (Igboïde / Yoruboïde mixte)
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Igboïde / Yoruboïde mixte) (FLG_BENOUECONGO)
 - Région : Nigeria (Kogi State, confluence Niger–Benue)
 - Identifiant : PPL_IGALA
 

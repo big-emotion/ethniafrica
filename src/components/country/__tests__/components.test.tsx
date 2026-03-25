@@ -9,6 +9,7 @@ import { KingdomsSection } from "../KingdomsSection";
 import { LanguagesSection } from "../LanguagesSection";
 import { CultureGrid } from "../CultureGrid";
 import { SourcesFooter } from "../SourcesFooter";
+import { HistoricalFactsSection } from "../HistoricalFactsSection";
 import type {
   HeroData,
   EtymologyData,
@@ -18,6 +19,7 @@ import type {
   KingdomsData,
   LanguagesData,
   CultureGridData,
+  HistoricalFactsData,
 } from "@/lib/countryDataTransformer";
 
 // ==========================================
@@ -526,6 +528,51 @@ describe("CultureGrid", () => {
     };
     render(<CultureGrid data={data} />);
     expect(screen.getByText("🌾")).toBeTruthy();
+  });
+});
+
+// ==========================================
+// HistoricalFactsSection
+// ==========================================
+
+describe("HistoricalFactsSection", () => {
+  it("renders all period labels and content", () => {
+    const data: HistoricalFactsData = {
+      periods: [
+        { label: "Colonisation", content: "Colonisation française 1880-1960" },
+        {
+          label: "Période post-indépendance",
+          content: "Indépendance proclamée le 5 août 1960",
+        },
+      ],
+    };
+    render(<HistoricalFactsSection data={data} />);
+    expect(screen.getByText("Colonisation")).toBeTruthy();
+    expect(screen.getByText("Colonisation française 1880-1960")).toBeTruthy();
+    expect(screen.getByText("Période post-indépendance")).toBeTruthy();
+    expect(
+      screen.getByText("Indépendance proclamée le 5 août 1960")
+    ).toBeTruthy();
+  });
+
+  it("renders nothing when periods list is empty", () => {
+    const data: HistoricalFactsData = { periods: [] };
+    const { container } = render(<HistoricalFactsSection data={data} />);
+    expect(container.firstChild).toBeNull();
+  });
+
+  it("renders a single period correctly", () => {
+    const data: HistoricalFactsData = {
+      periods: [
+        {
+          label: "Périodes anciennes",
+          content: "Grandes migrations bantoues",
+        },
+      ],
+    };
+    render(<HistoricalFactsSection data={data} />);
+    expect(screen.getByText("Périodes anciennes")).toBeTruthy();
+    expect(screen.getByText("Grandes migrations bantoues")).toBeTruthy();
   });
 });
 

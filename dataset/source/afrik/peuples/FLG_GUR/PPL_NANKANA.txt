@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Nankana / Nankani
 - Auto-appellation : Nankana
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région historique : Ghana (Upper East)
 - Identifiant : PPL_NANKANA
 

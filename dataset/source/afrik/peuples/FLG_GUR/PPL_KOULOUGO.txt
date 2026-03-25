@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Koulango
 - Auto-appellation : Kulango / Koulango
-- Famille linguistique : Niger-Congo – Gur (élément Gur selon AFRIK)
+- Famille linguistique : Niger-Congo – Gur (élément Gur selon AFRIK) (FLG_GUR)
 - Région historique : Côte d’Ivoire (Nord-Est)
 - Identifiant peuple : PPL_KOULOUGO
 

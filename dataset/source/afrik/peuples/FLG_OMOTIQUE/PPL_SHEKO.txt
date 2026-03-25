@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Sheko
 - Auto-appellation : S̱hekkocc / Shekka
-- Famille linguistique : Afro-asiatique – Omotique
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe : Omotique sud-occidental
 - Région : Bench-Sheko Zone (Éthiopie)
 - Pays actuels : ETH

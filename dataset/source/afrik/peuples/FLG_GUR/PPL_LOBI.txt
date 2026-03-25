@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal du peuple : Lobi
 - Auto-appellation : Lobiri / Lobi
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région historique : BFA, Côte d’Ivoire, GHA
 - Identifiant peuple : PPL_LOBI
 

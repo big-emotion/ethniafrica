@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Gabra
 - Auto-appellation : Gabra / Gabara
-- Famille linguistique : Afro-asiatique – Couchitique
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe : Couchitique oriental
 - Région historique : Nord Kenya – Sud Éthiopie
 - ID : PPL_GABRA

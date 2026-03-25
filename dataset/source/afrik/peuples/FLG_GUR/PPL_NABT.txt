@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Nabit
 - Auto-appellation : Nabit
-- Famille linguistique : Niger-Congo – Gur
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
 - Région : Ghana (Upper East)
 - Identifiant peuple : PPL_NABT
 

@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Tiv
 - Auto-appellation : Tiv
-- Famille linguistique : Niger-Congo – Bénoué-Congo
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
 - Région historique : Nigeria (Benue State), CMR
 - Identifiant peuple : PPL_TIV
 
