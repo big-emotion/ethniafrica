@@ -189,7 +189,7 @@ export function auditPeopleFile(
   filePath: string,
   content: string
 ): FileAuditResult {
-  const result = parsePeopleFile(content);
+  const result = parsePeopleFile(content, filePath);
 
   if (!result.success || !result.data) {
     return {

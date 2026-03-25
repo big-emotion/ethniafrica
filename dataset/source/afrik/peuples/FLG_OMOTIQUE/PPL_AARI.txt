@@ -2,7 +2,7 @@
 - Nom principal du peuple : Aari
 - Auto-appellation : Aari / Ari
 - Exonymes historiques : Aucun terme péjoratif majeur attesté
-- Famille linguistique principale : Afro-asiatique – Omotique
+- Famille linguistique principale : Afro-asiatique – Omotique (FLG_OMOTIQUE)
 - Groupe ethno-linguistique : Omotique sud
 - Région historique : Vallées du sud-ouest éthiopien (South Omo Zone)
 - Pays actuels : ETH

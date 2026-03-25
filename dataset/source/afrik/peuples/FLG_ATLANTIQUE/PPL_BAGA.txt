@@ -2,7 +2,7 @@
 - Nom principal du peuple : Baga
 - Auto-appellation : Baga
 - Exonymes historiques : aucune connotation coloniale péjorative majeure identifiée
-- Famille linguistique principale : Niger-Congo – Atlantique (Sénégambien)
+- Famille linguistique principale : Niger-Congo – Atlantique (Sénégambien) (FLG_ATLANTIQUE)
 - Région historique : Littoral de Guinée (Basse Guinée), îles et mangroves
 - Pays actuels : GIN (principal)
 - Identifiant peuple : PPL_BAGA

@@ -4,7 +4,7 @@
 - Exonymes / appellations historiques :
   - « Ghomara » (forme historique arabe et amazighe)
   - Parfois classés comme « arabisés », notion discutable (processus sociolinguistique et non identité)
-- Famille linguistique principale : Afro-asiatique – Berbère (Amazigh)
+- Famille linguistique principale : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
 - Groupe ethno-linguistique : Berbère nord-occidental (Rif occidental)
 - Région historique : Nord-ouest du Rif (Maroc)
 - Pays actuels : MAR

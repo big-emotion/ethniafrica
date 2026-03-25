@@ -2,7 +2,7 @@
 - Nom principal : Nafusi
 - Auto-appellation : Inafusen
 - Appellations historiques : « Nefoussa » (forme arabe)
-- Famille : Afro-asiatique – Berbère
+- Famille : Afro-asiatique – Berbère (FLG_BERBERE)
 - Région historique : Djebel Nafousa (Libye)
 - Pays actuels : LBY, diaspora tunisienne
 - ID : PPL_NAFUSI

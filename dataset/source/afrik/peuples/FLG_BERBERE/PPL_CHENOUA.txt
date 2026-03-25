@@ -2,7 +2,7 @@
 - Nom principal du peuple : Chenoua
 - Auto-appellation : Ic̱enwa / Ach-chinwa (variantes locales)
 - Appellations historiques : « Chenoua » (français) ; pas de terme colonial péjoratif identifié
-- Famille linguistique principale : Afro-asiatique – Berbère
+- Famille linguistique principale : Afro-asiatique – Berbère (FLG_BERBERE)
 - Groupe ethno-linguistique : Berbère nord-algérien (Zenati)
 - Région historique : Mont Chenoua (Tipasa – Algérie)
 - Pays actuels : DZA

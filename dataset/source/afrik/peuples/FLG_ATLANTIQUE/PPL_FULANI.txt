@@ -8,7 +8,7 @@
 - Pourquoi certains exonymes posent problème :
   - classification extérieure
   - « Fellata » associé à des stéréotypes historiques négatifs
-- Famille linguistique principale : Niger-Congo – Atlantique (branche sénégambienne)
+- Famille linguistique principale : Niger-Congo – Atlantique (branche sénégambienne) (FLG_ATLANTIQUE)
 - Région historique : Bande sahélienne de l’Atlantique au Tchad
 - Pays actuels : SEN, GIN, MLI, BFA, NER, Nigéria, CMR, TCD, etc.
 - Identifiant peuple (ID) : PPL_FULANI

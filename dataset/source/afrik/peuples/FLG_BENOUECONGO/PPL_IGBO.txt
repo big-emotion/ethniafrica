@@ -5,7 +5,7 @@
 - Origine des termes (exonymes) : « Ibo » provient d'une transcription coloniale britannique erronée du terme igbo, utilisée dans les documents administratifs coloniaux du XIXe et XXe siècle
 - Pourquoi certains termes posent problème (si applicable) : Le terme « Ibo » est considéré comme colonial et réducteur car il simplifie la prononciation tonale complexe du terme igbo et fut imposé par l'administration coloniale britannique sans consultation des locuteurs natifs. Il perpétue une vision externe et déformée de l'identité igbo.
 - Usage contemporain des appellations : Le terme « Igbo » est désormais universellement préféré dans les contextes académiques, officiels et communautaires. « Ibo » n'est plus utilisé que dans des documents historiques ou par méconnaissance.
-- Famille linguistique principale : Niger-Congo – Bénoué-Congo (branche Volta-Congo, sous-groupe Igboïde)
+- Famille linguistique principale : Niger-Congo – Bénoué-Congo (branche Volta-Congo, sous-groupe Igboïde) (FLG_BENOUECONGO)
 - Groupe ethno-linguistique : Igboïde
 - Région historique : Forêt orientale du Nigeria (bassin du Niger inférieur et moyen, région d'Igboland)
 - Pays actuels : Nigeria (États d'Abia, Anambra, Ebonyi, Enugu, Imo, Delta, Rivers), Cameroun (minorités), Guinée équatoriale (diaspora), diaspora mondiale

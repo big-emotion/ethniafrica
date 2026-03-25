@@ -358,58 +358,214 @@ export function parseSections(content: string): Record<string, unknown> {
 }
 
 /**
- * List of excluded country codes (sources, obsolete codes, abbreviations)
- * Based on validateAfrikData.ts exclusion list
+ * Positive whitelist of ISO 3166-1 alpha-3 country codes.
+ * Includes all 54 African states + major diaspora destinations + other UN members.
+ * This is more robust than an exclusion list: only valid codes are accepted,
+ * so any abbreviation, acronym, or century notation is automatically rejected.
  */
-function getExcludedCountryCodes(): Set<string> {
+function getValidCountryCodes(): Set<string> {
   return new Set([
-    // Organisations internationales
-    "ISO", // ISO 639-3
-    "CIA", // CIA World Factbook
-    "SIL", // SIL Ethnologue
-    "ONU", // Organisation des Nations Unies
-    "IDP", // Internally Displaced Persons
-    "CSV", // Comma-Separated Values (format de fichier)
-    // Codes obsolètes ou non-ISO
-    "RCA", // République Centrafricaine (code obsolète, le code ISO est CAF)
-    "RDC", // République Démocratique du Congo (code obsolète, le code ISO est COD)
-    "DRC", // Democratic Republic of Congo (code obsolète, le code ISO est COD)
-    "CAR", // Central African Republic (code obsolète, le code ISO est CAF)
-    // Territoires français (pas des pays indépendants)
-    "MYT", // Mayotte
-    "REU", // La Réunion
-    "TOM", // Territoires d'Outre-Mer (terme historique)
-    // Pays non-africains
-    "USA", // États-Unis
-    "OMN", // Oman
-    // Abréviations politiques/organisationnelles (Algérie)
-    "FLN", // Front de Libération Nationale
-    "FFS", // Front des Forces Socialistes
-    "ALN", // Armée de Libération Nationale
-    "MAK", // Mouvement pour l'Autonomie de la Kabylie
-    "PUF", // Parti (abréviation)
-    "MCB", // Mouvement (abréviation)
-    "HCA", // Haut Commissariat (abréviation)
-    "BNF", // (abréviation)
-    "ONS", // Office National des Statistiques (Algérie)
-    "ADN", // (abréviation)
-    "III", // (abréviation)
-    // Autres abréviations
-    "AOF", // Afrique-Occidentale Française (terme historique)
-    "UPC", // Union des Populations du Cameroun / abréviations diverses
-    "FCT", // Federal Capital Territory (Nigeria, pas un pays)
-    "CSA", // (abréviation)
-    "LRA", // Lord's Resistance Army (groupe armé, pas un pays)
-    // Préfixes AFRIK
-    "FLG", // Famille Linguistique (préfixe)
-    "PPL", // Peuple (préfixe)
-    // Siècles (déjà filtrés mais pour être exhaustif)
-    "XIe",
-    "XVe",
-    "XVIe",
-    "XVIIe",
-    "XIXe",
-    "XXe",
+    // Africa (54 states)
+    "AGO",
+    "BDI",
+    "BEN",
+    "BFA",
+    "BWA",
+    "CAF",
+    "CIV",
+    "CMR",
+    "COD",
+    "COG",
+    "COM",
+    "CPV",
+    "DJI",
+    "DZA",
+    "EGY",
+    "ERI",
+    "ETH",
+    "GAB",
+    "GHA",
+    "GIN",
+    "GMB",
+    "GNB",
+    "GNQ",
+    "KEN",
+    "LBR",
+    "LBY",
+    "LSO",
+    "MAR",
+    "MDG",
+    "MLI",
+    "MOZ",
+    "MRT",
+    "MUS",
+    "MWI",
+    "NAM",
+    "NER",
+    "NGA",
+    "RWA",
+    "SDN",
+    "SEN",
+    "SLE",
+    "SOM",
+    "SSD",
+    "STP",
+    "SWZ",
+    "SYC",
+    "TCD",
+    "TGO",
+    "TUN",
+    "TZA",
+    "UGA",
+    "ZAF",
+    "ZMB",
+    "ZWE",
+    // North Africa / Middle East (frequently mentioned)
+    "DZA",
+    "EGY",
+    "LBY",
+    "MAR",
+    "MRT",
+    "SDN",
+    "TUN",
+    "ISR",
+    "JOR",
+    "LBN",
+    "OMN",
+    "QAT",
+    "SAU",
+    "SYR",
+    "YEM",
+    // Major diaspora destinations
+    "BEL",
+    "CHE",
+    "DEU",
+    "ESP",
+    "FRA",
+    "GBR",
+    "ITA",
+    "NLD",
+    "PRT",
+    "SWE",
+    "USA",
+    "CAN",
+    "BRA",
+    "ARG",
+    // French / Portuguese overseas territories relevant to dataset
+    "MYT",
+    "REU",
+    // Other African-adjacent or commonly cited
+    "COM",
+    "MDG",
+    "MUS",
+    "SYC",
+    // Rest of world (UN member states) — added on demand
+    "AFG",
+    "ALB",
+    "AND",
+    "ARE",
+    "ARM",
+    "ATG",
+    "AUS",
+    "AUT",
+    "AZE",
+    "BHS",
+    "BIH",
+    "BLR",
+    "BLZ",
+    "BOL",
+    "BRB",
+    "BRN",
+    "BTN",
+    "CHL",
+    "CHN",
+    "CIV",
+    "CMR",
+    "COL",
+    "CRI",
+    "CUB",
+    "CYP",
+    "CZE",
+    "DOM",
+    "ECU",
+    "EST",
+    "FIN",
+    "FJI",
+    "GEO",
+    "GRC",
+    "GTM",
+    "GUY",
+    "HND",
+    "HRV",
+    "HTI",
+    "HUN",
+    "IDN",
+    "IND",
+    "IRL",
+    "IRN",
+    "IRQ",
+    "ISL",
+    "JAM",
+    "JPN",
+    "KAZ",
+    "KGZ",
+    "KHM",
+    "KIR",
+    "KOR",
+    "KWT",
+    "LAO",
+    "LKA",
+    "LTU",
+    "LUX",
+    "LVA",
+    "MCO",
+    "MDA",
+    "MDV",
+    "MEX",
+    "MKD",
+    "MLT",
+    "MNG",
+    "MMR",
+    "NCL",
+    "NIC",
+    "NOR",
+    "NPL",
+    "NRU",
+    "NZL",
+    "PAK",
+    "PAN",
+    "PER",
+    "PHL",
+    "PLW",
+    "PNG",
+    "POL",
+    "PRK",
+    "PRY",
+    "ROU",
+    "RUS",
+    "SGP",
+    "SLB",
+    "SLV",
+    "SMR",
+    "SRB",
+    "SUR",
+    "THA",
+    "TJK",
+    "TKM",
+    "TLS",
+    "TON",
+    "TTO",
+    "TUR",
+    "UKR",
+    "URY",
+    "UZB",
+    "VCT",
+    "VEN",
+    "VNM",
+    "VUT",
+    "WSM",
+    "XKX",
+    "ZZZ", // placeholder, never matches real data
   ]);
 }
 
@@ -429,16 +585,14 @@ export function extractRelations(
 ): string[] | string {
   switch (type) {
     case "countries": {
-      // Extract ISO 3166-1 alpha-3 codes
+      // Extract ISO 3166-1 alpha-3 codes using a positive whitelist.
+      // Only codes present in the whitelist are accepted — acronyms, centuries,
+      // and organisation abbreviations are automatically rejected.
       const pattern = /\b([A-Z]{3})\b/g;
-      const matches = Array.from(content.matchAll(pattern));
-      const excludedCodes = getExcludedCountryCodes();
-      const codes = matches
+      const validCodes = getValidCountryCodes();
+      const codes = Array.from(content.matchAll(pattern))
         .map((m) => m[1])
-        .filter((code) => {
-          // Filter out excluded codes
-          return !excludedCodes.has(code);
-        });
+        .filter((code) => validCodes.has(code));
       return [...new Set(codes)]; // Deduplicate
     }
 

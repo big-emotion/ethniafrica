@@ -20,7 +20,7 @@
   * « Peul » reste largement utilisé en français
   * « Fulani » est courant en anglais
   * « Massina » ou « Macina » désigne spécifiquement les Peuls de la région du delta intérieur du Niger au Mali
-- Famille linguistique principale : Niger-Congo – Atlantique (branche sénégambienne)
+- Famille linguistique principale : Niger-Congo – Atlantique (branche sénégambienne) (FLG_ATLANTIQUE)
 - Groupe ethno-linguistique : Atlantique Nord (groupe Fula-Wolof)
 - Région historique : Delta intérieur du Niger (Massina / Macina), Mali central
 - Pays actuels : Mali (principalement région de Mopti, Ségou, Tombouctou), Burkina Faso, Niger

@@ -2,7 +2,7 @@
 - Nom principal du peuple : Tigrayans
 - Auto-appellation : ትግራይ (Təgray)
 - Appellations historiques : « Abyssins » (terme oriental/colonial englobant ; imprécis)
-- Famille linguistique principale : Afro-asiatique – Sémitique éthiopien
+- Famille linguistique principale : Afro-asiatique – Sémitique éthiopien (FLG_SEMITIQUE)
 - Groupe ethno-linguistique : Sémitique du Nord
 - Région historique : Hautes terres du Tigray (Éthiopie) et d’Érythrée
 - Pays actuels : ETH, ERI, diaspora

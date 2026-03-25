@@ -2,7 +2,7 @@
 - Nom principal du peuple : Gurage
 - Auto-appellation : Gurage
 - Appellations historiques : aucune d’usage colonial péjoratif majeur
-- Famille linguistique principale : Afro-asiatique – Sémitique éthiopien
+- Famille linguistique principale : Afro-asiatique – Sémitique éthiopien (FLG_SEMITIQUE)
 - Groupe ethno-linguistique : Sémitique du Sud
 - Région historique : Sud-Ouest de l’Éthiopie (Gurage Zone)
 - Pays actuels : ETH

@@ -4,7 +4,7 @@
 - Exonymes / appellations historiques :
   - « Haoussa » (transcription coloniale française)
   - « Al-Sūdān » (ancienne appellation arabo-islamique large, non spécifique)
-- Famille linguistique principale : Afro-asiatique – Tchadique
+- Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
 - Groupe ethno-linguistique : Tchadique occidental
 - Région historique : Sahel central (Kano, Katsina, Zaria)
 - Pays actuels : NGA, NER, CMR, GHA, TCD, SDN

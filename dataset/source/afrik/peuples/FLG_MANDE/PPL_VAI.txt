@@ -2,7 +2,7 @@
 - Nom principal du peuple : Vai
 - Auto-appellation : Vai / Vy
 - Exonymes historiques : Vey (ancienne forme anglophone, non péjorative)
-- Famille linguistique principale : Niger-Congo – Mandé (occidental)
+- Famille linguistique principale : Niger-Congo – Mandé (occidental) (FLG_MANDE)
 - Région historique : Côte ouest du Liberia et Sierra Leone (région littorale)
 - Pays actuels : LBR (principal), SLE
 - Identifiant peuple : PPL_VAI

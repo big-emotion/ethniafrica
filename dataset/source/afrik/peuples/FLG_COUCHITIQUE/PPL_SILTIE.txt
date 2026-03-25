@@ -1,7 +1,7 @@
 # Nom du peuple
 - Nom principal : Siltie
 - Auto-appellation : Silte / Zayite (dans certains sous-groupes)
-- Famille linguistique principale : Afro-asiatique – Couchitique
+- Famille linguistique principale : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe ethno-linguistique : Couchitique oriental
 - Région historique : Région Silt’e (Éthiopie)
 - Pays actuels : ETH

@@ -2,7 +2,7 @@
 - Nom principal du peuple : Bissa / Bisa
 - Auto-appellation : Bissa / Bisa
 - Appellations historiques : Busa, Bissa-Barka (formes anciennes)
-- Famille linguistique principale : Niger-Congo – Gur
+- Famille linguistique principale : Niger-Congo – Gur (FLG_GUR)
 - Région historique : BFA, GHA, TGO
 - Identifiant peuple : PPL_BUSSA
 

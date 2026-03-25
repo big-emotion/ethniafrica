@@ -5,7 +5,7 @@
 - Origine des termes (exonymes) : N/A
 - Pourquoi certains termes posent problème (si applicable) : N/A
 - Usage contemporain des appellations : N/A
-- Famille linguistique principale : FLG_NILOSAHARIEN
+- Famille linguistique principale : FLG_NILOSAHARIENNE
 - Groupe ethno-linguistique : N/A
 - Région historique : Nord du Soudan (vallée du Nil, Nubie)
 - Pays actuels : SDN

@@ -6,7 +6,7 @@
 - Pourquoi le terme « Galla » pose problème :
   - utilisé par les sources abyssiniennes médiévales avec connotation négative
   - associé à des récits de conquête et de marginalisation
-- Famille linguistique principale : Afro-asiatique – Couchitique
+- Famille linguistique principale : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe ethno-linguistique : Couchitique oriental
 - Région historique : Oromia (Éthiopie centrale, orientale et méridionale)
 - Pays actuels : ETH, KEN, diaspora

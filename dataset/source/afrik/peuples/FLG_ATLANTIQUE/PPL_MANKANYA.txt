@@ -2,7 +2,7 @@
 - Nom principal du peuple : Mankanya
 - Auto-appellation : Mankanya / Mankagne
 - Exonymes historiques : aucune forme majeure péjorative identifiée
-- Famille linguistique principale : Niger-Congo – Atlantique (Sénégambien)
+- Famille linguistique principale : Niger-Congo – Atlantique (Sénégambien) (FLG_ATLANTIQUE)
 - Région historique : Casamance (Sénégal), GIN-Bissau
 - Pays actuels : SEN, GIN-Bissau
 - Identifiant peuple : PPL_MANKANYA

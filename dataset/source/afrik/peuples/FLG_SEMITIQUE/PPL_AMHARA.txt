@@ -4,7 +4,7 @@
 - Exonymes / appellations historiques : 
   - « Abyssins » (terme européen ancien, colonial et imprécis ; utilisé pour désigner l’ensemble des populations chrétiennes de la région, pas uniquement les Amhara)
   - « Habesha » (terme englobant Amhara + Tigray ; peut être revendiqué ou rejeté selon contexte)
-- Famille linguistique principale : Afro-asiatique – Sémitique éthiopien
+- Famille linguistique principale : Afro-asiatique – Sémitique éthiopien (FLG_SEMITIQUE)
 - Groupe ethno-linguistique : Sémitique du Nord
 - Région historique : Hautes terres du centre et du nord-ouest de l’Éthiopie (Gojjam, Gondar, Wollo)
 - Pays actuels : ETH (principalement), diaspora mondiale

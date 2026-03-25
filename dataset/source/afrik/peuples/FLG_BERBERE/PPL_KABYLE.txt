@@ -18,7 +18,7 @@
   - L'auto-appellation « Iqvayliyen » est privilégiée dans les contextes identitaires et culturels.
   - Le terme « Amazigh » est revendiqué dans le cadre du mouvement culturel berbère (MCB) depuis les années 1980.
   - En 2016, l'Algérie reconnaît « tamazight » (berbère) comme langue nationale et officielle dans sa Constitution.
-- Famille linguistique principale : Afro-asiatique / Berbère (branche Nord)
+- Famille linguistique principale : Afro-asiatique / Berbère (branche Nord) (FLG_BERBERE)
 - Groupe ethno-linguistique : Berbère septentrional (kabyle)
 - Région historique : Kabylie (Tamurt n Leqvayel) — massifs montagneux du Djurdjura et de Babor (Atlas tellien)
 - Pays actuels : Algérie (DZA) principalement, France (diaspora majeure), Canada, Belgique

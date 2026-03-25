@@ -2,7 +2,7 @@
 - Nom principal du peuple : Dasanach
 - Auto-appellation : Daasanach
 - Exonymes historiques : « Galubba » (exonyme utilisé par certains voisins ; connotation extérieure, non préférée)
-- Famille linguistique principale : Afro-asiatique – Couchitique
+- Famille linguistique principale : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
 - Groupe ethno-linguistique : Couchitique oriental
 - Région historique : Bassin inférieur de l’Omo (Éthiopie – Kenya – Sud Soudan)
 - Pays actuels : ETH, KEN, SDN du Sud

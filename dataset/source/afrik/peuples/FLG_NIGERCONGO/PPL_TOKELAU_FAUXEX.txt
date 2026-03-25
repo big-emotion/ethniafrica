@@ -2,7 +2,7 @@
 - Nom principal du peuple : Tokelau (Faux exonyme)
 - Auto-appellation : N/A
 - Exonymes / appellations historiques : Tokelau (terme erroné, ne correspond pas à un peuple africain)
-- Famille linguistique principale : N/A
+- Famille linguistique principale : N/A (FLG_NIGERCONGO)
 - Groupe ethno-linguistique : N/A
 - Région historique : N/A
 - Pays actuels : N/A
